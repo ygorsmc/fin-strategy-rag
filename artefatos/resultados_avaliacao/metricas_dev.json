@@ -1,0 +1,20 @@
+{
+  "keyword": {
+    "recall_at_5": 0.6666666666666666,
+    "exatidao_numerica": 0.2,
+    "taxa_recusa_correta": 1.0,
+    "custo_medio_usd": 0.000940625,
+    "latencia_media_s": 1.447358956700009,
+    "latencia_p95_s": 1.8210984669999561,
+    "n_json_invalido": 0
+  },
+  "closed_book": {
+    "recall_at_5": null,
+    "exatidao_numerica": 0.0,
+    "taxa_recusa_correta": 1.0,
+    "custo_medio_usd": 0.0001829,
+    "latencia_media_s": 1.2772983386999386,
+    "latencia_p95_s": 1.6949068730000363,
+    "n_json_invalido": 0
+  }
+}
