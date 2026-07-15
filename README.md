@@ -7,8 +7,9 @@ atacar dois problemas técnicos concretos:
 
 1. **Localizar informações pontuais em textos longos** — um número, uma
    comparação entre instituições, um destaque qualitativo — dentro de
-   documentos financeiros de 20–40 páginas, hoje só navegáveis por leitura
-   manual.
+   documentos financeiros de 20 a 312 páginas. O corpus congelado cobre
+   `2T2025`–`1T2026`: são 20 documentos e 2.790 páginas, hoje só navegáveis
+   por leitura manual.
 2. **Auditar alucinações de LLMs sobre dados financeiros estruturados** — o
    sistema nunca responde com base em memória paramétrica: toda resposta cita
    a fonte (empresa, documento, trimestre, página) e, sem evidência no trecho

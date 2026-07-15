@@ -38,10 +38,18 @@ class Config:
     top_k: int = 5
     estrategia_padrao: str = "semantica"
 
-    # Provedores (plugável — RNF06; ramo ativo decidido pelo gate G1, seção 5.7)
-    embedding_provider: str = "local"
-    llm_provider: str = "azure_openai"
+    # Provedores (plugável — RNF06). Desenvolvimento é local-first; Azure só
+    # entra no gate de pré-deploy, depois do pipeline local estar validado.
+    embedding_provider: str = "ollama"
+    llm_provider: str = "ollama"
     temperatura: float = 0.0
+    ollama_base_url: str = "http://127.0.0.1:11434/v1"
+    ollama_modelo_llm: str = "qwen2.5:14b"
+    ollama_modelo_embedding: str = "bge-m3"
+    ollama_embedding_dimensao: int = 1024
+    ollama_timeout_s: float = 180.0
+    ollama_max_tokens: int = 1024
+    ollama_embedding_batch_size: int = 32
     azure_openai_endpoint: str = ""
     azure_openai_api_key: str = ""
     azure_openai_api_version: str = ""
@@ -93,6 +101,29 @@ def carregar_config(env_file: Path | None = None) -> Config:
         embedding_provider=_env("EMBEDDING_PROVIDER", padrao.embedding_provider),
         llm_provider=_env("LLM_PROVIDER", padrao.llm_provider),
         temperatura=float(_env("TEMPERATURA", str(padrao.temperatura))),
+        ollama_base_url=_env("OLLAMA_BASE_URL", padrao.ollama_base_url),
+        ollama_modelo_llm=_env("OLLAMA_MODELO_LLM", padrao.ollama_modelo_llm),
+        ollama_modelo_embedding=_env(
+            "OLLAMA_MODELO_EMBEDDING", padrao.ollama_modelo_embedding
+        ),
+        ollama_embedding_dimensao=int(
+            _env(
+                "OLLAMA_EMBEDDING_DIMENSAO",
+                str(padrao.ollama_embedding_dimensao),
+            )
+        ),
+        ollama_timeout_s=float(
+            _env("OLLAMA_TIMEOUT_S", str(padrao.ollama_timeout_s))
+        ),
+        ollama_max_tokens=int(
+            _env("OLLAMA_MAX_TOKENS", str(padrao.ollama_max_tokens))
+        ),
+        ollama_embedding_batch_size=int(
+            _env(
+                "OLLAMA_EMBEDDING_BATCH_SIZE",
+                str(padrao.ollama_embedding_batch_size),
+            )
+        ),
         azure_openai_endpoint=_env("AZURE_OPENAI_ENDPOINT", ""),
         azure_openai_api_key=_env("AZURE_OPENAI_API_KEY", ""),
         azure_openai_api_version=_env("AZURE_OPENAI_API_VERSION", ""),

@@ -154,3 +154,40 @@ Cada etapa referencia a seção da spec, os stubs a implementar e o critério de
 E0–E2 (E3 incluída) rodada nas 45 perguntas congeladas com log JSONL, números reais no
 README (metas vs. resultados) e resumo executivo (spec 5.12). Pronto para push no GitHub
 sem nenhuma amarra ao nome da empresa-alvo da vaga e sem a `especificacao.md`.
+
+## Memória entre sessões — MEMORY.md
+
+O `MEMORY.md` na raiz do repositório é o arquivo de **handoff entre sessões de
+execução** — não um changelog, não um substituto deste AGENTS.md. A divisão de
+papéis: AGENTS.md descreve o plano (estável, muda só quando o escopo muda);
+MEMORY.md descreve **onde a execução parou** (muda a cada sessão que avança o
+projeto).
+
+- **No início de toda sessão de trabalho neste projeto:** ler o `MEMORY.md`
+  antes de agir. Ele pode registrar decisão, bloqueio ou estado que não é
+  óbvio a partir do código ou do `git log` — ex.: qual ramo do gate G1 ficou
+  ativo, quantos documentos do corpus já foram baixados, se o conjunto-padrão
+  já foi congelado, um bloqueio externo em aberto (cota de provedor, chave
+  pendente etc.).
+- **Ao final de toda sessão que mudar o estado da execução:** sobrescrever
+  (nunca só anexar) as seções que ficaram desatualizadas. Formato sugerido:
+
+  ```markdown
+  ## Estado atual
+  - Etapa ativa (plano §2): <número e nome>
+  - Última etapa concluída: <número e nome> (<data>)
+
+  ## Decisões e bloqueios em aberto
+  - <decisão que desvia do padrão da spec, com o motivo — se houver>
+  - <bloqueio esperando algo externo: chave de API, cota, disponibilidade de provedor>
+
+  ## Próximo passo concreto
+  - <ação específica, imediatamente executável pela próxima sessão>
+  ```
+
+- **O que NÃO vai no MEMORY.md:** nada que já esteja em `git log`/`git diff`
+  (o histórico de commits já conta essa história); números de métricas de
+  avaliação (vivem em `artefatos/` e no README, não aqui); segredos ou chaves
+  (mesma regra do `.env`, RNF04 — nunca); o plano em si (isso é o AGENTS.md).
+- Mantenha o arquivo curto (poucas dezenas de linhas). Se crescer a ponto de
+  virar um changelog completo, está sendo mal usado — o Git já é o changelog.
