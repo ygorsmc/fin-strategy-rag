@@ -43,6 +43,7 @@ corpus/raw/*
 artefatos/indice_vetorial/*.faiss
 artefatos/indice_vetorial/*.pkl
 artefatos/indice_vetorial/*.bin
+artefatos/indice_vetorial/chunks.json
 !artefatos/indice_vetorial/.gitkeep
 
 # 3. Modelos LoRA locais (Se Fase 3 rodar localmente)

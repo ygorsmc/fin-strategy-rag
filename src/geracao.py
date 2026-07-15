@@ -316,7 +316,27 @@ def montar_prompt_usuario(pergunta: str, chunks: list[Chunk]) -> str:
     """Concatena os trechos recuperados (cada um já traz o cabeçalho
     contextual) + a pergunta. E0 (closed-book) passa chunks=[] e o prompt
     declara a ausência de contexto."""
-    raise NotImplementedError("Etapa 8 do AGENTS.md — montagem do prompt")
+    if chunks:
+        trechos = "\n\n---\n\n".join(chunk.texto for chunk in chunks)
+        contexto = f"Trechos recuperados dos documentos:\n\n{trechos}"
+    else:
+        contexto = (
+            "Nenhum trecho de documento foi recuperado para esta consulta "
+            "(sem contexto disponível)."
+        )
+    return f"{contexto}\n\nPergunta: {pergunta}"
+
+
+def _resposta_invalida(bruto: str, motivo: str, reparado: bool) -> RespostaGerada:
+    return RespostaGerada(
+        resposta=None,
+        recusa=True,  # conservador: lixo conta como erro, nunca como resposta
+        motivo_recusa=motivo,
+        citacoes=(),
+        bruto=bruto,
+        json_reparado=reparado,
+        json_invalido=True,
+    )
 
 
 def parsear_resposta_llm(texto: str) -> RespostaGerada:
@@ -324,7 +344,49 @@ def parsear_resposta_llm(texto: str) -> RespostaGerada:
     (seção 5.7, modo de falha nº 7). Persistindo o erro, devolve
     RespostaGerada(json_invalido=True, recusa=True) — conta como erro da
     estratégia naquele item, NUNCA re-tentado até passar."""
-    raise NotImplementedError("Etapa 8 do AGENTS.md — parse + reparo de JSON")
+    reparado = False
+    try:
+        objeto = json.loads(texto)
+    except (json.JSONDecodeError, TypeError):
+        # Reparo único: descarta cercas de markdown/texto fora do objeto.
+        reparado = True
+        inicio, fim = texto.find("{"), texto.rfind("}")
+        if inicio < 0 or fim <= inicio:
+            return _resposta_invalida(texto, "LLM não devolveu JSON.", reparado)
+        try:
+            objeto = json.loads(texto[inicio : fim + 1])
+        except json.JSONDecodeError:
+            return _resposta_invalida(
+                texto, "JSON inválido mesmo após uma tentativa de reparo.", reparado
+            )
+    if not isinstance(objeto, dict):
+        return _resposta_invalida(texto, "JSON não é um objeto.", reparado)
+    try:
+        citacoes = tuple(
+            Citacao(
+                empresa=str(c["empresa"]),
+                documento=str(c["documento"]),
+                trimestre=str(c["trimestre"]),
+                pagina=int(c["pagina"]),
+            )
+            for c in (objeto.get("citacoes") or [])
+        )
+    except (KeyError, TypeError, ValueError):
+        return _resposta_invalida(
+            texto, "Citação fora do contrato (empresa/documento/trimestre/pagina).",
+            reparado,
+        )
+    resposta = objeto.get("resposta")
+    motivo = objeto.get("motivo_recusa")
+    return RespostaGerada(
+        resposta=None if resposta is None else str(resposta),
+        recusa=bool(objeto.get("recusa", False)),
+        motivo_recusa=None if motivo is None else str(motivo),
+        citacoes=citacoes,
+        bruto=texto,
+        json_reparado=reparado,
+        json_invalido=False,
+    )
 
 
 def gerar_resposta(
@@ -336,4 +398,34 @@ def gerar_resposta(
     """Ponta a ponta da geração: prompt fixo -> LLM (temperatura da config,
     0 em avaliação) -> parse -> checagem RN01 (`citacoes_sao_subconjunto`;
     citação órfã rebaixa a resposta a inválida)."""
-    raise NotImplementedError("Etapa 8 do AGENTS.md — geração ponta a ponta")
+    bruta = provedor.gerar(
+        PROMPT_SISTEMA,
+        montar_prompt_usuario(pergunta, chunks),
+        temperatura=config.temperatura,
+    )
+    resposta = parsear_resposta_llm(bruta.texto)
+    if not resposta.recusa:
+        if not resposta.citacoes:
+            resposta = RespostaGerada(
+                resposta=None,
+                recusa=True,
+                motivo_recusa="Rebaixada por RN01: afirmação sem citação.",
+                citacoes=(),
+                bruto=resposta.bruto,
+                json_reparado=resposta.json_reparado,
+                json_invalido=resposta.json_invalido,
+            )
+        elif not citacoes_sao_subconjunto(list(resposta.citacoes), chunks):
+            resposta = RespostaGerada(
+                resposta=None,
+                recusa=True,
+                motivo_recusa=(
+                    "Rebaixada por RN01: citação órfã (não corresponde a "
+                    "nenhum chunk recuperado nesta consulta)."
+                ),
+                citacoes=(),
+                bruto=resposta.bruto,
+                json_reparado=resposta.json_reparado,
+                json_invalido=resposta.json_invalido,
+            )
+    return resposta, bruta.uso

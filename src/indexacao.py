@@ -23,6 +23,8 @@ if TYPE_CHECKING:
     import numpy as np
 
 ARQUIVO_METADADOS_INDICE = "metadados_construcao.json"
+ARQUIVO_INDICE_FAISS = "indice.faiss"
+ARQUIVO_CHUNKS = "chunks.json"
 
 
 class ErroConsistenciaIndice(RuntimeError):
@@ -265,18 +267,94 @@ def construir_indice_faiss(
     metadados de construção. Reconstrução é determinística a partir do corpus
     (seção 5.5 — sem estado oculto). O metadado de modelo deve usar
     `provedor.identidade_modelo()`, nunca apenas uma tag Ollama mutável."""
-    raise NotImplementedError("Etapa 6 do AGENTS.md — construção FAISS")
+    import faiss
+
+    from datetime import datetime, timezone
+
+    dir_saida.mkdir(parents=True, exist_ok=True)
+    matriz = provedor.embedar([c.texto for c in chunks])
+    indice = faiss.IndexFlatIP(provedor.dimensao)
+    indice.add(matriz)
+    faiss.write_index(indice, str(dir_saida / ARQUIVO_INDICE_FAISS))
+    salvar_chunks(chunks, dir_saida)
+    metadados = MetadadosIndice(
+        provedor=provedor.nome,
+        modelo=provedor.identidade_modelo(),
+        dimensao=provedor.dimensao,
+        data_construcao=datetime.now(timezone.utc).isoformat(),
+        hash_corpus=hash_corpus,
+        n_chunks=len(chunks),
+    )
+    salvar_metadados_indice(metadados, dir_saida)
+    return metadados
+
+
+def salvar_chunks(chunks: list[Chunk], dir_saida: Path = DIR_INDICE_VETORIAL) -> Path:
+    """Mapeamento posição->chunk compartilhado por FAISS e BM25 (mesma ordem)."""
+    dir_saida.mkdir(parents=True, exist_ok=True)
+    caminho = dir_saida / ARQUIVO_CHUNKS
+    caminho.write_text(
+        json.dumps([asdict(c) for c in chunks], ensure_ascii=False),
+        encoding="utf-8",
+    )
+    return caminho
+
+
+def carregar_chunks(dir_indice: Path = DIR_INDICE_VETORIAL) -> list[Chunk]:
+    caminho = dir_indice / ARQUIVO_CHUNKS
+    if not caminho.exists():
+        raise FileNotFoundError(
+            f"{caminho} não existe — construa o índice primeiro "
+            "(executar_pipeline.py, etapa de indexação)."
+        )
+    return [Chunk(**d) for d in json.loads(caminho.read_text(encoding="utf-8"))]
 
 
 def construir_indice_bm25(chunks: list[Chunk], dir_saida: Path = DIR_INDICE_VETORIAL):
     """Índice BM25 sobre os mesmos chunks, tokenizados por
-    `normalizacao.normalizar_texto_bm25` (estratégia E1)."""
-    raise NotImplementedError("Etapa 6 do AGENTS.md — construção BM25")
+    `normalizacao.normalizar_texto_bm25` (estratégia E1).
+
+    O BM25 é reconstruído deterministicamente a partir do `chunks.json`
+    persistido — não há binário próprio a versionar."""
+    from rank_bm25 import BM25Okapi
+
+    from src.normalizacao import normalizar_texto_bm25
+
+    salvar_chunks(chunks, dir_saida)
+    return BM25Okapi([normalizar_texto_bm25(c.texto) for c in chunks])
+
+
+def carregar_indice_bm25(dir_indice: Path = DIR_INDICE_VETORIAL):
+    """Reconstrói o BM25 a partir dos chunks persistidos, na mesma ordem."""
+    from rank_bm25 import BM25Okapi
+
+    from src.normalizacao import normalizar_texto_bm25
+
+    chunks = carregar_chunks(dir_indice)
+    return BM25Okapi([normalizar_texto_bm25(c.texto) for c in chunks]), chunks
 
 
 def carregar_indice_faiss(
     provedor_consulta: ProvedorEmbeddings, dir_indice: Path = DIR_INDICE_VETORIAL
 ):
-    """Carrega o índice E valida a consistência (RNF09) antes de devolver."""
-    validar_consistencia(carregar_metadados_indice(dir_indice), provedor_consulta)
-    raise NotImplementedError("Etapa 6 do AGENTS.md — carga FAISS")
+    """Carrega o índice E valida a consistência (RNF09) antes de devolver.
+
+    Devolve `(indice_faiss, chunks)` com os chunks na ordem dos vetores."""
+    metadados = carregar_metadados_indice(dir_indice)
+    validar_consistencia(metadados, provedor_consulta)
+    import faiss
+
+    caminho = dir_indice / ARQUIVO_INDICE_FAISS
+    if not caminho.exists():
+        raise FileNotFoundError(
+            f"{caminho} não existe — construa o índice primeiro "
+            "(executar_pipeline.py, etapa de indexação)."
+        )
+    indice = faiss.read_index(str(caminho))
+    chunks = carregar_chunks(dir_indice)
+    if indice.ntotal != len(chunks) or indice.ntotal != metadados.n_chunks:
+        raise ErroConsistenciaIndice(
+            f"Índice FAISS com {indice.ntotal} vetores, {len(chunks)} chunks "
+            f"persistidos e n_chunks={metadados.n_chunks} nos metadados (RNF09)."
+        )
+    return indice, chunks

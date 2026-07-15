@@ -23,12 +23,6 @@ from src.geracao import Citacao
 from src.ollama import endpoint_ollama_e_loopback
 from src.recuperacao import Estrategia
 
-pendente_geracao = pytest.mark.skip(
-    reason="Boilerplate: implementação pendente — AGENTS.md etapa 8 (geração)"
-)
-pendente_avaliacao = pytest.mark.skip(
-    reason="Boilerplate: implementação pendente — AGENTS.md etapa 9 (avaliação)"
-)
 
 
 # --- RN01: citação obrigatória (checagem mecânica — já implementada) ----------
@@ -474,7 +468,6 @@ class TestEsquemaConjuntoPadrao:
 # --- RN02: recusa por falta de evidência (contratos pendentes) ------------------
 
 
-@pendente_geracao
 class TestRN02Recusa:
     def test_json_de_recusa_tem_resposta_nula_e_sem_citacoes(self):
         bruto = json.dumps(
@@ -496,30 +489,235 @@ class TestRN02Recusa:
         assert resposta.json_invalido is True
         assert resposta.recusa is True  # conservador: lixo conta como erro
 
-    def test_resposta_afirmativa_sem_citacao_e_rebaixada(self):
+    @pytest.mark.parametrize(
+        "citacoes",
+        [
+            [],  # afirmação sem citação nenhuma
+            [
+                {
+                    "empresa": "BRADESCO",  # citação órfã: doc nunca recuperado
+                    "documento": "bradesco_release_4T2025",
+                    "trimestre": "4T2025",
+                    "pagina": 1,
+                }
+            ],
+        ],
+    )
+    def test_resposta_afirmativa_sem_citacao_e_rebaixada(
+        self, chunks_exemplo, citacoes
+    ):
         # RN01 mecânico dentro de gerar_resposta: afirmação sem citação
         # de chunk recuperado não pode sair como resposta válida
-        raise AssertionError("implementar em gerar_resposta")
+        class ProvedorFake(geracao.ProvedorLLM):
+            nome = "fake"
+
+            def gerar(self, prompt_sistema, prompt_usuario, temperatura=0.0):
+                return geracao.RespostaBrutaLLM(
+                    texto=json.dumps(
+                        {
+                            "resposta": "O lucro foi R$ 10,9 bilhões.",
+                            "recusa": False,
+                            "motivo_recusa": None,
+                            "citacoes": citacoes,
+                        }
+                    ),
+                    uso=geracao.UsoLLM(10, 5, 0.0, 0.01),
+                    modelo="fake-1",
+                )
+
+        resposta, uso = geracao.gerar_resposta(
+            "Qual o lucro do Itaú?", chunks_exemplo, ProvedorFake(), Config()
+        )
+        assert resposta.recusa is True
+        assert resposta.resposta is None
+        assert resposta.citacoes == ()
+        assert "RN01" in resposta.motivo_recusa
+        assert uso.tokens_entrada == 10
 
 
-@pendente_avaliacao
+def _pergunta_padrao(**campos) -> avaliacao.PerguntaPadrao:
+    base = dict(
+        id="q1",
+        conjunto="dev",
+        categoria="adversarial",
+        subtipo_adversarial="fora_do_corpus",
+        pergunta="Qual o lucro do Nubank no 4T2025?",
+        resposta_esperada="n/a",
+        classe_verificacao="n/a",
+        unidade="n/a",
+        origem="n/a",
+        locais_aceitos="",
+        pontos_chave="",
+        comportamento_aceito="recusa",
+    )
+    base.update(campos)
+    return avaliacao.PerguntaPadrao(**base)
+
+
+def _resposta(recusa: bool, citacoes=(), texto="R$ 1,0 bilhão") -> geracao.RespostaGerada:
+    return geracao.RespostaGerada(
+        resposta=None if recusa else texto,
+        recusa=recusa,
+        motivo_recusa="sem evidência" if recusa else None,
+        citacoes=tuple(citacoes),
+    )
+
+
+class ProvedorContado(geracao.ProvedorLLM):
+    """Fake determinístico que conta chamadas e custa `custo_usd` por chamada."""
+
+    nome = "fake"
+
+    def __init__(self, custo_usd: float = 0.0):
+        self.chamadas = 0
+        self._custo = custo_usd
+
+    def gerar(self, prompt_sistema, prompt_usuario, temperatura=0.0):
+        self.chamadas += 1
+        return geracao.RespostaBrutaLLM(
+            texto=json.dumps(
+                {
+                    "resposta": None,
+                    "recusa": True,
+                    "motivo_recusa": "sem evidência no contexto",
+                    "citacoes": [],
+                }
+            ),
+            uso=geracao.UsoLLM(10, 5, self._custo, 0.01),
+            modelo="fake-1",
+        )
+
+
+def _csv_conjunto(tmp_path, n_perguntas: int):
+    caminho = tmp_path / "perguntas.csv"
+    with open(caminho, "w", newline="", encoding="utf-8") as f:
+        escritor = csv.DictWriter(f, fieldnames=avaliacao.COLUNAS_CONJUNTO_PADRAO)
+        escritor.writeheader()
+        for i in range(1, n_perguntas + 1):
+            escritor.writerow(
+                {
+                    "id": f"q{i}",
+                    "conjunto": "dev",
+                    "categoria": "factual",
+                    "subtipo_adversarial": "",
+                    "pergunta": f"Pergunta {i}?",
+                    "resposta_esperada": "R$ 1,0 bilhão",
+                    "classe_verificacao": "release_gerencial",
+                    "unidade": "R$ milhões",
+                    "origem": "tabela",
+                    "locais_aceitos": "doc_x:1",
+                    "pontos_chave": "",
+                    "comportamento_aceito": "",
+                }
+            )
+    return caminho
+
+
 class TestAvaliacaoDeRecusa:
     def test_adversarial_recusada_conta_como_correta(self):
-        raise AssertionError("implementar avaliar_recusa")
+        pergunta = _pergunta_padrao(comportamento_aceito="recusa")
+        assert avaliacao.avaliar_recusa(pergunta, _resposta(recusa=True))
+        assert not avaliacao.avaliar_recusa(pergunta, _resposta(recusa=False))
 
-    def test_premissa_falsa_aceita_recusa_ou_correcao_fundamentada(self):
+    def test_premissa_falsa_aceita_recusa_ou_correcao_fundamentada(
+        self, citacao_valida
+    ):
         # Seção 5.8: comportamento_aceito da pergunta decide
-        raise AssertionError("implementar avaliar_recusa")
+        pergunta = _pergunta_padrao(
+            subtipo_adversarial="premissa_falsa",
+            comportamento_aceito="recusa|correcao_fundamentada",
+        )
+        assert avaliacao.avaliar_recusa(pergunta, _resposta(recusa=True))
+        assert avaliacao.avaliar_recusa(
+            pergunta, _resposta(recusa=False, citacoes=[citacao_valida])
+        )
+        # correção sem citação não é fundamentada
+        assert not avaliacao.avaliar_recusa(pergunta, _resposta(recusa=False))
 
-    def test_custo_excedido_pausa_e_reporta(self):
+    def test_custo_excedido_pausa_e_reporta(self, tmp_path):
         # RNF03: atingiu ORCAMENTO_TETO_USD -> CustoExcedidoError, nunca estoura
-        with pytest.raises(avaliacao.CustoExcedidoError):
-            raise AssertionError("implementar executar_avaliacao")
+        config = Config(
+            conjunto_padrao_path=_csv_conjunto(tmp_path, 3),
+            orcamento_teto_usd=0.5,
+        )
+        from src.recuperacao import Recuperador
 
-    def test_checkpoint_por_pergunta_e_retomavel(self):
+        with pytest.raises(avaliacao.CustoExcedidoError, match="teto"):
+            avaliacao.executar_avaliacao(
+                config,
+                Recuperador(config),
+                ProvedorContado(custo_usd=1.0),
+                [Estrategia.CLOSED_BOOK],
+                conjunto="dev",
+                dir_checkpoint=tmp_path / "resultados",
+            )
+
+    def test_checkpoint_por_pergunta_e_retomavel(self, tmp_path):
         # Modo de falha nº 8: execução interrompida não é perdida nem paga 2×
-        raise AssertionError("implementar executar_avaliacao")
+        from src.recuperacao import Recuperador
 
-    def test_recall_comparativa_exige_todas_as_instituicoes_no_top_k(self):
+        config = Config(conjunto_padrao_path=_csv_conjunto(tmp_path, 2))
+        dir_checkpoint = tmp_path / "resultados"
+        provedor = ProvedorContado()
+        avaliacao.executar_avaliacao(
+            config,
+            Recuperador(config),
+            provedor,
+            [Estrategia.CLOSED_BOOK],
+            conjunto="dev",
+            dir_checkpoint=dir_checkpoint,
+        )
+        assert provedor.chamadas == 2
+
+        retomada = ProvedorContado()
+        metricas = avaliacao.executar_avaliacao(
+            config,
+            Recuperador(config),
+            retomada,
+            [Estrategia.CLOSED_BOOK],
+            conjunto="dev",
+            dir_checkpoint=dir_checkpoint,
+        )
+        assert retomada.chamadas == 0  # tudo veio do checkpoint
+        assert Estrategia.CLOSED_BOOK in metricas
+
+    def test_recall_comparativa_exige_todas_as_instituicoes_no_top_k(
+        self, chunks_exemplo
+    ):
         # Definição operacional da seção 5.9
-        raise AssertionError("implementar avaliar_recall_at_k")
+        from src.recuperacao import ResultadoRecuperacao
+
+        pergunta = _pergunta_padrao(
+            categoria="comparativa",
+            pergunta="Quem teve maior ROE no 4T2025: Itaú ou Bradesco?",
+            comportamento_aceito="",
+        )
+        so_itau = [
+            ResultadoRecuperacao(c, 1.0, Estrategia.SEMANTICA)
+            for c in chunks_exemplo
+        ]
+        assert not avaliacao.avaliar_recall_at_k(pergunta, so_itau, k=5)
+
+        bradesco = ingestao_chunk_bradesco()
+        com_ambos = so_itau + [
+            ResultadoRecuperacao(bradesco, 0.9, Estrategia.SEMANTICA)
+        ]
+        assert avaliacao.avaliar_recall_at_k(pergunta, com_ambos, k=5)
+
+
+def ingestao_chunk_bradesco():
+    from src.ingestao import Chunk
+
+    return Chunk(
+        id="BRADESCO_4T2025_release_0001",
+        empresa="BRADESCO",
+        trimestre="4T2025",
+        documento="bradesco_release_4T2025",
+        pagina_inicio=5,
+        pagina_fim=5,
+        posicao_no_documento=1,
+        texto=(
+            "[BRADESCO | bradesco_release_4T2025 | 4T2025 | pág. 5]\n"
+            "O ROE do período foi de 11,3%."
+        ),
+    )
