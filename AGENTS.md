@@ -1,76 +1,156 @@
 # AGENTS.md — Execução: Assistente de Research Financeiro com RAG
 
-Este é o guia **específico** para o agente que vai executar o projeto descrito na `especificacao.md`. Seu papel é materializar o repositório de código que roda de ponta a ponta, implementando rigorosamente a arquitetura, as regras de negócio (RN) e o escopo aprovado.
+Guia **específico** para o agente que executa o projeto descrito na `especificacao.md`.
+**Fase atual: EXECUÇÃO.** O boilerplate foi entregue em 2026-07-15 (estrutura completa,
+contratos tipados, utilitários de base e suíte de testes); o trabalho agora é implementar
+os contratos pendentes, coletar o corpus real, construir o conjunto-padrão e medir as
+métricas honestamente.
 
-## 0. Agnosticismo e Privacidade da Empresa (Regra Dura)
+## 0. Agnosticismo e Privacidade da Empresa (Regra Dura — inalterada)
 
-O projeto deve ser 100% **agnóstico quanto à empresa-alvo de qualquer vaga**. 
-- NENHUM nome de banco (como BTG Pactual, Itaú, etc.) deve aparecer na documentação como *seu possível empregador* ou *empresa-alvo*.
-- O repositório aborda o domínio de "Research Financeiro" processando dados públicos (releases de resultados dos 5 maiores bancos do Brasil), mas a ferramenta não é um "produto de uma empresa X".
+O projeto deve ser 100% **agnóstico quanto à empresa-alvo de qualquer vaga**.
+- NENHUM nome de banco (BTG Pactual, Itaú, etc.) deve aparecer na documentação como
+  *seu possível empregador* ou *empresa-alvo*. Citar os 5 bancos como **fonte de dados
+  públicos do corpus** é permitido e necessário.
 - Use o slug neutro do projeto: `assistente-research-financeiro`.
-- O README focará no problema técnico: localizar informações pontuais em textos longos e auditar alucinações de LLMs em dados financeiros estruturados.
+- O README foca no problema técnico: localizar informações pontuais em textos longos e
+  auditar alucinações de LLMs em dados financeiros estruturados.
+- A `especificacao.md` menciona a vaga de origem: ela é documento de trabalho local e
+  **não deve ser publicada** no repositório final.
 
-## 1. O Pipeline a ser construído
+## 1. Estado atual do repositório (boilerplate entregue)
 
-A ordem de construção já foi definida na seção 5.15 da spec. Você deve implementá-la nesta exata sequência:
+**Já implementado e testado (não regredir):**
+- `src/config.py` — `Config` imutável; único ponto de leitura do `.env` (defaults = seção 5.14).
+- `src/normalizacao.py` — `remover_acentos`, `normalizar_texto_bm25`, `APELIDOS_BANCOS`
+  (inclui NUBANK como armadilha adversarial), `PADRAO_TRIMESTRE`, `MULTIPLICADORES`.
+- `src/ingestao.py` — dataclasses (`DocumentoCorpus`, `PaginaExtraida`, `Chunk`,
+  `RelatorioQualidade`), `carregar_metadados_corpus` (valida esquema),
+  `montar_cabecalho_contextual` (formato `[EMPRESA | doc | trimestre | pág. N]`).
+- `src/indexacao.py` — guarda RNF09 completa (`validar_consistencia`,
+  `ErroConsistenciaIndice`, `salvar/carregar_metadados_indice`) e fábrica plugável de
+  provedores de embeddings.
+- `src/geracao.py` — `PROMPT_SISTEMA` fixo (`VERSAO_PROMPT="v1"` — mudou o prompt, sobe a
+  versão e loga), dataclasses do contrato JSON, fábrica plugável de LLMs,
+  `citacoes_sao_subconjunto` (checagem mecânica de RN01).
+- `src/avaliacao.py` — esquema do gabarito (`COLUNAS_CONJUNTO_PADRAO`),
+  `registrar_execucao` (JSONL, RNF08), dataclasses de resultado/métricas.
+- `scripts/gate.py` — funcional: testa Azure OpenAI (LLM + embeddings) e regenera
+  `resultados/gate.md` com evidência a cada execução.
+- `scripts/baixar_corpus.py` — funcional: baixa pelo manifesto, valida/preenche SHA-256,
+  reporta URL morta e hash divergente (nunca re-raspa silenciosamente).
+- `executar_pipeline.py` — orquestrador com `--amostra` e `--etapa`; reporta
+  OK/PENDENTE/FALHOU por etapa; a etapa `testes` roda o pytest.
+- `app_streamlit.py` — casca funcional: modos demo-cacheado/pergunta-livre, limite por
+  sessão, transparência de modo/provedor.
 
-1. **Gate G1 (`scripts/gate.py`):** Valide a criação do recurso de inferência LLM e embeddings. Registre a evidência de sucesso ou falha (acionando fallback documentado) em `resultados/gate.md`. Não inicie processamento pesado sem passar pelo gate.
-2. **Download do Corpus (`scripts/baixar_corpus.py`):** Crie o script que obtém os PDFs dos releases trimestrais. Atualize o `corpus/metadados.csv` (empresa, URL, data, hash).
-3. **Conjunto-Padrão (`conjunto_padrao/perguntas.csv`):** Configure as 45 perguntas de avaliação divididas em factuais, comparativas, qualitativas e adversariais.
-4. **Ingestão e Chunking (`src/ingestao.py`):** Extraia texto dos PDFs mantendo numeração de páginas. Divida em blocos de ~600 tokens (100 de overlap), inserindo cabeçalho contextual no texto.
-5. **Normalização (`src/normalizacao.py`):** Implemente parser numérico pt-BR (lidando com R$, bilhões, milhões e %). É fundamental que este módulo seja coberto por testes unitários (`pytest`).
-6. **Indexação (`src/indexacao.py`):** Construa os índices de embeddings (FAISS) e de palavra-chave (BM25). Crie a guarda de consistência de metadados para garantir que consulta e índice usem o mesmo modelo.
-7. **Recuperação (`src/recuperacao.py`):** Lógica Top-K, permitindo filtro opcional por empresa/trimestre com base nos metadados da pergunta.
-8. **Geração (`src/geracao.py`):** Implemente o prompt fixo e a arquitetura plugável. O LLM deve retornar JSON contendo: resposta, indicador booleano de recusa, e metadados de citação da fonte.
-9. **Avaliação (`src/avaliacao.py`):** Script para medir Recall@5, Exatidão Numérica e Taxa de Recusa, comparando as estratégias (Closed-book, BM25, Semântica e Híbrida).
-10. **Interface (`app_streamlit.py`):** Crie a interface de consulta interativa permitindo modo de demonstração livre ou cacheado.
-11. **(Fase 3) Módulo LoRA:** Implemente o classificador PEFT leve para rotear perguntas e servir de guardrail.
+**Pendente (stubs `NotImplementedError`, cada um citando sua etapa):** parser numérico
+pt-BR e apelidos (`normalizar_numero_ptbr`, `valores_equivalentes`, `canonizar_banco`,
+`extrair_bancos_citados`, `extrair_trimestre_citado`); extração/chunking/qualidade
+(`extrair_paginas`, `gerar_chunks`, `validar_qualidade`, `teste_sentinela`,
+`ingerir_corpus`); embeddings e índices (`embedar` dos 3 provedores,
+`construir_indice_faiss/bm25`, `carregar_indice_faiss`); recuperação
+(`extrair_filtro_metadados`, `fusao_reciprocal_rank`, `Recuperador.recuperar`); geração
+(`montar_prompt_usuario`, `parsear_resposta_llm`, `gerar_resposta`, adaptadores `.gerar`
+dos 3 provedores); avaliação (`avaliar_recall_at_k`, `avaliar_exatidao_numerica`,
+`avaliar_recusa`, `executar_avaliacao`, `consolidar_metricas`);
+`responder_pergunta_livre` no app.
 
-## 2. Estrutura Obrigatória do Repositório
+**Convenção de testes (obrigatória):** a suíte tem 92 casos — 40 passando (contratos já
+implementados) e 52 marcados com `pendente = pytest.mark.skip(...)`. Ao implementar uma
+etapa: (1) remova o marcador `pendente` da(s) classe(s) correspondente(s); (2) complete os
+testes-esqueleto que contêm `raise AssertionError("implementar...")`; (3) NUNCA enfraqueça
+uma asserção para fazer código passar — o teste é o contrato, o código se adapta a ele.
+Arquivos de dados: `corpus/metadados.csv` e `conjunto_padrao/perguntas.csv` estão só com
+cabeçalho (esquema validado por teste), aguardando as etapas 2–3.
 
-Sua saída deve espelhar exatamente esta estrutura (`assistente-research-financeiro/`):
+**Dependências:** `requirements.txt` está curado e pinado nas versões do venv
+(Python 3.12). `sentence-transformers==5.6.0` foi adicionado para a etapa 6 mas **ainda
+não está instalado** — rode `pip install -r requirements.txt` antes de implementar os
+embeddings locais.
+
+## 2. Plano de execução (nesta ordem)
+
+Cada etapa referencia a seção da spec, os stubs a implementar e o critério de conclusão.
+
+1. **Gate G1 real (spec 5.7):** preencher o `.env` (copiar de `.env.example`), rodar
+   `python scripts/gate.py` e commitar o `resultados/gate.md` com a evidência real.
+   Fixar `LLM_PROVIDER`/`EMBEDDING_PROVIDER` conforme o ramo. O gate atual registra
+   apenas "não configurado" — não vale como evidência final.
+2. **Corpus (spec 5.2):** preencher `corpus/metadados.csv` com os releases reais —
+   regra da interseção: os 4 trimestres mais recentes disponíveis para **todos os 5**
+   bancos. Rodar `python scripts/baixar_corpus.py` até todos os hashes registrados.
+   Concluída quando: 20 linhas no manifesto, 20 PDFs íntegros em `corpus/raw/`.
+3. **Conjunto-padrão (spec 5.8):** 45 perguntas `conjunto=teste` (15 factuais,
+   10 comparativas, 10 qualitativas, 10 adversariais com subtipos nomeados — ≥4 de
+   Nubank) + ~10 `conjunto=dev`. Conferir gabarito pela classe de verificação
+   (`cvm` via ITR/DFP; `release_gerencial` via dupla leitura). Registrar a **data de
+   congelamento** neste arquivo ao concluir.
+4. **Ingestão (spec 5.3–5.4; stubs de `src/ingestao.py`):** implementar extração
+   pypdf⇄pdfplumber, chunking ~600/100 tokens (tiktoken), validação estrutural e
+   teste-sentinela. Destravar os skips de `tests/test_ingestao.py`. Criar PDFs sintéticos
+   pequenos em `tests/fixtures/` para os testes — nunca depender de PDF real no pytest.
+5. **Normalização (spec 5.8; stubs de `src/normalizacao.py`):** parser numérico pt-BR,
+   comparador com tolerância, canonização de bancos/trimestres. Destravar os skips de
+   `tests/test_normalizacao.py` — os casos parametrizados já definem o contrato exato.
+6. **Indexação (spec 5.5; stubs de `src/indexacao.py`):** `embedar` (local primeiro),
+   FAISS + BM25, persistência determinística. A guarda RNF09 já existe — os construtores
+   DEVEM gravar `MetadadosIndice` e a carga DEVE passar por `validar_consistencia`.
+7. **Recuperação (spec 5.6; stubs de `src/recuperacao.py`):** filtro por metadados,
+   subconsulta por banco nas comparativas (modo de falha nº 6), RRF para E3.
+8. **Geração (spec 5.7; stubs de `src/geracao.py`):** adaptadores de provedor
+   (o SDK `openai` cobre os 3 — Azure/OpenAI/DeepSeek), parse do JSON com UMA tentativa
+   de reparo, checagem RN01 dentro de `gerar_resposta`. Destravar os skips de geração em
+   `tests/test_regras.py`.
+9. **Avaliação (spec 5.9–5.10; stubs de `src/avaliacao.py`):** métricas por definição
+   operacional, checkpoint por pergunta, retry/backoff, teto de custo
+   (`CustoExcedidoError`). Iterar SÓ no conjunto `dev`; rodar as 45 congeladas ao final,
+   temperatura 0, logando cada execução completa (RNF08). Gerar
+   `artefatos/resultados_avaliacao/respostas_cacheadas.json` para o modo demo.
+   Destravar os skips de avaliação em `tests/test_regras.py`.
+10. **Interface e README:** implementar `responder_pergunta_livre`, validar os dois modos
+    localmente e preencher a tabela do README com os números **medidos** (nunca metas).
+11. **(Fase 3) Deploy:** Azure Container Apps primário; demo cacheado sem segredo;
+    teto/alerta de orçamento no provedor (RN03).
+12. **(Fase 3) Módulo LoRA (spec 5.16):** classificador PEFT roteador/guardrail, split
+    por pergunta-base (anti-vazamento de paráfrases).
+
+## 3. Contratos e Regras Invioláveis (inalterados)
+
+- **Honestidade de Avaliação:** pytest cobre regras de formatação/chunking (passa/falha).
+  Recall@5, alucinação e exatidão são **resultados avaliados** — rodados no
+  conjunto-padrão (temperatura 0), calculados honestamente, logados em
+  `artefatos/logs_execucoes/` e expostos no README.
+- **Tolerância Zero para Alucinação e Vazamento:** sem base no trecho recuperado, a flag
+  booleana de recusa DEVE ser verdadeira (RN02).
+- **Dados Privados/Segredos:** nunca versionar PDFs (`corpus/raw/`); NUNCA colocar chaves
+  reais em código ou commit — `.env` local e secrets no deploy (RNF04).
+- **Deploy Seguro:** a versão publicada funciona por padrão em modo demonstração cacheado
+  e limita perguntas livres pelo `.env`; o controle real de custo é o teto no provedor.
+- **Determinismo e não-regressão:** `pytest` verde é pré-condição de qualquer commit;
+  etapa implementada = skips da etapa removidos e passando.
+
+## 4. Estrutura do repositório (como está)
 
 ```text
-├── AGENTS.md               (Cópia deste guia)
-├── README.md               (Foco no domínio financeiro e na avaliação de métricas vs resultados reais)
-├── LICENSE                 (MIT)
-├── requirements.txt        (Versões pinadas)
-├── .env.example            (Contrato de variáveis de ambiente sem expor chaves)
-├── .gitignore              (Regras para ignorar `corpus/raw/`, `artefatos/indice_vetorial/` não estáticos, etc)
-├── executar_pipeline.py    (Orquestrador com flag `--amostra` para smoke test)
-├── scripts/
-│   ├── baixar_corpus.py
-│   └── gate.py
-├── corpus/
-│   ├── raw/                (Arquivos PDF não comitados)
-│   └── metadados.csv       (Fonte de verdade)
-├── src/
-│   ├── ingestao.py
-│   ├── normalizacao.py
-│   ├── indexacao.py
-│   ├── recuperacao.py
-│   ├── geracao.py
-│   └── avaliacao.py
-├── conjunto_padrao/
-│   └── perguntas.csv
-├── artefatos/
-│   ├── indice_vetorial/
-│   ├── logs_execucoes/     (JSONL com registro de versão/modelo/parâmetros)
-│   └── resultados_avaliacao/
+├── AGENTS.md / CLAUDE.md / especificacao.md (local, não publicar a spec)
+├── README.md · LICENSE (MIT) · requirements.txt (pinado) · .env.example · pytest.ini
+├── executar_pipeline.py        (orquestrador; --amostra, --etapa)
+├── scripts/gate.py · scripts/baixar_corpus.py
+├── corpus/raw/ (fora do Git) · corpus/metadados.csv (fonte de verdade)
+├── src/ config.py · ingestao.py · normalizacao.py · indexacao.py
+│        recuperacao.py · geracao.py · avaliacao.py
+├── conjunto_padrao/perguntas.csv
+├── artefatos/ indice_vetorial/ · logs_execucoes/ · resultados_avaliacao/
+├── resultados/gate.md          (evidência do gate G1 — regenerado por execução)
 ├── app_streamlit.py
-└── tests/
-    ├── test_ingestao.py
-    ├── test_normalizacao.py
-    └── test_regras.py
+└── tests/ conftest.py · test_ingestao.py · test_normalizacao.py · test_regras.py
 ```
 
-## 3. Contratos e Regras Invioláveis
+## 5. Entregável Final
 
-- **Honestidade de Avaliação:** Testes no `pytest` são para regras de formatação/chunking (passa/falha). Recall@5, taxa de alucinação e Exatidão são **resultados avaliados**. Eles devem ser rodados no conjunto-padrão (temperatura 0), calculados honestamente, logados no `artefatos/logs_execucoes/` e expostos no README.
-- **Tolerância Zero para Alucinação e Vazamento:** Se o LLM não encontrar base no trecho recuperado, a flag booleana de recusa DEVE ser verdadeira (RN02).
-- **Dados Privados/Segredos:** Nunca versionar PDFs (`corpus/raw/`) para evitar questões de redistribuição, e NUNCA colocar chaves de API reais (OpenAI/Azure) em código.
-- **Deploy Seguro:** Para mitigar custos e estouro de memória, a versão publicada no Streamlit Cloud/Container Apps deve funcionar por padrão no modo "demonstração cacheado" usando o conjunto-padrão pré-computado, ou limitar as execuções de perguntas livres ao limite estabelecido no `.env`.
-
-## 4. Seu Entregável Final
-
-Quando finalizar o trabalho, o script `executar_pipeline.py` deve processar a extração dos metadados, aplicar testes unitários com pytest, rodar as avaliações no conjunto de teste e salvar os números reais das estratégias testadas para serem postas no README final. O sistema deverá estar pronto para o push no GitHub sem nenhuma amarra ao nome da empresa-alvo da vaga.
+`executar_pipeline.py` processando ponta a ponta: testes verdes (sem skips), corpus
+íntegro pelo manifesto, índices construídos com guarda RNF09, avaliação das estratégias
+E0–E2 (E3 incluída) rodada nas 45 perguntas congeladas com log JSONL, números reais no
+README (metas vs. resultados) e resumo executivo (spec 5.12). Pronto para push no GitHub
+sem nenhuma amarra ao nome da empresa-alvo da vaga e sem a `especificacao.md`.

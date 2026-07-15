@@ -1,27 +1,35 @@
+# Dependências diretas, pinadas nas versões instaladas no venv (RNF01).
+# Python 3.12. Transitivas são resolvidas pelo pip — não listar freeze completo
+# (o freeze arrasta wheels CUDA/linux-only que quebram instalação em outras
+# plataformas e no deploy enxuto da Fase 3).
+
 # Ingestão e manipulação de PDF
-pypdf>=4.2.0
-pdfplumber>=0.11.0
-tiktoken>=0.7.0
+pypdf==6.14.2
+pdfplumber==0.11.10
+tiktoken==0.13.0
 
 # Indexação Vetorial e BM25
-faiss-cpu>=1.8.0
-rank-bm25>=0.2.2
-numpy>=1.26.0
+faiss-cpu==1.14.3
+rank-bm25==0.2.2
+numpy==2.5.1
+
+# Embeddings locais (EMBEDDING_PROVIDER=local — etapa 6; NUNCA no deploy, seção 5.13)
+sentence-transformers==5.6.0
 
 # Modelos, Integração de LLMs e Segredos
-openai>=1.35.0
-python-dotenv>=1.0.1
+openai==2.45.0
+python-dotenv==1.2.2
 
 # Interface e Manipulação de Dados
-streamlit>=1.36.0
-pandas>=2.2.0
-requests>=2.32.0
+streamlit==1.59.2
+pandas==3.0.3
+requests==2.34.2
 
 # Testes e Qualidade
-pytest>=8.2.0
+pytest==9.1.1
 
 # Módulo LoRA / Fase 3 (Ajuste Fino Leve)
-torch>=2.3.0
-transformers>=4.42.0
-peft>=0.11.0
-accelerate>=0.31.0
+torch==2.13.0
+transformers==5.13.1
+peft==0.19.1
+accelerate==1.14.0
