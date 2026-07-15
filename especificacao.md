@@ -7,7 +7,7 @@
 | **Data** | 2026-07-14 |
 | **Empresa / vaga-alvo** | BTG Pactual · Estágio em Ciência de Dados (TECH - DATA) |
 | **Perfil** | Ciência de Dados, com núcleo de arquitetura IA/LLM proporcional ao pedido explícito da vaga ("projetar e treinar modelos baseados em LLMs"). Os artefatos de meio (seção 5) combinam a variante Dados (pergunta de negócio, pipeline, métricas) com elementos da variante IA/ML (arquitetura, limitações previstas) onde isso aumenta o rigor, sem duplicar seções. |
-| **Modo** | Misto — consolida Python, arquitetura de provedor de LLM plugável e avaliação estatística de saídas de IA (ambos já validados no projeto "Corretor de Redação do ENEM"); explora Azure OpenAI Service (não a primeira vez na nuvem Azure — o corretor de redação do ENEM já roda em Azure Container Apps —, mas primeira vez com o serviço de IA generativa gerenciada), busca vetorial/BM25 formal, Streamlit e ajuste fino leve (LoRA, aprovado em `escopo.md`) |
+| **Modo** | Misto — consolida Python, arquitetura de provedor de LLM plugável e avaliação estatística de saídas de IA (ambos já validados no projeto "Corretor de Redação do ENEM"); usa inferência local com Ollama e avalia Azure apenas como opção condicional de Fase 3, além de busca vetorial/BM25 formal, Streamlit e ajuste fino leve (LoRA, aprovado em `escopo.md`) |
 | **Status** | Aprovada para execução — escopo marcado em `escopo.md` (2026-07-14): transcrições de teleconferência adiadas (⏸), todos os demais módulos aprovados (✅), incluindo Fase 3 e LoRA. Passe crítico de modos de falha aplicado após a aprovação (seção 5.18) |
 
 ---
@@ -109,9 +109,10 @@ maiores bancos do Brasil reportam seus próprios resultados.
 - Comparação formal de 4 estratégias de resposta (closed-book, keyword/BM25, semântica,
   híbrida) sobre esse conjunto-padrão.
 - Interface de consulta local (Streamlit, estilo chat) exibindo resposta e fontes citadas.
-- Fase 3 (aprovada em `escopo.md`): publicação da interface em Azure Container Apps
-  (primário) ou Streamlit Community Cloud (alternativa), com mitigação explícita de
-  custo/exposição, e o módulo de ajuste fino leve (LoRA) da seção 5.16.
+- Fase 3 (aprovada em `escopo.md`): após o fluxo local estar 100% verde e mediante
+  autorização explícita de gasto, publicação opcional em Azure Container Apps ou
+  Streamlit Community Cloud, com mitigação de custo/exposição, e o módulo de ajuste
+  fino leve (LoRA) da seção 5.16.
 
 **Nota honesta sobre "treinar modelos baseados em LLMs":** esta especificação cobre
 integralmente o **projetar** (arquitetura RAG, engenharia de prompt, avaliação formal).
@@ -127,10 +128,10 @@ entrevista: aproveitamento de créditos de estudante (Azure for Students) e cont
 com outro projeto do portfólio que já roda em Azure (Container Apps, no corretor de
 redação do ENEM). **Fato verificado na pesquisa (2026):** a assinatura Azure for
 Students **não é elegível** para criar recursos Azure OpenAI/AI Foundry — bloqueio de
-política da plataforma (fontes na seção 1). Por isso o plano de provedores tem um gate
-de verificação no primeiro dia de execução e um fallback definido (seção 5.7), e o uso
-**garantido** dos créditos é a hospedagem da aplicação (Azure Container Apps), que a
-assinatura de estudante comprovadamente suporta. Os conceitos de arquitetura — serviço
+política da plataforma (fontes na seção 1). Por isso o plano começa com um Gate L1 local
+e reserva o Gate G1 Azure ao pré-deploy (seção 5.7). Se a publicação em nuvem for
+aprovada após o fluxo local estar verde, os créditos podem ser usados na hospedagem em
+Azure Container Apps. Os conceitos de arquitetura — serviço
 de IA generativa gerenciado, autenticação/segredo em nuvem, deploy serverless/contêiner
 — são portáveis entre provedores; o equivalente direto na AWS seria o Amazon Bedrock,
 citado ao longo desta spec como referência de equivalência sempre que relevante. Se a
@@ -169,7 +170,7 @@ Vocabulário: `RF` = funcional (o que faz), `RNF` = não funcional (qualidade),
 | RF08 | Declarar ausência de evidência suficiente quando os trechos recuperados não sustentam uma resposta (RN02) | Geração |
 | RF09 | Comparar 4 estratégias (closed-book, keyword, semântica, híbrida) no conjunto-padrão e reportar métricas por estratégia | Comparação de estratégias |
 | RF10 | Expor uma interface de consulta (Streamlit, estilo chat) mostrando resposta e trechos/fontes recuperados | Interface |
-| RF11 | Publicar a interface (Fase 3) em Azure Container Apps (primário) ou Streamlit Community Cloud (alternativa), com mitigação de custo/exposição para tráfego público anônimo | Deploy |
+| RF11 | Se a Fase 3 for autorizada após o fluxo local estar verde, publicar a interface em Azure Container Apps ou Streamlit Community Cloud, conforme créditos disponíveis, com mitigação de custo/exposição para tráfego público anônimo | Deploy |
 
 ### Requisitos não funcionais (RNF)
 
@@ -308,9 +309,9 @@ para validar o pipeline de ponta a ponta em minutos antes da execução completa
 
 - **Vetorial:** embeddings por chunk, armazenados num índice FAISS local (arquivo único,
   da ordem de poucos MB para os ~2–4 mil chunks esperados). Provedor de embeddings
-  plugável (RNF06): modelo local multilíngue (custo zero, padrão em desenvolvimento) ou
-  serviço gerenciado — Azure OpenAI `text-embedding-3` se o gate G1 passar (seção 5.7),
-  senão OpenAI direto (equivalente na AWS seria o Bedrock Titan Embeddings).
+  plugável (RNF06): Ollama/BGE-M3 multilíngue (1.024 dimensões, custo zero e padrão em
+  desenvolvimento), MiniLM local alternativo ou serviço gerenciado apenas se o Gate G1
+  de pré-deploy justificar (equivalente na AWS seria o Bedrock Titan Embeddings).
 - **Guarda de consistência (RNF09):** o índice grava, junto dos vetores, metadados de
   construção — provedor, modelo, dimensão, data e hash do corpus. Consultar um índice
   com um modelo de embedding diferente do que o construiu produz similaridades sem
@@ -351,20 +352,23 @@ para validar o pipeline de ponta a ponta em minutos antes da execução completa
 - Arquitetura de provedor de LLM plugável (RNF06), reaproveitando o padrão já validado no
   projeto do corretor de redação do ENEM (troca de provedor por variável de ambiente).
   Divergência deliberada em relação ao pedido literal de AWS da vaga — ver nota na
-  seção 3. O plano de provedores é uma árvore com **gate G1 no primeiro dia de
-  execução** — tentar criar o recurso Azure OpenAI na assinatura de estudante:
-  - **Se G1 passar** (possível via oferta educacional gerenciada pela instituição ou
-    mudança de política): Azure OpenAI Service para LLM e embeddings — o cenário
-    originalmente desejado.
-  - **Se G1 falhar (cenário esperado — fato verificado, seção 1):** a assinatura Azure
-    for Students bloqueia Azure OpenAI/AI Foundry por política da plataforma; a
-    inferência usa OpenAI direto ou DeepSeek (custo baixo, mesmos adaptadores
-    plugáveis), e os créditos de estudante ficam integralmente na **hospedagem** Azure
-    (Container Apps, seção 5.13). A história "implantei na Azure com créditos de
-    estudante" permanece verdadeira nos dois ramos; a restrição verificada vira resposta
-    de entrevista ("verifiquei, documentei e segui com fallback"), não constrangimento.
-  - O resultado do gate (data e print/log do erro ou do recurso criado) entra no resumo
-    executivo — evidência, não alegação.
+  seção 3. A ordem é **local-first**, para não consumir créditos durante desenvolvimento:
+  - **Ramo ativo:** Gemini API executa a geração (`gemini-3.1-flash-lite`) pelo
+    endpoint OpenAI-compatible; BGE-M3 via Ollama continua nos embeddings. O Gate
+    Gemini registra JSON, citação, recusa, tokens, latência e custo estimado em
+    `resultados/gate_gemini.md`.
+  - **Fallback local:** Ollama continua disponível para geração e embeddings sem
+    chave paga; o Gate L1 registra essa alternativa em `resultados/gate_local.md`.
+  - Todo o pipeline, avaliação, Streamlit e eventual demonstração via container/ngrok
+    são validados localmente antes de qualquer tentativa de deploy. Ollama nunca é
+    exposto diretamente; somente a porta do Streamlit pode receber túnel autenticado.
+  - **Gate G1 Azure no pré-deploy:** somente quando o fluxo local estiver 100% verde e
+    após autorização separada para provisionar/configurar deployments Azure. O
+    `scripts/gate.py` não descobre capacidade nem cria recursos: apenas valida endpoints
+    já existentes. Se passar, o serviço gerenciado continua opcional; se não for
+    autorizado ou falhar, a inferência local e o demo cacheado permanecem funcionais.
+  - O Gate Gemini, o Gate L1 e, se executado, o G1 entram no resumo executivo como
+    evidência, não alegação.
 - **Contrato de saída estruturada (RF07):** o gerador responde JSON —
   `{resposta, recusa: bool, motivo_recusa, citacoes: [{empresa, documento, trimestre,
   pagina}]}`. Isso torna RN01–RN02 verificáveis por código: recusa é um campo booleano
@@ -512,10 +516,16 @@ mesmo log JSONL de execução (RNF08) — comparação justa, não anedótica.
 
 Documento de 1–2 páginas: problema, corpus (5 bancos, 4 trimestres, 20 documentos),
 métodos comparados (E0–E3), métricas medidas vs. metas, principais casos de recusa
-correta e de erro, resultado do gate G1 de provedores (com evidência — seção 5.7), custo
+correta e de erro, resultado do Gate L1 e status condicional do G1 (com evidência quando
+executado — seção 5.7), custo
 real de desenvolvimento vs. teto estimado, limitações (seção 5.17).
 
 ### 5.13 Arquitetura de custo e exposição pública (Fase 3)
+
+**Pré-condição local-first:** nenhum recurso ou deploy Azure é criado enquanto testes,
+avaliação e interface não funcionarem ponta a ponta localmente. Antes da nuvem, uma
+demonstração temporária pode usar container/ngrok autenticado, expondo somente o
+Streamlit e nunca o endpoint do Ollama.
 
 Diferença importante em relação aos outros dois projetos de Ciência de Dados deste ciclo
 (Sanar e InComm/Méliuz não se aplicam aqui do mesmo jeito): um dashboard de agregados
@@ -526,12 +536,11 @@ limite exporia a conta de nuvem do candidato a qualquer visitante anônimo.
 
 Mitigação:
 
-- **Alvo de publicação: Azure Container Apps como primário** — usa os créditos de
-  estudante no que a assinatura comprovadamente permite (hospedagem), reaproveita a
-  experiência real do corretor do ENEM e escala a zero quando ocioso (custo de
-  hospedagem próximo de zero sem tráfego). Streamlit Community Cloud fica como
-  alternativa gratuita, com a restrição documentada de ~1 GB de RAM (fonte na seção 1).
-- **A instância publicada nunca carrega modelo de embedding local** (centenas de MB de
+- **Alvo de publicação condicional:** somente após autorização explícita de gasto,
+  escolher entre Azure Container Apps e Streamlit Community Cloud conforme créditos,
+  memória e custo medidos. Container/ngrok autenticado cobre demonstrações temporárias
+  antes dessa decisão.
+- **Uma eventual instância em nuvem nunca carrega modelo de embedding local** (centenas de MB de
   RAM só para embedar a consulta): embeddings do corpus são pré-computados offline; a
   pergunta livre embeda apenas a consulta via API, usando **o mesmo modelo** que
   construiu o índice publicado (RNF09).
@@ -566,10 +575,28 @@ CHUNK_SOBREPOSICAO_TOKENS=100
 TOP_K=5
 ESTRATEGIA_PADRAO=semantica       # closed_book | keyword | semantica | hibrida
 
-# Provedores (plugável — RNF06; o ramo ativo é decidido pelo gate G1, seção 5.7)
-EMBEDDING_PROVIDER=local          # local | azure_openai | openai
-LLM_PROVIDER=azure_openai         # azure_openai | openai | deepseek | local
+# Provedores (plugável — RNF06; padrão local-first)
+EMBEDDING_PROVIDER=ollama         # ollama | local | azure_openai | openai
+LLM_PROVIDER=gemini               # gemini | ollama | azure_openai | openai | deepseek
 TEMPERATURA=0                     # determinismo na avaliação (RNF08)
+OLLAMA_BASE_URL=http://127.0.0.1:11434/v1
+OLLAMA_MODELO_LLM=qwen2.5:14b
+OLLAMA_MODELO_EMBEDDING=bge-m3
+OLLAMA_EMBEDDING_DIMENSAO=1024
+OLLAMA_TIMEOUT_S=180
+OLLAMA_MAX_TOKENS=512
+OLLAMA_EMBEDDING_BATCH_SIZE=4
+
+# Gemini API — geração ativa; GOOGLE_API_KEY também é aceito
+GEMINI_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+GEMINI_MODELO_LLM=gemini-3.1-flash-lite
+GEMINI_TIMEOUT_S=120
+GEMINI_MAX_TOKENS=512
+GEMINI_REASONING_EFFORT=low
+GEMINI_PRECO_ENTRADA_USD_MILHAO=0.25
+GEMINI_PRECO_SAIDA_USD_MILHAO=1.50
+
+# Azure: preencher apenas no Gate G1 de pré-deploy
 AZURE_OPENAI_ENDPOINT=
 AZURE_OPENAI_API_KEY=
 AZURE_OPENAI_API_VERSION=
@@ -590,13 +617,13 @@ Sobre o teto de USD 10 (RNF03): ordem de grandeza, não chute — uma execução
 das 4 estratégias sobre 45 perguntas movimenta centenas de milhares de tokens, o que em
 modelo pequeno custa fração de dólar por execução; USD 10 comporta dezenas de execuções
 completas mais as iterações de desenvolvimento. Estimativa a priori, a confirmar contra
-a tabela de preços vigente do provedor escolhido no gate G1; o gasto real é medido e
-reportado (meta vs. resultado).
+a tabela de preços vigente somente se um provedor pago for ativado no Gate G1. No ramo
+Ollama, o custo de API é zero e latência/consumo local são medidos e reportados.
 
 ### 5.15 Estrutura do repositório e ordem de construção
 
 ```
-btg-assistente-research/
+assistente-research-financeiro/
 ├── executar_pipeline.py
 ├── baixar_corpus.py            # re-obtém PDFs pela URL do manifesto e valida hash
 ├── .env.example
@@ -612,7 +639,8 @@ btg-assistente-research/
 │   ├── geracao.py              # prompt, contrato JSON, citação obrigatória, recusa
 │   └── avaliacao.py            # métricas, checkpoint/retomada, log JSONL, teto de custo
 ├── conjunto_padrao/
-│   └── perguntas.csv           # 45 teste (congeladas) + ~10 dev — esquema da seção 5.8
+│   ├── perguntas.csv           # ~10 dev enquanto o teste não congela
+│   └── candidatas_teste.csv    # 45 candidatas, fora da avaliação até a 2ª leitura
 ├── artefatos/
 │   ├── indice_vetorial/        # índice FAISS + metadados de construção (RNF09)
 │   ├── logs_execucoes/         # JSONL por execução completa (RNF08)
@@ -627,12 +655,12 @@ btg-assistente-research/
 
 Ordem de construção:
 
-1. **Gate G1 (dia 1):** tentar criar o recurso Azure OpenAI na assinatura de estudante;
-   registrar o resultado com evidência e fixar o ramo de provedores (seção 5.7) — antes
-   de escrever qualquer código que dependa da resposta.
+1. **Gate Gemini:** validar a geração estruturada via Gemini API e registrar custo; manter
+   o Gate L1 como fallback Ollama para embeddings/geração. O Gate G1 Azure fica reservado
+   ao pré-deploy, depois de todo o fluxo local estar validado.
 2. Selecionar e baixar o corpus (5 bancos × 4 trimestres, regra da interseção);
    registrar `metadados.csv` e congelar o conjunto de trimestres.
-3. Construir o conjunto-padrão (45 congeladas + ~10 dev), conferindo números conforme a
+3. Construir o conjunto-padrão (45 candidatas a congelar + ~10 dev), conferindo números conforme a
    classe de verificação de cada pergunta (CVM ITR/DFP ou dupla leitura do release).
 4. Implementar ingestão/chunking + normalizador pt-BR + testes de qualidade e sentinela.
 5. Implementar indexação (BM25 + embeddings/FAISS) com a guarda de consistência (RNF09).
@@ -640,11 +668,13 @@ Ordem de construção:
 7. Implementar geração com contrato JSON, citação obrigatória e recusa (RN01–RN02).
 8. Implementar e rodar a comparação de estratégias (E0–E3) — iterando só no conjunto
    dev; o congelado roda ao final, com log por execução.
-9. Construir a interface Streamlit local.
-10. Escrever resumo executivo e README (metas vs. resultados, resultado do gate G1).
-11. (Fase 3) Publicar (Container Apps primário), configurar teto/alerta de orçamento no
-    provedor e validar os dois modos (demo sem segredo; pergunta livre limitada).
-12. (Fase 3) Módulo LoRA (seção 5.16), com a regra anti-vazamento de paráfrases.
+9. Construir a interface Streamlit e validar o fluxo nativo local.
+10. Escrever resumo executivo e README (metas vs. resultados, Gates Gemini/L1).
+11. Empacotar e, se necessário, demonstrar via ngrok autenticado somente após o fluxo
+    nativo estar verde; não expor Ollama.
+12. (Fase 3) Executar o Gate G1 Azure e só então decidir sobre Container Apps conforme
+    créditos disponíveis; configurar teto/alerta e validar os dois modos.
+13. (Fase 3) Módulo LoRA (seção 5.16), com a regra anti-vazamento de paráfrases.
 
 ### 5.16 Módulo de ajuste fino leve (cobre "treinar" literalmente) — aprovado
 
@@ -684,9 +714,9 @@ GPU gratuita (ex.: Google Colab T4). Aprovado em `escopo.md` como módulo de Fas
 - **Azure OpenAI/AI Foundry bloqueados para assinatura de estudante (fato verificado,
   2026):** política da plataforma impede a criação do recurso
   (`RequestDisallowedByAzure` em todas as regiões) e, quando o recurso chega a existir,
-  a cota de modelos pode vir zerada — fontes na seção 1. Por isso o gate G1 e o fallback
-  OpenAI direto/DeepSeek (5.7); o uso garantido dos créditos de estudante é a hospedagem
-  (Container Apps), não a inferência.
+  a cota de modelos pode vir zerada — fontes na seção 1. Por isso o desenvolvimento usa
+  Ollama e o Gate G1 ocorre apenas no pré-deploy (5.7). Container Apps permanece uma
+  opção, não um requisito nem consumo antecipado de créditos.
 - **Métricas gerenciais não são perfeitamente comparáveis entre bancos:** cada banco
   define os próprios ajustes ("lucro ajustado", "ROE anualizado"); as perguntas
   comparativas fixam "como divulgado em cada release" e essa limitação de domínio é
@@ -711,7 +741,7 @@ mitigação vive na seção indicada; esta tabela existe para nenhum deles ser d
 
 | # | Modo de falha | Sintoma provável | Mitigação prevista | Onde |
 |---|---------------|------------------|--------------------|------|
-| 1 | Assinatura de estudante bloqueia Azure OpenAI/Foundry (verificado) | `RequestDisallowedByAzure` ao criar o recurso; cota 0 | Gate G1 no dia 1 + fallback OpenAI direto/DeepSeek; créditos vão para a hospedagem | 5.7, 5.13 |
+| 1 | Assinatura de estudante bloqueia Azure OpenAI/Foundry (verificado) | `RequestDisallowedByAzure` ao criar o recurso; cota 0 | Ollama local-first + Gate G1 apenas no pré-deploy; Azure permanece opcional | 5.7, 5.13 |
 | 2 | Extração de PDF quebra em tabelas — onde vivem os números | Recall alto, mas exatidão numérica baixa; números truncados/fora de ordem | Teste-sentinela por documento; parser alternativo; campo `origem=tabela\|texto` no gabarito para diagnóstico | 5.4, 5.8 |
 | 3 | Gabarito gerencial ≠ CVM (ajustado vs. contábil) | Conferência do gabarito "falha" em massa com o sistema certo | Classe de verificação por pergunta (`cvm` vs. `release_gerencial`); enunciado fixa a definição da métrica | 5.8 |
 | 4 | Comparação numérica sem normalização pt-BR | Falsos negativos ("R$ 2,3 bi" ≠ "2.300 milhões") | Normalizador testado (vírgula, milhar, multiplicador, %) + tabela de apelidos de banco | 5.8 |
@@ -720,7 +750,7 @@ mitigação vive na seção indicada; esta tabela existe para nenhum deles ser d
 | 7 | LLM devolve JSON inválido | Avaliação trava ou contabiliza lixo | Uma tentativa de reparo; depois conta como erro da estratégia (nunca loop) | 5.7 |
 | 8 | Avaliação em lote interrompida (429/rede) no meio | Execução perdida; custo pago à toa | Checkpoint por pergunta + retomada; retry com backoff; custo logado por chamada; pausa ao atingir o teto | 5.9 |
 | 9 | Iteração contra o conjunto de teste (overfitting) | Métricas reportadas infladas | Conjunto dev separado; 45 congeladas; execuções completas contadas e logadas | 5.8 |
-| 10 | Instância pública estoura memória (Streamlit Cloud ~1 GB) | App cai para o visitante | Nunca carregar embedding local em nuvem; primário é Container Apps; demo sem segredo | 5.13 |
+| 10 | Instância pública estoura memória (Streamlit Cloud ~1 GB) | App cai para o visitante | Medir memória antes da escolha; não carregar embedding local em nuvem; demo sem segredo | 5.13 |
 | 11 | Limite de sessão contornado por refresh gera custo | Conta de API cresce sem teto | Teto/alerta de orçamento no provedor (controle real); modo livre desliga, demo continua | 5.13, RN03 |
 | 12 | Vazamento treino→teste no módulo LoRA (paráfrases) | Acurácia do classificador inflada | Split por pergunta-base — paráfrases nunca cruzam o split | 5.16 |
 
@@ -730,15 +760,15 @@ mitigação vive na seção indicada; esta tabela existe para nenhum deles ser d
 |--------|-----------|----------|-----------|---------|
 | Linguagem | Python | ✅ | ✅ tenho | pedida explicitamente |
 | Extração de PDF | pypdf/pdfplumber | ➕ extra | 🆕 | indispensável para ingestão; não citado na vaga |
-| Embeddings | modelo local multilíngue + Azure OpenAI Service (`text-embedding-3`) | ⚠️ diverge (vaga pede AWS) | 🆕 | aproveita créditos de estudante; local cobre custo zero em dev; equivalente AWS seria Bedrock Titan Embeddings |
+| Embeddings | Ollama/BGE-M3 local; MiniLM e APIs gerenciadas opcionais | ⚠️ diverge (vaga pede AWS) | 🆕 | custo zero em desenvolvimento, multilíngue e guardado por modelo/dimensão (RNF09) |
 | Índice vetorial | FAISS | ➕ extra | 🆕 | padrão leve, local, sem servidor — agnóstico de nuvem |
 | Busca por palavra-chave | BM25 (ex. `rank_bm25`) | ➕ extra | 🆕 | necessário para a comparação de estratégias (E1) |
-| Geração (LLM) | Azure OpenAI Service se o gate G1 passar; senão OpenAI direto/DeepSeek (fallback verificado — 5.7), sempre via arquitetura plugável | ⚠️ diverge (vaga pede AWS) | 🆕 no Azure OpenAI; ✅ no padrão plugável (validado no projeto ENEM) | cobre "projetar... modelos baseados em LLMs"; equivalente AWS seria Bedrock (ver nota seção 3) |
+| Geração (LLM) | Gemini 3.1 Flash-Lite via API; Ollama local como fallback; Azure/OpenAI/DeepSeek opcionais | ⚠️ diverge (vaga pede AWS) | 🆕 no Gemini/Ollama; ✅ no padrão plugável (validado no projeto ENEM) | geração estruturada com custo/latência registrados; equivalente AWS seria Bedrock |
 | Ajuste fino leve (Fase 3, aprovado) | LoRA/PEFT sobre modelo pequeno (ex.: BERTimbau-base) | ➕ extra | 🆕 | cobre "treinar" literalmente e roteia fora-de-escopo (seção 5.16) |
 | Orquestração do pipeline | Script único `executar_pipeline.py` | — | ✅ | reprodutibilidade (RNF01) |
 | Testes | pytest | — | 🆕 documentado (mesmo padrão dos outros projetos do ciclo) | cobertura de ingestão e regras RN01–RN03 |
 | Interface | Streamlit (chat) | ➕ extra | 🆕 (mesma curva dos outros projetos do ciclo) | ferramenta analítica de consulta |
-| Deploy | Azure Container Apps (primário; escala a zero) ou Streamlit Community Cloud (alternativa, ~1 GB RAM) | ⚠️ diverge (vaga pede AWS) | ✅ em Container Apps (ENEM); 🆕 no empacotamento deste app | Fase 3; uso garantido dos créditos de estudante é a hospedagem (5.13) |
+| Deploy | nativo → container/ngrok autenticado → Azure Container Apps opcional | ⚠️ diverge (vaga pede AWS) | ✅ em Container Apps (ENEM); 🆕 neste app | progressão local-first; nuvem só após o fluxo local estar verde e conforme créditos |
 | Segredos | `.env` local / Streamlit secrets | — | ✅ | nunca versionar chave |
 
 > Marcado com 🆕 o que é aprendizado novo desta vaga; enriquece o próximo currículo
@@ -755,8 +785,12 @@ mitigação vive na seção indicada; esta tabela existe para nenhum deles ser d
 - [ ] Pipeline de ingestão/chunking com testes automatizados de qualidade.
 - [ ] Índice vetorial (FAISS) e índice BM25 construídos, reproduzíveis por
       `executar_pipeline.py` (com `--amostra` funcionando como smoke test).
-- [ ] Gate G1 executado e documentado no dia 1 (qual ramo de provedores ficou ativo, com
-      evidência — print/log).
+- [x] Gate L1 local executado e documentado como fallback, com Ollama/BGE-M3/Qwen,
+      custo zero e evidência regenerável em `resultados/gate_local.md`.
+- [x] Gate Gemini executado e documentado com citação, recusa, tokens, latência e
+      custo estimado em `resultados/gate_gemini.md`.
+- [ ] (Fase 3 condicional; não bloqueia a conclusão local) Gate G1 Azure executado e
+      documentado somente após autorização explícita de provisionamento/gasto.
 - [ ] Conjunto-padrão de 45 perguntas com gabarito conferido conforme a classe de
       verificação de cada pergunta (CVM ITR/DFP para contábeis; dupla leitura
       independente para gerenciais), mais ~10 perguntas de desenvolvimento separadas.
@@ -772,8 +806,8 @@ mitigação vive na seção indicada; esta tabela existe para nenhum deles ser d
       obrigatória.
 - [ ] Guarda de consistência de índice (RNF09) coberta por teste: mismatch de modelo de
       embedding gera erro explícito.
-- [ ] Teto/alerta de orçamento configurado no provedor (RN03) e gasto real reportado
-      contra o teto (RNF03).
+- [ ] Se um provedor pago for ativado, teto/alerta de orçamento configurado (RN03) e
+      gasto real reportado contra o teto (RNF03).
 - [ ] Custo real de desenvolvimento medido e comparado ao teto estimado (RNF03).
 - [ ] (Fase 3) Deploy público com mitigação de custo/exposição (RN03) implementada e
       testada.
@@ -785,7 +819,7 @@ mitigação vive na seção indicada; esta tabela existe para nenhum deles ser d
 | Problema/necessidade | Requisito(s) | Módulo/entrega |
 |----------------------|--------------|----------------|
 | Vaga pede "projetar e treinar modelos baseados em LLMs", isolado das demais responsabilidades | RF07, RF08, RNF06 | Geração com citação/recusa; provedor plugável |
-| Vaga pede interesse em AWS — projeto diverge para Azure por decisão consciente (créditos de estudante, continuidade com o corretor do ENEM); verificado que assinatura de estudante não cria Azure OpenAI/Foundry | RF05, RF07, RF11, RNF04, RNF06 | Plano de provedores em árvore com gate G1 (5.7); hospedagem em Container Apps (5.13); nota honesta na seção 3; equivalência com Bedrock nomeada na seção 6 |
+| Vaga pede interesse em AWS — projeto usa desenvolvimento local e mantém Azure opcional por continuidade técnica; assinatura de estudante não cria Azure OpenAI/Foundry | RF05, RF07, RF11, RNF04, RNF06 | Ollama + Gate L1; Gate G1 e Container Apps só no pré-deploy (5.7/5.13); equivalência com Bedrock nomeada na seção 6 |
 | Diferencial "NLP" citado na vaga | RF02–RF09 | Pipeline RAG completo |
 | Documentos financeiros longos dificultam localizar uma resposta pontual (dor observada) | RF06, RF09 | Recuperação com filtro; comparação de estratégias |
 | Risco setorial documentado de alucinação em IA generativa aplicada a bancos | RN01, RN02, RF08 | Regras anti-alucinação e conjunto adversarial |

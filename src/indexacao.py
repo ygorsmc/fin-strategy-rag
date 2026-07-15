@@ -13,8 +13,11 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from openai import OpenAI
+
 from src.config import DIR_INDICE_VETORIAL, Config
 from src.ingestao import Chunk
+from src.ollama import resolver_identidade_modelo_ollama
 
 if TYPE_CHECKING:
     import numpy as np
@@ -49,6 +52,10 @@ class ProvedorEmbeddings(ABC):
     def embedar(self, textos: list[str]) -> "np.ndarray":
         """Matriz (len(textos), dimensao), float32, L2-normalizada."""
 
+    def identidade_modelo(self) -> str:
+        """Identidade persistida no índice; provedores mutáveis sobrescrevem."""
+        return self.modelo
+
 
 class EmbeddingsLocal(ProvedorEmbeddings):
     """Modelo local multilíngue — custo zero, padrão em desenvolvimento.
@@ -62,6 +69,87 @@ class EmbeddingsLocal(ProvedorEmbeddings):
 
     def embedar(self, textos: list[str]) -> "np.ndarray":
         raise NotImplementedError("Etapa 6 do AGENTS.md — embeddings locais")
+
+
+class EmbeddingsOllama(ProvedorEmbeddings):
+    """Embeddings locais pelo endpoint OpenAI-compatible do Ollama."""
+
+    nome = "ollama"
+
+    def __init__(self, config: Config):
+        faltando = [
+            nome
+            for nome, valor in (
+                ("OLLAMA_BASE_URL", config.ollama_base_url),
+                ("OLLAMA_MODELO_EMBEDDING", config.ollama_modelo_embedding),
+            )
+            if not valor
+        ]
+        if faltando:
+            raise ValueError(f"Variáveis Ollama ausentes: {faltando}")
+        if config.ollama_embedding_dimensao <= 0:
+            raise ValueError("OLLAMA_EMBEDDING_DIMENSAO deve ser positiva.")
+        if config.ollama_embedding_batch_size <= 0:
+            raise ValueError("OLLAMA_EMBEDDING_BATCH_SIZE deve ser positivo.")
+        if config.ollama_timeout_s <= 0:
+            raise ValueError("OLLAMA_TIMEOUT_S deve ser positivo.")
+        self.modelo = config.ollama_modelo_embedding
+        self.dimensao = config.ollama_embedding_dimensao
+        self._batch_size = config.ollama_embedding_batch_size
+        self._base_url = config.ollama_base_url
+        self._timeout_s = config.ollama_timeout_s
+        self._identidade_modelo: str | None = None
+        self._cliente = OpenAI(
+            base_url=config.ollama_base_url,
+            api_key="ollama-local",
+            timeout=config.ollama_timeout_s,
+            max_retries=0,
+        )
+
+    def identidade_modelo(self) -> str:
+        if self._identidade_modelo is None:
+            self._identidade_modelo = resolver_identidade_modelo_ollama(
+                self._base_url, self.modelo, self._timeout_s
+            )
+        return self._identidade_modelo
+
+    def embedar(self, textos: list[str]) -> "np.ndarray":
+        import numpy as np
+
+        if not textos:
+            return np.empty((0, self.dimensao), dtype=np.float32)
+
+        vetores: list[list[float]] = []
+        for inicio in range(0, len(textos), self._batch_size):
+            lote = textos[inicio : inicio + self._batch_size]
+            resposta = self._cliente.embeddings.create(model=self.modelo, input=lote)
+            indices = [item.index for item in resposta.data]
+            if sorted(indices) != list(range(len(lote))):
+                raise RuntimeError(
+                    "Ollama devolveu índices de embeddings inválidos: "
+                    f"esperado={list(range(len(lote)))}, recebido={indices}"
+                )
+            dados = sorted(resposta.data, key=lambda item: item.index)
+            if len(dados) != len(lote):
+                raise RuntimeError(
+                    "Ollama devolveu quantidade inesperada de embeddings: "
+                    f"esperado={len(lote)}, recebido={len(dados)}"
+                )
+            vetores.extend(item.embedding for item in dados)
+
+        matriz = np.asarray(vetores, dtype=np.float32)
+        esperado = (len(textos), self.dimensao)
+        if matriz.shape != esperado:
+            raise RuntimeError(
+                "Dimensão inesperada no embedding Ollama: "
+                f"esperado={esperado}, recebido={matriz.shape}"
+            )
+        if not np.isfinite(matriz).all():
+            raise RuntimeError("Embedding Ollama contém valor não finito.")
+        normas = np.linalg.norm(matriz, axis=1, keepdims=True)
+        if np.any(normas == 0):
+            raise RuntimeError("Embedding Ollama devolveu vetor de norma zero.")
+        return (matriz / normas).astype(np.float32, copy=False)
 
 
 class EmbeddingsOpenAI(ProvedorEmbeddings):
@@ -110,6 +198,7 @@ def fabricar_provedor_embeddings(config: Config) -> ProvedorEmbeddings:
     """Dispatch por EMBEDDING_PROVIDER (RNF06)."""
     fabricas = {
         "local": lambda: EmbeddingsLocal(),
+        "ollama": lambda: EmbeddingsOllama(config),
         "openai": lambda: EmbeddingsOpenAI(config),
         "azure_openai": lambda: EmbeddingsAzureOpenAI(config),
     }
@@ -130,7 +219,7 @@ def validar_consistencia(
         f"{campo}: índice={valor_indice!r} vs consulta={valor_consulta!r}"
         for campo, valor_indice, valor_consulta in (
             ("provedor", metadados.provedor, provedor.nome),
-            ("modelo", metadados.modelo, provedor.modelo),
+            ("modelo", metadados.modelo, provedor.identidade_modelo()),
             ("dimensao", metadados.dimensao, provedor.dimensao),
         )
         if valor_indice != valor_consulta
@@ -174,7 +263,8 @@ def construir_indice_faiss(
 ) -> MetadadosIndice:
     """Embeda os chunks, grava o índice FAISS + mapeamento id->chunk +
     metadados de construção. Reconstrução é determinística a partir do corpus
-    (seção 5.5 — sem estado oculto)."""
+    (seção 5.5 — sem estado oculto). O metadado de modelo deve usar
+    `provedor.identidade_modelo()`, nunca apenas uma tag Ollama mutável."""
     raise NotImplementedError("Etapa 6 do AGENTS.md — construção FAISS")
 
 

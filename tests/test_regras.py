@@ -11,12 +11,16 @@ from __future__ import annotations
 
 import csv
 import json
+from types import SimpleNamespace
 
+import numpy as np
 import pytest
 
 from src import avaliacao, geracao, indexacao
-from src.config import Config
+from scripts import gate_local
+from src.config import Config, carregar_config
 from src.geracao import Citacao
+from src.ollama import endpoint_ollama_e_loopback
 from src.recuperacao import Estrategia
 
 pendente_geracao = pytest.mark.skip(
@@ -111,6 +115,21 @@ class TestRNF09GuardaDeConsistencia:
         indexacao.salvar_metadados_indice(metadados, tmp_path)
         assert indexacao.carregar_metadados_indice(tmp_path) == metadados
 
+    def test_digest_ollama_diferente_gera_erro_explicito(self, monkeypatch):
+        monkeypatch.setattr(
+            indexacao,
+            "resolver_identidade_modelo_ollama",
+            lambda *_: "bge-m3@sha256:digest-novo",
+        )
+        provedor = indexacao.EmbeddingsOllama(Config())
+        metadados = self._metadados(
+            provedor="ollama",
+            modelo="bge-m3@sha256:digest-antigo",
+            dimensao=1024,
+        )
+        with pytest.raises(indexacao.ErroConsistenciaIndice, match="modelo"):
+            indexacao.validar_consistencia(metadados, provedor)
+
 
 # --- RNF06: arquitetura plugável (dispatch — já implementada) ------------------
 
@@ -137,6 +156,174 @@ class TestProvedoresPlugaveis:
         with pytest.raises(ValueError, match="AZURE_OPENAI_ENDPOINT"):
             geracao.fabricar_provedor_llm(config)
 
+    def test_ollama_local_nao_exige_credencial(self):
+        config = Config(llm_provider="ollama", embedding_provider="ollama")
+        assert geracao.fabricar_provedor_llm(config).nome == "ollama"
+        embeddings = indexacao.fabricar_provedor_embeddings(config)
+        assert embeddings.nome == "ollama"
+        assert embeddings.modelo == "bge-m3"
+        assert embeddings.dimensao == 1024
+
+    def test_ollama_sem_modelo_falha_com_mensagem_clara(self):
+        config = Config(llm_provider="ollama", ollama_modelo_llm="")
+        with pytest.raises(ValueError, match="OLLAMA_MODELO_LLM"):
+            geracao.fabricar_provedor_llm(config)
+
+    def test_gemini_sem_credencial_falha_com_mensagem_clara(self):
+        config = Config(llm_provider="gemini", gemini_api_key="")
+        with pytest.raises(ValueError, match="GEMINI_API_KEY"):
+            geracao.fabricar_provedor_llm(config)
+
+
+class TestAdaptadoresOllama:
+    def test_llm_preserva_prompts_e_registra_custo_zero(self):
+        chamadas = {}
+
+        class Completions:
+            def create(self, **kwargs):
+                chamadas.update(kwargs)
+                return SimpleNamespace(
+                    model="qwen2.5:14b",
+                    choices=[
+                        SimpleNamespace(
+                            message=SimpleNamespace(
+                                content='{"resposta": null, "recusa": true}'
+                            )
+                        )
+                    ],
+                    usage=SimpleNamespace(prompt_tokens=12, completion_tokens=7),
+                )
+
+        provedor = geracao.LLMOllama(Config())
+        provedor._cliente = SimpleNamespace(
+            chat=SimpleNamespace(completions=Completions())
+        )
+        resposta = provedor.gerar("sistema", "usuario", temperatura=0.0)
+
+        assert chamadas["model"] == "qwen2.5:14b"
+        assert chamadas["messages"] == [
+            {"role": "system", "content": "sistema"},
+            {"role": "user", "content": "usuario"},
+        ]
+        assert chamadas["temperature"] == 0.0
+        assert chamadas["response_format"] == {"type": "json_object"}
+        assert resposta.texto.startswith("{")
+        assert resposta.modelo == "qwen2.5:14b"
+        assert resposta.uso.tokens_entrada == 12
+        assert resposta.uso.tokens_saida == 7
+        assert resposta.uso.custo_usd == 0.0
+        assert resposta.uso.latencia_s >= 0.0
+
+    def test_embeddings_normaliza_e_preserva_ordem(self):
+        chamadas = []
+
+        class Embeddings:
+            def create(self, **kwargs):
+                chamadas.append(kwargs)
+                return SimpleNamespace(
+                    data=[
+                        SimpleNamespace(index=1, embedding=[0.0, 4.0, 0.0]),
+                        SimpleNamespace(index=0, embedding=[3.0, 0.0, 0.0]),
+                    ]
+                )
+
+        config = Config(
+            ollama_embedding_dimensao=3, ollama_embedding_batch_size=2
+        )
+        provedor = indexacao.EmbeddingsOllama(config)
+        provedor._cliente = SimpleNamespace(embeddings=Embeddings())
+        matriz = provedor.embedar(["primeiro", "segundo"])
+
+        assert chamadas == [{"model": "bge-m3", "input": ["primeiro", "segundo"]}]
+        assert matriz.dtype == np.float32
+        assert matriz.shape == (2, 3)
+        np.testing.assert_allclose(matriz, [[1, 0, 0], [0, 1, 0]])
+        np.testing.assert_allclose(np.linalg.norm(matriz, axis=1), [1, 1])
+        assert provedor.embedar([]).shape == (0, 3)
+
+    def test_embeddings_rejeita_indices_duplicados(self):
+        class Embeddings:
+            def create(self, **kwargs):
+                return SimpleNamespace(
+                    data=[
+                        SimpleNamespace(index=0, embedding=[1.0, 0.0]),
+                        SimpleNamespace(index=0, embedding=[0.0, 1.0]),
+                    ]
+                )
+
+        provedor = indexacao.EmbeddingsOllama(
+            Config(ollama_embedding_dimensao=2, ollama_embedding_batch_size=2)
+        )
+        provedor._cliente = SimpleNamespace(embeddings=Embeddings())
+        with pytest.raises(RuntimeError, match="índices de embeddings inválidos"):
+            provedor.embedar(["a", "b"])
+
+    def test_llm_aceita_usage_ausente(self):
+        class Completions:
+            def create(self, **kwargs):
+                return SimpleNamespace(
+                    model=None,
+                    choices=[
+                        SimpleNamespace(message=SimpleNamespace(content="{}"))
+                    ],
+                    usage=None,
+                )
+
+        provedor = geracao.LLMOllama(Config())
+        provedor._cliente = SimpleNamespace(
+            chat=SimpleNamespace(completions=Completions())
+        )
+        resposta = provedor.gerar("s", "u")
+        assert resposta.modelo == "qwen2.5:14b"
+        assert resposta.uso.tokens_entrada == 0
+        assert resposta.uso.tokens_saida == 0
+
+
+class TestAdaptadorGemini:
+    def test_gemini_preserva_contrato_e_calcula_custo(self):
+        chamadas = {}
+
+        class Completions:
+            def create(self, **kwargs):
+                chamadas.update(kwargs)
+                return SimpleNamespace(
+                    model="gemini-3.1-flash-lite",
+                    choices=[
+                        SimpleNamespace(
+                            message=SimpleNamespace(
+                                content='{"resposta": null, "recusa": true}'
+                            )
+                        )
+                    ],
+                    usage=SimpleNamespace(prompt_tokens=100, completion_tokens=20),
+                )
+
+        config = Config(
+            llm_provider="gemini",
+            gemini_api_key="chave-de-teste",
+            gemini_reasoning_effort="low",
+        )
+        provedor = geracao.LLMGemini(config)
+        provedor._cliente = SimpleNamespace(
+            chat=SimpleNamespace(completions=Completions())
+        )
+        resposta = provedor.gerar("sistema", "usuario", temperatura=0.0)
+
+        assert chamadas["model"] == "gemini-3.1-flash-lite"
+        assert chamadas["messages"] == [
+            {"role": "system", "content": "sistema"},
+            {"role": "user", "content": "usuario"},
+        ]
+        assert chamadas["temperature"] == 0.0
+        assert chamadas["max_tokens"] == 512
+        assert chamadas["response_format"] == {"type": "json_object"}
+        assert chamadas["reasoning_effort"] == "low"
+        assert resposta.modelo == "gemini-3.1-flash-lite"
+        assert resposta.uso.tokens_entrada == 100
+        assert resposta.uso.tokens_saida == 20
+        assert resposta.uso.custo_usd == pytest.approx(0.000055)
+        assert resposta.uso.latencia_s >= 0.0
+
 
 # --- RN03 + RNF08: defaults e log de execuções (já implementados) --------------
 
@@ -150,6 +337,98 @@ class TestRN03LimitesDeExposicao:
     def test_temperatura_zero_por_padrao(self, config_padrao: Config):
         # Determinismo da avaliação (RNF08)
         assert config_padrao.temperatura == 0.0
+
+    def test_defaults_sao_locais_e_sem_chave(self, config_padrao: Config):
+        assert config_padrao.llm_provider == "ollama"
+        assert config_padrao.embedding_provider == "ollama"
+        assert config_padrao.ollama_base_url == "http://127.0.0.1:11434/v1"
+        assert config_padrao.ollama_max_tokens == 512
+        assert config_padrao.ollama_embedding_batch_size == 4
+
+    def test_variaveis_ollama_sobrescrevem_defaults(self, monkeypatch, tmp_path):
+        monkeypatch.setenv("OLLAMA_MODELO_LLM", "modelo-teste")
+        monkeypatch.setenv("OLLAMA_EMBEDDING_DIMENSAO", "768")
+        monkeypatch.setenv("OLLAMA_EMBEDDING_BATCH_SIZE", "8")
+        config = carregar_config(env_file=tmp_path / "inexistente.env")
+        assert config.ollama_modelo_llm == "modelo-teste"
+        assert config.ollama_embedding_dimensao == 768
+        assert config.ollama_embedding_batch_size == 8
+
+    def test_variaveis_gemini_sobrescrevem_defaults(self, monkeypatch, tmp_path):
+        monkeypatch.setenv("GEMINI_MODELO_LLM", "modelo-gemini-teste")
+        monkeypatch.setenv("GOOGLE_API_KEY", "chave-teste")
+        monkeypatch.setenv("GEMINI_MAX_TOKENS", "256")
+        config = carregar_config(env_file=tmp_path / "inexistente.env")
+        assert config.gemini_modelo_llm == "modelo-gemini-teste"
+        assert config.gemini_api_key == "chave-teste"
+        assert config.gemini_max_tokens == 256
+
+
+class TestGateLocal:
+    def test_endpoint_remoto_e_recusado_antes_de_chamada(self):
+        config = Config(ollama_base_url="https://ollama.exemplo/v1")
+        passou, evidencia = gate_local._testar_runtime(config)
+        assert passou is False
+        assert "loopback" in evidencia
+
+    @pytest.mark.parametrize(
+        "url",
+        [
+            "http://127.0.0.1:11434/v1",
+            "http://localhost:11434/v1",
+            "http://[::1]:11434/v1",
+        ],
+    )
+    def test_endpoint_loopback_e_identificado(self, url):
+        assert endpoint_ollama_e_loopback(url)
+
+    def test_resposta_numericamente_errada_nao_passa(self):
+        objeto = {
+            "resposta": "99%",
+            "recusa": False,
+            "motivo_recusa": None,
+            "citacoes": [
+                {
+                    "empresa": "BTG",
+                    "documento": "btg_release_1T2026",
+                    "trimestre": "1T2026",
+                    "pagina": 6,
+                }
+            ],
+        }
+        with pytest.raises(RuntimeError, match="26,6%"):
+            gate_local._validar_resposta_fundamentada(objeto)
+
+    def test_citacao_incompleta_nao_passa(self):
+        objeto = {
+            "resposta": "26,6%",
+            "recusa": False,
+            "motivo_recusa": None,
+            "citacoes": [
+                {"documento": "btg_release_1T2026", "pagina": 6}
+            ],
+        }
+        with pytest.raises(RuntimeError, match="única e exata"):
+            gate_local._validar_resposta_fundamentada(objeto)
+
+    def test_recusa_rn02_exige_contrato_completo(self):
+        gate_local._validar_resposta_recusa(
+            {
+                "resposta": None,
+                "recusa": True,
+                "motivo_recusa": "O trecho não contém essa informação.",
+                "citacoes": [],
+            }
+        )
+        with pytest.raises(RuntimeError, match="citacoes"):
+            gate_local._validar_resposta_recusa(
+                {
+                    "resposta": None,
+                    "recusa": True,
+                    "motivo_recusa": "Sem evidência.",
+                    "citacoes": [{"pagina": 1}],
+                }
+            )
 
 
 class TestRNF08LogDeExecucoes:

@@ -38,8 +38,8 @@ class Config:
     top_k: int = 5
     estrategia_padrao: str = "semantica"
 
-    # Provedores (plugável — RNF06). Desenvolvimento é local-first; Azure só
-    # entra no gate de pré-deploy, depois do pipeline local estar validado.
+    # Provedores (plugável — RNF06). Gemini é o perfil ativo no .env; Ollama
+    # permanece como fallback e Azure só entra no gate de pré-deploy.
     embedding_provider: str = "ollama"
     llm_provider: str = "ollama"
     temperatura: float = 0.0
@@ -48,8 +48,16 @@ class Config:
     ollama_modelo_embedding: str = "bge-m3"
     ollama_embedding_dimensao: int = 1024
     ollama_timeout_s: float = 180.0
-    ollama_max_tokens: int = 1024
-    ollama_embedding_batch_size: int = 32
+    ollama_max_tokens: int = 512
+    ollama_embedding_batch_size: int = 4
+    gemini_base_url: str = "https://generativelanguage.googleapis.com/v1beta/openai/"
+    gemini_api_key: str = ""
+    gemini_modelo_llm: str = "gemini-3.1-flash-lite"
+    gemini_timeout_s: float = 120.0
+    gemini_max_tokens: int = 512
+    gemini_reasoning_effort: str = "low"
+    gemini_preco_entrada_usd_milhao: float = 0.25
+    gemini_preco_saida_usd_milhao: float = 1.50
     azure_openai_endpoint: str = ""
     azure_openai_api_key: str = ""
     azure_openai_api_version: str = ""
@@ -122,6 +130,33 @@ def carregar_config(env_file: Path | None = None) -> Config:
             _env(
                 "OLLAMA_EMBEDDING_BATCH_SIZE",
                 str(padrao.ollama_embedding_batch_size),
+            )
+        ),
+        gemini_base_url=_env("GEMINI_BASE_URL", padrao.gemini_base_url),
+        gemini_api_key=_env(
+            "GEMINI_API_KEY",
+            _env("GOOGLE_API_KEY", padrao.gemini_api_key),
+        ),
+        gemini_modelo_llm=_env("GEMINI_MODELO_LLM", padrao.gemini_modelo_llm),
+        gemini_timeout_s=float(
+            _env("GEMINI_TIMEOUT_S", str(padrao.gemini_timeout_s))
+        ),
+        gemini_max_tokens=int(
+            _env("GEMINI_MAX_TOKENS", str(padrao.gemini_max_tokens))
+        ),
+        gemini_reasoning_effort=_env(
+            "GEMINI_REASONING_EFFORT", padrao.gemini_reasoning_effort
+        ),
+        gemini_preco_entrada_usd_milhao=float(
+            _env(
+                "GEMINI_PRECO_ENTRADA_USD_MILHAO",
+                str(padrao.gemini_preco_entrada_usd_milhao),
+            )
+        ),
+        gemini_preco_saida_usd_milhao=float(
+            _env(
+                "GEMINI_PRECO_SAIDA_USD_MILHAO",
+                str(padrao.gemini_preco_saida_usd_milhao),
             )
         ),
         azure_openai_endpoint=_env("AZURE_OPENAI_ENDPOINT", ""),

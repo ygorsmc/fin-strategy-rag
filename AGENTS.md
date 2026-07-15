@@ -28,15 +28,21 @@ O projeto deve ser 100% **agnóstico quanto à empresa-alvo de qualquer vaga**.
   `RelatorioQualidade`), `carregar_metadados_corpus` (valida esquema),
   `montar_cabecalho_contextual` (formato `[EMPRESA | doc | trimestre | pág. N]`).
 - `src/indexacao.py` — guarda RNF09 completa (`validar_consistencia`,
-  `ErroConsistenciaIndice`, `salvar/carregar_metadados_indice`) e fábrica plugável de
-  provedores de embeddings.
+  `ErroConsistenciaIndice`, `salvar/carregar_metadados_indice`), fábrica plugável e
+  adaptador Ollama/BGE-M3 local com batching, validação e normalização L2.
 - `src/geracao.py` — `PROMPT_SISTEMA` fixo (`VERSAO_PROMPT="v1"` — mudou o prompt, sobe a
-  versão e loga), dataclasses do contrato JSON, fábrica plugável de LLMs,
-  `citacoes_sao_subconjunto` (checagem mecânica de RN01).
+  versão e loga), dataclasses do contrato JSON, fábrica plugável de LLMs, adaptador
+  Ollama/OpenAI-compatible com custo zero e `citacoes_sao_subconjunto` (RN01).
 - `src/avaliacao.py` — esquema do gabarito (`COLUNAS_CONJUNTO_PADRAO`),
   `registrar_execucao` (JSONL, RNF08), dataclasses de resultado/métricas.
-- `scripts/gate.py` — funcional: testa Azure OpenAI (LLM + embeddings) e regenera
-  `resultados/gate.md` com evidência a cada execução.
+- `scripts/gate_local.py` — funcional: exige endpoint loopback e testa Ollama
+  (LLM + embeddings), resposta/citação, recusa RN02, digests, tokens, latência e
+  custo de API zero; regenera `resultados/gate_local.md`.
+- `scripts/gate_gemini.py` — funcional: smoke test do Gemini API com resposta
+  factual, recusa RN02, tokens, latência e custo estimado; regenera
+  `resultados/gate_gemini.md`.
+- `scripts/gate.py` — funcional: testa Azure OpenAI sem criar recurso; reservado ao
+  pré-deploy da Fase 3 e regenera `resultados/gate.md`.
 - `scripts/baixar_corpus.py` — funcional: baixa pelo manifesto, valida/preenche SHA-256,
   reporta URL morta e hash divergente (nunca re-raspa silenciosamente).
 - `executar_pipeline.py` — orquestrador com `--amostra` e `--etapa`; reporta
@@ -48,35 +54,38 @@ O projeto deve ser 100% **agnóstico quanto à empresa-alvo de qualquer vaga**.
 pt-BR e apelidos (`normalizar_numero_ptbr`, `valores_equivalentes`, `canonizar_banco`,
 `extrair_bancos_citados`, `extrair_trimestre_citado`); extração/chunking/qualidade
 (`extrair_paginas`, `gerar_chunks`, `validar_qualidade`, `teste_sentinela`,
-`ingerir_corpus`); embeddings e índices (`embedar` dos 3 provedores,
-`construir_indice_faiss/bm25`, `carregar_indice_faiss`); recuperação
+`ingerir_corpus`); embeddings e índices (`EmbeddingsLocal/OpenAI/Azure.embedar`,
+`construir_indice_faiss/bm25`, `carregar_indice_faiss`; Ollama já implementado); recuperação
 (`extrair_filtro_metadados`, `fusao_reciprocal_rank`, `Recuperador.recuperar`); geração
 (`montar_prompt_usuario`, `parsear_resposta_llm`, `gerar_resposta`, adaptadores `.gerar`
-dos 3 provedores); avaliação (`avaliar_recall_at_k`, `avaliar_exatidao_numerica`,
+Azure/OpenAI/DeepSeek; Ollama e Gemini já implementados); avaliação (`avaliar_recall_at_k`, `avaliar_exatidao_numerica`,
 `avaliar_recusa`, `executar_avaliacao`, `consolidar_metricas`);
 `responder_pergunta_livre` no app.
 
-**Convenção de testes (obrigatória):** a suíte tem 92 casos — 40 passando (contratos já
+**Convenção de testes (obrigatória):** a suíte tem 111 casos — 59 passando (contratos já
 implementados) e 52 marcados com `pendente = pytest.mark.skip(...)`. Ao implementar uma
 etapa: (1) remova o marcador `pendente` da(s) classe(s) correspondente(s); (2) complete os
 testes-esqueleto que contêm `raise AssertionError("implementar...")`; (3) NUNCA enfraqueça
 uma asserção para fazer código passar — o teste é o contrato, o código se adapta a ele.
-Arquivos de dados: `corpus/metadados.csv` e `conjunto_padrao/perguntas.csv` estão só com
-cabeçalho (esquema validado por teste), aguardando as etapas 2–3.
+Arquivos de dados: `corpus/metadados.csv` contém 20 documentos íntegros e
+`conjunto_padrao/perguntas.csv` contém 10 perguntas `dev`; as 45 candidatas `teste` ficam
+separadas em `conjunto_padrao/candidatas_teste.csv` até a segunda leitura e congelamento.
 
 **Dependências:** `requirements.txt` está curado e pinado nas versões do venv
-(Python 3.12). `sentence-transformers==5.6.0` foi adicionado para a etapa 6 mas **ainda
-não está instalado** — rode `pip install -r requirements.txt` antes de implementar os
-embeddings locais.
+   (Python 3.12). O ramo ativo usa Gemini para geração e BGE-M3 já instalado no Ollama.
+`sentence-transformers==5.6.0` permanece como alternativa `EMBEDDING_PROVIDER=local`, mas
+ainda não está instalado; instale-o antes de implementar/testar `EmbeddingsLocal`.
 
 ## 2. Plano de execução (nesta ordem)
 
 Cada etapa referencia a seção da spec, os stubs a implementar e o critério de conclusão.
 
-1. **Gate G1 real (spec 5.7):** preencher o `.env` (copiar de `.env.example`), rodar
-   `python scripts/gate.py` e commitar o `resultados/gate.md` com a evidência real.
-   Fixar `LLM_PROVIDER`/`EMBEDDING_PROVIDER` conforme o ramo. O gate atual registra
-   apenas "não configurado" — não vale como evidência final.
+1. **Gates de geração (spec 5.7):** o ramo ativo usa Gemini API
+   (`LLM_PROVIDER=gemini`, `gemini-3.1-flash-lite`) e BGE-M3 via Ollama para embeddings.
+   O Gate Gemini passou em 2026-07-15 após duas chamadas controladas; o Gate L1
+   (`python scripts/gate_local.py`) permanece como fallback local sem API.
+   O Gate G1 Azure foi movido para o pré-deploy (etapa 12): não criar recurso nem
+   consumir créditos Azure antes do pipeline local estar 100% validado.
 2. **Corpus (spec 5.2):** preencher `corpus/metadados.csv` com os releases reais —
    regra da interseção: os 4 trimestres mais recentes disponíveis para **todos os 5**
    bancos. Rodar `python scripts/baixar_corpus.py` até todos os hashes registrados.
@@ -93,13 +102,15 @@ Cada etapa referencia a seção da spec, os stubs a implementar e o critério de
 5. **Normalização (spec 5.8; stubs de `src/normalizacao.py`):** parser numérico pt-BR,
    comparador com tolerância, canonização de bancos/trimestres. Destravar os skips de
    `tests/test_normalizacao.py` — os casos parametrizados já definem o contrato exato.
-6. **Indexação (spec 5.5; stubs de `src/indexacao.py`):** `embedar` (local primeiro),
+6. **Indexação (spec 5.5; stubs de `src/indexacao.py`):** `embedar` com
+   Ollama/BGE-M3 primeiro,
    FAISS + BM25, persistência determinística. A guarda RNF09 já existe — os construtores
    DEVEM gravar `MetadadosIndice` e a carga DEVE passar por `validar_consistencia`.
 7. **Recuperação (spec 5.6; stubs de `src/recuperacao.py`):** filtro por metadados,
    subconsulta por banco nas comparativas (modo de falha nº 6), RRF para E3.
 8. **Geração (spec 5.7; stubs de `src/geracao.py`):** adaptadores de provedor
-   (o SDK `openai` cobre os 3 — Azure/OpenAI/DeepSeek), parse do JSON com UMA tentativa
+   (o SDK `openai` cobre Gemini/Ollama/Azure/OpenAI/DeepSeek; Gemini e Ollama já implementados), parse do
+   JSON com UMA tentativa
    de reparo, checagem RN01 dentro de `gerar_resposta`. Destravar os skips de geração em
    `tests/test_regras.py`.
 9. **Avaliação (spec 5.9–5.10; stubs de `src/avaliacao.py`):** métricas por definição
@@ -109,10 +120,12 @@ Cada etapa referencia a seção da spec, os stubs a implementar e o critério de
    `artefatos/resultados_avaliacao/respostas_cacheadas.json` para o modo demo.
    Destravar os skips de avaliação em `tests/test_regras.py`.
 10. **Interface e README:** implementar `responder_pergunta_livre`, validar os dois modos
-    localmente e preencher a tabela do README com os números **medidos** (nunca metas).
-11. **(Fase 3) Deploy:** Azure Container Apps primário; demo cacheado sem segredo;
-    teto/alerta de orçamento no provedor (RN03).
-12. **(Fase 3) Módulo LoRA (spec 5.16):** classificador PEFT roteador/guardrail, split
+    nativamente e preencher a tabela do README com números **medidos** (nunca metas).
+11. **Empacotamento local e demonstração:** somente após o fluxo nativo estar verde, criar
+    container e exposição ngrok autenticada; publicar apenas o Streamlit, nunca Ollama.
+12. **(Fase 3) Gate G1 Azure e deploy opcional:** testar Azure só no pré-deploy; decidir
+    então sobre Container Apps conforme créditos disponíveis, com demo cacheado e RN03.
+13. **(Fase 3) Módulo LoRA (spec 5.16):** classificador PEFT roteador/guardrail, split
     por pergunta-base (anti-vazamento de paráfrases).
 
 ## 3. Contratos e Regras Invioláveis (inalterados)
@@ -136,13 +149,14 @@ Cada etapa referencia a seção da spec, os stubs a implementar e o critério de
 ├── AGENTS.md / CLAUDE.md / especificacao.md (local, não publicar a spec)
 ├── README.md · LICENSE (MIT) · requirements.txt (pinado) · .env.example · pytest.ini
 ├── executar_pipeline.py        (orquestrador; --amostra, --etapa)
-├── scripts/gate.py · scripts/baixar_corpus.py
+├── scripts/gate_local.py · scripts/gate.py · scripts/baixar_corpus.py
 ├── corpus/raw/ (fora do Git) · corpus/metadados.csv (fonte de verdade)
 ├── src/ config.py · ingestao.py · normalizacao.py · indexacao.py
 │        recuperacao.py · geracao.py · avaliacao.py
 ├── conjunto_padrao/perguntas.csv
 ├── artefatos/ indice_vetorial/ · logs_execucoes/ · resultados_avaliacao/
-├── resultados/gate.md          (evidência do gate G1 — regenerado por execução)
+├── resultados/gate_local.md    (evidência do ramo Ollama local-first)
+├── resultados/gate.md          (Gate G1 Azure — somente no pré-deploy)
 ├── app_streamlit.py
 └── tests/ conftest.py · test_ingestao.py · test_normalizacao.py · test_regras.py
 ```
@@ -152,7 +166,8 @@ Cada etapa referencia a seção da spec, os stubs a implementar e o critério de
 `executar_pipeline.py` processando ponta a ponta: testes verdes (sem skips), corpus
 íntegro pelo manifesto, índices construídos com guarda RNF09, avaliação das estratégias
 E0–E2 (E3 incluída) rodada nas 45 perguntas congeladas com log JSONL, números reais no
-README (metas vs. resultados) e resumo executivo (spec 5.12). Pronto para push no GitHub
+README (metas vs. resultados) e resumo executivo (spec 5.12), tudo validado localmente
+antes de qualquer decisão de deploy Azure. Pronto para push no GitHub
 sem nenhuma amarra ao nome da empresa-alvo da vaga e sem a `especificacao.md`.
 
 ## Memória entre sessões — MEMORY.md
@@ -165,8 +180,9 @@ projeto).
 
 - **No início de toda sessão de trabalho neste projeto:** ler o `MEMORY.md`
   antes de agir. Ele pode registrar decisão, bloqueio ou estado que não é
-  óbvio a partir do código ou do `git log` — ex.: qual ramo do gate G1 ficou
-  ativo, quantos documentos do corpus já foram baixados, se o conjunto-padrão
+  óbvio a partir do código ou do `git log` — ex.: qual ramo local ficou ativo,
+  se o Gate L1 passou e qual é o status condicional do Gate G1, quantos documentos
+  do corpus já foram baixados, se o conjunto-padrão
   já foi congelado, um bloqueio externo em aberto (cota de provedor, chave
   pendente etc.).
 - **Ao final de toda sessão que mudar o estado da execução:** sobrescrever

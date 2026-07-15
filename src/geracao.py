@@ -10,6 +10,9 @@ from __future__ import annotations
 import json
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
+from time import perf_counter
+
+from openai import OpenAI
 
 from src.config import Config
 from src.ingestao import Chunk
@@ -92,6 +95,135 @@ class ProvedorLLM(ABC):
     ) -> RespostaBrutaLLM: ...
 
 
+class LLMOllama(ProvedorLLM):
+    """Inferência local via endpoint OpenAI-compatible do Ollama."""
+
+    nome = "ollama"
+
+    def __init__(self, config: Config):
+        faltando = [
+            nome
+            for nome, valor in (
+                ("OLLAMA_BASE_URL", config.ollama_base_url),
+                ("OLLAMA_MODELO_LLM", config.ollama_modelo_llm),
+            )
+            if not valor
+        ]
+        if faltando:
+            raise ValueError(f"Variáveis Ollama ausentes: {faltando}")
+        if config.ollama_timeout_s <= 0:
+            raise ValueError("OLLAMA_TIMEOUT_S deve ser positivo.")
+        if config.ollama_max_tokens <= 0:
+            raise ValueError("OLLAMA_MAX_TOKENS deve ser positivo.")
+        self._config = config
+        self._cliente = OpenAI(
+            base_url=config.ollama_base_url,
+            api_key="ollama-local",
+            timeout=config.ollama_timeout_s,
+            max_retries=0,
+        )
+
+    def gerar(
+        self, prompt_sistema: str, prompt_usuario: str, temperatura: float = 0.0
+    ) -> RespostaBrutaLLM:
+        inicio = perf_counter()
+        resposta = self._cliente.chat.completions.create(
+            model=self._config.ollama_modelo_llm,
+            messages=[
+                {"role": "system", "content": prompt_sistema},
+                {"role": "user", "content": prompt_usuario},
+            ],
+            temperature=temperatura,
+            max_tokens=self._config.ollama_max_tokens,
+            response_format={"type": "json_object"},
+        )
+        latencia_s = perf_counter() - inicio
+        uso_api = resposta.usage
+        uso = UsoLLM(
+            tokens_entrada=int(getattr(uso_api, "prompt_tokens", 0) or 0),
+            tokens_saida=int(getattr(uso_api, "completion_tokens", 0) or 0),
+            custo_usd=0.0,
+            latencia_s=latencia_s,
+        )
+        return RespostaBrutaLLM(
+            texto=resposta.choices[0].message.content or "",
+            uso=uso,
+            modelo=str(resposta.model or self._config.ollama_modelo_llm),
+        )
+
+
+class LLMGemini(ProvedorLLM):
+    """Geração via Gemini API usando a compatibilidade OpenAI oficial."""
+
+    nome = "gemini"
+
+    def __init__(self, config: Config):
+        faltando = [
+            nome
+            for nome, valor in (
+                ("GEMINI_API_KEY/GOOGLE_API_KEY", config.gemini_api_key),
+                ("GEMINI_MODELO_LLM", config.gemini_modelo_llm),
+                ("GEMINI_BASE_URL", config.gemini_base_url),
+            )
+            if not valor
+        ]
+        if faltando:
+            raise ValueError(f"Variáveis Gemini ausentes: {faltando}")
+        if config.gemini_timeout_s <= 0:
+            raise ValueError("GEMINI_TIMEOUT_S deve ser positivo.")
+        if config.gemini_max_tokens <= 0:
+            raise ValueError("GEMINI_MAX_TOKENS deve ser positivo.")
+        if (
+            config.gemini_preco_entrada_usd_milhao < 0
+            or config.gemini_preco_saida_usd_milhao < 0
+        ):
+            raise ValueError("Preços Gemini não podem ser negativos.")
+        self._config = config
+        self._cliente = OpenAI(
+            api_key=config.gemini_api_key,
+            base_url=config.gemini_base_url,
+            timeout=config.gemini_timeout_s,
+            max_retries=0,
+        )
+
+    def gerar(
+        self, prompt_sistema: str, prompt_usuario: str, temperatura: float = 0.0
+    ) -> RespostaBrutaLLM:
+        inicio = perf_counter()
+        argumentos = {
+            "model": self._config.gemini_modelo_llm,
+            "messages": [
+                {"role": "system", "content": prompt_sistema},
+                {"role": "user", "content": prompt_usuario},
+            ],
+            "temperature": temperatura,
+            "max_tokens": self._config.gemini_max_tokens,
+            "response_format": {"type": "json_object"},
+        }
+        if self._config.gemini_reasoning_effort:
+            argumentos["reasoning_effort"] = self._config.gemini_reasoning_effort
+        resposta = self._cliente.chat.completions.create(**argumentos)
+        latencia_s = perf_counter() - inicio
+        uso_api = resposta.usage
+        tokens_entrada = int(getattr(uso_api, "prompt_tokens", 0) or 0)
+        tokens_saida = int(getattr(uso_api, "completion_tokens", 0) or 0)
+        custo_usd = (
+            tokens_entrada * self._config.gemini_preco_entrada_usd_milhao
+            + tokens_saida * self._config.gemini_preco_saida_usd_milhao
+        ) / 1_000_000
+        uso = UsoLLM(
+            tokens_entrada=tokens_entrada,
+            tokens_saida=tokens_saida,
+            custo_usd=custo_usd,
+            latencia_s=latencia_s,
+        )
+        return RespostaBrutaLLM(
+            texto=resposta.choices[0].message.content or "",
+            uso=uso,
+            modelo=str(resposta.model or self._config.gemini_modelo_llm),
+        )
+
+
 class LLMAzureOpenAI(ProvedorLLM):
     """Ramo A do gate G1 (seção 5.7)."""
 
@@ -117,7 +249,7 @@ class LLMAzureOpenAI(ProvedorLLM):
 
 
 class LLMOpenAI(ProvedorLLM):
-    """Fallback primário se o gate G1 falhar (cenário esperado — 5.7)."""
+    """Provedor pago opcional; não é usado no ramo local-first."""
 
     nome = "openai"
 
@@ -147,6 +279,8 @@ class LLMDeepSeek(ProvedorLLM):
 def fabricar_provedor_llm(config: Config) -> ProvedorLLM:
     """Dispatch por LLM_PROVIDER (RNF06)."""
     fabricas = {
+        "ollama": LLMOllama,
+        "gemini": LLMGemini,
         "azure_openai": LLMAzureOpenAI,
         "openai": LLMOpenAI,
         "deepseek": LLMDeepSeek,

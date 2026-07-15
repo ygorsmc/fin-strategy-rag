@@ -48,17 +48,30 @@ entre si por definição, e o sistema de avaliação trata isso explicitamente.
 
 ## Como rodar
 
+O ramo ativo usa **Gemini 3.1 Flash-Lite via API** para geração e BGE-M3 via
+Ollama para embeddings. Ollama continua disponível como fallback local. Azure só
+será avaliado no pré-deploy, depois de testes, avaliação e interface funcionarem
+ponta a ponta.
+
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env   # preencha as chaves do provedor escolhido
+ollama pull bge-m3
+cp .env.example .env
+# preencha GEMINI_API_KEY ou GOOGLE_API_KEY no .env
 
-python scripts/gate.py            # G1: verifica o provedor de inferência
+python scripts/gate_gemini.py     # smoke test Gemini: citação + recusa + custo
+python scripts/gate_local.py      # fallback local: embeddings + citação + recusa
 python scripts/baixar_corpus.py   # baixa os PDFs do manifesto e valida hashes
 python executar_pipeline.py --amostra   # smoke test (1 banco × 1 trimestre)
 python executar_pipeline.py             # pipeline completo
 streamlit run app_streamlit.py          # interface de consulta
 ```
+
+O Gate Azure (`python scripts/gate.py`) fica reservado à Fase 3. Container e
+ngrok entram somente após a execução nativa estar verde; o túnel deve expor
+apenas o Streamlit, nunca a porta `11434` do Ollama. O modo demonstração
+cacheado continua sem segredo e sem chamada paga.
 
 - `executar_pipeline.py` roda, em ordem: pytest → ingestão/qualidade →
   indexação → avaliação, e imprime um resumo por etapa.
@@ -71,7 +84,9 @@ streamlit run app_streamlit.py          # interface de consulta
 ```
 ├── executar_pipeline.py        # orquestrador único (--amostra p/ smoke test)
 ├── scripts/
-│   ├── gate.py                 # gate G1 de provedores (evidência em resultados/gate.md)
+│   ├── gate.py                 # Gate G1 Azure, somente no pré-deploy
+│   ├── gate_local.py           # Gate L1 Ollama (resultados/gate_local.md)
+│   ├── gate_gemini.py          # smoke test Gemini (resultados/gate_gemini.md)
 │   └── baixar_corpus.py        # re-obtém PDFs pelo manifesto e valida hash
 ├── corpus/
 │   ├── raw/                    # PDFs (fora do Git — regeneráveis por script)
@@ -83,7 +98,9 @@ streamlit run app_streamlit.py          # interface de consulta
 │   ├── recuperacao.py          # top-k, filtro de metadados, estratégias E0–E3
 │   ├── geracao.py              # prompt fixo, contrato JSON, citação/recusa
 │   └── avaliacao.py            # métricas, checkpoint, log JSONL, teto de custo
-├── conjunto_padrao/perguntas.csv   # 45 congeladas + ~10 dev
+├── conjunto_padrao/
+│   ├── perguntas.csv           # 10 dev enquanto o teste não congela
+│   └── candidatas_teste.csv    # 45 candidatas, fora da avaliação
 ├── artefatos/                  # índices, logs de execução, resultados
 ├── app_streamlit.py            # interface chat
 └── tests/                      # pytest: ingestão, normalização, regras RN01–RN03

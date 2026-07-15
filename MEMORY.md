@@ -7,37 +7,36 @@
 
 ## Estado atual
 
-- Etapas ativas (plano §2 do AGENTS.md): Etapa 1 (Gate G1 real), bloqueada
-  por reautenticação no Azure CLI, e Etapa 3 (segunda leitura e congelamento
-  do conjunto-padrão).
-- Última etapa concluída: Etapa 2, Corpus (2026-07-15) — janela comum
-  `2T2025`–`1T2026`, 20 documentos oficiais, hashes validados e 2.790 páginas.
-- Primeira leitura da Etapa 3: 10 perguntas `dev` validadas no arquivo do
-  pipeline e 45 candidatas `teste` no arquivo separado de curadoria. As
-  candidatas ainda não estão congeladas nem autorizadas para medir métricas.
+- Etapa ativa (plano §2): Etapa 3, segunda leitura e congelamento do
+  conjunto-padrão; depois, Etapa 4 (ingestão).
+- Últimas etapas concluídas: Gate L1 local (2026-07-15) e Etapa 2, Corpus
+  (2026-07-15) — 20 documentos, hashes validados e 2.790 páginas.
+- Primeira leitura da Etapa 3: 10 perguntas `dev` no arquivo do pipeline e 45
+  candidatas `teste` separadas. Ainda não usar as candidatas para métricas.
 
 ## Decisões e bloqueios em aberto
 
-- `.env` ainda não existe. A assinatura ativa do Azure CLI é `Azure for
-  Students`, mas as consultas de gerenciamento falharam com `AADSTS50078`
-  (MFA expirada). Rodar `az login` e só depois executar novamente o gate;
-  `resultados/gate.md` ainda NÃO é evidência final.
-- O corpus usa os relatórios gerenciais oficiais substantivos, incluindo as
-  demonstrações anexas, em vez de apresentações curtas. Por isso os PDFs têm
-  20–312 páginas (2.790 no total), acima da estimativa inicial. Eles seguem
-  ignorados pelo Git; manifesto, URL, data e SHA-256 são versionáveis.
-- A auditoria cruzada da primeira leitura corrigiu ambiguidades de série e
-  comparabilidade. A segunda leitura das 45 candidatas ainda deve ocorrer em
-  outro dia; só então promover para `perguntas.csv` e registrar o congelamento.
-- `sentence-transformers==5.6.0` foi adicionado ao `requirements.txt` (para
-  a Etapa 6 — embeddings locais) mas **ainda não foi instalado** no venv.
-  Rodar `pip install -r requirements.txt` antes de implementar
-  `EmbeddingsLocal.embedar`.
+- Decisão explícita do usuário: desenvolvimento, avaliação e interface devem
+  funcionar 100% localmente antes de qualquer consumo de créditos Azure.
+- Ramo ativo: Gemini API (`gemini-3.1-flash-lite`) para LLM e `bge-m3` via
+  Ollama para embeddings. A chave local existente está sob o alias
+  `GOOGLE_API_KEY`; não registrar o valor em logs ou commits.
+- `scripts/gate_local.py` continua como fallback comprovado em endpoint loopback.
+  `scripts/gate_gemini.py` passou em 2026-07-15: citação e recusa RN02 válidas,
+  711+180 tokens, 4,95 s e custo estimado de US$ 0,000448.
+- O Gate G1 Azure foi deliberadamente movido para o pré-deploy. O Gemini API é
+  externo, mas não envolve Azure; seu teto de custo deve ser conferido antes do
+  gate. Container e
+  ngrok também só entram após o fluxo nativo estar verde; nunca expor `11434`.
+- A segunda leitura das 45 candidatas deve ocorrer em outro dia e sem reutilizar
+  a anotação inicial; só então promover e registrar o congelamento.
+- `sentence-transformers` ainda não está instalado; é necessário somente para
+  a alternativa `EMBEDDING_PROVIDER=local`, não para o ramo Ollama ativo.
 
 ## Próximo passo concreto
 
-- Reautenticar com `az login`, escolher/configurar o ramo de provedor no
-  `.env` local e rodar `python scripts/gate.py` para produzir o Gate G1 real.
-- Em outro dia, fazer a segunda leitura descrita em
-  `conjunto_padrao/README.md`; promover e congelar as 45 perguntas somente se
-  valor, definição, unidade, página e classe de verificação forem confirmados.
+- Em outra data, executar a segunda leitura descrita em
+  `conjunto_padrao/README.md`, promover as 45 perguntas e registrar a data de
+  congelamento no `AGENTS.md`.
+- Em seguida, implementar a Etapa 4 (ingestão) com fixtures PDF sintéticas e
+  remover apenas os 11 skips correspondentes quando os contratos passarem.

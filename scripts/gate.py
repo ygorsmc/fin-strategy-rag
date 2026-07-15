@@ -1,10 +1,9 @@
-"""Gate G1 — verificação do recurso de inferência ANTES de qualquer código
-que dependa da resposta (seção 5.7; etapa 1 do AGENTS.md).
+"""Gate G1 — verificação opcional de Azure no pré-deploy (seção 5.7).
 
 Tenta uma chamada mínima de LLM e de embeddings no Azure OpenAI. Registra a
 evidência (sucesso ou erro literal, ex. `RequestDisallowedByAzure`) em
-`resultados/gate.md` e fixa o ramo de provedores recomendado. Não inicia
-processamento pesado sem passar por aqui.
+`resultados/gate.md`. O desenvolvimento usa primeiro o Gate L1 local em
+`scripts/gate_local.py`; este script não cria recurso nem faz deploy.
 
 Uso:
     python scripts/gate.py
@@ -70,6 +69,10 @@ def _testar_azure(config: Config, alvo: str) -> tuple[bool, str]:
 
 
 def _ramo_fallback(config: Config) -> str:
+    if config.llm_provider == "gemini":
+        return "gemini API (GEMINI_API_KEY/GOOGLE_API_KEY presente)"
+    if config.llm_provider == "ollama":
+        return "ollama local (sem API paga)"
     if config.openai_api_key:
         return "openai (OPENAI_API_KEY presente)"
     if config.deepseek_api_key:
@@ -96,9 +99,9 @@ def executar_gate(config: Config | None = None) -> bool:
         decisao = (
             "**Ramo B ativo (fallback documentado, seção 5.7 da spec):** "
             f"inferência via {_ramo_fallback(config)}; embeddings "
-            "`local` em desenvolvimento e via API na instância publicada. "
-            "Créditos de estudante ficam integralmente na hospedagem "
-            "(Azure Container Apps)."
+            f"via `EMBEDDING_PROVIDER={config.embedding_provider}`. "
+            "Nenhum deploy Azure é necessário para desenvolvimento ou avaliação; "
+            "os créditos permanecem preservados até uma decisão explícita de publicação."
         )
 
     CAMINHO_RELATORIO.parent.mkdir(parents=True, exist_ok=True)
@@ -130,4 +133,4 @@ def executar_gate(config: Config | None = None) -> bool:
 
 
 if __name__ == "__main__":
-    executar_gate()
+    raise SystemExit(0 if executar_gate() else 1)
