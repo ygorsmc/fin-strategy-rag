@@ -237,7 +237,11 @@ def executar_avaliacao(
             )
             custo_acumulado += item.custo_usd
             itens.append(item)
-            _anexar_checkpoint(caminho_checkpoint, item)
+            # Item com erro permanente NÃO entra no checkpoint: na retomada ele
+            # é re-tentado (custo zero — a falha ocorre antes/na chamada), em
+            # vez de ficar congelado como resultado da estratégia.
+            if item.erro is None:
+                _anexar_checkpoint(caminho_checkpoint, item)
             registrar_execucao(
                 {
                     "pergunta_id": pergunta.id,
