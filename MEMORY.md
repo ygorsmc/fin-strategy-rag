@@ -7,36 +7,40 @@
 
 ## Estado atual
 
-- Etapa ativa (plano §2): Etapa 3, segunda leitura e congelamento do
-  conjunto-padrão; depois, Etapa 4 (ingestão).
-- Últimas etapas concluídas: Gate L1 local (2026-07-15) e Etapa 2, Corpus
-  (2026-07-15) — 20 documentos, hashes validados e 2.790 páginas.
-- Primeira leitura da Etapa 3: 10 perguntas `dev` no arquivo do pipeline e 45
-  candidatas `teste` separadas. Ainda não usar as candidatas para métricas.
+- Etapa ativa (plano §2): Etapa 3 — segunda leitura e congelamento das 45
+  candidatas (bloqueada: deve ocorrer em outra data, sem reusar a anotação
+  inicial).
+- Últimas etapas concluídas: **Etapas 4–10 implementadas e validadas em
+  2026-07-15** — suíte com 112 testes passando SEM skips; corpus 20/20
+  íntegro; índice FAISS real (5.280 chunks, bge-m3 pinado por digest, RNF09)
+  + BM25; avaliação `dev` das 4 estratégias (E0–E3) rodada com checkpoint e
+  log JSONL; cache demo gerado; pergunta livre do Streamlit implementada.
+- Métricas medidas vivem em `artefatos/resultados_avaliacao/metricas_dev.json`
+  e no log RNF08 — números de `dev` são para iteração, NUNCA vão ao README.
 
 ## Decisões e bloqueios em aberto
 
-- Decisão explícita do usuário: desenvolvimento, avaliação e interface devem
-  funcionar 100% localmente antes de qualquer consumo de créditos Azure.
-- Ramo ativo: Gemini API (`gemini-3.1-flash-lite`) para LLM e `bge-m3` via
-  Ollama para embeddings. A chave local existente está sob o alias
-  `GOOGLE_API_KEY`; não registrar o valor em logs ou commits.
-- `scripts/gate_local.py` continua como fallback comprovado em endpoint loopback.
-  `scripts/gate_gemini.py` passou em 2026-07-15: citação e recusa RN02 válidas,
-  711+180 tokens, 4,95 s e custo estimado de US$ 0,000448.
-- O Gate G1 Azure foi deliberadamente movido para o pré-deploy. O Gemini API é
-  externo, mas não envolve Azure; seu teto de custo deve ser conferido antes do
-  gate. Container e
-  ngrok também só entram após o fluxo nativo estar verde; nunca expor `11434`.
-- A segunda leitura das 45 candidatas deve ocorrer em outro dia e sem reutilizar
-  a anotação inicial; só então promover e registrar o congelamento.
-- `sentence-transformers` ainda não está instalado; é necessário somente para
-  a alternativa `EMBEDDING_PROVIDER=local`, não para o ramo Ollama ativo.
+- `especificacao.md` foi removida do rastreamento (commit 8c045e5), mas
+  permanece no histórico de commits antigos — o repositório público deve
+  nascer de histórico limpo (regra dura AGENTS §0).
+- NÃO rodar `--amostra --etapa indexacao` após o índice real construído: a
+  amostra sobrescreve `artefatos/indice_vetorial/` (reconstrução ≈ 1 h de
+  embedding no Ollama).
+- O índice atual foi construído com `hash_corpus=""` (anterior ao fix do
+  orquestrador); a próxima reconstrução grava o sha256 do manifesto.
+- Adaptadores `.gerar` de Azure/OpenAI/DeepSeek e `.embedar` de
+  Local/OpenAI/Azure seguem `NotImplementedError` deliberadamente
+  (decisão local-first; Azure só no gate G1 do pré-deploy, etapa 12).
+  `sentence-transformers` segue não instalado (só para EMBEDDING_PROVIDER=local).
+- Durante a 1ª rodada `dev` da híbrida, o Ollama falhou transitoriamente em
+  4 itens; o desenho retry+checkpoint (erro não é congelado) resolveu na
+  retomada — comportamento esperado, sem ação pendente.
 
 ## Próximo passo concreto
 
-- Em outra data, executar a segunda leitura descrita em
-  `conjunto_padrao/README.md`, promover as 45 perguntas e registrar a data de
-  congelamento no `AGENTS.md`.
-- Em seguida, implementar a Etapa 4 (ingestão) com fixtures PDF sintéticas e
-  remover apenas os 11 skips correspondentes quando os contratos passarem.
+- Em outra data: segunda leitura das 45 candidatas
+  (`conjunto_padrao/README.md`), promover a `conjunto=teste` e registrar a
+  data de congelamento no AGENTS.md.
+- Depois: `python executar_pipeline.py --etapa avaliacao` (45 congeladas,
+  E0–E3, temperatura 0), preencher a tabela do README com os números medidos
+  e regenerar `respostas_cacheadas.json` a partir do conjunto congelado.

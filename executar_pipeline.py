@@ -40,6 +40,9 @@ def etapa_ingestao(config: Config, amostra: bool) -> str:
 
 
 def etapa_indexacao(config: Config, amostra: bool) -> str:
+    import hashlib
+
+    from src.config import CAMINHO_METADADOS_CORPUS
     from src.indexacao import (
         construir_indice_bm25,
         construir_indice_faiss,
@@ -50,7 +53,8 @@ def etapa_indexacao(config: Config, amostra: bool) -> str:
     chunks = ingerir_corpus(config, amostra=amostra)
     provedor = fabricar_provedor_embeddings(config)
     construir_indice_bm25(chunks)
-    metadados = construir_indice_faiss(chunks, provedor, hash_corpus="")
+    hash_corpus = hashlib.sha256(CAMINHO_METADADOS_CORPUS.read_bytes()).hexdigest()
+    metadados = construir_indice_faiss(chunks, provedor, hash_corpus=hash_corpus)
     return f"índices construídos ({metadados.n_chunks} chunks, {metadados.modelo})"
 
 
@@ -59,7 +63,12 @@ def etapa_avaliacao(config: Config, amostra: bool) -> str:
     from src.geracao import fabricar_provedor_llm
     from src.recuperacao import Estrategia, Recuperador
 
-    estrategias = [Estrategia.CLOSED_BOOK, Estrategia.KEYWORD, Estrategia.SEMANTICA]
+    estrategias = [
+        Estrategia.CLOSED_BOOK,
+        Estrategia.KEYWORD,
+        Estrategia.SEMANTICA,
+        Estrategia.HIBRIDA,
+    ]
     metricas = executar_avaliacao(
         config,
         Recuperador(config),
