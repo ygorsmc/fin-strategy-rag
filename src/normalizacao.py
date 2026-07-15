@@ -72,7 +72,18 @@ def normalizar_numero_ptbr(texto: str) -> float | None:
     Regras: vírgula é decimal, ponto é separador de milhar, multiplicadores
     (mil/milhões/bilhões e abreviações mi/bi) são aplicados, "R$" é ignorado.
     """
-    raise NotImplementedError("Etapa 5 do AGENTS.md — parser numérico pt-BR")
+    normalizado = remover_acentos(texto).lower()
+    numero = re.search(r"\d{1,3}(?:\.\d{3})+(?:,\d+)?|\d+(?:,\d+)?", normalizado)
+    if numero is None:
+        return None
+    valor = float(numero.group(0).replace(".", "").replace(",", "."))
+    resto = normalizado[numero.end() :]
+    if re.match(r"\s*%", resto):
+        return valor / 100.0
+    palavra = re.match(r"\s*([a-z]+)\b", resto)
+    if palavra and palavra.group(1) in MULTIPLICADORES:
+        valor *= MULTIPLICADORES[palavra.group(1)]
+    return valor
 
 
 def valores_equivalentes(
@@ -86,7 +97,9 @@ def valores_equivalentes(
     vs. 2.3e9 canônico já resolvido pelo parser; aqui trata arredondamento de
     exibição, ex. 2,3 bi vs. 2.287 bi -> False; 2,3 bi vs. 2,31 bi -> True).
     """
-    raise NotImplementedError("Etapa 5 do AGENTS.md — comparador com tolerância")
+    if esperado == 0.0:
+        return obtido == 0.0
+    return abs(obtido - esperado) <= abs(esperado) * (tolerancia_pct / 100.0)
 
 
 def canonizar_banco(texto: str) -> str | None:
@@ -97,7 +110,22 @@ def canonizar_banco(texto: str) -> str | None:
     de outra palavra — a busca respeita fronteiras de palavra).
     Devolve None se nenhuma instituição conhecida for citada.
     """
-    raise NotImplementedError("Etapa 5 do AGENTS.md — tabela de apelidos")
+    citados = extrair_bancos_citados(texto)
+    return citados[0] if citados else None
+
+
+def _ocorrencias_de_bancos(texto: str) -> list[tuple[int, int, str]]:
+    """(posição, -len(apelido), canônico) de cada apelido achado, com fronteira
+    de palavra sobre o texto sem acento/minúsculo."""
+    normalizado = remover_acentos(texto).lower()
+    ocorrencias: list[tuple[int, int, str]] = []
+    for canonico, apelidos in APELIDOS_BANCOS.items():
+        for apelido in apelidos:
+            padrao = r"\b" + re.escape(apelido) + r"\b"
+            for m in re.finditer(padrao, normalizado):
+                ocorrencias.append((m.start(), -len(apelido), canonico))
+    ocorrencias.sort()
+    return ocorrencias
 
 
 def extrair_bancos_citados(texto: str) -> list[str]:
@@ -105,9 +133,16 @@ def extrair_bancos_citados(texto: str) -> list[str]:
 
     Base da decomposição em subconsultas das perguntas comparativas (5.6).
     """
-    raise NotImplementedError("Etapa 5 do AGENTS.md — tabela de apelidos")
+    vistos: list[str] = []
+    for _, _, canonico in _ocorrencias_de_bancos(texto):
+        if canonico not in vistos:
+            vistos.append(canonico)
+    return vistos
 
 
 def extrair_trimestre_citado(texto: str) -> str | None:
     """Devolve o código canônico "1T2026" se a pergunta citar um trimestre."""
-    raise NotImplementedError("Etapa 5 do AGENTS.md — vocabulário de trimestres")
+    m = PADRAO_TRIMESTRE.search(texto)
+    if m is None:
+        return None
+    return f"{m.group(1)}T{m.group(2)}"
