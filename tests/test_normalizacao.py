@@ -13,10 +13,6 @@ import pytest
 
 from src import normalizacao as norm
 
-pendente = pytest.mark.skip(
-    reason="Boilerplate: implementação pendente — AGENTS.md etapa 5 (normalização)"
-)
-
 
 # --- Já implementado (deve passar) -------------------------------------------
 
@@ -78,7 +74,6 @@ class TestTabelaDeApelidos:
 # --- Contratos pendentes (etapa 5) -------------------------------------------
 
 
-@pendente
 class TestNormalizarNumeroPtbr:
     @pytest.mark.parametrize(
         "texto,esperado",
@@ -107,7 +102,6 @@ class TestNormalizarNumeroPtbr:
         assert norm.normalizar_numero_ptbr(texto) is None
 
 
-@pendente
 class TestValoresEquivalentes:
     def test_dentro_da_tolerancia_de_1_pct(self):
         assert norm.valores_equivalentes(1_000.0, 1_009.0, tolerancia_pct=1.0)
@@ -124,7 +118,6 @@ class TestValoresEquivalentes:
         assert not norm.valores_equivalentes(2_300.0, 2_300_000.0)
 
 
-@pendente
 class TestCanonizarBanco:
     @pytest.mark.parametrize(
         "texto,esperado",
@@ -150,7 +143,6 @@ class TestCanonizarBanco:
         assert norm.canonizar_banco("o clube ABBA anunciou") is None
 
 
-@pendente
 class TestExtrairBancosCitados:
     def test_comparativa_dois_bancos_na_ordem(self):
         texto = "Quem teve maior ROE no 4T2025: Itaú ou Bradesco?"
@@ -161,7 +153,6 @@ class TestExtrairBancosCitados:
         assert norm.extrair_bancos_citados(texto) == ["ITAU"]
 
 
-@pendente
 class TestExtrairTrimestreCitado:
     @pytest.mark.parametrize(
         "texto,esperado",
