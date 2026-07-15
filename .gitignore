@@ -1,0 +1,58 @@
+# Arquivos Python e Compilados
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+build/
+dist/
+
+# Ambientes Virtuais e Dependências
+.venv/
+venv/
+env/
+ENV/
+.uv_cache/
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Segredos
+.env
+.streamlit/secrets.toml
+
+# ====================================================
+# Regras Específicas do Assistente de Research Financeiro
+# ====================================================
+
+# 1. Corpus Bruto (RNF02 e Privacidade/Limites do Git)
+# Nunca versionar os PDFs brutos. Eles são gerados pelo script de download.
+# (O corpus/metadados.csv é a fonte de verdade e DEVE ser versionado).
+corpus/raw/*
+!corpus/raw/.gitkeep
+
+# 2. Artefatos Dinâmicos / Pesados
+# Ignoramos binários pesados e índices locais não otimizados para deploy.
+# Mantemos apenas os descritores/metadados estáticos ou os índices 
+# menores estritamente necessários se versionados explicitamente.
+artefatos/indice_vetorial/*.faiss
+artefatos/indice_vetorial/*.pkl
+artefatos/indice_vetorial/*.bin
+!artefatos/indice_vetorial/.gitkeep
+
+# 3. Modelos LoRA locais (Se Fase 3 rodar localmente)
+# Pesos finetunados localmente não devem ir pro repositório devido ao tamanho
+modelos_lora/
+*.safetensors
+*.pt
+*.ckpt
+
+# Testes
+.pytest_cache/
+.coverage
+htmlcov/

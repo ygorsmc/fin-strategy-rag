@@ -1,0 +1,27 @@
+# Ingestão e manipulação de PDF
+pypdf>=4.2.0
+pdfplumber>=0.11.0
+tiktoken>=0.7.0
+
+# Indexação Vetorial e BM25
+faiss-cpu>=1.8.0
+rank-bm25>=0.2.2
+numpy>=1.26.0
+
+# Modelos, Integração de LLMs e Segredos
+openai>=1.35.0
+python-dotenv>=1.0.1
+
+# Interface e Manipulação de Dados
+streamlit>=1.36.0
+pandas>=2.2.0
+requests>=2.32.0
+
+# Testes e Qualidade
+pytest>=8.2.0
+
+# Módulo LoRA / Fase 3 (Ajuste Fino Leve)
+torch>=2.3.0
+transformers>=4.42.0
+peft>=0.11.0
+accelerate>=0.31.0
