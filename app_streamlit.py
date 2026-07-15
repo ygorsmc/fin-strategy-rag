@@ -32,13 +32,50 @@ def carregar_cache_demo() -> dict:
     return {}
 
 
+@st.cache_resource
+def _pipeline_ao_vivo():
+    """Recuperador (índices carregados com guarda RNF09) + provedor LLM,
+    instanciados uma única vez por processo."""
+    from src.geracao import fabricar_provedor_llm
+    from src.recuperacao import Estrategia, Recuperador
+
+    return (
+        Recuperador(config),
+        fabricar_provedor_llm(config),
+        Estrategia(config.estrategia_padrao),
+    )
+
+
 def responder_pergunta_livre(pergunta: str) -> dict:
     """Recuperação + geração ao vivo (uma chamada real de API por consulta).
 
-    Pendente: depende das etapas 6–8 do AGENTS.md (indexação, recuperação,
-    geração). Embeddings da consulta SEMPRE via API na instância publicada,
-    com o mesmo modelo do índice (RNF09/5.13)."""
-    raise NotImplementedError("Etapa 10 do AGENTS.md — consulta ao vivo")
+    Embeddings da consulta SEMPRE com o mesmo modelo do índice (RNF09/5.13)."""
+    from src.geracao import gerar_resposta
+
+    recuperador, provedor_llm, estrategia = _pipeline_ao_vivo()
+    recuperados = recuperador.recuperar(pergunta, estrategia)
+    resposta, _ = gerar_resposta(
+        pergunta, [r.chunk for r in recuperados], provedor_llm, config
+    )
+    if resposta.recusa:
+        conteudo = "**Recusa (RN02):** " + (
+            resposta.motivo_recusa or "sem evidência suficiente no corpus."
+        )
+    else:
+        conteudo = resposta.resposta or "—"
+        if resposta.citacoes:
+            conteudo += "\n\n" + "\n".join(
+                f"> 📄 {c.empresa} · {c.documento} · {c.trimestre} · pág. {c.pagina}"
+                for c in resposta.citacoes
+            )
+    return {
+        "resposta": conteudo,
+        "fontes": [
+            f"{r.chunk.empresa} · {r.chunk.documento} · "
+            f"págs. {r.chunk.pagina_inicio}–{r.chunk.pagina_fim}"
+            for r in recuperados
+        ],
+    }
 
 
 # --- Estado de sessão -------------------------------------------------------
