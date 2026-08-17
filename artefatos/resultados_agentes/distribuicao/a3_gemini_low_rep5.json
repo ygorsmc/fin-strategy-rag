@@ -1,0 +1,1896 @@
+{
+  "braco": "A",
+  "run_id": "20260816T184045Z-4eb4098900",
+  "preparacao_s": 0.0,
+  "resumo": {
+    "n": 15,
+    "por_subconjunto": {
+      "cobertura": 6,
+      "projecoes": 4,
+      "reconciliacao": 5
+    },
+    "apurados": 5,
+    "acertos": 3,
+    "erros": 2,
+    "pendentes": 10,
+    "base_da_taxa": "apurados",
+    "taxa_acerto": 0.6,
+    "criterios_falhos": {
+      "base": 6,
+      "cobertura": 2,
+      "comportamento": 7,
+      "motivo": 2,
+      "rn01_rn02": 2
+    },
+    "custo_usd_total": 0.1278201,
+    "chamadas_llm_total": 56,
+    "tokens_total": 264301,
+    "latencia_s_total": 184.490076348,
+    "latencia_s_media": 12.2993384232,
+    "latencia_s_max": 41.95443882800009,
+    "chamadas_ferramenta_total": 42,
+    "leituras_painel_total": 26,
+    "violacoes_total": 2,
+    "convertidas_em_recusa": 2,
+    "erros_execucao": 0,
+    "vereditos_auditor": {},
+    "recusas": 4,
+    "desambiguacoes": 1
+  },
+  "registros": [
+    {
+      "id_pergunta": "AGTC001",
+      "braco": "A",
+      "subconjunto": "cobertura",
+      "categoria": "factual",
+      "rota_esperada": "triagem_cobertura",
+      "pergunta": "E o Inter? Quanto ele lucrou no primeiro trimestre de 2026?",
+      "resposta": "No primeiro trimestre de 2026 (1T2026), o lucro líquido consolidado da INTER & CO, INC. (CD_CVM 080217) foi de R$ 417.547.000,00 e o lucro líquido atribuído aos controladores foi de R$ 394.788.000,00, conforme dados contábeis arquivados na CVM. Não há release indexado para esta instituição no período, logo nada pode ser dito sobre o que a administração declarou gerencialmente.",
+      "resposta_bruta": "",
+      "recusa": false,
+      "motivo_observado": "fora_do_corpus",
+      "parcial": false,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "resposta_completa",
+      "cobertura_observada": "so_painel",
+      "entidades_resolvidas": [
+        "080217"
+      ],
+      "bases_publicadas": [
+        "contabil_consolidado",
+        "contabil_controladores"
+      ],
+      "citacoes": [
+        "CVM · INTER & CO, INC. (CD_CVM 080217) · 1T2026 · lucro_liquido_consolidado",
+        "CVM · INTER & CO, INC. (CD_CVM 080217) · 1T2026 · lucro_liquido_controladores"
+      ],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Inter",
+            "trimestre": "1T2026"
+          },
+          "resumo": "1 entidade(s): so_painel",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "consultar_cvm",
+          "argumentos": {
+            "sql": "SELECT trimestre, conceito, valor_reais FROM fatos_semanticos WHERE cd_cvm = '080217' AND trimestre = '1T2026' AND conceito IN ('lucro_liquido_consolidado', 'lucro_liquido_controladores') LIMIT 5"
+          },
+          "resumo": "2 linha(s)",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 2,
+      "leituras_painel": 2,
+      "chamadas_llm": 3,
+      "iteracoes": 3,
+      "tokens_entrada": 10667,
+      "tokens_saida": 1165,
+      "custo_usd": 0.006112599999999999,
+      "latencia_s": 6.79508449299999,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "verificado_painel",
+      "apuracao": "erro",
+      "acerto": false,
+      "motivo_apuracao": "critérios reprovados: ['comportamento']",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "so_painel",
+          "observado": "so_painel",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "resposta_parcial_marcada",
+          "observado": "resposta_completa",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "fora_do_corpus",
+          "observado": "fora_do_corpus",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "contabil_consolidado",
+          "observado": "contabil_consolidado|contabil_controladores",
+          "detalhe": ""
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTC002",
+      "braco": "A",
+      "subconjunto": "cobertura",
+      "categoria": "adversarial",
+      "rota_esperada": "triagem_cobertura",
+      "pergunta": "E o Nubank? Quanto ele lucrou no primeiro trimestre de 2026?",
+      "resposta": "Não foi possível atender à solicitação porque a Nu Holdings Ltd. (Nubank) não possui cobertura no painel contábil da CVM e tampouco no corpus de releases, que é restrito a cinco bancos brasileiros.",
+      "resposta_bruta": "",
+      "recusa": true,
+      "motivo_observado": "fora_do_corpus",
+      "parcial": false,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "recusa",
+      "cobertura_observada": "nenhuma",
+      "entidades_resolvidas": [],
+      "bases_publicadas": [],
+      "citacoes": [],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Nubank",
+            "trimestre": "1T2026"
+          },
+          "resumo": "1 entidade(s): nenhuma",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 1,
+      "leituras_painel": 1,
+      "chamadas_llm": 2,
+      "iteracoes": 2,
+      "tokens_entrada": 6721,
+      "tokens_saida": 479,
+      "custo_usd": 0.0032138,
+      "latencia_s": 3.169234424000024,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "verificado_painel",
+      "apuracao": "acerto",
+      "acerto": true,
+      "motivo_apuracao": "todos os critérios aplicáveis passaram",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "nenhuma",
+          "observado": "nenhuma",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "recusa",
+          "observado": "recusa",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "fora_do_corpus",
+          "observado": "fora_do_corpus",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "nenhum valor (base_esperada=n/a)",
+          "observado": "nenhum valor",
+          "detalhe": ""
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTC003",
+      "braco": "A",
+      "subconjunto": "cobertura",
+      "categoria": "factual",
+      "rota_esperada": "desambiguacao_entidade",
+      "pergunta": "Quanto o BTG lucrou no primeiro trimestre de 2026?",
+      "resposta": "'btg' identifica 2 companhias no painel da CVM: BCO BTG PACTUAL S.A. (CD_CVM 022616); BTG PACTUAL COMMODITIES SERTRADING S.A. (CD_CVM 027774). Qual delas? Responda com o CD_CVM — a seleção é sempre por código, nunca por nome.",
+      "resposta_bruta": "",
+      "recusa": false,
+      "motivo_observado": "n/a",
+      "parcial": false,
+      "precisa_desambiguacao": true,
+      "comportamento_observado": "pergunta_de_desambiguacao",
+      "cobertura_observada": "ambigua",
+      "entidades_resolvidas": [
+        "022616",
+        "027774"
+      ],
+      "bases_publicadas": [],
+      "citacoes": [],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "BTG",
+            "trimestre": "1T2026"
+          },
+          "resumo": "1 entidade(s): desambiguacao",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 1,
+      "leituras_painel": 1,
+      "chamadas_llm": 2,
+      "iteracoes": 2,
+      "tokens_entrada": 6872,
+      "tokens_saida": 366,
+      "custo_usd": 0.0029766000000000003,
+      "latencia_s": 2.552267946000029,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "verificado_painel",
+      "apuracao": "acerto",
+      "acerto": true,
+      "motivo_apuracao": "todos os critérios aplicáveis passaram",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "ambigua",
+          "observado": "ambigua",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "pergunta_de_desambiguacao",
+          "observado": "pergunta_de_desambiguacao",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "n/a",
+          "observado": "n/a",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "nenhum valor (base_esperada=n/a)",
+          "observado": "nenhum valor",
+          "detalhe": ""
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "não nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTC004",
+      "braco": "A",
+      "subconjunto": "cobertura",
+      "categoria": "factual",
+      "rota_esperada": "triagem_cobertura",
+      "pergunta": "E o Banco Mercantil do Brasil? Quanto ele lucrou no primeiro trimestre de 2026?",
+      "resposta": "No primeiro trimestre de 2026, o BCO MERCANTIL DO BRASIL S.A. (CD_CVM 001325) registrou lucro líquido dos controladores de R$ 273.473.000,00 e lucro líquido consolidado de R$ 278.021.000,00, conforme dados contábeis arquivados na CVM. Não há release indexado para esta instituição no corpus.",
+      "resposta_bruta": "",
+      "recusa": false,
+      "motivo_observado": "fora_do_corpus",
+      "parcial": false,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "resposta_completa",
+      "cobertura_observada": "so_painel",
+      "entidades_resolvidas": [
+        "001325"
+      ],
+      "bases_publicadas": [
+        "contabil_controladores",
+        "contabil_consolidado"
+      ],
+      "citacoes": [
+        "CVM · BCO MERCANTIL DO BRASIL S.A. (CD_CVM 001325) · 1T2026 · lucro_liquido_controladores",
+        "CVM · BCO MERCANTIL DO BRASIL S.A. (CD_CVM 001325) · 1T2026 · lucro_liquido_consolidado"
+      ],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Banco Mercantil do Brasil",
+            "trimestre": "1T2026"
+          },
+          "resumo": "1 entidade(s): so_painel",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "consultar_cvm",
+          "argumentos": {
+            "sql": "SELECT trimestre, conceito, valor_reais FROM fatos_semanticos WHERE cd_cvm = '001325' AND trimestre = '1T2026' AND conceito IN ('lucro_liquido_consolidado', 'lucro_liquido_controladores') LIMIT 5"
+          },
+          "resumo": "2 linha(s)",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 2,
+      "leituras_painel": 2,
+      "chamadas_llm": 3,
+      "iteracoes": 3,
+      "tokens_entrada": 10727,
+      "tokens_saida": 941,
+      "custo_usd": 0.0055706,
+      "latencia_s": 5.340347294999901,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "verificado_painel",
+      "apuracao": "erro",
+      "acerto": false,
+      "motivo_apuracao": "critérios reprovados: ['comportamento']",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "so_painel",
+          "observado": "so_painel",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "resposta_parcial_marcada",
+          "observado": "resposta_completa",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "fora_do_corpus",
+          "observado": "fora_do_corpus",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "contabil_consolidado",
+          "observado": "contabil_controladores|contabil_consolidado",
+          "detalhe": ""
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTC005",
+      "braco": "A",
+      "subconjunto": "cobertura",
+      "categoria": "adversarial",
+      "rota_esperada": "triagem_cobertura",
+      "pergunta": "E o C6 Bank? Quanto ele lucrou no primeiro trimestre de 2026?",
+      "resposta": "Não foi possível responder à pergunta pois o C6 Bank não possui cobertura (nem no painel da CVM nem no corpus de releases) para o trimestre 1T2026.",
+      "resposta_bruta": "",
+      "recusa": true,
+      "motivo_observado": "fora_do_corpus",
+      "parcial": false,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "recusa",
+      "cobertura_observada": "nenhuma",
+      "entidades_resolvidas": [],
+      "bases_publicadas": [],
+      "citacoes": [],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "C6 Bank",
+            "trimestre": "1T2026"
+          },
+          "resumo": "1 entidade(s): nenhuma",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 1,
+      "leituras_painel": 1,
+      "chamadas_llm": 2,
+      "iteracoes": 2,
+      "tokens_entrada": 6683,
+      "tokens_saida": 428,
+      "custo_usd": 0.0030749,
+      "latencia_s": 2.7087783040000204,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "verificado_painel",
+      "apuracao": "acerto",
+      "acerto": true,
+      "motivo_apuracao": "todos os critérios aplicáveis passaram",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "nenhuma",
+          "observado": "nenhuma",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "recusa",
+          "observado": "recusa",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "fora_do_corpus",
+          "observado": "fora_do_corpus",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "nenhum valor (base_esperada=n/a)",
+          "observado": "nenhum valor",
+          "detalhe": ""
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTC006",
+      "braco": "A",
+      "subconjunto": "cobertura",
+      "categoria": "factual",
+      "rota_esperada": "triagem_cobertura",
+      "pergunta": "E o Santander? Quanto ele lucrou no primeiro trimestre de 2026?",
+      "resposta": "RESPOSTA PARCIAL — o teto de passos por pergunta foi atingido antes de a investigação concluir. Nenhuma afirmação é publicada sem conclusão. Consultas concluídas antes do corte: buscar_trechos ×1, consultar_cvm ×2, verificar_cobertura ×2.",
+      "resposta_bruta": "",
+      "recusa": false,
+      "motivo_observado": "n/a",
+      "parcial": true,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "resposta_parcial_marcada",
+      "cobertura_observada": "",
+      "entidades_resolvidas": [
+        "020532"
+      ],
+      "bases_publicadas": [],
+      "citacoes": [],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Santander",
+            "trimestre": "1T2026"
+          },
+          "resumo": "1 entidade(s): ambas",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "consultar_cvm",
+          "argumentos": {
+            "sql": "SELECT trimestre, conceito, valor_reais FROM fatos_semanticos WHERE cd_cvm = '020532' AND trimestre = '1T2026' AND conceito LIKE '%lucro_liquido%' LIMIT 5"
+          },
+          "resumo": "3 linha(s)",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "lucro líquido 1T2026 Santander",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Santander",
+            "trimestre": "1T2026"
+          },
+          "resumo": "1 entidade(s): ambas",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "consultar_cvm",
+          "argumentos": {
+            "sql": "SELECT trimestre, conceito, valor_reais FROM fatos_semanticos WHERE cd_cvm = '020532' AND trimestre = '1T2026' AND conceito IN ('lucro_liquido_consolidado', 'lucro_liquido_controladores') LIMIT 5"
+          },
+          "resumo": "2 linha(s)",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 5,
+      "leituras_painel": 4,
+      "chamadas_llm": 5,
+      "iteracoes": 5,
+      "tokens_entrada": 17528,
+      "tokens_saida": 1749,
+      "custo_usd": 0.009630900000000001,
+      "latencia_s": 29.577859957999976,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "parcial_pendente_release",
+      "apuracao": "pendente_conferencia_humana",
+      "acerto": null,
+      "motivo_apuracao": "gabarito parcial_pendente_release: acerto não apurado até a dupla leitura humana do release. Critérios que já divergem: ['cobertura', 'comportamento', 'base']",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "ambas",
+          "observado": "",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "resposta_completa",
+          "observado": "resposta_parcial_marcada",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "n/a",
+          "observado": "n/a",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "contabil_consolidado|gerencial",
+          "observado": "nenhuma",
+          "detalhe": "bases não apresentadas: ['contabil_consolidado', 'gerencial']"
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "não nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTR001",
+      "braco": "A",
+      "subconjunto": "reconciliacao",
+      "categoria": "comparativa",
+      "rota_esperada": "reconciliacao",
+      "pergunta": "Quando dizem que o Banco do Brasil lucrou tanto no primeiro trimestre de 2026, esse valor já é o que sobra para os donos do banco? Quais são os números?",
+      "resposta": "No primeiro trimestre de 2026, o Banco do Brasil apresentou um lucro líquido consolidado de R$ 3.106.277.000,00 e um lucro líquido atribuível aos controladores (o que sobra para os donos do banco) de R$ 2.397.165.000,00, conforme os dados arquivados na CVM.",
+      "resposta_bruta": "",
+      "recusa": false,
+      "motivo_observado": "n/a",
+      "parcial": false,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "resposta_completa",
+      "cobertura_observada": "ambas",
+      "entidades_resolvidas": [
+        "001023"
+      ],
+      "bases_publicadas": [
+        "contabil_consolidado",
+        "contabil_controladores",
+        "gerencial"
+      ],
+      "citacoes": [
+        "CVM · BCO BRASIL S.A. (CD_CVM 001023) · 1T2026 · lucro_liquido_consolidado",
+        "CVM · BCO BRASIL S.A. (CD_CVM 001023) · 1T2026 · lucro_liquido_controladores",
+        "release bb_release_1T2026 · BB · 1T2026 · p. 220"
+      ],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Banco do Brasil",
+            "trimestre": "1T2026"
+          },
+          "resumo": "1 entidade(s): ambas",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "consultar_cvm",
+          "argumentos": {
+            "sql": "SELECT trimestre, conceito, valor_reais FROM fatos_semanticos WHERE cd_cvm = '001023' AND trimestre = '1T2026' AND conceito IN ('lucro_liquido_consolidado', 'lucro_liquido_controladores') LIMIT 5"
+          },
+          "resumo": "2 linha(s)",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "lucro liquido ajustado 1T2026 Banco do Brasil",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 3,
+      "leituras_painel": 2,
+      "chamadas_llm": 4,
+      "iteracoes": 4,
+      "tokens_entrada": 17297,
+      "tokens_saida": 1866,
+      "custo_usd": 0.009854100000000001,
+      "latencia_s": 9.48355753699991,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "parcial_pendente_release",
+      "apuracao": "pendente_conferencia_humana",
+      "acerto": null,
+      "motivo_apuracao": "gabarito parcial_pendente_release: acerto não apurado até a dupla leitura humana do release. Critérios que já divergem: nenhum",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "ambas",
+          "observado": "ambas",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "resposta_completa",
+          "observado": "resposta_completa",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "n/a",
+          "observado": "n/a",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "contabil_consolidado|contabil_controladores|gerencial",
+          "observado": "contabil_consolidado|contabil_controladores|gerencial",
+          "detalhe": ""
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "não nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTR002",
+      "braco": "A",
+      "subconjunto": "reconciliacao",
+      "categoria": "comparativa",
+      "rota_esperada": "reconciliacao",
+      "pergunta": "O resultado recorrente gerencial que o Itaú Unibanco divulgou no release do 2T2025 é o mesmo número que ele arquivou na CVM? Apresente os dois.",
+      "resposta": "O resultado recorrente gerencial divulgado pelo Itaú Unibanco no release do 2T2025 foi de R$ 11.508 milhões. Por sua vez, nos números contábeis arquivados na CVM para o mesmo trimestre (2T2025), o lucro líquido consolidado foi de R$ 11.398.000.000,00 (R$ 11.398 milhões) e o lucro líquido atribuído aos controladores foi de R$ 11.137.000.000,00 (R$ 11.137 milhões). Portanto, trata-se de números diferentes, pois a visão gerencial recorrente difere dos conceitos contábeis oficiais consolidados e dos controladores.",
+      "resposta_bruta": "",
+      "recusa": false,
+      "motivo_observado": "n/a",
+      "parcial": false,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "resposta_completa",
+      "cobertura_observada": "ambas",
+      "entidades_resolvidas": [
+        "019348"
+      ],
+      "bases_publicadas": [
+        "contabil_consolidado",
+        "contabil_controladores",
+        "gerencial"
+      ],
+      "citacoes": [
+        "CVM · ITAU UNIBANCO HOLDING S.A. (CD_CVM 019348) · 2T2025 · lucro_liquido_consolidado",
+        "CVM · ITAU UNIBANCO HOLDING S.A. (CD_CVM 019348) · 2T2025 · lucro_liquido_controladores",
+        "release itau_release_2T2025 · ITAU · 2T2025 · p. 5"
+      ],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Itaú Unibanco",
+            "trimestre": "2T2025"
+          },
+          "resumo": "1 entidade(s): ambas",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "consultar_cvm",
+          "argumentos": {
+            "sql": "SELECT trimestre, conceito, valor_reais FROM fatos_semanticos WHERE cd_cvm = '019348' AND trimestre = '2T2025' AND conceito IN ('lucro_liquido_consolidado', 'lucro_liquido_controladores') LIMIT 5"
+          },
+          "resumo": "2 linha(s)",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "resultado recorrente gerencial 2T2025 Itaú",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 3,
+      "leituras_painel": 2,
+      "chamadas_llm": 4,
+      "iteracoes": 4,
+      "tokens_entrada": 17200,
+      "tokens_saida": 1979,
+      "custo_usd": 0.0101075,
+      "latencia_s": 9.956896529999995,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "parcial_pendente_release",
+      "apuracao": "pendente_conferencia_humana",
+      "acerto": null,
+      "motivo_apuracao": "gabarito parcial_pendente_release: acerto não apurado até a dupla leitura humana do release. Critérios que já divergem: nenhum",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "ambas",
+          "observado": "ambas",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "resposta_completa",
+          "observado": "resposta_completa",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "n/a",
+          "observado": "n/a",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "gerencial|contabil_consolidado",
+          "observado": "contabil_consolidado|contabil_controladores|gerencial",
+          "detalhe": ""
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTR003",
+      "braco": "A",
+      "subconjunto": "reconciliacao",
+      "categoria": "comparativa",
+      "rota_esperada": "reconciliacao",
+      "pergunta": "O lucro do Bradesco no terceiro trimestre de 2025 que aparece no relatório é o mesmo que ele registrou na CVM? Por que a diferença?",
+      "resposta": "No relatório do Bradesco referente ao 3T2025, o Lucro Líquido Recorrente e o Lucro Líquido Contábil informados foram ambos de R$ 6.205 milhões (página 45 do release).",
+      "resposta_bruta": "",
+      "recusa": false,
+      "motivo_observado": "n/a",
+      "parcial": false,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "resposta_completa",
+      "cobertura_observada": "ambas",
+      "entidades_resolvidas": [
+        "000906"
+      ],
+      "bases_publicadas": [
+        "contabil_consolidado",
+        "gerencial"
+      ],
+      "citacoes": [
+        "release bradesco_release_3T2025 · BRADESCO · 3T2025 · p. 45"
+      ],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Bradesco",
+            "trimestre": "3T2025"
+          },
+          "resumo": "1 entidade(s): ambas",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "lucro liquido 3T2025 Bradesco",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 2,
+      "leituras_painel": 1,
+      "chamadas_llm": 3,
+      "iteracoes": 3,
+      "tokens_entrada": 11919,
+      "tokens_saida": 1234,
+      "custo_usd": 0.006660699999999999,
+      "latencia_s": 7.4335062799999605,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "parcial_pendente_release",
+      "apuracao": "pendente_conferencia_humana",
+      "acerto": null,
+      "motivo_apuracao": "gabarito parcial_pendente_release: acerto não apurado até a dupla leitura humana do release. Critérios que já divergem: ['base']",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "ambas",
+          "observado": "ambas",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "resposta_completa",
+          "observado": "resposta_completa",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "n/a",
+          "observado": "n/a",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "gerencial|contabil_controladores",
+          "observado": "contabil_consolidado|gerencial",
+          "detalhe": "bases não apresentadas: ['contabil_controladores']"
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "não nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTR004",
+      "braco": "A",
+      "subconjunto": "reconciliacao",
+      "categoria": "comparativa",
+      "rota_esperada": "reconciliacao",
+      "pergunta": "No 3T2025 do Santander, as parcelas de controladores e não controladores somam o lucro consolidado arquivado na CVM? E como isso se compara com o lucro divulgado no release?",
+      "resposta": "RESPOSTA PARCIAL — o teto de passos por pergunta foi atingido antes de a investigação concluir. Nenhuma afirmação é publicada sem conclusão. Consultas concluídas antes do corte: buscar_trechos ×2, consultar_cvm ×1, verificar_cobertura ×2.",
+      "resposta_bruta": "",
+      "recusa": false,
+      "motivo_observado": "n/a",
+      "parcial": true,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "resposta_parcial_marcada",
+      "cobertura_observada": "",
+      "entidades_resolvidas": [
+        "020532"
+      ],
+      "bases_publicadas": [],
+      "citacoes": [],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Santander",
+            "trimestre": "3T2025"
+          },
+          "resumo": "1 entidade(s): ambas",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "consultar_cvm",
+          "argumentos": {
+            "sql": "SELECT trimestre, conceito, valor_reais FROM fatos_semanticos WHERE cd_cvm = '020532' AND trimestre = '3T2025' AND conceito IN ('lucro_liquido_consolidado', 'lucro_liquido_controladores') LIMIT 10"
+          },
+          "resumo": "2 linha(s)",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "lucro liquido 3T2025",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "Santander lucro líquido 3T2025",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Santander",
+            "trimestre": "3T2025"
+          },
+          "resumo": "1 entidade(s): ambas",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 5,
+      "leituras_painel": 3,
+      "chamadas_llm": 6,
+      "iteracoes": 6,
+      "tokens_entrada": 27378,
+      "tokens_saida": 3287,
+      "custo_usd": 0.0164309,
+      "latencia_s": 31.287134407000053,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "parcial_pendente_release",
+      "apuracao": "pendente_conferencia_humana",
+      "acerto": null,
+      "motivo_apuracao": "gabarito parcial_pendente_release: acerto não apurado até a dupla leitura humana do release. Critérios que já divergem: ['cobertura', 'comportamento', 'base']",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "ambas",
+          "observado": "",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "divergencia_registrada",
+          "observado": "resposta_parcial_marcada",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "n/a",
+          "observado": "n/a",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "contabil_consolidado|contabil_controladores|gerencial",
+          "observado": "nenhuma",
+          "detalhe": "bases não apresentadas: ['contabil_consolidado', 'contabil_controladores', 'gerencial']"
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "não nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTR005",
+      "braco": "A",
+      "subconjunto": "reconciliacao",
+      "categoria": "comparativa",
+      "rota_esperada": "reconciliacao",
+      "pergunta": "Quanto o Itaú Unibanco lucrou no 4T2025 segundo o arquivado na CVM, e esse número foi arquivado assim mesmo?",
+      "resposta": "No 4T2025, segundo o arquivado na CVM, o Itaú Unibanco S.A. (CD_CVM 019348) registrou lucro líquido consolidado de R$ 12,14 bilhões e lucro líquido atribuível aos controladores de R$ 11,91 bilhões.",
+      "resposta_bruta": "",
+      "recusa": false,
+      "motivo_observado": "n/a",
+      "parcial": false,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "resposta_completa",
+      "cobertura_observada": "ambas",
+      "entidades_resolvidas": [
+        "019348"
+      ],
+      "bases_publicadas": [
+        "contabil_consolidado",
+        "contabil_controladores"
+      ],
+      "citacoes": [
+        "CVM · ITAU UNIBANCO HOLDING S.A. (CD_CVM 019348) · 4T2025 · lucro_liquido_consolidado",
+        "CVM · ITAU UNIBANCO HOLDING S.A. (CD_CVM 019348) · 4T2025 · lucro_liquido_controladores"
+      ],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Itaú Unibanco",
+            "trimestre": "4T2025"
+          },
+          "resumo": "1 entidade(s): ambas",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "consultar_cvm",
+          "argumentos": {
+            "sql": "SELECT trimestre, conceito, valor_reais FROM fatos_semanticos WHERE cd_cvm = '019348' AND trimestre = '4T2025' AND conceito IN ('lucro_liquido_consolidado', 'lucro_liquido_controladores') LIMIT 5"
+          },
+          "resumo": "2 linha(s)",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 2,
+      "leituras_painel": 2,
+      "chamadas_llm": 3,
+      "iteracoes": 3,
+      "tokens_entrada": 10871,
+      "tokens_saida": 1191,
+      "custo_usd": 0.006238799999999999,
+      "latencia_s": 5.497342156000059,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "parcial_pendente_release",
+      "apuracao": "pendente_conferencia_humana",
+      "acerto": null,
+      "motivo_apuracao": "gabarito parcial_pendente_release: acerto não apurado até a dupla leitura humana do release. Critérios que já divergem: ['base']",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "ambas",
+          "observado": "ambas",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "resposta_completa",
+          "observado": "resposta_completa",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "n/a",
+          "observado": "n/a",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "contabil_consolidado|gerencial",
+          "observado": "contabil_consolidado|contabil_controladores",
+          "detalhe": "bases não apresentadas: ['gerencial']"
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "não nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTP001",
+      "braco": "A",
+      "subconjunto": "projecoes",
+      "categoria": "qualitativa",
+      "rota_esperada": "acompanhamento_projecoes",
+      "pergunta": "O Banco do Brasil cumpriu a promessa de lucro que tinha feito para 2025?",
+      "resposta": "Recusa registrada: a resposta produzida foi descartada por violar as regras verificadas em código sobre a saída (rn02_valor_sem_lastro). Nenhum valor é apresentado sem citação da fonte que o produziu (RN01/RN02).",
+      "resposta_bruta": "```json\n{\n  \"cobertura\": \"ambas\",\n  \"comportamento\": \"resposta_completa\",\n  \"motivo_recusa\": \"n/a\",\n  \"bases\": [\"gerencial\"],\n  \"afirmacao\": \"Conforme os releases do Banco do Brasil, o guidance de Lucro Líquido Ajustado para 2025 foi revisado para o intervalo de R$ 21,0 a R$ 25,0 bilhões (conforme reportado no 2T2025). No encerramento do exercício de 2025 (release do 4T2025), o lucro líquido gerencial reportado foi de R$ 17,8 bilhões, ficando abaixo da faixa projetada pela administração.\",\n  \"citacoes\": [\"release bb_release_2T2025 · BB · 2T2025 · p. 15\", \"release bb_release_4T2025 · BB · 4T2025 · p. 135\"],\n  \"rastro\": [\"passo 1: verifiquei a cobertura do Banco do Brasil e encontrei estado ambas\", \"passo 2: busquei trechos sobre guidance e lucro líquido de 2025 nos releases do Banco do Brasil\", \"passo 3: identifiquei a faixa de projeção e o valor reportado no 4T2025\"]\n}\n```",
+      "recusa": true,
+      "motivo_observado": "recusa_convertida_por_violacao",
+      "parcial": true,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "recusa",
+      "cobertura_observada": "ambas",
+      "entidades_resolvidas": [
+        "001023"
+      ],
+      "bases_publicadas": [],
+      "citacoes": [],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Banco do Brasil",
+            "trimestre": null
+          },
+          "resumo": "1 entidade(s): ambas",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "lucro 2025 guidance promessa",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "Banco do Brasil lucro guidance 2025",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "guidance lucro liquido ajustado 2025 banco do brasil",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 4,
+      "leituras_painel": 1,
+      "chamadas_llm": 5,
+      "iteracoes": 5,
+      "tokens_entrada": 26605,
+      "tokens_saida": 628,
+      "custo_usd": 0.0095515,
+      "latencia_s": 8.218774369000016,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [
+        "rn02_valor_sem_lastro"
+      ],
+      "convertida_em_recusa": true,
+      "status_gabarito": "pendente_conferencia_humana",
+      "apuracao": "pendente_conferencia_humana",
+      "acerto": null,
+      "motivo_apuracao": "gabarito pendente_conferencia_humana: acerto não apurado até a dupla leitura humana do release. Critérios que já divergem: ['comportamento', 'motivo', 'base', 'rn01_rn02']",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "ambas",
+          "observado": "ambas",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "registro_sem_juizo",
+          "observado": "recusa",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "n/a",
+          "observado": "recusa_convertida_por_violacao",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "gerencial",
+          "observado": "nenhuma",
+          "detalhe": "bases não apresentadas: ['gerencial']"
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "não nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "rn02_valor_sem_lastro",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTP002",
+      "braco": "A",
+      "subconjunto": "projecoes",
+      "categoria": "factual",
+      "rota_esperada": "acompanhamento_projecoes",
+      "pergunta": "Que faixa de lucro do Banco do Brasil para 2025 estava valendo quando saiu o relatório do 3T2025?",
+      "resposta": "Quando saiu o relatório do 3T2025, a projeção (guidance) revisada do lucro líquido ajustado do Banco do Brasil para o ano de 2025 era de R$ 18,0 bilhões a R$ 21,0 bilhões.",
+      "resposta_bruta": "",
+      "recusa": false,
+      "motivo_observado": "n/a",
+      "parcial": false,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "resposta_completa",
+      "cobertura_observada": "ambas",
+      "entidades_resolvidas": [
+        "001023"
+      ],
+      "bases_publicadas": [
+        "gerencial"
+      ],
+      "citacoes": [
+        "release bb_release_3T2025 · BB · 3T2025 · p. 14-16"
+      ],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Banco do Brasil",
+            "trimestre": "3T2025"
+          },
+          "resumo": "1 entidade(s): ambas",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "guidance lucro 2025 Banco do Brasil 3T2025",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "Projeções Corporativas guidance 2025 lucro líquido ajustado Banco do Brasil 3T2025",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "Lucro Líquido Ajustado 2025 Projeções Corporativas guidance Banco do Brasil página 12",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "Projeções Corporativas Lucro Líquido Ajustado 2025 Banco do Brasil 3T2025",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 5,
+      "leituras_painel": 1,
+      "chamadas_llm": 6,
+      "iteracoes": 6,
+      "tokens_entrada": 34984,
+      "tokens_saida": 696,
+      "custo_usd": 0.012235199999999998,
+      "latencia_s": 9.999289188000034,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "pendente_conferencia_humana",
+      "apuracao": "pendente_conferencia_humana",
+      "acerto": null,
+      "motivo_apuracao": "gabarito pendente_conferencia_humana: acerto não apurado até a dupla leitura humana do release. Critérios que já divergem: nenhum",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "ambas",
+          "observado": "ambas",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "resposta_completa",
+          "observado": "resposta_completa",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "n/a",
+          "observado": "n/a",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "gerencial",
+          "observado": "gerencial",
+          "detalhe": ""
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "não nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTP003",
+      "braco": "A",
+      "subconjunto": "projecoes",
+      "categoria": "qualitativa",
+      "rota_esperada": "acompanhamento_projecoes",
+      "pergunta": "O Banco do Brasil mexeu em alguma projeção de 2025 ao longo do ano? Quais linhas mudaram e em que relatório a mudança aparece?",
+      "resposta": "O Banco do Brasil apresentou revisões em suas projeções corporativas (guidance) ao longo de 2025 nos relatórios trimestrais (releases de resultados). A mudança nas projeções aparece detalhada na seção de Projeções Corporativas dos relatórios da administração.",
+      "resposta_bruta": "",
+      "recusa": false,
+      "motivo_observado": "n/a",
+      "parcial": false,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "resposta_completa",
+      "cobertura_observada": "ambas",
+      "entidades_resolvidas": [
+        "001023"
+      ],
+      "bases_publicadas": [
+        "gerencial"
+      ],
+      "citacoes": [
+        "release bb_release_2T2025 · BB · 2T2025 · págs. 14–15"
+      ],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Banco do Brasil",
+            "trimestre": null
+          },
+          "resumo": "1 entidade(s): ambas",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "projeção guidance 2025 revisão mudou",
+            "top_k": 4
+          },
+          "resumo": "4 trecho(s) por semantica",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 2,
+      "leituras_painel": 1,
+      "chamadas_llm": 3,
+      "iteracoes": 3,
+      "tokens_entrada": 12085,
+      "tokens_saida": 1914,
+      "custo_usd": 0.0084105,
+      "latencia_s": 10.51556463299994,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [],
+      "convertida_em_recusa": false,
+      "status_gabarito": "pendente_conferencia_humana",
+      "apuracao": "pendente_conferencia_humana",
+      "acerto": null,
+      "motivo_apuracao": "gabarito pendente_conferencia_humana: acerto não apurado até a dupla leitura humana do release. Critérios que já divergem: ['comportamento']",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "ambas",
+          "observado": "ambas",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "registro_sem_juizo",
+          "observado": "resposta_completa",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "n/a",
+          "observado": "n/a",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "gerencial",
+          "observado": "gerencial",
+          "detalhe": ""
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "não nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "sem violação",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    },
+    {
+      "id_pergunta": "AGTP004",
+      "braco": "A",
+      "subconjunto": "projecoes",
+      "categoria": "comparativa",
+      "rota_esperada": "acompanhamento_projecoes",
+      "pergunta": "Quanto o Banco do Brasil lucrou em 2025, e dá para comparar esse número com a faixa que ele tinha projetado?",
+      "resposta": "Recusa registrada: a resposta produzida foi descartada por violar as regras verificadas em código sobre a saída (rn02_valor_sem_lastro). Nenhum valor é apresentado sem citação da fonte que o produziu (RN01/RN02).",
+      "resposta_bruta": "{\"cobertura\": \"ambas\", \"comportamento\": \"resposta_completa\", \"motivo_recusa\": \"n/a\", \"bases\": [\"contabil_consolidado\", \"contabil_controladores\", \"gerencial\"], \"afirmacao\": \"O lucro líquido gerencial do Banco do Brasil em 2025 foi de R$ 17,8 bilhões, conforme o Relatório da Administração de 2025 (release bb_release_4T2025). Pelo painel contábil da CVM (fatos semânticos), a soma dos lucros líquidos consolidados trimestrais de 2025 (1T2025 a 4T2025) totaliza R$ 18.014.978.000,00 (sendo 1T2025: R$ 4.177.854.000,00; 2T2025: R$ 3.582.262.000,00; 3T2025: R$ 3.006.743.000,00; e 4T2025: R$ 6.015.079.000,00). Já o lucro líquido atribuído aos controladores somou R$ 14.901.624.000,00 no mesmo período (1T2025: R$ 3.438.804.000,00; 2T2025: R$ 2.782.083.000,00; 3T2025: R$ 2.237.301.000,00; e 4T2025: R$ 5.239.936.000,00). Os releases do banco trazem acompanhamento trimestral das projeções corporativas (guidance).\", \"citacoes\": [\"CVM · BCO BRASIL S.A. (CD_CVM 001023) · 4T2025 · lucro_liquido_consolidado\", \"release bb_release_4T2025 · BB · 4T2025 · págs. 135–137\"], \"rastro\": [\"passo 1: verifiquei a cobertura do Banco do Brasil com verificar_cobertura\", \"passo 2: consultei os fatos semânticos da CVM para obter os lucros líquidos trimestrais de 2025\", \"passo 3: busquei trechos no corpus de releases para verificar dados do guidance e do lucro gerencial de 2025\"]}",
+      "recusa": true,
+      "motivo_observado": "recusa_convertida_por_violacao",
+      "parcial": true,
+      "precisa_desambiguacao": false,
+      "comportamento_observado": "recusa",
+      "cobertura_observada": "ambas",
+      "entidades_resolvidas": [
+        "001023"
+      ],
+      "bases_publicadas": [],
+      "citacoes": [],
+      "fatos_publicados": [],
+      "chamadas_ferramenta": [
+        {
+          "papel": "agente_unico",
+          "ferramenta": "verificar_cobertura",
+          "argumentos": {
+            "entidade": "Banco do Brasil",
+            "trimestre": null
+          },
+          "resumo": "1 entidade(s): ambas",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "consultar_cvm",
+          "argumentos": {
+            "sql": "SELECT trimestre, conceito, valor_reais FROM fatos_semanticos WHERE cd_cvm = '001023' AND trimestre IN ('1T2025', '2T2025', '3T2025', '4T2025') AND conceito IN ('lucro_liquido_consolidado', 'lucro_liquido_controladores') LIMIT 20"
+          },
+          "resumo": "8 linha(s)",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "projeção lucro 2025 guidance",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        },
+        {
+          "papel": "agente_unico",
+          "ferramenta": "buscar_trechos",
+          "argumentos": {
+            "pergunta": "Banco do Brasil guidance lucro 2025",
+            "top_k": 3
+          },
+          "resumo": "3 trecho(s) por semantica",
+          "erro": null
+        }
+      ],
+      "total_chamadas_ferramenta": 4,
+      "leituras_painel": 2,
+      "chamadas_llm": 5,
+      "iteracoes": 5,
+      "tokens_entrada": 24705,
+      "tokens_saida": 4136,
+      "custo_usd": 0.0177515,
+      "latencia_s": 41.95443882800009,
+      "tokens_raciocinio": 0,
+      "tokens_entrada_cache_hit": 0,
+      "raciocinios": [],
+      "veredito_auditor": null,
+      "violacoes": [
+        "rn02_valor_sem_lastro"
+      ],
+      "convertida_em_recusa": true,
+      "status_gabarito": "parcial_pendente_release",
+      "apuracao": "pendente_conferencia_humana",
+      "acerto": null,
+      "motivo_apuracao": "gabarito parcial_pendente_release: acerto não apurado até a dupla leitura humana do release. Critérios que já divergem: ['comportamento', 'motivo', 'base', 'rn01_rn02']",
+      "verificacoes": [
+        {
+          "criterio": "cobertura",
+          "aplicavel": true,
+          "passou": true,
+          "esperado": "ambas",
+          "observado": "ambas",
+          "detalhe": ""
+        },
+        {
+          "criterio": "comportamento",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "resposta_completa",
+          "observado": "recusa",
+          "detalhe": ""
+        },
+        {
+          "criterio": "motivo",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "n/a",
+          "observado": "recusa_convertida_por_violacao",
+          "detalhe": ""
+        },
+        {
+          "criterio": "base",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "contabil_consolidado|contabil_controladores|gerencial",
+          "observado": "nenhuma",
+          "detalhe": "bases não apresentadas: ['contabil_consolidado', 'contabil_controladores', 'gerencial']"
+        },
+        {
+          "criterio": "ausencia_nomeada",
+          "aplicavel": false,
+          "passou": true,
+          "esperado": "recusa nomeia painel e corpus",
+          "observado": "não nomeia",
+          "detalhe": ""
+        },
+        {
+          "criterio": "rn01_rn02",
+          "aplicavel": true,
+          "passou": false,
+          "esperado": "sem violação de RN01/RN02",
+          "observado": "rn02_valor_sem_lastro",
+          "detalhe": ""
+        }
+      ],
+      "erro_execucao": null
+    }
+  ]
+}

@@ -1,0 +1,3641 @@
+{
+ "documento": "btg_release_3T2025",
+ "empresa": "BTG",
+ "hash_pdf": "7841a97d7837f97ff80659716d6ac0619d4c5633de1496316bd1f8b0c339c440",
+ "modelo": "mistral-ocr-4-0",
+ "ocr": {
+  "document_annotation": null,
+  "model": "mistral-ocr-4-0",
+  "pages": [
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 550,
+      "bottom_right_y": 343,
+      "confidence_scores": null,
+      "content": "![img-0.jpeg](img-0.jpeg)",
+      "image_id": "img-0.jpeg",
+      "top_left_x": 241,
+      "top_left_y": 222,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 623,
+      "bottom_right_y": 557,
+      "confidence_scores": null,
+      "content": "# Divulgação de Resultados",
+      "top_left_x": 165,
+      "top_left_y": 418,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 636,
+      "confidence_scores": null,
+      "content": "Terceiro trimestre de 2025",
+      "top_left_x": 116,
+      "top_left_y": 592,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 641,
+      "bottom_right_y": 730,
+      "confidence_scores": null,
+      "content": "11 de novembro de 2025",
+      "top_left_x": 148,
+      "top_left_y": 688,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 722,
+      "bottom_right_y": 903,
+      "confidence_scores": null,
+      "content": "![img-1.jpeg](img-1.jpeg)",
+      "image_id": "img-1.jpeg",
+      "top_left_x": 627,
+      "top_left_y": 808,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 738,
+      "bottom_right_y": 933,
+      "confidence_scores": null,
+      "content": "btgpactual.com",
+      "top_left_x": 609,
+      "top_left_y": 912,
+      "type": "text"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 550,
+      "bottom_right_y": 343,
+      "id": "img-0.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 241,
+      "top_left_y": 222
+     },
+     {
+      "bottom_right_x": 722,
+      "bottom_right_y": 903,
+      "id": "img-1.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 627,
+      "top_left_y": 808
+     }
+    ],
+    "index": 0,
+    "markdown": "![img-0.jpeg](img-0.jpeg)\n\n# Divulgação de Resultados\n\nTerceiro trimestre de 2025\n\n11 de novembro de 2025\n\n![img-1.jpeg](img-1.jpeg)\n\nbtgpactual.com",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 318,
+      "bottom_right_y": 151,
+      "confidence_scores": null,
+      "content": "Net New Money\n(R$)",
+      "top_left_x": 129,
+      "top_left_y": 95,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 271,
+      "bottom_right_y": 221,
+      "confidence_scores": null,
+      "content": "83bi",
+      "top_left_x": 129,
+      "top_left_y": 168,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 359,
+      "bottom_right_y": 289,
+      "confidence_scores": null,
+      "content": "3T25\n296bi no LTM 3T25",
+      "top_left_x": 129,
+      "top_left_y": 235,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 387,
+      "bottom_right_y": 378,
+      "confidence_scores": null,
+      "content": "Lucro líquido ajustado\n(R$)",
+      "top_left_x": 129,
+      "top_left_y": 322,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 291,
+      "bottom_right_y": 453,
+      "confidence_scores": null,
+      "content": "4,5bi",
+      "top_left_x": 129,
+      "top_left_y": 394,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 382,
+      "bottom_right_y": 516,
+      "confidence_scores": null,
+      "content": "3T25\n42% crescimento a.a.",
+      "top_left_x": 129,
+      "top_left_y": 461,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 387,
+      "bottom_right_y": 607,
+      "confidence_scores": null,
+      "content": "Portfólio de Corporate\n& PME (R$)",
+      "top_left_x": 129,
+      "top_left_y": 548,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 310,
+      "bottom_right_y": 677,
+      "confidence_scores": null,
+      "content": "247bi",
+      "top_left_x": 129,
+      "top_left_y": 624,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 742,
+      "confidence_scores": null,
+      "content": "17% crescimento a.a.\nPME: 29bi",
+      "top_left_x": 129,
+      "top_left_y": 691,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 337,
+      "bottom_right_y": 802,
+      "confidence_scores": null,
+      "content": "Índice de Basileia",
+      "top_left_x": 129,
+      "top_left_y": 772,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 330,
+      "bottom_right_y": 880,
+      "confidence_scores": null,
+      "content": "15,5%",
+      "top_left_x": 129,
+      "top_left_y": 820,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 193,
+      "bottom_right_y": 914,
+      "confidence_scores": null,
+      "content": "3T25",
+      "top_left_x": 129,
+      "top_left_y": 889,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 544,
+      "bottom_right_y": 151,
+      "confidence_scores": null,
+      "content": "AuC total\n(R$)",
+      "top_left_x": 432,
+      "top_left_y": 95,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 607,
+      "bottom_right_y": 227,
+      "confidence_scores": null,
+      "content": "2,3tri",
+      "top_left_x": 432,
+      "top_left_y": 168,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 685,
+      "bottom_right_y": 289,
+      "confidence_scores": null,
+      "content": "3T25\n25% crescimento a.a.",
+      "top_left_x": 432,
+      "top_left_y": 235,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 581,
+      "bottom_right_y": 378,
+      "confidence_scores": null,
+      "content": "Receita total\n(R$)",
+      "top_left_x": 432,
+      "top_left_y": 322,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 595,
+      "bottom_right_y": 453,
+      "confidence_scores": null,
+      "content": "8,8bi",
+      "top_left_x": 432,
+      "top_left_y": 394,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 685,
+      "bottom_right_y": 516,
+      "confidence_scores": null,
+      "content": "3T25\n37% crescimento a.a.",
+      "top_left_x": 432,
+      "top_left_y": 461,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 663,
+      "bottom_right_y": 604,
+      "confidence_scores": null,
+      "content": "Unsecured Funding\n(R$)",
+      "top_left_x": 432,
+      "top_left_y": 548,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 613,
+      "bottom_right_y": 675,
+      "confidence_scores": null,
+      "content": "308bi",
+      "top_left_x": 432,
+      "top_left_y": 621,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 660,
+      "bottom_right_y": 714,
+      "confidence_scores": null,
+      "content": "20% crescimento a.a.",
+      "top_left_x": 432,
+      "top_left_y": 689,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 615,
+      "bottom_right_y": 804,
+      "confidence_scores": null,
+      "content": "ROAE ajustado",
+      "top_left_x": 432,
+      "top_left_y": 772,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 633,
+      "bottom_right_y": 880,
+      "confidence_scores": null,
+      "content": "28,1%",
+      "top_left_x": 432,
+      "top_left_y": 820,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 496,
+      "bottom_right_y": 914,
+      "confidence_scores": null,
+      "content": "3T25",
+      "top_left_x": 432,
+      "top_left_y": 889,
+      "type": "text"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 1,
+    "markdown": "Net New Money\n(R$)\n\n83bi\n\n3T25\n296bi no LTM 3T25\n\nLucro líquido ajustado\n(R$)\n\n4,5bi\n\n3T25\n42% crescimento a.a.\n\nPortfólio de Corporate\n& PME (R$)\n\n247bi\n\n17% crescimento a.a.\nPME: 29bi\n\nÍndice de Basileia\n\n15,5%\n\n3T25\n\nAuC total\n(R$)\n\n2,3tri\n\n3T25\n25% crescimento a.a.\n\nReceita total\n(R$)\n\n8,8bi\n\n3T25\n37% crescimento a.a.\n\nUnsecured Funding\n(R$)\n\n308bi\n\n20% crescimento a.a.\n\nROAE ajustado\n\n28,1%\n\n3T25",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 526,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 197,
+      "bottom_right_y": 216,
+      "confidence_scores": null,
+      "content": "## Destaques",
+      "top_left_x": 87,
+      "top_left_y": 193,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 272,
+      "confidence_scores": null,
+      "content": "O Banco BTG Pactual S.A anunciou receitas totais de R$8.818,4 milhões e um lucro líquido ajustado de R$4.538,6 milhões no trimestre encerrado em 30 de setembro de 2025.",
+      "top_left_x": 87,
+      "top_left_y": 238,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 325,
+      "confidence_scores": null,
+      "content": "O lucro líquido ajustado por *unit* e o retorno ajustado anualizado sobre o patrimônio líquido médio do BTG Pactual (“ROAE anualizado”) no trimestre foram de R$1,19 e 28,1%, respectivamente.",
+      "top_left_x": 87,
+      "top_left_y": 289,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 391,
+      "confidence_scores": null,
+      "content": "Em 30 de setembro de 2025, os ativos totais do BTG Pactual somaram R$685,0 bilhões, um aumento de 4,4% em comparação com o trimestre findo em 30 de junho de 2025. Nosso índice de Basileia encerrou o trimestre em 15,5%.",
+      "top_left_x": 87,
+      "top_left_y": 340,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 451,
+      "confidence_scores": null,
+      "content": "## Resumo financeiro e principais indicadores de desempenho do BTG Pactual",
+      "top_left_x": 87,
+      "top_left_y": 430,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 692,
+      "bottom_right_y": 711,
+      "confidence_scores": null,
+      "content": "|  Destaques e Principais Indicadores (não auditado) (em R$ milhões a menos que indicado) | Trimestre |   |   | Acumulado no ano  |   |\n| --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 9M 2024 | 9M 2025  |\n|  Receita total | 6.445 | 8.294 | 8.818 | 18.327 | 23.950  |\n|  Lucro líquido | 3.068 | 4.009 | 4.337 | 8.665 | 11.557  |\n|  **Lucro líquido Ajustado** | **3.207** | **4.182** | **4.539** | **9.046** | **12.088**  |\n|  Lucro líquido por unit ajustado (R$) | 0,84 | 1,10 | 1,19 | 2,37 | 3,17  |\n|  **ROAE anualizado** | **23,5%** | **27,1%** | **28,1%** | **22,8%** | **26,4%**  |\n|  Índice de eficiência ajustado | 36,4% | 35,6% | 34,1% | 37,1% | 35,4%  |\n|  Patrimônio líquido | 56.270 | 63.703 | 65.605 |  |   |\n|  Número Total de Ações (# em '000) | 11.433.761 | 11.423.711 | 11.423.711 |  |   |\n|  **Quantidade de Units (# em '000)** | **3.811.254** | **3.807.904** | **3.807.904** |  |   |\n|  **Valor Patrimonial por Unit (R$)** | **14,8** | **16,7** | **17,2** |  |   |\n|  Índice de Basileia | 16,4% | 16,2% | 15,5% |  |   |\n|  Ativos totais (em R$ Bilhões) | 611,4 | 656,1 | 685,0 |  |   |\n|  AuM e WuM Total (em R$ Bilhões) | 1.827,3 | 2.146,5 | 2.287,6 |  |   |",
+      "table_id": null,
+      "top_left_x": 87,
+      "top_left_y": 469,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 397,
+      "bottom_right_y": 728,
+      "confidence_scores": null,
+      "content": "Observação: Número de ações não inclui as ações em Tesouraria",
+      "top_left_x": 87,
+      "top_left_y": 713,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "2",
+      "top_left_x": 680,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 2,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n## Destaques\n\nO Banco BTG Pactual S.A anunciou receitas totais de R$8.818,4 milhões e um lucro líquido ajustado de R$4.538,6 milhões no trimestre encerrado em 30 de setembro de 2025.\n\nO lucro líquido ajustado por *unit* e o retorno ajustado anualizado sobre o patrimônio líquido médio do BTG Pactual (“ROAE anualizado”) no trimestre foram de R$1,19 e 28,1%, respectivamente.\n\nEm 30 de setembro de 2025, os ativos totais do BTG Pactual somaram R$685,0 bilhões, um aumento de 4,4% em comparação com o trimestre findo em 30 de junho de 2025. Nosso índice de Basileia encerrou o trimestre em 15,5%.\n\n## Resumo financeiro e principais indicadores de desempenho do BTG Pactual\n\n|  Destaques e Principais Indicadores (não auditado) (em R$ milhões a menos que indicado) | Trimestre |   |   | Acumulado no ano  |   |\n| --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 9M 2024 | 9M 2025  |\n|  Receita total | 6.445 | 8.294 | 8.818 | 18.327 | 23.950  |\n|  Lucro líquido | 3.068 | 4.009 | 4.337 | 8.665 | 11.557  |\n|  **Lucro líquido Ajustado** | **3.207** | **4.182** | **4.539** | **9.046** | **12.088**  |\n|  Lucro líquido por unit ajustado (R$) | 0,84 | 1,10 | 1,19 | 2,37 | 3,17  |\n|  **ROAE anualizado** | **23,5%** | **27,1%** | **28,1%** | **22,8%** | **26,4%**  |\n|  Índice de eficiência ajustado | 36,4% | 35,6% | 34,1% | 37,1% | 35,4%  |\n|  Patrimônio líquido | 56.270 | 63.703 | 65.605 |  |   |\n|  Número Total de Ações (# em '000) | 11.433.761 | 11.423.711 | 11.423.711 |  |   |\n|  **Quantidade de Units (# em '000)** | **3.811.254** | **3.807.904** | **3.807.904** |  |   |\n|  **Valor Patrimonial por Unit (R$)** | **14,8** | **16,7** | **17,2** |  |   |\n|  Índice de Basileia | 16,4% | 16,2% | 15,5% |  |   |\n|  Ativos totais (em R$ Bilhões) | 611,4 | 656,1 | 685,0 |  |   |\n|  AuM e WuM Total (em R$ Bilhões) | 1.827,3 | 2.146,5 | 2.287,6 |  |   |\n\nObservação: Número de ações não inclui as ações em Tesouraria\n\n2",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados^{}[] ^{}[] Terceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 41,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 382,
+      "bottom_right_y": 216,
+      "confidence_scores": null,
+      "content": "## Desempenho do BTG Pactual",
+      "top_left_x": 88,
+      "top_left_y": 191,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 289,
+      "confidence_scores": null,
+      "content": "Encerramos mais um trimestre com resultados recordes, superando o forte desempenho anterior e registrando retorno de 28,1%. Essa performance reafirma a solidez do nosso modelo de negócios, a eficiência da execução e a resiliência das nossas plataformas.",
+      "top_left_x": 88,
+      "top_left_y": 238,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 341,
+      "confidence_scores": null,
+      "content": "Nosso crescimento contínuo reflete a dedicação dos times, a confiança de nossos clientes e parceiros e a diversificação dos nossos negócios — elementos fundamentais para a consistência dos resultados do BTG Pactual ao longo dos ciclos econômicos.",
+      "top_left_x": 88,
+      "top_left_y": 289,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 443,
+      "confidence_scores": null,
+      "content": "A receita total atingiu R$8,8 bilhões no trimestre, com forte desempenho em todas as linhas de negócios. O lucro líquido alcançou um novo recorde de R$4,5 bilhões, refletindo o crescimento robusto da receita e nossa gestão disciplinada de custos, resultando no menor índice de eficiência da história do Banco, de 34,1%. Como mencionado, o ROAE avançou para 28,1%, demonstrando a força do nosso modelo operacional e eficiência na alocação de capital.",
+      "top_left_x": 88,
+      "top_left_y": 358,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 495,
+      "confidence_scores": null,
+      "content": "No acumulado do ano, também registramos os melhores resultados da história, com receita e lucro líquido de R$23,9 bilhões e R$12,1 bilhões, respectivamente, resultando em um ROAE de 26,4% no período.",
+      "top_left_x": 88,
+      "top_left_y": 461,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 581,
+      "confidence_scores": null,
+      "content": "Nossas franquias de clientes continuam em forte expansão, com as áreas de Wealth Management, Asset Management e Corporate Lending registrando receitas recordes. Além disso, Sales & Trading também alcançou um novo recorde após um segundo trimestre já bastante forte, evidenciando a posição de destaque do BTG no mercado e o crescimento de novas iniciativas de negócios.",
+      "top_left_x": 88,
+      "top_left_y": 513,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 666,
+      "confidence_scores": null,
+      "content": "A área de Investment Banking reportou receita de R$643,0 milhões no trimestre, sustentada por volume recorde de operações em DCM e pela forte atuação de M&A. Embora o resultado tenha sido 17,8% inferior ao reportado no trimestre anterior, a receita cresceu 69,2% na comparação anual, impulsionada pelo aumento no volume de operações de DCM.",
+      "top_left_x": 88,
+      "top_left_y": 598,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 734,
+      "confidence_scores": null,
+      "content": "Corporate Lending & Business Banking reportou mais um desempenho recorde, com receita de R$2.153,7 milhões, alta de 2,2% na comparação trimestral e de 25,8% na comparação anual. O crescimento foi impulsionado pela expansão contínua da carteira, retornos estáveis ajustados ao risco e diversificação contínua dos negócios.",
+      "top_left_x": 88,
+      "top_left_y": 666,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 803,
+      "confidence_scores": null,
+      "content": "Sales & Trading também registrou receita recorde de R$1.940,6 milhões, aumento de 1,4% em relação ao trimestre anterior, impulsionada pelo aumento da atividade de clientes, avanço de novas linhas de negócio e alocação eficiente de capital. O VaR médio subiu para 0,30%, refletindo a capacidade do Banco de aproveitar oportunidades de mercado, dentro do apetite de risco e abaixo das médias históricas.",
+      "top_left_x": 88,
+      "top_left_y": 734,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 854,
+      "confidence_scores": null,
+      "content": "Asset Management alcançou receita recorde de R$747,5 milhões, alta de 19,8% em relação ao trimestre anterior. As áreas de fundos geridos e administração fiduciária seguiram ganhando *market share*, com captações líquidas de R$33,5 bilhões no trimestre, elevando o AuM/AuA para R$1,2 trilhão.",
+      "top_left_x": 88,
+      "top_left_y": 803,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 905,
+      "confidence_scores": null,
+      "content": "Wealth Management & Personal Banking manteve sua trajetória acelerada de crescimento, com receita recorde e forte captação líquida orgânica, também impulsionada pela consolidação da JGP WM. A receita atingiu R$1.365,8 milhão, alta de 10,2% em relação ao trimestre anterior e de 35,7% na comparação anual.",
+      "top_left_x": 88,
+      "top_left_y": 854,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "3",
+      "top_left_x": 684,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 3,
+    "markdown": "btg pactual\n\nDivulgação de Resultados^{}[] Terceiro trimestre de 2025\n\n## Desempenho do BTG Pactual\n\nEncerramos mais um trimestre com resultados recordes, superando o forte desempenho anterior e registrando retorno de 28,1%. Essa performance reafirma a solidez do nosso modelo de negócios, a eficiência da execução e a resiliência das nossas plataformas.\n\nNosso crescimento contínuo reflete a dedicação dos times, a confiança de nossos clientes e parceiros e a diversificação dos nossos negócios — elementos fundamentais para a consistência dos resultados do BTG Pactual ao longo dos ciclos econômicos.\n\nA receita total atingiu R$8,8 bilhões no trimestre, com forte desempenho em todas as linhas de negócios. O lucro líquido alcançou um novo recorde de R$4,5 bilhões, refletindo o crescimento robusto da receita e nossa gestão disciplinada de custos, resultando no menor índice de eficiência da história do Banco, de 34,1%. Como mencionado, o ROAE avançou para 28,1%, demonstrando a força do nosso modelo operacional e eficiência na alocação de capital.\n\nNo acumulado do ano, também registramos os melhores resultados da história, com receita e lucro líquido de R$23,9 bilhões e R$12,1 bilhões, respectivamente, resultando em um ROAE de 26,4% no período.\n\nNossas franquias de clientes continuam em forte expansão, com as áreas de Wealth Management, Asset Management e Corporate Lending registrando receitas recordes. Além disso, Sales & Trading também alcançou um novo recorde após um segundo trimestre já bastante forte, evidenciando a posição de destaque do BTG no mercado e o crescimento de novas iniciativas de negócios.\n\nA área de Investment Banking reportou receita de R$643,0 milhões no trimestre, sustentada por volume recorde de operações em DCM e pela forte atuação de M&A. Embora o resultado tenha sido 17,8% inferior ao reportado no trimestre anterior, a receita cresceu 69,2% na comparação anual, impulsionada pelo aumento no volume de operações de DCM.\n\nCorporate Lending & Business Banking reportou mais um desempenho recorde, com receita de R$2.153,7 milhões, alta de 2,2% na comparação trimestral e de 25,8% na comparação anual. O crescimento foi impulsionado pela expansão contínua da carteira, retornos estáveis ajustados ao risco e diversificação contínua dos negócios.\n\nSales & Trading também registrou receita recorde de R$1.940,6 milhões, aumento de 1,4% em relação ao trimestre anterior, impulsionada pelo aumento da atividade de clientes, avanço de novas linhas de negócio e alocação eficiente de capital. O VaR médio subiu para 0,30%, refletindo a capacidade do Banco de aproveitar oportunidades de mercado, dentro do apetite de risco e abaixo das médias históricas.\n\nAsset Management alcançou receita recorde de R$747,5 milhões, alta de 19,8% em relação ao trimestre anterior. As áreas de fundos geridos e administração fiduciária seguiram ganhando *market share*, com captações líquidas de R$33,5 bilhões no trimestre, elevando o AuM/AuA para R$1,2 trilhão.\n\nWealth Management & Personal Banking manteve sua trajetória acelerada de crescimento, com receita recorde e forte captação líquida orgânica, também impulsionada pela consolidação da JGP WM. A receita atingiu R$1.365,8 milhão, alta de 10,2% em relação ao trimestre anterior e de 35,7% na comparação anual.\n\n3",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados^{}[] ^{}[] Terceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 259,
+      "confidence_scores": null,
+      "content": "Por fim, Participations apresentou receita sólida de R$324,8 milhões, crescimento de 16,6% em relação ao trimestre anterior e de 49,4% frente ao 3T24, impulsionada pela melhora nas contribuições das participações no Banco PAN e na Too Seguros. Assim como no trimestre anterior, não houve aquisições de portfólios no período.",
+      "top_left_x": 87,
+      "top_left_y": 190,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 360,
+      "confidence_scores": null,
+      "content": "As despesas operacionais totalizaram R$3.368,7 milhões no 3T25, aumento de 3,2% em relação ao 2T25. Esse crescimento decorre principalmente da maior amortização de ágio relacionada às aquisições recentes e de maiores despesas tributárias, em linha com o aumento da receita. Como mencionado acima, o índice de eficiência atingiu o menor patamar histórico de 34,1%, enquanto o índice de remuneração permaneceu estável em 19,9%.",
+      "top_left_x": 87,
+      "top_left_y": 276,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 464,
+      "confidence_scores": null,
+      "content": "O lucro líquido contábil atingiu o recorde de R$4.337,4 milhões, crescimento de 8,2% em relação ao trimestre anterior e de 41,4% na comparação anual. O patrimônio líquido totalizou R$65,6 bilhões, alta de 3,0% no trimestre, já considerando o pagamento de R$2,3 bilhões em juros sobre capital próprio (JCP) no período. O índice de cobertura de liquidez (LCR) foi de 168,5%, enquanto o índice de Basileia encerrou o trimestre em 15,5%.",
+      "top_left_x": 87,
+      "top_left_y": 378,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 600,
+      "confidence_scores": null,
+      "content": "Reforçando nosso compromisso com a sustentabilidade, neste trimestre o BTG Pactual atuou como coordenador na emissão do *blue bond* de US$750 milhões da Aegea Saneamento — a maior operação corporativa desse tipo no mundo. A transação reforça nossa liderança em finanças sustentáveis e reafirma nosso compromisso com o avanço da infraestrutura de água e saneamento no Brasil. Ao final do terceiro trimestre de 2025, o BTG Pactual havia contribuído para a estruturação e distribuição de mais de US$23,1 bilhões em títulos rotulados, consolidando ainda mais nosso papel como um dos principais agentes no desenvolvimento dos mercados de capitais sustentáveis.",
+      "top_left_x": 87,
+      "top_left_y": 481,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 702,
+      "confidence_scores": null,
+      "content": "No mesmo período, a International Finance Corporation (IFC) e o BTG Pactual anunciaram uma parceria estratégica para mobilizar até US$1 bilhão em investimentos até 2028, com foco em sustentabilidade, bioeconomia da Amazônia, infraestrutura e co-investimentos de impacto na América Latina. Essa aliança reforça nosso compromisso com o desenvolvimento sustentável e com soluções escaláveis em toda a região.",
+      "top_left_x": 87,
+      "top_left_y": 617,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 805,
+      "confidence_scores": null,
+      "content": "Além disso, o BTG Pactual foi uma das empresas selecionadas no leilão Eco Invest e mobilizará R$4,9 bilhões para iniciativas de agricultura regenerativa. O Banco também foi escolhido pelo Banco de Desenvolvimento do Espírito Santo para gerir o Fundo de Descarbonização do estado, com aporte inicial de R$500 milhões. Por fim, o BTG e o Banco Asiático de Investimento em Infraestrutura (AIIB) assinaram um acordo de US$160 milhões para expandir projetos de infraestrutura climática no Brasil.",
+      "top_left_x": 87,
+      "top_left_y": 720,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "4",
+      "top_left_x": 682,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 4,
+    "markdown": "btg pactual\n\nDivulgação de Resultados^{}[] Terceiro trimestre de 2025\n\nPor fim, Participations apresentou receita sólida de R$324,8 milhões, crescimento de 16,6% em relação ao trimestre anterior e de 49,4% frente ao 3T24, impulsionada pela melhora nas contribuições das participações no Banco PAN e na Too Seguros. Assim como no trimestre anterior, não houve aquisições de portfólios no período.\n\nAs despesas operacionais totalizaram R$3.368,7 milhões no 3T25, aumento de 3,2% em relação ao 2T25. Esse crescimento decorre principalmente da maior amortização de ágio relacionada às aquisições recentes e de maiores despesas tributárias, em linha com o aumento da receita. Como mencionado acima, o índice de eficiência atingiu o menor patamar histórico de 34,1%, enquanto o índice de remuneração permaneceu estável em 19,9%.\n\nO lucro líquido contábil atingiu o recorde de R$4.337,4 milhões, crescimento de 8,2% em relação ao trimestre anterior e de 41,4% na comparação anual. O patrimônio líquido totalizou R$65,6 bilhões, alta de 3,0% no trimestre, já considerando o pagamento de R$2,3 bilhões em juros sobre capital próprio (JCP) no período. O índice de cobertura de liquidez (LCR) foi de 168,5%, enquanto o índice de Basileia encerrou o trimestre em 15,5%.\n\nReforçando nosso compromisso com a sustentabilidade, neste trimestre o BTG Pactual atuou como coordenador na emissão do *blue bond* de US$750 milhões da Aegea Saneamento — a maior operação corporativa desse tipo no mundo. A transação reforça nossa liderança em finanças sustentáveis e reafirma nosso compromisso com o avanço da infraestrutura de água e saneamento no Brasil. Ao final do terceiro trimestre de 2025, o BTG Pactual havia contribuído para a estruturação e distribuição de mais de US$23,1 bilhões em títulos rotulados, consolidando ainda mais nosso papel como um dos principais agentes no desenvolvimento dos mercados de capitais sustentáveis.\n\nNo mesmo período, a International Finance Corporation (IFC) e o BTG Pactual anunciaram uma parceria estratégica para mobilizar até US$1 bilhão em investimentos até 2028, com foco em sustentabilidade, bioeconomia da Amazônia, infraestrutura e co-investimentos de impacto na América Latina. Essa aliança reforça nosso compromisso com o desenvolvimento sustentável e com soluções escaláveis em toda a região.\n\nAlém disso, o BTG Pactual foi uma das empresas selecionadas no leilão Eco Invest e mobilizará R$4,9 bilhões para iniciativas de agricultura regenerativa. O Banco também foi escolhido pelo Banco de Desenvolvimento do Espírito Santo para gerir o Fundo de Descarbonização do estado, com aporte inicial de R$500 milhões. Por fim, o BTG e o Banco Asiático de Investimento em Infraestrutura (AIIB) assinaram um acordo de US$160 milhões para expandir projetos de infraestrutura climática no Brasil.\n\n4",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 526,
+      "top_left_y": 41,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 442,
+      "bottom_right_y": 210,
+      "confidence_scores": null,
+      "content": "# Lucro líquido ajustado e ROAE (não auditados)",
+      "top_left_x": 87,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 692,
+      "bottom_right_y": 640,
+      "confidence_scores": null,
+      "content": "|  Lucro Líquido e ROAE Ajustado (não auditado) | 3T 2025 Contábil | Itens Não Recorrentes & Ágio | 3T 2025 Ajustado | 9M 2025 Ajustado  |\n| --- | --- | --- | --- | --- |\n|  Investment Banking | 643,0 |  | 643,0 | 1.805,5  |\n|  Corporate Lending & Business Banking | 2.153,7 |  | 2.153,7 | 6.192,7  |\n|  Sales and Trading | 1.940,6 |  | 1.940,6 | 5.165,3  |\n|  Asset Management | 747,5 |  | 747,5 | 2.106,8  |\n|  Wealth Management & Personal Banking | 1.365,8 |  | 1.365,8 | 3.652,9  |\n|  Participations | 324,8 |  | 324,8 | 893,2  |\n|  Interest & Others | 1.643,1 |  | 1.643,1 | 4.133,3  |\n|  **Receita Total** | **8.818,4** | **-** | **8.818,4** | **23.949,7**  |\n|  Bônus | (966,4) |  | (966,4) | (2.621,9)  |\n|  Salários e benefícios | (792,3) |  | (792,3) | (2.307,6)  |\n|  Administrativas e outras | (809,4) |  | (809,4) | (2.370,7)  |\n|  Amortização de ágio | (365,8) | 365,8 | - | -  |\n|  Despesas tributárias, exceto IR | (434,7) |  | (434,7) | (1.181,8)  |\n|  **Despesas operacionais totais** | **(3.368,7)** | **365,8** | **(3.002,9)** | **(8.481,9)**  |\n|  **Lucro antes dos impostos** | **5.449,7** | **365,8** | **5.815,6** | **15.467,8**  |\n|  IR e contribuição social | (1.112,4) | (164,6) | (1.277,0) | (3.380,2)  |\n|  **Lucro líquido** | **4.337,4** | **201,2** | **4.538,6** | **12.087,6**  |\n|  **ROAE Anualizado^{(1)}** | **26,8%** |  | **28,1%** | **26,4%**  |",
+      "table_id": null,
+      "top_left_x": 87,
+      "top_left_y": 230,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 651,
+      "bottom_right_y": 670,
+      "confidence_scores": null,
+      "content": "Observação: Os resultados, excluindo itens não recorrentes e ágio, oferecem informações mais significativas referentes à lucratividade subjacente dos nossos negócios.",
+      "top_left_x": 87,
+      "top_left_y": 643,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 692,
+      "bottom_right_y": 693,
+      "confidence_scores": null,
+      "content": "Note: (1) 6M ROAE Ajustado considera o Patrimônio Líquido proforma de dezembro de 2024, refletindo os impactos da Resolução 4.966 do Banco Central.",
+      "top_left_x": 87,
+      "top_left_y": 668,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 312,
+      "bottom_right_y": 727,
+      "confidence_scores": null,
+      "content": "# Itens Não Recorrentes & Ágio",
+      "top_left_x": 87,
+      "top_left_y": 707,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 765,
+      "confidence_scores": null,
+      "content": "Ágio: atribuível principalmente a algumas das nossas aquisições mais recentes, como a Empiricus, Necton, Banco Pan, Órama, Sertrading, Julius Baer Brasil e Justa.",
+      "top_left_x": 87,
+      "top_left_y": 732,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 525,
+      "bottom_right_y": 794,
+      "confidence_scores": null,
+      "content": "IR e contribuição social: impacto de imposto sobre a amortização de ágio",
+      "top_left_x": 87,
+      "top_left_y": 776,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "5",
+      "top_left_x": 681,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 5,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Lucro líquido ajustado e ROAE (não auditados)\n\n|  Lucro Líquido e ROAE Ajustado (não auditado) | 3T 2025 Contábil | Itens Não Recorrentes & Ágio | 3T 2025 Ajustado | 9M 2025 Ajustado  |\n| --- | --- | --- | --- | --- |\n|  Investment Banking | 643,0 |  | 643,0 | 1.805,5  |\n|  Corporate Lending & Business Banking | 2.153,7 |  | 2.153,7 | 6.192,7  |\n|  Sales and Trading | 1.940,6 |  | 1.940,6 | 5.165,3  |\n|  Asset Management | 747,5 |  | 747,5 | 2.106,8  |\n|  Wealth Management & Personal Banking | 1.365,8 |  | 1.365,8 | 3.652,9  |\n|  Participations | 324,8 |  | 324,8 | 893,2  |\n|  Interest & Others | 1.643,1 |  | 1.643,1 | 4.133,3  |\n|  **Receita Total** | **8.818,4** | **-** | **8.818,4** | **23.949,7**  |\n|  Bônus | (966,4) |  | (966,4) | (2.621,9)  |\n|  Salários e benefícios | (792,3) |  | (792,3) | (2.307,6)  |\n|  Administrativas e outras | (809,4) |  | (809,4) | (2.370,7)  |\n|  Amortização de ágio | (365,8) | 365,8 | - | -  |\n|  Despesas tributárias, exceto IR | (434,7) |  | (434,7) | (1.181,8)  |\n|  **Despesas operacionais totais** | **(3.368,7)** | **365,8** | **(3.002,9)** | **(8.481,9)**  |\n|  **Lucro antes dos impostos** | **5.449,7** | **365,8** | **5.815,6** | **15.467,8**  |\n|  IR e contribuição social | (1.112,4) | (164,6) | (1.277,0) | (3.380,2)  |\n|  **Lucro líquido** | **4.337,4** | **201,2** | **4.538,6** | **12.087,6**  |\n|  **ROAE Anualizado^{(1)}** | **26,8%** |  | **28,1%** | **26,4%**  |\n\nObservação: Os resultados, excluindo itens não recorrentes e ágio, oferecem informações mais significativas referentes à lucratividade subjacente dos nossos negócios.\n\nNote: (1) 6M ROAE Ajustado considera o Patrimônio Líquido proforma de dezembro de 2024, refletindo os impactos da Resolução 4.966 do Banco Central.\n\n# Itens Não Recorrentes & Ágio\n\nÁgio: atribuível principalmente a algumas das nossas aquisições mais recentes, como a Empiricus, Necton, Banco Pan, Órama, Sertrading, Julius Baer Brasil e Justa.\n\nIR e contribuição social: impacto de imposto sobre a amortização de ágio\n\n5",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 526,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 246,
+      "bottom_right_y": 210,
+      "confidence_scores": null,
+      "content": "## Receita Consolidada",
+      "top_left_x": 87,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 307,
+      "confidence_scores": null,
+      "content": "Mesmo após um forte 2T, mantivemos a trajetória consistente de crescimento e alcançamos novo recorde de receitas, atingindo R$8.818,4 milhões — alta de 36,8% na comparação anual e 6,3% no trimestre. Asset Management e Wealth Management registraram receitas recordes e forte captação líquida, enquanto Corporate Lending também atingiu novo recorde histórico, suportado pela expansão contínua da carteira de crédito. O forte desempenho da nossa plataforma de clientes também impulsionou o resultado recorde de Sales & Trading, reforçando a escalabilidade e resiliência do nosso modelo de negócios diversificado.",
+      "top_left_x": 87,
+      "top_left_y": 216,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 692,
+      "bottom_right_y": 497,
+      "confidence_scores": null,
+      "content": "|  Receitas Ajustadas (não auditado) (em R$mm, a menos que indicado) | Trimestre |   |   | Variação % para 3T 2025 |   | Acumulado no ano |   | Variação % para 9M 2025  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 3T 2024 | 2T 2025 | 9M 2024 | 9M 2025 | 9M 2024  |\n|  Investment Banking | 380 | 782 | 643 | 69% | -18% | 1.592 | 1.805 | 13%  |\n|  Corporate Lending & Business Banking | 1.712 | 2.107 | 2.154 | 26% | 2% | 4.682 | 6.193 | 32%  |\n|  Sales & Trading | 1.672 | 1.913 | 1.941 | 16% | 1% | 4.431 | 5.165 | 17%  |\n|  Asset Management | 606 | 624 | 747 | 23% | 20% | 1.729 | 2.107 | 22%  |\n|  Wealth Management & Consumer Banking | 1.007 | 1.239 | 1.366 | 36% | 10% | 2.814 | 3.653 | 30%  |\n|  Participações | 217 | 279 | 325 | 49% | 17% | 618 | 893 | 45%  |\n|  Interest & Others | 851 | 1.351 | 1.643 | 93% | 22% | 2.462 | 4.133 | 68%  |\n|  **Receita total** | **6.445** | **8.294** | **8.818** | **37%** | **6%** | **18.327** | **23.950** | **31%**  |",
+      "table_id": null,
+      "top_left_x": 87,
+      "top_left_y": 322,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "6",
+      "top_left_x": 680,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 6,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n## Receita Consolidada\n\nMesmo após um forte 2T, mantivemos a trajetória consistente de crescimento e alcançamos novo recorde de receitas, atingindo R$8.818,4 milhões — alta de 36,8% na comparação anual e 6,3% no trimestre. Asset Management e Wealth Management registraram receitas recordes e forte captação líquida, enquanto Corporate Lending também atingiu novo recorde histórico, suportado pela expansão contínua da carteira de crédito. O forte desempenho da nossa plataforma de clientes também impulsionou o resultado recorde de Sales & Trading, reforçando a escalabilidade e resiliência do nosso modelo de negócios diversificado.\n\n|  Receitas Ajustadas (não auditado) (em R$mm, a menos que indicado) | Trimestre |   |   | Variação % para 3T 2025 |   | Acumulado no ano |   | Variação % para 9M 2025  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 3T 2024 | 2T 2025 | 9M 2024 | 9M 2025 | 9M 2024  |\n|  Investment Banking | 380 | 782 | 643 | 69% | -18% | 1.592 | 1.805 | 13%  |\n|  Corporate Lending & Business Banking | 1.712 | 2.107 | 2.154 | 26% | 2% | 4.682 | 6.193 | 32%  |\n|  Sales & Trading | 1.672 | 1.913 | 1.941 | 16% | 1% | 4.431 | 5.165 | 17%  |\n|  Asset Management | 606 | 624 | 747 | 23% | 20% | 1.729 | 2.107 | 22%  |\n|  Wealth Management & Consumer Banking | 1.007 | 1.239 | 1.366 | 36% | 10% | 2.814 | 3.653 | 30%  |\n|  Participações | 217 | 279 | 325 | 49% | 17% | 618 | 893 | 45%  |\n|  Interest & Others | 851 | 1.351 | 1.643 | 93% | 22% | 2.462 | 4.133 | 68%  |\n|  **Receita total** | **6.445** | **8.294** | **8.818** | **37%** | **6%** | **18.327** | **23.950** | **31%**  |\n\n6",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 88,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 241,
+      "bottom_right_y": 210,
+      "confidence_scores": null,
+      "content": "# Investment Banking",
+      "top_left_x": 88,
+      "top_left_y": 191,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 275,
+      "confidence_scores": null,
+      "content": "As tabelas abaixo incluem as informações relativas às operações anunciadas das quais o BTG Pactual participou:",
+      "top_left_x": 88,
+      "top_left_y": 244,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 694,
+      "bottom_right_y": 393,
+      "confidence_scores": null,
+      "content": "|  Transações Anunciadas do BTG Pactual (não auditado) | Número de transações^{(1),(3)} |   |   | Valor^{(2),(3)} (US$ mm)  |   |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 3T 2024 | 2T 2025 | 3T 2025  |\n|  Financial Advisory (M&A)^{(4)} | 17 | 15 | 7 | 6.029 | 7.695 | 1.201  |\n|  Equity Underwriting (ECM) | 1 | 6 | 11 | 119 | 608 | 735  |\n|  Debt Underwriting (DCM) | 41 | 40 | 52 | 2.732 | 3.569 | 4.479  |",
+      "table_id": null,
+      "top_left_x": 88,
+      "top_left_y": 299,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 694,
+      "bottom_right_y": 504,
+      "confidence_scores": null,
+      "content": "|  Transações Anunciadas do BTG Pactual (não auditado) | Número de transações^{(1),(3)} |   | Valor^{(2),(3)} (US$ mm)  |   |\n| --- | --- | --- | --- | --- |\n|   |  9M 2024 | 9M 2025 | 9M 2024 | 9M 2025  |\n|  Financial Advisory (M&A)^{(4)} | 55 | 30 | 9.525 | 10.755  |\n|  Equity Underwriting (ECM) | 12 | 19 | 797 | 1.518  |\n|  Debt Underwriting (DCM) | 111 | 121 | 7.609 | 10.036  |",
+      "table_id": null,
+      "top_left_x": 88,
+      "top_left_y": 410,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 551,
+      "bottom_right_y": 519,
+      "confidence_scores": null,
+      "content": "Fonte: Dealogic para ECM, F&A e DCM Internacional no Brasil, e Anbima para DCM Local no Brasil",
+      "top_left_x": 88,
+      "top_left_y": 505,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 543,
+      "confidence_scores": null,
+      "content": "Notas:",
+      "top_left_x": 88,
+      "top_left_y": 530,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 666,
+      "confidence_scores": null,
+      "content": "(1) Equity underwriting e debt underwriting representam operações encerradas. Financial advisory representa operações anunciadas de F&A, que normalmente geram taxas baseadas em seu subsequente encerramento.\n(2) As operações no mercado de dívida (DCM) local foram convertidas em dólar norte-americano com base na taxa de câmbio do fim do trimestre relatada pelo Banco Central do Brasil.\n(3) Os dados do mercado de trimestres anteriores podem variar em todos os produtos devido a possíveis inclusões e exclusões.\n(4) Dados do mercado de F&A dos trimestres passados podem variar porque: (i) inclusões de negócios podem ocorrer com atraso a qualquer momento; (ii) operações canceladas podem ser retiradas do ranking; (iii) os valores das operações podem ser revisados; e (iv) o enterprise value das operações podem variar em virtude da inclusão de dívida, que normalmente ocorre algumas semanas após a operação ser anunciada (principalmente para alvos não listados).",
+      "top_left_x": 95,
+      "top_left_y": 542,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 618,
+      "bottom_right_y": 716,
+      "confidence_scores": null,
+      "content": "# Destaques da participação de mercado de Investment Banking no 3T25",
+      "top_left_x": 88,
+      "top_left_y": 697,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 683,
+      "bottom_right_y": 738,
+      "confidence_scores": null,
+      "content": "ECM: 1º em número e volume de transações no Brasil, 2º em volume de transações na América Latina",
+      "top_left_x": 88,
+      "top_left_y": 722,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "7",
+      "top_left_x": 684,
+      "top_left_y": 939,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 7,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Investment Banking\n\nAs tabelas abaixo incluem as informações relativas às operações anunciadas das quais o BTG Pactual participou:\n\n|  Transações Anunciadas do BTG Pactual (não auditado) | Número de transações^{(1),(3)} |   |   | Valor^{(2),(3)} (US$ mm)  |   |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 3T 2024 | 2T 2025 | 3T 2025  |\n|  Financial Advisory (M&A)^{(4)} | 17 | 15 | 7 | 6.029 | 7.695 | 1.201  |\n|  Equity Underwriting (ECM) | 1 | 6 | 11 | 119 | 608 | 735  |\n|  Debt Underwriting (DCM) | 41 | 40 | 52 | 2.732 | 3.569 | 4.479  |\n\n|  Transações Anunciadas do BTG Pactual (não auditado) | Número de transações^{(1),(3)} |   | Valor^{(2),(3)} (US$ mm)  |   |\n| --- | --- | --- | --- | --- |\n|   |  9M 2024 | 9M 2025 | 9M 2024 | 9M 2025  |\n|  Financial Advisory (M&A)^{(4)} | 55 | 30 | 9.525 | 10.755  |\n|  Equity Underwriting (ECM) | 12 | 19 | 797 | 1.518  |\n|  Debt Underwriting (DCM) | 111 | 121 | 7.609 | 10.036  |\n\nFonte: Dealogic para ECM, F&A e DCM Internacional no Brasil, e Anbima para DCM Local no Brasil\n\nNotas:\n\n(1) Equity underwriting e debt underwriting representam operações encerradas. Financial advisory representa operações anunciadas de F&A, que normalmente geram taxas baseadas em seu subsequente encerramento.\n(2) As operações no mercado de dívida (DCM) local foram convertidas em dólar norte-americano com base na taxa de câmbio do fim do trimestre relatada pelo Banco Central do Brasil.\n(3) Os dados do mercado de trimestres anteriores podem variar em todos os produtos devido a possíveis inclusões e exclusões.\n(4) Dados do mercado de F&A dos trimestres passados podem variar porque: (i) inclusões de negócios podem ocorrer com atraso a qualquer momento; (ii) operações canceladas podem ser retiradas do ranking; (iii) os valores das operações podem ser revisados; e (iv) o enterprise value das operações podem variar em virtude da inclusão de dívida, que normalmente ocorre algumas semanas após a operação ser anunciada (principalmente para alvos não listados).\n\n# Destaques da participação de mercado de Investment Banking no 3T25\n\nECM: 1º em número e volume de transações no Brasil, 2º em volume de transações na América Latina\n\n7",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 498,
+      "bottom_right_y": 210,
+      "confidence_scores": null,
+      "content": "# Receitas (em milhões de R$)",
+      "top_left_x": 289,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 694,
+      "bottom_right_y": 450,
+      "confidence_scores": null,
+      "content": "![img-2.jpeg](img-2.jpeg)",
+      "image_id": "img-2.jpeg",
+      "top_left_x": 87,
+      "top_left_y": 209,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 530,
+      "confidence_scores": null,
+      "content": "# 3T25 vs. 2T25",
+      "top_left_x": 87,
+      "top_left_y": 512,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 613,
+      "confidence_scores": null,
+      "content": "As receitas de Investment Banking totalizaram R$643,0 milhões, 17,8% abaixo do desempenho recorde registrado no 2T25. Apesar da queda, reportamos um resultado sólido, reforçando a força da nossa franquia de mercado de capitais. DCM entregou receitas recordes, impulsionada pelo sólido momento do mercado de dívida, com 52 operações concluídas no período. M&A e ECM também contribuíram positivamente, enquanto mantivemos nossas posições de destaque nos rankings do setor.",
+      "top_left_x": 87,
+      "top_left_y": 537,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 659,
+      "confidence_scores": null,
+      "content": "# 3T25 vs. 3T24",
+      "top_left_x": 87,
+      "top_left_y": 642,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 698,
+      "confidence_scores": null,
+      "content": "Investment Banking cresceram 69,2% em comparação aos R$380 milhões registrados no 3T24, período marcado por um cenário de menor atividade no mercado local.",
+      "top_left_x": 87,
+      "top_left_y": 667,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "8",
+      "top_left_x": 683,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 694,
+      "bottom_right_y": 450,
+      "id": "img-2.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 87,
+      "top_left_y": 209
+     }
+    ],
+    "index": 8,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Receitas (em milhões de R$)\n\n![img-2.jpeg](img-2.jpeg)\n\n# 3T25 vs. 2T25\n\nAs receitas de Investment Banking totalizaram R$643,0 milhões, 17,8% abaixo do desempenho recorde registrado no 2T25. Apesar da queda, reportamos um resultado sólido, reforçando a força da nossa franquia de mercado de capitais. DCM entregou receitas recordes, impulsionada pelo sólido momento do mercado de dívida, com 52 operações concluídas no período. M&A e ECM também contribuíram positivamente, enquanto mantivemos nossas posições de destaque nos rankings do setor.\n\n# 3T25 vs. 3T24\n\nInvestment Banking cresceram 69,2% em comparação aos R$380 milhões registrados no 3T24, período marcado por um cenário de menor atividade no mercado local.\n\n8",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 386,
+      "bottom_right_y": 211,
+      "confidence_scores": null,
+      "content": "# Corporate Lending & Business Banking",
+      "top_left_x": 87,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 363,
+      "confidence_scores": null,
+      "content": "A carteira de crédito total alcançou R$246,9 bilhões, representando crescimento de 3,8% no trimestre e de 17,4% em doze meses. Seguimos ampliando nossa participação em diferentes segmentos e regiões, mantendo spreads saudáveis e níveis consistentemente baixos de inadimplência.\nA carteira de PMEs atingiu R$29,0 bilhões, com expansão de 1,1% no trimestre e de 13,0% em relação ao 3T24. Apesar do crescimento mais moderado no crédito para PMEs, seguimos avançando na evolução da nossa plataforma de Business Banking, ampliando o portfólio de produtos e serviços — incluindo o lançamento do BTG Pay, nossa solução integrada de meios de pagamento, que marca a entrada do BTG no mercado de adquirência, com maquininhas próprias e ferramentas de gestão de vendas",
+      "top_left_x": 87,
+      "top_left_y": 241,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 378,
+      "bottom_right_y": 410,
+      "confidence_scores": null,
+      "content": "# Portfólio de Crédito (em milhões de R$)",
+      "top_left_x": 87,
+      "top_left_y": 390,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 546,
+      "bottom_right_y": 696,
+      "confidence_scores": null,
+      "content": "![img-3.jpeg](img-3.jpeg)",
+      "image_id": "img-3.jpeg",
+      "top_left_x": 108,
+      "top_left_y": 451,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "9",
+      "top_left_x": 683,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 546,
+      "bottom_right_y": 696,
+      "id": "img-3.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 108,
+      "top_left_y": 451
+     }
+    ],
+    "index": 9,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Corporate Lending & Business Banking\n\nA carteira de crédito total alcançou R$246,9 bilhões, representando crescimento de 3,8% no trimestre e de 17,4% em doze meses. Seguimos ampliando nossa participação em diferentes segmentos e regiões, mantendo spreads saudáveis e níveis consistentemente baixos de inadimplência.\nA carteira de PMEs atingiu R$29,0 bilhões, com expansão de 1,1% no trimestre e de 13,0% em relação ao 3T24. Apesar do crescimento mais moderado no crédito para PMEs, seguimos avançando na evolução da nossa plataforma de Business Banking, ampliando o portfólio de produtos e serviços — incluindo o lançamento do BTG Pay, nossa solução integrada de meios de pagamento, que marca a entrada do BTG no mercado de adquirência, com maquininhas próprias e ferramentas de gestão de vendas\n\n# Portfólio de Crédito (em milhões de R$)\n\n![img-3.jpeg](img-3.jpeg)\n\n9",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 498,
+      "bottom_right_y": 207,
+      "confidence_scores": null,
+      "content": "# Receitas (em milhões de R$)",
+      "top_left_x": 289,
+      "top_left_y": 189,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 290,
+      "bottom_right_y": 232,
+      "confidence_scores": null,
+      "content": "# Trimestre",
+      "top_left_x": 214,
+      "top_left_y": 215,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 407,
+      "bottom_right_y": 467,
+      "confidence_scores": null,
+      "content": "![img-4.jpeg](img-4.jpeg)",
+      "image_id": "img-4.jpeg",
+      "top_left_x": 98,
+      "top_left_y": 266,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 629,
+      "bottom_right_y": 232,
+      "confidence_scores": null,
+      "content": "# Período de 9 meses",
+      "top_left_x": 478,
+      "top_left_y": 215,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 665,
+      "bottom_right_y": 468,
+      "confidence_scores": null,
+      "content": "![img-5.jpeg](img-5.jpeg)",
+      "image_id": "img-5.jpeg",
+      "top_left_x": 443,
+      "top_left_y": 266,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 190,
+      "bottom_right_y": 524,
+      "confidence_scores": null,
+      "content": "# 3T25 vs.2T25",
+      "top_left_x": 88,
+      "top_left_y": 507,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 579,
+      "confidence_scores": null,
+      "content": "As receitas de Corporate Lending alcançaram R$2.153,7 milhões, alta de 2,2% em relação ao trimestre anterior. O desempenho reflete uma originação diversificada entre setores e produtos, aliada à resiliência da qualidade dos ativos e à gestão de risco disciplinada.",
+      "top_left_x": 88,
+      "top_left_y": 531,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 608,
+      "confidence_scores": null,
+      "content": "As receitas recorrentes seguiram em expansão, acompanhando o crescimento de 3,8% da carteira no trimestre, reforçando a consistência da nossa franquia.",
+      "top_left_x": 88,
+      "top_left_y": 577,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 639,
+      "confidence_scores": null,
+      "content": "# 3T25 vs. 3T24",
+      "top_left_x": 88,
+      "top_left_y": 622,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 707,
+      "confidence_scores": null,
+      "content": "As receitas atingiram R$2.153,7 milhões, representando crescimento de 25,8% em doze meses, impulsionadas pela expansão consistente da carteira junto a contrapartes de alta qualidade e pela maior diversificação entre produtos e geografias. Essa diversificação estratégica contribuiu para spreads saudáveis e consistência do resultado.",
+      "top_left_x": 88,
+      "top_left_y": 647,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "10",
+      "top_left_x": 676,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 407,
+      "bottom_right_y": 467,
+      "id": "img-4.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 98,
+      "top_left_y": 266
+     },
+     {
+      "bottom_right_x": 665,
+      "bottom_right_y": 468,
+      "id": "img-5.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 443,
+      "top_left_y": 266
+     }
+    ],
+    "index": 10,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Receitas (em milhões de R$)\n\n# Trimestre\n\n![img-4.jpeg](img-4.jpeg)\n\n# Período de 9 meses\n\n![img-5.jpeg](img-5.jpeg)\n\n# 3T25 vs.2T25\n\nAs receitas de Corporate Lending alcançaram R$2.153,7 milhões, alta de 2,2% em relação ao trimestre anterior. O desempenho reflete uma originação diversificada entre setores e produtos, aliada à resiliência da qualidade dos ativos e à gestão de risco disciplinada.\n\nAs receitas recorrentes seguiram em expansão, acompanhando o crescimento de 3,8% da carteira no trimestre, reforçando a consistência da nossa franquia.\n\n# 3T25 vs. 3T24\n\nAs receitas atingiram R$2.153,7 milhões, representando crescimento de 25,8% em doze meses, impulsionadas pela expansão consistente da carteira junto a contrapartes de alta qualidade e pela maior diversificação entre produtos e geografias. Essa diversificação estratégica contribuiu para spreads saudáveis e consistência do resultado.\n\n10",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 211,
+      "bottom_right_y": 211,
+      "confidence_scores": null,
+      "content": "# Sales & Trading",
+      "top_left_x": 87,
+      "top_left_y": 191,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 498,
+      "bottom_right_y": 269,
+      "confidence_scores": null,
+      "content": "Receitas (em milhões de R$)",
+      "top_left_x": 289,
+      "top_left_y": 250,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 694,
+      "bottom_right_y": 512,
+      "confidence_scores": null,
+      "content": "![img-6.jpeg](img-6.jpeg)",
+      "image_id": "img-6.jpeg",
+      "top_left_x": 87,
+      "top_left_y": 268,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 194,
+      "bottom_right_y": 562,
+      "confidence_scores": null,
+      "content": "# 3T25 vs. 2T25",
+      "top_left_x": 87,
+      "top_left_y": 544,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 645,
+      "confidence_scores": null,
+      "content": "A área de Sales & Trading entregou mais um trimestre recorde, com receitas de R$1.940,6 milhão, representando crescimento de 1,4% em relação ao já forte 2T25. O desempenho foi impulsionado pelo aumento da atividade de clientes, pela expansão de novas linhas de negócio e pela alocação eficiente de risco. O VaR médio aumentou para 0,30%, à medida que aproveitamos oportunidades de mercado, mas ainda, mantendo-se em patamares confortáveis e abaixo das médias históricas",
+      "top_left_x": 87,
+      "top_left_y": 569,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 194,
+      "bottom_right_y": 677,
+      "confidence_scores": null,
+      "content": "# 3T25 vs. 3T24",
+      "top_left_x": 87,
+      "top_left_y": 659,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 744,
+      "confidence_scores": null,
+      "content": "As receitas de Sales & Trading cresceram 16,0% na comparação anual, frente aos R$1.672,3 milhões do 3T24. O forte desempenho foi impulsionado pela contínua expansão da nossa franquia de clientes em todas as linhas de negócio, que sustentou maior nível de atividade, além de uma alocação de risco mais eficiente.",
+      "top_left_x": 87,
+      "top_left_y": 684,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "11",
+      "top_left_x": 675,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 694,
+      "bottom_right_y": 512,
+      "id": "img-6.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 87,
+      "top_left_y": 268
+     }
+    ],
+    "index": 11,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Sales & Trading\n\nReceitas (em milhões de R$)\n\n![img-6.jpeg](img-6.jpeg)\n\n# 3T25 vs. 2T25\n\nA área de Sales & Trading entregou mais um trimestre recorde, com receitas de R$1.940,6 milhão, representando crescimento de 1,4% em relação ao já forte 2T25. O desempenho foi impulsionado pelo aumento da atividade de clientes, pela expansão de novas linhas de negócio e pela alocação eficiente de risco. O VaR médio aumentou para 0,30%, à medida que aproveitamos oportunidades de mercado, mas ainda, mantendo-se em patamares confortáveis e abaixo das médias históricas\n\n# 3T25 vs. 3T24\n\nAs receitas de Sales & Trading cresceram 16,0% na comparação anual, frente aos R$1.672,3 milhões do 3T24. O forte desempenho foi impulsionado pela contínua expansão da nossa franquia de clientes em todas as linhas de negócio, que sustentou maior nível de atividade, além de uma alocação de risco mais eficiente.\n\n11",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 88,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 211,
+      "confidence_scores": null,
+      "content": "# Asset Management",
+      "top_left_x": 88,
+      "top_left_y": 191,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 321,
+      "confidence_scores": null,
+      "content": "Asset Management manteve um desempenho forte e consistente em ambos os segmentos — Gestão de Fundos e Asset Servicing. AuM/AuA total atingiu R$1.151,8 bilhão, crescimento de 5,6% em relação ao trimestre anterior, impulsionado por captações líquidas de R$33,5 bilhões e pela performance positiva do mercado. Nos últimos doze meses, as captações somaram R$95,9 bilhões, concentradas principalmente nas estratégias de renda fixa local e administração fiduciária.",
+      "top_left_x": 88,
+      "top_left_y": 245,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 465,
+      "bottom_right_y": 354,
+      "confidence_scores": null,
+      "content": "# AuM e AuA por classe de ativos (em bilhões de R$)",
+      "top_left_x": 88,
+      "top_left_y": 334,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 539,
+      "bottom_right_y": 654,
+      "confidence_scores": null,
+      "content": "![img-7.jpeg](img-7.jpeg)",
+      "image_id": "img-7.jpeg",
+      "top_left_x": 98,
+      "top_left_y": 390,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 314,
+      "bottom_right_y": 695,
+      "confidence_scores": null,
+      "content": "# AuM e AuA por tipo de cliente",
+      "top_left_x": 88,
+      "top_left_y": 676,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 655,
+      "bottom_right_y": 905,
+      "confidence_scores": null,
+      "content": "![img-8.jpeg](img-8.jpeg)",
+      "image_id": "img-8.jpeg",
+      "top_left_x": 90,
+      "top_left_y": 722,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "12",
+      "top_left_x": 675,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 539,
+      "bottom_right_y": 654,
+      "id": "img-7.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 98,
+      "top_left_y": 390
+     },
+     {
+      "bottom_right_x": 655,
+      "bottom_right_y": 905,
+      "id": "img-8.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 90,
+      "top_left_y": 722
+     }
+    ],
+    "index": 12,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Asset Management\n\nAsset Management manteve um desempenho forte e consistente em ambos os segmentos — Gestão de Fundos e Asset Servicing. AuM/AuA total atingiu R$1.151,8 bilhão, crescimento de 5,6% em relação ao trimestre anterior, impulsionado por captações líquidas de R$33,5 bilhões e pela performance positiva do mercado. Nos últimos doze meses, as captações somaram R$95,9 bilhões, concentradas principalmente nas estratégias de renda fixa local e administração fiduciária.\n\n# AuM e AuA por classe de ativos (em bilhões de R$)\n\n![img-7.jpeg](img-7.jpeg)\n\n# AuM e AuA por tipo de cliente\n\n![img-8.jpeg](img-8.jpeg)\n\n12",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 498,
+      "bottom_right_y": 211,
+      "confidence_scores": null,
+      "content": "# Receitas (em milhões de R$)",
+      "top_left_x": 289,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 290,
+      "bottom_right_y": 236,
+      "confidence_scores": null,
+      "content": "# Trimestre",
+      "top_left_x": 214,
+      "top_left_y": 217,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 407,
+      "bottom_right_y": 467,
+      "confidence_scores": null,
+      "content": "![img-9.jpeg](img-9.jpeg)",
+      "image_id": "img-9.jpeg",
+      "top_left_x": 98,
+      "top_left_y": 255,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 629,
+      "bottom_right_y": 236,
+      "confidence_scores": null,
+      "content": "# Período de 9 meses",
+      "top_left_x": 477,
+      "top_left_y": 217,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 467,
+      "confidence_scores": null,
+      "content": "![img-10.jpeg](img-10.jpeg)",
+      "image_id": "img-10.jpeg",
+      "top_left_x": 432,
+      "top_left_y": 255,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 540,
+      "confidence_scores": null,
+      "content": "# 3T25 vs. 2T25",
+      "top_left_x": 87,
+      "top_left_y": 522,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 609,
+      "confidence_scores": null,
+      "content": "Asset Management registrou receita recorde de R$747,5 milhões, alta de 19,8% em relação aos R$624,1 milhões do trimestre anterior. O crescimento foi impulsionado pelo aumento das taxas de administração e gestão, em linha com a expansão do AuM/AuA, e pelos dividendos das participações minoritárias em gestoras independentes.",
+      "top_left_x": 87,
+      "top_left_y": 547,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 655,
+      "confidence_scores": null,
+      "content": "# 3T25 vs. 3T24",
+      "top_left_x": 87,
+      "top_left_y": 637,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 708,
+      "confidence_scores": null,
+      "content": "As receitas de Asset Management cresceram 23,3% em relação aos R$606,4 milhões reportados no 3T24, refletindo a expansão contínua do AuM/AuA e a estabilidade do retornos por classe de ativos ao longo do período.",
+      "top_left_x": 87,
+      "top_left_y": 662,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "13",
+      "top_left_x": 675,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 407,
+      "bottom_right_y": 467,
+      "id": "img-9.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 98,
+      "top_left_y": 255
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 467,
+      "id": "img-10.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 432,
+      "top_left_y": 255
+     }
+    ],
+    "index": 13,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Receitas (em milhões de R$)\n\n# Trimestre\n\n![img-9.jpeg](img-9.jpeg)\n\n# Período de 9 meses\n\n![img-10.jpeg](img-10.jpeg)\n\n# 3T25 vs. 2T25\n\nAsset Management registrou receita recorde de R$747,5 milhões, alta de 19,8% em relação aos R$624,1 milhões do trimestre anterior. O crescimento foi impulsionado pelo aumento das taxas de administração e gestão, em linha com a expansão do AuM/AuA, e pelos dividendos das participações minoritárias em gestoras independentes.\n\n# 3T25 vs. 3T24\n\nAs receitas de Asset Management cresceram 23,3% em relação aos R$606,4 milhões reportados no 3T24, refletindo a expansão contínua do AuM/AuA e a estabilidade do retornos por classe de ativos ao longo do período.\n\n13",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 406,
+      "bottom_right_y": 211,
+      "confidence_scores": null,
+      "content": "# Wealth Management & Consumer Banking",
+      "top_left_x": 87,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 335,
+      "confidence_scores": null,
+      "content": "Wealth under Management (WuM) atingiu R$1.135,8 bilhão, com crescimento de 7,5% em relação ao trimestre anterior e 32,5% na comparação anual. As captações líquidas totalizaram R$49,2 bilhões no trimestre, combinando forte crescimento orgânico e a consolidação da JGP Wealth Management – aproximadamente R$18 bilhões. Mesmo em um cenário mais persistente de juros elevados, seguimos expandindo nosso market share nos segmentos de private e alta renda, reflexo da nossa capacidade de manter um sólido ritmo de captação – totalizando R$168 bilhões no ano.",
+      "top_left_x": 87,
+      "top_left_y": 244,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 387,
+      "bottom_right_y": 383,
+      "confidence_scores": null,
+      "content": "# Composição do WuM (em bilhões de R$)",
+      "top_left_x": 87,
+      "top_left_y": 363,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 540,
+      "bottom_right_y": 683,
+      "confidence_scores": null,
+      "content": "![img-11.jpeg](img-11.jpeg)",
+      "image_id": "img-11.jpeg",
+      "top_left_x": 101,
+      "top_left_y": 414,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "14",
+      "top_left_x": 675,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 540,
+      "bottom_right_y": 683,
+      "id": "img-11.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 101,
+      "top_left_y": 414
+     }
+    ],
+    "index": 14,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Wealth Management & Consumer Banking\n\nWealth under Management (WuM) atingiu R$1.135,8 bilhão, com crescimento de 7,5% em relação ao trimestre anterior e 32,5% na comparação anual. As captações líquidas totalizaram R$49,2 bilhões no trimestre, combinando forte crescimento orgânico e a consolidação da JGP Wealth Management – aproximadamente R$18 bilhões. Mesmo em um cenário mais persistente de juros elevados, seguimos expandindo nosso market share nos segmentos de private e alta renda, reflexo da nossa capacidade de manter um sólido ritmo de captação – totalizando R$168 bilhões no ano.\n\n# Composição do WuM (em bilhões de R$)\n\n![img-11.jpeg](img-11.jpeg)\n\n14",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 41,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 498,
+      "bottom_right_y": 211,
+      "confidence_scores": null,
+      "content": "# Receitas (em milhões de R$)",
+      "top_left_x": 289,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 450,
+      "confidence_scores": null,
+      "content": "![img-12.jpeg](img-12.jpeg)",
+      "image_id": "img-12.jpeg",
+      "top_left_x": 87,
+      "top_left_y": 207,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 522,
+      "confidence_scores": null,
+      "content": "# 3T25 vs. 2T25",
+      "top_left_x": 87,
+      "top_left_y": 503,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 576,
+      "confidence_scores": null,
+      "content": "Wealth Management & Personal Banking registrou receita recorde de R$1.365,8 milhão, alta de 10,2% em relação ao trimestre anterior. O aumento trimestral foi impulsionado pela expansão de 7,5% no WuM, aliado a um maior número de dias úteis no período, favorecendo a geração de receitas",
+      "top_left_x": 87,
+      "top_left_y": 528,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 622,
+      "confidence_scores": null,
+      "content": "# 3T25 vs. 3T24",
+      "top_left_x": 87,
+      "top_left_y": 603,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 676,
+      "confidence_scores": null,
+      "content": "As receitas de Wealth Management & Personal Banking expandiram 35,7% na comparação anual, frente aos R$1.006,6 milhão do 3T24 e em linha com a expansão de 32,5% no WuM no período, refletindo um crescimento consistente e sustentado da franquia.",
+      "top_left_x": 87,
+      "top_left_y": 628,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "15",
+      "top_left_x": 675,
+      "top_left_y": 937,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 450,
+      "id": "img-12.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 87,
+      "top_left_y": 207
+     }
+    ],
+    "index": 15,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Receitas (em milhões de R$)\n\n![img-12.jpeg](img-12.jpeg)\n\n# 3T25 vs. 2T25\n\nWealth Management & Personal Banking registrou receita recorde de R$1.365,8 milhão, alta de 10,2% em relação ao trimestre anterior. O aumento trimestral foi impulsionado pela expansão de 7,5% no WuM, aliado a um maior número de dias úteis no período, favorecendo a geração de receitas\n\n# 3T25 vs. 3T24\n\nAs receitas de Wealth Management & Personal Banking expandiram 35,7% na comparação anual, frente aos R$1.006,6 milhão do 3T24 e em linha com a expansão de 32,5% no WuM no período, refletindo um crescimento consistente e sustentado da franquia.\n\n15",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 196,
+      "bottom_right_y": 210,
+      "confidence_scores": null,
+      "content": "# Participations",
+      "top_left_x": 87,
+      "top_left_y": 191,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 519,
+      "confidence_scores": null,
+      "content": "![img-13.jpeg](img-13.jpeg)",
+      "image_id": "img-13.jpeg",
+      "top_left_x": 87,
+      "top_left_y": 244,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 583,
+      "confidence_scores": null,
+      "content": "# 3T25 vs. 2T25",
+      "top_left_x": 87,
+      "top_left_y": 565,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 651,
+      "confidence_scores": null,
+      "content": "Participations reportou receita de R$324,8 milhões, aumento de 16,6% em relação aos R$278,6 milhões do 2T25. Os resultados do 3T25 foram compostos por: (i) R$151,2 milhões de equivalência patrimonial do Banco Pan; (ii) R$76,8 milhões em ganhos com a Too Seguros e a Pan Corretora; e (iii) R$96,9 milhões referentes ao accrual dos portfólios de crédito do Banco Pan adquiridos em períodos anteriores.",
+      "top_left_x": 87,
+      "top_left_y": 590,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 698,
+      "confidence_scores": null,
+      "content": "# 3T25 vs. 3T24",
+      "top_left_x": 87,
+      "top_left_y": 680,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 752,
+      "confidence_scores": null,
+      "content": "As receitas de Participations cresceram 49,4% em relação aos R$217,4 milhões do 3T24. O aumento anual nas receitas foi principalmente atribuído a um menor efeito de eliminação, já que o BTG não adquiriu carteiras de consignado do Banco Pan neste trimestre.",
+      "top_left_x": 87,
+      "top_left_y": 705,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "16",
+      "top_left_x": 676,
+      "top_left_y": 939,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 519,
+      "id": "img-13.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 87,
+      "top_left_y": 244
+     }
+    ],
+    "index": 16,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Participations\n\n![img-13.jpeg](img-13.jpeg)\n\n# 3T25 vs. 2T25\n\nParticipations reportou receita de R$324,8 milhões, aumento de 16,6% em relação aos R$278,6 milhões do 2T25. Os resultados do 3T25 foram compostos por: (i) R$151,2 milhões de equivalência patrimonial do Banco Pan; (ii) R$76,8 milhões em ganhos com a Too Seguros e a Pan Corretora; e (iii) R$96,9 milhões referentes ao accrual dos portfólios de crédito do Banco Pan adquiridos em períodos anteriores.\n\n# 3T25 vs. 3T24\n\nAs receitas de Participations cresceram 49,4% em relação aos R$217,4 milhões do 3T24. O aumento anual nas receitas foi principalmente atribuído a um menor efeito de eliminação, já que o BTG não adquiriu carteiras de consignado do Banco Pan neste trimestre.\n\n16",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 84,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados^{}[] ^{}[] Terceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 219,
+      "bottom_right_y": 210,
+      "confidence_scores": null,
+      "content": "## Interest & Others",
+      "top_left_x": 87,
+      "top_left_y": 191,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 263,
+      "confidence_scores": null,
+      "content": "### 3T25 vs. 2T25",
+      "top_left_x": 87,
+      "top_left_y": 245,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 332,
+      "confidence_scores": null,
+      "content": "As receitas de Interest & Others totalizaram R$1.643,1 milhão no 3T25, ante R$1.350,5 milhão no 2T25, impulsionadas principalmente pelo aumento do patrimônio líquido tangível e pelo aumento das taxas de juros no período. As receitas de Interest & Others correspondem principalmente às taxas de juros do Banco Central, aplicadas sobre o nosso patrimônio tangível, refletindo nosso custo interno de captação.",
+      "top_left_x": 87,
+      "top_left_y": 270,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 378,
+      "confidence_scores": null,
+      "content": "### 3T25 vs. 3T24",
+      "top_left_x": 87,
+      "top_left_y": 360,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 417,
+      "confidence_scores": null,
+      "content": "As receitas de Interest & Others cresceram 93,1% em relação ao 3T24, refletindo também o impacto das taxas de juros mais altas combinadas a uma base média maior de patrimônio tangível ao longo do período.",
+      "top_left_x": 87,
+      "top_left_y": 385,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "17",
+      "top_left_x": 675,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 17,
+    "markdown": "btg pactual\n\nDivulgação de Resultados^{}[] Terceiro trimestre de 2025\n\n## Interest & Others\n\n### 3T25 vs. 2T25\n\nAs receitas de Interest & Others totalizaram R$1.643,1 milhão no 3T25, ante R$1.350,5 milhão no 2T25, impulsionadas principalmente pelo aumento do patrimônio líquido tangível e pelo aumento das taxas de juros no período. As receitas de Interest & Others correspondem principalmente às taxas de juros do Banco Central, aplicadas sobre o nosso patrimônio tangível, refletindo nosso custo interno de captação.\n\n### 3T25 vs. 3T24\n\nAs receitas de Interest & Others cresceram 93,1% em relação ao 3T24, refletindo também o impacto das taxas de juros mais altas combinadas a uma base média maior de patrimônio tangível ao longo do período.\n\n17",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 234,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 526,
+      "top_left_y": 41,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 340,
+      "bottom_right_y": 210,
+      "confidence_scores": null,
+      "content": "# Despesas operacionais ajustadas",
+      "top_left_x": 87,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 692,
+      "bottom_right_y": 460,
+      "confidence_scores": null,
+      "content": "|  Despesas Operacionais Ajustadas (não auditado) (em R$mm, a menos que indicado) | Trimestre |   |   | Variação % para 3T 2025 |   | Acumulado no ano |   | Variação % para 9M 2025  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 3T 2024 | 2T 2025 | 9M 2024 | 9M 2025 | 9M 2024  |\n|  Bônus | (727) | (970) | (966) | 33% | 0% | (1.986) | (2.622) | 32%  |\n|  Salários e benefícios | (638) | (771) | (792) | 24% | 3% | (1.879) | (2.308) | 23%  |\n|  Administrativas e outras | (687) | (807) | (809) | 18% | 0% | (1.996) | (2.371) | 19%  |\n|  Amortização de ágio | (253) | (314) | (366) | 45% | 16% | (692) | (966) | 40%  |\n|  Despesas tributárias, exceto imposto de renda | (296) | (401) | (435) | 47% | 8% | (932) | (1.182) | 27%  |\n|  **Despesas operacionais totais** | **(2.601)** | **(3.264)** | **(3.369)** | **30%** | **3%** | **(7.484)** | **(9.448)** | **26%**  |\n|  Índice de eficiência ajustado | 36% | 36% | 34% | -7% | -4% | 37% | 35% | -4%  |\n|  Índice de remuneração | 21% | 21% | 20% | -6% | -5% | 21% | 21% | -2%  |\n|  Número total de colaboradores | 7.611 | 8.854 | 9.367 | 23% | 6% | 7.611 | 9.367 | 23%  |\n|  Partners e Associate Partners | 373 | 410 | 412 | 10% | 0% | 373 | 412 | 10%  |\n|  Funcionários | 7.238 | 8.444 | 8.955 | 24% | 6% | 7.238 | 8.955 | 24%  |",
+      "table_id": null,
+      "top_left_x": 87,
+      "top_left_y": 232,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 140,
+      "bottom_right_y": 510,
+      "confidence_scores": null,
+      "content": "# Bônus",
+      "top_left_x": 87,
+      "top_left_y": 491,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 592,
+      "confidence_scores": null,
+      "content": "As despesas com bônus totalizaram R$966,4 milhões no 3T25, estáveis em relação ao trimestre anterior, mas 32,8% superiores na comparação anual, refletindo o aumento das receitas em todas as linhas de negócio. O bônus é determinado de acordo com nosso programa de participação nos lucros e calculados como percentual da nossa receita operacional (excluindo receitas de Interest & Others), menos nossas despesas operacionais.",
+      "top_left_x": 87,
+      "top_left_y": 516,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 247,
+      "bottom_right_y": 639,
+      "confidence_scores": null,
+      "content": "# Salários e benefícios",
+      "top_left_x": 87,
+      "top_left_y": 620,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 707,
+      "confidence_scores": null,
+      "content": "Os custos de pessoal cresceram 2,8% em relação ao trimestre anterior e 24,1% em doze meses, impulsionados principalmente pelo aumento do quadro de colaboradores em função das recentes aquisições. As despesas com pessoal totalizaram R$792,3 milhões no 3T25, ante R$771,0 milhões no 2T25 e R$638,5 milhões no 3T24.",
+      "top_left_x": 87,
+      "top_left_y": 645,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 430,
+      "bottom_right_y": 755,
+      "confidence_scores": null,
+      "content": "# Despesas administrativas e de outra natureza",
+      "top_left_x": 87,
+      "top_left_y": 735,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 808,
+      "confidence_scores": null,
+      "content": "As despesas administrativas e de outras naturezas permaneceram praticamente estáveis no trimestre, passando de R$807,1 milhões no 2T25 para R$809,4 milhões no 3T25. Em relação ao 3T24, as despesas cresceram 17,9%, principalmente devido às aquisições.",
+      "top_left_x": 87,
+      "top_left_y": 761,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 245,
+      "bottom_right_y": 843,
+      "confidence_scores": null,
+      "content": "# Amortização do ágio",
+      "top_left_x": 87,
+      "top_left_y": 823,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 902,
+      "confidence_scores": null,
+      "content": "No 3T25, registramos despesas com amortização de ágio de R$365,8 milhões, 16,4% acima do trimestre anterior. As amortizações de ágio refletem nossas recentes aquisições, como Sertrading, Julius Baer Brasil, JGP WM e Justa.",
+      "top_left_x": 87,
+      "top_left_y": 855,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "18",
+      "top_left_x": 673,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 18,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Despesas operacionais ajustadas\n\n|  Despesas Operacionais Ajustadas (não auditado) (em R$mm, a menos que indicado) | Trimestre |   |   | Variação % para 3T 2025 |   | Acumulado no ano |   | Variação % para 9M 2025  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 3T 2024 | 2T 2025 | 9M 2024 | 9M 2025 | 9M 2024  |\n|  Bônus | (727) | (970) | (966) | 33% | 0% | (1.986) | (2.622) | 32%  |\n|  Salários e benefícios | (638) | (771) | (792) | 24% | 3% | (1.879) | (2.308) | 23%  |\n|  Administrativas e outras | (687) | (807) | (809) | 18% | 0% | (1.996) | (2.371) | 19%  |\n|  Amortização de ágio | (253) | (314) | (366) | 45% | 16% | (692) | (966) | 40%  |\n|  Despesas tributárias, exceto imposto de renda | (296) | (401) | (435) | 47% | 8% | (932) | (1.182) | 27%  |\n|  **Despesas operacionais totais** | **(2.601)** | **(3.264)** | **(3.369)** | **30%** | **3%** | **(7.484)** | **(9.448)** | **26%**  |\n|  Índice de eficiência ajustado | 36% | 36% | 34% | -7% | -4% | 37% | 35% | -4%  |\n|  Índice de remuneração | 21% | 21% | 20% | -6% | -5% | 21% | 21% | -2%  |\n|  Número total de colaboradores | 7.611 | 8.854 | 9.367 | 23% | 6% | 7.611 | 9.367 | 23%  |\n|  Partners e Associate Partners | 373 | 410 | 412 | 10% | 0% | 373 | 412 | 10%  |\n|  Funcionários | 7.238 | 8.444 | 8.955 | 24% | 6% | 7.238 | 8.955 | 24%  |\n\n# Bônus\n\nAs despesas com bônus totalizaram R$966,4 milhões no 3T25, estáveis em relação ao trimestre anterior, mas 32,8% superiores na comparação anual, refletindo o aumento das receitas em todas as linhas de negócio. O bônus é determinado de acordo com nosso programa de participação nos lucros e calculados como percentual da nossa receita operacional (excluindo receitas de Interest & Others), menos nossas despesas operacionais.\n\n# Salários e benefícios\n\nOs custos de pessoal cresceram 2,8% em relação ao trimestre anterior e 24,1% em doze meses, impulsionados principalmente pelo aumento do quadro de colaboradores em função das recentes aquisições. As despesas com pessoal totalizaram R$792,3 milhões no 3T25, ante R$771,0 milhões no 2T25 e R$638,5 milhões no 3T24.\n\n# Despesas administrativas e de outra natureza\n\nAs despesas administrativas e de outras naturezas permaneceram praticamente estáveis no trimestre, passando de R$807,1 milhões no 2T25 para R$809,4 milhões no 3T25. Em relação ao 3T24, as despesas cresceram 17,9%, principalmente devido às aquisições.\n\n# Amortização do ágio\n\nNo 3T25, registramos despesas com amortização de ágio de R$365,8 milhões, 16,4% acima do trimestre anterior. As amortizações de ágio refletem nossas recentes aquisições, como Sertrading, Julius Baer Brasil, JGP WM e Justa.\n\n18",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 526,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 438,
+      "bottom_right_y": 199,
+      "confidence_scores": null,
+      "content": "# Despesas tributárias, exceto imposto de renda",
+      "top_left_x": 87,
+      "top_left_y": 180,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 251,
+      "confidence_scores": null,
+      "content": "As despesas tributárias, excluindo imposto de renda, somaram R$434,7 milhões, equivalentes a 4,9% da receita total, ante R$401,3 milhões no 2T25, ou 4,8% da receita total.",
+      "top_left_x": 87,
+      "top_left_y": 219,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 291,
+      "bottom_right_y": 299,
+      "confidence_scores": null,
+      "content": "# Imposto de renda ajustado",
+      "top_left_x": 87,
+      "top_left_y": 279,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 692,
+      "bottom_right_y": 414,
+      "confidence_scores": null,
+      "content": "|  Imposto de Renda Ajustado (não auditado) (em R$mm, a menos que indicado) | Trimestre |   |   | Acumulado no ano  |   |\n| --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 9M 2024 | 9M 2025  |\n|  Lucro antes dos impostos | 3.844 | 5.030 | 5.450 | 10.843 | 14.502  |\n|  Imposto de renda e contribuição social | (776) | (1.021) | (1.112) | (2.177) | (2.946)  |\n|  **Alíquota de imposto de renda efetiva** | **20,2%** | **20,3%** | **20,4%** | **20,1%** | **20,3%**  |",
+      "table_id": null,
+      "top_left_x": 87,
+      "top_left_y": 319,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 479,
+      "confidence_scores": null,
+      "content": "A alíquota efetiva de imposto de renda no trimestre foi de 20,4% (representando uma despesa de R$1.112,4 milhão), frente a 20,3% no 2T25 e 20,2% no 3T24. A taxa efetiva neste trimestre foi impactada pela distribuição de juros sobre capital próprio (JCP).",
+      "top_left_x": 87,
+      "top_left_y": 432,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "19",
+      "top_left_x": 673,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 19,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Despesas tributárias, exceto imposto de renda\n\nAs despesas tributárias, excluindo imposto de renda, somaram R$434,7 milhões, equivalentes a 4,9% da receita total, ante R$401,3 milhões no 2T25, ou 4,8% da receita total.\n\n# Imposto de renda ajustado\n\n|  Imposto de Renda Ajustado (não auditado) (em R$mm, a menos que indicado) | Trimestre |   |   | Acumulado no ano  |   |\n| --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 9M 2024 | 9M 2025  |\n|  Lucro antes dos impostos | 3.844 | 5.030 | 5.450 | 10.843 | 14.502  |\n|  Imposto de renda e contribuição social | (776) | (1.021) | (1.112) | (2.177) | (2.946)  |\n|  **Alíquota de imposto de renda efetiva** | **20,2%** | **20,3%** | **20,4%** | **20,1%** | **20,3%**  |\n\nA alíquota efetiva de imposto de renda no trimestre foi de 20,4% (representando uma despesa de R$1.112,4 milhão), frente a 20,3% no 2T25 e 20,2% no 3T24. A taxa efetiva neste trimestre foi impactada pela distribuição de juros sobre capital próprio (JCP).\n\n19",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 526,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 241,
+      "bottom_right_y": 210,
+      "confidence_scores": null,
+      "content": "## Balanço patrimonial",
+      "top_left_x": 87,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 607,
+      "bottom_right_y": 232,
+      "confidence_scores": null,
+      "content": "O gráfico abaixo resume a composição de ativos e passivos em 30 de setembro de 2025:",
+      "top_left_x": 87,
+      "top_left_y": 216,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 522,
+      "bottom_right_y": 282,
+      "confidence_scores": null,
+      "content": "### Balanço patrimonial resumido (não auditado) [em bilhões de R$]",
+      "top_left_x": 87,
+      "top_left_y": 263,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 609,
+      "bottom_right_y": 645,
+      "confidence_scores": null,
+      "content": "![img-14.jpeg](img-14.jpeg)",
+      "image_id": "img-14.jpeg",
+      "top_left_x": 110,
+      "top_left_y": 302,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 737,
+      "confidence_scores": null,
+      "content": "O ativo total aumentou 4,4%, passando de R$656,1 bilhões no final do 2T25 para R$685,0 bilhões no final do 3T25, principalmente em função do aumento de 28,3% no caixa e equivalentes de caixa (de R$69,0 bilhões para R$88,5 bilhões) e do crescimento de 3,2% nos ativos da carteira de Trading (de R$170,3 bilhões para R$175,8 bilhões). O índice de alavancagem permaneceu estável em 8,8x.",
+      "top_left_x": 87,
+      "top_left_y": 675,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 675,
+      "bottom_right_y": 767,
+      "confidence_scores": null,
+      "content": "Do lado do passivo, nosso Unsecured Funding aumentou 10,3%, e Outros Passivos cresceram 7,3%.",
+      "top_left_x": 87,
+      "top_left_y": 750,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 825,
+      "confidence_scores": null,
+      "content": "O patrimônio líquido aumentou de R$63,7 bilhões no final do 2T25 para R$65,6 bilhões no final do 3T25, refletindo principalmente o lucro líquido contábil de R$4.337 milhões, parcialmente compensado pela distribuição de JCP de R$2,3 bilhões.",
+      "top_left_x": 87,
+      "top_left_y": 779,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "20",
+      "top_left_x": 673,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 609,
+      "bottom_right_y": 645,
+      "id": "img-14.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 110,
+      "top_left_y": 302
+     }
+    ],
+    "index": 20,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n## Balanço patrimonial\n\nO gráfico abaixo resume a composição de ativos e passivos em 30 de setembro de 2025:\n\n### Balanço patrimonial resumido (não auditado) [em bilhões de R$]\n\n![img-14.jpeg](img-14.jpeg)\n\nO ativo total aumentou 4,4%, passando de R$656,1 bilhões no final do 2T25 para R$685,0 bilhões no final do 3T25, principalmente em função do aumento de 28,3% no caixa e equivalentes de caixa (de R$69,0 bilhões para R$88,5 bilhões) e do crescimento de 3,2% nos ativos da carteira de Trading (de R$170,3 bilhões para R$175,8 bilhões). O índice de alavancagem permaneceu estável em 8,8x.\n\nDo lado do passivo, nosso Unsecured Funding aumentou 10,3%, e Outros Passivos cresceram 7,3%.\n\nO patrimônio líquido aumentou de R$63,7 bilhões no final do 2T25 para R$65,6 bilhões no final do 3T25, refletindo principalmente o lucro líquido contábil de R$4.337 milhões, parcialmente compensado pela distribuição de JCP de R$2,3 bilhões.\n\n20",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 276,
+      "bottom_right_y": 210,
+      "confidence_scores": null,
+      "content": "## Gestão de risco e capital",
+      "top_left_x": 88,
+      "top_left_y": 191,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 650,
+      "bottom_right_y": 232,
+      "confidence_scores": null,
+      "content": "Não houve mudanças significativas na estrutura de gerenciamento de risco e capital no trimestre.",
+      "top_left_x": 88,
+      "top_left_y": 217,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 338,
+      "bottom_right_y": 281,
+      "confidence_scores": null,
+      "content": "### Risco de mercado – Value-at-risk",
+      "top_left_x": 88,
+      "top_left_y": 263,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 694,
+      "bottom_right_y": 374,
+      "confidence_scores": null,
+      "content": "|  Value-at-risk (não auditado) (em R$mm, a menos que indicado) | Trimestre  |   |   |\n| --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025  |\n|  Média diária do VaR | 87,4 | 138,1 | 192,6  |\n|  Média diária VaR como % do patrimônio líquido médio | 0,16% | 0,22% | 0,30%  |",
+      "table_id": null,
+      "top_left_x": 88,
+      "top_left_y": 297,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 459,
+      "confidence_scores": null,
+      "content": "O VaR diário médio total encerrou o trimestre em 0,30%, ante 0,22% no 2T25, à medida que capturamos oportunidades de mercado, mantendo os níveis de risco em patamar confortável, abaixo das médias históricas.",
+      "top_left_x": 88,
+      "top_left_y": 409,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 322,
+      "bottom_right_y": 494,
+      "confidence_scores": null,
+      "content": "### Análise do Unsecured Funding",
+      "top_left_x": 88,
+      "top_left_y": 475,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 573,
+      "bottom_right_y": 516,
+      "confidence_scores": null,
+      "content": "O gráfico abaixo traz um resumo da evolução da nossa base de unsecured funding:",
+      "top_left_x": 88,
+      "top_left_y": 500,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 543,
+      "bottom_right_y": 828,
+      "confidence_scores": null,
+      "content": "![img-15.jpeg](img-15.jpeg)",
+      "image_id": "img-15.jpeg",
+      "top_left_x": 101,
+      "top_left_y": 542,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 892,
+      "confidence_scores": null,
+      "content": "O Unsecured Funding expandiu 10,1% no trimestre, passando de R$279,8 bilhões no 2T25 para R$308,1 bilhões no 3T25, devido ao forte aumento de títulos emitidos e os depósitos a prazo, predominantemente nos mercados locais.",
+      "top_left_x": 88,
+      "top_left_y": 846,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "21",
+      "top_left_x": 675,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 543,
+      "bottom_right_y": 828,
+      "id": "img-15.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 101,
+      "top_left_y": 542
+     }
+    ],
+    "index": 21,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n## Gestão de risco e capital\n\nNão houve mudanças significativas na estrutura de gerenciamento de risco e capital no trimestre.\n\n### Risco de mercado – Value-at-risk\n\n|  Value-at-risk (não auditado) (em R$mm, a menos que indicado) | Trimestre  |   |   |\n| --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025  |\n|  Média diária do VaR | 87,4 | 138,1 | 192,6  |\n|  Média diária VaR como % do patrimônio líquido médio | 0,16% | 0,22% | 0,30%  |\n\nO VaR diário médio total encerrou o trimestre em 0,30%, ante 0,22% no 2T25, à medida que capturamos oportunidades de mercado, mantendo os níveis de risco em patamar confortável, abaixo das médias históricas.\n\n### Análise do Unsecured Funding\n\nO gráfico abaixo traz um resumo da evolução da nossa base de unsecured funding:\n\n![img-15.jpeg](img-15.jpeg)\n\nO Unsecured Funding expandiu 10,1% no trimestre, passando de R$279,8 bilhões no 2T25 para R$308,1 bilhões no 3T25, devido ao forte aumento de títulos emitidos e os depósitos a prazo, predominantemente nos mercados locais.\n\n21",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 234,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 88,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 437,
+      "bottom_right_y": 210,
+      "confidence_scores": null,
+      "content": "## Portfólio de crédito expandido do BTG Pactual",
+      "top_left_x": 88,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 276,
+      "confidence_scores": null,
+      "content": "Nosso portfólio de crédito expandido é composto por empréstimos, recebíveis, adiantamentos em contratos de câmbio, cartas de crédito e títulos e valores mobiliários sujeitos a exposições de crédito (incluindo debêntures, notas promissórias, títulos imobiliários e fundos de investimento em direitos creditórios (FIDCs)).",
+      "top_left_x": 88,
+      "top_left_y": 217,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 315,
+      "confidence_scores": null,
+      "content": "O saldo do nosso portfólio de crédito expandido subiu 3,0% em relação ao trimestre anterior, passando de R$267,6 bilhões para R$275,8 bilhões e, uma alta de 18,0% em relação ao 3T24.",
+      "top_left_x": 88,
+      "top_left_y": 283,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 345,
+      "bottom_right_y": 394,
+      "confidence_scores": null,
+      "content": "Portfólio de crédito expandido\nDetalhamento por área\n(em milhões de R$)",
+      "top_left_x": 135,
+      "top_left_y": 346,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 367,
+      "bottom_right_y": 600,
+      "confidence_scores": null,
+      "content": "![img-16.jpeg](img-16.jpeg)",
+      "image_id": "img-16.jpeg",
+      "top_left_x": 112,
+      "top_left_y": 404,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 647,
+      "bottom_right_y": 394,
+      "confidence_scores": null,
+      "content": "Portfólio de crédito expandido\nDetalhamento por produto\n(em milhões de R$)",
+      "top_left_x": 437,
+      "top_left_y": 346,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 683,
+      "bottom_right_y": 598,
+      "confidence_scores": null,
+      "content": "![img-17.jpeg](img-17.jpeg)",
+      "image_id": "img-17.jpeg",
+      "top_left_x": 407,
+      "top_left_y": 404,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 614,
+      "confidence_scores": null,
+      "content": "Notas:",
+      "top_left_x": 88,
+      "top_left_y": 602,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 527,
+      "bottom_right_y": 628,
+      "confidence_scores": null,
+      "content": "Others: inclui depósitos interbancários, operações estruturadas de Merchant Banking e outros.",
+      "top_left_x": 88,
+      "top_left_y": 614,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 652,
+      "confidence_scores": null,
+      "content": "Wealth Management exerce impacto sobre os resultados de WM, ao passo que \"outros\" exerce impacto sobre os resultados de Sales & Trading e Merchant Banking.",
+      "top_left_x": 88,
+      "top_left_y": 626,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 548,
+      "bottom_right_y": 688,
+      "confidence_scores": null,
+      "content": "## Portfólio de Corporate Lending & Others por setor (% do total)",
+      "top_left_x": 88,
+      "top_left_y": 669,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 240,
+      "bottom_right_y": 911,
+      "confidence_scores": null,
+      "content": "- Utilities\n- WM, Payroll and Consumer\n- Financial\n- Agribusiness\n- Retail\n- Real Estate\n- Oil & Gas\n- Food & Beverage\n- Metals & Mining\n- Water & Sewage\n- Infra-Structure\n- Telecom\n- Government\n- Forest Products & Paper\n- Auto-Parts\n- Other",
+      "top_left_x": 101,
+      "top_left_y": 702,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 497,
+      "bottom_right_y": 904,
+      "confidence_scores": null,
+      "content": "![img-18.jpeg](img-18.jpeg)",
+      "image_id": "img-18.jpeg",
+      "top_left_x": 312,
+      "top_left_y": 715,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "22",
+      "top_left_x": 674,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 367,
+      "bottom_right_y": 600,
+      "id": "img-16.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 112,
+      "top_left_y": 404
+     },
+     {
+      "bottom_right_x": 683,
+      "bottom_right_y": 598,
+      "id": "img-17.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 407,
+      "top_left_y": 404
+     },
+     {
+      "bottom_right_x": 497,
+      "bottom_right_y": 904,
+      "id": "img-18.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 312,
+      "top_left_y": 715
+     }
+    ],
+    "index": 22,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n## Portfólio de crédito expandido do BTG Pactual\n\nNosso portfólio de crédito expandido é composto por empréstimos, recebíveis, adiantamentos em contratos de câmbio, cartas de crédito e títulos e valores mobiliários sujeitos a exposições de crédito (incluindo debêntures, notas promissórias, títulos imobiliários e fundos de investimento em direitos creditórios (FIDCs)).\n\nO saldo do nosso portfólio de crédito expandido subiu 3,0% em relação ao trimestre anterior, passando de R$267,6 bilhões para R$275,8 bilhões e, uma alta de 18,0% em relação ao 3T24.\n\nPortfólio de crédito expandido\nDetalhamento por área\n(em milhões de R$)\n\n![img-16.jpeg](img-16.jpeg)\n\nPortfólio de crédito expandido\nDetalhamento por produto\n(em milhões de R$)\n\n![img-17.jpeg](img-17.jpeg)\n\nNotas:\n\nOthers: inclui depósitos interbancários, operações estruturadas de Merchant Banking e outros.\n\nWealth Management exerce impacto sobre os resultados de WM, ao passo que \"outros\" exerce impacto sobre os resultados de Sales & Trading e Merchant Banking.\n\n## Portfólio de Corporate Lending & Others por setor (% do total)\n\n- Utilities\n- WM, Payroll and Consumer\n- Financial\n- Agribusiness\n- Retail\n- Real Estate\n- Oil & Gas\n- Food & Beverage\n- Metals & Mining\n- Water & Sewage\n- Infra-Structure\n- Telecom\n- Government\n- Forest Products & Paper\n- Auto-Parts\n- Other\n\n![img-18.jpeg](img-18.jpeg)\n\n22",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 213,
+      "bottom_right_y": 209,
+      "confidence_scores": null,
+      "content": "# Risco de crédito",
+      "top_left_x": 88,
+      "top_left_y": 191,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 276,
+      "confidence_scores": null,
+      "content": "A tabela a seguir apresenta a distribuição, por classificação de risco de crédito, das nossas exposições a risco de crédito em 30 de setembro de 2025. As classificações de risco abaixo refletem a nossa avaliação interna, aplicadas de modo consistente, conforme a escala padronizada de classificação de risco do Banco Central do Brasil:",
+      "top_left_x": 88,
+      "top_left_y": 217,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 390,
+      "confidence_scores": null,
+      "content": "|  Classificação de risco (não auditado) (em R$ milhões) | 3T 2025  |\n| --- | --- |\n|  Stage 1 | 266.040  |\n|  Stage 2 | 6.021  |\n|  Stage 3 | 3.690  |\n|  **Total** | **275.751**  |",
+      "table_id": null,
+      "top_left_x": 88,
+      "top_left_y": 290,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 221,
+      "bottom_right_y": 443,
+      "confidence_scores": null,
+      "content": "# Gestão de capital",
+      "top_left_x": 88,
+      "top_left_y": 425,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 525,
+      "confidence_scores": null,
+      "content": "O BTG Pactual atende às normas de requisitos de capital estabelecidas pelo Banco Central do Brasil, as quais são consistentes com aquelas propostas pelo Comitê de Supervisão Bancária da Basileia, segundo o Acordo da Basileia. O nosso Índice de Basileia, calculado conforme as normas e os regulamentos do Banco Central do Brasil, se aplica apenas ao BTG Pactual. O índice de Basileia foi de 15,5% no fim do 3T25. O nosso índice de cobertura de liquidez (LCR) encerrou o trimestre em 168,5%.",
+      "top_left_x": 88,
+      "top_left_y": 450,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 356,
+      "bottom_right_y": 587,
+      "confidence_scores": null,
+      "content": "Índice de Basileia (não auditado)\n(%)",
+      "top_left_x": 128,
+      "top_left_y": 554,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 363,
+      "bottom_right_y": 768,
+      "confidence_scores": null,
+      "content": "![img-19.jpeg](img-19.jpeg)",
+      "image_id": "img-19.jpeg",
+      "top_left_x": 98,
+      "top_left_y": 598,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 665,
+      "bottom_right_y": 587,
+      "confidence_scores": null,
+      "content": "Nível 1: CET1 & AT1 (não auditado)\n(%)",
+      "top_left_x": 422,
+      "top_left_y": 554,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 768,
+      "confidence_scores": null,
+      "content": "![img-20.jpeg](img-20.jpeg)",
+      "image_id": "img-20.jpeg",
+      "top_left_x": 407,
+      "top_left_y": 598,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "23",
+      "top_left_x": 675,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 363,
+      "bottom_right_y": 768,
+      "id": "img-19.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 98,
+      "top_left_y": 598
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 768,
+      "id": "img-20.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 407,
+      "top_left_y": 598
+     }
+    ],
+    "index": 23,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Risco de crédito\n\nA tabela a seguir apresenta a distribuição, por classificação de risco de crédito, das nossas exposições a risco de crédito em 30 de setembro de 2025. As classificações de risco abaixo refletem a nossa avaliação interna, aplicadas de modo consistente, conforme a escala padronizada de classificação de risco do Banco Central do Brasil:\n\n|  Classificação de risco (não auditado) (em R$ milhões) | 3T 2025  |\n| --- | --- |\n|  Stage 1 | 266.040  |\n|  Stage 2 | 6.021  |\n|  Stage 3 | 3.690  |\n|  **Total** | **275.751**  |\n\n# Gestão de capital\n\nO BTG Pactual atende às normas de requisitos de capital estabelecidas pelo Banco Central do Brasil, as quais são consistentes com aquelas propostas pelo Comitê de Supervisão Bancária da Basileia, segundo o Acordo da Basileia. O nosso Índice de Basileia, calculado conforme as normas e os regulamentos do Banco Central do Brasil, se aplica apenas ao BTG Pactual. O índice de Basileia foi de 15,5% no fim do 3T25. O nosso índice de cobertura de liquidez (LCR) encerrou o trimestre em 168,5%.\n\nÍndice de Basileia (não auditado)\n(%)\n\n![img-19.jpeg](img-19.jpeg)\n\nNível 1: CET1 & AT1 (não auditado)\n(%)\n\n![img-20.jpeg](img-20.jpeg)\n\n23",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados^{}[] ^{}[] Terceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 149,
+      "bottom_right_y": 209,
+      "confidence_scores": null,
+      "content": "## Anexos",
+      "top_left_x": 88,
+      "top_left_y": 191,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 244,
+      "bottom_right_y": 235,
+      "confidence_scores": null,
+      "content": "### Base da apresentação",
+      "top_left_x": 88,
+      "top_left_y": 217,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 346,
+      "confidence_scores": null,
+      "content": "Exceto onde indicado em contrário, as informações relativas à nossa condição financeira apresentada neste documento baseiam-se no nosso Balanço Patrimonial, que é preparado de acordo com os princípios fundamentais de contabilidade do Brasil para o Banco BTG Pactual S.A. e suas subsidiárias. Exceto onde indicado em contrário, as informações dos nossos resultados operacionais apresentados neste documento baseiam-se na nossa Demonstração do Resultado Ajustado, que representa uma composição das receitas por unidades de negócios líquidas de custos de financiamento e despesas financeiras alocadas a tais unidades, e em uma reclassificação de outras despesas e custos determinados.",
+      "top_left_x": 88,
+      "top_left_y": 241,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 488,
+      "confidence_scores": null,
+      "content": "A nossa Demonstração do Resultado Ajustado baseia-se nas mesmas informações contábeis utilizadas na preparação da nossa Demonstração do Resultado, de acordo com os princípios fundamentais de contabilidade do Brasil e com o IFRS. A classificação das rubricas na nossa Demonstração do Resultado Ajustado não foi auditada e difere significativamente da classificação e da apresentação das rubricas correspondentes da nossa Demonstração de Resultados. Conforme explicado nas notas explicativas das Demonstrações Financeiras do BTG Pactual, as nossas demonstrações financeiras são apresentadas com o propósito exclusivo de fornecer – num único conjunto de demonstrações financeiras e com base nos princípios fundamentais de contabilidade – informações relativas às operações do BTG Pactual e representam a consolidação entre as operações do Banco BTG Pactual S.A. e suas subsidiárias.",
+      "top_left_x": 88,
+      "top_left_y": 353,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 511,
+      "bottom_right_y": 537,
+      "confidence_scores": null,
+      "content": "### Principais indicadores-chave de desempenho (KPIs) e índices",
+      "top_left_x": 88,
+      "top_left_y": 519,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 648,
+      "confidence_scores": null,
+      "content": "Os indicadores-chave de desempenho (“KPIs”) e os índices são monitorados pela administração do BTG Pactual. O BTG busca alcançar esses indicadores e índices durante todos os períodos financeiros. Consequentemente, os principais indicadores calculados com base nos resultados anuais durante todos os períodos financeiros podem ser mais significativos do que os resultados trimestrais e os resultados obtidos em qualquer data específica. Os KPIs são calculados anualmente e ajustados, quando necessário, como parte do planejamento estratégico, com o objetivo de refletir o ambiente regulatório ou as condições de mercado significativamente adversas.",
+      "top_left_x": 88,
+      "top_left_y": 543,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 685,
+      "confidence_scores": null,
+      "content": "Esta seção contém a base para a apresentação e o cálculo dos KPIs e índices selecionados apresentados neste relatório.",
+      "top_left_x": 88,
+      "top_left_y": 655,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "24",
+      "top_left_x": 675,
+      "top_left_y": 939,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 24,
+    "markdown": "btg pactual\n\nDivulgação de Resultados^{}[] Terceiro trimestre de 2025\n\n## Anexos\n\n### Base da apresentação\n\nExceto onde indicado em contrário, as informações relativas à nossa condição financeira apresentada neste documento baseiam-se no nosso Balanço Patrimonial, que é preparado de acordo com os princípios fundamentais de contabilidade do Brasil para o Banco BTG Pactual S.A. e suas subsidiárias. Exceto onde indicado em contrário, as informações dos nossos resultados operacionais apresentados neste documento baseiam-se na nossa Demonstração do Resultado Ajustado, que representa uma composição das receitas por unidades de negócios líquidas de custos de financiamento e despesas financeiras alocadas a tais unidades, e em uma reclassificação de outras despesas e custos determinados.\n\nA nossa Demonstração do Resultado Ajustado baseia-se nas mesmas informações contábeis utilizadas na preparação da nossa Demonstração do Resultado, de acordo com os princípios fundamentais de contabilidade do Brasil e com o IFRS. A classificação das rubricas na nossa Demonstração do Resultado Ajustado não foi auditada e difere significativamente da classificação e da apresentação das rubricas correspondentes da nossa Demonstração de Resultados. Conforme explicado nas notas explicativas das Demonstrações Financeiras do BTG Pactual, as nossas demonstrações financeiras são apresentadas com o propósito exclusivo de fornecer – num único conjunto de demonstrações financeiras e com base nos princípios fundamentais de contabilidade – informações relativas às operações do BTG Pactual e representam a consolidação entre as operações do Banco BTG Pactual S.A. e suas subsidiárias.\n\n### Principais indicadores-chave de desempenho (KPIs) e índices\n\nOs indicadores-chave de desempenho (“KPIs”) e os índices são monitorados pela administração do BTG Pactual. O BTG busca alcançar esses indicadores e índices durante todos os períodos financeiros. Consequentemente, os principais indicadores calculados com base nos resultados anuais durante todos os períodos financeiros podem ser mais significativos do que os resultados trimestrais e os resultados obtidos em qualquer data específica. Os KPIs são calculados anualmente e ajustados, quando necessário, como parte do planejamento estratégico, com o objetivo de refletir o ambiente regulatório ou as condições de mercado significativamente adversas.\n\nEsta seção contém a base para a apresentação e o cálculo dos KPIs e índices selecionados apresentados neste relatório.\n\n24",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 234,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 526,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 731,
+      "bottom_right_y": 704,
+      "confidence_scores": null,
+      "content": "|  KPIs e índices | Descrição  |\n| --- | --- |\n|  AuM (ativos sob gestão) e AuA (ativos sob administração) | AuM (ativos sob gestão) e AuA (ativos sob administração) consistem em ativos proprietários, de terceiros, fundos de wealth management e/ou veículos de investimento coletivo que gerenciamos e/ou administramos, considerando uma variedade de classes de ativos, incluindo renda fixa, ações, contas remuneradas, fundos multimercado e fundos de private equity.  |\n|  Índice de eficiência | É calculado mediante a divisão das despesas operacionais ajustadas totais pelas receitas ajustadas totais.  |\n|  Índice de remuneração | É calculado mediante a divisão da soma das despesas ajustadas com bônus, salários e benefícios pelas receitas ajustadas totais.  |\n|  Alíquota efetiva de imposto de renda | É calculada mediante a divisão das receitas (ou despesas) com imposto de renda e contribuição social ajustados pelo lucro ajustado antes da dedução de impostos.  |\n|  Lucro líquido por unit | O lucro líquido por unit apresenta os resultados de cada unit pró-forma formada por 3 diferentes classes de ações do Banco e leva em conta as units em circulação até a data da preparação deste relatório. Esta rubrica é uma medida que não faz parte dos princípios de contabilidade geralmente aceitos e pode não ser comparável a outras medidas semelhantes (e que não fazem parte de tais princípios) utilizadas por outras empresas.  |\n|  ROAE | O ROE anualizado é calculado mediante a divisão do lucro líquido anualizado pelo patrimônio líquido médio. Determinamos o patrimônio líquido médio com base no patrimônio líquido inicial e final do trimestre.  |\n|  VaR | Para os montantes de Value-at-risk (VaR) apresentados, foram utilizados horizonte de um dia, nível de confiança de 95,0% e janela de visão retrospectiva de um ano. Um nível de confiança de 95,0% significa que há uma chance em 20 de que as receitas líquidas diárias de negociação caiam abaixo do VaR estimado. Dessa forma, a ocorrência de perdas nas receitas líquidas diárias de negociação em valores superiores ao VaR reportado seria esperada, em média, uma vez por mês. Perdas num único dia podem exceder o VaR reportado em valores significativos e também podem ocorrer com maior frequência, ou acumular-se durante um período mais longo, como numa série de dias de negociação consecutivos. Em virtude de sua dependência de dados históricos, a precisão do VaR é limitada em sua capacidade de prever mudanças de mercado sem precedentes, já que distribuições históricas nos fatores de risco de mercado podem não produzir estimativas precisas de risco de mercado futuro. Diferentes metodologias de VaR e premissas de distribuição podem produzir VaR significativamente distintos. Além disso, o VaR calculado para um horizonte de um dia não captura integralmente o risco de mercado de posições que não podem ser liquidadas ou compensadas com hedges no período de um dia. Utilizamos modelos de \"Teste de Stress\" como complemento do VaR em nossas atividades diárias de gestão de risco.  |\n|  WuM | O Wealth under Management consiste em ativos de wealth privados de clientes que gerenciamos dentre variadas classes de ativos, inclusive renda fixa, mercado monetário, fundos multimercados e fundos de merchant banking. Dessa forma, uma parcela do nosso WuM também está alocada no nosso AuM, à medida que os nossos clientes de wealth management investem nos nossos produtos de asset management.  |\n|  Índice de alavancagem | O índice de alavancagem é calculado mediante a divisão do ativo total pelo patrimônio líquido.  |",
+      "table_id": null,
+      "top_left_x": 49,
+      "top_left_y": 190,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "25",
+      "top_left_x": 673,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 25,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n|  KPIs e índices | Descrição  |\n| --- | --- |\n|  AuM (ativos sob gestão) e AuA (ativos sob administração) | AuM (ativos sob gestão) e AuA (ativos sob administração) consistem em ativos proprietários, de terceiros, fundos de wealth management e/ou veículos de investimento coletivo que gerenciamos e/ou administramos, considerando uma variedade de classes de ativos, incluindo renda fixa, ações, contas remuneradas, fundos multimercado e fundos de private equity.  |\n|  Índice de eficiência | É calculado mediante a divisão das despesas operacionais ajustadas totais pelas receitas ajustadas totais.  |\n|  Índice de remuneração | É calculado mediante a divisão da soma das despesas ajustadas com bônus, salários e benefícios pelas receitas ajustadas totais.  |\n|  Alíquota efetiva de imposto de renda | É calculada mediante a divisão das receitas (ou despesas) com imposto de renda e contribuição social ajustados pelo lucro ajustado antes da dedução de impostos.  |\n|  Lucro líquido por unit | O lucro líquido por unit apresenta os resultados de cada unit pró-forma formada por 3 diferentes classes de ações do Banco e leva em conta as units em circulação até a data da preparação deste relatório. Esta rubrica é uma medida que não faz parte dos princípios de contabilidade geralmente aceitos e pode não ser comparável a outras medidas semelhantes (e que não fazem parte de tais princípios) utilizadas por outras empresas.  |\n|  ROAE | O ROE anualizado é calculado mediante a divisão do lucro líquido anualizado pelo patrimônio líquido médio. Determinamos o patrimônio líquido médio com base no patrimônio líquido inicial e final do trimestre.  |\n|  VaR | Para os montantes de Value-at-risk (VaR) apresentados, foram utilizados horizonte de um dia, nível de confiança de 95,0% e janela de visão retrospectiva de um ano. Um nível de confiança de 95,0% significa que há uma chance em 20 de que as receitas líquidas diárias de negociação caiam abaixo do VaR estimado. Dessa forma, a ocorrência de perdas nas receitas líquidas diárias de negociação em valores superiores ao VaR reportado seria esperada, em média, uma vez por mês. Perdas num único dia podem exceder o VaR reportado em valores significativos e também podem ocorrer com maior frequência, ou acumular-se durante um período mais longo, como numa série de dias de negociação consecutivos. Em virtude de sua dependência de dados históricos, a precisão do VaR é limitada em sua capacidade de prever mudanças de mercado sem precedentes, já que distribuições históricas nos fatores de risco de mercado podem não produzir estimativas precisas de risco de mercado futuro. Diferentes metodologias de VaR e premissas de distribuição podem produzir VaR significativamente distintos. Além disso, o VaR calculado para um horizonte de um dia não captura integralmente o risco de mercado de posições que não podem ser liquidadas ou compensadas com hedges no período de um dia. Utilizamos modelos de \"Teste de Stress\" como complemento do VaR em nossas atividades diárias de gestão de risco.  |\n|  WuM | O Wealth under Management consiste em ativos de wealth privados de clientes que gerenciamos dentre variadas classes de ativos, inclusive renda fixa, mercado monetário, fundos multimercados e fundos de merchant banking. Dessa forma, uma parcela do nosso WuM também está alocada no nosso AuM, à medida que os nossos clientes de wealth management investem nos nossos produtos de asset management.  |\n|  Índice de alavancagem | O índice de alavancagem é calculado mediante a divisão do ativo total pelo patrimônio líquido.  |\n\n25",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 237,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 760,
+      "bottom_right_y": 84,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 526,
+      "top_left_y": 41,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 311,
+      "bottom_right_y": 208,
+      "confidence_scores": null,
+      "content": "Dados financeiros selecionados",
+      "top_left_x": 87,
+      "top_left_y": 190,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 626,
+      "confidence_scores": null,
+      "content": "|  Balanço Patrimonial (não auditado) (em R$mm, a menos que indicado) | Trimestre |   |   | Variação % para 3T 2025  |   |\n| --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 3T 2024 | 2T 2025  |\n|  **Ativo** |  |  |  |  |   |\n|  Disponibilidades | 5.378 | 3.681 | 5.777 | 7% | 57%  |\n|  Aplicações interfinanceiras de liquidez | 98.729 | 66.993 | 80.082 | -19% | 20%  |\n|  Títulos e valores mobiliários e instrumentos financeiros derivativos | 237.993 | 276.788 | 284.658 | 20% | 3%  |\n|  Relações interfinanceiras | 40.031 | 35.199 | 37.382 | -7% | 6%  |\n|  Operações de crédito | 148.808 | 165.279 | 172.246 | 16% | 4%  |\n|  Outros créditos | 65.179 | 77.870 | 73.750 | 13% | -5%  |\n|  Outros valores e bens | 2.272 | 14.307 | 14.303 | 529% | 0%  |\n|  Ativo Permanente | 12.997 | 15.954 | 16.762 | 29% | 5%  |\n|  **Total do ativo** | **611.387** | **656.071** | **684.960** | **12%** | **4%**  |\n|  **Passivo** |  |  |  |  |   |\n|  Depósitos | 153.617 | 148.266 | 168.944 | 10% | 14%  |\n|  Captações no mercado aberto | 122.187 | 123.104 | 125.519 | 3% | 2%  |\n|  Recursos de aceites e emissão de títulos | 101.571 | 109.987 | 114.365 | 13% | 4%  |\n|  Relações interfinanceiras | 3.788 | 5.325 | 5.534 | 46% | 4%  |\n|  Obrigações por empréstimos e repasses | 22.986 | 31.209 | 30.917 | 35% | -1%  |\n|  Instrumentos financeiros derivativos | 31.786 | 55.157 | 51.413 | 62% | -7%  |\n|  Dívida subordinada | 583 | 580 | 554 | -5% | -5%  |\n|  Outras obrigações | 112.324 | 112.692 | 115.077 | 2% | 2%  |\n|  Resultados de exercícios futuros | - | - | - | n.a. | n.a.  |\n|  **Patrimônio líquido** | **56.270** | **63.703** | **65.605** | **17%** | **3%**  |\n|  Participação de não controladores | 6.275 | 6.046 | 7.031 | 12% | 16%  |\n|  **Total do passivo** | **611.387** | **656.071** | **684.960** | **12%** | **4%**  |",
+      "table_id": null,
+      "top_left_x": 87,
+      "top_left_y": 222,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "26",
+      "top_left_x": 672,
+      "top_left_y": 937,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 26,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\nDados financeiros selecionados\n\n|  Balanço Patrimonial (não auditado) (em R$mm, a menos que indicado) | Trimestre |   |   | Variação % para 3T 2025  |   |\n| --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 3T 2024 | 2T 2025  |\n|  **Ativo** |  |  |  |  |   |\n|  Disponibilidades | 5.378 | 3.681 | 5.777 | 7% | 57%  |\n|  Aplicações interfinanceiras de liquidez | 98.729 | 66.993 | 80.082 | -19% | 20%  |\n|  Títulos e valores mobiliários e instrumentos financeiros derivativos | 237.993 | 276.788 | 284.658 | 20% | 3%  |\n|  Relações interfinanceiras | 40.031 | 35.199 | 37.382 | -7% | 6%  |\n|  Operações de crédito | 148.808 | 165.279 | 172.246 | 16% | 4%  |\n|  Outros créditos | 65.179 | 77.870 | 73.750 | 13% | -5%  |\n|  Outros valores e bens | 2.272 | 14.307 | 14.303 | 529% | 0%  |\n|  Ativo Permanente | 12.997 | 15.954 | 16.762 | 29% | 5%  |\n|  **Total do ativo** | **611.387** | **656.071** | **684.960** | **12%** | **4%**  |\n|  **Passivo** |  |  |  |  |   |\n|  Depósitos | 153.617 | 148.266 | 168.944 | 10% | 14%  |\n|  Captações no mercado aberto | 122.187 | 123.104 | 125.519 | 3% | 2%  |\n|  Recursos de aceites e emissão de títulos | 101.571 | 109.987 | 114.365 | 13% | 4%  |\n|  Relações interfinanceiras | 3.788 | 5.325 | 5.534 | 46% | 4%  |\n|  Obrigações por empréstimos e repasses | 22.986 | 31.209 | 30.917 | 35% | -1%  |\n|  Instrumentos financeiros derivativos | 31.786 | 55.157 | 51.413 | 62% | -7%  |\n|  Dívida subordinada | 583 | 580 | 554 | -5% | -5%  |\n|  Outras obrigações | 112.324 | 112.692 | 115.077 | 2% | 2%  |\n|  Resultados de exercícios futuros | - | - | - | n.a. | n.a.  |\n|  **Patrimônio líquido** | **56.270** | **63.703** | **65.605** | **17%** | **3%**  |\n|  Participação de não controladores | 6.275 | 6.046 | 7.031 | 12% | 16%  |\n|  **Total do passivo** | **611.387** | **656.071** | **684.960** | **12%** | **4%**  |\n\n26",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 526,
+      "top_left_y": 41,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 498,
+      "confidence_scores": null,
+      "content": "|  Demonstrativo de Resultados (não auditado) *(em R$mm, a menos que indicado)* | Trimestre |   |   | Variação % para 3T 2025 |   | Acumulado no ano |   | Variação % para 9M 2025  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 3T 2024 | 2T 2025 | 9M 2024 | 9M 2025 | 9M 2024  |\n|  Investment Banking | 380 | 782 | 643 | 69% | -18% | 1.592 | 1.805 | 13%  |\n|  Corporate Lending & Business Banking | 1.712 | 2.107 | 2.154 | 26% | 2% | 4.682 | 6.193 | 32%  |\n|  Sales & Trading | 1.672 | 1.913 | 1.941 | 16% | 1% | 4.431 | 5.165 | 17%  |\n|  Asset Management | 606 | 624 | 747 | 23% | 20% | 1.729 | 2.107 | 22%  |\n|  Wealth Management & Personal Banking | 1.007 | 1.239 | 1.366 | 36% | 10% | 2.814 | 3.653 | 30%  |\n|  Participations | 217 | 279 | 325 | 49% | 17% | 618 | 893 | 45%  |\n|  Interest & Others | 851 | 1.351 | 1.643 | 93% | 22% | 2.462 | 4.133 | 68%  |\n|  **Receita Total** | **6.445** | **8.294** | **8.818** | **37%** | **6%** | **18.327** | **23.950** | **31%**  |\n|  Bônus | (727) | (970) | (966) | 33% | 0% | (1.986) | (2.622) | 32%  |\n|  Salários e benefícios | (638) | (771) | (792) | 24% | 3% | (1.879) | (2.308) | 23%  |\n|  Administrativas e outras | (687) | (807) | (809) | 18% | 0% | (1.996) | (2.371) | 19%  |\n|  Amortização de ágio | (253) | (314) | (366) | 45% | 16% | (692) | (966) | 40%  |\n|  Despesas tributárias, exceto imposto de rend | (296) | (401) | (435) | 47% | 8% | (932) | (1.182) | 27%  |\n|  **Despesas operacionais totais** | **(2.601)** | **(3.264)** | **(3.369)** | **30%** | **3%** | **(7.484)** | **(9.448)** | **26%**  |\n|  **Lucro antes dos impostos** | **3.844** | **5.030** | **5.450** | **42%** | **8%** | **10.843** | **14.502** | **34%**  |\n|  Imposto de renda e contribuição social | (776) | (1.021) | (1.112) | 43% | 9% | (2.177) | (2.946) | 35%  |\n|  **Lucro líquido** | **3.068** | **4.009** | **4.337** | **41%** | **8%** | **8.665** | **11.557** | **33%**  |",
+      "table_id": null,
+      "top_left_x": 88,
+      "top_left_y": 189,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 727,
+      "confidence_scores": null,
+      "content": "|  Demonstrativo de Resultados (não auditado) *(em R$mm, a menos que indicado)* | Banco BTG Pactual S.A.  |   |\n| --- | --- | --- |\n|   |  2T 2025 | 3T 2025  |\n|  Receitas da intermediação financeira | 24.082 | 26.415  |\n|  Despesas da intermediação financeira | (17.578) | (17.963)  |\n|  **Resultado bruto da intermediação financeira** | **6.504** | **8.452**  |\n|  Outras receitas (despesas) operacionais | (952) | (1.406)  |\n|  **Resultado operacional** | **5.552** | **7.047**  |\n|  Resultado não operacional | 146 | (239)  |\n|  **Resultado antes da tributação sobre o lucro e participações** | **5.697** | **6.807**  |\n|  Imposto de renda e contribuição social | (530) | (1.182)  |\n|  Participações estatutárias no lucro | (989) | (992)  |\n|  Participações de acionistas minoritários | (170) | (296)  |\n|  **Lucro líquido do trimestre** | **4.009** | **4.337**  |",
+      "table_id": null,
+      "top_left_x": 88,
+      "top_left_y": 515,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "27",
+      "top_left_x": 672,
+      "top_left_y": 937,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 27,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n|  Demonstrativo de Resultados (não auditado) *(em R$mm, a menos que indicado)* | Trimestre |   |   | Variação % para 3T 2025 |   | Acumulado no ano |   | Variação % para 9M 2025  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|   |  3T 2024 | 2T 2025 | 3T 2025 | 3T 2024 | 2T 2025 | 9M 2024 | 9M 2025 | 9M 2024  |\n|  Investment Banking | 380 | 782 | 643 | 69% | -18% | 1.592 | 1.805 | 13%  |\n|  Corporate Lending & Business Banking | 1.712 | 2.107 | 2.154 | 26% | 2% | 4.682 | 6.193 | 32%  |\n|  Sales & Trading | 1.672 | 1.913 | 1.941 | 16% | 1% | 4.431 | 5.165 | 17%  |\n|  Asset Management | 606 | 624 | 747 | 23% | 20% | 1.729 | 2.107 | 22%  |\n|  Wealth Management & Personal Banking | 1.007 | 1.239 | 1.366 | 36% | 10% | 2.814 | 3.653 | 30%  |\n|  Participations | 217 | 279 | 325 | 49% | 17% | 618 | 893 | 45%  |\n|  Interest & Others | 851 | 1.351 | 1.643 | 93% | 22% | 2.462 | 4.133 | 68%  |\n|  **Receita Total** | **6.445** | **8.294** | **8.818** | **37%** | **6%** | **18.327** | **23.950** | **31%**  |\n|  Bônus | (727) | (970) | (966) | 33% | 0% | (1.986) | (2.622) | 32%  |\n|  Salários e benefícios | (638) | (771) | (792) | 24% | 3% | (1.879) | (2.308) | 23%  |\n|  Administrativas e outras | (687) | (807) | (809) | 18% | 0% | (1.996) | (2.371) | 19%  |\n|  Amortização de ágio | (253) | (314) | (366) | 45% | 16% | (692) | (966) | 40%  |\n|  Despesas tributárias, exceto imposto de rend | (296) | (401) | (435) | 47% | 8% | (932) | (1.182) | 27%  |\n|  **Despesas operacionais totais** | **(2.601)** | **(3.264)** | **(3.369)** | **30%** | **3%** | **(7.484)** | **(9.448)** | **26%**  |\n|  **Lucro antes dos impostos** | **3.844** | **5.030** | **5.450** | **42%** | **8%** | **10.843** | **14.502** | **34%**  |\n|  Imposto de renda e contribuição social | (776) | (1.021) | (1.112) | 43% | 9% | (2.177) | (2.946) | 35%  |\n|  **Lucro líquido** | **3.068** | **4.009** | **4.337** | **41%** | **8%** | **8.665** | **11.557** | **33%**  |\n\n|  Demonstrativo de Resultados (não auditado) *(em R$mm, a menos que indicado)* | Banco BTG Pactual S.A.  |   |\n| --- | --- | --- |\n|   |  2T 2025 | 3T 2025  |\n|  Receitas da intermediação financeira | 24.082 | 26.415  |\n|  Despesas da intermediação financeira | (17.578) | (17.963)  |\n|  **Resultado bruto da intermediação financeira** | **6.504** | **8.452**  |\n|  Outras receitas (despesas) operacionais | (952) | (1.406)  |\n|  **Resultado operacional** | **5.552** | **7.047**  |\n|  Resultado não operacional | 146 | (239)  |\n|  **Resultado antes da tributação sobre o lucro e participações** | **5.697** | **6.807**  |\n|  Imposto de renda e contribuição social | (530) | (1.182)  |\n|  Participações estatutárias no lucro | (989) | (992)  |\n|  Participações de acionistas minoritários | (170) | (296)  |\n|  **Lucro líquido do trimestre** | **4.009** | **4.337**  |\n\n27",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 234,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 526,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 380,
+      "bottom_right_y": 210,
+      "confidence_scores": null,
+      "content": "# Diferenças de Apresentação Selecionadas",
+      "top_left_x": 87,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 246,
+      "confidence_scores": null,
+      "content": "A tabela abaixo apresenta um resumo de determinadas diferenças relevantes entre a Demonstração do Resultado Ajustado e a Demonstração de Resultados, preparadas em concordância com o BR GAAP:",
+      "top_left_x": 87,
+      "top_left_y": 214,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 735,
+      "bottom_right_y": 888,
+      "confidence_scores": null,
+      "content": "|   | Demonstração do Resultado Ajustado | Demonstração de Resultado  |\n| --- | --- | --- |\n|  Receitas | - Receitas segregadas por unidade de negócios, que é a visão funcional utilizada pela nossa administração para monitorar o nosso desempenho. - Cada operação é alocada a uma unidade de negócios, e a receita associada, líquida de custos de operação e financiamento (quando aplicável), é divulgada como tendo sido gerada por essa unidade de negócios. | - As receitas são apresentadas de acordo com as normas do BR GAAP e com as normas estabelecidas pelo COSIF e o IFRS. - A segregação das receitas obedece à natureza contratual das operações e está alinhada à classificação dos ativos e passivos — dos quais tais receitas são originadas. - As receitas são apresentadas sem dedução de custos financeiros ou de custos de transação correspondentes.  |\n|  Despesas | - As receitas são líquidas de determinadas despesas, tais como perdas com negociações, bem como custos de operação e de financiamento. - As receitas são líquidas de custos de financiamento do nosso patrimônio líquido (registradas na rubrica \"Interest & others\"). - As despesas gerais, administrativas e com vendas que dão suporte às nossas operações são apresentadas separadamente. | - Composição das despesas em concordância com o COSIF - Despesas financeiras e perdas em negociações são apresentadas como rubricas separadas e não deduzidas das receitas financeiras às quais estão associadas. - Os custos de transação são capitalizados como parte do custo de aquisição dos ativos e passivos em nosso inventário. - As despesas gerais, administrativas e com vendas que dão suporte às nossas operações são apresentadas separadamente em nossas demonstrações do resultado.  |\n|  Receitas de Principal Investments | - Receitas líquidas de custos de financiamento (incluindo o custo do patrimônio líquido) e de perdas em negociações, incluindo perdas com derivativos e com variações cambiais. - As receitas são reduzidas pelos custos de operação associados e pelas taxas de administração e de desempenho pagas. | - Receitas incluídas em diferentes rubricas de receitas (títulos e valores mobiliários, receitas financeiras de derivativos e equivalência patrimonial das subsidiárias). - Prejuízos, incluindo perdas com negociações e despesas com derivativos, apresentados como despesas financeiras.  |\n|  Receitas de Sales & Trading | - Receitas líquidas de custos de financiamento (incluindo o custo do patrimônio líquido) e de perdas em negociações, incluindo perdas com derivativos e com variações cambiais. - Receitas deduzidas dos custos de operação. | - Receitas incluídas em diferentes rubricas de receitas (títulos e valores mobiliários, receitas financeiras de derivativos, câmbio e investimentos obrigatórios). - Prejuízos, incluindo perdas com negociações, despesas com derivativos e custos de financiamento e empréstimos, apresentados como despesas financeiras.  |\n|  Receitas de Corporate & SME Lending | - Receitas apresentadas líquidas de custos de financiamento (incluindo o custo de financiamento do patrimônio líquido). | - Receitas incluídas em determinadas rubricas de receitas (operações de crédito, títulos e valores mobiliários e receitas financeiras de derivativos). - Prejuízos, incluindo perdas com derivativos, apresentados como despesas financeiras.  |\n|  Receitas do Banco Pan | - As receitas consistem na equivalência patrimonial decorrentes do nosso investimento e são apresentadas líquidas de amortização de ágio. | - As receitas decorrentes de equivalência patrimonial registradas como equivalência patrimonial proveniente de subsidiárias.  |\n|  Salários e benefícios | - Salários e benefícios incluem despesas com remuneração e contribuições previdenciárias. | - São geralmente registradas como despesas com pessoal.  |\n|  Bônus | - Os bônus incluem despesas com o plano de participação nos lucros (percentual de nossas receitas líquidas menos despesas operacionais). | - São geralmente registradas como participação estatutária nos lucros.  |\n|  Despesas administrativas e de outra natureza | - Despesas administrativas e de outra natureza incluem honorários de consultoria, despesas de escritório, TI, viagens e entretenimento, bem como outras despesas gerais. | - São geralmente registradas como outras despesas administrativas e outras despesas operacionais.  |\n|  Amortização do ágio | - Corresponde à amortização do ágio decorrente de investimentos em controladas operacionais, que não são investimentos em merchant banking. | - É geralmente registrado como outras despesas operacionais.  |\n|  Despesas tributárias, exceto imposto de renda, | - Despesas tributárias são compostas por impostos incidentes sobre as nossas receitas que, por conta de sua natureza, não consideramos como custos de operação (PIS, COFINS e ISS). | - São geralmente registradas como despesas tributárias exceto imposto de renda.  |\n|  Imposto de renda e contribuição social | - Imposto de renda e outros impostos incidentes sobre o lucro líquido. | - São geralmente registrados como imposto de renda e contribuição social.  |",
+      "table_id": null,
+      "top_left_x": 45,
+      "top_left_y": 285,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "28",
+      "top_left_x": 672,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 28,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Diferenças de Apresentação Selecionadas\n\nA tabela abaixo apresenta um resumo de determinadas diferenças relevantes entre a Demonstração do Resultado Ajustado e a Demonstração de Resultados, preparadas em concordância com o BR GAAP:\n\n|   | Demonstração do Resultado Ajustado | Demonstração de Resultado  |\n| --- | --- | --- |\n|  Receitas | - Receitas segregadas por unidade de negócios, que é a visão funcional utilizada pela nossa administração para monitorar o nosso desempenho. - Cada operação é alocada a uma unidade de negócios, e a receita associada, líquida de custos de operação e financiamento (quando aplicável), é divulgada como tendo sido gerada por essa unidade de negócios. | - As receitas são apresentadas de acordo com as normas do BR GAAP e com as normas estabelecidas pelo COSIF e o IFRS. - A segregação das receitas obedece à natureza contratual das operações e está alinhada à classificação dos ativos e passivos — dos quais tais receitas são originadas. - As receitas são apresentadas sem dedução de custos financeiros ou de custos de transação correspondentes.  |\n|  Despesas | - As receitas são líquidas de determinadas despesas, tais como perdas com negociações, bem como custos de operação e de financiamento. - As receitas são líquidas de custos de financiamento do nosso patrimônio líquido (registradas na rubrica \"Interest & others\"). - As despesas gerais, administrativas e com vendas que dão suporte às nossas operações são apresentadas separadamente. | - Composição das despesas em concordância com o COSIF - Despesas financeiras e perdas em negociações são apresentadas como rubricas separadas e não deduzidas das receitas financeiras às quais estão associadas. - Os custos de transação são capitalizados como parte do custo de aquisição dos ativos e passivos em nosso inventário. - As despesas gerais, administrativas e com vendas que dão suporte às nossas operações são apresentadas separadamente em nossas demonstrações do resultado.  |\n|  Receitas de Principal Investments | - Receitas líquidas de custos de financiamento (incluindo o custo do patrimônio líquido) e de perdas em negociações, incluindo perdas com derivativos e com variações cambiais. - As receitas são reduzidas pelos custos de operação associados e pelas taxas de administração e de desempenho pagas. | - Receitas incluídas em diferentes rubricas de receitas (títulos e valores mobiliários, receitas financeiras de derivativos e equivalência patrimonial das subsidiárias). - Prejuízos, incluindo perdas com negociações e despesas com derivativos, apresentados como despesas financeiras.  |\n|  Receitas de Sales & Trading | - Receitas líquidas de custos de financiamento (incluindo o custo do patrimônio líquido) e de perdas em negociações, incluindo perdas com derivativos e com variações cambiais. - Receitas deduzidas dos custos de operação. | - Receitas incluídas em diferentes rubricas de receitas (títulos e valores mobiliários, receitas financeiras de derivativos, câmbio e investimentos obrigatórios). - Prejuízos, incluindo perdas com negociações, despesas com derivativos e custos de financiamento e empréstimos, apresentados como despesas financeiras.  |\n|  Receitas de Corporate & SME Lending | - Receitas apresentadas líquidas de custos de financiamento (incluindo o custo de financiamento do patrimônio líquido). | - Receitas incluídas em determinadas rubricas de receitas (operações de crédito, títulos e valores mobiliários e receitas financeiras de derivativos). - Prejuízos, incluindo perdas com derivativos, apresentados como despesas financeiras.  |\n|  Receitas do Banco Pan | - As receitas consistem na equivalência patrimonial decorrentes do nosso investimento e são apresentadas líquidas de amortização de ágio. | - As receitas decorrentes de equivalência patrimonial registradas como equivalência patrimonial proveniente de subsidiárias.  |\n|  Salários e benefícios | - Salários e benefícios incluem despesas com remuneração e contribuições previdenciárias. | - São geralmente registradas como despesas com pessoal.  |\n|  Bônus | - Os bônus incluem despesas com o plano de participação nos lucros (percentual de nossas receitas líquidas menos despesas operacionais). | - São geralmente registradas como participação estatutária nos lucros.  |\n|  Despesas administrativas e de outra natureza | - Despesas administrativas e de outra natureza incluem honorários de consultoria, despesas de escritório, TI, viagens e entretenimento, bem como outras despesas gerais. | - São geralmente registradas como outras despesas administrativas e outras despesas operacionais.  |\n|  Amortização do ágio | - Corresponde à amortização do ágio decorrente de investimentos em controladas operacionais, que não são investimentos em merchant banking. | - É geralmente registrado como outras despesas operacionais.  |\n|  Despesas tributárias, exceto imposto de renda, | - Despesas tributárias são compostas por impostos incidentes sobre as nossas receitas que, por conta de sua natureza, não consideramos como custos de operação (PIS, COFINS e ISS). | - São geralmente registradas como despesas tributárias exceto imposto de renda.  |\n|  Imposto de renda e contribuição social | - Imposto de renda e outros impostos incidentes sobre o lucro líquido. | - São geralmente registrados como imposto de renda e contribuição social.  |\n\n28",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados^{}[] ^{}[] Terceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 41,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 371,
+      "confidence_scores": null,
+      "content": "As diferenças discutidas acima não estão completas e não devem ser interpretadas como uma reconciliação entre as nossas Demonstrações do Resultado Ajustado e as Demonstrações do Resultado ou as Demonstrações Financeiras. As unidades de negócio apresentadas na Demonstração do Resultado Ajustado não devem ser consideradas como segmentos operacionais de acordo com o IFRS, pois a administração não se baseia somente nessas informações para a tomada de decisões. Dessa forma, as Demonstrações do Resultado Ajustado contêm informações sobre os negócios e sobre os resultados operacionais e financeiros que não são diretamente comparáveis às demonstrações do resultado ou às demonstrações financeiras, não devendo ser considerados isoladamente ou como uma alternativa às demonstrações do resultado ou às demonstrações financeiras. Além disso, apesar de a administração acreditar que as Demonstrações do Resultado Ajustado são úteis para avaliar o nosso desempenho, essas informações não se baseiam no BR GAAP, no IFRS, no U.S. GAAP ou em qualquer outra prática contábil geralmente aceita.",
+      "top_left_x": 87,
+      "top_left_y": 190,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 268,
+      "bottom_right_y": 429,
+      "confidence_scores": null,
+      "content": "### Declarações prospectivas",
+      "top_left_x": 87,
+      "top_left_y": 411,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 675,
+      "confidence_scores": null,
+      "content": "Este documento pode conter estimativas e declarações prospectivas nos termos da seção 27A do *Securities Act* de 1933 e da seção 21E do *Securities Exchange Act* de 1934 e suas posteriores alterações, ou o *Exchange Act*. Essas declarações podem aparecer ao longo de todo o documento. Essas estimativas e declarações prospectivas baseiam-se, principalmente, em nossas expectativas atuais e estimativas de eventos e tendências futuros que afetam, ou poderão afetar, nossos negócios, condição financeira, resultados das operações, fluxo de caixa, liquidez, perspectivas e a cotação de nossas units. Embora acreditemos que essas estimativas e declarações futuras são baseadas em premissas razoáveis, elas estão sujeitas a riscos, incertezas e premissas significativos e são emitidas levando em consideração informações atualmente disponíveis para nós. As declarações prospectivas se referem apenas à data em que foram emitidas, e não nos responsabilizamos por atualizá-las ou revisá-las publicamente após a distribuição deste documento em virtude de novas informações, eventos futuros ou outros fatores. Em vista dos riscos e incertezas supramencionados, as circunstâncias e eventos prospectivos discutidos neste documento podem não ocorrer, e nossos resultados futuros podem diferir significativamente daqueles expressos ou sugeridos nessas declarações prospectivas. Declarações prospectivas envolvem riscos e incertezas e não são garantias de resultados futuros. Portanto, os investidores não devem tomar nenhuma decisão de investimento com base nas declarações prospectivas contidas neste documento.",
+      "top_left_x": 87,
+      "top_left_y": 435,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 208,
+      "bottom_right_y": 740,
+      "confidence_scores": null,
+      "content": "### Arredondamento",
+      "top_left_x": 87,
+      "top_left_y": 723,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 808,
+      "confidence_scores": null,
+      "content": "Determinadas porcentagens e outros valores incluídos neste documento foram arredondados para facilitar a apresentação. Dessa forma, os números apresentados como totais em algumas tabelas podem não representar a soma aritmética dos números que os precedem, e podem diferir daqueles apresentados nas demonstrações financeiras.",
+      "top_left_x": 87,
+      "top_left_y": 747,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "29",
+      "top_left_x": 674,
+      "top_left_y": 938,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 29,
+    "markdown": "btg pactual\n\nDivulgação de Resultados^{}[] Terceiro trimestre de 2025\n\nAs diferenças discutidas acima não estão completas e não devem ser interpretadas como uma reconciliação entre as nossas Demonstrações do Resultado Ajustado e as Demonstrações do Resultado ou as Demonstrações Financeiras. As unidades de negócio apresentadas na Demonstração do Resultado Ajustado não devem ser consideradas como segmentos operacionais de acordo com o IFRS, pois a administração não se baseia somente nessas informações para a tomada de decisões. Dessa forma, as Demonstrações do Resultado Ajustado contêm informações sobre os negócios e sobre os resultados operacionais e financeiros que não são diretamente comparáveis às demonstrações do resultado ou às demonstrações financeiras, não devendo ser considerados isoladamente ou como uma alternativa às demonstrações do resultado ou às demonstrações financeiras. Além disso, apesar de a administração acreditar que as Demonstrações do Resultado Ajustado são úteis para avaliar o nosso desempenho, essas informações não se baseiam no BR GAAP, no IFRS, no U.S. GAAP ou em qualquer outra prática contábil geralmente aceita.\n\n### Declarações prospectivas\n\nEste documento pode conter estimativas e declarações prospectivas nos termos da seção 27A do *Securities Act* de 1933 e da seção 21E do *Securities Exchange Act* de 1934 e suas posteriores alterações, ou o *Exchange Act*. Essas declarações podem aparecer ao longo de todo o documento. Essas estimativas e declarações prospectivas baseiam-se, principalmente, em nossas expectativas atuais e estimativas de eventos e tendências futuros que afetam, ou poderão afetar, nossos negócios, condição financeira, resultados das operações, fluxo de caixa, liquidez, perspectivas e a cotação de nossas units. Embora acreditemos que essas estimativas e declarações futuras são baseadas em premissas razoáveis, elas estão sujeitas a riscos, incertezas e premissas significativos e são emitidas levando em consideração informações atualmente disponíveis para nós. As declarações prospectivas se referem apenas à data em que foram emitidas, e não nos responsabilizamos por atualizá-las ou revisá-las publicamente após a distribuição deste documento em virtude de novas informações, eventos futuros ou outros fatores. Em vista dos riscos e incertezas supramencionados, as circunstâncias e eventos prospectivos discutidos neste documento podem não ocorrer, e nossos resultados futuros podem diferir significativamente daqueles expressos ou sugeridos nessas declarações prospectivas. Declarações prospectivas envolvem riscos e incertezas e não são garantias de resultados futuros. Portanto, os investidores não devem tomar nenhuma decisão de investimento com base nas declarações prospectivas contidas neste documento.\n\n### Arredondamento\n\nDeterminadas porcentagens e outros valores incluídos neste documento foram arredondados para facilitar a apresentação. Dessa forma, os números apresentados como totais em algumas tabelas podem não representar a soma aritmética dos números que os precedem, e podem diferir daqueles apresentados nas demonstrações financeiras.\n\n29",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 237,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 87,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 760,
+      "bottom_right_y": 84,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 526,
+      "top_left_y": 41,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 159,
+      "bottom_right_y": 208,
+      "confidence_scores": null,
+      "content": "# Glossário",
+      "top_left_x": 87,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 691,
+      "bottom_right_y": 521,
+      "confidence_scores": null,
+      "content": "|  Alternext | A Alternext Amsterdam.  |\n| --- | --- |\n|  BM&FBOVESPA | A Bolsa de Valores de São Paulo (BM&FBOVESPA S.A. – Bolsa de Valores, Mercadorias e Futuros).  |\n|  BR Properties | A BR Properties S.A.  |\n|  CMN | Conselho Monetário Nacional  |\n|  ECB LTRO | Operações de acordo de recompra de longo prazo do Banco Central Europeu  |\n|  ECM | Mercado de Ações  |\n|  Euronext | A NYSE Euronext Amsterdam  |\n|  HNWI | *High net worth individuals* (indivíduos que possuem patrimônio pessoal elevado).  |\n|  IPCA | A taxa de inflação é mensurada pelo Índice de Preços ao Consumidor, conforme cálculo do IBGE.  |\n|  F&A | Fusões e Aquisições  |\n|  NNM | Net New Money  |\n|  PIB | Produto Interno Bruto  |\n|  Selic | A taxa de juros básica pagável aos detentores de alguns títulos e valores mobiliários emitidos pelo governo brasileiro.  |\n|  SG&A | Despesas gerais, administrativas e com vendas  |",
+      "table_id": null,
+      "top_left_x": 87,
+      "top_left_y": 231,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 699,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "30",
+      "top_left_x": 672,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 30,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n# Glossário\n\n|  Alternext | A Alternext Amsterdam.  |\n| --- | --- |\n|  BM&FBOVESPA | A Bolsa de Valores de São Paulo (BM&FBOVESPA S.A. – Bolsa de Valores, Mercadorias e Futuros).  |\n|  BR Properties | A BR Properties S.A.  |\n|  CMN | Conselho Monetário Nacional  |\n|  ECB LTRO | Operações de acordo de recompra de longo prazo do Banco Central Europeu  |\n|  ECM | Mercado de Ações  |\n|  Euronext | A NYSE Euronext Amsterdam  |\n|  HNWI | *High net worth individuals* (indivíduos que possuem patrimônio pessoal elevado).  |\n|  IPCA | A taxa de inflação é mensurada pelo Índice de Preços ao Consumidor, conforme cálculo do IBGE.  |\n|  F&A | Fusões e Aquisições  |\n|  NNM | Net New Money  |\n|  PIB | Produto Interno Bruto  |\n|  Selic | A taxa de juros básica pagável aos detentores de alguns títulos e valores mobiliários emitidos pelo governo brasileiro.  |\n|  SG&A | Despesas gerais, administrativas e com vendas  |\n\n30",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 88,
+      "top_left_y": 29,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 759,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "Divulgação de Resultados\nTerceiro trimestre de 2025",
+      "top_left_x": 528,
+      "top_left_y": 42,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 444,
+      "bottom_right_y": 250,
+      "confidence_scores": null,
+      "content": "## Divulgação de Resultados – Terceiro Trimestre de 2025",
+      "top_left_x": 95,
+      "top_left_y": 193,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 463,
+      "bottom_right_y": 268,
+      "confidence_scores": null,
+      "content": "11 de novembro de 2025 (antes da abertura do mercado)",
+      "top_left_x": 97,
+      "top_left_y": 251,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 390,
+      "bottom_right_y": 330,
+      "confidence_scores": null,
+      "content": "Teleconferência em inglês\n(com tradução simultânea para português)",
+      "top_left_x": 95,
+      "top_left_y": 296,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 326,
+      "bottom_right_y": 359,
+      "confidence_scores": null,
+      "content": "11 de agosto de 2025 (terça-feira)",
+      "top_left_x": 95,
+      "top_left_y": 342,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 400,
+      "bottom_right_y": 375,
+      "confidence_scores": null,
+      "content": "11h (horário de Brasília) / 9h (horário de Nova York)",
+      "top_left_x": 95,
+      "top_left_y": 359,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 421,
+      "bottom_right_y": 390,
+      "confidence_scores": null,
+      "content": "Webcast: https://nucleodeimagem.com.br/btg/3q25.html",
+      "top_left_x": 95,
+      "top_left_y": 374,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 675,
+      "bottom_right_y": 496,
+      "confidence_scores": null,
+      "content": "Webcast: O áudio das teleconferências será transmitido ao vivo por meio de um sistema de webcast disponível no nosso site www.btgpactual.com/ir.",
+      "top_left_x": 88,
+      "top_left_y": 457,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 667,
+      "bottom_right_y": 539,
+      "confidence_scores": null,
+      "content": "Solicitamos que os participantes se conectem 15 minutos antes do horário marcado para o início das teleconferências.",
+      "top_left_x": 88,
+      "top_left_y": 500,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 264,
+      "bottom_right_y": 577,
+      "confidence_scores": null,
+      "content": "Relações com Investidores",
+      "top_left_x": 88,
+      "top_left_y": 561,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 245,
+      "bottom_right_y": 593,
+      "confidence_scores": null,
+      "content": "E-mail: ri@btgpactual.com",
+      "top_left_x": 88,
+      "top_left_y": 577,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 265,
+      "bottom_right_y": 607,
+      "confidence_scores": null,
+      "content": "Telefone: +55 (11) 3383-2000",
+      "top_left_x": 88,
+      "top_left_y": 592,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 623,
+      "confidence_scores": null,
+      "content": "Fax: +55 (11) 3383-2001",
+      "top_left_x": 88,
+      "top_left_y": 607,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 231,
+      "bottom_right_y": 798,
+      "confidence_scores": null,
+      "content": "![img-21.jpeg](img-21.jpeg)",
+      "image_id": "img-21.jpeg",
+      "top_left_x": 97,
+      "top_left_y": 664,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 956,
+      "confidence_scores": null,
+      "content": "31",
+      "top_left_x": 675,
+      "top_left_y": 939,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 93,
+     "height": 1023,
+     "width": 791
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [
+     "https://nucleodeimagem.com.br/btg/3q25.html",
+     "http://www.btgpactual.com/ir",
+     "mailto:ri%40btgpactual.com"
+    ],
+    "images": [
+     {
+      "bottom_right_x": 231,
+      "bottom_right_y": 798,
+      "id": "img-21.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 97,
+      "top_left_y": 664
+     }
+    ],
+    "index": 31,
+    "markdown": "btg pactual\n\nDivulgação de Resultados\nTerceiro trimestre de 2025\n\n## Divulgação de Resultados – Terceiro Trimestre de 2025\n\n11 de novembro de 2025 (antes da abertura do mercado)\n\nTeleconferência em inglês\n(com tradução simultânea para português)\n\n11 de agosto de 2025 (terça-feira)\n\n11h (horário de Brasília) / 9h (horário de Nova York)\n\nWebcast: https://nucleodeimagem.com.br/btg/3q25.html\n\nWebcast: O áudio das teleconferências será transmitido ao vivo por meio de um sistema de webcast disponível no nosso site www.btgpactual.com/ir.\n\nSolicitamos que os participantes se conectem 15 minutos antes do horário marcado para o início das teleconferências.\n\nRelações com Investidores\n\nE-mail: ri@btgpactual.com\n\nTelefone: +55 (11) 3383-2000\n\nFax: +55 (11) 3383-2001\n\n![img-21.jpeg](img-21.jpeg)\n\n31",
+    "tables": []
+   }
+  ],
+  "usage_info": {
+   "doc_size_bytes": 885151,
+   "pages_processed": 32
+  }
+ },
+ "trimestre": "3T2025"
+}

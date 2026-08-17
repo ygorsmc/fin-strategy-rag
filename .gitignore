@@ -18,47 +18,125 @@ ENV/
 # IDEs e Editores
 .vscode/
 .idea/
+# Definições de subagente do Claude Code: configuração de ferramenta local, não
+# produto. Atenção: o AGENTS.md §7 nomeia esses donos por etapa (`dados-cvm`,
+# `indice-recuperacao`, ...) e eles não existirão no repositório publicado.
+.claude/
 *.swp
 *.swo
 .DS_Store
 
-# Segredos
-.env
-.streamlit/secrets.toml
+# Segredos e credenciais locais
+.env*
+!.env.example
+.envrc
+.envrc.*
+.streamlit/secrets*.toml
+**/.streamlit/secrets*.toml
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*service-account*.json
+credentials/
+secrets/
 
 # ====================================================
 # Regras Específicas do Assistente de Research Financeiro
 # ====================================================
+
+# Regra geral (spec 5.21): são VERSIONADOS o cache de OCR, corpus/metadados.csv,
+# o índice de deploy, os logs JSONL de execução (RNF08) e as respostas cacheadas
+# do demo. Ficam FORA os PDFs brutos, os ZIPs da CVM, o banco DuckDB, o índice
+# de desenvolvimento, pesos de modelo e qualquer segredo.
 
 # 1. Corpus Bruto (RNF02 e Privacidade/Limites do Git)
 # Nunca versionar os PDFs brutos. Eles são gerados pelo script de download.
 # (O corpus/metadados.csv é a fonte de verdade e DEVE ser versionado).
 corpus/raw/*
 !corpus/raw/.gitkeep
+# corpus/ocr/ NÃO é ignorado de propósito: a RNF10 exige cache de OCR versionado
+# (markdown + metadados de bloco, poucos MB). Ainda não existe — o subsistema OCR
+# atual grava em artefatos/ocr_mistral/ e a migração é onda adiada (AGENTS.md §3.2).
 
-# 2. Artefatos Dinâmicos / Pesados
+# Demonstrações em IFRS publicadas em separado — evidência do gate G4, NÃO corpus.
+# Mesma regra dos PDFs brutos: o binário fica fora, o manifesto com URL, data e
+# SHA-256 é versionado e é o que torna o gate refazível. Estes documentos nunca
+# entram em corpus/metadados.csv: isso mudaria a identidade do índice (RNF09).
+corpus/ifrs/raw/*
+!corpus/ifrs/raw/.gitkeep
+
+# 2. Dados abertos da CVM (seção 5.5)
+# Os ZIPs de ITR/DFP e o banco analítico são regeneráveis por scripts/baixar_cvm.py.
+artefatos/cvm.duckdb
+artefatos/cvm.duckdb.wal
+artefatos/*.duckdb
+artefatos/*.duckdb.wal
+artefatos/cvm/
+dados_cvm/
+*.zip
+
+# 3. Artefatos Dinâmicos / Pesados
 # Ignoramos binários pesados e índices locais não otimizados para deploy.
-# Mantemos apenas os descritores/metadados estáticos ou os índices 
+# Mantemos apenas os descritores/metadados estáticos ou os índices
 # menores estritamente necessários se versionados explicitamente.
-artefatos/indice_vetorial/*.faiss
-artefatos/indice_vetorial/*.pkl
-artefatos/indice_vetorial/*.bin
-artefatos/indice_vetorial/chunks.json
+artefatos/amostra/
+artefatos/ocr_mistral/*
+!artefatos/ocr_mistral/.gitkeep
+!artefatos/ocr_mistral/README.md
+# Journals write-ahead: são mecanismo de recuperação de falha (eventos
+# "intencao"/"conclusao"/"inicio" por chamada), NÃO a evidência RNF08. O log de
+# evidência é o `execucao_*.jsonl`/`agentes_*.jsonl` por execução, que continua
+# versionado. Mesma regra que já valia para o journal do OCR.
+artefatos/logs_execucoes/journal_ocr_mistral.jsonl
+artefatos/logs_execucoes/journal_ocr_batch.json
+artefatos/logs_execucoes/journal_agentes/
+artefatos/logs_execucoes/journal_chamadas/
+# Índice de desenvolvimento (Chroma: chroma.sqlite3 + subdiretórios por UUID;
+# FAISS/pickle no formato anterior). Só o descritor RNF09 é versionado.
+artefatos/indice_vetorial/*
 !artefatos/indice_vetorial/.gitkeep
+!artefatos/indice_vetorial/metadados_construcao.json
+# Modelo preditivo: o binário serializado fica fora; o relatório de métricas fica.
+artefatos/modelo/*
+!artefatos/modelo/.gitkeep
+!artefatos/modelo/*.json
+!artefatos/modelo/*.md
+artefatos/**/*.lock
+artefatos/**/.*.staging-*
+artefatos/**/.*.backup-*
+artefatos/**/.*.tmp-*
+resultados/gate_*_execucoes.jsonl
 
-# 3. Modelos LoRA locais (Se Fase 3 rodar localmente)
-# Pesos finetunados localmente não devem ir pro repositório devido ao tamanho
+# Sobras recuperáveis de editores e operações manuais
+*.bak
+*.backup
+*.orig
+
+# 4. Pesos de modelo local
+# Guardrails (Prompt Guard 2 em ONNX) são embutidos na imagem no build, nunca
+# versionados; LoRA opcional (5.22) idem.
 modelos_lora/
+modelos_guardrails/
+*.onnx
 *.safetensors
 *.pt
 *.ckpt
 
-# Testes
+# Testes e avaliação automatizada
 .pytest_cache/
 .coverage
 htmlcov/
+.deepeval/
+.deepeval-cache.json
 
+# Documentos de governo internos e a especificação.
+# .docs NUNCA é publicado — menciona a vaga de origem (AGENTS.md §0).
+# A exceção é DESAFIO_CBL.md, cuja cópia na raiz é versionada por exigência da RF18.
+# AGENTS.md/MEMORY.md/CLAUDE.md já estão rastreados; as linhas abaixo apenas
+# impedem que cópias novas entrem sem intenção.
 AGENTS.md
 MEMORY.md
 CLAUDE.md
-especificacao.md
+.docs

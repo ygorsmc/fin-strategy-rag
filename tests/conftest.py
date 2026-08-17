@@ -4,9 +4,21 @@ from __future__ import annotations
 
 import pytest
 
+from src import geracao
 from src.config import Config
 from src.geracao import Citacao
 from src.ingestao import Chunk, DocumentoCorpus
+
+
+@pytest.fixture(autouse=True)
+def _sem_limite_de_taxa_gemini_entre_testes():
+    """O limitador de taxa do Gemini vive em estado de módulo (processo
+    inteiro, não por instância — ver `_aguardar_limite_taxa_gemini`). Sem
+    isso, dois testes que usam o mesmo nome de modelo sofreriam um `sleep`
+    real herdado do teste anterior."""
+    geracao._ultima_chamada_gemini_por_modelo.clear()
+    yield
+    geracao._ultima_chamada_gemini_por_modelo.clear()
 
 
 @pytest.fixture

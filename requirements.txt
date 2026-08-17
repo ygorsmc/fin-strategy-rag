@@ -9,12 +9,26 @@ pdfplumber==0.11.10
 tiktoken==0.13.0
 
 # Indexação Vetorial e BM25
-faiss-cpu==1.14.3
+# Chroma no lugar do FAISS: a RF06 exige filtro por metadados antes do
+# ranqueamento, e o FAISS indexa vetores e nada mais — o filtro exigiria um
+# índice paralelo sincronizado à mão (estado duplicado, bug silencioso).
+chromadb==1.4.0
 rank-bm25==0.2.2
 numpy==2.5.1
 
-# Embeddings locais (EMBEDDING_PROVIDER=local — etapa 6; NUNCA no deploy, seção 5.13)
-sentence-transformers==5.6.0
+# Dados estruturados — painel contábil da CVM (seção 5.5)
+duckdb==1.4.4
+
+# Camada de agentes (seção 5.9) — Investigador + Auditor, Process.sequential.
+# A versão **não** é a mais recente, e o motivo é dependência, não capricho: a
+# linha 1.15.x exige `chromadb~=1.1.0` e arrasta `lancedb`, ou seja, o framework
+# de agentes passaria a ditar a versão do banco vetorial de todo o projeto — o
+# índice em `artefatos/indice_vetorial/` foi construído com `chromadb==1.4.0`, e
+# rebaixá-lo para instalar um agente é mexer no índice pelo motivo errado. A
+# linha 0.193.x declara `chromadb>=0.5.23` e resolve sem alterar chromadb,
+# pydantic nem opentelemetry (verificado com `pip install --dry-run` e
+# `pip check` em 2026-08-12). Mesma disciplina já aplicada ao `mistralai`.
+crewai==0.193.2
 
 # Modelos, Integração de LLMs e Segredos
 openai==2.45.0
@@ -28,8 +42,7 @@ requests==2.34.2
 # Testes e Qualidade
 pytest==9.1.1
 
-# Módulo LoRA / Fase 3 (Ajuste Fino Leve)
-torch==2.13.0
-transformers==5.13.1
-peft==0.19.1
-accelerate==1.14.0
+# Dependências pesadas e opcionais ficam separadas para o ambiente principal
+# não instalar vários GB que o pipeline Ollama/Gemini não usa:
+# - requirements-local.txt: EMBEDDING_PROVIDER=local;
+# - requirements-lora.txt: módulo PEFT da Fase 3.

@@ -101,6 +101,18 @@ class TestNormalizarNumeroPtbr:
     def test_sem_numero_devolve_none(self, texto):
         assert norm.normalizar_numero_ptbr(texto) is None
 
+    @pytest.mark.parametrize(
+        "texto,esperado",
+        [
+            ("R$1.090,4 bilhão", 1_090_400_000_000.0),
+            ("R$ 6,3 milhão", 6_300_000.0),
+            ("R$1.090,4 bilhao", 1_090_400_000_000.0),
+            ("R$ 6,3 milhao", 6_300_000.0),
+        ],
+    )
+    def test_unidades_singulares_com_e_sem_acento(self, texto, esperado):
+        assert norm.normalizar_numero_ptbr(texto) == pytest.approx(esperado)
+
 
 class TestValoresEquivalentes:
     def test_dentro_da_tolerancia_de_1_pct(self):
@@ -165,3 +177,131 @@ class TestExtrairTrimestreCitado:
     )
     def test_casos(self, texto, esperado):
         assert norm.extrair_trimestre_citado(texto) == esperado
+
+class TestRegressoesNumerosFinanceiros:
+    def test_prioriza_valor_com_unidade_e_ignora_trimestre_ticker_e_ano(self):
+        texto = "No 3T2025, BPAC11 reportou lucro de R$ 31.382 milhões."
+        assert norm.extrair_numeros_ptbr(texto) == pytest.approx([31_382_000_000.0])
+        assert norm.normalizar_numero_ptbr(texto) == pytest.approx(31_382_000_000.0)
+
+    def test_extrai_todos_os_valores_qualificados(self):
+        texto = "ROAE de 24,8% no Itaú e 26,6% no BTG; lucro de R$ 2,3 bi."
+        assert norm.extrair_numeros_ptbr(texto) == pytest.approx(
+            [0.248, 0.266, 2_300_000_000.0]
+        )
+
+    def test_nao_descarta_numero_nu_quando_ha_valor_qualificado(self):
+        texto = "BTG: R$ 2 bilhões; Itaú: 999.000.000"
+        assert norm.extrair_numeros_ptbr(texto) == pytest.approx(
+            [2_000_000_000.0, 999_000_000.0]
+        )
+
+    def test_tabela_herda_escala_declarada(self):
+        texto = (
+            "Em R$ milhões (exceto onde indicado) 3T25 2T25\n"
+            "Margem Financeira Gerencial 31.382 31.177\n"
+            "ROAE 23,3% 22,7%"
+        )
+        assert norm.extrair_numeros_ptbr(texto) == pytest.approx(
+            [31_382_000_000.0, 31_177_000_000.0, 0.233, 0.227]
+        )
+
+    @pytest.mark.parametrize(
+        "cabecalho,multiplicador",
+        [("Em R$ milhão", 1_000_000.0), ("Em R$ bilhão", 1_000_000_000.0)],
+    )
+    def test_tabela_herda_escala_singular(self, cabecalho, multiplicador):
+        texto = f"{cabecalho}\nLucro 6,3\nPrejuízo (1,2)"
+        assert norm.extrair_numeros_ptbr(texto) == pytest.approx(
+            [6.3 * multiplicador, -1.2 * multiplicador]
+        )
+
+    def test_bps_e_pontos_base_viram_fracao(self):
+        assert norm.extrair_numeros_ptbr(
+            "alta de 404 bps e queda de 12 pontos-base"
+        ) == pytest.approx([0.0404, 0.0012])
+
+    def test_enumeracoes_nao_viram_valores_financeiros(self):
+        assert norm.extrair_numeros_ptbr("1) sazonalidade\n2. câmbio") == []
+
+    def test_escala_monetaria_nao_contamina_percentual_ou_quantidade(self):
+        texto = (
+            "Em R$ milhões\nLucro 500\nROAE (%) 26,6\n"
+            "Quantidade de clientes 42"
+        )
+        assert norm.extrair_numeros_ptbr(texto) == pytest.approx(
+            [500_000_000.0, 0.266, 42.0]
+        )
+
+    def test_ano_e_pagina_nao_viram_valores_mesmo_com_moeda(self):
+        texto = "pág. 5\nEm 2025, o lucro foi de R$ 2 bilhões."
+        assert norm.extrair_numeros_ptbr(texto) == pytest.approx(
+            [2_000_000_000.0]
+        )
+
+    def test_preserva_sinais_e_negativo_contabil(self):
+        assert norm.extrair_numeros_ptbr(
+            "A margem variou -3,2% e a perda foi (R$ 1,5 milhão)."
+        ) == pytest.approx([-0.032, -1_500_000.0])
+
+    @pytest.mark.parametrize(
+        "texto,esperado",
+        [
+            ("R$ -6,3 milhão", -6_300_000.0),
+            ("(R$ 1.090,4 bilhão)", -1_090_400_000_000.0),
+        ],
+    )
+    def test_unidades_singulares_preservam_negativos(self, texto, esperado):
+        assert norm.normalizar_numero_ptbr(texto) == pytest.approx(esperado)
+
+    @pytest.mark.parametrize(
+        "texto",
+        [
+            "R$ 6,3 milhãoextra",
+            "R$ 6,3 bilhãoextra",
+            "R$ 6,3 milhoesextra",
+            "R$ 6,3 bilhoesextra",
+        ],
+    )
+    def test_unidade_parcial_recusa_em_vez_de_casar_prefixo(self, texto):
+        assert norm.contem_notacao_numerica_nao_suportada(texto)
+        assert norm.normalizar_numero_ptbr(texto) is None
+
+    def test_numero_gigante_recusa_sem_overflow_ou_excecao(self):
+        texto = "R$ " + "9" * 400 + " milhões"
+        assert norm.contem_notacao_numerica_nao_suportada(texto)
+        assert norm.extrair_numeros_ptbr_tipados(texto) == []
+
+    def test_ticker_e_trimestre_sozinhos_nao_sao_numeros(self):
+        assert norm.extrair_numeros_ptbr("BPAC11 no 4T2025") == []
+
+    def test_extrai_multiplos_trimestres_sem_duplicata(self):
+        assert norm.extrair_trimestres_citados(
+            "Compare 4T2025 com 1t2026 e novamente 4T2025"
+        ) == ["4T2025", "1T2026"]
+
+    @pytest.mark.parametrize(
+        "esperado,obtido,tolerancia",
+        [
+            (float("nan"), 1.0, 1.0),
+            (1.0, float("inf"), 1.0),
+            (1.0, 1.0, -0.1),
+            (True, 1.0, 1.0),
+        ],
+    )
+    def test_comparador_rejeita_valores_e_tolerancia_invalidos(
+        self, esperado, obtido, tolerancia
+    ):
+        with pytest.raises(ValueError):
+            norm.valores_equivalentes(esperado, obtido, tolerancia)
+
+    @pytest.mark.parametrize(
+        "texto,esperado",
+        [
+            ("ROAE de 26.6%", 0.266),
+            ("aumento de 0,1 p.p.", 0.001),
+            ("R$ 1.234", 1234.0),
+        ],
+    )
+    def test_ponto_decimal_de_llm_sem_quebrar_milhar(self, texto, esperado):
+        assert norm.normalizar_numero_ptbr(texto) == pytest.approx(esperado)

@@ -1,0 +1,4 @@
+-r requirements.txt
+
+# Alternativa local de embeddings; não instalar no deploy enxuto (seção 5.13).
+sentence-transformers==5.6.0

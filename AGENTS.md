@@ -1,209 +1,381 @@
 # AGENTS.md — Execução: Assistente de Research Financeiro com RAG
 
-Guia **específico** para o agente que executa o projeto descrito na `especificacao.md`.
-**Fase atual: EXECUÇÃO.** O boilerplate foi entregue em 2026-07-15 (estrutura completa,
-contratos tipados, utilitários de base e suíte de testes); o trabalho agora é implementar
-os contratos pendentes, coletar o corpus real, construir o conjunto-padrão e medir as
-métricas honestamente.
+Plano de execução do projeto descrito em `.docs/especificacao.md`, **revisão 3
+(2026-08-07)**. Este arquivo é o plano; `MEMORY.md` é onde a execução parou.
+Leia os dois no início de qualquer sessão.
 
-## 0. Agnosticismo e Privacidade da Empresa (Regra Dura — inalterada)
+> **A revisão 3 expandiu o escopo.** Se você trouxe da memória a ideia de que
+> este projeto é "um RAG com FAISS sobre PDFs de banco", essa era a revisão 1.
+> Leia a seção 1 antes de agir: o índice mudou, o extrator mudou, e entraram
+> cinco camadas novas (dados estruturados, agentes, modelo preditivo,
+> segurança, observabilidade).
 
-O projeto deve ser 100% **agnóstico quanto à empresa-alvo de qualquer vaga**.
-- NENHUM nome de banco (BTG Pactual, Itaú, etc.) deve aparecer na documentação como
-  *seu possível empregador* ou *empresa-alvo*. Citar os 5 bancos como **fonte de dados
-  públicos do corpus** é permitido e necessário.
-- Use o slug neutro do projeto: `assistente-research-financeiro`.
-- O README foca no problema técnico: localizar informações pontuais em textos longos e
-  auditar alucinações de LLMs em dados financeiros estruturados.
-- A `especificacao.md` menciona a vaga de origem: ela é documento de trabalho local e
-  **não deve ser publicada** no repositório final.
+---
 
-## 1. Estado atual do repositório (boilerplate entregue)
+## 0. Agnosticismo e privacidade da empresa-alvo (regra dura — inalterada)
 
-**Já implementado e testado (não regredir):**
-- `src/config.py` — `Config` imutável; único ponto de leitura do `.env` (defaults = seção 5.14).
-- `src/normalizacao.py` — `remover_acentos`, `normalizar_texto_bm25`, `APELIDOS_BANCOS`
-  (inclui NUBANK como armadilha adversarial), `PADRAO_TRIMESTRE`, `MULTIPLICADORES`.
-- `src/ingestao.py` — dataclasses (`DocumentoCorpus`, `PaginaExtraida`, `Chunk`,
-  `RelatorioQualidade`), `carregar_metadados_corpus` (valida esquema),
-  `montar_cabecalho_contextual` (formato `[EMPRESA | doc | trimestre | pág. N]`).
-- `src/indexacao.py` — guarda RNF09 completa (`validar_consistencia`,
-  `ErroConsistenciaIndice`, `salvar/carregar_metadados_indice`), fábrica plugável e
-  adaptador Ollama/BGE-M3 local com batching, validação e normalização L2.
-- `src/geracao.py` — `PROMPT_SISTEMA` fixo (`VERSAO_PROMPT="v1"` — mudou o prompt, sobe a
-  versão e loga), dataclasses do contrato JSON, fábrica plugável de LLMs, adaptador
-  Ollama/OpenAI-compatible com custo zero e `citacoes_sao_subconjunto` (RN01).
-- `src/avaliacao.py` — esquema do gabarito (`COLUNAS_CONJUNTO_PADRAO`),
-  `registrar_execucao` (JSONL, RNF08), dataclasses de resultado/métricas.
-- `scripts/gate_local.py` — funcional: exige endpoint loopback e testa Ollama
-  (LLM + embeddings), resposta/citação, recusa RN02, digests, tokens, latência e
-  custo de API zero; regenera `resultados/gate_local.md`.
-- `scripts/gate_gemini.py` — funcional: smoke test do Gemini API com resposta
-  factual, recusa RN02, tokens, latência e custo estimado; regenera
-  `resultados/gate_gemini.md`.
-- `scripts/gate.py` — funcional: testa Azure OpenAI sem criar recurso; reservado ao
-  pré-deploy da Fase 3 e regenera `resultados/gate.md`.
-- `scripts/baixar_corpus.py` — funcional: baixa pelo manifesto, valida/preenche SHA-256,
-  reporta URL morta e hash divergente (nunca re-raspa silenciosamente).
-- `executar_pipeline.py` — orquestrador com `--amostra` e `--etapa`; reporta
-  OK/PENDENTE/FALHOU por etapa; a etapa `testes` roda o pytest.
-- `app_streamlit.py` — casca funcional: modos demo-cacheado/pergunta-livre, limite por
-  sessão, transparência de modo/provedor.
+O repositório é 100% **agnóstico quanto à empresa-alvo de qualquer vaga**.
 
-**Pendente (stubs `NotImplementedError`, cada um citando sua etapa):** parser numérico
-pt-BR e apelidos (`normalizar_numero_ptbr`, `valores_equivalentes`, `canonizar_banco`,
-`extrair_bancos_citados`, `extrair_trimestre_citado`); extração/chunking/qualidade
-(`extrair_paginas`, `gerar_chunks`, `validar_qualidade`, `teste_sentinela`,
-`ingerir_corpus`); embeddings e índices (`EmbeddingsLocal/OpenAI/Azure.embedar`,
-`construir_indice_faiss/bm25`, `carregar_indice_faiss`; Ollama já implementado); recuperação
-(`extrair_filtro_metadados`, `fusao_reciprocal_rank`, `Recuperador.recuperar`); geração
-(`montar_prompt_usuario`, `parsear_resposta_llm`, `gerar_resposta`, adaptadores `.gerar`
-Azure/OpenAI/DeepSeek; Ollama e Gemini já implementados); avaliação (`avaliar_recall_at_k`, `avaliar_exatidao_numerica`,
-`avaliar_recusa`, `executar_avaliacao`, `consolidar_metricas`);
-`responder_pergunta_livre` no app.
+- NENHUM nome de banco aparece na documentação como *possível empregador* ou
+  *empresa-alvo*. Citar os 5 bancos como **fonte de dados públicos do corpus**
+  é permitido e necessário — é a distinção inteira.
+- Slug neutro do projeto: `assistente-research-financeiro`.
+- **`.docs/` inteiro é documento de trabalho local e NUNCA é publicado.** A
+  `especificacao.md` menciona a vaga de origem nominalmente (seções 3, 6 e
+  5.23); publicá-la quebra a regra.
+- **Exceção declarada:** `DESAFIO_CBL.md`, que a RF18 exige versionado. A cópia
+  na raiz do repositório é a publicável; a de `.docs/` é a fonte. Conferido
+  agnóstico em 2026-08-10 antes da cópia.
+- O README foca no problema técnico: localizar informação pontual em texto
+  longo, reconciliar número gerencial com número contábil e auditar alucinação
+  de LLM em dado financeiro.
 
-**Convenção de testes (obrigatória):** a suíte tem 111 casos — 59 passando (contratos já
-implementados) e 52 marcados com `pendente = pytest.mark.skip(...)`. Ao implementar uma
-etapa: (1) remova o marcador `pendente` da(s) classe(s) correspondente(s); (2) complete os
-testes-esqueleto que contêm `raise AssertionError("implementar...")`; (3) NUNCA enfraqueça
-uma asserção para fazer código passar — o teste é o contrato, o código se adapta a ele.
-Arquivos de dados: `corpus/metadados.csv` contém 20 documentos íntegros e
-`conjunto_padrao/perguntas.csv` contém 10 perguntas `dev`; as 45 candidatas `teste` ficam
-separadas em `conjunto_padrao/candidatas_teste.csv` até a segunda leitura e congelamento.
+---
 
-**Dependências:** `requirements.txt` está curado e pinado nas versões do venv
-   (Python 3.12). O ramo ativo usa Gemini para geração e BGE-M3 já instalado no Ollama.
-`sentence-transformers==5.6.0` permanece como alternativa `EMBEDDING_PROVIDER=local`, mas
-ainda não está instalado; instale-o antes de implementar/testar `EmbeddingsLocal`.
+## 1. O que a revisão 3 mudou (leia antes de agir)
 
-## 2. Plano de execução (nesta ordem)
+| Camada | Revisão 1 (2026-07-14) | Revisão 3 (2026-08-07) |
+|---|---|---|
+| Extração | `pypdf` ⇄ `pdfplumber` | **Mistral OCR** primário, `pdfplumber` como extrator alternativo atrás da mesma interface (5.3) |
+| Índice vetorial | FAISS | **ChromaDB** — a RF06 exige filtro por metadados antes do ranqueamento (5.6) |
+| Dados estruturados | CVM só como fonte de gabarito | **Camada consultável de primeira classe** — DuckDB, ITR/DFP, `mapa_contas`, `fatos_semanticos` (5.5) |
+| Agentes | não existia | **Investigador + Auditor por isolamento de contexto**, com braços A/B/C e injeção de falha (5.9) |
+| "Treinar" | LoRA sobre as próprias perguntas | **Modelo supervisionado** sobre o painel CVM; LoRA rebaixado a opcional (5.10, 5.22) |
+| Segurança | não existia | **Presidio + Llama Prompt Guard 2 + detector de tópico próprio** (5.11) |
+| Observabilidade | não existia | **Langfuse** por etapa + **DeepEval medido contra a auditoria humana** (5.12, 5.15) |
+| Regras de negócio | RN01–RN03 | **RN01–RN12** |
+| Teto de orçamento | USD 10 | **USD 25** (5.20) |
+| Ordem de construção | 10 etapas | **18 etapas** (5.21) |
 
-Cada etapa referencia a seção da spec, os stubs a implementar e o critério de conclusão.
+Motivo declarado da expansão (spec 3): o mesmo sistema passa a servir também
+como entrega da disciplina *AI Factory: Building Intelligent Systems*, e cada
+camada nova resolve um problema que a revisão 1 **já tinha identificado e
+deixado em aberto** — a divergência gerencial × contábil, a fragilidade da
+extração de tabela, a fronteira entre relatar e recomendar, o custo por
+consulta.
 
-1. **Gates de geração (spec 5.7):** o ramo ativo usa Gemini API
-   (`LLM_PROVIDER=gemini`, `gemini-3.1-flash-lite`) e BGE-M3 via Ollama para embeddings.
-   O Gate Gemini passou em 2026-07-15 após duas chamadas controladas; o Gate L1
-   (`python scripts/gate_local.py`) permanece como fallback local sem API.
-   O Gate G1 Azure foi movido para o pré-deploy (etapa 12): não criar recurso nem
-   consumir créditos Azure antes do pipeline local estar 100% validado.
-2. **Corpus (spec 5.2):** preencher `corpus/metadados.csv` com os releases reais —
-   regra da interseção: os 4 trimestres mais recentes disponíveis para **todos os 5**
-   bancos. Rodar `python scripts/baixar_corpus.py` até todos os hashes registrados.
-   Concluída quando: 20 linhas no manifesto, 20 PDFs íntegros em `corpus/raw/`.
-3. **Conjunto-padrão (spec 5.8):** 45 perguntas `conjunto=teste` (15 factuais,
-   10 comparativas, 10 qualitativas, 10 adversariais com subtipos nomeados — ≥4 de
-   Nubank) + ~10 `conjunto=dev`. Conferir gabarito pela classe de verificação
-   (`cvm` via ITR/DFP; `release_gerencial` via dupla leitura). Registrar a **data de
-   congelamento** neste arquivo ao concluir.
-4. **Ingestão (spec 5.3–5.4; stubs de `src/ingestao.py`):** implementar extração
-   pypdf⇄pdfplumber, chunking ~600/100 tokens (tiktoken), validação estrutural e
-   teste-sentinela. Destravar os skips de `tests/test_ingestao.py`. Criar PDFs sintéticos
-   pequenos em `tests/fixtures/` para os testes — nunca depender de PDF real no pytest.
-5. **Normalização (spec 5.8; stubs de `src/normalizacao.py`):** parser numérico pt-BR,
-   comparador com tolerância, canonização de bancos/trimestres. Destravar os skips de
-   `tests/test_normalizacao.py` — os casos parametrizados já definem o contrato exato.
-6. **Indexação (spec 5.5; stubs de `src/indexacao.py`):** `embedar` com
-   Ollama/BGE-M3 primeiro,
-   FAISS + BM25, persistência determinística. A guarda RNF09 já existe — os construtores
-   DEVEM gravar `MetadadosIndice` e a carga DEVE passar por `validar_consistencia`.
-7. **Recuperação (spec 5.6; stubs de `src/recuperacao.py`):** filtro por metadados,
-   subconsulta por banco nas comparativas (modo de falha nº 6), RRF para E3.
-8. **Geração (spec 5.7; stubs de `src/geracao.py`):** adaptadores de provedor
-   (o SDK `openai` cobre Gemini/Ollama/Azure/OpenAI/DeepSeek; Gemini e Ollama já implementados), parse do
-   JSON com UMA tentativa
-   de reparo, checagem RN01 dentro de `gerar_resposta`. Destravar os skips de geração em
-   `tests/test_regras.py`.
-9. **Avaliação (spec 5.9–5.10; stubs de `src/avaliacao.py`):** métricas por definição
-   operacional, checkpoint por pergunta, retry/backoff, teto de custo
-   (`CustoExcedidoError`). Iterar SÓ no conjunto `dev`; rodar as 45 congeladas ao final,
-   temperatura 0, logando cada execução completa (RNF08). Gerar
-   `artefatos/resultados_avaliacao/respostas_cacheadas.json` para o modo demo.
-   Destravar os skips de avaliação em `tests/test_regras.py`.
-10. **Interface e README:** implementar `responder_pergunta_livre`, validar os dois modos
-    nativamente e preencher a tabela do README com números **medidos** (nunca metas).
-11. **Empacotamento local e demonstração:** somente após o fluxo nativo estar verde, criar
-    container e exposição ngrok autenticada; publicar apenas o Streamlit, nunca Ollama.
-12. **(Fase 3) Gate G1 Azure e deploy opcional:** testar Azure só no pré-deploy; decidir
-    então sobre Container Apps conforme créditos disponíveis, com demo cacheado e RN03.
-13. **(Fase 3) Módulo LoRA (spec 5.16):** classificador PEFT roteador/guardrail, split
-    por pergunta-base (anti-vazamento de paráfrases).
+---
 
-## 3. Contratos e Regras Invioláveis (inalterados)
+## 2. Estado atual do repositório
 
-- **Honestidade de Avaliação:** pytest cobre regras de formatação/chunking (passa/falha).
-  Recall@5, alucinação e exatidão são **resultados avaliados** — rodados no
-  conjunto-padrão (temperatura 0), calculados honestamente, logados em
-  `artefatos/logs_execucoes/` e expostos no README.
-- **Tolerância Zero para Alucinação e Vazamento:** sem base no trecho recuperado, a flag
-  booleana de recusa DEVE ser verdadeira (RN02).
-- **Dados Privados/Segredos:** nunca versionar PDFs (`corpus/raw/`); NUNCA colocar chaves
-  reais em código ou commit — `.env` local e secrets no deploy (RNF04).
-- **Deploy Seguro:** a versão publicada funciona por padrão em modo demonstração cacheado
-  e limita perguntas livres pelo `.env`; o controle real de custo é o teto no provedor.
-- **Determinismo e não-regressão:** `pytest` verde é pré-condição de qualquer commit;
-  etapa implementada = skips da etapa removidos e passando.
+**Implementado e coberto (não regredir):** configuração validada; parser
+numérico pt-BR; extração local com fallback; chunking e teste-sentinela
+independentes; embeddings plugáveis; índice com transação, checksums e guarda
+RNF09; recuperação E0–E3 com subconsulta por banco; geração JSON com RN01 e
+grounding numérico da RN02; avaliação retomável com fingerprint v3,
+journal/checkpoint, teto de custo e locks; interface cacheada com pergunta
+livre opt-in; subsistema Mistral OCR *content-addressed* como pré-processador
+explícito.
 
-## 4. Estrutura do repositório (como está)
+**Convenção de testes (obrigatória):** a suíte local tem **525 casos coletados e
+nenhum skip** (medido em 2026-08-10). NUNCA enfraquecer uma asserção para fazer
+código passar — o teste é o contrato e o código se adapta a ele. `pytest` verde
+é pré-condição de qualquer commit; etapa implementada = testes da etapa
+presentes e passando. Enquanto houver onda paralela em voo, um vermelho
+transitório pode aparecer no meio do caminho: ele é fechado antes do commit,
+nunca contornado enfraquecendo o teste.
+
+**Dados congelados:** `corpus/metadados.csv` tem 20 documentos íntegros
+(interseção `2T2025`–`1T2026`), `corpus/ancoras_sentinela.csv` cobre 20/20 e
+`conjunto_padrao/perguntas.csv` tem 10 perguntas `dev` + **45 `teste`
+congeladas em 2026-07-29**. `candidatas_teste.csv` permanece apenas como origem
+auditável da curadoria e não é carregado pelo pipeline.
+
+**Dependências:** `requirements.txt` é o runtime pinado (Python 3.12) e já
+inclui `chromadb` e `duckdb`. `requirements-local.txt` adiciona
+`sentence-transformers` só para `EMBEDDING_PROVIDER=local`;
+`requirements-lora.txt` isola PyTorch/PEFT do módulo opcional.
+
+---
+
+## 3. Divergências conscientes da letra da especificação
+
+Registradas aqui porque escondê-las seria o oposto do que o projeto mede.
+
+### 3.1 Provedor de LLM: Gemini no ramo ativo
+
+A spec 5.20 lista `LLM_PROVIDER=azure_openai | openai | deepseek | local` e
+**não menciona Gemini**. O ramo ativo deste repositório é
+**`gemini-3.5-flash-lite`, `reasoning_effort=low`** (Gate Gemini passou em
+2026-07-15, então com `gemini-3.1-flash-lite`), com Ollama como fallback sem
+API e os provedores da spec atrás da **mesma interface plugável da RNF06**.
+
+**Motivo:** medido, não só custo. Comparação real de 2026-08-14 a 2026-08-16
+sob o mesmo prompt e arnês (`resultados/comparacao_llm_2026-08.md`) —
+`gemini-3.5-flash-lite/low` venceu `gemini-3.1-flash-lite` (que era o ramo
+anterior por custo) e o DeepSeek V4 Flash em acerto (0,88 contra 0,40–0,60),
+custo (empatado ou mais barato que o DeepSeek fora do horário de pico dele) e
+latência — é a única configuração sem risco de resposta levando vários
+minutos. A camada de agentes multiplica chamadas por resposta e o LLM-juiz do
+DeepEval soma centenas de chamadas curtas sobre as 45 perguntas — a spec 5.20
+reconhece isso ao subir o teto de USD 10 para USD 25; um modelo de tier
+barato continua mantendo o teto auditável, mas deixou de ser o único
+critério.
+
+**O que a divergência não autoriza:** trocar o provedor não relaxa nada. Preço
+por 1M de tokens continua obrigatório na configuração (sem ele o teto não é
+auditável), temperatura 0 continua obrigatória na avaliação, e o modelo usado
+fica registrado por execução (RNF08).
+
+### 3.2 OCR adiado — o extrator ativo continua o local
+
+A spec 5.3 torna o Mistral OCR o extrator **primário**, com cache em
+`corpus/ocr/` versionado no Git e a variável `EXTRATOR=mistral_ocr|pdfplumber`.
+**Nesta rodada isso está pendente, não pronto.**
+
+O que vale hoje:
+
+- extrator ativo: `EXTRACAO_PDF_MODO=local` (nome de variável ainda antigo);
+- o subsistema Mistral existente (`src/ocr_mistral.py`, `src/ocr_cache.py`,
+  `scripts/preprocessar_ocr_mistral.py`, cache em `artefatos/ocr_mistral/`)
+  permanece **como está** — pré-processador explícito e pago, nunca fallback
+  automático da ingestão;
+- há **autorização de gasto de até 100 páginas** para o teste do gate G3.
+
+O que a onda adiada ainda precisa entregar: renomear `EXTRACAO_PDF_MODO` para
+`EXTRATOR` com os valores da spec, mover o cache de `artefatos/ocr_mistral/`
+para `corpus/ocr/` e **passar a versioná-lo** (RNF10), rodar o **gate G3** e,
+só então, reconstruir o índice em namespace separado. Nada disso está feito.
+
+### 3.3 O que está em execução agora (não afirmar concluído)
+
+FAISS → ChromaDB e a camada DuckDB/CVM estão sendo implementadas **em
+paralelo** por outros agentes. Este plano conta com elas; o estado real entra
+no `MEMORY.md`. Não escreva "concluído" sobre nenhuma das duas sem evidência no
+repositório.
+
+---
+
+## 4. Contratos e regras invioláveis
+
+### 4.1 Regras de negócio RN01–RN12
+
+| ID | Regra (resumo — texto normativo na spec §4) | Onde é verificada |
+|---|---|---|
+| RN01 | Toda resposta cita empresa, documento, trimestre e página dos trechos usados | `src/geracao.py` · `tests/test_regras.py` |
+| RN02 | Sem evidência suficiente no trecho recuperado, o sistema declara isso — nunca responde de memória paramétrica | `src/geracao.py` · `tests/test_regras.py` |
+| RN03 | Instância pública limita perguntas livres por sessão **e** mantém teto no provedor; o controle real é o do provedor | `app_streamlit.py` · `src/config.py` |
+| RN04 | SQL do painel roda somente-leitura, sobre lista branca, com DDL/DML bloqueado por análise sintática, `LIMIT` e timeout — falha de guarda devolve erro, nunca executa | `src/dados_estruturados.py` · `tests/test_dados_estruturados.py` |
+| RN05 | Sem recomendação de investimento, preço-alvo ou aconselhamento pessoal. Âncora legal: **Res. CVM 20/2021** (análise) e **19/2021** (consultoria); cada subtipo de recusa mapeia à sua | `src/seguranca.py` · `tests/test_seguranca.py` |
+| RN06 | PII do usuário é anonimizada antes de qualquer chamada externa e nunca entra em log, trace ou cache | `src/seguranca.py` · `src/reconhecedores_br.py` |
+| RN07 | O modelo preditivo **não** é exposto como resposta sobre companhia nomeada — mesma fronteira da RN05 | `src/modelo/` · teste que falha se alguma rota o expuser |
+| RN08 | Verbete de glossário de métrica gerencial é sempre atribuído a instituição e release de origem | `src/ingestao.py` (glossário, RF19) |
+| RN09 | `cd_conta` nunca é chave de significado sozinho: todo conceito passa pelo mapa semântico validado; consulta que referencie `cd_conta` direto é rejeitada pela lista branca | `src/mapa_contas.py` · gate G4 |
+| RN10 | Valor derivado por aritmética entre períodos — notadamente o 4T, que não existe como ITR — sai marcado como **derivado**, com a conta explicitada | `src/dados_estruturados.py` · `app_streamlit.py` |
+| RN11 | Companhia é resolvida por `CD_CVM`, nunca por nome. Nome que resolve para mais de uma companhia **gera pergunta de desambiguação** — nunca escolha automática | `src/cobertura.py` · `tests/test_cobertura.py` |
+| RN12 | Ausência de evidência é **classificada**: `ambas` / `so_painel` / `nenhuma`. Companhia no painel mas fora do corpus recebe o dado contábil e a declaração do que falta. Especializa a RN02, não a relaxa | `src/cobertura.py` · `src/geracao.py` |
+
+### 4.2 Honestidade de avaliação
+
+`pytest` cobre regras de formatação, chunking e contrato (passa/falha). Recall,
+exatidão, recusa, groundedness, falso bloqueio, acerto de cobertura e o veredito
+dos três braços são **resultados avaliados** — rodados no conjunto congelado a
+temperatura 0, calculados honestamente, logados em `artefatos/logs_execucoes/`
+(RNF08) e expostos no README como **número medido ou a palavra "não medido"**.
+Meta e resultado são colunas diferentes. Nenhum número de `dev` vira resultado
+final.
+
+Onde a spec declarou limiar antes da execução, ele é respeitado: a comparação
+A/B/C só declara diferença a partir de **6 discordâncias na mesma direção**
+(McNemar exato, p = 0,031); abaixo disso publica-se "indistinguível neste
+tamanho de amostra".
+
+### 4.3 Segredos, dados e determinismo
+
+- Nunca versionar PDFs (`corpus/raw/`); NUNCA chave real em código ou commit —
+  `.env` local e secrets no deploy (RNF04).
+- O modo demonstração abre **sem nenhum segredo configurado** (RNF12); ausência
+  de chave obrigatória no modo livre falha com mensagem explícita, nunca com
+  degradação silenciosa.
+- `HF_TOKEN` é segredo **de build**, nunca de runtime. Se o contêiner exigir
+  token para subir, a RNF12 está quebrada e o build está errado.
+- Chamada externa paga exige opt-in explícito (`--permitir-api-paga`) e passa
+  pelo journal write-ahead antes e depois.
+
+---
+
+## 5. Gates — estado real
+
+| Gate | O que verifica | Estado |
+|---|---|---|
+| **G1** | Criar recurso Azure OpenAI na assinatura de estudante | ❌ **Não disponível** (`resultados/gate.md`, 2026-07-15). Reservado ao pré-deploy; créditos vão para hospedagem |
+| **G2** | Cobertura da CVM suficiente para o rótulo T+1 do modelo preditivo | ✅ **Fechado em 2026-08-07** na fase de investigação — 1.351 observações de trimestre isolado, ~29% de positivos em um ano |
+| **G3** | Mistral OCR em **um** release contra `pdfplumber`, conferindo valores-âncora | ⏸️ **Pendente** — parte da onda de OCR adiada (§3.2); há autorização de até 100 páginas |
+| **G4** | Lucro resolvido pelo mapa semântico bate com o release, **banco a banco, em todos os trimestres** | ⬜ **Pendente e bloqueante** — sem ele, nem o painel nem o modelo preditivo avançam |
+| Gate L1 | Inferência local Ollama sem API | ✅ Passou em 2026-07-15 (`resultados/gate_local.md`), com `prompt=v1` |
+| Gate Gemini | Duas chamadas controladas ao ramo ativo | ✅ Passou em 2026-07-15 (`resultados/gate_gemini.md`) |
+
+Os relatórios em `resultados/` datados de 2026-07-15 são **históricos**: o Gate
+L1 registra `prompt=v1` e o Gate Azure antecede o hardening atual. Nenhum deles
+comprova o prompt ou os adaptadores atuais até ser regenerado explicitamente.
+
+G4 é o gate com maior potencial de dano do projeto. O mesmo `cd_conta` designa
+contas diferentes conforme o plano de contas: `3.09` é lucro líquido no Itaú,
+Santander e BTG, e *resultado antes das participações* no BB e no Bradesco. Uma
+consulta ingênua devolve **número plausível, não nulo e errado** para 2 dos 5
+bancos — a falha exata que o projeto existe para combater, dentro da própria
+base. Por isso ele para o pipeline.
+
+---
+
+## 6. Dois caminhos de execução (RNF11) — a separação que não se negocia
 
 ```text
-├── AGENTS.md / CLAUDE.md / especificacao.md (local, não publicar a spec)
-├── README.md · LICENSE (MIT) · requirements.txt (pinado) · .env.example · pytest.ini
-├── executar_pipeline.py        (orquestrador; --amostra, --etapa)
-├── scripts/gate_local.py · scripts/gate.py · scripts/baixar_corpus.py
-├── corpus/raw/ (fora do Git) · corpus/metadados.csv (fonte de verdade)
-├── src/ config.py · ingestao.py · normalizacao.py · indexacao.py
-│        recuperacao.py · geracao.py · avaliacao.py
-├── conjunto_padrao/perguntas.csv
-├── artefatos/ indice_vetorial/ · logs_execucoes/ · resultados_avaliacao/
-├── resultados/gate_local.md    (evidência do ramo Ollama local-first)
-├── resultados/gate.md          (Gate G1 Azure — somente no pré-deploy)
-├── app_streamlit.py
-└── tests/ conftest.py · test_ingestao.py · test_normalizacao.py · test_regras.py
+CAMINHO INTERATIVO (o produto)
+  pergunta → guardrails de entrada → Investigador → [filtro de contexto]
+           → Auditor → guardrails de saída → resposta → Streamlit
+           (instrumentado por Langfuse)
+
+CAMINHO DE AVALIAÇÃO (o benchmark, determinístico)
+  45 perguntas congeladas → E0–E3 → métricas + DeepEval
+  SEM camada de agentes
 ```
 
-## 5. Entregável Final
+**O benchmark de recuperação E0–E3 nunca passa pela camada de agentes.** Motivo:
+a orquestração multiagente introduz variabilidade de plano — quantas
+ferramentas o agente chama, em que ordem, quantos tokens gasta — que destruiria
+a comparabilidade entre estratégias mesmo a temperatura 0.
 
-`executar_pipeline.py` processando ponta a ponta: testes verdes (sem skips), corpus
-íntegro pelo manifesto, índices construídos com guarda RNF09, avaliação das estratégias
-E0–E2 (E3 incluída) rodada nas 45 perguntas congeladas com log JSONL, números reais no
-README (metas vs. resultados) e resumo executivo (spec 5.12), tudo validado localmente
-antes de qualquer decisão de deploy Azure. Pronto para push no GitHub
-sem nenhuma amarra ao nome da empresa-alvo da vaga e sem a `especificacao.md`.
+A regra **não** proíbe medir a camada de agentes: essa medição é obrigatória e
+roda em **conjunto próprio**, com os três braços (A: agente único · B:
+Investigador+Auditor · C: determinístico sem LLM) sobre o subconjunto pareado
+de 15 extraído das 45.
 
-## Memória entre sessões — MEMORY.md
+Os dois caminhos compartilham as mesmas ferramentas e o mesmo prompt de
+geração; só a orquestração difere, e o resumo executivo reporta cada um
+separadamente.
 
-O `MEMORY.md` na raiz do repositório é o arquivo de **handoff entre sessões de
-execução** — não um changelog, não um substituto deste AGENTS.md. A divisão de
-papéis: AGENTS.md descreve o plano (estável, muda só quando o escopo muda);
-MEMORY.md descreve **onde a execução parou** (muda a cada sessão que avança o
-projeto).
+---
 
-- **No início de toda sessão de trabalho neste projeto:** ler o `MEMORY.md`
-  antes de agir. Ele pode registrar decisão, bloqueio ou estado que não é
-  óbvio a partir do código ou do `git log` — ex.: qual ramo local ficou ativo,
-  se o Gate L1 passou e qual é o status condicional do Gate G1, quantos documentos
-  do corpus já foram baixados, se o conjunto-padrão
-  já foi congelado, um bloqueio externo em aberto (cota de provedor, chave
-  pendente etc.).
+## 7. Plano de execução — 18 etapas (spec 5.21)
+
+Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisão · ⬜ pendente
+
+| # | Etapa | Dono | Estado |
+|---|---|---|---|
+| 1 | **Gates do dia 1** — G1 (Azure) e G3 (OCR × `pdfplumber` em um release), com evidência antes de escrever código dependente | sessão principal | G1 ❌ resolvido para o pré-deploy · G3 ⏸️ (§3.2) |
+| 2 | **Corpus** — regra da interseção, `metadados.csv` com URL, data e SHA-256 | — | ✅ 20 documentos, hashes registrados |
+| 3 | **CVM → DuckDB** — carga ITR/DFP com as **seis regras de armadilha**, `mapa_contas`, visão `fatos_semanticos`, derivação do 4T, e o **gate G4 bloqueante** | `dados-cvm` | 🔄 |
+| 4 | **Ingestão/OCR** com cache versionado + normalizador pt-BR + testes de qualidade e sentinela | sessão principal | ✅ no extrator local · ⏸️ na troca para OCR |
+| 5 | **Indexação** — BM25 + embeddings em **Chroma**, com a guarda RNF09 | `indice-recuperacao` | 🔄 (migração FAISS → Chroma) |
+| 6 | **Recuperação** — filtro de metadados, subconsulta por banco, E0–E3 | `indice-recuperacao` | ✅ base implementada · 🔄 sob a migração |
+| 7 | **Geração** — contrato JSON, citação obrigatória, recusa (RN01–RN02) | sessão principal | ✅ · ⬜ marcações de RN10/RN12 na resposta |
+| 8 | **Conjunto-padrão** — 45 congeladas + ~10 dev, conferidas pela classe de verificação | `conjunto-padrao` | ✅ congelado 2026-07-29 · ⬜ colunas novas da revisão 2 (`cobertura_esperada`, `motivo_recusa_esperado`, `base_esperada`, `rota_esperada`) |
+| 9 | **Comparação de estratégias E0–E3** — só `dev` na iteração; o congelado roda ao final, com log por execução | `observabilidade-avaliacao` | ⬜ nunca rodada no conjunto congelado |
+| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ⬜ (depende do G4) |
+| 11 | **Ferramentas + agentes** — `verificar_cobertura`, Investigador e Auditor com filtro de contexto **em código**, teste que falha se o rastro vazar, braços A/B/C, triagem de cobertura; projeções depois | `agentes-investigacao` | ⬜ |
+| 12 | **Injeção de falha (RF25) e comparação dos três braços (RF26)** — registrar o veredito, inclusive se for "o determinístico basta" | `agentes-investigacao` + `observabilidade-avaliacao` | ⬜ |
+| 13 | **Langfuse + DeepEval** — traces por etapa e matriz de concordância com a auditoria manual | `observabilidade-avaliacao` | ⬜ |
+| 14 | **Guardrails** — ataques bloqueados × falso bloqueio medido nas 45 legítimas (meta 0) | `seguranca-guardrails` | ⬜ |
+| 15 | **Interface Streamlit** — streaming, estado de sessão, painéis de evidência, etiqueta de derivado, estado de cobertura, veredito do Auditor | `interface-produto` | ✅ base cacheada + pergunta livre · ⬜ camadas novas |
+| 16 | **Publicação** — Container Apps primário, teto/alerta no provedor, dois modos validados | `interface-produto` | ⬜ |
+| 17 | **`DESAFIO_CBL.md`, README e resumo executivo** (metas × resultados) | `documentacao-projeto` | ✅ desafio e README · ⬜ resumo executivo |
+| 18 | **(Opcional) LoRA** — roteador de entrada, com split por pergunta-base | — | ⬜ opcional |
+
+**Transversal:** rodar `auditor-conformidade` (somente leitura) ao final de cada
+onda de implementação, antes de considerar a etapa concluída.
+
+**Regra de crescimento do gabarito: acrescente coluna, nunca linha.** O gargalo
+declarado do projeto é o gabarito manual. Toda capacidade nova é avaliada
+anotando mais sobre as mesmas 45 perguntas.
+
+---
+
+## 8. Estrutura do repositório
+
+Alvo da spec 5.21, com o que já existe marcado:
+
+```text
+├── AGENTS.md · CLAUDE.md · MEMORY.md · README.md · DESAFIO_CBL.md · LICENSE (MIT)
+├── .docs/                       (local — NUNCA publicado; exceto a cópia do desafio)
+├── requirements.txt · requirements-local.txt · requirements-lora.txt
+├── .env.example · .gitignore · pytest.ini
+├── executar_pipeline.py         (orquestrador; --amostra, --etapa)
+├── scripts/
+│   ├── baixar_corpus.py         ✅   ├── baixar_cvm.py            ⬜
+│   ├── gate_local.py  ✅ · gate_gemini.py ✅ · gate.py ✅ · gate_seguranca.py ✅
+│   ├── preprocessar_ocr_mistral.py ✅ · reconciliar_chamada_orfa.py ✅
+│   └── preparar_auditoria_final.py · executar_estabilidade.py ·
+│       consolidar_auditoria_final.py                             ✅
+├── corpus/
+│   ├── raw/                     (fora do Git — regenerável por script)
+│   ├── ocr/                     ⏸️ cache de OCR versionado (RNF10) — onda adiada
+│   ├── metadados.csv            ✅ fonte de verdade, versionada
+│   └── ancoras_sentinela.csv    ✅
+├── src/
+│   ├── ingestao.py ✅ · normalizacao.py ✅ · indexacao.py 🔄 · recuperacao.py 🔄
+│   ├── geracao.py ✅ · avaliacao.py ✅ · auditoria.py ✅ · bloqueio.py ✅
+│   ├── config.py ✅ · ollama.py ✅ · ocr_mistral.py ✅ · ocr_cache.py ✅
+│   ├── dados_estruturados.py 🔄 · mapa_contas.py 🔄
+│   ├── ferramentas.py ⬜ · cobertura.py ⬜ · agentes.py ⬜
+│   ├── seguranca.py ⬜ · reconhecedores_br.py ⬜ · observabilidade.py ⬜
+│   └── modelo/ construir_painel.py · treinar.py · prever.py      ⬜
+├── conjunto_padrao/perguntas.csv    ✅ 10 dev + 45 teste congeladas
+├── artefatos/
+│   ├── cvm.duckdb               (fora do Git — regenerável)
+│   ├── indice_vetorial/         (Chroma; só `metadados_construcao.json` versionado)
+│   ├── modelo/                  (binário fora do Git; relatório de métricas versionado)
+│   ├── logs_execucoes/          (JSONL por execução completa — versionado, RNF08)
+│   └── resultados_avaliacao/    (métricas + respostas cacheadas do demo — versionadas)
+├── resultados/                  (evidência dos gates)
+├── app_streamlit.py             ✅
+└── tests/  conftest · test_ingestao ✅ · test_normalizacao ✅ · test_regras ✅
+         · test_dados_estruturados 🔄 · test_seguranca ⬜ · test_isolamento ⬜
+         · test_cobertura ⬜ · test_deepeval ⬜  (+ suítes de hardening já existentes)
+```
+
+**O que é versionado e o que não é:** versionados o cache de OCR (quando migrar
+para `corpus/ocr/`), `metadados.csv`, o índice de deploy, os logs JSONL e as
+respostas cacheadas do demo. Fora do Git: PDFs brutos, ZIPs da CVM,
+`cvm.duckdb`, o índice de desenvolvimento, pesos de modelo e qualquer segredo.
+
+---
+
+## 9. Entregável final
+
+`executar_pipeline.py` processando ponta a ponta: suíte verde sem skips; corpus
+íntegro pelo manifesto; painel CVM carregado com as seis regras de armadilha e
+**G4 aprovado**; índices construídos com guarda RNF09; E0–E3 rodadas nas 45
+congeladas no caminho determinístico, com log JSONL; camada de agentes medida
+em conjunto próprio, com o veredito dos três braços publicado **mesmo se for
+negativo**; guardrails com ataques bloqueados e falso bloqueio medidos; modelo
+preditivo contra baselines, fora da caixa de ferramentas do agente; números
+reais no README (metas × resultados) e resumo executivo (spec 5.18).
+
+Critério de "pronto" completo: `.docs/especificacao.md` §7. O repositório final
+sobe sem nenhuma amarra ao nome da empresa-alvo e sem `.docs/`.
+
+---
+
+## 10. Memória entre sessões — MEMORY.md
+
+O `MEMORY.md` é o arquivo de **handoff entre sessões de execução** — não um
+changelog, não um substituto deste AGENTS.md. A divisão de papéis: AGENTS.md
+descreve o plano (estável, muda só quando o escopo muda); MEMORY.md descreve
+**onde a execução parou** (muda a cada sessão que avança o projeto).
+
+- **No início de toda sessão:** ler o `MEMORY.md` antes de agir. Ele registra
+  decisão, bloqueio ou estado que não é óbvio a partir do código ou do
+  `git log` — qual ramo de provedor está ativo, qual gate passou, o que uma
+  onda paralela deixou pela metade, qual bloqueio externo está em aberto.
 - **Ao final de toda sessão que mudar o estado da execução:** sobrescrever
-  (nunca só anexar) as seções que ficaram desatualizadas. Formato sugerido:
+  (nunca só anexar) as seções desatualizadas. Formato:
 
   ```markdown
   ## Estado atual
-  - Etapa ativa (plano §2): <número e nome>
+  - Etapa ativa (plano §7): <número e nome>
   - Última etapa concluída: <número e nome> (<data>)
 
   ## Decisões e bloqueios em aberto
-  - <decisão que desvia do padrão da spec, com o motivo — se houver>
-  - <bloqueio esperando algo externo: chave de API, cota, disponibilidade de provedor>
+  - <decisão que desvia do padrão da spec, com o motivo>
+  - <bloqueio esperando algo externo: chave, cota, disponibilidade>
 
   ## Próximo passo concreto
   - <ação específica, imediatamente executável pela próxima sessão>
   ```
 
-- **O que NÃO vai no MEMORY.md:** nada que já esteja em `git log`/`git diff`
-  (o histórico de commits já conta essa história); números de métricas de
-  avaliação (vivem em `artefatos/` e no README, não aqui); segredos ou chaves
-  (mesma regra do `.env`, RNF04 — nunca); o plano em si (isso é o AGENTS.md).
-- Mantenha o arquivo curto (poucas dezenas de linhas). Se crescer a ponto de
-  virar um changelog completo, está sendo mal usado — o Git já é o changelog.
+- **O que NÃO vai no MEMORY.md:** nada que já esteja em `git log`/`git diff`;
+  números de métricas (vivem em `artefatos/` e no README); segredos ou chaves
+  (RNF04); o plano em si (isso é este arquivo).
+- Mantenha curto — poucas dezenas de linhas. Se virar changelog, está sendo mal
+  usado: o Git já é o changelog.

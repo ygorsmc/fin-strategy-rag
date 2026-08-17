@@ -1,0 +1,4 @@
+conjunto,ano,arquivo,url,data_download,tamanho_bytes,hash_sha256
+dfp,2025,dfp_cia_aberta_2025.zip,https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2025.zip,2026-08-10,12728936,5690c0574e493adc92f6156bb859c8900769a82b4e56af05f043bf15a54bd2d1
+itr,2025,itr_cia_aberta_2025.zip,https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2025.zip,2026-08-10,31626337,1a978e73b08afded2ad01b2e94cc2883ed4f9294fec77e2519f206bc6cfcb21d
+itr,2026,itr_cia_aberta_2026.zip,https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_2026.zip,2026-08-10,12926736,56b2be43df05adb0afa080b855bc5665f982832ab5364f60847fda3c44a60b2a

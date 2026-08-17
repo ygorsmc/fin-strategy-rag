@@ -1,0 +1,15 @@
+CNPJ_CIA;DT_REFER;VERSAO;DENOM_CIA;CD_CVM;GRUPO_DFP;MOEDA;ESCALA_MOEDA;ORDEM_EXERC;DT_INI_EXERC;DT_FIM_EXERC;CD_CONTA;DS_CONTA;VL_CONTA;ST_CONTA_FIXA
+00.000.000/0001-91;2025-12-31;1;BCO BRASIL S.A.;001023;DF Consolidado - Demonstração do Resultado;REAL;MIL;ÚLTIMO;2025-01-01;2025-12-31;3.01;Receitas de Intermediação Financeira;85000000.0000000000;S
+00.000.000/0001-91;2025-12-31;1;BCO BRASIL S.A.;001023;DF Consolidado - Demonstração do Resultado;REAL;MIL;PENÚLTIMO;2024-01-01;2024-12-31;3.01;Receitas de Intermediação Financeira;18000000.0000000000;S
+00.000.000/0001-91;2025-12-31;1;BCO BRASIL S.A.;001023;DF Consolidado - Demonstração do Resultado;REAL;MIL;ÚLTIMO;2025-01-01;2025-12-31;3.09;Lucro ou Prejuízo antes das Participações e Contribuições Estatutárias;17100000.0000000000;S
+00.000.000/0001-91;2025-12-31;1;BCO BRASIL S.A.;001023;DF Consolidado - Demonstração do Resultado;REAL;MIL;PENÚLTIMO;2024-01-01;2024-12-31;3.09;Lucro ou Prejuízo antes das Participações e Contribuições Estatutárias;2800000.0000000000;S
+00.000.000/0001-91;2025-12-31;1;BCO BRASIL S.A.;001023;DF Consolidado - Demonstração do Resultado;REAL;MIL;ÚLTIMO;2025-01-01;2025-12-31;3.11;Lucro ou Prejuízo Líquido Consolidado do Período;16500000.0000000000;S
+00.000.000/0001-91;2025-12-31;1;BCO BRASIL S.A.;001023;DF Consolidado - Demonstração do Resultado;REAL;MIL;PENÚLTIMO;2024-01-01;2024-12-31;3.11;Lucro ou Prejuízo Líquido Consolidado do Período;2600000.0000000000;S
+00.000.000/0001-91;2025-12-31;1;BCO BRASIL S.A.;001023;DF Consolidado - Demonstração do Resultado;REAL;MIL;ÚLTIMO;2025-01-01;2025-12-31;3.11.01;Atribuído aos Sócios da Empresa Controladora;12705000.0000000000;S
+00.000.000/0001-91;2025-12-31;1;BCO BRASIL S.A.;001023;DF Consolidado - Demonstração do Resultado;REAL;MIL;PENÚLTIMO;2024-01-01;2024-12-31;3.11.01;Atribuído aos Sócios da Empresa Controladora;2002000.0000000000;S
+00.000.000/0001-91;2025-12-31;1;BCO BRASIL S.A.;001023;DF Consolidado - Demonstração do Resultado;REAL;MIL;ÚLTIMO;2025-01-01;2025-12-31;3.11.02;Atribuído aos Sócios não Controladores;3795000.0000000000;S
+00.000.000/0001-91;2025-12-31;1;BCO BRASIL S.A.;001023;DF Consolidado - Demonstração do Resultado;REAL;MIL;PENÚLTIMO;2024-01-01;2024-12-31;3.11.02;Atribuído aos Sócios não Controladores;598000.0000000000;S
+30.306.294/0001-45;2025-12-31;1;BCO BTG PACTUAL S.A.;022616;DF Consolidado - Demonstração do Resultado;REAL;UNIDADE;ÚLTIMO;2025-01-01;2025-12-31;3.01;Receitas da Intermediação Financeira;33000000000.0000000000;S
+30.306.294/0001-45;2025-12-31;1;BCO BTG PACTUAL S.A.;022616;DF Consolidado - Demonstração do Resultado;REAL;UNIDADE;ÚLTIMO;2025-01-01;2025-12-31;3.09;Lucro/Prejuízo Consolidado do Período;20000000000.0000000000;S
+30.306.294/0001-45;2025-12-31;1;BCO BTG PACTUAL S.A.;022616;DF Consolidado - Demonstração do Resultado;REAL;UNIDADE;ÚLTIMO;2025-01-01;2025-12-31;3.09.01;Atribuído a Sócios da Empresa Controladora;19300000000.0000000000;S
+30.306.294/0001-45;2025-12-31;1;BCO BTG PACTUAL S.A.;022616;DF Consolidado - Demonstração do Resultado;REAL;UNIDADE;ÚLTIMO;2025-01-01;2025-12-31;3.09.02;Atribuído a Sócios Não Controladores;700000000.0000000000;S

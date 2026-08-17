@@ -10,9 +10,19 @@ from urllib.request import Request, urlopen
 
 def endpoint_ollama_e_loopback(base_url: str) -> bool:
     """Retorna ``True`` somente para um endpoint HTTP(S) em loopback."""
-    partes = urlsplit(base_url)
+    try:
+        partes = urlsplit(base_url)
+        porta = partes.port
+    except (TypeError, ValueError):
+        return False
     host = partes.hostname
-    if partes.scheme not in {"http", "https"} or not host:
+    if (
+        partes.scheme not in {"http", "https"}
+        or not host
+        or partes.username
+        or partes.password
+        or porta is None
+    ):
         return False
     if host.lower() == "localhost":
         return True
@@ -24,6 +34,10 @@ def endpoint_ollama_e_loopback(base_url: str) -> bool:
 
 def raiz_api_ollama(base_url: str) -> str:
     """Converte a base OpenAI-compatible ``.../v1`` na raiz da API nativa."""
+    if not endpoint_ollama_e_loopback(base_url):
+        raise ValueError(
+            "OLLAMA_BASE_URL deve apontar para loopback, sem credenciais."
+        )
     partes = urlsplit(base_url)
     if partes.scheme not in {"http", "https"} or not partes.hostname:
         raise ValueError(f"OLLAMA_BASE_URL inválida: {base_url!r}")

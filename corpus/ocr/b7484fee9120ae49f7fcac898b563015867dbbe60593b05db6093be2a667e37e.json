@@ -1,0 +1,3584 @@
+{
+ "documento": "santander_release_1T2026",
+ "empresa": "SANTANDER",
+ "hash_pdf": "b7484fee9120ae49f7fcac898b563015867dbbe60593b05db6093be2a667e37e",
+ "modelo": "mistral-ocr-4-0",
+ "ocr": {
+  "document_annotation": null,
+  "model": "mistral-ocr-4-0",
+  "pages": [
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 459,
+      "bottom_right_y": 97,
+      "confidence_scores": null,
+      "content": "# Informe de Resultados",
+      "top_left_x": 48,
+      "top_left_y": 40,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 360,
+      "bottom_right_y": 151,
+      "confidence_scores": null,
+      "content": "1º trimestre de 2026",
+      "top_left_x": 49,
+      "top_left_y": 115,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 148,
+      "bottom_right_y": 181,
+      "confidence_scores": null,
+      "content": "(BRGAAP)",
+      "top_left_x": 49,
+      "top_left_y": 154,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 670,
+      "bottom_right_y": 839,
+      "confidence_scores": null,
+      "content": "![img-0.jpeg](img-0.jpeg)",
+      "image_id": "img-0.jpeg",
+      "top_left_x": 21,
+      "top_left_y": 230,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 193,
+      "bottom_right_y": 938,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 39,
+      "top_left_y": 908,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 261,
+      "bottom_right_y": 977,
+      "confidence_scores": null,
+      "content": "www.santander.com.br/ri/",
+      "top_left_x": 30,
+      "top_left_y": 954,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 705,
+      "bottom_right_y": 1019,
+      "confidence_scores": null,
+      "content": "![img-1.jpeg](img-1.jpeg)",
+      "image_id": "img-1.jpeg",
+      "top_left_x": 574,
+      "top_left_y": 884,
+      "type": "image"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [
+     "http://www.santander.com.br/ri/"
+    ],
+    "images": [
+     {
+      "bottom_right_x": 670,
+      "bottom_right_y": 839,
+      "id": "img-0.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 21,
+      "top_left_y": 230
+     },
+     {
+      "bottom_right_x": 705,
+      "bottom_right_y": 1019,
+      "id": "img-1.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 574,
+      "top_left_y": 884
+     }
+    ],
+    "index": 0,
+    "markdown": "# Informe de Resultados\n\n1º trimestre de 2026\n\n(BRGAAP)\n\n![img-0.jpeg](img-0.jpeg)\n\nComeça agora\n\nwww.santander.com.br/ri/\n\n![img-1.jpeg](img-1.jpeg)",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 190,
+      "bottom_right_y": 35,
+      "confidence_scores": null,
+      "content": "Primeiro trimestre",
+      "top_left_x": 48,
+      "top_left_y": 15,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 653,
+      "bottom_right_y": 37,
+      "confidence_scores": null,
+      "content": "2026",
+      "top_left_x": 595,
+      "top_left_y": 13,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 118,
+      "bottom_right_y": 93,
+      "confidence_scores": null,
+      "content": "## Índice",
+      "top_left_x": 72,
+      "top_left_y": 65,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 627,
+      "bottom_right_y": 769,
+      "confidence_scores": null,
+      "content": "|  Análise de desempenho | 3  |\n| --- | --- |\n|  Evolução da estratégia | 4  |\n|  Centralidade no cliente | 4  |\n|  Sumário executivo | 5  |\n|  Análise do resultado e balanço patrimonial | 6  |\n|  Demonstração do resultado gerencial | 6  |\n|  Margem financeira | 7  |\n|  Comissões | 8  |\n|  Resultado de PDD e custo de crédito | 10  |\n|  NPL Formation, write-off e carteira renegociada | 11  |\n|  Qualidade de crédito | 12  |\n|  Despesas | 13  |\n|  Outras Receitas e Despesas Operacionais | 14  |\n|  Balanço patrimonial | 14  |\n|  Carteira de crédito | 15  |\n|  Captações | 18  |\n|  Capital | 19  |\n|  Reconciliação dos resultados contábil e gerencial | 20  |",
+      "table_id": null,
+      "top_left_x": 72,
+      "top_left_y": 93,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 22,
+      "top_left_y": 987,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "2",
+      "top_left_x": 671,
+      "top_left_y": 991,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 1,
+    "markdown": "Primeiro trimestre\n\n2026\n\n## Índice\n\n|  Análise de desempenho | 3  |\n| --- | --- |\n|  Evolução da estratégia | 4  |\n|  Centralidade no cliente | 4  |\n|  Sumário executivo | 5  |\n|  Análise do resultado e balanço patrimonial | 6  |\n|  Demonstração do resultado gerencial | 6  |\n|  Margem financeira | 7  |\n|  Comissões | 8  |\n|  Resultado de PDD e custo de crédito | 10  |\n|  NPL Formation, write-off e carteira renegociada | 11  |\n|  Qualidade de crédito | 12  |\n|  Despesas | 13  |\n|  Outras Receitas e Despesas Operacionais | 14  |\n|  Balanço patrimonial | 14  |\n|  Carteira de crédito | 15  |\n|  Captações | 18  |\n|  Capital | 19  |\n|  Reconciliação dos resultados contábil e gerencial | 20  |\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n2",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 520,
+      "bottom_right_y": 51,
+      "confidence_scores": null,
+      "content": "# Informe de Resultados do 1º trimestre de 2026 (BRGAAP)",
+      "top_left_x": 15,
+      "top_left_y": 16,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 426,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "No 1T26, mantivemos o foco na execução da nossa estratégia, com ambição de sermos a principal plataforma financeira na vida de nossos clientes. Avançamos de forma contínua e consistente na construção de uma operação cada vez mais diversificada, sólida e rentável, preparada para crescer de maneira sustentável ao longo do tempo.",
+      "top_left_x": 24,
+      "top_left_y": 77,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 426,
+      "bottom_right_y": 215,
+      "confidence_scores": null,
+      "content": "Encerramos o trimestre com um lucro líquido de R$ 3,8 bilhões, o que representou uma redução de 7,3% no trimestre e 1,9% no ano. O retorno sobre patrimônio foi de 16,0%, queda de 1,6 p.p. no trimestre e 1,5 p.p. na comparação com o mesmo período de 2025.",
+      "top_left_x": 24,
+      "top_left_y": 155,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 426,
+      "bottom_right_y": 384,
+      "confidence_scores": null,
+      "content": "As receitas totais avançaram 0,8% no trimestre e 0,9% no ano. A margem financeira cresceu 3,1% no trimestre e recuou 0,7% no ano. Na comparação trimestral, a melhora é explicada principalmente pela margem com mercados, efeito da sensibilidade positiva à queda da taxa de juros, menor número de dias úteis, bem como pelos melhores resultados da tesouraria. No ano, a queda é explicada pela sensibilidade negativa ao aumento da taxa de juros e menores resultados da tesouraria. Já a margem com clientes apresentou redução de 1,4% no trimestre e avanço de 4,8% no ano. No trimestre, efeito de menos dias úteis e corridos, já na comparação anual o incremento se deve principalmente a volume, mix e disciplina de preço, contribuindo para o aumento do spread.",
+      "top_left_x": 24,
+      "top_left_y": 219,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 426,
+      "bottom_right_y": 476,
+      "confidence_scores": null,
+      "content": "As comissões apresentaram boa performance no ano, crescendo 5,8%, resultado do foco na diversificação de receitas, mais balanceadas entre crédito e serviços, sendo um pilar importante de crescimento, com destaque para o avanço das comissões de cartões com 9,8% e seguros com 12,2%. Na comparação trimestral, essas receitas reduziram em 5,5%, devido à sazonalidade do trimestre que afeta especialmente as receitas de cartões.",
+      "top_left_x": 24,
+      "top_left_y": 387,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 426,
+      "bottom_right_y": 600,
+      "confidence_scores": null,
+      "content": "A carteira de crédito ampliada recuou 0,4% no trimestre, porém com avanço de 3,4% no ano, encerrando o período em R$ 705.582 milhões. A redução no trimestre se deve especialmente à sazonalidade em cartões e à variação cambial. Em doze meses destacam-se os crescimentos de financiamento ao consumo +14,2%; no segmento pessoa física sobressaem o crédito imobiliário +10,6% e cartões +9,1% e por fim, as PMEs apresentam expansão de 9,9%. Mantemos nossa disciplina na alocação de capital com foco nos negócios estratégicos, gestão de risco dos portfólios e rentabilidade.",
+      "top_left_x": 24,
+      "top_left_y": 480,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 426,
+      "bottom_right_y": 664,
+      "confidence_scores": null,
+      "content": "As captações totais atingiram R$ 743.309 milhões, avanço de 0,6% no trimestre e 2,8% no ano, mantendo nossa busca por um mix mais equilibrado entre Pessoa Física e Jurídica, atingindo 51% de representatividade do segmento PF, evolução de 6 p.p. YoY.",
+      "top_left_x": 24,
+      "top_left_y": 604,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 426,
+      "bottom_right_y": 742,
+      "confidence_scores": null,
+      "content": "O resultado de PDD gerencial totalizou R$ 6.344 milhões, avanço de 3,9% no trimestre e queda de 0,7% no ano. Na comparação trimestral a PDD mantém-se pressionada pelo cenário macroeconômico e alto endividamento das famílias; já na comparação anual a queda reflete a ativa gestão de riscos e os efeitos de mix do portfólio.",
+      "top_left_x": 24,
+      "top_left_y": 667,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 426,
+      "bottom_right_y": 805,
+      "confidence_scores": null,
+      "content": "As despesas seguem sob rigoroso controle, estáveis no trimestre e com incremento de 0,9% no ano, bastante abaixo da inflação no período. Seguimos focados na gestão eficiente de custos, com uso intensivo de tecnologia para otimizar processos e maximizar produtividade.",
+      "top_left_x": 24,
+      "top_left_y": 745,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 426,
+      "bottom_right_y": 854,
+      "confidence_scores": null,
+      "content": "Mantemos nosso compromisso com resultados sustentáveis de longo prazo, por meio de um balanço sólido e diversificado, impulsionados por uma obsessão pela excelência da experiência de nossos clientes.",
+      "top_left_x": 24,
+      "top_left_y": 809,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 624,
+      "bottom_right_y": 99,
+      "confidence_scores": null,
+      "content": "## Destaques do trimestre",
+      "top_left_x": 443,
+      "top_left_y": 70,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 623,
+      "bottom_right_y": 139,
+      "confidence_scores": null,
+      "content": "### Lucro líquido gerencial",
+      "top_left_x": 447,
+      "top_left_y": 118,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 629,
+      "bottom_right_y": 200,
+      "confidence_scores": null,
+      "content": "|  **R$ 3,8** | -7,3% QoQ  |\n| --- | --- |\n|  bilhões | -1,9% YoY  |",
+      "table_id": null,
+      "top_left_x": 456,
+      "top_left_y": 156,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 666,
+      "bottom_right_y": 243,
+      "confidence_scores": null,
+      "content": "### Carteira de crédito ampliada",
+      "top_left_x": 447,
+      "top_left_y": 223,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 629,
+      "bottom_right_y": 301,
+      "confidence_scores": null,
+      "content": "|  **R$ 706** | -0,4% QoQ  |\n| --- | --- |\n|  bilhões | +3,4% YoY  |",
+      "table_id": null,
+      "top_left_x": 456,
+      "top_left_y": 257,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 344,
+      "confidence_scores": null,
+      "content": "### Captações de clientes",
+      "top_left_x": 447,
+      "top_left_y": 322,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 629,
+      "bottom_right_y": 404,
+      "confidence_scores": null,
+      "content": "|  **R$ 664** | -1,0% QoQ  |\n| --- | --- |\n|  bilhões | +1,9% YoY  |",
+      "table_id": null,
+      "top_left_x": 456,
+      "top_left_y": 359,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 447,
+      "confidence_scores": null,
+      "content": "### Margem com clientes",
+      "top_left_x": 447,
+      "top_left_y": 426,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 629,
+      "bottom_right_y": 510,
+      "confidence_scores": null,
+      "content": "|  **R$ 16,6** | -1,4% QoQ  |\n| --- | --- |\n|  bilhões | +4,8% YoY  |",
+      "table_id": null,
+      "top_left_x": 456,
+      "top_left_y": 461,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 636,
+      "bottom_right_y": 553,
+      "confidence_scores": null,
+      "content": "### Margem com o mercado",
+      "top_left_x": 447,
+      "top_left_y": 532,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 642,
+      "bottom_right_y": 611,
+      "confidence_scores": null,
+      "content": "|  **R$ -0,8** | -48,1% QoQ  |\n| --- | --- |\n|  bilhões | n.d. YoY  |",
+      "table_id": null,
+      "top_left_x": 456,
+      "top_left_y": 567,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 574,
+      "bottom_right_y": 655,
+      "confidence_scores": null,
+      "content": "### Custo de crédito",
+      "top_left_x": 447,
+      "top_left_y": 634,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 638,
+      "bottom_right_y": 697,
+      "confidence_scores": null,
+      "content": "|  **3,73%** | Estável QoQ  |\n| --- | --- |\n|   | Estável YoY  |",
+      "table_id": null,
+      "top_left_x": 456,
+      "top_left_y": 669,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 596,
+      "bottom_right_y": 750,
+      "confidence_scores": null,
+      "content": "### Índice de eficiência",
+      "top_left_x": 447,
+      "top_left_y": 729,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 646,
+      "bottom_right_y": 796,
+      "confidence_scores": null,
+      "content": "|  **37,7%** | -1,1 p.p. QoQ  |\n| --- | --- |\n|   | +0,5 p.p. YoY  |",
+      "table_id": null,
+      "top_left_x": 456,
+      "top_left_y": 764,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 493,
+      "bottom_right_y": 846,
+      "confidence_scores": null,
+      "content": "### ROAE",
+      "top_left_x": 447,
+      "top_left_y": 826,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 646,
+      "bottom_right_y": 881,
+      "confidence_scores": null,
+      "content": "|  **16,0%** | -1,6 p.p. QoQ  |\n| --- | --- |\n|   | -1,5 p.p. YoY  |",
+      "table_id": null,
+      "top_left_x": 456,
+      "top_left_y": 848,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 112,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 24,
+      "top_left_y": 988,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "3",
+      "top_left_x": 671,
+      "top_left_y": 991,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 2,
+    "markdown": "# Informe de Resultados do 1º trimestre de 2026 (BRGAAP)\n\nNo 1T26, mantivemos o foco na execução da nossa estratégia, com ambição de sermos a principal plataforma financeira na vida de nossos clientes. Avançamos de forma contínua e consistente na construção de uma operação cada vez mais diversificada, sólida e rentável, preparada para crescer de maneira sustentável ao longo do tempo.\n\nEncerramos o trimestre com um lucro líquido de R$ 3,8 bilhões, o que representou uma redução de 7,3% no trimestre e 1,9% no ano. O retorno sobre patrimônio foi de 16,0%, queda de 1,6 p.p. no trimestre e 1,5 p.p. na comparação com o mesmo período de 2025.\n\nAs receitas totais avançaram 0,8% no trimestre e 0,9% no ano. A margem financeira cresceu 3,1% no trimestre e recuou 0,7% no ano. Na comparação trimestral, a melhora é explicada principalmente pela margem com mercados, efeito da sensibilidade positiva à queda da taxa de juros, menor número de dias úteis, bem como pelos melhores resultados da tesouraria. No ano, a queda é explicada pela sensibilidade negativa ao aumento da taxa de juros e menores resultados da tesouraria. Já a margem com clientes apresentou redução de 1,4% no trimestre e avanço de 4,8% no ano. No trimestre, efeito de menos dias úteis e corridos, já na comparação anual o incremento se deve principalmente a volume, mix e disciplina de preço, contribuindo para o aumento do spread.\n\nAs comissões apresentaram boa performance no ano, crescendo 5,8%, resultado do foco na diversificação de receitas, mais balanceadas entre crédito e serviços, sendo um pilar importante de crescimento, com destaque para o avanço das comissões de cartões com 9,8% e seguros com 12,2%. Na comparação trimestral, essas receitas reduziram em 5,5%, devido à sazonalidade do trimestre que afeta especialmente as receitas de cartões.\n\nA carteira de crédito ampliada recuou 0,4% no trimestre, porém com avanço de 3,4% no ano, encerrando o período em R$ 705.582 milhões. A redução no trimestre se deve especialmente à sazonalidade em cartões e à variação cambial. Em doze meses destacam-se os crescimentos de financiamento ao consumo +14,2%; no segmento pessoa física sobressaem o crédito imobiliário +10,6% e cartões +9,1% e por fim, as PMEs apresentam expansão de 9,9%. Mantemos nossa disciplina na alocação de capital com foco nos negócios estratégicos, gestão de risco dos portfólios e rentabilidade.\n\nAs captações totais atingiram R$ 743.309 milhões, avanço de 0,6% no trimestre e 2,8% no ano, mantendo nossa busca por um mix mais equilibrado entre Pessoa Física e Jurídica, atingindo 51% de representatividade do segmento PF, evolução de 6 p.p. YoY.\n\nO resultado de PDD gerencial totalizou R$ 6.344 milhões, avanço de 3,9% no trimestre e queda de 0,7% no ano. Na comparação trimestral a PDD mantém-se pressionada pelo cenário macroeconômico e alto endividamento das famílias; já na comparação anual a queda reflete a ativa gestão de riscos e os efeitos de mix do portfólio.\n\nAs despesas seguem sob rigoroso controle, estáveis no trimestre e com incremento de 0,9% no ano, bastante abaixo da inflação no período. Seguimos focados na gestão eficiente de custos, com uso intensivo de tecnologia para otimizar processos e maximizar produtividade.\n\nMantemos nosso compromisso com resultados sustentáveis de longo prazo, por meio de um balanço sólido e diversificado, impulsionados por uma obsessão pela excelência da experiência de nossos clientes.\n\n## Destaques do trimestre\n\n### Lucro líquido gerencial\n\n|  **R$ 3,8** | -7,3% QoQ  |\n| --- | --- |\n|  bilhões | -1,9% YoY  |\n\n### Carteira de crédito ampliada\n\n|  **R$ 706** | -0,4% QoQ  |\n| --- | --- |\n|  bilhões | +3,4% YoY  |\n\n### Captações de clientes\n\n|  **R$ 664** | -1,0% QoQ  |\n| --- | --- |\n|  bilhões | +1,9% YoY  |\n\n### Margem com clientes\n\n|  **R$ 16,6** | -1,4% QoQ  |\n| --- | --- |\n|  bilhões | +4,8% YoY  |\n\n### Margem com o mercado\n\n|  **R$ -0,8** | -48,1% QoQ  |\n| --- | --- |\n|  bilhões | n.d. YoY  |\n\n### Custo de crédito\n\n|  **3,73%** | Estável QoQ  |\n| --- | --- |\n|   | Estável YoY  |\n\n### Índice de eficiência\n\n|  **37,7%** | -1,1 p.p. QoQ  |\n| --- | --- |\n|   | +0,5 p.p. YoY  |\n\n### ROAE\n\n|  **16,0%** | -1,6 p.p. QoQ  |\n| --- | --- |\n|   | -1,5 p.p. YoY  |\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n3",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 705,
+      "bottom_right_y": 136,
+      "confidence_scores": null,
+      "content": "![img-2.jpeg](img-2.jpeg)",
+      "image_id": "img-4.jpeg",
+      "top_left_x": 0,
+      "top_left_y": 0,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 277,
+      "bottom_right_y": 193,
+      "confidence_scores": null,
+      "content": "# Centralidade no cliente",
+      "top_left_x": 29,
+      "top_left_y": 156,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 454,
+      "bottom_right_y": 208,
+      "confidence_scores": null,
+      "content": "Evolução tecnológica para servir o cliente onde, como e quando ele desejar",
+      "top_left_x": 29,
+      "top_left_y": 191,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 335,
+      "bottom_right_y": 541,
+      "confidence_scores": null,
+      "content": "![img-3.jpeg](img-3.jpeg)",
+      "image_id": "img-3.jpeg",
+      "top_left_x": 12,
+      "top_left_y": 231,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 560,
+      "bottom_right_y": 256,
+      "confidence_scores": null,
+      "content": "## Visão integrada do cliente",
+      "top_left_x": 358,
+      "top_left_y": 235,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 666,
+      "bottom_right_y": 387,
+      "confidence_scores": null,
+      "content": "Seguimos focados em ser o banco mais presente na vida dos nossos clientes. Nossa estratégia de centralidade no cliente se traduz em crescimento sustentável de nossa base, especialmente de clientes com principalidade, na evolução da satisfação, medida pelo NPS, e no aumento da rentabilidade. Expandimos a nossa base de clientes em 6% YoY, atingindo 75,2 milhões, e os clientes ativos em 3% YoY, totalizando 34,2 milhões.",
+      "top_left_x": 358,
+      "top_left_y": 273,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 666,
+      "bottom_right_y": 493,
+      "confidence_scores": null,
+      "content": "A evolução do nosso modelo de negócios, com o uso intenso de tecnologia para servir o cliente onde, como e quando ele desejar, permite o constante avanço de sua jornada, com ofertas de produtos mais adequadas ao seu perfil, focando sempre na principalidade. Para impulsionar a retomada da nossa rentabilidade, manteremos foco nos nossos três pilares da principalidade: transacionalidade, crédito e investimentos.",
+      "top_left_x": 358,
+      "top_left_y": 395,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 307,
+      "bottom_right_y": 571,
+      "confidence_scores": null,
+      "content": "## Obsessão pela experiência completa",
+      "top_left_x": 29,
+      "top_left_y": 550,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 323,
+      "bottom_right_y": 676,
+      "confidence_scores": null,
+      "content": "Buscamos a evolução contínua de nossas ofertas e atendimento ao cliente, combinando o contato humano com o ambiente digital para trazer a melhor experiência em todos os pontos de contato com o banco. No canal digital, seguimos em constante avanço tecnológico, com jornadas cada vez mais simples e completas.",
+      "top_left_x": 29,
+      "top_left_y": 585,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 323,
+      "bottom_right_y": 744,
+      "confidence_scores": null,
+      "content": "Nos canais assistidos, que englobam nosso canal físico e remoto, temos nosso modelo de atendimento que possui a loja como um canal de conveniência e parte da oferta multicanal completa.",
+      "top_left_x": 29,
+      "top_left_y": 683,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 323,
+      "bottom_right_y": 797,
+      "confidence_scores": null,
+      "content": "Temos focado na hiperpersonalização, com as interações baseadas no comportamento e momento de vida dos clientes, gerando mais interesse e conversão.",
+      "top_left_x": 29,
+      "top_left_y": 751,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 323,
+      "bottom_right_y": 894,
+      "confidence_scores": null,
+      "content": "Nossos esforços se refletem na crescente satisfação do cliente nos últimos anos, tanto no segmento de Pessoas Físicas quanto Jurídicas, demonstrando o nosso compromisso em entregar soluções que atendam às necessidades de nossos clientes, com excelência no atendimento e na experiência.",
+      "top_left_x": 29,
+      "top_left_y": 804,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 560,
+      "bottom_right_y": 574,
+      "confidence_scores": null,
+      "content": "## Santander Rewards",
+      "top_left_x": 347,
+      "top_left_y": 546,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 661,
+      "bottom_right_y": 633,
+      "confidence_scores": null,
+      "content": "### Ressignificar toda a oferta de valor do Banco baseada na Principalidade",
+      "top_left_x": 358,
+      "top_left_y": 587,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 546,
+      "bottom_right_y": 794,
+      "confidence_scores": null,
+      "content": "Em linha com nossa estratégia de centralidade no cliente, lançamos o Santander Rewards, um modelo de relacionamento baseado na principalidade, que reforça nossa oferta de cartões. Nesse programa, o nível de engajamento e a profundidade do vínculo orientam o benefício de aceleração de pontos nos cartões de crédito.",
+      "top_left_x": 358,
+      "top_left_y": 644,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 546,
+      "bottom_right_y": 890,
+      "confidence_scores": null,
+      "content": "Alinhada ao nosso compromisso com a inovação, a iniciativa permite uma proposta mais integrada e personalizada, incentivando a construção de relações de longo prazo com nossos clientes.",
+      "top_left_x": 358,
+      "top_left_y": 802,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 666,
+      "bottom_right_y": 877,
+      "confidence_scores": null,
+      "content": "![img-4.jpeg](img-4.jpeg)",
+      "image_id": "img-4.jpeg",
+      "top_left_x": 568,
+      "top_left_y": 655,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 456,
+      "bottom_right_y": 976,
+      "confidence_scores": null,
+      "content": "+ Relacionamento",
+      "top_left_x": 383,
+      "top_left_y": 963,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 544,
+      "bottom_right_y": 976,
+      "confidence_scores": null,
+      "content": "+ Pontos",
+      "top_left_x": 507,
+      "top_left_y": 963,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 976,
+      "confidence_scores": null,
+      "content": "+ Experiências",
+      "top_left_x": 600,
+      "top_left_y": 963,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 22,
+      "top_left_y": 988,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 1003,
+      "confidence_scores": null,
+      "content": "4",
+      "top_left_x": 671,
+      "top_left_y": 991,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 705,
+      "bottom_right_y": 136,
+      "id": "img-2.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 0,
+      "top_left_y": 0
+     },
+     {
+      "bottom_right_x": 335,
+      "bottom_right_y": 541,
+      "id": "img-3.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 12,
+      "top_left_y": 231
+     },
+     {
+      "bottom_right_x": 666,
+      "bottom_right_y": 877,
+      "id": "img-4.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 568,
+      "top_left_y": 655
+     }
+    ],
+    "index": 3,
+    "markdown": "![img-2.jpeg](img-2.jpeg)\n\n# Centralidade no cliente\n\nEvolução tecnológica para servir o cliente onde, como e quando ele desejar\n\n![img-3.jpeg](img-3.jpeg)\n\n## Visão integrada do cliente\n\nSeguimos focados em ser o banco mais presente na vida dos nossos clientes. Nossa estratégia de centralidade no cliente se traduz em crescimento sustentável de nossa base, especialmente de clientes com principalidade, na evolução da satisfação, medida pelo NPS, e no aumento da rentabilidade. Expandimos a nossa base de clientes em 6% YoY, atingindo 75,2 milhões, e os clientes ativos em 3% YoY, totalizando 34,2 milhões.\n\nA evolução do nosso modelo de negócios, com o uso intenso de tecnologia para servir o cliente onde, como e quando ele desejar, permite o constante avanço de sua jornada, com ofertas de produtos mais adequadas ao seu perfil, focando sempre na principalidade. Para impulsionar a retomada da nossa rentabilidade, manteremos foco nos nossos três pilares da principalidade: transacionalidade, crédito e investimentos.\n\n## Obsessão pela experiência completa\n\nBuscamos a evolução contínua de nossas ofertas e atendimento ao cliente, combinando o contato humano com o ambiente digital para trazer a melhor experiência em todos os pontos de contato com o banco. No canal digital, seguimos em constante avanço tecnológico, com jornadas cada vez mais simples e completas.\n\nNos canais assistidos, que englobam nosso canal físico e remoto, temos nosso modelo de atendimento que possui a loja como um canal de conveniência e parte da oferta multicanal completa.\n\nTemos focado na hiperpersonalização, com as interações baseadas no comportamento e momento de vida dos clientes, gerando mais interesse e conversão.\n\nNossos esforços se refletem na crescente satisfação do cliente nos últimos anos, tanto no segmento de Pessoas Físicas quanto Jurídicas, demonstrando o nosso compromisso em entregar soluções que atendam às necessidades de nossos clientes, com excelência no atendimento e na experiência.\n\n## Santander Rewards\n\n### Ressignificar toda a oferta de valor do Banco baseada na Principalidade\n\nEm linha com nossa estratégia de centralidade no cliente, lançamos o Santander Rewards, um modelo de relacionamento baseado na principalidade, que reforça nossa oferta de cartões. Nesse programa, o nível de engajamento e a profundidade do vínculo orientam o benefício de aceleração de pontos nos cartões de crédito.\n\nAlinhada ao nosso compromisso com a inovação, a iniciativa permite uma proposta mais integrada e personalizada, incentivando a construção de relações de longo prazo com nossos clientes.\n\n![img-4.jpeg](img-4.jpeg)\n\n+ Relacionamento\n\n+ Pontos\n\n+ Experiências\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n4",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 511,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 16,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 551,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 159,
+      "bottom_right_y": 73,
+      "confidence_scores": null,
+      "content": "# Sumário executivo",
+      "top_left_x": 28,
+      "top_left_y": 51,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 74,
+      "bottom_right_y": 90,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 28,
+      "top_left_y": 78,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 700,
+      "confidence_scores": null,
+      "content": "|   | 1T26 | 4T25 | 1T26 x 4T25 | 1T25 | 1T26 x 1T25  |\n| --- | --- | --- | --- | --- | --- |\n|  Lucro líquido gerencial | 3.788 | 4.086 | -7,3% | 3.861 | -1,9%  |\n|  **Indicadores de desempenho**  |   |   |   |   |   |\n|  ROAE gerencial excluindo ágio - anualizado^{1} | 16,0% | 17,6% | -1,6 p.p. | 17,4% | -1,5 p.p.  |\n|  ROAA gerencial excluindo ágio - anualizado^{1} | 1,2% | 1,3% | -0,1 p.p. | 1,2% | 0,0 p.p.  |\n|  Índice de eficiência^{2} | 37,7% | 38,8% | -1,1 p.p. | 37,2% | 0,5 p.p.  |\n|  Índice de inadimplência (15 a 90 dias) | 3,4% | 3,3% | 0,1 p.p. | 3,3% | 0,0 p.p.  |\n|  Índice de inadimplência (acima de 90 dias) | 3,3% | 3,1% | 0,2 p.p. | 2,8% | 0,6 p.p.  |\n|  Índice de cobertura da carteira em estágio 3^{3} | 67,6% | 66,4% | 1,1 p.p. | 74,1% | -6,5 p.p.  |\n|  **Balanço patrimonial**  |   |   |   |   |   |\n|   | **Mar/26** | **Dez/25** | **Mar/26 x Dez/25** | **Mar/25** | **Mar/26 x Mar/25**  |\n|  Ativos totais | 1.286.795 | 1.255.624 | 2,5% | 1.234.641 | 4,2%  |\n|  Carteira de crédito ampliada^{4} | 705.582 | 708.201 | -0,4% | 682.293 | 3,4%  |\n|  Captações de clientes^{5} | 663.850 | 670.430 | -1,0% | 651.486 | 1,9%  |\n|  Patrimônio líquido | 97.523 | 95.650 | 2,0% | 90.544 | 7,7%  |\n|  Índice de Basileia | 15,2% | 15,4% | -0,2 p.p. | 14,3% | 0,8 p.p.  |\n|  Índice de capital principal (CET1) | 11,2% | 11,6% | -0,3 p.p. | 11,1% | 0,2 p.p.  |\n|  **Indicadores de ações**  |   |   |   |   |   |\n|   | **1T26** | **4T25** | **1T26 x 4T25** | **1T25** | **1T26 x 1T25**  |\n|  Valor de mercado - R$ milhões | 114.405 | 126.300 | -9,4% | 99.507 | 15,0%  |\n|  Lucro líquido gerencial por unit (R$) - anualizado | 4,05 | 4,38 | -7,5% | 4,13 | -2,1%  |\n|  Lucro líquido societário por unit (R$) - anualizado | 3,98 | 4,31 | -7,6% | 4,05 | -1,7%  |\n|  Quantidade de ações no final do período - milhões^{6} | 7.490 | 7.471 | 19 | 7.471 | 19  |\n|  Valor patrimonial por unit (R$) | 25,57 | 25,11 | 1,8% | 23,69 | 7,9%  |\n|  JCP + dividendos - R$ milhões^{7} | 2.000 | 2.620 | (620) | 1.500 | 500  |\n|  **Outros dados**  |   |   |   |   |   |\n|   | **Mar/26** | **Dez/25** | **Mar/26 x Dez/25** | **Mar/25** | **Mar/26 x Mar/25**  |\n|  Funcionários | 49.107 | 49.661 | (554) | 55.303 | (6.196)  |\n|  Lojas | 868 | 916 | (48) | 1.126 | (258)  |\n|  PABs | 754 | 769 | (15) | 979 | (225)  |\n|  Caixas eletrônicos - próprios | 5.788 | 6.006 | (218) | 7.146 | (1.358)  |\n|  Caixas eletrônicos - Rede 24h | 27.312 | 26.705 | 607 | 24.285 | 3.027  |",
+      "table_id": null,
+      "top_left_x": 28,
+      "top_left_y": 87,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 764,
+      "confidence_scores": null,
+      "content": "(1) Eficiência: Exclui 100% do saldo do ágio (líquido de amortização), que foi de R$ 1.773 milhões em março de 2026, R$ 1.843 milhões em dezembro de 2025 e R$ 2.060 milhões em março de 2025.",
+      "top_left_x": 44,
+      "top_left_y": 742,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 787,
+      "confidence_scores": null,
+      "content": "(2) Despesas Gerais sobre Margem Financeira Bruta + Comissões + Despesas Tributárias + Outras Receitas/Despesas Operacionais + Resultados de Participações em Coligadas e Controladas.",
+      "top_left_x": 44,
+      "top_left_y": 766,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 336,
+      "bottom_right_y": 802,
+      "confidence_scores": null,
+      "content": "(3) Cobertura da carteira: Saldo de provisão do estágio 3 sobre a carteira de estágio 3.",
+      "top_left_x": 44,
+      "top_left_y": 789,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 561,
+      "bottom_right_y": 817,
+      "confidence_scores": null,
+      "content": "(4) Inclui avais, fianças e títulos privados (CRI, CRA, FIDC e CPR, além de debêntures, notas promissórias, notas comerciais, eurobonds e floating rates notes).",
+      "top_left_x": 44,
+      "top_left_y": 805,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 521,
+      "bottom_right_y": 831,
+      "confidence_scores": null,
+      "content": "(5) Inclui Poupança, Depósitos à vista, Depósitos a prazo, Debêntures, LCA, LCI, Letras Financeiras, Certificados de Operações Estruturadas e LIG.",
+      "top_left_x": 44,
+      "top_left_y": 819,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 392,
+      "bottom_right_y": 846,
+      "confidence_scores": null,
+      "content": "(6) Quantidade de ações representativas do capital social em circulação, excluindo ações em tesouraria.",
+      "top_left_x": 44,
+      "top_left_y": 833,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 600,
+      "bottom_right_y": 879,
+      "confidence_scores": null,
+      "content": "(7) Mar/26: distribuição de JCP de R$ 2.000 milhões, aprovada em 9 de janeiro de 2026. Dez/25: distribuição de JCP de R$ 2.000 milhões, aprovada em 10 de outubro de 2025 e distribuição de JCP de R$ 620 milhões, aprovada em 22 de dezembro de 2025. Mar/25: distribuição de JCP de R$ 1.500 milhões, aprovada em 10 de janeiro de 2025.",
+      "top_left_x": 44,
+      "top_left_y": 848,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 21,
+      "top_left_y": 987,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "5",
+      "top_left_x": 671,
+      "top_left_y": 990,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 4,
+    "markdown": "Resultados\n\nReconciliação dos resultados contábil e gerencial\n\n# Sumário executivo\n\nR$ Milhões\n\n|   | 1T26 | 4T25 | 1T26 x 4T25 | 1T25 | 1T26 x 1T25  |\n| --- | --- | --- | --- | --- | --- |\n|  Lucro líquido gerencial | 3.788 | 4.086 | -7,3% | 3.861 | -1,9%  |\n|  **Indicadores de desempenho**  |   |   |   |   |   |\n|  ROAE gerencial excluindo ágio - anualizado^{1} | 16,0% | 17,6% | -1,6 p.p. | 17,4% | -1,5 p.p.  |\n|  ROAA gerencial excluindo ágio - anualizado^{1} | 1,2% | 1,3% | -0,1 p.p. | 1,2% | 0,0 p.p.  |\n|  Índice de eficiência^{2} | 37,7% | 38,8% | -1,1 p.p. | 37,2% | 0,5 p.p.  |\n|  Índice de inadimplência (15 a 90 dias) | 3,4% | 3,3% | 0,1 p.p. | 3,3% | 0,0 p.p.  |\n|  Índice de inadimplência (acima de 90 dias) | 3,3% | 3,1% | 0,2 p.p. | 2,8% | 0,6 p.p.  |\n|  Índice de cobertura da carteira em estágio 3^{3} | 67,6% | 66,4% | 1,1 p.p. | 74,1% | -6,5 p.p.  |\n|  **Balanço patrimonial**  |   |   |   |   |   |\n|   | **Mar/26** | **Dez/25** | **Mar/26 x Dez/25** | **Mar/25** | **Mar/26 x Mar/25**  |\n|  Ativos totais | 1.286.795 | 1.255.624 | 2,5% | 1.234.641 | 4,2%  |\n|  Carteira de crédito ampliada^{4} | 705.582 | 708.201 | -0,4% | 682.293 | 3,4%  |\n|  Captações de clientes^{5} | 663.850 | 670.430 | -1,0% | 651.486 | 1,9%  |\n|  Patrimônio líquido | 97.523 | 95.650 | 2,0% | 90.544 | 7,7%  |\n|  Índice de Basileia | 15,2% | 15,4% | -0,2 p.p. | 14,3% | 0,8 p.p.  |\n|  Índice de capital principal (CET1) | 11,2% | 11,6% | -0,3 p.p. | 11,1% | 0,2 p.p.  |\n|  **Indicadores de ações**  |   |   |   |   |   |\n|   | **1T26** | **4T25** | **1T26 x 4T25** | **1T25** | **1T26 x 1T25**  |\n|  Valor de mercado - R$ milhões | 114.405 | 126.300 | -9,4% | 99.507 | 15,0%  |\n|  Lucro líquido gerencial por unit (R$) - anualizado | 4,05 | 4,38 | -7,5% | 4,13 | -2,1%  |\n|  Lucro líquido societário por unit (R$) - anualizado | 3,98 | 4,31 | -7,6% | 4,05 | -1,7%  |\n|  Quantidade de ações no final do período - milhões^{6} | 7.490 | 7.471 | 19 | 7.471 | 19  |\n|  Valor patrimonial por unit (R$) | 25,57 | 25,11 | 1,8% | 23,69 | 7,9%  |\n|  JCP + dividendos - R$ milhões^{7} | 2.000 | 2.620 | (620) | 1.500 | 500  |\n|  **Outros dados**  |   |   |   |   |   |\n|   | **Mar/26** | **Dez/25** | **Mar/26 x Dez/25** | **Mar/25** | **Mar/26 x Mar/25**  |\n|  Funcionários | 49.107 | 49.661 | (554) | 55.303 | (6.196)  |\n|  Lojas | 868 | 916 | (48) | 1.126 | (258)  |\n|  PABs | 754 | 769 | (15) | 979 | (225)  |\n|  Caixas eletrônicos - próprios | 5.788 | 6.006 | (218) | 7.146 | (1.358)  |\n|  Caixas eletrônicos - Rede 24h | 27.312 | 26.705 | 607 | 24.285 | 3.027  |\n\n(1) Eficiência: Exclui 100% do saldo do ágio (líquido de amortização), que foi de R$ 1.773 milhões em março de 2026, R$ 1.843 milhões em dezembro de 2025 e R$ 2.060 milhões em março de 2025.\n\n(2) Despesas Gerais sobre Margem Financeira Bruta + Comissões + Despesas Tributárias + Outras Receitas/Despesas Operacionais + Resultados de Participações em Coligadas e Controladas.\n\n(3) Cobertura da carteira: Saldo de provisão do estágio 3 sobre a carteira de estágio 3.\n\n(4) Inclui avais, fianças e títulos privados (CRI, CRA, FIDC e CPR, além de debêntures, notas promissórias, notas comerciais, eurobonds e floating rates notes).\n\n(5) Inclui Poupança, Depósitos à vista, Depósitos a prazo, Debêntures, LCA, LCI, Letras Financeiras, Certificados de Operações Estruturadas e LIG.\n\n(6) Quantidade de ações representativas do capital social em circulação, excluindo ações em tesouraria.\n\n(7) Mar/26: distribuição de JCP de R$ 2.000 milhões, aprovada em 9 de janeiro de 2026. Dez/25: distribuição de JCP de R$ 2.000 milhões, aprovada em 10 de outubro de 2025 e distribuição de JCP de R$ 620 milhões, aprovada em 22 de dezembro de 2025. Mar/25: distribuição de JCP de R$ 1.500 milhões, aprovada em 10 de janeiro de 2025.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n5",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 511,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 551,
+      "top_left_y": 7,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 285,
+      "bottom_right_y": 75,
+      "confidence_scores": null,
+      "content": "## Demonstração de resultado gerencial",
+      "top_left_x": 28,
+      "top_left_y": 51,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 74,
+      "bottom_right_y": 91,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 28,
+      "top_left_y": 78,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 510,
+      "confidence_scores": null,
+      "content": "|   | 1T26 | 4T25 | 1T26 x 4T25 | 1T25 | 1T26 x 1T25  |\n| --- | --- | --- | --- | --- | --- |\n|  Margem financeira bruta | 15.812 | 15.332 | 3,1% | 15.922 | -0,7%  |\n|  Margem financeira com clientes | 16.584 | 16.818 | -1,4% | 15.825 | 4,8%  |\n|  Margem financeira com o mercado | (771) | (1.486) | -48,1% | 97 | n.a.  |\n|  Comissões | 5.435 | 5.754 | -5,5% | 5.137 | 5,8%  |\n|  **Receita total** | **21.248** | **21.086** | **0,8%** | **21.058** | **0,9%**  |\n|  Resultado de PDD | (6.344) | (6.105) | 3,9% | (6.390) | -0,7%  |\n|  Provisão de crédito | (6.827) | (6.768) | 0,9% | (7.012) | -2,6%  |\n|  Recuperação de crédito | 483 | 664 | -27,2% | 622 | -22,4%  |\n|  Despesas gerais | (6.633) | (6.633) | 0,0% | (6.573) | 0,9%  |\n|  Despesas de pessoal | (3.050) | (3.044) | 0,2% | (3.189) | -4,4%  |\n|  Despesas administrativas | (3.583) | (3.589) | -0,2% | (3.384) | 5,9%  |\n|  Despesas tributárias | (1.453) | (1.471) | -1,2% | (1.341) | 8,3%  |\n|  Resultados de participações em coligadas e controladas | 89 | 71 | 25,7% | 77 | 16,3%  |\n|  Outras receitas/Despesas operacionais | (2.300) | (2.609) | -11,8% | (2.126) | 8,2%  |\n|  **Resultado operacional** | **4.607** | **4.340** | **6,2%** | **4.704** | **-2,1%**  |\n|  Resultado não operacional | (25) | 7 | n.a. | 43 | n.a.  |\n|  **Resultado gerencial antes de impostos** | **4.583** | **4.347** | **5,4%** | **4.747** | **-3,5%**  |\n|  Imposto de renda e contribuição social | (677) | (110) | n.a. | (823) | -17,7%  |\n|  Participações de acionistas minoritários | (118) | (150) | -21,6% | (64) | 85,0%  |\n|  **Lucro líquido** | **3.788** | **4.086** | **-7,3%** | **3.861** | **-1,9%**  |\n|  **Lucro líquido contábil** | **3.725** | **4.023** | **-7,4%** | **3.778** | **-1,4%**  |",
+      "table_id": null,
+      "top_left_x": 28,
+      "top_left_y": 78,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 190,
+      "bottom_right_y": 547,
+      "confidence_scores": null,
+      "content": "## ROAE e lucro líquido gerencial",
+      "top_left_x": 33,
+      "top_left_y": 526,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 74,
+      "bottom_right_y": 566,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 33,
+      "top_left_y": 555,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 610,
+      "bottom_right_y": 619,
+      "confidence_scores": null,
+      "content": "![img-5.jpeg](img-5.jpeg)",
+      "image_id": "img-5.jpeg",
+      "top_left_x": 109,
+      "top_left_y": 582,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 57,
+      "bottom_right_y": 655,
+      "confidence_scores": null,
+      "content": "ROAE",
+      "top_left_x": 21,
+      "top_left_y": 640,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 638,
+      "bottom_right_y": 949,
+      "confidence_scores": null,
+      "content": "![img-6.jpeg](img-6.jpeg)",
+      "image_id": "img-6.jpeg",
+      "top_left_x": 60,
+      "top_left_y": 686,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 21,
+      "top_left_y": 987,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "6",
+      "top_left_x": 671,
+      "top_left_y": 991,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 610,
+      "bottom_right_y": 619,
+      "id": "img-5.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 109,
+      "top_left_y": 582
+     },
+     {
+      "bottom_right_x": 638,
+      "bottom_right_y": 949,
+      "id": "img-6.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 60,
+      "top_left_y": 686
+     }
+    ],
+    "index": 5,
+    "markdown": "Resultados\n\nReconciliação dos resultados contábil e gerencial\n\n## Demonstração de resultado gerencial\n\nR$ Milhões\n\n|   | 1T26 | 4T25 | 1T26 x 4T25 | 1T25 | 1T26 x 1T25  |\n| --- | --- | --- | --- | --- | --- |\n|  Margem financeira bruta | 15.812 | 15.332 | 3,1% | 15.922 | -0,7%  |\n|  Margem financeira com clientes | 16.584 | 16.818 | -1,4% | 15.825 | 4,8%  |\n|  Margem financeira com o mercado | (771) | (1.486) | -48,1% | 97 | n.a.  |\n|  Comissões | 5.435 | 5.754 | -5,5% | 5.137 | 5,8%  |\n|  **Receita total** | **21.248** | **21.086** | **0,8%** | **21.058** | **0,9%**  |\n|  Resultado de PDD | (6.344) | (6.105) | 3,9% | (6.390) | -0,7%  |\n|  Provisão de crédito | (6.827) | (6.768) | 0,9% | (7.012) | -2,6%  |\n|  Recuperação de crédito | 483 | 664 | -27,2% | 622 | -22,4%  |\n|  Despesas gerais | (6.633) | (6.633) | 0,0% | (6.573) | 0,9%  |\n|  Despesas de pessoal | (3.050) | (3.044) | 0,2% | (3.189) | -4,4%  |\n|  Despesas administrativas | (3.583) | (3.589) | -0,2% | (3.384) | 5,9%  |\n|  Despesas tributárias | (1.453) | (1.471) | -1,2% | (1.341) | 8,3%  |\n|  Resultados de participações em coligadas e controladas | 89 | 71 | 25,7% | 77 | 16,3%  |\n|  Outras receitas/Despesas operacionais | (2.300) | (2.609) | -11,8% | (2.126) | 8,2%  |\n|  **Resultado operacional** | **4.607** | **4.340** | **6,2%** | **4.704** | **-2,1%**  |\n|  Resultado não operacional | (25) | 7 | n.a. | 43 | n.a.  |\n|  **Resultado gerencial antes de impostos** | **4.583** | **4.347** | **5,4%** | **4.747** | **-3,5%**  |\n|  Imposto de renda e contribuição social | (677) | (110) | n.a. | (823) | -17,7%  |\n|  Participações de acionistas minoritários | (118) | (150) | -21,6% | (64) | 85,0%  |\n|  **Lucro líquido** | **3.788** | **4.086** | **-7,3%** | **3.861** | **-1,9%**  |\n|  **Lucro líquido contábil** | **3.725** | **4.023** | **-7,4%** | **3.778** | **-1,4%**  |\n\n## ROAE e lucro líquido gerencial\n\nR$ Milhões\n\n![img-5.jpeg](img-5.jpeg)\n\nROAE\n\n![img-6.jpeg](img-6.jpeg)\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n6",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 511,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 551,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 161,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "## Margem financeira",
+      "top_left_x": 28,
+      "top_left_y": 51,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 74,
+      "bottom_right_y": 91,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 28,
+      "top_left_y": 78,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 243,
+      "confidence_scores": null,
+      "content": "|   | 1T26 | 4T25 | 1T26 x 4T25 | 1T25 | 1T26 x 1T25  |\n| --- | --- | --- | --- | --- | --- |\n|  **Margem com clientes** | **16.584** | **16.818** | **-1,4%** | **15.825** | **4,8%**  |\n|  Margem de produtos | 15.472 | 15.688 | -1,4% | 14.865 | 4,1%  |\n|  Volume | 625.877 | 617.744 | 1,3% | 605.630 | 3,3%  |\n|  Spread (a.a.) | 10,41% | 10,46% | -0,05 p.p. | 10,33% | 0,08 p.p.  |\n|  Capital de giro próprio | 1.111 | 1.130 | -1,7% | 959 | 15,8%  |\n|  **Margem com o mercado** | **(771)** | **(1.486)** | **-48,1%** | **97** | **n.a.**  |\n|  **Margem financeira** | **15.812** | **15.332** | **3,1%** | **15.922** | **-0,7%**  |",
+      "table_id": null,
+      "top_left_x": 28,
+      "top_left_y": 78,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 345,
+      "bottom_right_y": 342,
+      "confidence_scores": null,
+      "content": "A margem financeira atingiu R$ 15.812 milhões no 1T26, aumento de 3,1% em três meses. A margem com clientes alcançou R$ 16.584 milhões, redução de 1,4% no trimestre, enquanto a margem com o mercado atenuou sua perda de forma expressiva.",
+      "top_left_x": 38,
+      "top_left_y": 263,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 663,
+      "bottom_right_y": 358,
+      "confidence_scores": null,
+      "content": "Na comparação anual, a margem financeira caiu 0,7%, refletindo o resultado da margem com o mercado, impactada pela sensibilidade negativa ao aumento da taxa de juros, enquanto a margem com clientes teve evolução de 4,8%, beneficiada por ambos aumento de spread e volume no período.",
+      "top_left_x": 358,
+      "top_left_y": 263,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 488,
+      "confidence_scores": null,
+      "content": "No trimestre, a margem com clientes reduziu 1,4%; apesar do aumento do volume médio, com destaque para o incremento em produtos de menor risco, tivemos (i) menos dias no trimestre afetando tanto a margem de crédito quanto captações bem como o (ii) efeito do diferimento das comissões migradas para a margem, que também afetaram o spread negativamente. Excluindo este efeito o spread teria ficado *flat* na comparação trimestral. No comparativo anual, a margem com clientes subiu 4,8%, beneficiada tanto por maiores volumes quanto por maiores spreads, além da maior remuneração do capital de giro, impulsionada principalmente pela Selic.",
+      "top_left_x": 74,
+      "top_left_y": 378,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 589,
+      "confidence_scores": null,
+      "content": "A margem com o mercado apresentou recuperação no trimestre, totalizando perda de R$ 771 milhões, ante R$ 1.486 milhões negativos no trimestre anterior, beneficiada especialmente pela sensibilidade positiva à queda da taxa de juros, menor número de dias úteis e maior *accrual* de títulos atrelados a inflação bem como por maiores resultados de tesouraria. Na comparação anual, a deterioração se deve principalmente à sensibilidade negativa ao aumento da taxa de juros e ao menor resultado de tesouraria.",
+      "top_left_x": 74,
+      "top_left_y": 495,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 202,
+      "bottom_right_y": 613,
+      "confidence_scores": null,
+      "content": "## Evolução da margem financeira",
+      "top_left_x": 28,
+      "top_left_y": 593,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 69,
+      "bottom_right_y": 630,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 28,
+      "top_left_y": 618,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 650,
+      "bottom_right_y": 967,
+      "confidence_scores": null,
+      "content": "![img-7.jpeg](img-7.jpeg)",
+      "image_id": "img-7.jpeg",
+      "top_left_x": 28,
+      "top_left_y": 630,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 21,
+      "top_left_y": 987,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "7",
+      "top_left_x": 671,
+      "top_left_y": 991,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 650,
+      "bottom_right_y": 967,
+      "id": "img-7.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 28,
+      "top_left_y": 630
+     }
+    ],
+    "index": 6,
+    "markdown": "Resultados\n\nReconciliação dos resultados contábil e gerencial\n\n## Margem financeira\n\nR$ Milhões\n\n|   | 1T26 | 4T25 | 1T26 x 4T25 | 1T25 | 1T26 x 1T25  |\n| --- | --- | --- | --- | --- | --- |\n|  **Margem com clientes** | **16.584** | **16.818** | **-1,4%** | **15.825** | **4,8%**  |\n|  Margem de produtos | 15.472 | 15.688 | -1,4% | 14.865 | 4,1%  |\n|  Volume | 625.877 | 617.744 | 1,3% | 605.630 | 3,3%  |\n|  Spread (a.a.) | 10,41% | 10,46% | -0,05 p.p. | 10,33% | 0,08 p.p.  |\n|  Capital de giro próprio | 1.111 | 1.130 | -1,7% | 959 | 15,8%  |\n|  **Margem com o mercado** | **(771)** | **(1.486)** | **-48,1%** | **97** | **n.a.**  |\n|  **Margem financeira** | **15.812** | **15.332** | **3,1%** | **15.922** | **-0,7%**  |\n\nA margem financeira atingiu R$ 15.812 milhões no 1T26, aumento de 3,1% em três meses. A margem com clientes alcançou R$ 16.584 milhões, redução de 1,4% no trimestre, enquanto a margem com o mercado atenuou sua perda de forma expressiva.\n\nNa comparação anual, a margem financeira caiu 0,7%, refletindo o resultado da margem com o mercado, impactada pela sensibilidade negativa ao aumento da taxa de juros, enquanto a margem com clientes teve evolução de 4,8%, beneficiada por ambos aumento de spread e volume no período.\n\nNo trimestre, a margem com clientes reduziu 1,4%; apesar do aumento do volume médio, com destaque para o incremento em produtos de menor risco, tivemos (i) menos dias no trimestre afetando tanto a margem de crédito quanto captações bem como o (ii) efeito do diferimento das comissões migradas para a margem, que também afetaram o spread negativamente. Excluindo este efeito o spread teria ficado *flat* na comparação trimestral. No comparativo anual, a margem com clientes subiu 4,8%, beneficiada tanto por maiores volumes quanto por maiores spreads, além da maior remuneração do capital de giro, impulsionada principalmente pela Selic.\n\nA margem com o mercado apresentou recuperação no trimestre, totalizando perda de R$ 771 milhões, ante R$ 1.486 milhões negativos no trimestre anterior, beneficiada especialmente pela sensibilidade positiva à queda da taxa de juros, menor número de dias úteis e maior *accrual* de títulos atrelados a inflação bem como por maiores resultados de tesouraria. Na comparação anual, a deterioração se deve principalmente à sensibilidade negativa ao aumento da taxa de juros e ao menor resultado de tesouraria.\n\n## Evolução da margem financeira\n\nR$ Milhões\n\n![img-7.jpeg](img-7.jpeg)\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n7",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 511,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 551,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 105,
+      "bottom_right_y": 73,
+      "confidence_scores": null,
+      "content": "## Comissões",
+      "top_left_x": 28,
+      "top_left_y": 51,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 320,
+      "confidence_scores": null,
+      "content": "|  R$ Milhões | 1T26 | 4T25 | 1T26 x 4T25 | 1T25 | 1T26 x 1T25  |\n| --- | --- | --- | --- | --- | --- |\n|  Cartões | 1.560 | 1.680 | -7,2% | 1.420 | 9,8%  |\n|  Seguros | 1.117 | 1.125 | -0,7% | 996 | 12,2%  |\n|  Conta corrente | 854 | 889 | -3,9% | 900 | -5,1%  |\n|  Operações de crédito | 483 | 513 | -6,0% | 453 | 6,5%  |\n|  Administração de recursos | 525 | 547 | -4,1% | 446 | 17,7%  |\n|  Consórcios | 305 | 288 | 5,7% | 264 | 15,6%  |\n|  Fundos e previdência | 220 | 257 | -14,3% | 182 | 20,9%  |\n|  Corretagem e colocação de títulos | 477 | 408 | 16,8% | 398 | 19,8%  |\n|  Cobrança e arrecadações | 295 | 272 | 8,5% | 277 | 6,5%  |\n|  Outras | 124 | 318 | -60,9% | 246 | -49,5%  |\n|  **Total comissões** | **5.435** | **5.754** | **-5,5%** | **5.137** | **5,8%**  |",
+      "table_id": null,
+      "top_left_x": 28,
+      "top_left_y": 77,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 429,
+      "confidence_scores": null,
+      "content": "As comissões totalizaram R$ 5.435 milhões no 1T26, recuo de 5,5% em três meses, explicado principalmente pela sazonalidade usual do primeiro trimestre, em especial nas linhas de cartões e operações de crédito, bem como menores receitas com capitalização e de prestação de serviço com ligadas na linha de outras. No comparativo anual, houve aumento de 5,8% com expansão em praticamente todas as linhas, com destaque para receitas de cartões, seguros e administração de recursos, tanto fundos quanto consórcios, parcialmente compensado pela redução na linha de conta corrente e outras.",
+      "top_left_x": 32,
+      "top_left_y": 336,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 196,
+      "bottom_right_y": 477,
+      "confidence_scores": null,
+      "content": "## Evolução do total de comissões",
+      "top_left_x": 28,
+      "top_left_y": 457,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 661,
+      "bottom_right_y": 604,
+      "confidence_scores": null,
+      "content": "![img-8.jpeg](img-8.jpeg)",
+      "image_id": "img-8.jpeg",
+      "top_left_x": 28,
+      "top_left_y": 480,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 176,
+      "bottom_right_y": 630,
+      "confidence_scores": null,
+      "content": "## Composição das comissões",
+      "top_left_x": 28,
+      "top_left_y": 610,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 735,
+      "confidence_scores": null,
+      "content": "![img-9.jpeg](img-9.jpeg)",
+      "image_id": "img-9.jpeg",
+      "top_left_x": 28,
+      "top_left_y": 633,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 114,
+      "bottom_right_y": 755,
+      "confidence_scores": null,
+      "content": "### Cartões",
+      "top_left_x": 60,
+      "top_left_y": 738,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 661,
+      "bottom_right_y": 822,
+      "confidence_scores": null,
+      "content": "As receitas com cartões atingiram R$ 1.560 milhões no 1T26, recuo de 7,2% no trimestre, refletindo principalmente a sazonalidade de vendas de final de ano, gerando menor faturamento no período. Em comparação com o 1T25, as receitas avançaram 9,8%, impulsionadas principalmente pelo aumento do faturamento em cartões de crédito, ancorado pelo avanço no *spending* médio.",
+      "top_left_x": 48,
+      "top_left_y": 758,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 249,
+      "bottom_right_y": 846,
+      "confidence_scores": null,
+      "content": "### Faturamento e *spending*$^{1}$ Médio",
+      "top_left_x": 56,
+      "top_left_y": 827,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 335,
+      "bottom_right_y": 961,
+      "confidence_scores": null,
+      "content": "![img-10.jpeg](img-10.jpeg)",
+      "image_id": "img-10.jpeg",
+      "top_left_x": 56,
+      "top_left_y": 847,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 494,
+      "bottom_right_y": 846,
+      "confidence_scores": null,
+      "content": "### Receitas com cartões",
+      "top_left_x": 366,
+      "top_left_y": 827,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 630,
+      "bottom_right_y": 939,
+      "confidence_scores": null,
+      "content": "![img-11.jpeg](img-11.jpeg)",
+      "image_id": "img-11.jpeg",
+      "top_left_x": 366,
+      "top_left_y": 847,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 109,
+      "bottom_right_y": 983,
+      "confidence_scores": null,
+      "content": "(1) *Spending* de crédito.",
+      "top_left_x": 28,
+      "top_left_y": 971,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 109,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 21,
+      "top_left_y": 987,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "8",
+      "top_left_x": 671,
+      "top_left_y": 991,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 661,
+      "bottom_right_y": 604,
+      "id": "img-8.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 28,
+      "top_left_y": 480
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 735,
+      "id": "img-9.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 28,
+      "top_left_y": 633
+     },
+     {
+      "bottom_right_x": 335,
+      "bottom_right_y": 961,
+      "id": "img-10.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 56,
+      "top_left_y": 847
+     },
+     {
+      "bottom_right_x": 630,
+      "bottom_right_y": 939,
+      "id": "img-11.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 366,
+      "top_left_y": 847
+     }
+    ],
+    "index": 7,
+    "markdown": "Resultados\n\nReconciliação dos resultados contábil e gerencial\n\n## Comissões\n\n|  R$ Milhões | 1T26 | 4T25 | 1T26 x 4T25 | 1T25 | 1T26 x 1T25  |\n| --- | --- | --- | --- | --- | --- |\n|  Cartões | 1.560 | 1.680 | -7,2% | 1.420 | 9,8%  |\n|  Seguros | 1.117 | 1.125 | -0,7% | 996 | 12,2%  |\n|  Conta corrente | 854 | 889 | -3,9% | 900 | -5,1%  |\n|  Operações de crédito | 483 | 513 | -6,0% | 453 | 6,5%  |\n|  Administração de recursos | 525 | 547 | -4,1% | 446 | 17,7%  |\n|  Consórcios | 305 | 288 | 5,7% | 264 | 15,6%  |\n|  Fundos e previdência | 220 | 257 | -14,3% | 182 | 20,9%  |\n|  Corretagem e colocação de títulos | 477 | 408 | 16,8% | 398 | 19,8%  |\n|  Cobrança e arrecadações | 295 | 272 | 8,5% | 277 | 6,5%  |\n|  Outras | 124 | 318 | -60,9% | 246 | -49,5%  |\n|  **Total comissões** | **5.435** | **5.754** | **-5,5%** | **5.137** | **5,8%**  |\n\nAs comissões totalizaram R$ 5.435 milhões no 1T26, recuo de 5,5% em três meses, explicado principalmente pela sazonalidade usual do primeiro trimestre, em especial nas linhas de cartões e operações de crédito, bem como menores receitas com capitalização e de prestação de serviço com ligadas na linha de outras. No comparativo anual, houve aumento de 5,8% com expansão em praticamente todas as linhas, com destaque para receitas de cartões, seguros e administração de recursos, tanto fundos quanto consórcios, parcialmente compensado pela redução na linha de conta corrente e outras.\n\n## Evolução do total de comissões\n\n![img-8.jpeg](img-8.jpeg)\n\n## Composição das comissões\n\n![img-9.jpeg](img-9.jpeg)\n\n### Cartões\n\nAs receitas com cartões atingiram R$ 1.560 milhões no 1T26, recuo de 7,2% no trimestre, refletindo principalmente a sazonalidade de vendas de final de ano, gerando menor faturamento no período. Em comparação com o 1T25, as receitas avançaram 9,8%, impulsionadas principalmente pelo aumento do faturamento em cartões de crédito, ancorado pelo avanço no *spending* médio.\n\n### Faturamento e *spending*$^{1}$ Médio\n\n![img-10.jpeg](img-10.jpeg)\n\n### Receitas com cartões\n\n![img-11.jpeg](img-11.jpeg)\n\n(1) *Spending* de crédito.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n8",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 511,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 551,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 130,
+      "bottom_right_y": 80,
+      "confidence_scores": null,
+      "content": "## Seguros",
+      "top_left_x": 74,
+      "top_left_y": 62,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 384,
+      "bottom_right_y": 201,
+      "confidence_scores": null,
+      "content": "As comissões de seguros totalizaram R$ 1.117 milhões no 1T26, recuo de 0,7% no trimestre, dada a concentração de algumas apólices anuais renovadas no 4T. Na comparação anual, as receitas expandiram 12,2%, refletindo a boa performance em seguros não atrelados a crédito, principalmente no segmento de auto e expansão de novos produtos, como o Proteção Vitalícia.",
+      "top_left_x": 51,
+      "top_left_y": 92,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 551,
+      "bottom_right_y": 104,
+      "confidence_scores": null,
+      "content": "### Receitas com seguros",
+      "top_left_x": 420,
+      "top_left_y": 88,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 642,
+      "bottom_right_y": 224,
+      "confidence_scores": null,
+      "content": "![img-12.jpeg](img-12.jpeg)",
+      "image_id": "img-12.jpeg",
+      "top_left_x": 420,
+      "top_left_y": 104,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 297,
+      "bottom_right_y": 286,
+      "confidence_scores": null,
+      "content": "## Corretagem e colocação de títulos",
+      "top_left_x": 74,
+      "top_left_y": 267,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 379,
+      "bottom_right_y": 378,
+      "confidence_scores": null,
+      "content": "As receitas de serviços de corretagem e colocação de títulos atingiram R$ 477 milhões no período, incremento de 16,8% no trimestre e 19,8% no ano. Ambas as variações são explicadas por maior número de operações de renda fixa no período, com foco em clientes institucionais.",
+      "top_left_x": 51,
+      "top_left_y": 299,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 637,
+      "bottom_right_y": 316,
+      "confidence_scores": null,
+      "content": "### Receitas com corretagem e colocação de títulos",
+      "top_left_x": 420,
+      "top_left_y": 284,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 642,
+      "bottom_right_y": 421,
+      "confidence_scores": null,
+      "content": "![img-13.jpeg](img-13.jpeg)",
+      "image_id": "img-13.jpeg",
+      "top_left_x": 420,
+      "top_left_y": 316,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 164,
+      "bottom_right_y": 468,
+      "confidence_scores": null,
+      "content": "## Conta corrente",
+      "top_left_x": 64,
+      "top_left_y": 451,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 334,
+      "bottom_right_y": 566,
+      "confidence_scores": null,
+      "content": "As receitas de serviços de conta corrente totalizaram R$ 854 milhões no 1T26, redução de 3,9% no trimestre e de 5,1% na comparação anual. Estamos privilegiando a completude da relação com nossos clientes, com foco na transacionalidade e principalidade.",
+      "top_left_x": 51,
+      "top_left_y": 471,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 223,
+      "bottom_right_y": 638,
+      "confidence_scores": null,
+      "content": "### Receitas com conta corrente",
+      "top_left_x": 51,
+      "top_left_y": 620,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 312,
+      "bottom_right_y": 781,
+      "confidence_scores": null,
+      "content": "![img-14.jpeg](img-14.jpeg)",
+      "image_id": "img-14.jpeg",
+      "top_left_x": 51,
+      "top_left_y": 638,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 560,
+      "bottom_right_y": 468,
+      "confidence_scores": null,
+      "content": "## Administração de recursos",
+      "top_left_x": 385,
+      "top_left_y": 451,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 612,
+      "confidence_scores": null,
+      "content": "As receitas de administração de recursos totalizaram R$ 525 milhões no período, redução de 4,1% no trimestre. No ano, essas receitas expandiram 17,7% impulsionadas tanto por fundos quanto consórcios. A aceleração comercial, combinada à ampliação da oferta de consórcios e a uma força de vendas especializada, tem contribuído para o avanço de consórcios que cresceram 15,6% no ano.",
+      "top_left_x": 373,
+      "top_left_y": 471,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 610,
+      "bottom_right_y": 638,
+      "confidence_scores": null,
+      "content": "### Receitas com administração de recursos",
+      "top_left_x": 371,
+      "top_left_y": 620,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 642,
+      "bottom_right_y": 781,
+      "confidence_scores": null,
+      "content": "![img-15.jpeg](img-15.jpeg)",
+      "image_id": "img-15.jpeg",
+      "top_left_x": 371,
+      "top_left_y": 638,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 389,
+      "bottom_right_y": 836,
+      "confidence_scores": null,
+      "content": "## Operações de crédito e cobranças e arrecadações",
+      "top_left_x": 69,
+      "top_left_y": 818,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 955,
+      "confidence_scores": null,
+      "content": "As comissões de operações de crédito totalizaram R$ 483 milhões no 1T26, redução de 6,0% no trimestre devido ao efeito sazonal, com maior volume de financiamentos no final do ano. No ano essas receitas avançaram 6,5% beneficiada por reprecificação da tarifa de cadastro e menores isenções, além do aumento da originação de linhas de crédito que trazem estas comissões. Já as receitas de cobranças e arrecadações totalizaram R$ 295 milhões no período, crescimento de 8,5% em três meses e 6,5% no ano, devido principalmente ao início da monetização de FIDC da Financeira estruturado no 4T25, contribuindo para a diversificação e recorrência das receitas.",
+      "top_left_x": 51,
+      "top_left_y": 846,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 112,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 22,
+      "top_left_y": 987,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "9",
+      "top_left_x": 671,
+      "top_left_y": 991,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 642,
+      "bottom_right_y": 224,
+      "id": "img-12.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 420,
+      "top_left_y": 104
+     },
+     {
+      "bottom_right_x": 642,
+      "bottom_right_y": 421,
+      "id": "img-13.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 420,
+      "top_left_y": 316
+     },
+     {
+      "bottom_right_x": 312,
+      "bottom_right_y": 781,
+      "id": "img-14.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 51,
+      "top_left_y": 638
+     },
+     {
+      "bottom_right_x": 642,
+      "bottom_right_y": 781,
+      "id": "img-15.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 371,
+      "top_left_y": 638
+     }
+    ],
+    "index": 8,
+    "markdown": "Resultados\n\nReconciliação dos resultados contábil e gerencial\n\n## Seguros\n\nAs comissões de seguros totalizaram R$ 1.117 milhões no 1T26, recuo de 0,7% no trimestre, dada a concentração de algumas apólices anuais renovadas no 4T. Na comparação anual, as receitas expandiram 12,2%, refletindo a boa performance em seguros não atrelados a crédito, principalmente no segmento de auto e expansão de novos produtos, como o Proteção Vitalícia.\n\n### Receitas com seguros\n\n![img-12.jpeg](img-12.jpeg)\n\n## Corretagem e colocação de títulos\n\nAs receitas de serviços de corretagem e colocação de títulos atingiram R$ 477 milhões no período, incremento de 16,8% no trimestre e 19,8% no ano. Ambas as variações são explicadas por maior número de operações de renda fixa no período, com foco em clientes institucionais.\n\n### Receitas com corretagem e colocação de títulos\n\n![img-13.jpeg](img-13.jpeg)\n\n## Conta corrente\n\nAs receitas de serviços de conta corrente totalizaram R$ 854 milhões no 1T26, redução de 3,9% no trimestre e de 5,1% na comparação anual. Estamos privilegiando a completude da relação com nossos clientes, com foco na transacionalidade e principalidade.\n\n### Receitas com conta corrente\n\n![img-14.jpeg](img-14.jpeg)\n\n## Administração de recursos\n\nAs receitas de administração de recursos totalizaram R$ 525 milhões no período, redução de 4,1% no trimestre. No ano, essas receitas expandiram 17,7% impulsionadas tanto por fundos quanto consórcios. A aceleração comercial, combinada à ampliação da oferta de consórcios e a uma força de vendas especializada, tem contribuído para o avanço de consórcios que cresceram 15,6% no ano.\n\n### Receitas com administração de recursos\n\n![img-15.jpeg](img-15.jpeg)\n\n## Operações de crédito e cobranças e arrecadações\n\nAs comissões de operações de crédito totalizaram R$ 483 milhões no 1T26, redução de 6,0% no trimestre devido ao efeito sazonal, com maior volume de financiamentos no final do ano. No ano essas receitas avançaram 6,5% beneficiada por reprecificação da tarifa de cadastro e menores isenções, além do aumento da originação de linhas de crédito que trazem estas comissões. Já as receitas de cobranças e arrecadações totalizaram R$ 295 milhões no período, crescimento de 8,5% em três meses e 6,5% no ano, devido principalmente ao início da monetização de FIDC da Financeira estruturado no 4T25, contribuindo para a diversificação e recorrência das receitas.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n9",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 512,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados\ncontábil e gerencial",
+      "top_left_x": 553,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 272,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "# Resultado de PDD e custo de crédito",
+      "top_left_x": 28,
+      "top_left_y": 51,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 74,
+      "bottom_right_y": 91,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 28,
+      "top_left_y": 79,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 656,
+      "bottom_right_y": 487,
+      "confidence_scores": null,
+      "content": "![img-16.jpeg](img-16.jpeg)",
+      "image_id": "img-16.jpeg",
+      "top_left_x": 41,
+      "top_left_y": 142,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 654,
+      "bottom_right_y": 567,
+      "confidence_scores": null,
+      "content": "O resultado de PDD gerencial totalizou R$ 6.344 milhões no 1T26, avanço de 3,9% no trimestre e queda de 0,7% no ano. Na comparação trimestral a PDD mantém-se pressionada pelo cenário macroeconômico, já na comparação anual a queda reflete a ativa gestão de risco e os efeitos de mix do portfólio.",
+      "top_left_x": 43,
+      "top_left_y": 519,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 654,
+      "bottom_right_y": 671,
+      "confidence_scores": null,
+      "content": "As despesas de provisão apresentaram aumento de 0,9% no trimestre, ainda pressionadas pelo cenário macroeconômico, com altas taxas de juros e elevado nível de endividamento das famílias. No ano, queda de 2,6%, refletindo a consistência da nossa gestão de riscos, combinada à melhoria no mix de carteira, com maior participação de operações de menor risco, refletindo um melhor perfil de crédito.",
+      "top_left_x": 72,
+      "top_left_y": 608,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 654,
+      "bottom_right_y": 753,
+      "confidence_scores": null,
+      "content": "As receitas de recuperação de créditos baixados a prejuízo atingiram R$ 483 milhões no trimestre, com redução de 27,2% e 22,4% na comparação trimestral e anual, respectivamente. Seguimos com o nosso compromisso de atuar com excelência, apoiados por uso intensivo de tecnologia e de dados, alcançando leitura mais tempestiva e assertiva do momento de vida dos nossos clientes.",
+      "top_left_x": 72,
+      "top_left_y": 691,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 654,
+      "bottom_right_y": 803,
+      "confidence_scores": null,
+      "content": "O custo de crédito atingiu 3,73%, estável no trimestre e no ano, reflexo da queda das despesas com provisões paralela ao movimento de crescimento moderado da carteira.",
+      "top_left_x": 72,
+      "top_left_y": 771,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 171,
+      "bottom_right_y": 983,
+      "confidence_scores": null,
+      "content": "(1) Custo do crédito acumulado anualizado.",
+      "top_left_x": 28,
+      "top_left_y": 972,
+      "type": "references"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 21,
+      "top_left_y": 988,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 412,
+      "top_left_y": 991,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "10",
+      "top_left_x": 671,
+      "top_left_y": 991,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 656,
+      "bottom_right_y": 487,
+      "id": "img-16.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 41,
+      "top_left_y": 142
+     }
+    ],
+    "index": 9,
+    "markdown": "Resultados\n\nReconciliação dos resultados\ncontábil e gerencial\n\n# Resultado de PDD e custo de crédito\n\nR$ Milhões\n\n![img-16.jpeg](img-16.jpeg)\n\nO resultado de PDD gerencial totalizou R$ 6.344 milhões no 1T26, avanço de 3,9% no trimestre e queda de 0,7% no ano. Na comparação trimestral a PDD mantém-se pressionada pelo cenário macroeconômico, já na comparação anual a queda reflete a ativa gestão de risco e os efeitos de mix do portfólio.\n\nAs despesas de provisão apresentaram aumento de 0,9% no trimestre, ainda pressionadas pelo cenário macroeconômico, com altas taxas de juros e elevado nível de endividamento das famílias. No ano, queda de 2,6%, refletindo a consistência da nossa gestão de riscos, combinada à melhoria no mix de carteira, com maior participação de operações de menor risco, refletindo um melhor perfil de crédito.\n\nAs receitas de recuperação de créditos baixados a prejuízo atingiram R$ 483 milhões no trimestre, com redução de 27,2% e 22,4% na comparação trimestral e anual, respectivamente. Seguimos com o nosso compromisso de atuar com excelência, apoiados por uso intensivo de tecnologia e de dados, alcançando leitura mais tempestiva e assertiva do momento de vida dos nossos clientes.\n\nO custo de crédito atingiu 3,73%, estável no trimestre e no ano, reflexo da queda das despesas com provisões paralela ao movimento de crescimento moderado da carteira.\n\n(1) Custo do crédito acumulado anualizado.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n10",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 511,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 551,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 134,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "## NPL Formation$^{1}$",
+      "top_left_x": 28,
+      "top_left_y": 50,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 635,
+      "bottom_right_y": 277,
+      "confidence_scores": null,
+      "content": "![img-17.jpeg](img-17.jpeg)",
+      "image_id": "img-17.jpeg",
+      "top_left_x": 67,
+      "top_left_y": 114,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 337,
+      "confidence_scores": null,
+      "content": "O NPL Formation somou R$ 7.186 milhões no 1T26, avanço de 7,6% no trimestre e alta de 2,7% no ano. A relação entre o NPL Formation e a carteira de crédito atingiu 1,01% no período, incremento de 0,05 p.p. no trimestre e queda de 0,01 p.p. no ano.",
+      "top_left_x": 40,
+      "top_left_y": 289,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 94,
+      "bottom_right_y": 378,
+      "confidence_scores": null,
+      "content": "## Write-off",
+      "top_left_x": 28,
+      "top_left_y": 354,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 647,
+      "bottom_right_y": 536,
+      "confidence_scores": null,
+      "content": "![img-18.jpeg](img-18.jpeg)",
+      "image_id": "img-18.jpeg",
+      "top_left_x": 65,
+      "top_left_y": 395,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 614,
+      "confidence_scores": null,
+      "content": "Write-off atingiu R$ 5.508 milhões no 1T26, incremento de 31,9% no trimestre e redução de 13,2% no ano. Ao longo de 2025 aprimoramos nossa política de baixas a prejuízo com base em uma expectativa mais apurada de recuperabilidade de cada portfólio, em implementação no 1S26. Neste trimestre ainda tivemos um nível mais expressivo de antecipações de prejuízo explicando o incremento na comparação trimestral.",
+      "top_left_x": 40,
+      "top_left_y": 550,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 175,
+      "bottom_right_y": 679,
+      "confidence_scores": null,
+      "content": "## Carteira renegociada",
+      "top_left_x": 28,
+      "top_left_y": 654,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 73,
+      "bottom_right_y": 697,
+      "confidence_scores": null,
+      "content": "R$ bilhões",
+      "top_left_x": 28,
+      "top_left_y": 683,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 260,
+      "bottom_right_y": 778,
+      "confidence_scores": null,
+      "content": "Ao final do 1T26, o portfólio totalizava R$ 50,1 bilhões. A cobertura dessa carteira encerrou o trimestre em 44,6%, ante 44,9% no trimestre anterior.",
+      "top_left_x": 40,
+      "top_left_y": 715,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 677,
+      "bottom_right_y": 932,
+      "confidence_scores": null,
+      "content": "![img-19.jpeg](img-19.jpeg)",
+      "image_id": "img-19.jpeg",
+      "top_left_x": 282,
+      "top_left_y": 700,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 971,
+      "confidence_scores": null,
+      "content": "(1) O NPL Formation é calculado pela soma da carteira baixada para prejuízo no período com a variação do saldo da carteira inadimplente acima de 90 dias sobre a carteira de crédito expandida do trimestre anterior, não considerando a carteira renegociada. (2) Saldo médio da carteira de crédito expandida dos últimos dois trimestres.",
+      "top_left_x": 28,
+      "top_left_y": 950,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 24,
+      "top_left_y": 988,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "11",
+      "top_left_x": 671,
+      "top_left_y": 990,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 635,
+      "bottom_right_y": 277,
+      "id": "img-17.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 67,
+      "top_left_y": 114
+     },
+     {
+      "bottom_right_x": 647,
+      "bottom_right_y": 536,
+      "id": "img-18.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 65,
+      "top_left_y": 395
+     },
+     {
+      "bottom_right_x": 677,
+      "bottom_right_y": 932,
+      "id": "img-19.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 282,
+      "top_left_y": 700
+     }
+    ],
+    "index": 10,
+    "markdown": "Resultados\n\nReconciliação dos resultados contábil e gerencial\n\n## NPL Formation$^{1}$\n\n![img-17.jpeg](img-17.jpeg)\n\nO NPL Formation somou R$ 7.186 milhões no 1T26, avanço de 7,6% no trimestre e alta de 2,7% no ano. A relação entre o NPL Formation e a carteira de crédito atingiu 1,01% no período, incremento de 0,05 p.p. no trimestre e queda de 0,01 p.p. no ano.\n\n## Write-off\n\n![img-18.jpeg](img-18.jpeg)\n\nWrite-off atingiu R$ 5.508 milhões no 1T26, incremento de 31,9% no trimestre e redução de 13,2% no ano. Ao longo de 2025 aprimoramos nossa política de baixas a prejuízo com base em uma expectativa mais apurada de recuperabilidade de cada portfólio, em implementação no 1S26. Neste trimestre ainda tivemos um nível mais expressivo de antecipações de prejuízo explicando o incremento na comparação trimestral.\n\n## Carteira renegociada\n\nR$ bilhões\n\nAo final do 1T26, o portfólio totalizava R$ 50,1 bilhões. A cobertura dessa carteira encerrou o trimestre em 44,6%, ante 44,9% no trimestre anterior.\n\n![img-19.jpeg](img-19.jpeg)\n\n(1) O NPL Formation é calculado pela soma da carteira baixada para prejuízo no período com a variação do saldo da carteira inadimplente acima de 90 dias sobre a carteira de crédito expandida do trimestre anterior, não considerando a carteira renegociada. (2) Saldo médio da carteira de crédito expandida dos últimos dois trimestres.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n11",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 512,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 553,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 170,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "## Qualidade de crédito",
+      "top_left_x": 28,
+      "top_left_y": 51,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 654,
+      "bottom_right_y": 114,
+      "confidence_scores": null,
+      "content": "A partir do primeiro trimestre de 2026 os indicadores de inadimplência passaram a ser reportados alinhados ao conceito da carteira expandida que inclui a carteira de títulos e avais, além da carteira de crédito.",
+      "top_left_x": 42,
+      "top_left_y": 83,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 323,
+      "bottom_right_y": 147,
+      "confidence_scores": null,
+      "content": "### Índice de inadimplência de 15 a 90 dias",
+      "top_left_x": 67,
+      "top_left_y": 128,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 318,
+      "bottom_right_y": 306,
+      "confidence_scores": null,
+      "content": "![img-20.jpeg](img-20.jpeg)",
+      "image_id": "img-20.jpeg",
+      "top_left_x": 57,
+      "top_left_y": 161,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 639,
+      "bottom_right_y": 306,
+      "confidence_scores": null,
+      "content": "![img-21.jpeg](img-21.jpeg)",
+      "image_id": "img-21.jpeg",
+      "top_left_x": 378,
+      "top_left_y": 191,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 377,
+      "confidence_scores": null,
+      "content": "**O índice de inadimplência de 15 a 90 dias encerra o trimestre em 3,4%,** com elevação de 0,1 p.p. no trimestre, praticamente estável, apesar de um cenário macroeconômico mais desafiador e da sazonalidade mais negativa devido à menor liquidez no período.",
+      "top_left_x": 60,
+      "top_left_y": 328,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 350,
+      "bottom_right_y": 515,
+      "confidence_scores": null,
+      "content": "O índice de inadimplência de 15 a 90 dias de Pessoa Física apresentou incremento no 1T26 atingindo 5,2%, em função (i) da sazonalidade do primeiro trimestre, (ii) de um cenário macroeconômico desafiador, especialmente na baixa renda, e (iii) de uma menor base de carteira de Pessoa Física no período. Na comparação anual, redução de 0,2 p.p. alinhada à disciplina de originação, com foco em rentabilidade.",
+      "top_left_x": 54,
+      "top_left_y": 390,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 499,
+      "confidence_scores": null,
+      "content": "Em Pessoa Jurídica, o índice encerrou o período em 1,6%, estável no trimestre e com avanço de 0,3 p.p. no ano. Em PMEs, estável no trimestre e avanço de 0,6 p.p. no ano, atingindo 4,8% ao final do 1T26. No Atacado, o aumento de casos de recuperação judicial pressionou a evolução anual; já a trimestral apresenta redução de 0,1 p.p.",
+      "top_left_x": 363,
+      "top_left_y": 390,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 333,
+      "bottom_right_y": 571,
+      "confidence_scores": null,
+      "content": "### Índice de inadimplência acima de 90 dias",
+      "top_left_x": 67,
+      "top_left_y": 552,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 318,
+      "bottom_right_y": 731,
+      "confidence_scores": null,
+      "content": "![img-22.jpeg](img-22.jpeg)",
+      "image_id": "img-22.jpeg",
+      "top_left_x": 57,
+      "top_left_y": 585,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 639,
+      "bottom_right_y": 731,
+      "confidence_scores": null,
+      "content": "![img-23.jpeg](img-23.jpeg)",
+      "image_id": "img-23.jpeg",
+      "top_left_x": 378,
+      "top_left_y": 585,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 817,
+      "confidence_scores": null,
+      "content": "**O índice de inadimplência superior a 90 dias atingiu 3,3% no 1T26,** com alta de 0,2 p.p. no trimestre e 0,6 p.p. no ano, especialmente em Pessoa Física nas faixas de menor renda e, em Pessoa Jurídica, nas empresas de menor faturamento. Importante destacar que o aprimoramento das regras de baixa a prejuízo, desenvolvido ao longo de 2025, deve impactar os índices de inadimplência ao longo de 2026.",
+      "top_left_x": 60,
+      "top_left_y": 753,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 347,
+      "bottom_right_y": 927,
+      "confidence_scores": null,
+      "content": "Em Pessoa Física o índice inadimplência acima de 90 dias registrou alta de 0,3 p.p. no trimestre e 0,6 p.p. no ano. Em ambos os períodos, o aumento concentrou-se na baixa renda, que foi afetada pela manutenção de um cenário econômico mais desafiador.",
+      "top_left_x": 54,
+      "top_left_y": 833,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 912,
+      "confidence_scores": null,
+      "content": "Na Pessoa Jurídica o incremento foi de 0,2 p.p. no trimestre e 0,6 p.p. ano. O indicador apresentou incremento sobretudo no segmento de PMEs, com avanço de 0,5 p.p. no trimestre e 1,4 p.p. no ano, alcançando o patamar de 6,0%.",
+      "top_left_x": 360,
+      "top_left_y": 833,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 966,
+      "confidence_scores": null,
+      "content": "Já em Grandes Empresas, o índice ficou em 0,2%, com piora de 0,1 p.p. na comparação trimestral e 0,2 p.p. no ano.",
+      "top_left_x": 360,
+      "top_left_y": 919,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 24,
+      "top_left_y": 988,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "12",
+      "top_left_x": 671,
+      "top_left_y": 990,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 318,
+      "bottom_right_y": 306,
+      "id": "img-20.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 57,
+      "top_left_y": 161
+     },
+     {
+      "bottom_right_x": 639,
+      "bottom_right_y": 306,
+      "id": "img-21.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 378,
+      "top_left_y": 191
+     },
+     {
+      "bottom_right_x": 318,
+      "bottom_right_y": 731,
+      "id": "img-22.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 57,
+      "top_left_y": 585
+     },
+     {
+      "bottom_right_x": 639,
+      "bottom_right_y": 731,
+      "id": "img-23.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 378,
+      "top_left_y": 585
+     }
+    ],
+    "index": 11,
+    "markdown": "Resultados\n\nReconciliação dos resultados contábil e gerencial\n\n## Qualidade de crédito\n\nA partir do primeiro trimestre de 2026 os indicadores de inadimplência passaram a ser reportados alinhados ao conceito da carteira expandida que inclui a carteira de títulos e avais, além da carteira de crédito.\n\n### Índice de inadimplência de 15 a 90 dias\n\n![img-20.jpeg](img-20.jpeg)\n\n![img-21.jpeg](img-21.jpeg)\n\n**O índice de inadimplência de 15 a 90 dias encerra o trimestre em 3,4%,** com elevação de 0,1 p.p. no trimestre, praticamente estável, apesar de um cenário macroeconômico mais desafiador e da sazonalidade mais negativa devido à menor liquidez no período.\n\nO índice de inadimplência de 15 a 90 dias de Pessoa Física apresentou incremento no 1T26 atingindo 5,2%, em função (i) da sazonalidade do primeiro trimestre, (ii) de um cenário macroeconômico desafiador, especialmente na baixa renda, e (iii) de uma menor base de carteira de Pessoa Física no período. Na comparação anual, redução de 0,2 p.p. alinhada à disciplina de originação, com foco em rentabilidade.\n\nEm Pessoa Jurídica, o índice encerrou o período em 1,6%, estável no trimestre e com avanço de 0,3 p.p. no ano. Em PMEs, estável no trimestre e avanço de 0,6 p.p. no ano, atingindo 4,8% ao final do 1T26. No Atacado, o aumento de casos de recuperação judicial pressionou a evolução anual; já a trimestral apresenta redução de 0,1 p.p.\n\n### Índice de inadimplência acima de 90 dias\n\n![img-22.jpeg](img-22.jpeg)\n\n![img-23.jpeg](img-23.jpeg)\n\n**O índice de inadimplência superior a 90 dias atingiu 3,3% no 1T26,** com alta de 0,2 p.p. no trimestre e 0,6 p.p. no ano, especialmente em Pessoa Física nas faixas de menor renda e, em Pessoa Jurídica, nas empresas de menor faturamento. Importante destacar que o aprimoramento das regras de baixa a prejuízo, desenvolvido ao longo de 2025, deve impactar os índices de inadimplência ao longo de 2026.\n\nEm Pessoa Física o índice inadimplência acima de 90 dias registrou alta de 0,3 p.p. no trimestre e 0,6 p.p. no ano. Em ambos os períodos, o aumento concentrou-se na baixa renda, que foi afetada pela manutenção de um cenário econômico mais desafiador.\n\nNa Pessoa Jurídica o incremento foi de 0,2 p.p. no trimestre e 0,6 p.p. ano. O indicador apresentou incremento sobretudo no segmento de PMEs, com avanço de 0,5 p.p. no trimestre e 1,4 p.p. no ano, alcançando o patamar de 6,0%.\n\nJá em Grandes Empresas, o índice ficou em 0,2%, com piora de 0,1 p.p. na comparação trimestral e 0,2 p.p. no ano.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n12",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 511,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 551,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 98,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "## Despesas",
+      "top_left_x": 29,
+      "top_left_y": 51,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "|  R$ Milhões | 1T26 | 4T25 | 1T26 x 4T25 | 1T25 | 1T26 x 1T25  |\n| --- | --- | --- | --- | --- | --- |\n|  Serviços de terceiros, transportes, segurança e sistema financeiro | (912) | (914) | -0,1% | (952) | -4,2%  |\n|  Propaganda, promoções e publicidade | (123) | (211) | -41,9% | (164) | -25,0%  |\n|  Processamento de dados | (1.036) | (975) | 6,2% | (785) | 32,0%  |\n|  Comunicações | (58) | (73) | -21,1% | (63) | -8,6%  |\n|  Aluguéis | (108) | (114) | -5,6% | (164) | -34,3%  |\n|  Manutenção e conservação de bens | (61) | (75) | -19,7% | (62) | -2,1%  |\n|  Água, energia e gás | (36) | (59) | -39,6% | (43) | -18,2%  |\n|  Material | (21) | (27) | -20,5% | (27) | -20,5%  |\n|  Outras | (340) | (294) | 15,6% | (310) | 9,8%  |\n|  **Subtotal** | **(2.694)** | **(2.743)** | **-1,8%** | **(2.570)** | **4,8%**  |\n|  Depreciações e amortizações^{1} | (888) | (846) | 5,0% | (814) | 9,1%  |\n|  **Total despesas administrativas** | **(3.583)** | **(3.589)** | **-0,2%** | **(3.384)** | **5,9%**  |\n|  Remuneração^{2} | (2.050) | (2.052) | -0,1% | (2.132) | -3,8%  |\n|  Encargos | (564) | (530) | 6,3% | (602) | -6,3%  |\n|  Benefícios | (420) | (443) | -5,1% | (434) | -3,2%  |\n|  Treinamento | (16) | (20) | -20,5% | (21) | -26,8%  |\n|  Outras | 0 | 0 | -99,8% | (0) | n.a.  |\n|  **Despesas de pessoal^{2}** | **(3.050)** | **(3.044)** | **0,2%** | **(3.189)** | **-4,4%**  |\n|  Despesas administrativas + pessoal (exclui depreciação e amortização) | (5.744) | (5.787) | -0,7% | (5.759) | -0,3%  |\n|  **Total despesas gerais** | **(6.633)** | **(6.633)** | **0,0%** | **(6.573)** | **0,9%**  |\n|  Funcionários | 49.107 | 49.661 | (554) | 55.303 | (6.196)  |\n|  Lojas e PABs | 1.622 | 1.685 | (63) | 2.105 | (483)  |",
+      "table_id": null,
+      "top_left_x": 29,
+      "top_left_y": 78,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 661,
+      "bottom_right_y": 618,
+      "confidence_scores": null,
+      "content": "As despesas gerais totalizaram R$ 6.633 milhões no 1T26, estáveis em três meses, com destaque para o incremento nas linhas de despesas relacionadas aos investimentos em tecnologia, bem como a amortização destes investimentos, que continuam a evoluir ao longo dos trimestres.",
+      "top_left_x": 29,
+      "top_left_y": 571,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 661,
+      "bottom_right_y": 690,
+      "confidence_scores": null,
+      "content": "Na comparação anual, as despesas totais avançaram 0,9%, muito abaixo da inflação observada no período. Importante destacar que a otimização do *footprint* e da força de trabalho foi parcialmente compensada por maiores investimentos em tecnologia. Mantivemos nossa disciplina rigorosa na gestão de gastos, impulsionada por tecnologia, dada a nossa cultura de produtividade e excelência operacional.",
+      "top_left_x": 29,
+      "top_left_y": 625,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 661,
+      "bottom_right_y": 729,
+      "confidence_scores": null,
+      "content": "Vale ressaltar que em 2025 1,6 mil funcionários foram migrados para a SSD, empresa do grupo, alinhado à estratégia da criação de plataformas globais de serviços para alavancar a eficiência e produtividade do banco.",
+      "top_left_x": 29,
+      "top_left_y": 697,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 661,
+      "bottom_right_y": 784,
+      "confidence_scores": null,
+      "content": "O índice de eficiência atingiu 37,7% no 1T26, com redução de 1,1 p.p. no trimestre e avanço de 0,5 p.p. no ano. Seguimos comprometidos com o uso intensivo de tecnologia, com a gestão eficiente de custos e com olhar criterioso na otimização de nossos processos.",
+      "top_left_x": 29,
+      "top_left_y": 736,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 120,
+      "bottom_right_y": 822,
+      "confidence_scores": null,
+      "content": "## Despesas gerais",
+      "top_left_x": 29,
+      "top_left_y": 802,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 73,
+      "bottom_right_y": 842,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 29,
+      "top_left_y": 829,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 359,
+      "bottom_right_y": 967,
+      "confidence_scores": null,
+      "content": "![img-24.jpeg](img-24.jpeg)",
+      "image_id": "img-24.jpeg",
+      "top_left_x": 29,
+      "top_left_y": 842,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 536,
+      "bottom_right_y": 987,
+      "confidence_scores": null,
+      "content": "(1) Exclui 100% da despesa de amortização do ágio de R$ 63 milhões no 1T26, R$ 64 milhões no 4T25 e R$ 82 milhões no 1T25. (2) Inclui participação no lucro.",
+      "top_left_x": 29,
+      "top_left_y": 974,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 484,
+      "bottom_right_y": 822,
+      "confidence_scores": null,
+      "content": "## Índice de eficiência",
+      "top_left_x": 378,
+      "top_left_y": 802,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 655,
+      "bottom_right_y": 949,
+      "confidence_scores": null,
+      "content": "![img-25.jpeg](img-25.jpeg)",
+      "image_id": "img-25.jpeg",
+      "top_left_x": 378,
+      "top_left_y": 829,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 22,
+      "top_left_y": 988,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 688,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "13",
+      "top_left_x": 671,
+      "top_left_y": 990,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 359,
+      "bottom_right_y": 967,
+      "id": "img-24.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 29,
+      "top_left_y": 842
+     },
+     {
+      "bottom_right_x": 655,
+      "bottom_right_y": 949,
+      "id": "img-25.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 378,
+      "top_left_y": 829
+     }
+    ],
+    "index": 12,
+    "markdown": "Resultados\n\nReconciliação dos resultados contábil e gerencial\n\n## Despesas\n\n|  R$ Milhões | 1T26 | 4T25 | 1T26 x 4T25 | 1T25 | 1T26 x 1T25  |\n| --- | --- | --- | --- | --- | --- |\n|  Serviços de terceiros, transportes, segurança e sistema financeiro | (912) | (914) | -0,1% | (952) | -4,2%  |\n|  Propaganda, promoções e publicidade | (123) | (211) | -41,9% | (164) | -25,0%  |\n|  Processamento de dados | (1.036) | (975) | 6,2% | (785) | 32,0%  |\n|  Comunicações | (58) | (73) | -21,1% | (63) | -8,6%  |\n|  Aluguéis | (108) | (114) | -5,6% | (164) | -34,3%  |\n|  Manutenção e conservação de bens | (61) | (75) | -19,7% | (62) | -2,1%  |\n|  Água, energia e gás | (36) | (59) | -39,6% | (43) | -18,2%  |\n|  Material | (21) | (27) | -20,5% | (27) | -20,5%  |\n|  Outras | (340) | (294) | 15,6% | (310) | 9,8%  |\n|  **Subtotal** | **(2.694)** | **(2.743)** | **-1,8%** | **(2.570)** | **4,8%**  |\n|  Depreciações e amortizações^{1} | (888) | (846) | 5,0% | (814) | 9,1%  |\n|  **Total despesas administrativas** | **(3.583)** | **(3.589)** | **-0,2%** | **(3.384)** | **5,9%**  |\n|  Remuneração^{2} | (2.050) | (2.052) | -0,1% | (2.132) | -3,8%  |\n|  Encargos | (564) | (530) | 6,3% | (602) | -6,3%  |\n|  Benefícios | (420) | (443) | -5,1% | (434) | -3,2%  |\n|  Treinamento | (16) | (20) | -20,5% | (21) | -26,8%  |\n|  Outras | 0 | 0 | -99,8% | (0) | n.a.  |\n|  **Despesas de pessoal^{2}** | **(3.050)** | **(3.044)** | **0,2%** | **(3.189)** | **-4,4%**  |\n|  Despesas administrativas + pessoal (exclui depreciação e amortização) | (5.744) | (5.787) | -0,7% | (5.759) | -0,3%  |\n|  **Total despesas gerais** | **(6.633)** | **(6.633)** | **0,0%** | **(6.573)** | **0,9%**  |\n|  Funcionários | 49.107 | 49.661 | (554) | 55.303 | (6.196)  |\n|  Lojas e PABs | 1.622 | 1.685 | (63) | 2.105 | (483)  |\n\nAs despesas gerais totalizaram R$ 6.633 milhões no 1T26, estáveis em três meses, com destaque para o incremento nas linhas de despesas relacionadas aos investimentos em tecnologia, bem como a amortização destes investimentos, que continuam a evoluir ao longo dos trimestres.\n\nNa comparação anual, as despesas totais avançaram 0,9%, muito abaixo da inflação observada no período. Importante destacar que a otimização do *footprint* e da força de trabalho foi parcialmente compensada por maiores investimentos em tecnologia. Mantivemos nossa disciplina rigorosa na gestão de gastos, impulsionada por tecnologia, dada a nossa cultura de produtividade e excelência operacional.\n\nVale ressaltar que em 2025 1,6 mil funcionários foram migrados para a SSD, empresa do grupo, alinhado à estratégia da criação de plataformas globais de serviços para alavancar a eficiência e produtividade do banco.\n\nO índice de eficiência atingiu 37,7% no 1T26, com redução de 1,1 p.p. no trimestre e avanço de 0,5 p.p. no ano. Seguimos comprometidos com o uso intensivo de tecnologia, com a gestão eficiente de custos e com olhar criterioso na otimização de nossos processos.\n\n## Despesas gerais\n\nR$ Milhões\n\n![img-24.jpeg](img-24.jpeg)\n\n(1) Exclui 100% da despesa de amortização do ágio de R$ 63 milhões no 1T26, R$ 64 milhões no 4T25 e R$ 82 milhões no 1T25. (2) Inclui participação no lucro.\n\n## Índice de eficiência\n\n![img-25.jpeg](img-25.jpeg)\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n13",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 512,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 16,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 551,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 304,
+      "bottom_right_y": 75,
+      "confidence_scores": null,
+      "content": "## Outras receitas e despesas operacionais",
+      "top_left_x": 28,
+      "top_left_y": 51,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 184,
+      "confidence_scores": null,
+      "content": "|  R$ Milhões | 1T26 | 4T25 | 1T26 x 4T25 | 1T25 | 1T26 x 1T25  |\n| --- | --- | --- | --- | --- | --- |\n|  Resultado de cartões | (474) | (440) | 7,8% | (452) | 4,8%  |\n|  Provisões para contingências | (1.126) | (901) | 24,9% | (928) | 21,3%  |\n|  Outras | (700) | (1.268) | -44,8% | (746) | -6,2%  |\n|  **Outras receitas e despesas operacionais** | **(2.300)** | **(2.609)** | **-11,8%** | **(2.126)** | **8,2%**  |",
+      "table_id": null,
+      "top_left_x": 28,
+      "top_left_y": 77,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 273,
+      "confidence_scores": null,
+      "content": "As outras receitas e despesas operacionais totalizaram uma despesa de R$ 2.300 milhões no 1T26, queda de 11,8% no trimestre, em parte devido à sazonalidade de maior volume de negócios no 4T25, que resultou em maiores despesas com transacionalidade no período, dentre outros efeitos. No ano, houve aumento de 8,2%, em especial pelo aumento das provisões para contingências.",
+      "top_left_x": 38,
+      "top_left_y": 210,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 169,
+      "bottom_right_y": 318,
+      "confidence_scores": null,
+      "content": "## Balanço patrimonial",
+      "top_left_x": 28,
+      "top_left_y": 292,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 880,
+      "confidence_scores": null,
+      "content": "|  R$ Milhões | Mar/26 | Dez/25 | Mar/26 x Dez/25 | Mar/25 | Mar/26 x Mar/25  |\n| --- | --- | --- | --- | --- | --- |\n|  **Ativo circulante e realizável a longo prazo** | **1.271.403** | **1.240.049** | **2,5%** | **1.219.181** | **4,3%**  |\n|  Disponibilidades | 9.945 | 7.633 | 30,3% | 14.117 | -29,6%  |\n|  Ativos financeiros mensurados ao valor justo por meio do resultado | 271.624 | 250.803 | 8,3% | 237.620 | 14,3%  |\n|  Ativos financeiros mensurados ao valor justo por meio de outros resultados abrangentes | 56.821 | 67.682 | -16,0% | 68.171 | -16,6%  |\n|  Aplicações interfinanceiras de liquidez mensuradas ao custo amortizado | 47.742 | 38.452 | 24,2% | 39.516 | 20,8%  |\n|  Títulos e valores mobiliários mensurados ao custo amortizado | 129.048 | 117.944 | 9,4% | 122.467 | 5,4%  |\n|  Carteira de crédito | 417.095 | 421.944 | -1,1% | 411.226 | 1,4%  |\n|  Outros ativos financeiros mensurados ao custo amortizado, outros ativos e ativos fiscais | 339.127 | 335.591 | 1,1% | 326.065 | 4,0%  |\n|  **Permanente** | **15.392** | **15.575** | **-1,2%** | **15.459** | **-0,4%**  |\n|  Investimentos | 2.822 | 2.830 | -0,3% | 2.890 | -2,4%  |\n|  Imobilizado de uso | 4.360 | 4.343 | 0,4% | 4.764 | -8,5%  |\n|  Intangível | 8.210 | 8.402 | -2,3% | 7.806 | 5,2%  |\n|  **Total do ativo** | **1.286.795** | **1.255.624** | **2,5%** | **1.234.641** | **4,2%**  |\n|  **Passivo circulante e exigível a longo prazo** | **1.186.580** | **1.157.824** | **2,5%** | **1.142.138** | **3,9%**  |\n|  Passivos financeiros mensurados ao valor justo por meio do resultado | 52.845 | 52.758 | 0,2% | 29.066 | 81,8%  |\n|  Depósitos | 489.868 | 491.090 | -0,2% | 492.541 | -0,5%  |\n|  Captações no mercado aberto | 163.357 | 149.753 | 9,1% | 164.702 | -0,8%  |\n|  Obrigações por empréstimos | 111.738 | 102.552 | 9,0% | 115.360 | -3,1%  |\n|  Obrigações por repasses do país - instituições oficiais | 9.913 | 10.742 | -7,7% | 8.879 | 11,6%  |\n|  Recursos de aceites e emissão de títulos | 189.799 | 188.255 | 0,8% | 169.527 | 12,0%  |\n|  Outros passivos financeiros mensurados ao custo amortizado, outros passivos e passivos fiscais | 169.061 | 162.673 | 3,9% | 162.062 | 4,3%  |\n|  **Participação dos acionistas minoritários** | **2.692** | **2.150** | **25,2%** | **1.958** | **37,5%**  |\n|  **Patrimônio líquido** | **97.523** | **95.650** | **2,0%** | **90.544** | **7,7%**  |\n|  **Total do passivo** | **1.286.795** | **1.255.624** | **2,5%** | **1.234.641** | **4,2%**  |",
+      "table_id": null,
+      "top_left_x": 28,
+      "top_left_y": 318,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 660,
+      "bottom_right_y": 950,
+      "confidence_scores": null,
+      "content": "Os ativos e passivos totais somaram R$ 1.287 bilhões em março de 2026, expansão de 2,5% em três meses e 4,2% em relação ao mesmo período do ano anterior. O patrimônio líquido atingiu R$ 97.523 milhões no período, crescimento de 2,0% em três meses e 7,7% em doze meses.",
+      "top_left_x": 40,
+      "top_left_y": 903,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 21,
+      "top_left_y": 987,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "14",
+      "top_left_x": 671,
+      "top_left_y": 990,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 13,
+    "markdown": "Resultados\n\nReconciliação dos resultados contábil e gerencial\n\n## Outras receitas e despesas operacionais\n\n|  R$ Milhões | 1T26 | 4T25 | 1T26 x 4T25 | 1T25 | 1T26 x 1T25  |\n| --- | --- | --- | --- | --- | --- |\n|  Resultado de cartões | (474) | (440) | 7,8% | (452) | 4,8%  |\n|  Provisões para contingências | (1.126) | (901) | 24,9% | (928) | 21,3%  |\n|  Outras | (700) | (1.268) | -44,8% | (746) | -6,2%  |\n|  **Outras receitas e despesas operacionais** | **(2.300)** | **(2.609)** | **-11,8%** | **(2.126)** | **8,2%**  |\n\nAs outras receitas e despesas operacionais totalizaram uma despesa de R$ 2.300 milhões no 1T26, queda de 11,8% no trimestre, em parte devido à sazonalidade de maior volume de negócios no 4T25, que resultou em maiores despesas com transacionalidade no período, dentre outros efeitos. No ano, houve aumento de 8,2%, em especial pelo aumento das provisões para contingências.\n\n## Balanço patrimonial\n\n|  R$ Milhões | Mar/26 | Dez/25 | Mar/26 x Dez/25 | Mar/25 | Mar/26 x Mar/25  |\n| --- | --- | --- | --- | --- | --- |\n|  **Ativo circulante e realizável a longo prazo** | **1.271.403** | **1.240.049** | **2,5%** | **1.219.181** | **4,3%**  |\n|  Disponibilidades | 9.945 | 7.633 | 30,3% | 14.117 | -29,6%  |\n|  Ativos financeiros mensurados ao valor justo por meio do resultado | 271.624 | 250.803 | 8,3% | 237.620 | 14,3%  |\n|  Ativos financeiros mensurados ao valor justo por meio de outros resultados abrangentes | 56.821 | 67.682 | -16,0% | 68.171 | -16,6%  |\n|  Aplicações interfinanceiras de liquidez mensuradas ao custo amortizado | 47.742 | 38.452 | 24,2% | 39.516 | 20,8%  |\n|  Títulos e valores mobiliários mensurados ao custo amortizado | 129.048 | 117.944 | 9,4% | 122.467 | 5,4%  |\n|  Carteira de crédito | 417.095 | 421.944 | -1,1% | 411.226 | 1,4%  |\n|  Outros ativos financeiros mensurados ao custo amortizado, outros ativos e ativos fiscais | 339.127 | 335.591 | 1,1% | 326.065 | 4,0%  |\n|  **Permanente** | **15.392** | **15.575** | **-1,2%** | **15.459** | **-0,4%**  |\n|  Investimentos | 2.822 | 2.830 | -0,3% | 2.890 | -2,4%  |\n|  Imobilizado de uso | 4.360 | 4.343 | 0,4% | 4.764 | -8,5%  |\n|  Intangível | 8.210 | 8.402 | -2,3% | 7.806 | 5,2%  |\n|  **Total do ativo** | **1.286.795** | **1.255.624** | **2,5%** | **1.234.641** | **4,2%**  |\n|  **Passivo circulante e exigível a longo prazo** | **1.186.580** | **1.157.824** | **2,5%** | **1.142.138** | **3,9%**  |\n|  Passivos financeiros mensurados ao valor justo por meio do resultado | 52.845 | 52.758 | 0,2% | 29.066 | 81,8%  |\n|  Depósitos | 489.868 | 491.090 | -0,2% | 492.541 | -0,5%  |\n|  Captações no mercado aberto | 163.357 | 149.753 | 9,1% | 164.702 | -0,8%  |\n|  Obrigações por empréstimos | 111.738 | 102.552 | 9,0% | 115.360 | -3,1%  |\n|  Obrigações por repasses do país - instituições oficiais | 9.913 | 10.742 | -7,7% | 8.879 | 11,6%  |\n|  Recursos de aceites e emissão de títulos | 189.799 | 188.255 | 0,8% | 169.527 | 12,0%  |\n|  Outros passivos financeiros mensurados ao custo amortizado, outros passivos e passivos fiscais | 169.061 | 162.673 | 3,9% | 162.062 | 4,3%  |\n|  **Participação dos acionistas minoritários** | **2.692** | **2.150** | **25,2%** | **1.958** | **37,5%**  |\n|  **Patrimônio líquido** | **97.523** | **95.650** | **2,0%** | **90.544** | **7,7%**  |\n|  **Total do passivo** | **1.286.795** | **1.255.624** | **2,5%** | **1.234.641** | **4,2%**  |\n\nOs ativos e passivos totais somaram R$ 1.287 bilhões em março de 2026, expansão de 2,5% em três meses e 4,2% em relação ao mesmo período do ano anterior. O patrimônio líquido atingiu R$ 97.523 milhões no período, crescimento de 2,0% em três meses e 7,7% em doze meses.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n14",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 511,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 551,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 224,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "## Carteira de crédito ampliada",
+      "top_left_x": 28,
+      "top_left_y": 51,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 74,
+      "bottom_right_y": 91,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 28,
+      "top_left_y": 78,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 206,
+      "confidence_scores": null,
+      "content": "|   | Mar/26 | Dez/25 | Mar/26 x Dez/25 | Mar/25 | Mar/26 x Mar/25  |\n| --- | --- | --- | --- | --- | --- |\n|  Pessoa física | 265.261 | 268.883 | -1,3% | 268.151 | -1,1%  |\n|  Financiamento ao consumo | 95.442 | 93.805 | 1,7% | 83.547 | 14,2%  |\n|  Pequenas e médias empresas | 93.704 | 94.001 | -0,3% | 85.278 | 9,9%  |\n|  Grandes empresas | 251.176 | 251.512 | -0,1% | 245.317 | 2,4%  |\n|  **Total** | **705.582** | **708.201** | **-0,4%** | **682.293** | **3,4%**  |",
+      "table_id": null,
+      "top_left_x": 28,
+      "top_left_y": 78,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 336,
+      "confidence_scores": null,
+      "content": "A carteira de crédito ampliada alcançou R$ 705.582 milhões em março de 2026, praticamente estável na comparação trimestral. O desempenho foi liderado pelo avanço (i) de 1,7% na Financeira, e no segmento de pessoas físicas, (ii) crescimento de 2,1% do crédito imobiliário. Os avanços nestes portfólios foram compensados pelos decréscimos em (i) cartões, pelo efeito sazonal usual do primeiro trimestre com redução de 3,1%, (ii) consignado com redução de 5,2% e (iii) pelo efeito da variação cambial nas grandes empresas que apresentaram redução de 0,1%; quando excluído o efeito da variação cambial o crescimento seria de 1,0%.",
+      "top_left_x": 36,
+      "top_left_y": 240,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 391,
+      "confidence_scores": null,
+      "content": "Na comparação anual a carteira de crédito avançou 3,4%, sendo os destaques dentro de pessoa física os produtos de cartões e crédito imobiliário com incremento de 9,1% e 10,6% respectivamente, e a financeira com avanço de 14,2% seguida por PMEs crescendo 9,9%.",
+      "top_left_x": 36,
+      "top_left_y": 342,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 463,
+      "confidence_scores": null,
+      "content": "## Carteira ampliada por produto",
+      "top_left_x": 28,
+      "top_left_y": 438,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 77,
+      "bottom_right_y": 478,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 28,
+      "top_left_y": 465,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 922,
+      "confidence_scores": null,
+      "content": "|   | Mar/26 | Dez/25 | Mar/26 x Dez/25 | Mar/25 | Mar/26 x Mar/25  |\n| --- | --- | --- | --- | --- | --- |\n|  **Pessoa física** | **265.261** | **268.883** | **-1,3%** | **268.151** | **-1,1%**  |\n|  Leasing / veículos | 6.002 | 7.009 | -14,4% | 8.576 | -30,0%  |\n|  Cartão de crédito | 63.359 | 65.414 | -3,1% | 58.080 | 9,1%  |\n|  Consignado | 58.046 | 61.209 | -5,2% | 68.706 | -15,5%  |\n|  Crédito imobiliário | 75.318 | 73.805 | 2,1% | 68.094 | 10,6%  |\n|  Crédito rural | 9.089 | 9.040 | 0,5% | 10.399 | -12,6%  |\n|  Crédito pessoal/outros | 37.201 | 36.647 | 1,5% | 38.549 | -3,5%  |\n|  Títulos privados^{1} | 15.574 | 15.032 | 3,6% | 15.262 | 2,0%  |\n|  Avais e Fianças | 671 | 728 | -7,8% | 486 | 38,2%  |\n|  **Financiamento ao consumo** | **95.442** | **93.805** | **1,7%** | **83.547** | **14,2%**  |\n|  Pessoa física | 80.701 | 78.290 | 3,1% | 70.755 | 14,1%  |\n|  Pessoa jurídica | 14.740 | 15.515 | -5,0% | 12.792 | 15,2%  |\n|  **Pessoa jurídica** | **344.880** | **345.512** | **-0,2%** | **330.595** | **4,3%**  |\n|  Leasing / veículos | 2.851 | 3.048 | -6,4% | 3.544 | -19,5%  |\n|  Crédito imobiliário | 4.279 | 4.180 | 2,4% | 4.005 | 6,9%  |\n|  Comércio exterior | 92.133 | 94.763 | -2,8% | 92.344 | -0,2%  |\n|  Repasses | 8.896 | 9.759 | -8,8% | 7.503 | 18,6%  |\n|  Crédito rural | 11.081 | 11.351 | -2,4% | 11.813 | -6,2%  |\n|  Capital de giro/outros | 95.590 | 96.044 | -0,5% | 91.106 | 4,9%  |\n|  Títulos privados^{1} | 60.238 | 58.245 | 3,4% | 53.269 | 13,1%  |\n|  Avais e fianças | 69.812 | 68.123 | 2,5% | 67.012 | 4,2%  |\n|  **Carteira ampliada** | **705.582** | **708.201** | **-0,4%** | **682.293** | **3,4%**  |",
+      "table_id": null,
+      "top_left_x": 28,
+      "top_left_y": 465,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 427,
+      "bottom_right_y": 983,
+      "confidence_scores": null,
+      "content": "(1) Inclui CRI, CRA, FIDC e CPR, além de debêntures, notas promissórias, notas comerciais, eurobonds e floating rates notes.",
+      "top_left_x": 28,
+      "top_left_y": 971,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 21,
+      "top_left_y": 987,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 688,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "15",
+      "top_left_x": 671,
+      "top_left_y": 990,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 14,
+    "markdown": "Resultados\n\nReconciliação dos resultados contábil e gerencial\n\n## Carteira de crédito ampliada\n\nR$ Milhões\n\n|   | Mar/26 | Dez/25 | Mar/26 x Dez/25 | Mar/25 | Mar/26 x Mar/25  |\n| --- | --- | --- | --- | --- | --- |\n|  Pessoa física | 265.261 | 268.883 | -1,3% | 268.151 | -1,1%  |\n|  Financiamento ao consumo | 95.442 | 93.805 | 1,7% | 83.547 | 14,2%  |\n|  Pequenas e médias empresas | 93.704 | 94.001 | -0,3% | 85.278 | 9,9%  |\n|  Grandes empresas | 251.176 | 251.512 | -0,1% | 245.317 | 2,4%  |\n|  **Total** | **705.582** | **708.201** | **-0,4%** | **682.293** | **3,4%**  |\n\nA carteira de crédito ampliada alcançou R$ 705.582 milhões em março de 2026, praticamente estável na comparação trimestral. O desempenho foi liderado pelo avanço (i) de 1,7% na Financeira, e no segmento de pessoas físicas, (ii) crescimento de 2,1% do crédito imobiliário. Os avanços nestes portfólios foram compensados pelos decréscimos em (i) cartões, pelo efeito sazonal usual do primeiro trimestre com redução de 3,1%, (ii) consignado com redução de 5,2% e (iii) pelo efeito da variação cambial nas grandes empresas que apresentaram redução de 0,1%; quando excluído o efeito da variação cambial o crescimento seria de 1,0%.\n\nNa comparação anual a carteira de crédito avançou 3,4%, sendo os destaques dentro de pessoa física os produtos de cartões e crédito imobiliário com incremento de 9,1% e 10,6% respectivamente, e a financeira com avanço de 14,2% seguida por PMEs crescendo 9,9%.\n\n## Carteira ampliada por produto\n\nR$ Milhões\n\n|   | Mar/26 | Dez/25 | Mar/26 x Dez/25 | Mar/25 | Mar/26 x Mar/25  |\n| --- | --- | --- | --- | --- | --- |\n|  **Pessoa física** | **265.261** | **268.883** | **-1,3%** | **268.151** | **-1,1%**  |\n|  Leasing / veículos | 6.002 | 7.009 | -14,4% | 8.576 | -30,0%  |\n|  Cartão de crédito | 63.359 | 65.414 | -3,1% | 58.080 | 9,1%  |\n|  Consignado | 58.046 | 61.209 | -5,2% | 68.706 | -15,5%  |\n|  Crédito imobiliário | 75.318 | 73.805 | 2,1% | 68.094 | 10,6%  |\n|  Crédito rural | 9.089 | 9.040 | 0,5% | 10.399 | -12,6%  |\n|  Crédito pessoal/outros | 37.201 | 36.647 | 1,5% | 38.549 | -3,5%  |\n|  Títulos privados^{1} | 15.574 | 15.032 | 3,6% | 15.262 | 2,0%  |\n|  Avais e Fianças | 671 | 728 | -7,8% | 486 | 38,2%  |\n|  **Financiamento ao consumo** | **95.442** | **93.805** | **1,7%** | **83.547** | **14,2%**  |\n|  Pessoa física | 80.701 | 78.290 | 3,1% | 70.755 | 14,1%  |\n|  Pessoa jurídica | 14.740 | 15.515 | -5,0% | 12.792 | 15,2%  |\n|  **Pessoa jurídica** | **344.880** | **345.512** | **-0,2%** | **330.595** | **4,3%**  |\n|  Leasing / veículos | 2.851 | 3.048 | -6,4% | 3.544 | -19,5%  |\n|  Crédito imobiliário | 4.279 | 4.180 | 2,4% | 4.005 | 6,9%  |\n|  Comércio exterior | 92.133 | 94.763 | -2,8% | 92.344 | -0,2%  |\n|  Repasses | 8.896 | 9.759 | -8,8% | 7.503 | 18,6%  |\n|  Crédito rural | 11.081 | 11.351 | -2,4% | 11.813 | -6,2%  |\n|  Capital de giro/outros | 95.590 | 96.044 | -0,5% | 91.106 | 4,9%  |\n|  Títulos privados^{1} | 60.238 | 58.245 | 3,4% | 53.269 | 13,1%  |\n|  Avais e fianças | 69.812 | 68.123 | 2,5% | 67.012 | 4,2%  |\n|  **Carteira ampliada** | **705.582** | **708.201** | **-0,4%** | **682.293** | **3,4%**  |\n\n(1) Inclui CRI, CRA, FIDC e CPR, além de debêntures, notas promissórias, notas comerciais, eurobonds e floating rates notes.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n15",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 511,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados\ncontábil e gerencial",
+      "top_left_x": 551,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 147,
+      "bottom_right_y": 90,
+      "confidence_scores": null,
+      "content": "# Pessoa Física",
+      "top_left_x": 60,
+      "top_left_y": 73,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 345,
+      "bottom_right_y": 199,
+      "confidence_scores": null,
+      "content": "A carteira ampliada de Pessoa Física totalizou R$ 265.261 milhões em março de 2026, redução de 1,3% no trimestre, explicada especialmente pela sazonalidade em cartões e pela queda no consignado. No ano, houve retração de 1,1%, em função da contração no crédito consignado.",
+      "top_left_x": 52,
+      "top_left_y": 104,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 345,
+      "bottom_right_y": 269,
+      "confidence_scores": null,
+      "content": "A carteira de cartão de crédito atingiu R$ 63.359 milhões, redução de 3,1% no trimestre pela sazonalidade, já no ano cresce 9,1%, reforçando o nosso foco em transacionalidade.",
+      "top_left_x": 52,
+      "top_left_y": 206,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 345,
+      "bottom_right_y": 308,
+      "confidence_scores": null,
+      "content": "Destaque para a carteira de imobiliário, que avançou 2,1% no trimestre e 10,6% no ano.",
+      "top_left_x": 52,
+      "top_left_y": 276,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 345,
+      "bottom_right_y": 379,
+      "confidence_scores": null,
+      "content": "O crédito consignado totalizou R$ 58.046 milhões, com redução de 5,2% no trimestre e 15,5% no ano, em linha com o foco em produtos com maior retorno sobre o capital alocado.",
+      "top_left_x": 52,
+      "top_left_y": 316,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 345,
+      "bottom_right_y": 449,
+      "confidence_scores": null,
+      "content": "O saldo de crédito pessoal/outros, incluindo as operações renegociadas, apresentou incremento de 1,5% no trimestre e redução de 3,5% no ano totalizando R$ 37.201 milhões no fechamento.",
+      "top_left_x": 52,
+      "top_left_y": 387,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 549,
+      "bottom_right_y": 129,
+      "confidence_scores": null,
+      "content": "# Mix da carteira ampliada PF",
+      "top_left_x": 368,
+      "top_left_y": 110,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 641,
+      "bottom_right_y": 453,
+      "confidence_scores": null,
+      "content": "![img-26.jpeg](img-26.jpeg)",
+      "image_id": "img-26.jpeg",
+      "top_left_x": 361,
+      "top_left_y": 166,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 245,
+      "bottom_right_y": 510,
+      "confidence_scores": null,
+      "content": "# Financiamento ao consumo",
+      "top_left_x": 65,
+      "top_left_y": 493,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 382,
+      "bottom_right_y": 603,
+      "confidence_scores": null,
+      "content": "A carteira de financiamento ao consumo atingiu R$ 95.442 milhões, majoritariamente composta por operações de veículos, com alta de 1,7% no trimestre e de 14,2% no ano.",
+      "top_left_x": 59,
+      "top_left_y": 540,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 382,
+      "bottom_right_y": 690,
+      "confidence_scores": null,
+      "content": "A carteira total de veículos para pessoa física, que inclui tanto as operações realizadas pela financeira quanto pelos canais de distribuição do banco, alcançou R$ 82.349 milhões no trimestre, crescendo 2,1% na comparação trimestral e 8,8% em doze meses.",
+      "top_left_x": 59,
+      "top_left_y": 611,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 630,
+      "bottom_right_y": 553,
+      "confidence_scores": null,
+      "content": "# Mix da carteira de Financiamento",
+      "top_left_x": 412,
+      "top_left_y": 536,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 651,
+      "bottom_right_y": 686,
+      "confidence_scores": null,
+      "content": "![img-27.jpeg](img-27.jpeg)",
+      "image_id": "img-27.jpeg",
+      "top_left_x": 407,
+      "top_left_y": 555,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 651,
+      "bottom_right_y": 772,
+      "confidence_scores": null,
+      "content": "Nosso diferencial competitivo segue ancorado na expertise de crédito, sendo a financeira um dos principais destaques desse pilar. No segmento, as iniciativas de cross-sell e o fortalecimento das parcerias estratégicas, com 6 das 10 maiores montadoras do país, seguem avançando, contribuindo para a expansão consistente da carteira e para a manutenção da liderança na carteira de veículos PF, com 20% de market share¹.",
+      "top_left_x": 55,
+      "top_left_y": 708,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 249,
+      "bottom_right_y": 807,
+      "confidence_scores": null,
+      "content": "# Carteira de veículos PF por canal",
+      "top_left_x": 63,
+      "top_left_y": 789,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 256,
+      "bottom_right_y": 946,
+      "confidence_scores": null,
+      "content": "![img-28.jpeg](img-28.jpeg)",
+      "image_id": "img-28.jpeg",
+      "top_left_x": 63,
+      "top_left_y": 810,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 466,
+      "bottom_right_y": 807,
+      "confidence_scores": null,
+      "content": "# Produção de crédito de veículos",
+      "top_left_x": 284,
+      "top_left_y": 789,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 479,
+      "bottom_right_y": 927,
+      "confidence_scores": null,
+      "content": "![img-29.jpeg](img-29.jpeg)",
+      "image_id": "img-29.jpeg",
+      "top_left_x": 284,
+      "top_left_y": 810,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 632,
+      "bottom_right_y": 864,
+      "confidence_scores": null,
+      "content": "LTV da carteira (mar/26):\n58,1%",
+      "top_left_x": 507,
+      "top_left_y": 831,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 122,
+      "bottom_right_y": 983,
+      "confidence_scores": null,
+      "content": "(1) Data-base: fevereiro/26.",
+      "top_left_x": 29,
+      "top_left_y": 971,
+      "type": "references"
+     },
+     {
+      "bottom_right_x": 112,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 22,
+      "top_left_y": 987,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 412,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "16",
+      "top_left_x": 671,
+      "top_left_y": 990,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 641,
+      "bottom_right_y": 453,
+      "id": "img-26.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 361,
+      "top_left_y": 166
+     },
+     {
+      "bottom_right_x": 651,
+      "bottom_right_y": 686,
+      "id": "img-27.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 407,
+      "top_left_y": 555
+     },
+     {
+      "bottom_right_x": 256,
+      "bottom_right_y": 946,
+      "id": "img-28.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 63,
+      "top_left_y": 810
+     },
+     {
+      "bottom_right_x": 479,
+      "bottom_right_y": 927,
+      "id": "img-29.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 284,
+      "top_left_y": 810
+     }
+    ],
+    "index": 15,
+    "markdown": "Resultados\n\nReconciliação dos resultados\ncontábil e gerencial\n\n# Pessoa Física\n\nA carteira ampliada de Pessoa Física totalizou R$ 265.261 milhões em março de 2026, redução de 1,3% no trimestre, explicada especialmente pela sazonalidade em cartões e pela queda no consignado. No ano, houve retração de 1,1%, em função da contração no crédito consignado.\n\nA carteira de cartão de crédito atingiu R$ 63.359 milhões, redução de 3,1% no trimestre pela sazonalidade, já no ano cresce 9,1%, reforçando o nosso foco em transacionalidade.\n\nDestaque para a carteira de imobiliário, que avançou 2,1% no trimestre e 10,6% no ano.\n\nO crédito consignado totalizou R$ 58.046 milhões, com redução de 5,2% no trimestre e 15,5% no ano, em linha com o foco em produtos com maior retorno sobre o capital alocado.\n\nO saldo de crédito pessoal/outros, incluindo as operações renegociadas, apresentou incremento de 1,5% no trimestre e redução de 3,5% no ano totalizando R$ 37.201 milhões no fechamento.\n\n# Mix da carteira ampliada PF\n\n![img-26.jpeg](img-26.jpeg)\n\n# Financiamento ao consumo\n\nA carteira de financiamento ao consumo atingiu R$ 95.442 milhões, majoritariamente composta por operações de veículos, com alta de 1,7% no trimestre e de 14,2% no ano.\n\nA carteira total de veículos para pessoa física, que inclui tanto as operações realizadas pela financeira quanto pelos canais de distribuição do banco, alcançou R$ 82.349 milhões no trimestre, crescendo 2,1% na comparação trimestral e 8,8% em doze meses.\n\n# Mix da carteira de Financiamento\n\n![img-27.jpeg](img-27.jpeg)\n\nNosso diferencial competitivo segue ancorado na expertise de crédito, sendo a financeira um dos principais destaques desse pilar. No segmento, as iniciativas de cross-sell e o fortalecimento das parcerias estratégicas, com 6 das 10 maiores montadoras do país, seguem avançando, contribuindo para a expansão consistente da carteira e para a manutenção da liderança na carteira de veículos PF, com 20% de market share¹.\n\n# Carteira de veículos PF por canal\n\n![img-28.jpeg](img-28.jpeg)\n\n# Produção de crédito de veículos\n\n![img-29.jpeg](img-29.jpeg)\n\nLTV da carteira (mar/26):\n58,1%\n\n(1) Data-base: fevereiro/26.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n16",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 511,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 551,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 171,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "## Pessoa jurídica",
+      "top_left_x": 72,
+      "top_left_y": 54,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 361,
+      "bottom_right_y": 176,
+      "confidence_scores": null,
+      "content": "A carteira ampliada de Pessoa Jurídica totalizou R$ 344.880 milhões, praticamente estável em três meses e com avanço de 4,3% em doze meses. Em março de 2026, avais, fianças e títulos privados representaram 37,7% da carteira ampliada de Pessoa Jurídica (+1,1 p.p. QoQ e +1,3 p.p. YoY).",
+      "top_left_x": 48,
+      "top_left_y": 83,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 361,
+      "bottom_right_y": 273,
+      "confidence_scores": null,
+      "content": "A carteira ampliada de Grandes Empresas somou R$ 251.176 milhões, estável no trimestre, com queda na carteira de crédito, impactada pela variação cambial, sendo compensada por avanço em títulos (+3,7%) e avais (+3,4%).",
+      "top_left_x": 48,
+      "top_left_y": 195,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 361,
+      "bottom_right_y": 406,
+      "confidence_scores": null,
+      "content": "No ano, a carteira apresentou incremento de 2,4% no ano, principalmente pelo desempenho das linhas de comércio exterior e capital de giro, além do aumento em títulos privados e avais, que cresceram 14,1% e 3,3%, respectivamente. Desconsiderando o efeito da variação cambial, a carteira ampliada de Grandes Empresas teria apresentado um aumento de 1,0% no trimestre e 4,6% no ano.",
+      "top_left_x": 48,
+      "top_left_y": 282,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 361,
+      "bottom_right_y": 493,
+      "confidence_scores": null,
+      "content": "Já a carteira ampliada de Pequenas e Médias Empresas totalizou R$ 93.704 milhões, estável no trimestre e aumento de 9,9% no ano, refletindo a evolução da oferta ao segmento e o foco no fortalecimento do relacionamento principal.",
+      "top_left_x": 48,
+      "top_left_y": 414,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 621,
+      "bottom_right_y": 93,
+      "confidence_scores": null,
+      "content": "### Mix da carteira ampliada PJ por segmento",
+      "top_left_x": 372,
+      "top_left_y": 75,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 410,
+      "bottom_right_y": 106,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 372,
+      "top_left_y": 96,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 642,
+      "bottom_right_y": 300,
+      "confidence_scores": null,
+      "content": "![img-30.jpeg](img-30.jpeg)",
+      "image_id": "img-30.jpeg",
+      "top_left_x": 379,
+      "top_left_y": 114,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 636,
+      "bottom_right_y": 332,
+      "confidence_scores": null,
+      "content": "### Mix da carteira ampliada PJ por instrumento",
+      "top_left_x": 372,
+      "top_left_y": 315,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 650,
+      "bottom_right_y": 468,
+      "confidence_scores": null,
+      "content": "![img-31.jpeg](img-31.jpeg)",
+      "image_id": "img-31.jpeg",
+      "top_left_x": 407,
+      "top_left_y": 353,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 199,
+      "bottom_right_y": 564,
+      "confidence_scores": null,
+      "content": "## Concentração de crédito$^{1}$",
+      "top_left_x": 26,
+      "top_left_y": 537,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 99,
+      "bottom_right_y": 582,
+      "confidence_scores": null,
+      "content": "R$ Milhões – Mar/26",
+      "top_left_x": 26,
+      "top_left_y": 571,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 666,
+      "bottom_right_y": 709,
+      "confidence_scores": null,
+      "content": "|   | Exposição | Exposição/Carteira de crédito  |\n| --- | --- | --- |\n|  Maior devedor | 5.782 | 0,8%  |\n|  10 maiores devedores | 34.233 | 4,8%  |\n|  20 maiores devedores | 54.822 | 7,7%  |\n|  50 maiores devedores | 92.448 | 12,9%  |\n|  100 maiores devedores | 126.530 | 17,7%  |",
+      "table_id": null,
+      "top_left_x": 26,
+      "top_left_y": 581,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 747,
+      "confidence_scores": null,
+      "content": "Em março/26, apenas 17,7% da nossa exposição de crédito estava concentrada nos 100 maiores devedores.",
+      "top_left_x": 38,
+      "top_left_y": 731,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 559,
+      "bottom_right_y": 984,
+      "confidence_scores": null,
+      "content": "(1) Inclui: as parcelas de crédito a liberar para construtoras/incorporadoras, posição de debêntures, notas promissórias e certificados de recebíveis imobiliários – CRI.",
+      "top_left_x": 31,
+      "top_left_y": 972,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 24,
+      "top_left_y": 988,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 412,
+      "top_left_y": 991,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "17",
+      "top_left_x": 671,
+      "top_left_y": 991,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 642,
+      "bottom_right_y": 300,
+      "id": "img-30.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 379,
+      "top_left_y": 114
+     },
+     {
+      "bottom_right_x": 650,
+      "bottom_right_y": 468,
+      "id": "img-31.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 407,
+      "top_left_y": 353
+     }
+    ],
+    "index": 16,
+    "markdown": "Resultados\n\nReconciliação dos resultados contábil e gerencial\n\n## Pessoa jurídica\n\nA carteira ampliada de Pessoa Jurídica totalizou R$ 344.880 milhões, praticamente estável em três meses e com avanço de 4,3% em doze meses. Em março de 2026, avais, fianças e títulos privados representaram 37,7% da carteira ampliada de Pessoa Jurídica (+1,1 p.p. QoQ e +1,3 p.p. YoY).\n\nA carteira ampliada de Grandes Empresas somou R$ 251.176 milhões, estável no trimestre, com queda na carteira de crédito, impactada pela variação cambial, sendo compensada por avanço em títulos (+3,7%) e avais (+3,4%).\n\nNo ano, a carteira apresentou incremento de 2,4% no ano, principalmente pelo desempenho das linhas de comércio exterior e capital de giro, além do aumento em títulos privados e avais, que cresceram 14,1% e 3,3%, respectivamente. Desconsiderando o efeito da variação cambial, a carteira ampliada de Grandes Empresas teria apresentado um aumento de 1,0% no trimestre e 4,6% no ano.\n\nJá a carteira ampliada de Pequenas e Médias Empresas totalizou R$ 93.704 milhões, estável no trimestre e aumento de 9,9% no ano, refletindo a evolução da oferta ao segmento e o foco no fortalecimento do relacionamento principal.\n\n### Mix da carteira ampliada PJ por segmento\n\nR$ Milhões\n\n![img-30.jpeg](img-30.jpeg)\n\n### Mix da carteira ampliada PJ por instrumento\n\n![img-31.jpeg](img-31.jpeg)\n\n## Concentração de crédito$^{1}$\n\nR$ Milhões – Mar/26\n\n|   | Exposição | Exposição/Carteira de crédito  |\n| --- | --- | --- |\n|  Maior devedor | 5.782 | 0,8%  |\n|  10 maiores devedores | 34.233 | 4,8%  |\n|  20 maiores devedores | 54.822 | 7,7%  |\n|  50 maiores devedores | 92.448 | 12,9%  |\n|  100 maiores devedores | 126.530 | 17,7%  |\n\nEm março/26, apenas 17,7% da nossa exposição de crédito estava concentrada nos 100 maiores devedores.\n\n(1) Inclui: as parcelas de crédito a liberar para construtoras/incorporadoras, posição de debêntures, notas promissórias e certificados de recebíveis imobiliários – CRI.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n17",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 512,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados^{}[] ^{}[] contábil e gerencial",
+      "top_left_x": 553,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 102,
+      "bottom_right_y": 75,
+      "confidence_scores": null,
+      "content": "## Captações",
+      "top_left_x": 28,
+      "top_left_y": 51,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 74,
+      "bottom_right_y": 90,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 28,
+      "top_left_y": 78,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 465,
+      "confidence_scores": null,
+      "content": "|   | Mar/26 | Dez/25 | Mar/26 x Dez/25 | Mar/25 | Mar/26 x Mar/25  |\n| --- | --- | --- | --- | --- | --- |\n|  Depósitos à vista | 27.462 | 35.960 | -23,6% | 50.436 | -45,6%  |\n|  Poupança | 51.373 | 53.075 | -3,2% | 54.786 | -6,2%  |\n|  Depósitos a prazo | 404.836 | 395.713 | 2,3% | 381.500 | 6,1%  |\n|  Produtos de compromissada^{1} | 14.189 | 18.907 | -25,0% | 12.536 | 13,2%  |\n|  LCI e LCA | 90.974 | 90.409 | 0,6% | 78.340 | 16,1%  |\n|  LF e outros^{2} | 75.015 | 76.365 | -1,8% | 73.887 | 1,5%  |\n|  **Captação de clientes (A)** | **663.850** | **670.430** | **-1,0%** | **651.486** | **1,9%**  |\n|  (-) Depósitos Compulsórios | (92.023) | (91.037) | 1,1% | (92.488) | -0,5%  |\n|  **Captações líquidas de depósitos compulsórios** | **571.827** | **579.393** | **-1,3%** | **558.998** | **2,3%**  |\n|  Obrigações por repasses/empréstimos - país | 10.530 | 11.006 | -4,3% | 8.910 | 18,2%  |\n|  Dívida subordinada | 29.551 | 28.319 | 4,4% | 23.659 | 24,9%  |\n|  Captações no exterior | 131.402 | 120.341 | 9,2% | 131.643 | -0,2%  |\n|  **Total captações (B)** | **743.309** | **739.059** | **0,6%** | **723.210** | **2,8%**  |\n|  Fundos^{3} | 442.409 | 435.736 | 1,5% | 439.745 | 0,6%  |\n|  **Total de captações e fundos** | **1.185.718** | **1.174.794** | **0,9%** | **1.162.955** | **2,0%**  |\n|  Total crédito clientes^{4} (C) | 635.099 | 639.350 | -0,7% | 614.796 | 3,3%  |\n|  C/B (%) | 85,4% | 86,5% | -1,1 p.p. | 85,0% | 0,4 p.p.  |\n|  C/A (%) | 95,7% | 95,4% | 0,3 p.p. | 94,4% | 1,3 p.p.  |",
+      "table_id": null,
+      "top_left_x": 28,
+      "top_left_y": 90,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 655,
+      "bottom_right_y": 601,
+      "confidence_scores": null,
+      "content": "O saldo de captações de clientes totalizou R$ 663.850 milhões em março de 2026, recuo de 1,0% no trimestre, explicado principalmente pela redução sazonal dos depósitos à vista seguido pela redução em compromissadas. No ano, as captações de clientes cresceram 1,9%, principalmente por depósitos a prazo, letras financeiras e LCI. Temos focado na otimização do mix de passivos, com maior representatividade de pessoas físicas, reduzindo o custo de captações do banco e, ao mesmo tempo, mantendo patamares otimizados dos indicadores de liquidez. Atualmente o segmento Pessoa Física possui participação de 51%, com avanço de 6 p.p. em 12 meses.",
+      "top_left_x": 40,
+      "top_left_y": 505,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 512,
+      "bottom_right_y": 984,
+      "confidence_scores": null,
+      "content": "(1) Com lastro em debêntures. (2) Inclui LIG e COE. (3) De acordo com o critério ANBIMA. (4) Não considera avais e fianças. Considera títulos privados.",
+      "top_left_x": 28,
+      "top_left_y": 971,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 21,
+      "top_left_y": 987,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 688,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "18",
+      "top_left_x": 671,
+      "top_left_y": 990,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 17,
+    "markdown": "Resultados\n\nReconciliação dos resultados^{}[] contábil e gerencial\n\n## Captações\n\nR$ Milhões\n\n|   | Mar/26 | Dez/25 | Mar/26 x Dez/25 | Mar/25 | Mar/26 x Mar/25  |\n| --- | --- | --- | --- | --- | --- |\n|  Depósitos à vista | 27.462 | 35.960 | -23,6% | 50.436 | -45,6%  |\n|  Poupança | 51.373 | 53.075 | -3,2% | 54.786 | -6,2%  |\n|  Depósitos a prazo | 404.836 | 395.713 | 2,3% | 381.500 | 6,1%  |\n|  Produtos de compromissada^{1} | 14.189 | 18.907 | -25,0% | 12.536 | 13,2%  |\n|  LCI e LCA | 90.974 | 90.409 | 0,6% | 78.340 | 16,1%  |\n|  LF e outros^{2} | 75.015 | 76.365 | -1,8% | 73.887 | 1,5%  |\n|  **Captação de clientes (A)** | **663.850** | **670.430** | **-1,0%** | **651.486** | **1,9%**  |\n|  (-) Depósitos Compulsórios | (92.023) | (91.037) | 1,1% | (92.488) | -0,5%  |\n|  **Captações líquidas de depósitos compulsórios** | **571.827** | **579.393** | **-1,3%** | **558.998** | **2,3%**  |\n|  Obrigações por repasses/empréstimos - país | 10.530 | 11.006 | -4,3% | 8.910 | 18,2%  |\n|  Dívida subordinada | 29.551 | 28.319 | 4,4% | 23.659 | 24,9%  |\n|  Captações no exterior | 131.402 | 120.341 | 9,2% | 131.643 | -0,2%  |\n|  **Total captações (B)** | **743.309** | **739.059** | **0,6%** | **723.210** | **2,8%**  |\n|  Fundos^{3} | 442.409 | 435.736 | 1,5% | 439.745 | 0,6%  |\n|  **Total de captações e fundos** | **1.185.718** | **1.174.794** | **0,9%** | **1.162.955** | **2,0%**  |\n|  Total crédito clientes^{4} (C) | 635.099 | 639.350 | -0,7% | 614.796 | 3,3%  |\n|  C/B (%) | 85,4% | 86,5% | -1,1 p.p. | 85,0% | 0,4 p.p.  |\n|  C/A (%) | 95,7% | 95,4% | 0,3 p.p. | 94,4% | 1,3 p.p.  |\n\nO saldo de captações de clientes totalizou R$ 663.850 milhões em março de 2026, recuo de 1,0% no trimestre, explicado principalmente pela redução sazonal dos depósitos à vista seguido pela redução em compromissadas. No ano, as captações de clientes cresceram 1,9%, principalmente por depósitos a prazo, letras financeiras e LCI. Temos focado na otimização do mix de passivos, com maior representatividade de pessoas físicas, reduzindo o custo de captações do banco e, ao mesmo tempo, mantendo patamares otimizados dos indicadores de liquidez. Atualmente o segmento Pessoa Física possui participação de 51%, com avanço de 6 p.p. em 12 meses.\n\n(1) Com lastro em debêntures. (2) Inclui LIG e COE. (3) De acordo com o critério ANBIMA. (4) Não considera avais e fianças. Considera títulos privados.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n18",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 512,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 462,
+      "top_left_y": 17,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 30,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados^{}[] ^{}[] contábil e gerencial",
+      "top_left_x": 551,
+      "top_left_y": 8,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 79,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "# Capital",
+      "top_left_x": 28,
+      "top_left_y": 51,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 75,
+      "bottom_right_y": 91,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 28,
+      "top_left_y": 78,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 397,
+      "confidence_scores": null,
+      "content": "|   | Mar/26 | Dez/25 | Mar/26 x Dez/25 | Mar/25 | Mar/26 x Mar/25  |\n| --- | --- | --- | --- | --- | --- |\n|  Capital de nível I | 93.734 | 94.548 | -0,9% | 88.002 | 6,5%  |\n|  Capital principal | 85.918 | 86.427 | -0,6% | 80.206 | 7,1%  |\n|  Capital complementar | 7.816 | 8.122 | -3,8% | 7.796 | 0,3%  |\n|  Capital de nível II | 22.045 | 20.521 | 7,4% | 16.098 | 36,9%  |\n|  **Patrimônio de referência** | **115.779** | **115.070** | **0,6%** | **104.100** | **11,2%**  |\n|  **Ativo ponderado pelo risco (RWA)** | **764.131** | **747.715** | **2,2%** | **725.641** | **5,3%**  |\n|  Risco de crédito | 627.072 | 627.240 | 0,0% | 604.366 | 3,8%  |\n|  Risco de mercado | 44.227 | 45.564 | -2,9% | 48.127 | -8,1%  |\n|  Risco operacional | 92.832 | 74.911 | 23,9% | 73.148 | 26,9%  |\n|  **Índice de Basileia (BIS)** | **15,2%** | **15,4%** | **-0,2 p.p.** | **14,3%** | **0,8 p.p.**  |\n|  **Capital de nível I (%)** | **12,3%** | **12,6%** | **-0,4 p.p.** | **12,1%** | **0,1 p.p.**  |\n|  Capital principal (%) | 11,2% | 11,6% | -0,3 p.p. | 11,1% | 0,2 p.p.  |\n|  Capital complementar (%) | 1,0% | 1,1% | -0,1 p.p. | 1,1% | -0,1 p.p.  |\n|  **Capital de nível II (%)** | **2,9%** | **2,7%** | **0,1 p.p.** | **2,2%** | **0,7 p.p.**  |",
+      "table_id": null,
+      "top_left_x": 28,
+      "top_left_y": 95,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 660,
+      "bottom_right_y": 497,
+      "confidence_scores": null,
+      "content": "O índice de Basileia atingiu 15,2%, queda de 0,2 p.p. no trimestre, refletindo o aumento dos ativos ponderados pelo risco (RWA), impactados pela implementação gradual do novo modelo de apuração do RWA Operacional, conforme a Resolução BCB nº 356/2023. Em relação ao mesmo período do ano anterior, o índice apresentou aumento de 0,8 p.p., impulsionado pelo crescimento de 11,2% do Patrimônio de Referência. O capital principal atingiu 11,2%, com queda de 0,3 p.p. no trimestre e avanço de 0,2 p.p. em 12 meses.",
+      "top_left_x": 39,
+      "top_left_y": 417,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 24,
+      "top_left_y": 988,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 412,
+      "top_left_y": 991,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "19",
+      "top_left_x": 671,
+      "top_left_y": 991,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 18,
+    "markdown": "Resultados\n\nReconciliação dos resultados^{}[] contábil e gerencial\n\n# Capital\n\nR$ Milhões\n\n|   | Mar/26 | Dez/25 | Mar/26 x Dez/25 | Mar/25 | Mar/26 x Mar/25  |\n| --- | --- | --- | --- | --- | --- |\n|  Capital de nível I | 93.734 | 94.548 | -0,9% | 88.002 | 6,5%  |\n|  Capital principal | 85.918 | 86.427 | -0,6% | 80.206 | 7,1%  |\n|  Capital complementar | 7.816 | 8.122 | -3,8% | 7.796 | 0,3%  |\n|  Capital de nível II | 22.045 | 20.521 | 7,4% | 16.098 | 36,9%  |\n|  **Patrimônio de referência** | **115.779** | **115.070** | **0,6%** | **104.100** | **11,2%**  |\n|  **Ativo ponderado pelo risco (RWA)** | **764.131** | **747.715** | **2,2%** | **725.641** | **5,3%**  |\n|  Risco de crédito | 627.072 | 627.240 | 0,0% | 604.366 | 3,8%  |\n|  Risco de mercado | 44.227 | 45.564 | -2,9% | 48.127 | -8,1%  |\n|  Risco operacional | 92.832 | 74.911 | 23,9% | 73.148 | 26,9%  |\n|  **Índice de Basileia (BIS)** | **15,2%** | **15,4%** | **-0,2 p.p.** | **14,3%** | **0,8 p.p.**  |\n|  **Capital de nível I (%)** | **12,3%** | **12,6%** | **-0,4 p.p.** | **12,1%** | **0,1 p.p.**  |\n|  Capital principal (%) | 11,2% | 11,6% | -0,3 p.p. | 11,1% | 0,2 p.p.  |\n|  Capital complementar (%) | 1,0% | 1,1% | -0,1 p.p. | 1,1% | -0,1 p.p.  |\n|  **Capital de nível II (%)** | **2,9%** | **2,7%** | **0,1 p.p.** | **2,2%** | **0,7 p.p.**  |\n\nO índice de Basileia atingiu 15,2%, queda de 0,2 p.p. no trimestre, refletindo o aumento dos ativos ponderados pelo risco (RWA), impactados pela implementação gradual do novo modelo de apuração do RWA Operacional, conforme a Resolução BCB nº 356/2023. Em relação ao mesmo período do ano anterior, o índice apresentou aumento de 0,8 p.p., impulsionado pelo crescimento de 11,2% do Patrimônio de Referência. O capital principal atingiu 11,2%, com queda de 0,3 p.p. no trimestre e avanço de 0,2 p.p. em 12 meses.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n19",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 520,
+      "bottom_right_y": 26,
+      "confidence_scores": null,
+      "content": "Resultados",
+      "top_left_x": 469,
+      "top_left_y": 12,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 679,
+      "bottom_right_y": 37,
+      "confidence_scores": null,
+      "content": "Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 553,
+      "top_left_y": 14,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 363,
+      "bottom_right_y": 75,
+      "confidence_scores": null,
+      "content": "## Reconciliação dos resultados contábil e gerencial",
+      "top_left_x": 28,
+      "top_left_y": 50,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 655,
+      "bottom_right_y": 132,
+      "confidence_scores": null,
+      "content": "Para melhor compreensão dos resultados em BRGAAP, a seguir apresentamos a reconciliação entre o resultado contábil e o resultado gerencial.",
+      "top_left_x": 41,
+      "top_left_y": 101,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 432,
+      "confidence_scores": null,
+      "content": "|  R$ Milhões | 1T26 |   | Reclassificações |   |   |   | 1T26  |   |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|   |  Contábil | Hedge Cambial^{1} | Recup. Crédito^{2} | Amort. do ágio^{3} | Part. no Lucro | Var. Cambiais (Líquidas) | Outros Eventos^{4} | Gerencial  |\n|  **Margem Financeira Bruta** | **14.257** | **(160)** | **506** | - | - | **1.430** | **(220)** | **15.812**  |\n|  Resultado de Créditos de Liquidação Duvidosa | (5.828) | - | (517) | - | - | - | 1 | (6.344)  |\n|  Variações Cambiais (Líquidas) | 1.430 | - | - | - | - | (1.430) | - | -  |\n|  **Margem Financeira Líquida** | **9.858** | **(160)** | **(11)** | - | - | - | **(219)** | **9.468**  |\n|  Receitas de Prest. de Serviços e Tarifas Bancárias | 5.783 | - | - | - | - | - | (348) | 5.435  |\n|  Despesas Gerais | (5.834) | - | - | 63 | (749) | - | (112) | (6.633)  |\n|  Despesas de Pessoal | (2.324) | - | - | - | (749) | - | 24 | (3.050)  |\n|  Outras Despesas Administrativas | (3.510) | - | - | 63 | - | - | (136) | (3.583)  |\n|  Despesas Tributárias | (1.613) | 160 | - | - | - | - | - | (1.453)  |\n|  Resultados de Part. em Coligadas e Controladas | 89 | - | - | - | - | - | - | 89  |\n|  Outras Receitas/Despesas Operacionais | (2.990) | - | 11 | - | - | - | 679 | (2.300)  |\n|  **Resultado Operacional** | **5.294** | - | - | **63** | **(749)** | - | - | **4.607**  |\n|  Resultado não operacional | (25) | - | - | - | - | - | - | (25)  |\n|  **Resultado antes de Impostos** | **5.270** | - | - | **63** | **(749)** | - | - | **4.583**  |\n|  Imposto de renda e contribuição social | (677) | - | - | - | - | - | - | (677)  |\n|  Participações no lucro | (749) | - | - | - | 749 | - | - | -  |\n|  Participações dos acionistas minoritários | (118) | - | - | - | - | - | - | (118)  |\n|  **Lucro Líquido** | **3.725** | - | - | **63** | - | - | - | **3.788**  |",
+      "table_id": null,
+      "top_left_x": 28,
+      "top_left_y": 160,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 648,
+      "bottom_right_y": 487,
+      "confidence_scores": null,
+      "content": "(1) Hedge Cambial: de acordo com as regras fiscais brasileiras, o ganho (perda) com a variação cambial dos investimentos em moeda estrangeira não é tributável (dedutível) para fins de PIS/CDFINS. Esse tratamento resulta em uma exposição cambial na linha de impostos. Uma posição de hedge de câmbio foi montada com o objetivo de tornar o lucro líquido protegido contra as variações cambiais relacionadas a esta exposição cambial decorrente dos investimentos no exterior (filiais e subsidiárias).",
+      "top_left_x": 41,
+      "top_left_y": 455,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 648,
+      "bottom_right_y": 506,
+      "confidence_scores": null,
+      "content": "(2) Recuperação de Crédito: Margem Financeira Bruta e Resultado de Créditos de Liquidação Duvidosa: reclassificação referente à recuperação de crédito e ao desconto concedido. Outras Receitas e Despesas Operacionais e Resultado de Créditos de Liquidação Duvidosa: reclassificação referente à provisão de garantias prestadas;",
+      "top_left_x": 41,
+      "top_left_y": 485,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 284,
+      "bottom_right_y": 515,
+      "confidence_scores": null,
+      "content": "(3) Amortização de Ágio: reversão das despesas com amortização de ágio;",
+      "top_left_x": 41,
+      "top_left_y": 504,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 648,
+      "bottom_right_y": 533,
+      "confidence_scores": null,
+      "content": "(4) Outros eventos: Reclassificações entre Outras Receitas e Despesas Operacionais para as linhas de Margem Financeira, Comissões e Despesas Gerais. Margem Financeira Bruta e Resultado de Créditos de Liquidação Duvidosa: reclassificação referente aos ajustes na valoração de ativos.",
+      "top_left_x": 41,
+      "top_left_y": 513,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Começa agora",
+      "top_left_x": 21,
+      "top_left_y": 987,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "Informe de Resultados do Primeiro Trimestre de 2026",
+      "top_left_x": 411,
+      "top_left_y": 990,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 1004,
+      "confidence_scores": null,
+      "content": "20",
+      "top_left_x": 671,
+      "top_left_y": 990,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": null,
+    "dimensions": {
+     "dpi": 94,
+     "height": 1019,
+     "width": 705
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 19,
+    "markdown": "Resultados\n\nReconciliação dos resultados contábil e gerencial\n\n## Reconciliação dos resultados contábil e gerencial\n\nPara melhor compreensão dos resultados em BRGAAP, a seguir apresentamos a reconciliação entre o resultado contábil e o resultado gerencial.\n\n|  R$ Milhões | 1T26 |   | Reclassificações |   |   |   | 1T26  |   |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|   |  Contábil | Hedge Cambial^{1} | Recup. Crédito^{2} | Amort. do ágio^{3} | Part. no Lucro | Var. Cambiais (Líquidas) | Outros Eventos^{4} | Gerencial  |\n|  **Margem Financeira Bruta** | **14.257** | **(160)** | **506** | - | - | **1.430** | **(220)** | **15.812**  |\n|  Resultado de Créditos de Liquidação Duvidosa | (5.828) | - | (517) | - | - | - | 1 | (6.344)  |\n|  Variações Cambiais (Líquidas) | 1.430 | - | - | - | - | (1.430) | - | -  |\n|  **Margem Financeira Líquida** | **9.858** | **(160)** | **(11)** | - | - | - | **(219)** | **9.468**  |\n|  Receitas de Prest. de Serviços e Tarifas Bancárias | 5.783 | - | - | - | - | - | (348) | 5.435  |\n|  Despesas Gerais | (5.834) | - | - | 63 | (749) | - | (112) | (6.633)  |\n|  Despesas de Pessoal | (2.324) | - | - | - | (749) | - | 24 | (3.050)  |\n|  Outras Despesas Administrativas | (3.510) | - | - | 63 | - | - | (136) | (3.583)  |\n|  Despesas Tributárias | (1.613) | 160 | - | - | - | - | - | (1.453)  |\n|  Resultados de Part. em Coligadas e Controladas | 89 | - | - | - | - | - | - | 89  |\n|  Outras Receitas/Despesas Operacionais | (2.990) | - | 11 | - | - | - | 679 | (2.300)  |\n|  **Resultado Operacional** | **5.294** | - | - | **63** | **(749)** | - | - | **4.607**  |\n|  Resultado não operacional | (25) | - | - | - | - | - | - | (25)  |\n|  **Resultado antes de Impostos** | **5.270** | - | - | **63** | **(749)** | - | - | **4.583**  |\n|  Imposto de renda e contribuição social | (677) | - | - | - | - | - | - | (677)  |\n|  Participações no lucro | (749) | - | - | - | 749 | - | - | -  |\n|  Participações dos acionistas minoritários | (118) | - | - | - | - | - | - | (118)  |\n|  **Lucro Líquido** | **3.725** | - | - | **63** | - | - | - | **3.788**  |\n\n(1) Hedge Cambial: de acordo com as regras fiscais brasileiras, o ganho (perda) com a variação cambial dos investimentos em moeda estrangeira não é tributável (dedutível) para fins de PIS/CDFINS. Esse tratamento resulta em uma exposição cambial na linha de impostos. Uma posição de hedge de câmbio foi montada com o objetivo de tornar o lucro líquido protegido contra as variações cambiais relacionadas a esta exposição cambial decorrente dos investimentos no exterior (filiais e subsidiárias).\n\n(2) Recuperação de Crédito: Margem Financeira Bruta e Resultado de Créditos de Liquidação Duvidosa: reclassificação referente à recuperação de crédito e ao desconto concedido. Outras Receitas e Despesas Operacionais e Resultado de Créditos de Liquidação Duvidosa: reclassificação referente à provisão de garantias prestadas;\n\n(3) Amortização de Ágio: reversão das despesas com amortização de ágio;\n\n(4) Outros eventos: Reclassificações entre Outras Receitas e Despesas Operacionais para as linhas de Margem Financeira, Comissões e Despesas Gerais. Margem Financeira Bruta e Resultado de Créditos de Liquidação Duvidosa: reclassificação referente aos ajustes na valoração de ativos.\n\nComeça agora\n\nInforme de Resultados do Primeiro Trimestre de 2026\n\n20",
+    "tables": []
+   }
+  ],
+  "usage_info": {
+   "doc_size_bytes": 1073864,
+   "pages_processed": 20
+  }
+ },
+ "trimestre": "1T2026"
+}
