@@ -1,11 +1,11 @@
 {
   "_meta": {
     "avaliacao_automatica": "completa",
-    "consolidation_run_id": "20260817T004427Z-17210d3135",
+    "consolidation_run_id": "20260817T181108Z-f1158b4907",
     "definicao_custo_usd": "custo observado da tentativa bem-sucedida mais o limite conservador das tentativas transitórias sem telemetria",
     "estabilidade_10x3": "nao_aplicavel",
     "estrategia_demo_e_auditoria": "semantica",
-    "fingerprint": "9da3777b47be31b53b5c5aa89c11d2c5c9e48d3836f183e4b37dfdbf9f3b2a1a",
+    "fingerprint": "e23cbe34e8f1fd5ff8acbb4a0eddb7de59f23572e3b8e866cd01aa6bdc51fa7e",
     "fingerprint_componentes": {
       "bancos": [
         "BTG",
@@ -30,21 +30,21 @@
       "estrategia_demo_e_auditoria": "semantica",
       "indice": {
         "arquivos": {
-          "chunks.json": "373a27f6a289314e1e12b41f8db534dfde57f7546aa4d7e3148f5bc9e06f38df"
+          "chunks.json": "87781caa349202a3a9981307746674e3cdc4c3a96f6397bce647172cdf6f570f"
         },
         "metadados_materiais": {
           "dimensao": 1024,
           "extrator": "mistral_ocr",
-          "fingerprint_derivacao_ocr": "fb07bce9e5d780c35d79fb22579bb83c63cbf37670d0a72c3d36e5001731a8bb",
+          "fingerprint_derivacao_ocr": "f7c328a7bb9b845877415cc0571124051a2d7c35c73ef6860594da76c5cfdd81",
           "hash_artefatos_extracao": "21715b45a323e8c98adea739a72ccd0a21559535f53b34dbef847c503e3132e9",
           "hash_cache_ocr": "83463136aa86821283a51e963e9fd5291735ac6c108f3f532e17a748533bc87b",
-          "hash_chunks": "373a27f6a289314e1e12b41f8db534dfde57f7546aa4d7e3148f5bc9e06f38df",
+          "hash_chunks": "87781caa349202a3a9981307746674e3cdc4c3a96f6397bce647172cdf6f570f",
           "hash_corpus": "dc66f548dfa64bffffe21068d980e5345a95e2b329b57d96d3be47775d8948d9",
-          "hash_indice_vetorial": "0dbc56cae9cf77c39e592088b438fe8328c834de340eb232244f0220fe45c551",
+          "hash_indice_vetorial": "c21058e3c569910bdbfe50bdb31d82b8920e2e02627b32ca6f7a8d638f492b61",
           "modelo": "bge-m3@sha256:7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
           "modelos_extracao": "mistral-ocr-4-0",
           "n_artefatos_extracao": 20,
-          "n_chunks": 6812,
+          "n_chunks": 7574,
           "provedor": "ollama",
           "provedores_extracao": "mistral"
         }
@@ -199,9 +199,9 @@
         "auditoria.py": "8a579978beac3e5d4cc8c11f41ce1f4770c9dd575a2172861751efd4d97870f6",
         "avaliacao.py": "d37c1a30757e33e571bb563915e737e14b4d8651b7a94b618f2e3f2e5e79e6d3",
         "config.py": "c93a9eda4205e775dc22e7787b6e4a4dce58f8bcac78b093daf3d2157835b6df",
-        "geracao.py": "b061eab190db483b6d0c51389f8d821e76bdf5cd3e0b5d2bdd37ac8a41950f2c",
+        "geracao.py": "0e3f8349a1af6821b31e476cbe84efa71854a0516e70ec4c70153c94f31c4483",
         "indexacao.py": "bcc523edaa4ccea9e93f6bd8db7e0efb776bb626c67b33611df09daf749f2317",
-        "ingestao.py": "0c4cbdb1206a1bbb26abf59a860815388cb1146e9d0bf168802d83adf0a37f2a",
+        "ingestao.py": "802c83e2acf281e52c3b552f2afdefd7f5b4ba1423f22ed6be1729a0875a0cf9",
         "normalizacao.py": "7cbb7d8f3fd6abcf4885b884e6e6b6db4f047cf000adea5fd400c833fef23c4e",
         "ocr_cache.py": "bb5600d2eef04197757fecfcaa10fc87f32d0a7bfbd59b5e1e67202b1ab8a894",
         "ocr_corpus.py": "fc991e6c6c8e22bf187447e21ff26b521480f2ef31a98ca6644c80c843fabf33",
@@ -223,24 +223,24 @@
       "versao_avaliacao": "v5",
       "versao_prompt": "v9"
     },
-    "fingerprint_componentes_sha256": "9da3777b47be31b53b5c5aa89c11d2c5c9e48d3836f183e4b37dfdbf9f3b2a1a",
+    "fingerprint_componentes_sha256": "e23cbe34e8f1fd5ff8acbb4a0eddb7de59f23572e3b8e866cd01aa6bdc51fa7e",
     "groundedness_manual_15": "nao_aplicavel",
     "provedor_llm": "gemini",
     "recall_k": 5,
-    "run_id": "20260817T004427Z-17210d3135",
+    "run_id": "20260817T181108Z-f1158b4907",
     "run_ids": [
-      "20260817T004427Z-17210d3135"
+      "20260817T181108Z-f1158b4907"
     ],
     "status": "desenvolvimento",
     "temperatura": 0.0
   },
   "closed_book": {
-    "custo_conservador_medio_usd": 0.00025239999999999996,
-    "custo_medio_usd": 0.00025239999999999996,
-    "custo_observado_medio_usd": 0.00025239999999999996,
+    "custo_conservador_medio_usd": 0.00025765,
+    "custo_medio_usd": 0.00025765,
+    "custo_observado_medio_usd": 0.00025765,
     "exatidao_numerica": 0.0,
-    "latencia_media_s": 3.947675400888531,
-    "latencia_p95_s": 4.078880378001486,
+    "latencia_media_s": 3.9479570988887644,
+    "latencia_p95_s": 4.285741880000387,
     "n_chamadas": 10,
     "n_chamadas_sem_telemetria": 0,
     "n_erros": 0,
@@ -255,12 +255,12 @@
     "taxa_recusa_correta": 1.0
   },
   "hibrida": {
-    "custo_conservador_medio_usd": 0.00127971,
-    "custo_medio_usd": 0.00127971,
-    "custo_observado_medio_usd": 0.00127971,
-    "exatidao_numerica": 0.2,
-    "latencia_media_s": 3.985374388444244,
-    "latencia_p95_s": 4.3164170989985,
+    "custo_conservador_medio_usd": 0.00128236,
+    "custo_medio_usd": 0.00128236,
+    "custo_observado_medio_usd": 0.00128236,
+    "exatidao_numerica": 0.6,
+    "latencia_media_s": 3.9392346125555884,
+    "latencia_p95_s": 4.611986690999402,
     "n_chamadas": 10,
     "n_chamadas_sem_telemetria": 0,
     "n_erros": 0,
@@ -275,12 +275,12 @@
     "taxa_recusa_correta": 1.0
   },
   "keyword": {
-    "custo_conservador_medio_usd": 0.00116776,
-    "custo_medio_usd": 0.00116776,
-    "custo_observado_medio_usd": 0.00116776,
+    "custo_conservador_medio_usd": 0.00119535,
+    "custo_medio_usd": 0.00119535,
+    "custo_observado_medio_usd": 0.00119535,
     "exatidao_numerica": 0.4,
-    "latencia_media_s": 3.9678498505559725,
-    "latencia_p95_s": 4.293925899000897,
+    "latencia_media_s": 3.991211370777819,
+    "latencia_p95_s": 5.23774036299983,
     "n_chamadas": 10,
     "n_chamadas_sem_telemetria": 0,
     "n_erros": 0,
@@ -295,12 +295,12 @@
     "taxa_recusa_correta": 1.0
   },
   "semantica": {
-    "custo_conservador_medio_usd": 0.00139445,
-    "custo_medio_usd": 0.00139445,
-    "custo_observado_medio_usd": 0.00139445,
-    "exatidao_numerica": 0.2,
-    "latencia_media_s": 3.9830861214452145,
-    "latencia_p95_s": 4.544992187999014,
+    "custo_conservador_medio_usd": 0.00137353,
+    "custo_medio_usd": 0.00137353,
+    "custo_observado_medio_usd": 0.00137353,
+    "exatidao_numerica": 0.4,
+    "latencia_media_s": 4.537743313777658,
+    "latencia_p95_s": 11.76145531200018,
     "n_chamadas": 10,
     "n_chamadas_sem_telemetria": 0,
     "n_erros": 0,
@@ -311,7 +311,7 @@
     "n_json_invalido": 0,
     "n_tentativas": 10,
     "n_tentativas_sem_telemetria": 0,
-    "recall_at_5": 0.8333333333333334,
+    "recall_at_5": 1.0,
     "taxa_recusa_correta": 1.0
   }
 }

@@ -316,6 +316,99 @@ class TestClausulaNumericaSemConteudoInventado:
         )
 
 
+class TestCelulaDeTabelaHerdaUnidadeVigente:
+    """Célula de tabela sem unidade própria é reanalisada com a legenda
+    vigente do chunk (5.3) — o par com a propagação de legenda na ingestão.
+
+    Achado real (Bradesco 1T2026, pág. 41): mesmo com "Em R$ milhões" já
+    presente no mesmo chunk da tabela (ingestão corrigida em 2026-08-17), a
+    RN02 continuava recusando. Causa: `_fatos_numericos_da_linha` tipa cada
+    CÉLULA isoladamente — "20.051" sem `R$` na própria célula fica `escalar`
+    (20.051), nunca compatível com a resposta do modelo "R$ 20.051 milhões"
+    (`monetario`, 2,0051e10). A legenda precisava entrar na reanálise do
+    NÚMERO, não só existir em algum lugar do texto do chunk.
+    """
+
+    LINHA_TABELA = "|  Margem Financeira Total | 20.051 | 19.245 |"
+    LEGENDA = "Em R$ milhões (exceto quando indicado)"
+
+    def test_celula_nua_sozinha_fica_escalar(self):
+        fatos = geracao._fatos_numericos_da_linha(self.LINHA_TABELA)
+        assert [numero.dimensao for numero, _, _ in fatos] == ["escalar", "escalar"]
+
+    def test_celula_nua_com_legenda_vigente_vira_monetaria(self):
+        fatos = geracao._fatos_numericos_da_linha(self.LINHA_TABELA, self.LEGENDA)
+        assert [numero.dimensao for numero, _, _ in fatos] == [
+            "monetario",
+            "monetario",
+        ]
+        assert fatos[0][0].valor == pytest.approx(20_051_000_000.0)
+
+    def test_rotulo_da_linha_nao_e_contaminado_pela_legenda(self):
+        """A legenda não pode virar candidata a rótulo — ela entra só na
+        reanálise da célula numérica, nunca antes do split por `|`."""
+        fatos = geracao._fatos_numericos_da_linha(self.LINHA_TABELA, self.LEGENDA)
+        tokens_esperados = geracao._tokens_metrica_grounding(
+            "Margem Financeira Total"
+        )
+        assert all(tokens == tokens_esperados for _, tokens, _ in fatos)
+
+    def test_celula_ja_com_unidade_propria_nao_e_reanalisada(self):
+        """Célula que já tem escala própria não deve ser trocada — evita
+        que uma legenda desatualizada sobrescreva um valor já correto."""
+        linha = "|  Receita | R$ 500 mil |"
+        fatos = geracao._fatos_numericos_da_linha(linha, self.LEGENDA)
+        (numero, _, _), = fatos
+        assert numero.valor == pytest.approx(500_000.0)
+
+    def test_grounding_end_to_end_aceita_valor_de_tabela_com_legenda_no_chunk(self):
+        """O caso real (DEV005): legenda e tabela no MESMO chunk (ingestão
+        já garante isso), resposta cita o valor com unidade — RN02 aceita."""
+        chunk = Chunk(
+            id="c",
+            empresa="BRADESCO",
+            trimestre="1T2026",
+            documento="doc",
+            pagina_inicio=41,
+            pagina_fim=41,
+            posicao_no_documento=1,
+            texto=(
+                f"[BRADESCO | doc | 1T2026 | pág. 41]\n{self.LEGENDA}\n"
+                f"{self.LINHA_TABELA}"
+            ),
+        )
+        citacoes = (Citacao("BRADESCO", "doc", "1T2026", 41),)
+        assert geracao.numeros_da_resposta_estao_fundamentados(
+            "A margem financeira total foi de R$ 20.051 milhões.",
+            citacoes,
+            [chunk],
+            1.0,
+            "qual foi a margem financeira total?",
+        )
+
+    def test_grounding_end_to_end_sem_legenda_no_chunk_continua_recusando(self):
+        """Contraprova: sem a legenda em lugar nenhum do chunk, a célula nua
+        continua `escalar` e a RN02 recusa — não virou permissivo demais."""
+        chunk = Chunk(
+            id="c",
+            empresa="BRADESCO",
+            trimestre="1T2026",
+            documento="doc",
+            pagina_inicio=41,
+            pagina_fim=41,
+            posicao_no_documento=1,
+            texto=f"[BRADESCO | doc | 1T2026 | pág. 41]\n{self.LINHA_TABELA}",
+        )
+        citacoes = (Citacao("BRADESCO", "doc", "1T2026", 41),)
+        assert not geracao.numeros_da_resposta_estao_fundamentados(
+            "A margem financeira total foi de R$ 20.051 milhões.",
+            citacoes,
+            [chunk],
+            1.0,
+            "qual foi a margem financeira total?",
+        )
+
+
 def _evento_inicio(fingerprint: str, *, call_id: str = "call-1") -> dict:
     return {
         "evento": "inicio",

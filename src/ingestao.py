@@ -32,7 +32,12 @@ from src.config import (
     DIR_CORPUS_RAW,
     Config,
 )
-from src.normalizacao import MULTIPLICADORES, remover_acentos, valores_equivalentes
+from src.normalizacao import (
+    MULTIPLICADORES,
+    extrair_numeros_ptbr_tipados,
+    remover_acentos,
+    valores_equivalentes,
+)
 from src.ocr_corpus import DIR_CACHE_OCR, ErroCacheOCR, carregar_documento_ocr
 
 # Mesmo tokenizador da família OpenAI-compatible usada pelos provedores (5.3).
@@ -511,6 +516,27 @@ def _e_separador_markdown(linha: str) -> bool:
     )
 
 
+_PADRAO_LEGENDA_UNIDADE = re.compile(
+    r"r\$\s*(?:mil|milh(?:ao|oes)|bilh(?:ao|oes))\b"
+)
+
+
+def _e_legenda_de_unidade(linha: str) -> bool:
+    """Linha que DECLARA a escala monetária ("Em R$ milhões"), não uma que
+    já enuncia um valor ("Lucro de R$ 100 milhões").
+
+    A distinção é o que separa rótulo de dado: uma legenda de unidade não
+    carrega número monetário/de escala próprio — se carregasse, seria a
+    própria informação, não a moldura dela.
+    """
+    if not _PADRAO_LEGENDA_UNIDADE.search(remover_acentos(linha).casefold()):
+        return False
+    return not any(
+        numero.dimensao in {"monetario", "escala"}
+        for numero in extrair_numeros_ptbr_tipados(linha)
+    )
+
+
 def segmentar_blocos(texto: str) -> list[BlocoTexto]:
     """Divide o texto de uma página em blocos de tabela e de texto.
 
@@ -753,7 +779,9 @@ def gerar_chunks(
             atual = []
             n_tokens = 0
 
-        def adicionar_tabela(bloco: BlocoTexto, pagina: int, primeira: bool) -> bool:
+        def adicionar_tabela(
+            bloco: BlocoTexto, pagina: int, primeira: bool, legenda: str
+        ) -> bool:
             """Insere uma tabela sem parti-la enquanto ela couber (5.3).
 
             Quando nem um chunk vazio comporta a tabela, ela é dividida por
@@ -761,9 +789,18 @@ def gerar_chunks(
             entregar números sem o rótulo da coluna. A integridade da tabela tem
             precedência sobre a sobreposição: se a cauda do chunk anterior não
             deixar espaço, ela é descartada em vez de partir a grade.
+
+            ``legenda`` é a unidade monetária vigente ("Em R$ milhões"), quando
+            existe — ver ``legenda_vigente`` no chamador. É repetida em toda
+            parte pelo mesmo motivo do cabeçalho: número sem escala não é
+            distinguível de outro valor na mesma ordem de grandeza. Pode
+            duplicar a linha que já está no bloco de texto anterior se os dois
+            caírem no mesmo chunk — aceito, é uma linha.
             """
+            prefixo_legenda = (legenda,) if legenda else ()
+            linhas_com_legenda = prefixo_legenda + bloco.linhas
             prefixo = "" if primeira else "\n"
-            tokens_tabela = _ENCODER.encode(prefixo + "\n".join(bloco.linhas))
+            tokens_tabela = _ENCODER.encode(prefixo + "\n".join(linhas_com_legenda))
             if len(tokens_tabela) <= max_corpo:
                 if n_tokens + len(tokens_tabela) > max_corpo:
                     emitir()
@@ -792,7 +829,9 @@ def gerar_chunks(
 
             def emitir_parte(linhas_parte: list[str]) -> None:
                 adicionar(
-                    _ENCODER.encode("\n".join(cabecalho + linhas_parte)),
+                    _ENCODER.encode(
+                        "\n".join([*prefixo_legenda, *cabecalho, *linhas_parte])
+                    ),
                     pagina,
                     "tabela",
                 )
@@ -815,14 +854,23 @@ def gerar_chunks(
             return False
 
         primeira_linha = True
+        # Unidade monetária vigente ("Em R$ milhões"), estado do DOCUMENTO
+        # inteiro — atravessa página porque a tabela também atravessa (5.3).
+        # Uma seção declara a escala uma vez; toda tabela abaixo, mesmo em
+        # página seguinte, herda até a próxima declaração. Medido em
+        # 2026-08-16: restringir a busca à página perdia a maioria dos casos,
+        # porque tabela grande é rotineiramente cortada no meio pela extração.
+        legenda_vigente = ""
         for pag in sorted(pags, key=lambda p: p.numero):
             for bloco in segmentar_blocos(pag.texto):
                 if bloco.tipo == "tabela":
                     primeira_linha = adicionar_tabela(
-                        bloco, pag.numero, primeira_linha
+                        bloco, pag.numero, primeira_linha, legenda_vigente
                     )
                     continue
                 for linha in bloco.linhas:
+                    if _e_legenda_de_unidade(linha):
+                        legenda_vigente = linha
                     prefixo = "" if primeira_linha else "\n"
                     tokens_linha = _ENCODER.encode(prefixo + linha)
                     primeira_linha = False

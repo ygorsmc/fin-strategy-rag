@@ -2,16 +2,16 @@
   "provedor": "ollama",
   "modelo": "bge-m3@sha256:7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
   "dimensao": 1024,
-  "data_construcao": "2026-08-11T22:58:43.256504+00:00",
+  "data_construcao": "2026-08-17T18:00:10.574946+00:00",
   "hash_corpus": "dc66f548dfa64bffffe21068d980e5345a95e2b329b57d96d3be47775d8948d9",
-  "n_chunks": 6812,
-  "hash_chunks": "373a27f6a289314e1e12b41f8db534dfde57f7546aa4d7e3148f5bc9e06f38df",
-  "hash_indice_vetorial": "0dbc56cae9cf77c39e592088b438fe8328c834de340eb232244f0220fe45c551",
+  "n_chunks": 7574,
+  "hash_chunks": "87781caa349202a3a9981307746674e3cdc4c3a96f6397bce647172cdf6f570f",
+  "hash_indice_vetorial": "c21058e3c569910bdbfe50bdb31d82b8920e2e02627b32ca6f7a8d638f492b61",
   "provedores_extracao": "mistral",
   "modelos_extracao": "mistral-ocr-4-0",
   "hash_artefatos_extracao": "21715b45a323e8c98adea739a72ccd0a21559535f53b34dbef847c503e3132e9",
   "n_artefatos_extracao": 20,
   "extrator": "mistral_ocr",
   "hash_cache_ocr": "83463136aa86821283a51e963e9fd5291735ac6c108f3f532e17a748533bc87b",
-  "fingerprint_derivacao_ocr": "fb07bce9e5d780c35d79fb22579bb83c63cbf37670d0a72c3d36e5001731a8bb"
+  "fingerprint_derivacao_ocr": "f7c328a7bb9b845877415cc0571124051a2d7c35c73ef6860594da76c5cfdd81"
 }

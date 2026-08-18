@@ -299,6 +299,163 @@ class TestChunkingPorBloco:
             assert len(enc.encode(chunk.texto)) <= config.chunk_tamanho_tokens
 
 
+class TestLegendaDeUnidadeNaTabela:
+    """Tabela herda a escala monetária vigente no documento (5.3).
+
+    Achado real (BB 2T2025, Tabela 56, págs. 81-82): a legenda "R$ milhões"
+    ficava na página anterior à continuação da tabela. Restringir a busca à
+    página perdia a maioria dos casos — tabela grande é rotineiramente
+    cortada no meio pela extração. O estado é do DOCUMENTO inteiro, não da
+    página: uma seção declara a escala uma vez, tudo abaixo herda até a
+    próxima declaração — é assim que o release realmente é escrito.
+
+    Achado original (DEV005, Bradesco 1T2026, pág. 41): a legenda "Em R$
+    milhões" ficava num bloco de TEXTO separado do bloco de TABELA que ela
+    rotula, porque `segmentar_blocos` os classifica em blocos distintos. O
+    trecho recuperado com "20.051" sem unidade não é distinguível de outro
+    valor na mesma ordem de grandeza — e a RN02 recusava corretamente por
+    isso. Quase metade dos chunks de tabela do corpus não trazem unidade.
+    """
+
+    def test_e_legenda_de_unidade_reconhece_a_declaracao(self):
+        assert ingestao._e_legenda_de_unidade(
+            "Em R$ milhões (exceto quando indicado)"
+        )
+        assert ingestao._e_legenda_de_unidade("Carteira por setor (R$ bilhões)")
+
+    def test_e_legenda_de_unidade_rejeita_frase_que_ja_enuncia_valor(self):
+        """"Lucro de R$ 100 milhões" é dado, não rótulo — promovê-la a legenda
+        contaminaria toda tabela seguinte com um valor específico da prosa."""
+        assert not ingestao._e_legenda_de_unidade(
+            "O lucro do trimestre foi de R$ 100 milhões."
+        )
+
+    def test_tabela_herda_legenda_do_texto_imediatamente_anterior(
+        self, documento_exemplo
+    ):
+        config = Config(chunk_tamanho_tokens=220, chunk_sobreposicao_tokens=40)
+        pagina = PaginaExtraida(
+            documento_exemplo,
+            1,
+            "Demonstração do Resultado Recorrente\n"
+            "Em R$ milhões (exceto quando indicado)\n" + _tabela_markdown(2),
+        )
+        chunks = ingestao.gerar_chunks([pagina], config)
+        assert any(
+            "Em R$ milhões (exceto quando indicado)" in chunk.texto
+            for chunk in chunks
+        )
+
+    def test_sem_legenda_em_lugar_nenhum_do_documento_nao_inventa_uma(
+        self, documento_exemplo
+    ):
+        config = Config(chunk_tamanho_tokens=220, chunk_sobreposicao_tokens=40)
+        pagina = PaginaExtraida(documento_exemplo, 1, _tabela_markdown(2))
+        chunks = ingestao.gerar_chunks([pagina], config)
+        assert not any("R$" in chunk.texto for chunk in chunks)
+
+    def test_frase_que_ja_enuncia_valor_nao_e_tratada_como_legenda(
+        self, documento_exemplo
+    ):
+        config = Config(chunk_tamanho_tokens=220, chunk_sobreposicao_tokens=40)
+        pagina = PaginaExtraida(
+            documento_exemplo,
+            1,
+            "O lucro do trimestre foi de R$ 100 milhões.\n" + _tabela_markdown(2),
+        )
+        chunks = ingestao.gerar_chunks([pagina], config)
+        tabela = next(c for c in chunks if "tabela" in c.tipo_bloco)
+        # A frase é texto legítimo do chunk (página pequena, cabe junto com a
+        # tabela) e aparece uma vez só; se tivesse sido promovida a legenda,
+        # apareceria de novo como prefixo repetido da tabela.
+        assert tabela.texto.count("R$ 100 milhões") == 1
+
+    def test_legenda_mais_recente_prevalece_sobre_a_mais_antiga(
+        self, documento_exemplo
+    ):
+        """Duas seções no mesmo documento, escalas diferentes: vale a
+        última declaração antes da tabela, não a primeira que aparece."""
+        config = Config(chunk_tamanho_tokens=220, chunk_sobreposicao_tokens=40)
+        pagina = PaginaExtraida(
+            documento_exemplo,
+            1,
+            "Em R$ bilhões (carteira)\n"
+            "Texto de transição entre seções do release.\n"
+            "Em R$ milhões (resultado)\n" + _tabela_markdown(2),
+        )
+        chunks = ingestao.gerar_chunks([pagina], config)
+        tabela = next(c for c in chunks if "tabela" in c.tipo_bloco)
+        # A mais antiga ("bilhões") aparece só como texto original — nunca
+        # foi injetada como legenda. A vigente ("milhões") aparece 2×: uma
+        # vez como texto original, outra como prefixo injetado da tabela.
+        assert tabela.texto.count("Em R$ bilhões (carteira)") == 1
+        assert tabela.texto.count("Em R$ milhões (resultado)") == 2
+
+    def test_legenda_atravessa_pagina_quando_a_tabela_e_cortada(
+        self, documento_exemplo
+    ):
+        """O caso real que motivou o redesenho: a legenda fica na página
+        anterior; a tabela só continua (sem legenda própria) na seguinte."""
+        config = Config(chunk_tamanho_tokens=220, chunk_sobreposicao_tokens=40)
+        paginas = [
+            PaginaExtraida(
+                documento_exemplo,
+                1,
+                "Em R$ milhões (exceto quando indicado)\n"
+                + "\n".join(_tabela_markdown(3).splitlines()[:2]),
+            ),
+            PaginaExtraida(
+                documento_exemplo,
+                2,
+                "| Linha final | 9.000 | 9.100 |",
+            ),
+        ]
+        chunks = ingestao.gerar_chunks(paginas, config)
+        chunk_pagina_2 = next(c for c in chunks if c.pagina_fim == 2)
+        assert "Em R$ milhões (exceto quando indicado)" in chunk_pagina_2.texto
+
+    def test_legenda_aparece_no_chunk_quando_a_tabela_cabe_inteira(
+        self, documento_exemplo
+    ):
+        config = Config(chunk_tamanho_tokens=220, chunk_sobreposicao_tokens=40)
+        pagina = PaginaExtraida(
+            documento_exemplo,
+            1,
+            "Em R$ milhões (exceto quando indicado)\n" + _tabela_markdown(4),
+        )
+        chunks = ingestao.gerar_chunks([pagina], config)
+        assert any(
+            "Em R$ milhões (exceto quando indicado)" in chunk.texto
+            for chunk in chunks
+        )
+
+    def test_legenda_e_repetida_em_toda_parte_da_tabela_dividida(
+        self, documento_exemplo
+    ):
+        config = Config(chunk_tamanho_tokens=220, chunk_sobreposicao_tokens=40)
+        pagina = PaginaExtraida(
+            documento_exemplo,
+            1,
+            "Em R$ milhões (exceto quando indicado)\n" + _tabela_markdown(40),
+        )
+        chunks = ingestao.gerar_chunks([pagina], config)
+        partes = [chunk for chunk in chunks if "tabela" in chunk.tipo_bloco]
+        assert len(partes) > 1, "a tabela deveria ter sido dividida"
+        for parte in partes:
+            assert "Em R$ milhões (exceto quando indicado)" in parte.texto
+
+    def test_legenda_nao_estoura_o_teto_de_tokens_do_chunk(self, documento_exemplo):
+        config = Config(chunk_tamanho_tokens=220, chunk_sobreposicao_tokens=40)
+        pagina = PaginaExtraida(
+            documento_exemplo,
+            1,
+            "Em R$ milhões (exceto quando indicado)\n" + _tabela_markdown(40),
+        )
+        enc = tiktoken.get_encoding("cl100k_base")
+        for chunk in ingestao.gerar_chunks([pagina], config):
+            assert len(enc.encode(chunk.texto)) <= config.chunk_tamanho_tokens
+
+
 class TestValidarQualidade:
     def test_rejeita_chunk_vazio_ou_so_controle(self, documento_exemplo):
         # RF03: nenhum chunk vazio ou só com caracteres de controle

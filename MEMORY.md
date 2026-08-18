@@ -9,10 +9,10 @@
 - **Marco:** o repositório foi realinhado à **revisão 3** da especificação
   (2026-08-10). O plano em `AGENTS.md` tem 18 etapas, RN01–RN12 e os gates
   G1/G2/G3/G4 — o plano antigo de 10 etapas não vale mais.
-- **Suíte local: 1.270 casos passando, sem skips, sem falhas.** Verificado ao
-  final da sessão de 2026-08-16 (eram 1.260 em 2026-08-13; +10 dos testes de
-  telemetria de custo/raciocínio e da guarda de observação fabricada, ver
-  bullet do prompt `a3` abaixo).
+- **Suíte local: 1.302 casos passando, sem skips, sem falhas.** Verificado ao
+  final da sessão de 2026-08-17 (eram 1.270 em 2026-08-16; +32 do redesenho da
+  RN02, do limitador de taxa do Gemini, de `--conjunto` e da propagação de
+  unidade — ver bullets abaixo).
 - Etapas **3 (CVM → DuckDB)** e **5 (indexação em Chroma)**: **concluídas**.
 - Etapa ativa (plano §7): **11 (camada de agentes)**. **Os três braços existem e
   rodaram** (2026-08-12): `src/cobertura.py`, `src/ferramentas.py`,
@@ -44,20 +44,29 @@
 - A avaliação E0–E3 **nunca rodou no conjunto congelado** e o cache público
   (`respostas_cacheadas.json`) segue deliberadamente vazio. As métricas `dev` de
   2026-07-15 continuam invalidadas — `VERSAO_AVALIACAO` está em **v5**.
-- **E0–E3 rodou no `dev` em 2026-08-16** (run `20260817T004427Z-17210d3135`,
-  40 chamadas, ~US$ 0,04), contra o índice **integral**, depois do redesenho da
-  RN02 (ver bullet próprio). Exatidão: E1 0,400 · E2 0,200 · E3 0,200 · E0
-  0,000; recall@5 E3 1,000 · E1/E2 0,833; recusa correta 1,000 em todas; zero
-  erro de infraestrutura. **É `dev`, n=1, 10 perguntas — não promover para o
-  README nem tratar E1 > E3 como achado: a diferença é de 2 contra 1 acerto em
-  5 apuradas, dentro do ruído de um modelo não determinístico.**
-- **O índice Chroma integral está pronto e carrega** (6.812 chunks, `bge-m3`
-  1024d, hash do corpus confere) — o bullet anterior, que mandava reconstruir
-  por ainda ser FAISS, estava desatualizado. Verificado em 2026-08-16 carregando
-  Chroma e BM25 com Ollama ativo. Atenção: os metadados do índice registram
-  `extrator=mistral_ocr`, o que **contradiz** o `AGENTS.md` §3.2 e o bullet da
-  ingestão mais abaixo, que dizem que o extrator ativo ainda é o local. Uma das
-  duas informações está errada e isso não foi apurado.
+- **E0–E3 rodou no `dev` três vezes em 2026-08-16/17**, contra o índice
+  **integral**, ~40 chamadas e ~US$ 0,04 cada. **A vigente é a run
+  `20260817T181108Z-f1158b4907`** (depois do redesenho da RN02 + da
+  propagação de unidade, ver bullets abaixo): exatidão **E3 0,600 · E1/E2
+  0,400 · E0 0,000**; recall@5 E3/E2 1,000 · E1 0,833; recusa correta 1,000
+  em todas; zero erro de infraestrutura; zero resposta com número errado
+  passando (conferido caso a caso). As duas runs anteriores
+  (`20260817T004427Z-...`, exatidão 0,200/0,200/0,200; e a de 16/08,
+  0,000/0,000/0,000) ficam só como trilha da progressão. **Ainda é `dev`, n=1,
+  10 perguntas — não promover para o README.** O ganho de E3 (0,200→0,600) é
+  grande demais pra ser só ruído de amostra, mas o tamanho da amostra
+  continua pequeno demais pra declarar vitória.
+- **O índice Chroma integral está pronto e carrega** (7.574 chunks desde a
+  reconstrução de 2026-08-17 — era 6.812 antes da propagação de unidade
+  aumentar um pouco a fragmentação de tabela; `bge-m3` 1024d, hash do corpus
+  confere). O bullet antigo, que mandava reconstruir por ainda ser FAISS,
+  estava desatualizado.
+- **`AGENTS.md` §3.2/§3.3 corrigidas em 2026-08-17** para refletir que a
+  migração de OCR já terminou (extrator ativo `mistral_ocr`, cache versionado
+  em `corpus/ocr/`, gate G3 rodado) e que o gate G4 rodou e **reprovou** — a
+  seção descrevia as duas coisas como pendentes, o que já não era verdade
+  desde o commit `83d7cad` (onda paralela). Gates §5 e etapas 1/3/4 do plano
+  §7 também corrigidas.
 
 ## Decisões e bloqueios em aberto
 
@@ -84,8 +93,41 @@
   Duas mudanças posteriores (extração ciente de tabela, que pareia o rótulo da
   linha às células numéricas; e remoção da exigência de um único número por
   cláusula, redundante com o `all()` de `analisar_valores`) mantiveram a suíte
-  em 1.286 e renderam +1 resposta — a associação número↔métrica dentro de
-  `analisar_valores` segue sendo o ponto a investigar.
+  em 1.286 e renderam +1 resposta. O gargalo real que sobrava era outro — ver
+  bullet da propagação de unidade, abaixo — e resolvido, a RN02 passou a
+  publicar 4 das respostas certas que antes recusava (medido por *replay*
+  offline sobre os checkpoints anteriores, sem gastar chamada nova).
+- **Achado maior da sessão: metade dos chunks de tabela do corpus não
+  carregava a unidade monetária ("Em R$ milhões"), e isso — não a dimensão do
+  embedding, a pergunta original que abriu esta investigação — era o gargalo
+  real.** Duas causas empilhadas, cada uma exigindo correção separada:
+  1. **Ingestão (`src/ingestao.py`, `gerar_chunks`):** a legenda de unidade
+     ficava num bloco de TEXTO, a tabela num bloco separado — a tentativa
+     inicial de herdar a legenda só dentro da mesma PÁGINA (`segmentar_blocos`)
+     recuperou só 1pp (71%→70%) porque tabela grande é rotineiramente cortada
+     no meio pela extração, e a legenda fica na página anterior à continuação.
+     Correção real: estado `legenda_vigente` do **documento inteiro**,
+     atravessando página, threaded pelo laço de `gerar_chunks` — uma seção
+     declara a escala uma vez, tudo abaixo herda até a próxima declaração.
+     Medido: **71%→24%** de chunks de tabela sem unidade. Índice reconstruído
+     em 2026-08-17, custo zero (embeddings locais, extração do cache de OCR
+     já versionado): 6.812 → **7.574 chunks**.
+  2. **Geração (`src/geracao.py`, `_fatos_numericos_da_linha` dentro de
+     `analisar_valores`):** mesmo com a legenda já no mesmo chunk, a RN02
+     continuava recusando — o verificador tipa cada CÉLULA da tabela
+     isoladamente, e "20.051" sem `R$` na própria célula fica `escalar`
+     (20.051), nunca compatível com a resposta do modelo "R$ 20.051 milhões"
+     (`monetario`, 2,0051e10). Correção: célula com número nu é reanalisada
+     junto com a legenda vigente do chunk (mesmo texto, `extrair_numeros_ptbr_tipados`
+     tipa certo) — mas a legenda entra só nessa reanálise pontual, nunca antes
+     do split por `|`, porque prefixá-la na linha inteira faz `_fatos_numericos_da_linha`
+     escolher a legenda como "rótulo" da linha em vez da métrica real (bug que
+     encontrei e não cheguei a versionar — corrigido antes do commit).
+  **Efeito ponta a ponta, medido com chamada real (não só replay):** E0–E3 no
+  `dev`, exatidão da híbrida **0,200 → 0,600** (ver bullet do E0–E3 acima).
+  Suíte com +16 testes entre as duas correções (ingestão + geração), 1.302
+  no total, nenhuma asserção enfraquecida, zero resposta errada passando
+  (conferido caso a caso nas duas rodadas).
 - **`executar_pipeline.py` ganhou `--conjunto {dev,teste}`**, independente de
   `--amostra`. Antes não existia caminho para rodar o `dev` contra o índice
   integral: `--amostra` acoplava "1 banco × 1 trimestre" a "conjunto dev", e o
@@ -212,12 +254,6 @@
   quer medir** — agora o agente consulta o corpus em vez de recusar por RN02.
   Não foi refeita nesta sessão de propósito: misturaria duas mudanças na mesma
   medição.
-- **A ingestão ainda NÃO lê o cache de OCR.** `EXTRACAO_PDF_MODO=local` segue
-  ativo. Falta a renomeação para `EXTRATOR=mistral_ocr|pdfplumber` (spec 5.20) e
-  fazer `src/ingestao.py` consumir `corpus/ocr/`. Não foi feito de propósito:
-  meia-migração deixaria estado ambíguo. **Ao migrar, reconstruir o índice em
-  namespace separado** — os loaders recusam corretamente o índice atual quando o
-  modo muda, e a promoção só depois de avaliar `dev`.
 - **Gate G3: rodado, favorável mas NÃO conclusivo** (`resultados/gate_g3.md`,
   2026-08-11, custo zero — lê o cache em disco). Âncora: OCR 20/20 ×
   pdfplumber 18/20, e 20/20 nos dois tolerando escala — **praticamente empate**,

@@ -22,7 +22,7 @@ from src.config import (
     endpoint_azure_openai_e_oficial,
     endpoint_gemini_e_oficial,
 )
-from src.ingestao import Chunk
+from src.ingestao import Chunk, _e_legenda_de_unidade
 from src.normalizacao import (
     APELIDOS_BANCOS,
     NumeroPtBR,
@@ -1291,7 +1291,7 @@ def _e_modal(texto: str) -> bool:
 
 
 def _fatos_numericos_da_linha(
-    linha: str,
+    linha: str, legenda_unidade: str = ""
 ) -> list[tuple[NumeroPtBR, set[str], set[str]]]:
     """Pareia cada número da linha ao rótulo de métrica que o governa.
 
@@ -1300,6 +1300,14 @@ def _fatos_numericos_da_linha(
     outro: a célula do número ficava sem nenhum token de métrica e **nenhum
     valor de tabela conseguia fundamentar resposta**, embora metade do corpus
     seja tabela. Aqui as células numéricas herdam os tokens do rótulo da linha.
+
+    ``legenda_unidade`` é a unidade monetária vigente do chunk ("Em R$
+    milhões" — ingestão a repete perto de toda tabela, 5.3). Célula com número
+    NU ("20.051", sem R$ nem sufixo de escala) é reanalisada junto com a
+    legenda: sozinha ela tipa como `escalar` e nunca casa com a resposta do
+    modelo, que legitimamente escreve "R$ 20.051 milhões" (`monetario`). A
+    legenda entra só na reanálise do NÚMERO — nunca antes do split por `|` —
+    para não virar candidata a rótulo da linha.
 
     Limite conhecido: dentro de uma mesma linha as colunas não são
     distinguidas, então um valor de coluna vizinha (outro período) ainda casa.
@@ -1323,6 +1331,18 @@ def _fatos_numericos_da_linha(
         modificadores_rotulo = _modificadores_metrica_grounding(rotulo)
         for celula in celulas:
             numeros = extrair_numeros_ptbr_tipados(celula)
+            if (
+                legenda_unidade
+                and numeros
+                and all(numero.dimensao == "escalar" for numero in numeros)
+            ):
+                reanalisados = extrair_numeros_ptbr_tipados(
+                    f"{legenda_unidade} {celula}"
+                )
+                if len(reanalisados) == len(numeros) and all(
+                    numero.dimensao != "escalar" for numero in reanalisados
+                ):
+                    numeros = reanalisados
             if not numeros or _e_modal(celula):
                 continue
             tokens = tokens_rotulo | _tokens_metrica_grounding(celula)
@@ -1597,8 +1617,17 @@ def numeros_da_resposta_estao_fundamentados(
             tuple[NumeroPtBR, set[str], set[str]]
         ] = []
         for chunk in chunks:
+            # Reinicia por chunk: a ingestão já repete a legenda vigente em
+            # todo chunk de tabela que precisa dela (5.3), então não há razão
+            # para carregar unidade de um chunk para outro, possivelmente de
+            # seção diferente do release.
+            legenda_vigente = ""
             for linha in chunk.texto.splitlines():
-                valores_evidencia.extend(_fatos_numericos_da_linha(linha))
+                if _e_legenda_de_unidade(linha):
+                    legenda_vigente = linha
+                valores_evidencia.extend(
+                    _fatos_numericos_da_linha(linha, legenda_vigente)
+                )
         if not valores_evidencia:
             return False
 

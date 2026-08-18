@@ -59,13 +59,13 @@ consulta.
 ## 2. Estado atual do repositório
 
 **Implementado e coberto (não regredir):** configuração validada; parser
-numérico pt-BR; extração local com fallback; chunking e teste-sentinela
-independentes; embeddings plugáveis; índice com transação, checksums e guarda
-RNF09; recuperação E0–E3 com subconsulta por banco; geração JSON com RN01 e
-grounding numérico da RN02; avaliação retomável com fingerprint v3,
-journal/checkpoint, teto de custo e locks; interface cacheada com pergunta
-livre opt-in; subsistema Mistral OCR *content-addressed* como pré-processador
-explícito.
+numérico pt-BR; extração via Mistral OCR *content-addressed*, cache versionado
+em `corpus/ocr/` (RNF10), `pdfplumber` como alternativa atrás da mesma
+interface; chunking e teste-sentinela independentes; embeddings plugáveis;
+índice com transação, checksums e guarda RNF09; recuperação E0–E3 com
+subconsulta por banco; geração JSON com RN01 e grounding numérico da RN02;
+avaliação retomável com fingerprint v3, journal/checkpoint, teto de custo e
+locks; interface cacheada com pergunta livre opt-in.
 
 **Convenção de testes (obrigatória):** a suíte local tem **525 casos coletados e
 nenhum skip** (medido em 2026-08-10). NUNCA enfraquecer uma asserção para fazer
@@ -117,32 +117,46 @@ por 1M de tokens continua obrigatório na configuração (sem ele o teto não é
 auditável), temperatura 0 continua obrigatória na avaliação, e o modelo usado
 fica registrado por execução (RNF08).
 
-### 3.2 OCR adiado — o extrator ativo continua o local
+### 3.2 OCR — migrado (2026-08-11); estado atual, não mais divergência
 
-A spec 5.3 torna o Mistral OCR o extrator **primário**, com cache em
-`corpus/ocr/` versionado no Git e a variável `EXTRATOR=mistral_ocr|pdfplumber`.
-**Nesta rodada isso está pendente, não pronto.**
+A spec 5.3 torna o Mistral OCR o extrator **primário**. Isso **já é o caso**:
+`Config.extrator` tem default `"mistral_ocr"` (`src/config.py`), a variável
+antiga `EXTRACAO_PDF_MODO` foi removida — setá-la levanta erro explícito
+apontando para `EXTRATOR=mistral_ocr|pdfplumber` (RNF03: falhar fechado em vez
+de silenciosamente ignorar a variável trocada) —, e o cache vive versionado em
+`corpus/ocr/<hash-do-pdf>.json` (RNF10), carregado pela Batch API: job
+`0eb6eab2`, 20/20 documentos, 2.790 páginas, zero erros, USD 5,58. `pdfplumber`
+continua disponível atrás da mesma interface plugável, como extrator
+alternativo — nunca fallback automático.
 
-O que vale hoje:
+O **gate G3** rodou (`resultados/gate_g3.md`, 2026-08-11, custo zero — lê o
+cache em disco) e o veredito é **favorável mas não conclusivo**: na âncora de
+sanidade, OCR e `pdfplumber` empatam praticamente (20/20 × 18/20, e 20/20 nos
+dois tolerando escala perdida) — o valor de capa também aparece em texto
+corrido, e um parser posicional o encontra de qualquer forma. A diferença real
+está na estrutura de tabela reconstruída: 37.612 linhas contra 28.268 (+33%),
+concentrada no Itaú (3,5×); no BTG é o `pdfplumber` que reconstrói mais
+(0,5×). A decisão de trocar o extrator não se reverte, mas a spec 5.3
+antecipava uma vitória mais clara do que a medição entregou — ver o relatório
+para a ressalva completa (contagem de linhas mede estrutura, não correção).
 
-- extrator ativo: `EXTRACAO_PDF_MODO=local` (nome de variável ainda antigo);
-- o subsistema Mistral existente (`src/ocr_mistral.py`, `src/ocr_cache.py`,
-  `scripts/preprocessar_ocr_mistral.py`, cache em `artefatos/ocr_mistral/`)
-  permanece **como está** — pré-processador explícito e pago, nunca fallback
-  automático da ingestão;
-- há **autorização de gasto de até 100 páginas** para o teste do gate G3.
+O índice vetorial em produção já é construído sobre o cache OCR — não há
+namespace separado pendente.
 
-O que a onda adiada ainda precisa entregar: renomear `EXTRACAO_PDF_MODO` para
-`EXTRATOR` com os valores da spec, mover o cache de `artefatos/ocr_mistral/`
-para `corpus/ocr/` e **passar a versioná-lo** (RNF10), rodar o **gate G3** e,
-só então, reconstruir o índice em namespace separado. Nada disso está feito.
+### 3.3 Gate G4 — rodado, bloqueante, e o motivo do bloqueio está apurado
 
-### 3.3 O que está em execução agora (não afirmar concluído)
-
-FAISS → ChromaDB e a camada DuckDB/CVM estão sendo implementadas **em
-paralelo** por outros agentes. Este plano conta com elas; o estado real entra
-no `MEMORY.md`. Não escreva "concluído" sobre nenhuma das duas sem evidência no
-repositório.
+G4 (lucro pelo mapa semântico × release, banco a banco) **rodou e reprovou**
+(`resultados/gate_g4.md`, 2026-08-11, custo zero). Parte A (mapa × conferência
+congelada) **aprovada** — nenhuma célula reprova por erro de mapeamento nos
+cinco emissores. Parte B: 17/20 células conferidas, **2 divergentes**
+(SANTANDER 3T2025 e 4T2025, ±363,754 R$ mi — causa apurada: erro no próprio
+arquivo da CVM, não no painel nem no mapa; o 4T herda o erro com sinal
+invertido por ser derivado do 3T defeituoso) e **1 sem âncora** (BTG 4T2025 —
+a demonstração anual em IFRS tem 63 de 71 páginas com fonte sem mapa de
+caracteres; ler exigiria OCR pago, decisão de orçamento ainda não tomada).
+Detalhe célula a célula no relatório. **Decisão pendente do Ygor:** treinar a
+etapa 10 excluindo as 2 células Santander ou corrigi-las com procedência
+declarada — corrigir em silêncio é o que o G4 existe para impedir.
 
 ---
 
@@ -200,8 +214,8 @@ tamanho de amostra".
 |---|---|---|
 | **G1** | Criar recurso Azure OpenAI na assinatura de estudante | ❌ **Não disponível** (`resultados/gate.md`, 2026-07-15). Reservado ao pré-deploy; créditos vão para hospedagem |
 | **G2** | Cobertura da CVM suficiente para o rótulo T+1 do modelo preditivo | ✅ **Fechado em 2026-08-07** na fase de investigação — 1.351 observações de trimestre isolado, ~29% de positivos em um ano |
-| **G3** | Mistral OCR em **um** release contra `pdfplumber`, conferindo valores-âncora | ⏸️ **Pendente** — parte da onda de OCR adiada (§3.2); há autorização de até 100 páginas |
-| **G4** | Lucro resolvido pelo mapa semântico bate com o release, **banco a banco, em todos os trimestres** | ⬜ **Pendente e bloqueante** — sem ele, nem o painel nem o modelo preditivo avançam |
+| **G3** | Mistral OCR em **um** release contra `pdfplumber`, conferindo valores-âncora | ✅ **Rodado em 2026-08-11**, favorável mas não conclusivo (§3.2, `resultados/gate_g3.md`) |
+| **G4** | Lucro resolvido pelo mapa semântico bate com o release, **banco a banco, em todos os trimestres** | ❌ **Rodado em 2026-08-11, REPROVADO** (§3.3, `resultados/gate_g4.md`) — 2 células Santander divergentes, 1 BTG sem âncora; bloqueante até decisão do Ygor |
 | Gate L1 | Inferência local Ollama sem API | ✅ Passou em 2026-07-15 (`resultados/gate_local.md`), com `prompt=v1` |
 | Gate Gemini | Duas chamadas controladas ao ramo ativo | ✅ Passou em 2026-07-15 (`resultados/gate_gemini.md`) |
 
@@ -253,10 +267,10 @@ Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisã
 
 | # | Etapa | Dono | Estado |
 |---|---|---|---|
-| 1 | **Gates do dia 1** — G1 (Azure) e G3 (OCR × `pdfplumber` em um release), com evidência antes de escrever código dependente | sessão principal | G1 ❌ resolvido para o pré-deploy · G3 ⏸️ (§3.2) |
+| 1 | **Gates do dia 1** — G1 (Azure) e G3 (OCR × `pdfplumber` em um release), com evidência antes de escrever código dependente | sessão principal | G1 ❌ resolvido para o pré-deploy · G3 ✅ (§3.2) |
 | 2 | **Corpus** — regra da interseção, `metadados.csv` com URL, data e SHA-256 | — | ✅ 20 documentos, hashes registrados |
-| 3 | **CVM → DuckDB** — carga ITR/DFP com as **seis regras de armadilha**, `mapa_contas`, visão `fatos_semanticos`, derivação do 4T, e o **gate G4 bloqueante** | `dados-cvm` | 🔄 |
-| 4 | **Ingestão/OCR** com cache versionado + normalizador pt-BR + testes de qualidade e sentinela | sessão principal | ✅ no extrator local · ⏸️ na troca para OCR |
+| 3 | **CVM → DuckDB** — carga ITR/DFP com as **seis regras de armadilha**, `mapa_contas`, visão `fatos_semanticos`, derivação do 4T, e o **gate G4 bloqueante** | `dados-cvm` | ✅ implementada · ❌ G4 reprovado (§3.3) — bloqueia a etapa 10 |
+| 4 | **Ingestão/OCR** com cache versionado + normalizador pt-BR + testes de qualidade e sentinela | sessão principal | ✅ `mistral_ocr` é o extrator ativo, cache versionado em `corpus/ocr/` (§3.2) |
 | 5 | **Indexação** — BM25 + embeddings em **Chroma**, com a guarda RNF09 | `indice-recuperacao` | 🔄 (migração FAISS → Chroma) |
 | 6 | **Recuperação** — filtro de metadados, subconsulta por banco, E0–E3 | `indice-recuperacao` | ✅ base implementada · 🔄 sob a migração |
 | 7 | **Geração** — contrato JSON, citação obrigatória, recusa (RN01–RN02) | sessão principal | ✅ · ⬜ marcações de RN10/RN12 na resposta |
@@ -299,7 +313,7 @@ Alvo da spec 5.21, com o que já existe marcado:
 │       consolidar_auditoria_final.py                             ✅
 ├── corpus/
 │   ├── raw/                     (fora do Git — regenerável por script)
-│   ├── ocr/                     ⏸️ cache de OCR versionado (RNF10) — onda adiada
+│   ├── ocr/                     ✅ cache de OCR versionado (RNF10)
 │   ├── metadados.csv            ✅ fonte de verdade, versionada
 │   └── ancoras_sentinela.csv    ✅
 ├── src/
@@ -324,8 +338,8 @@ Alvo da spec 5.21, com o que já existe marcado:
          · test_cobertura ⬜ · test_deepeval ⬜  (+ suítes de hardening já existentes)
 ```
 
-**O que é versionado e o que não é:** versionados o cache de OCR (quando migrar
-para `corpus/ocr/`), `metadados.csv`, o índice de deploy, os logs JSONL e as
+**O que é versionado e o que não é:** versionados o cache de OCR
+(`corpus/ocr/`), `metadados.csv`, o índice de deploy, os logs JSONL e as
 respostas cacheadas do demo. Fora do Git: PDFs brutos, ZIPs da CVM,
 `cvm.duckdb`, o índice de desenvolvimento, pesos de modelo e qualquer segredo.
 
