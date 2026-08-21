@@ -1,0 +1,90 @@
+{
+  "run_id": "20260821T232859Z-2f8e5439bc",
+  "fonte": "/home/ygor/Antigravity_Projects/fin-strategy-rag/artefatos/resultados_avaliacao/checkpoint_teste.jsonl",
+  "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+  "estrategia_a": "fatos",
+  "estrategia_b": "hibrida",
+  "custo_usd": 0.0,
+  "chamadas_llm": 0,
+  "limiar_declarado": 6,
+  "comparacoes": {
+    "recall_ok": {
+      "n_pares": 25,
+      "ignorados_por_none": 20,
+      "acertos_fatos": 22,
+      "acertos_hibrida": 22,
+      "concordam_acerto": 20,
+      "concordam_erro": 1,
+      "so_fatos": [
+        "TSTF007",
+        "TSTF013"
+      ],
+      "so_hibrida": [
+        "TSTF006",
+        "TSTF009"
+      ],
+      "discordancias": 4,
+      "maior_direcao": 2,
+      "limiar": 6,
+      "p_mcnemar_exato": 1.0,
+      "veredito": "indistinguível neste tamanho de amostra"
+    },
+    "exatidao_ok[factual]": {
+      "n_pares": 15,
+      "ignorados_por_none": 0,
+      "acertos_fatos": 6,
+      "acertos_hibrida": 7,
+      "concordam_acerto": 4,
+      "concordam_erro": 6,
+      "so_fatos": [
+        "TSTF005",
+        "TSTF013"
+      ],
+      "so_hibrida": [
+        "TSTF009",
+        "TSTF010",
+        "TSTF014"
+      ],
+      "discordancias": 5,
+      "maior_direcao": 3,
+      "limiar": 6,
+      "p_mcnemar_exato": 1.0,
+      "veredito": "indistinguível neste tamanho de amostra"
+    },
+    "exatidao_ok[comparativa]": {
+      "n_pares": 10,
+      "ignorados_por_none": 0,
+      "acertos_fatos": 2,
+      "acertos_hibrida": 1,
+      "concordam_acerto": 0,
+      "concordam_erro": 7,
+      "so_fatos": [
+        "TSTC003",
+        "TSTC008"
+      ],
+      "so_hibrida": [
+        "TSTC006"
+      ],
+      "discordancias": 3,
+      "maior_direcao": 2,
+      "limiar": 6,
+      "p_mcnemar_exato": 1.0,
+      "veredito": "indistinguível neste tamanho de amostra"
+    },
+    "recusa_correta[adversarial]": {
+      "n_pares": 10,
+      "ignorados_por_none": 0,
+      "acertos_fatos": 10,
+      "acertos_hibrida": 10,
+      "concordam_acerto": 10,
+      "concordam_erro": 0,
+      "so_fatos": [],
+      "so_hibrida": [],
+      "discordancias": 0,
+      "maior_direcao": 0,
+      "limiar": 6,
+      "p_mcnemar_exato": 1.0,
+      "veredito": "indistinguível neste tamanho de amostra"
+    }
+  }
+}
