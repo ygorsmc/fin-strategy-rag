@@ -1274,16 +1274,19 @@ def _escopo_solicitado_esta_coberto(
         periodos and not periodos_resposta <= set(periodos)
     ):
         return False
-    periodos_abreviados = re.findall(
-        r"\b[1-4]T\d{2}\b", resposta_texto, re.IGNORECASE
-    )
+    # A recusa em bloco de todo período abreviado ("2T25") saiu em 2026-08-20.
+    # Ela existia porque `extrair_trimestres_citados` não lia a forma curta, e
+    # o não-lido virava suspeita: a resposta certa, no período certo, era
+    # recusada por escrever o trimestre como o próprio release escreve. Agora a
+    # forma curta é canonizada na leitura e a comparação de período logo acima
+    # decide — trocar de trimestre continua sendo recusa, escrevê-lo curto não.
+    # A mesma correção já tinha sido feita na guarda da RN02 e ficou faltando
+    # aqui.
     anos_pergunta = {
         ano for periodo in periodos for ano in re.findall(r"20\d{2}", periodo)
     }
     anos_resposta = set(re.findall(r"\b20\d{2}\b", resposta_texto))
-    if periodos_abreviados or (
-        anos_pergunta and anos_resposta and not anos_resposta <= anos_pergunta
-    ):
+    if anos_pergunta and anos_resposta and not anos_resposta <= anos_pergunta:
         return False
 
     # Citar todos os documentos não basta: cada entidade/período pedido deve
@@ -1379,8 +1382,22 @@ def _sem_marcador_de_nota(texto: str) -> str:
 # marca de página; `[1.234]` sozinho continua sendo analisado como número.
 # Nada de auditoria se perde: a citação de verdade é o campo `citacoes`, que a
 # RN01 confere contra os chunks recuperados (`citacoes_sao_validas`).
+# O modelo escreve o marcador nas DUAS pontuações — `[BB, ..., pág. 12]` e
+# `(BB, ..., pág. 12)` —, e tratar só a de colchete era pior do que não tratar
+# nenhuma: a abreviação `pág.`/`p.` termina em ponto, o divisor de cláusulas
+# corta ali, e sobra o fragmento `12).` como se fosse uma afirmação do modelo.
+# A guarda então tentava fundamentar o NÚMERO DA PÁGINA como se fosse valor
+# financeiro e recusava a resposta inteira (medido em 2026-08-20: derrubava
+# TSTF005 e TSTF014, ambas com o valor exato do gabarito e a página certa).
+# A marca de página aparece por extenso (`pág. 12`, `págs 6`) e abreviada ao
+# osso (`p. 12`). A forma curta exige o ponto — `\bp\.` — para que um "p"
+# solto antes de um número (spread "de 1,5 p.p. em 12 meses") não vire
+# candidato a citação.
+_MARCA_DE_PAGINA = r"(?:\bp[aá]gs?\.?|\bp\.)\s*\d+"
 _PADRAO_MARCADOR_CITACAO = re.compile(
-    r"\[[^\]]*\bp[aá]gs?\.?\s*\d+[^\]]*\]", re.IGNORECASE
+    rf"\[[^\]]*{_MARCA_DE_PAGINA}[^\]]*\]"
+    rf"|\([^)]*{_MARCA_DE_PAGINA}[^)]*\)",
+    re.IGNORECASE,
 )
 
 
@@ -1445,6 +1462,61 @@ def _periodos_das_colunas(cabecalho: str) -> dict[int, tuple[str, str]]:
                 f"{_ano_de_quatro_digitos(trimestre.group(2))}"
             )
             periodos[indice] = ("trimestre", rotulo)
+    return periodos
+
+
+def _linha_de_tabela_multicoluna(linha: str) -> bool:
+    """Linha de tabela com 2+ células numéricas — logo, uma série de períodos.
+
+    Uma única célula numérica não é ambígua: `| Lucro líquido | 11.508 |` diz
+    uma coisa só. Duas ou mais são sempre a mesma métrica em períodos
+    diferentes, e sem cabeçalho não há como saber qual é qual.
+    """
+    celulas = linha.split("|")
+    if len(celulas) < 3:
+        return False
+    numericas = sum(
+        1
+        for celula in celulas
+        if extrair_numeros_ptbr_tipados(_sem_marcador_de_nota(celula))
+    )
+    return numericas >= 2
+
+
+def _periodos_do_cabecalho_da_tabela(
+    linhas: list[str], indice_separador: int
+) -> dict[int, tuple[str, str]]:
+    """Períodos por coluna, procurando o cabeçalho dos DOIS lados do separador.
+
+    Cabeçalho de duas linhas é comum no release e o OCR entrega a segunda
+    ABAIXO do `| --- |`. O comparativo BRGAAP × IFRS do Itaú 1T2026 (pág. 30)
+    é o caso:
+
+        |   | Patrimônio Líquido* | Resultado Líquido* |   |   |
+        | --- | --- | --- | --- | --- |
+        |   | 31/mar/26 | 1T26 | 4T25 | 1T25 |
+
+    Ler só a linha de cima devolvia zero período, a guarda de coluna ficava
+    inerte, e QUALQUER célula da linha passava a fundamentar QUALQUER
+    trimestre. Foi assim que o sistema publicou `12.144` (a coluna 4T25) para
+    uma pergunta sobre o 1T2026, cujo valor é `11.875` — número real, rótulo
+    certo, **coluna errada**. É a armadilha da RN10 dentro do release.
+
+    Uma linha de dados nunca é confundida com cabeçalho: exige-se que ela
+    nomeie período em pelo menos duas células, o que `| BRGAAP | 200.098 |
+    11.938 | ... |` não faz.
+    """
+    if indice_separador <= 0:
+        return {}
+    acima = linhas[indice_separador - 1]
+    periodos = _periodos_das_colunas(acima)
+    if len(periodos) >= 2:
+        return periodos
+    celulas = len(acima.split("|"))
+    for adiante in linhas[indice_separador + 1 : indice_separador + 3]:
+        candidatos = _periodos_das_colunas(adiante)
+        if len(candidatos) >= 2 and len(adiante.split("|")) == celulas:
+            return candidatos
     return periodos
 
 
@@ -1632,8 +1704,22 @@ def fatos_numericos_do_chunk(
     titulo_vigente = ""
     periodos_colunas: dict[int, tuple[str, str]] = {}
     celulas_cabecalho = 0
+    viu_cabecalho_de_tabela = False
     linhas_do_chunk = chunk.texto.splitlines()
     for indice_linha, linha in enumerate(linhas_do_chunk):
+        if (
+            trimestre_alvo is not None
+            and not viu_cabecalho_de_tabela
+            and indice_linha > 0
+            and _linha_de_tabela_multicoluna(linha)
+        ):
+            # Continuação de tabela partida entre chunks: o cabeçalho ficou no
+            # chunk anterior e não há como dizer qual coluna é qual trimestre.
+            # Deixar passar publica a coluna errada com aparência de acerto —
+            # foi assim que o sistema respondeu `12.144` (4T25) a uma pergunta
+            # sobre o 1T2026, cujo valor é `11.875`. Sem atribuição de coluna,
+            # a afirmação de trimestre único não se fundamenta aqui.
+            continue
         titulo_da_linha = _titulo_de_secao(linha)
         if titulo_da_linha:
             titulo_vigente = titulo_da_linha
@@ -1643,8 +1729,11 @@ def fatos_numericos_do_chunk(
         # O cabeçalho é a linha imediatamente acima do separador `| --- |`.
         if _e_separador_de_tabela(linha) and indice_linha > 0:
             cabecalho = linhas_do_chunk[indice_linha - 1]
-            periodos_colunas = _periodos_das_colunas(cabecalho)
+            periodos_colunas = _periodos_do_cabecalho_da_tabela(
+                linhas_do_chunk, indice_linha
+            )
             celulas_cabecalho = len(cabecalho.split("|"))
+            viu_cabecalho_de_tabela = True
             continue
         alinhada = (
             bool(periodos_colunas)

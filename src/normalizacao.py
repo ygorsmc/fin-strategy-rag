@@ -28,7 +28,13 @@ APELIDOS_BANCOS: dict[str, tuple[str, ...]] = {
 }
 
 # Códigos de trimestre reconhecidos nas perguntas (vocabulário fechado, 5.6).
-PADRAO_TRIMESTRE = re.compile(r"\b([1-4])T(20\d{2})\b", re.IGNORECASE)
+# Aceita as duas grafias do mesmo período: a extensa (`2T2025`) e a abreviada
+# de dois dígitos (`2T25`), **que é a forma que os próprios releases usam** nos
+# cabeçalhos de tabela. Ler só a extensa não tornava o sistema conservador —
+# tornava o período INVISÍVEL, e o código a jusante tratava "não consigo ler"
+# como "período divergente", recusando resposta correta (medido em 2026-08-20:
+# derrubava TSTF004, TSTF007 e TSTF010, todas com valor e página certos).
+PADRAO_TRIMESTRE = re.compile(r"\b([1-4])T(20\d{2}|\d{2})\b", re.IGNORECASE)
 
 MULTIPLICADORES = {
     "mil": 1_000,
@@ -466,7 +472,11 @@ def extrair_trimestres_citados(texto: str) -> list[str]:
     """
     vistos: list[str] = []
     for match in PADRAO_TRIMESTRE.finditer(texto):
-        trimestre = f"{match.group(1)}T{match.group(2)}"
+        ano = match.group(2)
+        # A forma abreviada é canonizada para a extensa aqui, e só aqui: o
+        # resto do sistema (metadados do corpus, filtro da RF06, gabarito)
+        # continua falando um único dialeto, `1T2026`.
+        trimestre = f"{match.group(1)}T{ano if len(ano) == 4 else f'20{ano}'}"
         if trimestre not in vistos:
             vistos.append(trimestre)
     return vistos

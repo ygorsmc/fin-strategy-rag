@@ -125,32 +125,56 @@ primário e o gate de comparação contra `pdfplumber` ainda não foi executado.
 
 ## Resultados medidos
 
-Rodada vigente no conjunto congelado: **`20260820T164636Z-516a5112dc`**
+Rodada vigente no conjunto congelado: **`20260821T012629Z-2e5d234d10`**
 (2026-08-20), 45 perguntas × 5 estratégias = **225 chamadas**, temperatura 0,
-zero erro de infraestrutura, **USD 0,2306**. As 45 `teste` foram congeladas em
+zero erro de infraestrutura, **USD 0,2622**. As 45 `teste` foram congeladas em
 2026-07-29 e nenhum número de `dev` aparece aqui.
 
 | Estratégia | Recall@5 | Exatidão numérica | Recusa correta | Custo médio |
 |---|---|---|---|---|
-| E0 — Closed-book | — (não se aplica) | 0,000 | 0,800 | USD 0,000278 |
-| E1 — Keyword/BM25 | 0,920 | **0,333** | 1,000 | USD 0,001182 |
-| E2 — Semântica | 0,880 | 0,267 | 1,000 | USD 0,001283 |
-| E3 — Híbrida/RRF | 0,880 | 0,267 | 1,000 | USD 0,001238 |
-| E4 — Tabela de fatos | 0,880 | **0,333** | 1,000 | USD 0,001143 |
+| E0 — Closed-book | — (não se aplica) | 0,000 | 0,800 | USD 0,000311 |
+| E1 — Keyword/BM25 | 0,920 | 0,200 | 1,000 | USD 0,001210 |
+| E2 — Semântica | 0,880 | 0,400 | 1,000 | USD 0,001327 |
+| E3 — Híbrida/RRF | 0,880 | **0,467** | 1,000 | USD 0,001227 |
+| E4 — Tabela de fatos | 0,880 | **0,467** | 1,000 | USD 0,001751 |
 
-**Nenhuma estratégia é declarada vencedora.** E1 e E4 empatam em 5/15 factuais
-e E2/E3 ficam em 4/15. Entre E4 e E3 há **3 discordâncias numa direção e 2 na
-outra** — o limiar declarado antes da execução é de **6 na mesma direção**
-(McNemar exato, p = 0,031), então o resultado publicado é *indistinguível neste
-tamanho de amostra*.
+**Nenhuma estratégia é declarada vencedora.** E3 e E4 empatam em 7/15 factuais,
+com **3 discordâncias de cada lado**. O limiar declarado antes da execução é de
+**6 na mesma direção** (McNemar exato, p = 0,031), então o resultado publicado é
+*indistinguível neste tamanho de amostra* — e agora com duas rodadas
+independentes dizendo o mesmo.
 
-**Onde o sistema está travado, medido e não escondido.** A recuperação não é
-mais o gargalo: o E4 leva o valor exato do gabarito ao top-5 em 11/15 das
-factuais, contra 9/15 do E3. O que consome esse ganho é a camada de recusa —
-o sistema **recusa em 9 das 15 factuais, e em 5 delas o valor exato já estava
-no trecho recuperado**. A guarda da RN02 erra para o lado seguro (zero resposta
-publicada com número divergente do gabarito, conferido caso a caso), mas erra
-demais. É a próxima frente de trabalho, não uma limitação aceita.
+**A recuperação deixou de ser o gargalo.** O E4 leva o valor exato do gabarito
+ao top-5 em 11/15 das factuais, contra 9/15 do E3. O que consome esse ganho é a
+camada de recusa: o sistema ainda recusa mais da metade das factuais, e parte
+dessas recusas tem o valor certo no trecho recuperado. Duas causas foram
+apuradas e corrigidas nesta rodada — período escrito na forma abreviada do
+próprio release (`2T25`) e marcador de citação entre parênteses, cujo número de
+página era tratado como afirmação numérica. A exatidão subiu de 0,333 para
+0,467, o melhor número já medido aqui.
+
+**O defeito mais grave desta rodada foi encontrado, apurado e corrigido.** Em
+duas respostas o sistema publicou o número da **coluna errada** de uma tabela:
+`12.144` (trimestre anterior) onde o gabarito é `11.875`, e `22,8%` (semestre
+acumulado) onde o gabarito é `23,3%`. Não era alucinação — o número existe na
+página citada, na linha certa, na coluna errada. Duas causas: cabeçalho de
+tabela em duas linhas, com os períodos abaixo do separador, que a guarda de
+coluna não lia; e continuação de tabela cujo cabeçalho ficou no trecho
+anterior, onde não há como atribuir coluna alguma. Hoje uma linha de tabela sem
+cabeçalho no próprio trecho não fundamenta afirmação sobre um trimestre
+específico. As duas respostas erradas passaram a ser recusadas **sem perder
+nenhum acerto**.
+
+**A lacuna acima foi fechada em código (2026-08-21), mas ainda não em
+número oficial.** `avaliar_exatidao_comparativa` agora pontua as 10
+comparativas — a mudança de lógica de pontuação invalida o checkpoint vigente
+e exige uma rodada nova de 225 chamadas para publicar oficialmente; a
+estimativa por replay contra as respostas já pagas é baixa (0 a 2 de 10,
+conforme a estratégia) e revelou um defeito genuíno: em mais de um caso o
+modelo cita, dentro do próprio top-5 recuperado, a página ERRADA — por
+exemplo o índice do documento em vez da tabela com o dado. `recall@5` não
+enxerga isso porque só verifica se a página certa está presente, nunca se a
+citação aponta para ela. É achado novo, não investigado a fundo ainda.
 
 | Outras métricas | Escopo | Resultado |
 |---|---|---|

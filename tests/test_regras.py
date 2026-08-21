@@ -1700,6 +1700,7 @@ class TestAvaliacaoAuditavel:
                 pergunta_id=f"q{i}",
                 estrategia=Estrategia.KEYWORD,
                 resposta=None,
+                categoria="factual",
                 exatidao_ok=(i == 1),
                 latencia_s=float(i),
                 erro="falha" if i == 2 else None,

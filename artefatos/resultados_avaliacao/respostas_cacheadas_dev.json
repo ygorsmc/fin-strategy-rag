@@ -1,34 +1,4 @@
 {
-  "Segundo a análise gerencial do Itaú Unibanco qual foi a Margem Financeira Gerencial total no 3T2025?": {
-    "citacoes": [
-      {
-        "documento": "itau_release_3T2025",
-        "empresa": "ITAU",
-        "pagina": 6,
-        "trimestre": "3T2025"
-      }
-    ],
-    "conjunto": "dev",
-    "estrategia": "semantica",
-    "fingerprint": "a2811aae2e33b986f85e6b849dc3417f1549ba43defd7826e1723795c37560cc",
-    "fontes": [
-      "ITAU · itau_release_3T2025 · 3T2025 · pág. 6"
-    ],
-    "gabarito": "R$ 31.382 milhões",
-    "modelo": "gemini-3.5-flash-lite",
-    "pergunta_id": "DEV003",
-    "provedor": "gemini",
-    "resposta": "A Margem Financeira Gerencial total no 3T2025 foi de R$ 31.382 milhões.",
-    "run_id": "20260819T225003Z-7ce66fd5ba",
-    "trechos_recuperados": [
-      "ITAU · itau_release_3T2025 · págs. 1–5",
-      "ITAU · itau_release_3T2025 · págs. 9–12",
-      "ITAU · itau_release_3T2025 · págs. 6–6",
-      "ITAU · itau_release_3T2025 · págs. 8–10",
-      "ITAU · itau_release_3T2025 · págs. 24–24"
-    ],
-    "validacao_automatica": true
-  },
   "Segundo a demonstração do resultado recorrente do Bradesco qual foi a margem financeira total no 1T2026?": {
     "citacoes": [
       {
@@ -40,16 +10,16 @@
     ],
     "conjunto": "dev",
     "estrategia": "semantica",
-    "fingerprint": "a2811aae2e33b986f85e6b849dc3417f1549ba43defd7826e1723795c37560cc",
+    "fingerprint": "a1347e15513400b90684db09a295d0d61e5feca94363d9f2efce3a47817679cb",
     "fontes": [
       "BRADESCO · bradesco_release_1T2026 · 1T2026 · pág. 41"
     ],
     "gabarito": "R$ 20.051 milhões",
-    "modelo": "gemini-3.5-flash-lite",
+    "modelo": "gemini-3.1-flash-lite",
     "pergunta_id": "DEV005",
     "provedor": "gemini",
-    "resposta": "No 1T2026, a margem financeira total do Bradesco foi de R$ 20.051 milhões.",
-    "run_id": "20260819T225003Z-7ce66fd5ba",
+    "resposta": "A Margem Financeira Total do Bradesco no 1T2026 foi de R$ 20.051 milhões.",
+    "run_id": "20260821T021955Z-2e72219aad",
     "trechos_recuperados": [
       "BRADESCO · bradesco_release_1T2026 · págs. 158–159",
       "BRADESCO · bradesco_release_1T2026 · págs. 84–85",
@@ -63,14 +33,14 @@
     "citacoes": [],
     "conjunto": "dev",
     "estrategia": "semantica",
-    "fingerprint": "a2811aae2e33b986f85e6b849dc3417f1549ba43defd7826e1723795c37560cc",
+    "fingerprint": "a1347e15513400b90684db09a295d0d61e5feca94363d9f2efce3a47817679cb",
     "fontes": [],
     "gabarito": "Recusa: o Nubank não integra o corpus curado.",
-    "modelo": "gemini-3.5-flash-lite",
+    "modelo": "gemini-3.1-flash-lite",
     "pergunta_id": "DEV010",
     "provedor": "gemini",
     "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
-    "run_id": "20260819T225003Z-7ce66fd5ba",
+    "run_id": "20260821T021955Z-2e72219aad",
     "trechos_recuperados": [],
     "validacao_automatica": true
   },
@@ -85,16 +55,16 @@
     ],
     "conjunto": "dev",
     "estrategia": "semantica",
-    "fingerprint": "a2811aae2e33b986f85e6b849dc3417f1549ba43defd7826e1723795c37560cc",
+    "fingerprint": "a1347e15513400b90684db09a295d0d61e5feca94363d9f2efce3a47817679cb",
     "fontes": [
       "BB · bb_release_1T2026 · 1T2026 · pág. 10"
     ],
     "gabarito": "R$ 3.431 milhões",
-    "modelo": "gemini-3.5-flash-lite",
+    "modelo": "gemini-3.1-flash-lite",
     "pergunta_id": "DEV007",
     "provedor": "gemini",
-    "resposta": "No 1T2026, o lucro líquido ajustado do Banco do Brasil alcançou R$ 3,4 bilhões.",
-    "run_id": "20260819T225003Z-7ce66fd5ba",
+    "resposta": "O lucro líquido ajustado do Banco do Brasil no 1T2026 foi de R$ 3,4 bilhões.",
+    "run_id": "20260821T021955Z-2e72219aad",
     "trechos_recuperados": [
       "BB · bb_release_1T2026 · págs. 132–133",
       "BB · bb_release_1T2026 · págs. 10–11",

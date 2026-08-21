@@ -48,6 +48,7 @@ from src.ingestao import Chunk
 from src.normalizacao import (
     APELIDOS_BANCOS,
     NumeroPtBR,
+    _ocorrencias_de_bancos,
     extrair_numeros_ptbr,
     extrair_numeros_ptbr_tipados,
     extrair_bancos_citados,
@@ -80,10 +81,13 @@ COLUNAS_CONJUNTO_PADRAO = (
 
 CATEGORIAS = ("factual", "comparativa", "qualitativa", "adversarial")
 RECALL_K = 5
-# v5: a troca de FAISS por Chroma mudou o armazenamento vetorial, então o
-# fingerprint tem de mudar junto — reaproveitar checkpoint construído sobre o
-# índice antigo seria comparar execuções que não são comparáveis.
-VERSAO_AVALIACAO = "v5"
+# v6: `avaliar_exatidao_comparativa` passou a pontuar as 10 comparativas, que
+# antes não tinham NENHUMA checagem de acerto numérico — achado em 2026-08-20
+# (TSTC005 publicava um número da coluna errada e `exatidao_ok` ficava sempre
+# `None`, invisível a qualquer métrica). Reaproveitar checkpoint da v5 deixaria
+# essas 10 perguntas com o campo antigo (sempre não avaliado) misturado com o
+# novo em uma retomada — precisa nascer de novo.
+VERSAO_AVALIACAO = "v6"
 # O artefato do Chroma (`chroma.sqlite3` e os segmentos HNSW) é reescrito a cada
 # abertura da coleção, então hashear o arquivo daria digest instável — passaria
 # uma vez e falharia na carga seguinte. A cobertura do índice vetorial vem de
@@ -237,6 +241,12 @@ class MetricasEstrategia:
     estrategia: Estrategia
     recall_at_5: float | None
     exatidao_numerica: float | None
+    # Coluna nova (2026-08-20), não substitui `exatidao_numerica`: as
+    # comparativas não tinham NENHUMA checagem de acerto numérico até então
+    # (ver `avaliar_exatidao_comparativa`). `exatidao_numerica` continua
+    # escopado às factuais — o mesmo número de sempre, mesma comparabilidade
+    # histórica.
+    exatidao_numerica_comparativa: float | None
     taxa_recusa_correta: float | None
     # Alias de compatibilidade: sempre representa o débito conservador.
     custo_medio_usd: float | None
@@ -516,6 +526,77 @@ def avaliar_exatidao_numerica(
         obtido.valor,
         tolerancia_pct=config.tolerancia_numerica_pct,
     ) and _dimensoes_numericas_compativeis(esperado, obtido)
+
+
+def _pares_banco_valor_percentual(texto: str) -> dict[str, list[NumeroPtBR]]:
+    """Para cada banco citado, os valores percentuais atribuídos a ele.
+
+    Um valor pertence ao banco cuja menção o precede mais de perto: a janela
+    de cada ocorrência vai até a PRÓXIMA menção de banco (de qualquer banco,
+    inclusive o mesmo repetido), nunca além. É a mesma disciplina de escopo
+    que a RN09/G4 já impõe à leitura de tabela — sem ela, "BTG, com 27,1%,
+    superou o Itaú, com 23,3%" deixaria o valor do BTG livre para validar
+    também uma afirmação sobre o Itaú.
+
+    Só entra valor de dimensão ``taxa_percentual``: a variação em pontos-base
+    ou p.p. ("em 3,8 p.p.") tem dimensão ``delta_percentual`` e cai fora por
+    tipo, não por posição — por isso não precisa de tratamento especial nem é
+    confundida com o valor de nenhum dos dois bancos.
+    """
+    ocorrencias = _ocorrencias_de_bancos(texto)
+    pares: dict[str, list[NumeroPtBR]] = {}
+    for indice, (inicio, _tamanho, canonico) in enumerate(ocorrencias):
+        fim = (
+            ocorrencias[indice + 1][0]
+            if indice + 1 < len(ocorrencias)
+            else len(texto)
+        )
+        if fim <= inicio:
+            continue
+        valores = [
+            numero
+            for numero in extrair_numeros_ptbr_tipados(texto[inicio:fim])
+            if numero.dimensao == "taxa_percentual"
+        ]
+        if valores:
+            pares.setdefault(canonico, []).extend(valores)
+    return pares
+
+
+def avaliar_exatidao_comparativa(
+    pergunta: PerguntaPadrao, resposta: RespostaGerada, config: Config
+) -> bool:
+    """Exatidão para comparativa: cada valor do gabarito, no banco certo.
+
+    Espelha `avaliar_exatidao_numerica`, mas o gabarito de uma comparativa
+    nomeia 2 a 5 bancos na mesma frase ("BTG 27,1%; Itaú 23,3%; ..."), então
+    não há uma única cláusula-alvo — o valor certo pode estar na coluna
+    (banco) errada, que é exatamente o defeito que motivou esta métrica
+    (TSTC005 publicava o valor do trimestre anterior do Itaú).
+
+    Conservadora por construção: gabarito sem 2+ bancos com valor percentual
+    não é verificável automaticamente e conta como não avaliado, do mesmo
+    jeito que a factual trata a ausência da métrica no enunciado.
+    """
+    if resposta.recusa or resposta.resposta is None or resposta.json_invalido:
+        return False
+    esperado = _pares_banco_valor_percentual(pergunta.resposta_esperada)
+    if len(esperado) < 2:
+        return False
+    obtido = _pares_banco_valor_percentual(resposta.resposta)
+    for banco, valores_esperados in esperado.items():
+        candidatos = obtido.get(banco, [])
+        for valor_esperado in valores_esperados:
+            if not any(
+                valores_equivalentes(
+                    valor_esperado.valor,
+                    candidato.valor,
+                    tolerancia_pct=config.tolerancia_numerica_pct,
+                )
+                for candidato in candidatos
+            ):
+                return False
+    return True
 
 
 _STOPWORDS_METRICA = {
@@ -1985,6 +2066,10 @@ def _avaliar_item(
                     item.exatidao_ok = avaliar_exatidao_numerica(
                         pergunta, resposta, config
                     )
+                elif pergunta.categoria == "comparativa":
+                    item.exatidao_ok = avaliar_exatidao_comparativa(
+                        pergunta, resposta, config
+                    )
             elif pergunta.categoria == "adversarial":
                 item.recusa_correta = avaliar_recusa(pergunta, resposta)
             return item
@@ -2398,7 +2483,18 @@ def consolidar_metricas(
             estrategia=estrategia,
             recall_at_5=_media_binaria([item.recall_ok for item in grupo]),
             exatidao_numerica=_media_binaria(
-                [item.exatidao_ok for item in grupo]
+                [
+                    item.exatidao_ok
+                    for item in grupo
+                    if item.categoria == "factual"
+                ]
+            ),
+            exatidao_numerica_comparativa=_media_binaria(
+                [
+                    item.exatidao_ok
+                    for item in grupo
+                    if item.categoria == "comparativa"
+                ]
             ),
             taxa_recusa_correta=_media_binaria(
                 [item.recusa_correta for item in grupo]
@@ -2437,6 +2533,7 @@ def _serializar_metrica_estrategia(metrica: MetricasEstrategia) -> dict:
     return {
         "recall_at_5": metrica.recall_at_5,
         "exatidao_numerica": metrica.exatidao_numerica,
+        "exatidao_numerica_comparativa": metrica.exatidao_numerica_comparativa,
         "taxa_recusa_correta": metrica.taxa_recusa_correta,
         "custo_medio_usd": metrica.custo_medio_usd,
         "custo_conservador_medio_usd": metrica.custo_conservador_medio_usd,
@@ -2533,6 +2630,7 @@ def validar_metricas_teste_automaticas(
         campos_scores = {
             "recall_at_5",
             "exatidao_numerica",
+            "exatidao_numerica_comparativa",
             "taxa_recusa_correta",
         }
         campos_valores = {

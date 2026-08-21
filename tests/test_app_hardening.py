@@ -56,6 +56,7 @@ def _metricas(
             estrategia: {
                 "recall_at_5": 0.90,
                 "exatidao_numerica": 0.95,
+                "exatidao_numerica_comparativa": 0.90,
                 "taxa_recusa_correta": 1.0,
                 "custo_medio_usd": 0.01,
                 "custo_conservador_medio_usd": 0.012,

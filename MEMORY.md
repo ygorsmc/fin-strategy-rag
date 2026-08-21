@@ -60,28 +60,129 @@
   Validação: 2.790/2.790 páginas, nenhuma vazia, sentinela ok em 4 amostras.
   O desbloqueio foi ativar **Pay-As-You-Go** no console — crédito pré-pago é
   saldo, não permissão, e a Batch API recusava com HTTP 402 até então.
-- **Rodada congelada VIGENTE: `20260820T164636Z-516a5112dc`** (2026-08-20,
-  **225 chamadas** — 5 estratégias —, zero erro, **USD 0,2306**), primeira com
-  prompt v10 + guarda afrouxada + **E4**.
-  **Exatidão: E0 0,000 · E1 0,333 · E2 0,267 · E3 0,267 · E4 0,333.**
-  Recall@5: E1 0,920 · E2/E3/E4 0,880. Recusa correta 1,000 em E1–E4 (E0 0,800).
-  **Agregado E1+E2+E3: 10 → 13** (E1 3→5, E2 2→4, E3 5→4). O prompt v10 e a
-  guarda afrouxada ajudaram E1 e E2; o −1 do E3 está dentro da variância medida.
-  **VEREDITO DO E4 — indistinguível do E3 neste tamanho de amostra.** E4 5/15
-  contra E3 4/15, com discordâncias **3 a 2** (só E4: TSTF002, TSTF011,
-  TSTF013; só E3: TSTF004, TSTF014). A regra do projeto (AGENTS.md §4.2) exige
-  **6 discordâncias na mesma direção** para declarar diferença — 3 não chega
-  perto. E4 também não bate o E1, que empata em 5/15.
-- **O GARGALO MUDOU DE CAMADA e este é o achado da sessão.** O E4 entregou
-  exatamente o que prometeu na recuperação — valor exato do gabarito no top-5
-  em **11/15 contra 9/15 do E3** — e isso **não converteu em exatidão**, porque
-  o sistema **recusa em 9/15 das factuais, sendo 5 delas COM o valor exato já
-  no top-5**. No E3 são 8/15 recusas, 3 com o valor presente. Ou seja: mais
-  evidência boa recuperada produziu mais recusa indevida, não mais acerto.
-  **Parar de mexer em recuperação.** O teto agora é a guarda da RN02 e o
-  prompt, não o top-k. Próxima frente: apurar, nessas 5, qual `return False`
-  da `numeros_da_resposta_estao_fundamentados` dispara (o rastreio por
-  `sys.settrace` usado em 19/08 resolve isso a custo zero).
+- **Rodada congelada VIGENTE: `20260821T012629Z-2e5d234d10`** (2026-08-20,
+  225 chamadas, zero erro, **USD 0,2622**), com E4 + prompt v10 + guarda
+  afrouxada + as duas correções de recusa (trimestre abreviado e marcador de
+  citação entre parênteses).
+  **Exatidão: E0 0,000 · E1 0,200 · E2 0,400 · E3 0,467 · E4 0,467.**
+  Recall@5: E1 0,920 · E2/E3/E4 0,880. Recusa correta 1,000 em E1–E4.
+  **Melhor número já medido no congelado** (o recorde anterior era E3 0,333).
+  Agregado E1+E2+E3+E4: **18/60 → 23/60**.
+  **E4 × E3 empatam em 7/15, com 3 discordâncias de cada lado** (só E4:
+  TSTF002, TSTF005, TSTF013; só E3: TSTF006, TSTF010, TSTF014). O limiar é 6
+  na mesma direção — **indistinguíveis, agora com duas rodadas dizendo o
+  mesmo**. E4 deixou de ser aposta e virou empate medido.
+  **Custo:** E4 é a estratégia MAIS CARA (0,001751/resposta contra 0,001227 do
+  E3) — ela recusa menos, então gera texto mais longo. O registro anterior de
+  que ela era a mais barata valia para a rodada em que ela recusava mais.
+- **A REPLAY PREVÊ O AGREGADO, NÃO O ITEM — aprendido na marra em 2026-08-20.**
+  O replay das correções sobre as respostas já pagas estimou E1 6/15, E2 6/15,
+  E3 5/15, E4 8/15 (agregado 25/60). Medido de verdade: **3, 6, 7, 7 (agregado
+  23/60)**. O agregado bateu quase na mosca; a alocação por estratégia embaralhou
+  completamente — o E1 caiu 5→3 e o E3 subiu 4→7. Motivo: a temperatura 0 não
+  torna a LLM determinística entre execuções, e o replay reusa as respostas
+  antigas. **Usar replay para decidir SE vale rodar, nunca para publicar
+  número por estratégia.**
+- **O GARGALO MUDOU DE CAMADA — e as recusas foram APURADAS e CORRIGIDAS
+  (2026-08-20, custo zero).** O E4 levou o valor exato ao top-5 em 11/15 contra
+  9/15 do E3, e isso não virou exatidão porque o sistema recusava 9/15 das
+  factuais, **5 delas com o valor exato já no trecho**. Rastreadas com
+  `sys.settrace` sobre o checkpoint pago, as 5 caíam em **dois defeitos, nenhum
+  deles de fundamento**:
+  1. **Trimestre abreviado (TSTF004, TSTF007, TSTF010).**
+     `extrair_trimestres_citados` só lia `2T2025`, não `2T25` — que é a grafia
+     do próprio release. O não-lido virava suspeita: `_escopo_solicitado_esta_
+     coberto` recusava **em bloco** toda resposta com período abreviado. A
+     resposta estava certa em valor, página e trimestre; caiu por ortografia.
+     **A guarda da RN02 já tinha recebido essa correção; faltou aqui** — a
+     mesma falha, corrigida num lugar só.
+     Corrigido em `PADRAO_TRIMESTRE`, que agora canoniza a forma curta na
+     leitura, e a recusa em bloco saiu de `geracao.py`.
+  2. **Marcador de citação entre parênteses (TSTF005, TSTF014).** O stripper
+     tratava `[..., pág. 12]` mas não `(..., p. 12)` — e a marca curta `p.`
+     não casava nem entre colchetes, porque o padrão exigia o "a" de "pág".
+     A abreviação termina em ponto, o divisor de cláusulas corta ali, e sobrava
+     `12).` como afirmação: a guarda tentava fundamentar **o número da página**
+     como valor financeiro e derrubava a resposta inteira.
+  **Efeito medido por replay sobre as 60 respostas já pagas, zero regressão:**
+  E1 5→6 · E2 4→6 · E3 4→5 · **E4 5→8**; agregado **18/60 → 25/60**.
+  Nenhuma célula piorou.
+- **ATENÇÃO — a rodada congelada vigente ficou DESATUALIZADA em relação ao
+  código.** Os números publicados (E4 0,333 etc.) são os da rodada; o replay
+  acima é **estimativa**, não resultado publicável. Como o fingerprint hasheia
+  `geracao.py` e `normalizacao.py`, o checkpoint já está invalidado — publicar
+  exige **nova rodada de 225 chamadas** (~USD 0,23). Não rodada ainda.
+- **DEFEITO DO TSTF006: CAUSA APURADA E CORRIGIDA (2026-08-20).** O sistema
+  publicava **12.144** com gabarito **11.875**, reproduzindo idêntico nas duas
+  rodadas. A causa não era alucinação: era **atribuição de coluna**, em dois
+  defeitos distintos da tabela `Comparativo BRGAAP¹ e IFRS` (Itaú 1T2026,
+  pág. 30), cuja linha é
+  `| IFRS - ... controladores e não controladores | 220.017 | 11.875 | 12.144 | 10.707 |`
+  sob as colunas `31/mar/26 | 1T26 | 4T25 | 1T25`:
+  1. **Cabeçalho de duas linhas.** A linha de períodos vem ABAIXO do
+     `| --- |`, e `_periodos_das_colunas` só lia a de cima (que traz
+     `Patrimônio Líquido* | Resultado Líquido*`, sem período nenhum). Resultado:
+     zero coluna identificada, guarda inerte, qualquer célula fundamentando
+     qualquer trimestre. Corrigido por `_periodos_do_cabecalho_da_tabela`, que
+     procura dos dois lados do separador e exige 2+ células com período para
+     não confundir linha de dados com cabeçalho.
+  2. **O chunk recuperado nem tinha cabeçalho.** O E2 recuperou o
+     `itau_release_1T2026_0085`, que **começa no meio da tabela** — o cabeçalho
+     ficou no `0084`. É o problema que a "Opção B" tentou resolver na ingestão
+     e falhou três vezes. Resolvido pelo outro lado, na guarda: linha de tabela
+     órfã (sem cabeçalho no próprio chunk) com **2+ células numéricas** não
+     fundamenta afirmação de trimestre único. Célula única continua valendo —
+     `| Lucro líquido | 11.508 |` não é ambíguo.
+  **Alcance medido antes de implementar:** 63% dos chunks começam com tabela
+  sem cabeçalho; as linhas órfãs multicoluna são 4.322, ou 10,7% de todas as
+  linhas de tabela do corpus.
+  **Efeito medido por replay sobre as 180 respostas da rodada vigente:
+  exatamente DOIS vereditos mudam, e os dois eram respostas ERRADAS.**
+  `TSTF006/semantica` (12.144 → recusa) e **`TSTC005/keyword`**, que publicava
+  `22,8%` para o ROAE do Itaú no 2T2025 quando o gabarito é `23,3%` — 22,8% é a
+  coluna do semestre acumulado `1S25`. Exatidão fica **idêntica** (23/60,
+  E1 3 · E2 6 · E3 7 · E4 7): nenhum acerto foi perdido. Ganho puro de
+  segurança.
+- **BURACO NA AVALIAÇÃO, ACHADO DE RASPÃO E AINDA ABERTO: as 10 comparativas
+  não têm métrica de acerto numérico.** `exatidao_numerica` roda só sobre as 15
+  factuais. O `TSTC005` publicou um número errado e **nenhuma métrica registrou
+  isso** — `recall_ok=True`, `recusa_correta=None`. Só apareceu porque eu fui
+  conferir manualmente. Enquanto isso não for coberto, o número de exatidão
+  publicado descreve um terço do conjunto congelado.
+- **MÉTRICA DE EXATIDÃO PARA COMPARATIVAS: CONSTRUÍDA (2026-08-21), custo
+  zero.** `avaliar_exatidao_comparativa` em `src/avaliacao.py`, nova coluna
+  `exatidao_numerica_comparativa` em `MetricasEstrategia` (a antiga
+  `exatidao_numerica` continua escopada às factuais — regra do projeto é
+  acrescentar coluna, nunca linha). `VERSAO_AVALIACAO` "v5"→"v6": o
+  checkpoint vigente fica invalidado, então **este número exige rodada nova
+  para virar oficial** — e uma rodada completa são 225 chamadas, MAIS do que
+  as 50 que restam hoje no 3.5. Não dá para oficializar nesta sessão.
+  **Mecanismo:** para cada banco citado no gabarito, pega os valores
+  percentuais na janela até a PRÓXIMA menção de banco (nunca além — é a
+  mesma disciplina de escopo da RN09/G4, senão o valor do BTG validaria
+  também uma afirmação sobre o Itaú); delta em p.p. cai fora por DIMENSÃO
+  (`delta_percentual` ≠ `taxa_percentual`), não por posição, então não
+  precisa de tratamento especial. 9 testes novos, incluindo o caso real do
+  TSTC005 como regressão.
+  **Replay contra o checkpoint pago (estimativa, não oficial):**
+  factual keyword 3/15 · semantica 6/15 · hibrida 7/15 · fatos 7/15 (igual a
+  antes — nada mudou na factual); **comparativa keyword 0/10 · semantica
+  1/10 · hibrida 0/10 · fatos 2/10.**
+  **ACHADO REAL, NÃO É BUG DA MÉTRICA: o modelo cita a página ERRADA dentro
+  do próprio top-5 recuperado nas comparativas.** TSTC006/hibrida: recuperou
+  Santander pgs 1–3 (índice), 3–3, **24–25** (onde o dado real provavelmente
+  está) — e citou a **pág. 2** (o índice) para o valor de 17,5%. `recall_ok`
+  dá `True` porque a página certa ESTÁ no top-5; a exatidão dá `False`
+  porque a citação não aponta pra ela. É por isso que ninguém via esse
+  defeito: a única métrica que existia (recall) não enxerga citação, só
+  presença. É provavelmente o principal motivo da exatidão comparativa
+  vir tão mais baixa que a factual, e é achado novo desta sessão — não
+  investigado a fundo, fica para a próxima.
+- **10 respostas publicam o valor CERTO e o grader reprova** na rodada vigente
+  (TSTF002, TSTF006, TSTF009, TSTF010, TSTF012, em várias estratégias). É a exigência de repetir
+  os qualificadores, já discutida em 19/08. O caminho correto continua sendo
+  **coluna nova no gabarito** com as redações aceitas por pergunta — decisão do
+  Ygor, não feita.
 - **Histórico das rodadas no congelado** (mesmo conjunto de 45):
   `20260818T235938Z-5c0da1df7f` (v9) E1 0,200 · E2 0,133 · E3 0,200 → agregado 8;
   `20260819T200308Z-fe444d53d8` (v9) E1 0,133 · E2 0,133 · E3 0,267 → agregado 8;

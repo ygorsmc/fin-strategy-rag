@@ -303,7 +303,7 @@ Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisã
 | 6 | **Recuperação** — filtro de metadados, subconsulta por banco, E0–E4 (§3.1-bis) | `indice-recuperacao` | ✅ base implementada · 🔄 sob a migração |
 | 7 | **Geração** — contrato JSON, citação obrigatória, recusa (RN01–RN02) | sessão principal | ✅ · ⬜ marcações de RN10/RN12 na resposta |
 | 8 | **Conjunto-padrão** — 45 congeladas + ~10 dev, conferidas pela classe de verificação | `conjunto-padrao` | ✅ congelado 2026-07-29 · ⬜ colunas novas da revisão 2 (`cobertura_esperada`, `motivo_recusa_esperado`, `base_esperada`, `rota_esperada`) |
-| 9 | **Comparação de estratégias E0–E4** — só `dev` na iteração; o congelado roda ao final, com log por execução | `observabilidade-avaliacao` | ✅ rodada em 2026-08-20 no congelado (45 × 5 = 225 chamadas) — E1 0,333 · E2 0,267 · E3 0,267 · E4 0,333; E4 × E3 **indistinguível** (3×2 discordâncias, limiar 6). Ver `MEMORY.md` |
+| 9 | **Comparação de estratégias E0–E4** — só `dev` na iteração; o congelado roda ao final, com log por execução | `observabilidade-avaliacao` | ✅ rodada em 2026-08-20 no congelado (45 × 5 = 225 chamadas) — E1 0,200 · E2 0,400 · E3 **0,467** · E4 **0,467**; E4 × E3 **indistinguível** (3×3 discordâncias, limiar 6). Ver `MEMORY.md` |
 | 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ⬜ (depende do G4) |
 | 11 | **Ferramentas + agentes** — `verificar_cobertura`, Investigador e Auditor com filtro de contexto **em código**, teste que falha se o rastro vazar, braços A/B/C, triagem de cobertura; projeções depois | `agentes-investigacao` | ⬜ |
 | 12 | **Injeção de falha (RF25) e comparação dos três braços (RF26)** — registrar o veredito, inclusive se for "o determinístico basta" | `agentes-investigacao` + `observabilidade-avaliacao` | ⬜ |
@@ -313,6 +313,7 @@ Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisã
 | 16 | **Publicação** — Container Apps primário, teto/alerta no provedor, dois modos validados | `interface-produto` | ⬜ |
 | 17 | **`DESAFIO_CBL.md`, README e resumo executivo** (metas × resultados) | `documentacao-projeto` | ✅ desafio e README · ⬜ resumo executivo |
 | 18 | **(Opcional) LoRA** — roteador de entrada, com split por pergunta-base | — | ⬜ opcional |
+| 19 | **Bônus — múltiplos de mercado (P/L, P/VPA)** — fora da spec 5.21, proposta em 2026-08-21 durante conversa sobre Value Investing. `precos_fechamento` no DuckDB (5 tickers, fonte pública), disciplina *point-in-time* obrigatória (preço da data do release, nunca o de hoje), múltiplo marcado como **derivado** pela RN10, medido em conjunto próprio — nunca nas 45 congeladas nem em E0–E4 | — | ⬜ **não iniciar antes das etapas 1–18 concluídas; G4 aprovado é pré-condição** |
 
 **Transversal:** rodar `auditor-conformidade` (somente leitura) ao final de cada
 onda de implementação, antes de considerar a etapa concluída.

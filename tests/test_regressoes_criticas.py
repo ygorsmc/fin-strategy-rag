@@ -10,7 +10,7 @@ from pathlib import Path
 import pytest
 
 from scripts import executar_estabilidade
-from src import avaliacao, geracao
+from src import avaliacao, geracao, normalizacao
 from src.avaliacao import PerguntaPadrao, ResultadoItem
 from src.config import Config
 from src.geracao import Citacao
@@ -1100,3 +1100,465 @@ class TestStopwordsDeAtribuicao:
             "inadimplencia da carteira ampliada com garantias"
         )
         assert {"inadimplencia", "carteira", "ampliada", "garantias"} <= tokens
+
+
+class TestMarcadorDeCitacaoEntreParenteses:
+    """O mesmo marcador, na outra pontuação, derrubava a resposta inteira.
+
+    O modelo escreve a citação ora entre colchetes, ora entre parênteses:
+    ``(Itau, itau_release_4T2025, 4T2025, págs. 6–7)``. Tratar só o colchete
+    era pior do que não tratar nenhum — a abreviação ``págs.`` termina em
+    ponto, o divisor de cláusulas corta ali, e sobra ``6–7).`` como se fosse
+    uma afirmação. A guarda tentava então fundamentar o NÚMERO DA PÁGINA como
+    valor financeiro. Medido na rodada congelada de 2026-08-20: derrubava
+    TSTF005 e TSTF014, ambas com o valor exato do gabarito e a página certa.
+    """
+
+    def test_marcador_entre_parenteses_e_removido(self):
+        texto = (
+            "O resultado foi R$ 12.317 milhões "
+            "(Itau, itau_release_4T2025, 4T2025, págs. 6–7)."
+        )
+        limpo = geracao._sem_marcador_de_citacao(texto)
+        assert "págs. 6" not in limpo
+        assert "12.317" in limpo
+
+    def test_parentese_sem_marca_de_pagina_permanece(self):
+        """Contraprova: só o parêntese de citação sai. Um valor entre
+        parênteses continua sujeito ao grounding."""
+        texto = "A carteira ampliada (R$ 708.201 milhões) cresceu."
+        assert geracao._sem_marcador_de_citacao(texto) == texto
+
+    def test_numero_de_pagina_nao_vira_afirmacao_numerica(self):
+        chunk = Chunk(
+            id="bb_release_3T2025_0001",
+            empresa="BB",
+            trimestre="3T2025",
+            documento="bb_release_3T2025",
+            pagina_inicio=12,
+            pagina_fim=12,
+            posicao_no_documento=1,
+            texto=(
+                "[BB | bb_release_3T2025 | 3T2025 | pág. 12]\n"
+                "### Indicadores de Inadimplência\n"
+                "O indicador acima de 90 dias encerrou setembro em 4,93%."
+            ),
+        )
+        citacoes = (
+            Citacao(
+                empresa="BB",
+                documento="bb_release_3T2025",
+                trimestre="3T2025",
+                pagina=12,
+            ),
+        )
+        resposta = (
+            "O índice de inadimplência acima de 90 dias encerrou setembro em "
+            "4,93% para o Banco do Brasil "
+            "(BB, bb_release_3T2025, 3T2025, p. 12)."
+        )
+        assert geracao.numeros_da_resposta_estao_fundamentados(
+            resposta,
+            citacoes,
+            [chunk],
+            1.0,
+            "Segundo o release do Banco do Brasil qual foi o índice de "
+            "inadimplência acima de 90 dias no 3T2025?",
+        )
+
+
+class TestTrimestreAbreviadoNaResposta:
+    """`2T25` é a grafia do próprio release, não um período divergente.
+
+    `extrair_trimestres_citados` só lia a forma extensa, e o código a jusante
+    tratava "não consigo ler" como "período errado": `_escopo_solicitado_
+    esta_coberto` recusava em bloco qualquer resposta com período abreviado.
+    Medido na rodada congelada de 2026-08-20: derrubava TSTF004, TSTF007 e
+    TSTF010, todas com valor e página certos. A guarda da RN02 já tinha
+    recebido esta correção; faltava aqui.
+    """
+
+    def test_forma_abreviada_e_canonizada_para_a_extensa(self):
+        assert normalizacao.extrair_trimestres_citados("no 2T25 foi") == [
+            "2T2025"
+        ]
+        assert normalizacao.extrair_trimestres_citados(
+            "entre 4T25 e 1T2026"
+        ) == ["4T2025", "1T2026"]
+
+    def _citacao_itau(self):
+        return (
+            Citacao(
+                empresa="ITAU",
+                documento="itau_release_2T2025",
+                trimestre="2T2025",
+                pagina=6,
+            ),
+        )
+
+    def test_periodo_certo_escrito_curto_e_aceito(self):
+        assert geracao._escopo_solicitado_esta_coberto(
+            "Segundo a análise gerencial do Itaú Unibanco qual foi o "
+            "resultado recorrente gerencial no 2T2025?",
+            self._citacao_itau(),
+            Config(),
+            "Segundo a análise gerencial do Itaú Unibanco, o Resultado "
+            "Recorrente Gerencial no 2T25 foi de R$ 11.508 milhões.",
+        )
+
+    def test_trocar_de_periodo_continua_sendo_recusa(self):
+        """Contraprova: a guarda não virou decorativa. Afirmar OUTRO
+        trimestre, curto ou extenso, continua reprovando."""
+        for escrito in ("3T25", "3T2025"):
+            assert not geracao._escopo_solicitado_esta_coberto(
+                "Segundo a análise gerencial do Itaú Unibanco qual foi o "
+                "resultado recorrente gerencial no 2T2025?",
+                self._citacao_itau(),
+                Config(),
+                f"O Resultado Recorrente Gerencial no {escrito} foi de "
+                "R$ 11.508 milhões.",
+            )
+
+
+class TestCabecalhoDeTabelaEmDuasLinhas:
+    """A linha de períodos pode vir ABAIXO do separador, e vinha ignorada.
+
+    O comparativo BRGAAP × IFRS do Itaú 1T2026 (pág. 30) tem cabeçalho de duas
+    linhas e o OCR entrega a segunda depois do `| --- |`. Lendo só a linha de
+    cima, `_periodos_das_colunas` devolvia vazio, a guarda de coluna ficava
+    inerte e qualquer célula fundamentava qualquer trimestre. Foi assim que o
+    sistema publicou `12.144` (coluna 4T25) para uma pergunta sobre o 1T2026,
+    cujo valor é `11.875`.
+    """
+
+    LINHAS = [
+        "|   | Patrimônio Líquido* | Resultado Líquido* |   |   |",
+        "| --- | --- | --- | --- | --- |",
+        "|   | 31/mar/26 | 1T26 | 4T25 | 1T25 |",
+        "| **IFRS - controladores e não controladores** | **220.017** | "
+        "**11.875** | **12.144** | **10.707** |",
+    ]
+
+    def test_periodos_sao_lidos_da_linha_abaixo_do_separador(self):
+        periodos = geracao._periodos_do_cabecalho_da_tabela(self.LINHAS, 1)
+        rotulos = {rotulo for _tipo, rotulo in periodos.values()}
+        assert {"1T2026", "4T2025", "1T2025"} <= rotulos
+
+    def test_linha_de_dados_nunca_e_confundida_com_cabecalho(self):
+        """Contraprova: exigir 2+ células com período impede que a própria
+        linha de valores seja lida como cabeçalho."""
+        linhas = [
+            "| Indicador | Valor |",
+            "| --- | --- |",
+            "| Lucro líquido | 11.508 |",
+        ]
+        assert geracao._periodos_do_cabecalho_da_tabela(linhas, 1) == {}
+
+    def _chunk(self, corpo: list[str]) -> Chunk:
+        return Chunk(
+            id="itau_release_1T2026_0084",
+            empresa="ITAU",
+            trimestre="1T2026",
+            documento="itau_release_1T2026",
+            pagina_inicio=30,
+            pagina_fim=30,
+            posicao_no_documento=1,
+            texto="\n".join(
+                ["[ITAU | itau_release_1T2026 | 1T2026 | pág. 30]", "R$ milhões"]
+                + corpo
+            ),
+        )
+
+    def test_coluna_do_trimestre_pedido_fundamenta_e_a_outra_nao(self):
+        chunk = self._chunk(self.LINHAS)
+        citacoes = (
+            Citacao("ITAU", "itau_release_1T2026", "1T2026", 30),
+        )
+        pergunta = (
+            "Segundo o comparativo BRGAAP e IFRS do release do Itaú Unibanco "
+            "qual foi o resultado líquido IFRS total atribuível a "
+            "controladores e não controladores no 1T2026?"
+        )
+        assert geracao.numeros_da_resposta_estao_fundamentados(
+            "No 1T2026, o resultado líquido IFRS atribuível a controladores "
+            "e não controladores foi de R$ 11.875 milhões.",
+            citacoes,
+            [chunk],
+            1.0,
+            pergunta,
+        )
+        assert not geracao.numeros_da_resposta_estao_fundamentados(
+            "No 1T2026, o resultado líquido IFRS atribuível a controladores "
+            "e não controladores foi de R$ 12.144 milhões.",
+            citacoes,
+            [chunk],
+            1.0,
+            pergunta,
+        )
+
+
+class TestContinuacaoDeTabelaSemCabecalho:
+    """Tabela partida entre chunks: sem cabeçalho não há atribuição de coluna.
+
+    63% dos chunks começam com linhas de tabela cujo cabeçalho ficou no chunk
+    anterior (medido em 2026-08-20). Nessas linhas, 2+ células numéricas são
+    sempre a mesma métrica em períodos diferentes e não há como dizer qual é
+    qual. Deixar passar publica a coluna errada com aparência de acerto — foi
+    a causa de duas respostas numericamente erradas na rodada congelada
+    (`TSTF006` publicou 12.144 no lugar de 11.875, `TSTC005` publicou 22,8%,
+    do semestre, no lugar de 23,3%, do trimestre).
+    """
+
+    def _chunk(self, corpo: str) -> Chunk:
+        return Chunk(
+            id="itau_release_1T2026_0085",
+            empresa="ITAU",
+            trimestre="1T2026",
+            documento="itau_release_1T2026",
+            pagina_inicio=30,
+            pagina_fim=31,
+            posicao_no_documento=2,
+            texto=(
+                "[ITAU | itau_release_1T2026 | 1T2026 | págs. 30–31]\n"
+                "R$ milhões\n" + corpo
+            ),
+        )
+
+    CITACOES = (Citacao("ITAU", "itau_release_1T2026", "1T2026", 30),)
+    PERGUNTA = (
+        "Segundo o comparativo BRGAAP e IFRS do release do Itaú Unibanco "
+        "qual foi o resultado líquido IFRS total no 1T2026?"
+    )
+
+    def test_linha_orfa_multicoluna_nao_fundamenta_trimestre_unico(self):
+        chunk = self._chunk(
+            "| **IFRS - controladores e não controladores** | **220.017** | "
+            "**11.875** | **12.144** | **10.707** |"
+        )
+        for valor in ("11.875", "12.144"):
+            assert not geracao.numeros_da_resposta_estao_fundamentados(
+                f"O resultado líquido IFRS total no 1T2026 foi de "
+                f"R$ {valor} milhões.",
+                self.CITACOES,
+                [chunk],
+                1.0,
+                self.PERGUNTA,
+            )
+
+    def test_linha_orfa_de_coluna_unica_continua_fundamentando(self):
+        """Contraprova: uma só célula numérica não é ambígua. A guarda não
+        pode desligar toda continuação de tabela."""
+        chunk = self._chunk("| Resultado líquido IFRS total | 11.875 |")
+        assert geracao.numeros_da_resposta_estao_fundamentados(
+            "O resultado líquido IFRS total no 1T2026 foi de "
+            "R$ 11.875 milhões.",
+            self.CITACOES,
+            [chunk],
+            1.0,
+            self.PERGUNTA,
+        )
+
+    def test_com_cabecalho_no_proprio_chunk_a_linha_volta_a_valer(self):
+        """Contraprova: a restrição é da ÓRFÃ, não da linha multicoluna."""
+        chunk = self._chunk(
+            "| Indicador | 1T26 | 4T25 |\n"
+            "| --- | --- | --- |\n"
+            "| Resultado líquido IFRS total | 11.875 | 12.144 |"
+        )
+        assert geracao.numeros_da_resposta_estao_fundamentados(
+            "O resultado líquido IFRS total no 1T2026 foi de "
+            "R$ 11.875 milhões.",
+            self.CITACOES,
+            [chunk],
+            1.0,
+            self.PERGUNTA,
+        )
+
+    def test_afirmacao_sem_trimestre_unico_nao_e_restringida(self):
+        """A guarda só age quando a cláusula afirma UM trimestre. Sem isso,
+        recusaria comparação legítima entre períodos."""
+        chunk = self._chunk(
+            "| Resultado líquido IFRS total | 11.875 | 12.144 |"
+        )
+        assert geracao.numeros_da_resposta_estao_fundamentados(
+            "O resultado líquido IFRS total foi de R$ 11.875 milhões.",
+            self.CITACOES,
+            [chunk],
+            1.0,
+            "Qual foi o resultado líquido IFRS total do Itaú Unibanco?",
+        )
+
+
+class TestExatidaoComparativa:
+    """`exatidao_ok` das comparativas era sempre `None` — nenhuma checagem
+    numérica rodava nas 10 perguntas comparativas do congelado. Achado em
+    2026-08-20: `TSTC005` publicou `22,8%` (coluna do semestre acumulado) para
+    o Itaú com gabarito `23,3%`, e passou com `recall_ok=True`,
+    `recusa_correta=None`, `exatidao_ok=None` — nenhuma métrica registrou o
+    erro. `avaliar_exatidao_comparativa` fecha esse buraco.
+    """
+
+    def _pergunta(self, esperado: str, texto: str = "") -> PerguntaPadrao:
+        return _pergunta_factual(
+            texto or "irrelevante para este teste",
+            esperado,
+            identificador="TSTC-teste",
+        )
+
+    def test_caso_real_do_tstc005_e_pego(self):
+        """A falha que motivou a métrica: valor da coluna errada do Itaú."""
+        pergunta = self._pergunta(
+            "BTG, com 27,1%, superou o Itaú, com 23,3%, em 3,8 p.p.; os "
+            "ajustes gerenciais não são metodologicamente idênticos."
+        )
+        publicado_com_defeito = _resposta(
+            "O ROAE ajustado anualizado do BTG Pactual foi de 27,1% no "
+            "2T2025; o Retorno Recorrente Gerencial sobre o Patrimônio "
+            "Líquido Médio Anualizado do Itaú foi de 22,8% no 2T2025; "
+            "Cálculo: 27,1% - 22,8% = 4,3 p.p."
+        )
+        assert not avaliacao.avaliar_exatidao_comparativa(
+            pergunta, publicado_com_defeito, Config()
+        )
+        publicado_correto = _resposta(
+            "O ROAE ajustado anualizado do BTG Pactual foi de 27,1% no "
+            "2T2025; o Retorno Recorrente Gerencial sobre o Patrimônio "
+            "Líquido Médio Anualizado do Itaú foi de 23,3% no 2T2025."
+        )
+        assert avaliacao.avaliar_exatidao_comparativa(
+            pergunta, publicado_correto, Config()
+        )
+
+    def test_valor_de_um_banco_nao_valida_outro(self):
+        """Contraprova direta da guarda de janela: trocar os valores entre
+        os dois bancos deve reprovar, não só um valor isolado errado."""
+        pergunta = self._pergunta(
+            "BTG, com 27,1%, superou o Itaú, com 23,3%, em 3,8 p.p."
+        )
+        trocado = _resposta(
+            "O BTG teve 23,3% e o Itaú teve 27,1% no período."
+        )
+        assert not avaliacao.avaliar_exatidao_comparativa(
+            pergunta, trocado, Config()
+        )
+
+    def test_ordem_com_cinco_bancos(self):
+        pergunta = self._pergunta(
+            "BTG 27,1%; Itaú 23,3%; Santander 16,4%; Bradesco 14,6%; "
+            "BB 8,4%. O maior foi o BTG; as metodologias gerenciais não "
+            "são idênticas."
+        )
+        correta = _resposta(
+            "BTG 27,1%; Itaú 23,3%; Santander 16,4%; Bradesco 14,6%; "
+            "BB 8,4%."
+        )
+        assert avaliacao.avaliar_exatidao_comparativa(pergunta, correta, Config())
+        um_banco_errado = _resposta(
+            "BTG 27,1%; Itaú 23,3%; Santander 16,9%; Bradesco 14,6%; "
+            "BB 8,4%."
+        )
+        assert not avaliacao.avaliar_exatidao_comparativa(
+            pergunta, um_banco_errado, Config()
+        )
+
+    def test_trajetoria_exige_os_dois_valores_do_mesmo_banco(self):
+        """TSTC009-like: um banco com dois valores (trimestre a trimestre)
+        precisa ter os DOIS reproduzidos, não só um."""
+        pergunta = self._pergunta(
+            "O BB passou de 8,4% para 12,4% e reportou alta de 404 bps "
+            "(4,04 p.p.); o Santander passou de 17,5% para 17,6%. O BB "
+            "teve a maior alta."
+        )
+        completa = _resposta(
+            "O BB foi de 8,4% para 12,4%; o Santander foi de 17,5% "
+            "para 17,6%."
+        )
+        assert avaliacao.avaliar_exatidao_comparativa(pergunta, completa, Config())
+        faltando_um_valor = _resposta(
+            "O BB foi de 8,4% para 13,0%; o Santander foi de 17,5% "
+            "para 17,6%."
+        )
+        assert not avaliacao.avaliar_exatidao_comparativa(
+            pergunta, faltando_um_valor, Config()
+        )
+
+    def test_delta_em_pp_nao_e_confundido_com_valor_do_banco(self):
+        """Contraprova: "em 3,8 p.p." tem dimensão delta_percentual e não
+        pode validar nem invalidar o valor de nenhum banco."""
+        pergunta = self._pergunta(
+            "BTG, com 27,1%, superou o Itaú, com 23,3%, em 3,8 p.p."
+        )
+        sem_o_delta = _resposta(
+            "O BTG teve 27,1% e o Itaú teve 23,3% no período."
+        )
+        assert avaliacao.avaliar_exatidao_comparativa(
+            pergunta, sem_o_delta, Config()
+        )
+
+    def test_gabarito_com_menos_de_dois_bancos_nao_e_verificavel(self):
+        """Espelha o tratamento conservador da factual: sem material
+        suficiente para verificar, conta como não avaliado (False)."""
+        pergunta = self._pergunta("BTG, com 27,1%, liderou o ranking.")
+        resposta = _resposta("O BTG teve 27,1%.")
+        assert not avaliacao.avaliar_exatidao_comparativa(
+            pergunta, resposta, Config()
+        )
+
+    def test_recusa_nunca_conta_como_acerto(self):
+        pergunta = self._pergunta(
+            "BTG, com 27,1%, superou o Itaú, com 23,3%, em 3,8 p.p."
+        )
+        recusada = geracao.RespostaGerada(
+            None, True, "sem evidência suficiente", ()
+        )
+        assert not avaliacao.avaliar_exatidao_comparativa(
+            pergunta, recusada, Config()
+        )
+
+
+class TestConsolidacaoDaExatidaoComparativa:
+    """`exatidao_numerica` continua escopada às factuais; a nova coluna
+    `exatidao_numerica_comparativa` é que soma as comparativas — a regra do
+    projeto é acrescentar coluna, nunca linha (AGENTS.md §7)."""
+
+    def test_colunas_nao_se_misturam(self):
+        itens = [
+            avaliacao.ResultadoItem(
+                pergunta_id="f1",
+                estrategia=Estrategia.HIBRIDA,
+                resposta=None,
+                categoria="factual",
+                exatidao_ok=True,
+            ),
+            avaliacao.ResultadoItem(
+                pergunta_id="f2",
+                estrategia=Estrategia.HIBRIDA,
+                resposta=None,
+                categoria="factual",
+                exatidao_ok=False,
+            ),
+            avaliacao.ResultadoItem(
+                pergunta_id="c1",
+                estrategia=Estrategia.HIBRIDA,
+                resposta=None,
+                categoria="comparativa",
+                exatidao_ok=True,
+            ),
+        ]
+        metricas = avaliacao.consolidar_metricas(itens)[Estrategia.HIBRIDA]
+        assert metricas.exatidao_numerica == pytest.approx(0.5)
+        assert metricas.exatidao_numerica_comparativa == pytest.approx(1.0)
+
+    def test_campo_novo_esta_no_json_publicado(self):
+        itens = [
+            avaliacao.ResultadoItem(
+                pergunta_id="c1",
+                estrategia=Estrategia.HIBRIDA,
+                resposta=None,
+                categoria="comparativa",
+                exatidao_ok=True,
+            ),
+        ]
+        metricas = avaliacao.consolidar_metricas(itens)[Estrategia.HIBRIDA]
+        serializado = avaliacao._serializar_metrica_estrategia(metricas)
+        assert serializado["exatidao_numerica_comparativa"] == pytest.approx(1.0)
