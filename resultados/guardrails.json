@@ -1,0 +1,37 @@
+{
+  "run_id": "20260821T224903Z-4a94fc2628",
+  "scanners_ativos": [
+    "injection",
+    "topico_proibido",
+    "pii"
+  ],
+  "presidio_habilitado": true,
+  "prompt_guard_habilitado": true,
+  "custo_usd": 0.0,
+  "chamadas_llm": 0,
+  "ataques": {
+    "n": 20,
+    "bloqueados_corretamente": 20,
+    "taxa": 1.0,
+    "por_familia": {
+      "injecao": "9/9",
+      "topico": "11/11"
+    },
+    "falhas": []
+  },
+  "falso_bloqueio": {
+    "n_legitimas": 45,
+    "bloqueadas": 0,
+    "taxa": 0.0,
+    "meta": 0,
+    "detalhes": []
+  },
+  "falso_bloqueio_saida": {
+    "fonte": "/home/ygor/Antigravity_Projects/fin-strategy-rag/artefatos/resultados_avaliacao/checkpoint_teste.jsonl",
+    "n_textos": 855,
+    "bloqueados": 0,
+    "taxa": 0.0,
+    "meta": 0,
+    "detalhes": []
+  }
+}

@@ -83,7 +83,7 @@ import os
 import re
 import time
 import unicodedata
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable, Mapping, Sequence
@@ -2664,6 +2664,99 @@ def responder_braco_b(
     return consolidar(saida, veredito=veredito, contexto=contexto)
 
 
+# --------------------------------------------------------------------------- #
+# Caminho do produto: guardrails em volta do braço (RNF11 §6)
+# --------------------------------------------------------------------------- #
+
+
+def responder_com_guardrails(
+    pergunta: str,
+    config: Config,
+    *,
+    fabrica_llm: FabricaLLM,
+    fabrica_ferramentas: FabricaFerramentas,
+    responder: Callable[..., RespostaAgente] | None = None,
+) -> RespostaAgente:
+    """O caminho interativo inteiro: entrada → braço → saída (spec 5.11, §6).
+
+    **Por que isto é uma composição e não uma alteração dos braços.** A RNF11
+    separa o produto do benchmark, e `responder_braco_a`/`responder_braco_b` são
+    os braços do experimento de 5.9.3: o que eles medem é orquestração. Enfiar
+    guardrail dentro deles faria o experimento medir orquestração + guardrail, e
+    a comparação A×B deixaria de responder à pergunta que motivou o
+    experimento. O produto compõe; o experimento continua puro.
+
+    Três garantias que os testes travam:
+
+    1. **Entrada bloqueada não chega a gastar.** A varredura roda antes de
+       qualquer fábrica ser chamada — nenhum LLM, nenhuma ferramenta, custo
+       zero. Um ataque não deve custar dinheiro para ser recusado.
+    2. **O braço recebe o texto anonimizado**, nunca o original (RN06). É
+       `texto_seguro` que entra no prompt, no rastro e no log.
+    3. **Bloquear a saída não apaga o custo já incorrido.** O `uso` da resposta
+       é preservado: a chamada aconteceu, e esconder isso corromperia a
+       contabilidade de orçamento.
+    """
+    from src.seguranca import avaliar_entrada, avaliar_saida, texto_de_recusa
+
+    executar = responder_braco_b if responder is None else responder
+    scanners = tuple(config.guardrails_ativos)
+    presidio = dict(
+        presidio_habilitado=config.presidio_habilitado,
+        presidio_idioma=config.presidio_idioma,
+        presidio_modelo_spacy=config.presidio_modelo_spacy,
+    )
+    # Só `avaliar_entrada` aceita os kwargs de injeção ML — injeção é ataque de
+    # ENTRADA, `avaliar_saida` nunca a verifica (ver docstring dela).
+    entrada_kwargs = dict(
+        presidio,
+        prompt_guard_habilitado=config.prompt_guard_habilitado,
+        prompt_guard_modelo=config.prompt_guard_modelo,
+        prompt_guard_revisao=config.guardrails_modelo_injecao_revision,
+        prompt_guard_limiar=config.guardrails_limiar_injection,
+    )
+
+    entrada = avaliar_entrada(pergunta, scanners, **entrada_kwargs)
+    if entrada.bloqueado:
+        return RespostaAgente(
+            pergunta=entrada.texto_seguro,
+            resposta=texto_de_recusa(entrada),
+            recusa=True,
+            motivo_recusa=entrada.motivo,
+            comportamento=COMPORTAMENTO_RECUSA,
+            violacoes=tuple(
+                f"guardrail_entrada:{achado.scanner}:{achado.subtipo}"
+                for achado in entrada.achados
+            ),
+        )
+
+    resposta = executar(
+        entrada.texto_seguro,
+        config,
+        fabrica_llm=fabrica_llm,
+        fabrica_ferramentas=fabrica_ferramentas,
+    )
+
+    saida = avaliar_saida(resposta.resposta, scanners, **presidio)
+    if not saida.bloqueado:
+        # Ainda assim substitui pelo texto anonimizado: a RN06 vale para o que
+        # sai, e a anonimização é idempotente quando não há o que anonimizar.
+        return replace(resposta, resposta=saida.texto_seguro)
+    return replace(
+        resposta,
+        resposta=texto_de_recusa(saida),
+        recusa=True,
+        motivo_recusa=saida.motivo,
+        comportamento=COMPORTAMENTO_RECUSA,
+        convertida_em_recusa=True,
+        violacoes=resposta.violacoes
+        + tuple(
+            f"guardrail_saida:{achado.scanner}:{achado.subtipo}"
+            for achado in saida.achados
+        ),
+    )
+
+
 def registrar_evento_agentes(
     evento: dict, dir_logs: Path = DIR_LOGS_EXECUCOES, arquivo: str | None = None
 ) -> Path:
@@ -2735,6 +2828,7 @@ __all__ = [
     "registrar_evento_agentes",
     "responder_braco_a",
     "responder_braco_b",
+    "responder_com_guardrails",
     "valores_monetarios_do_texto",
     "verificar_regras_agente",
 ]

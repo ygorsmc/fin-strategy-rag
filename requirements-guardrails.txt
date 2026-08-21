@@ -1,0 +1,20 @@
+-r requirements.txt
+
+# Presidio (spec 5.11) — NER de nome de pessoa, reconhecedor ADICIONAL da RN06
+# atrás da mesma interface de src.reconhecedores_br; não substitui os
+# validados por dígito verificador. Opcional e pesado (~40 MB do modelo
+# spaCy) — não instalar no deploy enxuto por padrão (RNF12: o modo
+# demonstração sobe sem nenhum modelo baixado). Versões pinadas nas
+# instaladas no venv de desenvolvimento (RNF01).
+presidio-analyzer==2.2.364
+presidio-anonymizer==2.2.364
+spacy==3.8.15
+pt_core_news_md @ https://github.com/explosion/spacy-models/releases/download/pt_core_news_md-3.8.0/pt_core_news_md-3.8.0-py3-none-any.whl
+
+# Llama Prompt Guard 2 (spec 5.11) — detector de injeção que cobre paráfrase e
+# ofuscação que padrão fixo não pega. transformers/torch já ficam isolados em
+# requirements-lora.txt; reuse-os em vez de instalar duas vezes. Os pesos são
+# GATED: exigem aceitar a licença da Meta na conta Hugging Face e um
+# HF_TOKEN de BUILD (nunca de runtime — RNF12) para baixar
+# meta-llama/Llama-Prompt-Guard-2-86M.
+-r requirements-lora.txt

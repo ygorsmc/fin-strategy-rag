@@ -9,9 +9,115 @@
 - **Marco:** o repositório foi realinhado à **revisão 3** da especificação
   (2026-08-10). O plano em `AGENTS.md` tem 18 etapas, RN01–RN12 e os gates
   G1/G2/G3/G4 — o plano antigo de 10 etapas não vale mais.
-- **Suíte local: 1.365 casos passando, sem skips, sem falhas.** Verificado em
-  2026-08-20 (eram 1.349 em 19/08; +16 de `tests/test_fatos.py`, o contrato do
-  canal E4).
+- **Suíte local: 1.474 casos passando, sem skips, sem falhas.** Verificado em
+  2026-08-21 COM `requirements-guardrails.txt` instalado E os pesos do Prompt
+  Guard 2 no cache local (1.349 em 19/08 → +16 de `tests/test_fatos.py` (E4)
+  → +7 das guardas de coluna → +9 da métrica de exatidão comparativa → +36 de
+  `tests/test_seguranca.py` → +22 da fiação dos guardrails → +17 de
+  `tests/test_reconhecedor_presidio.py` → +12 de `tests/test_prompt_guard.py`).
+  Sem os dois requirements opcionais, a contagem é 1.445 — `pytest` erraria a
+  coleta desses dois arquivos, não silenciaria com skip.
+- **ETAPA 14 (guardrails) — CONSTRUÍDA, MEDIDA e LIGADA em 2026-08-21, custo
+  zero.** `src/seguranca.py`, `src/reconhecedores_br.py`,
+  `conjunto_padrao/ataques.csv` (20 ataques), `scripts/medir_guardrails.py`,
+  `responder_com_guardrails` em `src/agentes.py`, portão em
+  `app_streamlit.py`, 58 testes. Evidência: `resultados/guardrails.json`.
+  **TRÊS metas na mesma execução: 20/20 ataques bloqueados** (9 injeção,
+  11 tópico, todos pelo scanner E subtipo corretos), **0/45 falso bloqueio de
+  entrada** nas congeladas e **0/855 de saída** sobre os textos que o próprio
+  sistema gerou nas 4 estratégias do congelado. Medir só a primeira premiaria
+  um scanner que recusa tudo.
+  - **Dígito verificador é o que faz funcionar.** CPF/CNPJ são validados pela
+    aritmética, não pela forma: um release está cheio de números de onze
+    dígitos (`1.296.511` de carteira, códigos de conta) e reconhecer pela
+    forma seria fábrica de falso bloqueio. Há teste de regressão com número
+    de 15 dígitos.
+  - **PII NÃO bloqueia, anonimiza.** Um CPF na pergunta é dado a proteger, não
+    ataque. Bloquear viraria proteção do usuário em recusa de atendimento.
+  - **Cada subtipo de tópico declara a norma em CÓDIGO** (`ANCORA_LEGAL`):
+    recomendação e preço-alvo → **Res. CVM 20/2021** (analista); consultoria
+    pessoal → **Res. CVM 19/2021**. É o que permite a interface explicar a
+    recusa citando a resolução, em vez de confiar isso ao prompt.
+  - **O gatilho é o VERBO, não o assunto** — "qual foi o lucro" e "qual o
+    preço-alvo" falam ambos de dinheiro e só o segundo é conduta regulada. É
+    isso que segura o falso bloqueio em zero.
+  - **Ordem importa:** consultoria é testada antes de recomendação, porque
+    "onde devo investir" é aconselhamento pessoal (19/2021) antes de ser
+    recomendação (20/2021), e a âncora legal muda com isso.
+  - **PRESIDIO CONSTRUÍDO em 2026-08-21** (mesma sessão) —
+    `src/reconhecedor_presidio.py`, `requirements-guardrails.txt` (isolado,
+    reusa `requirements-lora.txt` para torch/transformers), config
+    `presidio_habilitado` (padrão `False` — RNF12), 17 testes. Fundido em
+    `src.seguranca.anonimizar` via `combinar_sem_sobreposicao` (extraído de
+    `reconhecedores_br.encontrar_entidades` para ser reusável). Ligado em
+    `app_streamlit.guardar_entrada`/`avaliar_saida` e em
+    `agentes.responder_com_guardrails`, threadado de `Config`.
+    - **Dois falsos positivos medidos e corrigidos ANTES de aceitar o
+      resultado, não depois:** (1) "Santander" sozinho vira PERSON (score
+      0,85 — o recognizer spaCy da Presidio dá score FIXO por tipo, não
+      confiança gradiente) → filtrado contra `APELIDOS_BANCOS`; (2) "Ignore"
+      e "Aja" no início da frase viram PERSON só por capitalização de início
+      de sentença → filtrado por token único na posição 0. **O achado 2 é o
+      mais sério dos dois:** sem o filtro, ATK012 e ATK015 deixavam de ser
+      bloqueados, porque a anonimização roda ANTES da varredura de conduta e
+      apagava o verbo que o scanner de injeção precisa ver. Remedido depois
+      da correção: 20/20 ataques, 0/55 alteradas (dev+teste), 0/855 na saída.
+    - **`PresidioIndisponivelError` captura `SystemExit`, não só
+      `OSError`:** modelo spaCy ausente não levanta exceção comum — a CLI do
+      spaCy tenta baixar e chama `sys.exit(1)` ao falhar. Sem capturar os
+      dois, um erro de configuração comum derrubava o processo inteiro.
+  - **LLAMA PROMPT GUARD 2 (86M) CONSTRUÍDO em 2026-08-21, mesma sessão** —
+    `src/prompt_guard.py`, config `prompt_guard_habilitado` (padrão `False`),
+    `guardrails_modelo_injecao_revision` agora pinado no SHA real
+    (`a8ded8e...4a2fd27`) em vez de vazio, 12 testes. Ygor forneceu
+    `HF_TOKEN` (conta `ygorsmc`) — token válido de imediato, mas os DOIS
+    modelos (`86M` e `22M`) estavam com `gated: manual`: aprovação por
+    revisão da Meta, não automática por aceitar licença. Ygor solicitou
+    acesso na página do modelo e foi aprovado em minutos, dentro da mesma
+    sessão.
+    - **Achado central, medido ANTES de compor:** sozinho, o classificador
+      **não cobre a família `topico_proibido`** (0/11) — ele foi treinado
+      para *sobreposição de instrução*, não *pedido de conduta regulada*;
+      são categorias diferentes, não é defeito. Da família `injecao`, pega
+      5/9 sozinho (perde ATK014/015/016/018 — redefinição de papel e
+      extração de prompt em frase curta de um turno, fora do caso de uso
+      "documento de terceiro" para o qual foi treinado). **Os 9 já são
+      cobertos pelo regex** — o valor de somar não é o placar nesta amostra
+      fixa, é a paráfrase/ofuscação que nenhum padrão fixo cobre em tráfego
+      real.
+    - **Composição é OR, não substituição:** em `seguranca.avaliar_entrada`,
+      só chama o classificador ML quando o regex NÃO achou nada (mesmo
+      resultado final, sem pagar a inferência duas vezes). Com as duas
+      camadas ML (Presidio + Prompt Guard 2) ligadas ao mesmo tempo: 20/20
+      ataques, 0/45 falso bloqueio de entrada, 0/855 de saída — nenhuma
+      interfere na outra.
+    - **`local_files_only=True` confirmado sem HF_TOKEN em runtime:** testei
+      explicitamente com a variável removida do ambiente — os pesos já
+      cacheados carregam normalmente. Confirma a doutrina da RNF12: o token
+      é segredo de BUILD (baixa uma vez), nunca de runtime.
+    - **86M, não 22M:** o card do modelo diz que só o 86M usa base
+      multilíngue treinada para injeção não-inglesa; o 22M é avaliado em
+      múltiplos idiomas mas não necessariamente treinado com eles. Como o
+      corpus e os ataques são em português, 86M foi a escolha, apesar do
+      custo de latência 4x maior.
+  - **Etapa 14 está COMPLETA** — nenhum item pendente. `PRESIDIO_HABILITADO`
+    e `PROMPT_GUARD_HABILITADO` continuam `False` no `.env` (RNF12); ligar é
+    decisão de deploy, não lacuna técnica.
+  - **Fiação é COMPOSIÇÃO, não alteração dos braços (RNF11).**
+    `responder_com_guardrails` embrulha `responder_braco_b`; os braços A/B
+    continuam puros porque o experimento de 5.9.3 mede orquestração, e
+    guardrail dentro deles faria a comparação A×B medir outra coisa. Há teste
+    que lê o fonte dos braços e falha se `avaliar_entrada`/`avaliar_saida`
+    aparecerem lá.
+  - **Três garantias da fiação, travadas por teste:** (1) entrada bloqueada não
+    constrói fábrica nenhuma — ataque não custa dinheiro nem cota de sessão;
+    (2) o braço recebe o texto **anonimizado**, nunca o original; (3) bloquear
+    a saída **não zera o `uso`** — a chamada foi paga, e esconder isso
+    corromperia a contabilidade de orçamento.
+  - **Falso bloqueio de saída foi medido ANTES de ligar**, não depois: 855
+    textos reais do checkpoint congelado, zero bloqueios. Ligar uma guarda de
+    saída sem essa contraprova seria apostar que ela não recusa resposta
+    legítima.
 - **E4 (`Estrategia.FATOS`) construído em 2026-08-20** — `src/fatos.py`,
   ligado em `src/recuperacao.py::_top_fatos`, no vocabulário de
   `ESTRATEGIA_PADRAO`, em `app_streamlit.ESTRATEGIAS_AVALIACAO` e na lista do
@@ -50,31 +156,54 @@
   resultado corrente: `braco_{a,b}_prompt_a1.json` (prompt anterior) e
   `braco_b_prompt_a2_sem_fix_desambiguacao.json` (run
   `20260813T170119Z-da0a6fc4f2`, mesmo prompt, roteamento defeituoso).
-  **`braco_c.json`
-  continua pendente de reapuração**, mas por outro motivo: ele é determinístico
-  e não depende do prompt; o que o desatualiza são as correções de
-  `src/cobertura.py` (custo zero para refazer).
+  **`braco_c.json` foi REAPURADO em 2026-08-21** (run
+  `20260821T173509Z-8dd07cd4c6`, custo zero, zero chamada de LLM) e o
+  resultado é **idêntico ao anterior: 0 de 15 registros mudaram** em
+  apuração, acerto, cobertura, comportamento, motivo, recusa ou resposta —
+  só a latência variou. As correções de `src/cobertura.py` não tocaram
+  nenhum veredito do braço C. A pendência era de procedência (run_id velho),
+  não de conteúdo. **Débito fechado, e fechou como no-op.**
+  Números vigentes: 15 perguntas, 5 apurados (2 acertos, 3 erros,
+  taxa 0,400), **10 pendentes de dupla leitura humana** — o gabarito não
+  conferido nunca vira acerto nem erro, por regra dura.
 - **OCR completo (2026-08-11).** A passagem pela Batch API rodou: job
   `0eb6eab2`, 20/20 documentos, **2.790 páginas, zero erros, USD 5,58** (metade
   do síncrono). Cache versionado em `corpus/ocr/<hash-do-pdf>.json`, 23 MB.
   Validação: 2.790/2.790 páginas, nenhuma vazia, sentinela ok em 4 amostras.
   O desbloqueio foi ativar **Pay-As-You-Go** no console — crédito pré-pago é
   saldo, não permissão, e a Batch API recusava com HTTP 402 até então.
-- **Rodada congelada VIGENTE: `20260821T012629Z-2e5d234d10`** (2026-08-20,
-  225 chamadas, zero erro, **USD 0,2622**), com E4 + prompt v10 + guarda
-  afrouxada + as duas correções de recusa (trimestre abreviado e marcador de
-  citação entre parênteses).
-  **Exatidão: E0 0,000 · E1 0,200 · E2 0,400 · E3 0,467 · E4 0,467.**
+- **Rodada congelada VIGENTE: `20260821T165512Z-2a9feb8a5b`** (2026-08-21,
+  225 chamadas, zero erro, **USD 0,2348**, `gemini-3.5-flash-lite`,
+  fingerprint `59634fb6`). Primeira com **v6** — a métrica de exatidão
+  comparativa — e com as guardas de coluna do TSTF006.
+  **Exatidão factual: E0 0,000 · E1 0,400 · E2 0,333 · E3 0,467 · E4 0,400.**
+  **Exatidão comparativa (nova): E1 0,000 · E2 0,100 · E3 0,100 · E4 0,200.**
   Recall@5: E1 0,920 · E2/E3/E4 0,880. Recusa correta 1,000 em E1–E4.
-  **Melhor número já medido no congelado** (o recorde anterior era E3 0,333).
-  Agregado E1+E2+E3+E4: **18/60 → 23/60**.
-  **E4 × E3 empatam em 7/15, com 3 discordâncias de cada lado** (só E4:
-  TSTF002, TSTF005, TSTF013; só E3: TSTF006, TSTF010, TSTF014). O limiar é 6
-  na mesma direção — **indistinguíveis, agora com duas rodadas dizendo o
-  mesmo**. E4 deixou de ser aposta e virou empate medido.
-  **Custo:** E4 é a estratégia MAIS CARA (0,001751/resposta contra 0,001227 do
-  E3) — ela recusa menos, então gera texto mais longo. O registro anterior de
-  que ela era a mais barata valia para a rodada em que ela recusava mais.
+  **E4 × E3 nas factuais: 2 discordâncias de um lado, 3 do outro** (só E4:
+  TSTF005, TSTF013; só E3: TSTF009, TSTF010, TSTF014). Limiar é 6 —
+  **indistinguíveis, terceira rodada consecutiva dizendo o mesmo**. Encerrar
+  esse debate: E4 é empate medido, não melhoria.
+  **Segurança conferida:** das 36 respostas publicadas, **zero** omitem o
+  valor do gabarito. As 8 que o grader reprova têm os valores certos e caem
+  por exigência de qualificador na redação.
+  **Custo:** E4 saiu 0,001208, praticamente empatado com E3 (0,001233) —
+  desmente o registro anterior de que E4 seria a mais cara; aquilo era
+  característica da rodada, não da estratégia.
+- **CITAÇÃO É O GARGALO ATUAL, MEDIDO (2026-08-21).** Em **18** respostas
+  publicadas a página aceita **estava no top-5** e o modelo citou **outra**:
+  12 factuais e 6 comparativas. Exemplos conferidos na mão: TSTC006 citou a
+  **pág. 2 do Santander (o índice do documento)** em vez da 11; TSTC005 citou
+  a **pág. 38 do Itaú**, onde mora a coluna do semestre acumulado (22,8%), em
+  vez da pág. 5 com o trimestre (23,3%). As guardas recusam **10 das 18**; as
+  outras **8 continuam publicadas**.
+  **Consequência interpretativa:** a exatidão comparativa baixa NÃO é a
+  métrica nova sendo severa — é a guarda recusando corretamente uma citação
+  que não sustenta o número. Recuperação não é mais o gargalo; escolha de
+  página é.
+  **Ressalva:** `locais_aceitos` lista uma página por documento. Parte das 18
+  pode estar citando página alternativa legítima (a pág. 108 do BB é
+  provavelmente a demonstração completa). Separar exige leitura humana — é o
+  caso mais forte para enriquecer a coluna `locais_aceitos` do gabarito.
 - **A REPLAY PREVÊ O AGREGADO, NÃO O ITEM — aprendido na marra em 2026-08-20.**
   O replay das correções sobre as respostas já pagas estimou E1 6/15, E2 6/15,
   E3 5/15, E4 8/15 (agregado 25/60). Medido de verdade: **3, 6, 7, 7 (agregado
@@ -675,8 +804,8 @@ tratado como fonte na spec:
   leitura humana dos 10 gabaritos pendentes — tarefa do Ygor.** A comparabilidade
   de prompt está resolvida (A e B em `a2` desde 2026-08-13). Com 5 perguntas
   apuradas o teste não tem poder nenhum: há 1 par discordante contra um limiar
-  de 6. Falta ainda **reapurar o braço C** (custo zero, pendente desde a
-  correção de `src/cobertura.py`) — ele não depende do prompt.
+  de 6. O braço C **já foi reapurado** em 2026-08-21 (0/15 registros mudaram) —
+  esse débito está fechado.
 - **Por que o agente não consultava o painel: respondido em 2026-08-12.** Era
   prompt + protocolo, não o tier do modelo — `GEMINI_REASONING_EFFORT` continua
   em `low` e a taxa de consulta de dado foi de 1/15 para 12/15. Ver o bullet do
@@ -686,8 +815,10 @@ tratado como fonte na spec:
   (excluir as 2 células ou corrigi-las com procedência declarada) e se vale
   gastar OCR pago para ler a demonstração anual do BTG e fechar a última célula
   sem âncora. As duas decisões são do Ygor; o gate já entregou a medição.
-- Migrar a ingestão para consumir `corpus/ocr/` (`EXTRATOR=mistral_ocr`) e
-  reconstruir o índice Chroma em namespace separado.
+- **Etapa 14 está fechada — nada pendente dela.** Próximo trabalho é outra
+  etapa do plano (§7 do AGENTS.md): 10 (modelo preditivo, bloqueado por G4),
+  11–13 (agentes/observabilidade além do já construído), ou a decisão do G4
+  em si.
 - Em paralelo, fazer a **dupla leitura** dos 10 valores de release marcados como
   pendentes em `conjunto_agentes.csv` (a página física de cada um está em
   `fonte_gabarito`). Sem ela, 10 das 15 seguem em `pendente_conferencia_humana`

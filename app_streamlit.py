@@ -34,6 +34,12 @@ from src.config import (
     DIR_RESULTADOS_AVALIACAO,
     carregar_config,
 )
+from src.seguranca import (
+    ResultadoGuardrail,
+    avaliar_entrada,
+    avaliar_saida,
+    texto_de_recusa,
+)
 
 ARQUIVO_CACHE_DEMO = DIR_RESULTADOS_AVALIACAO / "respostas_cacheadas.json"
 ARQUIVO_METRICAS_TESTE = DIR_RESULTADOS_AVALIACAO / "metricas_teste.json"
@@ -360,6 +366,33 @@ def _contabilizar_reserva_falha(
     return custo_atual_usd + falha.custo_reservado_usd
 
 
+class PerguntaBloqueada(ValueError):
+    """Entrada barrada por guardrail, antes de qualquer chamada externa.
+
+    Carrega o veredito inteiro — e não só uma mensagem — porque a interface
+    precisa da âncora legal para explicar a recusa citando a resolução.
+    """
+
+    def __init__(self, resultado: ResultadoGuardrail):
+        super().__init__(resultado.motivo)
+        self.resultado = resultado
+
+
+def guardar_entrada(pergunta: str) -> ResultadoGuardrail:
+    """Varredura de entrada com os scanners configurados (RN05/RN06)."""
+    return avaliar_entrada(
+        pergunta,
+        tuple(config.guardrails_ativos),
+        presidio_habilitado=config.presidio_habilitado,
+        presidio_idioma=config.presidio_idioma,
+        presidio_modelo_spacy=config.presidio_modelo_spacy,
+        prompt_guard_habilitado=config.prompt_guard_habilitado,
+        prompt_guard_modelo=config.prompt_guard_modelo,
+        prompt_guard_revisao=config.guardrails_modelo_injecao_revision,
+        prompt_guard_limiar=config.guardrails_limiar_injection,
+    )
+
+
 def validar_pergunta_livre(pergunta: str) -> str:
     """Normaliza a entrada e impede chamadas vazias ou desproporcionalmente caras."""
     pergunta = pergunta.strip()
@@ -388,6 +421,13 @@ def responder_pergunta_livre(
     from src.recuperacao import Estrategia
 
     pergunta = validar_pergunta_livre(pergunta)
+    # Portão duplo, de propósito: a interface já barrou antes de debitar a cota,
+    # mas a guarda que importa é a que mora na função que fala com o provedor.
+    # Um chamador futuro não pode contornar a RN05 esquecendo de varrer antes.
+    entrada = guardar_entrada(pergunta)
+    if entrada.bloqueado:
+        raise PerguntaBloqueada(entrada)
+    pergunta = entrada.texto_seguro
     if config.embedding_provider not in {"ollama", "local"}:
         raise RuntimeError(
             "Perguntas livres exigem embeddings locais: o custo de embeddings "
@@ -480,6 +520,19 @@ def responder_pergunta_livre(
                     for c in resposta.citacoes
                 )
         conteudo = _redigir_para_exibicao(conteudo)
+        # Guarda de saída (RN05 nos dois sentidos): entrada limpa não garante
+        # resposta limpa. Bloquear aqui NÃO desfaz o débito — a chamada já foi
+        # paga, e o custo continua sendo contabilizado abaixo.
+        saida = avaliar_saida(
+            conteudo,
+            tuple(config.guardrails_ativos),
+            presidio_habilitado=config.presidio_habilitado,
+            presidio_idioma=config.presidio_idioma,
+            presidio_modelo_spacy=config.presidio_modelo_spacy,
+        )
+        conteudo = (
+            texto_de_recusa(saida) if saida.bloqueado else saida.texto_seguro
+        )
     except Exception as exc:
         raise FalhaConsultaAoVivo(custo_a_debitar_em_falha) from exc
     return {
@@ -552,6 +605,13 @@ st.sidebar.info(
     f"{max(0, config.limite_perguntas_livres_por_sessao - st.session_state.perguntas_livres_usadas)}\n\n"
     f"Orçamento restante da sessão: US$ "
     f"{max(0.0, config.orcamento_teto_usd - st.session_state.custo_usd_acumulado):.4f}"
+)
+st.sidebar.caption(
+    "**Guardrails ativos:** "
+    + (", ".join(f"`{s}`" for s in config.guardrails_ativos) or "_nenhum_")
+    + ". Pedido de recomendação, preço-alvo ou aconselhamento pessoal é "
+    "recusado antes de qualquer chamada externa (Res. CVM 20/2021 e 19/2021); "
+    "identificadores pessoais são anonimizados e não entram em log."
 )
 if not config.habilitar_perguntas_livres:
     st.sidebar.warning(
@@ -626,10 +686,33 @@ else:
             )
         else:
             try:
-                pergunta = validar_pergunta_livre(pergunta)
+                guarda_entrada = guardar_entrada(
+                    validar_pergunta_livre(pergunta)
+                )
             except ValueError as exc:
                 st.error(str(exc))
-            else:
+                guarda_entrada = None
+            if guarda_entrada is not None and guarda_entrada.bloqueado:
+                # A pergunta original NUNCA entra no histórico: o que aparece na
+                # tela e no estado de sessão é a forma anonimizada (RN06).
+                st.session_state.historico.append(
+                    {"papel": "user", "conteudo": guarda_entrada.texto_seguro}
+                )
+                st.session_state.historico.append(
+                    {
+                        "papel": "assistant",
+                        "conteudo": texto_de_recusa(guarda_entrada),
+                        "fontes": [],
+                        "modo": "recusa por guardrail (nenhuma chamada externa)",
+                        "provedor": "—",
+                    }
+                )
+                # Sem débito de cota nem de orçamento: a cota existe para conter
+                # gasto, e recusar aqui não gastou nada. Debitá-la faria um falso
+                # bloqueio custar ao usuário duas vezes.
+                st.rerun()
+            elif guarda_entrada is not None:
+                pergunta = guarda_entrada.texto_seguro
                 st.session_state.perguntas_livres_usadas += 1
                 st.session_state.historico.append(
                     {"papel": "user", "conteudo": pergunta}

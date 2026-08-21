@@ -175,11 +175,26 @@ class Config:
     guardrails_ativos: tuple[str, ...] = ("injection", "topico_proibido", "pii")
     guardrails_usar_onnx: bool = True
     guardrails_limiar_injection: float = 0.85
-    # Vazio = build não reprodutível. Os pesos do Prompt Guard 2 são embutidos
-    # na imagem no build; HF_TOKEN é segredo de BUILD, nunca de runtime (RNF12).
-    guardrails_modelo_injecao_revision: str = ""
+    # Desligado por padrão: exige requirements-guardrails.txt E os pesos
+    # baixados no build com HF_TOKEN (RNF12 — runtime carrega com
+    # local_files_only, confirmado que não precisa de token depois de
+    # baixado). Ligar sem os pesos no cache falha fechado no primeiro uso
+    # (RNF03) — ver `src.prompt_guard`.
+    prompt_guard_habilitado: bool = False
+    prompt_guard_modelo: str = "meta-llama/Llama-Prompt-Guard-2-86M"
+    # SHA pinado em 2026-08-21 (RNF01: pinar ao que foi medido). Vazio =
+    # build não reprodutível. Os pesos do Prompt Guard 2 são embutidos na
+    # imagem no build; HF_TOKEN é segredo de BUILD, nunca de runtime (RNF12).
+    guardrails_modelo_injecao_revision: str = (
+        "a8ded8e697ce7c355e395a0df51f94adb4a2fd27"
+    )
     presidio_idioma: str = "pt"
     presidio_modelo_spacy: str = "pt_core_news_md"
+    # Desligado por padrão: exige requirements-guardrails.txt instalado
+    # (presidio-analyzer + modelo spaCy, ~40 MB) — o modo demonstração sobe
+    # sem ele (RNF12). Ligar sem o pacote instalado falha fechado no primeiro
+    # uso, não silenciosamente (RNF03) — ver `src.reconhecedor_presidio`.
+    presidio_habilitado: bool = False
 
     # Observabilidade (seção 5.12)
     langfuse_public_key: str = field(default="", repr=False)
@@ -749,12 +764,22 @@ def carregar_config(env_file: Path | None = None) -> Config:
                 str(padrao.guardrails_limiar_injection),
             )
         ),
+        prompt_guard_habilitado=_env_bool(
+            "PROMPT_GUARD_HABILITADO", padrao.prompt_guard_habilitado
+        ),
+        prompt_guard_modelo=_env(
+            "PROMPT_GUARD_MODELO", padrao.prompt_guard_modelo
+        ),
         guardrails_modelo_injecao_revision=_env(
-            "GUARDRAILS_MODELO_INJECAO_REVISION", ""
+            "GUARDRAILS_MODELO_INJECAO_REVISION",
+            padrao.guardrails_modelo_injecao_revision,
         ),
         presidio_idioma=_env("PRESIDIO_IDIOMA", padrao.presidio_idioma),
         presidio_modelo_spacy=_env(
             "PRESIDIO_MODELO_SPACY", padrao.presidio_modelo_spacy
+        ),
+        presidio_habilitado=_env_bool(
+            "PRESIDIO_HABILITADO", padrao.presidio_habilitado
         ),
         langfuse_public_key=_env("LANGFUSE_PUBLIC_KEY", ""),
         langfuse_secret_key=_env("LANGFUSE_SECRET_KEY", ""),

@@ -95,86 +95,131 @@ não é falsa, mas também não é publicável.
 ## Estado de implementação
 
 Nem tudo o que a arquitetura descreve está construído. Esta tabela é o estado
-verificável em **2026-08-10**, não a intenção.
+verificável em **2026-08-21**, não a intenção.
 
 | Camada | Estado |
 |---|---|
 | Corpus (20 PDFs, 5 bancos × 4 trimestres, manifesto com SHA-256) | ✅ íntegro |
+| Extração por **Mistral OCR** com cache versionado *content-addressed* | ✅ extrator primário; 2.790 páginas, zero erro |
 | Ingestão, chunking, validação estrutural e teste-sentinela (20/20 âncoras) | ✅ |
 | Normalização numérica pt-BR e canonização de bancos | ✅ |
-| Índice vetorial + BM25 com guarda de consistência (RNF09) | 🔄 migração para ChromaDB em curso |
-| Recuperação E0–E4 com filtro de metadados e subconsulta por banco | ✅ base implementada |
+| Índice vetorial **ChromaDB** + BM25 com guarda de consistência (RNF09) | ✅ 7.574 chunks, `bge-m3` 1024d |
+| Recuperação E0–E4 com filtro de metadados e subconsulta por banco | ✅ |
 | Geração com contrato JSON, citação obrigatória e recusa (RN01–RN02) | ✅ |
 | Avaliação retomável: fingerprint, journal, checkpoint, teto de custo | ✅ |
-| Painel contábil CVM em DuckDB, mapa semântico de contas, 4T derivado | 🔄 em construção |
-| Camada de agentes (Investigador + Auditor, três braços, injeção de falha) | ⬜ não construída |
-| Modelo preditivo supervisionado sobre o painel | ⬜ não construído |
-| Guardrails (PII, injeção, tópico proibido) | ⬜ não construídos |
-| Observabilidade e suíte automatizada de *faithfulness* | ⬜ não construídas |
+| Painel contábil CVM em DuckDB, mapa semântico de contas, 4T derivado | ✅ construído · ❌ **gate G4 reprovado** (ver abaixo) |
+| Camada de agentes (Investigador + Auditor, três braços, injeção de falha) | ✅ os três braços rodaram · ⬜ falta acompanhamento de projeções |
+| Modelo preditivo supervisionado sobre o painel | ⬜ não construído (depende do G4) |
+| Guardrails (PII, injeção, tópico proibido) | ✅ **20/20 ataques bloqueados · 0/45 falso bloqueio** · ⬜ Presidio e Prompt Guard 2 pendentes |
+| Observabilidade (Langfuse) e suíte automatizada de *faithfulness* | ⬜ não construídas |
 | Interface Streamlit (modo cacheado + pergunta livre opt-in) | ✅ base; camadas novas pendentes |
 
-Suíte de testes: **525 casos automatizados, sem skips**. `pytest` verde é
+Suíte de testes: **1.387 casos automatizados, sem skips**. `pytest` verde é
 pré-condição de qualquer commit.
 
-Extração por OCR de documento: **pendente**. O extrator ativo é o local
-(`pypdf` ⇄ `pdfplumber`); o subsistema Mistral OCR existe como pré-processador
-explícito e pago, com cache *content-addressed*, mas **não** é o extrator
-primário e o gate de comparação contra `pdfplumber` ainda não foi executado.
+**Gate G4 reprovado, e o motivo importa.** O gate confere, banco a banco, se o
+lucro resolvido pelo mapa semântico de contas bate com o release. Ele reprovou
+em 2 das 20 células (Santander 3T e 4T2025) — a causa apurada é **erro no
+próprio arquivo da CVM**, não no mapa; o 4T herda o erro com sinal invertido
+por ser derivado do 3T defeituoso. Uma célula (BTG 4T2025) ficou sem âncora
+porque 63 de 71 páginas da demonstração anual não têm mapa de caracteres. O
+painel contábil não é usado como fonte de resposta enquanto isso não for
+resolvido com procedência declarada.
 
 ---
 
 ## Resultados medidos
 
-Rodada vigente no conjunto congelado: **`20260821T012629Z-2e5d234d10`**
-(2026-08-20), 45 perguntas × 5 estratégias = **225 chamadas**, temperatura 0,
-zero erro de infraestrutura, **USD 0,2622**. As 45 `teste` foram congeladas em
+Rodada vigente no conjunto congelado: **`20260821T165512Z-2a9feb8a5b`**
+(2026-08-21), 45 perguntas × 5 estratégias = **225 chamadas**, temperatura 0,
+zero erro de infraestrutura, **USD 0,2348**. As 45 `teste` foram congeladas em
 2026-07-29 e nenhum número de `dev` aparece aqui.
 
-| Estratégia | Recall@5 | Exatidão numérica | Recusa correta | Custo médio |
-|---|---|---|---|---|
-| E0 — Closed-book | — (não se aplica) | 0,000 | 0,800 | USD 0,000311 |
-| E1 — Keyword/BM25 | 0,920 | 0,200 | 1,000 | USD 0,001210 |
-| E2 — Semântica | 0,880 | 0,400 | 1,000 | USD 0,001327 |
-| E3 — Híbrida/RRF | 0,880 | **0,467** | 1,000 | USD 0,001227 |
-| E4 — Tabela de fatos | 0,880 | **0,467** | 1,000 | USD 0,001751 |
+| Estratégia | Recall@5 | Exatidão factual (15) | Exatidão comparativa (10) | Recusa correta | Custo médio |
+|---|---|---|---|---|---|
+| E0 — Closed-book | — (não se aplica) | 0,000 | 0,000 | 0,700 | USD 0,000265 |
+| E1 — Keyword/BM25 | 0,920 | 0,400 | 0,000 | 1,000 | USD 0,001179 |
+| E2 — Semântica | 0,880 | 0,333 | 0,100 | 1,000 | USD 0,001333 |
+| E3 — Híbrida/RRF | 0,880 | **0,467** | 0,100 | 1,000 | USD 0,001233 |
+| E4 — Tabela de fatos | 0,880 | 0,400 | **0,200** | 1,000 | USD 0,001208 |
 
-**Nenhuma estratégia é declarada vencedora.** E3 e E4 empatam em 7/15 factuais,
-com **3 discordâncias de cada lado**. O limiar declarado antes da execução é de
-**6 na mesma direção** (McNemar exato, p = 0,031), então o resultado publicado é
-*indistinguível neste tamanho de amostra* — e agora com duas rodadas
-independentes dizendo o mesmo.
+**Nenhuma estratégia é declarada vencedora.** Entre E3 e E4 nas factuais há
+**2 discordâncias numa direção e 3 na outra**; o limiar declarado antes da
+execução é de **6 na mesma direção** (McNemar exato, p = 0,031). O resultado
+publicado é *indistinguível neste tamanho de amostra*, e três rodadas
+independentes já disseram o mesmo.
 
-**A recuperação deixou de ser o gargalo.** O E4 leva o valor exato do gabarito
-ao top-5 em 11/15 das factuais, contra 9/15 do E3. O que consome esse ganho é a
-camada de recusa: o sistema ainda recusa mais da metade das factuais, e parte
-dessas recusas tem o valor certo no trecho recuperado. Duas causas foram
-apuradas e corrigidas nesta rodada — período escrito na forma abreviada do
-próprio release (`2T25`) e marcador de citação entre parênteses, cujo número de
-página era tratado como afirmação numérica. A exatidão subiu de 0,333 para
-0,467, o melhor número já medido aqui.
+**A coluna comparativa é nova e é a mais reveladora.** Até 2026-08-20 as 10
+perguntas comparativas não tinham nenhuma verificação de acerto numérico — o
+sistema podia publicar um número errado e nenhuma métrica registrava. Agora
+elas são pontuadas, e o resultado é baixo em todas as estratégias (0 a 2 de
+10). A causa medida não é a recuperação: em 18 das respostas publicadas a
+página correta **estava** entre as recuperadas e o modelo citou outra — o
+índice do documento, ou a tabela do semestre acumulado em vez da do trimestre.
+As guardas recusam 10 dessas 18; as outras 8 continuam passando. Citação, não
+recuperação, é o gargalo atual.
 
-**O defeito mais grave desta rodada foi encontrado, apurado e corrigido.** Em
-duas respostas o sistema publicou o número da **coluna errada** de uma tabela:
-`12.144` (trimestre anterior) onde o gabarito é `11.875`, e `22,8%` (semestre
-acumulado) onde o gabarito é `23,3%`. Não era alucinação — o número existe na
-página citada, na linha certa, na coluna errada. Duas causas: cabeçalho de
-tabela em duas linhas, com os períodos abaixo do separador, que a guarda de
-coluna não lia; e continuação de tabela cujo cabeçalho ficou no trecho
-anterior, onde não há como atribuir coluna alguma. Hoje uma linha de tabela sem
-cabeçalho no próprio trecho não fundamenta afirmação sobre um trimestre
-específico. As duas respostas erradas passaram a ser recusadas **sem perder
-nenhum acerto**.
+**Propriedade de segurança verificada nesta rodada:** das 36 respostas
+publicadas (não recusadas), **nenhuma omite o valor do gabarito**. As 8 que o
+avaliador reprova contêm os valores corretos e falham por exigência de
+qualificador na redação, não por número errado.
 
-**A lacuna acima foi fechada em código (2026-08-21), mas ainda não em
-número oficial.** `avaliar_exatidao_comparativa` agora pontua as 10
-comparativas — a mudança de lógica de pontuação invalida o checkpoint vigente
-e exige uma rodada nova de 225 chamadas para publicar oficialmente; a
-estimativa por replay contra as respostas já pagas é baixa (0 a 2 de 10,
-conforme a estratégia) e revelou um defeito genuíno: em mais de um caso o
-modelo cita, dentro do próprio top-5 recuperado, a página ERRADA — por
-exemplo o índice do documento em vez da tabela com o dado. `recall@5` não
-enxerga isso porque só verifica se a página certa está presente, nunca se a
-citação aponta para ela. É achado novo, não investigado a fundo ainda.
+**Guardrails (medido em 2026-08-21, custo zero — nenhum scanner chama LLM).**
+Três números na mesma execução, porque publicar só o primeiro premiaria um
+scanner que recusa tudo:
+
+| Meta | Escopo | Resultado |
+|---|---|---|
+| Ataques bloqueados pelo scanner **e** subtipo corretos | 20 ataques (9 injeção · 11 tópico) | **20/20** |
+| Falso bloqueio na **entrada** | 45 perguntas legítimas congeladas | **0/45** |
+| Falso bloqueio na **saída** | 855 textos gerados pelo próprio sistema nas 4 estratégias | **0/855** |
+
+A terceira linha existe porque a guarda de saída entrou no caminho do produto e
+precisava do mesmo contraprova que a de entrada — medida sobre a linguagem que
+este sistema realmente gerou no conjunto congelado, não sobre exemplos escritos
+para ela passar. Evidência em `resultados/guardrails.json`.
+
+Cada recusa por tópico declara a norma que a fundamenta: **Resolução CVM
+20/2021** para atividade de analista (recomendar, precificar, classificar) e
+**Resolução CVM 19/2021** para consultoria (aconselhar pessoa determinada
+sobre a carteira dela). PII **não** bloqueia — CPF, CNPJ, e-mail, telefone e
+CEP são anonimizados e a pergunta segue; bloquear transformaria proteção do
+usuário em recusa de atendimento. CPF e CNPJ são validados pelo **dígito
+verificador**, não pela forma: um release está cheio de números de onze
+dígitos, e reconhecer pela forma seria uma fábrica de falso bloqueio.
+
+Os scanners estão **ligados ao caminho interativo**: a varredura de entrada roda
+antes de qualquer fábrica ser construída — um ataque é recusado sem gastar
+chamada nem cota de sessão —, o braço de agentes recebe o texto já anonimizado, e
+bloquear a saída **não apaga** o custo já incorrido, porque a chamada aconteceu e
+esconder isso corromperia a contabilidade de orçamento. O benchmark E0–E4 e os
+braços A/B/C do experimento continuam **fora** dessa fiação (RNF11): guardrail é
+composição do produto, não alteração da orquestração medida.
+
+**Presidio construído** (`src/reconhecedor_presidio.py`, `requirements-guardrails.txt`,
+desligado por padrão via `PRESIDIO_HABILITADO` — RNF12) — NER de nome de
+pessoa, que expressão regular não resolve. Dois falsos positivos reais foram
+medidos e corrigidos antes de publicar: o modelo spaCy marca o próprio nome de
+banco ("Santander") como PESSOA (filtrado contra `APELIDOS_BANCOS`) e marca o
+verbo que abre a frase ("Ignore", "Aja" — maiúsculo só por convenção de início
+de frase) como PESSOA, o que apagaria o gatilho que o scanner de injeção
+precisa ver (filtrado por token único na posição 0). Com Presidio ligado, as
+20 ataques e as 55 congeladas (dev + teste) foram remedidas: nenhuma mudança.
+
+**Llama Prompt Guard 2 (86M) também construído** (`src/prompt_guard.py`,
+desligado por padrão via `PROMPT_GUARD_HABILITADO`) — pesos gated do Hugging
+Face, baixados uma vez com `HF_TOKEN` de build e pinados por SHA
+(`guardrails_modelo_injecao_revision`); runtime carrega com
+`local_files_only=True`, confirmado que não pede token nenhum depois de
+baixado (RNF12). Medido antes de compor: sozinho, o classificador **não
+cobre a família `topico_proibido`** (recomendação, preço-alvo, consultoria) —
+ele foi treinado para reconhecer *tentativa de sobrepor instrução*, não
+*pedido de conduta regulada*, então isso é escopo, não defeito. Da família de
+injeção, pega 5 dos 9 ataques sozinho; os 9 continuam cobertos pelo regex
+determinístico. A integração é **OR**, não substituição: bloqueia se o regex
+ou o classificador disparar, e só chama o modelo quando o regex não achou
+nada. Com as duas camadas ML ligadas juntas, os 20/20 ataques e o 0/45+0/855
+de falso bloqueio se mantêm — evidência em `resultados/guardrails.json`.
 
 | Outras métricas | Escopo | Resultado |
 |---|---|---|
@@ -182,8 +227,8 @@ citação aponta para ela. É achado novo, não investigado a fundo ainda.
 | Estabilidade a temperatura 0 | 10 perguntas × 3 repetições | não medido |
 | Acerto da classe de cobertura (`ambas`/`so_painel`/`nenhuma`) | perguntas anotadas | não medido |
 | Recusa **pelo motivo certo** | 10 adversariais | não medido |
-| Taxa de falso bloqueio dos guardrails | 45 perguntas legítimas | não medido |
-| Ataques bloqueados | 4 ataques nomeados | não medido |
+| Taxa de falso bloqueio dos guardrails | 45 legítimas (entrada) + 855 textos gerados (saída) | **0/45 e 0/855** |
+| Ataques bloqueados | 20 ataques (injeção + tópico) | **20/20** |
 | Concordância entre juiz automático e auditoria humana | mesma amostra de 15 | não medido |
 | Comparação dos três braços (agente único × Investigador+Auditor × determinístico) | 15 pareadas | não medido |
 | Modelo preditivo (ROC-AUC contra baselines) | teste temporal | não medido |
@@ -370,12 +415,17 @@ pergunta livre, evitando custo falsamente registrado como zero.
 │   ├── perguntas.csv             # 10 dev + 45 teste congeladas
 │   └── candidatas_teste.csv      # origem auditável da curadoria
 ├── src/                          # ingestao · normalizacao · indexacao ·
-│                                 # recuperacao · geracao · avaliacao ·
-│                                 # auditoria · bloqueio · ocr_* · config
+│                                 # recuperacao · fatos (E4) · geracao ·
+│                                 # avaliacao · auditoria · bloqueio ·
+│                                 # dados_estruturados · mapa_contas ·
+│                                 # cobertura · ferramentas · agentes ·
+│                                 # braco_agente · braco_determinista ·
+│                                 # injecao_falha · ocr_* · config
+├── corpus/ocr/                   # cache de OCR versionado (RNF10)
 ├── artefatos/                    # índice, logs JSONL, resultados, cache do demo
 ├── resultados/                   # evidência dos gates
 ├── app_streamlit.py
-└── tests/                        # 525 casos, sem skips
+└── tests/                        # 1.387 casos, sem skips
 ```
 
 ---
