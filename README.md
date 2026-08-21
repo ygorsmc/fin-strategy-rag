@@ -64,7 +64,7 @@ pergunta → guardrails → Investigador → [filtro de contexto]
 
 **Dois caminhos de execução, deliberadamente separados.** O caminho interativo
 (agentes, guardrails, Streamlit) é o produto. O caminho de avaliação — as 45
-perguntas congeladas sobre as estratégias E0–E3 — roda o pipeline determinístico
+perguntas congeladas sobre as estratégias E0–E4 — roda o pipeline determinístico
 de recuperação + geração, **sem** a camada de agentes: a orquestração multiagente
 introduz variabilidade de plano que destruiria a comparabilidade entre
 estratégias, mesmo a temperatura 0. Os dois caminhos compartilham as mesmas
@@ -76,7 +76,12 @@ As estratégias comparadas são:
   "sabe" de pré-treinamento);
 - **E1** — keyword/BM25;
 - **E2** — semântica/embeddings (estratégia-alvo);
-- **E3** — híbrida por *Reciprocal Rank Fusion*.
+- **E3** — híbrida por *Reciprocal Rank Fusion*;
+- **E4** — tabela de fatos numéricos: ranqueia o trecho por quantos números
+  da métrica perguntada ele contém, e não por similaridade de texto. Existe
+  porque recuperar a *página* certa não basta — a prosa da página costuma
+  arredondar ("R$ 3,4 bilhões") enquanto a tabela com o valor exato fica
+  fora do top-k.
 
 O isolamento de contexto entre os dois agentes é a decisão de arquitetura, não a
 divisão por fonte de dado: o Auditor acrescenta informação justamente porque
@@ -98,7 +103,7 @@ verificável em **2026-08-10**, não a intenção.
 | Ingestão, chunking, validação estrutural e teste-sentinela (20/20 âncoras) | ✅ |
 | Normalização numérica pt-BR e canonização de bancos | ✅ |
 | Índice vetorial + BM25 com guarda de consistência (RNF09) | 🔄 migração para ChromaDB em curso |
-| Recuperação E0–E3 com filtro de metadados e subconsulta por banco | ✅ base implementada |
+| Recuperação E0–E4 com filtro de metadados e subconsulta por banco | ✅ base implementada |
 | Geração com contrato JSON, citação obrigatória e recusa (RN01–RN02) | ✅ |
 | Avaliação retomável: fingerprint, journal, checkpoint, teto de custo | ✅ |
 | Painel contábil CVM em DuckDB, mapa semântico de contas, 4T derivado | 🔄 em construção |
@@ -120,19 +125,32 @@ primário e o gate de comparação contra `pdfplumber` ainda não foi executado.
 
 ## Resultados medidos
 
-**Nada foi medido no conjunto congelado.** As 45 perguntas `teste` foram
-congeladas em 2026-07-29 após segunda leitura dos documentos, mas ainda não
-foram executadas pelo avaliador atual. As métricas `dev` de 2026-07-15 foram
-**invalidadas** por correções posteriores no avaliador, no controle closed-book
-e nas perguntas comparativas — e número de `dev` não vira resultado final em
-nenhuma hipótese.
+Rodada vigente no conjunto congelado: **`20260820T164636Z-516a5112dc`**
+(2026-08-20), 45 perguntas × 5 estratégias = **225 chamadas**, temperatura 0,
+zero erro de infraestrutura, **USD 0,2306**. As 45 `teste` foram congeladas em
+2026-07-29 e nenhum número de `dev` aparece aqui.
 
-| Estratégia | Recall@5 | Exatidão numérica | Recusa correta | Custo médio | Latência quente média / p95 |
-|---|---|---|---|---|---|
-| E0 — Closed-book | — (não se aplica) | não medido | diagnóstico | não medido | não medido |
-| E1 — Keyword/BM25 | não medido | não medido | não medido | não medido | não medido |
-| E2 — Semântica | não medido | não medido | não medido | não medido | não medido |
-| E3 — Híbrida/RRF | não medido | não medido | não medido | não medido | não medido |
+| Estratégia | Recall@5 | Exatidão numérica | Recusa correta | Custo médio |
+|---|---|---|---|---|
+| E0 — Closed-book | — (não se aplica) | 0,000 | 0,800 | USD 0,000278 |
+| E1 — Keyword/BM25 | 0,920 | **0,333** | 1,000 | USD 0,001182 |
+| E2 — Semântica | 0,880 | 0,267 | 1,000 | USD 0,001283 |
+| E3 — Híbrida/RRF | 0,880 | 0,267 | 1,000 | USD 0,001238 |
+| E4 — Tabela de fatos | 0,880 | **0,333** | 1,000 | USD 0,001143 |
+
+**Nenhuma estratégia é declarada vencedora.** E1 e E4 empatam em 5/15 factuais
+e E2/E3 ficam em 4/15. Entre E4 e E3 há **3 discordâncias numa direção e 2 na
+outra** — o limiar declarado antes da execução é de **6 na mesma direção**
+(McNemar exato, p = 0,031), então o resultado publicado é *indistinguível neste
+tamanho de amostra*.
+
+**Onde o sistema está travado, medido e não escondido.** A recuperação não é
+mais o gargalo: o E4 leva o valor exato do gabarito ao top-5 em 11/15 das
+factuais, contra 9/15 do E3. O que consome esse ganho é a camada de recusa —
+o sistema **recusa em 9 das 15 factuais, e em 5 delas o valor exato já estava
+no trecho recuperado**. A guarda da RN02 erra para o lado seguro (zero resposta
+publicada com número divergente do gabarito, conferido caso a caso), mas erra
+demais. É a próxima frente de trabalho, não uma limitação aceita.
 
 | Outras métricas | Escopo | Resultado |
 |---|---|---|
@@ -362,7 +380,7 @@ pergunta livre, evitando custo falsamente registrado como zero.
   instituição define os próprios ajustes; as perguntas comparativas fixam "como
   divulgado em cada release".
 - **Não-determinismo da camada de agentes:** por isso a comparação de estratégias
-  roda no caminho determinístico. As métricas de E0–E3 descrevem o pipeline de
+  roda no caminho determinístico. As métricas de E0–E4 descrevem o pipeline de
   recuperação, não o comportamento do agente.
 - **Guardrails têm custo de memória e de falso bloqueio:** qualquer scanner pode
   barrar uso legítimo, e por isso a taxa de falso bloqueio é métrica reportada,

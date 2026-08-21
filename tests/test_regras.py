@@ -909,12 +909,14 @@ class TestEsquemaConjuntoPadrao:
         assert cabecalho == avaliacao.COLUNAS_CONJUNTO_PADRAO
 
     def test_estrategias_cobrem_o_vocabulario_do_env(self):
-        # ESTRATEGIA_PADRAO aceita: closed_book | keyword | semantica | hibrida
+        # ESTRATEGIA_PADRAO aceita:
+        # closed_book | keyword | semantica | hibrida | fatos
         assert {e.value for e in Estrategia} == {
             "closed_book",
             "keyword",
             "semantica",
             "hibrida",
+            "fatos",
         }
 
 

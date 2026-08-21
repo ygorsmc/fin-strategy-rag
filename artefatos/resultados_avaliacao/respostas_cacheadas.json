@@ -1,1 +1,296 @@
-{}
+{
+  "Em que ano o BTG Pactual foi fundado?": {
+    "citacoes": [],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [],
+    "gabarito": "Recusa: a resposta exigiria conhecimento externo aos documentos recuperados.",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTA010",
+    "provedor": "gemini",
+    "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [
+      "BTG · btg_release_2T2025 · págs. 5–6",
+      "BTG · btg_release_4T2025 · págs. 27–28",
+      "BTG · btg_release_1T2026 · págs. 26–27",
+      "BTG · btg_release_2T2025 · págs. 25–26",
+      "BTG · btg_release_3T2025 · págs. 5–6"
+    ],
+    "validacao_automatica": true
+  },
+  "Por que o lucro líquido ajustado do Banco do Brasil caiu do 3T2025 para o 4T2025?": {
+    "citacoes": [],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [],
+    "gabarito": "A premissa é falsa: o lucro líquido ajustado subiu de R$ 3.785 milhões para R$ 5.742 milhões, alta de 51,7%.",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTA008",
+    "provedor": "gemini",
+    "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [
+      "BB · bb_release_3T2025 · págs. 134–135",
+      "BB · bb_release_4T2025 · págs. 11–12",
+      "BB · bb_release_3T2025 · págs. 12–13",
+      "BB · bb_release_4T2025 · págs. 23–24",
+      "BB · bb_release_3T2025 · págs. 134–134"
+    ],
+    "validacao_automatica": true
+  },
+  "Quem fundou o Bradesco?": {
+    "citacoes": [],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [],
+    "gabarito": "Recusa: a resposta exigiria conhecimento externo aos documentos recuperados.",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTA009",
+    "provedor": "gemini",
+    "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [
+      "BRADESCO · bradesco_release_2T2025 · págs. 60–61",
+      "BRADESCO · bradesco_release_3T2025 · págs. 60–61",
+      "BRADESCO · bradesco_release_4T2025 · págs. 182–184",
+      "BRADESCO · bradesco_release_3T2025 · págs. 152–153",
+      "BRADESCO · bradesco_release_1T2026 · págs. 59–59"
+    ],
+    "validacao_automatica": true
+  },
+  "Segundo a administração do Nubank quais fatores explicaram a inadimplência no 2T2025?": {
+    "citacoes": [],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [],
+    "gabarito": "Recusa: o Nubank não integra o corpus curado.",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTA003",
+    "provedor": "gemini",
+    "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [],
+    "validacao_automatica": true
+  },
+  "Segundo a análise gerencial do Bradesco qual foi o saldo da carteira de crédito expandida no 3T2025?": {
+    "citacoes": [
+      {
+        "documento": "bradesco_release_3T2025",
+        "empresa": "BRADESCO",
+        "pagina": 45,
+        "trimestre": "3T2025"
+      }
+    ],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [
+      "BRADESCO · bradesco_release_3T2025 · 3T2025 · pág. 45"
+    ],
+    "gabarito": "R$ 1.034.238 milhões",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTF008",
+    "provedor": "gemini",
+    "resposta": "No 3T2025, o saldo da carteira de crédito expandida foi de R$ 1.034.238 milhões.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [
+      "BRADESCO · bradesco_release_3T2025 · págs. 16–17",
+      "BRADESCO · bradesco_release_3T2025 · págs. 11–12",
+      "BRADESCO · bradesco_release_3T2025 · págs. 15–16",
+      "BRADESCO · bradesco_release_3T2025 · págs. 17–18",
+      "BRADESCO · bradesco_release_3T2025 · págs. 45–45"
+    ],
+    "validacao_automatica": true
+  },
+  "Segundo a divulgação gerencial do BTG Pactual qual foi o ROAE ajustado anualizado no 1T2026?": {
+    "citacoes": [
+      {
+        "documento": "btg_release_1T2026",
+        "empresa": "BTG",
+        "pagina": 3,
+        "trimestre": "1T2026"
+      }
+    ],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [
+      "BTG · btg_release_1T2026 · 1T2026 · pág. 3"
+    ],
+    "gabarito": "26,6%",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTF001",
+    "provedor": "gemini",
+    "resposta": "No 1T2026, o ROAE ajustado anualizado do BTG Pactual foi de 26,6%.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [
+      "BTG · btg_release_1T2026 · págs. 3–4",
+      "BTG · btg_release_1T2026 · págs. 6–6",
+      "BTG · btg_release_1T2026 · págs. 1–3",
+      "BTG · btg_release_1T2026 · págs. 3–3",
+      "BTG · btg_release_1T2026 · págs. 6–7"
+    ],
+    "validacao_automatica": true
+  },
+  "Segundo a divulgação gerencial do BTG Pactual qual foi o lucro líquido ajustado no 4T2025?": {
+    "citacoes": [
+      {
+        "documento": "btg_release_4T2025",
+        "empresa": "BTG",
+        "pagina": 1,
+        "trimestre": "4T2025"
+      }
+    ],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [
+      "BTG · btg_release_4T2025 · 4T2025 · pág. 1"
+    ],
+    "gabarito": "R$ 4.597,1 milhões",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTF003",
+    "provedor": "gemini",
+    "resposta": "Segundo a divulgação gerencial do BTG Pactual, o lucro líquido ajustado no 4T2025 foi de R$4.597,1 milhões.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [
+      "BTG · btg_release_4T2025 · págs. 1–3",
+      "BTG · btg_release_4T2025 · págs. 3–4",
+      "BTG · btg_release_4T2025 · págs. 5–5",
+      "BTG · btg_release_4T2025 · págs. 6–6",
+      "BTG · btg_release_4T2025 · págs. 3–3"
+    ],
+    "validacao_automatica": true
+  },
+  "Segundo o release do Banco do Brasil qual foi o lucro líquido ajustado no 2T2026?": {
+    "citacoes": [],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [],
+    "gabarito": "Recusa: o 2T2026 não integra a janela temporal do corpus.",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTA005",
+    "provedor": "gemini",
+    "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [],
+    "validacao_automatica": true
+  },
+  "Segundo o release do Banco do Brasil qual foi o índice de inadimplência acima de 90 dias no 3T2025?": {
+    "citacoes": [
+      {
+        "documento": "bb_release_3T2025",
+        "empresa": "BB",
+        "pagina": 59,
+        "trimestre": "3T2025"
+      }
+    ],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [
+      "BB · bb_release_3T2025 · 3T2025 · pág. 59"
+    ],
+    "gabarito": "4,93%",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTF014",
+    "provedor": "gemini",
+    "resposta": "No 3T2025, o índice de inadimplência acima de 90 dias (INAD+90d) do Banco do Brasil encerrou setembro/25 em 4,93%.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [
+      "BB · bb_release_3T2025 · págs. 78–80",
+      "BB · bb_release_3T2025 · págs. 12–13",
+      "BB · bb_release_3T2025 · págs. 68–70",
+      "BB · bb_release_3T2025 · págs. 57–59",
+      "BB · bb_release_3T2025 · págs. 79–81"
+    ],
+    "validacao_automatica": true
+  },
+  "Segundo o release do Itaú Unibanco qual foi a renda mensal mediana dos clientes pessoa física no 1T2026?": {
+    "citacoes": [],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [],
+    "gabarito": "Recusa: essa métrica não é divulgada nos documentos do corpus.",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTA007",
+    "provedor": "gemini",
+    "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [
+      "ITAU · itau_release_1T2026 · págs. 132–132",
+      "ITAU · itau_release_1T2026 · págs. 119–119",
+      "ITAU · itau_release_1T2026 · págs. 124–125",
+      "ITAU · itau_release_1T2026 · págs. 8–9",
+      "ITAU · itau_release_1T2026 · págs. 119–120"
+    ],
+    "validacao_automatica": true
+  },
+  "Segundo o release do Nubank qual foi o ROE ou ROAE no 4T2025?": {
+    "citacoes": [],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [],
+    "gabarito": "Recusa: o Nubank não integra o corpus curado.",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTA001",
+    "provedor": "gemini",
+    "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [],
+    "validacao_automatica": true
+  },
+  "Segundo o release do Nubank qual foi o saldo da carteira de crédito no 3T2025?": {
+    "citacoes": [],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [],
+    "gabarito": "Recusa: o Nubank não integra o corpus curado.",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTA002",
+    "provedor": "gemini",
+    "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [],
+    "validacao_automatica": true
+  },
+  "Segundo o release do Nubank qual foi o índice de eficiência no 1T2026?": {
+    "citacoes": [],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [],
+    "gabarito": "Recusa: o Nubank não integra o corpus curado.",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTA004",
+    "provedor": "gemini",
+    "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [],
+    "validacao_automatica": true
+  },
+  "Segundo o release do Santander qual foi o ROAE no 1T2020?": {
+    "citacoes": [],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "e02a5f99d943fb8634f702ea8f93c1aa00e998992a946b0feb67f06a33ff8e5e",
+    "fontes": [],
+    "gabarito": "Recusa: o 1T2020 não integra a janela temporal do corpus.",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTA006",
+    "provedor": "gemini",
+    "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
+    "run_id": "20260820T164636Z-516a5112dc",
+    "trechos_recuperados": [],
+    "validacao_automatica": true
+  }
+}

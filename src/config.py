@@ -463,7 +463,7 @@ def _validar_config(config: Config) -> Config:
         erros.append("PRESIDIO_MODELO_SPACY não pode ser vazio")
 
     if config.estrategia_padrao not in {
-        "closed_book", "keyword", "semantica", "hibrida"
+        "closed_book", "keyword", "semantica", "hibrida", "fatos"
     }:
         erros.append(f"ESTRATEGIA_PADRAO desconhecida: {config.estrategia_padrao!r}")
     if config.embedding_provider not in {

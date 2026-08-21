@@ -9,10 +9,29 @@
 - **Marco:** o repositório foi realinhado à **revisão 3** da especificação
   (2026-08-10). O plano em `AGENTS.md` tem 18 etapas, RN01–RN12 e os gates
   G1/G2/G3/G4 — o plano antigo de 10 etapas não vale mais.
-- **Suíte local: 1.302 casos passando, sem skips, sem falhas.** Verificado ao
-  final da sessão de 2026-08-17 (eram 1.270 em 2026-08-16; +32 do redesenho da
-  RN02, do limitador de taxa do Gemini, de `--conjunto` e da propagação de
-  unidade — ver bullets abaixo).
+- **Suíte local: 1.365 casos passando, sem skips, sem falhas.** Verificado em
+  2026-08-20 (eram 1.349 em 19/08; +16 de `tests/test_fatos.py`, o contrato do
+  canal E4).
+- **E4 (`Estrategia.FATOS`) construído em 2026-08-20** — `src/fatos.py`,
+  ligado em `src/recuperacao.py::_top_fatos`, no vocabulário de
+  `ESTRATEGIA_PADRAO`, em `app_streamlit.ESTRATEGIAS_AVALIACAO` e na lista do
+  `executar_pipeline.py`. **Consequência de contrato:** `src/avaliacao.py:1103`
+  exige `set(estrategias) == set(Estrategia)` no congelado, então a rodada
+  publicável passou de 180 para **225 chamadas**.
+  - **Parser único, de propósito:** o laço que a guarda da RN02 usava para
+    montar evidência virou `geracao.fatos_numericos_do_chunk()` e é o mesmo que
+    a tabela usa. `tests/test_fatos.py::test_parser_e_o_mesmo_da_guarda_da_rn02`
+    trava isso — um segundo interpretador proporia página que o grounding
+    depois recusa.
+  - **Não é persistido em disco, por decisão.** Construir sob demanda custa
+    ~35 s e 36.621 fatos (só os que têm grupo métrico; os outros 127 mil não
+    discriminam chunk nenhum). Um artefato derivado dos chunks criaria a classe
+    de defeito "índice novo, fatos velhos" e exigiria guarda própria de
+    consistência — construir sob demanda torna a incoerência impossível.
+  - **Validado pelo caminho de produção** contra o índice real, custo zero:
+    recall@5 por categoria E1/E2/E3/E4 = comparativa 10/10/10/**10**, factual
+    13/12/12/**12**, total 23/22/22/**27**; valor exato no top-5 das factuais
+    **E3=9/15 · E4=11/15**. Consulta leva 0,5 s para as 45.
 - Etapas **3 (CVM → DuckDB)** e **5 (indexação em Chroma)**: **concluídas**.
 - Etapa ativa (plano §7): **11 (camada de agentes)**. **Os três braços existem e
   rodaram** (2026-08-12): `src/cobertura.py`, `src/ferramentas.py`,
@@ -41,9 +60,37 @@
   Validação: 2.790/2.790 páginas, nenhuma vazia, sentinela ok em 4 amostras.
   O desbloqueio foi ativar **Pay-As-You-Go** no console — crédito pré-pago é
   saldo, não permissão, e a Batch API recusava com HTTP 402 até então.
-- A avaliação E0–E3 **nunca rodou no conjunto congelado** e o cache público
-  (`respostas_cacheadas.json`) segue deliberadamente vazio. As métricas `dev` de
-  2026-07-15 continuam invalidadas — `VERSAO_AVALIACAO` está em **v5**.
+- **Rodada congelada VIGENTE: `20260820T164636Z-516a5112dc`** (2026-08-20,
+  **225 chamadas** — 5 estratégias —, zero erro, **USD 0,2306**), primeira com
+  prompt v10 + guarda afrouxada + **E4**.
+  **Exatidão: E0 0,000 · E1 0,333 · E2 0,267 · E3 0,267 · E4 0,333.**
+  Recall@5: E1 0,920 · E2/E3/E4 0,880. Recusa correta 1,000 em E1–E4 (E0 0,800).
+  **Agregado E1+E2+E3: 10 → 13** (E1 3→5, E2 2→4, E3 5→4). O prompt v10 e a
+  guarda afrouxada ajudaram E1 e E2; o −1 do E3 está dentro da variância medida.
+  **VEREDITO DO E4 — indistinguível do E3 neste tamanho de amostra.** E4 5/15
+  contra E3 4/15, com discordâncias **3 a 2** (só E4: TSTF002, TSTF011,
+  TSTF013; só E3: TSTF004, TSTF014). A regra do projeto (AGENTS.md §4.2) exige
+  **6 discordâncias na mesma direção** para declarar diferença — 3 não chega
+  perto. E4 também não bate o E1, que empata em 5/15.
+- **O GARGALO MUDOU DE CAMADA e este é o achado da sessão.** O E4 entregou
+  exatamente o que prometeu na recuperação — valor exato do gabarito no top-5
+  em **11/15 contra 9/15 do E3** — e isso **não converteu em exatidão**, porque
+  o sistema **recusa em 9/15 das factuais, sendo 5 delas COM o valor exato já
+  no top-5**. No E3 são 8/15 recusas, 3 com o valor presente. Ou seja: mais
+  evidência boa recuperada produziu mais recusa indevida, não mais acerto.
+  **Parar de mexer em recuperação.** O teto agora é a guarda da RN02 e o
+  prompt, não o top-k. Próxima frente: apurar, nessas 5, qual `return False`
+  da `numeros_da_resposta_estao_fundamentados` dispara (o rastreio por
+  `sys.settrace` usado em 19/08 resolve isso a custo zero).
+- **Histórico das rodadas no congelado** (mesmo conjunto de 45):
+  `20260818T235938Z-5c0da1df7f` (v9) E1 0,200 · E2 0,133 · E3 0,200 → agregado 8;
+  `20260819T200308Z-fe444d53d8` (v9) E1 0,133 · E2 0,133 · E3 0,267 → agregado 8;
+  `20260819T220100Z-46ab9dc70f` (v9) E1 0,200 · E2 0,133 · E3 0,333 → agregado 10;
+  **vigente** (v10 + guarda afrouxada + E4) E1 0,333 · E2 0,267 · E3 0,267 ·
+  E4 0,333 → agregado 13.
+  **Isto é o número real, promovível ao README.** O `dev` (10 perguntas) tinha
+  sugerido híbrida em 0,600; no congelado ela nunca passou de 0,333 — o `dev`
+  nunca teve poder estatístico para prever o número real.
 - **E0–E3 rodou no `dev` três vezes em 2026-08-16/17**, contra o índice
   **integral**, ~40 chamadas e ~US$ 0,04 cada. **A vigente é a run
   `20260817T181108Z-f1158b4907`** (depois do redesenho da RN02 + da
@@ -69,6 +116,152 @@
   §7 também corrigidas.
 
 ## Decisões e bloqueios em aberto
+
+- **Três correções determinísticas na RN02 (2026-08-18), medidas por replay
+  offline sobre o checkpoint congelado — custo zero, nenhuma chamada nova.**
+  Vieram do diagnóstico caso a caso das 15 factuais: **8 das 15 tinham número
+  certo e página certa e pontuaram zero**; só 4 eram falha real de recuperação.
+  1. **Marcador de nota no rótulo** (`^{N}`) fazia a célula do rótulo parecer
+     numérica, a linha perdia a métrica e nada nela fundamentava resposta.
+     Removido em `_sem_marcador_de_nota`. Medido no índice: devolve o rótulo de
+     **454 linhas** de tabela. **`(N)` NÃO é removido** — devolveria zero
+     rótulos e apareceria em 6.034 linhas onde parêntese é **negativo
+     contábil**; removê-lo trocaria sinal de valor real. Tem contraprova.
+  2. **Citação inline no texto** (`[SANTANDER, ..., pág. 11]`, que o modelo
+     copia do cabeçalho do trecho): o split de cláusulas quebra em `pág.` +
+     `11]`, e a segunda cláusula fica com número e sem métrica. **9 respostas
+     traziam o marcador e as 9 foram recusadas — 100%.** Removido só o colchete
+     que contém marca de página; `[1.234]` continua sujeito ao grounding.
+  3. **Stopwords `conforme`/`segundo`/`reais`/`real`** — conectivo e palavra de
+     moeda contavam como conteúdo inventado (derrubaram TSTF009 e TSTF006).
+  **Efeito medido (replay):** exatidão E1 3→4/15, E2 2→3/15, E3 3→4/15
+  (0,200→0,267 · 0,133→0,200 · 0,200→0,267); das 66 respostas rebaixadas pela
+  RN02, **6 passam a ser publicadas**. Suíte 1.302 → **1.314**, nenhuma
+  asserção enfraquecida. É estimativa de piso: o Gemini não é determinístico,
+  então rodada real pode divergir.
+- **Ataque à exatidão (2026-08-19, segunda leva) — 4 correções, todas com
+  causa medida caso a caso sobre a rodada congelada vigente.** O diagnóstico
+  das 15 factuais deu: 4 acertos + 3 recusas CORRETAS (valor ausente dos
+  trechos) = 7 comportamentos certos, e **8 perdas evitáveis**.
+  1. **Empresa da citação comparada por identidade canônica**
+     (`_mesma_empresa`, usado em `citacoes_sao_subconjunto` e no grounding).
+     O corpus usa sigla (`ITAU`, `BB`), o modelo cita o nome do documento
+     (`Itaú Unibanco`, `Banco do Brasil`) — igualdade literal zerava a lista de
+     chunks citados e derrubava a resposta inteira. **8 de 106 citações (8%)
+     não casavam; duas só por caixa.** `APELIDOS_BANCOS` resolve; citar banco
+     diferente continua órfão (tem contraprova).
+  2. **`_tem_negacao` não lê mais "não controladores" como negação** — é conta
+     contábil, aparece em **270 chunks**. `_e_modal` já normalizava; esta não.
+  3. **Grupo métrico herdado do título da seção** quando a linha não tem grupo
+     próprio. O release nomeia a métrica em `### Indicadores de Inadimplência`
+     e escreve "O indicador acima de 90 dias encerrou setembro em 4,93%".
+     **Preenche lacuna, nunca sobrescreve** (contraprova no teste).
+  4. **Stopwords de atribuição** (`pelo`, `informado`, `divulgado`, …):
+     "conforme informado pelo BB" diz de onde veio o fato, não afirma fato.
+  **Replay: E1 2→4/15, E2 2→3/15, E3 4→4/15.** Suíte 1.324 → **1.349**.
+  **Não medido com chamada real ainda.**
+- **Terceira leva (2026-08-19, fim da sessão): 2 de 3 mudanças pedidas foram
+  feitas; a terceira foi RECUSADA COM EVIDÊNCIA.**
+  1. **Guarda afrouxada onde um dos lados não nomeia grupo métrico**
+     (`metricas_compativeis`): quando resposta E evidência nomeiam grupo, eles
+     continuam tendo que ser o mesmo (impede lucro casar com carteira); quando
+     um lado não nomeia — linha de tabela de reconciliação, rótulo "IFRS -
+     valores atribuíveis aos acionistas controladores" — cai na sobreposição de
+     tokens. **Replay: E3 5→6 (TSTF009). Zero resposta errada admitida**,
+     conferido programaticamente. Suíte intacta.
+  2. **Prompt endurecido contra arredondamento — `VERSAO_PROMPT` v9 → v10.**
+     Manda copiar o número como impresso, proíbe converter escala e proíbe a
+     segunda forma entre parênteses. **Efeito NÃO demonstrado:** rodada `dev`
+     (`20260819T225003Z-7ce66fd5ba`, 40 chamadas) deu E1 0,200 · E2 0,600 ·
+     E3 0,600 contra E1 0,400 · E2 0,400 · E3 0,600 antes — sobe num lugar,
+     cai noutro, com n=10. E o modelo **continua arredondando** (DEV007:
+     "R$ 3,4 bilhões" para um gabarito de R$ 3.431 milhões — passou porque o
+     corretor tolera 1% e o release imprime a forma arredondada também).
+  3. **NÃO removi a exigência de repetir os qualificadores da métrica no
+     corretor**, apesar de pedido — porque a evidência mostrou que ela não é só
+     redação. Removê-la quebra
+     `test_exatidao_distingue_total_de_atribuivel_a_controladores`, e o
+     contraexemplo é real: no Itaú 1T2026 coexistem
+     `IFRS - valores atribuíveis aos acionistas controladores` = **11.636** e
+     `...controladores e não controladores` = **11.875**. Sem o qualificador o
+     corretor **aceitaria como certa** uma resposta que atribui 11.875 à linha
+     errada (±R$ 239 mi). **Mas o pedido tem razão de existir:** no BTG só há
+     `Índice de eficiência ajustado` (a versão sem "ajustado" é linha de
+     glossário, não valor concorrente), então ali a exigência reprova redação.
+     **Caminho certo, não feito: coluna nova no gabarito** com as redações
+     aceitas por pergunta — é a regra "acrescente coluna, nunca linha" do
+     AGENTS.md. Patch da remoção guardado no scratchpad, não aplicado.
+- **Tabela de fatos numéricos (proposta E4) — VIABILIDADE MEDIDA em 2026-08-19,
+  custo zero. Vale construir, mas NÃO pelo motivo óbvio.** Materializando
+  `_fatos_numericos_da_linha` sobre o corpus inteiro: **163.317 fatos**, 39 s
+  de construção, 20 chaves (empresa × trimestre).
+  **Cuidado com a métrica errada:** por *recall@5 da página aceita*, o canal
+  entrega E3=12/15, fatos=10/15, **união 13/15 — só +1**, retorno ruim. Foi o
+  que quase me fez recomendar não construir.
+  **A métrica certa é "um chunk com o VALOR EXATO está no top-5?"** — é essa
+  que modela a falha real (DEV007 teve `recall_ok=True` e ainda assim respondeu
+  "R$ 3,4 bilhões", porque a página recuperada tinha só a prosa arredondada e a
+  tabela com `3.431` estava na pág. 13, fora do top-5). Nessa métrica:
+  **E3=9/15 · canal-fatos=11/15**, e o canal recupera exatamente os casos do
+  tipo DEV007 (TSTF004, TSTF005, TSTF007, TSTF013).
+  **CORREÇÃO de 2026-08-20 — o "UNIÃO=13/15 (+4)" que eu publiquei aqui em
+  19/08 estava errado e não reproduz.** Ele era união de DEZ chunks (top-5 de
+  cada canal), ou seja, o dobro do orçamento de contexto — não uma estratégia,
+  outro orçamento. Refeito sob o mesmo top-5 de todo mundo: RRF(E3,canal)=8/15,
+  intercalado=8–9/15, **canal sozinho=11/15**, união-de-10=13/15. Fundir PIORA,
+  porque dividir cinco vagas entre duas listas expulsa justamente o trecho que
+  só uma delas achou. Daí o E4 ser canal PURO, não fusão.
+  **Como tabela de RESPOSTAS não serve:** o valor do gabarito está entre os
+  candidatos em 14/15, mas em 1º lugar por frequência em só **4/15**, com
+  70–700 valores distintos por consulta. É canal de RECUPERAÇÃO, não de
+  resposta.
+  **Não resolve:** TSTF008 e TSTF015 falham nos dois canais.
+- **Onde eu PAREI de afrouxar, de propósito:** TSTF006 e TSTF009 têm o número
+  certo e a página certa, mas a evidência é uma tabela de reconciliação cujo
+  título é "Comparativo BRGAAP x IFRS" e cuja linha é "IFRS - valores
+  atribuíveis aos acionistas controladores" — **em lugar nenhum perto do número
+  aparece "lucro" ou "resultado"**. Fazer casar exigiria deixar qualquer número
+  de tabela de reconciliação sustentar qualquer métrica. A recusa é
+  conservadora e correta; o caminho certo seria enriquecer o gabarito, não
+  afrouxar a guarda.
+- **Guarda de período por coluna de tabela: implementada, testada e HOJE
+  INERTE** (`src/geracao.py`, 2026-08-19). Mapeia coluna→período pelo cabeçalho
+  (`| 2T25 | 1S25 |`), distingue trimestre de acumulado e **falha aberto**
+  quando falta informação de qualquer lado. Nunca disparou em dado real: só
+  342 dos 2.887 chunks de tabela têm período no cabeçalho, e o chunk que
+  motivou a guarda (Itaú pág. 38) não tem cabeçalho nenhum. **Fica no código
+  como rede para quando o cabeçalho existir — não contar com ela hoje.**
+- **Opção B (propagar cabeçalho de tabela no chunking) FALHOU em três
+  tentativas e foi revertida** (2026-08-19, `git stash` "opcao-B-ingestao-
+  cabecalho-descartada"). (1) herdar cabeçalho entre PÁGINAS: **0 chunks
+  alterados** — no corpus real a extração não corta tabela na virada de página;
+  (2) repetir cabeçalho na continuação fatiada por capacidade: **0 chunks** —
+  tabela que cabe nunca é fatiada, e a que não cabe já repetia; (3) injetar o
+  cabeçalho na CAUDA DE SOBREPOSIÇÃO: mexeu (7.574→7.597 chunks) mas **inseriu
+  o cabeçalho da tabela ERRADA** (linhas do "Retorno" sob o cabeçalho de
+  "Ações") e corrompeu a linha separadora — pior que o defeito original.
+  **O defeito segue aberto e medido: 1.162 chunks de tabela (24%) têm linha de
+  dados sem cabeçalho, com 4.163 linhas; e 98% das tabelas TÊM cabeçalho na
+  extração** — logo é artefato do chunking, mas nenhuma das três hipóteses o
+  explica. Próxima tentativa precisa começar por descobrir de qual caminho
+  esses chunks saem, não por adivinhar.
+- **Nota operacional: a indexação parece travada e não está.** O processo
+  Python fica em `poll_schedule_timeout` com ~1% de CPU e não escreve em disco
+  até o fim — quem trabalha é o `llama-server` (90% de CPU). Matei uma
+  reconstrução saudável aos 26 min por essa leitura errada. **Conferir o CPU do
+  `llama-server` antes de concluir que travou.** Reconstrução completa leva
+  ~50 min, não ~18.
+- **Custo da correção, declarado e não escondido: das 6 respostas destravadas,
+  5 conferem com o gabarito e 1 publica número ERRADO** (TSTC005/keyword: cita
+  Itaú 22,8% quando o 2T2025 é 23,3%). O 22,8% existe no documento, com o nome
+  exato da métrica — é a coluna **1S25 (semestre)** da pág. 38, e a pergunta
+  pede o trimestre. **A proteção anterior era acidental:** o `^{2}` quebrava o
+  rótulo e a RN02 recusava por bug de parsing, não por detectar o período
+  errado. O limite já estava declarado no docstring de
+  `_fatos_numericos_da_linha` ("dentro de uma mesma linha as colunas não são
+  distinguidas"). **Gargalo seguinte, agora visível e mensurável: atribuição de
+  período/coluna dentro da linha de tabela** — trimestre isolado × acumulado do
+  semestre é a armadilha, e nenhuma guarda a cobre hoje.
 
 - **RN02 redesenhada de 12 portões para 4** (2026-08-16, `src/geracao.py`). A
   guarda vinha recusando **toda** resposta do `dev` (exatidão 0,000 nas quatro

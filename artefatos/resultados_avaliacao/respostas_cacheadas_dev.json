@@ -1,4 +1,34 @@
 {
+  "Segundo a análise gerencial do Itaú Unibanco qual foi a Margem Financeira Gerencial total no 3T2025?": {
+    "citacoes": [
+      {
+        "documento": "itau_release_3T2025",
+        "empresa": "ITAU",
+        "pagina": 6,
+        "trimestre": "3T2025"
+      }
+    ],
+    "conjunto": "dev",
+    "estrategia": "semantica",
+    "fingerprint": "a2811aae2e33b986f85e6b849dc3417f1549ba43defd7826e1723795c37560cc",
+    "fontes": [
+      "ITAU · itau_release_3T2025 · 3T2025 · pág. 6"
+    ],
+    "gabarito": "R$ 31.382 milhões",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "DEV003",
+    "provedor": "gemini",
+    "resposta": "A Margem Financeira Gerencial total no 3T2025 foi de R$ 31.382 milhões.",
+    "run_id": "20260819T225003Z-7ce66fd5ba",
+    "trechos_recuperados": [
+      "ITAU · itau_release_3T2025 · págs. 1–5",
+      "ITAU · itau_release_3T2025 · págs. 9–12",
+      "ITAU · itau_release_3T2025 · págs. 6–6",
+      "ITAU · itau_release_3T2025 · págs. 8–10",
+      "ITAU · itau_release_3T2025 · págs. 24–24"
+    ],
+    "validacao_automatica": true
+  },
   "Segundo a demonstração do resultado recorrente do Bradesco qual foi a margem financeira total no 1T2026?": {
     "citacoes": [
       {
@@ -10,7 +40,7 @@
     ],
     "conjunto": "dev",
     "estrategia": "semantica",
-    "fingerprint": "e23cbe34e8f1fd5ff8acbb4a0eddb7de59f23572e3b8e866cd01aa6bdc51fa7e",
+    "fingerprint": "a2811aae2e33b986f85e6b849dc3417f1549ba43defd7826e1723795c37560cc",
     "fontes": [
       "BRADESCO · bradesco_release_1T2026 · 1T2026 · pág. 41"
     ],
@@ -18,8 +48,8 @@
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "DEV005",
     "provedor": "gemini",
-    "resposta": "A margem financeira total do Bradesco no 1T2026 foi de R$ 20.051 milhões.",
-    "run_id": "20260817T181108Z-f1158b4907",
+    "resposta": "No 1T2026, a margem financeira total do Bradesco foi de R$ 20.051 milhões.",
+    "run_id": "20260819T225003Z-7ce66fd5ba",
     "trechos_recuperados": [
       "BRADESCO · bradesco_release_1T2026 · págs. 158–159",
       "BRADESCO · bradesco_release_1T2026 · págs. 84–85",
@@ -29,49 +59,49 @@
     ],
     "validacao_automatica": true
   },
-  "Segundo a demonstração gerencial do Santander qual foi o resultado de PDD no 1T2026 expresso como valor absoluto da despesa?": {
-    "citacoes": [
-      {
-        "documento": "santander_release_1T2026",
-        "empresa": "SANTANDER",
-        "pagina": 9,
-        "trimestre": "1T2026"
-      }
-    ],
-    "conjunto": "dev",
-    "estrategia": "semantica",
-    "fingerprint": "e23cbe34e8f1fd5ff8acbb4a0eddb7de59f23572e3b8e866cd01aa6bdc51fa7e",
-    "fontes": [
-      "SANTANDER · santander_release_1T2026 · 1T2026 · pág. 9"
-    ],
-    "gabarito": "R$ 6.344 milhões",
-    "modelo": "gemini-3.5-flash-lite",
-    "pergunta_id": "DEV006",
-    "provedor": "gemini",
-    "resposta": "Segundo a demonstração gerencial do Santander, o resultado de PDD no 1T2026 expresso como valor absoluto da despesa foi o resultado de PDD de R$ 6.344 milhões.",
-    "run_id": "20260817T181108Z-f1158b4907",
-    "trechos_recuperados": [
-      "SANTANDER · santander_release_1T2026 · págs. 9–11",
-      "SANTANDER · santander_release_1T2026 · págs. 5–5",
-      "SANTANDER · santander_release_1T2026 · págs. 6–6",
-      "SANTANDER · santander_release_1T2026 · págs. 13–14",
-      "SANTANDER · santander_release_1T2026 · págs. 13–14"
-    ],
-    "validacao_automatica": true
-  },
   "Segundo o release do Nubank qual foi seu lucro líquido ajustado no 1T2026?": {
     "citacoes": [],
     "conjunto": "dev",
     "estrategia": "semantica",
-    "fingerprint": "e23cbe34e8f1fd5ff8acbb4a0eddb7de59f23572e3b8e866cd01aa6bdc51fa7e",
+    "fingerprint": "a2811aae2e33b986f85e6b849dc3417f1549ba43defd7826e1723795c37560cc",
     "fontes": [],
     "gabarito": "Recusa: o Nubank não integra o corpus curado.",
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "DEV010",
     "provedor": "gemini",
     "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
-    "run_id": "20260817T181108Z-f1158b4907",
+    "run_id": "20260819T225003Z-7ce66fd5ba",
     "trechos_recuperados": [],
+    "validacao_automatica": true
+  },
+  "Segundo o release qual foi o lucro líquido ajustado do Banco do Brasil no 1T2026?": {
+    "citacoes": [
+      {
+        "documento": "bb_release_1T2026",
+        "empresa": "BB",
+        "pagina": 10,
+        "trimestre": "1T2026"
+      }
+    ],
+    "conjunto": "dev",
+    "estrategia": "semantica",
+    "fingerprint": "a2811aae2e33b986f85e6b849dc3417f1549ba43defd7826e1723795c37560cc",
+    "fontes": [
+      "BB · bb_release_1T2026 · 1T2026 · pág. 10"
+    ],
+    "gabarito": "R$ 3.431 milhões",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "DEV007",
+    "provedor": "gemini",
+    "resposta": "No 1T2026, o lucro líquido ajustado do Banco do Brasil alcançou R$ 3,4 bilhões.",
+    "run_id": "20260819T225003Z-7ce66fd5ba",
+    "trechos_recuperados": [
+      "BB · bb_release_1T2026 · págs. 132–133",
+      "BB · bb_release_1T2026 · págs. 10–11",
+      "BB · bb_release_1T2026 · págs. 186–187",
+      "BB · bb_release_1T2026 · págs. 29–30",
+      "BB · bb_release_1T2026 · págs. 239–240"
+    ],
     "validacao_automatica": true
   }
 }

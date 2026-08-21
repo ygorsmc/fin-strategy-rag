@@ -44,6 +44,7 @@ class Estrategia(str, Enum):
     KEYWORD = "keyword"          # E1 — BM25
     SEMANTICA = "semantica"      # E2 — embeddings (estratégia-alvo)
     HIBRIDA = "hibrida"          # E3 — RRF de E1+E2 (Fase 2)
+    FATOS = "fatos"              # E4 — tabela de fatos numéricos (5.7)
 
 
 @dataclass(frozen=True, init=False)
@@ -230,6 +231,7 @@ class Recuperador:
         self._provedor = provedor_embeddings
         self._hash_corpus_esperado = hash_corpus_esperado
         self._chunks_por_id: dict[str, Chunk] | None = None
+        self._indice_fatos = None
 
     def _garantir_provedor(self) -> ProvedorEmbeddings:
         if self._provedor is None:
@@ -263,6 +265,19 @@ class Recuperador:
                 hash_corpus_esperado=self._garantir_hash_corpus()
             )
         return self._bm25
+
+    def _garantir_indice_fatos(self):
+        """Tabela de fatos construída sob demanda a partir dos chunks do BM25.
+
+        Usa o conjunto do BM25 porque é a única lista completa de chunks já
+        materializada em memória — a coleção Chroma guarda vetores, não texto.
+        """
+        if self._indice_fatos is None:
+            from src.fatos import construir_indice_fatos
+
+            _bm25, chunks = self._garantir_bm25()
+            self._indice_fatos = construir_indice_fatos(chunks)
+        return self._indice_fatos
 
     def recuperar(
         self,
@@ -350,6 +365,8 @@ class Recuperador:
     ) -> list[ResultadoRecuperacao]:
         if estrategia == Estrategia.KEYWORD:
             return self._top_bm25(pergunta, filtro, top_k)
+        if estrategia == Estrategia.FATOS:
+            return self._top_fatos(pergunta, filtro, top_k)
         if estrategia == Estrategia.SEMANTICA:
             return self._top_chroma(
                 pergunta, filtro, top_k, consulta_semantica
@@ -379,6 +396,39 @@ class Recuperador:
             for i in melhores
             if scores[i] > 0.0
         ]
+
+    def _top_fatos(
+        self, pergunta: str, filtro: FiltroMetadados, top_k: int
+    ) -> list[ResultadoRecuperacao]:
+        """E4 — chunk ranqueado por densidade de fatos da métrica perguntada.
+
+        Não se funde com E1/E2 de propósito. Medido em 2026-08-20 sob o mesmo
+        orçamento de top-5: o canal sozinho leva o valor exato do gabarito em
+        11/15 factuais, contra 9/15 do E3; qualquer combinação dos dois no
+        mesmo orçamento cai para 8–9/15, porque dividir cinco vagas entre duas
+        listas expulsa justamente o trecho que só uma delas achou. A união só
+        vence com dez vagas — o que é outro orçamento de contexto, não outra
+        estratégia, e não seria comparável com E1–E3.
+        """
+        indice = self._garantir_indice_fatos()
+        _bm25, chunks = self._garantir_bm25()
+        por_id = self._chunk_por_id(chunks)
+        pontuados = indice.pontuar_chunks(
+            pergunta, filtro.empresas, filtro.trimestres
+        )
+        resultados: list[ResultadoRecuperacao] = []
+        for identificador, pontos in pontuados[:top_k]:
+            chunk = por_id.get(identificador)
+            if chunk is None:
+                raise ErroConsistenciaIndice(
+                    f"A tabela de fatos referenciou o chunk {identificador!r}, "
+                    "ausente do conjunto persistido (RNF09); reconstrua o "
+                    "índice."
+                )
+            resultados.append(
+                ResultadoRecuperacao(chunk, float(pontos), Estrategia.FATOS)
+            )
+        return resultados
 
     def _top_chroma(
         self,

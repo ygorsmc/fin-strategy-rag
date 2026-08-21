@@ -229,6 +229,7 @@ def etapa_avaliacao(
         Estrategia.KEYWORD,
         Estrategia.SEMANTICA,
         Estrategia.HIBRIDA,
+        Estrategia.FATOS,
     ]
     conjunto_efetivo = _conjunto_efetivo(amostra, conjunto)
     dir_indice = DIR_AMOSTRA_INDICE if amostra else DIR_INDICE_VETORIAL

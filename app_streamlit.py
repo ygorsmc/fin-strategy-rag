@@ -39,7 +39,7 @@ ARQUIVO_CACHE_DEMO = DIR_RESULTADOS_AVALIACAO / "respostas_cacheadas.json"
 ARQUIVO_METRICAS_TESTE = DIR_RESULTADOS_AVALIACAO / "metricas_teste.json"
 LOGGER = logging.getLogger(__name__)
 ESTRATEGIAS_AVALIACAO = frozenset(
-    {"closed_book", "keyword", "semantica", "hibrida"}
+    {"closed_book", "keyword", "semantica", "hibrida", "fatos"}
 )
 
 try:

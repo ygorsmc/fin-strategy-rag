@@ -62,7 +62,7 @@ consulta.
 numérico pt-BR; extração via Mistral OCR *content-addressed*, cache versionado
 em `corpus/ocr/` (RNF10), `pdfplumber` como alternativa atrás da mesma
 interface; chunking e teste-sentinela independentes; embeddings plugáveis;
-índice com transação, checksums e guarda RNF09; recuperação E0–E3 com
+índice com transação, checksums e guarda RNF09; recuperação E0–E4 com
 subconsulta por banco; geração JSON com RN01 e grounding numérico da RN02;
 avaliação retomável com fingerprint v3, journal/checkpoint, teto de custo e
 locks; interface cacheada com pergunta livre opt-in.
@@ -116,6 +116,34 @@ critério.
 por 1M de tokens continua obrigatório na configuração (sem ele o teto não é
 auditável), temperatura 0 continua obrigatória na avaliação, e o modelo usado
 fica registrado por execução (RNF08).
+
+### 3.1-bis Estratégia E4 (`fatos`) — quarta via de recuperação, acrescentada
+
+A spec 5.16 fecha o vocabulário de estratégias em **E0–E3**. Este repositório
+acrescentou **E4 = `fatos`** em 2026-08-20: recuperação por **tabela de fatos
+numéricos** (`src/fatos.py`), que ranqueia o trecho por quantos números da
+métrica perguntada ele contém, em vez de por similaridade de texto.
+
+**Motivo medido, não estético.** O E3 recupera a *página* certa em 12/15 das
+factuais congeladas, mas o *trecho* que ele traz contém o valor exato do
+gabarito em só 9/15 — é a falha do DEV007: a prosa da página certa arredonda
+("R$ 3,4 bilhões") e a tabela com `3.431` fica fora do top-k. O E4 mede
+**11/15** no mesmo orçamento de top-5, e 27/45 de recall@5 total contra 22/45
+do E3.
+
+**E4 é canal PURO, não fusão** — e isso foi medido, não escolhido. Sob o mesmo
+top-5, RRF(E3, fatos) cai para 8/15 e o intercalado para 8–9/15: dividir cinco
+vagas entre duas listas expulsa justamente o trecho que só uma delas achou. A
+união só vence com dez vagas, o que é outro orçamento de contexto e não seria
+comparável com E1–E3.
+
+**O que a divergência não autoriza:** E4 é mais uma coluna da mesma comparação,
+não uma exceção a ela. Roda a temperatura 0, no mesmo prompt de geração, sob a
+mesma guarda da RN02, e **fora da camada de agentes** como o §6 exige. O
+`src/avaliacao.py` continua exigindo o conjunto COMPLETO de estratégias na
+publicação do congelado — o efeito prático é que a rodada publicável passou de
+180 para **225 chamadas**, e nenhuma estratégia pode ser omitida para melhorar
+a foto.
 
 ### 3.2 OCR — migrado (2026-08-11); estado atual, não mais divergência
 
@@ -241,11 +269,11 @@ CAMINHO INTERATIVO (o produto)
            (instrumentado por Langfuse)
 
 CAMINHO DE AVALIAÇÃO (o benchmark, determinístico)
-  45 perguntas congeladas → E0–E3 → métricas + DeepEval
+  45 perguntas congeladas → E0–E4 → métricas + DeepEval
   SEM camada de agentes
 ```
 
-**O benchmark de recuperação E0–E3 nunca passa pela camada de agentes.** Motivo:
+**O benchmark de recuperação E0–E4 nunca passa pela camada de agentes.** Motivo:
 a orquestração multiagente introduz variabilidade de plano — quantas
 ferramentas o agente chama, em que ordem, quantos tokens gasta — que destruiria
 a comparabilidade entre estratégias mesmo a temperatura 0.
@@ -272,10 +300,10 @@ Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisã
 | 3 | **CVM → DuckDB** — carga ITR/DFP com as **seis regras de armadilha**, `mapa_contas`, visão `fatos_semanticos`, derivação do 4T, e o **gate G4 bloqueante** | `dados-cvm` | ✅ implementada · ❌ G4 reprovado (§3.3) — bloqueia a etapa 10 |
 | 4 | **Ingestão/OCR** com cache versionado + normalizador pt-BR + testes de qualidade e sentinela | sessão principal | ✅ `mistral_ocr` é o extrator ativo, cache versionado em `corpus/ocr/` (§3.2) |
 | 5 | **Indexação** — BM25 + embeddings em **Chroma**, com a guarda RNF09 | `indice-recuperacao` | 🔄 (migração FAISS → Chroma) |
-| 6 | **Recuperação** — filtro de metadados, subconsulta por banco, E0–E3 | `indice-recuperacao` | ✅ base implementada · 🔄 sob a migração |
+| 6 | **Recuperação** — filtro de metadados, subconsulta por banco, E0–E4 (§3.1-bis) | `indice-recuperacao` | ✅ base implementada · 🔄 sob a migração |
 | 7 | **Geração** — contrato JSON, citação obrigatória, recusa (RN01–RN02) | sessão principal | ✅ · ⬜ marcações de RN10/RN12 na resposta |
 | 8 | **Conjunto-padrão** — 45 congeladas + ~10 dev, conferidas pela classe de verificação | `conjunto-padrao` | ✅ congelado 2026-07-29 · ⬜ colunas novas da revisão 2 (`cobertura_esperada`, `motivo_recusa_esperado`, `base_esperada`, `rota_esperada`) |
-| 9 | **Comparação de estratégias E0–E3** — só `dev` na iteração; o congelado roda ao final, com log por execução | `observabilidade-avaliacao` | ⬜ nunca rodada no conjunto congelado |
+| 9 | **Comparação de estratégias E0–E4** — só `dev` na iteração; o congelado roda ao final, com log por execução | `observabilidade-avaliacao` | ✅ rodada em 2026-08-20 no congelado (45 × 5 = 225 chamadas) — E1 0,333 · E2 0,267 · E3 0,267 · E4 0,333; E4 × E3 **indistinguível** (3×2 discordâncias, limiar 6). Ver `MEMORY.md` |
 | 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ⬜ (depende do G4) |
 | 11 | **Ferramentas + agentes** — `verificar_cobertura`, Investigador e Auditor com filtro de contexto **em código**, teste que falha se o rastro vazar, braços A/B/C, triagem de cobertura; projeções depois | `agentes-investigacao` | ⬜ |
 | 12 | **Injeção de falha (RF25) e comparação dos três braços (RF26)** — registrar o veredito, inclusive se for "o determinístico basta" | `agentes-investigacao` + `observabilidade-avaliacao` | ⬜ |
@@ -349,7 +377,7 @@ respostas cacheadas do demo. Fora do Git: PDFs brutos, ZIPs da CVM,
 
 `executar_pipeline.py` processando ponta a ponta: suíte verde sem skips; corpus
 íntegro pelo manifesto; painel CVM carregado com as seis regras de armadilha e
-**G4 aprovado**; índices construídos com guarda RNF09; E0–E3 rodadas nas 45
+**G4 aprovado**; índices construídos com guarda RNF09; E0–E4 rodadas nas 45
 congeladas no caminho determinístico, com log JSONL; camada de agentes medida
 em conjunto próprio, com o veredito dos três braços publicado **mesmo se for
 negativo**; guardrails com ataques bloqueados e falso bloqueio medidos; modelo
