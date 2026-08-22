@@ -36,6 +36,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import json
 import re
 import unicodedata
 from dataclasses import dataclass
@@ -280,6 +281,11 @@ class DemonstracaoIFRS:
     documento: str
     pagina: int
     dre: LinhasDRE
+    # Qual extrator produziu o texto lido. `pdfplumber` é o nativo; `ocr_mistral`
+    # significa que a fonte embutida era ilegível e a leitura veio do cache de
+    # OCR. Fica no dado, e não só no relatório, porque a procedência de uma
+    # âncora é parte da âncora — quem audita precisa saber por onde ela passou.
+    fonte_texto: str = "pdfplumber"
 
 
 @dataclass(frozen=True)
@@ -290,6 +296,57 @@ class DocumentoIlegivel:
     periodo: str
     documento: str
     motivo: str
+
+
+DIR_CACHE_OCR_IFRS = DIR_IFRS / "ocr"
+
+
+def _linhas_da_tabela_html(html: str) -> list[str]:
+    """Converte uma tabela HTML do OCR nas linhas de texto que o parser espera.
+
+    O parser desta âncora foi escrito para o layout do `pdfplumber` — rótulo e
+    números na mesma linha. O OCR devolve a tabela em HTML separado do
+    markdown, então a conversão é o que permite as DUAS fontes usarem o mesmo
+    parser, em vez de manter dois interpretadores que podem discordar.
+    """
+    import html as _html
+
+    linhas: list[str] = []
+    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.S | re.I):
+        celulas = [
+            _html.unescape(re.sub(r"<[^>]+>", "", c)).strip()
+            for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", tr, re.S | re.I)
+        ]
+        if any(celulas):
+            linhas.append(" ".join(c for c in celulas if c))
+    return linhas
+
+
+def paginas_do_cache_ocr(
+    sha256_pdf: str, dir_cache: Path = DIR_CACHE_OCR_IFRS
+) -> dict[int, str]:
+    """Páginas OCR de um documento, prontas para o parser. Vazio se não houver.
+
+    O cache é endereçado pelo **hash do PDF**: peça que mudou desde o OCR não
+    casa, e a âncora volta a ser "sem evidência" em vez de usar leitura de um
+    documento diferente do registrado.
+    """
+    caminho = dir_cache / f"{sha256_pdf}.json"
+    if not caminho.exists():
+        return {}
+    dados = json.loads(caminho.read_text(encoding="utf-8"))
+    if dados.get("sha256_pdf") != sha256_pdf:
+        raise LeituraIFRSError(
+            f"Cache OCR {caminho.name} declara outro sha256 — não é a peça "
+            "registrada no manifesto."
+        )
+    paginas: dict[int, str] = {}
+    for pagina in dados.get("paginas", []):
+        partes = [pagina.get("markdown", "")]
+        for tabela in pagina.get("tabelas", []):
+            partes.extend(_linhas_da_tabela_html(tabela.get("conteudo", "")))
+        paginas[int(pagina["indice_1based"])] = "\n".join(partes)
+    return paginas
 
 
 def ler_demonstracao(
@@ -325,6 +382,25 @@ def ler_demonstracao(
                 pagina=indice,
                 dre=dre,
             )
+    # Fonte alternativa DECLARADA, não fallback silencioso: só é consultada
+    # quando o extrator nativo falhou, e a leitura resultante é marcada com a
+    # sua origem. O cache é endereçado pelo hash do PDF, então usá-lo não
+    # afrouxa a exigência de que a peça seja a registrada no manifesto.
+    paginas_ocr = paginas_do_cache_ocr(hash_do_arquivo(caminho))
+    for indice in sorted(paginas_ocr):
+        dre = ler_dre_da_pagina(paginas_ocr[indice])
+        if dre is None:
+            continue
+        if not all(dre.identidade_fecha(j) for j in range(dre.colunas)):
+            continue
+        return DemonstracaoIFRS(
+            empresa=empresa,
+            periodo=periodo,
+            documento=documento,
+            pagina=indice,
+            dre=dre,
+            fonte_texto="ocr_mistral",
+        )
     if total and ilegiveis / total > 0.5:
         return DocumentoIlegivel(
             empresa=empresa,

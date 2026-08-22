@@ -29,6 +29,7 @@ from src.avaliacao import (
     _validar_conjunto_teste_final,
     carregar_conjunto_padrao,
     consolidar_metricas,
+    avaliar_exatidao_comparativa,
     avaliar_exatidao_numerica,
     avaliar_recall_at_k,
     avaliar_recusa,
@@ -217,6 +218,10 @@ def _validar_metricas_contra_checkpoint(
                 )
             if pergunta.categoria == "factual":
                 exatidao_esperada = avaliar_exatidao_numerica(
+                    pergunta, item.resposta, config
+                )
+            elif pergunta.categoria == "comparativa":
+                exatidao_esperada = avaliar_exatidao_comparativa(
                     pergunta, item.resposta, config
                 )
         elif pergunta.categoria == "adversarial":

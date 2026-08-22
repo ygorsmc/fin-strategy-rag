@@ -31,8 +31,18 @@ DIR_MODELO = RAIZ_PROJETO / "artefatos" / "modelo"
 # ``fatos_contabeis`` fica DELIBERADAMENTE fora: o agente consulta a visão
 # semântica, nunca a tabela crua, porque ``cd_conta`` não identifica o conceito
 # contábil entre companhias (RN09).
+# `correcoes_contabeis` entra na lista porque a correção precisa ser AUDITÁVEL
+# por quem consulta: a visão já marca a célula como corrigida, e quem quiser
+# ver a procedência (documento, página, evidência) tem de conseguir lê-la.
+# Esconder a tabela deixaria a marca `corrigido=true` sem como ser verificada.
 TABELAS_PERMITIDAS_SQL: frozenset[str] = frozenset(
-    {"companhias", "fatos_semanticos", "indicadores", "mapa_contas"}
+    {
+        "companhias",
+        "correcoes_contabeis",
+        "fatos_semanticos",
+        "indicadores",
+        "mapa_contas",
+    }
 )
 
 GUARDRAILS_CONHECIDOS: frozenset[str] = frozenset(

@@ -23,6 +23,7 @@ arquivado pelo regulador seria mentir por omissão.
 
 from __future__ import annotations
 
+import csv
 import re
 import threading
 from dataclasses import dataclass, field
@@ -31,7 +32,7 @@ from typing import Any, Collection, Iterable, Sequence
 
 import duckdb
 
-from src.config import TABELAS_PERMITIDAS_SQL, Config
+from src.config import RAIZ_PROJETO, TABELAS_PERMITIDAS_SQL, Config
 from src.mapa_contas import (
     BANCO_POR_CD_CVM,
     CD_CVM_CORPUS,
@@ -233,6 +234,27 @@ CREATE TABLE IF NOT EXISTS mapa_contas (
     ds_conta_norm      VARCHAR NOT NULL,
     PRIMARY KEY (plano_contas, cd_conta, ds_conta_norm)
 );
+
+-- Correções com procedência (gate G4). Existe porque o arquivo da CVM pode
+-- estar errado, e o painel não pode nem repetir o erro nem consertá-lo em
+-- silêncio: `valor_original_reais` PRENDE a correção ao valor exatamente
+-- observado quando ela foi revisada. Se a CVM republicar e o valor cru mudar,
+-- a correção deixa de casar e a carga FALHA — em vez de aplicar às cegas um
+-- ajuste que ninguém revisou contra o dado novo.
+CREATE TABLE IF NOT EXISTS correcoes_contabeis (
+    cd_cvm                VARCHAR NOT NULL REFERENCES companhias(cd_cvm),
+    trimestre             VARCHAR NOT NULL,
+    conceito              VARCHAR NOT NULL,
+    valor_original_reais  DOUBLE  NOT NULL,
+    valor_corrigido_reais DOUBLE  NOT NULL,
+    fonte_documento       VARCHAR NOT NULL,
+    fonte_pagina          INTEGER NOT NULL,
+    fonte_sha256          VARCHAR NOT NULL,
+    evidencia             VARCHAR NOT NULL,
+    motivo                VARCHAR NOT NULL,
+    data_utc              VARCHAR NOT NULL,
+    PRIMARY KEY (cd_cvm, trimestre, conceito)
+);
 """
 
 # A normalização precisa ser IDÊNTICA à de `src.mapa_contas.normalizar_ds_conta`:
@@ -255,7 +277,12 @@ SELECT
     c.denom_social      AS denom_social,
     f.trimestre         AS trimestre,
     m.conceito          AS conceito,
-    f.valor_reais       AS valor_reais,
+    coalesce(k.valor_corrigido_reais, f.valor_reais) AS valor_reais,
+    f.valor_reais       AS valor_reais_arquivo,
+    (k.cd_cvm IS NOT NULL) AS corrigido,
+    k.motivo            AS correcao_motivo,
+    k.fonte_documento   AS correcao_fonte,
+    k.fonte_pagina      AS correcao_fonte_pagina,
     f.origem            AS origem,
     f.tipo_periodo      AS tipo_periodo,
     f.demonstrativo     AS demonstrativo,
@@ -269,6 +296,10 @@ JOIN mapa_contas AS m
   ON m.plano_contas = c.plano_contas
  AND m.cd_conta = f.cd_conta
  AND m.ds_conta_norm = f.ds_conta_norm
+LEFT JOIN correcoes_contabeis AS k
+  ON k.cd_cvm = f.cd_cvm
+ AND k.trimestre = f.trimestre
+ AND k.conceito = m.conceito
 WHERE f.tipo_periodo IN ('trimestral', 'instantaneo');
 """
 
@@ -277,6 +308,173 @@ def criar_esquema(con: duckdb.DuckDBPyConnection) -> None:
     """Cria tabelas e a visão semântica; idempotente."""
     con.execute(ESQUEMA_SQL)
     con.execute(VISAO_FATOS_SEMANTICOS_SQL)
+
+
+# --------------------------------------------------------------------------- #
+# Correções com procedência (gate G4)
+# --------------------------------------------------------------------------- #
+
+CAMINHO_CORRECOES = RAIZ_PROJETO / "corpus" / "cvm" / "correcoes_contabeis.csv"
+
+CAMPOS_CORRECAO: tuple[str, ...] = (
+    "cd_cvm",
+    "trimestre",
+    "conceito",
+    "valor_original_reais",
+    "valor_corrigido_reais",
+    "fonte_documento",
+    "fonte_pagina",
+    "fonte_sha256",
+    "evidencia",
+    "motivo",
+    "data_utc",
+)
+
+# Tamanho mínimo de texto livre. Não é burocracia: "erro na origem" não permite
+# a ninguém reconferir a correção daqui a seis meses, e a procedência é a
+# única coisa que separa correção de ajuste conveniente.
+_MIN_EVIDENCIA = 60
+_MIN_MOTIVO = 60
+
+
+class ErroCorrecaoInvalida(ValueError):
+    """Correção sem procedência completa, ou que não casa com o dado atual."""
+
+
+def carregar_correcoes(
+    caminho: Path = CAMINHO_CORRECOES,
+) -> tuple[dict[str, object], ...]:
+    """Lê e valida o CSV de correções — falha fechado em qualquer lacuna.
+
+    **Por que o CSV é a fonte de verdade, e não linhas inseridas na tabela.**
+    Uma correção precisa aparecer em `git diff` e ser revisável por outra
+    pessoa antes de valer. Inserção direta no DuckDB seria invisível: o banco
+    está fora do Git (é regenerável), então uma correção que morasse só nele
+    não deixaria rastro nenhum de quem a fez, quando e por quê.
+    """
+    if not caminho.exists():
+        return ()
+    with open(caminho, newline="", encoding="utf-8") as arquivo:
+        linhas = list(csv.DictReader(arquivo))
+    if linhas and set(linhas[0]) != set(CAMPOS_CORRECAO):
+        raise ErroCorrecaoInvalida(
+            f"Colunas de {caminho.name} divergem do contrato.\n"
+            f"  esperado: {sorted(CAMPOS_CORRECAO)}\n"
+            f"  obtido:   {sorted(linhas[0])}"
+        )
+    correcoes: list[dict[str, object]] = []
+    vistas: set[tuple[str, str, str]] = set()
+    for numero, linha in enumerate(linhas, start=2):
+        faltando = [c for c in CAMPOS_CORRECAO if not str(linha.get(c, "")).strip()]
+        if faltando:
+            raise ErroCorrecaoInvalida(
+                f"Linha {numero} de {caminho.name} sem procedência completa: "
+                f"campos vazios {faltando}"
+            )
+        chave = (linha["cd_cvm"], linha["trimestre"], linha["conceito"])
+        if chave in vistas:
+            raise ErroCorrecaoInvalida(
+                f"Linha {numero}: correção duplicada para {chave}"
+            )
+        vistas.add(chave)
+        if len(linha["evidencia"].strip()) < _MIN_EVIDENCIA:
+            raise ErroCorrecaoInvalida(
+                f"Linha {numero}: `evidencia` precisa demonstrar POR QUE o "
+                f"valor do arquivo está errado (mínimo {_MIN_EVIDENCIA} "
+                "caracteres); a aritmética que não fecha é o padrão."
+            )
+        if len(linha["motivo"].strip()) < _MIN_MOTIVO:
+            raise ErroCorrecaoInvalida(
+                f"Linha {numero}: `motivo` precisa dizer o que foi apurado e o "
+                f"que foi descartado (mínimo {_MIN_MOTIVO} caracteres)."
+            )
+        try:
+            original = float(linha["valor_original_reais"])
+            corrigido = float(linha["valor_corrigido_reais"])
+            pagina = int(linha["fonte_pagina"])
+        except ValueError as exc:
+            raise ErroCorrecaoInvalida(f"Linha {numero}: {exc}") from exc
+        if pagina < 1:
+            raise ErroCorrecaoInvalida(f"Linha {numero}: página deve ser 1-based.")
+        if original == corrigido:
+            raise ErroCorrecaoInvalida(
+                f"Linha {numero}: correção que não muda nada é ruído no rastro."
+            )
+        if len(linha["fonte_sha256"].strip()) != 64:
+            raise ErroCorrecaoInvalida(
+                f"Linha {numero}: `fonte_sha256` deve ser um SHA-256 completo — "
+                "é o que prende a correção ao documento exato que a justifica."
+            )
+        correcoes.append(
+            {
+                **{c: linha[c].strip() for c in CAMPOS_CORRECAO},
+                "valor_original_reais": original,
+                "valor_corrigido_reais": corrigido,
+                "fonte_pagina": pagina,
+            }
+        )
+    return tuple(correcoes)
+
+
+def aplicar_correcoes(
+    con: duckdb.DuckDBPyConnection, caminho: Path = CAMINHO_CORRECOES
+) -> int:
+    """Carrega as correções conferindo cada uma contra o dado atual.
+
+    A conferência do `valor_original_reais` é a guarda que impede a tabela de
+    virar porta dos fundos: a correção só entra se o valor que ela diz corrigir
+    ainda for exatamente o que está no painel. Republicação da CVM, recarga com
+    outro mapa ou mudança de escala fazem a correção parar de casar — e o erro
+    é levantado, não engolido.
+    """
+    correcoes = carregar_correcoes(caminho)
+    con.execute("DELETE FROM correcoes_contabeis")
+    if not correcoes:
+        return 0
+    divergencias: list[str] = []
+    for correcao in correcoes:
+        atual = con.execute(
+            """
+            SELECT f.valor_reais
+            FROM fatos_contabeis AS f
+            JOIN companhias AS c ON c.cd_cvm = f.cd_cvm
+            JOIN mapa_contas AS m
+              ON m.plano_contas = c.plano_contas
+             AND m.cd_conta = f.cd_conta
+             AND m.ds_conta_norm = f.ds_conta_norm
+            WHERE f.cd_cvm = ? AND f.trimestre = ? AND m.conceito = ?
+              AND f.tipo_periodo IN ('trimestral', 'instantaneo')
+            """,
+            [correcao["cd_cvm"], correcao["trimestre"], correcao["conceito"]],
+        ).fetchall()
+        chave = (
+            f"{correcao['cd_cvm']}/{correcao['trimestre']}/"
+            f"{correcao['conceito']}"
+        )
+        if not atual:
+            divergencias.append(f"{chave}: nenhuma linha no painel para corrigir")
+            continue
+        if len(atual) > 1:
+            divergencias.append(f"{chave}: {len(atual)} linhas — correção ambígua")
+            continue
+        observado = float(atual[0][0])
+        esperado = float(correcao["valor_original_reais"])
+        if abs(observado - esperado) > 0.5:
+            divergencias.append(
+                f"{chave}: valor_original_reais={esperado:,.0f} não bate com o "
+                f"painel atual ({observado:,.0f}). A correção foi revisada "
+                "contra outro dado; reconfira antes de reaplicar."
+            )
+    if divergencias:
+        raise ErroCorrecaoInvalida(
+            "Correções não puderam ser aplicadas:\n  - "
+            + "\n  - ".join(divergencias)
+        )
+    con.executemany(
+        "INSERT INTO correcoes_contabeis VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        [[correcao[c] for c in CAMPOS_CORRECAO] for correcao in correcoes],
+    )
+    return len(correcoes)
 
 
 # --------------------------------------------------------------------------- #

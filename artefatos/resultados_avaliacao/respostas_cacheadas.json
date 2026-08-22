@@ -3,14 +3,14 @@
     "citacoes": [],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [],
     "gabarito": "Recusa: a resposta exigiria conhecimento externo aos documentos recuperados.",
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTA010",
     "provedor": "gemini",
     "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [
       "BTG · btg_release_2T2025 · págs. 5–6",
       "BTG · btg_release_4T2025 · págs. 27–28",
@@ -24,14 +24,14 @@
     "citacoes": [],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [],
     "gabarito": "A premissa é falsa: o lucro líquido ajustado subiu de R$ 3.785 milhões para R$ 5.742 milhões, alta de 51,7%.",
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTA008",
     "provedor": "gemini",
     "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [
       "BB · bb_release_3T2025 · págs. 134–135",
       "BB · bb_release_4T2025 · págs. 11–12",
@@ -45,14 +45,14 @@
     "citacoes": [],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [],
     "gabarito": "Recusa: a resposta exigiria conhecimento externo aos documentos recuperados.",
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTA009",
     "provedor": "gemini",
     "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [
       "BRADESCO · bradesco_release_2T2025 · págs. 60–61",
       "BRADESCO · bradesco_release_3T2025 · págs. 60–61",
@@ -66,14 +66,14 @@
     "citacoes": [],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [],
     "gabarito": "Recusa: o Nubank não integra o corpus curado.",
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTA003",
     "provedor": "gemini",
     "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [],
     "validacao_automatica": true
   },
@@ -88,7 +88,7 @@
     ],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [
       "BRADESCO · bradesco_release_3T2025 · 3T2025 · pág. 45"
     ],
@@ -96,14 +96,51 @@
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTF008",
     "provedor": "gemini",
-    "resposta": "No 3T2025, o Total da Carteira de Crédito Expandida foi de R$ 1.034.238 milhões.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "resposta": "No 3T2025, o saldo da Total da Carteira de Crédito Expandida foi de R$ 1.034.238 milhões.",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [
       "BRADESCO · bradesco_release_3T2025 · págs. 16–17",
       "BRADESCO · bradesco_release_3T2025 · págs. 11–12",
       "BRADESCO · bradesco_release_3T2025 · págs. 15–16",
       "BRADESCO · bradesco_release_3T2025 · págs. 17–18",
       "BRADESCO · bradesco_release_3T2025 · págs. 45–45"
+    ],
+    "validacao_automatica": true
+  },
+  "Segundo a análise gerencial do Itaú Unibanco qual foi o resultado recorrente gerencial no 4T2025?": {
+    "citacoes": [
+      {
+        "documento": "itau_release_4T2025",
+        "empresa": "ITAU",
+        "pagina": 8,
+        "trimestre": "4T2025"
+      },
+      {
+        "documento": "itau_release_4T2025",
+        "empresa": "ITAU",
+        "pagina": 5,
+        "trimestre": "4T2025"
+      }
+    ],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
+    "fontes": [
+      "ITAU · itau_release_4T2025 · 4T2025 · pág. 8",
+      "ITAU · itau_release_4T2025 · 4T2025 · pág. 5"
+    ],
+    "gabarito": "R$ 12.317 milhões",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTF005",
+    "provedor": "gemini",
+    "resposta": "No 4T2025, o resultado recorrente gerencial foi de R$ 12,3 bi [ITAU | itau_release_4T2025 | 4T2025 | págs. 8–9] (ou 12.317 milhões de reais [ITAU | itau_release_4T2025 | 4T2025 | pág. 5]).",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
+    "trechos_recuperados": [
+      "ITAU · itau_release_4T2025 · págs. 1–5",
+      "ITAU · itau_release_4T2025 · págs. 8–12",
+      "ITAU · itau_release_4T2025 · págs. 25–26",
+      "ITAU · itau_release_4T2025 · págs. 8–9",
+      "ITAU · itau_release_4T2025 · págs. 5–5"
     ],
     "validacao_automatica": true
   },
@@ -118,7 +155,7 @@
     ],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [
       "SANTANDER · santander_release_3T2025 · 3T2025 · pág. 11"
     ],
@@ -127,13 +164,43 @@
     "pergunta_id": "TSTF011",
     "provedor": "gemini",
     "resposta": "Segundo a demonstração gerencial do Santander, o ROAE gerencial excluindo ágio - anualizado no 3T25 foi de 17,5%.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [
       "SANTANDER · santander_release_3T2025 · págs. 12–13",
       "SANTANDER · santander_release_3T2025 · págs. 11–11",
       "SANTANDER · santander_release_3T2025 · págs. 19–20",
       "SANTANDER · santander_release_3T2025 · págs. 3–4",
       "SANTANDER · santander_release_3T2025 · págs. 10–11"
+    ],
+    "validacao_automatica": true
+  },
+  "Segundo a demonstração gerencial do Santander qual foi o lucro líquido gerencial no 2T2025?": {
+    "citacoes": [
+      {
+        "documento": "santander_release_2T2025",
+        "empresa": "SANTANDER",
+        "pagina": 11,
+        "trimestre": "2T2025"
+      }
+    ],
+    "conjunto": "teste",
+    "estrategia": "semantica",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
+    "fontes": [
+      "SANTANDER · santander_release_2T2025 · 2T2025 · pág. 11"
+    ],
+    "gabarito": "R$ 3.659 milhões",
+    "modelo": "gemini-3.5-flash-lite",
+    "pergunta_id": "TSTF010",
+    "provedor": "gemini",
+    "resposta": "Segundo a demonstração gerencial do Santander, o Lucro líquido gerencial no 2T25 foi de 3.659 R$ Milhões.",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
+    "trechos_recuperados": [
+      "SANTANDER · santander_release_2T2025 · págs. 10–11",
+      "SANTANDER · santander_release_2T2025 · págs. 12–13",
+      "SANTANDER · santander_release_2T2025 · págs. 10–11",
+      "SANTANDER · santander_release_2T2025 · págs. 11–11",
+      "SANTANDER · santander_release_2T2025 · págs. 1–3"
     ],
     "validacao_automatica": true
   },
@@ -148,7 +215,7 @@
     ],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [
       "BTG · btg_release_1T2026 · 1T2026 · pág. 3"
     ],
@@ -157,7 +224,7 @@
     "pergunta_id": "TSTF001",
     "provedor": "gemini",
     "resposta": "No 1T2026, o ROAE ajustado anualizado do BTG Pactual foi de 26,6%.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [
       "BTG · btg_release_1T2026 · págs. 3–4",
       "BTG · btg_release_1T2026 · págs. 6–6",
@@ -178,7 +245,7 @@
     ],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [
       "BTG · btg_release_4T2025 · 4T2025 · pág. 1"
     ],
@@ -186,8 +253,8 @@
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTF003",
     "provedor": "gemini",
-    "resposta": "Segundo a divulgação de resultados do BTG Pactual, o lucro líquido ajustado no 4T2025 foi de R$4.597,1 milhões [BTG, btg_release_4T2025, 4T2025, págs. 1–3].",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "resposta": "Segundo a divulgação gerencial do BTG Pactual, o lucro líquido ajustado no 4T2025 foi de R$4.597,1 milhões.",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [
       "BTG · btg_release_4T2025 · págs. 1–3",
       "BTG · btg_release_4T2025 · págs. 3–4",
@@ -201,14 +268,14 @@
     "citacoes": [],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [],
     "gabarito": "Recusa: o 2T2026 não integra a janela temporal do corpus.",
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTA005",
     "provedor": "gemini",
     "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [],
     "validacao_automatica": true
   },
@@ -217,22 +284,22 @@
       {
         "documento": "bb_release_3T2025",
         "empresa": "BB",
-        "pagina": 13,
+        "pagina": 57,
         "trimestre": "3T2025"
       }
     ],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [
-      "BB · bb_release_3T2025 · 3T2025 · pág. 13"
+      "BB · bb_release_3T2025 · 3T2025 · pág. 57"
     ],
     "gabarito": "4,93%",
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTF014",
     "provedor": "gemini",
-    "resposta": "No 3T2025, o índice de inadimplência acima de 90 dias do Banco do Brasil encerrou setembro em 4,93%.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "resposta": "No 3T2025, o índice de inadimplência acima de 90 dias (INAD+90d) do Banco do Brasil encerrou setembro em 4,93%.",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [
       "BB · bb_release_3T2025 · págs. 78–80",
       "BB · bb_release_3T2025 · págs. 12–13",
@@ -246,14 +313,14 @@
     "citacoes": [],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [],
     "gabarito": "Recusa: essa métrica não é divulgada nos documentos do corpus.",
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTA007",
     "provedor": "gemini",
     "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [
       "ITAU · itau_release_1T2026 · págs. 132–132",
       "ITAU · itau_release_1T2026 · págs. 119–119",
@@ -267,14 +334,14 @@
     "citacoes": [],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [],
     "gabarito": "Recusa: o Nubank não integra o corpus curado.",
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTA001",
     "provedor": "gemini",
     "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [],
     "validacao_automatica": true
   },
@@ -282,14 +349,14 @@
     "citacoes": [],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [],
     "gabarito": "Recusa: o Nubank não integra o corpus curado.",
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTA002",
     "provedor": "gemini",
     "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [],
     "validacao_automatica": true
   },
@@ -297,14 +364,14 @@
     "citacoes": [],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [],
     "gabarito": "Recusa: o Nubank não integra o corpus curado.",
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTA004",
     "provedor": "gemini",
     "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [],
     "validacao_automatica": true
   },
@@ -312,14 +379,14 @@
     "citacoes": [],
     "conjunto": "teste",
     "estrategia": "semantica",
-    "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+    "fingerprint": "089e95893e1934622cfed0aac569d446a0b693f135e405051ae3dd89cbaeb677",
     "fontes": [],
     "gabarito": "Recusa: o 1T2020 não integra a janela temporal do corpus.",
     "modelo": "gemini-3.5-flash-lite",
     "pergunta_id": "TSTA006",
     "provedor": "gemini",
     "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
-    "run_id": "20260821T165512Z-2a9feb8a5b",
+    "run_id": "20260822T002944Z-3cd8dbcf1e",
     "trechos_recuperados": [],
     "validacao_automatica": true
   }
