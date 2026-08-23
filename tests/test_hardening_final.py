@@ -462,6 +462,8 @@ def _item_auditoria(
     exatidao_ok = (
         avaliacao.avaliar_exatidao_numerica(pergunta, resposta, Config())
         if pergunta.categoria == "factual"
+        else avaliacao.avaliar_exatidao_comparativa(pergunta, resposta, Config())
+        if pergunta.categoria == "comparativa"
         else None
     )
     recusa_correta = (

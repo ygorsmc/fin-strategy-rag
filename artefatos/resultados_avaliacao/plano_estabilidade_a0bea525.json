@@ -1,0 +1,23 @@
+{
+  "_meta": {
+    "estrategia": "semantica",
+    "fingerprint_base": "a0bea525c898e47fe44ea4c3ec3d332689fc135518875e50c3275f842fd6cdbf",
+    "metodo_amostra": "sha256 estratificado 3/3/2/2",
+    "n_perguntas": 10,
+    "repeticoes": 3,
+    "status": "execucao_pendente",
+    "temperatura": 0.0
+  },
+  "pergunta_ids": [
+    "TSTF006",
+    "TSTF010",
+    "TSTF012",
+    "TSTC008",
+    "TSTC009",
+    "TSTC006",
+    "TSTQ005",
+    "TSTQ010",
+    "TSTA008",
+    "TSTA002"
+  ]
+}

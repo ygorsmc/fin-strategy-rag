@@ -1,0 +1,1651 @@
+{
+  "_meta": {
+    "estrategia": "semantica",
+    "fingerprint": "a0bea525c898e47fe44ea4c3ec3d332689fc135518875e50c3275f842fd6cdbf",
+    "metodo_amostra": "sha256 estratificado 4/4/4/3",
+    "n": 15,
+    "status": "preenchida"
+  },
+  "avaliacoes": [
+    {
+      "assinatura_contexto": "8a8f94cc0012ea2307d0a6152d63ededb2db0c754aa01c6e98539a667fa747ee",
+      "auditor_id": "ygor",
+      "categoria": "factual",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_1T2026",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "5b8f2a442b6c0dcf7218772e81c0a748da8f6a74c138805098f4fb8ac2af87a3",
+            "id": "itau_release_1T2026_0085",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 31,
+            "pagina_inicio": 30,
+            "posicao_no_documento": 85,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_1T2026 | 1T2026 | págs. 30–31]\n| 10.312 | 239 | 237 | 200  |\n|  **IFRS - valores atribuíveis aos acionistas controladores e não controladores** | **220.017** | **11.875** | **12.144** | **10.707**  |\n* Eventos líquidos dos efeitos tributários\n## Diferenças entre as Demonstrações Contábeis em IFRS e BRGAAP\n- (a) Diferenças normativas no BRGAAP para apuração da perda de crédito esperada, como pisos mínimos para operações inadimplentes há mais de 90 dias e para renegociações de créditos que estavam baixadas.⁶\n- (b) Diferença na classificação de ativos financeiros entre BRGAAP e IFRS, que trazem impactos na mensuração destes instrumentos quando reconhecidos ao valor justo.\n- (c) Em 2025, houve a equalização na estimativa de baixa de ativos financeiros, gerando efeito no resultado do IFRS.\n- (d) Diferença normativa no BRGAAP, o qual requer a amortização do ágio pelo prazo estabelecido em laudo externo para o retorno da rentabilidade futura e, no IFRS não há amortização de ágio.\n- (e) Diferenças normativas na designação de estruturas de hedge contábil entre o BRGAAP e IFRS.\n⁶ Mais detalhes nas Demonstrações Contábeis do primeiro trimestre de 2026.\nGlossário\n31\nAnálise Gerencial da Operação > Glossário\n![Logo of Itaú]()\n# Sumário Executivo\n# **Produto Bancário**\nÉ a soma da Margem Financeira Gerencial, das Receitas de Prestação de Serviços e das Receitas de Seguros, Previdência e Capitalização antes das Despesas de Sinistros.\n# **Margem Financeira Gerencial**\nÉ a soma da Margem Financeira com Clientes e da Margem Financeira com o Mercado.\n# **Retorno Recorrente Gerencial sobre o Patrimônio Líquido Médio anualizado**",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.7058870792388916
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_1T2026",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "5b8f2a442b6c0dcf7218772e81c0a748da8f6a74c138805098f4fb8ac2af87a3",
+            "id": "itau_release_1T2026_0082",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 29,
+            "pagina_inicio": 29,
+            "posicao_no_documento": 82,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_1T2026 | 1T2026 | pág. 29]\nR$ milhões\n|   | BRGAAP | Ajustes e Reclassificações¹ 31/mar/26 | IFRS | BRGAAP | Ajustes e Reclassificações¹ 31/dez/25 | IFRS  |\n| --- | --- | --- | --- | --- | --- | --- |\n|  Total do Patrimônio Líquido dos Acionistas Controladores⁵ | 200.098 | 9.607 | 209.705 | 196.146 | 8.355 | 204.501  |",
+            "tipo_bloco": "tabela",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.6841030120849609
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_1T2026",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "5b8f2a442b6c0dcf7218772e81c0a748da8f6a74c138805098f4fb8ac2af87a3",
+            "id": "itau_release_1T2026_0127",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 50,
+            "pagina_inicio": 50,
+            "posicao_no_documento": 127,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_1T2026 | 1T2026 | pág. 50]\nEm R$ bilhões\n|  Nota | Atribuído à Participação dos Acionistas Controladores |   |   |   |   |   |   |   |   |   | Lucros Acumulados | Total PL - Acionistas Controladores | Total PL - Acionistas não Controladores | Total  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  Outros Resultados Abrangentes | - | - | - | - | (398) | - | (10) | (2.682) | 811 | 3 | - | (2.276) | (330) | (2.606)  |\n|  Destinações: |  |  |  |  |  |  |  |  |  |  |  |  |  |   |\n|  Reserva Legal | - | - | - | 583 | - | - | - | - | - | - | (583) | - | - | -  |\n|  Reservas Estatutárias | - | - | - | 6.934 | - | - | - | - | - | - | (6.934) | - | - | -  |\n|  Dividendos | - | - | - | - | - | - | - | - | - | - | - | - | (97) | (97)  |\n|  Juros sobre o Capital Próprio | - | - | - | - | - | - | - | - | - | - | (4.446) | (4.446) | - | (4.446)  |\n|  **Total - 31/03/2026** | **18** | **136.910** | **(265)** | **1.763** | **65.121** | **(198)** | **259** | **(1.974)** | **5.366** | **(6.889)** | **5** | **200.098** | **9.270** | **209.368**  |\n|  **Mutações do Período** | **-** | **(252)** | **(1.110)** | **7.590** | **(398)** | **-** | **(10)** | **(2.682)** | **811** | **3** | **-** | **3.952** | **(214)** | **3.738**  |",
+            "tipo_bloco": "tabela",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.6749195456504822
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_1T2026",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "5b8f2a442b6c0dcf7218772e81c0a748da8f6a74c138805098f4fb8ac2af87a3",
+            "id": "itau_release_1T2026_0124",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 50,
+            "pagina_inicio": 50,
+            "posicao_no_documento": 124,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_1T2026 | 1T2026 | pág. 50]\nEm R$ bilhões\n|  Nota | Atribuído à Participação dos Acionistas Controladores |   |   |   |   |   |   |   |   |   | Lucros Acumulados | Total PL - Acionistas Controladores | Total PL - Acionistas não Controladores | Total  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  Capitalização por Reservas | 33.334 | - | - | (33.334) | - | - | - | - | - | - | - | - | - | -  |\n|  Outros | - | - | - | (818) | - | - | - | - | - | - | - | (818) | - | (818)  |\n|  Dividendos - Declarados após período anterior | - | - | - | (12.229) | - | - | - | - | - | - | - | (12.229) | - | (12.229)  |\n|  Juros sobre o Capital Próprio - Declarados após período anterior | - | - | - | (3.260) | - | - | - | - | - | - | - | (3.260) | - | (3.260)  |\n|  Dividendos e Juros sobre o Capital Próprio Prescritos | - | - | - | - | - | - | - | - | - | - | 15 | 15 | - | 15  |\n|  Total do Resultado Abrangente | - | - | - | - | 756 | - | (3) | (3.246) | 1.158 | 779 | 10.894 | 10.338 | (20) | 10.318  |\n|  Lucro Líquido Consolidado | - | - | - | - | - | - | - | - | - | - | 10.894 | 10.894 | 252 | 11.146  |\n|  Outros Resultados Abrangentes | - | - | - | - | 756 | - | (3) | (3.246) | 1.158 | 779 | - | (556) | (272) | (828)  |\n|  Destinações: |  |  |  |  |  |  |  |  |  |  |  |  |  |   |",
+            "tipo_bloco": "tabela",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.67304527759552
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_1T2026",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "5b8f2a442b6c0dcf7218772e81c0a748da8f6a74c138805098f4fb8ac2af87a3",
+            "id": "itau_release_1T2026_0292",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 101,
+            "pagina_inicio": 101,
+            "posicao_no_documento": 292,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_1T2026 | 1T2026 | pág. 101]\nEm R$ bilhões\n|  Empresas | Saldo em 31/12/2025 |   |   |   |   | Movimentação de 01/01 a 31/03/2026 |   |   |   |   |   |   |   |   |   | Resultado de Participações em Controladas de 01/01 a 31/03/2025  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|   |  Valor Patrimonial |   |   | Resultado não Realizado | Agio | Total | Amortização de Agio | Dividendos Pagos / Provisões^{(1)} | Resultado de Participações em Controladas |   |   | Resultado não Realizado e Outros | Variação Cambial e Agio de Investimento - Moeda Funcional Diferente de Real | Ajuste de TVM de Controladas e Outros | Eventos Societários^{(1)}  |   |\n|   |  Patrimônio Líquido | Variação Cambial e Agio de Investimento - Moeda Funcional Diferente de Real | Ajuste a critério de investidor^{(1)} |   |   |   |   |   | Lucro Líquido (Prejuízo) | Ajuste a critério de investidor^{(1)} | Resultado não Realizado e Outros  |   |   |   |   |   |\n|  **Controladas** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |   |\n|  **No País** | **179.226** | **1.204** | **1.071** | **(2)** | **-** | **182.299** | **-** | **(5.122)** | **11.338** | **131** | **(543)** | **10.926** | **(1.618)** | **148** | **500** | **187.135**  |\n|  Itaú Unibanco S.A. | 156.353 | 1.206 | 1.703 | 1 | - | 159.263 | - | (4.850) | 9.885 | 116 | (544) | 9.457 | (1.600) | 171 | (818) | 161.673  |",
+            "tipo_bloco": "tabela",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.671288788318634
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": true,
+      "observacao": "Descartou corretamente. O valor correto para 1T26 e de R$ 11.875 milhoes; o modelo respondeu 12.144, que e a coluna errada da mesma tabela. A guarda da RN02 pegou uma alucinacao real.",
+      "pergunta": "Segundo o comparativo BRGAAP e IFRS do release do Itaú Unibanco qual foi o resultado líquido IFRS total atribuível a controladores e não controladores no 1T2026?",
+      "pergunta_id": "TSTF006",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": \"No 1T2026, o valor atribuível aos acionistas controladores e não controladores segundo o IFRS foi R$ 12.144 milhões no Itaú Unibanco (ITAU, itau_release_1T2026, 1T2026, págs. 30–31).\",\n  \"recusa\": false,\n  \"motivo_recusa\": null,\n  \"citacoes\": [\n    {\n      \"empresa\": \"ITAU\",\n      \"documento\": \"itau_release_1T2026\",\n      \"trimestre\": \"1T2026\",\n      \"pagina\": 30\n    }\n  ]\n}",
+        "citacoes": [],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": "Rebaixada por RN02: ao menos um valor numérico da resposta não aparece nos trechos citados.",
+        "recusa": true,
+        "resposta": null
+      }
+    },
+    {
+      "assinatura_contexto": "a6d5413ef27dce31b9644b981185e347101fd93051a9eb0067c7bf26e4e11a70",
+      "auditor_id": "ygor",
+      "categoria": "factual",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_2T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "19967e186631fdb07a9c5c4c3dc1fb7c5d8a02c34cb91dd4dbcf3c0982e94082",
+            "id": "santander_release_2T2025_0019",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 11,
+            "pagina_inicio": 10,
+            "posicao_no_documento": 19,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_2T2025 | 2T2025 | págs. 10–11]\np.p. QoQ  |\n| --- | --- |\n|   | +0,8 p.p. YoY  |\nGUSTAVO ALEJO,\nCFO DO SANTANDER BRASIL\nSantander Brasil | Informe do Segundo Trimestre de 2025\n10\nEstratégia\nResultados\nReconciliação dos resultados\ncontábil e gerencial\n## Sumário Executivo\nR$ Milhões\nR$ Milhões\n|   | 2T25 | 1T25 | 2T25 x 1T25 | 2T24 | 2T25 x 2T24  |\n| --- | --- | --- | --- | --- | --- |\n|  Lucro líquido gerencial | 3.659 | 3.861 | -5,2% | 3.332 | 9,8%  |\n### Indicadores de desempenho",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "2T2025"
+          },
+          "origem": "semantica",
+          "score": 0.7353595495223999
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_2T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "19967e186631fdb07a9c5c4c3dc1fb7c5d8a02c34cb91dd4dbcf3c0982e94082",
+            "id": "santander_release_2T2025_0027",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 13,
+            "pagina_inicio": 12,
+            "posicao_no_documento": 27,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_2T2025 | 2T2025 | págs. 12–13]\n## ROAE e Lucro Líquido gerencial\nR$ Milhões\n![img-6.jpeg](img-6.jpeg)\n(1) Desconsidera a joint venture com a Pluxee ocorrida no 2T24 no valor de R$ 1.930 milhões e constituição de provisão adicional de mesmo valor.\nSantander Brasil | Informe do Segundo Trimestre de 2025\n12\nEstratégia\nResultados\nReconciliação dos resultados\ncontábil e gerencial\n## Margem Financeira\nR$ Milhões\nR$ Milhões\n|   | 2T25 | 1T25 | 2T25 x 1T25 | 2T24 | 2T25 x 2T24  |\n| --- | --- | --- | --- | --- | --- |\n|  **Clientes** | **16.127** | **15.825** | **1,9%** | **14.493** | **11,3%**  |\n|  Margem de produtos | 15.453 | 15.108 | 2,3% | 13.883 | 11,3%  |\n|  Volume | 599.342 | 605.630 | -1,0% | 588.235 | 1,9%  |\n|  Spread (a.a.) | 10,75% | 10,51% | 0,24 p.p. | 9,81% | 0,94 p.p.  |\n|  Capital de giro próprio | 673 | 717 | -6,1% | 610 | 10,4%  |\n|  **Margem com o mercado** | **-730** | **97** | **n.a.** | **258** | **n.a.**  |\n|  **Margem Financeira** | **15.396** | **15.922** | **-3,3%** | **14.751** | **4,4%**  |\nA margem financeira atingiu R$ 15.396 milhões no 2T25, recuo de 3,3% em três meses. A margem com clientes alcançou R$ 16.127 milhões, incremento de 1,9% no trimestre, enquanto a margem com o mercado teve piora, com perda de R$ 730 milhões.",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "2T2025"
+          },
+          "origem": "semantica",
+          "score": 0.7091225981712341
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_2T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "19967e186631fdb07a9c5c4c3dc1fb7c5d8a02c34cb91dd4dbcf3c0982e94082",
+            "id": "santander_release_2T2025_0018",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 11,
+            "pagina_inicio": 10,
+            "posicao_no_documento": 18,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_2T2025 | 2T2025 | págs. 10–11]\nre (-2,5 p.p. YoY e -0,4 p.p. QoQ), o menor patamar em 3 anos.\n## Destaques do trimestre\n### Lucro líquido gerencial\n|  **R$ 3,7** | -5,2% QoQ  |\n| --- | --- |\n|  bilhões | +9,8% YoY  |\n### Carteira de crédito ampliada\n|  **R$ 676** | -1,0% QoQ  |\n| --- | --- |\n|  bilhões | +1,5% YoY  |\n### Captações de clientes\n|  **R$ 644** | -1,2% QoQ  |\n| --- | --- |\n|  bilhões | +0,2% YoY  |\n### Margem com clientes\n|  **R$ 16,1** | +1,9% QoQ  |\n| --- | --- |\n|  bilhões | +11,3% YoY  |\n### Margem com o mercado\n|  **R$ -730** | n.d. QoQ  |\n| --- | --- |\n|  milhões | n.d. YoY  |\n### Custo de crédito\n|  **3,9%** | +0,2 p.p. QoQ  |\n| --- | --- |\n|   | +0,3 p.p. YoY  |\n### Índice de eficiência\n|  **36,8%** | -0,4 p.p. QoQ  |\n| --- | --- |\n|   | -2,5 p.p. YoY  |\n### ROAE\n|  **16,4%** | -1,1 p.p. QoQ  |\n| --- | --- |\n|   | +0,8 p.p. YoY  |\nGUSTAVO ALEJO,\nCFO DO SANTANDER BRASIL\nSantander Brasil | Informe do Segundo Trimestre de 2025\n10\nEstratégia\nResultados\nReconciliação dos resultados\ncontábil e gerencial\n## Sumário Executivo\nR$ Milhões",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "2T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6886535286903381
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_2T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "19967e186631fdb07a9c5c4c3dc1fb7c5d8a02c34cb91dd4dbcf3c0982e94082",
+            "id": "santander_release_2T2025_0020",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 11,
+            "pagina_inicio": 11,
+            "posicao_no_documento": 20,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_2T2025 | 2T2025 | pág. 11]\n|   | 2T25 | 1T25 | 2T25 x 1T25 | 2T24 | 2T25 x 2T24  |\n| --- | --- | --- | --- | --- | --- |\n|  Lucro líquido gerencial | 3.659 | 3.861 | -5,2% | 3.332 | 9,8%  |\n### Indicadores de desempenho\nR$ Milhões\n|  ROAE gerencial excluindo ágio - anualizado^{1} | 16,4% | 17,4% | -1,1 p.p. | 15,5% | 0,8 p.p.  |\n| --- | --- | --- | --- | --- | --- |\n|  ROAA gerencial excluindo ágio - anualizado^{1} | 1,2% | 1,2% | -0,01 p.p. | 1,1% | 0,1 p.p.  |\n|  Índice de eficiência^{2} | 36,8% | 37,2% | -0,4 p.p. | 39,3% | -2,5 p.p.  |\n|  Índice de recorrência^{3} | 81,2% | 78,1% | 3,0 p.p. | 82,1% | -0,9 p.p.  |\n|  Índice de inadimplência (15 a 90 dias) | 4,0% | 4,1% | -0,1 p.p. | 3,5% | 0,5 p.p.  |\n|  Índice de inadimplência (acima de 90 dias) | 3,1% | 3,3% | -0,2 p.p. | 3,2% | -0,05 p.p.  |\n|  Índice de cobertura da carteira em estágio 3^{4} | 67,1% | 74,1% | -6,9 p.p. | - | -  |\n### Balanço patrimonial",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "2T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6860936880111694
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_2T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "19967e186631fdb07a9c5c4c3dc1fb7c5d8a02c34cb91dd4dbcf3c0982e94082",
+            "id": "santander_release_2T2025_0001",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 3,
+            "pagina_inicio": 1,
+            "posicao_no_documento": 1,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_2T2025 | 2T2025 | págs. 1–3]\n# Informe de Resultados\n2º trimestre de 2025\n(BRGAAP)\n![img-0.jpeg](img-0.jpeg)\n![img-1.jpeg](img-1.jpeg)\nwww.santander.com.br/ri/\nSantander\nSegundo trimestre\n2025\n## Índice\n|  **Destaques estratégicos** | **3**  |\n| --- | --- |\n|  **Evolução da estratégia** | **4**  |\n|  Centralidade no cliente | 4  |\n|  Transacionalidade | 5  |\n|  Crédito | 6  |\n|  Investimentos | 7  |\n|  Cultura e Pessoas | 8  |\n|  **Análise do desempenho** | **10**  |\n|  **Sumário executivo** | **11**  |\n|  **Análise do resultado e balanço patrimonial** | **12**  |\n|  Demonstração do resultado gerencial | 12  |\n|  Margem financeira | 13  |\n|  Comissões | 14  |\n|  Resultado de PDD e custo de crédito | 16  |\n|  NPL Formation, write-off e carteira renegociada | 17  |\n|  Qualidade de crédito | 18  |\n|  Despesas | 19  |\n|  Outras Receitas e Despesas Operacionais | 20  |\n|  Balanço patrimonial | 20  |\n|  Carteira de crédito | 21  |\n|  Captações | 24  |\n|  Capital | 24  |\n|  Reconciliação dos resultados contábil e gerencial | 25  |\nSantander Brasil | Informe do Segundo Trimestre de 2025\n2\n# Informe de Resultados do 2º trimestre de 2025 (BRGAAP)\nNeste trimestre, continuamos focados na execução de nossa estratégia de sermos o banco mais presente na vida de nossos clientes, bem como construindo uma operação mais diversificada, sólida e capaz de gerar resultados consistentes. Registramos lucro de R$ 3,7 bilhões e retorno sobre patrimônio de 16,4%, com expansão versus 2024 mas queda comparado ao primeiro trimestre, dado um ambiente macroeconômico mais desafiador.",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "2T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6848105192184448
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": true,
+      "observacao": "Publicado corretamente.",
+      "pergunta": "Segundo a demonstração gerencial do Santander qual foi o lucro líquido gerencial no 2T2025?",
+      "pergunta_id": "TSTF010",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": \"Segundo a demonstração gerencial do Santander, o lucro líquido gerencial no 2T25 foi de R$ 3.659 milhões (SANTANDER, santander_release_2T2025, 2T2025, p. 11).\",\n  \"recusa\": false,\n  \"motivo_recusa\": null,\n  \"citacoes\": [\n    {\n      \"empresa\": \"SANTANDER\",\n      \"documento\": \"santander_release_2T2025\",\n      \"trimestre\": \"2T2025\",\n      \"pagina\": 11\n    }\n  ]\n}",
+        "citacoes": [
+          {
+            "documento": "santander_release_2T2025",
+            "empresa": "SANTANDER",
+            "pagina": 11,
+            "trimestre": "2T2025"
+          }
+        ],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": null,
+        "recusa": false,
+        "resposta": "Segundo a demonstração gerencial do Santander, o lucro líquido gerencial no 2T25 foi de R$ 3.659 milhões (SANTANDER, santander_release_2T2025, 2T2025, p. 11)."
+      }
+    },
+    {
+      "assinatura_contexto": "393e25c2afd2c9155280e3e739ffb24026c3b7a2685b7fc4f44bfaacdb7decd4",
+      "auditor_id": "ygor",
+      "categoria": "factual",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_4T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "a4fd494e84aea24f70c0aff955067814c8a219890df2566007665df759e27ec4",
+            "id": "santander_release_4T2025_0052",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 24,
+            "pagina_inicio": 23,
+            "posicao_no_documento": 52,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_4T2025 | 4T2025 | págs. 23–24]\niada de Pessoa Jurídica totalizou R$ 345.353 milhões, com expansão de 3,0% em três meses e 5,0% em doze meses. Em dezembro de 2025, avais, fianças e títulos privados representaram 36,5% da carteira ampliada de Pessoa Jurídica (-0,2 p.p. QoQ e +1,0 p.p. YoY).\nA carteira ampliada de Grandes Empresas somou R$ 250.509 milhões, avançando 2,0% no trimestre e 2,3% no ano, principalmente pelo desempenho das linhas de comércio exterior e capital de giro. Em títulos privados, registramos crescimento de 7,9% no trimestre e 11,4% no ano, com destaque para debêntures. Avais e fianças, por sua vez, recuaram 2,2% em três meses e avançaram 4,1% em doze meses. Desconsiderando o efeito da variação cambial, a carteira ampliada de Grandes Empresas teria apresentado um aumento de 1,2% no trimestre e 5,1% no ano.\nJá a carteira ampliada de Pequenas e Médias Empresas totalizou R$ 94.844 milhões, com aumento de 5,8% no trimestre e de 13,0% no ano, refletindo a evolução da oferta ao segmento e o foco no fortalecimento do relacionamento principal.\n# Mix da carteira ampliada PJ por segmento\nR$ Milhões\n![img-31.jpeg](img-31.jpeg)\n# Mix da carteira ampliada PJ por instrumento\n![img-32.jpeg](img-32.jpeg)\nSantander Brasil | Informe do Quarto Trimestre de 2025\n23\nEstratégia\nResultados\nReconciliação dos resultados\ncontábil e gerencial\n## Captações\nR$ Milhões",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.7159843444824219
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_4T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "a4fd494e84aea24f70c0aff955067814c8a219890df2566007665df759e27ec4",
+            "id": "santander_release_4T2025_0047",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 22,
+            "pagina_inicio": 21,
+            "posicao_no_documento": 47,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_4T2025 | 4T2025 | págs. 21–22]\n,7% no ano, com destaque para o crescimento de Títulos (+6,6% QoQ e +7,9% YoY). Da mesma forma, se desconsiderados os efeitos cambiais, a carteira ampliada teria apresentado um aumento de 2,5% no trimestre e 4,9% no ano.\n## Concentração de crédito$^{2}$\nR$ Milhões – Dez/25\nR$ Milhões\n|   | Exposição | Exposição/Carteira de crédito  |\n| --- | --- | --- |\n|  Maior devedor | 6.248 | 0,9%  |\n|  10 maiores devedores | 40.321 | 5,6%  |\n|  20 maiores devedores | 60.262 | 8,4%  |\n|  50 maiores devedores | 96.242 | 13,4%  |\n|  100 maiores devedores | 129.354 | 18,0%  |\nEm dezembro/25, apenas **18,0%** da nossa exposição de crédito estava concentrada nos 100 maiores devedores.\n(1) Inclui CRI, CRA, FIDC e CPR, além de debêntures, notas promissórias, notas comerciais, eurobonds e floating rates notes. (2) Inclui: as parcelas de crédito a liberar para construtoras/incorporadoras, posição de debêntures, notas promissórias e certificados de recebíveis imobiliários – CRI.\n![Santander Brasil logo]() Santander Brasil | Informe do Quarto Trimestre de 2025\n21\nEstratégia\nResultados\nReconciliação dos resultados\ncontábil e gerencial\n## Carteira de crédito por produto\nR$ Milhões",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6919766068458557
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_4T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "a4fd494e84aea24f70c0aff955067814c8a219890df2566007665df759e27ec4",
+            "id": "santander_release_4T2025_0004",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 3,
+            "pagina_inicio": 3,
+            "posicao_no_documento": 4,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_4T2025 | 4T2025 | pág. 3]\ntrimestre, a Toro passou a ser Santander Corretora, reforçando nosso posicionamento e ecossistema de investimentos.\nAdicionalmente, seguimos avançando na agenda de construção de plataformas globais, em conjunto com o Grupo, combinando expertises, estratégias e investimentos para entregar soluções mais eficientes, simples e ágeis para melhor servir quem mais nos importa: nossos clientes.\nIniciamos 2026 ainda mais preparados para atender às necessidades de nossos clientes com excelência e inovação. Seguimos caminhando na evolução consistente do nosso ROAE, com foco em resultados e disciplina na gestão, pautados por nossos pilares estratégicos e transformação constante junto aos nossos clientes, colaboradores, acionistas e sociedade.\nMARIO LEÃO\nCEO DO SANTANDER BRASIL\n## Destaques financeiros | 4T25\n**Carteira de crédito ampliada**\nR$ 708,2 bilhões (+2,8% QoQ e +3,7% YoY)\nCrescimento seletivo e equilibrado dos ativos\n**Custo de crédito**\n3,76% (-0,1 p.p. QoQ e +0,3 p.p. YoY)\nEstável, mas ainda pressionado pelo contexto macroeconômico\n**Captações de clientes**\nR$ 670,4 bilhões (+1,7% QoQ e +3,9% YoY)\nEvolução do mix de passivos com maior representatividade da PF\n**ROAE**\n17,6%\n(Estável QoQ e -0,1 p.p. YoY)\n**Margem financeira**\nR$ 15,3 bilhões (+0,8% QoQ e -4,0% YoY)\nClientes com desempenho sólido e mercados apresentando perda, conforme o previsto\n**Comissões**\nR$ 5,8 bilhões (+3,6% QoQ e +4,3% YoY)\nExpansão por diversificação de receitas, pilar relevante de crescimento\n**Despesas**\nR$ 6,6 bilhões (+3,3% QoQ e -2,0% YoY)\nDisciplina na gestão de gastos, com crescimento sazonal no trimestre\n**Lucro líquido**\nR$ 4,1 bilhões",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6696096658706665
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_4T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "a4fd494e84aea24f70c0aff955067814c8a219890df2566007665df759e27ec4",
+            "id": "santander_release_4T2025_0010",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 6,
+            "pagina_inicio": 6,
+            "posicao_no_documento": 10,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_4T2025 | 4T2025 | pág. 6]\nIsso nos permitiu ter um melhor atendimento e maior produtividade (3 vezes mais visitas¹), satisfação dos clientes (+9 pontos em 2 anos) e rentabilidade do negócio. Adicionalmente, para 2026 redesenhamos a segmentação da PJ para melhor servir os clientes, proporcionando atendimento mais personalizado, alinhado ao modelo global.\n### Pessoa Física\n#### Foco na qualidade e rentabilidade\nEstamos focados na qualidade e rentabilidade das nossas operações de crédito por meio de crescimento seletivo e favorecendo o relacionamento completo com nossos clientes. Encerramos 2025 com R$ 269 bilhões de carteira de crédito ampliada no segmento PF, queda de 1% YoY. Seguimos com disciplina na concessão de crédito, focados na qualidade e rentabilidade dos ativos, aumentando a receita de 2025 do segmento em 2% YoY mesmo com a ligeira redução da carteira. As receitas do segmento Select cresceram 7% YoY, destacando-se que este segmento possui inadimplência 31% menor que os demais segmentos de Pessoa Física. No massivo, seguimos evoluindo com a hiperpersonalização e aprimoramento da experiência e jornada do cliente, além do foco na transacionalidade, crescendo 14% YoY em depósitos, *versus* queda de 5% YoY do crédito, e com redução de 19% YoY do custo de servir, melhorando nossa eficiência.\n### Santander Financiamentos\n#### Financeira como destaque do pilar de crédito\nSeguimos como a maior e mais digital financeira do país, sendo referência na praticidade, com jornada simplificada na contratação, com apenas 4 cliques, e qualidade do atendimento ao cliente desde o seu primeiro contato. Essa estrutura é potencializada pela capilaridade da rede comercial, com forte presença em pontos de venda inseridos diretamente em parceiros, como lojas e correspondentes. Este posicionamento, aliado a parcerias com 6 das 10 maiores montadoras do país, nos permite sermos líderes em veículos PF, com 20% de market share² de carteira.",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6482069492340088
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_4T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "a4fd494e84aea24f70c0aff955067814c8a219890df2566007665df759e27ec4",
+            "id": "santander_release_4T2025_0002",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 3,
+            "pagina_inicio": 2,
+            "posicao_no_documento": 2,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_4T2025 | 4T2025 | págs. 2–3]\npatrimonial | 20  |\n|  Carteira de crédito | 21  |\n|  Captações | 24  |\n|  Capital | 24  |\n|  Reconciliação dos resultados contábil e gerencial | 25  |\nSantander Brasil | Informe do Quarto Trimestre de 2025\n2\n# Informe de Resultados do 4º trimestre de 2025 (BRGAAP)\nEncerramos o trimestre com um lucro líquido de R$ 4,1 bilhões, o maior lucro trimestral dos últimos 4 anos, e com retorno sobre patrimônio de 17,6%, estável em relação ao 3T25. Esses resultados refletem a consistência da nossa execução estratégica e reforçam nossa ambição de sermos a principal plataforma financeira na vida de nossos clientes, o banco que cada cliente escolhe todos os dias, que apoia os clientes nos seus começos, o banco do #ComeçaAgora, e que trata cada cliente como Cliente Principal e único. Avançamos de forma contínua na construção de uma operação cada vez mais diversificada, sólida e rentável, preparada para crescer de maneira sustentável ao longo do tempo.\nNo 4T25, mantivemos o rigor na alocação de capital, com crescimento seletivo e equilibrado de nossos ativos. Em passivos, continuamos a diversificar nossas captações, com redução do custo de funding por meio da expansão da representatividade das pessoas físicas. A qualidade de crédito permanece pressionada pelo contexto macroeconômico, mas seguimos atuando com prudência, disciplina e gestão ativa de riscos. Em termos de eficiência, mantemos nossa gestão rigorosa de custos que, aliada ao uso intensivo de tecnologia, tem nos permitido elevar a produtividade e capturar ganhos estruturais.",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6463020443916321
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": false,
+      "observacao": "Descartado incorretamente. O que e dito na pagina 3 e detalhado em tabela na pagina 22 — o valor tinha lastro no corpus e a guarda rejeitou mesmo assim.",
+      "pergunta": "Segundo a demonstração gerencial do Santander qual foi a carteira de crédito ampliada incluindo títulos privados, avais e fianças no 4T2025?",
+      "pergunta_id": "TSTF012",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": \"Segundo a demonstração gerencial do Santander, a carteira de crédito ampliada no 4T25 foi de R$ 708,2 bilhões.\",\n  \"recusa\": false,\n  \"motivo_recusa\": null,\n  \"citacoes\": [\n    {\n      \"empresa\": \"SANTANDER\",\n      \"documento\": \"santander_release_4T2025\",\n      \"trimestre\": \"4T2025\",\n      \"pagina\": 3\n    }\n  ]\n}",
+        "citacoes": [],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": "Rebaixada por RN02: ao menos um valor numérico da resposta não aparece nos trechos citados.",
+        "recusa": true,
+        "resposta": null
+      }
+    },
+    {
+      "assinatura_contexto": "81534cd19801c237905031292f6c17318a25f63646875ca024009115337d3647",
+      "auditor_id": "ygor",
+      "categoria": "factual",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_1T2026",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "8fe8da8d147eb95c67005ea904c193c1ec9b7c1777cf98642dceefef8c4362d1",
+            "id": "btg_release_1T2026_0004",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 4,
+            "pagina_inicio": 3,
+            "posicao_no_documento": 4,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_1T2026 | 1T2026 | págs. 3–4]\nObservação: Número de ações não inclui as ações em Tesouraria\nNota: (1) ROAE Ajustado considera o Patrimônio Líquido proforma de dezembro de 2024, refletindo os impactos da Resolução 4.966 do Banco Central. Para fins de comparação, o ROAE ajustado dos períodos anteriores também foi ajustado para incluir o ágio do Banco Pan\n(2) Para fins de comparação, os valores dos períodos anteriores foram ajustados para refletir a inclusão da linha de negócio de Consumer Finance & Banking, após a aquisição de 100% do Banco Pan\n2\nbtg pactual\nDivulgação de Resultados^{}[] Primeiro trimestre de 2026\n## Desempenho do BTG Pactual\nEncerramos o primeiro trimestre do ano com mais um forte resultado, com receitas totais atingindo R$9.968,0 milhões e lucro líquido ajustado de R$4.808,4 milhões, resultando em um ROAE de 26,6%, significativamente acima dos 23,2% reportado no 1T25. Mesmo em um trimestre tipicamente impactado pela sazonalidade e diante de um ambiente macroeconômico e geopolítico desafiador, seguimos nos beneficiando da escala e diversificação da nossa plataforma, sustentando elevados níveis de rentabilidade.\nContinuamos ampliando nossa base de clientes através de novos produtos, segmentos e mercados, o que resultou em R$83 bilhões de captação líquida total e R$2,6 trilhões de ativos sob gestão e administração combinados entre Asset e Wealth Management. Em Corporate Lending, mantivemos o foco em qualidade e disciplina na originação, apoiados por uma base de funding estável e bem diversificada. Esse desempenho reflete a força da nossa marca e a confiança fiduciária dos nossos clientes, mesmo em um ambiente de mercado mais incerto.\nNesse contexto, os resultados das nossas principais linhas de negócios evidenciam a diversificação do nosso modelo de negócios, aliado a uma sólida execução em todos os segmentos.",
+            "tipo_bloco": "texto",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.7118869423866272
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_1T2026",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "8fe8da8d147eb95c67005ea904c193c1ec9b7c1777cf98642dceefef8c4362d1",
+            "id": "btg_release_1T2026_0008",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 6,
+            "pagina_inicio": 6,
+            "posicao_no_documento": 8,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_1T2026 | 1T2026 | pág. 6]\n|  Lucro Líquido e ROAE Ajustado (não auditado) | 1T 2026 Contábil | Itens Não Recorrentes & Ágio | 1T 2026 Ajustado  |\n| --- | --- | --- | --- |\n|  Investment Banking | 627,9 |  | 627,9  |\n|  Corporate Lending & Business Banking | 2.332,3 |  | 2.332,3  |\n|  Sales and Trading | 1.877,0 |  | 1.877,0  |\n|  Asset Management | 783,4 |  | 783,4  |\n|  Wealth Management & Personal Banking | 1.516,1 |  | 1.516,1  |\n|  Consumer Finance & Banking | 1.125,0 |  | 1.125,0  |\n|  Interest & Others | 1.706,0 |  | 1.706,0  |\n|  **Receita Total** | **9.967,7** | **-** | **9.967,7**  |\n|  Bônus | (1.004,5) |  | (1.004,5)  |\n|  Salários e benefícios | (986,0) |  | (986,0)  |\n|  Administrativas e outras | (1.134,8) |  | (1.134,8)  |\n|  Amortização de ágio | (432,1) | 432,1 | -  |\n|  Despesas tributárias, exceto IR | (673,7) |  | (673,7)  |\n|  **Despesas operacionais totais** | **(4.231,1)** | **432,1** | **(3.799,0)**  |\n|  **Lucro antes dos impostos** | **5.736,6** | **432,1** | **6.168,7**  |\n|  IR e contribuição social | (1.166,2) | (194,4) | (1.360,6)  |\n|  **Lucro líquido** | **4.570,4** | **237,7** | **4.808,1**  |\n|  **ROAE Anualizado** | **25,3%** |  | **26,6%**  |",
+            "tipo_bloco": "tabela",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.6429116129875183
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_1T2026",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "8fe8da8d147eb95c67005ea904c193c1ec9b7c1777cf98642dceefef8c4362d1",
+            "id": "btg_release_1T2026_0001",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 3,
+            "pagina_inicio": 1,
+            "posicao_no_documento": 1,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_1T2026 | 1T2026 | págs. 1–3]\n![img-0.jpeg](img-0.jpeg)\n# Divulgação de Resultados\nPrimeiro trimestre de 2026\n11 de maio de 2026\n![img-1.jpeg](img-1.jpeg)\nbtgpactual.com\nNet New Money\n(R$)\n82,8bi\n1T26\n332bi LTM 1T26\nLucro líquido ajustado\n(R$)\n4,8bi\n1T26\n42% crescimento a.a.\nPortfólio de Crédito\n(R$)\n355bi\n24% crescimento a.a.\nCorporate: 281bi\nConsumer: 74bi\nÍndice de Basileia\n15,9%\n1T26\nAuM/WuM Total\n(R$)\n2,6tri\n1T26\n28% crescimento a.a.\nReceita total\n(R$)\n10,0bi\n1T26\n34% crescimento a.a.\nUnsecured Funding\n(R$)\n379bi\n31% crescimento a.a.\nROAE ajustado\n26,6%\n1T26\nbtg pactual\nDivulgação de Resultados\nPrimeiro trimestre de 2026\n## Destaques\nO Banco BTG Pactual S.A anunciou receitas totais de R$9.968,0 milhões e um lucro líquido ajustado de R$4.808,4 milhões no trimestre encerrado em 31 de março de 2026.\nO lucro líquido ajustado por unit e o retorno ajustado anualizado sobre o patrimônio líquido médio do BTG Pactual (“ROAE anualizado”) no trimestre foram de R$1,24 e 26,6%⁽¹⁾, respectivamente.\nEm 31 de março de 2026, os ativos totais do BTG Pactual somaram R$845,6 bilhões, um crescimento de 4,9% em comparação com trimestre findo em 31 de dezembro de 2025. Nosso índice de Basileia encerrou o trimestre em 15,9%.\n## Resumo financeiro e principais indicadores de desempenho do BTG Pactual",
+            "tipo_bloco": "texto",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.6389380693435669
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_1T2026",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "8fe8da8d147eb95c67005ea904c193c1ec9b7c1777cf98642dceefef8c4362d1",
+            "id": "btg_release_1T2026_0002",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 3,
+            "pagina_inicio": 3,
+            "posicao_no_documento": 2,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_1T2026 | 1T2026 | pág. 3]\n|  Destaques e Principais Indicadores (não auditado) (em R$ milhões a menos que indicado) | Trimestre |   |   | Acumulado no ano  |   |\n| --- | --- | --- | --- | --- | --- |\n|   |  1T 2025 | 4T 2025 | 1T 2026 | 3M 2025 | 3M 2026  |\n|  Receita total | 7.423 | 9.888 | 9.968 | 7.423 | 9.968  |\n|  Lucro líquido | 3.210 | 4.391 | 4.570 | 3.210 | 4.570  |\n|  **Lucro líquido Ajustado** | **3.379** | **4.610** | **4.808** | **3.379** | **4.808**  |\n|  Lucro líquido por unit ajustado (R$) | 0,89 | 1,19 | 1,24 | 0,89 | 1,24  |\n|  **ROAE anualizado** | **23,2%** | **27,6%** | **26,6%** | **23,2%** | **26,6%**  |\n|  Índice de eficiência ajustado | 41,3% | 38,0% | 38,1% | 41,3% | 38,1%  |\n|  Patrimônio líquido | 59.779 | 69.970 | 74.510 |  |   |\n|  Número Total de Ações (# em '000) | 11.423.711 | 11.587.655 | 11.587.655 |  |   |\n|  **Quantidade de Units (# em '000)** | **3.807.904** | **3.862.552** | **3.862.552** |  |   |\n|  **Valor Patrimonial por Unit (R$)** | **15,7** | **18,1** | **19,3** |  |   |\n|  Índice de Basileia | 15,4% | 15,5% | 15,9% |  |   |\n|  Ativos totais (em R$ Bilhões) | 608,4 | 806,0 | 845,6 |  |   |",
+            "tipo_bloco": "tabela",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.627787709236145
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_1T2026",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "8fe8da8d147eb95c67005ea904c193c1ec9b7c1777cf98642dceefef8c4362d1",
+            "id": "btg_release_1T2026_0009",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 7,
+            "pagina_inicio": 6,
+            "posicao_no_documento": 9,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_1T2026 | 1T2026 | págs. 6–7]\n**6.168,7**  |\n|  IR e contribuição social | (1.166,2) | (194,4) | (1.360,6)  |\n|  **Lucro líquido** | **4.570,4** | **237,7** | **4.808,1**  |\n|  **ROAE Anualizado** | **25,3%** |  | **26,6%**  |\nObservação: Os resultados, excluindo itens não recorrentes e ágio, oferecem informações mais significativas referentes à lucratividade subjacente dos nossos negócios.\n# Itens Não Recorrentes & Ágio\nÁgio: atribuível principalmente a algumas das nossas aquisições mais recentes, como a Banco Pan, Orama, Sertrading, Julius Baer Brasil, JGP Wealth Management e Justa\nIR e contribuição social: impacto de imposto sobre a amortização de ágio\n5\nbtg pactual\nDivulgação de Resultados\nPrimeiro trimestre de 2026\n# Receita Consolidada\nRecorde de receitas no trimestre, com crescimento de 34,3% na comparação anual, mesmo em um ambiente mais desafiador marcado pelo aumento das tensões geopolíticas e maior volatilidade nos mercados. Os resultados recordes em Corporate Lending e Wealth Management, aliados à performance consistente das demais áreas de negócio, sustentaram o forte desempenho do período e impulsionaram a expansão das receitas.",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.612202525138855
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": true,
+      "observacao": "Publicado corretamente.",
+      "pergunta": "Segundo a divulgação gerencial do BTG Pactual qual foi o ROAE ajustado anualizado no 1T2026?",
+      "pergunta_id": "TSTF001",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": \"No 1T2026, o ROAE ajustado anualizado do BTG Pactual foi de 26,6%.\",\n  \"recusa\": false,\n  \"motivo_recusa\": null,\n  \"citacoes\": [\n    {\n      \"empresa\": \"BTG\",\n      \"documento\": \"btg_release_1T2026\",\n      \"trimestre\": \"1T2026\",\n      \"pagina\": 3\n    }\n  ]\n}",
+        "citacoes": [
+          {
+            "documento": "btg_release_1T2026",
+            "empresa": "BTG",
+            "pagina": 3,
+            "trimestre": "1T2026"
+          }
+        ],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": null,
+        "recusa": false,
+        "resposta": "No 1T2026, o ROAE ajustado anualizado do BTG Pactual foi de 26,6%."
+      }
+    },
+    {
+      "assinatura_contexto": "60dfd234a07375113573eefe78599ff49bcafa431464d6236bff5549d05e2a4b",
+      "auditor_id": "ygor",
+      "categoria": "comparativa",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_1T2026",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "8fe8da8d147eb95c67005ea904c193c1ec9b7c1777cf98642dceefef8c4362d1",
+            "id": "btg_release_1T2026_0001",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 3,
+            "pagina_inicio": 1,
+            "posicao_no_documento": 1,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_1T2026 | 1T2026 | págs. 1–3]\n![img-0.jpeg](img-0.jpeg)\n# Divulgação de Resultados\nPrimeiro trimestre de 2026\n11 de maio de 2026\n![img-1.jpeg](img-1.jpeg)\nbtgpactual.com\nNet New Money\n(R$)\n82,8bi\n1T26\n332bi LTM 1T26\nLucro líquido ajustado\n(R$)\n4,8bi\n1T26\n42% crescimento a.a.\nPortfólio de Crédito\n(R$)\n355bi\n24% crescimento a.a.\nCorporate: 281bi\nConsumer: 74bi\nÍndice de Basileia\n15,9%\n1T26\nAuM/WuM Total\n(R$)\n2,6tri\n1T26\n28% crescimento a.a.\nReceita total\n(R$)\n10,0bi\n1T26\n34% crescimento a.a.\nUnsecured Funding\n(R$)\n379bi\n31% crescimento a.a.\nROAE ajustado\n26,6%\n1T26\nbtg pactual\nDivulgação de Resultados\nPrimeiro trimestre de 2026\n## Destaques\nO Banco BTG Pactual S.A anunciou receitas totais de R$9.968,0 milhões e um lucro líquido ajustado de R$4.808,4 milhões no trimestre encerrado em 31 de março de 2026.\nO lucro líquido ajustado por unit e o retorno ajustado anualizado sobre o patrimônio líquido médio do BTG Pactual (“ROAE anualizado”) no trimestre foram de R$1,24 e 26,6%⁽¹⁾, respectivamente.\nEm 31 de março de 2026, os ativos totais do BTG Pactual somaram R$845,6 bilhões, um crescimento de 4,9% em comparação com trimestre findo em 31 de dezembro de 2025. Nosso índice de Basileia encerrou o trimestre em 15,9%.\n## Resumo financeiro e principais indicadores de desempenho do BTG Pactual",
+            "tipo_bloco": "texto",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.6255783438682556
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_1T2026",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "5b8f2a442b6c0dcf7218772e81c0a748da8f6a74c138805098f4fb8ac2af87a3",
+            "id": "itau_release_1T2026_0002",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 5,
+            "pagina_inicio": 5,
+            "posicao_no_documento": 2,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_1T2026 | 1T2026 | pág. 5]\nEm R$ milhões (exceto onde indicado)\n|   |  | 1T26 | 4T25 | 1T25  |\n| --- | --- | --- | --- | --- |\n|  BRF | Resultado Recorrente Gerencial | 12.282 | 12.317 | 11.128  |\n|   |  Produto Bancário ^{(1)} | 46.822 | 47.617 | 44.793  |\n|   |  Margem Financeira Gerencial ^{(2)} | 32.326 | 32.314 | 31.081  |\n|  Desempenho | Retorno Recorrente Gerencial sobre o Patrimônio Líquido Médio anualizado - Consolidado ^{(3)} | 24,8% | 24,4% | 22,5%  |\n|   |  Retorno Recorrente Gerencial sobre o Patrimônio Líquido Médio anualizado - Brasil ^{(3)} | 26,4% | 26,0% | 23,7%  |\n|   |  Retorno Recorrente Gerencial sobre o Ativo Médio anualizado ^{(4)} | 1,6% | 1,6% | 1,5%  |\n|   |  Índice de Inadimplência (90 dias) - Total ^{(5)} | 1,9% | 1,9% | 1,9%  |\n|   |  Índice de Eficiência (IE) ^{(6)} | 37,1% | 38,3% | 37,0%  |\n|  Ações | Resultado Recorrente Gerencial por Ação (R$) ^{(7) (8)} | 1,11 | 1,12 | 1,00  |\n|   |  Lucro Líquido por Ação (R$) ^{(7) (8)} | 1,08 | 1,08 | 0,98  |\n|   |  Número total de ações no final do período - em milhões ^{(8)} | 11.021 | 11.027 | 11.102  |\n|   |  Valor Patrimonial por Ação (R$) ^{(8)} | 18,16 | 17,79 | 17,47  |\n|   |  Dividendos e JCP Líquidos ^{(9)} | 3.668 | 23.569 | 2.583  |",
+            "tipo_bloco": "tabela",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.6275401711463928
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_1T2026",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "8fe8da8d147eb95c67005ea904c193c1ec9b7c1777cf98642dceefef8c4362d1",
+            "id": "btg_release_1T2026_0034",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 28,
+            "pagina_inicio": 28,
+            "posicao_no_documento": 34,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_1T2026 | 1T2026 | pág. 28]\n|  Balanço Patrimonial (não auditado) (em R$mm, a menos que indicado) | Trimestre |   |   | Variação % para 1T 2026  |   |\n| --- | --- | --- | --- | --- | --- |\n|   |  1T 2025 | 4T 2025 | 1T 2026 | 1T 2025 | 4T 2025  |\n|  **Ativo**  |   |   |   |   |   |\n|  Disponibilidades | 5.139 | 5.577 | 4.848 | -6% | -13%  |\n|  Aplicações interfinanceiras de liquidez | 81.279 | 90.737 | 95.212 | 17% | 5%  |\n|  Títulos e valores mobiliários e instrumentos financeiros derivativos | 225.314 | 371.140 | 387.626 | 72% | 4%  |\n|  Relações interfinanceiras | 35.174 | 31.266 | 39.736 | 13% | 27%  |\n|  Operações de crédito | 161.955 | 188.259 | 196.219 | 21% | 4%  |\n|  Outros créditos | 69.949 | 86.226 | 90.801 | 30% | 5%  |\n|  Outros valores e bens | 13.569 | 15.649 | 14.561 | 7% | -7%  |\n|  Ativo Permanente | 16.063 | 17.114 | 16.571 | 3% | -3%  |\n|  **Total do ativo** | **608.442** | **805.968** | **845.575** | **39%** | **5%**  |\n|  **Passivo**  |   |   |   |   |   |\n|  Depósitos | 144.744 | 176.167 | 190.146 | 31% | 8%  |\n|  Captações no mercado aberto | 111.928 | 201.795 | 199.244 | 78% | -1%  |\n|  Recursos de aceites e emissão de títulos | 105.345 | 118.824 | 122.148 | 16% | 3%  |",
+            "tipo_bloco": "tabela",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.6223661303520203
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_1T2026",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "5b8f2a442b6c0dcf7218772e81c0a748da8f6a74c138805098f4fb8ac2af87a3",
+            "id": "itau_release_1T2026_0299",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 102,
+            "pagina_inicio": 102,
+            "posicao_no_documento": 299,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_1T2026 | 1T2026 | pág. 102]\nEm R$ bilhões\n|   | 31/03/2026 |   |   | 31/12/2025 |   |   | 01/01 a 31/03/2026 |   | 01/01 a 31/03/2025  |   |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|   |  Ativos Totais | Passivos Contingentes | Outros Passivos | Ativos Totais | Passivos Contingentes | Outros Passivos | Outros Resultados Abrangentes | Total do Resultado Abrangente | Outros Resultados Abrangentes | Total do Resultado Abrangente  |\n|  **No País** |  |  |  |  |  |  |  |  |  |   |\n|  Itaú Unibanco S.A. | 2.305.418 | 14.468 | 49.381 | 2.218.844 | 13.542 | 34.683 | (1.924) | 8.147 | (2.370) | 6.306  |\n|  Redecard Instituição de Pagamento S.A. | 166.878 | 129 | 88.034 | 159.478 | 95 | 84.614 | - | 841 | (402) | 479  |\n|  Itaú BBA Assessoria Financeira S.A. | 3.873 | - | 244 | 4.004 | - | 462 | 14 | 389 | 139 | 428  |\n|  Itaú Corretora de Valores S.A. | 10.770 | 16 | 6.965 | 8.946 | 18 | 5.173 | - | 239 | - | 40  |\n|  Itauseg Participações S.A. | 15.456 | - | 38 | 14.207 | - | 43 | 135 | 1.249 | 1.247 | 2.123  |\n|  Itaú Consultoria de Valores Mobiliários e Participações S.A. | 1.468 | 77 | 2 | 1.430 | 76 | 2 | (1) | 32 | 1 | 26  |\n|  **No Exterior** |  |  |  |  |  |  |  |  |  |   |",
+            "tipo_bloco": "tabela",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.6135855913162231
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_1T2026",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "8fe8da8d147eb95c67005ea904c193c1ec9b7c1777cf98642dceefef8c4362d1",
+            "id": "btg_release_1T2026_0030",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 27,
+            "pagina_inicio": 26,
+            "posicao_no_documento": 30,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_1T2026 | 1T2026 | págs. 26–27]\nnossas demonstrações financeiras são apresentadas com o propósito exclusivo de fornecer – num único conjunto de demonstrações financeiras e com base nos princípios fundamentais de contabilidade – informações relativas às operações do BTG Pactual e representam a consolidação entre as operações do Banco BTG Pactual S.A. e suas subsidiárias.\n### Principais indicadores-chave de desempenho (KPIs) e índices\nOs indicadores-chave de desempenho (“KPIs”) e os índices são monitorados pela administração do BTG Pactual. O BTG busca alcançar esses indicadores e índices durante todos os períodos financeiros. Consequentemente, os principais indicadores calculados com base nos resultados anuais durante todos os períodos financeiros podem ser mais significativos do que os resultados trimestrais e os resultados obtidos em qualquer data específica. Os KPIs são calculados anualmente e ajustados, quando necessário, como parte do planejamento estratégico, com o objetivo de refletir o ambiente regulatório ou as condições de mercado significativamente adversas.\nEsta seção contém a base para a apresentação e o cálculo dos KPIs e índices selecionados apresentados neste relatório.\n25\nbtg pactual\nDivulgação de Resultados\nPrimeiro trimestre de 2026",
+            "tipo_bloco": "texto",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.6204960346221924
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": false,
+      "observacao": "Descartado incorretamente. A resposta trazia um valor DERIVADO por aritmetica (26,6% - 24,8% = 1,8%); a guarda procurou 1,8 literal nos trechos, nao achou e descartou. Falso negativo por valor calculado, nao por alucinacao.",
+      "pergunta": "Entre BTG Pactual e Itaú Unibanco qual teve o maior indicador anualizado de rentabilidade gerencial sobre o patrimônio no 1T2026 como divulgado em cada release e por quanto?",
+      "pergunta_id": "TSTC008",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": \"No 1T2026, o retorno ajustado anualizado sobre o patrimônio líquido médio do BTG Pactual (\\\"ROAE anualizado\\\") foi de 26,6% [BTG | btg_release_1T2026 | 1T2026 | págs. 1–3]. No 1T2026, o Retorno Recorrente Gerencial sobre o Patrimônio Líquido Médio anualizado - Consolidado do Itaú foi de 24,8% [ITAU | itau_release_1T2026 | 1T2026 | pág. 5]. Cálculo: 26,6% - 24,8% = 1,8%\",\n  \"recusa\": false,\n  \"motivo_recusa\": null,\n  \"citacoes\": [\n    {\n      \"empresa\": \"BTG\",\n      \"documento\": \"btg_release_1T2026\",\n      \"trimestre\": \"1T2026\",\n      \"pagina\": 1\n    },\n    {\n      \"empresa\": \"ITAU\",\n      \"documento\": \"itau_release_1T2026\",\n      \"trimestre\": \"1T2026\",\n      \"pagina\": 5\n    }\n  ]\n}",
+        "citacoes": [],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": "Rebaixada por RN02: ao menos um valor numérico da resposta não aparece nos trechos citados.",
+        "recusa": true,
+        "resposta": null
+      }
+    },
+    {
+      "assinatura_contexto": "ef61caa4df929c923ce17165ad31f8885e698cc25ee72d20b413324ece248958",
+      "auditor_id": "ygor",
+      "categoria": "comparativa",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_3T2025",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "d6e40baab12cb72c5de0d265a0ea94a54bb7012a12707a2208a299f8149d0260",
+            "id": "bb_release_3T2025_0051",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 22,
+            "pagina_inicio": 21,
+            "posicao_no_documento": 51,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_3T2025 | 3T2025 | págs. 21–22]\nAlém disso, destaca-se o crescimento de 12,6% do saldo médio das captações comerciais. No 9M25, destaque para o crescimento de 16,0% das receitas financeiras.\nBanco do Brasil S.A.\nAnálise do Desempenho 3T25 | Margem Financeira Bruta\n## MFB Contábil\n**Tabela 6.** Principais Indicadores\nTabela 3. Demonstração do Resultado com Realocações¹ – R$ milhões\n|   | 3T24 | 2T25 | 3T25 | Δ% A/A | Δ% T/T | 9M24 | 9M25 | Δ% Acm.  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  CDI / TMS – % | 2,63 | 3,33 | 3,70 | 40,7 | 11,3 | 7,99 | 10,36 | 29,7  |\n|  TJLP – % | 1,74 | 2,18 | 2,26 | 29,9 | 3,6 | 5,14 | 6,58 | 28,0  |\n|  TR – % | 0,21 | 0,51 | 0,52 | 146,5 | 2,4 | 0,57 | 1,45 | 155,7  |\n|  RDP – % ^{1} | 1,72 | 2,00 | 2,04 | 18,2 | 1,8 | 5,22 | 6,09 | 16,7  |\n|  Dias úteis | 66 | 61 | 66 | – | 8,2 | 190 | 188 | (1,1)  |\n|  Dias corridos | 92 | 91 | 92 | – | 1,1 | 274 | 273 | (0,4)  |\n|  Câmbio – US$ ^{2} | 5,45 | 5,46 | 5,32 | (2,4) | (2,5) |  |  |   |\n(1) Remuneração dos Depósitos de Poupança; (2) Câmbio de fechamento (PTAX venda) do último dia útil do período de referência.\n**Tabela 7.** Composição da Margem Financeira Bruta $^{4}$ – R$ milhões",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6309752464294434
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_4T2025",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "bf1d0028a1af44f4c37e3b4f9adda603455e8fb8593ced11518b901519ad6311",
+            "id": "bb_release_4T2025_0260",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 110,
+            "pagina_inicio": 108,
+            "posicao_no_documento": 260,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_4T2025 | 4T2025 | págs. 108–110]\n(4.527) | (4.391) | (3,0)  |\n|  Despesa Financeira de Captação Institucional | (21) | (63) | (8) | (62,8) | (87,6) | (308) | (178) | (42,1)  |\n**Tabela 86.** Banco Patagonia – Indicadores de Rentabilidade, Capital e Crédito – %\n**Tabela 53.** Carteira de Crédito PJ¹ e Perda Esperada por Estágio – R$ milhões\n|   | 4T24 | 1T25 | 2T25 | 3T25 | 4T25  |\n| --- | --- | --- | --- | --- | --- |\n|  Retorno sobre o Patrimônio Líquido ^{1} | 13,6 | (1,4) | 4,0 | (0,3) | 4,5  |\n|  Índice de Basileia | 31,2 | 29,4 | 26,2 | 22,9 | 28,2  |\n|  Índice de Cobertura (+90 dias) | 199,4 | 165,8 | 115,8 | 92,9 | 91,2  |\n|  Inad+90 | 0,5 | 0,7 | 1,2 | 1,7 | 2,1  |\n(1) O cálculo é anualizado (multiplicação do resultado trimestral por quatro). Considera o padrão IFRS e o lucro líquido abrangente.\nBanco do Brasil S.A. | Relações com Investidores\n106\nAnálise do Desempenho 4T25\n# Cadernos Estratégicos\nBanco do Brasil S.A.\n107\n# Caderno de Clientes\n![img-52.jpeg](img-52.jpeg)\n## Um banco para cada cliente\nO Banco do Brasil avançou em 2025 na personalização e eficiência do relacionamento com seus clientes ao expandir capacidades analíticas, omnicanalidade e soluções digitais. Com melhorias nos canais, maior uso de IA, crescimento do engajamento e evolução dos indicadores de satisfação, o BB reforça sua atuação responsável, inovadora e próxima, oferecendo soluções completas para diferentes perfis e fortalecendo sua relevância em todas as jornadas do cliente.",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.660008430480957
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_3T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "54e03f9f6400fec17f7d97b58ba98a72c19c118b371e06603c2f419860f65124",
+            "id": "santander_release_3T2025_0004",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 4,
+            "pagina_inicio": 3,
+            "posicao_no_documento": 4,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_3T2025 | 3T2025 | págs. 3–4]\nampliada\nR$ 688,8 bilhões (+2,0% QoQ e +3,8% YoY)\nDisciplina na alocação de capital priorizando linhas de maior rentabilidade\n### Custo de crédito\n3,86% (estável QoQ e +0,2 p.p. YoY)\nMelhora na inadimplência de curto prazo e novas safras\n### Captações de clientes\nR$ 659,5 bilhões (+2,4% QoQ e +2,8% YoY)\nEvolução do mix de passivos com maior representatividade da PF\n### ROAE\n17,5%\n(+1,2 p.p. QoQ e +0,5 p.p. YoY)\n### Margem financeira\nR$ 15,2 bilhões (-1,2% QoQ e -0,1% YoY)\nClientes com boa performance em crédito e passivos, mercados com queda dentro do esperado\n### Comissões\nR$ 5,5 bilhões (+6,7% QoQ e +4,1% YoY)\nExpansão por diversificação de receitas\n### Despesas\nR$ 6,4 bilhões (+0,2% QoQ e -0,5% YoY)\nGestão de gastos segue sob controle rigoroso e bem abaixo da inflação\n### Lucro líquido\nR$ 4,0 bilhões\n(+9,6% QoQ e +9,4% YoY)\nSantander Brasil | Informe do Terceiro Trimestre de 2025\n3\nEstratégia\nResultados\nReconciliação dos resultados contábil e gerencial\n# Evolução da estratégia:\nCentralidade no cliente\nTransacionalidade\nCrédito\nInvestimentos\nCultura e Pessoas\n## Centralidade no cliente\nEvolução tecnológica para servir o cliente onde, como e quando ele desejar\n### Visão integrada do cliente\nSeguimos focados em ser o banco mais presente na vida dos nossos clientes. Nossa estratégia de centralidade no cliente se traduz em crescimento sustentável de nossa base, especialmente de clientes com principalidade¹, na evolução da satisfação, medida pelo NPS, e no aumento da rentabilidade. Expandimos a nossa base de clientes em 7% YoY, atingindo 72,8 milhões. Em clientes com principalidade PF crescemos 7% no ano.",
+            "tipo_bloco": "texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6992448568344116
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_4T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "a4fd494e84aea24f70c0aff955067814c8a219890df2566007665df759e27ec4",
+            "id": "santander_release_4T2025_0002",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 3,
+            "pagina_inicio": 2,
+            "posicao_no_documento": 2,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_4T2025 | 4T2025 | págs. 2–3]\npatrimonial | 20  |\n|  Carteira de crédito | 21  |\n|  Captações | 24  |\n|  Capital | 24  |\n|  Reconciliação dos resultados contábil e gerencial | 25  |\nSantander Brasil | Informe do Quarto Trimestre de 2025\n2\n# Informe de Resultados do 4º trimestre de 2025 (BRGAAP)\nEncerramos o trimestre com um lucro líquido de R$ 4,1 bilhões, o maior lucro trimestral dos últimos 4 anos, e com retorno sobre patrimônio de 17,6%, estável em relação ao 3T25. Esses resultados refletem a consistência da nossa execução estratégica e reforçam nossa ambição de sermos a principal plataforma financeira na vida de nossos clientes, o banco que cada cliente escolhe todos os dias, que apoia os clientes nos seus começos, o banco do #ComeçaAgora, e que trata cada cliente como Cliente Principal e único. Avançamos de forma contínua na construção de uma operação cada vez mais diversificada, sólida e rentável, preparada para crescer de maneira sustentável ao longo do tempo.\nNo 4T25, mantivemos o rigor na alocação de capital, com crescimento seletivo e equilibrado de nossos ativos. Em passivos, continuamos a diversificar nossas captações, com redução do custo de funding por meio da expansão da representatividade das pessoas físicas. A qualidade de crédito permanece pressionada pelo contexto macroeconômico, mas seguimos atuando com prudência, disciplina e gestão ativa de riscos. Em termos de eficiência, mantemos nossa gestão rigorosa de custos que, aliada ao uso intensivo de tecnologia, tem nos permitido elevar a produtividade e capturar ganhos estruturais.",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.7296271324157715
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_3T2025",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "d6e40baab12cb72c5de0d265a0ea94a54bb7012a12707a2208a299f8149d0260",
+            "id": "bb_release_3T2025_0257",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 109,
+            "pagina_inicio": 107,
+            "posicao_no_documento": 257,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_3T2025 | 3T2025 | págs. 107–109]\n,8 | (3.349) | (3.354) | 0,1  |\n|  Despesa Financeira de Captação Institucional | (12) | (64) | (67) | 459,6 | 4,2 | (287) | (174) | (39,2)  |\n**Tabela 86.** Banco Patagonia – Indicadores de Rentabilidade, Capital e Crédito – %\n**Tabela 47.** Carteira de Créditos Renegociado e Reestruturados – Banco Múltiplo¹ – R$ milhões\n|   | 3T24 | 4T24 | 1T25 | 2T25 | 3T25  |\n| --- | --- | --- | --- | --- | --- |\n|  Retorno sobre o Patrimônio Líquido ^{1} | 16,0 | 13,6 | (1,4) | 4,0 | (0,3)  |\n|  Índice de Basileia | 35,6 | 31,2 | 29,4 | 26,2 | 22,9  |\n|  Índice de Cobertura (+90 dias) | 210,2 | 199,4 | 165,8 | 115,8 | 92,9  |\n|  Inad+90 | 0,5 | 0,5 | 0,7 | 1,2 | 1,7  |\n(1) O cálculo é anualizado (multiplicação do resultado trimestral por quatro). Considera o padrão IFRS e o lucro líquido abrangente.\nBanco do Brasil S.A. | Relações com Investidores\n105\nAnálise do Desempenho 3T25\n# Cadernos Estratégicos\nBanco do Brasil S.A.\n104\n# Caderno de Clientes\n![img-52.jpeg](img-52.jpeg)\n## Um banco para cada cliente\nO Banco do Brasil tem o cliente no centro da sua estratégia, guiado pelo comportamento e necessidades dos clientes nas diferentes fases de suas vidas. Com uma estrutura sólida, tecnológica, ética e segura, o Banco do Brasil reafirma seu compromisso com a excelência e com o futuro, sustentando uma atuação responsável e inovadora no mercado.\n### CRM ágil",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6251895427703857
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": true,
+      "observacao": "Recusou corretamente. Pergunta com tarefa muito complexa.",
+      "pergunta": "Segundo os deltas trimestrais reportados nos releases, na passagem do 3T2025 para o 4T2025 qual banco teve a maior alta no indicador anualizado de rentabilidade gerencial sobre o patrimônio: Banco do Brasil ou Santander?",
+      "pergunta_id": "TSTC009",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": null,\n  \"recusa\": true,\n  \"motivo_recusa\": \"Os trechos fornecidos não contêm dados suficientes para calcular ou comparar a alta trimestral exata da rentabilidade sobre o patrimônio do Banco do Brasil na passagem do 3T2025 para o 4T2025 com base nos deltas reportados, pois os dados do Banco Patagonia (Banco do Brasil) indicam volatilidade e números negativos, mas não há uma métrica consolidada de rentabilidade gerencial sobre o patrimônio comparável diretamente de forma completa nos trechos para ambos os bancos com a mesma base.\",\n  \"citacoes\": []\n}",
+        "citacoes": [],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": "Não há evidência suficiente nos trechos recuperados.",
+        "recusa": true,
+        "resposta": null
+      }
+    },
+    {
+      "assinatura_contexto": "5273f454f2ed96cdd476c15c723e33ae9adee07dc49a273aaeee27af8a50963b",
+      "auditor_id": "ygor",
+      "categoria": "comparativa",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_3T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "54e03f9f6400fec17f7d97b58ba98a72c19c118b371e06603c2f419860f65124",
+            "id": "santander_release_3T2025_0058",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 25,
+            "pagina_inicio": 24,
+            "posicao_no_documento": 58,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_3T2025 | 3T2025 | págs. 24–25]\nO índice de Basileia atingiu 15,2%, alta de 0,2 p.p. no trimestre, explicado principalmente pelo lucro do trimestre, contribuindo para aumento de 1,9% do patrimônio de referência, acima do crescimento nos ativos ponderados pelo risco. Comparado ao mesmo período do ano anterior, o índice de Basileia ficou estável. O Capital principal atingiu 11,7%, elevação de 0,2 p.p. no trimestre e de 0,8 p.p. em 12 meses, graças ao lucro do período, que superou o crescimento dos ativos ponderados ao risco.\n(1) Com lastro em debêntures. (2) LIG e COE. (3) De acordo com o critério ANBIMA. (4) Não considera avais e fianças. Considera títulos privados. (5) Inclui o Private.\nSantander Brasil | Informe do Terceiro Trimestre de 2025\n24\nEstratégia\nResultados\nReconciliação dos resultados contábil e gerencial\n## Reconciliação dos resultados contábil e gerencial\nPara melhor compreensão dos resultados em BRGAAP, a seguir apresentamos a reconciliação entre o resultado contábil e o resultado gerencial.",
+            "tipo_bloco": "texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6257619261741638
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bradesco_release_3T2025",
+            "empresa": "BRADESCO",
+            "hashes_artefatos_extracao": "31f9e95f101b9fa1c43c82502f0c245cb50c2491f5ce93de7e74739caa38c133",
+            "id": "bradesco_release_3T2025_0002",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 6,
+            "pagina_inicio": 3,
+            "posicao_no_documento": 2,
+            "provedores_extracao": "mistral",
+            "texto": "[BRADESCO | bradesco_release_3T2025 | 3T2025 | págs. 3–6]\n– consolidado Seguros | 47 |\n| resultado gerencial x recorrente | comparativo BRGAAP x IFRS | 48 |\n| **Relatório dos Auditores Independentes** | **49** |\n| **Demonstrações Financeiras** | **53** |\nBradesco | Relatório de Análise Econômica e Financeira\n3\nAlguns números inclusos neste relatório foram submetidos a ajustes de arredondamento.\nAssim sendo, os valores indicados como totais em alguns quadros podem não ser a soma aritmética dos números que os precedem. Variações percentuais não apresentadas nos quadros deste relatório, estão relacionadas, em sua maioria, a saldos de baixo valor quando comparados com os demais períodos apresentados.\nA partir de janeiro de 2025, adotamos em nossas Demonstrações Financeiras as novas práticas contábeis estabelecidas pelas Resoluções CMN nº 4.966 e 4.975. Para fins gerenciais, mantivemos as informações dos períodos anteriores conforme já divulgado, as quais não apresentam diferenças relevantes na análise histórica dos resultados. Para alguns indicadores de crédito, quando mencionado, realizamos em bases proforma os dados históricos para fins de comparabilidade. Em nossas demonstrações financeiras a Organização optou pela isenção facultada pela Norma de não reapresentar informações comparativas de períodos anteriores decorrentes das alterações.\nBradesco | Relatório de Análise Econômica e Financeira\n4\n![img-1.jpeg](img-1.jpeg)\n# Análise Gerencial dos Resultados\n![img-2.jpeg](img-2.jpeg)\n# press release\nO Bradesco se transforma e os resultados seguem em expansão. No terceiro trimestre do ano, demos mais um passo no incremento da nossa rentabilidade. Continuamos com a mesma tração comercial, mantendo os indicadores de inadimplência sob controle, priorizando o retorno ajustado ao risco. A transformação avança, dando sustentação à nossa evolução e reforçando a nossa competitividade de longo prazo.\nO lucro líquido recorrente foi de R$ 6,2 bilhões no 3T25, registrando aumento de 2,3% t/t e 18,8% a/a. Com isso, o ROAE chegou a 14,7% no trimestre.",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6545367240905762
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_3T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "54e03f9f6400fec17f7d97b58ba98a72c19c118b371e06603c2f419860f65124",
+            "id": "santander_release_3T2025_0018",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 11,
+            "pagina_inicio": 10,
+            "posicao_no_documento": 18,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_3T2025 | 3T2025 | págs. 10–11]\n### Margem com clientes\n|  **R$ 16,6** | +2,7% QoQ  |\n| --- | --- |\n|  bilhões | +11,1% YoY  |\n### Margem com o mercado\n|  **R$ -1,3** | +84,5% QoQ  |\n| --- | --- |\n|  bilhões | n.d. YoY  |\n### Custo de crédito\n|  **3,86%** | Estável QoQ  |\n| --- | --- |\n|   | +0,2 p.p. YoY  |\n### Índice de eficiência\n|  **37,5%** | +0,7 p.p. QoQ  |\n| --- | --- |\n|   | -1,4 p.p. YoY  |\n### ROAE\n|  **17,5%** | +1,2 p.p. QoQ  |\n| --- | --- |\n|   | +0,5 p.p. YoY  |\nSantander Brasil | Informe do Terceiro Trimestre de 2025\n10\nEstratégia\nResultados\nReconciliação dos resultados\ncontábil e gerencial\n## Sumário executivo\nR$ Milhões\nR$ Milhões\n|   | 3T25 | 2T25 | 3T25 x 2T25 | 3T24 | 3T25 x 3T24  |\n| --- | --- | --- | --- | --- | --- |\n|  Lucro líquido gerencial | 4.009 | 3.659 | 9,6% | 3.664 | 9,4%  |\n### Indicadores de desempenho",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6238269805908203
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bradesco_release_3T2025",
+            "empresa": "BRADESCO",
+            "hashes_artefatos_extracao": "31f9e95f101b9fa1c43c82502f0c245cb50c2491f5ce93de7e74739caa38c133",
+            "id": "bradesco_release_3T2025_0008",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 8,
+            "pagina_inicio": 7,
+            "posicao_no_documento": 8,
+            "provedores_extracao": "mistral",
+            "texto": "[BRADESCO | bradesco_release_3T2025 | 3T2025 | págs. 7–8]\n� 1,3 p.p. a/a\nfaturamento\nR$ 29,6 bi\nΔ 1,5% t/t ∇ 5,8% a/a\níndice de sinistralidade 3T25\n72,8%\nΔ 1,1 p.p. t/t ∇ 3,4 p.p. a/a\nprincipais destaques\n- Rentabilidade cresce de forma gradual e segura\n- Receitas avançam, com destaque para a margem com clientes\n- Inadimplência estável, carteira reestruturada diminui e carteira com garantia ganha participação de novo\n- Despesas operacionais controladas e ajuste do footprint em ritmo acelerado\n- Sólido desempenho de Seguros, com expansão no ROAE\nBradesco | Relatório de Análise Econômica e Financeira\n7\n# demonstração do resultado recorrente",
+            "tipo_bloco": "texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6500530242919922
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_3T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "54e03f9f6400fec17f7d97b58ba98a72c19c118b371e06603c2f419860f65124",
+            "id": "santander_release_3T2025_0019",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 11,
+            "pagina_inicio": 11,
+            "posicao_no_documento": 19,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_3T2025 | 3T2025 | pág. 11]\n|   | 3T25 | 2T25 | 3T25 x 2T25 | 3T24 | 3T25 x 3T24  |\n| --- | --- | --- | --- | --- | --- |\n|  Lucro líquido gerencial | 4.009 | 3.659 | 9,6% | 3.664 | 9,4%  |\n### Indicadores de desempenho\nR$ Milhões\n|  ROAE gerencial excluindo ágio - anualizado^{1} | 17,5% | 16,4% | 1,2 p.p. | 17,0% | 0,5 p.p.  |\n| --- | --- | --- | --- | --- | --- |\n|  ROAA gerencial excluindo ágio - anualizado^{1} | 1,3% | 1,2% | 0,1 p.p. | 1,2% | 0,1 p.p.  |\n|  Índice de eficiência^{2} | 37,5% | 36,8% | 0,7 p.p. | 38,9% | -1,4 p.p.  |\n|  Índice de recorrência^{3} | 86,4% | 81,2% | 5,3 p.p. | 82,6% | 3,8 p.p.  |\n|  Índice de inadimplência (15 a 90 dias) | 3,9% | 4,0% | -0,2 p.p. | 3,6% | 0,3 p.p.  |\n|  Índice de inadimplência (acima de 90 dias) | 3,4% | 3,1% | 0,3 p.p. | 3,2% | 0,1 p.p.  |\n|  Índice de cobertura da carteira em estágio 3^{4} | 66,2% | 67,1% | -0,9 p.p. | - | -  |\n### Balanço patrimonial",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6235229969024658
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": true,
+      "observacao": "Publicado corretamente.",
+      "pergunta": "Entre Santander e Bradesco qual teve o maior indicador trimestral anualizado de rentabilidade gerencial ou recorrente sobre o patrimônio no 3T2025 como divulgado nos destaques de cada release e por quanto?",
+      "pergunta_id": "TSTC006",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": \"No Santander, o ROAE gerencial excluindo ágio - anualizado foi de 17,5% no 3T25 [SANTANDER | santander_release_3T2025 | 3T2025 | pág. 11]. No Bradesco, o ROAE foi de 14,7% no trimestre [BRADESCO | bradesco_release_3T2025 | 3T2025 | pág. 6]. Cálculo: 17,5% - 14,7% = 2,8 p.p.\",\n  \"recusa\": false,\n  \"motivo_recusa\": null,\n  \"citacoes\": [\n    {\n      \"empresa\": \"SANTANDER\",\n      \"documento\": \"santander_release_3T2025\",\n      \"trimestre\": \"3T2025\",\n      \"pagina\": 11\n    },\n    {\n      \"empresa\": \"BRADESCO\",\n      \"documento\": \"bradesco_release_3T2025\",\n      \"trimestre\": \"3T2025\",\n      \"pagina\": 6\n    }\n  ]\n}",
+        "citacoes": [
+          {
+            "documento": "santander_release_3T2025",
+            "empresa": "SANTANDER",
+            "pagina": 11,
+            "trimestre": "3T2025"
+          },
+          {
+            "documento": "bradesco_release_3T2025",
+            "empresa": "BRADESCO",
+            "pagina": 6,
+            "trimestre": "3T2025"
+          }
+        ],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": null,
+        "recusa": false,
+        "resposta": "No Santander, o ROAE gerencial excluindo ágio - anualizado foi de 17,5% no 3T25 [SANTANDER | santander_release_3T2025 | 3T2025 | pág. 11]. No Bradesco, o ROAE foi de 14,7% no trimestre [BRADESCO | bradesco_release_3T2025 | 3T2025 | pág. 6]. Cálculo: 17,5% - 14,7% = 2,8 p.p."
+      }
+    },
+    {
+      "assinatura_contexto": "d5b8a6d3b51a80bb0d700d023ae22dd89f5fc5b2e59c8288030a076b04a696e0",
+      "auditor_id": "ygor",
+      "categoria": "comparativa",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_3T2025",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "cb24982453877720e1844af4651186b4748c2c47a92ec7bf184c7151487a662e",
+            "id": "btg_release_3T2025_0011",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 7,
+            "pagina_inicio": 6,
+            "posicao_no_documento": 11,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_3T2025 | 3T2025 | págs. 6–7]\nObservação: Os resultados, excluindo itens não recorrentes e ágio, oferecem informações mais significativas referentes à lucratividade subjacente dos nossos negócios.\nNote: (1) 6M ROAE Ajustado considera o Patrimônio Líquido proforma de dezembro de 2024, refletindo os impactos da Resolução 4.966 do Banco Central.\n# Itens Não Recorrentes & Ágio\nÁgio: atribuível principalmente a algumas das nossas aquisições mais recentes, como a Empiricus, Necton, Banco Pan, Órama, Sertrading, Julius Baer Brasil e Justa.\nIR e contribuição social: impacto de imposto sobre a amortização de ágio\n5\nbtg pactual\nDivulgação de Resultados\nTerceiro trimestre de 2025\n## Receita Consolidada\nMesmo após um forte 2T, mantivemos a trajetória consistente de crescimento e alcançamos novo recorde de receitas, atingindo R$8.818,4 milhões — alta de 36,8% na comparação anual e 6,3% no trimestre. Asset Management e Wealth Management registraram receitas recordes e forte captação líquida, enquanto Corporate Lending também atingiu novo recorde histórico, suportado pela expansão contínua da carteira de crédito. O forte desempenho da nossa plataforma de clientes também impulsionou o resultado recorde de Sales & Trading, reforçando a escalabilidade e resiliência do nosso modelo de negócios diversificado.",
+            "tipo_bloco": "texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6231132745742798
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_3T2025",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "ac7f1197994831b3e4e5c554840cd4e5793ba7f79ad071c77b1653be5bd4e3f4",
+            "id": "itau_release_3T2025_0001",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 5,
+            "pagina_inicio": 1,
+            "posicao_no_documento": 1,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_3T2025 | 3T2025 | págs. 1–5]\n![img-0.jpeg](img-0.jpeg)\n# Resultados\n**3T25**\n# **Análise Gerencial\nda Operação\ne Demonstrações\nContábeis Condensadas**---\n3º Trimestre de 2025\n# Índice\n## Análise gerencial da operação\n03\n|  **Sumário Executivo** | **05**  |\n| --- | --- |\n|  **Análise do Resultado e Balanço Patrimonial** | **11**  |\n|  Margem Financeira Gerencial | 12  |\n|  Custo do Crédito | 13  |\n|  Qualidade do Crédito | 14  |\n|  Serviços e Seguros | 17  |\n|  Despesas Não Decorrentes de Juros | 19  |\n|  Balanço Patrimonial | 20  |\n|  Carteira de Crédito | 21  |\n|  Captações | 22  |\n|  Indicadores de Capital, Liquidez e Mercado | 23  |\n|  Resultados por Segmentos de Negócios | 24  |\n|  Demonstração de Resultados por Localidade | 26  |\n|  Atuação Internacional | 27  |\n|  **Informações Adicionais** | **28**  |\n|  Comparativo entre BRGAAP e IFRS | 29  |\n|  Glossário | 31  |\n|  **Relatório dos Auditores Independentes** | **33**  |\n## Demonstrações contábeis\n35\n# Análise Gerencial\nda Operação\n3º trimestre de 2025\nAnálise Gerencial da Operação e Demonstrações Contábeis Condensadas\nitaú\n# Sumário Executivo---\n4\n(Esta página foi deixada em branco intencionalmente)\nSumário Executivo\n5\nAnálise Gerencial da Operação > Sumário Executivo\n# Sumário do Resultado Gerencial\nA partir de janeiro de 2025, considera a adoção da Resolução 4.966 de forma prospectiva. A seguir, apresentamos os indicadores financeiros do Itaú Unibanco, apurados no final do período.",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.5934151411056519
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bradesco_release_3T2025",
+            "empresa": "BRADESCO",
+            "hashes_artefatos_extracao": "31f9e95f101b9fa1c43c82502f0c245cb50c2491f5ce93de7e74739caa38c133",
+            "id": "bradesco_release_3T2025_0002",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 6,
+            "pagina_inicio": 3,
+            "posicao_no_documento": 2,
+            "provedores_extracao": "mistral",
+            "texto": "[BRADESCO | bradesco_release_3T2025 | 3T2025 | págs. 3–6]\n– consolidado Seguros | 47 |\n| resultado gerencial x recorrente | comparativo BRGAAP x IFRS | 48 |\n| **Relatório dos Auditores Independentes** | **49** |\n| **Demonstrações Financeiras** | **53** |\nBradesco | Relatório de Análise Econômica e Financeira\n3\nAlguns números inclusos neste relatório foram submetidos a ajustes de arredondamento.\nAssim sendo, os valores indicados como totais em alguns quadros podem não ser a soma aritmética dos números que os precedem. Variações percentuais não apresentadas nos quadros deste relatório, estão relacionadas, em sua maioria, a saldos de baixo valor quando comparados com os demais períodos apresentados.\nA partir de janeiro de 2025, adotamos em nossas Demonstrações Financeiras as novas práticas contábeis estabelecidas pelas Resoluções CMN nº 4.966 e 4.975. Para fins gerenciais, mantivemos as informações dos períodos anteriores conforme já divulgado, as quais não apresentam diferenças relevantes na análise histórica dos resultados. Para alguns indicadores de crédito, quando mencionado, realizamos em bases proforma os dados históricos para fins de comparabilidade. Em nossas demonstrações financeiras a Organização optou pela isenção facultada pela Norma de não reapresentar informações comparativas de períodos anteriores decorrentes das alterações.\nBradesco | Relatório de Análise Econômica e Financeira\n4\n![img-1.jpeg](img-1.jpeg)\n# Análise Gerencial dos Resultados\n![img-2.jpeg](img-2.jpeg)\n# press release\nO Bradesco se transforma e os resultados seguem em expansão. No terceiro trimestre do ano, demos mais um passo no incremento da nossa rentabilidade. Continuamos com a mesma tração comercial, mantendo os indicadores de inadimplência sob controle, priorizando o retorno ajustado ao risco. A transformação avança, dando sustentação à nossa evolução e reforçando a nossa competitividade de longo prazo.\nO lucro líquido recorrente foi de R$ 6,2 bilhões no 3T25, registrando aumento de 2,3% t/t e 18,8% a/a. Com isso, o ROAE chegou a 14,7% no trimestre.",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.5948944091796875
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "santander_release_3T2025",
+            "empresa": "SANTANDER",
+            "hashes_artefatos_extracao": "54e03f9f6400fec17f7d97b58ba98a72c19c118b371e06603c2f419860f65124",
+            "id": "santander_release_3T2025_0001",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 3,
+            "pagina_inicio": 1,
+            "posicao_no_documento": 1,
+            "provedores_extracao": "mistral",
+            "texto": "[SANTANDER | santander_release_3T2025 | 3T2025 | págs. 1–3]\n# Informe de Resultados\n3º trimestre de 2025\n(BRGAAP)\n![img-0.jpeg](img-0.jpeg)\n![img-1.jpeg](img-1.jpeg)\nwww.santander.com.br/ri/\nSantander\nTerceiro trimestre\n2025\n## Índice\n|  **Destaques estratégicos** | **3**  |\n| --- | --- |\n|  **Evolução da estratégia** | **4**  |\n|  Centralidade no cliente | 4  |\n|  Transacionalidade | 5  |\n|  Crédito | 6  |\n|  Investimentos | 7  |\n|  Cultura e Pessoas | 8  |\n|  **Análise do desempenho** | **10**  |\n|  **Sumário executivo** | **11**  |\n|  **Análise do resultado e balanço patrimonial** | **12**  |\n|  Demonstração do resultado gerencial | 12  |\n|  Margem financeira | 13  |\n|  Comissões | 14  |\n|  Resultado de PDD e custo de crédito | 16  |\n|  NPL Formation, write-off e carteira renegociada | 17  |\n|  Qualidade de crédito | 18  |\n|  Despesas | 19  |\n|  Outras Receitas e Despesas Operacionais | 20  |\n|  Balanço patrimonial | 20  |\n|  Carteira de crédito | 21  |\n|  Captações | 24  |\n|  Capital | 24  |\n|  Reconciliação dos resultados contábil e gerencial | 25  |\nSantander Brasil | Informe do Terceiro Trimestre de 2025\n2\n# Informe de Resultados do 3º trimestre de 2025 (BRGAAP)\nNeste trimestre, registramos lucro de R$ 4,0 bilhões e retorno sobre patrimônio de 17,5%, com expansão tanto no ano quanto no trimestre, mesmo diante de um ambiente macroeconômico mais desafiador. Mantemos o foco em cada cliente, executando nossa estratégia de sermos o banco mais presente em suas vidas, ao mesmo tempo em que construímos uma operação mais diversificada, sólida e rentável.",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6049039959907532
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_3T2025",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "d6e40baab12cb72c5de0d265a0ea94a54bb7012a12707a2208a299f8149d0260",
+            "id": "bb_release_3T2025_0131",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 47,
+            "pagina_inicio": 46,
+            "posicao_no_documento": 131,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_3T2025 | 3T2025 | págs. 46–47]\n3T25\n# 6. Gestão de Capital\nA gestão de riscos e de capital é fundamental para a sustentabilidade do sistema bancário. Os métodos de identificação, mensuração, avaliação, monitoramento, reporte, controle e mitigação dos riscos salvaguardam as instituições financeiras em momentos adversos e proporcionam suporte à geração de resultados positivos e recorrentes ao longo do tempo.\nO Índice de Basileia foi de 14,81% em setembro de 2025. O índice de capital nível I foi de 13,92%, sendo 11,16% de capital principal. O Patrimônio de Referência, que considera os requisitos de apuração do capital regulamentar de Basileia, atingiu o montante de R$ 195,7 bilhões, evolução de 5,3% em 12 meses.\nO gerenciamento de riscos no Banco do Brasil contempla todos os riscos relevantes declarados no inventário de riscos do BB. As atividades de gerenciamento são realizadas por estruturas especializadas, conforme objetivos, políticas, estratégias, processos e sistemas descritos em cada um desses riscos.\nBanco do Brasil S.A.\nAnálise do Desempenho 3T25 | Gestão de Capital\nFigura 9. Evolução do Índice de Basileia - %\n![img-10.jpeg](img-10.jpeg)\nO Índice de Basileia é apurado segundo os critérios estabelecidos pelas Resoluções CMN nº 4.955/2021 e nº 4.958/2021, que tratam do cálculo do Patrimônio de Referência – PR e do Patrimônio de Referência Mínimo Requerido – PRMR em relação ao Ativo Ponderado pelo Risco – RWA, respectivamente. Os termos técnicos utilizados para regulação de capital estão disponíveis no glossário.\nO BB promove a gestão do Capital com visão prospectiva de três anos e considera a Declaração de Apetite e Tolerância a Riscos, a Estratégia Corporativa, o Plano Diretor e Orçamento Corporativo.\nO foco está na geração orgânica de capital e no crescimento sustentável do crédito em linhas com retorno ajustado ao risco adequado.",
+            "tipo_bloco": "texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.5953288078308105
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": true,
+      "observacao": "Recusou corretamente.",
+      "pergunta": "Qual foi a ordem decrescente dos cinco bancos pelo indicador trimestral anualizado de rentabilidade gerencial ou recorrente sobre o patrimônio no 3T2025 como divulgado nos destaques de cada release?",
+      "pergunta_id": "TSTC002",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": null,\n  \"recusa\": true,\n  \"motivo_recusa\": \"Os trechos fornecidos não contêm dados de rentabilidade sobre o patrimônio (ROAE) para todos os cinco bancos citados (falta para BTG, Itaú e Banco do Brasil nos trechos), impedindo a ordenação completa solicitada.\",\n  \"citacoes\": []\n}",
+        "citacoes": [],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": "Não há evidência suficiente nos trechos recuperados.",
+        "recusa": true,
+        "resposta": null
+      }
+    },
+    {
+      "assinatura_contexto": "e77e56f4f6ccaca7400931392c7db274e0720843cdb0b69b1cefb0cfcaa0f9d3",
+      "auditor_id": "ygor",
+      "categoria": "qualitativa",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bradesco_release_3T2025",
+            "empresa": "BRADESCO",
+            "hashes_artefatos_extracao": "31f9e95f101b9fa1c43c82502f0c245cb50c2491f5ce93de7e74739caa38c133",
+            "id": "bradesco_release_3T2025_0002",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 6,
+            "pagina_inicio": 3,
+            "posicao_no_documento": 2,
+            "provedores_extracao": "mistral",
+            "texto": "[BRADESCO | bradesco_release_3T2025 | 3T2025 | págs. 3–6]\n– consolidado Seguros | 47 |\n| resultado gerencial x recorrente | comparativo BRGAAP x IFRS | 48 |\n| **Relatório dos Auditores Independentes** | **49** |\n| **Demonstrações Financeiras** | **53** |\nBradesco | Relatório de Análise Econômica e Financeira\n3\nAlguns números inclusos neste relatório foram submetidos a ajustes de arredondamento.\nAssim sendo, os valores indicados como totais em alguns quadros podem não ser a soma aritmética dos números que os precedem. Variações percentuais não apresentadas nos quadros deste relatório, estão relacionadas, em sua maioria, a saldos de baixo valor quando comparados com os demais períodos apresentados.\nA partir de janeiro de 2025, adotamos em nossas Demonstrações Financeiras as novas práticas contábeis estabelecidas pelas Resoluções CMN nº 4.966 e 4.975. Para fins gerenciais, mantivemos as informações dos períodos anteriores conforme já divulgado, as quais não apresentam diferenças relevantes na análise histórica dos resultados. Para alguns indicadores de crédito, quando mencionado, realizamos em bases proforma os dados históricos para fins de comparabilidade. Em nossas demonstrações financeiras a Organização optou pela isenção facultada pela Norma de não reapresentar informações comparativas de períodos anteriores decorrentes das alterações.\nBradesco | Relatório de Análise Econômica e Financeira\n4\n![img-1.jpeg](img-1.jpeg)\n# Análise Gerencial dos Resultados\n![img-2.jpeg](img-2.jpeg)\n# press release\nO Bradesco se transforma e os resultados seguem em expansão. No terceiro trimestre do ano, demos mais um passo no incremento da nossa rentabilidade. Continuamos com a mesma tração comercial, mantendo os indicadores de inadimplência sob controle, priorizando o retorno ajustado ao risco. A transformação avança, dando sustentação à nossa evolução e reforçando a nossa competitividade de longo prazo.\nO lucro líquido recorrente foi de R$ 6,2 bilhões no 3T25, registrando aumento de 2,3% t/t e 18,8% a/a. Com isso, o ROAE chegou a 14,7% no trimestre.",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6691313982009888
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bradesco_release_3T2025",
+            "empresa": "BRADESCO",
+            "hashes_artefatos_extracao": "31f9e95f101b9fa1c43c82502f0c245cb50c2491f5ce93de7e74739caa38c133",
+            "id": "bradesco_release_3T2025_0033",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 17,
+            "pagina_inicio": 16,
+            "posicao_no_documento": 33,
+            "provedores_extracao": "mistral",
+            "texto": "[BRADESCO | bradesco_release_3T2025 | 3T2025 | págs. 16–17]\neriores ao 1T25/Mar25 estão sendo apresentados de acordo com a prática contábil vigente para os períodos. A partir de 2025, os saldos estão apresentados no modelo de perda esperada, em conformidade com a resolução CMN nº 4.966/21.\nBradesco | Relatório de Análise Econômica e Financeira\n16\n# indicadores da carteira de crédito *\n* Não inclui TVM's, Avais e Fianças e outros produtos da carteira de crédito expandida.\níndice de inadimplência\nredução de 0,1 p.p. em 12 meses da inadimplência 90 dias total e estabilidade pelo segundo trimestre consecutivo\nA inadimplência acima de 90 dias manteve-se estável no trimestre, com redução de 0,1 p.p. em 12 meses. O segmento MPME apresentou melhora significativa, com queda de 0,6 p.p. no trimestre e 1,5 p.p. em relação a Set24. Já o segmento de Grandes Empresas segue com níveis de inadimplência sob controle. O aumento da inadimplência na pessoa física está relacionado, substancialmente, à consolidação do Banco John Deere, desconsiderando esse efeito, o índice total de inadimplência teria reduzido 0,1 p.p. no trimestre, evidenciando, por mais um trimestre, os resultados da qualidade do processo de concessão e de recuperação de créditos.\ncarteira de crédito em atraso acima de 90 dias - %\n![img-26.jpeg](img-26.jpeg)\n## movimentação da carteira de crédito por estágio\nO quadro a seguir apresenta a movimentação da nossa carteira de crédito por estágio das operações. No 3T25, observamos um avanço na qualidade da carteira, onde houve cura de 4% no período da carteira em estágio 3 e, além disso, 12% das operações no estágio 2 melhoraram, migrando para o estágio 1. Os saldos migrados para estágio 3, contam com níveis adequados de provisão.",
+            "tipo_bloco": "texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6686214208602905
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bradesco_release_3T2025",
+            "empresa": "BRADESCO",
+            "hashes_artefatos_extracao": "31f9e95f101b9fa1c43c82502f0c245cb50c2491f5ce93de7e74739caa38c133",
+            "id": "bradesco_release_3T2025_0035",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 18,
+            "pagina_inicio": 17,
+            "posicao_no_documento": 35,
+            "provedores_extracao": "mistral",
+            "texto": "[BRADESCO | bradesco_release_3T2025 | 3T2025 | págs. 17–18]\n.044 | (9.199) | 59.059  |\n|  **Total** | **752.771** | **(4.746)** | **(12.242)** | **(8.911)** | **12.593** | **10.915** | **2.392** | **28.214** | **(9.199)** | **771.786**  |\n## representatividade da carteira de crédito por estágio\nEm 12 meses, houve uma melhora de 1,2 p.p na representatividade dos estágios 1 e 2, totalizando 92,3% em Set25, com destaque para o aumento das operações classificadas no estágio 1, que cresceram 0,8 p.p. de representatividade em 12 meses.\n![img-27.jpeg](img-27.jpeg)\nBradesco | Relatório de Análise Econômica e Financeira\n17\n# indicadores da carteira de crédito\n## carteira reestruturada\nApresentamos, por mais um trimestre seguido, redução no portfólio de créditos mais estressados, sendo -22% em relação a Set24 com queda de 1,6 p.p. na participação da carteira de crédito. Mantemos níveis adequados de provisão para esta carteira, representando aproximadamente 2 vezes o total dos créditos vencidos acima de 90 dias. Destacamos ainda, a redução de R$ 2,7 bi (-11%) de operações classificadas como ativos problemáticos, além do aumento de operações curadas em R$ 0,9 bi ou 20% no trimestre, evidenciando a qualidade da carteira e a assertividade das estratégias adotadas na recuperação de crédito.\n### evolução da carteira reestruturada\nR$ bilhões\n![img-28.jpeg](img-28.jpeg)\n### carteira reestruturada / carteira de crédito\n![img-29.jpeg](img-29.jpeg)\n### provisão $^{(1)}$ / carteira reestruturada\n![img-30.jpeg](img-30.jpeg)\n### inadimplência acima de 90 dias / carteira reestruturada\n![img-31.jpeg](img-31.jpeg)",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6505671739578247
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bradesco_release_3T2025",
+            "empresa": "BRADESCO",
+            "hashes_artefatos_extracao": "31f9e95f101b9fa1c43c82502f0c245cb50c2491f5ce93de7e74739caa38c133",
+            "id": "bradesco_release_3T2025_0006",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 7,
+            "pagina_inicio": 6,
+            "posicao_no_documento": 6,
+            "provedores_extracao": "mistral",
+            "texto": "[BRADESCO | bradesco_release_3T2025 | 3T2025 | págs. 6–7]\n34 novos escritórios do novo segmento Principal, intensificamos a operação dos nossos correspondentes bancários, e evoluímos com mais funcionalidades e usuários no nosso novo App Empresas e Negócios. Estamos disponibilizando o novo sistema de gestão da caixa para mais empresas. Na agenda de pessoas, o programa de evolução cultural segue sendo implementado. O plano continuará a ser executado de forma acelerada.\nComo parte relevante da nossa agenda estratégica, seguimos comprometidos com o financiamento de negócios sustentáveis e com o apoio aos nossos clientes na transição para uma economia mais verde e inclusiva, mantendo a estratégia de descarbonização do portfólio e o olhar atento para riscos e oportunidades. Ao final de setembro de 2025, alcançamos 100% da meta de direcionar até o final do ano R$ 350 bilhões para setores e atividades com benefícios socioambientais.\nAs informações a seguir detalham o nosso desempenho no 3T25, incluindo os resultados, o balanço patrimonial e os principais indicadores de performance.\n**boa leitura!**\nBradesco | Relatório de Análise Econômica e Financeira\n6\n# destaques 3T25\nlucro líquido recorrente consolidado\nR$ 6,2 bi\nΔ 2,3% t/t Δ 18,8% a/a\nROAE 3T25\n14,7%\nΔ 0,1 p.p. t/t Δ 2,3 p.p. a/a\ninformações selecionadas\nreceitas totais\nR$ 35,0 bi (1)\nΔ 3,0% t/t Δ 13,1% a/a\nmargem financeira total\nΔ 3,7% t/t Δ 16,9% a/a\nreceitas de prestação de serviços\nΔ 2,8% t/t Δ 6,9% a/a\nseguros, previdência e capitalização\nΔ 1,0% t/t Δ 13,0% a/a\ncusto do crédito\nR$ 8,6 bi\nΔ 5,1% t/t Δ 20,1% a/a\nPDD expandida / operações de crédito expandida (% anualizado)\n![img-3.jpeg](img-3.jpeg)\ndespesas de pessoal + administrativas (2)",
+            "tipo_bloco": "texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6473076343536377
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bradesco_release_3T2025",
+            "empresa": "BRADESCO",
+            "hashes_artefatos_extracao": "31f9e95f101b9fa1c43c82502f0c245cb50c2491f5ce93de7e74739caa38c133",
+            "id": "bradesco_release_3T2025_0008",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 8,
+            "pagina_inicio": 7,
+            "posicao_no_documento": 8,
+            "provedores_extracao": "mistral",
+            "texto": "[BRADESCO | bradesco_release_3T2025 | 3T2025 | págs. 7–8]\n� 1,3 p.p. a/a\nfaturamento\nR$ 29,6 bi\nΔ 1,5% t/t ∇ 5,8% a/a\níndice de sinistralidade 3T25\n72,8%\nΔ 1,1 p.p. t/t ∇ 3,4 p.p. a/a\nprincipais destaques\n- Rentabilidade cresce de forma gradual e segura\n- Receitas avançam, com destaque para a margem com clientes\n- Inadimplência estável, carteira reestruturada diminui e carteira com garantia ganha participação de novo\n- Despesas operacionais controladas e ajuste do footprint em ritmo acelerado\n- Sólido desempenho de Seguros, com expansão no ROAE\nBradesco | Relatório de Análise Econômica e Financeira\n7\n# demonstração do resultado recorrente",
+            "tipo_bloco": "texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6414667367935181
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": false,
+      "observacao": "Descartou incorretamente. Todos os trechos da resposta podem ser encontrados no documento; nao foi possivel identificar o motivo do descarte na leitura.",
+      "pergunta": "Segundo a análise gerencial do Bradesco como evoluiu a qualidade do crédito no 3T2025 e quais sinais sustentaram essa leitura?",
+      "pergunta_id": "TSTQ005",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": \"No 3T25, observou-se um avanço na qualidade da carteira de crédito do Bradesco, onde houve cura de 4% no período da carteira em estágio 3 e 12% das operações no estágio 2 melhoraram, migrando para o estágio 1 [BRADESCO, bradesco_release_3T2025, 3T2025, p. 16]. Os sinais que sustentaram essa leitura incluem: a inadimplência acima de 90 dias manteve-se estável no trimestre, com redução de 0,1 p.p. em 12 meses [BRADESCO, bradesco_release_3T2025, 3T2025, p. 16]; o segmento MPME apresentou melhora significativa, com queda de 0,6 p.p. no trimestre e 1,5 p.p. em relação a Set24 [BRADESCO, bradesco_release_3T2025, 3T2025, p. 16]; o segmento de Grandes Empresas segue com níveis de inadimplência sob controle [BRADESCO, bradesco_release_3T2025, 3T2025, p. 16]; houve redução no portfólio de créditos mais estressados, sendo -22% em relação a Set24 com queda de 1,6 p.p. na participação da carteira de crédito [BRADESCO, bradesco_release_3T2025, 3T2025, p. 17]; e foram destacados a redução de R$ 2,7 bi (-11%) de operações classificadas como ativos problemáticos, além do aumento de operações curadas em R$ 0,9 bi ou 20% no trimestre [BRADESCO, bradesco_release_3T2025, 3T2025, p. 17].\",\n  \"recusa\": false,\n  \"motivo_recusa\": null,\n  \"citacoes\": [\n    {\n      \"empresa\": \"BRADESCO\",\n      \"documento\": \"bradesco_release_3T2025\",\n      \"trimestre\": \"3T2025\",\n      \"pagina\": 16\n    },\n    {\n      \"empresa\": \"BRADESCO\",\n      \"documento\": \"bradesco_release_3T2025\",\n      \"trimestre\": \"3T2025\",\n      \"pagina\": 17\n    }\n  ]\n}",
+        "citacoes": [],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": "Rebaixada por RN02: ao menos um valor numérico da resposta não aparece nos trechos citados.",
+        "recusa": true,
+        "resposta": null
+      }
+    },
+    {
+      "assinatura_contexto": "0a9bfca2a11b3449a32442a35fb16130fdc68a8baf23595ac9d8f5ecceec1f06",
+      "auditor_id": "ygor",
+      "categoria": "qualitativa",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_1T2026",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "2ae905b850a51fed541530ac7871deb07489c27213e2b4a9760769bf7e4678f2",
+            "id": "bb_release_1T2026_0041",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 22,
+            "pagina_inicio": 21,
+            "posicao_no_documento": 41,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_1T2026 | 1T2026 | págs. 21–22]\nao Agronegócio e pelo efeito calendário.\nNa comparação com o mesmo período do ano anterior, o crescimento da MFB (+14,8%), está relacionado ao crescimento das receitas de crédito, notadamente as operações de pessoas físicas (+19,1%), e das receitas de tesouraria, com destaque para o desempenho do resultado de TVM (27,2%).\nBanco do Brasil S.A.\nAnálise do Desempenho 1T26 | Margem Financeira Bruta\n## MFB Contábil\n**Tabela 6.** Principais Indicadores\nFigura 35. Carteira de Crédito Grandes Empresas Expandida – R$ milhões...71\n|   | 1T25 | 4T25 | 1T26 | Δ% A/A | Δ% T/T  |\n| --- | --- | --- | --- | --- | --- |\n|  CDI / TMS – % | 2,99 | 3,59 | 3,41 | 14,0 | (5,0)  |\n|  TJLP – % | 2,01 | 2,28 | 2,32 | 15,4 | 1,3  |\n|  TR – % | 0,41 | 0,51 | 0,47 | 13,5 | (9,2)  |\n|  RDP – % ^{1} | 1,93 | 2,03 | 1,99 | 3,4 | (1,8)  |\n|  Dias úteis | 61 | 64 | 61 | – | (4,7)  |\n|  Dias corridos | 90 | 92 | 90 | – | (2,2)  |\n|  Câmbio – US$ ^{2} | 5,74 | 5,50 | 5,22 | (9,1) | (5,1)  |\n(1) Remuneração dos Depósitos de Poupança; (2) Câmbio de fechamento (PTAX venda) do último dia útil do período de referência.\n**Tabela 7.** Composição da Margem Financeira Bruta – R$ milhões",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.7023383975028992
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_1T2026",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "2ae905b850a51fed541530ac7871deb07489c27213e2b4a9760769bf7e4678f2",
+            "id": "bb_release_1T2026_0058",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 29,
+            "pagina_inicio": 28,
+            "posicao_no_documento": 58,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_1T2026 | 1T2026 | págs. 28–29]\nde passivos, e pelo (ii) efeito calendário (3 dias úteis a menos).\nA Margem com Mercado registrou R$ 4,5 bilhões no 1T26, favorecida pelo (i) decréscimo das despesas com captações institucionais, em virtude da estratégia de mix de funding com emissões de letras financeiras perpétuas no Brasil indexadas a TMS.\nNa comparação com o mesmo período do ano anterior, o desempenho da Margem com Clientes (+12,8%) foi influenciado tanto pelo aumento do saldo médio da carteira quanto pelo aumento do spread com clientes, fruto da gestão do mix de carteira de crédito e estratégia de captação. O crescimento da Margem com Mercado (+26,4%), na mesma comparação, é explicado pela alta da TMS (+42 bps).\nBanco do Brasil S.A. | Relações com Investidores\n26\nAnálise do Desempenho 1T26 | Margem Financeira Bruta\n## Análise dos Ativos e Passivos\n### Ativos Rentáveis\n**Tabela 17.** Saldos Médios e Taxa de Juros – Ativos Rentáveis (anual) – R$ milhões",
+            "tipo_bloco": "texto",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.676199197769165
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_1T2026",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "2ae905b850a51fed541530ac7871deb07489c27213e2b4a9760769bf7e4678f2",
+            "id": "bb_release_1T2026_0059",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 29,
+            "pagina_inicio": 28,
+            "posicao_no_documento": 59,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_1T2026 | 1T2026 | págs. 28–29]\n, é explicado pela alta da TMS (+42 bps).\nBanco do Brasil S.A. | Relações com Investidores\n26\nAnálise do Desempenho 1T26 | Margem Financeira Bruta\n## Análise dos Ativos e Passivos\n### Ativos Rentáveis\n**Tabela 17.** Saldos Médios e Taxa de Juros – Ativos Rentáveis (anual) – R$ milhões\n**Tabela 16.** Margem Financeira com Clientes e Mercado – R$ milhões\n|   | 1T25 |   |   | 1T26  |   |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|   |  Saldo Médio ^{1} | Receitas ^{2} | Taxa Anual ^{3} (%) | Saldo Médio ^{1} | Receitas ^{2} | Taxa Anual ^{3} (%)  |\n|  **Ativos Rentáveis** | **2.172.095** | **70.493** | **13,6** | **2.325.135** | **81.500** | **14,8**  |\n|  Operações de Crédito ^{4} | 1.218.495 | 42.038 | 14,5 | 1.235.283 | 46.453 | 15,9  |\n|  Títulos e Valores Mobiliários | 514.546 | 15.739 | 12,8 | 744.946 | 24.975 | 14,1  |\n|  Aplicações Interf. de Liquidez | 354.296 | 10.654 | 12,6 | 248.774 | 7.413 | 12,5  |\n|  Depósito Compulsório Rentável | 84.759 | 2.062 | 10,1 | 96.132 | 2.659 | 11,5  |\n(1) Média aritmética dos saldos finais dos meses que compõem o período; (2) Calculado com efeito parcial da variação cambial; (3) Taxa anualizada (252 dias úteis ano/dias úteis do período); (4) Inclui: Operações de Crédito, Arrendamento Mercantil, Carteiras Adquiridas e carteira de TVM Privados com característica de crédito.",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.662489652633667
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_1T2026",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "2ae905b850a51fed541530ac7871deb07489c27213e2b4a9760769bf7e4678f2",
+            "id": "bb_release_1T2026_0016",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 12,
+            "pagina_inicio": 11,
+            "posicao_no_documento": 16,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_1T2026 | 1T2026 | págs. 11–12]\n4% a/a\n## Agro\nR$ 418,4 bilhões\n+3,0% t/t\n+3,0% a/a\n**Lucro Líquido Ajustado** alcançou R$ 3,4 bilhões no 1T26, redução de 53,5% em relação ao 1T25 e 40,2% frente ao 4T25. Os principais componentes desse resultado são:\n**Margem Financeira Bruta (MFB):** atingiu R$ 27,4 bilhões, redução de 1,3% na comparação trimestral, em linha com a sazonalidade do período, influenciada principalmente, pela redução das despesas de captação, em função de menores volumes de LCA e pelo efeito calendário (3 dias úteis a menos).\nNa comparação com o mesmo período do ano anterior, a MFB cresceu 14,8%, impulsionada pela evolução das receitas financeiras (+12,3%), refletindo o avanço das operações de crédito, especialmente de pessoas físicas (+19,1%), e pelo crescimento do resultado de tesouraria, com destaque para o resultado de TVM (+27,2%), em virtude do maior excesso de liquidez e da elevação da TMS no período.\n**Custo do Crédito:** correspondeu a R$ 18,9 bilhões, elevação de 85,8% em relação ao 1T25 e de 5,0% na comparação com o 4T25.\n**Receitas de Prestação de Serviços:** totalizaram R$ 8,8 bilhões no trimestre, mantendo-se estáveis na comparação trimestral.\nBanco do Brasil S.A. | Relações com Investidores\n9\nNa comparação com o mesmo período do ano anterior, houve crescimento de 5,5% influenciado principalmente pelas linhas de administração de fundos (+8,6%), operações de crédito (+52,3%) e taxa de administração de consórcios (+14,0%).\n**Despesas Administrativas:** alcançou R$ 10,0 bilhões, com alta de 1,3% na comparação trimestral, e de 5,5% na comparação com o mesmo período do ano anterior, em linha com o reajuste salarial de 2025, além dos investimentos em tecnologia e cibersegurança.",
+            "tipo_bloco": "texto",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.6594849824905396
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_1T2026",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "2ae905b850a51fed541530ac7871deb07489c27213e2b4a9760769bf7e4678f2",
+            "id": "bb_release_1T2026_0042",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 23,
+            "pagina_inicio": 22,
+            "posicao_no_documento": 42,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_1T2026 | 1T2026 | págs. 22–23]\n$ ^{2} | 5,74 | 5,50 | 5,22 | (9,1) | (5,1)  |\n(1) Remuneração dos Depósitos de Poupança; (2) Câmbio de fechamento (PTAX venda) do último dia útil do período de referência.\n**Tabela 7.** Composição da Margem Financeira Bruta – R$ milhões\nFigura 35. Carteira de Crédito Grandes Empresas Expandida – R$ milhões...71\n|   | 1T25 | 4T25 | 1T26 | Δ% A/A | Δ% T/T  |\n| --- | --- | --- | --- | --- | --- |\n|  **Margem Financeira Bruta** | **23.881** | **27.801** | **27.426** | **14,8** | **(1,3)**  |\n|  **Receitas Financeiras** | **49.239** | **57.508** | **55.307** | **12,3** | **(3,8)**  |\n|  Operações de Crédito | 42.038 | 47.352 | 46.453 | 10,5 | (1,9)  |\n|  Tesouraria ^{1} | 7.201 | 10.156 | 8.854 | 23,0 | (12,8)  |\n|  **Despesas Financeiras** | **(25.357)** | **(29.707)** | **(27.880)** | **9,9** | **(6,1)**  |\n|  Captação Comercial | (21.089) | (25.000) | (23.396) | 10,9 | (6,4)  |\n|  Captação Institucional ^{2} | (4.268) | (4.707) | (4.484) | 5,0 | (4,7)  |\n(1) Inclui o resultado com juros, *hedge* fiscal, derivativos e outros instrumentos financeiros que compensam os efeitos da variação cambial no resultado; (2) Inclui instrumentos de dívida sênior, dívida subordinada e IHCD (exceto instrumento elegível ao Capital Principal).\nBanco do Brasil S.A. | Relações com Investidores\n20\nAnálise do Desempenho 1T26 | Margem Financeira Bruta",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "1T2026"
+          },
+          "origem": "semantica",
+          "score": 0.6503623723983765
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": false,
+      "observacao": "Descartada incorretamente. A resposta esta correta, mas nao aparece de forma completa no documento de referencia — possivelmente um dos percentuais citados (+19,1%, +27,2%, +12,3%) esta fora dos trechos recuperados das pags. 11 e 21.",
+      "pergunta": "Segundo o Banco do Brasil quais fatores levaram ao crescimento de 14,8% da margem financeira bruta no 1T2026?",
+      "pergunta_id": "TSTQ010",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": \"Segundo o Banco do Brasil, o crescimento da Margem Financeira Bruta (+14,8%) no 1T2026 em relação ao mesmo período do ano anterior está relacionado ao crescimento das receitas de crédito, com destaque para as operações de pessoas físicas (+19,1%), e das receitas de tesouraria, com destaque para o desempenho do resultado de TVM (27,2%). Adicionalmente, o crescimento da MFB foi impulsionado pela evolução das receitas financeiras (+12,3%), refletindo o avanço das operações de crédito (especialmente de pessoas físicas, +19,1%) e pelo crescimento do resultado de tesouraria (com destaque para o resultado de TVM, +27,2%), em virtude do maior excesso de liquidez e da elevação da TMS no período.\",\n  \"recusa\": false,\n  \"motivo_recusa\": null,\n  \"citacoes\": [\n    {\n      \"empresa\": \"BB\",\n      \"documento\": \"bb_release_1T2026\",\n      \"trimestre\": \"1T2026\",\n      \"pagina\": 21\n    },\n    {\n      \"empresa\": \"BB\",\n      \"documento\": \"bb_release_1T2026\",\n      \"trimestre\": \"1T2026\",\n      \"pagina\": 11\n    }\n  ]\n}",
+        "citacoes": [],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": "Rebaixada por RN02: ao menos um valor numérico da resposta não aparece nos trechos citados.",
+        "recusa": true,
+        "resposta": null
+      }
+    },
+    {
+      "assinatura_contexto": "ef2cd7a185af9061d202750f3742ae9691b349a805fefe8710c1e4e5d4e01fa4",
+      "auditor_id": "ygor",
+      "categoria": "qualitativa",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_4T2025",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "144583dad0c1c84591f7ef00a06cddfbcdb676cb6a71ed8c16d12b1a7097b698",
+            "id": "btg_release_4T2025_0017",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 11,
+            "pagina_inicio": 10,
+            "posicao_no_documento": 17,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_4T2025 | 4T2025 | págs. 10–11]\n, a carteira de crédito avançou 18,3%, enquanto as receitas de crédito cresceram 22,3%, mesmo em um ambiente de juros elevados e diante de um cenário de crédito mais desafiador. Esse desempenho reflete nossa originação disciplinada, mix de crédito diversificado entre produtos, segmentos e geografias, além da contínua redução do custo de funding.\nA carteira de PME registrou crescimento de 23,6% na comparação anual, atingindo R$32,1 bilhões em dezembro de 2025. Ainda que majoritariamente concentrada em produtos com garantias — como desconto de recebíveis e antecipação de recebíveis de cartão de crédito, seguimos ampliando nossa oferta de produtos bancários para PMEs, com destaque para o lançamento do BTG Pay e o avanço das soluções de cash management.\n# Portfólio de Corporate & SME Lending (em milhões de R$)\n![img-3.jpeg](img-3.jpeg)\n9\nbtg pactual\nDivulgação de Resultados\nQuarto trimestre de 2025\n# Receitas (em milhões de R$)\n![img-4.jpeg](img-4.jpeg)\n# 4T25 vs.3T25\nCorporate Lending & Business Banking entregou mais um trimestre recorde, com receitas de R$2.239,2 milhões, representando crescimento trimestral de 4,0%. O desempenho foi sustentado pela expansão de 6,2% da carteira de crédito, com spreads estáveis, refletindo a resiliência da qualidade dos ativos.\n# 4T25 vs. 4T24\nNa comparação anual, as receitas cresceram 22,3%, frente aos R$1.830,5 milhão registrados no 4T24, sustentadas pelo crescimento das receitas recorrentes em diversas geografias, spreads competitivos e níveis confortáveis de provisão.\n# 2025 vs. 2024",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6679831743240356
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_4T2025",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "144583dad0c1c84591f7ef00a06cddfbcdb676cb6a71ed8c16d12b1a7097b698",
+            "id": "btg_release_4T2025_0018",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 12,
+            "pagina_inicio": 11,
+            "posicao_no_documento": 18,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_4T2025 | 4T2025 | págs. 11–12]\niliência da qualidade dos ativos.\n# 4T25 vs. 4T24\nNa comparação anual, as receitas cresceram 22,3%, frente aos R$1.830,5 milhão registrados no 4T24, sustentadas pelo crescimento das receitas recorrentes em diversas geografias, spreads competitivos e níveis confortáveis de provisão.\n# 2025 vs. 2024\nNo ano, Corporate Lending & Business Banking registrou o melhor desempenho de história, com receitas de R$8.431,9 milhões, um crescimento anual de 29,5%. Os resultados foram impulsionados pela expansão contínua da carteira de crédito e por um aumento de 20bps nos spreads ao longo do ano, refletindo menor custo de captação, originação bem diversificada e forte contribuição da estratégia de Special Situations.\n10\nbtg pactual\nDivulgação de Resultados\nQuarto trimestre de 2025\n# Sales & Trading\nReceitas (em milhões de R$)\n![img-5.jpeg](img-5.jpeg)\n# 4T25 vs. 3T25\nSales & Trading entregou o terceiro trimestre consecutivo de resultados recordes, registrando receitas de R$2.009,9 milhões. O desempenho foi impulsionado pelo aumento das receitas de clientes, além da alocação eficiente de capital. O VaR médio avançou para 0,38% no trimestre, permanecendo em níveis confortáveis.\n# 4T25 vs. 4T24\nAs receitas cresceram 29,7% na comparação anual, avançando de R$1.549,7 milhão para R$2.009,9 milhões, refletindo a contínua escalabilidade das plataformas de cliente e a maior eficiência na alocação de VaR.\n# 2025 vs. 2024",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.662022054195404
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_4T2025",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "144583dad0c1c84591f7ef00a06cddfbcdb676cb6a71ed8c16d12b1a7097b698",
+            "id": "btg_release_4T2025_0008",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 5,
+            "pagina_inicio": 5,
+            "posicao_no_documento": 8,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_4T2025 | 4T2025 | pág. 5]\ntrimestre e 21,8% no ano em relação aos R$57,5 bilhões ao final de 2024, já refletindo (i) distribuição de JCP de R$2.450 milhões no 4T25, (ii) os efeitos da transação do Banco Pan no montante de R$2,2 bilhões e (iii) o lucro líquido de R$4.390,5 milhões no período.\nA base de *unsecured funding* encerrou o ano em R$336,7 bilhões, crescimento de 26,8% no ano. Ao longo do período, seguimos aprimorando a qualidade ao mesmo tempo em que reduzimos o custo de captação, fortalecendo nossos índices de capital e liquidez. Nesse contexto, emitimos R$4 bilhões em Letras Financeiras perpétuas a spreads atrativos e, mais recentemente, em janeiro, realizamos com sucesso a emissão de USD750 milhões em títulos de dívida seniores, com taxa de 5,5%, marcando o menor spread sobre o soberano da nossa história. Encerramos o ano com Índice de Basileia de 15,5% e LCR de 176,8%.\nAo longo do ano, aumentamos ainda mais nossa oferta de produtos e serviços, expandimos nossa rede distribuição e fortalecemos nossa atuação no mercado internacional por meio de aquisições estratégicas, incluindo Julius Baer Brasil, Justa, JGP WM e HSBC Uruguai. Adicionalmente, em dezembro, obtivemos as aprovações regulatórias nos Estados Unidos para a aquisição do MY Safra, marco relevante que amplia nossa presença global e nos posiciona como banco completo nos EUA.\nO BTG Pactual reforçou seu compromisso com ESG ao coordenar a emissão de R$2 bilhões em debêntures da Isa Energia, apoiando projetos estratégicos de transmissão de energia no Brasil, e ao firmar sua primeira parceria com o Asian Infrastructure Investment Bank (AIIB), por meio de uma linha de USD 160 milhões voltada ao financiamento de infraestrutura alinhada à agenda climática.",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6593952178955078
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_4T2025",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "144583dad0c1c84591f7ef00a06cddfbcdb676cb6a71ed8c16d12b1a7097b698",
+            "id": "btg_release_4T2025_0004",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 4,
+            "pagina_inicio": 3,
+            "posicao_no_documento": 4,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_4T2025 | 4T2025 | págs. 3–4]\nObservações:\n1. Número de ações não inclui as ações em Tesouraria\n2. ROAE ajustado considera o Patrimônio Líquido de Dezembro de 2025, sem os impactos da aquisição da participação remanescente do Banco Pan e o Patrimônio Líquido “pro forma” de Dezembro de 2024, considerando os impactos da implementação da Resolução 4.966 do Banco Central\n2\nbtg pactual\nDivulgação de Resultados^{}[] Quarto trimestre de 2025\n## Desempenho do BTG Pactual\nTemos o prazer de reportar os melhores resultados da nossa história, com desempenho excepcional tanto no trimestre quanto no ano. Esse resultado reflete execução disciplinada, foco estratégico consistente e a confiança de nossos clientes. Mesmo em um ambiente de juros elevados, encerramos o ano com recorde de receitas em todas as linhas de negócio, ao mesmo tempo em que mantivemos forte alavancagem operacional.\nEm 2025, o ROAE atingiu 26,9%, representando uma expansão relevante em relação aos 23,1% registrados em 2024, demonstrando nossa capacidade de gerar retornos sustentáveis e de reforçar a criação de valor de longo prazo para clientes e acionistas. Esse desempenho foi ainda sustentado pela forte captação líquida de R$ 354 bilhões ao longo do ano, com AuM/WuM alcançando R$ 2,5 trilhões.\nNo 4T25, registramos receitas recordes de R$9.089,6 milhões (+35,1% a/a) e lucro líquido de R$4.597,1 milhões (+40,3% a/a), resultando em um ROAE robusto de 27,6%. Esses resultados reforçam a força e a consistência do nosso modelo de negócio integrado.\nInvestment Banking apresentou desempenho sólido, com receitas de R$692,4 milhões, crescimento de 7,7% no trimestre, impulsionado pela contribuição consistente de DCM e M&A, além de resultados sólidos em ECM.",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6523411870002747
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "btg_release_4T2025",
+            "empresa": "BTG",
+            "hashes_artefatos_extracao": "144583dad0c1c84591f7ef00a06cddfbcdb676cb6a71ed8c16d12b1a7097b698",
+            "id": "btg_release_4T2025_0016",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 10,
+            "pagina_inicio": 9,
+            "posicao_no_documento": 16,
+            "provedores_extracao": "mistral",
+            "texto": "[BTG | btg_release_4T2025 | 4T2025 | págs. 9–10]\n3T25. O desempenho do 4T25 foi impulsionado principalmente pela forte contribuição de DCM em linha com o pipeline robusto de transações concluídas no período. A atividade de M&A manteve-se estável, contribuindo de forma consistente para os resultados, enquanto ECM apresentou um trimestre sólido após a conclusão de operações estratégicas.\n#### 4T25 vs. 4T24\nAs receitas de Investment Banking cresceram 35,8% em comparação aos R$509,9 milhões registrados no 4T24. O desempenho do 4T25 foi impulsionado por maiores contribuições em todos os segmentos, refletindo nossa presença consolidada no mercado e liderança nos rankings do setor ao longo do ano.\n#### 2025 vs. 2024\nNo acumulado do ano, as receitas atingiram o recorde de R$2.497,9 milhões, um crescimento de 18,9% em relação aos R$2.101,6 milhões reportados em 2024, marcando o melhor ano da história do Investment Banking. DCM registrou desempenho histórico, impulsionado por uma atividade robusta — especialmente nos mercados locais — enquanto M&A também atingiu contribuição recorde, sustentado por um pipeline robusto e consistente ao longo do ano. Além disso, reforçamos nossa posição na indústria, mantendo a liderança nos principais rankings do setor.\n8\nbtg pactual\nDivulgação de Resultados\nQuarto trimestre de 2025\n# Corporate Lending & Business Banking\nNo 4T25, a carteira de crédito cresceu 6,2%, ou R$15,4 bilhões, alcançando R$262,3 bilhões, frente aos R$246,9 bilhões do 3T25. Apesar do forte crescimento no período, mantivemos spreads estáveis e alta qualidade de ativos.\nEm 2025, a carteira de crédito avançou 18,3%, enquanto as receitas de crédito cresceram 22,3%, mesmo em um ambiente de juros elevados e diante de um cenário de crédito mais desafiador. Esse desempenho reflete nossa originação disciplinada, mix de crédito diversificado entre produtos, segmentos e geografias, além da contínua redução do custo de funding.",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6512259840965271
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": true,
+      "observacao": "Descartada corretamente. Havia informacoes bem mais relevantes para acrescentar a resposta.",
+      "pergunta": "Segundo os comentários gerenciais do BTG Pactual quais fatores explicaram o desempenho recorde de Corporate Lending no 4T2025?",
+      "pergunta_id": "TSTQ001",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": \"No 4T25, Corporate Lending & Business Banking entregou um trimestre recorde, cujo desempenho foi sustentado pela expansão de 6,2% da carteira de crédito, com spreads estáveis, refletindo a resiliência da qualidade dos ativos.\",\n  \"recusa\": false,\n  \"motivo_recusa\": null,\n  \"citacoes\": [\n    {\n      \"empresa\": \"BTG\",\n      \"documento\": \"btg_release_4T2025\",\n      \"trimestre\": \"4T2025\",\n      \"pagina\": 10\n    }\n  ]\n}",
+        "citacoes": [],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": "Rebaixada por RN02: ao menos um valor numérico da resposta não aparece nos trechos citados.",
+        "recusa": true,
+        "resposta": null
+      }
+    },
+    {
+      "assinatura_contexto": "12dfa02e9b8710b9b43d9e42a637187027314d16c082b0a1b1e3817a762bbd8d",
+      "auditor_id": "ygor",
+      "categoria": "qualitativa",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_4T2025",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "ab3c213b5d0439a8ddaf325b1d098e8ce56d62f7fb9abb173917baee38b98338",
+            "id": "itau_release_4T2025_0020",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 12,
+            "pagina_inicio": 9,
+            "posicao_no_documento": 20,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_4T2025 | 4T2025 | págs. 9–12]\nvidência e Capitalização.\n# Sumário Executivo\n10\n![Logo of Itaú, consisting of the letters 'itaú' in a stylized font.]()\n(Esta página foi deixada em branco intencionalmente)\n# Análise do Resultado e Balanço Patrimonial\nAnálise Gerencial da Operação e Demonstrações Contábeis Completas\nitaú\n# Margem Financeira Gerencial\n12\n## Análise Gerencial da Operação > Margem Financeira Gerencial\nA margem financeira com clientes cresceu 1,5% no trimestre. Abaixo estão os principais movimentos ocorridos, na comparação com o trimestre anterior:\n- • **Capital de giro próprio e outros (+ R$ 0,1 bilhão):** principalmente em função da maior taxa média de remuneração.\n- • **Volume médio (+ R$ 0,5 bilhão):** impacto positivo em função do aumento da carteira rentável média, com destaques para os crescimentos das carteiras de crédito imobiliário, consignado privado e de programas governamentais para pequenas empresas.\n- • **Mix de produtos (- R$ 0,3 bilhão):** redução em função da menor representatividade de produtos mais rentáveis, como crédito rotativo, cartão de crédito financiado e composição de dívida.\n- • **Spreads e margem de passivos (+ R$ 0,3 bilhão):** principalmente por conta do maior volume médio de passivos.\nNa comparação com o ano anterior, a margem financeira com clientes subiu 12,1%, e esse crescimento está relacionado com o maior volume de crédito, maior margem de passivos (tanto por volume quanto por taxa de remuneração) além da maior margem com capital de giro próprio.\nA margem financeira com o mercado recuou 33,9% no trimestre, principalmente em função da menor margem na mesa trading no Brasil. No ano de 2025, em comparação com o ano anterior, a redução foi de 25,8%, e está relacionada com o maior custo do hedge do índice de capital.\n### Margem com Clientes\nR$ 30,9 bi\n↗ +1,5% 4T25 x 3T25\n↗ +8,6% 4T25 x 4T24\n### Margem com o Mercado\nR$ 0,6 bi",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.7358256578445435
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_4T2025",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "ab3c213b5d0439a8ddaf325b1d098e8ce56d62f7fb9abb173917baee38b98338",
+            "id": "itau_release_4T2025_0021",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 12,
+            "pagina_inicio": 12,
+            "posicao_no_documento": 21,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_4T2025 | 4T2025 | pág. 12]\naração com o ano anterior, a redução foi de 25,8%, e está relacionada com o maior custo do hedge do índice de capital.\n### Margem com Clientes\nR$ 30,9 bi\n↗ +1,5% 4T25 x 3T25\n↗ +8,6% 4T25 x 4T24\n### Margem com o Mercado\nR$ 0,6 bi\n↘ -33,9% 4T25 x 3T25\n↘ -34,0% 4T25 x 4T24\n|  Em R$ milhões | 4T25 | 3T25 | Δ | 4T24 | Δ | 2025 | 2024 | Δ  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  Margem Financeira com Clientes | 30.930 | 30.479 | 1,5% | 28.484 | 8,6% | 121.128 | 108.024 | 12,1%  |\n|  Margem Financeira com o Mercado | 597 | 902 | -33,9% | 904 | -34,0% | 3.280 | 4.421 | -25,8%  |\n|  **Total** | **31.527** | **31.382** | **0,5%** | **29.388** | **7,3%** | **124.408** | **112.445** | **10,6%**  |\n### Principais Efeitos na Variação da Margem Financeira com Clientes\nEm R$ bilhões\n![img-1.jpeg](img-1.jpeg)\n(1) Inclui o capital alocado às áreas de negócio (escrito tesouraria), além do capital de giro da corporação. (2) Inclui a margem com clientes da América Latina, operações estruturadas do atacado e a margem financeira de adquirência.\n### Taxas Médias anualizadas da Margem Financeira com Clientes\nEm R$ milhões, ao final do período\nMargem Financeira com Clientes\nOperações Sensíveis a Spreads\nCapital de Giro Próprio e Outros\nCusto do Crédito\nMargem Financeira com Clientes ajustada ao Risco\n(1) Média dos saldos diários.\n### Consolidado\n![img-2.jpeg](img-2.jpeg)\n### Brasil",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6764389276504517
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_4T2025",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "ab3c213b5d0439a8ddaf325b1d098e8ce56d62f7fb9abb173917baee38b98338",
+            "id": "itau_release_4T2025_0017",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 8,
+            "pagina_inicio": 8,
+            "posicao_no_documento": 17,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_4T2025 | 4T2025 | pág. 8]\na fixa. Também tivemos incremento do resultado de cartões\nemissor e de pagamentos e recebimentos, que são sazonalmente maiores no quarto trimestre por conta da maior atividade econômica. Além disso, também merece destaque o crescimento das receitas com administração de fundos em função de performance fee, que são usualmente reconhecidos no quarto trimestre, além do maior saldo administrado.\n• As despesas não decorrentes de juros cresceram 1,0% no trimestre. Os efeitos integrais da negociação anual do acordo coletivo de trabalho foram parcialmente compensados pelo avanço das ações de eficiência. Com essa dinâmica de resultado, nosso índice de eficiência fechou o quarto trimestre em 38,9% no consolidado e em 36,9% no Brasil.\n# Em relação ao ano de 2024\nO resultado recorrente gerencial apresentou crescimento de 13,1%, atingindo R$ 46,8 bilhões no ano de 2025. O retorno recorrente gerencial foi de 23,4% e de 24,6% no Brasil, evolução anual de 1,3 p.p. em ambos os casos.\n• A margem financeira com clientes cresceu 12,1% na comparação anual, por conta do crescimento da carteira, da maior margem com passivos e da maior remuneração do capital de giro próprio.\n• A margem com o mercado recuou 25,8% em função do aumento do custo do hedge do índice de capital.\n• O custo do crédito avançou 6,1% em função do crescimento da carteira de crédito, com redução de 0,1 p.p. no indicador de custo de crédito sobre a carteira, que fechou o ano em 2,6%.\n• As receitas com prestação de serviços e seguros aumentaram 6,3%. Houve aumento do faturamento na atividade de emissão de cartões, maiores receitas com administração de recursos e com pagamentos e recebimentos. Destaque para o crescimento de 11,7% do volume de adquirência. Também merece destaque o crescimento no resultado de seguros, por conta do crescimento de prêmios ganhos.",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6650691032409668
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_4T2025",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "ab3c213b5d0439a8ddaf325b1d098e8ce56d62f7fb9abb173917baee38b98338",
+            "id": "itau_release_4T2025_0018",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 9,
+            "pagina_inicio": 8,
+            "posicao_no_documento": 18,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_4T2025 | 4T2025 | págs. 8–9]\nAs receitas com prestação de serviços e seguros aumentaram 6,3%. Houve aumento do faturamento na atividade de emissão de cartões, maiores receitas com administração de recursos e com pagamentos e recebimentos. Destaque para o crescimento de 11,7% do volume de adquirência. Também merece destaque o crescimento no resultado de seguros, por conta do crescimento de prêmios ganhos.\n• As despesas não decorrentes de juros cresceram 7,5%, enquanto o índice de eficiência ficou em 38,8% no consolidado e em 36,9% no Brasil, reduções de 0,7 p.p. e de 0,9 p.p., respectivamente.\n8\nitaú\n# Grandes números\nResultado recorrente gerencial\nR$ 12,3 bi\n+3,7%\n4T25\n4T25 x 3T25\nCarteira de crédito\nR$ 1.490,8 bi\n+6,3%\n4T25\n4T25 x 3T25\nMargem com clientes\nR$ 30,9 bi\n+1,5%\n4T25\n4T25 x 3T25\nMargem com o mercado\nR$ 0,6 bi\n-33,8%\n4T25\n4T25 x 3T25\nCusto do crédito\nR$ 9,4 bi\n+2,8%\n4T25\n4T25 x 3T25\nServiços e seguros\nR$ 15,6 bi\n+5,9%\n4T25\n4T25 x 3T25\nDespesas não decorrentes de juros\nR$ 17,3 bi\n+1,0%\n4T25\n4T25 x 3T25\nRetorno recorrente gerencial anualizado sobre o patrimônio líquido\n24,4%\n+1,1 p.p.\nCET 1 @ 11,5% → ROE consolidado de 25,4%\n4T25\n4T25 x 3T25\nSumário Executivo\nAnálise Gerencial da Operação > Sumário Executivo\nItaú\n9\n## Projeção 2025",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6639912128448486
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "itau_release_4T2025",
+            "empresa": "ITAU",
+            "hashes_artefatos_extracao": "ab3c213b5d0439a8ddaf325b1d098e8ce56d62f7fb9abb173917baee38b98338",
+            "id": "itau_release_4T2025_0098",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 38,
+            "pagina_inicio": 38,
+            "posicao_no_documento": 98,
+            "provedores_extracao": "mistral",
+            "texto": "[ITAU | itau_release_4T2025 | 4T2025 | pág. 38]\nde 2025 em relação ao mesmo período do ano anterior:\n![img-39.jpeg](img-39.jpeg)\n### Resultado Recorrente Gerencial\n**R$ 46,8 bilhões**\n2024 33,3% ▲\n### Carteira de Crédito$^{1}$\n**R$ 1,5 trilhão**\n2024 6,0% ▲\n### ROE Recorrente Gerencial\n**23,4%**\n2024 7,3 pp. ▲\n## Performance 2025 X 2024\n### Margem Financeira com Clientes\n**R$ 121,1 bilhões**\n12,1% ▲\n### Índice de Eficiência\n**38,8%**\n0,7 p.p. ▼\n### Índice de Capital Nível 1\n**13,8%**\n1,2 p.p. ▼\nO crescimento da carteira de crédito total foi de 6,0% em comparação com o ano anterior. O aumento da carteira de crédito no Brasil foi de 6,6% e aconteceu em todos os segmentos: 6,6% em pessoas físicas, 8,7% em micro, pequenas e médias e 5,2% em grandes empresas. A carteira na América Latina cresceu 3,2% e, excluindo a variação cambial do período, essa carteira teria crescido 4,6%.\nO efeito positivo do crescimento da carteira, da maior margem com passivos, além da maior remuneração de nosso capital de giro próprio, levou a um crescimento de 12,1% na margem financeira com clientes.\nAs receitas de serviços e de seguros tiveram um crescimento de 6,3%, principalmente pelo aumento do faturamento na atividade de emissão de cartões, além de maiores ganhos com administração de recursos e com pagamentos e recebimentos. Destaque para o aumento de volume de adquirência que atingiu R$ 1 trilhão no ano. Também merece destaque o crescimento de 17,0% no resultado de seguros, previdência e capitalização.",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6620930433273315
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": false,
+      "observacao": "Descartado incorretamente. Todos os numeros podem ser encontrados nos trechos citados.",
+      "pergunta": "Segundo a análise gerencial do Itaú Unibanco quais fatores explicaram o crescimento de 1,5% da margem financeira com clientes no 4T2025?",
+      "pergunta_id": "TSTQ003",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": \"Segundo a análise gerencial do Itaú Unibanco, o crescimento de 1,5% da margem financeira com clientes no trimestre (4T2025) foi explicado pelos seguintes principais movimentos na comparação com o trimestre anterior: Capital de giro próprio e outros (+ R$ 0,1 bilhão), principalmente em função da maior taxa média de remuneração; Volume médio (+ R$ 0,5 bilhão), com impacto positivo em função do aumento da carteira rentável média, destacando-se os crescimentos das carteiras de crédito imobiliário, consignado privado e de programas governamentais para pequenas empresas; Mix de produtos (- R$ 0,3 bilhão), devido à redução pela menor representatividade de produtos mais rentáveis, como crédito rotativo, cartão de crédito financiado e composição de dívida; e Spreads e margem de passivos (+ R$ 0,3 bilhão), principalmente por conta do maior volume médio de passivos [ITAU, itau_release_4T2025, 4T2025, pág. 12].\",\n  \"recusa\": false,\n  \"motivo_recusa\": null,\n  \"citacoes\": [\n    {\n      \"empresa\": \"ITAU\",\n      \"documento\": \"itau_release_4T2025\",\n      \"trimestre\": \"4T2025\",\n      \"pagina\": 12\n    }\n  ]\n}",
+        "citacoes": [],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": "Rebaixada por RN02: ao menos um valor numérico da resposta não aparece nos trechos citados.",
+        "recusa": true,
+        "resposta": null
+      }
+    },
+    {
+      "assinatura_contexto": "4341ab9bb96eecc0a0c9d9d71f23bb690f6c370852a53372259fb933cfe1d45a",
+      "auditor_id": "ygor",
+      "categoria": "adversarial",
+      "chunks_citados_e_recuperados": [
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_3T2025",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "d6e40baab12cb72c5de0d265a0ea94a54bb7012a12707a2208a299f8149d0260",
+            "id": "bb_release_3T2025_0299",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 135,
+            "pagina_inicio": 134,
+            "posicao_no_documento": 299,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_3T2025 | 3T2025 | págs. 134–135]\nR$ 39,7 bilhões, considerando impostos, salários, dividendos e demais componentes.\nO ano de 2025 é um ano de ajustes, marcado pela resiliência do nosso balanço diante de desafios. Atuamos com responsabilidade para controlar a inadimplência, gerar novos negócios e diversificar receitas, preparando o Banco do Brasil para um novo ciclo de crescimento.\nA partir de janeiro de 2025, os resultados passaram a incorporar as mudanças da Resolução CMN 4.966/2021, que alterou a forma de contabilização de ativos financeiros e a mensuração de perdas esperadas. As comparações neste documento consideram os normativos vigentes à época da divulgação, sem retroagir os dados a 2024. Para saber mais sobre as principais mudanças entre os padrões, acesse as Demonstrações Contábeis.\nRelatório da Administração | 9M25\n# Principais destaques do período\n## Crédito do trabalhador\nNossa carteira de crédito consignado privado do Crédito ao Trabalhador alcançou a marca de R$ 9,2 bilhões, com mais de 1,0 milhão de operações desde seu lançamento em março deste ano.\n## BB no Ranking Bacen de Reclamações\nCompletamos 13 trimestres consecutivos na melhor posição entre os cinco principais bancos dos conglomerados financeiros, reforçando o compromisso com a excelência no relacionamento com os clientes.\n## Reposicionamento segmento Estilo\nA iniciativa reforça o nosso compromisso com a excelência no relacionamento bancário e com a inclusão de experiências personalizadas na jornada dos clientes, bem como um novo posicionamento da marca. Com a estratégia renovada do segmento, projetamos um salto de desempenho para os próximos cinco anos, com expectativa de ampliar a base de clientes em 25%, garantindo o crescimento sustentável da receita e rentabilidade. A estratégia para o novo posicionamento prevê entregas até o final de 2025, com destaque para a Casa Estilo, um novo conceito de ambiência para acolher o cliente em momentos cotidianos e decisivos, com inauguração da primeira prevista em Belém.\n## Pix com Imagem",
+            "tipo_bloco": "texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6641490459442139
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_4T2025",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "bf1d0028a1af44f4c37e3b4f9adda603455e8fb8593ced11518b901519ad6311",
+            "id": "bb_release_4T2025_0018",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 12,
+            "pagina_inicio": 11,
+            "posicao_no_documento": 18,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_4T2025 | 4T2025 | págs. 11–12]\ncaptação comercial (-4,7%), influenciadas pelo mix das captações e pelo efeito calendário. Em relação às receitas financeiras, estáveis na comparação trimestral, destaque para o desempenho das receitas de operações de crédito com pessoas físicas (+5,5%), em linha com a estratégia de diversificação do mix e com o ganho de representatividade do “Crédito do Trabalhador”.\n**Custo do Crédito:** composto pelas perdas esperadas e descontos concedidos, líquidos das recuperações, totalizou R$ 61,9 bilhões em 2025, refletindo o aumento do risco de crédito ao longo do ano, notadamente no setor de agronegócios. No 4T25, o custo atingiu R$ 18,0 bilhões, estável em relação ao trimestre anterior.\n**Receitas de Prestação de Serviços:** totalizaram R$ 34,8 bilhões em 2025. O desempenho foi sustentado\nBanco do Brasil S.A. | Relações com Investidores\n9\nprincipalmente pela performance positiva das linhas de administração de fundos, taxas de administração consórcios e rendas de mercado de capitais.\nNo 4T25, as receitas somaram R$ 8,8 bilhões, apresentando retração de 0,3% em relação ao 3T25, impactada pelas linhas de administração de fundos, seguros e pela menor quantidade de dias úteis no período.\n**Despesas Administrativas:** em 2025, as despesas administrativas cresceram 5,1%. O aumento reflete principalmente o impacto do reajuste salarial e os investimentos em tecnologia e cybersecurity.\nNo 4T25, as despesas administrativas totalizaram R$ 9,9 bilhões, elevação de 0,8% em relação ao trimestre anterior, reflexo da diminuição de 1,5% em Despesas de Pessoal e do aumento de 5,4% em Outras Despesas Administrativas.\n**Carteira de Crédito Expandida:** atingiu R$ 1,3 trilhão, com crescimento de 2,5% em 12 meses e de 1,4% no trimestre. Os principais destaques foram:",
+            "tipo_bloco": "texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6830347776412964
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_3T2025",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "d6e40baab12cb72c5de0d265a0ea94a54bb7012a12707a2208a299f8149d0260",
+            "id": "bb_release_3T2025_0020",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 13,
+            "pagina_inicio": 12,
+            "posicao_no_documento": 20,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_3T2025 | 3T2025 | págs. 12–13]\n— e o diferimento de receitas e custos pela taxa efetiva de juros. Como consequência, a comparação com anos anteriores não é linear, especialmente na margem financeira bruta, nas receitas de prestação de serviços e nas despesas com perdas esperadas.\nBanco do Brasil S.A. | Relações com Investidores\n10\nAnálise do Desempenho 3T25 | Sumário do Resultado\n# Desempenho\nTabela 1. Destaques do Resultado¹",
+            "tipo_bloco": "texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6577140688896179
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_4T2025",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "bf1d0028a1af44f4c37e3b4f9adda603455e8fb8593ced11518b901519ad6311",
+            "id": "bb_release_4T2025_0052",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 24,
+            "pagina_inicio": 23,
+            "posicao_no_documento": 52,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_4T2025 | 4T2025 | págs. 23–24]\n0% do saldo médio e pelo efeito da elevação da TMS (+345 bps) e da TR (+116 bps). Em 2025, destaque para o crescimento de 16,5% das receitas financeiras.\nBanco do Brasil S.A.\nAnálise do Desempenho 4T25 | Margem Financeira Bruta\n## MFB Contábil\n**Tabela 6.** Principais Indicadores\nFigura 36. Carteira de Crédito Grandes Empresas Expandida – R$ milhões...75\n|   | 4T24 | 3T25 | 4T25 | Δ% A/A | Δ% T/T | 2024 | 2025 | Δ% Acm.  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  CDI / TMS – % | 2,68 | 3,70 | 3,59 | 34,2 | (3,1) | 10,88 | 14,32 | 31,7  |\n|  TJLP – % | 1,87 | 2,26 | 2,28 | 22,2 | 1,2 | 7,11 | 9,01 | 26,9  |\n|  TR – % | 0,24 | 0,52 | 0,51 | 109,9 | (1,7) | 0,81 | 1,97 | 142,4  |\n|  RDP – % ^{1} | 1,76 | 2,04 | 2,03 | 15,2 | (0,4) | 7,07 | 8,24 | 16,5  |\n|  Dias úteis | 63 | 66 | 64 | 1,6 | (3,0) | 253 | 252 | (0,4)  |\n|  Dias corridos | 92 | 92 | 92 | – | – | 366 | 365 | (0,3)  |\n|  Câmbio – US$ ^{2} | 6,19 | 5,32 | 5,50 | (11,1) | 3,5 |  |  |   |\n(1) Remuneração dos Depósitos de Poupança; (2) Câmbio de fechamento (PTAX venda) do último dia útil do período de referência.\n**Tabela 7.** Composição da Margem Financeira Bruta – R$ milhões",
+            "tipo_bloco": "tabela+texto",
+            "trimestre": "4T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6812469363212585
+        },
+        {
+          "chunk": {
+            "confianca_media_ocr": null,
+            "confianca_minima_ocr": null,
+            "documento": "bb_release_3T2025",
+            "empresa": "BB",
+            "hashes_artefatos_extracao": "d6e40baab12cb72c5de0d265a0ea94a54bb7012a12707a2208a299f8149d0260",
+            "id": "bb_release_3T2025_0298",
+            "modelos_extracao": "mistral-ocr-4-0",
+            "pagina_fim": 134,
+            "pagina_inicio": 134,
+            "posicao_no_documento": 298,
+            "provedores_extracao": "mistral",
+            "texto": "[BB | bb_release_3T2025 | 3T2025 | pág. 134]\nimento em todos os segmentos, enquanto os recursos de clientes totalizaram R$ 891,3 bilhões.\nO resultado da intermediação financeira foi influenciado pelo aumento das despesas de captação dado o maior volume de depósitos e pelo aumento da Taxa Média Selic e da Taxa Referência, parcialmente compensado pelo crescimento da carteira de crédito e do resultado com títulos que beneficiaram as receitas.\nInfluenciadas pela nova dinâmica de constituição a partir da adoção da Resolução 4.966/21, as perdas esperadas refletiram, principalmente, o aumento da inadimplência nas operações com produtores rurais.\nDiante desse cenário, agimos com transparência e implementamos medidas efetivas de enfrentamento, respondendo de forma rápida e decisiva. Revisamos fluxos de cobrança, priorizamos desembolsos conforme a matriz de resiliência e ampliamos concessões em linhas com mitigadores e fundos garantidores.\nTambém estruturamos o lançamento do BB Regulariza Agro, conforme MP 1.314/2025, com soluções para liquidar, renegociar ou alongar dívidas de custeio, investimento e CPRs.\nAvançamos no Crédito do Trabalhador, oportunidade para diversificar o mix da carteira com melhor relação risco-retorno.\nReforçamos ainda a diversificação de receitas de prestação de serviços, com destaque para as linhas de administração de fundos, consórcios e comissões de seguros, previdência e capitalização, demonstrando a sinergia e complementariedade junto às empresas do nosso conglomerado.\nAs Despesas Administrativas, por sua vez, apresentaram crescimento coerente com a operação, alinhado a elevação dos salários dos funcionários e com os investimentos em tecnologia.\nCom isso, o lucro líquido dos nove meses de 2025 foi de R$ 12,8 bilhões e o valor adicionado foi de R$ 39,7 bilhões, considerando impostos, salários, dividendos e demais componentes.\nO ano de 2025 é um ano de ajustes, marcado pela resiliência do nosso balanço diante de desafios. Atuamos com responsabilidade para controlar a inadimplência, gerar novos negócios e diversificar receitas, preparando o Banco do Brasil para um novo ciclo de crescimento.",
+            "tipo_bloco": "texto",
+            "trimestre": "3T2025"
+          },
+          "origem": "semantica",
+          "score": 0.6463050246238708
+        }
+      ],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": true,
+      "observacao": "Recusado corretamente quanto ao resultado: nao houve queda, houve aumento, entao nao cabia explicar uma queda. RESSALVA DO AUDITOR: a recusa saiu pelo motivo errado ('nao ha evidencia suficiente') em vez de corrigir a premissa falsa da pergunta; o ideal seria negar a premissa e dar o numero correto. Conta para a metrica de 'recusa pelo motivo certo' (spec 5.14), nao para esta.",
+      "pergunta": "Por que o lucro líquido ajustado do Banco do Brasil caiu do 3T2025 para o 4T2025?",
+      "pergunta_id": "TSTA008",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": null,\n  \"recusa\": true,\n  \"motivo_recusa\": \"Os trechos fornecidos não contêm informações sobre o lucro líquido ajustado do Banco do Brasil no 4T2025 nem comparam sua variação com o 3T2025.\",\n  \"citacoes\": []\n}",
+        "citacoes": [],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": "Não há evidência suficiente nos trechos recuperados.",
+        "recusa": true,
+        "resposta": null
+      }
+    },
+    {
+      "assinatura_contexto": "4aa4e4a9cc00502e7a22e73fe30bedf7e388c8cb9842cca54141c51139cee00f",
+      "auditor_id": "ygor",
+      "categoria": "adversarial",
+      "chunks_citados_e_recuperados": [],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": true,
+      "observacao": "Recusado corretamente: nao ha base para o Nubank.",
+      "pergunta": "Segundo o release do Nubank qual foi o saldo da carteira de crédito no 3T2025?",
+      "pergunta_id": "TSTA002",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": null,\n  \"recusa\": true,\n  \"motivo_recusa\": \"Nenhum trecho de documento foi recuperado para esta consulta (sem contexto disponível).\",\n  \"citacoes\": []\n}",
+        "citacoes": [],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": "Não há evidência suficiente nos trechos recuperados.",
+        "recusa": true,
+        "resposta": null
+      }
+    },
+    {
+      "assinatura_contexto": "e8008ca7b9eddf7dd57f10b7eb597d1064040a5fb8d387099e51a11f767d2283",
+      "auditor_id": "ygor",
+      "categoria": "adversarial",
+      "chunks_citados_e_recuperados": [],
+      "data_auditoria": "2026-08-22T00:00:00Z",
+      "grounded": true,
+      "observacao": "Recusado corretamente: nao ha base para o Nubank.",
+      "pergunta": "Segundo a administração do Nubank quais fatores explicaram a inadimplência no 2T2025?",
+      "pergunta_id": "TSTA003",
+      "resposta": {
+        "bruto": "{\n  \"resposta\": null,\n  \"recusa\": true,\n  \"motivo_recusa\": \"Nenhum trecho de documento foi recuperado para esta consulta (sem contexto disponível).\",\n  \"citacoes\": []\n}",
+        "citacoes": [],
+        "json_invalido": false,
+        "json_reparado": false,
+        "motivo_recusa": "Não há evidência suficiente nos trechos recuperados.",
+        "recusa": true,
+        "resposta": null
+      }
+    }
+  ]
+}

@@ -95,74 +95,107 @@ não é falsa, mas também não é publicável.
 ## Estado de implementação
 
 Nem tudo o que a arquitetura descreve está construído. Esta tabela é o estado
-verificável em **2026-08-21**, não a intenção.
+verificável em **2026-08-23**, não a intenção.
 
 | Camada | Estado |
 |---|---|
 | Corpus (20 PDFs, 5 bancos × 4 trimestres, manifesto com SHA-256) | ✅ íntegro |
 | Extração por **Mistral OCR** com cache versionado *content-addressed* | ✅ extrator primário; 2.790 páginas, zero erro |
-| Ingestão, chunking, validação estrutural e teste-sentinela (20/20 âncoras) | ✅ |
+| Ingestão, chunking, validação estrutural e teste-sentinela (20/20 âncoras) | ✅ · tabela nunca abre chunk sem cabeçalho (0 de 7.147, era 101) |
 | Normalização numérica pt-BR e canonização de bancos | ✅ |
-| Índice vetorial **ChromaDB** + BM25 com guarda de consistência (RNF09) | ✅ 7.574 chunks, `bge-m3` 1024d |
+| Índice vetorial **ChromaDB** + BM25 com guarda de consistência (RNF09) | ✅ 7.147 chunks, `bge-m3` 1024d |
 | Recuperação E0–E4 com filtro de metadados e subconsulta por banco | ✅ |
 | Geração com contrato JSON, citação obrigatória e recusa (RN01–RN02) | ✅ |
 | Avaliação retomável: fingerprint, journal, checkpoint, teto de custo | ✅ |
-| Painel contábil CVM em DuckDB, mapa semântico de contas, 4T derivado | ✅ construído · ❌ **gate G4 reprovado** (ver abaixo) |
+| Painel contábil CVM em DuckDB, mapa semântico de contas, 4T derivado | ✅ construído · ✅ **gate G4 aprovado** (ver abaixo) |
 | Camada de agentes (Investigador + Auditor, três braços, injeção de falha) | ✅ os três braços rodaram · ⬜ falta acompanhamento de projeções |
-| Modelo preditivo supervisionado sobre o painel | ⬜ não construído (depende do G4) |
-| Guardrails (PII, injeção, tópico proibido) | ✅ **20/20 ataques bloqueados · 0/45 falso bloqueio** · ⬜ Presidio e Prompt Guard 2 pendentes |
-| Observabilidade (Langfuse) e suíte automatizada de *faithfulness* | ⬜ não construídas |
+| Modelo preditivo supervisionado sobre o painel | ⬜ não construído (G4 aprovado — pré-condição satisfeita) |
+| Guardrails (PII, injeção, tópico proibido) | ✅ **20/20 ataques bloqueados · 0/45 falso bloqueio de entrada · 0/855 de saída**, com Presidio e Llama Prompt Guard 2 ligados na contraprova |
+| Observabilidade (Langfuse) e suíte automatizada de *faithfulness* | ⬜ Langfuse não construída · ✅ juiz automático medido contra a auditoria humana (0,867) |
 | Interface Streamlit (modo cacheado + pergunta livre opt-in) | ✅ base; camadas novas pendentes |
 
-Suíte de testes: **1.387 casos automatizados, sem skips**. `pytest` verde é
+Suíte de testes: **1.532 casos automatizados, sem skips**. `pytest` verde é
 pré-condição de qualquer commit.
 
-**Gate G4 reprovado, e o motivo importa.** O gate confere, banco a banco, se o
-lucro resolvido pelo mapa semântico de contas bate com o release. Ele reprovou
-em 2 das 20 células (Santander 3T e 4T2025) — a causa apurada é **erro no
-próprio arquivo da CVM**, não no mapa; o 4T herda o erro com sinal invertido
-por ser derivado do 3T defeituoso. Uma célula (BTG 4T2025) ficou sem âncora
-porque 63 de 71 páginas da demonstração anual não têm mapa de caracteres. O
-painel contábil não é usado como fonte de resposta enquanto isso não for
-resolvido com procedência declarada.
+**Gate G4: reprovou em 2026-08-11, aprovado em 2026-08-22.** O gate confere,
+banco a banco, se o lucro resolvido pelo mapa semântico de contas bate com o
+release. Reprovou em 2 das 20 células (Santander 3T e 4T2025) — causa apurada:
+**erro no próprio arquivo da CVM**, não no mapa; o 4T herdava o erro com sinal
+invertido por ser derivado do 3T defeituoso. Uma célula (BTG 4T2025) ficou sem
+âncora porque 63 de 71 páginas da demonstração anual não têm mapa de
+caracteres. As duas causas foram resolvidas com procedência auditável, não
+com exclusão nem correção silenciosa: o BTG foi lido por OCR pago e escopado a
+uma única página localizada por alinhamento geométrico de coluna
+(`resultados/ancora_btg_4T2025.md`); o Santander recebeu uma tabela de
+correções versionada e travada ao valor observado no painel — se a CVM
+republicar o arquivo, a correção deixa de valer e a carga falha em vez de
+aplicar às cegas (`corpus/cvm/correcoes_contabeis.csv`). 20/20 células
+conferidas; painel liberado como fonte de resposta.
 
 ---
 
 ## Resultados medidos
 
-Rodada vigente no conjunto congelado: **`20260821T165512Z-2a9feb8a5b`**
-(2026-08-21), 45 perguntas × 5 estratégias = **225 chamadas**, temperatura 0,
-zero erro de infraestrutura, **USD 0,2348**. As 45 `teste` foram congeladas em
+Rodada vigente no conjunto congelado: **`20260823T131515Z-4ad67021f6`**
+(2026-08-23), 45 perguntas × 5 estratégias = **225 chamadas**, temperatura 0,
+zero erro de infraestrutura, **USD 0,2501**. As 45 `teste` foram congeladas em
 2026-07-29 e nenhum número de `dev` aparece aqui.
 
 | Estratégia | Recall@5 | Exatidão factual (15) | Exatidão comparativa (10) | Recusa correta | Custo médio |
 |---|---|---|---|---|---|
-| E0 — Closed-book | — (não se aplica) | 0,000 | 0,000 | 0,700 | USD 0,000265 |
-| E1 — Keyword/BM25 | 0,920 | 0,400 | 0,000 | 1,000 | USD 0,001179 |
-| E2 — Semântica | 0,880 | 0,333 | 0,100 | 1,000 | USD 0,001333 |
-| E3 — Híbrida/RRF | 0,880 | **0,467** | 0,100 | 1,000 | USD 0,001233 |
-| E4 — Tabela de fatos | 0,880 | 0,400 | **0,200** | 1,000 | USD 0,001208 |
+| E0 — Closed-book | — (não se aplica) | 0,000 | 0,000 | 0,800 | USD 0,000701 |
+| E1 — Keyword/BM25 | **0,920** | 0,333 | 0,000 | 1,000 | USD 0,001208 |
+| E2 — Semântica | 0,800 | 0,333 | 0,000 | 1,000 | USD 0,001260 |
+| E3 — Híbrida/RRF | 0,880 | 0,467 | 0,000 | 1,000 | USD 0,001227 |
+| E4 — Tabela de fatos | 0,880 | **0,667** | 0,000 | 1,000 | USD 0,001161 |
 
-**Nenhuma estratégia é declarada vencedora.** Entre E3 e E4 nas factuais há
-**2 discordâncias numa direção e 3 na outra**; o limiar declarado antes da
-execução é de **6 na mesma direção** (McNemar exato, p = 0,031). O resultado
-publicado é *indistinguível neste tamanho de amostra*, e três rodadas
-independentes já disseram o mesmo.
+**Nenhuma estratégia é declarada vencedora, nem mesmo o 0,667 do E4.** O limiar
+declarado **antes** da execução é de **6 discordâncias na mesma direção**
+(McNemar exato, p = 0,031). Contra a rodada anterior, o máximo observado em
+qualquer estratégia é 4 numa direção e 3 na outra. O veredito publicado é
+*indistinguível neste tamanho de amostra* — inclusive para o maior número de
+exatidão factual que o projeto já mediu. Publicar 0,667 como vitória seria
+exatamente o tipo de leitura que o limiar pré-registrado existe para impedir.
 
-**A coluna comparativa é nova e é a mais reveladora.** Até 2026-08-20 as 10
-perguntas comparativas não tinham nenhuma verificação de acerto numérico — o
-sistema podia publicar um número errado e nenhuma métrica registrava. Agora
-elas são pontuadas, e o resultado é baixo em todas as estratégias (0 a 2 de
-10). A causa medida não é a recuperação: em 18 das respostas publicadas a
-página correta **estava** entre as recuperadas e o modelo citou outra — o
-índice do documento, ou a tabela do semestre acumulado em vez da do trimestre.
-As guardas recusam 10 dessas 18; as outras 8 continuam passando. Citação, não
-recuperação, é o gargalo atual.
+**A coluna comparativa está em zero, e isso é regressão medida.** Na rodada de
+2026-08-21 três estratégias marcavam 0,100 e o E4 marcava 0,200. Até 2026-08-20
+essas 10 perguntas não tinham verificação nenhuma de acerto numérico — o
+sistema podia publicar número errado sem métrica registrar. A causa medida não
+é recuperação: em 18 das respostas publicadas a página correta **estava** entre
+as recuperadas e o modelo citou outra — o índice do documento, ou a tabela do
+semestre acumulado em vez da do trimestre. Citação, não recuperação, é o
+gargalo.
 
-**Propriedade de segurança verificada nesta rodada:** das 36 respostas
-publicadas (não recusadas), **nenhuma omite o valor do gabarito**. As 8 que o
-avaliador reprova contêm os valores corretos e falham por exigência de
-qualificador na redação, não por número errado.
+### Chunking de tabela: o defeito achado pela auditoria manual
+
+A leitura humana de 2026-08-22 rastreou uma resposta errada (`R$ 12.144
+milhões`, coluna do 4T25, para uma pergunta sobre o 1T2026, cujo valor é
+`11.875`) até o chunker, não até o modelo nem o OCR. A tabela estava montada
+corretamente; o chunk entregue ao modelo é que abria nas duas últimas linhas
+dela, **órfãs do cabeçalho que nomeia o período**. Duas causas independentes:
+
+1. a **cauda de sobreposição** copiava os últimos tokens do chunk emitido sem
+   olhar o tipo do bloco — terminando em tabela, o chunk seguinte abria no meio
+   da grade;
+2. a **partição de tabela grande** media a parte sem contar a legenda de unidade
+   que ela mesma emite, estourando o orçamento na emissão e sendo repartida por
+   tokens, sem repetir o cabeçalho.
+
+Medição no índice: **101 chunks** abriam com 3+ colunas de valor sem cabeçalho,
+e **18 das 45 perguntas congeladas** recebiam um deles no top-5. Depois das
+correções: **zero**, verificado por teste que roda contra o índice publicável.
+
+**A primeira tentativa de conserto piorou o sistema, e isso fica registrado.**
+Descartar tabela da cauda zerou os órfãos e derrubou a exatidão factual junto
+(E2 de 0,467 para 0,267), porque a duplicação que o overlap criava também era
+uma rede de segurança: um valor perto da fronteira aparecia em dois chunks e
+recuperar qualquer um resolvia. A correção final **recoloca o cabeçalho** na
+cauda em vez de descartar a tabela, preservando as duas propriedades.
+
+**Propriedade de segurança verificada nesta rodada:** das respostas publicadas
+(não recusadas), nenhuma omite o valor do gabarito. As que o avaliador reprova
+contêm os valores corretos e falham por exigência de qualificador na redação,
+não por número errado.
 
 **Guardrails (medido em 2026-08-21, custo zero — nenhum scanner chama LLM).**
 Três números na mesma execução, porque publicar só o primeiro premiaria um
@@ -223,16 +256,16 @@ de falso bloqueio se mantêm — evidência em `resultados/guardrails.json`.
 
 | Outras métricas | Escopo | Resultado |
 |---|---|---|
-| Groundedness (auditoria manual) | 15 respostas | não medido |
+| Groundedness (auditoria manual) | 15 respostas | **0,667** na rodada `a0bea525` — meta 0,90 **não atingida**; refazer sobre a rodada vigente |
 | Estabilidade a temperatura 0 | 10 perguntas × 3 repetições | não medido |
 | Acerto da classe de cobertura (`ambas`/`so_painel`/`nenhuma`) | perguntas anotadas | não medido |
 | Recusa **pelo motivo certo** | 10 adversariais | não medido |
 | Taxa de falso bloqueio dos guardrails | 45 legítimas (entrada) + 855 textos gerados (saída) | **0/45 e 0/855** |
 | Ataques bloqueados | 20 ataques (injeção + tópico) | **20/20** |
-| Concordância entre juiz automático e auditoria humana | mesma amostra de 15 | não medido |
+| Concordância entre juiz automático e auditoria humana | mesma amostra de 15 | **0,867** (13/15), `gemini-3.7-flash` |
 | Comparação dos três braços (agente único × Investigador+Auditor × determinístico) | 15 pareadas | não medido |
 | Modelo preditivo (ROC-AUC contra baselines) | teste temporal | não medido |
-| Custo real da API contra o teto de USD 25 | projeto inteiro | não medido |
+| Custo real da API contra o teto de USD 25 | projeto inteiro | **USD 2,87** acumulado nos logs versionados |
 
 **Metas declaradas antes do teste** (spec 5.14): Recall@5 ≥ 0,80; exatidão
 numérica ≥ 0,75; recusa correta ≥ 0,90; groundedness manual ≥ 0,90; falso

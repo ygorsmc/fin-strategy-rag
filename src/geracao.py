@@ -1067,7 +1067,42 @@ _STOPWORDS_QUALITATIVAS = {
     "informado", "informou", "divulgado", "divulgou",
     "reportado", "reportou", "publicado", "publicou",
     "apresentado", "apresentou",
+    # Auxiliares de ligação e ANDAIME DE DISCURSO — a mesma classe dos verbos
+    # de atribuição acima, encontrada pela auditoria manual de 2026-08-22.
+    # "foi explicado pelos seguintes movimentos", "adicionalmente", "foram
+    # destacados", "os sinais incluem" e "devido à" não afirmam fato nenhum:
+    # organizam a prosa em volta de fatos que os tokens de CONTEÚDO da mesma
+    # cláusula já obrigam a estar na evidência. Sem eles, a guarda reprovava
+    # TSTQ003, TSTQ005 e TSTQ010 — respostas conferidas na mão como fiéis.
+    #
+    # Deliberadamente FORA desta lista: verbo que afirma direção ou magnitude
+    # ("cresceu", "caiu", "impulsionou", "dobrou"). Esses são conteúdo, e
+    # inventá-los é exatamente o que a guarda existe para pegar.
+    "foram", "sendo", "sao", "era", "eram", "esta", "estao",
+    "observou", "observado", "observa",
+    "incluem", "inclui", "incluindo",
+    "destacado", "destacados", "destacando", "destaca", "destacam",
+    "adicionalmente", "devido", "seguinte", "seguintes",
+    "explicado", "explica", "explicam",
 }
+
+
+def _radical_flexional(token: str) -> str:
+    """Colapsa só concordância de gênero/número do MESMO lexema.
+
+    O modelo escreve "crescimento impulsionado" onde o release escreve "margem
+    impulsionada" — mesma palavra, concordando com substantivo de outro gênero.
+    A comparação exata de string lia isso como token inventado e derrubava a
+    resposta inteira (TSTQ010, auditoria de 2026-08-22).
+
+    Conservador de propósito: tira no máximo o plural e a vogal temática, e só
+    se sobrar radical de 4+ caracteres. Sem esse piso, "casa"/"caso" e
+    "meta"/"meto" colapsariam — palavras diferentes viram a mesma.
+    """
+    radical = token[:-1] if token.endswith("s") and len(token) > 5 else token
+    if radical[-1:] in ("a", "o") and len(radical) > 4:
+        radical = radical[:-1]
+    return radical
 
 
 def _tokens_qualitativos(texto: str) -> set[str]:
@@ -1091,6 +1126,46 @@ def _sequencia_qualitativa(texto: str) -> list[str]:
             r"[a-z][a-z0-9_]*", remover_acentos(texto).casefold()
         )
         if token in tokens_validos
+    ]
+
+
+# Fim de frase de verdade, em português, é seguido de MAIÚSCULA. O ponto
+# seguido de minúscula é abreviação — `p.p.` (pontos percentuais), `a.a.` (ao
+# ano), `vs.`, e a cauda longa de rótulo truncado de tabela (`prev.`, `obrig.`,
+# `adm.`…). Medido no índice em 2026-08-22: **1.017 pontos seguidos de
+# minúscula contra 18.652 seguidos de maiúscula** — 5,2% dos pontos do corpus
+# eram falsos limites de oração.
+#
+# Sem esta regra o separador partia "queda de 0,6 p.p. no trimestre e 1,5 p.p.
+# em relação a Set24" em três fragmentos órfãos ("no trimestre e 1,5 p.p.",
+# "em relação a Set24") que nenhuma evidência pode fundamentar sozinhos, e a
+# resposta inteira caía. É a mesma família do defeito de `pág.` corrigido em
+# 2026-08-18 — aquela correção tratou o caso, não a classe.
+#
+# Só UNE o que o autor já havia escrito como uma oração; nunca separa mais do
+# que antes. Por isso não abre buraco novo: uma oração com duas métricas
+# separadas por vírgula já era uma cláusula única antes desta mudança.
+_PADRAO_FIM_DE_ORACAO = re.compile(r"(?<=[.!?])\s+(?=[A-ZÀ-Þ])")
+_PADRAO_SEPARADOR_FORTE = re.compile(r"[;\n]+")
+_PADRAO_SEPARADOR_FORTE_SEM_QUEBRA = re.compile(r"[;]+")
+
+
+def dividir_em_clausulas(texto: str, *, quebrar_linha: bool = True) -> list[str]:
+    """Separa em orações sem tratar abreviação como fim de frase.
+
+    Separador ÚNICO da resposta e da evidência, de propósito: os dois lados
+    precisam ser fatiados igual, senão a guarda compara pedaço de resposta
+    contra pedaço de evidência cortado em outro ponto.
+    """
+    forte = (
+        _PADRAO_SEPARADOR_FORTE
+        if quebrar_linha
+        else _PADRAO_SEPARADOR_FORTE_SEM_QUEBRA
+    )
+    return [
+        oracao
+        for bloco in forte.split(texto)
+        for oracao in _PADRAO_FIM_DE_ORACAO.split(bloco)
     ]
 
 
@@ -1146,8 +1221,16 @@ def _clausula_numerica_sem_conteudo_inventado(
     vocabulario_evidencia: set[str] = set()
     for chunk in chunks_citados:
         vocabulario_evidencia |= _tokens_qualitativos(chunk.texto)
-    if tokens - vocabulario_evidencia - tokens_pergunta:
-        return False
+    novos = tokens - vocabulario_evidencia - tokens_pergunta
+    if novos:
+        # Antes de acusar token inventado, tenta a concordância de gênero e
+        # número contra o mesmo vocabulário — nunca contra outro texto.
+        conhecidos = {
+            _radical_flexional(conhecido)
+            for conhecido in vocabulario_evidencia | tokens_pergunta
+        }
+        if any(_radical_flexional(token) not in conhecidos for token in novos):
+            return False
     negada_clausula = _tem_negacao(clausula)
     return any(
         (tokens & _tokens_qualitativos(linha))
@@ -1171,7 +1254,7 @@ def _texto_qualitativo_esta_fundamentado(
         if linha.strip()
     ]
     encontrou_clausula = False
-    for clausula in re.split(r"[;\n]+|(?<=[.!?])\s+", resposta):
+    for clausula in dividir_em_clausulas(resposta):
         sequencia = _sequencia_qualitativa(clausula)
         if not sequencia:
             continue
@@ -1296,7 +1379,7 @@ def _escopo_solicitado_esta_coberto(
     empresas_respondidas: set[str] = set()
     periodos_respondidos: set[str] = set()
     encontrou_numero = False
-    for clausula in re.split(r"[;\n]+|(?<=[.!?])\s+", resposta_texto):
+    for clausula in dividir_em_clausulas(resposta_texto):
         numeros = extrair_numeros_ptbr_tipados(clausula)
         normalizada = remover_acentos(clausula).casefold().strip()
         if not numeros or normalizada.startswith("calculo:"):
@@ -1332,9 +1415,18 @@ def _escopo_solicitado_esta_coberto(
     return True
 
 
+# Grupos cuja métrica é SEMPRE razão: rentabilidade (ROE/ROAE), índice de
+# eficiência e inadimplência (NPL) não existem em reais. Número escalar ao lado
+# deles é qualificador ("inadimplência acima de 90 dias"), não valor.
+#
+# `metrica_margem` saiu daqui em 2026-08-22: "margem" é o único do conjunto que
+# admite as DUAS dimensões — "margem líquida de 12%" é razão, mas "Spreads e
+# margem de passivos (+ R$ 0,3 bilhão)" é dinheiro, e é assim que o release do
+# Itaú abre a variação da margem financeira. Tratá-la como percentual filtrava
+# o valor em reais como se fosse qualificador, não sobrava número nenhum na
+# cláusula e a resposta caía inteira (TSTQ003, auditoria de 2026-08-22).
 _GRUPOS_PERCENTUAIS = {
     "metrica_rentabilidade",
-    "metrica_margem",
     "metrica_eficiencia",
     "metrica_inadimplencia",
 }
@@ -1560,10 +1652,42 @@ def _coluna_serve_ao_trimestre(
 _PADRAO_TITULO_SECAO = re.compile(r"^\s{0,3}#{1,6}\s+(.*)$")
 
 
+_PADRAO_ROTULO_DESTAQUE = re.compile(r"^\s*\*\*([^*]+)\*\*\s*$")
+
+
 def _titulo_de_secao(linha: str) -> str:
     """Título markdown (`### Indicadores de Inadimplência`), ou vazio."""
     achado = _PADRAO_TITULO_SECAO.match(linha)
     return achado.group(1).strip() if achado else ""
+
+
+def _rotulo_de_destaque(linha: str) -> str:
+    """Rótulo de painel de destaques — linha só de negrito, sem número.
+
+    A página de *Destaques financeiros* não é tabela nem prosa: é um painel em
+    que o nome da métrica ocupa uma linha em negrito e o valor ocupa a
+    seguinte, sem repetir o nome::
+
+        **Carteira de crédito ampliada**
+        R$ 708,2 bilhões (+2,8% QoQ e +3,7% YoY)
+
+    Sem isto o fato de `708,2` saía com os tokens `{qoq, yoy}` e NENHUM grupo
+    métrico, então a resposta certa ("carteira de crédito ampliada … R$ 708,2
+    bilhões") não achava com que casar e caía (TSTF012, auditoria de
+    2026-08-22). Entra na mesma vaga do título de seção — e, como ela, só
+    PREENCHE LACUNA: linha com métrica própria continua mandando na sua.
+
+    Exige linha inteiramente em negrito e **sem dígito**, para que valor em
+    negrito (`**220.017**`, comum em linha de total) continue sendo valor, e
+    célula de tabela (que traz `|`) nunca vire rótulo de seção.
+    """
+    achado = _PADRAO_ROTULO_DESTAQUE.match(linha)
+    if not achado:
+        return ""
+    rotulo = achado.group(1).strip()
+    if "|" in rotulo or any(caractere.isdigit() for caractere in rotulo):
+        return ""
+    return rotulo
 
 
 def _fatos_numericos_da_linha(
@@ -1666,7 +1790,7 @@ def _fatos_numericos_da_linha(
             for numero in financeiros or numeros:
                 fatos.append((numero, com_titulo(tokens), modificadores))
         return fatos
-    for segmento in re.split(r"[;]+|(?<=[.!?])\s+", linha):
+    for segmento in dividir_em_clausulas(linha, quebrar_linha=False):
         if _e_modal(segmento):
             continue
         numeros = extrair_numeros_ptbr_tipados(segmento)
@@ -1720,7 +1844,7 @@ def fatos_numericos_do_chunk(
             # sobre o 1T2026, cujo valor é `11.875`. Sem atribuição de coluna,
             # a afirmação de trimestre único não se fundamenta aqui.
             continue
-        titulo_da_linha = _titulo_de_secao(linha)
+        titulo_da_linha = _titulo_de_secao(linha) or _rotulo_de_destaque(linha)
         if titulo_da_linha:
             titulo_vigente = titulo_da_linha
             continue
@@ -2055,7 +2179,7 @@ def numeros_da_resposta_estao_fundamentados(
     # cláusulas simples anteriores.
     fatos_anteriores: list[_FatoNumerico] = []
     encontrou_conteudo = False
-    for clausula in re.split(r"[;\n]+|(?<=[.!?])\s+", resposta):
+    for clausula in dividir_em_clausulas(resposta):
         if not clausula.strip():
             continue
         encontrou_conteudo = True

@@ -645,7 +645,10 @@ def gerar_chunks(
         # Fragmentos guardam tokens, página E tipo de bloco. Assim, a cauda de
         # overlap que veio da página 1 continua atribuída à página 1 no chunk
         # seguinte, e o tipo de bloco do chunk é a união do que ele contém.
-        atual: list[tuple[list[int], int, str]] = []
+        # Cada fragmento guarda também o CABEÇALHO da tabela de onde saiu, para
+        # que a cauda de sobreposição possa recolocá-lo quando começar no meio
+        # de uma grade. Vazio para prosa.
+        atual: list[tuple[list[int], int, str, list[int]]] = []
         n_tokens = 0
         novos_desde_emissao = 0
         posicao = 0
@@ -655,14 +658,14 @@ def gerar_chunks(
             if not atual or novos_desde_emissao <= 0:
                 return
             posicao += 1
-            pag_ini = min(pagina for _, pagina, _ in atual)
-            pag_fim = max(pagina for _, pagina, _ in atual)
+            pag_ini = min(pagina for _, pagina, _, _ in atual)
+            pag_fim = max(pagina for _, pagina, _, _ in atual)
             tokens_corpo = [
                 token
-                for tokens_fragmento, _, _ in atual
+                for tokens_fragmento, _, _, _ in atual
                 for token in tokens_fragmento
             ]
-            tipo_bloco = "+".join(sorted({tipo for _, _, tipo in atual}))
+            tipo_bloco = "+".join(sorted({tipo for _, _, tipo, _ in atual}))
             corpo = _ENCODER.decode(tokens_corpo).strip()
             cabecalho = montar_cabecalho_contextual(
                 doc.empresa, doc.documento, doc.trimestre, pag_ini, pag_fim
@@ -675,7 +678,7 @@ def gerar_chunks(
                 )
             proveniencias = [
                 proveniencia_por_pagina[pagina]
-                for pagina in sorted({pagina for _, pagina, _ in atual})
+                for pagina in sorted({pagina for _, pagina, _, _ in atual})
             ]
             provedores = "+".join(
                 sorted(
@@ -740,24 +743,87 @@ def gerar_chunks(
                 atual = []
             else:
                 restantes = sobre
-                cauda_reversa: list[tuple[list[int], int, str]] = []
-                for tokens_fragmento, pagina, tipo in reversed(atual):
+                cauda_reversa: list[tuple[list[int], int, str, list[int]]] = []
+                for tokens_fragmento, pagina, tipo, cab in reversed(atual):
                     if restantes <= 0:
                         break
                     fatia = tokens_fragmento[-restantes:]
                     if fatia:
-                        cauda_reversa.append((fatia, pagina, tipo))
+                        cauda_reversa.append((fatia, pagina, tipo, cab))
                         restantes -= len(fatia)
                 atual = list(reversed(cauda_reversa))
+                # A cauda pode ter começado no MEIO de uma grade: cortada pelo
+                # tamanho do overlap, ela abriria o chunk seguinte com linhas de
+                # valor sem a linha que nomeia a coluna. Foi assim que o sistema
+                # respondeu `12.144` (coluna 4T25) a uma pergunta de 1T26, cujo
+                # valor é `11.875` — TSTF006, auditoria de 2026-08-22.
+                #
+                # A primeira tentativa foi DESCARTAR tabela da cauda. Matou os
+                # órfãos (101 → 0) e derrubou a exatidão factual junto
+                # (`semantica` 0,467 → 0,267), porque a duplicação que o overlap
+                # criava era também uma rede de segurança: um valor perto da
+                # fronteira aparecia em dois chunks e recuperar qualquer um dos
+                # dois resolvia. Em TSTF010 o valor `3.659` estava em dois
+                # chunks do top-5 antes, e em nenhum depois.
+                #
+                # Recolocar o cabeçalho preserva as duas coisas: a redundância
+                # continua, e o pedaço de grade chega rotulado.
+                if atual and "tabela" in atual[0][2] and atual[0][3]:
+                    cabecalho_tokens = atual[0][3]
+                    ja_tem = atual[0][0][: len(cabecalho_tokens)] == cabecalho_tokens
+                    if not ja_tem:
+                        # O cabeçalho recolocado não pode empurrar a cauda além
+                        # do orçamento do corpo; se empurrar, encurta-se a cauda
+                        # pela ponta final, que é a parte mais distante da grade.
+                        excedente = (
+                            sum(len(f) for f, _, _, _ in atual)
+                            + len(cabecalho_tokens)
+                            - max_corpo
+                        )
+                        while excedente > 0 and len(atual) > 1:
+                            ultimo = atual[-1]
+                            corte = min(excedente, len(ultimo[0]))
+                            restante_ultimo = ultimo[0][: len(ultimo[0]) - corte]
+                            excedente -= corte
+                            if restante_ultimo:
+                                atual[-1] = (
+                                    restante_ultimo,
+                                    ultimo[1],
+                                    ultimo[2],
+                                    ultimo[3],
+                                )
+                            else:
+                                atual.pop()
+                        if excedente <= 0:
+                            atual.insert(
+                                0,
+                                (
+                                    list(cabecalho_tokens),
+                                    atual[0][1],
+                                    atual[0][2],
+                                    list(cabecalho_tokens),
+                                ),
+                            )
             n_tokens = sum(
-                len(tokens_fragmento) for tokens_fragmento, _, _ in atual
+                len(tokens_fragmento) for tokens_fragmento, _, _, _ in atual
             )
             novos_desde_emissao = 0
 
-        def adicionar(tokens: list[int], pagina: int, tipo: str) -> None:
+        def adicionar(
+            tokens: list[int],
+            pagina: int,
+            tipo: str,
+            cabecalho_tokens: list[int] | None = None,
+        ) -> None:
             """Adiciona um bloco sem overlap interno; ``emitir`` é a única
-            fonte de repetição entre chunks."""
+            fonte de repetição entre chunks.
+
+            ``cabecalho_tokens`` é a linha que nomeia as colunas da tabela de
+            origem. Fica junto de cada fragmento para que a cauda de
+            sobreposição consiga recolocá-la se cortar dentro da grade.
+            """
             nonlocal n_tokens, novos_desde_emissao
+            cabecalho = list(cabecalho_tokens or ())
             cursor = 0
             while cursor < len(tokens):
                 capacidade = max_corpo - n_tokens
@@ -766,7 +832,7 @@ def gerar_chunks(
                     capacidade = max_corpo - n_tokens
                 quantidade = min(capacidade, len(tokens) - cursor)
                 fatia = tokens[cursor : cursor + quantidade]
-                atual.append((fatia, pagina, tipo))
+                atual.append((fatia, pagina, tipo, cabecalho))
                 n_tokens += quantidade
                 novos_desde_emissao += quantidade
                 cursor += quantidade
@@ -806,7 +872,16 @@ def gerar_chunks(
                     emitir()
                     if n_tokens + len(tokens_tabela) > max_corpo:
                         zerar_acumulado()
-                adicionar(tokens_tabela, pagina, "tabela")
+                adicionar(
+                    tokens_tabela,
+                    pagina,
+                    "tabela",
+                    _ENCODER.encode(
+                        "\n".join([*prefixo_legenda, *bloco.cabecalho])
+                    )
+                    if bloco.cabecalho
+                    else None,
+                )
                 return False
 
             emitir()
@@ -834,14 +909,32 @@ def gerar_chunks(
                     ),
                     pagina,
                     "tabela",
+                    _ENCODER.encode(
+                        "\n".join([*prefixo_legenda, *cabecalho])
+                    )
+                    if cabecalho
+                    else None,
                 )
                 emitir()
                 zerar_acumulado()
 
             for linha in corpo:
                 candidata = parte + [linha]
+                # A legenda entra na CONTA porque `emitir_parte` a emite junto
+                # com o cabeçalho. Sem ela aqui, a parte cabia na medição e
+                # estourava na emissão; `adicionar` então repartia a parte por
+                # tokens — sem repetir cabeçalho — e a continuação abria com
+                # linhas de valor órfãs, que é exatamente o que esta função
+                # existe para impedir. Some 36 chunks assim sobreviviam à
+                # correção do overlap, concentrados nas tabelas largas do BB.
                 excede = (
-                    len(_ENCODER.encode("\n".join(cabecalho + candidata)))
+                    len(
+                        _ENCODER.encode(
+                            "\n".join(
+                                [*prefixo_legenda, *cabecalho, *candidata]
+                            )
+                        )
+                    )
                     > max_corpo
                 )
                 if parte and excede:

@@ -67,8 +67,8 @@ subconsulta por banco; geração JSON com RN01 e grounding numérico da RN02;
 avaliação retomável com fingerprint v3, journal/checkpoint, teto de custo e
 locks; interface cacheada com pergunta livre opt-in.
 
-**Convenção de testes (obrigatória):** a suíte local tem **1.474 casos coletados
-e nenhum skip** (medido em 2026-08-21, com `requirements-guardrails.txt`
+**Convenção de testes (obrigatória):** a suíte local tem **1.532 casos coletados
+e nenhum skip** (medido em 2026-08-23, com `requirements-guardrails.txt`
 instalado e os pesos do Prompt Guard 2 no cache local). NUNCA enfraquecer uma asserção para fazer
 código passar — o teste é o contrato e o código se adapta a ele. `pytest` verde
 é pré-condição de qualquer commit; etapa implementada = testes da etapa
@@ -176,20 +176,81 @@ para a ressalva completa (contagem de linhas mede estrutura, não correção).
 O índice vetorial em produção já é construído sobre o cache OCR — não há
 namespace separado pendente.
 
-### 3.3 Gate G4 — rodado, bloqueante, e o motivo do bloqueio está apurado
+### 3.3 Gate G4 — rodou, reprovou, e foi destravado com procedência declarada
 
-G4 (lucro pelo mapa semântico × release, banco a banco) **rodou e reprovou**
-(`resultados/gate_g4.md`, 2026-08-11, custo zero). Parte A (mapa × conferência
-congelada) **aprovada** — nenhuma célula reprova por erro de mapeamento nos
-cinco emissores. Parte B: 17/20 células conferidas, **2 divergentes**
-(SANTANDER 3T2025 e 4T2025, ±363,754 R$ mi — causa apurada: erro no próprio
-arquivo da CVM, não no painel nem no mapa; o 4T herda o erro com sinal
-invertido por ser derivado do 3T defeituoso) e **1 sem âncora** (BTG 4T2025 —
-a demonstração anual em IFRS tem 63 de 71 páginas com fonte sem mapa de
-caracteres; ler exigiria OCR pago, decisão de orçamento ainda não tomada).
-Detalhe célula a célula no relatório. **Decisão pendente do Ygor:** treinar a
-etapa 10 excluindo as 2 células Santander ou corrigi-las com procedência
-declarada — corrigir em silêncio é o que o G4 existe para impedir.
+G4 (lucro pelo mapa semântico × release, banco a banco) **rodou, reprovou em
+2026-08-11 e foi reaprovado em 2026-08-22** (`resultados/gate_g4.md`, custo
+zero na reexecução — lê o painel e o cache OCR local). Parte A (mapa ×
+conferência congelada) **aprovada** desde a primeira rodada — nenhuma célula
+reprova por erro de mapeamento nos cinco emissores. Parte B chegou a **20/20
+CONFERIDO** por duas ações distintas, cada uma com evidência versionada:
+
+- **BTG 4T2025 (sem âncora → conferido):** a demonstração anual em IFRS tinha
+  63 de 71 páginas com fonte sem mapa de caracteres (`pdfplumber`/`pdftotext`
+  devolviam `(cid:N)`). Localizada a página certa por **alinhamento
+  geométrico de coluna** (a estrutura tabular sobrevive à corrupção de fonte
+  mesmo quando o texto não), e lida com OCR pago e escopo travado a essa
+  única página (`scripts/ocr_ancora_ifrs.py`, custo real USD 0,30 — três
+  bugs do próprio script perderam duas chamadas já pagas antes da correta;
+  detalhe completo em `resultados/ancora_btg_4T2025.md`). Resultado: Δ =
+  +0,00002% — CONFERIDO.
+- **SANTANDER 3T2025 e 4T2025 (divergentes → conferidos com correção):** a
+  causa já estava apurada (o arquivo da CVM se contradiz internamente — a
+  conta-pai bate com a demonstração em IFRS ao milhar, as contas-filhas não).
+  Em vez de excluir as células ou corrigir em silêncio, foi construída uma
+  **tabela de correções com procedência obrigatória**
+  (`corpus/cvm/correcoes_contabeis.csv`, carregada e aplicada por
+  `src/dados_estruturados.py::carregar_correcoes`/`aplicar_correcoes`, RN09):
+  cada linha declara o valor original, o valor corrigido, o documento e a
+  página-fonte, o SHA-256 do PDF e uma evidência de no mínimo 60 caracteres.
+  **Guarda anti-porta-dos-fundos:** a correção só é aplicada se
+  `valor_original_reais` ainda bater com o painel ao vivo (tolerância 0,5);
+  se a CVM republicar o arquivo, a correção para de valer e a carga **falha**
+  em vez de aplicar às cegas. A visão `fatos_semanticos` expõe os dois
+  números (`valor_reais` corrigido e `valor_reais_arquivo` original) e a
+  flag `corrigido` — nunca silencioso. 24 testes em
+  `tests/test_correcoes_contabeis.py`.
+
+Nenhuma célula foi excluída e nenhum número foi trocado sem procedência
+auditável — as duas saídas que a "decisão pendente do Ygor" desenhava foram,
+na prática, a segunda (corrigir com procedência declarada) para o Santander e
+uma terceira via (pagar o OCR pontual) para o BTG, que a decisão original
+deixava em aberto por orçamento.
+
+### 3.4 Chunking de tabela — invariante acrescentada em 2026-08-23
+
+**Nenhum chunk pode abrir com linhas de valor sem a linha que nomeia a coluna.**
+A spec 5.3 já dizia que "número recuperado sem o rótulo da coluna é número
+inútil para citação" e essa era a razão declarada de ter trocado o extrator; o
+que faltava era a invariante ser **verificada** em vez de suposta.
+
+Veio da auditoria manual: o sistema respondeu `R$ 12.144 milhões` (coluna
+4T25) a uma pergunta sobre o 1T2026, cujo valor é `11.875`. O OCR estava
+certo e a tabela íntegra — o **chunk** é que abria nas duas últimas linhas
+dela, órfãs do cabeçalho. Duas causas independentes, ambas no `src/ingestao.py`:
+a cauda de sobreposição copiava tokens sem olhar o tipo de bloco, e a partição
+de tabela grande media a parte sem contar a legenda de unidade que ela própria
+emite. **101 chunks** abriam assim; **18 das 45 congeladas** recebiam um no
+top-5.
+
+**A primeira correção piorou o sistema e o registro disso é parte da regra.**
+Descartar tabela da cauda zerou os órfãos e derrubou a exatidão factual junto
+(E2 0,467 → 0,267), porque a duplicação do overlap era **também** rede de
+segurança — um valor perto da fronteira aparecia em dois chunks e recuperar
+qualquer um resolvia. A correção final **recoloca o cabeçalho** na cauda em vez
+de descartar a tabela.
+
+**O que a invariante exige de quem mexer no chunker:**
+`tests/test_chunking_tabela_orfa.py` roda contra o índice publicável e falha se
+um só chunk voltar a abrir com 3+ colunas de valor sem cabeçalho. As
+contraprovas do mesmo arquivo travam o que a correção não pode custar — a
+sobreposição de prosa continua atravessando e nenhuma linha de dado se perde na
+partição.
+
+**Lição de método, para não repetir:** `recall@5` é medido **por página** e foi
+sinal enganoso aqui — contava como acerto o chunk órfão, que não conseguia
+responder. Para julgar chunking, medir se o **valor** está no top-5, não se a
+página está.
 
 ---
 
@@ -248,7 +309,7 @@ tamanho de amostra".
 | **G1** | Criar recurso Azure OpenAI na assinatura de estudante | ❌ **Não disponível** (`resultados/gate.md`, 2026-07-15). Reservado ao pré-deploy; créditos vão para hospedagem |
 | **G2** | Cobertura da CVM suficiente para o rótulo T+1 do modelo preditivo | ✅ **Fechado em 2026-08-07** na fase de investigação — 1.351 observações de trimestre isolado, ~29% de positivos em um ano |
 | **G3** | Mistral OCR em **um** release contra `pdfplumber`, conferindo valores-âncora | ✅ **Rodado em 2026-08-11**, favorável mas não conclusivo (§3.2, `resultados/gate_g3.md`) |
-| **G4** | Lucro resolvido pelo mapa semântico bate com o release, **banco a banco, em todos os trimestres** | ❌ **Rodado em 2026-08-11, REPROVADO** (§3.3, `resultados/gate_g4.md`) — 2 células Santander divergentes, 1 BTG sem âncora; bloqueante até decisão do Ygor |
+| **G4** | Lucro resolvido pelo mapa semântico bate com o release, **banco a banco, em todos os trimestres** | ✅ **Reprovou em 2026-08-11, APROVADO em 2026-08-22** (§3.3, `resultados/gate_g4.md`) — 20/20 CONFERIDO; BTG 4T2025 fechado por OCR pontual, Santander 3T/4T2025 fechados por correção com procedência declarada |
 | Gate L1 | Inferência local Ollama sem API | ✅ Passou em 2026-07-15 (`resultados/gate_local.md`), com `prompt=v1` |
 | Gate Gemini | Duas chamadas controladas ao ramo ativo | ✅ Passou em 2026-07-15 (`resultados/gate_gemini.md`) |
 
@@ -302,17 +363,17 @@ Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisã
 |---|---|---|---|
 | 1 | **Gates do dia 1** — G1 (Azure) e G3 (OCR × `pdfplumber` em um release), com evidência antes de escrever código dependente | sessão principal | G1 ❌ resolvido para o pré-deploy · G3 ✅ (§3.2) |
 | 2 | **Corpus** — regra da interseção, `metadados.csv` com URL, data e SHA-256 | — | ✅ 20 documentos, hashes registrados |
-| 3 | **CVM → DuckDB** — carga ITR/DFP com as **seis regras de armadilha**, `mapa_contas`, visão `fatos_semanticos`, derivação do 4T, e o **gate G4 bloqueante** | `dados-cvm` | ✅ implementada · ❌ G4 reprovado (§3.3) — bloqueia a etapa 10 |
-| 4 | **Ingestão/OCR** com cache versionado + normalizador pt-BR + testes de qualidade e sentinela | sessão principal | ✅ `mistral_ocr` é o extrator ativo, cache versionado em `corpus/ocr/` (§3.2) |
+| 3 | **CVM → DuckDB** — carga ITR/DFP com as **seis regras de armadilha**, `mapa_contas`, visão `fatos_semanticos`, derivação do 4T, e o **gate G4 bloqueante** | `dados-cvm` | ✅ implementada · ✅ G4 aprovado em 2026-08-22 (§3.3) — etapa 10 desbloqueada |
+| 4 | **Ingestão/OCR** com cache versionado + normalizador pt-BR + testes de qualidade e sentinela | sessão principal | ✅ `mistral_ocr` ativo, cache em `corpus/ocr/` (§3.2) · ✅ chunking de tabela corrigido em 2026-08-23 (§3.4) — 0 chunks abrindo sem cabeçalho, era 101 |
 | 5 | **Indexação** — BM25 + embeddings em **Chroma**, com a guarda RNF09 | `indice-recuperacao` | 🔄 (migração FAISS → Chroma) |
 | 6 | **Recuperação** — filtro de metadados, subconsulta por banco, E0–E4 (§3.1-bis) | `indice-recuperacao` | ✅ base implementada · 🔄 sob a migração |
 | 7 | **Geração** — contrato JSON, citação obrigatória, recusa (RN01–RN02) | sessão principal | ✅ · ⬜ marcações de RN10/RN12 na resposta |
 | 8 | **Conjunto-padrão** — 45 congeladas + ~10 dev, conferidas pela classe de verificação | `conjunto-padrao` | ✅ congelado 2026-07-29 · ⬜ colunas novas da revisão 2 (`cobertura_esperada`, `motivo_recusa_esperado`, `base_esperada`, `rota_esperada`) |
 | 9 | **Comparação de estratégias E0–E4** — só `dev` na iteração; o congelado roda ao final, com log por execução | `observabilidade-avaliacao` | ✅ rodada em 2026-08-21 no congelado (45 × 5 = 225 chamadas, v6) — factual E1 0,400 · E2 0,333 · E3 **0,467** · E4 0,400; comparativa (métrica nova) E1 0,000 · E2/E3 0,100 · E4 **0,200**; E4 × E3 **indistinguível** (2×3 discordâncias, limiar 6) pela 3ª rodada seguida. Ver `MEMORY.md` |
-| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ⬜ (depende do G4) |
+| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ⬜ (G4 aprovado em 2026-08-22 — pré-condição satisfeita, não iniciada) |
 | 11 | **Ferramentas + agentes** — `verificar_cobertura`, Investigador e Auditor com filtro de contexto **em código**, teste que falha se o rastro vazar, braços A/B/C, triagem de cobertura; projeções depois | `agentes-investigacao` | ⬜ |
 | 12 | **Injeção de falha (RF25) e comparação dos três braços (RF26)** — registrar o veredito, inclusive se for "o determinístico basta" | `agentes-investigacao` + `observabilidade-avaliacao` | ⬜ |
-| 13 | **Langfuse + DeepEval** — traces por etapa e matriz de concordância com a auditoria manual | `observabilidade-avaliacao` | ⬜ |
+| 13 | **Langfuse + DeepEval** — traces por etapa e matriz de concordância com a auditoria manual | `observabilidade-avaliacao` | 🔄 matriz de concordância **medida** em 2026-08-23 (0,867, `scripts/medir_juiz_groundedness.py`) · ⬜ Langfuse e suíte DeepEval formal |
 | 14 | **Guardrails** — ataques bloqueados × falso bloqueio medido nas 45 legítimas (meta 0) | `seguranca-guardrails` | ✅ **completa** em 2026-08-21 — base determinística, ligada ao caminho interativo, **Presidio e Llama Prompt Guard 2 (86M) integrados** — **20/20 ataques · 0/45 falso bloqueio de entrada · 0/855 de saída** (`resultados/guardrails.json`, com as duas camadas ML ligadas na contraprova); `src/seguranca.py`, `src/reconhecedores_br.py`, `src/reconhecedor_presidio.py`, `src/prompt_guard.py`, `conjunto_padrao/ataques.csv`, `responder_com_guardrails` em `src/agentes.py`, portão em `app_streamlit.py`, `requirements-guardrails.txt`, 87 testes · `presidio_habilitado`/`prompt_guard_habilitado` desligados por padrão (RNF12) — pesos do Prompt Guard 2 já baixados e pinados (`guardrails_modelo_injecao_revision`), `HF_TOKEN` só foi necessário no download, runtime usa `local_files_only` |
 | 15 | **Interface Streamlit** — streaming, estado de sessão, painéis de evidência, etiqueta de derivado, estado de cobertura, veredito do Auditor | `interface-produto` | ✅ base cacheada + pergunta livre · ⬜ camadas novas |
 | 16 | **Publicação** — Container Apps primário, teto/alerta no provedor, dois modos validados | `interface-produto` | ⬜ |
@@ -344,6 +405,7 @@ Alvo da spec 5.21, com o que já existe marcado:
 │   ├── baixar_corpus.py         ✅   ├── baixar_cvm.py            ⬜
 │   ├── gate_local.py  ✅ · gate_gemini.py ✅ · gate.py ✅ · gate_seguranca.py ✅
 │   ├── medir_guardrails.py ✅   (etapa 14 — custo zero, evidência RNF08)
+│   ├── medir_juiz_groundedness.py ✅ (etapa 13 — juiz × auditoria humana)
 │   ├── preprocessar_ocr_mistral.py ✅ · reconciliar_chamada_orfa.py ✅
 │   └── preparar_auditoria_final.py · executar_estabilidade.py ·
 │       consolidar_auditoria_final.py                             ✅
@@ -376,6 +438,7 @@ Alvo da spec 5.21, com o que já existe marcado:
 └── tests/  conftest · test_ingestao ✅ · test_normalizacao ✅ · test_regras ✅
          · test_dados_estruturados ✅ · test_seguranca ✅ · test_isolamento ✅
          · test_cobertura ✅ · test_guardrails_integracao ✅ · test_deepeval ⬜
+         · test_chunking_tabela_orfa ✅ · test_guarda_rn02_auditoria ✅
          (+ suítes de hardening já existentes)
 ```
 

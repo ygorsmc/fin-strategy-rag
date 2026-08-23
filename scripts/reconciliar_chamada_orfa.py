@@ -52,13 +52,13 @@ def principal(argv: list[str] | None = None) -> int:
         else ""
     )
     checkpoint = args.dir_resultados / (
-        f"checkpoint{suffixo}.jsonl"
+        f"checkpoint{sufixo}.jsonl"
         if sufixo
         else f"checkpoint_{args.conjunto}.jsonl"
     )
     journal = args.dir_logs / "journal_chamadas" / f"{args.fingerprint}.jsonl"
     lock = args.dir_resultados / (
-        f".avaliacao_{args.conjunto}{suffixo}.lock"
+        f".avaliacao_{args.conjunto}{sufixo}.lock"
     )
     try:
         with bloqueio_exclusivo(lock, "a reconciliação da avaliação"):

@@ -172,23 +172,44 @@
   Validação: 2.790/2.790 páginas, nenhuma vazia, sentinela ok em 4 amostras.
   O desbloqueio foi ativar **Pay-As-You-Go** no console — crédito pré-pago é
   saldo, não permissão, e a Batch API recusava com HTTP 402 até então.
-- **Rodada congelada VIGENTE: `20260821T165512Z-2a9feb8a5b`** (2026-08-21,
-  225 chamadas, zero erro, **USD 0,2348**, `gemini-3.5-flash-lite`,
-  fingerprint `59634fb6`). Primeira com **v6** — a métrica de exatidão
-  comparativa — e com as guardas de coluna do TSTF006.
-  **Exatidão factual: E0 0,000 · E1 0,400 · E2 0,333 · E3 0,467 · E4 0,400.**
-  **Exatidão comparativa (nova): E1 0,000 · E2 0,100 · E3 0,100 · E4 0,200.**
-  Recall@5: E1 0,920 · E2/E3/E4 0,880. Recusa correta 1,000 em E1–E4.
-  **E4 × E3 nas factuais: 2 discordâncias de um lado, 3 do outro** (só E4:
-  TSTF005, TSTF013; só E3: TSTF009, TSTF010, TSTF014). Limiar é 6 —
-  **indistinguíveis, terceira rodada consecutiva dizendo o mesmo**. Encerrar
-  esse debate: E4 é empate medido, não melhoria.
-  **Segurança conferida:** das 36 respostas publicadas, **zero** omitem o
-  valor do gabarito. As 8 que o grader reprova têm os valores certos e caem
-  por exigência de qualificador na redação.
-  **Custo:** E4 saiu 0,001208, praticamente empatado com E3 (0,001233) —
-  desmente o registro anterior de que E4 seria a mais cara; aquilo era
-  característica da rodada, não da estratégia.
+- **Rodada congelada VIGENTE: `20260823T131515Z-4ad67021f6`** (2026-08-23,
+  225 chamadas, zero erro, **USD 0,2501**, `gemini-3.5-flash-lite`,
+  fingerprint `5b9b142d`). É a primeira sobre o índice de **7.147 chunks**,
+  com o chunking de tabela corrigido (ver bloco próprio abaixo).
+  **Exatidão factual: E0 0,000 · E1 0,333 · E2 0,333 · E3 0,467 · E4 0,667.**
+  **Exatidão comparativa: 0,000 em TODAS** — regressão contra os 0,100/0,200
+  da rodada anterior.
+  Recall@5: E1 0,920 · E2 0,800 · E3/E4 0,880. Recusa correta 1,000 em E1–E4.
+  **O 0,667 do E4 é o maior número de exatidão factual do projeto e MESMO
+  ASSIM não é vitória:** contra a rodada anterior o máximo é 4 discordâncias
+  numa direção e 3 na outra, e o limiar pré-declarado é 6 (McNemar exato).
+  Publicar como melhoria seria a leitura que o limiar existe para impedir.
+- **DUAS RODADAS PAGAS FORAM GASTAS NUM CONSERTO QUE PIOROU ANTES DE
+  MELHORAR** (2026-08-22/23, USD ~0,26 cada). Registrado porque a lição é o
+  método, não o número. A auditoria manual rastreou o erro do TSTF006 (o
+  modelo respondeu `12.144`, coluna 4T25, a uma pergunta de 1T26 cujo valor é
+  `11.875`) até o **chunker** — não o modelo, não o OCR. A tabela estava
+  íntegra; o chunk é que abria nas duas últimas linhas dela, órfãs do
+  cabeçalho de período. **Duas causas:** (a) a cauda de sobreposição copiava
+  os últimos tokens sem olhar o tipo de bloco; (b) a partição de tabela grande
+  media a parte sem contar a legenda de unidade que ela mesma emite.
+  **101 chunks** abriam com 3+ colunas de valor sem cabeçalho e **18 das 45**
+  recebiam um no top-5.
+  - **A 1ª correção foi cega e custou uma rodada.** Descartar tabela da cauda
+    zerou os órfãos e derrubou a exatidão factual junto (E1 0,400→0,200,
+    E2 0,467→0,267). Causa: a duplicação do overlap era **também** rede de
+    segurança — em TSTF010 o valor `3.659` estava em 2 chunks do top-5 antes
+    e em **nenhum** depois. Recall continuou `True` nos 6 casos que
+    quebraram, o que prova que o problema não era recuperação de página.
+  - **A 2ª correção recoloca o cabeçalho na cauda** em vez de descartar a
+    tabela: os fragmentos passaram a carregar os tokens do cabeçalho de
+    origem. Resultado: **0 órfãos**, valores de volta no top-5, e
+    **TSTF006 passou a acertar em E3**.
+  - **Lição de método:** `recall@5` é medido POR PÁGINA e foi sinal enganoso
+    aqui — ele contava como acerto o chunk órfão, que não conseguia
+    responder. Nas duas vezes em que recall e realidade discordaram nesta
+    investigação, recall estava errado. Para julgar chunking, medir se o
+    VALOR está no top-5, não se a página está.
 - **CITAÇÃO É O GARGALO ATUAL, MEDIDO (2026-08-21).** Em **18** respostas
   publicadas a página aceita **estava no top-5** e o modelo citou **outra**:
   12 factuais e 6 comparativas. Exemplos conferidos na mão: TSTC006 citou a
@@ -687,43 +708,44 @@
   de estrutura, **não correção**. A prova real é a exatidão numérica por
   `origem=tabela|texto` (spec 5.4). A decisão de trocar o extrator não se
   reverte, mas também não está demonstrada com a força que a spec antecipava.
-- **Gate G4: veredito REPROVADO** (`resultados/gate_g4.md`, 2026-08-11, custo
-  zero). Parte A (mapa × conferência congelada) **APROVADA** — o mapa resolve o
-  conceito certo nos cinco emissores e **nenhuma célula reprova por erro de
-  mapeamento**. Parte B: **17/20 conferidos, 2 divergentes, 1 sem âncora**.
-  **A terceira base contábil, agora com âncora dos dois lados.** A conciliação
-  dos releases parte de **BRGAAP/COSIF** e o arquivo da CVM está em **IFRS**
-  (CMN 4.818/2020). Itaú e Bradesco publicam a ponte no próprio release; para
-  BB, BTG e Santander a âncora passou a vir das **demonstrações em IFRS
-  publicadas em separado** (`corpus/ifrs/`, 15 peças com URL, data e SHA-256 em
-  `manifesto_ifrs.csv`; PDFs fora do Git, lidos por `scripts/ancora_ifrs.py`,
-  hash conferido antes de cada leitura). **Estas peças NUNCA entram em
-  `corpus/metadados.csv`** — isso mudaria a identidade do índice (RNF09).
-  **O que bloqueia:** (a) **SANTANDER 3T2025 e 4T2025 divergem de verdade**,
-  ±363,754 R$ mi — ver bullet próprio abaixo; (b) **BTG 4T2025 sem âncora**: a
-  demonstração anual tem 63 de 71 páginas com fonte sem mapa de caracteres
-  (`pdfplumber` e `pdftotext` devolvem `(cid:N)`); ler exigiria **OCR pago** —
-  decisão de orçamento, não tomada. Fallback mais fraco: o ITR/DFP em PDF.
-  **Consequência para a etapa 10:** o rótulo de lucro está conferido em **17 das
-  20** células, com as 3 restantes identificadas nominalmente — 2 com valor
-  errado **conhecido e quantificado**, 1 não medida.
-- **A divergência do Santander tem causa apurada: o erro é da CVM, não do
-  painel nem do mapa** (2026-08-11). No ITR `DT_REFER=2025-09-30` (`VERSAO=1`,
-  única publicada, `DT_RECEB=2025-10-29`), a conta `3.09` reproduz a
-  demonstração em IFRS **ao milhar** — 9.021.926 (9M) e 3.882.410 (3T) —, mas as
-  filhas não: `3.09.01` traz 8.501.317 / 3.464.450 onde a demonstração publica
-  8.865.071 / 3.828.204, e `3.09.02` traz 163.700 / 61.051 onde ela publica
-  156.855 / 54.206. O arquivo se contradiz sozinho (o gap de 356.909 já
-  registrado abaixo). Descartadas com evidência: erro de mapa (o mesmo mapa
-  fecha 2T2025 e 1T2026 do mesmo emissor ao milhar), retificadora (não há
-  `VERSAO=2` para esse `DT_REFER`, embora haja para o 1T2025 — a regra de maior
-  versão funciona) e troca de conceito. O 4T2025 herda o erro com **sinal
-  invertido**, porque o subtraendo da derivação (RN10) é o 9M defeituoso; a DFP
-  anual está correta, e por isso os dois erros **se anulam no exercício** — o
-  que torna a falha invisível para quem só olha o número anual.
-  **Nada foi consertado nem descartado no painel.** Decisão pendente do Ygor:
-  treinar a etapa 10 excluindo essas 2 células, ou corrigi-las com procedência
-  declarada. Corrigir em silêncio é o que o G4 existe para impedir.
+- **Gate G4: REPROVOU em 2026-08-11, APROVADO em 2026-08-22** (destravado nesta
+  sessão — `resultados/gate_g4.md` regenerado, custo zero, lê painel + cache
+  OCR local). Parte A seguia aprovada desde sempre. Parte B foi de **17/20
+  conferidos, 2 divergentes, 1 sem âncora** para **20/20 CONFERIDO**, por duas
+  ações distintas:
+  - **BTG 4T2025 (sem âncora):** localizada a página certa da demonstração
+    anual (63/71 páginas sem mapa de caracteres) por **alinhamento geométrico
+    de coluna** — a estrutura de tabela sobrevive à corrupção de fonte mesmo
+    quando o texto não. OCR pago escopado a essa única página
+    (`scripts/ocr_ancora_ifrs.py`; cache em
+    `corpus/ifrs/ocr/<hash-do-pdf>.json`). **Custo real USD 0,30, não os USD
+    0,14 estimados** — três bugs do próprio script (nome de campo errado,
+    gravação fora do `try`, merge de cache por sobrescrita) perderam duas
+    chamadas já pagas antes da correta; os três foram corrigidos e ficam
+    registrados no script. Resultado: Δ = +0,00002% — CONFERIDO. Detalhe
+    completo, inclusive o custo desperdiçado, em
+    `resultados/ancora_btg_4T2025.md`. **Achado lateral confirma a RN11:**
+    resolver "BTG" por nome (em vez de `cd_cvm`) bate em duas companhias
+    (`022616` e `027774`).
+  - **SANTANDER 3T2025 e 4T2025 (divergentes):** em vez de excluir as células
+    ou corrigir em silêncio, nova infraestrutura de **correção com
+    procedência obrigatória** — `corpus/cvm/correcoes_contabeis.csv`
+    (versionado), carregado/aplicado por `src/dados_estruturados.py`
+    (`carregar_correcoes`/`aplicar_correcoes`), exposto pela view
+    `fatos_semanticos` com os dois números (`valor_reais` corrigido e
+    `valor_reais_arquivo` original) e a flag `corrigido`. **Guarda
+    anti-porta-dos-fundos:** a correção só aplica se `valor_original_reais`
+    ainda bater com o painel ao vivo (tolerância 0,5); se a CVM republicar, a
+    carga **falha** em vez de aplicar às cegas. Evidência/motivo exigem
+    ≥60 caracteres cada. 24 testes em `tests/test_correcoes_contabeis.py`,
+    incluindo um canário que trava "toda correção viva hoje é do Santander" —
+    qualquer correção nova para outro banco exige revisão explícita desse
+    teste. Causa da divergência (inalterada desde 2026-08-11): a conta-pai do
+    ITR bate com a demonstração em IFRS ao milhar, as duas contas-filhas não;
+    o 4T herdava o erro com sinal invertido por ser derivado do 3T defeituoso.
+  **Consequência:** a etapa 10 (modelo preditivo) está desbloqueada — G4 era a
+  única pré-condição em aberto. `AGENTS.md` e `README.md` já refletem G4
+  aprovado (atualizados nesta sessão).
 - **Defeitos de resolução de entidade corrigidos em `src/cobertura.py`**
   (2026-08-11), achados pelo braço C: `extrair_mencoes` devolvia o **slug** em
   vez da forma de superfície, e "Banco do Brasil" reduzido a `BB` passava a
@@ -811,14 +833,55 @@ tratado como fonte na spec:
   em `low` e a taxa de consulta de dado foi de 1/15 para 12/15. Ver o bullet do
   prompt `a2` acima. Fica em aberto só o resíduo AGTC005 (recusa sem verificar
   cobertura).
-- **Decidir o que fazer com SANTANDER 3T2025/4T2025 no rótulo da etapa 10**
-  (excluir as 2 células ou corrigi-las com procedência declarada) e se vale
-  gastar OCR pago para ler a demonstração anual do BTG e fechar a última célula
-  sem âncora. As duas decisões são do Ygor; o gate já entregou a medição.
+- **G4 resolvido em 2026-08-22 — nada pendente dele.** Ver bloco acima.
 - **Etapa 14 está fechada — nada pendente dela.** Próximo trabalho é outra
-  etapa do plano (§7 do AGENTS.md): 10 (modelo preditivo, bloqueado por G4),
-  11–13 (agentes/observabilidade além do já construído), ou a decisão do G4
-  em si.
+  etapa do plano (§7 do AGENTS.md): 10 (modelo preditivo, agora desbloqueado),
+  11–13 (agentes/observabilidade além do já construído), ou a leitura humana
+  de groundedness abaixo.
+- **O bloqueio do fingerprint de 2026-08-22 está FECHADO.** Ele veio de um bug
+  real, não do guarda: `src/auditoria.py::_validar_metricas_contra_checkpoint`
+  não conhecia `avaliar_exatidao_comparativa` e reconstruía `exatidao_ok` como
+  `None` para toda pergunta comparativa, reprovando 50 linhas corretas com
+  "Flags automáticas do checkpoint foram adulteradas". Corrigido, com a
+  fixture `_item_auditoria` de `tests/test_hardening_final.py` junto.
+- **Auditoria de groundedness: 10/15 = 0,667 na rodada `a0bea525`, meta 0,90
+  NÃO atingida.** Vereditos do Ygor em
+  `artefatos/resultados_avaliacao/auditoria_groundedness_a0bea525.json`,
+  análise em `resultados/auditoria_groundedness_2026-08-22.md`.
+  **Nenhuma alucinação publicada: os 5 erros são todos falso negativo da
+  guarda.** Duas leituras importantes que saíram dela:
+  - **`grounded` foi preenchido como "o sistema fez a coisa certa?"**, não como
+    "o texto publicado afirma algo sem lastro". Pela leitura literal o score
+    seria 15/15, porque 12 das 15 terminaram em recusa e recusa não alucina —
+    número verdadeiro e vazio. A escolha está declarada no relatório.
+  - **TSTC008 é descarte CORRETO, ao contrário do que a auditoria marcou.** A
+    diferença entre duas taxas é em **pontos percentuais**: o modelo escreveu
+    `26,6% - 24,8% = 1,8%` e a guarda recusou com razão; `1,8 p.p.` passaria.
+    Travado em teste para nenhuma correção futura afrouxar isso.
+  **Esta auditoria vale para um fingerprint já obsoleto** — refazer sobre a
+  rodada vigente `5b9b142d`.
+- **Juiz automático medido contra a auditoria humana (etapa 13, 2026-08-23):
+  concordância 0,867 (13/15), USD 0,0161.** `gemini-3.7-flash` julgando
+  `gemini-3.5-flash-lite` (juiz ≠ gerador de propósito), sobre os 15 cujo
+  veredito humano foi dado ÀS CEGAS — rodar o juiz antes da leitura ancoraria
+  o auditor e a matriz viraria artefato. Relatório em
+  `resultados/concordancia_juiz_humano_2026-08-23.md`.
+  - **A célula `juiz acertou × humano errou` é ZERO:** o juiz pegou os 5
+    falsos negativos que a leitura humana pegou. Serve como TRIAGEM.
+  - **E falhou no caso decisivo.** Em TSTF006 disse "fundamentada" porque viu
+    `12.144` no trecho — sem conferir de qual período era a coluna. É *número
+    certo, coluna errada*, a falha que o projeto existe para pegar. A guarda
+    determinística acertou onde o LLM mais forte errou. **Confirma a spec 5.23
+    com dado do próprio projeto** e é a razão de o juiz NÃO poder decidir
+    publicação.
+  - Cota: 20 req/dia, **5 req/min** — o script pausa 12,5 s entre chamadas.
+- **Próximo passo imediato:** rodar `python -m scripts.preparar_auditoria_final`
+  sobre a rodada vigente `5b9b142d` e refazer a leitura humana dos 15. Depois
+  dela, `scripts/executar_estabilidade.py --permitir-api-paga` (30 chamadas) e
+  `scripts/consolidar_auditoria_final.py` — a promoção a `completa` exige
+  groundedness ≥ 0,90, então com 0,667 ela ficaria em
+  `auditoria_concluida_meta_nao_atingida`.
+- **Gasto acumulado nos logs versionados: USD 2,87** de um teto de 25 (RNF03).
 - Em paralelo, fazer a **dupla leitura** dos 10 valores de release marcados como
   pendentes em `conjunto_agentes.csv` (a página física de cada um está em
   `fonte_gabarito`). Sem ela, 10 das 15 seguem em `pendente_conferencia_humana`
