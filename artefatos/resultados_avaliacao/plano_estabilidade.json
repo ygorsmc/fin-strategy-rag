@@ -1,7 +1,7 @@
 {
   "_meta": {
     "estrategia": "semantica",
-    "fingerprint_base": "f07f176c808cbcd8c0d7a20a63a87c5fa2b6881d0bd653929b2344851fbfe9ad",
+    "fingerprint_base": "5b9b142d675243bededb03de3f4014ec31f7c63bd04b90219fc85a039ae20966",
     "metodo_amostra": "sha256 estratificado 3/3/2/2",
     "n_perguntas": 10,
     "repeticoes": 3,
@@ -9,15 +9,15 @@
     "temperatura": 0.0
   },
   "pergunta_ids": [
+    "TSTF014",
     "TSTF004",
-    "TSTF001",
-    "TSTF008",
+    "TSTF006",
     "TSTC002",
-    "TSTC008",
-    "TSTC004",
-    "TSTQ004",
-    "TSTQ001",
-    "TSTA007",
-    "TSTA009"
+    "TSTC009",
+    "TSTC005",
+    "TSTQ006",
+    "TSTQ009",
+    "TSTA003",
+    "TSTA004"
   ]
 }

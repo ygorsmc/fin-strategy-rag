@@ -67,9 +67,10 @@ subconsulta por banco; geração JSON com RN01 e grounding numérico da RN02;
 avaliação retomável com fingerprint v3, journal/checkpoint, teto de custo e
 locks; interface cacheada com pergunta livre opt-in.
 
-**Convenção de testes (obrigatória):** a suíte local tem **1.532 casos coletados
-e nenhum skip** (medido em 2026-08-23, com `requirements-guardrails.txt`
-instalado e os pesos do Prompt Guard 2 no cache local). NUNCA enfraquecer uma asserção para fazer
+**Convenção de testes (obrigatória):** a suíte local tem **1.564 casos coletados
+e nenhum skip** (medido em 2026-08-23, com `requirements-guardrails.txt` e
+`requirements-modelo.txt` instalados e os pesos do Prompt Guard 2 no cache
+local). NUNCA enfraquecer uma asserção para fazer
 código passar — o teste é o contrato e o código se adapta a ele. `pytest` verde
 é pré-condição de qualquer commit; etapa implementada = testes da etapa
 presentes e passando. Enquanto houver onda paralela em voo, um vermelho
@@ -86,9 +87,11 @@ auditável da curadoria e não é carregado pelo pipeline.
 inclui `chromadb` e `duckdb`. `requirements-local.txt` adiciona
 `sentence-transformers` só para `EMBEDDING_PROVIDER=local`;
 `requirements-lora.txt` isola PyTorch/PEFT do módulo opcional;
+`requirements-modelo.txt` isola o scikit-learn da etapa 10, que roda offline e
+não toca o caminho interativo (RN07);
 `requirements-guardrails.txt` isola Presidio + modelo spaCy `pt_core_news_md`
 (~40 MB) e reusa `requirements-lora.txt` para o PyTorch/transformers que o
-Prompt Guard 2 vai exigir. Nenhum dos três entra no deploy enxuto por padrão
+Prompt Guard 2 vai exigir. Nenhum dos quatro entra no deploy enxuto por padrão
 (RNF12).
 
 ---
@@ -370,7 +373,7 @@ Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisã
 | 7 | **Geração** — contrato JSON, citação obrigatória, recusa (RN01–RN02) | sessão principal | ✅ · ⬜ marcações de RN10/RN12 na resposta |
 | 8 | **Conjunto-padrão** — 45 congeladas + ~10 dev, conferidas pela classe de verificação | `conjunto-padrao` | ✅ congelado 2026-07-29 · ⬜ colunas novas da revisão 2 (`cobertura_esperada`, `motivo_recusa_esperado`, `base_esperada`, `rota_esperada`) |
 | 9 | **Comparação de estratégias E0–E4** — só `dev` na iteração; o congelado roda ao final, com log por execução | `observabilidade-avaliacao` | ✅ rodada em 2026-08-21 no congelado (45 × 5 = 225 chamadas, v6) — factual E1 0,400 · E2 0,333 · E3 **0,467** · E4 0,400; comparativa (métrica nova) E1 0,000 · E2/E3 0,100 · E4 **0,200**; E4 × E3 **indistinguível** (2×3 discordâncias, limiar 6) pela 3ª rodada seguida. Ver `MEMORY.md` |
-| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ⬜ (G4 aprovado em 2026-08-22 — pré-condição satisfeita, não iniciada) |
+| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ✅ **2026-08-23** — 1.699 obs, 29,9% positivos, split temporal 873/420/406. Teste: AUC **0,877** (logística) e 0,844 (boosting) contra **0,745** da persistência; à precisão **0,833 no MESMO recall** da regra simples (0,644). F1/acurácia ficam ABAIXO da persistência no limiar por F2 — preço declarado da preferência por recall (5.10). `resultados/modelo_preditivo_2026-08-23.md` |
 | 11 | **Ferramentas + agentes** — `verificar_cobertura`, Investigador e Auditor com filtro de contexto **em código**, teste que falha se o rastro vazar, braços A/B/C, triagem de cobertura; projeções depois | `agentes-investigacao` | ⬜ |
 | 12 | **Injeção de falha (RF25) e comparação dos três braços (RF26)** — registrar o veredito, inclusive se for "o determinístico basta" | `agentes-investigacao` + `observabilidade-avaliacao` | ⬜ |
 | 13 | **Langfuse + DeepEval** — traces por etapa e matriz de concordância com a auditoria manual | `observabilidade-avaliacao` | 🔄 matriz de concordância **medida** em 2026-08-23 (0,867, `scripts/medir_juiz_groundedness.py`) · ⬜ Langfuse e suíte DeepEval formal |
@@ -398,13 +401,14 @@ Alvo da spec 5.21, com o que já existe marcado:
 ├── AGENTS.md · CLAUDE.md · MEMORY.md · README.md · DESAFIO_CBL.md · LICENSE (MIT)
 ├── .docs/                       (local — NUNCA publicado; exceto a cópia do desafio)
 ├── requirements.txt · requirements-local.txt · requirements-lora.txt ·
-│   requirements-guardrails.txt
+│   requirements-guardrails.txt · requirements-modelo.txt
 ├── .env.example · .gitignore · pytest.ini
 ├── executar_pipeline.py         (orquestrador; --amostra, --etapa)
 ├── scripts/
 │   ├── baixar_corpus.py         ✅   ├── baixar_cvm.py            ⬜
 │   ├── gate_local.py  ✅ · gate_gemini.py ✅ · gate.py ✅ · gate_seguranca.py ✅
 │   ├── medir_guardrails.py ✅   (etapa 14 — custo zero, evidência RNF08)
+│   ├── treinar_modelo.py ✅     (etapa 10 — custo zero, treino em CPU)
 │   ├── medir_juiz_groundedness.py ✅ (etapa 13 — juiz × auditoria humana)
 │   ├── preprocessar_ocr_mistral.py ✅ · reconciliar_chamada_orfa.py ✅
 │   └── preparar_auditoria_final.py · executar_estabilidade.py ·
@@ -423,7 +427,7 @@ Alvo da spec 5.21, com o que já existe marcado:
 │   ├── braco_agente.py ✅ · braco_determinista.py ✅ · injecao_falha.py ✅
 │   ├── seguranca.py ✅ · reconhecedores_br.py ✅ · reconhecedor_presidio.py ✅
 │   ├── prompt_guard.py ✅ · observabilidade.py ⬜
-│   └── modelo/ construir_painel.py · treinar.py · prever.py      ⬜
+│   └── modelo/ construir_painel.py ✅ · treinar.py ✅ · prever.py ✅
 ├── conjunto_padrao/
 │   ├── perguntas.csv            ✅ 10 dev + 45 teste congeladas
 │   └── ataques.csv              ✅ 20 ataques (11 tópico + 9 injeção)
@@ -439,6 +443,7 @@ Alvo da spec 5.21, com o que já existe marcado:
          · test_dados_estruturados ✅ · test_seguranca ✅ · test_isolamento ✅
          · test_cobertura ✅ · test_guardrails_integracao ✅ · test_deepeval ⬜
          · test_chunking_tabela_orfa ✅ · test_guarda_rn02_auditoria ✅
+         · test_modelo ✅ (inclui TestRN07 e TestVazamentoTemporal)
          (+ suítes de hardening já existentes)
 ```
 

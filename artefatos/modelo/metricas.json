@@ -1,0 +1,286 @@
+{
+  "divisao": {
+    "n_treino": 873,
+    "n_validacao": 420,
+    "n_teste": 406,
+    "trimestres_treino": [
+      "1T2025",
+      "2T2025"
+    ],
+    "trimestre_validacao": "3T2025",
+    "trimestre_teste": "4T2025",
+    "taxa_positivos_treino": 0.27262313860252,
+    "taxa_positivos_validacao": 0.3357142857142857,
+    "taxa_positivos_teste": 0.31773399014778325
+  },
+  "features": [
+    "roe_trimestral",
+    "roa_trimestral",
+    "alavancagem",
+    "log_ativo_total",
+    "patrimonio_negativo",
+    "prejuizo_em_t",
+    "prejuizo_em_t_menos_1",
+    "taxa_prejuizos_ate_t",
+    "delta_roe",
+    "delta_lucro_sobre_ativo",
+    "delta_patrimonio_relativo",
+    "passivo_sobre_ativo",
+    "variacao_lucro_escalada",
+    "dois_prejuizos_seguidos"
+  ],
+  "metricas": [
+    {
+      "nome": "baseline_classe_majoritaria",
+      "limiar": 0.5,
+      "n": 406,
+      "acuracia": 0.6822660098522167,
+      "precisao": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": null,
+      "verdadeiro_positivo": 0,
+      "falso_positivo": 0,
+      "verdadeiro_negativo": 277,
+      "falso_negativo": 129,
+      "conjunto": "teste",
+      "matriz_confusao": [
+        [
+          277,
+          0
+        ],
+        [
+          129,
+          0
+        ]
+      ]
+    },
+    {
+      "nome": "baseline_persistencia",
+      "limiar": 0.5,
+      "n": 406,
+      "acuracia": 0.7758620689655172,
+      "precisao": 0.6439393939393939,
+      "recall": 0.6589147286821705,
+      "f1": 0.6513409961685823,
+      "roc_auc": 0.7446198192147314,
+      "verdadeiro_positivo": 85,
+      "falso_positivo": 47,
+      "verdadeiro_negativo": 230,
+      "falso_negativo": 44,
+      "conjunto": "teste",
+      "matriz_confusao": [
+        [
+          230,
+          47
+        ],
+        [
+          44,
+          85
+        ]
+      ]
+    },
+    {
+      "nome": "regressao_logistica",
+      "limiar": 0.0842,
+      "n": 420,
+      "acuracia": 0.7380952380952381,
+      "precisao": 0.5803108808290155,
+      "recall": 0.7943262411347518,
+      "f1": 0.6706586826347305,
+      "roc_auc": 0.7947838023335622,
+      "verdadeiro_positivo": 112,
+      "falso_positivo": 81,
+      "verdadeiro_negativo": 198,
+      "falso_negativo": 29,
+      "conjunto": "validacao",
+      "matriz_confusao": [
+        [
+          198,
+          81
+        ],
+        [
+          29,
+          112
+        ]
+      ]
+    },
+    {
+      "nome": "regressao_logistica",
+      "limiar": 0.0842,
+      "n": 406,
+      "acuracia": 0.7364532019704434,
+      "precisao": 0.5504587155963303,
+      "recall": 0.9302325581395349,
+      "f1": 0.6916426512968299,
+      "roc_auc": 0.8874149945428595,
+      "verdadeiro_positivo": 120,
+      "falso_positivo": 98,
+      "verdadeiro_negativo": 179,
+      "falso_negativo": 9,
+      "conjunto": "teste",
+      "matriz_confusao": [
+        [
+          179,
+          98
+        ],
+        [
+          9,
+          120
+        ]
+      ]
+    },
+    {
+      "nome": "regressao_logistica_limiar_0.5",
+      "limiar": 0.5,
+      "n": 406,
+      "acuracia": 0.8325123152709359,
+      "precisao": 0.8588235294117647,
+      "recall": 0.5658914728682171,
+      "f1": 0.6822429906542056,
+      "roc_auc": 0.8874149945428595,
+      "verdadeiro_positivo": 73,
+      "falso_positivo": 12,
+      "verdadeiro_negativo": 265,
+      "falso_negativo": 56,
+      "conjunto": "teste",
+      "matriz_confusao": [
+        [
+          265,
+          12
+        ],
+        [
+          56,
+          73
+        ]
+      ]
+    },
+    {
+      "nome": "gradient_boosting",
+      "limiar": 0.0083,
+      "n": 420,
+      "acuracia": 0.6190476190476191,
+      "precisao": 0.4646840148698885,
+      "recall": 0.8865248226950354,
+      "f1": 0.6097560975609756,
+      "roc_auc": 0.8000965962530822,
+      "verdadeiro_positivo": 125,
+      "falso_positivo": 144,
+      "verdadeiro_negativo": 135,
+      "falso_negativo": 16,
+      "conjunto": "validacao",
+      "matriz_confusao": [
+        [
+          135,
+          144
+        ],
+        [
+          16,
+          125
+        ]
+      ]
+    },
+    {
+      "nome": "gradient_boosting",
+      "limiar": 0.0083,
+      "n": 406,
+      "acuracia": 0.5788177339901478,
+      "precisao": 0.42657342657342656,
+      "recall": 0.9457364341085271,
+      "f1": 0.5879518072289157,
+      "roc_auc": 0.8527411636302579,
+      "verdadeiro_positivo": 122,
+      "falso_positivo": 164,
+      "verdadeiro_negativo": 113,
+      "falso_negativo": 7,
+      "conjunto": "teste",
+      "matriz_confusao": [
+        [
+          113,
+          164
+        ],
+        [
+          7,
+          122
+        ]
+      ]
+    },
+    {
+      "nome": "gradient_boosting_limiar_0.5",
+      "limiar": 0.5,
+      "n": 406,
+      "acuracia": 0.812807881773399,
+      "precisao": 0.8045977011494253,
+      "recall": 0.5426356589147286,
+      "f1": 0.6481481481481481,
+      "roc_auc": 0.8527411636302579,
+      "verdadeiro_positivo": 70,
+      "falso_positivo": 17,
+      "verdadeiro_negativo": 260,
+      "falso_negativo": 59,
+      "conjunto": "teste",
+      "matriz_confusao": [
+        [
+          260,
+          17
+        ],
+        [
+          59,
+          70
+        ]
+      ]
+    }
+  ],
+  "analises": {
+    "precisao_ao_recall_da_persistencia": {
+      "recall_alvo": 0.6589147286821705,
+      "precisao_da_persistencia": 0.6439393939393939,
+      "regressao_logistica": {
+        "limiar": 0.3712,
+        "recall": 0.6589147286821705,
+        "precisao": 0.8018867924528302
+      },
+      "gradient_boosting": {
+        "limiar": 0.2346,
+        "recall": 0.6589147286821705,
+        "precisao": 0.7083333333333334
+      }
+    },
+    "ablacao_sem_historico_de_prejuizo": {
+      "regressao_logistica": 0.7708560714185767,
+      "gradient_boosting": 0.8499706153975317
+    },
+    "contraste_corpus_painel": {
+      "n_observacoes_corpus": 28,
+      "n_prejuizos_corpus": 0,
+      "taxa_prejuizo_corpus": 0.0,
+      "n_observacoes_painel": 2305,
+      "n_prejuizos_painel": 684,
+      "taxa_prejuizo_painel": 0.2967462039045553
+    },
+    "trimestres_usados": [
+      "1T2025",
+      "2T2025",
+      "3T2025",
+      "4T2025",
+      "1T2026"
+    ],
+    "trimestres_descartados": {
+      "3T2026": 9,
+      "2T2026": 128,
+      "1T2027": 1
+    },
+    "colunas_descartadas": {
+      "receita_intermediacao": "preenchida em 77 de 2.321 linhas (3%) — é conceito de instituição financeira e o painel é majoritariamente não financeiro; imputar 97% de uma coluna é inventar variável, não tratá-la",
+      "margem_liquida": "derivada de receita_intermediacao, herda o mesmo 3% de preenchimento",
+      "lucro_liquido_controladores": "colinear com o lucro consolidado, que é a base do rótulo; entra indiretamente pela razão de participação, que não é estável quando o denominador passa perto de zero",
+      "n_trimestres_observados": "confundida com o tempo: como o painel começa em 1T2025, a profundidade de histórico é determinada pelo trimestre (1 em 1T2025, 4 em 4T2025). O split temporal põe profundidade 1–3 no treino e 4 no teste, então o valor de teste NUNCA foi visto no treino e qualquer corte de árvore nessa coluna extrapola. Fica no quadro para auditoria, fora das features",
+      "n_prejuizos_ate_t": "contagem limitada pela profundidade, herda a mesma confusão com o tempo; substituída por `taxa_prejuizos_ate_t`, que é comparável entre profundidades diferentes"
+    }
+  },
+  "observacoes": [
+    "Split temporal; o limiar sai da validação, nunca do teste.",
+    "Métrica prioritária é recall (5.10); limiar escolhido por F2.",
+    "RN07: nenhuma saída por companhia nomeada é publicada."
+  ]
+}

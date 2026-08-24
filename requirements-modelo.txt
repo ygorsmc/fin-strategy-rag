@@ -1,0 +1,9 @@
+-r requirements.txt
+
+# Etapa 10 (spec 5.10) — modelo supervisionado offline sobre o painel CVM.
+#
+# Isolado do runtime por RNF12: este módulo NÃO participa do caminho que
+# responde ao usuário (RN07 — ver src/modelo/prever.py), roda offline e não
+# tem por que pesar no deploy enxuto. `scipy`, `joblib` e `threadpoolctl`
+# entram como dependências transitivas do scikit-learn.
+scikit-learn==1.8.0

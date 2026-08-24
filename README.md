@@ -109,12 +109,12 @@ verificável em **2026-08-23**, não a intenção.
 | Avaliação retomável: fingerprint, journal, checkpoint, teto de custo | ✅ |
 | Painel contábil CVM em DuckDB, mapa semântico de contas, 4T derivado | ✅ construído · ✅ **gate G4 aprovado** (ver abaixo) |
 | Camada de agentes (Investigador + Auditor, três braços, injeção de falha) | ✅ os três braços rodaram · ⬜ falta acompanhamento de projeções |
-| Modelo preditivo supervisionado sobre o painel | ⬜ não construído (G4 aprovado — pré-condição satisfeita) |
+| Modelo preditivo supervisionado sobre o painel | ✅ 1.699 obs, split temporal, baselines e ablação (`resultados/modelo_preditivo_2026-08-23.md`) — offline, nunca exposto por companhia nomeada (RN07) |
 | Guardrails (PII, injeção, tópico proibido) | ✅ **20/20 ataques bloqueados · 0/45 falso bloqueio de entrada · 0/855 de saída**, com Presidio e Llama Prompt Guard 2 ligados na contraprova |
 | Observabilidade (Langfuse) e suíte automatizada de *faithfulness* | ⬜ Langfuse não construída · ✅ juiz automático medido contra a auditoria humana (0,867) |
 | Interface Streamlit (modo cacheado + pergunta livre opt-in) | ✅ base; camadas novas pendentes |
 
-Suíte de testes: **1.532 casos automatizados, sem skips**. `pytest` verde é
+Suíte de testes: **1.564 casos automatizados, sem skips**. `pytest` verde é
 pré-condição de qualquer commit.
 
 **Gate G4: reprovou em 2026-08-11, aprovado em 2026-08-22.** O gate confere,
@@ -157,14 +157,27 @@ qualquer estratégia é 4 numa direção e 3 na outra. O veredito publicado é
 exatidão factual que o projeto já mediu. Publicar 0,667 como vitória seria
 exatamente o tipo de leitura que o limiar pré-registrado existe para impedir.
 
-**A coluna comparativa está em zero, e isso é regressão medida.** Na rodada de
-2026-08-21 três estratégias marcavam 0,100 e o E4 marcava 0,200. Até 2026-08-20
-essas 10 perguntas não tinham verificação nenhuma de acerto numérico — o
-sistema podia publicar número errado sem métrica registrar. A causa medida não
-é recuperação: em 18 das respostas publicadas a página correta **estava** entre
-as recuperadas e o modelo citou outra — o índice do documento, ou a tabela do
-semestre acumulado em vez da do trimestre. Citação, não recuperação, é o
-gargalo.
+**A coluna comparativa está em zero, e isso é teto estrutural — não regressão.**
+Uma versão anterior deste README chamou o zero de regressão; a apuração de
+2026-08-23 (`resultados/teto_comparativas_2026-08-23.md`, custo zero) mostra que
+a palavra estava errada. Cada comparativa exige de 1 a 5 valores, um por banco,
+e o orçamento de recuperação é **top-5 global** — nas cinco perguntas que pedem
+os cinco bancos sobra **um chunk por banco**. Medindo se o valor do gabarito
+está no chunk daquele banco, o **teto** (perguntas em que todos os valores
+chegaram) é E1 1/10 · E2 2/10 · E3 2/10 · **E4 5/10**. Com 0/10 publicado, o
+sistema disputa contra um teto de 1 a 5, nunca de 10.
+
+A recuperação **não** é o gargalo aqui: a subconsulta por banco entregou todos
+os bancos exigidos em **40 de 40** execuções. O que falta é o número dentro do
+chunk certo. E o teto do E4 é **idêntico** nas três últimas rodadas (5/10),
+enquanto E2/E3 variaram em uma pergunta — a diferença entre "0,100–0,200" e
+"0,000" são 1 a 3 eventos sobre uma base de 1 a 5, dentro do ruído e muito
+abaixo do limiar de 6.
+
+Dar orçamento por banco à comparativa resolveria o teto, mas **mudaria o
+orçamento de contexto** — e o §3.1-bis do `AGENTS.md` já estabeleceu, com
+medição, que isso torna a comparação E0–E4 não comparável. O caminho correto é
+medição declarada em separado, como o E4 entrou. Não implementado.
 
 ### Chunking de tabela: o defeito achado pela auditoria manual
 
@@ -264,7 +277,7 @@ de falso bloqueio se mantêm — evidência em `resultados/guardrails.json`.
 | Ataques bloqueados | 20 ataques (injeção + tópico) | **20/20** |
 | Concordância entre juiz automático e auditoria humana | mesma amostra de 15 | **0,867** (13/15), `gemini-3.7-flash` |
 | Comparação dos três braços (agente único × Investigador+Auditor × determinístico) | 15 pareadas | não medido |
-| Modelo preditivo (ROC-AUC contra baselines) | teste temporal | não medido |
+| Modelo preditivo (ROC-AUC contra baselines) | teste temporal, 406 obs | **0,877** (logística) e 0,844 (boosting) contra **0,745** da persistência |
 | Custo real da API contra o teto de USD 25 | projeto inteiro | **USD 2,87** acumulado nos logs versionados |
 
 **Metas declaradas antes do teste** (spec 5.14): Recall@5 ≥ 0,80; exatidão
