@@ -295,13 +295,33 @@ def construir_regressao_logistica() -> Pipeline:
 
 
 def construir_gradient_boosting() -> HistGradientBoostingClassifier:
-    """Árvores com tratamento nativo de nulo — não precisa imputar."""
+    """Árvores com tratamento nativo de nulo — não precisa imputar.
+
+    **`early_stopping=False` é explícito, e a explicitação corrige um defeito
+    (2026-08-25).** O padrão do scikit-learn é `'auto'`, que **liga sozinho
+    quando `n > 10.000`. No walk-forward o treino cruza esse limiar no fold 21:
+    21 folds treinavam 300 iterações fixas e 25 paravam cedo (o último com 111
+    árvores). Três consequências, todas ruins:
+
+    1. o estimador **não era o mesmo objeto** ao longo dos folds;
+    2. o critério de parada saía de uma partição **aleatória e não temporal**
+       de 10% do treino, misturando trimestres dentro da janela;
+    3. a ressalva publicada "nenhum ajuste de hiperparâmetro foi feito" era
+       **falsa** — o número de árvores estava sendo selecionado por fold, e a
+       comparação boosting × logística não era equivalente, porque um braço
+       tinha um ajustador implícito e o outro não.
+
+    Efeito numérico: 0,8787 com `False` contra 0,8797 com `'auto'` (−0,0009,
+    p = 0,20) — desprezível, o que só reforça que o problema era de contrato,
+    não de desempenho.
+    """
     return HistGradientBoostingClassifier(
         max_iter=300,
         learning_rate=0.05,
         max_leaf_nodes=15,
         min_samples_leaf=20,
         l2_regularization=1.0,
+        early_stopping=False,
         random_state=SEMENTE,
     )
 
@@ -363,6 +383,49 @@ def escore_classe_majoritaria(treino: pd.DataFrame, alvo: pd.DataFrame) -> np.nd
 def escore_persistencia(alvo: pd.DataFrame) -> np.ndarray:
     """"Teve prejuízo em T, terá em T+1" — a regra simples a bater."""
     return alvo["prejuizo_em_t"].to_numpy(dtype=float)
+
+
+def escore_taxa_recente(alvo: pd.DataFrame) -> np.ndarray:
+    """`taxa_prejuizos_4t` crua — **o baseline honesto**, e ele é duro.
+
+    A persistência é preditor de **dois valores** e o AUC pune empate: no fold
+    3T2025, 33,6% dos pares +/− ficam empatados e contam 0,5 cada. O ganho de
+    +0,10 que o relatório publicava contra ela era, em ~87%, artefato de
+    granularidade — não capacidade do modelo.
+
+    Esta coluna já existe no painel, tem 7 níveis, e sozinha marca AUC 0,8646
+    contra 0,8765 do boosting de 15 features. **A manchete honesta é +0,0138,
+    não +0,10.** Com desempate por ROA (duas linhas de código) a diferença some
+    de vez: +0,0015 de AUC (p = 0,33) e −0,0049 de AP — o modelo perde em AP.
+
+    Achado das auditorias de 2026-08-25; ver `resultados/debate_modelo_*.md`.
+    """
+    return alvo["taxa_prejuizos_4t"].to_numpy(dtype=float)
+
+
+def escore_identidade_implementavel(
+    treino: pd.DataFrame, alvo: pd.DataFrame
+) -> np.ndarray:
+    """Taxa histórica de rótulo da PRÓPRIA companhia, só com o passado do fold.
+
+    É o baseline que responde "o modelo sabe algo além de *quem* é esta
+    companhia?". A resposta é sim, e com folga: o modelo bate esta referência
+    por **+0,0744 de AUC, vencendo em 46/46 folds**.
+
+    **A palavra "implementável" carrega o achado.** Uma primeira versão desta
+    comparação usou a média do rótulo sobre o painel INTEIRO, incluindo os
+    trimestres de teste, e marcou 0,8947 — acima do modelo. Era vazamento: essa
+    média não é observável no momento da predição. Corrigida, cai para 0,8012.
+    A lição vale além daqui: um baseline também precisa passar pela fronteira
+    temporal, senão a conclusão inverte.
+
+    Companhia sem histórico no fold recebe a taxa-base do treino.
+    """
+    por_companhia = treino.groupby("cd_cvm")["rotulo"].mean()
+    padrao = float(treino["rotulo"].mean()) if len(treino) else 0.0
+    return (
+        alvo["cd_cvm"].map(por_companhia).astype(float).fillna(padrao).to_numpy()
+    )
 
 
 def escore_passeio_sazonal(alvo: pd.DataFrame) -> np.ndarray:
@@ -466,9 +529,22 @@ def dividir_walk_forward(
     trimestre são idênticos com e sem ela — verificado em
     `tests/test_modelo.py::TestPurga`.
 
-    A purga é contra o trimestre de **teste**, que é onde a métrica publicada é
-    calculada. O rótulo do treino ainda pode tocar a validação, que serve só
-    para escolher o limiar e não entra em nenhum número reportado.
+    **A validação também é purgada, e isso foi um vazamento real (2026-08-25).**
+    A versão anterior punha a validação em `k−1`. Com `n = 2` o rótulo dessa
+    linha cobre `{k, k+1}` e o do teste cobre `{k+1, k+2}` — **`k+1` é comum aos
+    dois**. Como o limiar F2 sai da validação, *todo número dependente de
+    limiar* estava contaminado. Agora a validação fica em
+    `ordem_teste − 1 − n_alvo`, de onde a janela do rótulo dela termina antes
+    do teste começar.
+
+    Efeito medido no ponto de operação (46 folds, alvo persistente): fração
+    sinalizada **42,9% → 34,5%**, recall 0,879 → 0,795, precisão 0,479 →
+    0,534, F1 0,614 → **0,627**. A contaminação fazia o modelo parecer *pior*
+    no critério que mais se criticava — sinalizar fatia grande demais da base.
+
+    O teste-guarda que existia para isto (`TestPurga`) inspecionava só
+    `divisao.treino` e por isso o vazamento sobreviveu a ele; hoje cobre
+    `divisao.validacao` também.
     """
     quadro = painel.quadro
     n_alvo = painel.trimestres_consecutivos
@@ -479,7 +555,11 @@ def dividir_walk_forward(
         ordem_validacao = ordens[indice - 1]
         limite_treino = ordem_validacao
         if purgar:
-            limite_treino = min(limite_treino, ordem_teste - n_alvo)
+            # Rótulo da validação cobre v+1 .. v+n; exigir v+n < ordem_teste.
+            # Vale inclusive para n=1: a validação em k−1 tinha rótulo igual ao
+            # desfecho DO PRÓPRIO trimestre de teste.
+            ordem_validacao = ordem_teste - 1 - n_alvo
+            limite_treino = min(ordem_validacao, ordem_teste - n_alvo)
         teste = quadro[quadro["ordem"] == ordem_teste]
         validacao = quadro[quadro["ordem"] == ordem_validacao]
         treino = quadro[quadro["ordem"] < limite_treino]
@@ -632,6 +712,79 @@ def desempenho_por_recorte(
     return resultado
 
 
+def auc_within_companhia(pontuado: pd.DataFrame) -> dict[str, object]:
+    """AUC calculado DENTRO de cada companhia, ao longo do tempo.
+
+    **É o número que impede ler o agregado como antecipação temporal**, e a
+    diferença entre os dois é o achado central das auditorias de 2026-08-25:
+    agregado ~0,88, *within*-companhia ~0,62. O modelo ordena **quais**
+    companhias são cronicamente deficitárias, não **quando** uma vira.
+
+    Duas contraprovas que fecham a leitura:
+
+    * `taxa_prejuizos_4t` sozinha tem *within* praticamente idêntico (0,6232
+      contra 0,6220) — mesmo dentro da companhia, as 15 features não agregam
+      nada sobre uma coluna;
+    * um escore constante por companhia tem *within* exatamente 0,5000 por
+      construção. Um preditor que marca 0,90 agregado e 0,50 intra-companhia é,
+      por definição, métrica entre companhias.
+
+    Conta pares concordantes/discordantes só entre linhas da MESMA companhia,
+    ponderando pelo número de pares — companhia sem as duas classes não entra.
+    """
+    concordantes = empatados = total = 0
+    n_companhias = 0
+    for _, grupo in pontuado.groupby("cd_cvm"):
+        y = grupo["rotulo"].to_numpy(dtype=int)
+        if len(np.unique(y)) < 2:
+            continue
+        n_companhias += 1
+        escore = grupo["escore"].to_numpy(dtype=float)
+        positivos, negativos = escore[y == 1], escore[y == 0]
+        diferenca = positivos[:, None] - negativos[None, :]
+        concordantes += int((diferenca > 0).sum())
+        empatados += int((diferenca == 0).sum())
+        total += diferenca.size
+    if not total:
+        return {"auc": None, "n_companhias": 0, "n_pares": 0}
+    return {
+        "auc": float((concordantes + 0.5 * empatados) / total),
+        "n_companhias": n_companhias,
+        "n_pares": total,
+    }
+
+
+def composicao_do_topo(
+    pontuado: pd.DataFrame, *, fracao: float = 0.10
+) -> dict[str, object]:
+    """Quem está no topo da lista — o número que qualifica todo lift.
+
+    Lift de 3,3 no painel inteiro soa como triagem até se olhar de quem é a
+    lista: **97,8% do decil superior já está em prejuízo em T** (contra 33% do
+    painel) e 99,9% tem `taxa_prejuizos_4t` ≥ 0,5. Não é alerta antecipado, é
+    uma lista de deficitárias crônicas reproduzível por um `WHERE`.
+
+    Por isso lift nunca deve ser publicado sozinho: sem esta linha ao lado, ele
+    é lido como capacidade que o módulo não tem.
+    """
+    n = len(pontuado)
+    if not n:
+        return {}
+    k = max(1, int(round(n * fracao)))
+    ordem = np.argsort(-pontuado["escore"].to_numpy(dtype=float), kind="stable")
+    topo = pontuado.iloc[ordem[:k]]
+    return {
+        "fracao": fracao,
+        "n_no_topo": int(k),
+        "ja_em_prejuizo_no_topo": float(topo["prejuizo_em_t"].mean()),
+        "ja_em_prejuizo_no_painel": float(pontuado["prejuizo_em_t"].mean()),
+        "taxa_4t_alta_no_topo": float(
+            (topo["taxa_prejuizos_4t"] >= 0.5).mean()
+        ),
+        "n_companhias_distintas_no_topo": int(topo["cd_cvm"].nunique()),
+    }
+
+
 def desempenho_por_estado(
     pontuado: pd.DataFrame, *, minimo_observacoes: int = 50
 ) -> dict[str, object]:
@@ -728,6 +881,15 @@ def avaliar_walk_forward(
         for nome, escore in (
             ("baseline_persistencia", escore_persistencia(divisao.teste)),
             ("baseline_passeio_sazonal", escore_passeio_sazonal(divisao.teste)),
+            # Os dois baselines que as auditorias de 2026-08-25 exigiram: um de
+            # granularidade equivalente (a persistência é binária e o AUC pune
+            # empate) e um que testa se o modelo sabe algo além de QUEM é a
+            # companhia. Publicar só contra a persistência inflava o ganho.
+            ("baseline_taxa_recente", escore_taxa_recente(divisao.teste)),
+            (
+                "baseline_identidade",
+                escore_identidade_implementavel(divisao.treino, divisao.teste),
+            ),
         ):
             auc = avaliar(nome, y_teste, escore, limiar=0.5).roc_auc
             if auc is not None:
@@ -764,10 +926,27 @@ def avaliar_walk_forward(
             if teste is not None:
                 comparacoes[f"{melhor} - {pior}"] = teste
 
+    # Decomposição obrigatória: sem ela o leitor lê o agregado como capacidade
+    # de antecipação temporal, que o módulo não tem.
+    pontuado = pontuar_walk_forward(
+        painel, minimo_trimestres_treino=minimo_trimestres_treino
+    )
     return {
         "n_folds": len(divisoes),
         "resumo": resumo,
         "comparacoes_pareadas": comparacoes,
+        "decomposicao": {
+            "auc_within_companhia": auc_within_companhia(pontuado),
+            "composicao_do_topo": composicao_do_topo(pontuado),
+            "leitura": (
+                "AUC agregado alto com AUC within-companhia perto de 0,65 "
+                "significa que o modelo ordena QUAIS companhias são "
+                "cronicamente deficitárias, não QUANDO uma vira. O decil "
+                "superior é majoritariamente composto de companhias que já "
+                "estão em prejuízo — lift não deve ser lido como triagem "
+                "antecipada sem esta linha ao lado."
+            ),
+        },
         "por_fold": por_fold,
     }
 

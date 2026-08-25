@@ -14,6 +14,7 @@ import duckdb
 import numpy as np
 import pandas as pd
 import pytest
+from sklearn.metrics import roc_auc_score
 
 from src.modelo import prever
 from src.modelo.construir_painel import (
@@ -29,8 +30,12 @@ from src.modelo.treinar import (
     ablacao_walk_forward,
     avaliar,
     comparar_pareado,
+    auc_within_companhia,
+    composicao_do_topo,
     desempenho_por_estado,
     desempenho_por_recorte,
+    escore_identidade_implementavel,
+    escore_taxa_recente,
     pontuar_walk_forward,
     construir_gradient_boosting_com_smote,
     construir_gradient_boosting_imputado,
@@ -606,21 +611,28 @@ class TestBaselines:
 class TestPurga:
     """Rótulo que olha para frente não pode atravessar a fronteira do fold."""
 
-    def test_alvo_de_um_trimestre_nao_e_afetado(self):
-        """Contraprova: a purga não pode remover o que não precisa remover.
+    def test_a_purga_afeta_TAMBEM_o_alvo_de_um_trimestre(self):
+        """Uma contraprova anterior deste arquivo afirmava o contrário.
 
-        Com `n = 1` o rótulo da última linha de treino alcança a validação e
-        para ali. Se a purga mexesse aqui, estaria jogando amostra fora de
-        graça — e a prova é a igualdade EXATA dos conjuntos, não do AUC.
+        Ela dizia que com `n = 1` a purga não removia nada, porque o rótulo do
+        treino alcançava só a validação. Estava certa sobre o treino e **errada
+        sobre o conjunto todo**: a validação em `k−1` tem rótulo igual ao
+        desfecho do próprio trimestre de teste, e é dela que sai o limiar. Ou
+        seja, o alvo de 1 trimestre também estava contaminado, e a asserção
+        antiga travava justamente o comportamento defeituoso.
         """
         con = _painel_longo_variado(n_companhias=20)
         painel = construir_painel(con, trimestres_consecutivos=1)
         com = dividir_walk_forward(painel, purgar=True)
         sem = dividir_walk_forward(painel, purgar=False)
-        assert len(com) == len(sem)
-        for a, b in zip(com, sem):
-            assert len(a.treino) == len(b.treino)
-            assert a.trimestre_teste == b.trimestre_teste
+        assert com and sem
+        assert sum(len(d.treino) for d in com) < sum(len(d.treino) for d in sem)
+        # e o defeito que a purga fecha, exibido diretamente
+        for divisao in sem:
+            ordem_teste = divisao.teste["ordem"].iloc[0]
+            assert divisao.validacao["ordem"].iloc[0] + 1 == ordem_teste, (
+                "sem purga, o rótulo da validação É o desfecho do teste"
+            )
 
     def test_alvo_persistente_remove_o_trimestre_que_vaza(self):
         con = _painel_longo_variado(n_companhias=20)
@@ -644,6 +656,63 @@ class TestPurga:
                     f"{ultima_do_treino + n_alvo}, alcançando o teste em "
                     f"{ordem_teste}"
                 )
+
+    def test_a_VALIDACAO_tambem_nao_alcanca_o_teste(self):
+        """O vazamento que sobreviveu ao teste-guarda anterior.
+
+        A versão anterior deste arquivo inspecionava só `divisao.treino`. Com
+        alvo de 2 trimestres, a validação em k−1 tem rótulo cobrindo {k, k+1} e
+        o teste em k cobre {k+1, k+2} — k+1 é comum, e o limiar F2 sai da
+        validação, então todo número dependente de limiar estava contaminado.
+        """
+        con = _painel_longo_variado(n_companhias=20)
+        for n_alvo in (1, 2, 3):
+            painel = construir_painel(con, trimestres_consecutivos=n_alvo)
+            for divisao in dividir_walk_forward(painel):
+                ordem_teste = divisao.teste["ordem"].iloc[0]
+                ordem_validacao = divisao.validacao["ordem"].iloc[0]
+                assert ordem_validacao + n_alvo < ordem_teste, (
+                    f"alvo de {n_alvo} trimestres: validação em "
+                    f"{ordem_validacao} tem rótulo cobrindo até "
+                    f"{ordem_validacao + n_alvo}, que alcança o teste em "
+                    f"{ordem_teste} — o limiar sairia de dado contaminado"
+                )
+
+    def test_validacao_e_teste_nunca_sao_o_mesmo_trimestre(self):
+        con = _painel_longo_variado(n_companhias=20)
+        painel = construir_painel(con, trimestres_consecutivos=2)
+        for divisao in dividir_walk_forward(painel):
+            assert divisao.trimestre_validacao != divisao.trimestre_teste
+
+
+class TestSemAjusteImplicito:
+    """`early_stopping` não pode selecionar hiperparâmetro por baixo do pano."""
+
+    def test_early_stopping_desligado_explicitamente(self):
+        """O padrão `'auto'` liga sozinho com n > 10.000 e ajusta o nº de árvores.
+
+        Isso tornava falsa a ressalva publicada de que nenhum ajuste de
+        hiperparâmetro havia sido feito, e desequilibrava a comparação com a
+        logística, que não tem ajustador implícito.
+        """
+        modelo = construir_gradient_boosting()
+        assert modelo.early_stopping is False
+
+    def test_todos_os_folds_treinam_o_mesmo_numero_de_arvores(self):
+        con = _painel_longo_variado(n_companhias=40)
+        painel = construir_painel(con, trimestres_consecutivos=1)
+        iteracoes = set()
+        for divisao in dividir_walk_forward(painel):
+            modelo = construir_gradient_boosting()
+            modelo.fit(
+                divisao.treino[list(COLUNAS_FEATURES)],
+                divisao.treino["rotulo"].to_numpy(int),
+            )
+            assert getattr(modelo, "do_early_stopping_", False) is False
+            iteracoes.add(modelo.n_iter_)
+        assert len(iteracoes) == 1, (
+            f"o estimador mudou entre folds: n_iter_ observados {iteracoes}"
+        )
 
 
 class TestDesempenhoPorRecorte:
@@ -698,6 +767,129 @@ class TestDesempenhoPorRecorte:
         assert set(saida) == {"ja_em_prejuizo", "lucrativa_hoje"}
         soma = saida["ja_em_prejuizo"]["n"] + saida["lucrativa_hoje"]["n"]
         assert soma == len(pontuado), "os dois estados precisam particionar"
+
+
+class TestBaselinesHonestos:
+    """Os baselines que as auditorias de 2026-08-25 exigiram."""
+
+    def test_identidade_nao_pode_usar_o_futuro(self):
+        """O erro que inverteu uma conclusão: baseline também tem fronteira.
+
+        Uma primeira versão desta comparação usou a média do rótulo sobre o
+        painel INTEIRO, incluindo os trimestres de teste. Marcou 0,8947 e
+        "batia" o modelo. Corrigida para só o passado do fold, cai para 0,8012
+        e o modelo a supera por +0,074 em 46/46 folds.
+        """
+        con = _painel_longo_variado(n_companhias=30)
+        painel = construir_painel(con, trimestres_consecutivos=1)
+        divisoes = dividir_walk_forward(painel)
+        assert divisoes
+        divisao = divisoes[-1]
+        escore = escore_identidade_implementavel(divisao.treino, divisao.teste)
+        # O escore de cada linha tem de ser reproduzível SÓ com o treino.
+        esperado = divisao.treino.groupby("cd_cvm")["rotulo"].mean()
+        padrao = float(divisao.treino["rotulo"].mean())
+        for posicao, cd in enumerate(divisao.teste["cd_cvm"]):
+            assert escore[posicao] == pytest.approx(
+                float(esperado.get(cd, padrao))
+            )
+
+    def test_identidade_sem_historico_cai_na_taxa_base(self):
+        con = _painel_longo_variado(n_companhias=20)
+        painel = construir_painel(con, trimestres_consecutivos=1)
+        divisao = dividir_walk_forward(painel)[-1]
+        teste = divisao.teste.copy()
+        teste.loc[:, "cd_cvm"] = "999999"  # companhia inexistente no treino
+        escore = escore_identidade_implementavel(divisao.treino, teste)
+        assert np.allclose(escore, float(divisao.treino["rotulo"].mean()))
+
+    def test_taxa_recente_e_mais_granular_que_a_persistencia(self):
+        """A persistência é binária e o AUC pune empate — daí o ganho inflado."""
+        con = _painel_longo_variado(n_companhias=30)
+        painel = construir_painel(con, trimestres_consecutivos=1)
+        divisao = dividir_walk_forward(painel)[-1]
+        assert len(np.unique(escore_persistencia(divisao.teste))) <= 2
+        assert len(np.unique(escore_taxa_recente(divisao.teste))) > 2
+
+
+class TestDecomposicao:
+    """O par de números que impede ler o agregado como antecipação temporal."""
+
+    def _pontuado(self):
+        con = _painel_longo_variado(n_companhias=60)
+        painel = construir_painel(con, trimestres_consecutivos=1)
+        return pontuar_walk_forward(painel)
+
+    def test_escore_constante_por_companhia_tem_within_meio(self):
+        """A contraprova mais curta que existe do ponto.
+
+        Um preditor que só codifica identidade não consegue ordenar nada DENTRO
+        da companhia — o AUC intra-companhia dele é 0,5 por construção.
+        """
+        pontuado = self._pontuado()
+        constante = pontuado.copy()
+        mapa = {
+            cd: i / max(1, pontuado["cd_cvm"].nunique())
+            for i, cd in enumerate(sorted(pontuado["cd_cvm"].unique()))
+        }
+        constante["escore"] = constante["cd_cvm"].map(mapa)
+        assert auc_within_companhia(constante)["auc"] == pytest.approx(0.5)
+
+    def test_separa_ordenacao_entre_companhias_da_ordenacao_dentro_delas(self):
+        """Caso construído: o escore ordena ao contrário DENTRO de cada companhia.
+
+        Duas companhias, escores que separam A de B mas que, dentro de cada
+        uma, põem o rótulo negativo acima do positivo. O AUC intra-companhia é
+        0,0 e o agregado não vê isso — é a situação que o par de métricas
+        existe para tornar visível.
+        """
+        quadro = pd.DataFrame(
+            {
+                "cd_cvm": ["A", "A", "B", "B"],
+                "rotulo": [1, 0, 1, 0],
+                "escore": [0.9, 0.95, 0.1, 0.15],
+                "prejuizo_em_t": [1, 0, 1, 0],
+                "taxa_prejuizos_4t": [1.0, 0.0, 1.0, 0.0],
+            }
+        )
+        agregado = roc_auc_score(
+            quadro["rotulo"].to_numpy(int), quadro["escore"].to_numpy(float)
+        )
+        dentro = auc_within_companhia(quadro)
+        # Dentro de cada companhia o escore ordena ao CONTRÁRIO do rótulo.
+        assert dentro["auc"] == pytest.approx(0.0)
+        assert dentro["n_companhias"] == 2
+        # E o agregado, que mistura pares entre companhias, não vê isso.
+        assert agregado > dentro["auc"]
+
+    def test_companhia_de_classe_unica_nao_entra(self):
+        """Sem as duas classes não há par a ordenar; contar seria inventar."""
+        quadro = pd.DataFrame(
+            {
+                "cd_cvm": ["A", "A", "B", "B"],
+                "rotulo": [1, 1, 1, 0],
+                "escore": [0.9, 0.1, 0.8, 0.2],
+                "prejuizo_em_t": [1, 1, 1, 0],
+                "taxa_prejuizos_4t": [1.0, 1.0, 1.0, 0.0],
+            }
+        )
+        dentro = auc_within_companhia(quadro)
+        assert dentro["n_companhias"] == 1
+        assert dentro["n_pares"] == 1
+
+    def test_funciona_no_painel_sintetico(self):
+        pontuado = self._pontuado()
+        dentro = auc_within_companhia(pontuado)
+        assert dentro["auc"] is not None
+        assert 0.0 <= dentro["auc"] <= 1.0
+        assert dentro["n_companhias"] > 0
+
+    def test_composicao_do_topo_traz_o_qualificador_do_lift(self):
+        pontuado = self._pontuado()
+        composicao = composicao_do_topo(pontuado)
+        assert 0.0 <= composicao["ja_em_prejuizo_no_topo"] <= 1.0
+        assert composicao["n_no_topo"] == max(1, round(len(pontuado) * 0.10))
+        assert composicao["n_companhias_distintas_no_topo"] > 0
 
 
 class TestRN07:

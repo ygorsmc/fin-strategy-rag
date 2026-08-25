@@ -67,8 +67,8 @@ subconsulta por banco; geração JSON com RN01 e grounding numérico da RN02;
 avaliação retomável com fingerprint v3, journal/checkpoint, teto de custo e
 locks; interface cacheada com pergunta livre opt-in.
 
-**Convenção de testes (obrigatória):** a suíte local tem **1.640 casos coletados
-e nenhum skip** (medido em 2026-08-24, com `requirements-guardrails.txt` e
+**Convenção de testes (obrigatória):** a suíte local tem **1.653 casos coletados
+e nenhum skip** (medido em 2026-08-25, com `requirements-guardrails.txt` e
 `requirements-modelo.txt` instalados e os pesos do Prompt Guard 2 no cache
 local). NUNCA enfraquecer uma asserção para fazer
 código passar — o teste é o contrato e o código se adapta a ele. `pytest` verde
@@ -276,11 +276,19 @@ comparação de feature ou de modelo era resolvível — duas foram tentadas e a
 duas ficaram indecidíveis. Com 2011–2026 são **21.903 observações e 47 folds**
 de walk-forward, e as mesmas comparações passaram a ter p da ordem de 1e-09.
 
-**O que a janela larga destravou, e que era impossível antes:** as features
-sazonais. Lucro trimestral tem sazonalidade, e o preditor natural do alvo T+1 é
-o mesmo trimestre do ano anterior (T−3) — defasagem que **não existe** num
-painel de cinco trimestres. É de onde veio o ganho real (+0,0100 de AUC,
-p = 7,0e-09), não do modelo nem das features de literatura.
+**O que a janela larga destravou:** o grupo de features que só existe com
+histórico longo — ganho de **+0,0102 de AUC (p = 7,0e-09)**, confirmado depois
+em folds não vistos (+0,0072, p = 4e-06).
+
+> **Correção de atribuição (2026-08-25).** Uma versão anterior deste parágrafo
+> creditava o ganho à defasagem sazonal T−3 ("o preditor natural do alvo T+1 é
+> o mesmo trimestre do ano anterior"). A ablação individual mostra que
+> `prejuizo_no_mesmo_trimestre_do_ano_anterior` mede **exatamente zero**
+> (−0,0005, p = 0,46). Quem carrega o grupo é **`taxa_prejuizos_4t`**, que é
+> **janela móvel de 4 trimestres, não defasagem sazonal** (+0,0039, p = 3e-04).
+> O número estava certo; a história em cima dele, não. A sazonalidade do lucro
+> vive no **nível** e o alvo binariza o **sinal** — se o alvo virar magnitude,
+> as sazonais precisam ser re-testadas, não apagadas.
 
 **O que a divergência não autoriza:** a janela larga é do painel de treino e de
 mais nada. O gate G4, a conferência de âncora e tudo que responde ao usuário
@@ -457,7 +465,7 @@ Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisã
 | 7 | **Geração** — contrato JSON, citação obrigatória, recusa (RN01–RN02) | sessão principal | ✅ · ⬜ marcações de RN10/RN12 na resposta |
 | 8 | **Conjunto-padrão** — 45 congeladas + ~10 dev, conferidas pela classe de verificação | `conjunto-padrao` | ✅ congelado 2026-07-29 · ⬜ colunas novas da revisão 2 (`cobertura_esperada`, `motivo_recusa_esperado`, `base_esperada`, `rota_esperada`) |
 | 9 | **Comparação de estratégias E0–E4** — só `dev` na iteração; o congelado roda ao final, com log por execução | `observabilidade-avaliacao` | ✅ rodada em 2026-08-21 no congelado (45 × 5 = 225 chamadas, v6) — factual E1 0,400 · E2 0,333 · E3 **0,467** · E4 0,400; comparativa (métrica nova) E1 0,000 · E2/E3 0,100 · E4 **0,200**; E4 × E3 **indistinguível** (2×3 discordâncias, limiar 6) pela 3ª rodada seguida. Ver `MEMORY.md` |
-| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ✅ **2026-08-23** — painel de treino próprio (2011–2026, §3.5), **21.903 obs**, 33,3% positivos. **Walk-forward de 47 folds**: boosting AUC **0,866** × persistência 0,752, vencendo em **47/47**. Ganho vem das features SAZONAIS (+0,0102, p=7,0e-09, 42/47); as do O-score de Ohlson deram **resultado negativo** e foram removidas. `resultados/modelo_preditivo_2026-08-23.md`. **Revisado em 2026-08-23** (`resultados/revisoes_modelo_2026-08-23.md`): alvo alternativo de **2 trimestres consecutivos** melhora tudo (lift@10% 2,55→**3,36**, sinaliza 57,6%→41,5%); **SMOTE PIORA** (−0,006, p=5e-08, e dobra o erro de calibração); ajuste de hiperparâmetros rende **zero** fora dos folds de busca. **Robustez em 2026-08-24** (`resultados/robustez_modelo_2026-08-24.md`): purga/embargo acrescentada — AUC publicado corrige 0,881 → **0,8797**; controle setorial **rejeitado** (+0,0005, p=0,19); recalibração isotônica/Platt **não melhora**; LightGBM **empata** (p=0,66); a decisão sobre as features sazonais **sobrevive em folds não vistos** (+0,0072, p=4e-06) |
+| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ✅ **2026-08-23** — painel de treino próprio (2011–2026, §3.5), **21.903 obs**, 33,3% positivos. **Walk-forward de 47 folds**: boosting AUC **0,866** × persistência 0,752, vencendo em **47/47**. Ganho vem das features SAZONAIS (+0,0102, p=7,0e-09, 42/47); as do O-score de Ohlson deram **resultado negativo** e foram removidas. `resultados/modelo_preditivo_2026-08-23.md`. **Revisado em 2026-08-23** (`resultados/revisoes_modelo_2026-08-23.md`): alvo alternativo de **2 trimestres consecutivos** melhora tudo (lift@10% 2,55→**3,36**, sinaliza 57,6%→41,5%); **SMOTE PIORA** (−0,006, p=5e-08, e dobra o erro de calibração); ajuste de hiperparâmetros rende **zero** fora dos folds de busca. **Robustez em 2026-08-24** (`resultados/robustez_modelo_2026-08-24.md`): purga/embargo acrescentada — AUC publicado corrige 0,881 → **0,8797**; controle setorial **rejeitado** (+0,0005, p=0,19); recalibração isotônica/Platt **não melhora**; LightGBM **empata** (p=0,66); a decisão sobre as features sazonais **sobrevive em folds não vistos** (+0,0072, p=4e-06). **DEBATE DE DOIS ESPECIALISTAS em 2026-08-25** (`resultados/debate_modelo_2026-08-25.md`) — três retratações: (a) o "interruptor do porte" era contaminação de `is_banco`, 29 de 35 eventos vinham de private equity e de uma companhia em liquidação; recorte setorial REMOVIDO; (b) vazamento no trimestre de VALIDAÇÃO corrigido — ponto de operação vai de 57,6% para 34,5% sinalizado; (c) `early_stopping='auto'` ajustava o modelo sozinho a partir do fold 21, tornando falsa a ressalva de "nenhum ajuste". **Manchete corrigida:** o ganho publicável é **+0,019 sobre `taxa_prejuizos_4t` crua** e **+0,073 sobre a identidade implementável**, não +0,11 sobre a persistência binária. **AUC intra-companhia 0,663 contra 0,865 agregado** — o modelo ordena QUAIS companhias, não QUANDO viram; 97,1% do decil superior já está em prejuízo |
 | 11 | **Ferramentas + agentes** — `verificar_cobertura`, Investigador e Auditor com filtro de contexto **em código**, teste que falha se o rastro vazar, braços A/B/C, triagem de cobertura; projeções depois | `agentes-investigacao` | ⬜ |
 | 12 | **Injeção de falha (RF25) e comparação dos três braços (RF26)** — registrar o veredito, inclusive se for "o determinístico basta" | `agentes-investigacao` + `observabilidade-avaliacao` | ⬜ |
 | 13 | **Langfuse + DeepEval** — traces por etapa e matriz de concordância com a auditoria manual | `observabilidade-avaliacao` | 🔄 matriz de concordância **medida** em 2026-08-23 (0,867, `scripts/medir_juiz_groundedness.py`) · ⬜ Langfuse e suíte DeepEval formal |
@@ -533,7 +541,7 @@ Alvo da spec 5.21, com o que já existe marcado:
          · test_dados_estruturados ✅ · test_seguranca ✅ · test_isolamento ✅
          · test_cobertura ✅ · test_guardrails_integracao ✅ · test_deepeval ⬜
          · test_chunking_tabela_orfa ✅ · test_guarda_rn02_auditoria ✅
-         · test_projecao ✅ (rota RN07 condicional ao modo, 39 casos)
+         · test_projecao ✅ (rota RN07 condicional ao modo, 40 casos)
          · test_modelo ✅ (inclui TestRN07 e TestVazamentoTemporal)
          (+ suítes de hardening já existentes)
 ```

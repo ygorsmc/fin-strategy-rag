@@ -1,70 +1,38 @@
 {
   "trimestre_referencia": "3T2025",
   "n_companhias_avaliadas": 413,
-  "n_acima_do_dobro_da_base": 80,
+  "n_acima_do_dobro_da_base": 79,
   "limiar_dobro_da_base": 0.4261501210653753,
   "n_no_decil_superior": 41,
   "taxa_base_painel": 0.21307506053268765,
   "n_observacoes_treino": 21119,
   "fracao_nao_financeira_treino": 0.9694587811922913,
-  "auc_walk_forward": 0.87968267536002,
+  "auc_walk_forward": 0.8785560272902274,
   "alvo": "prejuízo em T+1 e T+2",
   "faixas_de_porte": [
     {
       "rotulo": "≥ R$ 500 bi",
       "limite_inferior_reais": 500000000000.0,
-      "instituicao_financeira": true,
-      "n_observacoes": 169,
-      "taxa_prejuizo": 0.005917159763313609
+      "n_observacoes": 231,
+      "taxa_prejuizo": 0.06060606060606061
     },
     {
       "rotulo": "R$ 100–500 bi",
       "limite_inferior_reais": 100000000000.0,
-      "instituicao_financeira": true,
-      "n_observacoes": 57,
-      "taxa_prejuizo": 0.12280701754385964
+      "n_observacoes": 506,
+      "taxa_prejuizo": 0.21936758893280633
     },
     {
       "rotulo": "R$ 10–100 bi",
       "limite_inferior_reais": 10000000000.0,
-      "instituicao_financeira": true,
-      "n_observacoes": 257,
-      "taxa_prejuizo": 0.09727626459143969
+      "n_observacoes": 5365,
+      "taxa_prejuizo": 0.218452935694315
     },
     {
       "rotulo": "< R$ 10 bi",
       "limite_inferior_reais": 0.0,
-      "instituicao_financeira": true,
-      "n_observacoes": 267,
-      "taxa_prejuizo": 0.2958801498127341
-    },
-    {
-      "rotulo": "≥ R$ 500 bi",
-      "limite_inferior_reais": 500000000000.0,
-      "instituicao_financeira": false,
-      "n_observacoes": 62,
-      "taxa_prejuizo": 0.20967741935483872
-    },
-    {
-      "rotulo": "R$ 100–500 bi",
-      "limite_inferior_reais": 100000000000.0,
-      "instituicao_financeira": false,
-      "n_observacoes": 449,
-      "taxa_prejuizo": 0.23162583518930957
-    },
-    {
-      "rotulo": "R$ 10–100 bi",
-      "limite_inferior_reais": 10000000000.0,
-      "instituicao_financeira": false,
-      "n_observacoes": 5108,
-      "taxa_prejuizo": 0.2245497259201253
-    },
-    {
-      "rotulo": "< R$ 10 bi",
-      "limite_inferior_reais": 0.0,
-      "instituicao_financeira": false,
-      "n_observacoes": 16493,
-      "taxa_prejuizo": 0.3754320014551628
+      "n_observacoes": 16760,
+      "taxa_prejuizo": 0.37416467780429596
     }
   ]
 }

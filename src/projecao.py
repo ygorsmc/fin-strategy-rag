@@ -157,11 +157,31 @@ class PrevisaoPorEmissorDesabilitadaError(RuntimeError):
 
 @dataclass(frozen=True)
 class FaixaDePorte:
-    """Uma linha do regime de risco por porte — retrospectiva, sem emissor."""
+    """Uma linha do regime de risco por porte — retrospectiva, sem emissor.
+
+    **Não há recorte setorial aqui, e a ausência é uma retratação (2026-08-25).**
+    A primeira versão publicava a tabela separada em "instituição financeira" ×
+    "demais", com um gradiente de 0,6% a 29,6% que parecia mostrar o porte
+    funcionando como interruptor em banco. Duas auditorias independentes
+    derrubaram o achado:
+
+    * a flag de origem (`companhias.is_banco`) significa "usa plano de contas
+      de instituição financeira", e entre as 41 entidades marcadas estavam
+      GP Investments (private equity), CELGPAR (holding de energia) e Sul 116
+      **em liquidação** — **29 dos 35 eventos positivos (82,9%)** do recorte
+      vinham de oito entidades que não são banco;
+    * limpo o universo, a série fica **não monotônica** e o teste contínuo
+      mata o efeito: correlação de Spearman entre ativo e prejuízo, em bancos
+      de verdade **excluindo os ≥ R$ 500 bi**, é ρ = −0,014 (p = 0,79). Fora do
+      topo, porte não prediz nada — e o que sobrava era uma variável dummy
+      para cinco bancos.
+
+    O que resta e se sustenta é a tabela do **painel inteiro**, sem recorte de
+    setor, com amostra de verdade em cada faixa.
+    """
 
     rotulo: str
     limite_inferior_reais: float
-    instituicao_financeira: bool
     n_observacoes: int
     taxa_prejuizo: float
 
@@ -367,21 +387,21 @@ def _bloco_historico(
     return linha + "."
 
 
-def _bloco_regime(panorama: Panorama, financeira: bool | None) -> str:
-    faixas = [
-        faixa
-        for faixa in panorama.faixas_de_porte
-        if financeira is None or faixa.instituicao_financeira == financeira
-    ]
-    if not faixas:
+def _bloco_regime(panorama: Panorama) -> str:
+    """Regime por porte do PAINEL INTEIRO — sem recorte setorial.
+
+    Ver `FaixaDePorte` para a retratação: a versão separada por setor não
+    sobreviveu à auditoria e foi retirada, não corrigida.
+    """
+    if not panorama.faixas_de_porte:
         return ""
-    titulo = "**Regime de risco por porte** (retrospectivo, painel completo)"
     linhas = [
         f"| {faixa.rotulo} | {faixa.n_observacoes} | {_pct(faixa.taxa_prejuizo)} |"
-        for faixa in faixas
+        for faixa in panorama.faixas_de_porte
     ]
     return (
-        f"{titulo}\n\n| Porte | Trimestres | Com prejuízo |\n|---|---|---|\n"
+        "**Regime de risco por porte** (retrospectivo, painel completo, todos "
+        "os setores)\n\n| Porte | Trimestres | Com prejuízo |\n|---|---|---|\n"
         + "\n".join(linhas)
     )
 
@@ -449,7 +469,6 @@ def responder_projecao(
     trimestres_painel: Sequence[str] = (),
     n_prejuizos: int | None = None,
     n_prejuizos_derivados: int | None = None,
-    instituicao_financeira: bool | None = None,
     ativo_total: float | None = None,
     panorama: Panorama,
     previsao_por_emissor_habilitada: bool = False,
@@ -470,7 +489,7 @@ def responder_projecao(
             "use detectar_pergunta_prospectiva antes de rotear"
         )
 
-    faixa = _faixa_da_companhia(panorama, instituicao_financeira, ativo_total)
+    faixa = _faixa_da_companhia(panorama, ativo_total)
     blocos = [_CABECALHO_RECUSA.format(ancora=achado.ancora_legal)]
     nomes = ["recusa"]
 
@@ -485,7 +504,7 @@ def responder_projecao(
     )
     nomes.append("historico")
 
-    regime = _bloco_regime(panorama, instituicao_financeira)
+    regime = _bloco_regime(panorama)
     if regime:
         blocos.append(regime)
         nomes.append("regime_por_porte")
@@ -536,31 +555,20 @@ def responder_projecao(
 
 
 def _faixa_da_companhia(
-    panorama: Panorama,
-    instituicao_financeira: bool | None,
-    ativo_total: float | None = None,
+    panorama: Panorama, ativo_total: float | None = None
 ) -> FaixaDePorte | None:
     """Faixa de porte da companhia — sem inventar porte quando ele falta.
 
-    Com o ativo em mãos, escolhe a faixa cujo piso a companhia alcança. Sem
-    ele, devolve a faixa do setor só se houver exatamente uma; caso contrário
-    devolve ``None`` e o bloco de escore sai sem a comparação. Comparar com a
-    faixa errada seria pior que não comparar: o porte é justamente o que separa
-    0,6% de 29,6% em instituição financeira.
+    Sem o ativo em mãos devolve ``None`` e o bloco de escore sai sem a
+    comparação com a taxa-base, o que é preferível a comparar com a faixa
+    errada. Não há mais escolha por setor: ver a retratação em `FaixaDePorte`.
     """
-    if instituicao_financeira is None:
+    if ativo_total is None or not panorama.faixas_de_porte:
         return None
-    candidatas = [
+    alcancadas = [
         faixa
         for faixa in panorama.faixas_de_porte
-        if faixa.instituicao_financeira == instituicao_financeira
-    ]
-    if not candidatas:
-        return None
-    if ativo_total is None:
-        return candidatas[0] if len(candidatas) == 1 else None
-    alcancadas = [
-        faixa for faixa in candidatas if ativo_total >= faixa.limite_inferior_reais
+        if ativo_total >= faixa.limite_inferior_reais
     ]
     if not alcancadas:
         return None

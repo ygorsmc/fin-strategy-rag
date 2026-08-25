@@ -36,10 +36,14 @@ from src.modelo.treinar import (  # noqa: E402
     dividir_walk_forward,
 )
 
-#: Faixas de porte do regime de risco. Os cortes vêm da leitura descritiva de
-#: 2026-08-24 que mostrou porte funcionando como interruptor em instituição
-#: financeira (0,6% acima de R$500 bi contra 29,6% abaixo de R$10 bi) e quase
-#: nada nas demais (21,0% contra 37,5%).
+#: Faixas de porte do regime de risco, aplicadas ao PAINEL INTEIRO.
+#:
+#: Os cortes vieram de uma leitura descritiva de 2026-08-24 que parecia mostrar
+#: porte funcionando como interruptor em instituição financeira — leitura
+#: RETRATADA em 2026-08-25 (ver `_regime_por_porte`). Os cortes em si continuam
+#: úteis e a tabela do painel inteiro se sustenta com amostra em cada faixa:
+#: 6,1% (≥R$500bi, n=231) · 21,9% (100–500bi, n=506) · 21,8% (10–100bi,
+#: n=5.365) · 37,4% (<R$10bi, n=16.760).
 FAIXAS = (
     ("≥ R$ 500 bi", 5e11),
     ("R$ 100–500 bi", 1e11),
@@ -54,7 +58,17 @@ TRIMESTRES_CONSECUTIVOS = 2
 
 
 def _regime_por_porte(con: duckdb.DuckDBPyConnection) -> list[dict[str, object]]:
-    """Taxa histórica de prejuízo por faixa de porte × setor — retrospectivo."""
+    """Taxa histórica de prejuízo por faixa de porte — PAINEL INTEIRO.
+
+    **Sem recorte setorial, e isso é retratação (2026-08-25).** A primeira
+    versão separava "instituição financeira" das demais e publicava um
+    gradiente de 0,6% a 29,6% para as financeiras. A flag de origem significa
+    "usa plano de contas de instituição financeira": 29 dos 35 eventos
+    positivos do recorte vinham de GP Investments, Sul 116 (em liquidação),
+    CELGPAR e PPLA. Limpo o universo, a série fica não monotônica, e o teste
+    contínuo mata o efeito (ρ = −0,014, p = 0,79 entre bancos de verdade fora
+    do topo). Ver `src/projecao.py::FaixaDePorte`.
+    """
     caso = "CASE " + " ".join(
         f"WHEN i.ativo_total >= {limite} THEN '{rotulo}'"
         for rotulo, limite in FAIXAS
@@ -63,15 +77,13 @@ def _regime_por_porte(con: duckdb.DuckDBPyConnection) -> list[dict[str, object]]
     linhas = con.execute(
         f"""
         SELECT {caso} AS faixa,
-               c.is_banco,
                count(*) AS n,
                sum(CASE WHEN i.lucro_liquido_consolidado < 0 THEN 1 ELSE 0 END)
                    ::DOUBLE / count(*) AS taxa
         FROM indicadores i
-        JOIN companhias c USING (cd_cvm)
         WHERE i.lucro_liquido_consolidado IS NOT NULL
           AND i.ativo_total IS NOT NULL
-        GROUP BY 1, 2
+        GROUP BY 1
         """
     ).fetchall()
     ordem = {rotulo: indice for indice, (rotulo, _) in enumerate(FAIXAS)}
@@ -80,13 +92,12 @@ def _regime_por_porte(con: duckdb.DuckDBPyConnection) -> list[dict[str, object]]
         {
             "rotulo": faixa,
             "limite_inferior_reais": float(limites[faixa]),
-            "instituicao_financeira": bool(is_banco),
             "n_observacoes": int(n),
             "taxa_prejuizo": float(taxa),
         }
-        for faixa, is_banco, n, taxa in linhas
+        for faixa, n, taxa in linhas
     ]
-    saida.sort(key=lambda item: (not item["instituicao_financeira"], ordem[item["rotulo"]]))
+    saida.sort(key=lambda item: ordem[item["rotulo"]])
     return saida
 
 

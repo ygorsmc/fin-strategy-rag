@@ -521,7 +521,6 @@ def responder_prospectiva_se_couber(pergunta: str) -> dict | None:
         n_prejuizos_derivados=recursos["prejuizos_derivados"].get(
             companhia.cd_cvm
         ),
-        instituicao_financeira=companhia.is_banco,
         ativo_total=recursos["ativos"].get(companhia.cd_cvm),
         panorama=recursos["panorama"],
         previsao_por_emissor_habilitada=config.previsao_por_emissor_habilitada,

@@ -44,8 +44,9 @@ def _panorama(**ajustes) -> Panorama:
         "fracao_nao_financeira_treino": 0.96,
         "auc_walk_forward": 0.881,
         "faixas_de_porte": (
-            FaixaDePorte("≥ R$ 500 bi", 5e11, True, 169, 0.006),
-            FaixaDePorte("< R$ 10 bi", 0.0, True, 267, 0.296),
+            FaixaDePorte("≥ R$ 500 bi", 5e11, 231, 0.061),
+            FaixaDePorte("R$ 10–100 bi", 1e10, 5365, 0.218),
+            FaixaDePorte("< R$ 10 bi", 0.0, 16760, 0.374),
         ),
     }
     base.update(ajustes)
@@ -117,7 +118,6 @@ class TestModoPublico:
             cd_cvm="001023",
             trimestres_painel=("1T2022", "4T2025"),
             n_prejuizos=0,
-            instituicao_financeira=True,
             panorama=_panorama(),
         )
         assert resposta.expos_escore_por_emissor is False
@@ -142,7 +142,6 @@ class TestModoPublico:
             cd_cvm="001023",
             trimestres_painel=("1T2022", "2T2022", "4T2025"),
             n_prejuizos=0,
-            instituicao_financeira=True,
             panorama=_panorama(),
         )
         assert "historico" in resposta.blocos
@@ -211,7 +210,6 @@ class TestModoLocal:
             "O BB terá prejuízo nos próximos trimestres?",
             denom_social="BCO BRASIL S.A.",
             cd_cvm="001023",
-            instituicao_financeira=True,
             panorama=_panorama(),
             previsao_por_emissor_habilitada=True,
             escores={"001023": 0.031},
@@ -234,14 +232,13 @@ class TestModoLocal:
             "O BB terá prejuízo nos próximos trimestres?",
             denom_social="BCO BRASIL S.A.",
             cd_cvm="001023",
-            instituicao_financeira=True,
             ativo_total=2.2e12,
             panorama=_panorama(),
             previsao_por_emissor_habilitada=True,
             escores={"001023": 0.031},
         )
         assert "3,1%" in resposta.texto
-        assert "0,6%" in resposta.texto  # taxa-base da faixa ≥ R$ 500 bi
+        assert "6,1%" in resposta.texto  # taxa-base da faixa ≥ R$ 500 bi
         assert "3.1%" not in resposta.texto
 
     def test_faixa_de_porte_sai_do_ativo_da_companhia(self):
@@ -254,7 +251,6 @@ class TestModoLocal:
             "O BB terá prejuízo nos próximos trimestres?",
             denom_social="GRANDE",
             cd_cvm="001023",
-            instituicao_financeira=True,
             ativo_total=2.2e12,
             panorama=_panorama(),
             previsao_por_emissor_habilitada=True,
@@ -264,21 +260,38 @@ class TestModoLocal:
             "O banco terá prejuízo nos próximos trimestres?",
             denom_social="PEQUENO",
             cd_cvm="001023",
-            instituicao_financeira=True,
             ativo_total=5.0e9,
             panorama=_panorama(),
             previsao_por_emissor_habilitada=True,
             escores={"001023": 0.031},
         )
-        assert "≥ R$ 500 bi" in grande.texto and "0,6%" in grande.texto
-        assert "< R$ 10 bi" in pequeno.texto and "29,6%" in pequeno.texto
+        assert "≥ R$ 500 bi" in grande.texto and "6,1%" in grande.texto
+        assert "< R$ 10 bi" in pequeno.texto and "37,4%" in pequeno.texto
+
+    def test_regime_publicado_nao_tem_recorte_setorial(self):
+        """Retratação de 2026-08-25: a tabela por setor não sobreviveu.
+
+        29 dos 35 eventos do recorte "instituições financeiras" vinham de oito
+        entidades que não são banco. Limpo, o gradiente some e a série fica não
+        monotônica.
+        """
+        resposta = responder_projecao(
+            "O BB terá prejuízo nos próximos trimestres?",
+            denom_social="BCO BRASIL S.A.",
+            cd_cvm="001023",
+            panorama=_panorama(),
+        )
+        texto = resposta.texto.lower()
+        assert "instituição financeira" not in texto
+        assert "instituicao_financeira" not in texto
+        assert "todos os setores" in texto
+        assert not hasattr(_panorama().faixas_de_porte[0], "instituicao_financeira")
 
     def test_sem_ativo_nao_inventa_faixa(self):
         resposta = responder_projecao(
             "O BB terá prejuízo nos próximos trimestres?",
             denom_social="BCO BRASIL S.A.",
             cd_cvm="001023",
-            instituicao_financeira=True,
             panorama=_panorama(),  # duas faixas financeiras, nenhuma escolhível
             previsao_por_emissor_habilitada=True,
             escores={"001023": 0.031},
@@ -438,7 +451,6 @@ class TestArtefatos:
                         {
                             "rotulo": faixa.rotulo,
                             "limite_inferior_reais": faixa.limite_inferior_reais,
-                            "instituicao_financeira": faixa.instituicao_financeira,
                             "n_observacoes": faixa.n_observacoes,
                             "taxa_prejuizo": faixa.taxa_prejuizo,
                         }
@@ -452,7 +464,7 @@ class TestArtefatos:
         lido = carregar_panorama(caminho)
         assert lido.trimestre_referencia == "3T2025"
         assert lido.fracao_acima_do_dobro == pytest.approx(80 / 413)
-        assert len(lido.faixas_de_porte) == 2
+        assert len(lido.faixas_de_porte) == 3
 
 
 class TestEscoresForaDoGit:

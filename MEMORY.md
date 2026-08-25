@@ -18,7 +18,7 @@
 - Última etapa concluída: **10 (modelo preditivo)**, 2026-08-23 —
   `resultados/modelo_preditivo_2026-08-23.md`, custo zero. Antes dela, a 4
   (chunking de tabela, AGENTS.md §3.4).
-- Suíte: **1.640** casos, sem skip (exige `requirements-modelo.txt`).
+- Suíte: **1.653** casos, sem skip (exige `requirements-modelo.txt`).
 - Rodada congelada vigente: fingerprint `5b9b142d`
   (`20260823T131515Z-4ad67021f6`), números publicados no README. Status:
   `auditoria_manual_pendente`.
@@ -86,6 +86,27 @@
   código: o caminho interativo nunca importa `src.modelo` (lê artefato
   offline); `escores_por_companhia.json` está no `.gitignore`; e o agregado
   extremo é suprimido para não vazar por eliminação. 0/55 falso bloqueio.
+- **DEBATE DE DOIS ESPECIALISTAS (2026-08-25) derrubou 3 coisas publicadas** —
+  detalhe completo em `resultados/debate_modelo_2026-08-25.md`. Uma retratação
+  de cada lado, inclusive minha. O que muda a execução daqui pra frente:
+  - **NÃO publicar "+0,11 sobre a persistência".** Ela é BINÁRIA e o AUC pune
+    empate. Baselines honestos já estão no código (`escore_taxa_recente`,
+    `escore_identidade_implementavel`): ganho real **+0,019** e **+0,073**.
+  - **O modelo ordena QUAIS companhias, não QUANDO viram.** Intra-companhia
+    0,663 × 0,865 agregado; 97,1% do decil superior já está em prejuízo.
+    `auc_within_companhia` e `composicao_do_topo` são OBRIGATÓRIAS ao lado de
+    qualquer lift — sem elas o número é lido como capacidade que não existe.
+  - **`is_banco` não significa banco** (é "usa plano de contas de IF"). Recorte
+    setorial removido da rota. Se voltar a precisar, casar por CNPJ com a lista
+    do BACEN — `cnpj` está preenchido em 741/741.
+  - **Para banco, nenhum rótulo contábil da CVM serve**: líquido omite,
+    pré-tributos exagera (24,5% resgatados pela linha fiscal × 6,2% nas não
+    financeiras). O recorrente gerencial não está no arquivo — é a TESE do
+    projeto, não uma falha dele.
+- **Duas armadilhas de código que voltam se alguém mexer**: a validação precisa
+  ficar em `ordem_teste − 1 − n_alvo` (o rótulo dela alcançava o teste, mesmo
+  com alvo de 1 trimestre), e `early_stopping` precisa ficar `False` explícito
+  (o `'auto'` liga com n>10.000 e ajusta o nº de árvores por fold).
 - **A AUDITORIA PEGOU 4 DEFEITOS REAIS na rota nova** (2026-08-24, todos
   corrigidos com teste — `resultados/robustez_modelo_2026-08-24.md` §7):
   `KeyError` que derrubava o app e impedia a recusa de chegar à tela;

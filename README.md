@@ -114,7 +114,7 @@ verificável em **2026-08-23**, não a intenção.
 | Observabilidade (Langfuse) e suíte automatizada de *faithfulness* | ⬜ Langfuse não construída · ✅ juiz automático medido contra a auditoria humana (0,867) |
 | Interface Streamlit (modo cacheado + pergunta livre opt-in) | ✅ base; camadas novas pendentes |
 
-Suíte de testes: **1.640 casos automatizados, sem skips**. `pytest` verde é
+Suíte de testes: **1.653 casos automatizados, sem skips**. `pytest` verde é
 pré-condição de qualquer commit.
 
 **Gate G4: reprovou em 2026-08-11, aprovado em 2026-08-22.** O gate confere,
@@ -277,7 +277,8 @@ de falso bloqueio se mantêm — evidência em `resultados/guardrails.json`.
 | Ataques bloqueados | 20 ataques (injeção + tópico) | **20/20** |
 | Concordância entre juiz automático e auditoria humana | mesma amostra de 15 | **0,867** (13/15), `gemini-3.7-flash` |
 | Comparação dos três braços (agente único × Investigador+Auditor × determinístico) | 15 pareadas | não medido |
-| Modelo preditivo (ROC-AUC contra baselines) | walk-forward, 47 folds | **0,866** contra **0,752** da persistência — vence em **47/47 folds**. Com alvo de 2 trimestres consecutivos e purga/embargo: **0,8797**, lift **3,32×** no top-10%. Entre companhias hoje lucrativas — onde a regra de persistência não discrimina nada — lift **4,35×** |
+| Modelo preditivo (ROC-AUC contra baselines) | walk-forward, 47 folds | **0,865**. Contra a regra binária de persistência, +0,113 — mas esse número é inflado por empate (a persistência tem 2 valores e o AUC pune empate). **Ganho honesto: +0,019 sobre `taxa_prejuizos_4t` crua** (coluna que já existe no painel) e **+0,073 sobre a taxa histórica da própria companhia**, vencendo em 47/47 |
+| Modelo: o que ele NÃO faz (decomposição obrigatória) | walk-forward, 47 folds | **AUC intra-companhia 0,663** contra 0,865 agregado: o modelo ordena **quais** companhias são cronicamente deficitárias, não **quando** uma vira. **97,1% do decil superior já está em prejuízo** no próprio trimestre. Onde há sinal de antecipação é o recorte de hoje-lucrativas (AUC 0,832, lift 4,35), ~4 nomes novos por trimestre |
 | Modelo: o que foi medido e NÃO ajudou | walk-forward pareado | Features do O-score de Ohlson (nulo/pior) · SMOTE (−0,006, p=5e-08) · ajuste de hiperparâmetros (zero em folds não vistos) · controle setorial (+0,0005, p=0,19) · recalibração isotônica (piora a ordenação) · LightGBM (empate, p=0,66) |
 | Custo real da API contra o teto de USD 25 | projeto inteiro | **USD 2,87** acumulado nos logs versionados |
 
