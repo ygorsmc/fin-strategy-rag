@@ -110,8 +110,6 @@ def _regime_por_porte(con: duckdb.DuckDBPyConnection) -> list[dict[str, object]]
 def _escorar_trimestre_corrente(
     con: duckdb.DuckDBPyConnection,
     painel,
-    *,
-    limiar_absoluto: float,
 ) -> tuple[dict[str, object] | None, dict[str, float]]:
     """Escora o último trimestre FECHADO — o que ainda não tem rótulo.
 
@@ -133,6 +131,18 @@ def _escorar_trimestre_corrente(
     "nenhum rótulo toca o trimestre escorado", vem de "o trimestre escorado já
     é passado realizado quando o escore é calculado".
 
+    **O limiar é calculado AQUI, na população certa — e a primeira versão
+    errava isso.** Ela reusava o limiar do panorama, que é "2× a taxa-base do
+    painel inteiro" (22,3% → 44,6%). Só que este bloco escora exclusivamente
+    companhias **hoje lucrativas**, cuja taxa-base é 8,1%. O mesmo número
+    absoluto virava, na prática, **5,5× a taxa-base da população em que era
+    aplicado** — não 2×. O efeito era grosseiro: 2 de 286 sinalizadas em vez
+    de 25 de 286, um fator de 12. O limiar não estava "conservador"; estava
+    medindo outra coisa e chamando pelo mesmo nome.
+
+    A regra ("o dobro da taxa-base") não mudou. O que mudou é de QUAL base ela
+    é o dobro: a do recorte que ela filtra.
+
     Devolve `(agregado_publicavel, escores_por_cd_cvm)`. O primeiro entra no
     `panorama.json` versionado; o segundo só é gravado com `--com-escores` e
     fica fora do Git (RN07, §3.6).
@@ -151,12 +161,24 @@ def _escorar_trimestre_corrente(
     modelo.fit(painel.quadro[colunas], painel.quadro["rotulo"].to_numpy(int))
     escores = modelo.predict_proba(inferencia.quadro[colunas])[:, 1]
 
+    treino = painel.quadro
+    hoje_lucrativas = treino[treino["prejuizo_em_t"] == 0]
+    if hoje_lucrativas.empty:
+        print("  trimestre corrente não escorado: sem base de hoje-lucrativas")
+        return None, {}
+    taxa_base_recorte = float(hoje_lucrativas["rotulo"].mean())
+    limiar_absoluto = 2.0 * taxa_base_recorte
+
     agregado = {
         "trimestre": inferencia.trimestre,
         "n_hoje_lucrativas": int(inferencia.n_companhias),
         "n_ja_em_prejuizo": int(inferencia.n_descartadas_por_ja_estar_em_prejuizo),
         "n_acima_do_limiar": int((escores >= limiar_absoluto).sum()),
         "limiar": float(limiar_absoluto),
+        # Publicado ao lado do limiar de propósito: sem a taxa-base, "acima de
+        # 16,1%" não diz se o corte é frouxo ou apertado, e foi exatamente essa
+        # omissão que deixou o limiar errado passar despercebido.
+        "taxa_base_do_recorte": taxa_base_recorte,
     }
     por_companhia = {
         str(cd): float(valor)
@@ -231,7 +253,7 @@ def principal() -> int:
             1.0 - painel.quadro["instituicao_financeira"].mean()
         )
         bloco_corrente, escores_corrente = _escorar_trimestre_corrente(
-            con, painel, limiar_absoluto=limiar
+            con, painel
         )
         panorama = {
             "trimestre_referencia": ultimo.trimestre_teste,

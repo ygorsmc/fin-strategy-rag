@@ -39,7 +39,8 @@
     "trimestre": "1T2026",
     "n_hoje_lucrativas": 286,
     "n_ja_em_prejuizo": 136,
-    "n_acima_do_limiar": 2,
-    "limiar": 0.4261501210653753
+    "n_acima_do_limiar": 25,
+    "limiar": 0.16146090389903406,
+    "taxa_base_do_recorte": 0.08073045194951703
   }
 }

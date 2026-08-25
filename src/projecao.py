@@ -225,6 +225,12 @@ class TrimestreCorrente:
     n_ja_em_prejuizo: int
     n_acima_do_limiar: int
     limiar: float
+    #: Taxa-base do PRÓPRIO recorte (hoje lucrativas), da qual o limiar é o
+    #: dobro. Sai publicada ao lado dele porque "acima de 16,1%" não diz se o
+    #: corte é frouxo ou apertado — e foi essa omissão que deixou passar um
+    #: limiar calculado na população errada (2× a base do painel inteiro,
+    #: 5,5× a base deste recorte, sinalizando 2 em vez de 25 de 286).
+    taxa_base_do_recorte: float | None = None
 
     @property
     def fracao_sinalizada(self) -> float:
@@ -568,7 +574,14 @@ def _bloco_trimestre_corrente(panorama: Panorama) -> str:
         f"{corrente.trimestre} **com lucro**, "
         f"**{corrente.n_acima_do_limiar}** "
         f"({_pct(corrente.fracao_sinalizada)}) receberam escore acima de "
-        f"{_pct(corrente.limiar)} para {panorama.alvo}.\n"
+        f"{_pct(corrente.limiar)} para {panorama.alvo}"
+        + (
+            f" — o dobro da taxa-base histórica deste mesmo recorte "
+            f"({_pct(corrente.taxa_base_do_recorte)})"
+            if corrente.taxa_base_do_recorte is not None
+            else ""
+        )
+        + ".\n"
         f"Outras {corrente.n_ja_em_prejuizo} companhias do trimestre já estão "
         "em prejuízo e ficam fora desta contagem de propósito: para elas o "
         "escore alto repete o que a própria demonstração já diz.\n"

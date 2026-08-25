@@ -16,6 +16,8 @@ import pandas as pd
 import pytest
 from sklearn.metrics import roc_auc_score
 
+RAIZ = Path(__file__).resolve().parent.parent
+
 from src.modelo import prever
 from src.modelo.construir_painel import (
     COLUNAS_DESCARTADAS,
@@ -37,6 +39,7 @@ from src.modelo.treinar import (
     comparar_pareado,
     auc_within_companhia,
     composicao_do_topo,
+    desempenho_no_bloco_cego,
     desempenho_por_estado,
     desempenho_por_recorte,
     escore_identidade_implementavel,
@@ -513,6 +516,159 @@ class TestPainelDeInferencia:
         inferencia = construir_painel_para_inferencia(con)
         assert not isinstance(inferencia, type(construir_painel(con)))
         assert not hasattr(inferencia, "taxa_positivos")
+
+
+class TestBlocoCegoDoBaseline:
+    """O número que justifica o módulo existir (medido em 2026-08-25).
+
+    `taxa_prejuizos_4t` é fração de denominador 4: sete valores possíveis. No
+    maior bloco de empate — companhias sem prejuízo nos últimos 4 trimestres,
+    46% do painel — ela é CONSTANTE, e AUC de constante é 0,500 por
+    construção. O modelo mede 0,757 ali. É o que dilui o ganho agregado de
+    +0,019 e é a função real do módulo.
+    """
+
+    def _pontuado(self):
+        con = _painel_longo_variado(n_companhias=60)
+        painel = construir_painel(con, trimestres_consecutivos=1)
+        return pontuar_walk_forward(painel)
+
+    def test_identifica_o_maior_bloco_de_empate_do_baseline(self):
+        quadro = pd.DataFrame(
+            {
+                "cd_cvm": [f"{i:06d}" for i in range(10)],
+                "rotulo": [0, 1, 0, 0, 1, 0, 1, 0, 0, 1],
+                "escore": [0.1, 0.9, 0.2, 0.3, 0.8, 0.15, 0.7, 0.25, 0.05, 0.95],
+                "prejuizo_em_t": [0] * 10,
+                # 7 zeros contra 3 de 0,5: o bloco cego é o do zero
+                "taxa_prejuizos_4t": [0.0] * 7 + [0.5] * 3,
+            }
+        )
+        bloco = desempenho_no_bloco_cego(quadro)
+        assert bloco["valor_do_baseline_no_bloco"] == pytest.approx(0.0)
+        assert bloco["n_observacoes"] == 7
+        assert bloco["fracao_do_painel"] == pytest.approx(0.7)
+
+    def test_auc_do_baseline_e_meio_por_construcao_nao_por_estimativa(self):
+        """A afirmação central: no bloco o baseline não está pior, está cego.
+
+        Se alguém tentar "medir" o AUC do baseline ali, o sklearn devolve
+        exatamente 0,5 porque o vetor é constante — e é isso que a chave
+        `auc_do_baseline` documenta em vez de recalcular.
+        """
+        quadro = pd.DataFrame(
+            {
+                "cd_cvm": ["a", "b", "c", "d"],
+                "rotulo": [0, 1, 0, 1],
+                "escore": [0.1, 0.9, 0.2, 0.8],
+                "prejuizo_em_t": [0, 0, 0, 0],
+                "taxa_prejuizos_4t": [0.0, 0.0, 0.0, 0.0],
+            }
+        )
+        bloco = desempenho_no_bloco_cego(quadro)
+        assert bloco["auc_do_baseline"] == 0.5
+        constante = np.zeros(4)
+        assert roc_auc_score([0, 1, 0, 1], constante) == pytest.approx(0.5)
+        # e o modelo, no mesmo bloco, ordena perfeitamente
+        assert bloco["auc_do_modelo"] == pytest.approx(1.0)
+
+    def test_a_fracao_de_eventos_alcancada_sai_junto(self):
+        """Sem ela, "AUC 0,757 e lift 3,9" seria lido como triagem geral.
+
+        O bloco cego tem taxa-base baixa justamente porque é o bloco dos
+        saudáveis: ele concentra poucos eventos do painel, e omitir isso
+        inverteria o sentido do achado.
+        """
+        bloco = desempenho_no_bloco_cego(self._pontuado())
+        if not bloco:
+            pytest.skip("painel sintético sem bloco de empate")
+        assert "fracao_dos_eventos_do_painel" in bloco
+        assert "n_eventos" in bloco
+        assert bloco["taxa_base"] <= 1.0
+
+    def test_entra_na_decomposicao_obrigatoria_do_relatorio(self):
+        """As três medidas andam juntas: duas dizem o que o modelo não faz,
+        esta diz o que ele faz. Publicar só as primeiras leva à conclusão —
+        errada — de que o módulo não serve para nada."""
+        painel = construir_painel(
+            _painel_longo_variado(n_companhias=60), trimestres_consecutivos=1
+        )
+        decomposicao = avaliar_walk_forward(painel)["decomposicao"]
+        assert "auc_within_companhia" in decomposicao
+        assert "composicao_do_topo" in decomposicao
+        assert "bloco_cego_do_baseline" in decomposicao
+
+    def test_quadro_vazio_nao_estoura(self):
+        assert desempenho_no_bloco_cego(pd.DataFrame()) == {}
+
+
+class TestLimiarDoTrimestreCorrente:
+    """O limiar tem de sair da população que ele filtra.
+
+    Defeito real, achado em 2026-08-25 conferindo a própria onda: o bloco do
+    trimestre corrente reusava o limiar do panorama — "2× a taxa-base do painel
+    inteiro" (22,3% → 44,6%) — mas escora só companhias **hoje lucrativas**,
+    cuja taxa-base é 8,1%. O mesmo número absoluto virava 5,5× a base da
+    população em que era aplicado. Efeito: 2 de 286 sinalizadas em vez de 25,
+    um fator de 12. Não era conservadorismo; era outra métrica com o mesmo
+    nome.
+    """
+
+    def test_taxa_base_das_hoje_lucrativas_e_menor_que_a_do_painel(self):
+        """A premissa do defeito, medida.
+
+        Se as duas taxas fossem parecidas o limiar herdado não faria mal. Elas
+        não são, porque prejuízo PERSISTE — e é essa persistência que o painel
+        sintético precisa ter para o teste medir a coisa certa. O
+        `_painel_longo_variado` é ruído puro, e nele a propriedade
+        legitimamente não vale: um teste sobre ele estaria medindo o gerador,
+        não o fenômeno.
+        """
+        lucros = {}
+        for i in range(12):  # cronicamente deficitárias
+            lucros[f"{i:06d}"] = [-2.0] * 16
+        for i in range(12, 30):  # cronicamente lucrativas
+            lucros[f"{i:06d}"] = [3.0] * 16
+        painel = construir_painel(_painel_longo(lucros), trimestres_consecutivos=1)
+        quadro = painel.quadro
+        base_painel = float(quadro["rotulo"].mean())
+        base_recorte = float(quadro[quadro["prejuizo_em_t"] == 0]["rotulo"].mean())
+        assert base_recorte < base_painel
+        # O fator é o que torna o defeito grosseiro, não sutil: no painel real
+        # é 22,3% × 8,1%, e o limiar herdado vira 5,5× em vez de 2×.
+        assert base_painel / max(base_recorte, 1e-9) > 2.0
+
+    def test_o_gerador_calcula_o_limiar_no_recorte_e_nao_no_painel(self):
+        """Contraprova no código: o limiar do bloco não pode vir de fora."""
+        fonte = (
+            RAIZ / "scripts" / "gerar_panorama_modelo.py"
+        ).read_text(encoding="utf-8")
+        corpo = fonte.split("def _escorar_trimestre_corrente", 1)[1]
+        corpo = corpo.split("\ndef ", 1)[0]
+        assert 'prejuizo_em_t"] == 0' in corpo, (
+            "o limiar precisa ser derivado do recorte hoje-lucrativas"
+        )
+        assert "taxa_base_do_recorte" in corpo
+        assert "limiar_absoluto" not in corpo.split('"""', 2)[0], (
+            "receber o limiar pronto por parâmetro foi o defeito original"
+        )
+
+    def test_o_agregado_publica_a_taxa_base_junto_do_limiar(self):
+        """Número de corte sem a base ao lado é o que escondeu o defeito."""
+        import json
+
+        panorama = json.loads(
+            (RAIZ / "artefatos" / "modelo" / "panorama.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        bloco = panorama.get("trimestre_corrente")
+        if bloco is None:
+            pytest.skip("panorama sem trimestre corrente nesta janela")
+        assert "taxa_base_do_recorte" in bloco
+        assert bloco["limiar"] == pytest.approx(
+            2.0 * bloco["taxa_base_do_recorte"], rel=1e-6
+        ), "o limiar precisa ser exatamente o dobro da base que publica"
 
 
 class TestViesAsRestated:

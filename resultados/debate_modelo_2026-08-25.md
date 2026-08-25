@@ -296,8 +296,19 @@ Fechado em 2026-08-25, na mesma data, depois do debate:
    `prejuizo_em_t = 0` é o padrão pela razão que este debate estabeleceu
    (97,1% do decil superior já está em prejuízo), e o denominador descartado é
    publicado ao lado para que a queda de volume não passe por melhora: das 422
-   companhias de `1T2026`, **286 fecharam com lucro e 2 receberam escore acima
-   do limiar**; as outras 136 já estão em prejuízo e ficam fora de propósito.
+   companhias de `1T2026`, **286 fecharam com lucro e 25 (8,7%) receberam
+   escore acima do limiar de 16,2%**; as outras 136 já estão em prejuízo e
+   ficam fora de propósito.
+
+   > **Defeito de cálculo achado depois, conferindo a própria entrega.** A
+   > primeira versão sinalizava **2** de 286, não 25. O limiar era herdado do
+   > panorama — "2× a taxa-base do painel inteiro", 22,3% → 44,6% — mas
+   > aplicado a um recorte cuja taxa-base é **8,1%**. Na prática virava 5,5×,
+   > e o número saía 12 vezes menor. A regra ("o dobro da taxa-base") estava
+   > certa; errado era de qual base. Corrigido, com o limiar calculado na
+   > população que ele filtra e `taxa_base_do_recorte` publicada ao lado —
+   > porque foi justamente a ausência dela que deixou o erro passar por duas
+   > revisões e uma auditoria.
    O bloco não tem AUC e diz isso — o resultado não aconteceu.
    **Trava de tipo:** `PainelDeInferencia` não é `PainelSupervisionado`, e
    `rotulo` vem como `pd.NA`. Sem as duas coisas, o `ELSE 0` do `CASE` daria

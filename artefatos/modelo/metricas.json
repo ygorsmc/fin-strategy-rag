@@ -548,7 +548,19 @@
           "taxa_4t_alta_no_topo": 0.9982964224872232,
           "n_companhias_distintas_no_topo": 242
         },
-        "leitura": "AUC agregado alto com AUC within-companhia perto de 0,65 significa que o modelo ordena QUAIS companhias são cronicamente deficitárias, não QUANDO uma vira. O decil superior é majoritariamente composto de companhias que já estão em prejuízo — lift não deve ser lido como triagem antecipada sem esta linha ao lado."
+        "bloco_cego_do_baseline": {
+          "valor_do_baseline_no_bloco": 0.0,
+          "n_observacoes": 8082,
+          "fracao_do_painel": 0.4589177218783715,
+          "n_eventos": 623,
+          "fracao_dos_eventos_do_painel": 0.105414551607445,
+          "taxa_base": 0.07708487998020291,
+          "auc_do_baseline": 0.5,
+          "auc_do_modelo": 0.7231939094766746,
+          "lift_decil_superior": 2.6651860210098057,
+          "leitura": "O baseline é constante neste bloco (AUC 0,500 por construção), então o modelo não 'ganha pouco' aqui: é a única coisa que ordena. É o que dilui o ganho agregado e é a função real do módulo — separar risco entre companhias que o histórico recente faz parecer igualmente saudáveis. A fração de eventos alcançada está ao lado para impedir a leitura inflada."
+        },
+        "leitura": "AUC agregado alto com AUC within-companhia perto de 0,65 significa que o modelo ordena QUAIS companhias são cronicamente deficitárias, não QUANDO uma vira. O decil superior é majoritariamente composto de companhias que já estão em prejuízo — lift não deve ser lido como triagem antecipada sem esta linha ao lado. E o ganho agregado sobre o baseline é pequeno porque MISTURA duas populações: onde `taxa_prejuizos_4t` discrimina o modelo empata, e onde ela é constante (46% do painel) ele é a única coisa que ordena — ver `bloco_cego_do_baseline`."
       },
       "por_fold": [
         {

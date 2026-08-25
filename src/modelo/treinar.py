@@ -811,6 +811,89 @@ def composicao_do_topo(
     }
 
 
+def desempenho_no_bloco_cego(pontuado: pd.DataFrame) -> dict[str, object]:
+    """Onde o baseline é uma CONSTANTE — a função real deste modelo.
+
+    **Este é o número que justifica o módulo existir, e ele estava faltando.**
+
+    `taxa_prejuizos_4t` é o melhor baseline do projeto, mas é uma fração de
+    denominador 4: assume 7 valores e nada mais. O maior bloco de empate é o
+    das companhias sem nenhum prejuízo nos últimos quatro trimestres — **46%
+    do painel**, todas com escore idêntico. Ali o baseline tem **AUC 0,500 por
+    construção**: não ordena, não pode ordenar, não é questão de estar pior.
+
+    Medido em 2026-08-25 no painel de treino. **Os dois alvos são reportados
+    porque `treinar_modelo.py` publica o de 1 trimestre e o produto usa o de 2
+    — citar só um faria docstring e artefato parecerem discordar:**
+
+    | alvo | n do bloco | taxa-base | baseline | modelo | lift |
+    |---|---|---|---|---|---|
+    | 1 trimestre | 8.082 (45,9%) | 7,71% | 0,500 | **0,723** | 2,67× |
+    | 2 trimestres | 7.785 (46,0%) | 2,72% | 0,500 | **0,757** | 3,92× |
+
+    O alvo de 2 trimestres tem AUC e lift maiores e base muito menor — coerente
+    com ele exigir prejuízo persistente, que é evento mais raro e mais
+    estruturado.
+
+    **Por que isso reinterpreta o "+0,019" agregado.** O ganho médio sobre o
+    baseline é pequeno porque mistura duas populações opostas: nos 54% em que
+    o baseline já discrimina, o modelo empata; nos 46% em que ele é constante,
+    o modelo é a única coisa que ordena. "Nada + muito, dividido por dois" dá
+    +0,019 — o número estava certo, a leitura de que "o modelo empata com uma
+    heurística de duas linhas" não. A heurística não empata no bloco cego; ela
+    não opera lá.
+
+    **E o que isso NÃO autoriza.** O bloco cego tem taxa-base de 2,72% e
+    concentra só **5,6% dos eventos** do painel. Sinalizar o decil superior
+    dele é marcar ~778 companhias para alcançar ~83 prejuízos. É um filtro
+    onde antes não havia filtro nenhum — não é uma máquina de achar prejuízo,
+    e a fração de eventos alcançada sai publicada junto exatamente para
+    impedir essa leitura.
+    """
+    if pontuado.empty or "taxa_prejuizos_4t" not in pontuado.columns:
+        return {}
+    valores = pontuado["taxa_prejuizos_4t"].to_numpy(dtype=float)
+    distintos, contagens = np.unique(valores[~np.isnan(valores)], return_counts=True)
+    if not len(distintos):
+        return {}
+    valor_cego = float(distintos[int(np.argmax(contagens))])
+    cego = pontuado[pontuado["taxa_prejuizos_4t"] == valor_cego]
+
+    y = cego["rotulo"].to_numpy(dtype=int)
+    escore = cego["escore"].to_numpy(dtype=float)
+    auc = None
+    if len(np.unique(y)) == 2:
+        auc = float(roc_auc_score(y, escore))
+
+    k = max(1, int(round(len(cego) * 0.10)))
+    topo = cego.iloc[np.argsort(-escore, kind="stable")[:k]]
+    taxa_base = float(y.mean()) if len(y) else 0.0
+    taxa_topo = float(topo["rotulo"].mean()) if len(topo) else 0.0
+
+    total_eventos = int(pontuado["rotulo"].sum())
+    return {
+        "valor_do_baseline_no_bloco": valor_cego,
+        "n_observacoes": int(len(cego)),
+        "fracao_do_painel": float(len(cego) / len(pontuado)),
+        "n_eventos": int(y.sum()),
+        "fracao_dos_eventos_do_painel": (
+            float(y.sum() / total_eventos) if total_eventos else None
+        ),
+        "taxa_base": taxa_base,
+        "auc_do_baseline": 0.5,  # constante por construção, não estimativa
+        "auc_do_modelo": auc,
+        "lift_decil_superior": (taxa_topo / taxa_base) if taxa_base else None,
+        "leitura": (
+            "O baseline é constante neste bloco (AUC 0,500 por construção), "
+            "então o modelo não 'ganha pouco' aqui: é a única coisa que "
+            "ordena. É o que dilui o ganho agregado e é a função real do "
+            "módulo — separar risco entre companhias que o histórico recente "
+            "faz parecer igualmente saudáveis. A fração de eventos alcançada "
+            "está ao lado para impedir a leitura inflada."
+        ),
+    }
+
+
 def desempenho_por_estado(
     pontuado: pd.DataFrame, *, minimo_observacoes: int = 50
 ) -> dict[str, object]:
@@ -975,13 +1058,22 @@ def avaliar_walk_forward(
         "decomposicao": {
             "auc_within_companhia": auc_within_companhia(pontuado),
             "composicao_do_topo": composicao_do_topo(pontuado),
+            # As duas linhas acima dizem o que o modelo NÃO faz; esta diz o que
+            # ele faz. Publicar só as primeiras leva à conclusão de que o
+            # módulo não serve para nada — conclusão que a medição do bloco
+            # cego contradiz. As três andam juntas.
+            "bloco_cego_do_baseline": desempenho_no_bloco_cego(pontuado),
             "leitura": (
                 "AUC agregado alto com AUC within-companhia perto de 0,65 "
                 "significa que o modelo ordena QUAIS companhias são "
                 "cronicamente deficitárias, não QUANDO uma vira. O decil "
                 "superior é majoritariamente composto de companhias que já "
                 "estão em prejuízo — lift não deve ser lido como triagem "
-                "antecipada sem esta linha ao lado."
+                "antecipada sem esta linha ao lado. E o ganho agregado sobre "
+                "o baseline é pequeno porque MISTURA duas populações: onde "
+                "`taxa_prejuizos_4t` discrimina o modelo empata, e onde ela é "
+                "constante (46% do painel) ele é a única coisa que ordena — "
+                "ver `bloco_cego_do_baseline`."
             ),
         },
         "por_fold": por_fold,

@@ -18,7 +18,7 @@
 - Última etapa concluída: **10 (modelo preditivo)**, 2026-08-23 —
   `resultados/modelo_preditivo_2026-08-23.md`, custo zero. Antes dela, a 4
   (chunking de tabela, AGENTS.md §3.4).
-- Suíte: **1.689** casos, sem skip (exige `requirements-modelo.txt`).
+- Suíte: **1.699** casos, sem skip (exige `requirements-modelo.txt`).
 - Rodada congelada vigente: fingerprint `5b9b142d`
   (`20260823T131515Z-4ad67021f6`), números publicados no README. Status:
   `auditoria_manual_pendente`.
@@ -103,6 +103,20 @@
     pré-tributos exagera (24,5% resgatados pela linha fiscal × 6,2% nas não
     financeiras). O recorrente gerencial não está no arquivo — é a TESE do
     projeto, não uma falha dele.
+- **ONDE O MODELO DE FATO SERVE — medido em 2026-08-25, e faltava.** As duas
+  medidas de decomposição acima dizem o que o modelo NÃO faz, e publicá-las
+  sozinhas leva à conclusão (errada) de que o módulo não tem função — foi
+  exatamente a conclusão que o Ygor tirou ao ler o resumo, e ele estava certo
+  em tirá-la do que estava escrito. `taxa_prejuizos_4t` tem denominador 4:
+  **7 valores possíveis**, e o maior bloco de empate (sem prejuízo em 4
+  trimestres) é **46% do painel**, onde ela é CONSTANTE — **AUC 0,500 por
+  construção, não por estar pior**. O modelo mede **0,757** ali (alvo 2T;
+  0,723 no 1T), lift **3,92×**. É isso que dilui o +0,019: nos 54% em que o
+  baseline discrimina o modelo empata, nos 46% em que ele é cego o modelo é a
+  única coisa que ordena. **Ressalva que anda junto:** o bloco cego é o dos
+  saudáveis, concentra só **5,6% dos eventos** — filtro onde não havia filtro,
+  não máquina de achar prejuízo. `desempenho_no_bloco_cego`, dentro de
+  `decomposicao`.
 - **Duas armadilhas de código que voltam se alguém mexer**: a validação precisa
   ficar em `ordem_teste − 1 − n_alvo` (o rótulo dela alcançava o teste, mesmo
   com alvo de 1 trimestre), e `early_stopping` precisa ficar `False` explícito
@@ -129,7 +143,7 @@
   `construir_painel_para_inferencia` usa `LEFT JOIN` no alvo e devolve o
   último trimestre fechado: referência foi de `3T2025` para **`1T2026`**.
   Restrita a `prejuizo_em_t=0` por medição, não por gosto — 97,1% do decil
-  superior já está em prejuízo. **286 hoje lucrativas, 2 acima do limiar, 136
+  superior já está em prejuízo. **286 hoje lucrativas, 25 acima do limiar, 136
   já em prejuízo publicadas ao lado** para a queda de volume não passar por
   melhora. Duas travas: `PainelDeInferencia` é tipo PRÓPRIO (passar um pelo
   outro treinaria sobre rótulo inexistente) e `rotulo` vem `pd.NA`, porque o
@@ -170,8 +184,16 @@
     portão do produto sem ela, e se declara "o caminho interativo inteiro").
   - A guarda anti-eliminação do trimestre corrente é sobre **fração**
     (`BANDA_PUBLICAVEL`, 5%–95%), não sobre contagem: barrar só 0 e "todas"
-    deixava passar 2 de 286, que entrega a mesma dedução. **Com o painel atual
-    o bloco fica suprimido** — guarda que nunca dispara é decorativa.
+    deixava passar 2 de 286, que entrega a mesma dedução.
+- **DEFEITO DE CÁLCULO ACHADO DEPOIS DA AUDITORIA, conferindo a própria onda:**
+  o limiar do bloco do trimestre corrente era herdado do panorama — "2× a
+  taxa-base do PAINEL INTEIRO" (22,3%) — mas aplicado só às **hoje lucrativas**,
+  cuja base é 8,1%. Virava **5,5×** na prática. Efeito: **2 de 286 em vez de 25**,
+  fator 12. Corrigido: o limiar sai da população que ele filtra, e
+  `taxa_base_do_recorte` é publicada ao lado dele — foi a ausência dela que
+  escondeu o erro. **Lição que vale mais que o conserto: número de corte sem a
+  base ao lado é incomparável, e "2× a taxa-base" não diz nada sem dizer de
+  QUAL base.**
   - Um teste meu se chamava `test_falha_fechada_*`, dizia cobrir a falha e não
     tinha `pytest.raises`. Guarda extraída para `exigir_trimestre_sem_rotulo`
     para poder ser exercitada de verdade.

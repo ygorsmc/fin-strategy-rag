@@ -354,8 +354,9 @@ class TestTrimestreCorrente:
             "trimestre": "1T2026",
             "n_hoje_lucrativas": 286,
             "n_ja_em_prejuizo": 136,
-            "n_acima_do_limiar": 2,
-            "limiar": 0.426,
+            "n_acima_do_limiar": 25,
+            "limiar": 0.1615,
+            "taxa_base_do_recorte": 0.0807,
         }
         base.update(ajustes)
         return TrimestreCorrente(**base)
@@ -371,7 +372,7 @@ class TestTrimestreCorrente:
         )
 
     def test_publica_o_trimestre_corrente_e_o_denominador_descartado(self):
-        texto = self._responder(self._corrente(n_acima_do_limiar=40)).texto
+        texto = self._responder(self._corrente()).texto
         assert "1T2026" in texto
         assert "286" in texto
         assert "136" in texto, "o descartado precisa sair junto do recortado"
@@ -379,9 +380,37 @@ class TestTrimestreCorrente:
     def test_declara_que_nao_ha_auc_para_o_trimestre_corrente(self):
         """Resultado que não aconteceu não tem métrica de acerto. Publicar o
         AUC do walk-forward colado neste bloco insinuaria que tem."""
-        texto = self._responder(self._corrente(n_acima_do_limiar=40)).texto
+        texto = self._responder(self._corrente()).texto
         assert "ainda sem resultado conhecido" in texto
         assert "não tem AUC" in texto or "não tem auc" in texto.lower()
+
+    def test_o_limiar_sai_acompanhado_da_taxa_base_do_proprio_recorte(self):
+        """Sem a taxa-base ao lado, "acima de 16,1%" não diz se o corte é
+        frouxo ou apertado — e foi essa omissão que deixou passar um limiar
+        calculado na população errada (2× a base do painel inteiro, que é
+        5,5× a base deste recorte).
+        """
+        texto = self._responder(self._corrente()).texto
+        assert "16,2%" in texto or "16,1%" in texto, texto
+        assert "8,1%" in texto, "a taxa-base do recorte precisa sair junto"
+        # Frase específica DESTE bloco — `_bloco_panorama` também fala em
+        # "dobro da taxa-base", mas do painel inteiro; casar com a frase curta
+        # deixaria o teste passar mesmo sem o bloco novo.
+        assert "dobro da taxa-base histórica deste mesmo recorte" in texto
+
+    def test_bloco_sobrevive_sem_a_taxa_base(self):
+        """Panorama gravado antes da correção não tem o campo. O bloco degrada
+        (sai sem a comparação) em vez de estourar."""
+        corrente = TrimestreCorrente(
+            trimestre="1T2026",
+            n_hoje_lucrativas=286,
+            n_ja_em_prejuizo=136,
+            n_acima_do_limiar=25,
+            limiar=0.1615,
+        )
+        texto = self._responder(corrente).texto
+        assert "1T2026" in texto
+        assert "dobro da taxa-base histórica deste mesmo recorte" not in texto
 
     @pytest.mark.parametrize("n_acima", [0, 2, 284, 286])
     def test_fracao_extrema_suprime_o_bloco(self, n_acima):
@@ -398,15 +427,23 @@ class TestTrimestreCorrente:
         assert "1T2026" not in resposta.texto
 
     def test_fracao_dentro_da_banda_publica(self):
-        """Contraprova: a guarda não pode ser sempre-suprimir."""
-        resposta = self._responder(self._corrente(n_acima_do_limiar=40))
+        """Contraprova: a guarda não pode ser sempre-suprimir.
+
+        Com o limiar corrigido (2× a base do PRÓPRIO recorte, não a do painel
+        inteiro) o painel de 2026-08-25 dá 25/286 = 8,7%, dentro da banda —
+        então o bloco é publicado de verdade, não só em teoria.
+        """
+        resposta = self._responder(self._corrente())
         assert "trimestre_corrente" in resposta.blocos
 
     def test_a_banda_e_a_mesma_que_o_codigo_declara(self):
         piso, teto = BANDA_PUBLICAVEL
         assert 0.0 < piso < teto < 1.0
         n = 286
-        assert not (piso <= 2 / n <= teto), "o valor real do painel deve barrar"
+        assert piso <= 25 / n <= teto, "o valor real do painel deve publicar"
+        assert not (piso <= 2 / n <= teto), (
+            "2/286 era o valor sob o limiar errado e precisa continuar barrado"
+        )
 
     def test_recorte_pequeno_suprime_o_bloco(self):
         resposta = self._responder(
