@@ -16,6 +16,7 @@ from pathlib import Path
 import pytest
 
 from src.projecao import (
+    BANDA_PUBLICAVEL,
     CAMINHO_ESCORES,
     CAMINHO_PANORAMA,
     FaixaDePorte,
@@ -23,9 +24,11 @@ from src.projecao import (
     PanoramaIndisponivelError,
     PrevisaoPorEmissorDesabilitadaError,
     RESOLUCAO_ANALISE,
+    TrimestreCorrente,
     carregar_escores,
     carregar_panorama,
     detectar_pergunta_prospectiva,
+    recusa_de_ultimo_recurso,
     responder_projecao,
 )
 
@@ -271,9 +274,10 @@ class TestModoLocal:
     def test_regime_publicado_nao_tem_recorte_setorial(self):
         """Retratação de 2026-08-25: a tabela por setor não sobreviveu.
 
-        29 dos 35 eventos do recorte "instituições financeiras" vinham de oito
-        entidades que não são banco. Limpo, o gradiente some e a série fica não
-        monotônica.
+        42 dos 49 eventos do recorte "instituições financeiras" vinham de nove
+        entidades que não são banco; limpo, sobram 7 — abaixo do mínimo de 20 —
+        e o gradiente some. Reproduzível por
+        `scripts/auditar_recorte_is_banco.py`.
         """
         resposta = responder_projecao(
             "O BB terá prejuízo nos próximos trimestres?",
@@ -333,6 +337,198 @@ class TestModoLocal:
         assert resposta.expos_escore_por_emissor is False
         assert "escore_ausente" in resposta.blocos
         assert resposta.blocos[0] == "recusa"
+
+
+class TestTrimestreCorrente:
+    """Escorar o trimestre que ainda não tem rótulo (auditoria 2026-08-25).
+
+    Antes, o panorama publicava como referência um trimestre dois atrás do
+    último dado completo, porque o alvo exige T+1 e T+2. O bloco novo escora o
+    trimestre corrente — restrito a quem está hoje lucrativo, que é o único
+    recorte em que o escore diz algo que a demonstração não diz.
+    """
+
+    @staticmethod
+    def _corrente(**ajustes) -> TrimestreCorrente:
+        base = {
+            "trimestre": "1T2026",
+            "n_hoje_lucrativas": 286,
+            "n_ja_em_prejuizo": 136,
+            "n_acima_do_limiar": 2,
+            "limiar": 0.426,
+        }
+        base.update(ajustes)
+        return TrimestreCorrente(**base)
+
+    def _responder(self, corrente):
+        return responder_projecao(
+            "O Itaú terá prejuízo nos próximos trimestres?",
+            denom_social="ITAU UNIBANCO HOLDING S.A.",
+            cd_cvm="019348",
+            trimestres_painel=("1T2025", "2T2025"),
+            n_prejuizos=0,
+            panorama=_panorama(trimestre_corrente=corrente),
+        )
+
+    def test_publica_o_trimestre_corrente_e_o_denominador_descartado(self):
+        texto = self._responder(self._corrente(n_acima_do_limiar=40)).texto
+        assert "1T2026" in texto
+        assert "286" in texto
+        assert "136" in texto, "o descartado precisa sair junto do recortado"
+
+    def test_declara_que_nao_ha_auc_para_o_trimestre_corrente(self):
+        """Resultado que não aconteceu não tem métrica de acerto. Publicar o
+        AUC do walk-forward colado neste bloco insinuaria que tem."""
+        texto = self._responder(self._corrente(n_acima_do_limiar=40)).texto
+        assert "ainda sem resultado conhecido" in texto
+        assert "não tem AUC" in texto or "não tem auc" in texto.lower()
+
+    @pytest.mark.parametrize("n_acima", [0, 2, 284, 286])
+    def test_fracao_extrema_suprime_o_bloco(self, n_acima):
+        """"2 de 286" entrega a mesma dedução que "0 de 286".
+
+        A guarda original barrava só o 0 e o total literais, e a auditoria de
+        2026-08-25 mostrou que **2 de 286** — o valor real do painel — passava:
+        publicá-lo ao lado de uma pergunta sobre um emissor entrega, com 99,3%
+        de confiança, que aquele emissor está abaixo do limiar. A guarda passou
+        a ser sobre FRAÇÃO, não sobre contagem.
+        """
+        resposta = self._responder(self._corrente(n_acima_do_limiar=n_acima))
+        assert "trimestre_corrente" not in resposta.blocos
+        assert "1T2026" not in resposta.texto
+
+    def test_fracao_dentro_da_banda_publica(self):
+        """Contraprova: a guarda não pode ser sempre-suprimir."""
+        resposta = self._responder(self._corrente(n_acima_do_limiar=40))
+        assert "trimestre_corrente" in resposta.blocos
+
+    def test_a_banda_e_a_mesma_que_o_codigo_declara(self):
+        piso, teto = BANDA_PUBLICAVEL
+        assert 0.0 < piso < teto < 1.0
+        n = 286
+        assert not (piso <= 2 / n <= teto), "o valor real do painel deve barrar"
+
+    def test_recorte_pequeno_suprime_o_bloco(self):
+        resposta = self._responder(
+            self._corrente(n_hoje_lucrativas=12, n_acima_do_limiar=2)
+        )
+        assert "trimestre_corrente" not in resposta.blocos
+
+    def test_ausente_nao_derruba_a_resposta(self):
+        """Painel curto demais para alcançar trimestre sem rótulo: o bloco some
+        e o resto da resposta continua."""
+        resposta = self._responder(None)
+        assert "trimestre_corrente" not in resposta.blocos
+        assert resposta.texto.strip()
+
+    def test_o_escore_por_emissor_cita_o_trimestre_escorado(self):
+        """O escore passou a ser do trimestre corrente; citar o do panorama
+        mandaria o analista conferir o trimestre errado."""
+        panorama = _panorama(trimestre_corrente=self._corrente())
+        assert panorama.trimestre_dos_escores == "1T2026"
+        assert panorama.trimestre_referencia == "3T2025"
+        resposta = responder_projecao(
+            "Qual a probabilidade de prejuízo do Itaú?",
+            denom_social="ITAU UNIBANCO HOLDING S.A.",
+            cd_cvm="019348",
+            trimestres_painel=("1T2025", "2T2025"),
+            n_prejuizos=0,
+            panorama=panorama,
+            previsao_por_emissor_habilitada=True,
+            escores={"019348": 0.07},
+        )
+        assert "1T2026" in resposta.texto
+
+    def test_sem_trimestre_corrente_cai_no_de_referencia(self):
+        assert _panorama().trimestre_dos_escores == "3T2025"
+
+
+class TestGuardaProfunda:
+    """A RN07 não pode morar num ramo só (auditoria de 2026-08-25).
+
+    O defeito: `responder_prospectiva_se_couber` devolvia ``None`` quando o
+    panorama ou o painel faltavam, e ``None`` significa "siga o fluxo normal" —
+    ou seja, a pergunta prospectiva sobre emissor nomeado ia para o LLM. Uma
+    camada acessória ausente virava permissão. Aqui o teto vira piso: artefato
+    ausente degrada a RIQUEZA da resposta, nunca a fronteira.
+    """
+
+    def test_recusa_de_ultimo_recurso_nao_precisa_de_artefato(self):
+        achado = detectar_pergunta_prospectiva(
+            "O banco XYZ terá prejuízo no próximo trimestre?"
+        )
+        assert achado is not None
+        resposta = recusa_de_ultimo_recurso(achado, motivo="painel indisponível")
+        assert resposta.expos_escore_por_emissor is False
+        assert resposta.escore is None
+        assert resposta.blocos == ("recusa",)
+        assert resposta.metadados["degradado"] is True
+        assert RESOLUCAO_ANALISE in resposta.texto
+        assert "painel indisponível" in resposta.texto
+
+    def test_recusa_degradada_nao_inventa_numero(self):
+        """Trocar violação de RN07 por violação de RN02 não seria conserto.
+
+        Sem os artefatos não há número conferível. A recusa pobre é o
+        comportamento certo — qualquer dígito aqui viria de memória
+        paramétrica ou de constante escrita à mão.
+        """
+        import re
+
+        achado = detectar_pergunta_prospectiva("Qual a probabilidade de prejuízo?")
+        texto = recusa_de_ultimo_recurso(achado, motivo="sem painel").texto
+        # As âncoras legais carregam número ("20/2021"); nada além delas pode.
+        sem_ancoras = texto.replace(RESOLUCAO_ANALISE, "")
+        assert not re.search(r"\d+[,.]\d|\d+%", sem_ancoras), sem_ancoras
+
+    def test_o_ramo_do_streamlit_nao_devolve_none_sem_recursos(self):
+        """Contraprova no código: o `return None` do caminho sem recursos saiu."""
+        fonte = (RAIZ / "app_streamlit.py").read_text(encoding="utf-8")
+        trecho = fonte.split("def responder_prospectiva_se_couber", 1)[1]
+        trecho = trecho.split("\ndef ", 1)[0]
+        assert "recusa_de_ultimo_recurso" in trecho, (
+            "recursos ausentes precisam recusar, não cair no fluxo normal"
+        )
+        depois_do_carregar = trecho.split("recursos = carregar_rota_prospectiva()", 1)[1]
+        cabeca = depois_do_carregar.split("indice = recursos", 1)[0]
+        assert "return None" not in cabeca, (
+            "o fall-through para o LLM voltou: pergunta prospectiva sem "
+            "panorama seria respondida pelo provedor"
+        )
+
+    def test_a_camada_de_agentes_tambem_verifica(self):
+        """`responder_com_guardrails` era o único portão do produto sem a RN07.
+
+        Ela se declara "o caminho interativo inteiro" (§6). Enquanto a camada
+        de agentes não está ligada à interface o buraco é teórico; a etapa 11
+        o tornaria real, e a correção não pode depender de alguém lembrar.
+        Achado da auditoria de 2026-08-25 — a onda anterior fechou um dos dois
+        portões e reescreveu a memória como se tivesse fechado os dois.
+        """
+        fonte = (RAIZ / "src" / "agentes.py").read_text(encoding="utf-8")
+        corpo = fonte.split("def responder_com_guardrails", 1)[1]
+        corpo = corpo.split("\ndef ", 1)[0]
+        assert "detectar_pergunta_prospectiva" in corpo
+        assert corpo.index("detectar_pergunta_prospectiva") < corpo.index(
+            "executar("
+        ), "recusar depois de chamar o braço não é recusar"
+
+    def test_o_portao_do_provedor_tambem_verifica(self):
+        """Portão duplo, como já se faz com a RN05 em `responder_pergunta_livre`.
+
+        A rota depende do nome resolver no índice de cobertura. Companhia
+        nomeada que não esteja no índice escaparia da primeira guarda — esta
+        segunda, na função que fala com o provedor, é a que não escapa.
+        """
+        fonte = (RAIZ / "app_streamlit.py").read_text(encoding="utf-8")
+        corpo = fonte.split("def responder_pergunta_livre", 1)[1].split("\ndef ", 1)[0]
+        assert "detectar_pergunta_prospectiva" in corpo
+        posicao_guarda = corpo.index("detectar_pergunta_prospectiva")
+        for marcador in ("gerar_resposta(", "estimar_custo_maximo", "recuperar("):
+            assert posicao_guarda < corpo.index(marcador), (
+                f"a guarda da RN07 precisa vir ANTES de `{marcador}` — recusar "
+                "depois de gastar não é recusar"
+            )
 
 
 class TestAchadosDaAuditoria:

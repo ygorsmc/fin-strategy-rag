@@ -359,14 +359,18 @@ SELECT
     -- literatura de lucro trimestral documenta.
     (t.ordem % 4) + 1                                           AS trimestre_do_ano,
 
-    CASE WHEN prox.n_prejuizos_futuros = {n_alvo} THEN 1 ELSE 0 END AS rotulo
+    CASE WHEN prox.n_prejuizos_futuros = {n_alvo} THEN 1 ELSE 0 END AS rotulo,
+    -- Sem esta coluna, a junção frouxa do modo inferência produziria `rotulo`
+    -- = 0 para quem ainda NÃO tem futuro (NULL cai no ELSE) — rótulo inventado
+    -- disfarçado de "lucro". A coluna torna a distinção verificável.
+    CASE WHEN prox.n_prejuizos_futuros IS NULL THEN 0 ELSE 1 END AS rotulo_conhecido
 FROM ordenada t
 JOIN historico h
   ON h.cd_cvm = t.cd_cvm AND h.ordem = t.ordem
 -- O alvo cobre T+1 .. T+n por junção explícita, e o `HAVING count(*) = n`
 -- exige que TODOS os trimestres da janela existam: companhia que some do
 -- painel sai da amostra em vez de receber rótulo parcial.
-JOIN alvo prox
+{juncao_alvo} alvo prox
   ON prox.cd_cvm = t.cd_cvm AND prox.ordem = t.ordem
 -- T-1 é opcional: a primeira observação de cada companhia tem lag nulo, e o
 -- modelo precisa saber lidar com isso em produção.
@@ -381,6 +385,81 @@ JOIN historico_4t h4
   ON h4.cd_cvm = t.cd_cvm AND h4.ordem = t.ordem
 ORDER BY t.ordem, t.cd_cvm
 """
+
+
+_SQL_REPUBLICACAO = """
+WITH versao_por_obs AS (
+    SELECT cd_cvm, trimestre, max(versao_documento) AS versao_max
+    FROM fatos_contabeis
+    GROUP BY 1, 2
+)
+SELECT
+    CASE WHEN i.lucro_liquido_consolidado < 0 THEN 1 ELSE 0 END AS prejuizo,
+    count(*)                                                    AS n,
+    sum(CASE WHEN v.versao_max > 1 THEN 1 ELSE 0 END)           AS n_republicado
+FROM indicadores i
+JOIN versao_por_obs v USING (cd_cvm, trimestre)
+WHERE i.lucro_liquido_consolidado IS NOT NULL
+GROUP BY 1
+"""
+
+
+def medir_republicacao(con: duckdb.DuckDBPyConnection) -> dict[str, object]:
+    """Mede o viés *as-restated* em vez de apenas declará-lo.
+
+    A armadilha 1 da carga mantém só a maior VERSAO por companhia × trimestre,
+    que é a regra certa para consulta — o número corrigido é o número correto.
+    Para o modelo, porém, ela cria viés de antecipação: parte do painel de
+    treino é composta de valores que **não estavam disponíveis** na data em que
+    o trimestre fechou, porque só apareceram na republicação.
+
+    Não dá para desfazer isso com o painel carregado (as versões anteriores são
+    descartadas na carga, e recuperá-las exigiria reler os ZIPs por versão).
+    O que dá — e é o que esta função faz — é medir o tamanho da exposição e,
+    principalmente, se ela é **assimétrica entre as classes**. Republicação
+    concentrada nos trimestres de prejuízo seria contaminação direta do rótulo;
+    republicação uniforme é ruído que não empurra o modelo para um lado.
+
+    Medido em 2026-08-25 no painel de treino (2011–2026): 16,36% das
+    observações, com 16,81% nos trimestres de prejuízo contra 16,14% nos de
+    lucro — diferença de 0,67 ponto, sem concentração na classe positiva.
+    """
+    linhas = con.execute(_SQL_REPUBLICACAO).fetchall()
+    por_classe = {
+        int(prejuizo): {"n": int(n), "n_republicado": int(n_rep or 0)}
+        for prejuizo, n, n_rep in linhas
+    }
+    total = sum(bloco["n"] for bloco in por_classe.values())
+    total_rep = sum(bloco["n_republicado"] for bloco in por_classe.values())
+
+    def _taxa(classe: int) -> float | None:
+        bloco = por_classe.get(classe)
+        if not bloco or bloco["n"] == 0:
+            return None
+        return bloco["n_republicado"] / bloco["n"]
+
+    taxa_prejuizo, taxa_lucro = _taxa(1), _taxa(0)
+    assimetria = (
+        None
+        if taxa_prejuizo is None or taxa_lucro is None
+        else taxa_prejuizo - taxa_lucro
+    )
+    return {
+        "n_observacoes": total,
+        "n_republicadas": total_rep,
+        "fracao_republicada": (total_rep / total) if total else 0.0,
+        "fracao_republicada_em_prejuizo": taxa_prejuizo,
+        "fracao_republicada_em_lucro": taxa_lucro,
+        "assimetria_entre_classes": assimetria,
+        "ressalva": (
+            "Parte do painel usa valores que só existiram após republicação e "
+            "não estavam disponíveis no fechamento do trimestre (viés "
+            "as-restated). Não é reversível com o painel carregado — a carga "
+            "mantém só a maior VERSAO. A exposição é medida e a assimetria "
+            "entre classes é o que importa: republicação concentrada no "
+            "prejuízo contaminaria o rótulo; uniforme, não."
+        ),
+    }
 
 
 def construir_painel(
@@ -418,6 +497,7 @@ def construir_painel(
         lista_trimestres=lista,
         caso_ordem=caso_ordem,
         n_alvo=trimestres_consecutivos,
+        juncao_alvo="JOIN",
     )
     quadro = con.execute(sql).df()
 
@@ -430,4 +510,132 @@ def construir_painel(
         trimestres_usados=completos,
         trimestres_descartados=descartados,
         trimestres_consecutivos=trimestres_consecutivos,
+    )
+
+
+def exigir_trimestre_sem_rotulo(quadro: pd.DataFrame, trimestre: str) -> None:
+    """Levanta se o trimestre a escorar já tiver desfecho conhecido.
+
+    Função separada de propósito. Embutida em
+    `construir_painel_para_inferencia`, a condição é **inalcançável** hoje: o
+    trimestre escolhido é o último de `completos`, e o alvo só existe quando há
+    trimestre posterior dentro da mesma janela. Uma guarda inalcançável não é
+    testável, e guarda não testável é comentário — foi o que a auditoria de
+    2026-08-25 apontou, junto com um teste meu que dizia verificar a falha
+    fechada e na verdade exercitava o caminho feliz.
+
+    Ela continua existindo porque a escolha do trimestre é uma linha
+    (`alvo = completos[-1]`) que qualquer parametrização futura muda — escorar
+    um trimestre já resolvido entregaria retrospectiva com cara de previsão.
+    Extraída, a guarda passa a ser exercitada diretamente pelo teste, sem
+    depender de o SQL um dia deixá-la alcançável.
+    """
+    if "rotulo_conhecido" not in quadro.columns:
+        raise ValueError(
+            "quadro sem a coluna `rotulo_conhecido`; sem ela não há como "
+            "distinguir 'lucro' de 'ainda não aconteceu'"
+        )
+    n_com_rotulo = int(quadro["rotulo_conhecido"].sum())
+    if n_com_rotulo:
+        raise ValueError(
+            f"o trimestre {trimestre!r} já tem rótulo conhecido para "
+            f"{n_com_rotulo} companhias — não é o trimestre corrente; use "
+            "`construir_painel` para avaliar"
+        )
+
+
+@dataclass(frozen=True)
+class PainelDeInferencia:
+    """O trimestre corrente: tem feature, ainda não tem rótulo.
+
+    Deliberadamente NÃO é um `PainelSupervisionado`. Os dois têm as mesmas
+    colunas de feature e seria fácil passar um onde se espera o outro — e a
+    consequência disso seria treinar sobre linhas cujo `rotulo` é 0 só porque
+    o futuro ainda não aconteceu. Tipo diferente para que o erro não compile.
+    """
+
+    quadro: pd.DataFrame
+    trimestre: str
+    trimestres_consecutivos: int
+    #: Quantas linhas do trimestre foram removidas por já estarem em prejuízo.
+    n_descartadas_por_ja_estar_em_prejuizo: int = 0
+
+    @property
+    def n_companhias(self) -> int:
+        return len(self.quadro)
+
+
+def construir_painel_para_inferencia(
+    con: duckdb.DuckDBPyConnection,
+    *,
+    fracao_minima: float = 0.5,
+    trimestres_consecutivos: int = 1,
+    somente_hoje_lucrativas: bool = True,
+) -> PainelDeInferencia:
+    """Features do trimestre mais recente FECHADO, sem exigir rótulo.
+
+    Fecha o defeito estrutural apontado em 2026-08-25: `construir_painel` junta
+    o alvo com `JOIN` e `HAVING count(*) = n`, então qualquer companhia sem os
+    n trimestres futuros some da amostra. Isso é correto para treinar e
+    avaliar — e é exatamente errado para *usar* o modelo, porque a companhia
+    sobre a qual se quer prever é justamente a que não tem futuro ainda. O
+    efeito prático era o panorama publicar um trimestre de referência dois
+    trimestres atrás do último dado completo disponível.
+
+    **`somente_hoje_lucrativas=True` é o padrão, e não é conveniência.** A
+    decomposição de 2026-08-25 mostrou que 97,1% do decil superior já está em
+    prejuízo no próprio trimestre T: ordenar o painel inteiro devolve
+    majoritariamente companhias cujo prejuízo qualquer um lê na demonstração,
+    sem modelo nenhum. Restringir a `prejuizo_em_t = 0` é o único recorte em
+    que o escore carrega informação que o leitor não tinha — e o denominador
+    honesto (quantas companhias sobraram) sai junto, para que a queda de
+    volume não passe despercebida.
+
+    O treino não precisa de guarda temporal explícita aqui: o rótulo do
+    trimestre devolvido **não existe**, então nenhum fold pode tê-lo visto.
+    """
+    if trimestres_consecutivos < 1:
+        raise ValueError("trimestres_consecutivos precisa ser >= 1")
+    completos, _ = trimestres_completos(con, fracao_minima=fracao_minima)
+    if not completos:
+        raise ValueError("painel sem trimestre completo para inferência")
+
+    lista = "(" + ", ".join(f"'{t}'" for t in completos) + ")"
+    caso_ordem = (
+        "CASE "
+        + " ".join(
+            f"WHEN trimestre = '{t}' THEN {ordinal_trimestre(t)}" for t in completos
+        )
+        + " END"
+    )
+    quadro = con.execute(
+        _SQL_PAINEL.format(
+            lista_trimestres=lista,
+            caso_ordem=caso_ordem,
+            n_alvo=trimestres_consecutivos,
+            juncao_alvo="LEFT JOIN",
+        )
+    ).df()
+
+    alvo = completos[-1]
+    quadro = quadro[quadro["trimestre"] == alvo].copy()
+    if quadro.empty:
+        raise ValueError(f"nenhuma linha para o trimestre {alvo!r}")
+
+    exigir_trimestre_sem_rotulo(quadro, alvo)
+    # O `rotulo` que a consulta emite aqui é 0 por construção (NULL cai no
+    # ELSE). Zerá-lo para NA é o que impede alguém treinar sobre isto.
+    quadro["rotulo"] = pd.NA
+
+    n_descartadas = 0
+    if somente_hoje_lucrativas:
+        antes = len(quadro)
+        quadro = quadro[quadro["prejuizo_em_t"] == 0].copy()
+        n_descartadas = antes - len(quadro)
+
+    return PainelDeInferencia(
+        quadro=quadro.reset_index(drop=True),
+        trimestre=alvo,
+        trimestres_consecutivos=trimestres_consecutivos,
+        n_descartadas_por_ja_estar_em_prejuizo=n_descartadas,
     )

@@ -18,7 +18,7 @@
 - Última etapa concluída: **10 (modelo preditivo)**, 2026-08-23 —
   `resultados/modelo_preditivo_2026-08-23.md`, custo zero. Antes dela, a 4
   (chunking de tabela, AGENTS.md §3.4).
-- Suíte: **1.653** casos, sem skip (exige `requirements-modelo.txt`).
+- Suíte: **1.689** casos, sem skip (exige `requirements-modelo.txt`).
 - Rodada congelada vigente: fingerprint `5b9b142d`
   (`20260823T131515Z-4ad67021f6`), números publicados no README. Status:
   `auditoria_manual_pendente`.
@@ -118,10 +118,27 @@
   para `src/normalizacao.py`. Motivo é a RN07 — o caminho interativo precisa
   ordenar trimestre e não pode importar `src.modelo`. `construir_painel`
   reexporta; não duplique a regra.
-- **RN07 PENDENTE de virar guarda profunda**: hoje a rota vive só no ramo do
-  `app_streamlit.py` e devolve `None` (caindo no LLM) se faltar panorama,
-  painel ou resolução de entidade. `responder_pergunta_livre` e
-  `responder_com_guardrails` NÃO chamam o detector. É a correção seguinte.
+- **RN07 virou GUARDA PROFUNDA** (2026-08-25, era a pendência anterior).
+  Artefato ausente agora **recusa** (`recusa_de_ultimo_recurso`, sem número
+  nenhum — trocar RN07 por RN02 não seria conserto) em vez de cair no LLM, e
+  `responder_pergunta_livre` repete a verificação antes de recuperar e antes
+  de estimar custo (portão duplo, como já se faz com a RN05).
+  `TestGuardaProfunda` trava inclusive a ORDEM: recusar depois de gastar não
+  é recusar.
+- **O produto ESCORA O PRESENTE** (2026-08-25).
+  `construir_painel_para_inferencia` usa `LEFT JOIN` no alvo e devolve o
+  último trimestre fechado: referência foi de `3T2025` para **`1T2026`**.
+  Restrita a `prejuizo_em_t=0` por medição, não por gosto — 97,1% do decil
+  superior já está em prejuízo. **286 hoje lucrativas, 2 acima do limiar, 136
+  já em prejuízo publicadas ao lado** para a queda de volume não passar por
+  melhora. Duas travas: `PainelDeInferencia` é tipo PRÓPRIO (passar um pelo
+  outro treinaria sobre rótulo inexistente) e `rotulo` vem `pd.NA`, porque o
+  `ELSE 0` do `CASE` daria "lucro" a quem só não tem futuro ainda.
+- **Viés as-restated é MENSURÁVEL com o painel carregado** — eu havia escrito
+  que exigiria reler os ZIPs por versão, e estava errado: `versao_documento`
+  sobrevive em `fatos_contabeis`. `medir_republicacao`: 16,36% das obs, e a
+  assimetria entre classes é **0,66 ponto** (16,81% em prejuízo × 16,14% em
+  lucro) — não contamina o rótulo.
 - **Rota prospectiva precisa do artefato para funcionar**: gerar com
   `python -m scripts.gerar_panorama_modelo --painel artefatos/cvm_treino.duckdb
   --com-escores`. Sem `panorama.json` a rota se desliga e loga; com a chave
@@ -135,14 +152,42 @@
   trimestre só; **LightGBM empata** (p=0,66). E a decisão sobre as features
   sazonais **sobrevive em folds não vistos** (+0,0072, p=4e-06) — ao contrário
   dos hiperparâmetros, que eram ruído.
-- **Onde o modelo de fato serve** (medido, contraria o que eu disse antes):
-  vai MELHOR em instituição financeira (AUC 0,883, lift 5,10) que na média do
-  painel. O ponto cego são os 5 bancos do corpus, todos na faixa de ativo com
-  0,6% de prejuízo. Recorte `≥ R$100 bi` tem 5 eventos e sai marcado
-  INSUFICIENTE pela guarda `minimo_positivos` — não publicar AUC de 0,97 ali.
+- **NÃO usar o "AUC 0,883 / lift 5,10 em instituição financeira"** que ficou
+  escrito aqui até 2026-08-25: é o MESMO recorte `is_banco` contaminado que o
+  debate derrubou (29 dos 35 eventos vinham de private equity, holding e uma
+  companhia em liquidação). Limpo o universo sobram ~6 eventos — insuficientes
+  para distinguir qualquer AUC de 0,50 (Hanley & McNeil). O recorte que se
+  sustenta é o de **hoje-lucrativas**, que não depende de setor.
 - **E4 (`fatos`) não é persistido em disco, por decisão**: construir sob
   demanda (~35 s) evita a classe de defeito "índice novo, fatos velhos".
 - Gate G1 (Azure) resolvido para o pré-deploy — sem ação pendente até lá.
+
+- **A AUDITORIA DA ONDA DE 2026-08-25 PEGOU 7 DEFEITOS** — a lição da rodada
+  anterior ("rodar o auditor antes de considerar pronto") se repetiu, e um dos
+  achados foi eu ter reescrito esta memória como se tivesse fechado os dois
+  portões da RN07 tendo fechado um. O que ficou travado por teste:
+  - `responder_com_guardrails` também verifica a RN07 agora (era o único
+    portão do produto sem ela, e se declara "o caminho interativo inteiro").
+  - A guarda anti-eliminação do trimestre corrente é sobre **fração**
+    (`BANDA_PUBLICAVEL`, 5%–95%), não sobre contagem: barrar só 0 e "todas"
+    deixava passar 2 de 286, que entrega a mesma dedução. **Com o painel atual
+    o bloco fica suprimido** — guarda que nunca dispara é decorativa.
+  - Um teste meu se chamava `test_falha_fechada_*`, dizia cobrir a falha e não
+    tinha `pytest.raises`. Guarda extraída para `exigir_trimestre_sem_rotulo`
+    para poder ser exercitada de verdade.
+  - A interface sobrescrevia `modo`/`provedor` à mão e debitava cota da RN03
+    numa recusa de custo zero.
+- **Retratação sem artefato é dívida, não conserto**: os números que derrubaram
+  o recorte `is_banco` viviam só em prosa enquanto o número retratado tinha
+  artefato versionado. Agora há `scripts/auditar_recorte_is_banco.py` →
+  `artefatos/modelo/auditoria_is_banco.json`. Os valores corretos são **42/49
+  (85,7%)** e **ρ = −0,046 (p = 0,83)** — a prosa do debate dizia 29/35 e
+  −0,014, de contagem ad hoc num painel diferente. Conclusão idêntica, base
+  agora conferível.
+- **Alvo pré-tributos: RECOMENDADO pelos dois especialistas e DESCARTADO por
+  Ygor (2026-08-25).** Ganho estatístico é ruído (+0,0034) e a troca
+  invalidaria os três relatórios publicados. Registrado como caminho conhecido,
+  não como pendência — não reabrir sem pedido.
 
 ## Próximo passo concreto
 

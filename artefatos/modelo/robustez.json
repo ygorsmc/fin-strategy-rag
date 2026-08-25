@@ -238,53 +238,65 @@
       "instituicoes_financeiras": {
         "n": 577,
         "n_positivos": 74,
-        "suficiente": true,
+        "suficiente": false,
         "taxa_base": 0.12824956672443674,
         "roc_auc": 0.8845978184944387,
         "lift_topo_10pct": 4.705265610438024,
-        "precisao_topo_10pct": 0.603448275862069
+        "precisao_topo_10pct": 0.603448275862069,
+        "retratado": true,
+        "motivo_retratacao": "RETRATADO em 2026-08-25. O recorte usa `companhias.is_banco`, que significa 'usa plano de contas de instituição financeira', não 'é banco'. Entre as 41 entidades marcadas estão GP Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding), PPLA e mais cinco não bancárias — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo sobram **7 positivos**, abaixo do mínimo de 20 que este próprio relatório exige, e insuficientes para distinguir AUC 0,70 de 0,50 (Hanley & McNeil, 1982). Entre os bancos de verdade fora da faixa do topo o porte não se correlaciona com prejuízo (Spearman ρ = -0,046, p = 0,83). NÃO CITAR. Reproduzível por `python -m scripts.auditar_recorte_is_banco` → artefatos/modelo/auditoria_is_banco.json. Os recortes que não dependem de setor (painel_inteiro, lucrativas hoje, já em prejuízo) NÃO são afetados."
       },
       "financeiras_acima_100bi": {
         "n": 198,
         "n_positivos": 9,
         "suficiente": false,
-        "motivo_insuficiente": "poucos eventos da classe minoritária"
+        "motivo_insuficiente": "poucos eventos da classe minoritária",
+        "retratado": true,
+        "motivo_retratacao": "RETRATADO em 2026-08-25. O recorte usa `companhias.is_banco`, que significa 'usa plano de contas de instituição financeira', não 'é banco'. Entre as 41 entidades marcadas estão GP Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding), PPLA e mais cinco não bancárias — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo sobram **7 positivos**, abaixo do mínimo de 20 que este próprio relatório exige, e insuficientes para distinguir AUC 0,70 de 0,50 (Hanley & McNeil, 1982). Entre os bancos de verdade fora da faixa do topo o porte não se correlaciona com prejuízo (Spearman ρ = -0,046, p = 0,83). NÃO CITAR. Reproduzível por `python -m scripts.auditar_recorte_is_banco` → artefatos/modelo/auditoria_is_banco.json. Os recortes que não dependem de setor (painel_inteiro, lucrativas hoje, já em prejuízo) NÃO são afetados."
       },
       "financeiras_abaixo_100bi": {
         "n": 379,
         "n_positivos": 65,
-        "suficiente": true,
+        "suficiente": false,
         "taxa_base": 0.17150395778364116,
         "roc_auc": 0.8387800097991182,
         "lift_topo_10pct": 3.682591093117409,
-        "precisao_topo_10pct": 0.631578947368421
+        "precisao_topo_10pct": 0.631578947368421,
+        "retratado": true,
+        "motivo_retratacao": "RETRATADO em 2026-08-25. O recorte usa `companhias.is_banco`, que significa 'usa plano de contas de instituição financeira', não 'é banco'. Entre as 41 entidades marcadas estão GP Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding), PPLA e mais cinco não bancárias — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo sobram **7 positivos**, abaixo do mínimo de 20 que este próprio relatório exige, e insuficientes para distinguir AUC 0,70 de 0,50 (Hanley & McNeil, 1982). Entre os bancos de verdade fora da faixa do topo o porte não se correlaciona com prejuízo (Spearman ρ = -0,046, p = 0,83). NÃO CITAR. Reproduzível por `python -m scripts.auditar_recorte_is_banco` → artefatos/modelo/auditoria_is_banco.json. Os recortes que não dependem de setor (painel_inteiro, lucrativas hoje, já em prejuízo) NÃO são afetados."
       },
       "nao_financeiras": {
         "n": 17034,
         "n_positivos": 5836,
-        "suficiente": true,
+        "suficiente": false,
         "taxa_base": 0.3426088998473641,
         "roc_auc": 0.8626837692303078,
         "lift_topo_10pct": 2.5108706282546986,
-        "precisao_topo_10pct": 0.8602466236054023
+        "precisao_topo_10pct": 0.8602466236054023,
+        "retratado": true,
+        "motivo_retratacao": "RETRATADO em 2026-08-25. O recorte usa `companhias.is_banco`, que significa 'usa plano de contas de instituição financeira', não 'é banco'. Entre as 41 entidades marcadas estão GP Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding), PPLA e mais cinco não bancárias — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo sobram **7 positivos**, abaixo do mínimo de 20 que este próprio relatório exige, e insuficientes para distinguir AUC 0,70 de 0,50 (Hanley & McNeil, 1982). Entre os bancos de verdade fora da faixa do topo o porte não se correlaciona com prejuízo (Spearman ρ = -0,046, p = 0,83). NÃO CITAR. Reproduzível por `python -m scripts.auditar_recorte_is_banco` → artefatos/modelo/auditoria_is_banco.json. Os recortes que não dependem de setor (painel_inteiro, lucrativas hoje, já em prejuízo) NÃO são afetados."
       },
       "financeiras_lucrativas_hoje": {
         "n": 503,
         "n_positivos": 34,
-        "suficiente": true,
+        "suficiente": false,
         "taxa_base": 0.06759443339960239,
         "roc_auc": 0.8409632509720306,
         "lift_topo_10pct": 5.03,
-        "precisao_topo_10pct": 0.34
+        "precisao_topo_10pct": 0.34,
+        "retratado": true,
+        "motivo_retratacao": "RETRATADO em 2026-08-25. O recorte usa `companhias.is_banco`, que significa 'usa plano de contas de instituição financeira', não 'é banco'. Entre as 41 entidades marcadas estão GP Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding), PPLA e mais cinco não bancárias — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo sobram **7 positivos**, abaixo do mínimo de 20 que este próprio relatório exige, e insuficientes para distinguir AUC 0,70 de 0,50 (Hanley & McNeil, 1982). Entre os bancos de verdade fora da faixa do topo o porte não se correlaciona com prejuízo (Spearman ρ = -0,046, p = 0,83). NÃO CITAR. Reproduzível por `python -m scripts.auditar_recorte_is_banco` → artefatos/modelo/auditoria_is_banco.json. Os recortes que não dependem de setor (painel_inteiro, lucrativas hoje, já em prejuízo) NÃO são afetados."
       },
       "nao_financeiras_lucrativas_hoje": {
         "n": 11252,
         "n_positivos": 1921,
-        "suficiente": true,
+        "suficiente": false,
         "taxa_base": 0.17072520440810524,
         "roc_auc": 0.7993005632236496,
         "lift_topo_10pct": 3.290538029961247,
-        "precisao_topo_10pct": 0.5617777777777778
+        "precisao_topo_10pct": 0.5617777777777778,
+        "retratado": true,
+        "motivo_retratacao": "RETRATADO em 2026-08-25. O recorte usa `companhias.is_banco`, que significa 'usa plano de contas de instituição financeira', não 'é banco'. Entre as 41 entidades marcadas estão GP Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding), PPLA e mais cinco não bancárias — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo sobram **7 positivos**, abaixo do mínimo de 20 que este próprio relatório exige, e insuficientes para distinguir AUC 0,70 de 0,50 (Hanley & McNeil, 1982). Entre os bancos de verdade fora da faixa do topo o porte não se correlaciona com prejuízo (Spearman ρ = -0,046, p = 0,83). NÃO CITAR. Reproduzível por `python -m scripts.auditar_recorte_is_banco` → artefatos/modelo/auditoria_is_banco.json. Os recortes que não dependem de setor (painel_inteiro, lucrativas hoje, já em prejuízo) NÃO são afetados."
       }
     }
   },
@@ -527,50 +539,62 @@
       "instituicoes_financeiras": {
         "n": 535,
         "n_positivos": 35,
-        "suficiente": true,
+        "suficiente": false,
         "taxa_base": 0.06542056074766354,
         "roc_auc": 0.8830857142857144,
         "lift_topo_10pct": 5.095238095238096,
-        "precisao_topo_10pct": 0.3333333333333333
+        "precisao_topo_10pct": 0.3333333333333333,
+        "retratado": true,
+        "motivo_retratacao": "RETRATADO em 2026-08-25. O recorte usa `companhias.is_banco`, que significa 'usa plano de contas de instituição financeira', não 'é banco'. Entre as 41 entidades marcadas estão GP Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding), PPLA e mais cinco não bancárias — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo sobram **7 positivos**, abaixo do mínimo de 20 que este próprio relatório exige, e insuficientes para distinguir AUC 0,70 de 0,50 (Hanley & McNeil, 1982). Entre os bancos de verdade fora da faixa do topo o porte não se correlaciona com prejuízo (Spearman ρ = -0,046, p = 0,83). NÃO CITAR. Reproduzível por `python -m scripts.auditar_recorte_is_banco` → artefatos/modelo/auditoria_is_banco.json. Os recortes que não dependem de setor (painel_inteiro, lucrativas hoje, já em prejuízo) NÃO são afetados."
       },
       "financeiras_acima_100bi": {
         "n": 189,
         "n_positivos": 5,
         "suficiente": false,
-        "motivo_insuficiente": "poucos eventos da classe minoritária"
+        "motivo_insuficiente": "poucos eventos da classe minoritária",
+        "retratado": true,
+        "motivo_retratacao": "RETRATADO em 2026-08-25. O recorte usa `companhias.is_banco`, que significa 'usa plano de contas de instituição financeira', não 'é banco'. Entre as 41 entidades marcadas estão GP Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding), PPLA e mais cinco não bancárias — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo sobram **7 positivos**, abaixo do mínimo de 20 que este próprio relatório exige, e insuficientes para distinguir AUC 0,70 de 0,50 (Hanley & McNeil, 1982). Entre os bancos de verdade fora da faixa do topo o porte não se correlaciona com prejuízo (Spearman ρ = -0,046, p = 0,83). NÃO CITAR. Reproduzível por `python -m scripts.auditar_recorte_is_banco` → artefatos/modelo/auditoria_is_banco.json. Os recortes que não dependem de setor (painel_inteiro, lucrativas hoje, já em prejuízo) NÃO são afetados."
       },
       "financeiras_abaixo_100bi": {
         "n": 346,
         "n_positivos": 30,
-        "suficiente": true,
+        "suficiente": false,
         "taxa_base": 0.08670520231213873,
         "roc_auc": 0.8316455696202532,
         "lift_topo_10pct": 4.283809523809524,
-        "precisao_topo_10pct": 0.37142857142857144
+        "precisao_topo_10pct": 0.37142857142857144,
+        "retratado": true,
+        "motivo_retratacao": "RETRATADO em 2026-08-25. O recorte usa `companhias.is_banco`, que significa 'usa plano de contas de instituição financeira', não 'é banco'. Entre as 41 entidades marcadas estão GP Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding), PPLA e mais cinco não bancárias — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo sobram **7 positivos**, abaixo do mínimo de 20 que este próprio relatório exige, e insuficientes para distinguir AUC 0,70 de 0,50 (Hanley & McNeil, 1982). Entre os bancos de verdade fora da faixa do topo o porte não se correlaciona com prejuízo (Spearman ρ = -0,046, p = 0,83). NÃO CITAR. Reproduzível por `python -m scripts.auditar_recorte_is_banco` → artefatos/modelo/auditoria_is_banco.json. Os recortes que não dependem de setor (painel_inteiro, lucrativas hoje, já em prejuízo) NÃO são afetados."
       },
       "nao_financeiras": {
         "n": 16384,
         "n_positivos": 3767,
-        "suficiente": true,
+        "suficiente": false,
         "taxa_base": 0.22991943359375,
         "roc_auc": 0.8751768396047663,
         "lift_topo_10pct": 3.27396097398752,
-        "precisao_topo_10pct": 0.7527472527472527
+        "precisao_topo_10pct": 0.7527472527472527,
+        "retratado": true,
+        "motivo_retratacao": "RETRATADO em 2026-08-25. O recorte usa `companhias.is_banco`, que significa 'usa plano de contas de instituição financeira', não 'é banco'. Entre as 41 entidades marcadas estão GP Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding), PPLA e mais cinco não bancárias — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo sobram **7 positivos**, abaixo do mínimo de 20 que este próprio relatório exige, e insuficientes para distinguir AUC 0,70 de 0,50 (Hanley & McNeil, 1982). Entre os bancos de verdade fora da faixa do topo o porte não se correlaciona com prejuízo (Spearman ρ = -0,046, p = 0,83). NÃO CITAR. Reproduzível por `python -m scripts.auditar_recorte_is_banco` → artefatos/modelo/auditoria_is_banco.json. Os recortes que não dependem de setor (painel_inteiro, lucrativas hoje, já em prejuízo) NÃO são afetados."
       },
       "financeiras_lucrativas_hoje": {
         "n": 464,
         "n_positivos": 10,
         "suficiente": false,
-        "motivo_insuficiente": "poucos eventos da classe minoritária"
+        "motivo_insuficiente": "poucos eventos da classe minoritária",
+        "retratado": true,
+        "motivo_retratacao": "RETRATADO em 2026-08-25. O recorte usa `companhias.is_banco`, que significa 'usa plano de contas de instituição financeira', não 'é banco'. Entre as 41 entidades marcadas estão GP Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding), PPLA e mais cinco não bancárias — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo sobram **7 positivos**, abaixo do mínimo de 20 que este próprio relatório exige, e insuficientes para distinguir AUC 0,70 de 0,50 (Hanley & McNeil, 1982). Entre os bancos de verdade fora da faixa do topo o porte não se correlaciona com prejuízo (Spearman ρ = -0,046, p = 0,83). NÃO CITAR. Reproduzível por `python -m scripts.auditar_recorte_is_banco` → artefatos/modelo/auditoria_is_banco.json. Os recortes que não dependem de setor (painel_inteiro, lucrativas hoje, já em prejuízo) NÃO são afetados."
       },
       "nao_financeiras_lucrativas_hoje": {
         "n": 10853,
         "n_positivos": 904,
-        "suficiente": true,
+        "suficiente": false,
         "taxa_base": 0.08329494149083203,
         "roc_auc": 0.8303826283959698,
         "lift_topo_10pct": 4.304287141633702,
-        "precisao_topo_10pct": 0.3585253456221198
+        "precisao_topo_10pct": 0.3585253456221198,
+        "retratado": true,
+        "motivo_retratacao": "RETRATADO em 2026-08-25. O recorte usa `companhias.is_banco`, que significa 'usa plano de contas de instituição financeira', não 'é banco'. Entre as 41 entidades marcadas estão GP Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding), PPLA e mais cinco não bancárias — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo sobram **7 positivos**, abaixo do mínimo de 20 que este próprio relatório exige, e insuficientes para distinguir AUC 0,70 de 0,50 (Hanley & McNeil, 1982). Entre os bancos de verdade fora da faixa do topo o porte não se correlaciona com prejuízo (Spearman ρ = -0,046, p = 0,83). NÃO CITAR. Reproduzível por `python -m scripts.auditar_recorte_is_banco` → artefatos/modelo/auditoria_is_banco.json. Os recortes que não dependem de setor (painel_inteiro, lucrativas hoje, já em prejuízo) NÃO são afetados."
       }
     }
   }

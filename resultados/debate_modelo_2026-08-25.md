@@ -36,12 +36,25 @@ de instituição financeira" — e das 41 entidades marcadas, oito não são ban
 | PPLA PARTICIPATIONS | 5 | R$ 34,5 bi |
 | CELGPAR (holding de energia) | 3 | R$ 1,6 bi |
 
-**29 dos 35 eventos positivos (82,9%) do recorte vinham dessas entidades.**
-Limpo o universo, sobram 6 eventos, a série fica não monotônica, e o teste
-contínuo mata o efeito: correlação de Spearman entre ativo e prejuízo, em
-bancos de verdade **excluindo os ≥ R$ 500 bi**, é **ρ = −0,014 (p = 0,79)**.
-Fora do topo, porte não prediz nada — o que restava era uma variável dummy para
-cinco bancos.
+**42 dos 49 eventos positivos (85,7%) do recorte vinham dessas entidades.**
+Limpo o universo sobram **7 eventos** — contra o mínimo de 20 que o próprio
+módulo exige —, a série fica não monotônica, e o teste contínuo mata o efeito:
+correlação de Spearman entre ativo e prejuízo, em bancos de verdade
+**excluindo os ≥ R$ 500 bi**, é **ρ = −0,046 (p = 0,83)**. Fora do topo, porte
+não prediz nada — o que restava era uma variável dummy para cinco bancos.
+
+> **Nota de procedência (acrescentada depois da auditoria da própria onda).**
+> A primeira redação deste parágrafo trazia *29 dos 35* e *ρ = −0,014*, vindos
+> de contagens ad hoc dos agentes durante o debate, sem script versionado. O
+> auditor apontou a assimetria: um número **com** artefato
+> (`robustez.json`) estava sendo anulado por números **sem** artefato — a
+> mesma classe de defeito que o §4.2 do plano proíbe. Os valores acima vêm
+> agora de `scripts/auditar_recorte_is_banco.py`, que reconstrói o **mesmo**
+> painel supervisionado que o relatório retratado usou (alvo de 2 trimestres)
+> e grava `artefatos/modelo/auditoria_is_banco.json`. A conclusão não mudou;
+> a base dela passou a ser conferível. O veredito do script é **calculado**
+> das próprias contagens, não escrito à mão — a primeira versão dele trazia
+> uma conclusão fixa que contradizia os números que ele mesmo imprimia.
 
 Pior: entre bancos de verdade, quem mais dá prejuízo são instituições
 **grandes** em fase de crescimento — Nu Holdings 7/10 (R$ 117 bi), XP 3/15
@@ -261,25 +274,63 @@ trimestre e página.
 
 ---
 
-## O que continua em aberto
+## O que o debate deixou aberto — e o que foi fechado depois
 
-1. **Viés *as-restated*.** 16,3% dos fatos vêm de documento republicado e a
-   carga guarda `VERSAO = max` — features e rótulos usam número que não existia
-   na data. Medir exige reler os ZIPs brutos da CVM por versão; o DuckDB
-   carregado não serve.
-2. **O produto não escora o presente.** `construir_painel` faz `JOIN alvo`, e
-   linha sem rótulo é descartada: há dados completos até `1T2026` e a última
-   linha supervisionada é `3T2025`. Vale construir a escoragem **restrita a
-   `prejuizo_em_t = 0`**, e o denominador honesto do custo é ~4 nomes por
-   trimestre, não "lift 3,3".
-3. **Viés de sobrevivência.** 277 de 741 companhias somem do painel e a última
+Fechado em 2026-08-25, na mesma data, depois do debate:
+
+1. **~~Viés *as-restated*~~ — MEDIDO, não só declarado.** A premissa de que
+   "medir exige reler os ZIPs por versão" estava errada: a carga descarta as
+   versões anteriores, mas **preserva `versao_documento`** em
+   `fatos_contabeis`, e isso basta para medir a exposição.
+   `construir_painel.medir_republicacao` mede **16,36%** das observações
+   (3.741 de 22.862) — e, o que importa mais, a **assimetria entre classes é
+   0,66 ponto**: 16,81% nos trimestres de prejuízo contra 16,14% nos de lucro.
+   Republicação concentrada no prejuízo contaminaria o rótulo; uniforme, não
+   empurra o modelo para lado nenhum. O bloco entra em `metricas.json` com a
+   ressalva ao lado. Não reverte o viés — nenhum número aqui devolve o valor
+   que estava disponível na data — mas dimensiona o risco em vez de supô-lo.
+2. **~~O produto não escora o presente~~ — ESCORA.**
+   `construir_painel_para_inferencia` monta as mesmas features com `LEFT JOIN`
+   no alvo e devolve o último trimestre **fechado**, sem rótulo. O painel de
+   referência saiu de `3T2025` para **`1T2026`** — dois trimestres. O recorte
+   `prejuizo_em_t = 0` é o padrão pela razão que este debate estabeleceu
+   (97,1% do decil superior já está em prejuízo), e o denominador descartado é
+   publicado ao lado para que a queda de volume não passe por melhora: das 422
+   companhias de `1T2026`, **286 fecharam com lucro e 2 receberam escore acima
+   do limiar**; as outras 136 já estão em prejuízo e ficam fora de propósito.
+   O bloco não tem AUC e diz isso — o resultado não aconteceu.
+   **Trava de tipo:** `PainelDeInferencia` não é `PainelSupervisionado`, e
+   `rotulo` vem como `pd.NA`. Sem as duas coisas, o `ELSE 0` do `CASE` daria
+   rótulo "lucro" a quem apenas não tem futuro ainda.
+3. **~~`comparar_pareado` usa 1,96~~ — CORRIGIDO.** Passou a usar a t de
+   Student (`_quantil_t`, t₄₆ = 2,013). No relatório publicável a mudança é
+   cosmética; em `experimentos_robustez`, que compara recortes com menos de 10
+   folds, 1,96 subestimava o IC em mais de 10%. Junto saiu um segundo defeito
+   que o debate apontou: `auc_ic95_*` no resumo por modelo nomeava **percentil
+   entre folds** como se fosse incerteza da média. Agora são quatro campos com
+   nome do que são — `auc_faixa_folds_p2_5/p97_5` (dispersão, larga porque
+   trimestre ruim existe) e `auc_ic95_da_media_inferior/superior` (~7x mais
+   estreita).
+
+Continua aberto, e por motivo externo ao código:
+
+4. **Viés de sobrevivência.** 277 de 741 companhias somem do painel e a última
    observação antes do sumiço nunca recebe rótulo. Com uma lista de eventos
    terminais (B3/CVM/BACEN), o alvo deixaria de ser "prejuízo trimestral" (base
    33%) e passaria a ser o evento raro de que Altman e Ohlson tratam — o que
    também **explicaria** por que as features do O-score não transferiram.
-4. **Dependência entre folds.** Folds consecutivos compartilham 96,3% do
+   Depende de fonte que o projeto não tem.
+5. **Dependência entre folds.** Folds consecutivos compartilham 96,3% do
    treino. A correção de Nadeau–Bengio muda **uma** conclusão: o efeito da
    purga deixa de ser significativo (p = 0,026 → 0,125) — o que só reforça o
-   que já estava escrito, que ele é detectável e desprezível.
-5. **`comparar_pareado` usa o quantil normal 1,96** num IC de 46 observações;
-   deveria ser t₄₅ = 2,014. Os ICs saem ~3% estreitos demais.
+   que já estava escrito, que ele é detectável e desprezível. Não foi
+   incorporada ao código porque mudaria a leitura de uma linha só, e a linha
+   já está escrita na direção certa.
+
+**Decisão registrada — o alvo NÃO mudou.** Os dois especialistas convergiram em
+recomendar `resultado_antes_tributos < 0` no lugar de
+`lucro_liquido_consolidado < 0`, por razão de domínio (resgataria o estresse de
+2015 e 2020 e levaria os eventos bancários de 6 para 15). O ganho estatístico
+medido é ruído (+0,0034 de AUC) e a troca invalidaria os três relatórios já
+publicados. Ygor decidiu manter o alvo em 2026-08-25. A recomendação fica
+registrada aqui como caminho conhecido, não como pendência.

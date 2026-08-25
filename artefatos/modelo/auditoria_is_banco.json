@@ -1,0 +1,19 @@
+{
+  "recorte": "painel supervisionado, alvo de 2 trimestres (mesmo do relatório de 2026-08-24)",
+  "n_entidades_marcadas": 41,
+  "n_marcadas_que_nao_sao_banco": 9,
+  "codigos_nao_banco_ausentes_do_painel": [],
+  "n_observacoes_no_recorte": 645,
+  "eventos_positivos_no_recorte_marcado": 49,
+  "eventos_positivos_vindos_de_nao_bancos": 42,
+  "fracao_dos_eventos_vinda_de_nao_bancos": 0.8571428571428571,
+  "eventos_positivos_no_universo_limpo": 7,
+  "minimo_de_positivos_exigido": 20,
+  "universo_limpo_atinge_o_minimo": false,
+  "spearman_porte_x_prejuizo_fora_do_topo": {
+    "n_companhias": 23,
+    "rho": -0.046377366465047414,
+    "p": 0.8335684273892671
+  },
+  "veredito": "O recorte setorial NÃO se sustenta: 42 dos 49 eventos positivos (85.7%) vêm de entidades que não são banco; o universo limpo tem 7 positivos, abaixo do mínimo de 20 que o próprio módulo exige; e entre os bancos de verdade fora do topo o porte não se correlaciona com prejuízo (ρ = -0.046, p = 0.83)."
+}

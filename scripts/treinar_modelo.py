@@ -14,7 +14,11 @@ from pathlib import Path
 
 from src.config import Config
 from src.dados_estruturados import abrir_conexao_somente_leitura
-from src.modelo.construir_painel import COLUNAS_DESCARTADAS, construir_painel
+from src.modelo.construir_painel import (
+    COLUNAS_DESCARTADAS,
+    construir_painel,
+    medir_republicacao,
+)
 from src.modelo.prever import contrastar_corpus_e_painel
 from src.modelo.treinar import (
     GRUPO_SAZONAL,
@@ -44,6 +48,7 @@ def principal() -> int:
         relatorio.analises["contraste_corpus_painel"] = contrastar_corpus_e_painel(
             con
         ).como_dict()
+        relatorio.analises["vies_as_restated"] = medir_republicacao(con)
         if not argumentos.sem_walk_forward:
             print("rodando walk-forward (um fold por trimestre)...")
             relatorio.analises["walk_forward"] = avaliar_walk_forward(painel)

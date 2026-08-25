@@ -114,7 +114,7 @@ verificável em **2026-08-23**, não a intenção.
 | Observabilidade (Langfuse) e suíte automatizada de *faithfulness* | ⬜ Langfuse não construída · ✅ juiz automático medido contra a auditoria humana (0,867) |
 | Interface Streamlit (modo cacheado + pergunta livre opt-in) | ✅ base; camadas novas pendentes |
 
-Suíte de testes: **1.653 casos automatizados, sem skips**. `pytest` verde é
+Suíte de testes: **1.689 casos automatizados, sem skips**. `pytest` verde é
 pré-condição de qualquer commit.
 
 **Gate G4: reprovou em 2026-08-11, aprovado em 2026-08-22.** O gate confere,
@@ -279,6 +279,8 @@ de falso bloqueio se mantêm — evidência em `resultados/guardrails.json`.
 | Comparação dos três braços (agente único × Investigador+Auditor × determinístico) | 15 pareadas | não medido |
 | Modelo preditivo (ROC-AUC contra baselines) | walk-forward, 47 folds | **0,865**. Contra a regra binária de persistência, +0,113 — mas esse número é inflado por empate (a persistência tem 2 valores e o AUC pune empate). **Ganho honesto: +0,019 sobre `taxa_prejuizos_4t` crua** (coluna que já existe no painel) e **+0,073 sobre a taxa histórica da própria companhia**, vencendo em 47/47 |
 | Modelo: o que ele NÃO faz (decomposição obrigatória) | walk-forward, 47 folds | **AUC intra-companhia 0,663** contra 0,865 agregado: o modelo ordena **quais** companhias são cronicamente deficitárias, não **quando** uma vira. **97,1% do decil superior já está em prejuízo** no próprio trimestre. Onde há sinal de antecipação é o recorte de hoje-lucrativas (AUC 0,832, lift 4,35), ~4 nomes novos por trimestre |
+| Modelo: escoragem do trimestre corrente | `1T2026`, sem rótulo | Das **286** companhias que fecharam o trimestre **com lucro**, **2** receberam escore acima do limiar absoluto. Outras **136** já estão em prejuízo e ficam fora da contagem de propósito — para elas o escore alto repete a demonstração. **Sem AUC, e isso é declarado:** o resultado ainda não aconteceu. Nesta rodada o agregado **não é publicado na interface**: 2 de 286 é fração baixa demais e permitiria deduzir por eliminação o estado do emissor perguntado — a guarda suprime, e o escore por emissor segue disponível só no modo local |
+| Modelo: viés *as-restated* (medido, não suposto) | painel de treino, 22.862 obs | **16,36%** das observações usam valor que só existiu após republicação. O que importa é a assimetria: **16,81%** nos trimestres de prejuízo contra **16,14%** nos de lucro — **0,66 ponto**, sem concentração na classe positiva. Não reverte o viés; dimensiona |
 | Modelo: o que foi medido e NÃO ajudou | walk-forward pareado | Features do O-score de Ohlson (nulo/pior) · SMOTE (−0,006, p=5e-08) · ajuste de hiperparâmetros (zero em folds não vistos) · controle setorial (+0,0005, p=0,19) · recalibração isotônica (piora a ordenação) · LightGBM (empate, p=0,66) |
 | Custo real da API contra o teto de USD 25 | projeto inteiro | **USD 2,87** acumulado nos logs versionados |
 

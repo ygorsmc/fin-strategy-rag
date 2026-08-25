@@ -199,9 +199,24 @@ de utilidade do módulo:
 | Painel inteiro | 16.919 | 3.802 | 22,5% | 0,876 | 3,32 |
 | **Lucrativa hoje** | 11.317 | 914 | **8,1%** | **0,831** | **4,35** |
 | Já em prejuízo hoje | 5.602 | 2.888 | 51,6% | 0,722 | 1,46 |
-| Instituições financeiras | 535 | 35 | 6,5% | 0,883 | 5,10 |
-| — abaixo de R$ 100 bi | 346 | 30 | 8,7% | 0,832 | 4,28 |
+| ~~Instituições financeiras~~ | ~~535~~ | ~~35~~ | ~~6,5%~~ | ~~0,883~~ | ~~5,10~~ |
+| ~~— abaixo de R$ 100 bi~~ | ~~346~~ | ~~30~~ | ~~8,7%~~ | ~~0,832~~ | ~~4,28~~ |
 | Não financeiras | 16.384 | 3.767 | 23,0% | 0,875 | 3,27 |
+
+> **RETRATAÇÃO (2026-08-25) — as duas linhas riscadas não valem.** O recorte
+> usa `companhias.is_banco`, que significa "usa plano de contas de instituição
+> financeira", não "é banco". Entre as 41 entidades marcadas estão GP
+> Investments (private equity), Sul 116 (em liquidação), CELGPAR (holding) e
+> PPLA — e **42 dos 49 eventos positivos (85,7%) vêm delas**. Limpo o universo
+> sobram **7 eventos**, abaixo do mínimo de 20 que este próprio documento
+> estabelece duas seções adiante; por Hanley & McNeil (1982) essa amostra não
+> distingue AUC 0,70 de 0,50. E entre os bancos de verdade fora da faixa do
+> topo, porte não se correlaciona com prejuízo (ρ = −0,046, p = 0,83).
+> **Reproduzível:** `python -m scripts.auditar_recorte_is_banco` →
+> `artefatos/modelo/auditoria_is_banco.json`. Detalhe em
+> `resultados/debate_modelo_2026-08-25.md`.
+> **A linha "Lucrativa hoje" NÃO é afetada** — ela não depende de setor, e é
+> ela que sustenta a escoragem do trimestre corrente entregue em 2026-08-25.
 
 Entre companhias **hoje lucrativas** a regra de persistência prevê constante
 zero — discriminação nenhuma. O modelo ordena ali com lift 4,35. É a resposta

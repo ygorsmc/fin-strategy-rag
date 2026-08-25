@@ -2730,6 +2730,36 @@ def responder_com_guardrails(
             ),
         )
 
+    # RN07 no mesmo lugar da RN05, e pela mesma razão. Esta função se declara
+    # "o caminho interativo inteiro" (§6) — e até 2026-08-25 ela era o único
+    # portão do produto que NÃO verificava pergunta prospectiva. Enquanto a
+    # camada de agentes não está ligada à interface o buraco é teórico; ligá-la
+    # (etapa 11) o tornaria real, e a correção não pode depender de alguém
+    # lembrar na hora. Custo zero: recusa antes de qualquer fábrica ser
+    # chamada, como o ataque bloqueado da garantia (1).
+    from src.projecao import (
+        detectar_pergunta_prospectiva,
+        recusa_de_ultimo_recurso,
+    )
+
+    achado_projecao = detectar_pergunta_prospectiva(entrada.texto_seguro)
+    if achado_projecao is not None:
+        projecao = recusa_de_ultimo_recurso(
+            achado_projecao,
+            motivo="a camada de agentes não atende a rota prospectiva",
+        )
+        return RespostaAgente(
+            pergunta=entrada.texto_seguro,
+            resposta=projecao.texto,
+            recusa=True,
+            motivo_recusa=achado_projecao.detalhe,
+            comportamento=COMPORTAMENTO_RECUSA,
+            violacoes=(
+                f"rn07_projecao:{achado_projecao.scanner}:"
+                f"{achado_projecao.subtipo}",
+            ),
+        )
+
     resposta = executar(
         entrada.texto_seguro,
         config,

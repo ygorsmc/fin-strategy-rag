@@ -579,6 +579,30 @@ def dividir_walk_forward(
     return divisoes
 
 
+def _quantil_t(graus_de_liberdade: int) -> float:
+    """Quantil 97,5% da t de Student — NÃO o 1,96 da normal.
+
+    Corrigido em 2026-08-25. O erro padrão aqui é estimado a partir da própria
+    amostra de folds, então o quantil correto é o da t, não o da normal. Com 47
+    folds a diferença é pequena (2,013 contra 1,96, ~3% de largura), mas o
+    módulo roda com amostras muito menores — `experimentos_robustez` compara
+    recortes com menos de 10 folds, e aí 1,96 subestima o intervalo em mais de
+    10%. Publicar IC estreito demais é exatamente o defeito que este projeto
+    existe para não cometer.
+
+    Sem scipy, cai no 1,96 e o chamador vê `quantil_usado` no artefato — a
+    degradação fica declarada em vez de silenciosa (RNF03).
+    """
+    if graus_de_liberdade < 1:
+        return float("inf")
+    try:
+        from scipy import stats
+
+        return float(stats.t.ppf(0.975, graus_de_liberdade))
+    except Exception:  # pragma: no cover - ambiente sem scipy
+        return 1.96
+
+
 def comparar_pareado(
     por_fold: list[dict[str, object]], a: str, b: str
 ) -> dict[str, object] | None:
@@ -598,11 +622,13 @@ def comparar_pareado(
     diferencas = np.array([x - y for x, y in pares], dtype=float)
     n = len(diferencas)
     erro_padrao = float(diferencas.std(ddof=1) / np.sqrt(n))
+    quantil = _quantil_t(n - 1)
     resultado: dict[str, object] = {
         "n_folds": n,
         "diferenca_media": float(diferencas.mean()),
-        "ic95_inferior": float(diferencas.mean() - 1.96 * erro_padrao),
-        "ic95_superior": float(diferencas.mean() + 1.96 * erro_padrao),
+        "ic95_inferior": float(diferencas.mean() - quantil * erro_padrao),
+        "ic95_superior": float(diferencas.mean() + quantil * erro_padrao),
+        "quantil_usado": quantil,
         "folds_vencidos": int((diferencas > 0).sum()),
     }
 
@@ -911,12 +937,23 @@ def avaliar_walk_forward(
     resumo: dict[str, object] = {}
     for nome, valores in por_modelo.items():
         vetor = np.asarray(valores, dtype=float)
+        desvio = float(vetor.std(ddof=1)) if len(vetor) > 1 else 0.0
+        # Duas coisas diferentes, que a versão anterior publicava sob um rótulo
+        # só. `faixa_folds` é DISPERSÃO: onde caem 95% dos folds, e é larga
+        # porque trimestre ruim existe. `ic95` é INCERTEZA DA MÉDIA, ~7x mais
+        # estreita com 47 folds. Chamar a primeira de "IC 95%" exagerava a
+        # imprecisão do número publicado — erro na direção conservadora, mas
+        # erro. (Auditoria de 2026-08-25.)
+        erro_padrao = desvio / np.sqrt(len(vetor)) if len(vetor) > 1 else 0.0
+        quantil = _quantil_t(len(vetor) - 1) if len(vetor) > 1 else 0.0
         resumo[nome] = {
             "n_folds": int(len(vetor)),
             "auc_medio": float(vetor.mean()),
-            "auc_desvio": float(vetor.std(ddof=1)) if len(vetor) > 1 else 0.0,
-            "auc_ic95_inferior": float(np.percentile(vetor, 2.5)),
-            "auc_ic95_superior": float(np.percentile(vetor, 97.5)),
+            "auc_desvio": desvio,
+            "auc_faixa_folds_p2_5": float(np.percentile(vetor, 2.5)),
+            "auc_faixa_folds_p97_5": float(np.percentile(vetor, 97.5)),
+            "auc_ic95_da_media_inferior": float(vetor.mean() - quantil * erro_padrao),
+            "auc_ic95_da_media_superior": float(vetor.mean() + quantil * erro_padrao),
         }
     ordenados = sorted(resumo, key=lambda n: -resumo[n]["auc_medio"])
     comparacoes: dict[str, object] = {}

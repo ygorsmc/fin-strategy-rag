@@ -32,11 +32,17 @@ por pergunta seria absurdo; o deploy enxuto não precisa de scikit-learn
 
 1. *Vazamento por eliminação.* Publicar "0 das 13 instituições financeiras
    estão acima do limiar" ao lado de uma pergunta sobre um banco permite
-   deduzir o estado daquele banco. A proteção **efetiva** é que nenhum
-   agregado setorial do trimestre corrente chega a ser calculado — o panorama
-   só carrega o agregado do painel inteiro e taxas históricas por porte.
-   `_agregado_seguro` é a segunda linha, para o caso de alguém acrescentar um
-   recorte depois.
+   deduzir o estado daquele banco. Nenhum agregado **setorial** é calculado —
+   essa é a primeira linha e continua valendo.
+
+   Desde 2026-08-25 o panorama carrega, sim, um agregado do **trimestre
+   corrente** (recorte `prejuizo_em_t = 0`, centenas de companhias), então a
+   frase anterior — "nenhum agregado do trimestre corrente chega a ser
+   calculado" — deixou de descrever o desenho e foi corrigida aqui. A guarda
+   passou a ser a que faz o trabalho, e por isso ela é sobre FRAÇÃO
+   (`BANDA_PUBLICAVEL`) e não sobre contagem: barrar só 0 e "todas" deixava
+   passar 2 de 286, que entrega a mesma dedução que 0 de 286.
+   `_agregado_seguro` guarda o agregado do painel inteiro pela mesma lógica.
 2. *Tautologia com cara de medição.* A primeira versão publicava "o modelo
    colocou 41 de 413 companhias no decil superior" — que é sempre 10% por
    definição de decil, não diz nada sobre o trimestre, e ainda tornava
@@ -168,13 +174,21 @@ class FaixaDePorte:
     * a flag de origem (`companhias.is_banco`) significa "usa plano de contas
       de instituição financeira", e entre as 41 entidades marcadas estavam
       GP Investments (private equity), CELGPAR (holding de energia) e Sul 116
-      **em liquidação** — **29 dos 35 eventos positivos (82,9%)** do recorte
-      vinham de oito entidades que não são banco;
-    * limpo o universo, a série fica **não monotônica** e o teste contínuo
-      mata o efeito: correlação de Spearman entre ativo e prejuízo, em bancos
-      de verdade **excluindo os ≥ R$ 500 bi**, é ρ = −0,014 (p = 0,79). Fora do
-      topo, porte não prediz nada — e o que sobrava era uma variável dummy
-      para cinco bancos.
+      **em liquidação** — **42 dos 49 eventos positivos (85,7%)** do recorte
+      vinham de nove entidades que não são banco;
+    * limpo o universo sobram **7 eventos**, contra o mínimo de 20 que o
+      próprio módulo exige em `desempenho_por_recorte`. Com essa amostra não se
+      distingue AUC 0,70 de 0,50 (Hanley & McNeil, 1982);
+    * e o teste contínuo mata o efeito: correlação de Spearman entre ativo e
+      prejuízo, em bancos de verdade **excluindo os ≥ R$ 500 bi**, é
+      ρ = −0,046 (p = 0,83). Fora do topo, porte não prediz nada — o que
+      sobrava era uma variável dummy para cinco bancos.
+
+    Os números acima são **reproduzíveis**, e isso é parte da correção: a
+    primeira versão desta retratação existia só em prosa, enquanto o número
+    retratado tinha artefato versionado. Rode
+    `python -m scripts.auditar_recorte_is_banco` — saída em
+    `artefatos/modelo/auditoria_is_banco.json`, custo zero.
 
     O que resta e se sustenta é a tabela do **painel inteiro**, sem recorte de
     setor, com amostra de verdade em cada faixa.
@@ -184,6 +198,39 @@ class FaixaDePorte:
     limite_inferior_reais: float
     n_observacoes: int
     taxa_prejuizo: float
+
+
+@dataclass(frozen=True)
+class TrimestreCorrente:
+    """Escoragem do trimestre mais recente FECHADO — o que ainda não tem rótulo.
+
+    O bloco existe porque o panorama publicava como "referência" um trimestre
+    dois atrás do último dado disponível: o alvo exige T+1 e T+2, e a junção
+    que monta o painel descarta quem não os tem. Correto para avaliar, inútil
+    para usar — a companhia sobre a qual se quer prever é justamente a sem
+    futuro ainda.
+
+    **Restrito a quem está hoje lucrativo, e o denominador vem junto.** Sem o
+    recorte, o topo da ordenação é 97,1% composto de companhias já em prejuízo
+    em T (decomposição de 2026-08-25) — informação que o leitor tira da própria
+    demonstração, sem modelo. `n_ja_em_prejuizo` fica publicado ao lado
+    exatamente para que ninguém leia a contagem reduzida como melhora.
+
+    Não há AUC aqui, e não pode haver: o rótulo não existe. O AUC do panorama
+    é o do walk-forward, medido em trimestres que já fecharam.
+    """
+
+    trimestre: str
+    n_hoje_lucrativas: int
+    n_ja_em_prejuizo: int
+    n_acima_do_limiar: int
+    limiar: float
+
+    @property
+    def fracao_sinalizada(self) -> float:
+        if not self.n_hoje_lucrativas:
+            return 0.0
+        return self.n_acima_do_limiar / self.n_hoje_lucrativas
 
 
 @dataclass(frozen=True)
@@ -211,6 +258,21 @@ class Panorama:
     fracao_nao_financeira_treino: float = 0.0
     auc_walk_forward: float | None = None
     alvo: str = "prejuízo em T+1 e T+2"
+    #: Escoragem do trimestre ainda sem rótulo. `None` quando o painel não
+    #: alcança um trimestre fechado além da janela do alvo.
+    trimestre_corrente: TrimestreCorrente | None = None
+
+    @property
+    def trimestre_dos_escores(self) -> str:
+        """Qual trimestre o escore por emissor descreve.
+
+        Não é `trimestre_referencia`: este é o último fold AVALIADO (tem
+        rótulo, serve para o AUC), enquanto o escore por emissor passou a ser
+        do trimestre corrente, que é o único ainda prospectivo.
+        """
+        if self.trimestre_corrente is not None:
+            return self.trimestre_corrente.trimestre
+        return self.trimestre_referencia
 
     @property
     def fracao_acima_do_dobro(self) -> float:
@@ -233,7 +295,13 @@ def carregar_panorama(caminho: Path | str = CAMINHO_PANORAMA) -> Panorama:
         faixas = tuple(
             FaixaDePorte(**faixa) for faixa in dados.pop("faixas_de_porte", [])
         )
-        return Panorama(faixas_de_porte=faixas, **dados)
+        bruto_corrente = dados.pop("trimestre_corrente", None)
+        corrente = (
+            TrimestreCorrente(**bruto_corrente) if bruto_corrente else None
+        )
+        return Panorama(
+            faixas_de_porte=faixas, trimestre_corrente=corrente, **dados
+        )
     except (json.JSONDecodeError, TypeError, ValueError) as erro:
         raise PanoramaIndisponivelError(
             f"panorama do modelo malformado em {caminho}: {erro}"
@@ -317,6 +385,37 @@ _CABECALHO_RECUSA = (
     "compra. O modelo preditivo deste projeto roda offline e não responde por "
     "companhia (RN07)."
 )
+
+
+def recusa_de_ultimo_recurso(achado: Achado, *, motivo: str) -> RespostaProjecao:
+    """Recusa da RN07 que NÃO depende de artefato, painel ou índice nenhum.
+
+    Fecha o buraco que a auditoria de 2026-08-25 apontou: a rota prospectiva
+    vivia só no ramo do Streamlit e "sumia" quando o panorama ou o painel não
+    estavam presentes — no deploy enxuto (RNF12), por exemplo. Sumir significa
+    a pergunta cair no caminho normal e o LLM projetar resultado de emissor
+    nomeado, que é exatamente o que a RN07 proíbe. Degradação de uma camada
+    acessória não pode virar permissão.
+
+    A recusa aqui é deliberadamente **pobre**: só a fronteira legal e o que
+    falta. Nenhum número — sem os artefatos não há número conferível, e
+    preencher a recusa com valor de memória paramétrica seria trocar uma
+    violação da RN07 por uma da RN02.
+    """
+    texto = (
+        _CABECALHO_RECUSA.format(ancora=achado.ancora_legal)
+        + "\n\n"
+        + f"Também não consigo entregar o material agregado que normalmente "
+        f"acompanha esta recusa ({motivo}). Sem ele, a resposta seria número "
+        f"sem lastro — prefiro declarar a ausência."
+    )
+    return RespostaProjecao(
+        texto=texto,
+        achado=achado,
+        expos_escore_por_emissor=False,
+        blocos=("recusa",),
+        metadados={"degradado": True, "motivo_degradacao": motivo},
+    )
 
 
 def _pct(fracao: float, casas: int = 1) -> str:
@@ -430,12 +529,61 @@ def _bloco_panorama(panorama: Panorama) -> str:
     return linha
 
 
+#: Banda em que a contagem do trimestre corrente pode ser publicada.
+#:
+#: Endurecida em 2026-08-25 depois de a auditoria mostrar que a guarda anterior
+#: — que só barrava 0 e "todas" — deixava passar **2 de 286**, que é zero para
+#: qualquer efeito prático: publicar isso ao lado de uma pergunta sobre um
+#: emissor entrega, com 99,3% de confiança, que aquele emissor está abaixo do
+#: limiar. A fronteira aritmética não protegia a propriedade que dizia
+#: proteger. A banda é sobre FRAÇÃO, não sobre contagem.
+BANDA_PUBLICAVEL = (0.05, 0.95)
+
+
+def _bloco_trimestre_corrente(panorama: Panorama) -> str:
+    """O trimestre que ainda não fechou o rótulo — agregado, nunca por emissor.
+
+    Suprimido quando o recorte é pequeno ou a fração sinalizada cai fora de
+    `BANDA_PUBLICAVEL`, pela mesma razão de `_agregado_seguro`: "quase ninguém
+    de N" ao lado de uma pergunta sobre uma companhia revela o estado dela por
+    eliminação tão bem quanto "0 de N".
+
+    **Consequência assumida:** com o painel de 2026-08-25 (2 de 286 em
+    `1T2026`, 0,7%) este bloco NÃO é publicado. A escoragem do trimestre
+    corrente segue valendo pelo escore por emissor no modo local, que é o
+    consumidor principal dela; o agregado público volta a aparecer num
+    trimestre em que mais companhias sejam sinalizadas. Guarda que nunca
+    dispara é guarda decorativa — esta dispara.
+    """
+    corrente = panorama.trimestre_corrente
+    if corrente is None or corrente.n_hoje_lucrativas < 30:
+        return ""
+    piso, teto = BANDA_PUBLICAVEL
+    if not piso <= corrente.fracao_sinalizada <= teto:
+        return ""
+    return (
+        f"**Trimestre corrente — {corrente.trimestre}** (escorado, ainda sem "
+        "resultado conhecido)\n"
+        f"Entre as **{corrente.n_hoje_lucrativas}** companhias que fecharam "
+        f"{corrente.trimestre} **com lucro**, "
+        f"**{corrente.n_acima_do_limiar}** "
+        f"({_pct(corrente.fracao_sinalizada)}) receberam escore acima de "
+        f"{_pct(corrente.limiar)} para {panorama.alvo}.\n"
+        f"Outras {corrente.n_ja_em_prejuizo} companhias do trimestre já estão "
+        "em prejuízo e ficam fora desta contagem de propósito: para elas o "
+        "escore alto repete o que a própria demonstração já diz.\n"
+        "Este bloco não tem AUC porque o resultado ainda não aconteceu — o "
+        "desempenho citado acima é de trimestres já fechados."
+    )
+
+
 def _bloco_escore(
     denom_social: str, escore: float, panorama: Panorama, faixa: FaixaDePorte | None
 ) -> str:
     linhas = [
         f"**Sinal do modelo — {denom_social} · USO INTERNO, NÃO PUBLICÁVEL**",
-        f"Escore estimado para {panorama.alvo}: **{_pct(escore)}**.",
+        f"Escore estimado para {panorama.alvo}, a partir de "
+        f"{panorama.trimestre_dos_escores}: **{_pct(escore)}**.",
     ]
     if faixa is not None:
         # A comparação com a taxa-base é o que impede o analista de ler o
@@ -513,6 +661,11 @@ def responder_projecao(
         blocos.append(_bloco_panorama(panorama))
         nomes.append("panorama")
 
+    corrente = _bloco_trimestre_corrente(panorama)
+    if corrente:
+        blocos.append(corrente)
+        nomes.append("trimestre_corrente")
+
     escore: float | None = None
     if previsao_por_emissor_habilitada:
         if escores is None:
@@ -522,11 +675,16 @@ def responder_projecao(
             )
         escore = escores.get(cd_cvm)
         if escore is None:
+            # O trimestre certo a citar é o dos ESCORES, não o do panorama:
+            # desde 2026-08-25 o escore é do trimestre corrente e o panorama
+            # continua ancorado no último fold avaliado. Citar o do panorama
+            # mandaria o analista conferir o trimestre errado.
             blocos.append(
                 f"**Sinal do modelo — {denom_social}**\n"
-                "Sem escore para esta companhia no trimestre de referência "
-                f"({panorama.trimestre_referencia}): ela não tem as features "
-                "completas exigidas pelo painel."
+                "Sem escore para esta companhia no trimestre escorado "
+                f"({panorama.trimestre_dos_escores}): ela não tem as features "
+                "completas exigidas pelo painel, ou já estava em prejuízo no "
+                "próprio trimestre e ficou fora do recorte prospectivo."
             )
             nomes.append("escore_ausente")
         else:
@@ -550,6 +708,13 @@ def responder_projecao(
         metadados={
             "cd_cvm": cd_cvm,
             "trimestre_referencia": panorama.trimestre_referencia,
+            # Os dois, separados, porque desde 2026-08-25 são trimestres
+            # DIFERENTES: o de referência é o último fold avaliado (tem AUC),
+            # o dos escores é o corrente (é o que a resposta cita). Gravar só
+            # o primeiro carimbava o escore de 1T2026 como se fosse 3T2025 no
+            # log da RNF08 — o mesmo defeito que o texto já tinha corrigido,
+            # sobrevivendo na parte legível por máquina.
+            "trimestre_dos_escores": panorama.trimestre_dos_escores,
         },
     )
 

@@ -315,6 +315,15 @@
       "n_prejuizos_painel": 7568,
       "taxa_prejuizo_painel": 0.3310296561980579
     },
+    "vies_as_restated": {
+      "n_observacoes": 22862,
+      "n_republicadas": 3741,
+      "fracao_republicada": 0.1636339777797218,
+      "fracao_republicada_em_prejuizo": 0.16807610993657504,
+      "fracao_republicada_em_lucro": 0.16143585719890152,
+      "assimetria_entre_classes": 0.006640252737673519,
+      "ressalva": "Parte do painel usa valores que só existiram após republicação e não estavam disponíveis no fechamento do trimestre (viés as-restated). Não é reversível com o painel carregado — a carga mantém só a maior VERSAO. A exposição é medida e a assimetria entre classes é o que importa: republicação concentrada no prejuízo contaminaria o rótulo; uniforme, não."
+    },
     "walk_forward": {
       "n_folds": 47,
       "resumo": {
@@ -322,51 +331,64 @@
           "n_folds": 47,
           "auc_medio": 0.7521741633455026,
           "auc_desvio": 0.03475056695403202,
-          "auc_ic95_inferior": 0.7022068611170049,
-          "auc_ic95_superior": 0.824363873708947
+          "auc_faixa_folds_p2_5": 0.7022068611170049,
+          "auc_faixa_folds_p97_5": 0.824363873708947,
+          "auc_ic95_da_media_inferior": 0.7419710146516296,
+          "auc_ic95_da_media_superior": 0.7623773120393755
         },
         "baseline_passeio_sazonal": {
           "n_folds": 47,
           "auc_medio": 0.7391682333013617,
           "auc_desvio": 0.0350151694194025,
-          "auc_ic95_inferior": 0.6830406100286205,
-          "auc_ic95_superior": 0.7979177593672255
+          "auc_faixa_folds_p2_5": 0.6830406100286205,
+          "auc_faixa_folds_p97_5": 0.7979177593672255,
+          "auc_ic95_da_media_inferior": 0.7288873944131817,
+          "auc_ic95_da_media_superior": 0.7494490721895417
         },
         "baseline_taxa_recente": {
           "n_folds": 47,
           "auc_medio": 0.8458085435283501,
           "auc_desvio": 0.033915356043127946,
-          "auc_ic95_inferior": 0.7783484010079754,
-          "auc_ic95_superior": 0.8945286223630508
+          "auc_faixa_folds_p2_5": 0.7783484010079754,
+          "auc_faixa_folds_p97_5": 0.8945286223630508,
+          "auc_ic95_da_media_inferior": 0.8358506219447563,
+          "auc_ic95_da_media_superior": 0.8557664651119439
         },
         "baseline_identidade": {
           "n_folds": 47,
           "auc_medio": 0.7914390262770067,
           "auc_desvio": 0.03154916880945867,
-          "auc_ic95_inferior": 0.737886560020733,
-          "auc_ic95_superior": 0.840350214244254
+          "auc_faixa_folds_p2_5": 0.737886560020733,
+          "auc_faixa_folds_p97_5": 0.840350214244254,
+          "auc_ic95_da_media_inferior": 0.7821758432919114,
+          "auc_ic95_da_media_superior": 0.800702209262102
         },
         "regressao_logistica": {
           "n_folds": 47,
           "auc_medio": 0.8626612733865454,
           "auc_desvio": 0.0317985952388876,
-          "auc_ic95_inferior": 0.8020733658683111,
-          "auc_ic95_superior": 0.905450810332724
+          "auc_faixa_folds_p2_5": 0.8020733658683111,
+          "auc_faixa_folds_p97_5": 0.905450810332724,
+          "auc_ic95_da_media_inferior": 0.8533248560582231,
+          "auc_ic95_da_media_superior": 0.8719976907148678
         },
         "gradient_boosting": {
           "n_folds": 47,
           "auc_medio": 0.8647852082526923,
           "auc_desvio": 0.032812261539385004,
-          "auc_ic95_inferior": 0.7972798176559521,
-          "auc_ic95_superior": 0.915016508580879
+          "auc_faixa_folds_p2_5": 0.7972798176559521,
+          "auc_faixa_folds_p97_5": 0.915016508580879,
+          "auc_ic95_da_media_inferior": 0.8551511673488,
+          "auc_ic95_da_media_superior": 0.8744192491565846
         }
       },
       "comparacoes_pareadas": {
         "gradient_boosting - regressao_logistica": {
           "n_folds": 47,
           "diferenca_media": 0.0021239348661468813,
-          "ic95_inferior": -0.0015005396049365466,
-          "ic95_superior": 0.005748409337230309,
+          "ic95_inferior": -0.0015983552926488623,
+          "ic95_superior": 0.005846225024942624,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 30,
           "identicos": false,
           "p_wilcoxon": 0.10243126656007462
@@ -374,8 +396,9 @@
         "gradient_boosting - baseline_taxa_recente": {
           "n_folds": 47,
           "diferenca_media": 0.018976664724342396,
-          "ic95_inferior": 0.01535215105613531,
-          "ic95_superior": 0.022601178392549482,
+          "ic95_inferior": 0.015254334310588641,
+          "ic95_superior": 0.022698995138096152,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 44,
           "identicos": false,
           "p_wilcoxon": 4.565947619994404e-11
@@ -383,8 +406,9 @@
         "gradient_boosting - baseline_identidade": {
           "n_folds": 47,
           "diferenca_media": 0.07334618197568561,
-          "ic95_inferior": 0.06544579652378596,
-          "ic95_superior": 0.08124656742758526,
+          "ic95_inferior": 0.0652325844726775,
+          "ic95_superior": 0.08145977947869372,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 47,
           "identicos": false,
           "p_wilcoxon": 1.4210854715202004e-14
@@ -392,8 +416,9 @@
         "gradient_boosting - baseline_persistencia": {
           "n_folds": 47,
           "diferenca_media": 0.11261104490718984,
-          "ic95_inferior": 0.10360886961538608,
-          "ic95_superior": 0.12161322019899361,
+          "ic95_inferior": 0.10336592295536688,
+          "ic95_superior": 0.12185616685901281,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 47,
           "identicos": false,
           "p_wilcoxon": 1.4210854715202004e-14
@@ -401,8 +426,9 @@
         "gradient_boosting - baseline_passeio_sazonal": {
           "n_folds": 47,
           "diferenca_media": 0.12561697495133056,
-          "ic95_inferior": 0.11799041136264038,
-          "ic95_superior": 0.13324353854002075,
+          "ic95_inferior": 0.11778458909288482,
+          "ic95_superior": 0.1334493608097763,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 47,
           "identicos": false,
           "p_wilcoxon": 1.4210854715202004e-14
@@ -410,8 +436,9 @@
         "regressao_logistica - baseline_taxa_recente": {
           "n_folds": 47,
           "diferenca_media": 0.016852729858195515,
-          "ic95_inferior": 0.014417081937317926,
-          "ic95_superior": 0.019288377779073104,
+          "ic95_inferior": 0.014351349766128294,
+          "ic95_superior": 0.019354109950262738,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 45,
           "identicos": false,
           "p_wilcoxon": 7.105427357601002e-14
@@ -419,8 +446,9 @@
         "regressao_logistica - baseline_identidade": {
           "n_folds": 47,
           "diferenca_media": 0.07122224710953871,
-          "ic95_inferior": 0.06569107002543126,
-          "ic95_superior": 0.07675342419364617,
+          "ic95_inferior": 0.0655417971047204,
+          "ic95_superior": 0.07690269711435703,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 47,
           "identicos": false,
           "p_wilcoxon": 1.4210854715202004e-14
@@ -428,8 +456,9 @@
         "regressao_logistica - baseline_persistencia": {
           "n_folds": 47,
           "diferenca_media": 0.11048711004104299,
-          "ic95_inferior": 0.10098953748397638,
-          "ic95_superior": 0.1199846825981096,
+          "ic95_inferior": 0.10073322126525863,
+          "ic95_superior": 0.12024099881682734,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 47,
           "identicos": false,
           "p_wilcoxon": 1.4210854715202004e-14
@@ -437,8 +466,9 @@
         "regressao_logistica - baseline_passeio_sazonal": {
           "n_folds": 47,
           "diferenca_media": 0.1234930400851837,
-          "ic95_inferior": 0.11690164398250079,
-          "ic95_superior": 0.13008443618786664,
+          "ic95_inferior": 0.11672375834751782,
+          "ic95_superior": 0.13026232182284958,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 47,
           "identicos": false,
           "p_wilcoxon": 1.4210854715202004e-14
@@ -446,8 +476,9 @@
         "baseline_taxa_recente - baseline_identidade": {
           "n_folds": 47,
           "diferenca_media": 0.054369517251343195,
-          "ic95_inferior": 0.04766003854106221,
-          "ic95_superior": 0.06107899596162418,
+          "ic95_inferior": 0.047478966145747176,
+          "ic95_superior": 0.061260068356939215,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 46,
           "identicos": false,
           "p_wilcoxon": 2.842170943040401e-14
@@ -455,8 +486,9 @@
         "baseline_taxa_recente - baseline_persistencia": {
           "n_folds": 47,
           "diferenca_media": 0.09363438018284748,
-          "ic95_inferior": 0.08428004795050384,
-          "ic95_superior": 0.10298871241519111,
+          "ic95_inferior": 0.08402759743727878,
+          "ic95_superior": 0.10324116292841617,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 47,
           "identicos": false,
           "p_wilcoxon": 1.4210854715202004e-14
@@ -464,8 +496,9 @@
         "baseline_taxa_recente - baseline_passeio_sazonal": {
           "n_folds": 47,
           "diferenca_media": 0.10664031022698818,
-          "ic95_inferior": 0.09912830230330197,
-          "ic95_superior": 0.11415231815067439,
+          "ic95_inferior": 0.09892557161033723,
+          "ic95_superior": 0.11435504884363913,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 47,
           "identicos": false,
           "p_wilcoxon": 1.4210854715202004e-14
@@ -473,8 +506,9 @@
         "baseline_identidade - baseline_persistencia": {
           "n_folds": 47,
           "diferenca_media": 0.03926486293150427,
-          "ic95_inferior": 0.027694841334309748,
-          "ic95_superior": 0.05083488452869879,
+          "ic95_inferior": 0.027382594792526926,
+          "ic95_superior": 0.051147131070481605,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 39,
           "identicos": false,
           "p_wilcoxon": 3.822258065611095e-08
@@ -482,8 +516,9 @@
         "baseline_identidade - baseline_passeio_sazonal": {
           "n_folds": 47,
           "diferenca_media": 0.05227079297564498,
-          "ic95_inferior": 0.044026045185075316,
-          "ic95_superior": 0.06051554076621464,
+          "ic95_inferior": 0.04380353963797235,
+          "ic95_superior": 0.060738046313317605,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 46,
           "identicos": false,
           "p_wilcoxon": 7.105427357601002e-14
@@ -491,8 +526,9 @@
         "baseline_persistencia - baseline_passeio_sazonal": {
           "n_folds": 47,
           "diferenca_media": 0.013005930044140714,
-          "ic95_inferior": 1.7697187025409594e-05,
-          "ic95_superior": 0.02599416290125602,
+          "ic95_inferior": -0.00033282340271036624,
+          "ic95_superior": 0.026344683490991797,
+          "quantil_usado": 2.012895598919429,
           "folds_vencidos": 30,
           "identicos": false,
           "p_wilcoxon": 0.04195851350407054
@@ -1047,8 +1083,9 @@
       "comparacao": {
         "n_folds": 47,
         "diferenca_media": 0.01071312963492179,
-        "ic95_inferior": 0.007837681529121607,
-        "ic95_superior": 0.013588577740721974,
+        "ic95_inferior": 0.007760080228245057,
+        "ic95_superior": 0.013666179041598524,
+        "quantil_usado": 2.012895598919429,
         "folds_vencidos": 42,
         "identicos": false,
         "p_wilcoxon": 7.038266858216957e-09

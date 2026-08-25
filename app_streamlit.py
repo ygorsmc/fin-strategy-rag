@@ -476,14 +476,30 @@ def responder_prospectiva_se_couber(pergunta: str) -> dict | None:
     """
     from src.cobertura import extrair_mencoes, resolver_entidade
     from src.normalizacao import ordinal_trimestre
-    from src.projecao import detectar_pergunta_prospectiva, responder_projecao
+    from src.projecao import (
+        detectar_pergunta_prospectiva,
+        recusa_de_ultimo_recurso,
+        responder_projecao,
+    )
 
     achado = detectar_pergunta_prospectiva(pergunta)
     if achado is None:
         return None
     recursos = carregar_rota_prospectiva()
     if recursos is None:
-        return None
+        # NÃO cai no fluxo normal. Antes caía, e a pergunta prospectiva
+        # terminava no LLM — a rota "sumia" e a RN07 sumia junto. Artefato
+        # ausente degrada a RIQUEZA da resposta, nunca a fronteira.
+        saida = recusa_de_ultimo_recurso(
+            achado, motivo="panorama ou painel indisponível nesta instância"
+        )
+        return {
+            "resposta": saida.texto,
+            "fontes": [],
+            "modo": "rota prospectiva · RN07 degradada (nenhuma chamada externa)",
+            "provedor": "—",
+            "custo_usd": 0.0,
+        }
 
     indice = recursos["indice"]
     mencoes = extrair_mencoes(pergunta, indice)
@@ -577,6 +593,38 @@ def responder_pergunta_livre(
     if entrada.bloqueado:
         raise PerguntaBloqueada(entrada)
     pergunta = entrada.texto_seguro
+
+    # Mesmo portão duplo, agora para a RN07. `responder_prospectiva_se_couber`
+    # já atende a rota antes daqui, mas ela depende de artefato, de painel e de
+    # o nome resolver no índice de cobertura — três coisas que podem faltar. Se
+    # qualquer uma faltar e a guarda morasse só lá, a pergunta prospectiva
+    # chegaria ao provedor e seria respondida de memória paramétrica.
+    #
+    # O detector dispara 0 vezes nas 55 congeladas (`TestFalsoBloqueio`), então
+    # fechar aqui não custa falso bloqueio medido.
+    from src.projecao import (
+        detectar_pergunta_prospectiva,
+        recusa_de_ultimo_recurso,
+    )
+
+    achado_projecao = detectar_pergunta_prospectiva(pergunta)
+    if achado_projecao is not None:
+        saida = recusa_de_ultimo_recurso(
+            achado_projecao, motivo="rota prospectiva não atendeu esta pergunta"
+        )
+        return {
+            "resposta": saida.texto,
+            "fontes": [],
+            "modo": "rota prospectiva · RN07 no portão do provedor",
+            "provedor": "—",
+            "custo_usd": 0.0,
+            # A interface usa isto para NÃO debitar a cota da RN03: nenhuma
+            # chamada foi feita, e cobrar uma pergunta livre por uma recusa de
+            # custo zero é a mesma incoerência que o caminho do guardrail já
+            # evita.
+            "consumiu_chamada": False,
+        }
+
     if config.embedding_provider not in {"ollama", "local"}:
         raise RuntimeError(
             "Perguntas livres exigem embeddings locais: o custo de embeddings "
@@ -888,7 +936,6 @@ else:
                         }
                     )
                     st.rerun()
-                st.session_state.perguntas_livres_usadas += 1
                 st.session_state.historico.append(
                     {"papel": "user", "conteudo": pergunta}
                 )
@@ -902,18 +949,34 @@ else:
                         ),
                     )
                     st.session_state.custo_usd_acumulado += item["custo_usd"]
+                    # A cota da RN03 conta CHAMADA, não tentativa de digitar:
+                    # o segundo portão da RN07 recusa sem gastar e devolve
+                    # `consumiu_chamada=False`. Debitar ali cobraria da sessão
+                    # uma pergunta que nunca chegou ao provedor.
+                    if item.get("consumiu_chamada", True):
+                        st.session_state.perguntas_livres_usadas += 1
                     st.session_state.historico.append(
                         {
                             "papel": "assistant",
                             "conteudo": item["resposta"],
                             "fontes": item.get("fontes", []),
-                            "modo": "pergunta livre (inferência ao vivo)",
-                            "provedor": (
-                                f"{config.llm_provider}/{item.get('modelo', '—')}"
+                            # Vinha escrito à mão como "inferência ao vivo" e
+                            # `gemini/—`, o que passou a MENTIR quando a recusa
+                            # da RN07 sai daqui com custo zero (spec 5.17 exige
+                            # que a tela diga o modo e o provedor reais).
+                            "modo": item.get(
+                                "modo", "pergunta livre (inferência ao vivo)"
+                            ),
+                            "provedor": item.get(
+                                "provedor",
+                                f"{config.llm_provider}/{item.get('modelo', '—')}",
                             ),
                         }
                     )
                 except FalhaConsultaAoVivo as exc:
+                    # Falhou depois de reservar: a chamada foi tentada e paga,
+                    # então a cota conta.
+                    st.session_state.perguntas_livres_usadas += 1
                     st.session_state.custo_usd_acumulado = (
                         _contabilizar_reserva_falha(
                             st.session_state.custo_usd_acumulado,

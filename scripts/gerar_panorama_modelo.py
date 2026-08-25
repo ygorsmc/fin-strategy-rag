@@ -29,7 +29,11 @@ import numpy as np
 RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ))
 
-from src.modelo.construir_painel import COLUNAS_FEATURES, construir_painel  # noqa: E402
+from src.modelo.construir_painel import (  # noqa: E402
+    COLUNAS_FEATURES,
+    construir_painel,
+    construir_painel_para_inferencia,
+)
 from src.modelo.treinar import (  # noqa: E402
     avaliar,
     construir_gradient_boosting,
@@ -63,11 +67,13 @@ def _regime_por_porte(con: duckdb.DuckDBPyConnection) -> list[dict[str, object]]
     **Sem recorte setorial, e isso é retratação (2026-08-25).** A primeira
     versão separava "instituição financeira" das demais e publicava um
     gradiente de 0,6% a 29,6% para as financeiras. A flag de origem significa
-    "usa plano de contas de instituição financeira": 29 dos 35 eventos
-    positivos do recorte vinham de GP Investments, Sul 116 (em liquidação),
-    CELGPAR e PPLA. Limpo o universo, a série fica não monotônica, e o teste
-    contínuo mata o efeito (ρ = −0,014, p = 0,79 entre bancos de verdade fora
-    do topo). Ver `src/projecao.py::FaixaDePorte`.
+    "usa plano de contas de instituição financeira": 42 dos 49 eventos
+    positivos do recorte (85,7%) vinham de GP Investments, Sul 116 (em
+    liquidação), CELGPAR, PPLA e mais cinco. Limpo o universo sobram 7
+    positivos — abaixo do mínimo de 20 do próprio módulo — e o teste contínuo
+    mata o efeito (ρ = −0,046, p = 0,83 entre bancos de verdade fora do topo).
+    Reproduzível: `python -m scripts.auditar_recorte_is_banco`. Ver também
+    `src/projecao.py::FaixaDePorte`.
     """
     caso = "CASE " + " ".join(
         f"WHEN i.ativo_total >= {limite} THEN '{rotulo}'"
@@ -99,6 +105,64 @@ def _regime_por_porte(con: duckdb.DuckDBPyConnection) -> list[dict[str, object]]
     ]
     saida.sort(key=lambda item: ordem[item["rotulo"]])
     return saida
+
+
+def _escorar_trimestre_corrente(
+    con: duckdb.DuckDBPyConnection,
+    painel,
+    *,
+    limiar_absoluto: float,
+) -> tuple[dict[str, object] | None, dict[str, float]]:
+    """Escora o último trimestre FECHADO — o que ainda não tem rótulo.
+
+    **Sobre a fronteira temporal — a versão anterior desta docstring afirmava
+    demais.** Ela dizia que "todo rótulo que existe está estritamente no
+    passado do trimestre escorado". É falso: com `TRIMESTRES_CONSECUTIVOS = 2`
+    a última linha rotulada é `3T2025`, e o rótulo dela é definido pelos
+    desfechos de `4T2025` **e `1T2026`** — o próprio trimestre escorado. O
+    modelo vê, sim, informação de `1T2026` pela via do rótulo.
+
+    Isso **não é vazamento**, e a razão é outra: no instante da escoragem
+    `1T2026` já fechou e é público, então é exatamente a informação que um
+    usuário teria em produção. Mais: as companhias escoradas têm
+    `prejuizo_em_t = 0`, que é o próprio critério de inclusão — o rótulo de
+    `3T2025` delas só confirma o que o filtro já sabe. O alvo real da
+    escoragem (`2T2026`/`3T2026`) não existe em lugar nenhum do treino.
+
+    A distinção importa para quem for mexer na janela: a garantia não vem de
+    "nenhum rótulo toca o trimestre escorado", vem de "o trimestre escorado já
+    é passado realizado quando o escore é calculado".
+
+    Devolve `(agregado_publicavel, escores_por_cd_cvm)`. O primeiro entra no
+    `panorama.json` versionado; o segundo só é gravado com `--com-escores` e
+    fica fora do Git (RN07, §3.6).
+    """
+    colunas = list(COLUNAS_FEATURES)
+    try:
+        inferencia = construir_painel_para_inferencia(
+            con, trimestres_consecutivos=TRIMESTRES_CONSECUTIVOS
+        )
+    except ValueError as erro:
+        # Painel curto ou já rotulado até o fim: o bloco some, o resto fica.
+        print(f"  trimestre corrente não escorado: {erro}")
+        return None, {}
+
+    modelo = construir_gradient_boosting()
+    modelo.fit(painel.quadro[colunas], painel.quadro["rotulo"].to_numpy(int))
+    escores = modelo.predict_proba(inferencia.quadro[colunas])[:, 1]
+
+    agregado = {
+        "trimestre": inferencia.trimestre,
+        "n_hoje_lucrativas": int(inferencia.n_companhias),
+        "n_ja_em_prejuizo": int(inferencia.n_descartadas_por_ja_estar_em_prejuizo),
+        "n_acima_do_limiar": int((escores >= limiar_absoluto).sum()),
+        "limiar": float(limiar_absoluto),
+    }
+    por_companhia = {
+        str(cd): float(valor)
+        for cd, valor in zip(inferencia.quadro["cd_cvm"], escores)
+    }
+    return agregado, por_companhia
 
 
 def principal() -> int:
@@ -166,6 +230,9 @@ def principal() -> int:
         fracao_nao_financeira = float(
             1.0 - painel.quadro["instituicao_financeira"].mean()
         )
+        bloco_corrente, escores_corrente = _escorar_trimestre_corrente(
+            con, painel, limiar_absoluto=limiar
+        )
         panorama = {
             "trimestre_referencia": ultimo.trimestre_teste,
             "n_companhias_avaliadas": int(len(quadro)),
@@ -178,6 +245,7 @@ def principal() -> int:
             "auc_walk_forward": float(np.mean(aucs)) if aucs else None,
             "alvo": "prejuízo em T+1 e T+2",
             "faixas_de_porte": _regime_por_porte(con),
+            "trimestre_corrente": bloco_corrente,
         }
         argumentos.saida.parent.mkdir(parents=True, exist_ok=True)
         argumentos.saida.write_text(
@@ -189,15 +257,36 @@ def principal() -> int:
             f"superior · AUC walk-forward {panorama['auc_walk_forward']:.3f}"
         )
 
+        if bloco_corrente is not None:
+            print(
+                f"  trimestre corrente {bloco_corrente['trimestre']}: "
+                f"{bloco_corrente['n_acima_do_limiar']}/"
+                f"{bloco_corrente['n_hoje_lucrativas']} hoje lucrativas acima "
+                f"do limiar ({bloco_corrente['n_ja_em_prejuizo']} já em "
+                "prejuízo, fora da contagem)"
+            )
+
         if argumentos.com_escores:
-            por_companhia = {
-                str(cd): float(valor)
-                for cd, valor in zip(quadro["cd_cvm"], quadro["escore"])
-            }
+            # Prefere o trimestre CORRENTE: é o único escore que ainda é
+            # previsão. O do último fold é retrospectivo — o resultado dele já
+            # aconteceu, e entregá-lo ao analista como "o escore da companhia"
+            # seria vender leitura de arquivo como projeção.
+            if escores_corrente:
+                por_companhia = escores_corrente
+                trimestre_escores = bloco_corrente["trimestre"]
+                natureza = "prospectivo (rótulo ainda não existe)"
+            else:
+                por_companhia = {
+                    str(cd): float(valor)
+                    for cd, valor in zip(quadro["cd_cvm"], quadro["escore"])
+                }
+                trimestre_escores = ultimo.trimestre_teste
+                natureza = "retrospectivo (rótulo já conhecido)"
             argumentos.saida_escores.write_text(
                 json.dumps(
                     {
-                        "trimestre_referencia": ultimo.trimestre_teste,
+                        "trimestre_referencia": trimestre_escores,
+                        "natureza": natureza,
                         "alvo": panorama["alvo"],
                         "escores": por_companhia,
                     },
@@ -208,7 +297,8 @@ def principal() -> int:
             )
             print(
                 f"escores por companhia → {argumentos.saida_escores} "
-                f"({len(por_companhia)} companhias) — FORA DO GIT"
+                f"({len(por_companhia)} companhias, {trimestre_escores}, "
+                f"{natureza}) — FORA DO GIT"
             )
     finally:
         con.close()

@@ -22,13 +22,18 @@ from src.modelo.construir_painel import (
     COLUNAS_FEATURES,
     TrimestreInvalidoError,
     construir_painel,
+    construir_painel_para_inferencia,
+    exigir_trimestre_sem_rotulo,
+    medir_republicacao,
     ordinal_trimestre,
     trimestres_completos,
 )
 from src.modelo.treinar import (
     GRUPO_SAZONAL,
+    _quantil_t,
     ablacao_walk_forward,
     avaliar,
+    avaliar_walk_forward,
     comparar_pareado,
     auc_within_companhia,
     composicao_do_topo,
@@ -389,6 +394,297 @@ class TestComparacaoPareada:
             {"a": 0.83, "b": 0.73},
         ]
         assert comparar_pareado(por_fold, "a", "b")["n_folds"] == 3
+
+
+class TestPainelDeInferencia:
+    """Escorar o trimestre corrente sem inventar rótulo (auditoria 2026-08-25).
+
+    `construir_painel` junta o alvo com `JOIN` + `HAVING count(*) = n`: quem
+    não tem os n trimestres futuros some. Correto para treinar, errado para
+    usar — a companhia sobre a qual se quer prever é justamente essa.
+    """
+
+    def test_alcanca_trimestre_que_o_painel_de_treino_descarta(self):
+        lucros = {f"{i:06d}": [5.0, -2.0, 4.0, 6.0, 3.0] for i in range(6)}
+        lucros["000001"] = [5.0, 4.0, 3.0, 2.0, 1.0]
+        con = _painel_cheio(lucros)
+        treino = construir_painel(con, trimestres_consecutivos=2)
+        inferencia = construir_painel_para_inferencia(
+            con, trimestres_consecutivos=2
+        )
+        ultimo_rotulado = max(treino.quadro["ordem"])
+        assert ordinal_trimestre(inferencia.trimestre) > ultimo_rotulado
+        assert inferencia.trimestre == _TRIMESTRES[-1]
+
+    def test_rotulo_e_NA_e_nunca_zero(self):
+        """O defeito que a junção frouxa criaria se ninguém olhasse.
+
+        `LEFT JOIN` faz `n_prejuizos_futuros` virar NULL, e o `CASE` cairia no
+        `ELSE 0` — rótulo "lucro" para quem simplesmente não tem futuro. Isso
+        treinaria o modelo a chamar de saudável todo trimestre recente.
+        """
+        con = _painel_cheio({f"{i:06d}": [5.0, -2.0, 4.0, 6.0, 3.0] for i in range(6)})
+        inferencia = construir_painel_para_inferencia(con)
+        assert inferencia.quadro["rotulo"].isna().all()
+        assert (inferencia.quadro["rotulo_conhecido"] == 0).all()
+
+    def test_recorte_padrao_deixa_so_quem_esta_hoje_lucrativo(self):
+        """97,1% do decil superior já está em prejuízo — sem o recorte, o
+        escore devolve o que a demonstração já dizia."""
+        lucros = {
+            "000001": [5.0, 5.0, 5.0, 5.0, 4.0],    # lucrativa em T
+            "000002": [5.0, 5.0, 5.0, 5.0, -4.0],   # já em prejuízo em T
+            "000003": [1.0, -1.0, 2.0, 3.0, -2.0],  # já em prejuízo em T
+        }
+        inferencia = construir_painel_para_inferencia(_painel_cheio(lucros))
+        assert set(inferencia.quadro["cd_cvm"]) == {"000001"}
+        assert inferencia.n_descartadas_por_ja_estar_em_prejuizo == 2
+        assert (inferencia.quadro["prejuizo_em_t"] == 0).all()
+
+    def test_o_denominador_descartado_fica_disponivel(self):
+        """Queda de volume não pode passar por melhora."""
+        lucros = {
+            "000001": [5.0, 5.0, 5.0, 5.0, 4.0],
+            "000002": [5.0, 5.0, 5.0, 5.0, -4.0],
+        }
+        con = _painel_cheio(lucros)
+        completo = construir_painel_para_inferencia(
+            con, somente_hoje_lucrativas=False
+        )
+        recortado = construir_painel_para_inferencia(con)
+        assert completo.n_companhias == 2
+        assert (
+            recortado.n_companhias
+            + recortado.n_descartadas_por_ja_estar_em_prejuizo
+            == completo.n_companhias
+        )
+
+    def test_falha_fechada_quando_o_trimestre_ja_tem_rotulo(self):
+        """A guarda LEVANTA — e este teste chama `pytest.raises` de verdade.
+
+        A primeira versão deste teste tinha esse nome, essa docstring e nenhum
+        `raises`: exercitava o caminho feliz e afirmava cobrir a falha fechada.
+        Foi achado da auditoria de 2026-08-25 e é o motivo de a guarda ter sido
+        extraída para função própria — embutida, a condição é inalcançável e
+        não havia como testá-la sem mentir.
+        """
+        quadro = pd.DataFrame(
+            {"cd_cvm": ["000001", "000002"], "rotulo_conhecido": [0, 1]}
+        )
+        with pytest.raises(ValueError, match="já tem rótulo conhecido"):
+            exigir_trimestre_sem_rotulo(quadro, "1T2026")
+
+    def test_guarda_passa_quando_nenhum_rotulo_e_conhecido(self):
+        quadro = pd.DataFrame(
+            {"cd_cvm": ["000001", "000002"], "rotulo_conhecido": [0, 0]}
+        )
+        assert exigir_trimestre_sem_rotulo(quadro, "1T2026") is None
+
+    def test_guarda_rejeita_quadro_sem_a_coluna(self):
+        """Sem `rotulo_conhecido` não há como separar 'lucro' de 'ainda não
+        aconteceu' — passar batido seria pior que levantar."""
+        with pytest.raises(ValueError, match="rotulo_conhecido"):
+            exigir_trimestre_sem_rotulo(pd.DataFrame({"cd_cvm": ["1"]}), "1T2026")
+
+    def test_janela_encurtada_ainda_escora_trimestre_sem_futuro(self):
+        """Contraprova do caminho feliz, agora com o nome que descreve o que é."""
+        con = _painel_cheio({f"{i:06d}": [5.0, -2.0, 4.0, 6.0, 3.0] for i in range(4)})
+        con.execute(f"DELETE FROM indicadores WHERE trimestre = '{_TRIMESTRES[-1]}'")
+        con.execute(f"DELETE FROM indicadores WHERE trimestre = '{_TRIMESTRES[-2]}'")
+        inferencia = construir_painel_para_inferencia(con)
+        assert inferencia.trimestre == _TRIMESTRES[-3]
+        assert (inferencia.quadro["rotulo_conhecido"] == 0).all()
+
+    def test_features_batem_com_as_do_treino(self):
+        """Coluna a mais ou a menos aqui é erro de inferência silencioso."""
+        con = _painel_cheio({f"{i:06d}": [5.0, -2.0, 4.0, 6.0, 3.0] for i in range(6)})
+        treino = construir_painel(con)
+        inferencia = construir_painel_para_inferencia(con)
+        for coluna in COLUNAS_FEATURES:
+            assert coluna in inferencia.quadro.columns
+        assert list(treino.quadro[list(COLUNAS_FEATURES)].columns) == list(
+            inferencia.quadro[list(COLUNAS_FEATURES)].columns
+        )
+
+    def test_nao_e_um_painel_supervisionado(self):
+        """Tipo diferente de propósito: passar um pelo outro treinaria sobre
+        rótulo inexistente, e o erro precisa aparecer no tipo, não no número."""
+        con = _painel_cheio({f"{i:06d}": [5.0, -2.0, 4.0, 6.0, 3.0] for i in range(4)})
+        inferencia = construir_painel_para_inferencia(con)
+        assert not isinstance(inferencia, type(construir_painel(con)))
+        assert not hasattr(inferencia, "taxa_positivos")
+
+
+class TestViesAsRestated:
+    """O viés as-restated passou de declaração a medição (2026-08-25).
+
+    A carga mantém só a maior VERSAO — regra certa para consulta, viés de
+    antecipação para o treino. Como não é reversível com o painel carregado, o
+    que se exige é medir a exposição e, sobretudo, se ela é assimétrica entre
+    as classes: republicação concentrada no prejuízo contaminaria o rótulo.
+    """
+
+    @staticmethod
+    def _con_com_versoes(versoes: dict[tuple[str, str], int], lucros):
+        con = _con_sintetica(lucros)
+        con.execute(
+            """
+            CREATE TABLE fatos_contabeis (
+                cd_cvm VARCHAR, trimestre VARCHAR, versao_documento INTEGER
+            )
+            """
+        )
+        for (cd, tri), versao in versoes.items():
+            con.execute("INSERT INTO fatos_contabeis VALUES (?,?,?)", [cd, tri, versao])
+        return con
+
+    def test_conta_a_observacao_e_nao_o_fato(self):
+        """Uma companhia×trimestre com 20 linhas republicadas conta UMA vez."""
+        con = self._con_com_versoes(
+            {("000001", "1T2025"): 1, ("000002", "1T2025"): 3},
+            [("000001", "1T2025", 5.0, 100.0, 900.0),
+             ("000002", "1T2025", 4.0, 100.0, 900.0)],
+        )
+        for _ in range(19):
+            con.execute("INSERT INTO fatos_contabeis VALUES ('000002','1T2025',3)")
+        medida = medir_republicacao(con)
+        assert medida["n_observacoes"] == 2
+        assert medida["n_republicadas"] == 1
+        assert medida["fracao_republicada"] == pytest.approx(0.5)
+
+    def test_versao_um_nao_conta_como_republicacao(self):
+        con = self._con_com_versoes(
+            {("000001", "1T2025"): 1, ("000002", "1T2025"): 1},
+            [("000001", "1T2025", 5.0, 100.0, 900.0),
+             ("000002", "1T2025", 4.0, 100.0, 900.0)],
+        )
+        assert medir_republicacao(con)["n_republicadas"] == 0
+
+    def test_assimetria_entre_classes_e_o_numero_que_importa(self):
+        """Republicação SÓ nos trimestres de prejuízo tem de aparecer como tal.
+
+        É o cenário de contaminação: o rótulo negativo só existe porque a
+        companhia corrigiu o número depois. Se a medida não separasse por
+        classe, este caso ficaria indistinguível de ruído uniforme.
+        """
+        con = self._con_com_versoes(
+            {
+                ("000001", "1T2025"): 2,   # prejuízo, republicado
+                ("000002", "1T2025"): 2,   # prejuízo, republicado
+                ("000003", "1T2025"): 1,   # lucro, original
+                ("000004", "1T2025"): 1,   # lucro, original
+            },
+            [("000001", "1T2025", -5.0, 100.0, 900.0),
+             ("000002", "1T2025", -4.0, 100.0, 900.0),
+             ("000003", "1T2025", 5.0, 100.0, 900.0),
+             ("000004", "1T2025", 4.0, 100.0, 900.0)],
+        )
+        medida = medir_republicacao(con)
+        assert medida["fracao_republicada_em_prejuizo"] == pytest.approx(1.0)
+        assert medida["fracao_republicada_em_lucro"] == pytest.approx(0.0)
+        assert medida["assimetria_entre_classes"] == pytest.approx(1.0)
+
+    def test_uniforme_entre_classes_da_assimetria_nula(self):
+        con = self._con_com_versoes(
+            {
+                ("000001", "1T2025"): 2,
+                ("000002", "1T2025"): 1,
+                ("000003", "1T2025"): 2,
+                ("000004", "1T2025"): 1,
+            },
+            [("000001", "1T2025", -5.0, 100.0, 900.0),
+             ("000002", "1T2025", -4.0, 100.0, 900.0),
+             ("000003", "1T2025", 5.0, 100.0, 900.0),
+             ("000004", "1T2025", 4.0, 100.0, 900.0)],
+        )
+        assert medir_republicacao(con)["assimetria_entre_classes"] == pytest.approx(0.0)
+
+    def test_a_ressalva_acompanha_o_numero(self):
+        """Número sem a ressalva ao lado seria lido como "está tudo bem"."""
+        con = self._con_com_versoes(
+            {("000001", "1T2025"): 1},
+            [("000001", "1T2025", 5.0, 100.0, 900.0)],
+        )
+        assert "as-restated" in medir_republicacao(con)["ressalva"]
+
+
+class TestQuantilDoIntervalo:
+    """O IC usa a t de Student, não o 1,96 da normal (auditoria 2026-08-25).
+
+    O erro padrão é estimado da própria amostra de folds; com amostra pequena
+    o quantil normal produz intervalo estreito demais, e IC estreito demais é
+    afirmação forte demais. Estes testes travam a correção — sem eles, alguém
+    "simplifica" o quantil de volta para 1,96 e nada quebra.
+    """
+
+    def test_quantil_e_maior_que_o_da_normal_e_cai_nele_no_limite(self):
+        # Com 5 folds a diferença é grosseira; com 1.000 já é indistinguível.
+        assert _quantil_t(4) > 2.7
+        assert _quantil_t(46) == pytest.approx(2.0129, abs=1e-3)
+        assert _quantil_t(1000) == pytest.approx(1.962, abs=1e-3)
+
+    def test_amostra_pequena_alarga_o_intervalo_em_vez_de_estreitar(self):
+        """A contraprova direta do defeito: com 1,96 este IC excluiria zero."""
+        por_fold = [
+            {"a": 0.80, "b": 0.79},
+            {"a": 0.82, "b": 0.804},
+            {"a": 0.78, "b": 0.769},
+            {"a": 0.85, "b": 0.845},
+        ]
+        resultado = comparar_pareado(por_fold, "a", "b")
+        diferencas = np.array([0.01, 0.016, 0.011, 0.005])
+        erro_padrao = diferencas.std(ddof=1) / np.sqrt(4)
+        assert resultado["quantil_usado"] > 1.96
+        assert resultado["ic95_inferior"] == pytest.approx(
+            diferencas.mean() - resultado["quantil_usado"] * erro_padrao
+        )
+        # O que a correção custa: um resultado que a normal chamaria de
+        # significativo passa a ficar mais perto da fronteira.
+        assert resultado["ic95_inferior"] < diferencas.mean() - 1.96 * erro_padrao
+
+    def test_o_rotulo_enganoso_nao_ressuscita(self):
+        """`auc_ic95_*` nomeava percentil de fold como se fosse IC da média.
+
+        Os dois números passaram a existir separados e com nome que diz o que
+        cada um é. Este teste falha se alguém reintroduzir o rótulo antigo.
+        """
+        painel = construir_painel(
+            _painel_longo_variado(n_companhias=60), trimestres_consecutivos=1
+        )
+        bloco = avaliar_walk_forward(painel)["resumo"]["gradient_boosting"]
+
+        assert "auc_ic95_inferior" not in bloco
+        assert "auc_ic95_superior" not in bloco
+        for chave in (
+            "auc_faixa_folds_p2_5",
+            "auc_faixa_folds_p97_5",
+            "auc_ic95_da_media_inferior",
+            "auc_ic95_da_media_superior",
+        ):
+            assert chave in bloco
+        assert bloco["auc_ic95_da_media_inferior"] <= bloco["auc_medio"]
+        assert bloco["auc_medio"] <= bloco["auc_ic95_da_media_superior"]
+
+    def test_com_folds_suficientes_a_incerteza_da_media_e_muito_mais_estreita(self):
+        """A razão de os dois números não poderem compartilhar rótulo.
+
+        Com os 47 folds da execução publicável, a faixa entre folds é ~7x mais
+        larga que a incerteza da média: a primeira diz "existe trimestre ruim",
+        a segunda diz "a média publicada vale isto". Chamar a faixa de IC 95%
+        exagerava a imprecisão do resultado — conservador, mas errado.
+
+        (Com pouquíssimos folds a relação se inverte, porque o quantil da t
+        explode. Por isso a contraprova roda no tamanho real, não no sintético
+        de 2 folds.)
+        """
+        gerador = np.random.default_rng(7)
+        vetor = gerador.normal(0.865, 0.033, 47)
+        largura_folds = float(
+            np.percentile(vetor, 97.5) - np.percentile(vetor, 2.5)
+        )
+        erro_padrao = float(vetor.std(ddof=1) / np.sqrt(len(vetor)))
+        largura_media = 2 * _quantil_t(len(vetor) - 1) * erro_padrao
+        assert largura_media < largura_folds / 4
 
 
 class TestAblacao:

@@ -34,5 +34,12 @@
       "n_observacoes": 16760,
       "taxa_prejuizo": 0.37416467780429596
     }
-  ]
+  ],
+  "trimestre_corrente": {
+    "trimestre": "1T2026",
+    "n_hoje_lucrativas": 286,
+    "n_ja_em_prejuizo": 136,
+    "n_acima_do_limiar": 2,
+    "limiar": 0.4261501210653753
+  }
 }

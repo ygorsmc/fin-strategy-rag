@@ -67,7 +67,7 @@ subconsulta por banco; geração JSON com RN01 e grounding numérico da RN02;
 avaliação retomável com fingerprint v3, journal/checkpoint, teto de custo e
 locks; interface cacheada com pergunta livre opt-in.
 
-**Convenção de testes (obrigatória):** a suíte local tem **1.653 casos coletados
+**Convenção de testes (obrigatória):** a suíte local tem **1.689 casos coletados
 e nenhum skip** (medido em 2026-08-25, com `requirements-guardrails.txt` e
 `requirements-modelo.txt` instalados e os pesos do Prompt Guard 2 no cache
 local). NUNCA enfraquecer uma asserção para fazer
@@ -335,6 +335,29 @@ um Streamlit aberto e sem autenticação.
    publica o agregado do **painel inteiro** e a taxa histórica por porte,
    nunca a contagem setorial do trimestre corrente — `_agregado_seguro` trava
    e `TestVazamentoPorEliminacao` verifica.
+4. **A fronteira não some quando o artefato some** (acrescentada em
+   2026-08-25). Antes, `responder_prospectiva_se_couber` devolvia `None` se o
+   panorama ou o painel faltassem, e `None` significa "siga o fluxo normal" —
+   a pergunta prospectiva ia para o LLM. Camada acessória ausente virava
+   permissão. Agora artefato ausente degrada a **riqueza** da resposta
+   (`recusa_de_ultimo_recurso`, sem número nenhum, para não trocar violação de
+   RN07 por violação de RN02), nunca a fronteira. E há **portão duplo**: a
+   mesma verificação roda dentro de `responder_pergunta_livre` **e de
+   `responder_com_guardrails`** (que se declara "o caminho interativo
+   inteiro" e era o único portão do produto sem ela), antes de recuperar e
+   antes de estimar custo, pela razão que já vale para a RN05 — um chamador
+   futuro não pode contornar a regra esquecendo de varrer antes.
+   `TestGuardaProfunda` trava as três coisas, inclusive a **ordem**: recusar
+   depois de gastar não é recusar.
+
+   **O que esta trava NÃO fecha, e continua aberto:** ela cobre o ramo
+   "artefato ausente / entidade não resolvida". Não amplia o *detector*, que
+   segue sem casar paráfrases como "qual o outlook de resultado do BB?" ou
+   "o resultado do Bradesco tende a piorar?". A lacuna é anterior a esta onda
+   e está registrada em `resultados/robustez_modelo_2026-08-24.md` (item 6);
+   fechá-la exige conjunto adversarial de prospectivas parafraseadas, que não
+   existe. Não leia "a fronteira não some" como "toda pergunta prospectiva é
+   detectada".
 
 **Falso bloqueio medido:** o detector de pergunta prospectiva dispara **0 vezes
 nas 55 perguntas congeladas** (`TestFalsoBloqueio`), mesma disciplina da
@@ -465,7 +488,7 @@ Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisã
 | 7 | **Geração** — contrato JSON, citação obrigatória, recusa (RN01–RN02) | sessão principal | ✅ · ⬜ marcações de RN10/RN12 na resposta |
 | 8 | **Conjunto-padrão** — 45 congeladas + ~10 dev, conferidas pela classe de verificação | `conjunto-padrao` | ✅ congelado 2026-07-29 · ⬜ colunas novas da revisão 2 (`cobertura_esperada`, `motivo_recusa_esperado`, `base_esperada`, `rota_esperada`) |
 | 9 | **Comparação de estratégias E0–E4** — só `dev` na iteração; o congelado roda ao final, com log por execução | `observabilidade-avaliacao` | ✅ rodada em 2026-08-21 no congelado (45 × 5 = 225 chamadas, v6) — factual E1 0,400 · E2 0,333 · E3 **0,467** · E4 0,400; comparativa (métrica nova) E1 0,000 · E2/E3 0,100 · E4 **0,200**; E4 × E3 **indistinguível** (2×3 discordâncias, limiar 6) pela 3ª rodada seguida. Ver `MEMORY.md` |
-| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ✅ **2026-08-23** — painel de treino próprio (2011–2026, §3.5), **21.903 obs**, 33,3% positivos. **Walk-forward de 47 folds**: boosting AUC **0,866** × persistência 0,752, vencendo em **47/47**. Ganho vem das features SAZONAIS (+0,0102, p=7,0e-09, 42/47); as do O-score de Ohlson deram **resultado negativo** e foram removidas. `resultados/modelo_preditivo_2026-08-23.md`. **Revisado em 2026-08-23** (`resultados/revisoes_modelo_2026-08-23.md`): alvo alternativo de **2 trimestres consecutivos** melhora tudo (lift@10% 2,55→**3,36**, sinaliza 57,6%→41,5%); **SMOTE PIORA** (−0,006, p=5e-08, e dobra o erro de calibração); ajuste de hiperparâmetros rende **zero** fora dos folds de busca. **Robustez em 2026-08-24** (`resultados/robustez_modelo_2026-08-24.md`): purga/embargo acrescentada — AUC publicado corrige 0,881 → **0,8797**; controle setorial **rejeitado** (+0,0005, p=0,19); recalibração isotônica/Platt **não melhora**; LightGBM **empata** (p=0,66); a decisão sobre as features sazonais **sobrevive em folds não vistos** (+0,0072, p=4e-06). **DEBATE DE DOIS ESPECIALISTAS em 2026-08-25** (`resultados/debate_modelo_2026-08-25.md`) — três retratações: (a) o "interruptor do porte" era contaminação de `is_banco`, 29 de 35 eventos vinham de private equity e de uma companhia em liquidação; recorte setorial REMOVIDO; (b) vazamento no trimestre de VALIDAÇÃO corrigido — ponto de operação vai de 57,6% para 34,5% sinalizado; (c) `early_stopping='auto'` ajustava o modelo sozinho a partir do fold 21, tornando falsa a ressalva de "nenhum ajuste". **Manchete corrigida:** o ganho publicável é **+0,019 sobre `taxa_prejuizos_4t` crua** e **+0,073 sobre a identidade implementável**, não +0,11 sobre a persistência binária. **AUC intra-companhia 0,663 contra 0,865 agregado** — o modelo ordena QUAIS companhias, não QUANDO viram; 97,1% do decil superior já está em prejuízo |
+| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ✅ **2026-08-23** — painel de treino próprio (2011–2026, §3.5), **21.903 obs**, 33,3% positivos. **Walk-forward de 47 folds**: boosting AUC **0,866** × persistência 0,752, vencendo em **47/47**. Ganho vem das features SAZONAIS (+0,0102, p=7,0e-09, 42/47); as do O-score de Ohlson deram **resultado negativo** e foram removidas. `resultados/modelo_preditivo_2026-08-23.md`. **Revisado em 2026-08-23** (`resultados/revisoes_modelo_2026-08-23.md`): alvo alternativo de **2 trimestres consecutivos** melhora tudo (lift@10% 2,55→**3,36**, sinaliza 57,6%→41,5%); **SMOTE PIORA** (−0,006, p=5e-08, e dobra o erro de calibração); ajuste de hiperparâmetros rende **zero** fora dos folds de busca. **Robustez em 2026-08-24** (`resultados/robustez_modelo_2026-08-24.md`): purga/embargo acrescentada — AUC publicado corrige 0,881 → **0,8797**; controle setorial **rejeitado** (+0,0005, p=0,19); recalibração isotônica/Platt **não melhora**; LightGBM **empata** (p=0,66); a decisão sobre as features sazonais **sobrevive em folds não vistos** (+0,0072, p=4e-06). **DEBATE DE DOIS ESPECIALISTAS em 2026-08-25** (`resultados/debate_modelo_2026-08-25.md`) — três retratações: (a) o "interruptor do porte" era contaminação de `is_banco`, 29 de 35 eventos vinham de private equity e de uma companhia em liquidação; recorte setorial REMOVIDO; (b) vazamento no trimestre de VALIDAÇÃO corrigido — ponto de operação vai de 57,6% para 34,5% sinalizado; (c) `early_stopping='auto'` ajustava o modelo sozinho a partir do fold 21, tornando falsa a ressalva de "nenhum ajuste". **Manchete corrigida:** o ganho publicável é **+0,019 sobre `taxa_prejuizos_4t` crua** e **+0,073 sobre a identidade implementável**, não +0,11 sobre a persistência binária. **AUC intra-companhia 0,663 contra 0,865 agregado** — o modelo ordena QUAIS companhias, não QUANDO viram; 97,1% do decil superior já está em prejuízo. **Pendências do debate fechadas em 2026-08-25:** viés *as-restated* passou de declaração a **medição** (16,36% das obs, assimetria entre classes de só **0,66 ponto** — 16,81% em prejuízo × 16,14% em lucro, sem contaminação de rótulo); o produto passou a **escorar o presente** (`construir_painel_para_inferencia`, referência **3T2025 → 1T2026**, restrita a `prejuizo_em_t=0`: 286 hoje lucrativas, 2 acima do limiar, 136 já em prejuízo declaradas fora); IC pareado passou para o quantil da **t** e `auc_ic95_*` virou quatro campos com nome do que são. **O alvo NÃO mudou** — a troca para `resultado_antes_tributos` foi recomendada pelos dois especialistas mas descartada por Ygor (ganho estatístico é ruído, +0,0034) |
 | 11 | **Ferramentas + agentes** — `verificar_cobertura`, Investigador e Auditor com filtro de contexto **em código**, teste que falha se o rastro vazar, braços A/B/C, triagem de cobertura; projeções depois | `agentes-investigacao` | ⬜ |
 | 12 | **Injeção de falha (RF25) e comparação dos três braços (RF26)** — registrar o veredito, inclusive se for "o determinístico basta" | `agentes-investigacao` + `observabilidade-avaliacao` | ⬜ |
 | 13 | **Langfuse + DeepEval** — traces por etapa e matriz de concordância com a auditoria manual | `observabilidade-avaliacao` | 🔄 matriz de concordância **medida** em 2026-08-23 (0,867, `scripts/medir_juiz_groundedness.py`) · ⬜ Langfuse e suíte DeepEval formal |
@@ -506,6 +529,8 @@ Alvo da spec 5.21, com o que já existe marcado:
 │   ├── experimentos_robustez.py ✅ (purga, setor, calibração, LightGBM)
 │   ├── gerar_panorama_modelo.py ✅ (artefato agregado da rota prospectiva)
 │   ├── medir_juiz_groundedness.py ✅ (etapa 13 — juiz × auditoria humana)
+│   ├── auditar_recorte_is_banco.py ✅ (torna a retratação de is_banco
+│   │                                   reproduzível — veredito CALCULADO)
 │   ├── preprocessar_ocr_mistral.py ✅ · reconciliar_chamada_orfa.py ✅
 │   └── preparar_auditoria_final.py · executar_estabilidade.py ·
 │       consolidar_auditoria_final.py                             ✅
