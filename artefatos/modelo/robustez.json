@@ -1,0 +1,577 @@
+{
+  "alvo_1t": {
+    "n_observacoes": 21903,
+    "taxa_positivos": 0.33278546317856,
+    "purga": {
+      "n_folds": 47,
+      "auc_com_purga": 0.8660340335799612,
+      "auc_sem_purga": 0.8660340335799612,
+      "n_treino_medio_com": 11792.765957446809,
+      "n_treino_medio_sem": 11792.765957446809,
+      "comparacao": {
+        "n_folds": 47,
+        "diferenca_media": 0.0,
+        "ic95_inferior": 0.0,
+        "ic95_superior": 0.0,
+        "folds_vencidos": 0,
+        "identicos": true,
+        "p_wilcoxon": null
+      }
+    },
+    "setor": {
+      "n_folds": 47,
+      "auc_com_setor": 0.8667505131417474,
+      "auc_sem_setor": 0.8660340335799612,
+      "comparacao": {
+        "n_folds": 47,
+        "diferenca_media": 0.0007164795617863696,
+        "ic95_inferior": 0.00016354883438309887,
+        "ic95_superior": 0.0012694102891896404,
+        "folds_vencidos": 34,
+        "identicos": false,
+        "p_wilcoxon": 0.01375219815669339
+      }
+    },
+    "separacao_setorial_por_alavancagem": {
+      "instituicao_financeira": {
+        "n": 866,
+        "mediana_alavancagem": 8.810388578174287,
+        "p25": 5.812830713847824,
+        "p75": 12.239878065000003
+      },
+      "demais": {
+        "n": 19936,
+        "mediana_alavancagem": 2.4879511780076315,
+        "p25": 1.807588183949608,
+        "p75": 3.7296744784174036
+      }
+    },
+    "importancia_permutacao": {
+      "trimestre": "4T2025",
+      "n_repeticoes": 15,
+      "aviso": "fold único; mede dependência do modelo ajustado, não informação insubstituível — para isso use ablacao_walk_forward",
+      "por_feature": {
+        "roe_trimestral": {
+          "delta_auc_medio": -0.0006074984722672501,
+          "delta_auc_desvio": 0.001969934098711955
+        },
+        "roa_trimestral": {
+          "delta_auc_medio": 0.0031237643337286734,
+          "delta_auc_desvio": 0.003389202507470807
+        },
+        "alavancagem": {
+          "delta_auc_medio": 0.00021208526546600363,
+          "delta_auc_desvio": 0.0006029535753419268
+        },
+        "log_ativo_total": {
+          "delta_auc_medio": 0.0014935835220532434,
+          "delta_auc_desvio": 0.0015142077814495375
+        },
+        "patrimonio_negativo": {
+          "delta_auc_medio": 0.0,
+          "delta_auc_desvio": 0.0
+        },
+        "prejuizo_em_t": {
+          "delta_auc_medio": 0.0,
+          "delta_auc_desvio": 0.0
+        },
+        "prejuizo_em_t_menos_1": {
+          "delta_auc_medio": -6.290664653660164e-05,
+          "delta_auc_desvio": 0.00013770431222819257
+        },
+        "taxa_prejuizos_ate_t": {
+          "delta_auc_medio": 0.01373072360616836,
+          "delta_auc_desvio": 0.004972170429275366
+        },
+        "delta_roe": {
+          "delta_auc_medio": -0.00017973327581873497,
+          "delta_auc_desvio": 0.000635605581126424
+        },
+        "delta_lucro_sobre_ativo": {
+          "delta_auc_medio": -0.0002678025809699373,
+          "delta_auc_desvio": 0.0005772600816554158
+        },
+        "delta_patrimonio_relativo": {
+          "delta_auc_medio": 0.0004313598619647937,
+          "delta_auc_desvio": 0.00027652068165552173
+        },
+        "prejuizo_no_mesmo_trimestre_do_ano_anterior": {
+          "delta_auc_medio": 0.00436032927136123,
+          "delta_auc_desvio": 0.0012231427167080965
+        },
+        "variacao_lucro_anual": {
+          "delta_auc_medio": -0.000598511808476269,
+          "delta_auc_desvio": 0.0011824837848885908
+        },
+        "taxa_prejuizos_4t": {
+          "delta_auc_medio": 0.1587853625220172,
+          "delta_auc_desvio": 0.018473636250699414
+        },
+        "trimestre_do_ano": {
+          "delta_auc_medio": 0.0,
+          "delta_auc_desvio": 0.0
+        }
+      }
+    },
+    "calibracao": {
+      "cru_brier": 0.14024933723400335,
+      "cru_erro": 0.06698386489423012,
+      "cru_auc": 0.8660340335799612,
+      "isotonic_brier": 0.14585670044334745,
+      "isotonic_erro": 0.07866043511186228,
+      "isotonic_auc": 0.8613596903805054,
+      "sigmoid_brier": 0.14317416540642758,
+      "sigmoid_erro": 0.07624965908764902,
+      "sigmoid_auc": 0.8660340335799612,
+      "n_folds": 47,
+      "isotonic_vs_cru_erro": {
+        "n_folds": 47,
+        "diferenca_media": 0.011676570217632158,
+        "ic95_inferior": 0.0038402829755354306,
+        "ic95_superior": 0.019512857459728885,
+        "folds_vencidos": 27,
+        "identicos": false,
+        "p_wilcoxon": 0.008224654233018214
+      },
+      "isotonic_vs_cru_auc": {
+        "n_folds": 47,
+        "diferenca_media": -0.004674343199455967,
+        "ic95_inferior": -0.005740194569832114,
+        "ic95_superior": -0.003608491829079819,
+        "folds_vencidos": 1,
+        "identicos": false,
+        "p_wilcoxon": 4.263256414560601e-14
+      },
+      "sigmoid_vs_cru_erro": {
+        "n_folds": 47,
+        "diferenca_media": 0.00926579419341892,
+        "ic95_inferior": 0.001961298407451873,
+        "ic95_superior": 0.01657028997938597,
+        "folds_vencidos": 29,
+        "identicos": false,
+        "p_wilcoxon": 0.02223446642490501
+      },
+      "sigmoid_vs_cru_auc": {
+        "n_folds": 47,
+        "diferenca_media": 0.0,
+        "ic95_inferior": 0.0,
+        "ic95_superior": 0.0,
+        "folds_vencidos": 0,
+        "identicos": true,
+        "p_wilcoxon": null
+      }
+    },
+    "lightgbm": {
+      "n_folds": 47,
+      "auc_lightgbm": 0.865983830273088,
+      "auc_sklearn": 0.8660340335799612,
+      "comparacao": {
+        "n_folds": 47,
+        "diferenca_media": -5.020330687332388e-05,
+        "ic95_inferior": -0.0012105526561949596,
+        "ic95_superior": 0.001110146042448312,
+        "folds_vencidos": 24,
+        "identicos": false,
+        "p_wilcoxon": 0.8709307800517365
+      }
+    },
+    "features_em_folds_nao_vistos": {
+      "folds_da_decisao": {
+        "n_folds": 20,
+        "auc_completo": 0.8571838048788984,
+        "auc_sem_sazonais": 0.8452600293536048,
+        "comparacao": {
+          "n_folds": 20,
+          "diferenca_media": 0.011923775525293584,
+          "ic95_inferior": 0.006768348589410463,
+          "ic95_superior": 0.017079202461176706,
+          "folds_vencidos": 18,
+          "identicos": false,
+          "p_wilcoxon": 0.000209808349609375
+        }
+      },
+      "folds_nao_vistos": {
+        "n_folds": 27,
+        "auc_completo": 0.8725897585437116,
+        "auc_sem_sazonais": 0.8637073187107972,
+        "comparacao": {
+          "n_folds": 27,
+          "diferenca_media": 0.008882439832914233,
+          "ic95_inferior": 0.005902836118891277,
+          "ic95_superior": 0.01186204354693719,
+          "folds_vencidos": 24,
+          "identicos": false,
+          "p_wilcoxon": 1.1354684829711914e-05
+        }
+      }
+    },
+    "por_estado": {
+      "ja_em_prejuizo": {
+        "n": 5856,
+        "n_positivos": 3955,
+        "suficiente": true,
+        "taxa_base": 0.6753756830601093,
+        "roc_auc": 0.7256170981937115,
+        "lift_topo_10pct": 1.275993148172918,
+        "precisao_topo_10pct": 0.8617747440273038
+      },
+      "lucrativa_hoje": {
+        "n": 11755,
+        "n_positivos": 1955,
+        "suficiente": true,
+        "taxa_base": 0.1663122075712463,
+        "roc_auc": 0.8014756250326217,
+        "lift_topo_10pct": 3.333620404683612,
+        "precisao_topo_10pct": 0.5544217687074829
+      }
+    },
+    "por_recorte": {
+      "painel_inteiro": {
+        "n": 17611,
+        "n_positivos": 5910,
+        "suficiente": true,
+        "taxa_base": 0.335585713474533,
+        "roc_auc": 0.8643872976567436,
+        "lift_topo_10pct": 2.5551366273008624,
+        "precisao_topo_10pct": 0.8574673480976718
+      },
+      "instituicoes_financeiras": {
+        "n": 577,
+        "n_positivos": 74,
+        "suficiente": true,
+        "taxa_base": 0.12824956672443674,
+        "roc_auc": 0.8845978184944387,
+        "lift_topo_10pct": 4.705265610438024,
+        "precisao_topo_10pct": 0.603448275862069
+      },
+      "financeiras_acima_100bi": {
+        "n": 198,
+        "n_positivos": 9,
+        "suficiente": false,
+        "motivo_insuficiente": "poucos eventos da classe minoritária"
+      },
+      "financeiras_abaixo_100bi": {
+        "n": 379,
+        "n_positivos": 65,
+        "suficiente": true,
+        "taxa_base": 0.17150395778364116,
+        "roc_auc": 0.8387800097991182,
+        "lift_topo_10pct": 3.682591093117409,
+        "precisao_topo_10pct": 0.631578947368421
+      },
+      "nao_financeiras": {
+        "n": 17034,
+        "n_positivos": 5836,
+        "suficiente": true,
+        "taxa_base": 0.3426088998473641,
+        "roc_auc": 0.8626837692303078,
+        "lift_topo_10pct": 2.5108706282546986,
+        "precisao_topo_10pct": 0.8602466236054023
+      },
+      "financeiras_lucrativas_hoje": {
+        "n": 503,
+        "n_positivos": 34,
+        "suficiente": true,
+        "taxa_base": 0.06759443339960239,
+        "roc_auc": 0.8409632509720306,
+        "lift_topo_10pct": 5.03,
+        "precisao_topo_10pct": 0.34
+      },
+      "nao_financeiras_lucrativas_hoje": {
+        "n": 11252,
+        "n_positivos": 1921,
+        "suficiente": true,
+        "taxa_base": 0.17072520440810524,
+        "roc_auc": 0.7993005632236496,
+        "lift_topo_10pct": 3.290538029961247,
+        "precisao_topo_10pct": 0.5617777777777778
+      }
+    }
+  },
+  "alvo_2t": {
+    "n_observacoes": 21119,
+    "taxa_positivos": 0.223021923386524,
+    "purga": {
+      "n_folds": 46,
+      "auc_com_purga": 0.87968267536002,
+      "auc_sem_purga": 0.8812849767979908,
+      "n_treino_medio_com": 11023.630434782608,
+      "n_treino_medio_sem": 11387.08695652174,
+      "comparacao": {
+        "n_folds": 46,
+        "diferenca_media": -0.0016023014379714289,
+        "ic95_inferior": -0.002865836598648198,
+        "ic95_superior": -0.0003387662772946598,
+        "folds_vencidos": 15,
+        "identicos": false,
+        "p_wilcoxon": 0.0255835121070902
+      }
+    },
+    "setor": {
+      "n_folds": 46,
+      "auc_com_setor": 0.8802079813012982,
+      "auc_sem_setor": 0.87968267536002,
+      "comparacao": {
+        "n_folds": 46,
+        "diferenca_media": 0.0005253059412784755,
+        "ic95_inferior": -0.00043929446342451893,
+        "ic95_superior": 0.00148990634598147,
+        "folds_vencidos": 28,
+        "identicos": false,
+        "p_wilcoxon": 0.18801157618054276
+      }
+    },
+    "separacao_setorial_por_alavancagem": {
+      "instituicao_financeira": {
+        "n": 866,
+        "mediana_alavancagem": 8.810388578174287,
+        "p25": 5.812830713847824,
+        "p75": 12.239878065000003
+      },
+      "demais": {
+        "n": 19936,
+        "mediana_alavancagem": 2.4879511780076315,
+        "p25": 1.807588183949608,
+        "p75": 3.7296744784174036
+      }
+    },
+    "importancia_permutacao": {
+      "trimestre": "3T2025",
+      "n_repeticoes": 15,
+      "aviso": "fold único; mede dependência do modelo ajustado, não informação insubstituível — para isso use ablacao_walk_forward",
+      "por_feature": {
+        "roe_trimestral": {
+          "delta_auc_medio": 0.005939393939393963,
+          "delta_auc_desvio": 0.0033903433265748016
+        },
+        "roa_trimestral": {
+          "delta_auc_medio": 0.006431235431235457,
+          "delta_auc_desvio": 0.0029148473469078327
+        },
+        "alavancagem": {
+          "delta_auc_medio": 0.0010396270396270631,
+          "delta_auc_desvio": 0.0009315380622762773
+        },
+        "log_ativo_total": {
+          "delta_auc_medio": 0.002320512820512858,
+          "delta_auc_desvio": 0.0019987899850290106
+        },
+        "patrimonio_negativo": {
+          "delta_auc_medio": 0.0,
+          "delta_auc_desvio": 0.0
+        },
+        "prejuizo_em_t": {
+          "delta_auc_medio": 0.0,
+          "delta_auc_desvio": 0.0
+        },
+        "prejuizo_em_t_menos_1": {
+          "delta_auc_medio": 3.700743415417188e-17,
+          "delta_auc_desvio": 0.00010605420201471753
+        },
+        "taxa_prejuizos_ate_t": {
+          "delta_auc_medio": 0.017193473193473217,
+          "delta_auc_desvio": 0.0028188690812224345
+        },
+        "delta_roe": {
+          "delta_auc_medio": -0.00047086247086243943,
+          "delta_auc_desvio": 0.0010667385911493365
+        },
+        "delta_lucro_sobre_ativo": {
+          "delta_auc_medio": 3.0303030303061954e-05,
+          "delta_auc_desvio": 0.001028619324823512
+        },
+        "delta_patrimonio_relativo": {
+          "delta_auc_medio": -0.0007272727272726875,
+          "delta_auc_desvio": 0.0005534645856617859
+        },
+        "prejuizo_no_mesmo_trimestre_do_ano_anterior": {
+          "delta_auc_medio": -1.6317016316976426e-05,
+          "delta_auc_desvio": 5.396660560738172e-05
+        },
+        "variacao_lucro_anual": {
+          "delta_auc_medio": 0.000687645687645729,
+          "delta_auc_desvio": 0.0008535734600282266
+        },
+        "taxa_prejuizos_4t": {
+          "delta_auc_medio": 0.14801398601398605,
+          "delta_auc_desvio": 0.019341167331500184
+        },
+        "trimestre_do_ano": {
+          "delta_auc_medio": 0.0,
+          "delta_auc_desvio": 0.0
+        }
+      }
+    },
+    "calibracao": {
+      "cru_brier": 0.11576101139745056,
+      "cru_erro": 0.05758261162828142,
+      "cru_auc": 0.87968267536002,
+      "isotonic_brier": 0.11756239475100987,
+      "isotonic_erro": 0.05461919043572333,
+      "isotonic_auc": 0.8734367944476031,
+      "sigmoid_brier": 0.11537685013745821,
+      "sigmoid_erro": 0.05505597544270239,
+      "sigmoid_auc": 0.87968267536002,
+      "n_folds": 46,
+      "isotonic_vs_cru_erro": {
+        "n_folds": 46,
+        "diferenca_media": -0.002963421192558088,
+        "ic95_inferior": -0.01097079420173164,
+        "ic95_superior": 0.005043951816615464,
+        "folds_vencidos": 22,
+        "identicos": false,
+        "p_wilcoxon": 0.5733178874168061
+      },
+      "isotonic_vs_cru_auc": {
+        "n_folds": 46,
+        "diferenca_media": -0.006245880912416732,
+        "ic95_inferior": -0.007465209413379828,
+        "ic95_superior": -0.005026552411453636,
+        "folds_vencidos": 2,
+        "identicos": false,
+        "p_wilcoxon": 1.4210854715202004e-13
+      },
+      "sigmoid_vs_cru_erro": {
+        "n_folds": 46,
+        "diferenca_media": -0.00252663618557904,
+        "ic95_inferior": -0.008322464039818664,
+        "ic95_superior": 0.0032691916686605834,
+        "folds_vencidos": 20,
+        "identicos": false,
+        "p_wilcoxon": 0.35644730665052293
+      },
+      "sigmoid_vs_cru_auc": {
+        "n_folds": 46,
+        "diferenca_media": 0.0,
+        "ic95_inferior": 0.0,
+        "ic95_superior": 0.0,
+        "folds_vencidos": 0,
+        "identicos": true,
+        "p_wilcoxon": null
+      }
+    },
+    "lightgbm": {
+      "n_folds": 46,
+      "auc_lightgbm": 0.880108483627452,
+      "auc_sklearn": 0.87968267536002,
+      "comparacao": {
+        "n_folds": 46,
+        "diferenca_media": 0.0004258082674318602,
+        "ic95_inferior": -0.0012266642605557843,
+        "ic95_superior": 0.0020782807954195046,
+        "folds_vencidos": 21,
+        "identicos": false,
+        "p_wilcoxon": 0.6649942656656265
+      }
+    },
+    "features_em_folds_nao_vistos": {
+      "folds_da_decisao": {
+        "n_folds": 20,
+        "auc_completo": 0.8665834525456588,
+        "auc_sem_sazonais": 0.8512408906204231,
+        "comparacao": {
+          "n_folds": 20,
+          "diferenca_media": 0.015342561925235814,
+          "ic95_inferior": 0.011487830192879231,
+          "ic95_superior": 0.019197293657592398,
+          "folds_vencidos": 18,
+          "identicos": false,
+          "p_wilcoxon": 1.9073486328125e-05
+        }
+      },
+      "folds_nao_vistos": {
+        "n_folds": 26,
+        "auc_completo": 0.8897590006018359,
+        "auc_sem_sazonais": 0.8825305892926212,
+        "comparacao": {
+          "n_folds": 26,
+          "diferenca_media": 0.007228411309214666,
+          "ic95_inferior": 0.005034797525302101,
+          "ic95_superior": 0.00942202509312723,
+          "folds_vencidos": 23,
+          "identicos": false,
+          "p_wilcoxon": 4.082918167114258e-06
+        }
+      }
+    },
+    "por_estado": {
+      "ja_em_prejuizo": {
+        "n": 5602,
+        "n_positivos": 2888,
+        "suficiente": true,
+        "taxa_base": 0.5155301677972153,
+        "roc_auc": 0.7215681181194463,
+        "lift_topo_10pct": 1.4617407004352987,
+        "precisao_topo_10pct": 0.7535714285714286
+      },
+      "lucrativa_hoje": {
+        "n": 11317,
+        "n_positivos": 914,
+        "suficiente": true,
+        "taxa_base": 0.08076345321198197,
+        "roc_auc": 0.8314796628055658,
+        "lift_topo_10pct": 4.353331761140021,
+        "precisao_topo_10pct": 0.35159010600706714
+      }
+    },
+    "por_recorte": {
+      "painel_inteiro": {
+        "n": 16919,
+        "n_positivos": 3802,
+        "suficiente": true,
+        "taxa_base": 0.22471777291802117,
+        "roc_auc": 0.8764646887597669,
+        "lift_topo_10pct": 3.3217394913464733,
+        "precisao_topo_10pct": 0.7464539007092199
+      },
+      "instituicoes_financeiras": {
+        "n": 535,
+        "n_positivos": 35,
+        "suficiente": true,
+        "taxa_base": 0.06542056074766354,
+        "roc_auc": 0.8830857142857144,
+        "lift_topo_10pct": 5.095238095238096,
+        "precisao_topo_10pct": 0.3333333333333333
+      },
+      "financeiras_acima_100bi": {
+        "n": 189,
+        "n_positivos": 5,
+        "suficiente": false,
+        "motivo_insuficiente": "poucos eventos da classe minoritária"
+      },
+      "financeiras_abaixo_100bi": {
+        "n": 346,
+        "n_positivos": 30,
+        "suficiente": true,
+        "taxa_base": 0.08670520231213873,
+        "roc_auc": 0.8316455696202532,
+        "lift_topo_10pct": 4.283809523809524,
+        "precisao_topo_10pct": 0.37142857142857144
+      },
+      "nao_financeiras": {
+        "n": 16384,
+        "n_positivos": 3767,
+        "suficiente": true,
+        "taxa_base": 0.22991943359375,
+        "roc_auc": 0.8751768396047663,
+        "lift_topo_10pct": 3.27396097398752,
+        "precisao_topo_10pct": 0.7527472527472527
+      },
+      "financeiras_lucrativas_hoje": {
+        "n": 464,
+        "n_positivos": 10,
+        "suficiente": false,
+        "motivo_insuficiente": "poucos eventos da classe minoritária"
+      },
+      "nao_financeiras_lucrativas_hoje": {
+        "n": 10853,
+        "n_positivos": 904,
+        "suficiente": true,
+        "taxa_base": 0.08329494149083203,
+        "roc_auc": 0.8303826283959698,
+        "lift_topo_10pct": 4.304287141633702,
+        "precisao_topo_10pct": 0.3585253456221198
+      }
+    }
+  }
+}

@@ -1,8 +1,20 @@
-# O que a literatura diz sobre este dataset — e o que muda no nosso modelo
+# O que a literatura diz sobre este dataset — e o que aconteceu ao aplicá-la
 
 **Data:** 2026-08-23 · **Custo:** zero · Levantamento feito a pedido, depois da
 primeira versão da etapa 10, para checar se as escolhas de modelagem eram as
 melhores ou apenas as minhas.
+
+> **Este documento tem duas camadas, e a segunda contradiz parte da primeira.**
+> As seções 1–5 são o levantamento como foi escrito **antes** de executar as
+> recomendações. O bloco final, *Placar das previsões*, registra o que
+> aconteceu quando elas foram executadas: **das três recomendações
+> testáveis, uma se confirmou de forma esmagadora e duas foram refutadas** —
+> inclusive uma que eu havia implementado com confiança.
+>
+> Mantive o texto original em vez de reescrevê-lo porque um levantamento
+> bibliográfico que só é publicado depois de dar certo não serve de registro de
+> método. Os resultados finais estão em
+> `resultados/modelo_preditivo_2026-08-23.md`.
 
 Resumo em uma linha: **duas decisões minhas estavam certas e ficam
 confirmadas; três estavam erradas ou incompletas; e o gargalo real não é o
@@ -33,6 +45,11 @@ SMOTE foi desenhado para classes raras de 1–5%.
 com respaldo publicado em vez de só bom senso.
 
 ## 2. Corrigido — as features agora vêm da literatura, não do meu gosto
+
+> ⚠️ **REFUTADO depois.** Tudo nesta seção foi medido sobre a partição única e
+> não sobreviveu aos 47 folds: as features do O-score são nulas no boosting
+> (p = 0,135) e **pioram** a logística (p = 3,3e−04). Foram removidas. Ver o
+> *Placar das previsões*, no fim.
 
 Eu havia inventado as onze features olhando as colunas disponíveis. A
 referência estabelecida para insolvência é o **O-score de Ohlson (1980)**, cujo
@@ -108,6 +125,12 @@ em um trimestre qualquer.
 
 ## 4. Achado relacionado — o baseline canônico não é calculável hoje
 
+> ⚠️ **REFUTADO depois.** Com a janela larga o passeio sazonal virou
+> calculável — e mostrou-se marginalmente **mais fraco** que a persistência
+> (0,739 × 0,752). A suspeita de baseline fraco demais não se confirmou. Mas a
+> intuição sazonal estava certa no lugar errado: virou **feature**, e foi de lá
+> que veio todo o ganho.
+
 Para lucro trimestral, o benchmark consagrado não é a persistência de
 defasagem 1 que uso: é o **seasonal random walk**, que compara com o **mesmo
 trimestre do ano anterior** (defasagem 4). A literatura registra ainda que a
@@ -142,6 +165,8 @@ treino tem 873 linhas. Com mais dados, a ordem provavelmente se inverte.
 ## Recomendação, em ordem de retorno
 
 ### 1. Reabrir a janela do painel para o treino — é o desbloqueio de tudo
+
+> ✅ **EXECUTADO e CONFIRMADO** em 2026-08-23. 21.903 observações, 47 folds.
 
 `CVM_ANO_INICIAL=2025` foi decisão consciente para casar o painel com o corpus,
 e o `MEMORY.md` já registrava a saída: *reabrir a janela só para o treino,
@@ -186,6 +211,45 @@ degradar, e hoje não medimos.
   painel de **treino**, e os dois podem coexistir.
 
 ---
+
+---
+
+## Placar das previsões — o que sobreviveu à execução
+
+Escrito **depois** de reabrir a janela, construir o painel de treino
+2011–2026 e rodar 47 folds de walk-forward.
+
+| # | O que este documento previu | Veredito | Evidência |
+|---|---|---|---|
+| 1 | Não usar SMOTE; ajuste de limiar basta | **não testado** | O limiar por F2 seguiu em uso e funcionou; SMOTE nunca foi tentado, então isto continua sendo argumento emprestado, não medição própria |
+| 2 | As features do O-score melhorariam o modelo | **REFUTADO** | Nulo no boosting (+0,0005, p=0,135) e **piora** na logística (−0,0027, p=3,3e−04). Removidas |
+| 3 | O teste Q4→Q1 é o pior arranjo possível | **mitigado, não refutado** | Segue sendo Q4→Q1 na partição única, mas o treino passou a conter 14 outras transições Q4→Q1 e o walk-forward mede todos os trimestres |
+| 4 | O passeio sazonal seria um baseline mais duro | **REFUTADO** | É marginalmente *mais fraco* que a persistência (0,739 × 0,752, p=0,042) |
+| 5 | Partição única é a limitação dominante | **CONFIRMADO** | 47 folds resolveram as três comparações que a partição única deixava indecidíveis, com p da ordem de 1e−09 |
+| 6 | Com mais dados o boosting passaria a logística | **confirmado, mas fraco** | Passou (0,866 × 0,863), porém o IC 95% da diferença toca o zero: +0,0033 [−0,0002; +0,0069] |
+
+### O que isso ensina sobre o método, não sobre o dataset
+
+**A previsão que mais falhou foi a mais bem fundamentada.** As features do
+O-score vinham de 1980, de um modelo reconhecidamente superior ao Z-score em
+reavaliações empíricas, e três das nove eram diretamente deriváveis do painel.
+Eu as implementei e o número subiu — mas o intervalo de confiança incluía zero,
+e eu registrei isso como "não demonstrado" em vez de comemorar. Foi essa
+ressalva, e não a intuição, que se provou correta quando o poder estatístico
+chegou.
+
+**O ganho real veio de onde a literatura apontava sem eu ter percebido.** A
+seção 4 anotou que o benchmark de lucro trimestral é sazonal, e eu tratei isso
+como um problema de *baseline fraco*. Era, na verdade, uma dica sobre
+**features**: a sazonalidade que torna o passeio sazonal um benchmark natural é
+a mesma que faz `prejuizo_no_mesmo_trimestre_do_ano_anterior` ser informativa.
+O baseline sazonal se mostrou fraco; a *feature* sazonal deu todo o ganho
+(+0,0102, p=7,0e−09, 42/47 folds).
+
+**A recomendação certa era a menos sofisticada.** Entre "usar as variáveis
+canônicas de insolvência" e "conseguir mais dados", a segunda venceu com folga.
+Reabrir a janela destravou de uma vez o volume, os folds e as features
+sazonais.
 
 ## Fontes
 

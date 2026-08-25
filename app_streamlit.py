@@ -393,6 +393,156 @@ def guardar_entrada(pergunta: str) -> ResultadoGuardrail:
     )
 
 
+@st.cache_resource(show_spinner=False)
+def carregar_rota_prospectiva() -> dict | None:
+    """Índice de cobertura + panorama agregado, carregados uma vez.
+
+    Devolve ``None`` se o panorama não tiver sido gerado — a rota some em vez
+    de derrubar o aplicativo, porque ela é um acréscimo e o resto do produto
+    não depende dela. O que NÃO pode acontecer em silêncio é a rota responder
+    com dado ausente; por isso `carregar_panorama` falha fechado e o erro é
+    registrado aqui.
+    """
+    from src.cobertura import carregar_indice_cobertura
+    from src.dados_estruturados import abrir_conexao_somente_leitura
+    from src.projecao import PanoramaIndisponivelError, carregar_escores, carregar_panorama
+
+    try:
+        panorama = carregar_panorama()
+    except PanoramaIndisponivelError as erro:
+        LOGGER.warning("rota prospectiva desligada: %s", erro)
+        return None
+
+    try:
+        indice = carregar_indice_cobertura(config)
+        conexao = abrir_conexao_somente_leitura(config)
+        try:
+            # Prejuízos e porte na mesma varredura: o porte é o que permite
+            # comparar o escore com a taxa-base da faixa certa, e sem essa
+            # comparação o número por emissor vira só um número.
+            # RN10: o 4T não existe como ITR e é derivado por aritmética. No
+            # painel carregado ele responde por 420 das 435 linhas de 4T2025 —
+            # contar derivado junto com arquivado e apresentar o total como
+            # "prejuízos consolidados" seria exatamente o que a RN10 proíbe.
+            # Por isso os dois vêm separados e a resposta declara a divisão.
+            linhas_painel = conexao.execute(
+                "SELECT cd_cvm, "
+                "  sum(CASE WHEN lucro_liquido_consolidado < 0 "
+                "           AND origem = 'arquivado' THEN 1 ELSE 0 END), "
+                "  sum(CASE WHEN lucro_liquido_consolidado < 0 "
+                "           AND origem = 'derivado' THEN 1 ELSE 0 END), "
+                "  avg(ativo_total) "
+                "FROM indicadores WHERE lucro_liquido_consolidado IS NOT NULL "
+                "GROUP BY 1"
+            ).fetchall()
+            prejuizos = {str(cd): int(n) for cd, n, _, _ in linhas_painel}
+            prejuizos_derivados = {
+                str(cd): int(n) for cd, _, n, _ in linhas_painel
+            }
+            ativos = {
+                str(cd): float(ativo)
+                for cd, _, _, ativo in linhas_painel
+                if ativo is not None
+            }
+        finally:
+            conexao.close()
+    except Exception as erro:  # painel ausente no deploy enxuto (RNF12)
+        LOGGER.warning("rota prospectiva sem painel: %s", erro)
+        return None
+
+    escores = None
+    if config.previsao_por_emissor_habilitada:
+        # Falha fechada de propósito: pediram o modo local e o dado não está
+        # lá. Degradar para o modo público em silêncio seria pior — o analista
+        # leria a recusa achando que é a política, não a falta do arquivo.
+        escores = carregar_escores()
+
+    return {
+        "panorama": panorama,
+        "indice": indice,
+        "prejuizos": prejuizos,
+        "prejuizos_derivados": prejuizos_derivados,
+        "ativos": ativos,
+        "escores": escores,
+    }
+
+
+def responder_prospectiva_se_couber(pergunta: str) -> dict | None:
+    """Roteia a pergunta prospectiva sobre emissor nomeado (RN07).
+
+    Devolve ``None`` quando a pergunta não é prospectiva ou quando nenhuma
+    companhia foi resolvida — nos dois casos o fluxo normal segue. Nunca faz
+    chamada externa: custo zero, sempre.
+    """
+    from src.cobertura import extrair_mencoes, resolver_entidade
+    from src.normalizacao import ordinal_trimestre
+    from src.projecao import detectar_pergunta_prospectiva, responder_projecao
+
+    achado = detectar_pergunta_prospectiva(pergunta)
+    if achado is None:
+        return None
+    recursos = carregar_rota_prospectiva()
+    if recursos is None:
+        return None
+
+    indice = recursos["indice"]
+    mencoes = extrair_mencoes(pergunta, indice)
+    if not mencoes:
+        return None
+    resolucao = resolver_entidade(mencoes[0], indice)
+    if resolucao.ambigua:
+        # RN11: nome que resolve para mais de uma companhia gera pergunta de
+        # desambiguação, nunca escolha automática — inclusive aqui.
+        return {
+            "resposta": resolucao.pergunta_desambiguacao(),
+            "fontes": [],
+            "modo": "desambiguação (RN11, nenhuma chamada externa)",
+            "provedor": "—",
+            "custo_usd": 0.0,
+        }
+    if resolucao.companhia is None:
+        return None
+
+    companhia = resolucao.companhia
+    # `sorted()` puro ordenaria como TEXTO e poria 1T2026 antes de 2T2025 —
+    # a janela publicada sairia errada sem levantar erro nenhum.
+    trimestres = tuple(
+        sorted(
+            indice.trimestres_painel.get(companhia.cd_cvm, ()),
+            key=ordinal_trimestre,
+        )
+    )
+    saida = responder_projecao(
+        pergunta,
+        denom_social=companhia.denom_social,
+        cd_cvm=companhia.cd_cvm,
+        trimestres_painel=trimestres,
+        n_prejuizos=recursos["prejuizos"].get(companhia.cd_cvm),
+        n_prejuizos_derivados=recursos["prejuizos_derivados"].get(
+            companhia.cd_cvm
+        ),
+        instituicao_financeira=companhia.is_banco,
+        ativo_total=recursos["ativos"].get(companhia.cd_cvm),
+        panorama=recursos["panorama"],
+        previsao_por_emissor_habilitada=config.previsao_por_emissor_habilitada,
+        escores=recursos["escores"],
+        achado=achado,
+    )
+    modo = (
+        "rota prospectiva · modo local (escore por emissor exposto)"
+        if saida.expos_escore_por_emissor
+        else "rota prospectiva · RN07 (nenhuma chamada externa)"
+    )
+    return {
+        "resposta": saida.texto,
+        "fontes": [],
+        "modo": modo,
+        "provedor": "—",
+        "custo_usd": 0.0,
+        "rastro_projecao": saida.como_dicionario(),
+    }
+
+
 def validar_pergunta_livre(pergunta: str) -> str:
     """Normaliza a entrada e impede chamadas vazias ou desproporcionalmente caras."""
     pergunta = pergunta.strip()
@@ -713,6 +863,32 @@ else:
                 st.rerun()
             elif guarda_entrada is not None:
                 pergunta = guarda_entrada.texto_seguro
+                # Rota prospectiva ANTES de qualquer chamada paga: ela responde
+                # de artefato local, custa zero e não debita cota — pelo mesmo
+                # motivo da recusa por guardrail acima.
+                item_projecao = None
+                try:
+                    item_projecao = responder_prospectiva_se_couber(pergunta)
+                except Exception as exc:  # nunca derruba o app por um extra
+                    LOGGER.warning("rota prospectiva falhou: %s", exc)
+                if item_projecao is not None:
+                    st.session_state.historico.append(
+                        {"papel": "user", "conteudo": pergunta}
+                    )
+                    st.session_state.historico.append(
+                        # `conteudo` é a chave que o laço de renderização lê;
+                        # anexar só `resposta` estourava KeyError no rerun e
+                        # derrubava a página inteira — a recusa da RN07 nunca
+                        # chegava à tela.
+                        {
+                            "papel": "assistant",
+                            "conteudo": item_projecao["resposta"],
+                            "fontes": item_projecao.get("fontes", []),
+                            "modo": item_projecao["modo"],
+                            "provedor": item_projecao["provedor"],
+                        }
+                    )
+                    st.rerun()
                 st.session_state.perguntas_livres_usadas += 1
                 st.session_state.historico.append(
                     {"papel": "user", "conteudo": pergunta}

@@ -7,3 +7,15 @@
 # tem por que pesar no deploy enxuto. `scipy`, `joblib` e `threadpoolctl`
 # entram como dependências transitivas do scikit-learn.
 scikit-learn==1.8.0
+
+# Comparação com SMOTE (revisão de 2026-08-23). O `Pipeline` do imblearn é o
+# que garante reamostragem só no `fit` — o do scikit-learn sintetizaria linhas
+# na predição, que é vazamento. Entra para MEDIR o SMOTE, não para adotá-lo.
+# Veredito: PIORA (−0,006 de AUC, p=5e-08, e dobra o erro de calibração).
+imbalanced-learn==0.14.2
+
+# Biblioteca alternativa de boosting, também como CONTROLE (2026-08-24). A
+# ressalva "só uma implementação foi testada" virou medição: LightGBM empata
+# com o `HistGradientBoosting` do scikit-learn (±0,0004, p=0,66) — o teto é da
+# tarefa, não da implementação. O caminho publicado segue no scikit-learn.
+lightgbm==4.7.0

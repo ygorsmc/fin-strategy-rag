@@ -12,6 +12,7 @@ from pathlib import Path
 
 import duckdb
 import numpy as np
+import pandas as pd
 import pytest
 
 from src.modelo import prever
@@ -24,7 +25,19 @@ from src.modelo.construir_painel import (
     trimestres_completos,
 )
 from src.modelo.treinar import (
+    GRUPO_SAZONAL,
+    ablacao_walk_forward,
     avaliar,
+    comparar_pareado,
+    desempenho_por_estado,
+    desempenho_por_recorte,
+    pontuar_walk_forward,
+    construir_gradient_boosting_com_smote,
+    construir_gradient_boosting_imputado,
+    dividir_walk_forward,
+    metricas_de_calibracao,
+    metricas_de_ranqueamento,
+    escore_passeio_sazonal,
     construir_gradient_boosting,
     construir_regressao_logistica,
     dividir_temporalmente,
@@ -44,8 +57,14 @@ CAMINHO_PAINEL = Path("artefatos/cvm.duckdb")
 _TRIMESTRES = ("1T2025", "2T2025", "3T2025", "4T2025", "1T2026")
 
 
-def _con_sintetica(linhas: list[tuple]) -> duckdb.DuckDBPyConnection:
-    """`indicadores` mínima em memória: (cd_cvm, trimestre, lucro, pl, ativo)."""
+def _con_sintetica(
+    linhas: list[tuple], bancos: set[str] | None = None
+) -> duckdb.DuckDBPyConnection:
+    """`indicadores` + `companhias` mínimas em memória.
+
+    `companhias` existe porque o painel passou a trazer o controle setorial
+    (`instituicao_financeira`) por junção — sem a tabela a consulta nem monta.
+    """
     con = duckdb.connect(":memory:")
     con.execute(
         """
@@ -63,6 +82,12 @@ def _con_sintetica(linhas: list[tuple]) -> duckdb.DuckDBPyConnection:
         )
         """
     )
+    con.execute("CREATE TABLE companhias (cd_cvm VARCHAR, is_banco BOOLEAN)")
+    bancos = bancos or set()
+    for cd in sorted({linha[0] for linha in linhas}):
+        con.execute(
+            "INSERT INTO companhias VALUES (?,?)", [cd, cd in bancos]
+        )
     for cd, tri, lucro, pl, ativo in linhas:
         con.execute(
             "INSERT INTO indicadores VALUES (?,?,?,?,NULL,?,?,?,NULL,?,'arquivado')",
@@ -81,6 +106,325 @@ def _painel_cheio(lucros_por_companhia: dict[str, list[float]]):
 
 
 # --------------------------------------------------------------------------- #
+
+
+_TRIMESTRES_LONGOS = tuple(
+    f"{n}T{ano}" for ano in (2020, 2021, 2022, 2023) for n in (1, 2, 3, 4)
+)
+
+
+def _painel_longo(lucros_por_companhia: dict[str, list[float]]):
+    """Painel de 16 trimestres — o mínimo para features sazonais existirem."""
+    linhas = []
+    for cd, lucros in lucros_por_companhia.items():
+        for tri, lucro in zip(_TRIMESTRES_LONGOS, lucros):
+            linhas.append((cd, tri, lucro, 1_000.0, 5_000.0))
+    return _con_sintetica(linhas)
+
+
+def _painel_longo_variado(n_companhias: int = 20):
+    """Companhias com séries DIFERENTES entre si.
+
+    Séries idênticas produzem folds de classe única — que
+    `dividir_walk_forward` descarta com razão, porque AUC não existe neles.
+    """
+    gerador = np.random.default_rng(11)
+    return _painel_longo(
+        {
+            f"{i:06d}": (gerador.normal(0.4, 3.0, 16)).tolist()
+            for i in range(n_companhias)
+        }
+    )
+
+
+class TestFeaturesSazonais:
+    """A janela larga do painel de treino é o que as torna calculáveis."""
+
+    def test_mesmo_trimestre_do_ano_anterior_olha_para_t_menos_3(self):
+        """O alvo é T+1; o mesmo trimestre do ano anterior é T-3, não T-4."""
+        # prejuízo isolado em 2T2020 (índice 1)
+        lucros = [5.0] * 16
+        lucros[1] = -7.0
+        quadro = construir_painel(
+            _painel_longo({"000001": lucros})
+        ).quadro.set_index("trimestre")
+        # a linha de T=1T2021 (índice 4) tem alvo 2T2021 e T-3 = 2T2020
+        assert (
+            quadro.loc["1T2021", "prejuizo_no_mesmo_trimestre_do_ano_anterior"] == 1
+        )
+        assert (
+            quadro.loc["4T2020", "prejuizo_no_mesmo_trimestre_do_ano_anterior"] == 0
+        )
+
+    def test_trimestre_do_ano_cobre_os_quatro_valores(self):
+        quadro = construir_painel(_painel_longo({"000001": [5.0] * 16})).quadro
+        assert set(quadro["trimestre_do_ano"].unique()) == {1, 2, 3, 4}
+
+    def test_taxa_4t_e_janela_movel_e_nao_historico_inteiro(self):
+        """Um prejuízo antigo sai da janela; a taxa sobre todo histórico não."""
+        lucros = [-1.0] + [5.0] * 15
+        quadro = construir_painel(
+            _painel_longo({"000001": lucros})
+        ).quadro.set_index("trimestre")
+        assert quadro.loc["1T2020", "taxa_prejuizos_4t"] == pytest.approx(1.0)
+        # quatro trimestres depois o prejuízo já saiu da janela móvel
+        assert quadro.loc["1T2021", "taxa_prejuizos_4t"] == pytest.approx(0.0)
+        # mas segue contando no histórico completo
+        assert quadro.loc["1T2021", "taxa_prejuizos_ate_t"] > 0
+
+    def test_variacao_anual_fica_limitada_a_menos_um_e_um(self):
+        gerador = np.random.default_rng(7)
+        lucros = (gerador.normal(0, 1e6, 16)).tolist()
+        quadro = construir_painel(_painel_longo({"000001": lucros})).quadro
+        valores = quadro["variacao_lucro_anual"].dropna()
+        assert not valores.empty
+        assert valores.between(-1.0, 1.0).all()
+
+
+class TestOscoreRemovidoPorMedicao:
+    """Resultado negativo tem de ficar visível, não sumir do código."""
+
+    def test_features_do_oscore_saem_das_features(self):
+        from src.modelo.construir_painel import OSCORE_REMOVIDAS_POR_MEDICAO
+
+        for coluna in OSCORE_REMOVIDAS_POR_MEDICAO:
+            assert coluna not in COLUNAS_FEATURES
+
+    def test_seguem_calculadas_no_quadro_para_auditoria(self):
+        from src.modelo.construir_painel import OSCORE_REMOVIDAS_POR_MEDICAO
+
+        quadro = construir_painel(_painel_longo({"000001": [5.0] * 16})).quadro
+        for coluna in OSCORE_REMOVIDAS_POR_MEDICAO:
+            assert coluna in quadro.columns
+
+
+class TestWalkForward:
+    def test_um_fold_por_trimestre_apos_o_minimo(self):
+        con = _painel_longo_variado()
+        painel = construir_painel(con)
+        divisoes = dividir_walk_forward(painel, minimo_trimestres_treino=4)
+        assert len(divisoes) >= 8
+        # testes em ordem cronológica estrita, sem repetição
+        ordens = [d.teste["ordem"].iloc[0] for d in divisoes]
+        assert ordens == sorted(ordens)
+        assert len(set(ordens)) == len(ordens)
+
+    def test_nenhum_fold_treina_no_futuro_do_seu_teste(self):
+        """A guarda que faz o walk-forward valer alguma coisa."""
+        con = _painel_longo_variado()
+        for divisao in dividir_walk_forward(
+            construir_painel(con), minimo_trimestres_treino=4
+        ):
+            ordem_teste = divisao.teste["ordem"].iloc[0]
+            assert divisao.treino["ordem"].max() < ordem_teste
+            assert divisao.validacao["ordem"].max() < ordem_teste
+
+    def test_treino_e_expansivel_e_nunca_encolhe(self):
+        con = _painel_longo_variado()
+        divisoes = dividir_walk_forward(
+            construir_painel(con), minimo_trimestres_treino=4
+        )
+        tamanhos = [len(d.treino) for d in divisoes]
+        assert tamanhos == sorted(tamanhos)
+
+
+class TestAlvoPersistente:
+    """Prejuízo em T+1 E T+2 — separa deterioração de ruído contábil."""
+
+    def test_exige_prejuizo_em_todos_os_trimestres_da_janela(self):
+        # prejuízo isolado em 2T2020 (índice 1): não basta para o alvo de 2
+        lucros = [5.0] * 16
+        lucros[1] = -7.0
+        quadro = construir_painel(
+            _painel_longo({"000001": lucros}), trimestres_consecutivos=2
+        ).quadro.set_index("trimestre")
+        assert quadro.loc["1T2020", "rotulo"] == 0
+
+    def test_dois_prejuizos_seguidos_marcam_o_alvo(self):
+        lucros = [5.0] * 16
+        lucros[1] = lucros[2] = -7.0  # 2T2020 e 3T2020
+        quadro = construir_painel(
+            _painel_longo({"000001": lucros}), trimestres_consecutivos=2
+        ).quadro.set_index("trimestre")
+        assert quadro.loc["1T2020", "rotulo"] == 1
+
+    def test_janela_incompleta_sai_da_amostra(self):
+        """Rótulo parcial seria rótulo inventado."""
+        lucros = [5.0] * 16
+        painel = construir_painel(
+            _painel_longo({"000001": lucros}), trimestres_consecutivos=2
+        )
+        # com 16 trimestres e alvo de 2, sobram 14 linhas rotuláveis
+        assert painel.n_observacoes == 14
+
+    def test_alvo_persistente_e_mais_raro_que_o_de_um_trimestre(self):
+        gerador = np.random.default_rng(5)
+        lucros = gerador.normal(0.0, 2.0, 16).tolist()
+        con_um = _painel_longo({"000001": lucros})
+        con_dois = _painel_longo({"000001": lucros})
+        um = construir_painel(con_um, trimestres_consecutivos=1)
+        dois = construir_painel(con_dois, trimestres_consecutivos=2)
+        assert dois.taxa_positivos <= um.taxa_positivos
+
+    def test_zero_trimestres_e_rejeitado(self):
+        with pytest.raises(ValueError, match="precisa ser >= 1"):
+            construir_painel(
+                _painel_longo({"000001": [5.0] * 16}), trimestres_consecutivos=0
+            )
+
+
+class TestMetricasDeRanqueamento:
+    """O uso declarado é ORDENAR; ordenação se mede no topo da lista."""
+
+    def test_ordenacao_perfeita_da_precisao_maxima_no_topo(self):
+        y = np.array([1] * 10 + [0] * 90)
+        escore = np.concatenate([np.linspace(0.9, 0.8, 10), np.linspace(0.5, 0.0, 90)])
+        r = metricas_de_ranqueamento(y, escore)
+        assert r["precisao_topo_10pct"] == pytest.approx(1.0)
+        assert r["lift_topo_10pct"] == pytest.approx(10.0)
+
+    def test_escore_aleatorio_da_lift_perto_de_um(self):
+        gerador = np.random.default_rng(1)
+        y = (gerador.random(4000) < 0.3).astype(int)
+        r = metricas_de_ranqueamento(y, gerador.random(4000))
+        assert 0.7 < r["lift_topo_10pct"] < 1.3
+
+    def test_recall_no_topo_cresce_com_a_fatia(self):
+        gerador = np.random.default_rng(2)
+        y = (gerador.random(1000) < 0.3).astype(int)
+        escore = y * 0.6 + gerador.random(1000) * 0.4
+        r = metricas_de_ranqueamento(y, escore)
+        assert (
+            r["recall_topo_5pct"]
+            <= r["recall_topo_10pct"]
+            <= r["recall_topo_20pct"]
+            <= r["recall_topo_30pct"]
+        )
+
+
+class TestCalibracao:
+    def test_probabilidade_perfeita_tem_brier_baixo(self):
+        y = np.array([1, 1, 0, 0])
+        assert metricas_de_calibracao(y, np.array([1.0, 1.0, 0.0, 0.0]))["brier"] == 0.0
+
+    def test_probabilidade_invertida_tem_brier_maximo(self):
+        y = np.array([1, 1, 0, 0])
+        assert metricas_de_calibracao(y, np.array([0.0, 0.0, 1.0, 1.0]))["brier"] == 1.0
+
+    def test_erro_de_calibracao_flagra_excesso_de_confianca(self):
+        """Modelo que diz 0,9 e acerta 0,5 tem de aparecer como descalibrado."""
+        gerador = np.random.default_rng(4)
+        y = (gerador.random(2000) < 0.5).astype(int)
+        escore = np.full(2000, 0.9)
+        r = metricas_de_calibracao(y, escore)
+        assert r["erro_calibracao_esperado"] > 0.3
+
+
+class TestSmote:
+    def test_pipeline_reamostra_so_no_treino(self):
+        """Contraprova de vazamento: SMOTE na predição sintetizaria o teste.
+
+        O `Pipeline` do imblearn garante isso; o do scikit-learn, não. Se
+        alguém trocar um pelo outro, o número de predições deixa de bater com
+        o número de linhas de entrada.
+        """
+        con = _painel_longo_variado(n_companhias=40)
+        divisao = dividir_walk_forward(
+            construir_painel(con), minimo_trimestres_treino=4
+        )[-1]
+        colunas = list(COLUNAS_FEATURES)
+        modelo = construir_gradient_boosting_com_smote()
+        modelo.fit(divisao.treino[colunas], divisao.treino["rotulo"].to_numpy(int))
+        previsto = modelo.predict_proba(divisao.teste[colunas])
+        assert len(previsto) == len(divisao.teste)
+
+    def test_controle_imputado_existe_para_isolar_o_efeito(self):
+        """SMOTE exige imputação; comparar com o boosting puro mediria duas coisas."""
+        modelo = construir_gradient_boosting_imputado()
+        assert "imputacao" in dict(modelo.named_steps)
+
+
+class TestComparacaoPareada:
+    """Os p-valores publicados no relatório saem daqui — precisam de contrato."""
+
+    def test_diferenca_e_pareada_e_nao_diferenca_de_medias(self):
+        """O pareamento cancela a variação comum entre folds.
+
+        Dois modelos podem ter médias quase iguais e mesmo assim um vencer o
+        outro em todos os folds — é o caso que a comparação solta perderia.
+        """
+        por_fold = [
+            {"a": 0.80 + i * 0.01, "b": 0.79 + i * 0.01} for i in range(10)
+        ]
+        resultado = comparar_pareado(por_fold, "a", "b")
+        assert resultado is not None
+        assert resultado["diferenca_media"] == pytest.approx(0.01, abs=1e-9)
+        assert resultado["folds_vencidos"] == 10
+        assert resultado["ic95_inferior"] > 0
+
+    def test_ic_inclui_zero_quando_nao_ha_diferenca(self):
+        gerador = np.random.default_rng(3)
+        por_fold = [
+            {"a": float(x), "b": float(y)}
+            for x, y in zip(
+                gerador.normal(0.85, 0.03, 40), gerador.normal(0.85, 0.03, 40)
+            )
+        ]
+        resultado = comparar_pareado(por_fold, "a", "b")
+        assert resultado["ic95_inferior"] < 0 < resultado["ic95_superior"]
+
+    def test_devolve_none_com_folds_de_menos(self):
+        assert comparar_pareado([{"a": 0.8, "b": 0.7}], "a", "b") is None
+
+    def test_ignora_fold_sem_o_valor_dos_dois(self):
+        por_fold = [
+            {"a": 0.80, "b": 0.70},
+            {"a": 0.81, "b": None},
+            {"a": 0.82, "b": 0.72},
+            {"a": 0.83, "b": 0.73},
+        ]
+        assert comparar_pareado(por_fold, "a", "b")["n_folds"] == 3
+
+
+class TestAblacao:
+    def test_exige_que_o_grupo_esteja_em_uso(self):
+        """Ablação de feature inexistente devolveria diferença zero enganosa."""
+        con = _painel_longo_variado()
+        with pytest.raises(ValueError, match="nenhuma das features"):
+            ablacao_walk_forward(
+                construir_painel(con), ("coluna_que_nao_existe",)
+            )
+
+    def test_mede_o_grupo_sazonal_e_relata_os_dois_lados(self):
+        con = _painel_longo_variado(n_companhias=30)
+        resultado = ablacao_walk_forward(
+            construir_painel(con), GRUPO_SAZONAL, minimo_trimestres_treino=4
+        )
+        assert set(resultado["grupo"]) == set(GRUPO_SAZONAL)
+        assert 0.0 <= resultado["auc_completo"] <= 1.0
+        assert 0.0 <= resultado["auc_sem_o_grupo"] <= 1.0
+        assert resultado["comparacao"] is not None
+
+
+class TestPasseioSazonal:
+    def test_repete_o_mesmo_trimestre_do_ano_anterior(self):
+        quadro = pd.DataFrame(
+            {
+                "prejuizo_no_mesmo_trimestre_do_ano_anterior": [1.0, 0.0],
+                "prejuizo_em_t": [0.0, 1.0],
+            }
+        )
+        assert list(escore_passeio_sazonal(quadro)) == [1.0, 0.0]
+
+    def test_cai_para_a_persistencia_quando_falta_o_ano_anterior(self):
+        """Companhia recém-listada não pode ser excluída silenciosamente."""
+        quadro = pd.DataFrame(
+            {
+                "prejuizo_no_mesmo_trimestre_do_ano_anterior": [np.nan, np.nan],
+                "prejuizo_em_t": [1.0, 0.0],
+            }
+        )
+        assert list(escore_passeio_sazonal(quadro)) == [1.0, 0.0]
 
 
 class TestOrdinalTrimestre:
@@ -259,10 +603,115 @@ class TestBaselines:
         assert "baseline_persistencia" in nomes
 
 
+class TestPurga:
+    """Rótulo que olha para frente não pode atravessar a fronteira do fold."""
+
+    def test_alvo_de_um_trimestre_nao_e_afetado(self):
+        """Contraprova: a purga não pode remover o que não precisa remover.
+
+        Com `n = 1` o rótulo da última linha de treino alcança a validação e
+        para ali. Se a purga mexesse aqui, estaria jogando amostra fora de
+        graça — e a prova é a igualdade EXATA dos conjuntos, não do AUC.
+        """
+        con = _painel_longo_variado(n_companhias=20)
+        painel = construir_painel(con, trimestres_consecutivos=1)
+        com = dividir_walk_forward(painel, purgar=True)
+        sem = dividir_walk_forward(painel, purgar=False)
+        assert len(com) == len(sem)
+        for a, b in zip(com, sem):
+            assert len(a.treino) == len(b.treino)
+            assert a.trimestre_teste == b.trimestre_teste
+
+    def test_alvo_persistente_remove_o_trimestre_que_vaza(self):
+        con = _painel_longo_variado(n_companhias=20)
+        painel = construir_painel(con, trimestres_consecutivos=2)
+        com = dividir_walk_forward(painel, purgar=True)
+        sem = dividir_walk_forward(painel, purgar=False)
+        assert com, "sem folds não há o que verificar"
+        assert sum(len(d.treino) for d in com) < sum(len(d.treino) for d in sem)
+
+    def test_nenhuma_linha_de_treino_tem_rotulo_alcancando_o_teste(self):
+        """A invariante, verificada diretamente em vez de inferida."""
+        con = _painel_longo_variado(n_companhias=20)
+        for n_alvo in (1, 2, 3):
+            painel = construir_painel(con, trimestres_consecutivos=n_alvo)
+            for divisao in dividir_walk_forward(painel):
+                ordem_teste = divisao.teste["ordem"].iloc[0]
+                ultima_do_treino = divisao.treino["ordem"].max()
+                assert ultima_do_treino + n_alvo < ordem_teste, (
+                    f"alvo de {n_alvo} trimestres: linha de treino em "
+                    f"{ultima_do_treino} tem rótulo cobrindo até "
+                    f"{ultima_do_treino + n_alvo}, alcançando o teste em "
+                    f"{ordem_teste}"
+                )
+
+
+class TestDesempenhoPorRecorte:
+    """Recorte raso não pode virar linha de tabela com AUC bonito."""
+
+    def _pontuado(self):
+        # 60 companhias porque a guarda padrão exige 20 eventos da classe
+        # minoritária: com 25 a fixture tem 15 positivos e o recorte AMPLO
+        # sairia insuficiente, o que mediria o tamanho da fixture em vez do
+        # comportamento da função.
+        con = _painel_longo_variado(n_companhias=60)
+        painel = construir_painel(con, trimestres_consecutivos=1)
+        return pontuar_walk_forward(painel)
+
+    def test_recorte_com_poucos_eventos_sai_insuficiente(self):
+        pontuado = self._pontuado()
+        # Recorte artificialmente estreito: as 60 primeiras linhas, das quais
+        # dificilmente 20 são positivas.
+        mascara = pd.Series(
+            [i < 60 for i in range(len(pontuado))], index=pontuado.index
+        )
+        saida = desempenho_por_recorte(
+            pontuado, {"estreito": mascara}, minimo_positivos=1000
+        )
+        assert saida["estreito"]["suficiente"] is False
+        assert "roc_auc" not in saida["estreito"]
+        assert saida["estreito"]["motivo_insuficiente"]
+
+    def test_guarda_olha_a_classe_MINORITARIA(self):
+        """Muitos positivos e quase nenhum negativo é igualmente raso."""
+        pontuado = self._pontuado()
+        so_positivos_e_um = pontuado["rotulo"] == 1
+        indices = list(pontuado.index[~so_positivos_e_um.to_numpy()][:2])
+        mascara = so_positivos_e_um | pontuado.index.isin(indices)
+        saida = desempenho_por_recorte(pontuado, {"desbalanceado": mascara})
+        assert saida["desbalanceado"]["suficiente"] is False
+
+    def test_recorte_amplo_traz_auc_e_lift(self):
+        pontuado = self._pontuado()
+        saida = desempenho_por_recorte(
+            pontuado, {"tudo": pontuado["rotulo"].notna()}
+        )
+        bloco = saida["tudo"]
+        assert bloco["suficiente"] is True
+        assert 0.0 <= bloco["roc_auc"] <= 1.0
+        assert bloco["lift_topo_10pct"] >= 0.0
+        assert bloco["n_positivos"] > 0
+
+    def test_por_estado_separa_quem_ja_esta_em_prejuizo(self):
+        pontuado = self._pontuado()
+        saida = desempenho_por_estado(pontuado, minimo_observacoes=10)
+        assert set(saida) == {"ja_em_prejuizo", "lucrativa_hoje"}
+        soma = saida["ja_em_prejuizo"]["n"] + saida["lucrativa_hoje"]["n"]
+        assert soma == len(pontuado), "os dois estados precisam particionar"
+
+
 class TestRN07:
     """A fronteira que o módulo se impõe."""
 
     #: Tudo que participa de responder ao usuário.
+    #:
+    #: `src/projecao.py` está na lista mesmo sendo a rota que EXPÕE o escore no
+    #: modo local — e é justamente por isso. Ela lê um artefato calculado
+    #: offline (`artefatos/modelo/panorama.json` e, no modo local, os escores
+    #: por companhia), nunca importa `src.modelo` em tempo de resposta. Assim a
+    #: RN07 continua verificável por varredura de import mesmo depois de a
+    #: regra ter virado condicional ao modo, e o deploy enxuto segue sem
+    #: scikit-learn (RNF12).
     CAMINHO_INTERATIVO = (
         "src/agentes.py",
         "src/ferramentas.py",
@@ -272,6 +721,7 @@ class TestRN07:
         "src/recuperacao.py",
         "src/cobertura.py",
         "src/seguranca.py",
+        "src/projecao.py",
         "app_streamlit.py",
     )
 

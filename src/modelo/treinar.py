@@ -21,6 +21,7 @@ preferência.
 from __future__ import annotations
 
 import json
+from collections.abc import Sequence
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
@@ -167,6 +168,82 @@ def avaliar(
     )
 
 
+def metricas_de_ranqueamento(
+    y_verdadeiro: np.ndarray,
+    y_escore: np.ndarray,
+    *,
+    fracoes: Sequence[float] = (0.05, 0.10, 0.20, 0.30),
+) -> dict[str, object]:
+    """Precisão e *lift* no topo da lista — a métrica do uso declarado.
+
+    A 5.10 diz que o módulo serve para **ordenar** companhias por atenção
+    requerida. Ordenação se mede no topo da lista, não por um limiar global: um
+    corte por F2 que sinaliza 60% da base tem recall alto e utilidade baixa,
+    porque o analista não consegue ler 60% da base.
+
+    `lift` é a precisão no topo dividida pela taxa-base — quantas vezes melhor
+    que sortear.
+    """
+    y_verdadeiro = np.asarray(y_verdadeiro).astype(int)
+    y_escore = np.asarray(y_escore, dtype=float)
+    n = len(y_verdadeiro)
+    taxa_base = float(y_verdadeiro.mean()) if n else 0.0
+    ordem = np.argsort(-y_escore, kind="stable")
+    resultado: dict[str, object] = {"taxa_base": taxa_base}
+    for fracao in fracoes:
+        k = max(1, int(round(n * fracao)))
+        topo = y_verdadeiro[ordem[:k]]
+        precisao = float(topo.mean())
+        resultado[f"precisao_topo_{int(fracao * 100)}pct"] = precisao
+        resultado[f"lift_topo_{int(fracao * 100)}pct"] = (
+            precisao / taxa_base if taxa_base else 0.0
+        )
+        resultado[f"recall_topo_{int(fracao * 100)}pct"] = (
+            float(topo.sum() / y_verdadeiro.sum()) if y_verdadeiro.sum() else 0.0
+        )
+    return resultado
+
+
+def metricas_de_calibracao(
+    y_verdadeiro: np.ndarray, y_escore: np.ndarray, *, n_faixas: int = 10
+) -> dict[str, object]:
+    """Brier e desvio de calibração — publicamos probabilidade, então medimos.
+
+    Escolher limiar sobre uma probabilidade mal calibrada é escolher sobre um
+    número que não quer dizer o que aparenta. Até 2026-08-23 isto não era
+    medido, e a lacuna estava declarada nas ressalvas.
+    """
+    y_verdadeiro = np.asarray(y_verdadeiro).astype(int)
+    y_escore = np.asarray(y_escore, dtype=float)
+    brier = float(np.mean((y_escore - y_verdadeiro) ** 2))
+
+    bordas = np.linspace(0.0, 1.0, n_faixas + 1)
+    indices = np.clip(np.digitize(y_escore, bordas[1:-1]), 0, n_faixas - 1)
+    faixas: list[dict[str, float]] = []
+    erro_absoluto_ponderado = 0.0
+    for faixa in range(n_faixas):
+        seletor = indices == faixa
+        if not seletor.any():
+            continue
+        previsto = float(y_escore[seletor].mean())
+        observado = float(y_verdadeiro[seletor].mean())
+        peso = float(seletor.sum()) / len(y_verdadeiro)
+        erro_absoluto_ponderado += peso * abs(previsto - observado)
+        faixas.append(
+            {
+                "faixa": faixa,
+                "n": int(seletor.sum()),
+                "previsto_medio": previsto,
+                "observado_medio": observado,
+            }
+        )
+    return {
+        "brier": brier,
+        "erro_calibracao_esperado": erro_absoluto_ponderado,
+        "faixas": faixas,
+    }
+
+
 def escolher_limiar_por_f2(
     y_verdadeiro: np.ndarray, y_escore: np.ndarray, *, beta: float = 2.0
 ) -> float:
@@ -229,6 +306,49 @@ def construir_gradient_boosting() -> HistGradientBoostingClassifier:
     )
 
 
+def construir_gradient_boosting_imputado() -> Pipeline:
+    """Boosting com imputação explícita — **controle** do braço com SMOTE.
+
+    O SMOTE interpola vizinhos e por isso **não tolera nulo**, enquanto o
+    `HistGradientBoosting` trata nulo nativamente. Comparar SMOTE contra o
+    boosting puro mediria duas mudanças ao mesmo tempo (reamostragem *e*
+    imputação) e atribuiria a soma à reamostragem. Este braço existe para que a
+    única diferença contra o braço SMOTE seja o SMOTE.
+    """
+    return Pipeline(
+        [
+            ("imputacao", SimpleImputer(strategy="median")),
+            ("modelo", construir_gradient_boosting()),
+        ]
+    )
+
+
+def construir_gradient_boosting_com_smote() -> "Pipeline":
+    """Imputação → SMOTE → boosting.
+
+    O `Pipeline` é o do `imblearn`, não o do scikit-learn, e a diferença é de
+    correção: ele aplica a reamostragem **somente no `fit`**. Com o pipeline do
+    scikit-learn o SMOTE rodaria também na predição, sintetizando linhas de
+    validação e teste — vazamento grosseiro que infla o resultado.
+
+    Sobre a expectativa: van den Goorbergh et al. (JAMIA 2022) mostram que
+    reamostragem degrada calibração sem melhorar discriminação, e que deslocar
+    o limiar obtém o mesmo ponto de operação. Aqui a classe positiva é 33% —
+    desbalanceamento leve, longe do 1–5% para o qual o SMOTE foi desenhado.
+    A medição existe para verificar isso no dado do projeto, não para adotá-lo.
+    """
+    from imblearn.over_sampling import SMOTE
+    from imblearn.pipeline import Pipeline as PipelineImb
+
+    return PipelineImb(
+        [
+            ("imputacao", SimpleImputer(strategy="median")),
+            ("smote", SMOTE(random_state=SEMENTE)),
+            ("modelo", construir_gradient_boosting()),
+        ]
+    )
+
+
 # --------------------------------------------------------------------------- #
 # Baselines
 # --------------------------------------------------------------------------- #
@@ -243,6 +363,26 @@ def escore_classe_majoritaria(treino: pd.DataFrame, alvo: pd.DataFrame) -> np.nd
 def escore_persistencia(alvo: pd.DataFrame) -> np.ndarray:
     """"Teve prejuízo em T, terá em T+1" — a regra simples a bater."""
     return alvo["prejuizo_em_t"].to_numpy(dtype=float)
+
+
+def escore_passeio_sazonal(alvo: pd.DataFrame) -> np.ndarray:
+    """*Seasonal random walk*: o alvo T+1 repete o MESMO trimestre do ano anterior.
+
+    Este — não a persistência de defasagem 1 — é o benchmark consagrado para
+    lucro **trimestral**: a série tem sazonalidade forte, e a autocorrelação
+    das diferenças sazonais chega a inverter de sinal na defasagem 4. Publicar
+    só contra a persistência deixaria o modelo competir com um adversário
+    fraco de propósito.
+
+    Quando o trimestre do ano anterior não existe (companhia recém-listada,
+    ~10% das linhas), cai para a persistência de defasagem 1 — é o que um
+    analista faria, e deixar nulo excluiria justamente as empresas novas.
+    """
+    sazonal = alvo["prejuizo_no_mesmo_trimestre_do_ano_anterior"].to_numpy(
+        dtype=float
+    )
+    reserva = alvo["prejuizo_em_t"].to_numpy(dtype=float)
+    return np.where(np.isnan(sazonal), reserva, sazonal)
 
 
 # --------------------------------------------------------------------------- #
@@ -297,6 +437,339 @@ def ablacao_sem_historico_de_prejuizo(divisao: Divisao) -> dict[str, float]:
         escore = modelo.predict_proba(divisao.teste[colunas])[:, 1]
         resultado[nome] = float(roc_auc_score(y_teste, escore))
     return resultado
+
+
+def dividir_walk_forward(
+    painel: PainelSupervisionado,
+    *,
+    minimo_trimestres_treino: int = 12,
+    purgar: bool = True,
+) -> list[Divisao]:
+    """Janela expansível: um fold por trimestre, treino sempre só no passado.
+
+    É o desenho que a literatura de dado financeiro exige, e o que a versão
+    de partição única não conseguia dar: com um fold só, o IC do AUC tinha
+    largura 0,08 e nenhuma comparação de feature ou de modelo era resolvível.
+
+    Para cada trimestre de teste `k`: validação é `k-1` (de onde sai o limiar,
+    nunca do teste) e treino é tudo anterior a `k-1`.
+
+    **Purga (`purgar=True`, padrão).** Separar por trimestre não basta quando o
+    rótulo olha para frente: uma linha de treino em `o` tem rótulo que cobre
+    `o+1 .. o+n`, e com `n = 2` isso alcança o trimestre de TESTE. O treino
+    passaria a conter o desfecho do período avaliado — é o que López de Prado
+    chama de necessidade de *purging*. A purga remove essas linhas exigindo que
+    a janela do rótulo termine antes do teste.
+
+    Para `n = 1` a purga não remove nada (o rótulo do último trimestre de
+    treino alcança a validação, nunca o teste), então os números do alvo de um
+    trimestre são idênticos com e sem ela — verificado em
+    `tests/test_modelo.py::TestPurga`.
+
+    A purga é contra o trimestre de **teste**, que é onde a métrica publicada é
+    calculada. O rótulo do treino ainda pode tocar a validação, que serve só
+    para escolher o limiar e não entra em nenhum número reportado.
+    """
+    quadro = painel.quadro
+    n_alvo = painel.trimestres_consecutivos
+    ordens = sorted(quadro["ordem"].unique().tolist())
+    divisoes: list[Divisao] = []
+    for indice in range(minimo_trimestres_treino + 1, len(ordens)):
+        ordem_teste = ordens[indice]
+        ordem_validacao = ordens[indice - 1]
+        limite_treino = ordem_validacao
+        if purgar:
+            limite_treino = min(limite_treino, ordem_teste - n_alvo)
+        teste = quadro[quadro["ordem"] == ordem_teste]
+        validacao = quadro[quadro["ordem"] == ordem_validacao]
+        treino = quadro[quadro["ordem"] < limite_treino]
+        if treino.empty or validacao.empty or teste.empty:
+            continue
+        if teste["rotulo"].nunique() < 2:
+            continue  # AUC indefinido; fold inútil
+        divisoes.append(
+            Divisao(
+                treino=treino,
+                validacao=validacao,
+                teste=teste,
+                trimestre_validacao=str(validacao["trimestre"].iloc[0]),
+                trimestre_teste=str(teste["trimestre"].iloc[0]),
+            )
+        )
+    return divisoes
+
+
+def comparar_pareado(
+    por_fold: list[dict[str, object]], a: str, b: str
+) -> dict[str, object] | None:
+    """Compara dois modelos fold a fold — pareado, que é como tem de ser.
+
+    Comparar médias soltas ignoraria que os folds são os mesmos para os dois e
+    que a variação entre trimestres (0,79 a 0,91 de AUC) é muito maior que a
+    diferença entre modelos. O pareamento cancela essa variação comum.
+    """
+    pares = [
+        (float(linha[a]), float(linha[b]))
+        for linha in por_fold
+        if linha.get(a) is not None and linha.get(b) is not None
+    ]
+    if len(pares) < 3:
+        return None
+    diferencas = np.array([x - y for x, y in pares], dtype=float)
+    n = len(diferencas)
+    erro_padrao = float(diferencas.std(ddof=1) / np.sqrt(n))
+    resultado: dict[str, object] = {
+        "n_folds": n,
+        "diferenca_media": float(diferencas.mean()),
+        "ic95_inferior": float(diferencas.mean() - 1.96 * erro_padrao),
+        "ic95_superior": float(diferencas.mean() + 1.96 * erro_padrao),
+        "folds_vencidos": int((diferencas > 0).sum()),
+    }
+
+    # Diferença exatamente nula em TODOS os folds é resultado legítimo — é o
+    # que a contraprova da purga no alvo de 1 trimestre produz, por construção.
+    # O Wilcoxon é indefinido aí e devolve NaN, que `json.dumps` grava como
+    # `NaN` — JSON inválido, que quebraria quem for reler o artefato. Então o
+    # caso é nomeado em vez de propagado.
+    if np.all(diferencas == 0.0):
+        resultado["identicos"] = True
+        resultado["p_wilcoxon"] = None
+        return resultado
+    resultado["identicos"] = False
+
+    try:  # scipy é dependência do scikit-learn, mas não vale derrubar o relatório
+        from scipy import stats
+
+        p = float(stats.wilcoxon(diferencas).pvalue)
+        resultado["p_wilcoxon"] = None if np.isnan(p) else p
+    except Exception:  # pragma: no cover - ambiente sem scipy
+        resultado["p_wilcoxon"] = None
+    return resultado
+
+
+def pontuar_walk_forward(
+    painel: PainelSupervisionado,
+    *,
+    minimo_trimestres_treino: int = 12,
+    colunas: Sequence[str] | None = None,
+) -> pd.DataFrame:
+    """Empilha as predições de teste de TODOS os folds num quadro só.
+
+    Existe para responder perguntas de recorte — "o modelo funciona em
+    instituição financeira?", "e nas companhias hoje lucrativas?" — que por
+    fold têm amostra pequena demais para AUC. Empilhar resolve a amostra ao
+    custo de misturar trimestres; a contraprova está registrada: no painel
+    inteiro o AUC empilhado dá 0,8765 contra 0,8797 da média por fold (alvo de
+    2 trimestres, com purga), ou seja, a inflação por empilhamento é
+    desprezível aqui.
+    """
+    colunas = list(colunas or COLUNAS_FEATURES)
+    partes: list[pd.DataFrame] = []
+    for divisao in dividir_walk_forward(
+        painel, minimo_trimestres_treino=minimo_trimestres_treino
+    ):
+        modelo = construir_gradient_boosting()
+        modelo.fit(divisao.treino[colunas], divisao.treino["rotulo"].to_numpy(int))
+        parte = divisao.teste.copy()
+        parte["escore"] = modelo.predict_proba(divisao.teste[colunas])[:, 1]
+        partes.append(parte)
+    if not partes:
+        return pd.DataFrame(columns=[*colunas, "rotulo", "escore"])
+    return pd.concat(partes, ignore_index=True)
+
+
+def desempenho_por_recorte(
+    pontuado: pd.DataFrame,
+    recortes: dict[str, "pd.Series[bool]"],
+    *,
+    minimo_observacoes: int = 50,
+    minimo_positivos: int = 20,
+) -> dict[str, object]:
+    """AUC, taxa-base e lift em cada recorte — com recusa explícita se raso.
+
+    **A guarda que importa é `minimo_positivos`, não `minimo_observacoes`.** O
+    recorte `instituição financeira ≥ R$100 bi` tem 189 observações, o que
+    passaria folgado em qualquer corte por tamanho — e apenas **5 eventos
+    positivos**. O AUC ali sai 0,971, número de aparência esplêndida e conteúdo
+    nenhum: bastam dois pares trocados para ele desabar. Deixar isso virar
+    linha de tabela seria o erro que este módulo existe para não cometer, então
+    o recorte raso sai marcado como insuficiente em vez de marcado como
+    excelente.
+    """
+    resultado: dict[str, object] = {}
+    for nome, mascara in recortes.items():
+        sub = pontuado[mascara.to_numpy() if hasattr(mascara, "to_numpy") else mascara]
+        y = sub["rotulo"].to_numpy(dtype=int)
+        n_positivos = int(y.sum())
+        n_negativos = int(len(y) - n_positivos)
+        if (
+            len(sub) < minimo_observacoes
+            or len(np.unique(y)) < 2
+            or min(n_positivos, n_negativos) < minimo_positivos
+        ):
+            resultado[nome] = {
+                "n": len(sub),
+                "n_positivos": n_positivos,
+                "suficiente": False,
+                "motivo_insuficiente": (
+                    "poucos eventos da classe minoritária"
+                    if len(sub) >= minimo_observacoes
+                    else "amostra pequena"
+                ),
+            }
+            continue
+        escore = sub["escore"].to_numpy(dtype=float)
+        rank = metricas_de_ranqueamento(y, escore)
+        resultado[nome] = {
+            "n": len(sub),
+            "n_positivos": n_positivos,
+            "suficiente": True,
+            "taxa_base": float(y.mean()),
+            "roc_auc": float(roc_auc_score(y, escore)),
+            "lift_topo_10pct": rank["lift_topo_10pct"],
+            "precisao_topo_10pct": rank["precisao_topo_10pct"],
+        }
+    return resultado
+
+
+def desempenho_por_estado(
+    pontuado: pd.DataFrame, *, minimo_observacoes: int = 50
+) -> dict[str, object]:
+    """O recorte que responde "o modelo é a persistência com passos extras?".
+
+    A regra de persistência prevê constante zero entre companhias hoje
+    lucrativas — AUC indefinido, discriminação nenhuma. Se o modelo ordenar
+    bem JUSTAMENTE nesse subconjunto, ele não é a regra simples com verniz. É
+    a evidência mais forte de utilidade que o módulo tem, e por isso é função
+    e não script solto.
+    """
+    return desempenho_por_recorte(
+        pontuado,
+        {
+            "ja_em_prejuizo": pontuado["prejuizo_em_t"] == 1,
+            "lucrativa_hoje": pontuado["prejuizo_em_t"] == 0,
+        },
+        minimo_observacoes=minimo_observacoes,
+    )
+
+
+#: Features que só existem com janela longa (ver AGENTS.md §3.5).
+GRUPO_SAZONAL: tuple[str, ...] = (
+    "prejuizo_no_mesmo_trimestre_do_ano_anterior",
+    "variacao_lucro_anual",
+    "taxa_prejuizos_4t",
+    "trimestre_do_ano",
+)
+
+
+def ablacao_walk_forward(
+    painel: PainelSupervisionado,
+    grupo: Sequence[str],
+    *,
+    minimo_trimestres_treino: int = 12,
+) -> dict[str, object]:
+    """Mede a contribuição de um grupo de features ao longo de todos os folds.
+
+    Existe porque a versão de partição única não conseguia resolver isto: o IC
+    da diferença incluía zero e a resposta ficava "não demonstrado".
+    """
+    completo = list(COLUNAS_FEATURES)
+    reduzido = [c for c in completo if c not in set(grupo)]
+    if len(reduzido) == len(completo):
+        raise ValueError(f"nenhuma das features do grupo está em uso: {grupo!r}")
+
+    por_fold: list[dict[str, object]] = []
+    for divisao in dividir_walk_forward(
+        painel, minimo_trimestres_treino=minimo_trimestres_treino
+    ):
+        y_treino = divisao.treino["rotulo"].to_numpy(dtype=int)
+        y_teste = divisao.teste["rotulo"].to_numpy(dtype=int)
+        linha: dict[str, object] = {"trimestre_teste": divisao.trimestre_teste}
+        for rotulo, colunas in (("completo", completo), ("reduzido", reduzido)):
+            modelo = construir_gradient_boosting()
+            modelo.fit(divisao.treino[colunas], y_treino)
+            escore = modelo.predict_proba(divisao.teste[colunas])[:, 1]
+            linha[rotulo] = avaliar(rotulo, y_teste, escore, limiar=0.5).roc_auc
+        por_fold.append(linha)
+
+    return {
+        "grupo": list(grupo),
+        "modelo": "gradient_boosting",
+        "auc_completo": float(
+            np.mean([linha["completo"] for linha in por_fold])
+        ),
+        "auc_sem_o_grupo": float(
+            np.mean([linha["reduzido"] for linha in por_fold])
+        ),
+        "comparacao": comparar_pareado(por_fold, "completo", "reduzido"),
+    }
+
+
+def avaliar_walk_forward(
+    painel: PainelSupervisionado, *, minimo_trimestres_treino: int = 12
+) -> dict[str, object]:
+    """Roda todos os folds e agrega — média, desvio e IC 95% empírico."""
+    colunas = list(COLUNAS_FEATURES)
+    por_modelo: dict[str, list[float]] = {}
+    por_fold: list[dict[str, object]] = []
+    divisoes = dividir_walk_forward(
+        painel, minimo_trimestres_treino=minimo_trimestres_treino
+    )
+
+    for divisao in divisoes:
+        y_treino = divisao.treino["rotulo"].to_numpy(dtype=int)
+        y_teste = divisao.teste["rotulo"].to_numpy(dtype=int)
+        linha: dict[str, object] = {
+            "trimestre_teste": divisao.trimestre_teste,
+            "n_treino": len(divisao.treino),
+            "n_teste": len(divisao.teste),
+        }
+
+        for nome, escore in (
+            ("baseline_persistencia", escore_persistencia(divisao.teste)),
+            ("baseline_passeio_sazonal", escore_passeio_sazonal(divisao.teste)),
+        ):
+            auc = avaliar(nome, y_teste, escore, limiar=0.5).roc_auc
+            if auc is not None:
+                por_modelo.setdefault(nome, []).append(auc)
+                linha[nome] = auc
+
+        for nome, modelo in (
+            ("regressao_logistica", construir_regressao_logistica()),
+            ("gradient_boosting", construir_gradient_boosting()),
+        ):
+            modelo.fit(divisao.treino[colunas], y_treino)
+            escore = modelo.predict_proba(divisao.teste[colunas])[:, 1]
+            auc = avaliar(nome, y_teste, escore, limiar=0.5).roc_auc
+            if auc is not None:
+                por_modelo.setdefault(nome, []).append(auc)
+                linha[nome] = auc
+        por_fold.append(linha)
+
+    resumo: dict[str, object] = {}
+    for nome, valores in por_modelo.items():
+        vetor = np.asarray(valores, dtype=float)
+        resumo[nome] = {
+            "n_folds": int(len(vetor)),
+            "auc_medio": float(vetor.mean()),
+            "auc_desvio": float(vetor.std(ddof=1)) if len(vetor) > 1 else 0.0,
+            "auc_ic95_inferior": float(np.percentile(vetor, 2.5)),
+            "auc_ic95_superior": float(np.percentile(vetor, 97.5)),
+        }
+    ordenados = sorted(resumo, key=lambda n: -resumo[n]["auc_medio"])
+    comparacoes: dict[str, object] = {}
+    for i, melhor in enumerate(ordenados):
+        for pior in ordenados[i + 1:]:
+            teste = comparar_pareado(por_fold, melhor, pior)
+            if teste is not None:
+                comparacoes[f"{melhor} - {pior}"] = teste
+
+    return {
+        "n_folds": len(divisoes),
+        "resumo": resumo,
+        "comparacoes_pareadas": comparacoes,
+        "por_fold": por_fold,
+    }
 
 
 @dataclass

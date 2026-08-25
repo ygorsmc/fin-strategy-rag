@@ -480,3 +480,34 @@ def extrair_trimestres_citados(texto: str) -> list[str]:
         if trimestre not in vistos:
             vistos.append(trimestre)
     return vistos
+
+
+# --------------------------------------------------------------------------- #
+# Ordenação de trimestre
+# --------------------------------------------------------------------------- #
+
+_PADRAO_TRIMESTRE = re.compile(r"^([1-4])T(\d{4})$")
+
+
+class TrimestreInvalidoError(ValueError):
+    """Rótulo de trimestre fora do formato `<n>T<ano>`."""
+
+
+def ordinal_trimestre(trimestre: str) -> int:
+    """`'3T2025'` → inteiro monotônico, para que T+1 seja `ordem + 1`.
+
+    **Ordenar `trimestre` como texto inverte o tempo sem levantar erro nenhum:**
+    `sorted(['1T2025','1T2026','2T2025'])` devolve `1T2026` em segundo lugar, e
+    quem ler `[0]` e `[-1]` como "primeiro e último" publica uma janela errada.
+    Aconteceu de fato na rota prospectiva (achado da auditoria de 2026-08-24),
+    e é por isso que a função mora aqui e não em `src/modelo/`: quem responde ao
+    usuário precisa dela, e o caminho interativo não pode importar o modelo
+    (RN07).
+    """
+    casado = _PADRAO_TRIMESTRE.match(trimestre.strip())
+    if casado is None:
+        raise TrimestreInvalidoError(
+            f"trimestre {trimestre!r} não está no formato <n>T<ano> (ex.: 3T2025)"
+        )
+    numero, ano = int(casado.group(1)), int(casado.group(2))
+    return ano * 4 + (numero - 1)

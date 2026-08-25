@@ -227,6 +227,19 @@ class Config:
     habilitar_perguntas_livres: bool = False
     modo_demonstracao_cacheado: bool = True
 
+    # RN07 condicional ao modo (decisão de 2026-08-24, ver src/projecao.py).
+    # Desligado = instância pública: pergunta prospectiva sobre emissor nomeado
+    # recebe recusa fundamentada na Res. CVM 20/2021 mais histórico arquivado,
+    # regime de risco por porte e panorama agregado. Ligado = modo
+    # local/autenticado: acrescenta o escore do emissor, etiquetado como fora
+    # de domínio, para conferência interna de analista credenciado.
+    #
+    # O padrão é o público porque a mordida da norma está na DIVULGAÇÃO a
+    # terceiros; ferramenta interna de quem já é credenciado é outra postura.
+    # Ligar sem `artefatos/modelo/escores_por_companhia.json` (que fica fora do
+    # Git) falha fechado com mensagem explícita, nunca degrada em silêncio.
+    previsao_por_emissor_habilitada: bool = False
+
 
 def _env(nome: str, padrao: str) -> str:
     return os.environ.get(nome, padrao).strip()
@@ -820,6 +833,10 @@ def carregar_config(env_file: Path | None = None) -> Config:
         ),
         modo_demonstracao_cacheado=_env_bool(
             "MODO_DEMONSTRACAO_CACHEADO", padrao.modo_demonstracao_cacheado
+        ),
+        previsao_por_emissor_habilitada=_env_bool(
+            "PREVISAO_POR_EMISSOR_HABILITADA",
+            padrao.previsao_por_emissor_habilitada,
         ),
     )
     return _validar_config(config)

@@ -103,6 +103,12 @@ artefatos/modelo/*
 !artefatos/modelo/.gitkeep
 !artefatos/modelo/*.json
 !artefatos/modelo/*.md
+# EXCEÇÃO à linha acima, e ela é a RN07 em disco: o escore por companhia é
+# exatamente o dado que a instância pública não pode expor. O agregado
+# (panorama.json) é publicável e continua versionado; este não entra no Git,
+# para que o deploy público não tenha o dado em vez de tê-lo e prometer não
+# usar. Gerado localmente por `scripts/gerar_panorama_modelo.py --com-escores`.
+artefatos/modelo/escores_por_companhia.json
 artefatos/**/*.lock
 artefatos/**/.*.staging-*
 artefatos/**/.*.backup-*

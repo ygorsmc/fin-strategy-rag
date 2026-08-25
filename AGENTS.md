@@ -67,8 +67,8 @@ subconsulta por banco; geração JSON com RN01 e grounding numérico da RN02;
 avaliação retomável com fingerprint v3, journal/checkpoint, teto de custo e
 locks; interface cacheada com pergunta livre opt-in.
 
-**Convenção de testes (obrigatória):** a suíte local tem **1.564 casos coletados
-e nenhum skip** (medido em 2026-08-23, com `requirements-guardrails.txt` e
+**Convenção de testes (obrigatória):** a suíte local tem **1.640 casos coletados
+e nenhum skip** (medido em 2026-08-24, com `requirements-guardrails.txt` e
 `requirements-modelo.txt` instalados e os pesos do Prompt Guard 2 no cache
 local). NUNCA enfraquecer uma asserção para fazer
 código passar — o teste é o contrato e o código se adapta a ele. `pytest` verde
@@ -255,6 +255,90 @@ sinal enganoso aqui — contava como acerto o chunk órfão, que não conseguia
 responder. Para julgar chunking, medir se o **valor** está no top-5, não se a
 página está.
 
+### 3.5 Dois painéis CVM — janela larga só para o treino (2026-08-23)
+
+A spec 5.5 trata o painel como um só. **Passaram a ser dois**, e a separação é
+a razão de a etapa 10 ter saído do lugar.
+
+| Painel | Janela | Quem usa |
+|---|---|---|
+| `artefatos/cvm.duckdb` | 2025–2026 | camada **consultável** (agentes, Streamlit, gates) |
+| `artefatos/cvm_treino.duckdb` | **2011–2026** | **só** o modelo supervisionado offline (RN07) |
+
+**A decisão de casar o painel consultável com o corpus continua valendo** — ela
+existe para que tudo que o sistema responde ao usuário tenha documento
+correspondente. O que mudou é que o modelo preditivo não responde a usuário
+nenhum (RN07), então nada o obriga a viver na mesma janela.
+
+**Motivo medido, não conveniência.** Com um ano de painel, o split temporal
+tinha **uma única partição**: o IC 95% do AUC saía com largura 0,08 e nenhuma
+comparação de feature ou de modelo era resolvível — duas foram tentadas e as
+duas ficaram indecidíveis. Com 2011–2026 são **21.903 observações e 47 folds**
+de walk-forward, e as mesmas comparações passaram a ter p da ordem de 1e-09.
+
+**O que a janela larga destravou, e que era impossível antes:** as features
+sazonais. Lucro trimestral tem sazonalidade, e o preditor natural do alvo T+1 é
+o mesmo trimestre do ano anterior (T−3) — defasagem que **não existe** num
+painel de cinco trimestres. É de onde veio o ganho real (+0,0100 de AUC,
+p = 7,0e-09), não do modelo nem das features de literatura.
+
+**O que a divergência não autoriza:** a janela larga é do painel de treino e de
+mais nada. O gate G4, a conferência de âncora e tudo que responde ao usuário
+seguem no painel casado com o corpus. `scripts/construir_painel_cvm.py` recebe
+`--destino` justamente para que os dois não se confundam.
+
+**Achado lateral, registrado:** um arquivo da CVM (`itr_cia_aberta_BPA_con_2020.csv`)
+tem *mojibake* na origem — texto UTF-8 codificado duas vezes, com 12 bytes fora
+do latin-1. É saneado na extração, em campo puramente descritivo, com o motivo
+no script. A carga de produção segue exigindo latin-1 estrito.
+
+### 3.6 RN07 passou a ser condicional ao modo (2026-08-24)
+
+A RN07 dizia, sem qualificação, que o modelo preditivo **não** é exposto como
+resposta sobre companhia nomeada. **Passou a depender do modo de operação**, e
+a razão é uma leitura da norma que a versão anterior não tinha feito.
+
+| Modo | Pergunta prospectiva sobre emissor nomeado |
+|---|---|
+| **Instância pública** (padrão) | Recusa o número por emissor + entrega histórico arquivado, regime de risco por porte e panorama agregado |
+| **Local/autenticado** (`PREVISAO_POR_EMISSOR_HABILITADA=1`) | Acrescenta o escore do emissor, etiquetado como fora de domínio, com a taxa-base do porte ao lado |
+
+**Motivo.** A Res. CVM 20/2021 regula a *atividade* de análise — elaborar
+relatório destinado a auxiliar decisão de investimento — e sua mordida está na
+**divulgação a terceiros**. Ferramenta que um analista credenciado usa para
+conferir o próprio trabalho é insumo do processo dele, não relatório não
+registrado. A RN07 original era mais restritiva do que a norma exige *para uso
+interno*; continua correta para o contexto de deploy real deste sistema, que é
+um Streamlit aberto e sem autenticação.
+
+**O que a divergência não autoriza — três travas em código, não em texto:**
+
+1. **O modelo continua fora do caminho interativo.** Nem o modo público nem o
+   local importam `src.modelo` em tempo de resposta: os dois leem artefato
+   calculado offline por `scripts/gerar_panorama_modelo.py`. A varredura de
+   import de `TestRN07` continua valendo e agora inclui `src/projecao.py`.
+2. **O escore por emissor não é versionado.** `panorama.json` (agregado) é
+   publicável e entra no Git; `escores_por_companhia.json` está no
+   `.gitignore`, para que o deploy público **não tenha** o dado em vez de
+   tê-lo e prometer não usar.
+3. **O agregado não pode vazar por eliminação.** Publicar "0 das 13
+   instituições financeiras estão no decil de risco" ao lado de uma pergunta
+   sobre um banco permite deduzir o escore daquele banco. Por isso só se
+   publica o agregado do **painel inteiro** e a taxa histórica por porte,
+   nunca a contagem setorial do trimestre corrente — `_agregado_seguro` trava
+   e `TestVazamentoPorEliminacao` verifica.
+
+**Falso bloqueio medido:** o detector de pergunta prospectiva dispara **0 vezes
+nas 55 perguntas congeladas** (`TestFalsoBloqueio`), mesma disciplina da
+etapa 14.
+
+**Ressalva técnica que a permissão legal não remove:** para os cinco bancos do
+corpus, todos na faixa de ativo onde o prejuízo ocorre em 0,6% dos trimestres,
+o escore sai quase constante e quase zero. Autorização não torna um número não
+informativo em útil. O valor real do módulo está em instituição financeira de
+porte médio (AUC 0,832 abaixo de R$ 100 bi) e nas companhias hoje lucrativas
+(lift 4,35), não nos cinco do corpus.
+
 ---
 
 ## 4. Contratos e regras invioláveis
@@ -269,7 +353,7 @@ página está.
 | RN04 | SQL do painel roda somente-leitura, sobre lista branca, com DDL/DML bloqueado por análise sintática, `LIMIT` e timeout — falha de guarda devolve erro, nunca executa | `src/dados_estruturados.py` · `tests/test_dados_estruturados.py` |
 | RN05 | Sem recomendação de investimento, preço-alvo ou aconselhamento pessoal. Âncora legal: **Res. CVM 20/2021** (análise) e **19/2021** (consultoria); cada subtipo de recusa mapeia à sua | `src/seguranca.py` · `tests/test_seguranca.py` |
 | RN06 | PII do usuário é anonimizada antes de qualquer chamada externa e nunca entra em log, trace ou cache | `src/seguranca.py` · `src/reconhecedores_br.py` |
-| RN07 | O modelo preditivo **não** é exposto como resposta sobre companhia nomeada — mesma fronteira da RN05 | `src/modelo/` · teste que falha se alguma rota o expuser |
+| RN07 | Previsão sobre companhia nomeada é **condicional ao modo** (§3.6): instância pública recusa e entrega agregados; modo local/autenticado expõe o escore etiquetado. Em nenhum dos dois o caminho interativo importa `src.modelo` | `src/projecao.py` · `src/modelo/` · `tests/test_projecao.py` · `TestRN07` |
 | RN08 | Verbete de glossário de métrica gerencial é sempre atribuído a instituição e release de origem | `src/ingestao.py` (glossário, RF19) |
 | RN09 | `cd_conta` nunca é chave de significado sozinho: todo conceito passa pelo mapa semântico validado; consulta que referencie `cd_conta` direto é rejeitada pela lista branca | `src/mapa_contas.py` · gate G4 |
 | RN10 | Valor derivado por aritmética entre períodos — notadamente o 4T, que não existe como ITR — sai marcado como **derivado**, com a conta explicitada | `src/dados_estruturados.py` · `app_streamlit.py` |
@@ -373,7 +457,7 @@ Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisã
 | 7 | **Geração** — contrato JSON, citação obrigatória, recusa (RN01–RN02) | sessão principal | ✅ · ⬜ marcações de RN10/RN12 na resposta |
 | 8 | **Conjunto-padrão** — 45 congeladas + ~10 dev, conferidas pela classe de verificação | `conjunto-padrao` | ✅ congelado 2026-07-29 · ⬜ colunas novas da revisão 2 (`cobertura_esperada`, `motivo_recusa_esperado`, `base_esperada`, `rota_esperada`) |
 | 9 | **Comparação de estratégias E0–E4** — só `dev` na iteração; o congelado roda ao final, com log por execução | `observabilidade-avaliacao` | ✅ rodada em 2026-08-21 no congelado (45 × 5 = 225 chamadas, v6) — factual E1 0,400 · E2 0,333 · E3 **0,467** · E4 0,400; comparativa (métrica nova) E1 0,000 · E2/E3 0,100 · E4 **0,200**; E4 × E3 **indistinguível** (2×3 discordâncias, limiar 6) pela 3ª rodada seguida. Ver `MEMORY.md` |
-| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ✅ **2026-08-23** — 1.699 obs, 29,9% positivos, split temporal 873/420/406. Teste: AUC **0,877** (logística) e 0,844 (boosting) contra **0,745** da persistência; à precisão **0,833 no MESMO recall** da regra simples (0,644). F1/acurácia ficam ABAIXO da persistência no limiar por F2 — preço declarado da preferência por recall (5.10). `resultados/modelo_preditivo_2026-08-23.md` |
+| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ✅ **2026-08-23** — painel de treino próprio (2011–2026, §3.5), **21.903 obs**, 33,3% positivos. **Walk-forward de 47 folds**: boosting AUC **0,866** × persistência 0,752, vencendo em **47/47**. Ganho vem das features SAZONAIS (+0,0102, p=7,0e-09, 42/47); as do O-score de Ohlson deram **resultado negativo** e foram removidas. `resultados/modelo_preditivo_2026-08-23.md`. **Revisado em 2026-08-23** (`resultados/revisoes_modelo_2026-08-23.md`): alvo alternativo de **2 trimestres consecutivos** melhora tudo (lift@10% 2,55→**3,36**, sinaliza 57,6%→41,5%); **SMOTE PIORA** (−0,006, p=5e-08, e dobra o erro de calibração); ajuste de hiperparâmetros rende **zero** fora dos folds de busca. **Robustez em 2026-08-24** (`resultados/robustez_modelo_2026-08-24.md`): purga/embargo acrescentada — AUC publicado corrige 0,881 → **0,8797**; controle setorial **rejeitado** (+0,0005, p=0,19); recalibração isotônica/Platt **não melhora**; LightGBM **empata** (p=0,66); a decisão sobre as features sazonais **sobrevive em folds não vistos** (+0,0072, p=4e-06) |
 | 11 | **Ferramentas + agentes** — `verificar_cobertura`, Investigador e Auditor com filtro de contexto **em código**, teste que falha se o rastro vazar, braços A/B/C, triagem de cobertura; projeções depois | `agentes-investigacao` | ⬜ |
 | 12 | **Injeção de falha (RF25) e comparação dos três braços (RF26)** — registrar o veredito, inclusive se for "o determinístico basta" | `agentes-investigacao` + `observabilidade-avaliacao` | ⬜ |
 | 13 | **Langfuse + DeepEval** — traces por etapa e matriz de concordância com a auditoria manual | `observabilidade-avaliacao` | 🔄 matriz de concordância **medida** em 2026-08-23 (0,867, `scripts/medir_juiz_groundedness.py`) · ⬜ Langfuse e suíte DeepEval formal |
@@ -401,7 +485,7 @@ Alvo da spec 5.21, com o que já existe marcado:
 ├── AGENTS.md · CLAUDE.md · MEMORY.md · README.md · DESAFIO_CBL.md · LICENSE (MIT)
 ├── .docs/                       (local — NUNCA publicado; exceto a cópia do desafio)
 ├── requirements.txt · requirements-local.txt · requirements-lora.txt ·
-│   requirements-guardrails.txt · requirements-modelo.txt
+│   requirements-guardrails.txt · requirements-modelo.txt (sklearn + imblearn)
 ├── .env.example · .gitignore · pytest.ini
 ├── executar_pipeline.py         (orquestrador; --amostra, --etapa)
 ├── scripts/
@@ -409,6 +493,10 @@ Alvo da spec 5.21, com o que já existe marcado:
 │   ├── gate_local.py  ✅ · gate_gemini.py ✅ · gate.py ✅ · gate_seguranca.py ✅
 │   ├── medir_guardrails.py ✅   (etapa 14 — custo zero, evidência RNF08)
 │   ├── treinar_modelo.py ✅     (etapa 10 — custo zero, treino em CPU)
+│   ├── construir_painel_cvm.py ✅ (ZIPs da CVM → DuckDB; painel largo de treino)
+│   ├── experimentos_modelo.py ✅ (matriz: alvo 1T×2T, SMOTE, calibração, ajuste)
+│   ├── experimentos_robustez.py ✅ (purga, setor, calibração, LightGBM)
+│   ├── gerar_panorama_modelo.py ✅ (artefato agregado da rota prospectiva)
 │   ├── medir_juiz_groundedness.py ✅ (etapa 13 — juiz × auditoria humana)
 │   ├── preprocessar_ocr_mistral.py ✅ · reconciliar_chamada_orfa.py ✅
 │   └── preparar_auditoria_final.py · executar_estabilidade.py ·
@@ -426,15 +514,17 @@ Alvo da spec 5.21, com o que já existe marcado:
 │   ├── ferramentas.py ✅ · cobertura.py ✅ · agentes.py ✅ · fatos.py ✅
 │   ├── braco_agente.py ✅ · braco_determinista.py ✅ · injecao_falha.py ✅
 │   ├── seguranca.py ✅ · reconhecedores_br.py ✅ · reconhecedor_presidio.py ✅
-│   ├── prompt_guard.py ✅ · observabilidade.py ⬜
+│   ├── prompt_guard.py ✅ · projecao.py ✅ · observabilidade.py ⬜
 │   └── modelo/ construir_painel.py ✅ · treinar.py ✅ · prever.py ✅
 ├── conjunto_padrao/
 │   ├── perguntas.csv            ✅ 10 dev + 45 teste congeladas
 │   └── ataques.csv              ✅ 20 ataques (11 tópico + 9 injeção)
 ├── artefatos/
-│   ├── cvm.duckdb               (fora do Git — regenerável)
+│   ├── cvm.duckdb               (consultável, 2025–26; fora do Git)
+│   ├── cvm_treino.duckdb        (treino, 2011–26; fora do Git — §3.5)
 │   ├── indice_vetorial/         (Chroma; só `metadados_construcao.json` versionado)
-│   ├── modelo/                  (binário fora do Git; relatório de métricas versionado)
+│   ├── modelo/                  (binário fora do Git; métricas e panorama versionados;
+│   │                             escores_por_companhia.json FORA do Git — §3.6)
 │   ├── logs_execucoes/          (JSONL por execução completa — versionado, RNF08)
 │   └── resultados_avaliacao/    (métricas + respostas cacheadas do demo — versionadas)
 ├── resultados/                  (evidência dos gates)
@@ -443,6 +533,7 @@ Alvo da spec 5.21, com o que já existe marcado:
          · test_dados_estruturados ✅ · test_seguranca ✅ · test_isolamento ✅
          · test_cobertura ✅ · test_guardrails_integracao ✅ · test_deepeval ⬜
          · test_chunking_tabela_orfa ✅ · test_guarda_rn02_auditoria ✅
+         · test_projecao ✅ (rota RN07 condicional ao modo, 39 casos)
          · test_modelo ✅ (inclui TestRN07 e TestVazamentoTemporal)
          (+ suítes de hardening já existentes)
 ```
