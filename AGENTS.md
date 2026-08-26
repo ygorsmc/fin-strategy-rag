@@ -366,9 +366,136 @@ etapa 14.
 **Ressalva técnica que a permissão legal não remove:** para os cinco bancos do
 corpus, todos na faixa de ativo onde o prejuízo ocorre em 0,6% dos trimestres,
 o escore sai quase constante e quase zero. Autorização não torna um número não
-informativo em útil. O valor real do módulo está em instituição financeira de
-porte médio (AUC 0,832 abaixo de R$ 100 bi) e nas companhias hoje lucrativas
-(lift 4,35), não nos cinco do corpus.
+informativo em útil. O valor real do módulo está nas companhias **hoje
+lucrativas** (lift 4,35), não nos cinco do corpus.
+
+> **Correção (2026-08-26).** Esta frase citava "instituição financeira de porte
+> médio, AUC 0,832 abaixo de R$ 100 bi". É o recorte `is_banco` **retratado**
+> em 2026-08-25 — 42 dos 49 eventos vinham de entidades que não são banco, e o
+> universo limpo tem 7 positivos contra o mínimo de 20 do próprio módulo. O
+> número sobreviveu aqui depois de ter sido riscado no relatório e marcado em
+> `robustez.json`; removido agora. Reproduzível por
+> `scripts/auditar_recorte_is_banco.py`. **O recorte de hoje-lucrativas NÃO é
+> afetado** — ele não depende de setor.
+
+### 3.7 Alvo de ML para Value Investing — aprovado, não implementado (2026-08-26)
+
+Quatro rodadas de debate entre um cientista de dados e um analista de equity
+research, com verificação independente da sessão principal, produziram um alvo
+novo que **os dois aprovam** — e um protocolo de seleção de alvo que passa a
+valer para qualquer modelo futuro deste projeto. Relatório completo com as seis
+retratações: `resultados/debate_alvo_ml_2026-08-26.md`.
+
+**Motivo da busca:** "prejuízo contábil em T+1" não é decisão de investimento, e
+o modo analista da §3.6 tornou possível expor saída por emissor.
+
+#### O protocolo dos dois testes — regra durável, não achado de rodada
+
+Todo alvo novo tem de passar nos **dois ao mesmo tempo**. Falhar num deles é
+invisível pelo teste do outro, e cada proposta inicial do debate falhou em um.
+
+| Teste | Pergunta | Métrica | Limiar |
+|---|---|---|---|
+| **T1** | O alvo fabrica o próprio baseline? | amplitude da taxa de evento entre quintis do estratificador | **< 0,15** |
+| **T2** | Há sinal temporal ou só ordenação de emissor? | lacuna (AUC agregada − intra-companhia) | **< 0,12** |
+
+**Por que T1 existe.** Corte absoluto ("ROA cai 2pp") não é escala-livre: quem
+tem ROA de 40% cai 2pp sem esforço. A coluna que parecia baseline forte (AUC
+0,599) vale **menos que o acaso (0,491)** quando o alvo vira escala-livre — a
+força dela era artefato da definição do alvo.
+
+**Por que os dois juntos.** O corte absoluto passa em T2 e reprova em T1
+(amplitude 0,317); o relativo passa em T1 e reprova em T2 (lacuna +0,173, com
+AUC intra **abaixo do acaso**). Nenhum dos dois é limpo sozinho.
+
+#### O alvo aprovado
+
+```
+alvo = 1  se  ROA_ttm(t+4) − ROA_ttm(t) < −k · sd₈(ΔROA_ttm até t)
+k = 1,25  ·  sd₈ com min_periods=6, só dados até t, winsorizada a 1%/99%
+```
+
+Queda de lucratividade **em desvios-padrão da própria companhia**. Verificado em
+três implementações independentes, e a assinatura se repete nas três: **lacuna
+NEGATIVA** (−0,039 · −0,053 · −0,047) — a AUC intra-companhia é *maior* que a
+agregada, inversão exata do modelo antigo (+0,202). Δ sobre a coluna: **+0,03**,
+não +0,18. Decil superior com **2,4% já em prejuízo** contra 97,1% do antigo.
+
+**Universo:** não-financeira · ativo > R$ 1 bi · `CATEG_REG = 'Categoria A'` ·
+exclui `SIT_EMISSOR` em RJ/liquidação *point-in-time* → ~410 companhias.
+
+#### O que a divergência NÃO autoriza
+
+- **Publicar o +0,18.** É ganho sobre coluna inútil, não antecipação. O número
+  publicável é +0,03.
+- **Herdar o limiar `k`.** Ele foi escolhido *post-hoc* entre três valores; sob
+  Bonferroni o p cai de 2,6e−04 para ~7,8e−04. A medição atual é a rodada de
+  **seleção**, não a de confirmação — `k` tem de ser pré-registrado antes de
+  qualquer número publicável.
+- **Prometer alfa.** Sem preços *point-in-time* (item 19) não há afirmação de
+  retorno, e a literatura brasileira (Galdi & Lopes; Cupertino/Martinez/Costa)
+  dá razão específica para supor que **o preço já sabe**.
+- **Vender como sinal de alocação.** `CATEG_REG` resolve "pode ter ação
+  negociada", não liquidez nem free float. É **fila de leitura para analista**.
+
+#### Três bloqueios que caíram com um arquivo gratuito
+
+`cad_cia_aberta.csv` (dados abertos da CVM, casa por `cd_cvm`) fecha o que os
+três tratávamos como intransponível: **`SETOR_ATIV`** preenchido em 710/731
+(59 setores — o controle setorial deixa de ser impossível), **`CATEG_REG`**
+(135 das 731 são Categoria B e não podem ter ação negociada) e **`SIT_EMISSOR`
++ `DT_INI_SIT_EMISSOR`** (51 empresas em crise, com data — resolve o
+*look-ahead* do filtro de recuperação judicial). O carregador atual preenche
+`setor`/`ticker` de um dicionário fixo com os 5 bancos e grava `None` para as
+outras 736: **limitação por desenho, não defeito**, e agora fechável.
+
+### 3.8 Busca por um modelo de ML útil ao Value Investing — NEGATIVO medido (2026-08-26)
+
+Quatro rodadas entre os mesmos dois especialistas, agora com briefing mínimo e
+liberdade para propor qualquer enquadramento e baixar qualquer dataset público.
+Objetivo: um modelo **funcional e útil**, não item de checklist. Relatório:
+`resultados/debate_modelo_util_2026-08-26.md`.
+
+**Resultado: os dois retiraram as próprias propostas.** A formulação exata, que
+não deve ser encurtada:
+
+> **Nenhuma das propostas sustentou um componente aprendido superior ao seu
+> próprio baseline.** Não é que nada de útil saiu — o que saiu foi a régua que
+> reprovou todas.
+
+Seis candidatos, cada um vencido pelo seu próprio baseline trivial (detalhe e
+condição de reabertura em `becos_sem_saida.md` §E): evento legal de crédito
+(`pl_ativo` cru 0,8765); estresse agregado → NPL (ρ +0,076 em 1ª diferença);
+modelo no recorte estressado (`liq_corrente` cru); selo de revisão (barra
+pré-registrada do autor, 0,284 < 0,40); camada de abstenção (guarda RN02
+determinístico, risco 0,007 × 0,081, McNemar p = 1,0000); mapeador semântico
+(`JOIN ON ds_conta_norm`, F1 0,9923 × 0,7743, **205 × 1, p = 4e−60**).
+
+**A restrição estrutural, medida quatro vezes com quatro roupas diferentes:**
+
+> O lado que tem `n` (5,55 M de linhas, 741 companhias) **não tem conteúdo
+> bancário** — Basileia 0 linhas, margem financeira 0 linhas, NPL 1 emissor,
+> eficiência 1 emissor. O lado que tem conteúdo bancário tem **20 documentos**.
+> **O painel também não tem DFC** — só BPP, BPA e DRE.
+
+**Duas regras de método que passam a valer:**
+
+1. **"Denominador não é rótulo."** Pegou os dois especialistas: 186.701 células
+   contadas como rótulo quando o usável era **222** (840×); 37.540 triplas
+   contadas como rótulo quando existem **198** (190×).
+2. **Construa o baseline trivial ANTES do modelo.** Em E.6 a linha de base
+   venceu 205 a 1 — e só descobre isso quem a constrói primeiro.
+
+**O que o projeto leva, e é entrega real sem ser modelo:** a **tabela de 208
+contas** do plano padrão da CVM (publicado) destrava **85% das 5,55 M de linhas
+para 741 companhias** — hoje o mapa cobre 4,95%. É ~7 horas de anotação; o
+trabalho real é o **G4 estendido conceito a conceito**. Entregar como curadoria
++ join declarado, **nunca como modelo**.
+
+**O que este negativo NÃO autoriza:** concluir que ML é inútil em research
+financeiro, ou que o produto não tem valor (RAG + extração + abstenção
+determinística é o ouro do analista, e não tem ML). **Reabre com dado novo, não
+com modelo novo** — DFC, preços *point-in-time*, ou documentos além dos 20.
 
 ---
 
@@ -497,6 +624,7 @@ Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisã
 | 16 | **Publicação** — Container Apps primário, teto/alerta no provedor, dois modos validados | `interface-produto` | ⬜ |
 | 17 | **`DESAFIO_CBL.md`, README e resumo executivo** (metas × resultados) | `documentacao-projeto` | ✅ desafio e README · ⬜ resumo executivo |
 | 18 | **(Opcional) LoRA** — roteador de entrada, com split por pergunta-base | — | ⬜ opcional |
+| 20 | **Alvo de ML para Value Investing** (§3.7) — queda de lucratividade normalizada pela volatilidade da própria companhia, aprovada pelos dois especialistas em 2026-08-26 e **verificada em três implementações independentes**. Exige: carregar `cad_cia_aberta.csv` (setor, `CATEG_REG`, `SIT_EMISSOR` + datas), pré-registrar `k` antes de medir, publicar T1 e a lacuna ao lado de qualquer AUC. Entregue como **fila de leitura no modo autenticado**, nunca como sinal de alocação | — | ⬜ **aprovado, não implementado** — `resultados/debate_alvo_ml_2026-08-26.md` |
 | 19 | **Bônus — múltiplos de mercado (P/L, P/VPA)** — fora da spec 5.21, proposta em 2026-08-21 durante conversa sobre Value Investing. `precos_fechamento` no DuckDB (5 tickers, fonte pública), disciplina *point-in-time* obrigatória (preço da data do release, nunca o de hoje), múltiplo marcado como **derivado** pela RN10, medido em conjunto próprio — nunca nas 45 congeladas nem em E0–E4 | — | ⬜ **não iniciar antes das etapas 1–18 concluídas; G4 aprovado é pré-condição** |
 
 **Transversal:** rodar `auditor-conformidade` (somente leitura) ao final de cada
@@ -505,6 +633,15 @@ onda de implementação, antes de considerar a etapa concluída.
 **Regra de crescimento do gabarito: acrescente coluna, nunca linha.** O gargalo
 declarado do projeto é o gabarito manual. Toda capacidade nova é avaliada
 anotando mais sobre as mesmas 45 perguntas.
+
+**Antes de propor ideia nova, consultar `resultados/becos_sem_saida.md`.** É o
+registro consolidado do que já foi **medido e descartado** — alvos que reprovam
+T1/T2, SMOTE, ajuste de hiperparâmetros, recalibração, fusão E3+E4, provedores
+de LLM, e as quatro hipóteses de diagnóstico que foram retratadas. Cada linha
+traz **o que reabriria** a questão, para que o registro não vire dogma: nenhuma
+delas é permanente, todas são condicionais ao dado e ao alvo da data. Ao
+reabrir e remedir, **atualize a linha** em vez de acrescentar outra — o
+histórico é o Git.
 
 ---
 
@@ -560,7 +697,8 @@ Alvo da spec 5.21, com o que já existe marcado:
 │   │                             escores_por_companhia.json FORA do Git — §3.6)
 │   ├── logs_execucoes/          (JSONL por execução completa — versionado, RNF08)
 │   └── resultados_avaliacao/    (métricas + respostas cacheadas do demo — versionadas)
-├── resultados/                  (evidência dos gates)
+├── resultados/                  (evidência dos gates + becos_sem_saida.md,
+│                                 registro do que já foi medido e descartado)
 ├── app_streamlit.py             ✅
 └── tests/  conftest · test_ingestao ✅ · test_normalizacao ✅ · test_regras ✅
          · test_dados_estruturados ✅ · test_seguranca ✅ · test_isolamento ✅

@@ -206,10 +206,60 @@
   (85,7%)** e **ρ = −0,046 (p = 0,83)** — a prosa do debate dizia 29/35 e
   −0,014, de contagem ad hoc num painel diferente. Conclusão idêntica, base
   agora conferível.
+- **ALVO DE ML NOVO APROVADO PELOS DOIS ESPECIALISTAS (2026-08-26)** — quatro
+  rodadas, seis retratações, `resultados/debate_alvo_ml_2026-08-26.md`.
+  **Aprovado, NÃO implementado.** O que muda a execução daqui pra frente:
+  - **PROTOCOLO DOS DOIS TESTES, vale para todo alvo futuro** (AGENTS §3.7).
+    **T1**: o alvo fabrica o baseline? (amplitude da taxa de evento entre
+    quintis < 0,15). **T2**: tem sinal temporal? (lacuna agregada−intra < 0,12).
+    Falhar num é INVISÍVEL pelo teste do outro — corte absoluto passa em T2 e
+    reprova em T1; relativo passa em T1 e reprova em T2 com intra ABAIXO do
+    acaso. Nenhuma proposta inicial passava nos dois.
+  - **Alvo aprovado:** queda de ROA maior que `k·sd` da PRÓPRIA companhia
+    (k=1,25). Lacuna **NEGATIVA** nas três implementações (−0,039/−0,053/−0,047)
+    — intra > agregada, inversão do modelo antigo (+0,202). Decil com **2,4% já
+    em prejuízo** contra 97,1%.
+  - **NÃO publicar o +0,18.** É ganho sobre coluna inútil. O número é **+0,03**.
+  - **`k` é post-hoc** (3 valores testados). A medição atual é de SELEÇÃO, não
+    de confirmação. Pré-registrar antes de publicar.
+  - **`cad_cia_aberta.csv` derruba 3 bloqueios que os três davam como
+    intransponíveis**: `SETOR_ATIV` 710/731 (controle setorial deixa de ser
+    impossível), `CATEG_REG` (135 são Cat. B e não podem ter ação),
+    `SIT_EMISSOR`+`DT_INI_SIT_EMISSOR` (51 em RJ, com data — resolve o
+    look-ahead). Melhoria do painel independente do modelo.
+  - **Mortos com medição, não repetir:** accrual como alvo (inverte sob controle
+    de ROA), republicação como preditor (0,0007), reapresentação como alvo
+    (censura à direita: 28,1%→4,3%; `dt_refer=dt_fim_exerc` em 100%), alvo
+    setorial e efeitos fixos (reprovam T1).
 - **Alvo pré-tributos: RECOMENDADO pelos dois especialistas e DESCARTADO por
   Ygor (2026-08-25).** Ganho estatístico é ruído (+0,0034) e a troca
   invalidaria os três relatórios publicados. Registrado como caminho conhecido,
   não como pendência — não reabrir sem pedido.
+
+- **`resultados/becos_sem_saida.md` (2026-08-26) — consultar ANTES de propor
+  ideia nova.** Registro consolidado do que já foi medido e descartado, que
+  antes estava espalhado por sete relatórios: alvos que reprovam T1/T2, SMOTE,
+  ajuste de hiperparâmetros, recalibração isotônica/Platt, LightGBM, controle
+  setorial, accrual, fusão E3+E4, o primeiro conserto do chunker, os provedores
+  de LLM descartados, e as quatro hipóteses retratadas (interruptor do porte,
+  volatilidade, duas camadas, assimetria direcional). Cada linha traz **o que
+  reabriria** — o registro é condicional, não dogma. Ao remedir, **atualize a
+  linha**; o histórico é o Git. Em divergência, o relatório datado de origem
+  vence.
+
+- **Busca por modelo de ML útil ao Value Investing: NEGATIVO medido (2026-08-26,
+  §3.8).** Quatro rodadas, briefing mínimo, os dois especialistas **retiraram as
+  próprias propostas**. Seis candidatos, cada um vencido pelo **seu próprio
+  baseline trivial** — detalhe em `becos_sem_saida.md` §E. A frase publicável é
+  "nenhuma proposta sustentou componente aprendido superior ao seu baseline",
+  **não** "nada de útil saiu". Restrição estrutural medida quatro vezes: o lado
+  com `n` não tem conteúdo bancário (Basileia/margem financeira = **0 linhas**);
+  o lado com conteúdo bancário tem **20 documentos**. O painel **não tem DFC**.
+  Duas regras novas: **"denominador não é rótulo"** (pegou os dois: 840× e 190×)
+  e **"construa o baseline trivial antes do modelo"** (venceu 205×1). Entrega
+  real que saiu disso e **não é modelo**: a tabela de **208 contas** do plano
+  padrão da CVM destrava **85% das 5,55 M de linhas** (hoje: 4,95%) — ~7 h de
+  anotação, com o G4 por conceito como trabalho de verdade.
 
 ## Próximo passo concreto
 
