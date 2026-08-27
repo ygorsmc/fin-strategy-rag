@@ -18,7 +18,7 @@
 - Última etapa concluída: **10 (modelo preditivo)**, 2026-08-23 —
   `resultados/modelo_preditivo_2026-08-23.md`, custo zero. Antes dela, a 4
   (chunking de tabela, AGENTS.md §3.4).
-- Suíte: **1.699** casos, sem skip (exige `requirements-modelo.txt`).
+- Suíte: **1.718** casos, sem skip (exige `requirements-modelo.txt`).
 - Rodada congelada vigente: fingerprint `5b9b142d`
   (`20260823T131515Z-4ad67021f6`), números publicados no README. Status:
   `auditoria_manual_pendente`.
@@ -206,22 +206,28 @@
   (85,7%)** e **ρ = −0,046 (p = 0,83)** — a prosa do debate dizia 29/35 e
   −0,014, de contagem ad hoc num painel diferente. Conclusão idêntica, base
   agora conferível.
-- **ALVO DE ML NOVO APROVADO PELOS DOIS ESPECIALISTAS (2026-08-26)** — quatro
-  rodadas, seis retratações, `resultados/debate_alvo_ml_2026-08-26.md`.
-  **Aprovado, NÃO implementado.** O que muda a execução daqui pra frente:
-  - **PROTOCOLO DOS DOIS TESTES, vale para todo alvo futuro** (AGENTS §3.7).
-    **T1**: o alvo fabrica o baseline? (amplitude da taxa de evento entre
-    quintis < 0,15). **T2**: tem sinal temporal? (lacuna agregada−intra < 0,12).
-    Falhar num é INVISÍVEL pelo teste do outro — corte absoluto passa em T2 e
-    reprova em T1; relativo passa em T1 e reprova em T2 com intra ABAIXO do
-    acaso. Nenhuma proposta inicial passava nos dois.
-  - **Alvo aprovado:** queda de ROA maior que `k·sd` da PRÓPRIA companhia
-    (k=1,25). Lacuna **NEGATIVA** nas três implementações (−0,039/−0,053/−0,047)
-    — intra > agregada, inversão do modelo antigo (+0,202). Decil com **2,4% já
-    em prejuízo** contra 97,1%.
-  - **NÃO publicar o +0,18.** É ganho sobre coluna inútil. O número é **+0,03**.
-  - **`k` é post-hoc** (3 valores testados). A medição atual é de SELEÇÃO, não
-    de confirmação. Pré-registrar antes de publicar.
+- **C1 — QUEDA DE ROA NORMALIZADA PELA VOLATILIDADE REJEITADO (2026-08-26)** —
+  a aprovação exploratória de `resultados/debate_alvo_ml_2026-08-26.md` foi
+  retratada após validação cega com dois especialistas e replicação
+  independente: `resultados/validacao_c1_2026-08-26.md`.
+  - **PROTOCOLO DOS DOIS TESTES continua valendo para todo alvo futuro**
+    (AGENTS §3.7), com uma correção: **T1** deve testar cada componente que
+    define mecanicamente o rótulo, inclusive o normalizador; **T2** mede a
+    lacuna agregada−intra. Passar em um não compensa falhar no outro.
+  - O próprio `sd8` fabrica o baseline: amplitude T1 **0,180** na especificação
+    primária, **0,181/0,183** nas sensibilidades e **0,247** na implementação
+    isolada do agente, sempre acima de 0,15.
+  - Na replicação principal, `-sd8` sozinho obtém AUC **0,634** agregada e
+    **0,709** intra-companhia; precisão top-20 **0,346**. T2 favorável não
+    resgata T1 reprovado.
+  - Artefato: `artefatos/modelo/auditoria_alvo_c1.json`; reprodução:
+    `scripts/auditar_alvo_c1.py`; contrato:
+    `tests/test_auditar_alvo_c1.py`.
+  - O painel ainda não dá procedência point-in-time completa, mas isso é
+    bloqueio adicional, **não** a causa da rejeição.
+  - C1 só reabre por erro computacional ou divergência com a fórmula registrada.
+    Piso de materialidade, outro normalizador ou horizonte é **C2**, que não
+    herda números nem aprovação do C1.
   - **`cad_cia_aberta.csv` derruba 3 bloqueios que os três davam como
     intransponíveis**: `SETOR_ATIV` 710/731 (controle setorial deixa de ser
     impossível), `CATEG_REG` (135 são Cat. B e não podem ter ação),
@@ -231,6 +237,85 @@
     de ROA), republicação como preditor (0,0007), reapresentação como alvo
     (censura à direita: 28,1%→4,3%; `dt_refer=dt_fim_exerc` em 100%), alvo
     setorial e efeitos fixos (reprovam T1).
+- **CAND-02 — REDLINE SEMÂNTICO: NÃO IMPLEMENTAR ML AGORA (2026-08-27)** —
+  dois especialistas isolados e duas rodadas mediadas fecharam por unanimidade:
+  rejeitar a implementação aprendida agora e rejeitar a alegação de que o
+  determinístico já provou utilidade. `resultados/validacao_cand02_redline_2026-08-27.md`.
+  - Gate real: 20 documentos → 15 pares, mas só **5 clusters** no teste purgado;
+    zero PDF cruza desenvolvimento/teste; estrutura aprovada.
+  - Ausentes: dupla leitura completa dos 15 pares, adjudicação/gold e estudo
+    humano de tempo. Estado **INDECIDÍVEL**; nenhum modelo foi carregado.
+  - Pré-registro: `resultados/pre_registro_cand02_redline_2026-08-27.md`.
+    Auditor/artefato: `scripts/auditar_cand02_redline.py` →
+    `artefatos/cand02/auditoria_precondicoes.json`.
+  - Reabre com ≥30 mudanças P2 adjudicadas e estudo de tempo; primeiro provar
+    B1 (zero FN crítico, recall P2 ≥0,90, nDCG@20 ≥0,80), depois comparar ML.
+- **CAND-03 — TRIAGEM DE ANOMALIAS: NÃO IMPLEMENTAR ML AGORA (2026-08-27)** —
+  dois especialistas isolados, réplica e tréplica mediadas fecharam por
+  unanimidade: E2 (prioridade de leitura) é o alvo correto; erro/reapresentação
+  e fraude/deterioração são tarefas separadas. Estado **INDECIDÍVEL** e
+  baseline determinístico **não validado**.
+  - Painel: 5.552.787 linhas → 23.346 companhia–trimestres; mapa exato
+    274.935/5.552.787 (4,951%), 11 conceitos; setor 5/741; 698 duplicidades
+    semânticas, 587 conflitantes; BPA/BPP/DRE, sem DFC e sem `DT_RECEB`.
+  - Gold conhecido: quatro células, um emissor e **um episódio-raiz** (o
+    auditor publica limite superior de dois companhia–trimestres porque a
+    tabela ainda não tem `cause_id`). Denominador não é rótulo.
+  - Os 31 ZIPs locais já têm DFC e `DT_RECEB`. Metadados: 48.129
+    documento–versões, 41.062 arquivamentos, 5.803 reapresentados (14,13%);
+    o painel preserva **zero** grupos com múltiplas versões numéricas.
+  - Pré-registro:
+    `resultados/pre_registro_cand03_anomalias_contabeis_2026-08-27.md`.
+    Relatório: `resultados/validacao_cand03_anomalias_contabeis_2026-08-27.md`.
+    Auditor/artefato: `scripts/auditar_cand03_anomalias.py` →
+    `artefatos/cand03/auditoria_precondicoes.json`.
+  - Reabre o **experimento**, não o deploy, com shadow prospectivo: 30 releases,
+    seguir até ≥30 releases P1/P2 e rubrica estável, teto 150. Confirmatório
+    `N=max(100,N_poder,N_50+)`; primária é tempo/itens sob recall congelado,
+    nDCG@20 corroborativa; ganho precisa superar
+    `max(break-even+margem,20%)` com procedência perfeita.
+- **CAND-04 — PREVISÃO DE FUNDAMENTOS: RODADA A REJEITADA/INVALIDADA
+  (2026-08-27)** — dois especialistas cegos, réplica mediada e tréplica
+  validaram por unanimidade: a rodada A acabou; a fórmula econômica prospective
+  ROA não foi refutada; ML está **INDECIDÍVEL** e **NÃO IMPLEMENTAR AGORA**.
+  - Pré-registro: `resultados/pre_registro_cand04_previsao_fundamentos_2026-08-27.md`.
+    Relatório: `resultados/validacao_cand04_previsao_fundamentos_2026-08-27.md`.
+    Auditor/artefato: `scripts/auditar_cand04_previsao_fundamentos.py` →
+    `artefatos/cand04/auditoria_baselines.json`; 6 testes focados.
+  - Teste as-restated: 3.218 releases, 435 companhias, oito targets. B3 mede
+    MAE macro 950,94 bp × mediana AE 57,80; top 1% = 83,55% do erro.
+  - 23 linhas (0,71%, oito companhias) com saltos de ativo próximos de 1.000×
+    explicam 61,64% do erro; 20 targets `|y|>10.000 bp` explicam 71,28%; 4T
+    derivado MAE 2.602,46 × 449,94 no arquivado. G0 integridade e G1 PIT falham.
+  - **Não remover as 23 pós-hoc.** Adjudicar escala/perímetro contra fonte e
+    congelar regra antes de novo teste; a sensibilidade MAE 459,52 é somente
+    diagnóstico e não pode virar baseline oficial.
+  - Divergência preservada: Ciência de Dados prioriza A2 corrigido; Finanças
+    prioriza B (lucro dos controladores em R$ + materialidade em bps do PL).
+    Ambos são estimandos novos e não herdam números de A.
+- **RANK 5 — DIVERGÊNCIA GERENCIAL × CONTÁBIL: INDECIDÍVEL; ML FECHADO
+  (2026-08-27)** — dois especialistas isolados, réplica medida e tréplica
+  convergiram: **não implementar ML agora**; autorizar apenas K1 determinístico
+  + construção do gold.
+  - Auditoria: 20 releases, cinco bancos, 2.790 páginas. LAJIDA/LAJIR/EBITDA/
+    EBIT como palavra inteira = **0/20**. Ponte explícita contábil↔gerencial =
+    **12/20**, três emissores, 16 páginas. Ponte geral de resultado ajustado =
+    **20/20**, cinco emissores, 31 páginas.
+  - G0-L reprova; G0-K passa. G1 PIT, G2 gold, G3 baseline e G4 amostra
+    reprovam. O corpus tem URL/hash/data de coleta, mas não data original e
+    versão; 20/5 fica abaixo de 30 releases/10 emissores e positivos são
+    desconhecidos. Nenhum modelo foi carregado.
+  - K1 separado: `lucro líquido contábil + ajustes = lucro líquido ajustado/
+    recorrente`; rótulo do emissor não vira verdade econômica.
+  - Ranking normativo: `resultados/ranking_candidatos_ml_value_investing.md`.
+    Pré-registro: `resultados/pre_registro_rank05_divergencia_gerencial_contabil_2026-08-27.md`.
+    Relatório: `resultados/validacao_rank05_divergencia_gerencial_contabil_2026-08-27.md`.
+    Auditor/artefato: `scripts/auditar_rank05_divergencia_gerencial_contabil.py`
+    → `artefatos/rank05/auditoria_precondicoes.json`; 7 testes focados; suíte
+    ampliada **1.725 passed, zero skips**.
+  - Reprodutibilidade: resolução limpa com `requirements-guardrails.txt` falha
+    por `numpy==2.5.1` × `presidio-analyzer` (`numpy<2.5.0`). Não alterar pins
+    como efeito lateral desta validação; tratar em onda própria.
 - **Alvo pré-tributos: RECOMENDADO pelos dois especialistas e DESCARTADO por
   Ygor (2026-08-25).** Ganho estatístico é ruído (+0,0034) e a troca
   invalidaria os três relatórios publicados. Registrado como caminho conhecido,
@@ -263,12 +348,24 @@
 
 ## Próximo passo concreto
 
-1. Rodar `python -m scripts.preparar_auditoria_final` sobre o fingerprint
+1. Rank 5 não autoriza modelo. Se priorizado, primeiro inventariar/adjudicar as
+   31 páginas K1, recuperar data original/versão, implementar o extrator e B0–B3
+   determinísticos e iniciar gold de 30–150 releases até ≥30 P2/P3.
+2. CAND-04 não autoriza modelo. Se priorizada, primeiro reconstruir vintages
+   (`DT_RECEB`/`ID_DOC`), adjudicar as 23 linhas e a derivação 4T, completar
+   setor e então escolher/pre-registrar A2 ou B com teste novo.
+3. Se a linha CAND-03 for priorizada, o próximo passo não é modelo: construir
+   snapshots imutáveis point-in-time, ingerir DFC/`DT_RECEB`, resolver as 698
+   duplicidades e instrumentar o piloto shadow de 30–150 releases. Não chamar
+   o baseline-candidato de útil antes da dupla leitura e do estudo de tempo.
+4. Se CAND-02 voltar à prioridade, organizar dupla leitura completa dos 15
+   pares, adjudicação e estudo contrabalanceado conforme o pré-registro.
+5. Rodar `python -m scripts.preparar_auditoria_final` sobre o fingerprint
    `5b9b142d` (arquivar `auditoria_groundedness.json`/`plano_estabilidade.json`
    de fingerprint antigo antes, se ainda estiverem no lugar) e repetir a
    leitura humana das 15 perguntas.
-2. Depois da leitura: `scripts/executar_estabilidade.py --permitir-api-paga`
+6. Depois da leitura: `scripts/executar_estabilidade.py --permitir-api-paga`
    (30 chamadas) e `scripts/consolidar_auditoria_final.py` — promoção a
    `completa` exige groundedness ≥ 0,90.
-3. Em paralelo, sem depender do passo 1: dupla leitura dos 10 gabaritos
+7. Em paralelo, sem depender do passo 5: dupla leitura dos 10 gabaritos
    pendentes de `conjunto_agentes.csv` — destrava o McNemar da etapa 12.

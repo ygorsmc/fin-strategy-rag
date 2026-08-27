@@ -1,6 +1,22 @@
 # Varredura — onde ML é (ou pode ser) usado em Value Investing
 
-**Estado: VARREDURA EM EXECUÇÃO.** Arquivo de retomada.
+**Estado: VARREDURA CONCLUÍDA; candidatos em validação sequencial.**
+
+Resultados já fechados:
+
+- C1 — deterioração de lucratividade: **rejeitado antes do treino**
+  (`validacao_c1_2026-08-26.md`);
+- CAND-02 — redline semântico: **não implementar ML agora; utilidade
+  determinística ainda não medida** (`validacao_cand02_redline_2026-08-27.md`).
+- CAND-03 — triagem de anomalias contábeis: **não implementar ML agora;
+  E2 prospectivo permanece cientificamente indecidível**. Reabre com shadow,
+  gold humano e tempo, não com algoritmo novo
+  (`validacao_cand03_anomalias_contabeis_2026-08-27.md`).
+- CAND-04 — previsão interpretável de fundamentos: **rodada A
+  rejeitada/invalidada; hipótese econômica e ML indecidíveis; não implementar
+  ML agora**. Vinte e três linhas contaminadas por escala explicam 61,64% do
+  erro; A2 versus lucro dos controladores é novo estimando
+  (`validacao_cand04_previsao_fundamentos_2026-08-27.md`).
 
 ## Por que esta varredura existe
 
@@ -43,5 +59,3 @@ replicação) · quem usa na prática · maturidade (commodity / contestado /
 fronteira) · fontes.
 
 ---
-
-<!-- CATÁLOGO: pendente -->

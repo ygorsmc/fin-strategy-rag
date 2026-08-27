@@ -1,0 +1,96 @@
+{
+  "candidato": "C1 — queda de ROA TTM em T+4 < -1,25 × sd8 própria",
+  "natureza": "auditoria de validade do alvo; não é backtest confirmatório",
+  "limitacao_point_in_time": "o DuckDB não contém data de primeira recepção e usa números que podem ter sido reapresentados",
+  "operacionalizacao_primaria": "delta_por_trimestre",
+  "sensibilidades": {
+    "delta_por_trimestre": {
+      "n_origens": 10221,
+      "n_censuradas_t_mais_4": 1512,
+      "n_observacoes": 8709,
+      "n_companhias": 359,
+      "n_trimestres": 46,
+      "n_eventos": 1820,
+      "taxa_evento": 0.20897921690205534,
+      "taxa_evento_por_quintil_crescente_de_sd8": [
+        0.31285878300803677,
+        0.2766934557979334,
+        0.1883974727168294,
+        0.13375430539609645,
+        0.13318025258323765
+      ],
+      "amplitude_t1": 0.17967853042479912,
+      "limiar_t1": 0.15,
+      "falha_t1": true,
+      "auc_menos_sd8_agregada": 0.6337761744714858,
+      "auc_menos_sd8_intra_companhia": {
+        "auc": 0.7085563649535155,
+        "n_companhias": 266,
+        "n_pares": 49694
+      },
+      "top_n": 20,
+      "precisao_media_top_n_menos_sd8": 0.346195652173913,
+      "prevalencia_media_trimestral": 0.21652780356807722,
+      "veredito": "REJEITAR C1: o alvo falha T1 antes do treino."
+    },
+    "sd_por_trimestre": {
+      "n_origens": 10221,
+      "n_censuradas_t_mais_4": 1512,
+      "n_observacoes": 8709,
+      "n_companhias": 359,
+      "n_trimestres": 46,
+      "n_eventos": 1812,
+      "taxa_evento": 0.2080606269376507,
+      "taxa_evento_por_quintil_crescente_de_sd8": [
+        0.3111366245694604,
+        0.2766934557979334,
+        0.1883974727168294,
+        0.13375430539609645,
+        0.13030998851894374
+      ],
+      "amplitude_t1": 0.18082663605051666,
+      "limiar_t1": 0.15,
+      "falha_t1": true,
+      "auc_menos_sd8_agregada": 0.6348957268108699,
+      "auc_menos_sd8_intra_companhia": {
+        "auc": 0.7097457627118644,
+        "n_companhias": 266,
+        "n_pares": 49560
+      },
+      "top_n": 20,
+      "precisao_media_top_n_menos_sd8": 0.34293478260869564,
+      "prevalencia_media_trimestral": 0.21564159271231964,
+      "veredito": "REJEITAR C1: o alvo falha T1 antes do treino."
+    },
+    "nenhuma": {
+      "n_origens": 10221,
+      "n_censuradas_t_mais_4": 1512,
+      "n_observacoes": 8709,
+      "n_companhias": 359,
+      "n_trimestres": 46,
+      "n_eventos": 1815,
+      "taxa_evento": 0.20840509817430244,
+      "taxa_evento_por_quintil_crescente_de_sd8": [
+        0.31285878300803677,
+        0.2766934557979334,
+        0.1883974727168294,
+        0.13375430539609645,
+        0.13030998851894374
+      ],
+      "amplitude_t1": 0.18254879448909303,
+      "limiar_t1": 0.15,
+      "falha_t1": true,
+      "auc_menos_sd8_agregada": 0.6357272383619404,
+      "auc_menos_sd8_intra_companhia": {
+        "auc": 0.7095837952232188,
+        "n_companhias": 266,
+        "n_pares": 49615
+      },
+      "top_n": 20,
+      "precisao_media_top_n_menos_sd8": 0.346195652173913,
+      "prevalencia_media_trimestral": 0.21601806456950345,
+      "veredito": "REJEITAR C1: o alvo falha T1 antes do treino."
+    }
+  },
+  "veredito": "REJEITAR C1: o alvo falha T1 antes do treino."
+}

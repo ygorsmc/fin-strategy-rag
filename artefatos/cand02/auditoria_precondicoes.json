@@ -1,0 +1,179 @@
+{
+  "candidato": "CAND-02 — redline semântico para prioridade de leitura",
+  "natureza": "gate anterior ao algoritmo; nenhum modelo foi carregado",
+  "pre_registro": {
+    "caminho": "resultados/pre_registro_cand02_redline_2026-08-27.md",
+    "sha256": "f26d90aa9f3f6ad9ab76e7671ad20fa065b4236de0f60d20a933a86e437cb8b3"
+  },
+  "corpus": {
+    "n_documentos": 20,
+    "n_pares_adjacentes": 15,
+    "pares_por_papel": {
+      "desenvolvimento": 5,
+      "embargo": 5,
+      "teste": 5
+    },
+    "clusters_independentes_no_teste": 5,
+    "documentos_compartilhados_dev_teste": [],
+    "estrutura_aprovada": true,
+    "pares": [
+      {
+        "pair_id": "BB:2T2025->3T2025",
+        "empresa": "BB",
+        "trimestre_anterior": "2T2025",
+        "trimestre_atual": "3T2025",
+        "documento_anterior": "bb_release_2T2025",
+        "documento_atual": "bb_release_3T2025",
+        "papel": "desenvolvimento"
+      },
+      {
+        "pair_id": "BB:3T2025->4T2025",
+        "empresa": "BB",
+        "trimestre_anterior": "3T2025",
+        "trimestre_atual": "4T2025",
+        "documento_anterior": "bb_release_3T2025",
+        "documento_atual": "bb_release_4T2025",
+        "papel": "embargo"
+      },
+      {
+        "pair_id": "BB:4T2025->1T2026",
+        "empresa": "BB",
+        "trimestre_anterior": "4T2025",
+        "trimestre_atual": "1T2026",
+        "documento_anterior": "bb_release_4T2025",
+        "documento_atual": "bb_release_1T2026",
+        "papel": "teste"
+      },
+      {
+        "pair_id": "BRADESCO:2T2025->3T2025",
+        "empresa": "BRADESCO",
+        "trimestre_anterior": "2T2025",
+        "trimestre_atual": "3T2025",
+        "documento_anterior": "bradesco_release_2T2025",
+        "documento_atual": "bradesco_release_3T2025",
+        "papel": "desenvolvimento"
+      },
+      {
+        "pair_id": "BRADESCO:3T2025->4T2025",
+        "empresa": "BRADESCO",
+        "trimestre_anterior": "3T2025",
+        "trimestre_atual": "4T2025",
+        "documento_anterior": "bradesco_release_3T2025",
+        "documento_atual": "bradesco_release_4T2025",
+        "papel": "embargo"
+      },
+      {
+        "pair_id": "BRADESCO:4T2025->1T2026",
+        "empresa": "BRADESCO",
+        "trimestre_anterior": "4T2025",
+        "trimestre_atual": "1T2026",
+        "documento_anterior": "bradesco_release_4T2025",
+        "documento_atual": "bradesco_release_1T2026",
+        "papel": "teste"
+      },
+      {
+        "pair_id": "BTG:2T2025->3T2025",
+        "empresa": "BTG",
+        "trimestre_anterior": "2T2025",
+        "trimestre_atual": "3T2025",
+        "documento_anterior": "btg_release_2T2025",
+        "documento_atual": "btg_release_3T2025",
+        "papel": "desenvolvimento"
+      },
+      {
+        "pair_id": "BTG:3T2025->4T2025",
+        "empresa": "BTG",
+        "trimestre_anterior": "3T2025",
+        "trimestre_atual": "4T2025",
+        "documento_anterior": "btg_release_3T2025",
+        "documento_atual": "btg_release_4T2025",
+        "papel": "embargo"
+      },
+      {
+        "pair_id": "BTG:4T2025->1T2026",
+        "empresa": "BTG",
+        "trimestre_anterior": "4T2025",
+        "trimestre_atual": "1T2026",
+        "documento_anterior": "btg_release_4T2025",
+        "documento_atual": "btg_release_1T2026",
+        "papel": "teste"
+      },
+      {
+        "pair_id": "ITAU:2T2025->3T2025",
+        "empresa": "ITAU",
+        "trimestre_anterior": "2T2025",
+        "trimestre_atual": "3T2025",
+        "documento_anterior": "itau_release_2T2025",
+        "documento_atual": "itau_release_3T2025",
+        "papel": "desenvolvimento"
+      },
+      {
+        "pair_id": "ITAU:3T2025->4T2025",
+        "empresa": "ITAU",
+        "trimestre_anterior": "3T2025",
+        "trimestre_atual": "4T2025",
+        "documento_anterior": "itau_release_3T2025",
+        "documento_atual": "itau_release_4T2025",
+        "papel": "embargo"
+      },
+      {
+        "pair_id": "ITAU:4T2025->1T2026",
+        "empresa": "ITAU",
+        "trimestre_anterior": "4T2025",
+        "trimestre_atual": "1T2026",
+        "documento_anterior": "itau_release_4T2025",
+        "documento_atual": "itau_release_1T2026",
+        "papel": "teste"
+      },
+      {
+        "pair_id": "SANTANDER:2T2025->3T2025",
+        "empresa": "SANTANDER",
+        "trimestre_anterior": "2T2025",
+        "trimestre_atual": "3T2025",
+        "documento_anterior": "santander_release_2T2025",
+        "documento_atual": "santander_release_3T2025",
+        "papel": "desenvolvimento"
+      },
+      {
+        "pair_id": "SANTANDER:3T2025->4T2025",
+        "empresa": "SANTANDER",
+        "trimestre_anterior": "3T2025",
+        "trimestre_atual": "4T2025",
+        "documento_anterior": "santander_release_3T2025",
+        "documento_atual": "santander_release_4T2025",
+        "papel": "embargo"
+      },
+      {
+        "pair_id": "SANTANDER:4T2025->1T2026",
+        "empresa": "SANTANDER",
+        "trimestre_anterior": "4T2025",
+        "trimestre_atual": "1T2026",
+        "documento_anterior": "santander_release_4T2025",
+        "documento_atual": "santander_release_1T2026",
+        "papel": "teste"
+      }
+    ]
+  },
+  "evidencia_humana": {
+    "anotacoes": {
+      "presente": false,
+      "gate_aprovado": false
+    },
+    "leitura_completa": {
+      "presente": false,
+      "gate_aprovado": false
+    },
+    "estudo_tempo": {
+      "presente": false,
+      "gate_aprovado": false
+    }
+  },
+  "razoes": [
+    "gabarito_duplo_insuficiente_ou_ausente",
+    "leitura_completa_e_adjudicacao_ausentes",
+    "estudo_humano_de_tempo_ausente"
+  ],
+  "estado_cientifico": "INDECIDIVEL",
+  "decisao_de_implementacao_ml": "NAO_IMPLEMENTAR_AGORA",
+  "veredito": "CAND-02 aprendido é indecidível e não deve ser implementado agora."
+}

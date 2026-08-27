@@ -1,5 +1,12 @@
 # Debate — modelo de ML funcional e útil (2026-08-26, em andamento)
 
+> **ATUALIZAÇÃO POSTERIOR (validação concluída na virada de 26–27/08).**
+> A premissa abaixo de que o alvo anterior estava aprovado foi retratada:
+> o C1 reprovou T1 e foi rejeitado antes do treino
+> (`resultados/validacao_c1_2026-08-26.md`). Os seis resultados negativos deste
+> relatório permanecem válidos; somente a caracterização do C1 como alternativa
+> aprovada deixou de valer.
+
 **Estado: RODADA 1 EM EXECUÇÃO.** Este arquivo é o registro de retomada. Se a
 sessão cair, ele diz o que já foi dito, o que já foi verificado e o que estava
 pendente.
@@ -944,7 +951,6 @@ outro; a sessão pegou o segundo aplicando a lição do primeiro.
   extração + abstenção determinística) **está entregue e não tem ML**.
 - **Reabre com dado novo, não com modelo novo:** DFC (fluxo de caixa), preços
   *point-in-time*, ou documentos além dos 20. As três reabrem coisas diferentes.
-
 
 
 

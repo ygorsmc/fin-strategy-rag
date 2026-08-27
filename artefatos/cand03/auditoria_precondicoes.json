@@ -1,0 +1,119 @@
+{
+  "baseline_deterministico": "NAO_VALIDADO",
+  "candidato": "CAND-03 — triagem de anomalias contábeis",
+  "decisao_de_engenharia_ml": "NAO_IMPLEMENTAR_AGORA",
+  "estado_cientifico_ml": "INDECIDIVEL",
+  "estimandos": {
+    "e1_erro_arquivamento": {
+      "arquivo": "artefatos/cvm.duckdb",
+      "causas_raiz_confirmadas": null,
+      "companhia_trimestre_com_correcao": 2,
+      "emissores_com_correcao": 1,
+      "gate_e1_aprovado": false,
+      "limite_superior_causas_raiz": 2,
+      "linhas_corrigidas": 4,
+      "observacao": "Linhas corrigidas e companhia-trimestre são unidades aninhadas. A tabela não possui cause_id; o número reportado é só limite superior, não quantidade de rótulos independentes.",
+      "sha256": "43e31d9f150e535f1ab20576d9aacf1a53b83ecc5424ca7d48ba50781e4cef18"
+    },
+    "e2_prioridade_leitura": {
+      "anotacoes_duplas_presentes": false,
+      "estudo_tempo_presente": false,
+      "gate_e2_aprovado": false
+    },
+    "e3_evento_futuro": {
+      "eventos_externos_datados_presentes": false,
+      "gate_e3_aprovado": false
+    }
+  },
+  "fontes_brutas": {
+    "anos": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "arquivamentos_logicos": 41062,
+    "arquivamentos_reapresentados": 5803,
+    "atraso_reapresentacao_dias": {
+      "maximo": 2962,
+      "mediana": 8,
+      "p95": 372.9
+    },
+    "dfc_disponivel_na_fonte": true,
+    "diretorio": "corpus/cvm",
+    "dt_receb_disponivel_na_fonte": true,
+    "fracao_arquivamentos_reapresentados": 0.14132287759972725,
+    "linhas_metadados_documento_versao": 48129,
+    "observacao": "Disponibilidade no ZIP não aprova G0: o painel precisa preservar DT_RECEB, cada versão e DFC na unidade usada pelo experimento.",
+    "pacotes": 31,
+    "pacotes_com_arquivo_geral": 31,
+    "pacotes_com_dfc_consolidada": 31,
+    "pacotes_com_dt_receb": 31,
+    "versao_maxima": 8
+  },
+  "gates": {
+    "g0_observabilidade": false,
+    "g1_e1_rotulo": false,
+    "g1_e2_gold": false,
+    "g1_e3_rotulo": false,
+    "g2_baseline_validado": false
+  },
+  "modelo_carregado": false,
+  "nota": "A decisão impede carregar ML antes dos gates. Não rejeita a utilidade potencial de uma triagem determinística nem prova que um challenger aprendido perderia após novos dados e gold.",
+  "painel_treino": {
+    "arquivo": "artefatos/cvm_treino.duckdb",
+    "chaves_semanticas_com_valores_conflitantes": 587,
+    "chaves_semanticas_duplicadas": 698,
+    "companhia_trimestre": 23346,
+    "companhias": 741,
+    "companhias_cadastradas": 741,
+    "companhias_com_setor": 5,
+    "companhias_com_ticker": 5,
+    "conceitos_semanticos": 11,
+    "demonstrativos": {
+      "BPA": 1532804,
+      "BPP": 2612644,
+      "DRE": 1407339
+    },
+    "entradas_mapa": 198,
+    "fracao_companhias_com_setor": 0.006747638326585695,
+    "fracao_linhas_com_mapa_semantico": 0.049512974295610475,
+    "fracao_versao_maior_que_um": 0.16820868671292727,
+    "grupos_com_multiplas_versoes_numericas": 0,
+    "linhas_com_mapa_semantico": 274935,
+    "linhas_contabeis": 5552787,
+    "observacoes_com_versao": 23346,
+    "observacoes_com_versao_maior_que_um": 3927,
+    "sha256": "74aa28e86dfcf5d2eab50b1de62851100baffd5936ea60fff585908ebf108192",
+    "tem_data_primeira_recepcao": false,
+    "tem_dfc": false,
+    "trimestres": 64,
+    "unidades_linha_distintas": 3812986
+  },
+  "pre_registro": {
+    "arquivo": "resultados/pre_registro_cand03_anomalias_contabeis_2026-08-27.md",
+    "sha256": "23cd34975a2b0976cdc495fdb290af59928d1d62a7ec371929d64ef0c1637b08"
+  },
+  "razoes": [
+    "primeira_recepcao_e_vintages_ausentes",
+    "dfc_ausente_do_painel",
+    "controle_setorial_insuficiente",
+    "cobertura_de_contas_materiais_nao_auditada",
+    "rotulos_e1_independentes_insuficientes",
+    "gold_humano_e2_ausente",
+    "estudo_humano_de_tempo_ausente",
+    "eventos_externos_e3_ausentes"
+  ]
+}

@@ -1,5 +1,13 @@
 # Debate de dois especialistas — alvo de ML para Value Investing (2026-08-26)
 
+> **RETRATAÇÃO POSTERIOR (validação concluída na virada de 26–27/08).**
+> Este relatório preserva a rodada exploratória, mas sua aprovação do alvo não
+> representa mais o estado do projeto. Ao aplicar T1 também ao `sd8` — componente
+> que define mecanicamente o próprio evento — o C1 reprovou: amplitude
+> **0,180–0,183** na replicação principal e **0,247** na implementação isolada
+> do agente, contra o limiar < 0,15. Os dois especialistas terminaram em
+> **REJEITAR**. Ver `resultados/validacao_c1_2026-08-26.md`.
+
 Quatro rodadas entre um cientista de dados e um analista de equity research, ambos
 com acesso à web, mediando eu (sessão principal) com verificação independente de
 toda afirmação que carregava peso. Motivo: o alvo então em produção — "prejuízo

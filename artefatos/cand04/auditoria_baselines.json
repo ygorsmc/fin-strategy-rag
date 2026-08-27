@@ -1,0 +1,647 @@
+{
+  "alvo": {
+    "cobertura_baseline_sazonal": 1.0,
+    "companhias_teste": 435,
+    "formula": "10000 * lucro_liquido_consolidado_T_mais_1 / ativo_total_T",
+    "n_teste": 3218,
+    "n_trimestres_teste": 8,
+    "ordens_target_teste": [
+      8097,
+      8098,
+      8099,
+      8100,
+      8101,
+      8102,
+      8103,
+      8104
+    ],
+    "trimestres_target_teste": [
+      "2T2024",
+      "3T2024",
+      "4T2024",
+      "1T2025",
+      "2T2025",
+      "3T2025",
+      "4T2025",
+      "1T2026"
+    ],
+    "unidade": "pontos_base_de_ativo_T",
+    "universo_com_historico_consecutivo": 16282,
+    "universo_com_target": 21881
+  },
+  "baselines": {
+    "b0_persistencia": {
+      "acerto_direcao": null,
+      "cobertura_direcao": 0.0,
+      "companhias": 435,
+      "correlacao_agregada": 0.10345370500733575,
+      "correlacao_intra_companhia": -0.008812414773678208,
+      "mae_macro_companhia_bp": 1025.380813879842,
+      "mae_micro_bp": 1055.6681506954023,
+      "mediana_erro_absoluto_bp": 73.27061958965544,
+      "n": 3218,
+      "n_direcao_emitida": 0,
+      "por_fold": [
+        {
+          "companhias": 418,
+          "mae_macro_bp": 227.30978137255693,
+          "n": 418,
+          "trimestre_target": "2T2024"
+        },
+        {
+          "companhias": 417,
+          "mae_macro_bp": 230.6454753594531,
+          "n": 417,
+          "trimestre_target": "3T2024"
+        },
+        {
+          "companhias": 409,
+          "mae_macro_bp": 2398.543479741933,
+          "n": 409,
+          "trimestre_target": "4T2024"
+        },
+        {
+          "companhias": 401,
+          "mae_macro_bp": 1237.7346618496233,
+          "n": 401,
+          "trimestre_target": "1T2025"
+        },
+        {
+          "companhias": 409,
+          "mae_macro_bp": 313.4896632186968,
+          "n": 409,
+          "trimestre_target": "2T2025"
+        },
+        {
+          "companhias": 400,
+          "mae_macro_bp": 283.39920481998263,
+          "n": 400,
+          "trimestre_target": "3T2025"
+        },
+        {
+          "companhias": 388,
+          "mae_macro_bp": 2883.2498763265803,
+          "n": 388,
+          "trimestre_target": "4T2025"
+        },
+        {
+          "companhias": 376,
+          "mae_macro_bp": 979.6055007550017,
+          "n": 376,
+          "trimestre_target": "1T2026"
+        }
+      ],
+      "rmse_bp": 18054.359755220023,
+      "vies_assinado_bp": 188.81176525603493
+    },
+    "b1_sazonal": {
+      "acerto_direcao": 0.6843905472636815,
+      "cobertura_direcao": 0.9996891513832763,
+      "companhias": 435,
+      "correlacao_agregada": 0.5798419221415604,
+      "correlacao_intra_companhia": 0.5279201526919998,
+      "mae_macro_companhia_bp": 1172.4993590395395,
+      "mae_micro_bp": 1196.3760270129749,
+      "mediana_erro_absoluto_bp": 69.56459542974068,
+      "n": 3218,
+      "n_direcao_emitida": 3216,
+      "por_fold": [
+        {
+          "companhias": 418,
+          "mae_macro_bp": 334.1371796644123,
+          "n": 418,
+          "trimestre_target": "2T2024"
+        },
+        {
+          "companhias": 417,
+          "mae_macro_bp": 1075.1403465755582,
+          "n": 417,
+          "trimestre_target": "3T2024"
+        },
+        {
+          "companhias": 409,
+          "mae_macro_bp": 2548.5464533553322,
+          "n": 409,
+          "trimestre_target": "4T2024"
+        },
+        {
+          "companhias": 401,
+          "mae_macro_bp": 792.9564891535707,
+          "n": 401,
+          "trimestre_target": "1T2025"
+        },
+        {
+          "companhias": 409,
+          "mae_macro_bp": 501.51541956635845,
+          "n": 409,
+          "trimestre_target": "2T2025"
+        },
+        {
+          "companhias": 400,
+          "mae_macro_bp": 546.8718880762784,
+          "n": 400,
+          "trimestre_target": "3T2025"
+        },
+        {
+          "companhias": 388,
+          "mae_macro_bp": 2562.9497395895196,
+          "n": 388,
+          "trimestre_target": "4T2025"
+        },
+        {
+          "companhias": 376,
+          "mae_macro_bp": 1285.401800370272,
+          "n": 376,
+          "trimestre_target": "1T2026"
+        }
+      ],
+      "rmse_bp": 15713.378207090507,
+      "vies_assinado_bp": 114.04187663729496
+    },
+    "b2_mediana_4t": {
+      "acerto_direcao": 0.6735074626865671,
+      "cobertura_direcao": 0.9996891513832763,
+      "companhias": 435,
+      "correlacao_agregada": 0.10982130620553288,
+      "correlacao_intra_companhia": -0.0767163100943394,
+      "mae_macro_companhia_bp": 953.5861456919674,
+      "mae_micro_bp": 985.8113177421577,
+      "mediana_erro_absoluto_bp": 59.10114810200466,
+      "n": 3218,
+      "n_direcao_emitida": 3216,
+      "por_fold": [
+        {
+          "companhias": 418,
+          "mae_macro_bp": 217.4824535068407,
+          "n": 418,
+          "trimestre_target": "2T2024"
+        },
+        {
+          "companhias": 417,
+          "mae_macro_bp": 528.5657275032887,
+          "n": 417,
+          "trimestre_target": "3T2024"
+        },
+        {
+          "companhias": 409,
+          "mae_macro_bp": 2395.6473319596716,
+          "n": 409,
+          "trimestre_target": "4T2024"
+        },
+        {
+          "companhias": 401,
+          "mae_macro_bp": 351.2278829279885,
+          "n": 401,
+          "trimestre_target": "1T2025"
+        },
+        {
+          "companhias": 409,
+          "mae_macro_bp": 454.51861440930287,
+          "n": 409,
+          "trimestre_target": "2T2025"
+        },
+        {
+          "companhias": 400,
+          "mae_macro_bp": 328.89203676044286,
+          "n": 400,
+          "trimestre_target": "3T2025"
+        },
+        {
+          "companhias": 388,
+          "mae_macro_bp": 2815.622275543968,
+          "n": 388,
+          "trimestre_target": "4T2025"
+        },
+        {
+          "companhias": 376,
+          "mae_macro_bp": 878.8370633650592,
+          "n": 376,
+          "trimestre_target": "1T2026"
+        }
+      ],
+      "rmse_bp": 17616.807125601495,
+      "vies_assinado_bp": 92.92184828906778
+    },
+    "b3_combinado": {
+      "acerto_direcao": 0.714020081814801,
+      "cobertura_direcao": 0.8358719303699098,
+      "companhias": 435,
+      "correlacao_agregada": 0.11143130384824768,
+      "correlacao_intra_companhia": -0.06845312088291901,
+      "mae_macro_companhia_bp": 950.9367260667336,
+      "mae_micro_bp": 983.056236454981,
+      "mediana_erro_absoluto_bp": 57.80149467789751,
+      "n": 3218,
+      "n_direcao_emitida": 2689,
+      "por_fold": [
+        {
+          "companhias": 418,
+          "mae_macro_bp": 220.4768697040041,
+          "n": 418,
+          "trimestre_target": "2T2024"
+        },
+        {
+          "companhias": 417,
+          "mae_macro_bp": 529.560817867914,
+          "n": 417,
+          "trimestre_target": "3T2024"
+        },
+        {
+          "companhias": 409,
+          "mae_macro_bp": 2396.620944318742,
+          "n": 409,
+          "trimestre_target": "4T2024"
+        },
+        {
+          "companhias": 401,
+          "mae_macro_bp": 357.76791496037015,
+          "n": 401,
+          "trimestre_target": "1T2025"
+        },
+        {
+          "companhias": 409,
+          "mae_macro_bp": 408.93015814099897,
+          "n": 409,
+          "trimestre_target": "2T2025"
+        },
+        {
+          "companhias": 400,
+          "mae_macro_bp": 329.0734560571132,
+          "n": 400,
+          "trimestre_target": "3T2025"
+        },
+        {
+          "companhias": 388,
+          "mae_macro_bp": 2819.4364544722916,
+          "n": 388,
+          "trimestre_target": "4T2025"
+        },
+        {
+          "companhias": 376,
+          "mae_macro_bp": 888.2519009619624,
+          "n": 376,
+          "trimestre_target": "1T2026"
+        }
+      ],
+      "rmse_bp": 17589.042420878028,
+      "vies_assinado_bp": 100.73819126141896
+    }
+  },
+  "candidato": "CAND-04 — previsão interpretável de fundamentos",
+  "decisao_de_engenharia_ml": "NAO_CARREGAR_MODELO_AGORA",
+  "diagnosticos": {
+    "companhias_com_maior_erro_absoluto": [
+      {
+        "cd_cvm": "025461",
+        "erro_absoluto_soma_bp": 902105.1165251131,
+        "fracao_erro_absoluto": 0.28516271675616683
+      },
+      {
+        "cd_cvm": "023426",
+        "erro_absoluto_soma_bp": 581181.4740415963,
+        "fracao_erro_absoluto": 0.18371616015708694
+      },
+      {
+        "cd_cvm": "021520",
+        "erro_absoluto_soma_bp": 471077.89677465457,
+        "fracao_erro_absoluto": 0.148911529695666
+      },
+      {
+        "cd_cvm": "004448",
+        "erro_absoluto_soma_bp": 282257.8914925668,
+        "fracao_erro_absoluto": 0.08922400027386056
+      },
+      {
+        "cd_cvm": "018414",
+        "erro_absoluto_soma_bp": 138206.1278633067,
+        "fracao_erro_absoluto": 0.04368807378641396
+      },
+      {
+        "cd_cvm": "003549",
+        "erro_absoluto_soma_bp": 99489.79260337702,
+        "fracao_erro_absoluto": 0.03144952736502608
+      },
+      {
+        "cd_cvm": "021180",
+        "erro_absoluto_soma_bp": 70473.00025988984,
+        "fracao_erro_absoluto": 0.02227708483627561
+      },
+      {
+        "cd_cvm": "020567",
+        "erro_absoluto_soma_bp": 51455.15804488015,
+        "fracao_erro_absoluto": 0.01626539123923424
+      },
+      {
+        "cd_cvm": "012190",
+        "erro_absoluto_soma_bp": 18668.492808499363,
+        "fracao_erro_absoluto": 0.00590126142674022
+      },
+      {
+        "cd_cvm": "005983",
+        "erro_absoluto_soma_bp": 15297.16481590181,
+        "fracao_erro_absoluto": 0.004835557406405612
+      }
+    ],
+    "concentracao_erro_absoluto": {
+      "top_0_5pct": {
+        "fracao_erro_absoluto": 0.7856530675594593,
+        "n": 17
+      },
+      "top_10pct": {
+        "fracao_erro_absoluto": 0.9305764960379446,
+        "n": 322
+      },
+      "top_1pct": {
+        "fracao_erro_absoluto": 0.835453543618216,
+        "n": 33
+      },
+      "top_5pct": {
+        "fracao_erro_absoluto": 0.9037344513269847,
+        "n": 161
+      }
+    },
+    "descontinuidade_ativo_t_mais_1_sobre_t": {
+      "companhias": 8,
+      "criterio": "ativo_T_mais_1_sobre_ativo_T fora de [0.01, 100] ou nao positivo/finito; usa ativo futuro apenas como auditoria, nunca como feature ou denominador do alvo",
+      "fracao_erro_absoluto": 0.6163803781492754,
+      "fracao_linhas": 0.007147296457426973,
+      "n": 23
+    },
+    "melhor_baseline_auditado": "b3_combinado",
+    "por_origem_target": {
+      "arquivado": {
+        "mae_bp": 449.94450985151343,
+        "mediana_erro_absoluto_bp": 52.277122303015744,
+        "n": 2421
+      },
+      "derivado": {
+        "mae_bp": 2602.458357040922,
+        "mediana_erro_absoluto_bp": 84.7031197584703,
+        "n": 797
+      }
+    },
+    "por_quintil_ativo_t": {
+      "1": {
+        "ativo_max": 1074638000.0,
+        "ativo_min": 48336.0,
+        "mae_bp": 4332.617697893327,
+        "mediana_erro_absoluto_bp": 121.14748910403591,
+        "n": 644
+      },
+      "2": {
+        "ativo_max": 2878610000.0,
+        "ativo_min": 1074657000.0,
+        "mae_bp": 204.35710828668374,
+        "mediana_erro_absoluto_bp": 67.46793895254581,
+        "n": 643
+      },
+      "3": {
+        "ativo_max": 7264697000.0,
+        "ativo_min": 2889222000.0,
+        "mae_bp": 148.98553741599272,
+        "mediana_erro_absoluto_bp": 54.076026287946355,
+        "n": 644
+      },
+      "4": {
+        "ativo_max": 26006439000.0,
+        "ativo_min": 7280912000.0,
+        "mae_bp": 129.02170613408987,
+        "mediana_erro_absoluto_bp": 47.28661066490048,
+        "n": 643
+      },
+      "5": {
+        "ativo_max": 3066169000000.0,
+        "ativo_min": 26023000000.0,
+        "mae_bp": 97.76383183287244,
+        "mediana_erro_absoluto_bp": 31.39838889565847,
+        "n": 644
+      }
+    },
+    "por_regime": {
+      "instituicao_financeira": {
+        "companhias": 19,
+        "n": 136,
+        "target_mediana_bp": 30.55422779835945
+      },
+      "lucro": {
+        "companhias": 399,
+        "n": 2236,
+        "target_mediana_bp": 129.715949646103
+      },
+      "nao_financeira": {
+        "companhias": 416,
+        "n": 3082,
+        "target_mediana_bp": 69.50803618342158
+      },
+      "prejuizo": {
+        "companhias": 252,
+        "n": 982,
+        "target_mediana_bp": -141.6799231083088
+      }
+    },
+    "por_trimestre_target": {
+      "1T2025": {
+        "mae_bp": 357.76791496037015,
+        "mediana_erro_absoluto_bp": 52.2764018461519,
+        "n": 401,
+        "target_abs_max_bp": 79936.23305626368
+      },
+      "1T2026": {
+        "mae_bp": 888.2519009619624,
+        "mediana_erro_absoluto_bp": 49.59089409699908,
+        "n": 376,
+        "target_abs_max_bp": 119341.0974971137
+      },
+      "2T2024": {
+        "mae_bp": 220.4768697040041,
+        "mediana_erro_absoluto_bp": 57.702023977886796,
+        "n": 418,
+        "target_abs_max_bp": 72858.54567966243
+      },
+      "2T2025": {
+        "mae_bp": 408.93015814099897,
+        "mediana_erro_absoluto_bp": 50.10211401512086,
+        "n": 409,
+        "target_abs_max_bp": 62552.06858752386
+      },
+      "3T2024": {
+        "mae_bp": 529.560817867914,
+        "mediana_erro_absoluto_bp": 55.811983376912366,
+        "n": 417,
+        "target_abs_max_bp": 74258.3301170719
+      },
+      "3T2025": {
+        "mae_bp": 329.0734560571132,
+        "mediana_erro_absoluto_bp": 49.78091547362156,
+        "n": 400,
+        "target_abs_max_bp": 81560.5025829612
+      },
+      "4T2024": {
+        "mae_bp": 2396.620944318742,
+        "mediana_erro_absoluto_bp": 96.35141240305272,
+        "n": 409,
+        "target_abs_max_bp": 510120.25649828155
+      },
+      "4T2025": {
+        "mae_bp": 2819.4364544722916,
+        "mediana_erro_absoluto_bp": 73.46192180602893,
+        "n": 388,
+        "target_abs_max_bp": 761725.1247667922
+      }
+    },
+    "sensibilidade_sem_descontinuidade_ativo_100x": {
+      "baselines": {
+        "b0_persistencia": {
+          "correlacao_intra_companhia": -0.29261318985970775,
+          "mae_macro_companhia_bp": 393.92690903967406,
+          "mae_micro_bp": 388.2839096056901,
+          "mediana_erro_absoluto_bp": 72.65737528655183,
+          "n": 3195
+        },
+        "b1_sazonal": {
+          "correlacao_intra_companhia": -0.05123069553730927,
+          "mae_macro_companhia_bp": 764.4870517436509,
+          "mae_micro_bp": 586.8659339159161,
+          "mediana_erro_absoluto_bp": 69.45075773151993,
+          "n": 3195
+        },
+        "b2_mediana_4t": {
+          "correlacao_intra_companhia": -0.06459984874485876,
+          "mae_macro_companhia_bp": 465.1868856763811,
+          "mae_micro_bp": 382.3330058169685,
+          "mediana_erro_absoluto_bp": 59.082752946667625,
+          "n": 3195
+        },
+        "b3_combinado": {
+          "correlacao_intra_companhia": -0.07354248045599814,
+          "mae_macro_companhia_bp": 459.5229095576687,
+          "mae_micro_bp": 379.83445111371014,
+          "mediana_erro_absoluto_bp": 57.768833078248704,
+          "n": 3195
+        }
+      },
+      "linhas_removidas": 23,
+      "uso": "diagnostico_pos_resultado; nao substitui o teste congelado"
+    },
+    "setor_preenchido_fracao": 0.012430080795525171,
+    "setor_preenchido_nas_linhas": 40,
+    "target_abs_maior_10000_bp": {
+      "fracao_erro_absoluto": 0.7127697463579865,
+      "fracao_linhas": 0.006215040397762586,
+      "n": 20
+    },
+    "target_bp_quantis": {
+      "0.01": -3601.2785498467083,
+      "0.05": -700.1210004719966,
+      "0.25": -34.502862609437656,
+      "0.5": 64.04993704041789,
+      "0.75": 182.63333173473882,
+      "0.95": 509.2131636618306,
+      "0.99": 1174.2079691031502
+    }
+  },
+  "estado_cientifico_ml": "INDECIDIVEL",
+  "gates": {
+    "g0_alvo_e_amostra": false,
+    "g0_amostra_e_cobertura": true,
+    "g0_integridade_escala": false,
+    "g1_point_in_time": false,
+    "g2_baselines_executados": true,
+    "g3_intervalos": false,
+    "g4_utilidade_humana": false
+  },
+  "melhor_baseline_por_mae_macro": "b3_combinado",
+  "modelo_carregado": false,
+  "nota": "Os erros são diagnóstico as-restated. A sensibilidade não substitui o teste congelado. Falha de escala ou de point-in-time não autoriza comparação de ML.",
+  "painel": {
+    "arquivo": "artefatos/cvm_treino.duckdb",
+    "sha256": "74aa28e86dfcf5d2eab50b1de62851100baffd5936ea60fff585908ebf108192"
+  },
+  "pre_registro": {
+    "arquivo": "resultados/pre_registro_cand04_previsao_fundamentos_2026-08-27.md",
+    "sha256": "37370e372dc1782d0efb24f121b28bceb473c60bb9557c38064778933f0d6328"
+  },
+  "procedencia": {
+    "companhias": 741,
+    "companhias_com_setor": 5,
+    "fonte_bruta_tem_dt_receb": true,
+    "fracao_companhias_com_setor": 0.006747638326585695,
+    "tem_dt_receb_no_painel": false
+  },
+  "razoes": [
+    "alvo_contaminado_por_descontinuidade_de_escala",
+    "painel_sem_dt_receb_e_vintages_numericos",
+    "setor_insuficiente_para_heterogeneidade",
+    "intervalos_ainda_nao_calibrados",
+    "limiar_de_erro_acionavel_nao_medido",
+    "estudo_humano_de_utilidade_ausente"
+  ],
+  "trimestres_completos": [
+    "1T2011",
+    "2T2011",
+    "3T2011",
+    "4T2011",
+    "1T2012",
+    "2T2012",
+    "3T2012",
+    "4T2012",
+    "1T2013",
+    "2T2013",
+    "3T2013",
+    "4T2013",
+    "1T2014",
+    "2T2014",
+    "3T2014",
+    "4T2014",
+    "1T2015",
+    "2T2015",
+    "3T2015",
+    "4T2015",
+    "1T2016",
+    "2T2016",
+    "3T2016",
+    "4T2016",
+    "1T2017",
+    "2T2017",
+    "3T2017",
+    "4T2017",
+    "1T2018",
+    "2T2018",
+    "3T2018",
+    "4T2018",
+    "1T2019",
+    "2T2019",
+    "3T2019",
+    "4T2019",
+    "1T2020",
+    "2T2020",
+    "3T2020",
+    "4T2020",
+    "1T2021",
+    "2T2021",
+    "3T2021",
+    "4T2021",
+    "1T2022",
+    "2T2022",
+    "3T2022",
+    "4T2022",
+    "1T2023",
+    "2T2023",
+    "3T2023",
+    "4T2023",
+    "1T2024",
+    "2T2024",
+    "3T2024",
+    "4T2024",
+    "1T2025",
+    "2T2025",
+    "3T2025",
+    "4T2025",
+    "1T2026"
+  ],
+  "trimestres_descartados": {
+    "1T2027": 1,
+    "2T2026": 128,
+    "3T2026": 9
+  }
+}

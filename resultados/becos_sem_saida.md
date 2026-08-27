@@ -33,7 +33,8 @@ testes (AGENTS.md §3.7).
 | **Corte absoluto** (ΔROA < −2pp) | Amplitude por quintil **0,317**; coluna crua AUC 0,599 sob este alvo e **0,491** sob alvo escala-livre | **Reprova T1** — fabrica o próprio baseline. A força da coluna era artefato da definição | Nada. O defeito é da forma do corte, não do dado |
 | **Efeitos fixos por empresa** (ΔROA < μ própria − 2pp) | Amplitude **0,321** | **Reprova T1** — herda o defeito do corte absoluto | Idem |
 | **Alvo setorial** (pior que a mediana do setor) | Amplitude **0,164–0,213** (limiar 0,15) | **Reprova T1**, por pouco | Refazer com `SETOR_ATIV` do `cad_cia_aberta.csv` (59 setores reais, não os 5 do dicionário fixo) — a medição usou setor aproximado |
-| **Corte relativo** (lucro cai ≥ 30%) | T1 = 0,092 (passa). Lacuna **+0,173**, AUC intra-companhia **abaixo do acaso** | **Reprova T2** — ordena emissor crônico, não momento | Nada com este alvo. A normalização pela volatilidade própria (§3.7) é a versão que sobrevive |
+| **Corte relativo** (lucro cai ≥ 30%) | T1 = 0,092 (passa). Lacuna **+0,173**, AUC intra-companhia **abaixo do acaso** | **Reprova T2** — ordena emissor crônico, não momento | Nada com este alvo. A normalização pela volatilidade própria virou C1 e também foi rejeitada |
+| **C1 — ΔROA TTM < −1,25 × sd8 próprio** | Replicação principal: amplitude T1 **0,180/0,181/0,183**, `-sd8` AUC **0,634** agregada e **0,709** intra, precisão top-20 **0,346**. Implementação cega do agente: amplitude **0,247** | **Reprova T1 antes do treino** — o normalizador que define o evento fabrica seu próprio baseline; T2 favorável não compensa | Apenas erro computacional ou incompatibilidade com a fórmula. Piso de materialidade, novo normalizador ou horizonte é **C2**, não reabertura do C1 |
 
 ### A.2 Preditores e features
 
@@ -73,6 +74,9 @@ testes (AGENTS.md §3.7).
 | **Reapresentação como alvo** | ~~Censura à direita~~ **REABERTO E RESOLVIDO em 2026-08-26, depois morto por outro motivo.** A censura era do estimador antigo, não do fenômeno: a coluna `ORDEM_EXERC` dos CSVs (descartada pelo carregador) dá o mesmo período republicado como comparativo do ano seguinte, com defasagem **fixa de 365 dias** — 1.060.295 pares, 682 companhias, taxa **estável em 4,2%–7,6% de 2013 a 2025**. O alvo morreu depois, por **vazamento de observabilidade** (ver E.1), não por censura | O IPE não é mais necessário para esta linha. O que falta é sinal, não dado |
 | **Gerencial × contábil como alvo** | 5 emissores não dão amostra | Escala via IPE (~USD 12 de OCR para 40–60 não-financeiras), ancorada na **Res. CVM 156/2022**, que obriga conciliação de LAJIDA. Frente separada e exploratória |
 | **Viés de sobrevivência** | 277 de 741 companhias somem do painel; 41,2% delas em prejuízo na última declaração contra 34,1% das que ficam. A observação final **nunca recebe rótulo** (exige T+1) | Não tem correção com este dado. Torna o resultado **conservador para eventos extremos** — limitação declarada, não corrigida |
+| **CAND-03 — detector aprendido de “anomalia” antes de gold e shadow** | 5,55 M células → 23.346 companhia–trimestres; quatro correções são um episódio-raiz; nenhum gold E2/tempo; mapa 4,951%; setor 5/741; painel sem DFC/`DT_RECEB` e sem vintages numéricos. Dois especialistas convergiram | **Não implementar ML agora; INDECIDÍVEL.** Raridade, erro, prioridade de leitura e fraude não são proxies. Nem o baseline determinístico demonstrou utilidade | E2 prospectivo: snapshots imutáveis; piloto 30–150 releases até ≥30 releases P1/P2; baseline e recall congelados; confirmatório `N=max(100,N_poder,N_50+)`. Passar o piloto autoriza testar ML, não usar no produto |
+| **CAND-04A — prospective ROA no painel as-restated atual** | 3.218 releases; B3 MAE 950,94 bp × mediana 57,80. Top 1% = 83,55% do erro; 23 saltos de escala = 61,64%; 4T derivado MAE 2.602,46 bp. G0/G1 falham; dois especialistas validaram o encerramento | **Experimento rejeitado/invalidado; fórmula econômica e ML indecidíveis; não implementar ML agora.** Remover as 23 pós-hoc é proibido | Novo estimando e teste: vintages/`DT_RECEB`, escala e 4T adjudicados, setor completo, baselines/intervalos point-in-time. A2 ou lucro dos controladores começam do zero |
+| **Rank 5 — treinar risco de divergência gerencial × contábil no corpus atual** | 20 releases/5 bancos; LAJIDA/LAJIR = 0/20; K1 candidato = 20/20 e 31 páginas, mas sem gold, PIT ou workflow | **ML INDECIDÍVEL; não implementar agora.** Ponte encontrada não é rótulo nem réplica independente | K1 separado: ≥30 releases e ≥30 P2/P3 adjudicados; vintage, extrator auditado e B0–B4. Confirmatório ≥100 releases/10 emissores |
 
 ---
 
@@ -84,6 +88,7 @@ testes (AGENTS.md §3.7).
 | **Descartar tabela da cauda de sobreposição** (1ª correção do chunk órfão) | Zerou os 101 chunks órfãos e derrubou a exatidão factual **E2 0,467 → 0,267** | **Negativo.** A duplicação do overlap era **também** rede de segurança | Nada — a correção final (recolocar o cabeçalho) domina esta em todos os eixos |
 | **`recall@5` por página como métrica de chunking** | Contava como acerto o chunk órfão, que não conseguia responder | **Métrica enganosa para esta decisão.** Para julgar chunking, medir se o **valor** está no top-5 | Nada. Vale como métrica de recuperação, não de chunking |
 | **Exatidão comparativa como meta alcançável no top-5** | Teto estrutural: perguntas com **todos** os valores presentes — E1 1/10 · E2 2/10 · E3 2/10 · E4 5/10 | O sistema opera contra um teto de 1–5, não de 10. **Não é regressão do chunker** (medido nas três rodadas) | Subconsulta com orçamento **por banco** em vez de top-5 global |
+| **CAND-02 — implementar redline semântico antes do gold humano** | 20 documentos → 15 pares, mas teste purgado tem **5 clusters**. Dupla leitura, adjudicação e estudo de tempo ausentes; dois especialistas convergiram | **Não implementar ML agora.** O aprendido é INDECIDÍVEL e a utilidade do determinístico não foi demonstrada | Dupla leitura completa dos 15 pares, ≥30 P2 adjudicados e estudo de tempo; provar B1 antes de executar challenger |
 
 ---
 
@@ -176,8 +181,8 @@ Coisas **abertas**, que ninguém mediu ainda — não confundir com beco sem sa�
 
 - **XGBoost e CatBoost** seguem sem teste. A expectativa de ganho é baixa (o
   LightGBM empatou e o ajuste rendeu zero), mas expectativa não é medição.
-- **Controle setorial no alvo novo** (§3.7) — a medição de A.2 é sobre o alvo
-  de prejuízo e **não transfere**.
+- **Controle setorial em eventual C2** — a medição de A.2 é sobre o alvo de
+  prejuízo e **não transfere**; o C1 foi rejeitado antes do treino.
 - **Detecção de prospectivas parafraseadas** — lacuna conhecida da RN07,
   registrada em `robustez_modelo_2026-08-24.md` (item 6). Falta conjunto
   adversarial, não falta medição.
