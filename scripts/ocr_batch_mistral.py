@@ -131,10 +131,35 @@ def custo_estimado_usd(paginas: int, preco_mil: float) -> float:
     return paginas / 1000 * preco_mil * FATOR_BATCH
 
 
+def fingerprint_pendentes(pendentes: list[Documento]) -> str:
+    """Identifica O LOTE, não só "existe algum job".
+
+    Duas passagens diferentes (documentos diferentes) não podem casar o mesmo
+    registro de journal — foi o que aconteceu na prática: o journal de
+    2026-08-10 (job concluído, 20 documentos) fazia uma passagem nova, com
+    outros 24 documentos, ser lida como "já existe, retomando" e travava sem
+    criar job nem gastar nada. Seguro (não corrompeu nada, não cobrou
+    duas vezes), mas também não processava. O fingerprint do conjunto exato de
+    `(nome, hash_esperado)` resolve: mesmo lote pendente → mesmo registro,
+    retomado; lote diferente → chave diferente, job novo.
+    """
+    chave = sorted((doc.nome, doc.hash_esperado) for doc in pendentes)
+    bruto = json.dumps(chave, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    return hashlib.sha256(bruto).hexdigest()[:16]
+
+
 def _ler_journal() -> dict:
-    if CAMINHO_JOURNAL.is_file():
-        return json.loads(CAMINHO_JOURNAL.read_text(encoding="utf-8"))
-    return {}
+    if not CAMINHO_JOURNAL.is_file():
+        return {"lotes": {}}
+    dados = json.loads(CAMINHO_JOURNAL.read_text(encoding="utf-8"))
+    if "lotes" not in dados:
+        # Formato antigo (um único job flat, sem fingerprint de lote):
+        # migrado para dentro de "lotes" sob uma chave própria, preservado
+        # como histórico em vez de descartado (RNF08 — evidência de execução).
+        job_id = dados.get("job_id")
+        chave_legado = f"legado-{job_id}" if job_id else "legado-vazio"
+        dados = {"lotes": {chave_legado: dados}} if dados else {"lotes": {}}
+    return dados
 
 
 def _gravar_journal(dados: dict) -> None:
@@ -289,6 +314,18 @@ def gravar_resultados(
             encoding="utf-8",
         )
         gravados.append(doc.nome)
+
+    # A Mistral pode OMITIR a linha inteira de um request que falhou de forma
+    # catastrófica, em vez de devolver uma linha com `error`/status != 200.
+    # Achado na prática (2026-08-27): 23 de 24 gravaram, a saída não tinha
+    # `custom_id` nenhum para o 24º, e o loop acima — que só reage a linhas
+    # PRESENTES — devolvia `falhos=[]` e código de saída 0. Documento sumindo
+    # do corpus sem nenhum sinal de erro é pior que sumir com erro.
+    vistos = set(gravados) | {item.split(" ", 1)[0] for item in falhos}
+    for nome in documentos:
+        if nome not in vistos:
+            falhos.append(f"{nome} (ausente da saída do job)")
+
     return gravados, falhos
 
 
@@ -340,9 +377,14 @@ def main() -> int:
         return 0
 
     journal = _ler_journal()
-    job_id = journal.get("job_id")
+    lote = fingerprint_pendentes(pendentes)
+    registro = journal["lotes"].get(lote)
+    job_id = registro.get("job_id") if registro else None
     if job_id:
-        print(f"\nJob já existente no journal: {job_id} — retomando, não recriando.")
+        print(
+            f"\nJob já existente no journal para este lote ({lote}): {job_id} — "
+            "retomando, não recriando."
+        )
     else:
         print("\nSubindo PDFs e criando o job...")
         urls: dict[str, str] = {}
@@ -352,16 +394,15 @@ def main() -> int:
             print(f"  {doc.nome}: {doc.paginas} pp")
         conteudo = montar_jsonl(config, pendentes, urls)
         job_id = criar_job(chave, conteudo, config, config.mistral_ocr_timeout_s)
-        _gravar_journal(
-            {
-                "job_id": job_id,
-                "criado_em": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
-                "documentos": [d.nome for d in pendentes],
-                "paginas": paginas,
-                "custo_estimado_usd": round(custo, 4),
-                "modelo": config.mistral_ocr_modelo,
-            }
-        )
+        journal["lotes"][lote] = {
+            "job_id": job_id,
+            "criado_em": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+            "documentos": [d.nome for d in pendentes],
+            "paginas": paginas,
+            "custo_estimado_usd": round(custo, 4),
+            "modelo": config.mistral_ocr_modelo,
+        }
+        _gravar_journal(journal)
         print(f"Job criado: {job_id} (registrado em {CAMINHO_JOURNAL.name})")
 
     if not args.aguardar:

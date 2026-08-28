@@ -28,12 +28,23 @@ testes (AGENTS.md §3.7).
 
 ### A.1 Alvos que reprovaram o protocolo dos dois testes
 
+> **Padrão medido três vezes, com três roupas diferentes — leia antes de propor
+> alvo novo:** *alvo definido como **variação** de uma grandeza que reverte à
+> média fabrica o **nível** dessa grandeza como baseline.* Corte absoluto de
+> ROA (nível `roa_ttm`, 0,317) · C1 (o próprio `sd8`, 0,180–0,247) · Rank 3
+> (`accrual` 0,266 e `conversao` 0,229). Se o alvo é "X piora", o nível de X
+> entra em T1 **obrigatoriamente** — a reversão à média é a hipótese nula certa
+> e ela vence sozinha. Escapa disso só alvo com evento **materialmente
+> definido** (falência, evento legal, reapresentação), não movimento de série
+> contínua.
+
 | Ideia | Medição | Veredito | O que reabriria |
 |---|---|---|---|
 | **Corte absoluto** (ΔROA < −2pp) | Amplitude por quintil **0,317**; coluna crua AUC 0,599 sob este alvo e **0,491** sob alvo escala-livre | **Reprova T1** — fabrica o próprio baseline. A força da coluna era artefato da definição | Nada. O defeito é da forma do corte, não do dado |
 | **Efeitos fixos por empresa** (ΔROA < μ própria − 2pp) | Amplitude **0,321** | **Reprova T1** — herda o defeito do corte absoluto | Idem |
 | **Alvo setorial** (pior que a mediana do setor) | Amplitude **0,164–0,213** (limiar 0,15) | **Reprova T1**, por pouco | Refazer com `SETOR_ATIV` do `cad_cia_aberta.csv` (59 setores reais, não os 5 do dicionário fixo) — a medição usou setor aproximado |
 | **Corte relativo** (lucro cai ≥ 30%) | T1 = 0,092 (passa). Lacuna **+0,173**, AUC intra-companhia **abaixo do acaso** | **Reprova T2** — ordena emissor crônico, não momento | Nada com este alvo. A normalização pela volatilidade própria virou C1 e também foi rejeitada |
+| **Rank 3 — Δaccrual no quintil superior** (deterioração de conversão de caixa) | `accrual` amplitude **0,266** (0,374 → 0,108 entre quintis) e `conversao` **0,229**; `roa` 0,061 e `ativo_medio` 0,116 passam | **Reprova T1 antes do treino.** Quem tem accrual BAIXO hoje tem 3,5× mais chance de ser marcado — é reversão à média com outro nome | Só com evento **materialmente definido** (ex.: FCO negativo em dois trimestres consecutivos), que é Rank 3-B com pré-registro próprio |
 | **C1 — ΔROA TTM < −1,25 × sd8 próprio** | Replicação principal: amplitude T1 **0,180/0,181/0,183**, `-sd8` AUC **0,634** agregada e **0,709** intra, precisão top-20 **0,346**. Implementação cega do agente: amplitude **0,247** | **Reprova T1 antes do treino** — o normalizador que define o evento fabrica seu próprio baseline; T2 favorável não compensa | Apenas erro computacional ou incompatibilidade com a fórmula. Piso de materialidade, novo normalizador ou horizonte é **C2**, não reabertura do C1 |
 
 ### A.2 Preditores e features

@@ -35,6 +35,7 @@ import pytest
 from src.config import TABELAS_PERMITIDAS_SQL, Config
 from src.dados_estruturados import (
     ErroCargaCVM,
+    FonteCabecalho,
     FonteCVM,
     PainelIndisponivelError,
     SqlBloqueadoError,
@@ -1296,3 +1297,238 @@ def test_incoerencia_do_lucro_na_fonte_e_contada(tmp_path):
 def test_lucro_coerente_nao_gera_incoerencia(painel):
     _, relatorio = painel
     assert relatorio.incoerencias_lucro == 0
+
+
+# --------------------------------------------------------------------------- #
+# Fluxo de caixa (DFC) e cadastro de documento (point-in-time)
+#
+# Acrescentados em 2026-08-27. O fluxo de caixa SEMPRE esteve nos ZIPs já
+# baixados — o painel é que só lia DRE, BPA e BPP. Sem DFC não há conversão de
+# caixa, qualidade do lucro nem FCF; sem `DT_RECEB` nenhum backtest é
+# point-in-time, porque `dt_refer` é fim de exercício e não data de publicação.
+# --------------------------------------------------------------------------- #
+
+
+@pytest.fixture(scope="module")
+def fontes_com_fluxo() -> tuple[FonteCVM, ...]:
+    return (
+        FonteCVM(DIR_FIXTURES / "itr_cia_aberta_DRE_con_amostra.csv", "itr", "DRE"),
+        FonteCVM(DIR_FIXTURES / "dfp_cia_aberta_DRE_con_amostra.csv", "dfp", "DRE"),
+        FonteCVM(
+            DIR_FIXTURES / "itr_cia_aberta_DFC_MI_con_amostra.csv", "itr", "DFC_MI"
+        ),
+        FonteCVM(
+            DIR_FIXTURES / "dfp_cia_aberta_DFC_MI_con_amostra.csv", "dfp", "DFC_MI"
+        ),
+        FonteCVM(
+            DIR_FIXTURES / "itr_cia_aberta_DFC_MD_con_amostra.csv", "itr", "DFC_MD"
+        ),
+    )
+
+
+@pytest.fixture(scope="module")
+def cabecalhos() -> tuple[FonteCabecalho, ...]:
+    return (
+        FonteCabecalho(DIR_FIXTURES / "itr_cia_aberta_amostra.csv", "itr"),
+        FonteCabecalho(DIR_FIXTURES / "dfp_cia_aberta_amostra.csv", "dfp"),
+    )
+
+
+@pytest.fixture(scope="module")
+def painel_fluxo(fontes_com_fluxo, cabecalhos, tmp_path_factory):
+    destino = tmp_path_factory.mktemp("painel_fluxo") / "cvm.duckdb"
+    relatorio = carregar_painel(
+        list(fontes_com_fluxo), destino, cabecalhos=list(cabecalhos)
+    )
+    return destino, relatorio
+
+
+@pytest.fixture
+def con_fluxo(painel_fluxo):
+    caminho, _ = painel_fluxo
+    conexao = duckdb.connect(str(caminho), read_only=True)
+    try:
+        yield conexao
+    finally:
+        conexao.close()
+
+
+class TestFluxoDeCaixa:
+    def test_dfc_entra_no_painel(self, con_fluxo):
+        linhas = con_fluxo.execute(
+            "SELECT count(*) FROM fatos_contabeis "
+            "WHERE demonstrativo IN ('DFC_MI', 'DFC_MD')"
+        ).fetchone()[0]
+        assert linhas > 0, "o fluxo de caixa não foi carregado"
+
+    def test_penultimo_da_dfc_tambem_e_descartado(self, con_fluxo):
+        """A regra de armadilha vale para a DFC como vale para a DRE."""
+        anteriores = con_fluxo.execute(
+            "SELECT count(*) FROM fatos_contabeis "
+            "WHERE demonstrativo LIKE 'DFC%' AND dt_fim_exerc < DATE '2025-01-01'"
+        ).fetchone()[0]
+        assert anteriores == 0
+
+    def test_escala_da_dfc_convertida_para_reais(self, con_fluxo):
+        """BB publica em MIL; 9.000.000 MIL têm de virar 9e9 reais.
+
+        Qualificado pelo trimestre: a fixture tem DOIS acumulados (1S e 9M),
+        porque é assim que a CVM publica a DFC — e é o que a derivação de
+        trimestre intermediário consome.
+        """
+        valor = con_fluxo.execute(
+            """
+            SELECT valor_reais FROM fatos_contabeis
+            WHERE cd_cvm = '001023' AND demonstrativo = 'DFC_MI'
+              AND cd_conta = '6.01' AND tipo_periodo = 'acumulado'
+              AND trimestre = '3T2025'
+            """
+        ).fetchone()[0]
+        assert valor == pytest.approx(9_000_000_000.0)
+
+    def test_quarto_trimestre_da_dfc_e_derivado(self, con_fluxo):
+        """RN10 sobre fluxo de caixa: anual (13e9) − 9 meses (9e9) = 4e9."""
+        linha = con_fluxo.execute(
+            """
+            SELECT valor_reais, origem FROM fatos_contabeis
+            WHERE cd_cvm = '001023' AND demonstrativo = 'DFC_MI'
+              AND cd_conta = '6.01' AND trimestre = '4T2025'
+              AND tipo_periodo = 'trimestral'
+            """
+        ).fetchone()
+        assert linha is not None, "o 4T do fluxo de caixa não foi derivado"
+        assert linha[0] == pytest.approx(4_000_000_000.0)
+        assert linha[1] == "derivado", "RN10 exige a marcação explícita"
+
+    def test_derivacao_nao_inventa_4t_de_balanco(self, con_fluxo):
+        """Contraprova: saldo de balanço em 31/12 é arquivado, nunca derivado."""
+        derivados_de_balanco = con_fluxo.execute(
+            "SELECT count(*) FROM fatos_contabeis "
+            "WHERE origem = 'derivado' AND demonstrativo IN ('BPA', 'BPP')"
+        ).fetchone()[0]
+        assert derivados_de_balanco == 0
+
+    def test_sobreposicao_md_x_mi_e_contada_nao_suposta(self, painel_fluxo):
+        """O BB publica pelos dois métodos no 3T2025 — somar duplicaria o caixa.
+
+        A fixture reproduz o caso real: 9 emissores publicaram MD e MI em 2024.
+        """
+        _, relatorio = painel_fluxo
+        assert relatorio.emissores_dfc_ambos_metodos == 1
+        assert any("DOIS métodos" in aviso for aviso in relatorio.avisos)
+
+
+class TestDocumentosPointInTime:
+    def test_dt_receb_carregada(self, painel_fluxo, con_fluxo):
+        _, relatorio = painel_fluxo
+        assert relatorio.documentos_carregados == 6
+        linha = con_fluxo.execute(
+            "SELECT dt_receb FROM documentos "
+            "WHERE cd_cvm = '001023' AND dt_refer = DATE '2025-03-31'"
+        ).fetchone()
+        assert str(linha[0]) == "2025-05-12"
+
+    def test_publicacao_vem_depois_do_fim_do_exercicio(self, con_fluxo):
+        """O ponto inteiro da tabela: `dt_refer` NÃO é data de publicação.
+
+        Se alguém usar `dt_refer` como se fosse, todo backtest enxerga o
+        trimestre ~40 dias antes de ele existir. Foi a falha do gate G1.
+        """
+        atraso = con_fluxo.execute(
+            "SELECT min(datediff('day', dt_refer, dt_receb)) FROM documentos"
+        ).fetchone()[0]
+        assert atraso > 0, "dt_receb nunca pode preceder o fim do exercício"
+
+    def test_todas_as_versoes_sao_preservadas(self, con_fluxo):
+        """`fatos_contabeis` guarda só a maior versão; `documentos`, todas.
+
+        Sem isso não dá para responder "o que se sabia em D?" — inclusive que a
+        versão vigente naquela data foi depois substituída.
+        """
+        versoes = con_fluxo.execute(
+            "SELECT count(*) FROM documentos "
+            "WHERE cd_cvm = '001023' AND dt_refer = DATE '2025-06-30'"
+        ).fetchone()[0]
+        assert versoes == 2
+
+    def test_cabecalho_sem_dt_receb_falha_fechado(self, tmp_path):
+        """Painel que se diz point-in-time e não é seria pior que nenhum."""
+        with pytest.raises(ErroCargaCVM, match="DT_RECEB"):
+            carregar_painel(
+                [
+                    FonteCVM(
+                        DIR_FIXTURES / "itr_cia_aberta_DRE_con_amostra.csv",
+                        "itr",
+                        "DRE",
+                    )
+                ],
+                tmp_path / "cvm.duckdb",
+                cabecalhos=[
+                    FonteCabecalho(
+                        DIR_FIXTURES / "itr_cia_aberta_sem_dt_receb.csv", "itr"
+                    )
+                ],
+            )
+
+    def test_sem_cabecalho_o_painel_avisa_que_nao_e_point_in_time(self, painel):
+        """Ausência tem de ser legível, não silenciosa."""
+        _, relatorio = painel
+        assert relatorio.documentos_carregados == 0
+        assert any("NÃO é point-in-time" in aviso for aviso in relatorio.avisos)
+
+
+class TestDerivacaoDeTrimestreIntermediario:
+    """A CVM publica a DFC do 2T/3T só em forma ACUMULADA (achado 2026-08-27).
+
+    Sem derivar o isolado, fluxo de caixa existe apenas no 1T e no 4T — dois
+    trimestres por ano nunca fecham uma janela móvel de quatro, e toda métrica
+    TTM de caixa fica impossível.
+    """
+
+    def test_2t_isolado_e_derivado_do_acumulado(self, con_fluxo):
+        """1T = 3.000.000 MIL; acumulado do 1S = 5.500.000 → 2T = 2.500.000."""
+        linha = con_fluxo.execute(
+            """
+            SELECT valor_reais, origem, dt_ini_exerc FROM fatos_contabeis
+            WHERE cd_cvm = '001023' AND demonstrativo = 'DFC_MI'
+              AND cd_conta = '6.01' AND trimestre = '2T2025'
+              AND tipo_periodo = 'trimestral'
+            """
+        ).fetchone()
+        assert linha is not None, "o 2T isolado do fluxo de caixa não foi derivado"
+        assert linha[0] == pytest.approx(2_500_000_000.0)
+        assert linha[1] == "derivado"
+        assert str(linha[2]) == "2025-04-01", "o período tem de começar após o 1T"
+
+    def test_nao_sobrescreve_isolado_que_a_cvm_publica(self, con_fluxo):
+        """A DRE já vem com isolado; a derivação não pode duplicar nem trocar.
+
+        No 2T2025 o BB publica receita isolada de verdade — tem de continuar
+        `arquivado`, e existir uma única linha.
+        """
+        linhas = con_fluxo.execute(
+            """
+            SELECT origem FROM fatos_contabeis
+            WHERE cd_cvm = '001023' AND demonstrativo = 'DRE'
+              AND cd_conta = '3.01' AND trimestre = '2T2025'
+              AND tipo_periodo = 'trimestral'
+            """
+        ).fetchall()
+        assert len(linhas) == 1, "a derivação duplicou uma linha já publicada"
+        assert linhas[0][0] == "arquivado"
+
+    def test_derivacao_nao_atravessa_exercicios(self, con_fluxo):
+        """Só subtrai períodos de MESMO início de exercício.
+
+        Parear "a linha anterior" casaria o acumulado de um exercício com o de
+        outro e produziria número plausível e errado — a falha que a RN09
+        combate, na aritmética em vez de no código de conta.
+        """
+        atravessou = con_fluxo.execute(
+            """
+            SELECT count(*) FROM fatos_contabeis
+            WHERE origem = 'derivado' AND dt_ini_exerc IS NOT NULL
+              AND dt_ini_exerc > dt_fim_exerc
+            """
+        ).fetchone()[0]
+        assert atravessou == 0

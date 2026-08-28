@@ -18,7 +18,7 @@
 - Última etapa concluída: **10 (modelo preditivo)**, 2026-08-23 —
   `resultados/modelo_preditivo_2026-08-23.md`, custo zero. Antes dela, a 4
   (chunking de tabela, AGENTS.md §3.4).
-- Suíte: **1.718** casos, sem skip (exige `requirements-modelo.txt`).
+- Suíte: **1.736** casos, sem skip (exige `requirements-modelo.txt`).
 - Rodada congelada vigente: fingerprint `5b9b142d`
   (`20260823T131515Z-4ad67021f6`), números publicados no README. Status:
   `auditoria_manual_pendente`.
@@ -345,6 +345,88 @@
   real que saiu disso e **não é modelo**: a tabela de **208 contas** do plano
   padrão da CVM destrava **85% das 5,55 M de linhas** (hoje: 4,95%) — ~7 h de
   anotação, com o G4 por conceito como trabalho de verdade.
+
+- **DFC e point-in-time CARREGADOS (2026-08-27, §3.13).** O loader lia 3
+  demonstrativos e ignorava o resto do ZIP; agora lê 5 e tem tabela
+  `documentos` com `DT_RECEB`. Custo zero — os ZIPs já estavam em disco.
+  Painel: 5.552.787 → **6.787.589** linhas; **48.123** documentos;
+  **FCO existe para as 741 companhias**. Atraso mediano de publicação: 44 dias
+  (ITR) e 83 (DFP); **41% dos documentos chegam depois de 45 dias** — usar
+  `dt_refer` como data de publicação era ver o formulário antes de existir.
+  **Hash do painel de treino mudou** (`74aa28e8…` → `476a11da…`); o anterior
+  conferiu antes da troca, e o C1 exige tratar reexecução como nova medição.
+  A rejeição do C1 **não muda**. `artefatos/cvm.duckdb` não foi tocado (§3.5).
+  **Destrava o Rank 3 de intestável para decidível** — não garante que passe.
+
+- **Rank 3 REJEITADO em T1 (2026-08-27, §3.14).** Primeiro candidato testado com
+  o painel de fluxo de caixa. `accrual` amplitude **0,266** e `conversao`
+  **0,229** contra limiar 0,15 — quem tem accrual BAIXO hoje tem 3,5× mais
+  chance de ser marcado. **O pré-registro previu isso antes de medir.**
+  **Regra durável, 3ª medição do mesmo padrão:** alvo definido como *variação*
+  de grandeza que reverte à média fabrica o *nível* dela como baseline; se o
+  alvo é "X piora", o nível de X vai a T1 obrigatoriamente. Escapa só evento
+  materialmente definido (falência, evento legal), não movimento de série.
+  **Dois achados laterais:** a CVM não publica DFC isolada no 2T/3T (só
+  acumulada) — derivado agora, +390.187 fatos, painel a **7.177.705** linhas; e
+  o auditor **falhava em aberto** (`NaN >= 0,15` é False → "aprovado" sobre
+  amostra vazia), corrigido com mínimo e exceção. Hash do painel:
+  `c1a60445…`.
+
+- **Corpus enriquecido com 7 emissores novos (2026-08-27) — OCR CONCLUÍDO.**
+  BMG, ABC Brasil, Banestes, Pine, Mercantil do Brasil, Banco do Nordeste,
+  Banrisul: 24 documentos, 1.874 páginas, registrados em `corpus/metadados.csv`
+  (hash conferido, fonte CVM RAD via catálogo IPE aberto), **44/44 no cache
+  `corpus/ocr/`** (20 originais + 24 novos). Motivo: destravar o
+  `≥10 emissores` que Rank 5, CAND-02 e CAND-03 exigem para sair de
+  INDECIDÍVEL — material de teste, **não** expansão do produto público agora.
+  `HOSTS_PERMITIDOS` em `scripts/baixar_corpus.py` estendido para
+  `www.rad.cvm.gov.br`.
+  - Dois jobs Batch: `2b2cd99a…` (23/24 — Banrisul 2T2025 saiu ausente da
+    saída, ver bug abaixo) + `dcc2b386…` (retentativa, só o que faltou,
+    1/1 sucesso). Custo **estimado** somado: **USD 4,19** (3,75 + 0,45) —
+    **acima** dos ~USD 3,95 que o Ygor tinha de saldo, porque o primeiro job
+    já incluía a página do Banrisul que falhou e precisou ser resubmetida; o
+    script só registra `custo_estimado_usd` por lote (nunca fatura real via
+    API), então **não sei se a Mistral cobra por página tentada ou só por
+    página que teve sucesso** — se for a primeira, o Banrisul 2T2025 foi
+    cobrado duas vezes. **Conferir a fatura real da Mistral na próxima sessão**
+    antes de gastar mais este mês.
+  - Completar o que falta abaixo antes de considerar os 7 bancos utilizáveis:
+  - `src/normalizacao.py::APELIDOS_BANCOS` só tem os 5 originais + NUBANK —
+    sem entrada aqui, pergunta sobre um banco novo não é reconhecida.
+  - Índice vetorial não reconstruído com os novos chunks.
+  - Âncoras-sentinela ausentes em `corpus/ancoras_sentinela.csv` — manual,
+    tarefa do Ygor (página-fonte por documento).
+  - `mapa_contas.py`/`dados_estruturados.py` resolvem setor/ticker por
+    dicionário fixo dos 5 bancos (§3.7); os 7 novos caem em `None`.
+  - Descoberto no reconhecimento: Mercantil e Banco do Nordeste publicam só
+    **semestralmente** (2T/4T, sem 1T/3T isolado); Banco Pan teve o registro
+    CVM **cancelado em 2026-03-30** (fechou capital) — por isso ficou de fora
+    deste pacote.
+- **Bug real achado e corrigido ao submeter o job acima**: o journal de OCR em
+  lote (`journal_ocr_batch.json`) era um registro FLAT — um job antigo
+  concluído (`0eb6eab2`, 2026-08-10, 20 documentos) fazia a passagem nova (24
+  documentos diferentes) ler "já existe, retomando" e travar **sem criar job
+  nem gastar nada** (seguro, mas também não processava). Corrigido com
+  fingerprint por lote — `(nome, hash_esperado)` pendente vira a chave;
+  mesmo lote retoma, lote diferente cria job novo. Job antigo preservado como
+  histórico sob `legado-0eb6eab2…`. `scripts/ocr_batch_mistral.py::
+  fingerprint_pendentes` + `_ler_journal` migram o formato antigo; 6 testes
+  novos em `tests/test_ocr_batch_mistral.py`.
+- **PENDÊNCIA EXPLÍCITA — represada para depois do início do próximo mês
+  (crédito de OCR mensal, ~USD 4, já comprometido com o pacote acima em
+  2026-08-27):** completar o OCR do corpus IFRS paralelo. `corpus/ifrs/` tem
+  **15 documentos** (Demonstrações Financeiras Completas de BTG/BB/Santander,
+  5 trimestres cada, 1.255 páginas), baixados em 2026-08-11 só para ancorar o
+  gate G4 (`corpus/ifrs/manifesto_ifrs.csv`) — **nunca entraram em
+  `corpus/metadados.csv`, nunca foram indexados**. Só 1 página (BTG 4T2025,
+  pág. 13) foi OCR'd até hoje, num script pontual
+  (`resultados/ancora_btg_4T2025.md`). Custo estimado em lote: **USD 2,51**
+  (1.255 pg × USD 0,002/pg). Investigação de "por que refazer OCR" nas versões
+  antigas do `MEMORY.md` (commit `83d7cad`) achou outra pista — contradição
+  entre `extrator=mistral_ocr` nos metadados do índice e o `AGENTS.md` — mas
+  essa já foi apurada e fechada em 2026-08-17 (índice reconstruído sobre o
+  OCR real); não é a mesma pendência.
 
 ## Próximo passo concreto
 

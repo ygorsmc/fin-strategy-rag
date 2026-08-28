@@ -52,6 +52,9 @@ HOSTS_PERMITIDOS = frozenset(
         "d169uzu5o4xu1k.cloudfront.net",
         "api.mziq.com",
         "filemanager-cdn.mziq.com",
+        # RAD/CVM: fonte dos 7 emissores novos de 2026-08-27 (enriquecimento
+        # de corpus, becos_sem_saida.md §E/Rank 5 — precisa de ≥10 emissores).
+        "www.rad.cvm.gov.br",
     }
 )
 

@@ -28,12 +28,18 @@ sys.path.insert(0, str(RAIZ))
 
 from src.config import DIR_CVM_BRUTO  # noqa: E402
 from src.dados_estruturados import (  # noqa: E402
+    FonteCabecalho,
     FonteCVM,
     carregar_painel,
 )
 
 #: Só os demonstrativos que a carga consome; o ZIP traz muitos outros.
-DEMONSTRATIVOS = ("DRE", "BPA", "BPP")
+#:
+#: `DFC_MD`/`DFC_MI` entraram em 2026-08-27. O fluxo de caixa sempre esteve nos
+#: ZIPs já baixados — o painel é que não o lia, e sem ele não há conversão de
+#: caixa, nem qualidade do lucro, nem FCF. Cobertura medida: 465 de 476
+#: emissores (97,7%) no ITR de 2024.
+DEMONSTRATIVOS = ("DRE", "BPA", "BPP", "DFC_MD", "DFC_MI")
 CONJUNTOS = ("itr", "dfp")
 DIR_EXTRACAO = RAIZ / "artefatos" / "cvm"
 
@@ -76,10 +82,19 @@ def _sanear_c1(caminho: Path) -> int:
     return trocados
 
 
-def extrair(anos: list[int], destino: Path) -> list[FonteCVM]:
-    """Extrai `<conjunto>_cia_aberta_<DEM>_con_<ano>.csv` de cada ZIP."""
+def extrair(
+    anos: list[int], destino: Path
+) -> tuple[list[FonteCVM], list[FonteCabecalho]]:
+    """Extrai os CSVs de fato e o CSV-cadastro de cada ZIP.
+
+    Devolve dois grupos porque eles alimentam tabelas diferentes: os fatos vão
+    para `fatos_contabeis`; o cadastro (`<conjunto>_cia_aberta_<ano>.csv`) vai
+    para `documentos`, e é ele que carrega `DT_RECEB` — a data em que a CVM
+    recebeu o formulário, sem a qual nenhum backtest é point-in-time.
+    """
     destino.mkdir(parents=True, exist_ok=True)
     fontes: list[FonteCVM] = []
+    cabecalhos: list[FonteCabecalho] = []
     ausentes: list[str] = []
     saneados: list[tuple[str, int]] = []
     for conjunto in CONJUNTOS:
@@ -104,12 +119,21 @@ def extrair(anos: list[int], destino: Path) -> list[FonteCVM]:
                         if trocados:
                             saneados.append((alvo, trocados))
                     fontes.append(FonteCVM(saida, conjunto, demonstrativo))
+                cadastro = f"{conjunto}_cia_aberta_{ano}.csv"
+                if cadastro in nomes:
+                    saida = destino / cadastro
+                    if not saida.is_file():
+                        saida.write_bytes(arquivo.read(cadastro))
+                        _sanear_c1(saida)
+                    cabecalhos.append(FonteCabecalho(saida, conjunto))
+                else:
+                    ausentes.append(f"{zip_path.name}:{cadastro}")
     if ausentes:
         print(f"aviso: {len(ausentes)} arquivos ausentes (ex.: {ausentes[:3]})")
     for nome, trocados in saneados:
         print(f"aviso: {nome} tinha {trocados} bytes fora do latin-1 (mojibake "
               "na origem, em campo descritivo) — trocados por '?'")
-    return fontes
+    return fontes, cabecalhos
 
 
 def principal() -> int:
@@ -122,13 +146,18 @@ def principal() -> int:
     )
     argumentos = analisador.parse_args()
 
-    fontes = extrair(argumentos.anos, argumentos.dir_extracao)
+    fontes, cabecalhos = extrair(argumentos.anos, argumentos.dir_extracao)
     if not fontes:
         print("nenhuma fonte encontrada; rode scripts/baixar_cvm.py antes")
         return 1
-    print(f"{len(fontes)} fontes CSV; construindo {argumentos.destino}...")
+    print(
+        f"{len(fontes)} fontes CSV e {len(cabecalhos)} cadastros; "
+        f"construindo {argumentos.destino}..."
+    )
 
-    relatorio = carregar_painel(fontes, argumentos.destino)
+    relatorio = carregar_painel(
+        fontes, argumentos.destino, cabecalhos=cabecalhos
+    )
     print(relatorio.como_texto())
     return 0
 

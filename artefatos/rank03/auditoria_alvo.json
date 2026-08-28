@@ -1,0 +1,61 @@
+{
+  "pre_registro": "resultados/pre_registro_rank03_conversao_caixa_2026-08-27.md",
+  "amostra": {
+    "n": 7671,
+    "companhias": 378,
+    "trimestres": 54,
+    "eventos": 1557,
+    "prevalencia": 0.203,
+    "elegiveis_antes_da_censura": 10137,
+    "censurados_sem_t_mais_4": 2461
+  },
+  "t1": {
+    "accrual": {
+      "taxas_por_quintil": [
+        0.3739,
+        0.2269,
+        0.1675,
+        0.1389,
+        0.1076
+      ],
+      "amplitude": 0.2664,
+      "reprova": true
+    },
+    "roa": {
+      "taxas_por_quintil": [
+        0.2352,
+        0.2125,
+        0.1741,
+        0.1799,
+        0.2132
+      ],
+      "amplitude": 0.0611,
+      "reprova": false
+    },
+    "conversao": {
+      "taxas_por_quintil": [
+        0.129,
+        0.1284,
+        0.1604,
+        0.2399,
+        0.3572
+      ],
+      "amplitude": 0.2288,
+      "reprova": true
+    },
+    "ativo_medio": {
+      "taxas_por_quintil": [
+        0.2528,
+        0.2314,
+        0.2125,
+        0.1812,
+        0.1369
+      ],
+      "amplitude": 0.1159,
+      "reprova": false
+    },
+    "limiar": 0.15,
+    "algum_reprova": true
+  },
+  "veredito": "REPROVA T1 — o alvo fabrica o próprio baseline. Encerrado antes de treinar, como o pré-registro exige."
+}

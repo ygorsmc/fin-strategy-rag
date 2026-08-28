@@ -76,8 +76,27 @@ class SqlTempoExcedidoError(RuntimeError):
 # Fontes e relatório
 # --------------------------------------------------------------------------- #
 
-DEMONSTRATIVOS_SUPORTADOS: frozenset[str] = frozenset({"DRE", "BPA", "BPP"})
+DEMONSTRATIVOS_SUPORTADOS: frozenset[str] = frozenset(
+    {"DRE", "BPA", "BPP", "DFC_MD", "DFC_MI"}
+)
 CONJUNTOS_SUPORTADOS: frozenset[str] = frozenset({"itr", "dfp"})
+
+#: Demonstrativos de **fluxo** — o valor acumula dentro do exercício, então o 4T
+#: não existe como ITR e precisa da derivação da RN10. Saldo de balanço
+#: (BPA/BPP) em 31/12 é arquivado, não derivado.
+#:
+#: A DFC entrou aqui em 2026-08-27 pelo mesmo argumento que já valia para a DRE:
+#: a CVM publica o acumulado de nove meses no ITR do 3T e o anual na DFP, e sem
+#: a subtração o 4T de caixa simplesmente não existe no painel.
+DEMONSTRATIVOS_DE_FLUXO: frozenset[str] = frozenset({"DRE", "DFC_MD", "DFC_MI"})
+
+#: A CVM publica o fluxo de caixa em dois arquivos mutuamente exclusivos por
+#: método — direto (MD) e indireto (MI). O indireto domina (465 emissores em
+#: 2024 contra 20 do direto), mas a sobreposição **não é vazia**: 9 emissores
+#: publicaram os dois em 2024. Somar os dois demonstrativos duplicaria o caixa
+#: dessas companhias, então a sobreposição é CONTADA e reportada na carga em
+#: vez de suposta ausente.
+DEMONSTRATIVOS_DFC: tuple[str, str] = ("DFC_MD", "DFC_MI")
 
 FATORES_ESCALA: dict[str, float] = {
     "MIL": 1_000.0,
@@ -104,6 +123,25 @@ class FonteCVM:
             raise ValueError(
                 f"demonstrativo desconhecido: {self.demonstrativo!r}; "
                 f"suportados={sorted(DEMONSTRATIVOS_SUPORTADOS)}"
+            )
+
+
+@dataclass(frozen=True)
+class FonteCabecalho:
+    """O CSV-cadastro do ZIP (`<conjunto>_cia_aberta_<ano>.csv`).
+
+    Não traz fato contábil nenhum: traz `DT_RECEB`, que é quando o formulário
+    chegou à CVM. É a única fonte de data de publicação real no acervo.
+    """
+
+    caminho: Path
+    conjunto: str
+
+    def __post_init__(self) -> None:
+        if self.conjunto not in CONJUNTOS_SUPORTADOS:
+            raise ValueError(
+                f"conjunto desconhecido: {self.conjunto!r}; "
+                f"suportados={sorted(CONJUNTOS_SUPORTADOS)}"
             )
 
 
@@ -136,6 +174,17 @@ class RelatorioCarga:
     # difere da soma controladores + não controladores. Não é erro da carga —
     # é defeito da fonte, e fica contado para não virar número silencioso.
     incoerencias_lucro: int = 0
+    # Linhas de `documentos` (cadastro com DT_RECEB). Zero significa que nenhum
+    # cabeçalho foi passado — o painel funciona, mas NÃO é point-in-time.
+    documentos_carregados: int = 0
+    # 2T e 3T isolados derivados de acumulado consecutivo (RN10). A CVM publica
+    # a DFC só em forma acumulada nesses trimestres; sem isto, fluxo de caixa
+    # isolado existe apenas no 1T e no 4T e nenhuma janela TTM se fecha.
+    fatos_derivados_intermediarios: int = 0
+    # Emissores que publicaram fluxo de caixa pelos DOIS métodos no mesmo
+    # trimestre. Somar DFC_MD com DFC_MI duplicaria o caixa deles; o número
+    # fica visível para que o consumidor escolha um método, nunca os dois.
+    emissores_dfc_ambos_metodos: int = 0
 
     def regra(self, chave: str) -> RelatorioRegra:
         for regra in self.regras:
@@ -150,7 +199,12 @@ class RelatorioCarga:
             f"companhias: {self.companhias} | planos de contas: {self.planos_de_contas}",
             f"conceitos resolvidos (mapa_contas): {self.conceitos_resolvidos}",
             f"fatos derivados do 4T (RN10): {self.fatos_derivados_4t}",
+            "fatos derivados do 2T/3T isolado (RN10): "
+            f"{self.fatos_derivados_intermediarios}",
             f"fatos com lucro incoerente na fonte: {self.incoerencias_lucro}",
+            f"documentos com DT_RECEB (point-in-time): {self.documentos_carregados}",
+            "emissores com DFC pelos dois métodos: "
+            f"{self.emissores_dfc_ambos_metodos}",
             "regras de armadilha:",
         ]
         linhas.extend(f"  - {regra}" for regra in self.regras)
@@ -224,6 +278,30 @@ CREATE TABLE IF NOT EXISTS fatos_contabeis (
     valor_reais       DOUBLE  NOT NULL,
     versao_documento  INTEGER NOT NULL,
     origem            VARCHAR NOT NULL
+);
+
+-- Cadastro do DOCUMENTO, não do fato. Existe para tornar backtest
+-- *point-in-time* possível: `dt_receb` é a data em que a CVM RECEBEU o
+-- formulário, que é quando a informação passou a existir para o mercado.
+--
+-- Sem esta tabela, qualquer avaliação temporal usa `dt_refer` (o fim do
+-- exercício) como se fosse a data de publicação — e o formulário do 1T chega
+-- ~40 dias depois do trimestre fechar. Foi a falha que reprovou o gate G1 no
+-- CAND-04 e no Rank 5, e ela não depende de qual alvo se escolhe: contamina
+-- qualquer um.
+--
+-- Guarda-se TODA versão, não só a maior: `fatos_contabeis` mantém a última
+-- (regra de armadilha `versao_republicada`), mas quem quiser reconstruir o que
+-- era conhecido numa data passada precisa saber quando cada versão chegou.
+CREATE TABLE IF NOT EXISTS documentos (
+    cd_cvm    VARCHAR NOT NULL,
+    conjunto  VARCHAR NOT NULL,
+    dt_refer  DATE    NOT NULL,
+    versao    INTEGER NOT NULL,
+    id_doc    VARCHAR NOT NULL,
+    dt_receb  DATE    NOT NULL,
+    link_doc  VARCHAR,
+    PRIMARY KEY (cd_cvm, conjunto, dt_refer, versao)
 );
 
 CREATE TABLE IF NOT EXISTS mapa_contas (
@@ -648,11 +726,85 @@ def _resolver_mapa_e_companhias(
     return linhas_companhias, linhas_mapa, len(mapa_por_plano)
 
 
+def _carregar_documentos(
+    con: duckdb.DuckDBPyConnection,
+    cabecalhos: Sequence[FonteCabecalho],
+) -> int:
+    """Carrega o cadastro de documentos (`DT_RECEB`) — a chave point-in-time.
+
+    Falha fechado se um cabeçalho não tiver `DT_RECEB`: um painel que se diz
+    point-in-time e não é seria pior que nenhum, porque o defeito ficaria
+    invisível dentro de qualquer backtest construído em cima.
+
+    Mantém TODA versão do formulário, não só a maior. `fatos_contabeis` guarda
+    a última (regra `versao_republicada`); aqui a série completa é o que
+    permite responder "o que se sabia em D?" — inclusive que a versão vigente
+    naquela data foi depois substituída.
+    """
+    for cabecalho in cabecalhos:
+        colunas = _cabecalho_csv(cabecalho.caminho)
+        faltantes = [c for c in ("CD_CVM", "DT_REFER", "VERSAO", "DT_RECEB")
+                     if c not in colunas]
+        if faltantes:
+            raise ErroCargaCVM(
+                f"{cabecalho.caminho.name}: cabeçalho sem {faltantes}; sem "
+                "DT_RECEB o painel não é point-in-time e a carga falha em vez "
+                "de gravar um painel que promete o que não tem"
+            )
+        tem_id = "ID_DOC" in colunas
+        tem_link = "LINK_DOC" in colunas
+        con.execute(
+            f"""
+            INSERT INTO documentos BY NAME
+            SELECT DISTINCT
+                trim(CD_CVM)                       AS cd_cvm,
+                ?                                  AS conjunto,
+                try_cast(DT_REFER AS DATE)         AS dt_refer,
+                try_cast(VERSAO AS INTEGER)        AS versao,
+                {"trim(ID_DOC)" if tem_id else "''"} AS id_doc,
+                try_cast(DT_RECEB AS DATE)         AS dt_receb,
+                {"LINK_DOC" if tem_link else "NULL"} AS link_doc
+            FROM read_csv(
+                ?, delim = ';', header = true,
+                encoding = 'latin-1', all_varchar = true
+            )
+            WHERE try_cast(DT_RECEB AS DATE) IS NOT NULL
+              AND try_cast(DT_REFER AS DATE) IS NOT NULL
+              AND try_cast(VERSAO AS INTEGER) IS NOT NULL
+            ON CONFLICT DO NOTHING
+            """,
+            [cabecalho.conjunto, str(cabecalho.caminho)],
+        )
+    return _contar(con, "documentos")
+
+
+def _contar_dfc_ambos_metodos(con: duckdb.DuckDBPyConnection) -> int:
+    """Emissores que publicaram fluxo de caixa pelos DOIS métodos.
+
+    Somar `DFC_MD` com `DFC_MI` duplicaria o caixa dessas companhias. O número
+    é reportado em vez de suposto zero porque ele **não é** zero: medido em
+    2026-08-27, 9 emissores publicaram os dois em 2024.
+    """
+    linha = con.execute(
+        """
+        SELECT count(*) FROM (
+            SELECT cd_cvm, trimestre
+            FROM fatos_contabeis
+            WHERE demonstrativo IN ('DFC_MD', 'DFC_MI')
+            GROUP BY 1, 2
+            HAVING count(DISTINCT demonstrativo) > 1
+        )
+        """
+    ).fetchone()
+    return int(linha[0]) if linha else 0
+
+
 def carregar_painel(
     fontes: Sequence[FonteCVM],
     destino: Path,
     *,
     cd_cvm_permitidos: Collection[str] | None = None,
+    cabecalhos: Sequence[FonteCabecalho] = (),
 ) -> RelatorioCarga:
     """Constrói o painel DuckDB a partir dos CSVs da CVM já extraídos.
 
@@ -660,6 +812,11 @@ def carregar_painel(
     gravado. `cd_cvm_permitidos` restringe as companhias carregadas (RN11 —
     seleção por código, nunca por nome); `None` carrega todas as companhias
     abertas do período, que é o que dá volume amostral ao modelo preditivo.
+
+    `cabecalhos` alimenta a tabela `documentos` com `DT_RECEB`. É opcional para
+    não quebrar chamador antigo, mas **sem ele o painel não é point-in-time** —
+    e `RelatorioCarga.documentos_carregados` sai zero justamente para que a
+    ausência seja legível em vez de silenciosa.
     """
     if not fontes:
         raise ErroCargaCVM("nenhuma fonte informada")
@@ -784,7 +941,18 @@ def carregar_painel(
             WITH tipado AS (
                 SELECT
                     conjunto, demonstrativo, cnpj_cia, denom_cia, cd_cvm,
-                    cd_conta, trim(ds_conta) AS ds_conta,
+                    cd_conta,
+                    -- Defeito de origem, medido em 2026-08-27: 4 linhas do
+                    -- `itr_cia_aberta_DFC_MI_con_2014.csv` têm DS_CONTA vazio.
+                    -- São conta LIVRE (`ST_CONTA_FIXA=N`) de um emissor que
+                    -- criou a linha e não a nomeou, todas com valor 0,0.
+                    -- Descartar em silêncio esconderia dado da fonte; deixar
+                    -- nulo quebra a carga. O marcador preserva a linha para
+                    -- auditoria e, por não casar com `mapa_contas`, NUNCA
+                    -- resolve conceito — que é o comportamento certo pela RN09.
+                    coalesce(
+                        nullif(trim(ds_conta), ''), '(sem descrição na fonte)'
+                    ) AS ds_conta,
                     upper(strip_accents(trim(escala_moeda))) AS escala,
                     CAST(dt_refer AS DATE)      AS dt_refer,
                     TRY_CAST(dt_ini_exerc AS DATE) AS dt_ini_exerc,
@@ -957,10 +1125,25 @@ def carregar_painel(
             FROM _limpo
             """
         )
+        intermediarios = _derivar_trimestres_intermediarios(con)
         derivados = _derivar_quarto_trimestre(con)
         _materializar_indicadores(con)
         incoerencias = _contar_incoerencias_do_lucro(con)
+        documentos = _carregar_documentos(con, cabecalhos)
+        dfc_ambos = _contar_dfc_ambos_metodos(con)
         con.execute("COMMIT")
+        if not cabecalhos:
+            avisos.append(
+                "nenhum cabeçalho informado: a tabela `documentos` está vazia "
+                "e este painel NÃO é point-in-time — `dt_refer` é fim de "
+                "exercício, não data de publicação"
+            )
+        if dfc_ambos:
+            avisos.append(
+                f"{dfc_ambos} companhia–trimestre(s) com fluxo de caixa pelos "
+                "DOIS métodos (DFC_MD e DFC_MI); somar os dois duplica o caixa "
+                "— escolha um método ao consultar"
+            )
         if incoerencias:
             avisos.append(
                 f"{incoerencias} fato(s) em que o lucro consolidado NÃO é a soma "
@@ -1023,27 +1206,42 @@ def carregar_painel(
         fontes=tuple(f.caminho.name for f in fontes),
         avisos=tuple(avisos),
         incoerencias_lucro=incoerencias,
+        documentos_carregados=documentos,
+        emissores_dfc_ambos_metodos=dfc_ambos,
+        fatos_derivados_intermediarios=intermediarios,
     )
 
 
-def _derivar_quarto_trimestre(con: duckdb.DuckDBPyConnection) -> int:
-    """Deriva o 4T por DFP anual − ITR acumulado do 3T (RN10).
+def _derivar_trimestres_intermediarios(con: duckdb.DuckDBPyConnection) -> int:
+    """Deriva 2T e 3T isolados de demonstrativo de fluxo (RN10).
 
-    O pareamento é feito pelo **conceito resolvido**, com o par
-    código+descrição apenas como reserva para as contas que o mapa não cobre.
-    Parear por `cd_conta` seria reintroduzir a falha da RN09 dentro da própria
-    derivação: o Santander publica o lucro consolidado como `3.09` no ITR e como
-    `3.11` na DFP do mesmo ano, e o join por código casaria o acumulado de nove
-    meses do lucro com a linha anual *antes das participações* — número
-    plausível, não nulo e errado, sem erro visível (medido em 2026-08-10).
+    **Achado de 2026-08-27, e é o motivo de esta função existir:** a CVM publica
+    a DRE do 2T e do 3T em DUAS formas — acumulada e isolada — mas a **DFC só
+    em acumulada**. Medido: `6.01` tem 5.767 linhas de 2T e 5.603 de 3T, todas
+    `acumulado`, e **zero** isoladas; a DRE, no mesmo recorte, tem 5.747 e
+    5.582 isoladas.
 
-    Só para contas de fluxo (DRE): saldo de balanço em 31/12 é arquivado, não
-    derivado. As linhas entram com `origem='derivado'` e escala `UNIDADE`,
-    porque o valor já nasce em reais da subtração.
+    Sem esta derivação o fluxo de caixa isolado só existe no 1T (que a CVM
+    publica como 3 meses) e no 4T (derivado por `_derivar_quarto_trimestre`).
+    Dois trimestres por ano **nunca formam janela móvel de quatro**, e qualquer
+    métrica TTM de caixa — conversão, FCF, qualidade do lucro — fica impossível.
+
+    A aritmética é a mesma da RN10, dentro do próprio ITR:
+
+        isolado(q) = acumulado(q) − acumulado(q−1)
+
+    onde `acumulado(1T)` é a linha de três meses que a CVM já publica como
+    `trimestral`. O período anterior é o de **mesmo início de exercício** com o
+    maior `dt_fim_exerc` estritamente menor — nunca "a linha de cima", que
+    casaria exercícios diferentes.
+
+    Não toca a DFP anual: aquela subtração é o 4T e tem função própria. Aqui só
+    entra `acumulado`, então as duas não se sobrepõem.
     """
     antes = _contar(con, "fatos_contabeis")
+    fluxo = ", ".join(f"'{d}'" for d in sorted(DEMONSTRATIVOS_DE_FLUXO))
     con.execute(
-        """
+        f"""
         INSERT INTO fatos_contabeis
         WITH resolvido AS (
             SELECT
@@ -1058,7 +1256,110 @@ def _derivar_quarto_trimestre(con: duckdb.DuckDBPyConnection) -> int:
               ON m.plano_contas = c.plano_contas
              AND m.cd_conta = f.cd_conta
              AND m.ds_conta_norm = f.ds_conta_norm
-            WHERE f.demonstrativo = 'DRE'
+            WHERE f.demonstrativo IN ({fluxo})
+              AND f.tipo_periodo IN ('acumulado', 'trimestral')
+              AND f.dt_ini_exerc IS NOT NULL
+        ),
+        com_anterior AS (
+            SELECT
+                a.*,
+                lag(a.valor_reais) OVER janela  AS valor_anterior,
+                lag(a.dt_fim_exerc) OVER janela AS fim_anterior,
+                lag(a.cd_conta) OVER janela     AS cd_conta_anterior
+            FROM resolvido AS a
+            WINDOW janela AS (
+                PARTITION BY a.cd_cvm, a.demonstrativo,
+                             a.chave_pareamento, a.dt_ini_exerc
+                ORDER BY a.dt_fim_exerc
+            )
+        )
+        SELECT
+            a.cd_cvm,
+            a.conjunto,
+            a.demonstrativo,
+            a.trimestre,
+            'trimestral' AS tipo_periodo,
+            a.dt_refer,
+            a.fim_anterior + INTERVAL 1 DAY AS dt_ini_exerc,
+            a.dt_fim_exerc,
+            a.cd_conta,
+            a.ds_conta,
+            a.ds_conta_norm,
+            a.valor_reais - a.valor_anterior AS vl_conta,
+            'UNIDADE' AS escala,
+            a.valor_reais - a.valor_anterior AS valor_reais,
+            a.versao_documento,
+            'derivado' AS origem
+        FROM com_anterior AS a
+        WHERE a.tipo_periodo = 'acumulado'
+          AND a.valor_anterior IS NOT NULL
+          AND a.fim_anterior IS NOT NULL
+          AND NOT EXISTS (
+              SELECT 1 FROM fatos_contabeis AS ja
+              WHERE ja.cd_cvm = a.cd_cvm
+                AND ja.demonstrativo = a.demonstrativo
+                AND ja.cd_conta = a.cd_conta
+                AND ja.ds_conta_norm = a.ds_conta_norm
+                AND ja.trimestre = a.trimestre
+                AND ja.tipo_periodo = 'trimestral'
+          )
+        QUALIFY row_number() OVER (
+            PARTITION BY a.cd_cvm, a.demonstrativo, a.trimestre,
+                         a.chave_pareamento
+            ORDER BY a.cd_conta
+        ) = 1
+        """
+    )
+    return _contar(con, "fatos_contabeis") - antes
+
+
+def _derivar_quarto_trimestre(con: duckdb.DuckDBPyConnection) -> int:
+    """Deriva o 4T por DFP anual − ITR acumulado do 3T (RN10).
+
+    O pareamento é feito pelo **conceito resolvido**, com o par
+    código+descrição apenas como reserva para as contas que o mapa não cobre.
+    Parear por `cd_conta` seria reintroduzir a falha da RN09 dentro da própria
+    derivação: o Santander publica o lucro consolidado como `3.09` no ITR e como
+    `3.11` na DFP do mesmo ano, e o join por código casaria o acumulado de nove
+    meses do lucro com a linha anual *antes das participações* — número
+    plausível, não nulo e errado, sem erro visível (medido em 2026-08-10).
+
+    Só para contas de fluxo (`DEMONSTRATIVOS_DE_FLUXO` — DRE e as duas DFC):
+    saldo de balanço em 31/12 é arquivado, não derivado. As linhas entram com
+    `origem='derivado'` e escala `UNIDADE`, porque o valor já nasce em reais da
+    subtração.
+
+    A DFC entrou em 2026-08-27. O argumento é idêntico ao da DRE e a mecânica
+    também — mas há uma armadilha PRÓPRIA do fluxo de caixa que a subtração
+    resolve por acidente e que convém deixar dita: `Saldo Inicial` e `Saldo
+    Final de Caixa` **não são fluxo**, são saldo instantâneo, e subtrair
+    anual − 9 meses neles produz lixo. Eles sobrevivem à subtração porque a
+    linha derivada só entra quando não existe já um trimestral equivalente, e
+    o consumidor que precisa de saldo deve ler `origem='arquivado'`. Quem for
+    calcular conversão de caixa usa as linhas de *Caixa Líquido das Atividades*
+    (operacional, investimento, financiamento), que são fluxo de verdade.
+    """
+    antes = _contar(con, "fatos_contabeis")
+    # Lista literal e não parâmetro: os valores são constantes do módulo, nunca
+    # entrada externa, e um `IN (?)` de DuckDB não expande sequência aqui.
+    fluxo = ", ".join(f"'{d}'" for d in sorted(DEMONSTRATIVOS_DE_FLUXO))
+    con.execute(
+        f"""
+        INSERT INTO fatos_contabeis
+        WITH resolvido AS (
+            SELECT
+                f.*,
+                coalesce(
+                    m.conceito,
+                    'conta:' || f.cd_conta || '|' || f.ds_conta_norm
+                ) AS chave_pareamento
+            FROM fatos_contabeis AS f
+            JOIN companhias AS c ON c.cd_cvm = f.cd_cvm
+            LEFT JOIN mapa_contas AS m
+              ON m.plano_contas = c.plano_contas
+             AND m.cd_conta = f.cd_conta
+             AND m.ds_conta_norm = f.ds_conta_norm
+            WHERE f.demonstrativo IN ({fluxo})
         ),
         anual AS (
             SELECT * FROM resolvido WHERE tipo_periodo = 'anual'

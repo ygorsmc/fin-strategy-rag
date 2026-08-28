@@ -669,6 +669,109 @@ extrator auditado; B0–B4 congelados; split temporal/emissor. Confirmação exi
 `N@R90` 20% menor, ΔnDCG@20≥+0,05, procedência perfeita e ganho humano sem
 perda crítica.
 
+### 3.13 Fluxo de caixa e point-in-time carregados (2026-08-27)
+
+O carregador lia **três** demonstrativos e ignorava o resto do ZIP. Passou a
+ler **cinco**, e a tabela `documentos` entrou com `DT_RECEB`. Custo zero — os
+31 ZIPs já estavam em disco e pinados por SHA-256. Relatório completo:
+`resultados/carga_dfc_e_point_in_time_2026-08-27.md`.
+
+**Não é modelo.** É o primeiro dos três destravadores que o §3.8 declara como
+condição de reabertura (*"DFC, preços point-in-time, ou documentos além dos
+20"*), e o CAND-03 já havia diagnosticado: os ZIPs sempre tiveram DFC e
+`DT_RECEB`; o bloqueio era do loader.
+
+| | Antes | Depois |
+|---|---:|---:|
+| Linhas em `fatos_contabeis` | 5.552.787 | **6.787.589** |
+| Demonstrativos | 3 | **5** (+ `DFC_MD`, `DFC_MI`) |
+| Documentos com `DT_RECEB` | 0 | **48.123** |
+
+**FCO (`6.01`) existe para as 741 companhias.** Atraso mediano entre fim do
+exercício e recebimento: **44 dias no ITR, 83 na DFP**; **19.674 documentos
+(41%) chegam depois de 45 dias**. Usar `dt_refer` como data de publicação —
+que era o que se fazia — enxerga o formulário antes de ele existir.
+
+**Três invariantes que quem mexer na carga precisa preservar:**
+
+1. **A derivação do 4T (RN10) é governada por `DEMONSTRATIVOS_DE_FLUXO`**, não
+   por literal `= 'DRE'`. Fluxo de caixa acumula dentro do exercício e também
+   não existe como ITR no 4T. Balanço **nunca** é derivado — há contraprova.
+2. **`documentos` guarda TODAS as versões**, ao contrário de
+   `fatos_contabeis`, que mantém só a maior. Sem a série completa não se
+   responde "o que se sabia em D?" — inclusive que a versão vigente naquela
+   data foi depois substituída.
+3. **Cabeçalho sem `DT_RECEB` faz a carga FALHAR.** Painel que se diz
+   point-in-time e não é seria pior que nenhum: o defeito ficaria invisível
+   dentro de todo backtest construído em cima.
+
+**Duas armadilhas novas, tratadas e não supostas:** a sobreposição `DFC_MD` ×
+`DFC_MI` **não é vazia** (5 companhia–trimestres; somar os dois duplica o
+caixa — o número é reportado em `avisos`); e 4 linhas de 2014 têm `DS_CONTA`
+vazio na origem (conta livre não nomeada, valor 0,0) — entram com marcador
+explícito e, por não casarem com `mapa_contas`, nunca resolvem conceito (RN09).
+
+**Quebra de hash declarada,** como o C1 exige: o painel de treino saiu de
+`74aa28e8…` para `476a11da…`. O hash anterior conferiu antes da troca. A
+rejeição do C1 **não muda** — ela vem do vínculo mecânico entre `sd8` e o
+rótulo, que independe de haver fluxo de caixa. `artefatos/cvm.duckdb`
+(consultável) não foi tocado, por §3.5.
+
+**O que destrava:** o **Rank 3** (deterioração de conversão de caixa) passa de
+*intestável* a **decidível**; qualquer candidato pode ser avaliado
+point-in-time de verdade; accrual passa a ser `lucro − FCO` real em vez do
+proxy de capital de giro. **O que não destrava:** nada garante que o Rank 3
+passe em T1/T2 — segue exigindo pré-registro e os dois testes.
+
+### 3.14 Rank 3 — deterioração de conversão de caixa: REJEITADO em T1 (2026-08-27)
+
+Primeiro candidato avaliado com o painel de fluxo de caixa (§3.13). Alvo:
+Δaccrual (`ROA_ttm − FCO_ttm/ativo_médio`) no quintil superior do trimestre,
+em companhia lucrativa. **Reprovado em T1, antes de qualquer treino.**
+
+Pré-registro: `resultados/pre_registro_rank03_conversao_caixa_2026-08-27.md`.
+Relatório: `resultados/validacao_rank03_conversao_caixa_2026-08-27.md`.
+Auditor: `scripts/auditar_rank03_conversao_caixa.py`.
+
+| Componente | Amplitude T1 (limiar 0,15) | |
+|---|---:|---|
+| `accrual` | **0,266** | ❌ |
+| `conversao` | **0,229** | ❌ |
+| `roa` | 0,061 | ✅ |
+| `ativo_medio` | 0,116 | ✅ |
+
+n = 7.671 · 378 companhias · 54 trimestres · prevalência 0,203.
+
+**O pré-registro previu a reprovação e nomeou o mecanismo antes de medir.** A
+companhia no quintil de MENOR accrual tem 3,5× mais chance de ser marcada —
+reversão à média com outro nome.
+
+**Regra durável que sai daqui (terceira medição do mesmo padrão):** *alvo
+definido como **variação** de grandeza que reverte à média fabrica o **nível**
+dela como baseline.* Se o alvo é "X piora", o nível de X entra em T1
+obrigatoriamente. Escapa só evento **materialmente definido** — falência,
+evento legal, reapresentação — não movimento de série contínua.
+
+**Dois achados laterais que valeram mais que o veredito:**
+
+1. **A CVM não publica DFC isolada no 2T e no 3T, só acumulada** — a DRE tem as
+   duas. Sem derivar, fluxo isolado existia só no 1T e no 4T, e **dois
+   trimestres por ano nunca fecham janela TTM**. Corrigido em
+   `_derivar_trimestres_intermediarios` (`isolado(q) = acumulado(q) −
+   acumulado(q−1)`, pareando por mesmo início de exercício): **390.187** fatos
+   derivados, painel a **7.177.705** linhas, FCO isolado equilibrado nos quatro
+   trimestres (725/702/693/683 companhias).
+2. **O auditor falhava EM ABERTO.** Com `n = 0` a amplitude saía `NaN`, e
+   `NaN >= 0,15` é `False` — devolvia "T1 aprovado" sobre amostra vazia.
+   Corrigido com `MINIMO_PARA_T1` e exceção própria: amostra insuficiente
+   **levanta erro**, nunca vira aprovação. Guarda que aprova por ausência de
+   dado é pior que guarda nenhuma.
+
+**O que isto NÃO conclui:** que conversão de caixa seja irrelevante, nem que a
+carga de DFC tenha sido desperdício — ela é o que permitiu a pergunta ser
+**respondida** em vez de ficar em aberto por falta de dado. Um Rank 3-B com
+evento materialmente definido é outro estimando, com pré-registro próprio.
+
 ---
 
 ## 4. Contratos e regras invioláveis
