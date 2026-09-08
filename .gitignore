@@ -67,6 +67,18 @@ corpus/raw/*
 corpus/ifrs/raw/*
 !corpus/ifrs/raw/.gitkeep
 
+# Sete emissores acrescentados em 2026-08-27 (BMG, ABC Brasil, Banestes, Pine,
+# Mercantil, Banco do Nordeste, Banrisul) para destravar o `≥10 emissores` que
+# Rank 5, CAND-02 e CAND-03 exigem. Vale a MESMA regra do IFRS logo acima, e por
+# experiência própria: eles entraram primeiro em corpus/metadados.csv e
+# quebraram na hora o `hash_cache_ocr` do índice publicável (RNF09), a igualdade
+# `empresas(manifesto) == Config.bancos` e a auditoria congelada do Rank 5.
+# Material de teste não entra no contrato do produto sem decisão explícita.
+# Binário fora; manifesto e cache de OCR versionados (o OCR foi pago — RNF10
+# existe para ninguém pagar duas vezes).
+corpus/expansao/raw/*
+!corpus/expansao/raw/.gitkeep
+
 # 2. Dados abertos da CVM (seção 5.5)
 # Os ZIPs de ITR/DFP e o banco analítico são regeneráveis por scripts/baixar_cvm.py.
 artefatos/cvm.duckdb

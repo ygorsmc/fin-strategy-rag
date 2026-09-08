@@ -372,6 +372,51 @@
   amostra vazia), corrigido com mínimo e exceção. Hash do painel:
   `c1a60445…`.
 
+- **TRÊS CORPORA, NÃO UM — e a separação é contrato, não organização
+  (2026-09-08).** Os 7 emissores novos entraram primeiro em
+  `corpus/metadados.csv` e no cache `corpus/ocr/`, e isso **quebrou três
+  contratos congelados de uma vez**. Os testes pegaram; o conserto foi separar,
+  não afrouxar asserção.
+  | Corpus | Manifesto | Cache de OCR | Docs |
+  |---|---|---|---:|
+  | **principal** (produto) | `corpus/metadados.csv` | `corpus/ocr/` | 20 |
+  | **expansao** (teste) | `corpus/expansao/manifesto_expansao.csv` | `corpus/expansao/ocr/` | 24 |
+  | **ifrs** (evidência G4 + leitura completa) | `corpus/ifrs/manifesto_ifrs.csv` | `corpus/ifrs/ocr_documento/` | 15 |
+  O que quebrou e voltou: `hash_cache_ocr` da RNF09 saiu de `83463136…` para
+  `52edfba4…` (índice publicável deixou de conferir) — **restaurado**;
+  `empresas(manifesto) == Config.bancos` de `_validar_manifesto`; e a auditoria
+  congelada do Rank 5 (20 documentos). **O `.gitignore` já dizia essa regra para
+  o IFRS** — *"nunca entram em corpus/metadados.csv: isso mudaria a identidade
+  do índice (RNF09)"* — e ela agora está escrita também para a expansão.
+  **ATENÇÃO: o commit `f994421` contém as 24 linhas no `corpus/metadados.csv`.**
+  A árvore de trabalho já restaurou o manifesto congelado de 20; o commit é que
+  precisa ser corrigido.
+  `scripts/ocr_batch_mistral.py --corpus principal|expansao|ifrs`.
+- **OCR do corpus IFRS CONCLUÍDO (2026-09-08).** 15 documentos, **1.255/1.255
+  páginas, zero vazias**, job `67d038aa…`, custo estimado **USD 2,51**. Cache em
+  `corpus/ifrs/ocr_documento/` — **separado de `corpus/ifrs/ocr/` de
+  propósito**: aquele é endereçado pelo mesmo hash de PDF mas guarda um RECORTE
+  de 8 páginas em schema próprio, e `scripts/ancora_ifrs.py` o lê como evidência
+  do G4 aprovado; gravar em cima sobrescreveria prova de gate com outro formato.
+  Conferido intacto. **Validação independente:** o BTG 4T2025 tinha 63 de 71
+  páginas com fonte ilegível ao `pdfplumber`, e o OCR devolveu na pág. 13
+  exatamente `16.663.803 / 16.005.964 / 657.839` — os três valores da âncora que
+  custou USD 0,30 (`resultados/ancora_btg_4T2025.md`).
+- **Guarda nova: "arquivo existe" ≠ "documento processado".**
+  `separar_pendentes` confere a contagem de páginas do cache contra o PDF e
+  reporta cache incompleto como pendente. Veio de armadilha real: o cache de
+  âncora do BTG 4T2025 tem **8 de 71 páginas**, e a lógica antiga teria pulado o
+  documento inteiro deixando 63 páginas fora sem sinal nenhum. Schema não
+  reconhecido é tratado como **"não sei"**, nunca como incompleto — senão uma
+  mudança de formato viraria reprocessamento pago do corpus inteiro sem ninguém
+  pedir.
+- **Bug de teste que poluiu o cache REAL, achado e corrigido.** Um teste meu
+  atribuía `modulo.DIR_CACHE_OCR = tmp_path`, mas o default do parâmetro é
+  vinculado na **definição** da função — a atribuição não o alcança e a gravação
+  caiu em `corpus/ocr/ha.json`, mudando o `hash_cache_ocr` que a RNF09 usa.
+  Removido; `dir_cache` agora vai explícito e há contraprova
+  (`test_nao_escreve_fora_do_dir_cache_recebido`) que falha se voltar a escrever
+  no cache do projeto.
 - **Corpus enriquecido com 7 emissores novos (2026-08-27) — OCR CONCLUÍDO.**
   BMG, ABC Brasil, Banestes, Pine, Mercantil do Brasil, Banco do Nordeste,
   Banrisul: 24 documentos, 1.874 páginas, registrados em `corpus/metadados.csv`

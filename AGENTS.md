@@ -772,6 +772,64 @@ carga de DFC tenha sido desperdício — ela é o que permitiu a pergunta ser
 **respondida** em vez de ficar em aberto por falta de dado. Um Rank 3-B com
 evento materialmente definido é outro estimando, com pré-registro próprio.
 
+### 3.15 Três corpora, não um — separação por contrato (2026-09-08)
+
+O repositório passou a ter **três** corpora com manifesto e cache de OCR
+próprios. A separação não é organização de pastas: é o que impede material de
+teste de entrar no contrato do produto.
+
+| Corpus | Manifesto | Cache de OCR | Docs | Papel |
+|---|---|---|---:|---|
+| `principal` | `corpus/metadados.csv` | `corpus/ocr/` | 20 | o produto; identidade do índice (RNF09) |
+| `expansao` | `corpus/expansao/manifesto_expansao.csv` | `corpus/expansao/ocr/` | 24 | material de teste (7 emissores novos) |
+| `ifrs` | `corpus/ifrs/manifesto_ifrs.csv` | `corpus/ifrs/ocr_documento/` | 15 | demonstrações completas de BTG/BB/Santander |
+
+**A regra veio de erro medido, não de projeto.** Os 7 emissores novos entraram
+primeiro no `corpus/metadados.csv` e no cache `corpus/ocr/`, e isso quebrou
+**três contratos congelados de uma vez**:
+
+1. **`hash_cache_ocr` da RNF09** saiu de `83463136…` para `52edfba4…` — o
+   índice publicável deixou de conferir contra o cache. Restaurado.
+2. **`empresas(manifesto) == Config.bancos`**, verificada por
+   `_validar_manifesto` em `scripts/baixar_corpus.py`.
+3. **A auditoria congelada do Rank 5** (§3.12), que mede 20 documentos.
+
+O `.gitignore` **já dizia essa regra** para o IFRS — *"Estes documentos nunca
+entram em `corpus/metadados.csv`: isso mudaria a identidade do índice
+(RNF09)"* — e ela agora está escrita também para a expansão. Enriquecer o
+corpus de teste é barato; mudar o corpus do produto invalida a rodada
+congelada e os números do README.
+
+**O cache do IFRS é `ocr_documento/`, não `ocr/`, e isso é obrigatório.** Os
+dois são endereçados pelo hash do PDF, mas `corpus/ifrs/ocr/` guarda um
+**recorte** de 8 páginas em schema próprio que `scripts/ancora_ifrs.py` lê como
+evidência do G4 **aprovado**. Gravar o documento inteiro em cima sobrescreveria
+prova de gate com um arquivo de outro formato.
+
+**Duas guardas que saíram daqui:**
+
+- **"Arquivo existe" não é "documento processado".** `separar_pendentes` confere
+  a contagem de páginas do cache contra o PDF. O cache de âncora do BTG 4T2025
+  tem 8 de 71 páginas; a lógica antiga pularia o documento inteiro deixando 63
+  páginas fora **sem sinal nenhum**. Schema não reconhecido é tratado como *não
+  sei*, nunca como incompleto — senão uma mudança de formato viraria
+  reprocessamento pago do corpus inteiro.
+- **Documento ausente da saída do lote é falha.** A Batch API pode **omitir** a
+  linha de um request que falhou, em vez de devolver erro. Aconteceu: 23 de 24
+  gravaram, `falhos` saiu vazio e o script terminou com código 0. Documento
+  sumindo do corpus sem sinal é pior que sumir com erro.
+
+**Nota de leitura do OCR do IFRS:** o BTG 4T2025 tinha 63 de 71 páginas com
+fonte sem mapa de caracteres (§3.3). A passagem em lote devolveu na pág. 13
+`16.663.803 / 16.005.964 / 657.839` — os três valores da âncora estabelecida em
+`resultados/ancora_btg_4T2025.md`. Validação independente da leitura, não
+autoavaliação.
+
+**O que isto NÃO faz:** nenhum dos 39 documentos novos é consultável. Eles não
+estão no `corpus/metadados.csv`, não foram chunkados e não estão no índice.
+Indexá-los muda o `hash_corpus`, o que invalida a rodada congelada e os números
+publicados — é decisão explícita, nunca efeito lateral.
+
 ---
 
 ## 4. Contratos e regras invioláveis

@@ -54,6 +54,67 @@ class ErroBatchOCR(RuntimeError):
 
 
 @dataclass(frozen=True)
+class FonteCorpus:
+    """Um corpus com manifesto, PDFs e cache próprios.
+
+    Existe porque as demonstrações em IFRS são um corpus À PARTE
+    (`corpus/ifrs/`, manifesto próprio, baixadas em 2026-08-11 só para ancorar
+    o gate G4) e o schema do manifesto delas não é o de `corpus/metadados.csv`.
+    Duplicar o script para processá-las duplicaria também as guardas que
+    protegem dinheiro real — journal por lote, conferência de hash, teto.
+    """
+
+    nome: str
+    manifesto: Path
+    dir_raw: Path
+    dir_cache: Path
+    coluna_periodo: str
+    # Quando o manifesto tem coluna com o nome do arquivo, ela vence; quando
+    # não tem, o nome sai de `<documento>.pdf`, como no corpus principal.
+    coluna_arquivo: str | None = None
+
+
+FONTES: dict[str, FonteCorpus] = {
+    "principal": FonteCorpus(
+        nome="principal",
+        manifesto=CAMINHO_METADADOS_CORPUS,
+        dir_raw=DIR_CORPUS_RAW,
+        dir_cache=DIR_CACHE_OCR,
+        coluna_periodo="trimestre",
+    ),
+    # Sete emissores acrescentados em 2026-08-27 (BMG, ABC Brasil, Banestes,
+    # Pine, Mercantil, Banco do Nordeste, Banrisul) para destravar o `≥10
+    # emissores` que Rank 5/CAND-02/CAND-03 exigem. Corpus À PARTE, e isso não é
+    # detalhe de organização: eles entraram primeiro no manifesto principal e
+    # **quebraram três contratos congelados de uma vez** — `hash_cache_ocr` da
+    # RNF09 (índice publicável deixou de conferir), a igualdade
+    # `empresas(manifesto) == Config.bancos` de `_validar_manifesto`, e a
+    # auditoria congelada do Rank 5 (20 documentos). Material de teste não
+    # entra no contrato do produto sem decisão explícita.
+    "expansao": FonteCorpus(
+        nome="expansao",
+        manifesto=RAIZ_PROJETO / "corpus" / "expansao" / "manifesto_expansao.csv",
+        dir_raw=RAIZ_PROJETO / "corpus" / "expansao" / "raw",
+        dir_cache=RAIZ_PROJETO / "corpus" / "expansao" / "ocr",
+        coluna_periodo="trimestre",
+    ),
+    "ifrs": FonteCorpus(
+        nome="ifrs",
+        manifesto=RAIZ_PROJETO / "corpus" / "ifrs" / "manifesto_ifrs.csv",
+        dir_raw=RAIZ_PROJETO / "corpus" / "ifrs" / "raw",
+        # Cache SEPARADO do de âncora (`corpus/ifrs/ocr/`), de propósito. Aquele
+        # é endereçado pelo mesmo hash de PDF mas guarda um RECORTE de páginas
+        # em schema próprio, e `scripts/ancora_ifrs.py` o lê como evidência do
+        # G4. Gravar o documento inteiro em cima sobrescreveria a evidência de
+        # um gate aprovado com um arquivo de outro formato.
+        dir_cache=RAIZ_PROJETO / "corpus" / "ifrs" / "ocr_documento",
+        coluna_periodo="periodo",
+        coluna_arquivo="arquivo",
+    ),
+}
+
+
+@dataclass(frozen=True)
 class Documento:
     nome: str
     empresa: str
@@ -81,7 +142,7 @@ def _contar_paginas(caminho: Path) -> int:
     return len(PdfReader(str(caminho)).pages)
 
 
-def carregar_documentos() -> list[Documento]:
+def carregar_documentos(fonte: FonteCorpus = FONTES["principal"]) -> list[Documento]:
     """Lê o manifesto e confere a integridade de cada PDF local.
 
     Hash divergente é erro, nunca aviso: o cache de OCR passa a ser versionado e
@@ -93,9 +154,13 @@ def carregar_documentos() -> list[Documento]:
     documentos: list[Documento] = []
     divergentes: list[str] = []
     ausentes: list[str] = []
-    with open(CAMINHO_METADADOS_CORPUS, encoding="utf-8") as arquivo:
+    with open(fonte.manifesto, encoding="utf-8") as arquivo:
         for linha in csv.DictReader(arquivo):
-            caminho = DIR_CORPUS_RAW / f"{linha['documento']}.pdf"
+            if fonte.coluna_arquivo:
+                nome_arquivo = linha[fonte.coluna_arquivo]
+            else:
+                nome_arquivo = f"{linha['documento']}.pdf"
+            caminho = fonte.dir_raw / nome_arquivo
             if not caminho.is_file():
                 ausentes.append(linha["documento"])
                 continue
@@ -107,7 +172,7 @@ def carregar_documentos() -> list[Documento]:
                 Documento(
                     nome=linha["documento"],
                     empresa=linha["empresa"],
-                    trimestre=linha["trimestre"],
+                    trimestre=linha[fonte.coluna_periodo],
                     caminho=caminho,
                     hash_esperado=observado,
                     paginas=_contar_paginas(caminho),
@@ -115,8 +180,8 @@ def carregar_documentos() -> list[Documento]:
             )
     if ausentes:
         raise ErroBatchOCR(
-            f"PDFs ausentes em {DIR_CORPUS_RAW}: {ausentes}. "
-            "Rode `python scripts/baixar_corpus.py` antes."
+            f"PDFs ausentes em {fonte.dir_raw}: {ausentes}. "
+            "Rode o script de download do corpus correspondente antes."
         )
     if divergentes:
         raise ErroBatchOCR(
@@ -125,6 +190,60 @@ def carregar_documentos() -> list[Documento]:
             "gastar OCR sobre bytes não auditados."
         )
     return documentos
+
+
+def paginas_no_cache(caminho: Path) -> int | None:
+    """Quantas páginas o cache REALMENTE tem, ou ``None`` se não der para saber.
+
+    Existe por causa de uma armadilha concreta: `corpus/ifrs/ocr/` já continha
+    um arquivo para o BTG 4T2025 com **8 das 71 páginas** — o recorte cirúrgico
+    que fechou uma célula do G4 (`resultados/ancora_btg_4T2025.md`). "Arquivo
+    existe" não é "documento processado", e tratar um pelo outro deixaria 63
+    páginas fora do cache sem nenhum sinal.
+
+    Dois schemas convivem: o do lote (`ocr.pages`) e o da âncora (`paginas`).
+    Formato desconhecido devolve ``None`` — que o chamador trata como "não sei",
+    nunca como "está incompleto", para que uma mudança de schema não vire
+    reprocessamento pago por acidente.
+    """
+    try:
+        dados = json.loads(caminho.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    if not isinstance(dados, dict):
+        return None
+    ocr = dados.get("ocr")
+    if isinstance(ocr, dict) and isinstance(ocr.get("pages"), list):
+        return len(ocr["pages"])
+    if isinstance(dados.get("paginas"), list):
+        return len(dados["paginas"])
+    return None
+
+
+def separar_pendentes(
+    documentos: list[Documento], fonte: FonteCorpus
+) -> tuple[list[Documento], list[str], list[str]]:
+    """Divide em (pendentes, incompletos, indeterminados) conferindo páginas.
+
+    `incompletos` são cache com menos páginas que o PDF: entram como pendentes e
+    são REPORTADOS, para que reprocessar caro seja decisão vista, não silenciosa.
+    """
+    pendentes: list[Documento] = []
+    incompletos: list[str] = []
+    indeterminados: list[str] = []
+    for doc in documentos:
+        caminho = fonte.dir_cache / f"{doc.hash_esperado}.json"
+        if not caminho.is_file():
+            pendentes.append(doc)
+            continue
+        no_cache = paginas_no_cache(caminho)
+        if no_cache is None:
+            indeterminados.append(doc.nome)
+            continue
+        if no_cache < doc.paginas:
+            incompletos.append(f"{doc.nome} ({no_cache}/{doc.paginas} pp)")
+            pendentes.append(doc)
+    return pendentes, incompletos, indeterminados
 
 
 def custo_estimado_usd(paginas: int, preco_mil: float) -> float:
@@ -276,10 +395,12 @@ def baixar_arquivo(chave: str, file_id: str, timeout: float) -> bytes:
 
 
 def gravar_resultados(
-    bruto: bytes, documentos: dict[str, Documento]
+    bruto: bytes,
+    documentos: dict[str, Documento],
+    dir_cache: Path = DIR_CACHE_OCR,
 ) -> tuple[list[str], list[str]]:
-    """Grava um JSON por documento em `corpus/ocr/<hash-do-pdf>.json` (RNF10)."""
-    DIR_CACHE_OCR.mkdir(parents=True, exist_ok=True)
+    """Grava um JSON por documento em `<dir_cache>/<hash-do-pdf>.json` (RNF10)."""
+    dir_cache.mkdir(parents=True, exist_ok=True)
     gravados: list[str] = []
     falhos: list[str] = []
     for linha in bruto.decode("utf-8").splitlines():
@@ -295,7 +416,7 @@ def gravar_resultados(
             falhos.append(f"{nome} (erro na resposta)")
             continue
         corpo = item["response"]["body"]
-        destino = DIR_CACHE_OCR / f"{doc.hash_esperado}.json"
+        destino = dir_cache / f"{doc.hash_esperado}.json"
         destino.write_text(
             json.dumps(
                 {
@@ -339,29 +460,50 @@ def main() -> int:
         help="Acompanha o job até o fim; sem isso, cria e devolve o controle.",
     )
     parser.add_argument("--intervalo-s", type=float, default=60.0)
+    parser.add_argument(
+        "--corpus",
+        choices=sorted(FONTES),
+        default="principal",
+        help=(
+            "qual corpus processar: `principal` (corpus/metadados.csv) ou "
+            "`ifrs` (corpus/ifrs/manifesto_ifrs.csv, cache em ocr_documento/)"
+        ),
+    )
     args = parser.parse_args()
 
+    fonte = FONTES[args.corpus]
     config = carregar_config()
     chave = config.mistral_ocr_api_key or os.environ.get("MISTRAL_API_KEY", "")
     if not chave:
         raise ErroBatchOCR("MISTRAL_API_KEY ausente — configure o `.env` (RNF04).")
 
-    documentos = carregar_documentos()
-    if not args.reprocessar_ocr:
-        pendentes = [
-            d
-            for d in documentos
-            if not (DIR_CACHE_OCR / f"{d.hash_esperado}.json").is_file()
-        ]
+    documentos = carregar_documentos(fonte)
+    if args.reprocessar_ocr:
+        pendentes, incompletos, indeterminados = documentos, [], []
     else:
-        pendentes = documentos
+        pendentes, incompletos, indeterminados = separar_pendentes(documentos, fonte)
 
     paginas = sum(d.paginas for d in pendentes)
     custo = custo_estimado_usd(paginas, config.mistral_ocr_preco_usd_mil_paginas)
+    print(f"Corpus: {fonte.nome} (cache em {fonte.dir_cache.relative_to(RAIZ_PROJETO)})")
     print(f"Documentos pendentes: {len(pendentes)} de {len(documentos)}")
     print(f"Páginas a processar: {paginas}")
     print(f"Custo estimado (Batch, 50%): USD {custo:.2f}")
     print(f"Teto configurado: USD {config.mistral_ocr_orcamento_teto_usd:.2f}")
+    if incompletos:
+        print(
+            "\nCache INCOMPLETO (menos páginas que o PDF) — entra como pendente "
+            "e será reprocessado inteiro:"
+        )
+        for item in incompletos:
+            print(f"  {item}")
+    if indeterminados:
+        print(
+            "\nCache em formato NÃO RECONHECIDO — tratado como completo para não "
+            "gastar por acidente; confira à mão se precisa reprocessar:"
+        )
+        for item in indeterminados:
+            print(f"  {item}")
 
     if not pendentes:
         print("Nada pendente — cache completo (RNF10). Nenhuma chamada paga.")
@@ -426,8 +568,11 @@ def main() -> int:
         raise ErroBatchOCR(f"Job terminou em {situacao} — nada gravado no cache.")
 
     bruto = baixar_arquivo(chave, estado["output_file"], config.mistral_ocr_timeout_s)
-    gravados, falhos = gravar_resultados(bruto, {d.nome: d for d in pendentes})
-    print(f"\nGravados em corpus/ocr/: {len(gravados)}")
+    gravados, falhos = gravar_resultados(
+        bruto, {d.nome: d for d in pendentes}, fonte.dir_cache
+    )
+    rel = fonte.dir_cache.relative_to(RAIZ_PROJETO)
+    print(f"\nGravados em {rel}/: {len(gravados)}")
     if falhos:
         print(f"Falhos (não gravados): {falhos}")
     return 0 if not falhos else 1
