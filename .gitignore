@@ -79,6 +79,13 @@ corpus/ifrs/raw/*
 corpus/expansao/raw/*
 !corpus/expansao/raw/.gitkeep
 
+# 2T2026 dos 12 emissores (2026-09-08) — trimestre FORA DA AMOSTRA. Mesma regra:
+# binário fora, manifesto e cache de OCR versionados. Este corpus nunca entra em
+# corpus/metadados.csv nem no conjunto congelado: iterar contra holdout destrói o
+# que ele tem de único, que é não ter sido visto por nenhum ajuste.
+corpus/holdout_2T2026/raw/*
+!corpus/holdout_2T2026/raw/.gitkeep
+
 # 2. Dados abertos da CVM (seção 5.5)
 # Os ZIPs de ITR/DFP e o banco analítico são regeneráveis por scripts/baixar_cvm.py.
 artefatos/cvm.duckdb

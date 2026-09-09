@@ -219,6 +219,71 @@ class TestFonteIFRS:
         assert modulo.carregar_documentos.__defaults__[0] is modulo.FONTES["principal"]
 
 
+class TestUrlAssinada:
+    """404 logo após o upload é propagação, não ausência.
+
+    Derrubou a passagem duas vezes (lotes de 24 e de 12 documentos), sempre no
+    meio da fila de uploads, e a reexecução subia tudo de novo desde o começo.
+    """
+
+    def _resposta(self, codigo, url=None):
+        class R:
+            status_code = codigo
+            ok = 200 <= codigo < 300
+
+            def json(self):
+                return {"url": url}
+
+        return R()
+
+    def test_404_transitorio_e_repetido_ate_suceder(self, modulo, monkeypatch):
+        chamadas = []
+
+        def falso_get(*a, **k):
+            chamadas.append(1)
+            if len(chamadas) < 3:
+                return self._resposta(404)
+            return self._resposta(200, "https://assinada/ok")
+
+        monkeypatch.setattr(modulo.requests, "get", falso_get)
+        monkeypatch.setattr(modulo.time, "sleep", lambda s: None)
+        assert modulo.url_assinada("k", "f", 10.0) == "https://assinada/ok"
+        assert len(chamadas) == 3
+
+    def test_5xx_tambem_e_repetido(self, modulo, monkeypatch):
+        chamadas = []
+
+        def falso_get(*a, **k):
+            chamadas.append(1)
+            return self._resposta(503 if len(chamadas) < 2 else 200, "u")
+
+        monkeypatch.setattr(modulo.requests, "get", falso_get)
+        monkeypatch.setattr(modulo.time, "sleep", lambda s: None)
+        assert modulo.url_assinada("k", "f", 10.0) == "u"
+
+    def test_401_falha_na_primeira_sem_repetir(self, modulo, monkeypatch):
+        """Credencial errada não melhora com repetição — só atrasa o diagnóstico."""
+        chamadas = []
+
+        def falso_get(*a, **k):
+            chamadas.append(1)
+            return self._resposta(401)
+
+        monkeypatch.setattr(modulo.requests, "get", falso_get)
+        monkeypatch.setattr(modulo.time, "sleep", lambda s: None)
+        with pytest.raises(modulo.ErroBatchOCR, match="401"):
+            modulo.url_assinada("k", "f", 10.0)
+        assert len(chamadas) == 1
+
+    def test_404_persistente_desiste_e_informa_as_tentativas(self, modulo, monkeypatch):
+        monkeypatch.setattr(
+            modulo.requests, "get", lambda *a, **k: self._resposta(404)
+        )
+        monkeypatch.setattr(modulo.time, "sleep", lambda s: None)
+        with pytest.raises(modulo.ErroBatchOCR, match=r"tentativa 3/3"):
+            modulo.url_assinada("k", "f", 10.0, tentativas=3)
+
+
 class TestGravarResultados:
     def test_documento_ausente_da_saida_vira_falho(self, modulo, tmp_path):
         """Achado em 2026-08-27: a Mistral pode OMITIR a linha de um request

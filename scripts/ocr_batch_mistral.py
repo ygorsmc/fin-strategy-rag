@@ -98,6 +98,20 @@ FONTES: dict[str, FonteCorpus] = {
         dir_cache=RAIZ_PROJETO / "corpus" / "expansao" / "ocr",
         coluna_periodo="trimestre",
     ),
+    # 2T2026 dos 12 emissores, coletado em 2026-09-08. É o único dado do projeto
+    # que **nenhum ajuste viu**: todo número publicado vem da janela
+    # 2T2025–1T2026, aberta durante o desenvolvimento inteiro. Serve como
+    # trimestre fora da amostra e, por isso, JAMAIS entra no corpus do produto
+    # nem no conjunto congelado — usar holdout para iterar o destrói.
+    # O manifesto guarda `data_publicacao` e `versao` do protocolo da CVM, que é
+    # o vintage que o gate G1 do Rank 5 reprovava por ausência (§3.12).
+    "holdout_2T2026": FonteCorpus(
+        nome="holdout_2T2026",
+        manifesto=RAIZ_PROJETO / "corpus" / "holdout_2T2026" / "manifesto_holdout.csv",
+        dir_raw=RAIZ_PROJETO / "corpus" / "holdout_2T2026" / "raw",
+        dir_cache=RAIZ_PROJETO / "corpus" / "holdout_2T2026" / "ocr",
+        coluna_periodo="trimestre",
+    ),
     "ifrs": FonteCorpus(
         nome="ifrs",
         manifesto=RAIZ_PROJETO / "corpus" / "ifrs" / "manifesto_ifrs.csv",
@@ -303,16 +317,40 @@ def subir_pdf(chave: str, doc: Documento, timeout: float) -> str:
     return resposta.json()["id"]
 
 
-def url_assinada(chave: str, file_id: str, timeout: float) -> str:
-    resposta = requests.get(
-        f"{BASE}/files/{file_id}/url",
-        headers=_cabecalhos(chave),
-        params={"expiry": 24},
-        timeout=timeout,
-    )
-    if not resposta.ok:
-        raise ErroBatchOCR(f"URL assinada falhou: HTTP {resposta.status_code}")
-    return resposta.json()["url"]
+def url_assinada(
+    chave: str, file_id: str, timeout: float, tentativas: int = 5
+) -> str:
+    """Pede a URL assinada do arquivo já subido, tolerando 404 transitório.
+
+    O arquivo acabou de ser aceito pelo endpoint de upload, mas o de URL
+    assinada responde **404** por alguns segundos — propagação do lado do
+    provedor. Sem repetição isso derruba a passagem inteira no meio da fila de
+    uploads, e a reexecução sobe tudo de novo desde o começo: mediu-se isso duas
+    vezes, no lote de 24 documentos e no de 12.
+
+    Repete só o que é transitório (404 e 5xx). Erro de credencial ou de forma
+    (401, 403, 422) falha na primeira, porque repetir não conserta e só atrasa a
+    mensagem que diz o que está errado.
+    """
+    espera = 2.0
+    for tentativa in range(1, tentativas + 1):
+        resposta = requests.get(
+            f"{BASE}/files/{file_id}/url",
+            headers=_cabecalhos(chave),
+            params={"expiry": 24},
+            timeout=timeout,
+        )
+        if resposta.ok:
+            return resposta.json()["url"]
+        transitorio = resposta.status_code == 404 or 500 <= resposta.status_code < 600
+        if not transitorio or tentativa == tentativas:
+            raise ErroBatchOCR(
+                f"URL assinada falhou: HTTP {resposta.status_code} "
+                f"(tentativa {tentativa}/{tentativas})"
+            )
+        time.sleep(espera)
+        espera = min(espera * 2, 30.0)
+    raise ErroBatchOCR("URL assinada falhou: repetições esgotadas.")
 
 
 def montar_jsonl(config, documentos: list[Documento], urls: dict[str, str]) -> bytes:

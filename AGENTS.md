@@ -830,6 +830,49 @@ estão no `corpus/metadados.csv`, não foram chunkados e não estão no índice.
 Indexá-los muda o `hash_corpus`, o que invalida a rodada congelada e os números
 publicados — é decisão explícita, nunca efeito lateral.
 
+### 3.16 Etapa 19 — FCF yield × retorno futuro: INDECIDÍVEL (2026-09-08)
+
+Terceiro e último destravador nomeado pelo §3.8 — *"DFC, preços point-in-time,
+ou documentos além dos 20"*. Os dois primeiros já tinham sido feitos (§3.13,
+§3.15); preço fechou o conjunto. Pré-registro:
+`resultados/pre_registro_etapa19_fcf_yield_2026-09-08.md`. Relatório:
+`resultados/validacao_etapa19_fcf_yield_2026-09-08.md`. Artefato:
+`artefatos/etapa19/t1_fcf_yield.json`. Módulo novo com contrato próprio:
+`src/precos.py` (34 testes, ticker resolvido por CNPJ — RN11 — nunca por
+nome).
+
+**G0 (integridade de preço, gate próprio deste candidato) aprovou:** 4,19% de
+observações suspeitas de evento corporativo não ajustado contra limiar de 5%.
+
+**T1 não reprovou pela primeira vez neste projeto**, mas também não aprovou
+com confiança. Os cinco componentes obrigatórios ficaram abaixo de 0,15 na
+leitura pontual (`valor_mercado` 0,120 é o maior), mas um bootstrap por
+companhia (2.000 reamostragens, que respeita o agrupamento do painel) mostra
+**32% de chance de a amplitude verdadeira de `valor_mercado` exceder 0,15** —
+a amostra final tem só 1.908 observações e 19 trimestres porque a
+`composicao_capital` da CVM (ações em circulação) só existe a partir de 2020.
+
+**Achado metodológico que se aplica retroativamente:** `amplitude = max−min`
+sobre cinco quintis é estatística enviesada para cima — o observado de
+`fcf_ttm` (0,024) caiu **fora** do próprio IC95% pelo lado de baixo. Isso torna
+as reprovações do C1 (0,180–0,247) e do Rank 3 (0,266/0,229) **mais robustas**,
+não menos: a folga acima de 0,15 é grande demais para ser efeito desse viés.
+
+**Um caminho de reabertura foi examinado e explicitamente NÃO tomado.** A CVM
+publica Lucro Básico por Ação (`cd_conta 3.99.01`) desde 2011, o que em tese
+permitiria derivar ações em circulação (`lucro_controladores / LPA`) antes de
+2020. Mas o campo é aceito com a precisão que a própria companhia declarou —
+2 casas decimais na maioria dos arquivamentos — e arredonda a `0,00`
+justamente para companhias de LPA pequeno, produzindo ações derivadas
+indeterminadas ou com erro relativo enorme. É a mesma classe de defeito do
+CAND-04 (§3.11: trocas de escala silenciosas que só aparecem no residual).
+Usar essa derivação agora para resgatar um T1 ambíguo seria ajustar a
+população depois de ver o resultado — o pré-registro proíbe isso.
+
+**Veredito: INDECIDÍVEL, não T2/T3.** Reabre com amostra maior por fonte
+não-frágil de ações pré-2020, ou com G0 próprio para a derivação por LPA que
+descarte baixa precisão antes de medir — nunca depois.
+
 ---
 
 ## 4. Contratos e regras invioláveis
