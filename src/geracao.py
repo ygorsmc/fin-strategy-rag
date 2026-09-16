@@ -1145,6 +1145,9 @@ def _sequencia_qualitativa(texto: str) -> list[str]:
 # Só UNE o que o autor já havia escrito como uma oração; nunca separa mais do
 # que antes. Por isso não abre buraco novo: uma oração com duas métricas
 # separadas por vírgula já era uma cláusula única antes desta mudança.
+# Uma célula só é candidata a rótulo de linha se tiver letra: número solto,
+# traço e marcador de nota nomeiam métrica nenhuma.
+_CARACTERE_DE_PALAVRA = re.compile(r"[A-Za-zÀ-ÿ]")
 _PADRAO_FIM_DE_ORACAO = re.compile(r"(?<=[.!?])\s+(?=[A-ZÀ-Þ])")
 _PADRAO_SEPARADOR_FORTE = re.compile(r"[;\n]+")
 _PADRAO_SEPARADOR_FORTE_SEM_QUEBRA = re.compile(r"[;]+")
@@ -1755,6 +1758,14 @@ def _fatos_numericos_da_linha(
                 for celula in celulas
                 if celula.strip()
                 and not extrair_numeros_ptbr_tipados(_sem_marcador_de_nota(celula))
+                # Rótulo de métrica tem palavra. Sem esta condição, a primeira
+                # coluna mesclada do sumário do Itaú — que o OCR devolve como
+                # um ano solto ("| 2025 | Resultado Recorrente Gerencial |
+                # 11.508 |") — era eleita rótulo, o ano não produz token de
+                # métrica nenhum e a linha inteira ficava SEM grupo. Efeito:
+                # a RN02 rebaixava resposta com valor certo e página certa,
+                # porque a evidência chegava anônima à comparação.
+                and _CARACTERE_DE_PALAVRA.search(celula)
             ),
             "",
         )

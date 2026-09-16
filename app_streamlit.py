@@ -66,6 +66,27 @@ st.set_page_config(page_title="Assistente de Research Financeiro", page_icon="�
 config = carregar_config()
 
 
+INTERVALO_STREAMING_S = 0.012
+
+
+def _fluxo_de_texto(texto: str):
+    """Emite a resposta **já validada**, palavra a palavra, para `write_stream`.
+
+    O que NÃO se faz aqui é transmitir o token cru do provedor, e a razão é a
+    garantia central do projeto: a RN02 só pode rebaixar uma resposta depois de
+    ver o texto inteiro, porque o grounding confere cada valor numérico contra
+    os trechos citados. Transmitir o rascunho poria na tela um número que a
+    guarda derrubaria um segundo depois — o usuário teria lido exatamente a
+    alucinação que o sistema existe para não afirmar. Aqui a validação acontece
+    antes, e o streaming é da resposta que sobreviveu a ela.
+    """
+    import time
+
+    for indice, palavra in enumerate(str(texto).split(" ")):
+        yield palavra if indice == 0 else " " + palavra
+        time.sleep(INTERVALO_STREAMING_S)
+
+
 def _redigir_para_exibicao(texto: object) -> str:
     """Redige PII antes de um trecho recuperado chegar ao navegador.
 
@@ -516,10 +537,10 @@ def responder_prospectiva_se_couber(pergunta: str) -> dict | None:
             "provedor": "—",
             "custo_usd": 0.0,
         }
-    if resolucao.companhia is None:
+    companhia = resolucao.resolvida
+    if companhia is None:
         return None
 
-    companhia = resolucao.companhia
     # `sorted()` puro ordenaria como TEXTO e poria 1T2026 antes de 2T2025 —
     # a janela publicada sairia errada sem levantar erro nenhum.
     trimestres = tuple(
@@ -556,6 +577,252 @@ def responder_prospectiva_se_couber(pergunta: str) -> dict | None:
         "custo_usd": 0.0,
         "rastro_projecao": saida.como_dicionario(),
     }
+
+
+@st.cache_resource(show_spinner=False)
+def carregar_rota_estruturada() -> dict | None:
+    """Índice de cobertura + leitor do painel, para a rota sem LLM.
+
+    Devolve ``None`` quando o painel não está nesta instância (deploy enxuto da
+    RNF12): a rota some e o fluxo documental segue. Some inteira, de propósito
+    — meia rota responderia cobertura sem número, que é pior que não responder.
+    """
+    from src.cobertura import carregar_indice_cobertura
+    from src.dados_estruturados import abrir_conexao_somente_leitura
+    from src.ferramentas import LeitorPainelDuckDB
+
+    try:
+        indice = carregar_indice_cobertura(config)
+        # Abre e fecha o painel agora: sem isto, a ausência só apareceria na
+        # primeira pergunta, já dentro do fluxo de resposta.
+        abrir_conexao_somente_leitura(config).close()
+        leitor = LeitorPainelDuckDB(config)
+    except Exception as erro:  # painel ausente ou ilegível
+        LOGGER.warning("rota estruturada desligada: %s", erro)
+        return None
+    return {"indice": indice, "leitor": leitor}
+
+
+# Vocabulário que aponta para a camada DOCUMENTAL. O painel guarda o número
+# CONTÁBIL arquivado na CVM; o release publica o número GERENCIAL, e os dois
+# divergem de propósito — reconciliar essa divergência é o problema que o
+# projeto existe para tratar, não algo a resolver escolhendo um lado calado.
+# Medido em 2026-09-14: sem esta deferência a rota sequestrava 5 das 45
+# congeladas, e em 3 delas devolvia número materialmente diferente do que a
+# pergunta pedia (Santander 2T2025: R$ 1.928 mi contábil contra R$ 3.659 mi
+# gerencial). Uma das 5 era adversarial, cuja resposta certa é recusar a
+# premissa — respondê-la com um número é exatamente o defeito que a categoria
+# adversarial existe para pegar.
+# Radicais, não palavras inteiras: "gerencial" não é substring de "gerenciais",
+# e a congelada que diz "Segundo os comentários gerenciais do BTG" escapava da
+# lista por essa letra só.
+_MARCAS_DA_CAMADA_DOCUMENTAL = (
+    "release",
+    "gerenci",
+    "divulga",
+    "reconcilia",
+    "comparativ",
+    "brgaap",
+    "ifrs",
+    "ajustad",
+    "recorrente",
+    "por que",
+    "porque",
+)
+
+
+AVISO_CONTABIL_E_GERENCIAL = (
+    "**Número contábil arquivado na CVM (ITR/DFP).** O release de resultados "
+    "pode divulgar, para o mesmo período, um número gerencial — ajustado ou "
+    "recorrente — diferente deste; essa leitura não foi consultada aqui. Para "
+    "obtê-la, pergunte no modo pergunta livre citando o release."
+)
+
+
+def _pergunta_pede_a_camada_documental(pergunta: str) -> bool:
+    """Verdadeiro quando o enunciado aponta para o release, não para o painel."""
+    from src.normalizacao import remover_acentos
+
+    texto = remover_acentos(pergunta or "").casefold()
+    return any(marca in texto for marca in _MARCAS_DA_CAMADA_DOCUMENTAL)
+
+
+def responder_estruturada_se_couber(pergunta: str) -> dict | None:
+    """Responde do painel contábil da CVM, sem nenhuma chamada de LLM.
+
+    Devolve ``None`` quando a pergunta não é do vocabulário contábil fechado —
+    narrativa de release não se responde por SQL, e chutar aqui seria pior que
+    encaminhar —, e também quando ela pede explicitamente a camada documental.
+    Custo zero sempre, então não debita a cota da RN03.
+
+    As guardas de entrada (RN05/RN06) e da RN07 moram AQUI DENTRO, e não só na
+    ordem em que os chamadores as invocam: um chamador futuro não pode abrir a
+    porta esquecendo de varrer antes (§3.6). "O lucro do banco X vai cair?"
+    casa o conceito `lucro` e sairia daqui com números históricos.
+
+    O que a guarda da RN07 NÃO cobre: ela tem o tamanho de
+    `detectar_pergunta_prospectiva`. Paráfrases que o detector não casa
+    ("qual o outlook de lucro do Itaú?", "o lucro tende a piorar?") atravessam
+    e saem com tabela de fatos — 5 de 10 paráfrases na auditoria de
+    2026-09-15. Lacuna do detector, registrada no §3.6, não resolvida aqui.
+    """
+    from src.cobertura import (
+        ROTULO_CONCEITO,
+        EstadoCobertura,
+        formatar_reais,
+        responder_por_gabarito,
+    )
+    from src.projecao import (
+        detectar_pergunta_prospectiva,
+        recusa_de_ultimo_recurso,
+    )
+
+    guarda = guardar_entrada(pergunta)
+    if guarda.bloqueado:
+        return {
+            "resposta": texto_de_recusa(guarda),
+            "fontes": [],
+            "fatos": [],
+            "citacoes": [],
+            "modo": "painel CVM · recusa por guardrail no portão da consulta",
+            "provedor": "—",
+            "custo_usd": 0.0,
+            "consumiu_chamada": False,
+        }
+    # RN06: daqui em diante só circula a forma anonimizada.
+    pergunta = guarda.texto_seguro
+
+    achado = detectar_pergunta_prospectiva(pergunta)
+    if achado is not None:
+        saida = recusa_de_ultimo_recurso(
+            achado, motivo="rota prospectiva não atendeu esta pergunta"
+        )
+        return {
+            "resposta": saida.texto,
+            "fontes": [],
+            "fatos": [],
+            "citacoes": [],
+            "modo": "painel CVM · RN07 no portão da consulta estruturada",
+            "provedor": "—",
+            "custo_usd": 0.0,
+            "consumiu_chamada": False,
+        }
+
+    # Deferência à camada documental DEPOIS da RN07 (a fronteira nunca cede a
+    # roteamento) e ANTES de abrir o painel: pergunta sobre release não vira
+    # consulta contábil nem de leve.
+    if _pergunta_pede_a_camada_documental(pergunta):
+        return None
+
+    recursos = carregar_rota_estruturada()
+    if recursos is None:
+        return None
+
+    resposta = responder_por_gabarito(
+        pergunta, recursos["indice"], recursos["leitor"]
+    )
+    # Encaminha ao fluxo documental o que o gabarito fixo não cobre. `parcial`
+    # sozinho NÃO encaminha: cobertura `so_painel` é parcial por definição e é
+    # justamente a metade verdadeira que a RN12 manda entregar.
+    if (
+        not resposta.fatos
+        and not resposta.recusa
+        and not resposta.precisa_desambiguacao
+    ):
+        return None
+
+    if resposta.precisa_desambiguacao:
+        modo = "painel CVM · desambiguação (RN11, nenhuma chamada externa)"
+    elif resposta.recusa:
+        modo = "painel CVM · recusa classificada (RN12, nenhuma chamada externa)"
+    else:
+        modo = "painel CVM · consulta estruturada (nenhuma chamada externa)"
+
+    texto = resposta.resposta
+    # Mitigação da lacuna da deferência (auditoria de 2026-09-15): paráfrase
+    # que aponta o release sem casar radical ainda chega aqui. Quando a
+    # companhia TEM release no corpus, a resposta declara que é o contábil e
+    # que o gerencial não foi lido. Sem release (`so_painel`), a triagem da
+    # RN12 já diz o que falta, e prometer um release inexistente seria falso.
+    codigos_com_release = {
+        triagem.cobertura.companhia.cd_cvm
+        for triagem in resposta.triagens
+        if triagem.cobertura is not None
+        and triagem.cobertura.companhia is not None
+        and triagem.cobertura.estado is EstadoCobertura.AMBAS
+    }
+    if any(fato.cd_cvm in codigos_com_release for fato in resposta.fatos):
+        texto = f"{texto}\n\n{AVISO_CONTABIL_E_GERENCIAL}"
+
+    return {
+        "resposta": texto,
+        "fontes": [],
+        "fatos": [
+            {
+                "companhia": fato.denom_social,
+                "cd_cvm": fato.cd_cvm,
+                "trimestre": fato.trimestre,
+                "conceito": ROTULO_CONCEITO.get(fato.conceito, fato.conceito),
+                "valor": formatar_reais(fato.valor_reais),
+                "origem": "derivado (RN10)" if fato.derivado else "arquivado",
+            }
+            for fato in resposta.fatos
+        ],
+        "citacoes": list(resposta.citacoes),
+        "modo": modo,
+        "provedor": "—",
+        "custo_usd": 0.0,
+        "consumiu_chamada": False,
+    }
+
+
+def _mensagem_do_painel(item: dict) -> dict:
+    """Converte a saída da rota estruturada na mensagem que o histórico lê."""
+    return {
+        "papel": "assistant",
+        "conteudo": item["resposta"],
+        "fontes": item.get("fontes", []),
+        "fatos": item.get("fatos", []),
+        "citacoes": item.get("citacoes", []),
+        "modo": item["modo"],
+        "provedor": item["provedor"],
+        "streamar": True,
+    }
+
+
+def responder_sem_llm(pergunta: str) -> tuple[str, dict | None]:
+    """Cadeia de custo zero: guardrails → RN07 → painel contábil.
+
+    Devolve a pergunta na forma exibível (anonimizada, RN06) e a mensagem de
+    resposta, ou ``None`` quando só a camada documental pode responder. É o que
+    permite ao modo demonstração aceitar pergunta sem nenhum segredo
+    configurado (RNF12), porque nenhuma etapa daqui chama provedor externo.
+    """
+    guarda = guardar_entrada(pergunta)
+    if guarda.bloqueado:
+        return guarda.texto_seguro, {
+            "papel": "assistant",
+            "conteudo": texto_de_recusa(guarda),
+            "fontes": [],
+            "modo": "recusa por guardrail (nenhuma chamada externa)",
+            "provedor": "—",
+            "streamar": True,
+        }
+    segura = guarda.texto_seguro
+
+    item = None
+    try:
+        item = responder_prospectiva_se_couber(segura)
+    except Exception as exc:  # nunca derruba o app por um extra
+        LOGGER.warning("rota prospectiva falhou: %s", exc)
+    if item is None:
+        try:
+            item = responder_estruturada_se_couber(segura)
+        except Exception as exc:
+            LOGGER.warning("rota estruturada falhou: %s", exc)
+    if item is None:
+        return segura, None
+    return segura, _mensagem_do_painel(item)
 
 
 def validar_pergunta_livre(pergunta: str) -> str:
@@ -824,7 +1091,13 @@ st.caption(
 
 for msg in st.session_state.historico:
     with st.chat_message(msg["papel"]):
-        st.markdown(msg["conteudo"])
+        # `pop`: a mensagem transmite uma vez, na primeira renderização depois
+        # de ter sido produzida. Sem isso, todo rerun (clique, troca de modo)
+        # reescreveria o histórico inteiro palavra por palavra.
+        if msg.pop("streamar", False):
+            st.write_stream(_fluxo_de_texto(msg["conteudo"]))
+        else:
+            st.markdown(msg["conteudo"])
         if msg.get("fontes"):
             with st.expander(
                 "Trechos recuperados (não equivalem necessariamente às citações usadas)"
@@ -835,6 +1108,18 @@ for msg in st.session_state.historico:
                         st.caption(_redigir_para_exibicao(fonte.get("trecho", "")))
                     else:
                         st.markdown(f"- {_redigir_para_exibicao(fonte)}")
+        if msg.get("fatos"):
+            st.dataframe(msg["fatos"], hide_index=True, width="stretch")
+            if any("derivado" in f.get("origem", "") for f in msg["fatos"]):
+                st.warning(
+                    "Há valor **derivado** nesta resposta (RN10): o 4º "
+                    "trimestre não existe como ITR e foi obtido por "
+                    "DFP anual − ITR acumulado do 3T."
+                )
+        if msg.get("citacoes"):
+            with st.expander("Procedência no painel da CVM (RN01)"):
+                for citacao in msg["citacoes"]:
+                    st.markdown(f"- {citacao}")
         if msg.get("gabarito"):
             st.info(f"Gabarito verificado: {msg['gabarito']}")
         if msg.get("modo"):
@@ -868,9 +1153,76 @@ if modo == "Demonstração (cacheado)":
                     "gabarito": item.get("gabarito"),
                     "modo": "demonstração cacheada",
                     "provedor": item.get("provedor", "—"),
+                    "streamar": True,
                 }
             )
             st.rerun()
+
+    # Consulta ao painel contábil da CVM: sem LLM, sem segredo e sem custo, o
+    # que a torna elegível ao modo demonstração (RNF12). O cache de respostas
+    # pode estar travado pela auditoria pendente e esta consulta segue de pé —
+    # ela não depende da rodada congelada.
+    if carregar_rota_estruturada() is None:
+        st.info(
+            "O painel contábil da CVM não está disponível nesta instância, "
+            "então a consulta a dados estruturados está desligada."
+        )
+    else:
+        with st.expander("O que dá para perguntar ao painel contábil"):
+            st.markdown(
+                "Este canal lê os formulários **ITR/DFP arquivados na CVM** — "
+                "não os releases. Ele responde valor por companhia e "
+                "trimestre, sem chamar modelo de linguagem e sem custo:\n\n"
+                "- `Qual foi o lucro líquido do Itaú no 3T2025?`\n"
+                "- `Qual o lucro líquido consolidado do Banco do Brasil no "
+                "4T2025?` — vem **marcado como derivado**, porque o 4º "
+                "trimestre não existe como ITR\n"
+                "- `Qual foi o lucro do Banco Inter no 3T2025?` — está no "
+                "painel do regulador e **fora** do corpus de releases; o "
+                "sistema entrega o número e declara o que falta\n"
+                "- `Qual foi o lucro do Nubank no 3T2025?` — **recusa**, "
+                "dizendo por quê\n\n"
+                "Conceitos reconhecidos: lucro líquido (controladores ou "
+                "consolidado), patrimônio líquido, ativo total e receita de "
+                "intermediação financeira. Narrativa de release — *por que* "
+                "algo variou — exige o modo pergunta livre."
+            )
+        pergunta_painel = st.chat_input(
+            "Consulte o painel contábil da CVM (ex.: lucro líquido do Banco "
+            "do Brasil no 4T2025)",
+            key="entrada_painel",
+        )
+        if pergunta_painel:
+            try:
+                texto = validar_pergunta_livre(pergunta_painel)
+            except ValueError as exc:
+                st.error(str(exc))
+                texto = None
+            if texto is not None:
+                exibida, mensagem = responder_sem_llm(texto)
+                st.session_state.historico.append(
+                    {"papel": "user", "conteudo": exibida}
+                )
+                st.session_state.historico.append(
+                    mensagem
+                    if mensagem is not None
+                    else {
+                        "papel": "assistant",
+                        "conteudo": (
+                            "Esta pergunta depende da leitura dos releases, "
+                            "que exige o modo **pergunta livre**. O painel "
+                            "contábil responde valor por companhia e "
+                            "trimestre: lucro líquido, patrimônio líquido, "
+                            "ativo total e receita de intermediação "
+                            "financeira."
+                        ),
+                        "fontes": [],
+                        "modo": "painel CVM · fora do vocabulário contábil",
+                        "provedor": "—",
+                        "streamar": True,
+                    }
+                )
+                st.rerun()
 else:
     pergunta = st.chat_input(
         "Pergunte sobre os releases (ex.: lucro líquido do banco X no 4T2025)"
@@ -902,6 +1254,7 @@ else:
                         "fontes": [],
                         "modo": "recusa por guardrail (nenhuma chamada externa)",
                         "provedor": "—",
+                        "streamar": True,
                     }
                 )
                 # Sem débito de cota nem de orçamento: a cota existe para conter
@@ -933,7 +1286,23 @@ else:
                             "fontes": item_projecao.get("fontes", []),
                             "modo": item_projecao["modo"],
                             "provedor": item_projecao["provedor"],
+                            "streamar": True,
                         }
+                    )
+                    st.rerun()
+                # Painel contábil DEPOIS da guarda prospectiva e ANTES do
+                # provedor: responde de SQL local, custo zero, sem debitar cota.
+                item_painel = None
+                try:
+                    item_painel = responder_estruturada_se_couber(pergunta)
+                except Exception as exc:  # nunca derruba o app por um extra
+                    LOGGER.warning("rota estruturada falhou: %s", exc)
+                if item_painel is not None:
+                    st.session_state.historico.append(
+                        {"papel": "user", "conteudo": pergunta}
+                    )
+                    st.session_state.historico.append(
+                        _mensagem_do_painel(item_painel)
                     )
                     st.rerun()
                 st.session_state.historico.append(
@@ -971,6 +1340,7 @@ else:
                                 "provedor",
                                 f"{config.llm_provider}/{item.get('modelo', '—')}",
                             ),
+                            "streamar": True,
                         }
                     )
                 except FalhaConsultaAoVivo as exc:
@@ -1001,6 +1371,7 @@ else:
                             "fontes": [],
                             "modo": "pergunta livre (falha segura)",
                             "provedor": config.llm_provider,
+                            "streamar": True,
                         }
                     )
                 except Exception as exc:
@@ -1019,6 +1390,7 @@ else:
                             "fontes": [],
                             "modo": "pergunta livre (falha segura)",
                             "provedor": config.llm_provider,
+                            "streamar": True,
                         }
                     )
                 st.rerun()

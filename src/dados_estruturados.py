@@ -28,7 +28,7 @@ import re
 import threading
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Collection, Iterable, Sequence
+from typing import Any, Collection, Iterable, NamedTuple, Sequence
 
 import duckdb
 
@@ -1125,7 +1125,7 @@ def carregar_painel(
             FROM _limpo
             """
         )
-        intermediarios = _derivar_trimestres_intermediarios(con)
+        derivacao_intermediaria = _derivar_trimestres_intermediarios(con)
         derivados = _derivar_quarto_trimestre(con)
         _materializar_indicadores(con)
         incoerencias = _contar_incoerencias_do_lucro(con)
@@ -1137,6 +1137,23 @@ def carregar_painel(
                 "nenhum cabeçalho informado: a tabela `documentos` está vazia "
                 "e este painel NÃO é point-in-time — `dt_refer` é fim de "
                 "exercício, não data de publicação"
+            )
+        if derivacao_intermediaria.recusados:
+            # Contrato D1.2. Sem este aviso a correção seria silenciosa.
+            avisos.append(
+                f"{derivacao_intermediaria.recusados} derivação(ões) de trimestre "
+                "intermediário RECUSADAS por cobrirem mais de um trimestre "
+                "(falta o acumulado imediatamente anterior): o isolado NÃO "
+                "existe para esses períodos, em vez de existir errado"
+            )
+        if derivacao_intermediaria.sem_antecedente:
+            # Contrato D2.2: causa DISTINTA da recusa pela banda, aviso próprio.
+            avisos.append(
+                f"{derivacao_intermediaria.sem_antecedente} trimestre(s) "
+                "intermediário(s) SEM ANTECEDENTE: há o acumulado, mas nenhum "
+                "acumulado anterior do mesmo exercício com o mesmo conceito (ou, "
+                "sem conceito, o mesmo código E descrição) — não há aritmética "
+                "possível, e o isolado NÃO existe"
             )
         if dfc_ambos:
             avisos.append(
@@ -1208,11 +1225,35 @@ def carregar_painel(
         incoerencias_lucro=incoerencias,
         documentos_carregados=documentos,
         emissores_dfc_ambos_metodos=dfc_ambos,
-        fatos_derivados_intermediarios=intermediarios,
+        fatos_derivados_intermediarios=derivacao_intermediaria.criados,
     )
 
 
-def _derivar_trimestres_intermediarios(con: duckdb.DuckDBPyConnection) -> int:
+#: Um trimestre fiscal dura ~91 dias. A banda existe porque exercício de 13
+#: semanas desloca o fim do período em poucos dias, e `date_diff('month', …)`
+#: contaria 2 meses entre 29/03 e 28/06 — recusando derivação legítima.
+#:
+#: **A banda separa o que foi medido em 2026-09-12:** os 7.734 derivados
+#: anômalos (182, 183, 184 e 273 dias) caem fora, e os 701.357 derivados em
+#: disco dentro dela. Nenhum caso ambíguo foi observado. **Ressalva de
+#: 2026-09-15:** os 701.357 são TODOS os derivados trimestrais do painel,
+#: inclusive 319.049 do 4T, que outra função produz — não provam que a função
+#: corrigida preserva cada derivado legítimo, só que a banda não os cortaria.
+DIAS_MINIMOS_DE_UM_TRIMESTRE = 80
+DIAS_MAXIMOS_DE_UM_TRIMESTRE = 100
+
+
+class ResultadoDaDerivacao(NamedTuple):
+    """Contrato D2.3: três estados, nunca somados."""
+
+    criados: int
+    recusados: int
+    sem_antecedente: int
+
+
+def _derivar_trimestres_intermediarios(
+    con: duckdb.DuckDBPyConnection,
+) -> ResultadoDaDerivacao:
     """Deriva 2T e 3T isolados de demonstrativo de fluxo (RN10).
 
     **Achado de 2026-08-27, e é o motivo de esta função existir:** a CVM publica
@@ -1237,12 +1278,44 @@ def _derivar_trimestres_intermediarios(con: duckdb.DuckDBPyConnection) -> int:
 
     Não toca a DFP anual: aquela subtração é o 4T e tem função própria. Aqui só
     entra `acumulado`, então as duas não se sobrepõem.
+
+    **Correção de 2026-09-12 (contrato D1): só deriva trimestre quem cobre um
+    trimestre.** O `lag` pareia o período anterior *disponível*, e faltando um
+    acumulado intermediário a diferença cobria mais de um trimestre — saindo
+    rotulada `trimestral`. Medido no painel inteiro: **7.734 linhas** em 513
+    companhias e 111 contas, com 182, 183, 184 ou 273 dias (507 companhias é só
+    o grupo de 183 dias — corrigido em 2026-09-15). Exemplo:
+    `025887/3T2024` = 19.289.000 (jan–set) − 1.992.000 (jan–mar) =
+    **17.297.000 de abr–set**, publicado como trimestre isolado.
+
+    A promessa antiga desta docstring — *"o de mesmo início de exercício com o
+    maior `dt_fim_exerc` estritamente menor"* — era verdadeira e **insuficiente**:
+    nada garantia que esse período fosse o trimestre anterior.
+
+    Devolve `(criados, recusados, sem_antecedente)`. A recusa é **contada e
+    reportada em aviso**, nunca silenciosa: painel que perde linha sem sinal é o
+    defeito que o §3.15 descreve como *"pior que sumir com erro"*.
+
+    **Correção de 2026-09-15 (contrato D2, conferência QW6): uma relação só.**
+    A contagem de recusas usava `coalesce(conceito, cd_conta)` e a inserção
+    `coalesce(conceito, cd_conta|descrição)` — identidades diferentes. Com a
+    mesma conta no 1T e no 3T e outra descrição no 2T, a recusa acontecia e
+    **não era contada** (e o aviso não saía). Agora candidatos, inserção e
+    contagens saem da MESMA tabela, e a contagem é por grupo
+    `(companhia, demonstrativo, trimestre, chave)` — a unidade do `QUALIFY`.
+
+    **Antecedente inexistente é estado próprio** (`sem_antecedente`), contado
+    à parte: não há aritmética possível, que é causa diferente de a aritmética
+    cobrir mais de um trimestre. Medido sobre os arquivados do painel de treino:
+    ~140 mil grupos — boa parte porque a descrição normalizada muda entre
+    arquivamentos e parte a partição. Curar essa deriva muda a identidade de
+    pareamento (RN09) e todos os consumidores: contrato próprio, não feito.
     """
     antes = _contar(con, "fatos_contabeis")
     fluxo = ", ".join(f"'{d}'" for d in sorted(DEMONSTRATIVOS_DE_FLUXO))
     con.execute(
         f"""
-        INSERT INTO fatos_contabeis
+        CREATE OR REPLACE TEMP TABLE _candidatos_intermediarios AS
         WITH resolvido AS (
             SELECT
                 f.*,
@@ -1264,8 +1337,7 @@ def _derivar_trimestres_intermediarios(con: duckdb.DuckDBPyConnection) -> int:
             SELECT
                 a.*,
                 lag(a.valor_reais) OVER janela  AS valor_anterior,
-                lag(a.dt_fim_exerc) OVER janela AS fim_anterior,
-                lag(a.cd_conta) OVER janela     AS cd_conta_anterior
+                lag(a.dt_fim_exerc) OVER janela AS fim_anterior
             FROM resolvido AS a
             WINDOW janela AS (
                 PARTITION BY a.cd_cvm, a.demonstrativo,
@@ -1273,6 +1345,45 @@ def _derivar_trimestres_intermediarios(con: duckdb.DuckDBPyConnection) -> int:
                 ORDER BY a.dt_fim_exerc
             )
         )
+        SELECT
+            a.*,
+            (a.fim_anterior IS NOT NULL AND a.valor_anterior IS NOT NULL)
+                AS tem_antecedente,
+            -- Contrato D1.1: o período derivado tem de durar um trimestre.
+            (a.fim_anterior IS NOT NULL AND a.valor_anterior IS NOT NULL
+             AND (a.dt_fim_exerc - a.fim_anterior)
+                 BETWEEN {DIAS_MINIMOS_DE_UM_TRIMESTRE}
+                     AND {DIAS_MAXIMOS_DE_UM_TRIMESTRE})
+                AS na_banda
+        FROM com_anterior AS a
+        WHERE a.tipo_periodo = 'acumulado'
+          AND NOT EXISTS (
+              SELECT 1 FROM fatos_contabeis AS ja
+              WHERE ja.cd_cvm = a.cd_cvm
+                AND ja.demonstrativo = a.demonstrativo
+                AND ja.cd_conta = a.cd_conta
+                AND ja.ds_conta_norm = a.ds_conta_norm
+                AND ja.trimestre = a.trimestre
+                AND ja.tipo_periodo = 'trimestral'
+          )
+        """
+    )
+    derivaveis, recusados, sem_antecedente = con.execute(
+        """
+        SELECT count(*) FILTER (WHERE na_banda),
+               count(*) FILTER (WHERE tem_antecedente AND NOT na_banda),
+               count(*) FILTER (WHERE NOT tem_antecedente)
+        FROM (
+            SELECT bool_or(tem_antecedente) AS tem_antecedente,
+                   bool_or(na_banda)        AS na_banda
+            FROM _candidatos_intermediarios
+            GROUP BY cd_cvm, demonstrativo, trimestre, chave_pareamento
+        )
+        """
+    ).fetchone()
+    con.execute(
+        """
+        INSERT INTO fatos_contabeis
         SELECT
             a.cd_cvm,
             a.conjunto,
@@ -1290,19 +1401,8 @@ def _derivar_trimestres_intermediarios(con: duckdb.DuckDBPyConnection) -> int:
             a.valor_reais - a.valor_anterior AS valor_reais,
             a.versao_documento,
             'derivado' AS origem
-        FROM com_anterior AS a
-        WHERE a.tipo_periodo = 'acumulado'
-          AND a.valor_anterior IS NOT NULL
-          AND a.fim_anterior IS NOT NULL
-          AND NOT EXISTS (
-              SELECT 1 FROM fatos_contabeis AS ja
-              WHERE ja.cd_cvm = a.cd_cvm
-                AND ja.demonstrativo = a.demonstrativo
-                AND ja.cd_conta = a.cd_conta
-                AND ja.ds_conta_norm = a.ds_conta_norm
-                AND ja.trimestre = a.trimestre
-                AND ja.tipo_periodo = 'trimestral'
-          )
+        FROM _candidatos_intermediarios AS a
+        WHERE a.na_banda
         QUALIFY row_number() OVER (
             PARTITION BY a.cd_cvm, a.demonstrativo, a.trimestre,
                          a.chave_pareamento
@@ -1310,7 +1410,16 @@ def _derivar_trimestres_intermediarios(con: duckdb.DuckDBPyConnection) -> int:
         ) = 1
         """
     )
-    return _contar(con, "fatos_contabeis") - antes
+    con.execute("DROP TABLE _candidatos_intermediarios")
+    criados = _contar(con, "fatos_contabeis") - antes
+    if criados != derivaveis:
+        # Inserção e contagem saem da mesma relação; divergirem é defeito deste
+        # código, e painel com contagem errada é pior que carga que falha.
+        raise ErroCargaCVM(
+            f"derivação intermediária inseriu {criados} linhas, mas a relação de "
+            f"candidatos tem {derivaveis} grupos deriváveis"
+        )
+    return ResultadoDaDerivacao(criados, recusados, sem_antecedente)
 
 
 def _derivar_quarto_trimestre(con: duckdb.DuckDBPyConnection) -> int:

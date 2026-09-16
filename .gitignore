@@ -165,3 +165,13 @@ AGENTS.md
 MEMORY.md
 CLAUDE.md
 .docs
+
+# Piloto documental B-DFC-01J (2026-09-09): binários novos baixados pelo piloto.
+# Só os artefatos leves (manifestos, JSONL, CSV, README) entram no Git — os PDFs/
+# ZIPs/XLSX recuperados ficam fora, pela mesma razão de corpus/ifrs/raw.
+artefatos/b_dfc_01j/raw/*
+!artefatos/b_dfc_01j/raw/.gitkeep
+
+# Cookie de sessão do rad.cvm.gov.br usado na coleta. É credencial de sessão e
+# não entra no Git (RNF04); os artefatos leves da extensão, sim.
+artefatos/b_dfc_01j/extensao/.cookies_cvm

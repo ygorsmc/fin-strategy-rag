@@ -2,6 +2,14 @@
 
 **Veredito: REJEITADO em T1, antes de qualquer treino.** Custo de API: zero.
 
+> **Ressalva posterior — 2026-09-08.** A revisão do código constatou que o
+> filtro `DT_RECEB` do pré-registro não foi implementado e que o futuro foi
+> construído depois dos filtros de lucro/ativo, exigindo saúde também em
+> `t+4`. As métricas abaixo descrevem a amostra efetivamente construída,
+> **não a execução integral do protocolo nem uma confirmação PIT**.
+> Não houve remedição ou aprovação retrospectiva. Fontes e implicações:
+> [retomada DFC, §2.2](viabilidade_ml_dfc_2026-09-08.md#22-duas-desconformidades-do-experimento-antigo).
+
 Pré-registro: `resultados/pre_registro_rank03_conversao_caixa_2026-08-27.md`,
 escrito **antes** de qualquer medição de desempenho. Auditor:
 `scripts/auditar_rank03_conversao_caixa.py` →

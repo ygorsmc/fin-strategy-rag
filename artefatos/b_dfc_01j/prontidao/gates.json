@@ -1,0 +1,85 @@
+{
+ "schema_version": "1.0.0",
+ "candidato": "B-DFC-01J-M",
+ "pre_registro": "resultados/pre_registro_b_dfc_01j_modelo_2026-09-09.md",
+ "populacao": {
+  "registros_na_serie": 198,
+  "descartados_nao_isolado": 97,
+  "descartados_sem_fechamento": 4,
+  "descartados_status": 97,
+  "descartados_safra_pior": 0,
+  "descartados_largura": 0,
+  "observacoes_de_J": 0,
+  "pares_sem_trimestre_seguinte": 0,
+  "pares_com_sinal_trocado": 0,
+  "alvos": 0
+ },
+ "emissores": [],
+ "janela": "- .. -",
+ "gates": [
+  {
+   "gate": "G0",
+   "pergunta": "O dado é íntegro?",
+   "fechamento_na_populacao": 1.0,
+   "descartados_por_nao_fechar": 4,
+   "identidades_conferidas": 24,
+   "identidades_conferidas_independentes": 24,
+   "tem_evidencia_independente": true,
+   "requisito_de_evidencia_independente": "G0 só certifica com `identidades_conferidas_independentes` presente, inteiro e maior que zero. Campo ausente é «não sei» e NÃO certifica. Fechamento por construção é álgebra, não contraprova de mapeamento. Deliberadamente sem cobertura mínima: o contrato C5-B não fixou percentual e esta onda não o inventa.",
+   "identidades_que_fecham_por_construcao": 0,
+   "identidades_divergentes": 0,
+   "periodos_com_credito_em_parcela_incluida": [],
+   "rubricas_com_conformidade_contratual_nao_demonstrada": [],
+   "limiar": "100% de fechamento, 0 divergências, 0 rubricas incluídas com conformidade contratual não demonstrada e pelo menos uma identidade conferida de forma INDEPENDENTE (contrato C5-bis)",
+   "aprovado": false,
+   "papel": "decisivo"
+  },
+  {
+   "gate": "G1",
+   "pergunta": "É point-in-time?",
+   "aprovado": false,
+   "reprova_em_aberto": "Nenhum alvo: G1 não é decidível.",
+   "papel": "diagnostico_apos_a_interrupcao"
+  },
+  {
+   "gate": "G2",
+   "pergunta": "O rótulo tem erro menor que o sinal?",
+   "aprovado": false,
+   "reprova_em_aberto": "Alvos insuficientes para medir ruído/sinal.",
+   "papel": "diagnostico_apos_a_interrupcao"
+  },
+  {
+   "gate": "G3",
+   "pergunta": "A amostra decide algo?",
+   "aprovado": false,
+   "reprova_em_aberto": "0 emissor(es): menos que o mínimo 3 de clusters independentes.",
+   "papel": "diagnostico_apos_a_interrupcao"
+  },
+  {
+   "teste": "T1",
+   "pergunta": "O alvo fabrica o próprio baseline?",
+   "aprovado": false,
+   "reprova_em_aberto": "0 observações: abaixo do mínimo 25 para quintil. Amplitude sobre amostra insuficiente sai NaN, e NaN >= limiar é False — isso aprovaria por ausência de dado.",
+   "papel": "diagnostico_apos_a_interrupcao"
+  },
+  {
+   "teste": "T2",
+   "pergunta": "Há sinal temporal ou só ordenação de emissor?",
+   "aprovado": false,
+   "reprova_em_aberto": "G3 não chegou a eleger baseline: sem escore, T2 não é medível.",
+   "papel": "diagnostico_apos_a_interrupcao"
+  }
+ ],
+ "interrompido_em": "G0",
+ "reprovados_no_diagnostico": [
+  "G1",
+  "G2",
+  "G3",
+  "T1",
+  "T2"
+ ],
+ "reprovados": [
+  "G0"
+ ],
+ "veredito": "NAO AUTORIZA TREINO"
+}

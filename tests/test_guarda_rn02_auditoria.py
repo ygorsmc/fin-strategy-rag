@@ -212,3 +212,84 @@ class TestDeltaPercentualSegueExigido:
 
     def test_diferenca_de_taxas_escrita_em_porcento_e_recusada(self):
         assert not self._fundamenta("Cálculo: 26,6% - 24,8% = 1,8%")
+
+
+class TestRotuloDeLinhaComColunaMesclada:
+    """Célula mesclada do sumário fazia a linha inteira perder a métrica.
+
+    Achado em 2026-09-14, com a pergunta congelada TSTF004. O modelo respondeu
+    `R$ 11.508 milhões` — o valor do gabarito —, citou a página 5, que é a
+    página certa, e a RN02 rebaixou.
+
+    A causa não estava na guarda e sim na evidência que chegava até ela. O
+    sumário do Itaú tem a primeira coluna mesclada, e o OCR a devolve como um
+    ano solto: `| 2025 | Resultado Recorrente Gerencial | 11.508 | ...`. O
+    seletor de rótulo pegava a primeira célula sem número — o ano —, que não
+    produz token de métrica nenhum. A linha chegava anônima à comparação e
+    `metricas_compativeis` não tinha como casar. Rótulo agora exige letra.
+    """
+
+    LINHA_SUMARIO = (
+        "|  Em R$ milhões (exceto onde indicado) |   | 2T25 | 1T25 | 2T24  |\n"
+        "| --- | --- | --- | --- | --- |\n"
+        "|  2025 | Resultado Recorrente Gerencial | 11.508 | 11.128 | 10.072  |\n"
+        "|   |  Margem Financeira Gerencial | 31.177 | 30.322 | 27.665  |\n"
+    )
+
+    def _fundamenta(self, resposta: str) -> bool:
+        chunk = _chunk(
+            self.LINHA_SUMARIO,
+            empresa="ITAU",
+            trimestre="2T2025",
+            documento="itau_release_2T2025",
+            pagina_inicio=5,
+            pagina_fim=5,
+        )
+        return numeros_da_resposta_estao_fundamentados(
+            resposta,
+            (Citacao("ITAU", "itau_release_2T2025", "2T2025", 5),),
+            [chunk],
+            Config().tolerancia_numerica_pct,
+            "Segundo a análise gerencial do Itaú Unibanco qual foi o "
+            "resultado recorrente gerencial no 2T2025?",
+        )
+
+    def test_a_linha_com_ano_na_primeira_coluna_mantem_a_metrica(self):
+        chunk = _chunk(self.LINHA_SUMARIO, empresa="ITAU")
+        tokens_do_valor = [
+            tokens
+            for numero, tokens, _mod in fatos_numericos_do_chunk(chunk)
+            if numero.valor == 11_508_000_000.0
+        ]
+        assert tokens_do_valor, "o valor do sumário sumiu da evidência"
+        assert "metrica_lucro" in tokens_do_valor[0], (
+            "a célula mesclada voltou a ser eleita rótulo e a linha perdeu o "
+            "grupo métrico"
+        )
+
+    def test_resposta_com_valor_e_pagina_certos_e_aceita(self):
+        assert self._fundamenta(
+            "O resultado recorrente gerencial no 2T25 foi de R$ 11.508 milhões."
+        )
+
+    @pytest.mark.parametrize(
+        "resposta",
+        [
+            # O 11.508 é do resultado recorrente, não da margem financeira.
+            "A margem financeira gerencial no 2T25 foi de R$ 11.508 milhões.",
+            "O resultado recorrente gerencial no 2T25 foi de R$ 99.999 milhões.",
+            "O resultado recorrente gerencial no 2T24 foi de R$ 11.508 milhões.",
+        ],
+    )
+    def test_contraprova_a_guarda_nao_ficou_permissiva(self, resposta: str):
+        """Recuperar o rótulo certo precisa RECUSAR o que não bate com ele."""
+        assert not self._fundamenta(resposta)
+
+    def test_celula_sem_letra_nunca_e_rotulo(self):
+        """Ano, traço e marcador de nota não nomeiam métrica."""
+        chunk = _chunk(
+            "|  2024 | - | Lucro líquido recorrente | 3.882 |\n",
+            empresa="SANTANDER",
+        )
+        tokens = [t for _n, t, _m in fatos_numericos_do_chunk(chunk)]
+        assert any("metrica_lucro" in t for t in tokens)

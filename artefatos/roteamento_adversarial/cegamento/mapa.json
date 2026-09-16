@@ -1,0 +1,1406 @@
+{
+  "semente": 20260915,
+  "n_lotes": 2,
+  "mapa": {
+    "X001": {
+      "particao": "dev",
+      "id": "RAD084",
+      "lote": 1
+    },
+    "X002": {
+      "particao": "dev",
+      "id": "RAD101",
+      "lote": 1
+    },
+    "X003": {
+      "particao": "holdout",
+      "id": "RAH113",
+      "lote": 1
+    },
+    "X004": {
+      "particao": "holdout",
+      "id": "RAH040",
+      "lote": 1
+    },
+    "X005": {
+      "particao": "holdout",
+      "id": "RAH060",
+      "lote": 1
+    },
+    "X006": {
+      "particao": "dev",
+      "id": "RAD125",
+      "lote": 1
+    },
+    "X007": {
+      "particao": "holdout",
+      "id": "RAH139",
+      "lote": 1
+    },
+    "X008": {
+      "particao": "holdout",
+      "id": "RAH100",
+      "lote": 1
+    },
+    "X009": {
+      "particao": "holdout",
+      "id": "RAH032",
+      "lote": 1
+    },
+    "X010": {
+      "particao": "dev",
+      "id": "RAD044",
+      "lote": 1
+    },
+    "X011": {
+      "particao": "dev",
+      "id": "RAD016",
+      "lote": 1
+    },
+    "X012": {
+      "particao": "dev",
+      "id": "RAD075",
+      "lote": 1
+    },
+    "X013": {
+      "particao": "holdout",
+      "id": "RAH021",
+      "lote": 1
+    },
+    "X014": {
+      "particao": "dev",
+      "id": "RAD018",
+      "lote": 1
+    },
+    "X015": {
+      "particao": "dev",
+      "id": "RAD133",
+      "lote": 1
+    },
+    "X016": {
+      "particao": "dev",
+      "id": "RAD040",
+      "lote": 1
+    },
+    "X017": {
+      "particao": "dev",
+      "id": "RAD107",
+      "lote": 1
+    },
+    "X018": {
+      "particao": "dev",
+      "id": "RAD111",
+      "lote": 1
+    },
+    "X019": {
+      "particao": "holdout",
+      "id": "RAH133",
+      "lote": 1
+    },
+    "X020": {
+      "particao": "holdout",
+      "id": "RAH006",
+      "lote": 1
+    },
+    "X021": {
+      "particao": "holdout",
+      "id": "RAH087",
+      "lote": 1
+    },
+    "X022": {
+      "particao": "holdout",
+      "id": "RAH101",
+      "lote": 1
+    },
+    "X023": {
+      "particao": "holdout",
+      "id": "RAH034",
+      "lote": 1
+    },
+    "X024": {
+      "particao": "dev",
+      "id": "RAD108",
+      "lote": 1
+    },
+    "X025": {
+      "particao": "holdout",
+      "id": "RAH116",
+      "lote": 1
+    },
+    "X026": {
+      "particao": "dev",
+      "id": "RAD093",
+      "lote": 1
+    },
+    "X027": {
+      "particao": "dev",
+      "id": "RAD033",
+      "lote": 1
+    },
+    "X028": {
+      "particao": "dev",
+      "id": "RAD132",
+      "lote": 1
+    },
+    "X029": {
+      "particao": "dev",
+      "id": "RAD087",
+      "lote": 1
+    },
+    "X030": {
+      "particao": "dev",
+      "id": "RAD113",
+      "lote": 1
+    },
+    "X031": {
+      "particao": "dev",
+      "id": "RAD090",
+      "lote": 1
+    },
+    "X032": {
+      "particao": "dev",
+      "id": "RAD060",
+      "lote": 1
+    },
+    "X033": {
+      "particao": "dev",
+      "id": "RAD124",
+      "lote": 1
+    },
+    "X034": {
+      "particao": "holdout",
+      "id": "RAH111",
+      "lote": 1
+    },
+    "X035": {
+      "particao": "dev",
+      "id": "RAD099",
+      "lote": 1
+    },
+    "X036": {
+      "particao": "dev",
+      "id": "RAD126",
+      "lote": 1
+    },
+    "X037": {
+      "particao": "holdout",
+      "id": "RAH134",
+      "lote": 1
+    },
+    "X038": {
+      "particao": "holdout",
+      "id": "RAH051",
+      "lote": 1
+    },
+    "X039": {
+      "particao": "holdout",
+      "id": "RAH077",
+      "lote": 1
+    },
+    "X040": {
+      "particao": "dev",
+      "id": "RAD045",
+      "lote": 1
+    },
+    "X041": {
+      "particao": "holdout",
+      "id": "RAH136",
+      "lote": 1
+    },
+    "X042": {
+      "particao": "holdout",
+      "id": "RAH033",
+      "lote": 1
+    },
+    "X043": {
+      "particao": "dev",
+      "id": "RAD005",
+      "lote": 1
+    },
+    "X044": {
+      "particao": "holdout",
+      "id": "RAH063",
+      "lote": 1
+    },
+    "X045": {
+      "particao": "dev",
+      "id": "RAD006",
+      "lote": 1
+    },
+    "X046": {
+      "particao": "dev",
+      "id": "RAD061",
+      "lote": 1
+    },
+    "X047": {
+      "particao": "holdout",
+      "id": "RAH104",
+      "lote": 1
+    },
+    "X048": {
+      "particao": "holdout",
+      "id": "RAH093",
+      "lote": 1
+    },
+    "X049": {
+      "particao": "dev",
+      "id": "RAD064",
+      "lote": 1
+    },
+    "X050": {
+      "particao": "holdout",
+      "id": "RAH085",
+      "lote": 1
+    },
+    "X051": {
+      "particao": "holdout",
+      "id": "RAH084",
+      "lote": 1
+    },
+    "X052": {
+      "particao": "holdout",
+      "id": "RAH080",
+      "lote": 1
+    },
+    "X053": {
+      "particao": "holdout",
+      "id": "RAH107",
+      "lote": 1
+    },
+    "X054": {
+      "particao": "dev",
+      "id": "RAD121",
+      "lote": 1
+    },
+    "X055": {
+      "particao": "holdout",
+      "id": "RAH126",
+      "lote": 1
+    },
+    "X056": {
+      "particao": "dev",
+      "id": "RAD092",
+      "lote": 1
+    },
+    "X057": {
+      "particao": "dev",
+      "id": "RAD135",
+      "lote": 1
+    },
+    "X058": {
+      "particao": "dev",
+      "id": "RAD011",
+      "lote": 1
+    },
+    "X059": {
+      "particao": "dev",
+      "id": "RAD091",
+      "lote": 1
+    },
+    "X060": {
+      "particao": "holdout",
+      "id": "RAH064",
+      "lote": 1
+    },
+    "X061": {
+      "particao": "dev",
+      "id": "RAD070",
+      "lote": 1
+    },
+    "X062": {
+      "particao": "holdout",
+      "id": "RAH075",
+      "lote": 1
+    },
+    "X063": {
+      "particao": "dev",
+      "id": "RAD057",
+      "lote": 1
+    },
+    "X064": {
+      "particao": "dev",
+      "id": "RAD025",
+      "lote": 1
+    },
+    "X065": {
+      "particao": "holdout",
+      "id": "RAH037",
+      "lote": 1
+    },
+    "X066": {
+      "particao": "holdout",
+      "id": "RAH079",
+      "lote": 1
+    },
+    "X067": {
+      "particao": "dev",
+      "id": "RAD027",
+      "lote": 1
+    },
+    "X068": {
+      "particao": "dev",
+      "id": "RAD024",
+      "lote": 1
+    },
+    "X069": {
+      "particao": "holdout",
+      "id": "RAH029",
+      "lote": 1
+    },
+    "X070": {
+      "particao": "dev",
+      "id": "RAD117",
+      "lote": 1
+    },
+    "X071": {
+      "particao": "holdout",
+      "id": "RAH042",
+      "lote": 1
+    },
+    "X072": {
+      "particao": "dev",
+      "id": "RAD012",
+      "lote": 1
+    },
+    "X073": {
+      "particao": "holdout",
+      "id": "RAH072",
+      "lote": 1
+    },
+    "X074": {
+      "particao": "dev",
+      "id": "RAD002",
+      "lote": 1
+    },
+    "X075": {
+      "particao": "dev",
+      "id": "RAD089",
+      "lote": 1
+    },
+    "X076": {
+      "particao": "holdout",
+      "id": "RAH009",
+      "lote": 1
+    },
+    "X077": {
+      "particao": "dev",
+      "id": "RAD063",
+      "lote": 1
+    },
+    "X078": {
+      "particao": "dev",
+      "id": "RAD136",
+      "lote": 1
+    },
+    "X079": {
+      "particao": "dev",
+      "id": "RAD020",
+      "lote": 1
+    },
+    "X080": {
+      "particao": "dev",
+      "id": "RAD119",
+      "lote": 1
+    },
+    "X081": {
+      "particao": "holdout",
+      "id": "RAH046",
+      "lote": 1
+    },
+    "X082": {
+      "particao": "holdout",
+      "id": "RAH083",
+      "lote": 1
+    },
+    "X083": {
+      "particao": "dev",
+      "id": "RAD088",
+      "lote": 1
+    },
+    "X084": {
+      "particao": "dev",
+      "id": "RAD056",
+      "lote": 1
+    },
+    "X085": {
+      "particao": "holdout",
+      "id": "RAH091",
+      "lote": 1
+    },
+    "X086": {
+      "particao": "holdout",
+      "id": "RAH027",
+      "lote": 1
+    },
+    "X087": {
+      "particao": "dev",
+      "id": "RAD019",
+      "lote": 1
+    },
+    "X088": {
+      "particao": "dev",
+      "id": "RAD058",
+      "lote": 1
+    },
+    "X089": {
+      "particao": "dev",
+      "id": "RAD048",
+      "lote": 1
+    },
+    "X090": {
+      "particao": "dev",
+      "id": "RAD069",
+      "lote": 1
+    },
+    "X091": {
+      "particao": "holdout",
+      "id": "RAH022",
+      "lote": 1
+    },
+    "X092": {
+      "particao": "dev",
+      "id": "RAD114",
+      "lote": 1
+    },
+    "X093": {
+      "particao": "dev",
+      "id": "RAD118",
+      "lote": 1
+    },
+    "X094": {
+      "particao": "dev",
+      "id": "RAD134",
+      "lote": 1
+    },
+    "X095": {
+      "particao": "holdout",
+      "id": "RAH062",
+      "lote": 1
+    },
+    "X096": {
+      "particao": "dev",
+      "id": "RAD104",
+      "lote": 1
+    },
+    "X097": {
+      "particao": "dev",
+      "id": "RAD072",
+      "lote": 1
+    },
+    "X098": {
+      "particao": "holdout",
+      "id": "RAH125",
+      "lote": 1
+    },
+    "X099": {
+      "particao": "holdout",
+      "id": "RAH122",
+      "lote": 1
+    },
+    "X100": {
+      "particao": "holdout",
+      "id": "RAH086",
+      "lote": 1
+    },
+    "X101": {
+      "particao": "holdout",
+      "id": "RAH010",
+      "lote": 1
+    },
+    "X102": {
+      "particao": "dev",
+      "id": "RAD097",
+      "lote": 1
+    },
+    "X103": {
+      "particao": "holdout",
+      "id": "RAH036",
+      "lote": 1
+    },
+    "X104": {
+      "particao": "dev",
+      "id": "RAD130",
+      "lote": 1
+    },
+    "X105": {
+      "particao": "holdout",
+      "id": "RAH059",
+      "lote": 1
+    },
+    "X106": {
+      "particao": "holdout",
+      "id": "RAH024",
+      "lote": 1
+    },
+    "X107": {
+      "particao": "holdout",
+      "id": "RAH048",
+      "lote": 1
+    },
+    "X108": {
+      "particao": "dev",
+      "id": "RAD103",
+      "lote": 1
+    },
+    "X109": {
+      "particao": "dev",
+      "id": "RAD051",
+      "lote": 1
+    },
+    "X110": {
+      "particao": "dev",
+      "id": "RAD098",
+      "lote": 1
+    },
+    "X111": {
+      "particao": "holdout",
+      "id": "RAH130",
+      "lote": 1
+    },
+    "X112": {
+      "particao": "holdout",
+      "id": "RAH047",
+      "lote": 1
+    },
+    "X113": {
+      "particao": "holdout",
+      "id": "RAH082",
+      "lote": 1
+    },
+    "X114": {
+      "particao": "dev",
+      "id": "RAD076",
+      "lote": 1
+    },
+    "X115": {
+      "particao": "holdout",
+      "id": "RAH044",
+      "lote": 1
+    },
+    "X116": {
+      "particao": "holdout",
+      "id": "RAH052",
+      "lote": 1
+    },
+    "X117": {
+      "particao": "dev",
+      "id": "RAD038",
+      "lote": 1
+    },
+    "X118": {
+      "particao": "dev",
+      "id": "RAD022",
+      "lote": 1
+    },
+    "X119": {
+      "particao": "holdout",
+      "id": "RAH074",
+      "lote": 1
+    },
+    "X120": {
+      "particao": "holdout",
+      "id": "RAH055",
+      "lote": 1
+    },
+    "X121": {
+      "particao": "holdout",
+      "id": "RAH099",
+      "lote": 1
+    },
+    "X122": {
+      "particao": "holdout",
+      "id": "RAH127",
+      "lote": 1
+    },
+    "X123": {
+      "particao": "holdout",
+      "id": "RAH120",
+      "lote": 1
+    },
+    "X124": {
+      "particao": "holdout",
+      "id": "RAH039",
+      "lote": 1
+    },
+    "X125": {
+      "particao": "dev",
+      "id": "RAD068",
+      "lote": 1
+    },
+    "X126": {
+      "particao": "holdout",
+      "id": "RAH023",
+      "lote": 1
+    },
+    "X127": {
+      "particao": "dev",
+      "id": "RAD013",
+      "lote": 1
+    },
+    "X128": {
+      "particao": "dev",
+      "id": "RAD137",
+      "lote": 1
+    },
+    "X129": {
+      "particao": "dev",
+      "id": "RAD031",
+      "lote": 1
+    },
+    "X130": {
+      "particao": "dev",
+      "id": "RAD115",
+      "lote": 1
+    },
+    "X131": {
+      "particao": "holdout",
+      "id": "RAH057",
+      "lote": 1
+    },
+    "X132": {
+      "particao": "dev",
+      "id": "RAD028",
+      "lote": 1
+    },
+    "X133": {
+      "particao": "holdout",
+      "id": "RAH045",
+      "lote": 1
+    },
+    "X134": {
+      "particao": "holdout",
+      "id": "RAH020",
+      "lote": 1
+    },
+    "X135": {
+      "particao": "holdout",
+      "id": "RAH014",
+      "lote": 1
+    },
+    "X136": {
+      "particao": "dev",
+      "id": "RAD083",
+      "lote": 1
+    },
+    "X137": {
+      "particao": "dev",
+      "id": "RAD122",
+      "lote": 1
+    },
+    "X138": {
+      "particao": "dev",
+      "id": "RAD073",
+      "lote": 1
+    },
+    "X139": {
+      "particao": "dev",
+      "id": "RAD140",
+      "lote": 1
+    },
+    "X140": {
+      "particao": "dev",
+      "id": "RAD096",
+      "lote": 1
+    },
+    "X141": {
+      "particao": "holdout",
+      "id": "RAH131",
+      "lote": 2
+    },
+    "X142": {
+      "particao": "holdout",
+      "id": "RAH070",
+      "lote": 2
+    },
+    "X143": {
+      "particao": "dev",
+      "id": "RAD109",
+      "lote": 2
+    },
+    "X144": {
+      "particao": "dev",
+      "id": "RAD023",
+      "lote": 2
+    },
+    "X145": {
+      "particao": "dev",
+      "id": "RAD049",
+      "lote": 2
+    },
+    "X146": {
+      "particao": "holdout",
+      "id": "RAH041",
+      "lote": 2
+    },
+    "X147": {
+      "particao": "dev",
+      "id": "RAD004",
+      "lote": 2
+    },
+    "X148": {
+      "particao": "dev",
+      "id": "RAD066",
+      "lote": 2
+    },
+    "X149": {
+      "particao": "holdout",
+      "id": "RAH088",
+      "lote": 2
+    },
+    "X150": {
+      "particao": "dev",
+      "id": "RAD010",
+      "lote": 2
+    },
+    "X151": {
+      "particao": "holdout",
+      "id": "RAH089",
+      "lote": 2
+    },
+    "X152": {
+      "particao": "holdout",
+      "id": "RAH005",
+      "lote": 2
+    },
+    "X153": {
+      "particao": "holdout",
+      "id": "RAH108",
+      "lote": 2
+    },
+    "X154": {
+      "particao": "dev",
+      "id": "RAD001",
+      "lote": 2
+    },
+    "X155": {
+      "particao": "holdout",
+      "id": "RAH066",
+      "lote": 2
+    },
+    "X156": {
+      "particao": "dev",
+      "id": "RAD036",
+      "lote": 2
+    },
+    "X157": {
+      "particao": "holdout",
+      "id": "RAH098",
+      "lote": 2
+    },
+    "X158": {
+      "particao": "dev",
+      "id": "RAD128",
+      "lote": 2
+    },
+    "X159": {
+      "particao": "holdout",
+      "id": "RAH004",
+      "lote": 2
+    },
+    "X160": {
+      "particao": "holdout",
+      "id": "RAH092",
+      "lote": 2
+    },
+    "X161": {
+      "particao": "dev",
+      "id": "RAD074",
+      "lote": 2
+    },
+    "X162": {
+      "particao": "dev",
+      "id": "RAD110",
+      "lote": 2
+    },
+    "X163": {
+      "particao": "holdout",
+      "id": "RAH069",
+      "lote": 2
+    },
+    "X164": {
+      "particao": "holdout",
+      "id": "RAH068",
+      "lote": 2
+    },
+    "X165": {
+      "particao": "holdout",
+      "id": "RAH038",
+      "lote": 2
+    },
+    "X166": {
+      "particao": "holdout",
+      "id": "RAH058",
+      "lote": 2
+    },
+    "X167": {
+      "particao": "holdout",
+      "id": "RAH110",
+      "lote": 2
+    },
+    "X168": {
+      "particao": "holdout",
+      "id": "RAH026",
+      "lote": 2
+    },
+    "X169": {
+      "particao": "holdout",
+      "id": "RAH043",
+      "lote": 2
+    },
+    "X170": {
+      "particao": "dev",
+      "id": "RAD047",
+      "lote": 2
+    },
+    "X171": {
+      "particao": "holdout",
+      "id": "RAH081",
+      "lote": 2
+    },
+    "X172": {
+      "particao": "holdout",
+      "id": "RAH054",
+      "lote": 2
+    },
+    "X173": {
+      "particao": "holdout",
+      "id": "RAH109",
+      "lote": 2
+    },
+    "X174": {
+      "particao": "dev",
+      "id": "RAD139",
+      "lote": 2
+    },
+    "X175": {
+      "particao": "holdout",
+      "id": "RAH015",
+      "lote": 2
+    },
+    "X176": {
+      "particao": "holdout",
+      "id": "RAH096",
+      "lote": 2
+    },
+    "X177": {
+      "particao": "holdout",
+      "id": "RAH105",
+      "lote": 2
+    },
+    "X178": {
+      "particao": "dev",
+      "id": "RAD041",
+      "lote": 2
+    },
+    "X179": {
+      "particao": "holdout",
+      "id": "RAH013",
+      "lote": 2
+    },
+    "X180": {
+      "particao": "dev",
+      "id": "RAD034",
+      "lote": 2
+    },
+    "X181": {
+      "particao": "holdout",
+      "id": "RAH065",
+      "lote": 2
+    },
+    "X182": {
+      "particao": "dev",
+      "id": "RAD123",
+      "lote": 2
+    },
+    "X183": {
+      "particao": "dev",
+      "id": "RAD112",
+      "lote": 2
+    },
+    "X184": {
+      "particao": "holdout",
+      "id": "RAH028",
+      "lote": 2
+    },
+    "X185": {
+      "particao": "holdout",
+      "id": "RAH001",
+      "lote": 2
+    },
+    "X186": {
+      "particao": "holdout",
+      "id": "RAH071",
+      "lote": 2
+    },
+    "X187": {
+      "particao": "holdout",
+      "id": "RAH007",
+      "lote": 2
+    },
+    "X188": {
+      "particao": "holdout",
+      "id": "RAH019",
+      "lote": 2
+    },
+    "X189": {
+      "particao": "holdout",
+      "id": "RAH137",
+      "lote": 2
+    },
+    "X190": {
+      "particao": "holdout",
+      "id": "RAH128",
+      "lote": 2
+    },
+    "X191": {
+      "particao": "holdout",
+      "id": "RAH012",
+      "lote": 2
+    },
+    "X192": {
+      "particao": "dev",
+      "id": "RAD116",
+      "lote": 2
+    },
+    "X193": {
+      "particao": "dev",
+      "id": "RAD046",
+      "lote": 2
+    },
+    "X194": {
+      "particao": "dev",
+      "id": "RAD014",
+      "lote": 2
+    },
+    "X195": {
+      "particao": "dev",
+      "id": "RAD094",
+      "lote": 2
+    },
+    "X196": {
+      "particao": "holdout",
+      "id": "RAH035",
+      "lote": 2
+    },
+    "X197": {
+      "particao": "dev",
+      "id": "RAD052",
+      "lote": 2
+    },
+    "X198": {
+      "particao": "dev",
+      "id": "RAD026",
+      "lote": 2
+    },
+    "X199": {
+      "particao": "dev",
+      "id": "RAD055",
+      "lote": 2
+    },
+    "X200": {
+      "particao": "holdout",
+      "id": "RAH124",
+      "lote": 2
+    },
+    "X201": {
+      "particao": "holdout",
+      "id": "RAH002",
+      "lote": 2
+    },
+    "X202": {
+      "particao": "dev",
+      "id": "RAD030",
+      "lote": 2
+    },
+    "X203": {
+      "particao": "dev",
+      "id": "RAD015",
+      "lote": 2
+    },
+    "X204": {
+      "particao": "holdout",
+      "id": "RAH030",
+      "lote": 2
+    },
+    "X205": {
+      "particao": "dev",
+      "id": "RAD102",
+      "lote": 2
+    },
+    "X206": {
+      "particao": "holdout",
+      "id": "RAH115",
+      "lote": 2
+    },
+    "X207": {
+      "particao": "holdout",
+      "id": "RAH056",
+      "lote": 2
+    },
+    "X208": {
+      "particao": "holdout",
+      "id": "RAH073",
+      "lote": 2
+    },
+    "X209": {
+      "particao": "holdout",
+      "id": "RAH132",
+      "lote": 2
+    },
+    "X210": {
+      "particao": "dev",
+      "id": "RAD008",
+      "lote": 2
+    },
+    "X211": {
+      "particao": "dev",
+      "id": "RAD071",
+      "lote": 2
+    },
+    "X212": {
+      "particao": "dev",
+      "id": "RAD105",
+      "lote": 2
+    },
+    "X213": {
+      "particao": "holdout",
+      "id": "RAH050",
+      "lote": 2
+    },
+    "X214": {
+      "particao": "dev",
+      "id": "RAD095",
+      "lote": 2
+    },
+    "X215": {
+      "particao": "dev",
+      "id": "RAD127",
+      "lote": 2
+    },
+    "X216": {
+      "particao": "holdout",
+      "id": "RAH102",
+      "lote": 2
+    },
+    "X217": {
+      "particao": "dev",
+      "id": "RAD050",
+      "lote": 2
+    },
+    "X218": {
+      "particao": "dev",
+      "id": "RAD131",
+      "lote": 2
+    },
+    "X219": {
+      "particao": "holdout",
+      "id": "RAH095",
+      "lote": 2
+    },
+    "X220": {
+      "particao": "dev",
+      "id": "RAD043",
+      "lote": 2
+    },
+    "X221": {
+      "particao": "holdout",
+      "id": "RAH118",
+      "lote": 2
+    },
+    "X222": {
+      "particao": "holdout",
+      "id": "RAH008",
+      "lote": 2
+    },
+    "X223": {
+      "particao": "holdout",
+      "id": "RAH018",
+      "lote": 2
+    },
+    "X224": {
+      "particao": "dev",
+      "id": "RAD138",
+      "lote": 2
+    },
+    "X225": {
+      "particao": "holdout",
+      "id": "RAH053",
+      "lote": 2
+    },
+    "X226": {
+      "particao": "dev",
+      "id": "RAD017",
+      "lote": 2
+    },
+    "X227": {
+      "particao": "holdout",
+      "id": "RAH025",
+      "lote": 2
+    },
+    "X228": {
+      "particao": "holdout",
+      "id": "RAH017",
+      "lote": 2
+    },
+    "X229": {
+      "particao": "holdout",
+      "id": "RAH119",
+      "lote": 2
+    },
+    "X230": {
+      "particao": "holdout",
+      "id": "RAH049",
+      "lote": 2
+    },
+    "X231": {
+      "particao": "holdout",
+      "id": "RAH140",
+      "lote": 2
+    },
+    "X232": {
+      "particao": "holdout",
+      "id": "RAH097",
+      "lote": 2
+    },
+    "X233": {
+      "particao": "holdout",
+      "id": "RAH117",
+      "lote": 2
+    },
+    "X234": {
+      "particao": "holdout",
+      "id": "RAH121",
+      "lote": 2
+    },
+    "X235": {
+      "particao": "holdout",
+      "id": "RAH103",
+      "lote": 2
+    },
+    "X236": {
+      "particao": "holdout",
+      "id": "RAH129",
+      "lote": 2
+    },
+    "X237": {
+      "particao": "dev",
+      "id": "RAD086",
+      "lote": 2
+    },
+    "X238": {
+      "particao": "holdout",
+      "id": "RAH106",
+      "lote": 2
+    },
+    "X239": {
+      "particao": "dev",
+      "id": "RAD003",
+      "lote": 2
+    },
+    "X240": {
+      "particao": "dev",
+      "id": "RAD042",
+      "lote": 2
+    },
+    "X241": {
+      "particao": "dev",
+      "id": "RAD037",
+      "lote": 2
+    },
+    "X242": {
+      "particao": "dev",
+      "id": "RAD078",
+      "lote": 2
+    },
+    "X243": {
+      "particao": "dev",
+      "id": "RAD039",
+      "lote": 2
+    },
+    "X244": {
+      "particao": "dev",
+      "id": "RAD120",
+      "lote": 2
+    },
+    "X245": {
+      "particao": "dev",
+      "id": "RAD080",
+      "lote": 2
+    },
+    "X246": {
+      "particao": "holdout",
+      "id": "RAH135",
+      "lote": 2
+    },
+    "X247": {
+      "particao": "holdout",
+      "id": "RAH061",
+      "lote": 2
+    },
+    "X248": {
+      "particao": "dev",
+      "id": "RAD029",
+      "lote": 2
+    },
+    "X249": {
+      "particao": "dev",
+      "id": "RAD077",
+      "lote": 2
+    },
+    "X250": {
+      "particao": "dev",
+      "id": "RAD035",
+      "lote": 2
+    },
+    "X251": {
+      "particao": "dev",
+      "id": "RAD065",
+      "lote": 2
+    },
+    "X252": {
+      "particao": "holdout",
+      "id": "RAH123",
+      "lote": 2
+    },
+    "X253": {
+      "particao": "dev",
+      "id": "RAD081",
+      "lote": 2
+    },
+    "X254": {
+      "particao": "holdout",
+      "id": "RAH138",
+      "lote": 2
+    },
+    "X255": {
+      "particao": "holdout",
+      "id": "RAH076",
+      "lote": 2
+    },
+    "X256": {
+      "particao": "holdout",
+      "id": "RAH016",
+      "lote": 2
+    },
+    "X257": {
+      "particao": "holdout",
+      "id": "RAH078",
+      "lote": 2
+    },
+    "X258": {
+      "particao": "dev",
+      "id": "RAD062",
+      "lote": 2
+    },
+    "X259": {
+      "particao": "holdout",
+      "id": "RAH112",
+      "lote": 2
+    },
+    "X260": {
+      "particao": "dev",
+      "id": "RAD085",
+      "lote": 2
+    },
+    "X261": {
+      "particao": "holdout",
+      "id": "RAH094",
+      "lote": 2
+    },
+    "X262": {
+      "particao": "holdout",
+      "id": "RAH114",
+      "lote": 2
+    },
+    "X263": {
+      "particao": "holdout",
+      "id": "RAH003",
+      "lote": 2
+    },
+    "X264": {
+      "particao": "dev",
+      "id": "RAD007",
+      "lote": 2
+    },
+    "X265": {
+      "particao": "dev",
+      "id": "RAD129",
+      "lote": 2
+    },
+    "X266": {
+      "particao": "dev",
+      "id": "RAD100",
+      "lote": 2
+    },
+    "X267": {
+      "particao": "dev",
+      "id": "RAD079",
+      "lote": 2
+    },
+    "X268": {
+      "particao": "dev",
+      "id": "RAD059",
+      "lote": 2
+    },
+    "X269": {
+      "particao": "dev",
+      "id": "RAD032",
+      "lote": 2
+    },
+    "X270": {
+      "particao": "dev",
+      "id": "RAD021",
+      "lote": 2
+    },
+    "X271": {
+      "particao": "dev",
+      "id": "RAD082",
+      "lote": 2
+    },
+    "X272": {
+      "particao": "holdout",
+      "id": "RAH090",
+      "lote": 2
+    },
+    "X273": {
+      "particao": "dev",
+      "id": "RAD067",
+      "lote": 2
+    },
+    "X274": {
+      "particao": "holdout",
+      "id": "RAH011",
+      "lote": 2
+    },
+    "X275": {
+      "particao": "holdout",
+      "id": "RAH067",
+      "lote": 2
+    },
+    "X276": {
+      "particao": "dev",
+      "id": "RAD009",
+      "lote": 2
+    },
+    "X277": {
+      "particao": "holdout",
+      "id": "RAH031",
+      "lote": 2
+    },
+    "X278": {
+      "particao": "dev",
+      "id": "RAD053",
+      "lote": 2
+    },
+    "X279": {
+      "particao": "dev",
+      "id": "RAD106",
+      "lote": 2
+    },
+    "X280": {
+      "particao": "dev",
+      "id": "RAD054",
+      "lote": 2
+    }
+  }
+}

@@ -1,0 +1,1337 @@
+{
+  "candidato": "Rank 3-B — início de consumo operacional persistente",
+  "pre_registro": "resultados/pre_registro_rank03b_consumo_operacional_2026-09-11.md",
+  "pre_registro_sha256": "fbae30cce2bde9b3ece5ccf254e300ce99ba11946568720441193b0a3ac644cc",
+  "modelo_carregado": false,
+  "cadeia": [
+    {
+      "gate": "G0",
+      "pergunta": "O dado é íntegro?",
+      "papel": "decisivo",
+      "observacoes_de_fco": 22034,
+      "observacoes_de_ativo": 22471,
+      "g0_1_companhia_trimestre_com_os_dois_metodos": 0,
+      "g0_1_inventario": [],
+      "g0_2_fora_da_duracao_de_um_trimestre": 25,
+      "g0_2_grupos_com_trimestre_e_periodo_mais_longo": 15,
+      "g0_2_inventario": [
+        {
+          "cd_cvm": "003174",
+          "trimestre": "1T2014",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "011975",
+          "trimestre": "1T2019",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "011975",
+          "trimestre": "1T2020",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "015458",
+          "trimestre": "1T2017",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "016101",
+          "trimestre": "1T2018",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "020451",
+          "trimestre": "1T2018",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "022586",
+          "trimestre": "1T2021",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "022586",
+          "trimestre": "1T2022",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "022586",
+          "trimestre": "1T2023",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "022586",
+          "trimestre": "1T2024",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "022586",
+          "trimestre": "1T2025",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "022586",
+          "trimestre": "1T2026",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "023159",
+          "trimestre": "1T2013",
+          "dias": 12,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "023485",
+          "trimestre": "1T2018",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "023604",
+          "trimestre": "3T2019",
+          "dias": 183,
+          "demonstrativo": "DFC_MI",
+          "origem": "derivado"
+        },
+        {
+          "cd_cvm": "023795",
+          "trimestre": "1T2016",
+          "dias": 41,
+          "demonstrativo": "DFC_MD",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "023990",
+          "trimestre": "1T2017",
+          "dias": 38,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "024350",
+          "trimestre": "3T2018",
+          "dias": 183,
+          "demonstrativo": "DFC_MI",
+          "origem": "derivado"
+        },
+        {
+          "cd_cvm": "024830",
+          "trimestre": "3T2019",
+          "dias": 183,
+          "demonstrativo": "DFC_MI",
+          "origem": "derivado"
+        },
+        {
+          "cd_cvm": "025232",
+          "trimestre": "3T2021",
+          "dias": 183,
+          "demonstrativo": "DFC_MI",
+          "origem": "derivado"
+        },
+        {
+          "cd_cvm": "025720",
+          "trimestre": "3T2022",
+          "dias": 183,
+          "demonstrativo": "DFC_MI",
+          "origem": "derivado"
+        },
+        {
+          "cd_cvm": "025860",
+          "trimestre": "3T2021",
+          "dias": 183,
+          "demonstrativo": "DFC_MI",
+          "origem": "derivado"
+        },
+        {
+          "cd_cvm": "025887",
+          "trimestre": "3T2024",
+          "dias": 183,
+          "demonstrativo": "DFC_MI",
+          "origem": "derivado"
+        },
+        {
+          "cd_cvm": "027545",
+          "trimestre": "3T2024",
+          "dias": 183,
+          "demonstrativo": "DFC_MD",
+          "origem": "derivado"
+        },
+        {
+          "cd_cvm": "027545",
+          "trimestre": "3T2025",
+          "dias": 183,
+          "demonstrativo": "DFC_MD",
+          "origem": "derivado"
+        }
+      ],
+      "g0_2_duracoes_distintas": [
+        12,
+        31,
+        38,
+        41,
+        183
+      ],
+      "g0_3_saltos_de_escala": 132,
+      "g0_3_pares_nao_adjacentes_descartados": 4,
+      "g0_3_nao_adjacentes": [
+        {
+          "cd_cvm": "003328",
+          "de": "2T2021",
+          "para": "4T2024",
+          "razao": 71338795.0,
+          "distancia_em_trimestres": 14,
+          "adjacente": false
+        },
+        {
+          "cd_cvm": "010596",
+          "de": "1T2012",
+          "para": "4T2012",
+          "razao": 1020.2,
+          "distancia_em_trimestres": 3,
+          "adjacente": false
+        },
+        {
+          "cd_cvm": "022624",
+          "de": "3T2011",
+          "para": "2T2012",
+          "razao": 886.1,
+          "distancia_em_trimestres": 3,
+          "adjacente": false
+        },
+        {
+          "cd_cvm": "023337",
+          "de": "2T2013",
+          "para": "3T2014",
+          "razao": 375.0,
+          "distancia_em_trimestres": 5,
+          "adjacente": false
+        }
+      ],
+      "g0_3_fracao": 0.005874,
+      "g0_3_inventario": [
+        {
+          "cd_cvm": "003328",
+          "de": "2T2020",
+          "para": "3T2020",
+          "razao": 1052.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003328",
+          "de": "3T2020",
+          "para": "4T2020",
+          "razao": 991.3,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003328",
+          "de": "4T2020",
+          "para": "1T2021",
+          "razao": 28769069.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "2T2020",
+          "para": "3T2020",
+          "razao": 1009.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "3T2020",
+          "para": "4T2020",
+          "razao": 1003.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "3T2021",
+          "para": "4T2021",
+          "razao": 1000.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "3T2022",
+          "para": "4T2022",
+          "razao": 995.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "3T2023",
+          "para": "4T2023",
+          "razao": 1000.3,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "3T2024",
+          "para": "4T2024",
+          "razao": 1176.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "3T2025",
+          "para": "4T2025",
+          "razao": 998.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "4T2020",
+          "para": "1T2021",
+          "razao": 1031.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "4T2021",
+          "para": "1T2022",
+          "razao": 1001.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "4T2022",
+          "para": "1T2023",
+          "razao": 1000.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "4T2023",
+          "para": "1T2024",
+          "razao": 219.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "4T2024",
+          "para": "1T2025",
+          "razao": 1002.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "4T2025",
+          "para": "1T2026",
+          "razao": 1145.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "006815",
+          "de": "2T2011",
+          "para": "3T2011",
+          "razao": 966.8,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "007811",
+          "de": "3T2019",
+          "para": "4T2019",
+          "razao": 913.3,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "007811",
+          "de": "4T2018",
+          "para": "1T2019",
+          "razao": 981.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "008745",
+          "de": "3T2012",
+          "para": "4T2012",
+          "razao": 990.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "008745",
+          "de": "4T2011",
+          "para": "1T2012",
+          "razao": 1038.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "010596",
+          "de": "4T2011",
+          "para": "1T2012",
+          "razao": 993.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "016705",
+          "de": "1T2023",
+          "para": "2T2023",
+          "razao": 1616.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "016705",
+          "de": "3T2025",
+          "para": "4T2025",
+          "razao": 23237.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "016705",
+          "de": "4T2022",
+          "para": "1T2023",
+          "razao": 480.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "018414",
+          "de": "3T2024",
+          "para": "4T2024",
+          "razao": 991.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "018414",
+          "de": "3T2025",
+          "para": "4T2025",
+          "razao": 964.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "018414",
+          "de": "4T2024",
+          "para": "1T2025",
+          "razao": 957.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "018414",
+          "de": "4T2025",
+          "para": "1T2026",
+          "razao": 985.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "019313",
+          "de": "3T2016",
+          "para": "4T2016",
+          "razao": 272.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "019658",
+          "de": "2T2017",
+          "para": "3T2017",
+          "razao": 1247.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "019658",
+          "de": "3T2017",
+          "para": "4T2017",
+          "razao": 878.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "019771",
+          "de": "1T2019",
+          "para": "2T2019",
+          "razao": 1019.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "019771",
+          "de": "4T2018",
+          "para": "1T2019",
+          "razao": 1004.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "019798",
+          "de": "1T2013",
+          "para": "2T2013",
+          "razao": 971.8,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "019798",
+          "de": "1T2014",
+          "para": "2T2014",
+          "razao": 947.3,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "019798",
+          "de": "3T2012",
+          "para": "4T2012",
+          "razao": 972.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "019798",
+          "de": "3T2013",
+          "para": "4T2013",
+          "razao": 1049.3,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "020125",
+          "de": "1T2021",
+          "para": "2T2021",
+          "razao": 1005.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "020125",
+          "de": "2T2021",
+          "para": "3T2021",
+          "razao": 940.7,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "021520",
+          "de": "1T2024",
+          "para": "2T2024",
+          "razao": 992.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "021520",
+          "de": "2T2016",
+          "para": "3T2016",
+          "razao": 1052.5,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "021520",
+          "de": "3T2024",
+          "para": "4T2024",
+          "razao": 982.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "021520",
+          "de": "3T2025",
+          "para": "4T2025",
+          "razao": 983.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "021520",
+          "de": "4T2016",
+          "para": "1T2017",
+          "razao": 1022.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "021520",
+          "de": "4T2024",
+          "para": "1T2025",
+          "razao": 1009.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "021717",
+          "de": "1T2018",
+          "para": "2T2018",
+          "razao": 1044.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "021717",
+          "de": "2T2018",
+          "para": "3T2018",
+          "razao": 1051.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "021725",
+          "de": "1T2017",
+          "para": "2T2017",
+          "razao": 1174.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "021725",
+          "de": "3T2017",
+          "para": "4T2017",
+          "razao": 1079.8,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022144",
+          "de": "1T2016",
+          "para": "2T2016",
+          "razao": 1012.8,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022144",
+          "de": "2T2013",
+          "para": "3T2013",
+          "razao": 1004.5,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022144",
+          "de": "3T2013",
+          "para": "4T2013",
+          "razao": 1073.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022209",
+          "de": "2T2013",
+          "para": "3T2013",
+          "razao": 1422.7,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022209",
+          "de": "3T2013",
+          "para": "4T2013",
+          "razao": 1090.3,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022519",
+          "de": "1T2011",
+          "para": "2T2011",
+          "razao": 1074.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022560",
+          "de": "1T2011",
+          "para": "2T2011",
+          "razao": 972.8,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022756",
+          "de": "3T2011",
+          "para": "4T2011",
+          "razao": 13674255.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022810",
+          "de": "1T2014",
+          "para": "2T2014",
+          "razao": 1019.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022810",
+          "de": "3T2020",
+          "para": "4T2020",
+          "razao": 1005.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022810",
+          "de": "4T2011",
+          "para": "1T2012",
+          "razao": 1390.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022810",
+          "de": "4T2013",
+          "para": "1T2014",
+          "razao": 979.5,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022810",
+          "de": "4T2020",
+          "para": "1T2021",
+          "razao": 1080.3,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "022845",
+          "de": "4T2012",
+          "para": "1T2013",
+          "razao": 911.7,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023337",
+          "de": "1T2013",
+          "para": "2T2013",
+          "razao": 1000.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023426",
+          "de": "1T2023",
+          "para": "2T2023",
+          "razao": 1014.7,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023426",
+          "de": "3T2023",
+          "para": "4T2023",
+          "razao": 872.7,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023426",
+          "de": "3T2024",
+          "para": "4T2024",
+          "razao": 995.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023426",
+          "de": "3T2025",
+          "para": "4T2025",
+          "razao": 1061.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023426",
+          "de": "4T2023",
+          "para": "1T2024",
+          "razao": 852.5,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023426",
+          "de": "4T2024",
+          "para": "1T2025",
+          "razao": 906.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023426",
+          "de": "4T2025",
+          "para": "1T2026",
+          "razao": 985.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023604",
+          "de": "2T2017",
+          "para": "3T2017",
+          "razao": 999.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023604",
+          "de": "3T2016",
+          "para": "4T2016",
+          "razao": 991.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023604",
+          "de": "3T2017",
+          "para": "4T2017",
+          "razao": 1015.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023604",
+          "de": "3T2018",
+          "para": "4T2018",
+          "razao": 981.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023604",
+          "de": "4T2014",
+          "para": "1T2015",
+          "razao": 1010.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023604",
+          "de": "4T2017",
+          "para": "1T2018",
+          "razao": 1060.8,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023604",
+          "de": "4T2018",
+          "para": "1T2019",
+          "razao": 1003.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023710",
+          "de": "2T2018",
+          "para": "3T2018",
+          "razao": 1030.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023710",
+          "de": "3T2018",
+          "para": "4T2018",
+          "razao": 932.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023868",
+          "de": "1T2018",
+          "para": "2T2018",
+          "razao": 1009.8,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023868",
+          "de": "3T2017",
+          "para": "4T2017",
+          "razao": 987.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023868",
+          "de": "3T2018",
+          "para": "4T2018",
+          "razao": 995.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023868",
+          "de": "3T2020",
+          "para": "4T2020",
+          "razao": 1088.5,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023868",
+          "de": "3T2021",
+          "para": "4T2021",
+          "razao": 998.3,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023868",
+          "de": "4T2016",
+          "para": "1T2017",
+          "razao": 1022.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023868",
+          "de": "4T2018",
+          "para": "1T2019",
+          "razao": 1006.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023868",
+          "de": "4T2020",
+          "para": "1T2021",
+          "razao": 993.8,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023868",
+          "de": "4T2021",
+          "para": "1T2022",
+          "razao": 948.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023930",
+          "de": "1T2021",
+          "para": "2T2021",
+          "razao": 883.7,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023930",
+          "de": "4T2020",
+          "para": "1T2021",
+          "razao": 1049.3,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023957",
+          "de": "2T2016",
+          "para": "3T2016",
+          "razao": 1017.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "023957",
+          "de": "4T2015",
+          "para": "1T2016",
+          "razao": 976.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024317",
+          "de": "4T2016",
+          "para": "1T2017",
+          "razao": 938.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024473",
+          "de": "1T2018",
+          "para": "2T2018",
+          "razao": 1017.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024473",
+          "de": "1T2021",
+          "para": "2T2021",
+          "razao": 1003.7,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024473",
+          "de": "4T2017",
+          "para": "1T2018",
+          "razao": 997.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024473",
+          "de": "4T2020",
+          "para": "1T2021",
+          "razao": 988.3,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024589",
+          "de": "1T2019",
+          "para": "2T2019",
+          "razao": 901.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024589",
+          "de": "1T2020",
+          "para": "2T2020",
+          "razao": 917.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024589",
+          "de": "2T2019",
+          "para": "3T2019",
+          "razao": 1414.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024589",
+          "de": "2T2020",
+          "para": "3T2020",
+          "razao": 1102.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024597",
+          "de": "3T2019",
+          "para": "4T2019",
+          "razao": 1046.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024597",
+          "de": "4T2019",
+          "para": "1T2020",
+          "razao": 1021.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024716",
+          "de": "4T2018",
+          "para": "1T2019",
+          "razao": 1136.5,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024783",
+          "de": "3T2019",
+          "para": "4T2019",
+          "razao": 19188869.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024830",
+          "de": "3T2019",
+          "para": "4T2019",
+          "razao": 1015.5,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024830",
+          "de": "3T2021",
+          "para": "4T2021",
+          "razao": 1048.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "024830",
+          "de": "4T2018",
+          "para": "1T2019",
+          "razao": 1014.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "025127",
+          "de": "4T2019",
+          "para": "1T2020",
+          "razao": 12433.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "025399",
+          "de": "1T2021",
+          "para": "2T2021",
+          "razao": 1026.8,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "025399",
+          "de": "2T2021",
+          "para": "3T2021",
+          "razao": 1155.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "025461",
+          "de": "3T2025",
+          "para": "4T2025",
+          "razao": 952.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "025461",
+          "de": "4T2024",
+          "para": "1T2025",
+          "razao": 1049.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "025461",
+          "de": "4T2025",
+          "para": "1T2026",
+          "razao": 971.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "025976",
+          "de": "3T2021",
+          "para": "4T2021",
+          "razao": 969.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "025976",
+          "de": "3T2022",
+          "para": "4T2022",
+          "razao": 978.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "025976",
+          "de": "3T2023",
+          "para": "4T2023",
+          "razao": 1018.2,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "025976",
+          "de": "4T2020",
+          "para": "1T2021",
+          "razao": 1006.8,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "025976",
+          "de": "4T2021",
+          "para": "1T2022",
+          "razao": 933.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "025976",
+          "de": "4T2022",
+          "para": "1T2023",
+          "razao": 998.3,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "026247",
+          "de": "1T2021",
+          "para": "2T2021",
+          "razao": 971.0,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "026247",
+          "de": "4T2020",
+          "para": "1T2021",
+          "razao": 966.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "026298",
+          "de": "4T2020",
+          "para": "1T2021",
+          "razao": 272.4,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "026328",
+          "de": "1T2021",
+          "para": "2T2021",
+          "razao": 44562.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "026336",
+          "de": "4T2020",
+          "para": "1T2021",
+          "razao": 975.5,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "026948",
+          "de": "4T2025",
+          "para": "1T2026",
+          "razao": 1054.1,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "027430",
+          "de": "4T2022",
+          "para": "1T2023",
+          "razao": 1033.6,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "027634",
+          "de": "3T2025",
+          "para": "4T2025",
+          "razao": 14334.7,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "027634",
+          "de": "4T2025",
+          "para": "1T2026",
+          "razao": 201.9,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        },
+        {
+          "cd_cvm": "080233",
+          "de": "4T2023",
+          "para": "1T2024",
+          "razao": 1019.7,
+          "distancia_em_trimestres": 1,
+          "adjacente": true
+        }
+      ],
+      "limiar": "0 somas de método duplo · 0 fora de 80–100 dias · <= 0.5% de saltos de escala",
+      "aprovado": false,
+      "diagnostico_de_escala": {
+        "recortes": {
+          "painel_inteiro_sucessivos": {
+            "transicoes_de_escala": 137,
+            "bruto_continuo_suspeita_de_defeito": 123,
+            "redenominacao_aparentemente_real": 13,
+            "razao_indefinida_bruto_anterior_zero": 1,
+            "companhias_com_transicao_suspeita": 43
+          },
+          "painel_inteiro_adjacentes": {
+            "transicoes_de_escala": 134,
+            "bruto_continuo_suspeita_de_defeito": 121,
+            "redenominacao_aparentemente_real": 12,
+            "razao_indefinida_bruto_anterior_zero": 1,
+            "companhias_com_transicao_suspeita": 42
+          },
+          "universo_do_candidato_sucessivos": {
+            "transicoes_de_escala": 135,
+            "bruto_continuo_suspeita_de_defeito": 121,
+            "redenominacao_aparentemente_real": 13,
+            "razao_indefinida_bruto_anterior_zero": 1,
+            "companhias_com_transicao_suspeita": 42
+          },
+          "universo_do_candidato_adjacentes": {
+            "transicoes_de_escala": 132,
+            "bruto_continuo_suspeita_de_defeito": 119,
+            "redenominacao_aparentemente_real": 12,
+            "razao_indefinida_bruto_anterior_zero": 1,
+            "companhias_com_transicao_suspeita": 41
+          }
+        },
+        "recorte_pertinente_a_G0": "universo_do_candidato_adjacentes",
+        "leitura": "TRANSIÇÕES suspeitas, não linhas erradas nem células adjudicadas. Entrada e saída de uma célula produzem dois sinais. Continuidade do valor bruto é suspeita, não prova de qual valor corrigir: adjudicar exige ler uma segunda demonstração, caso a caso."
+      }
+    }
+  ],
+  "primeiro_reprovado": "G0",
+  "veredito": "REPROVADO EM G0/G1",
+  "quarentena": "As observações reprovadas por G0.3 NÃO foram removidas e NENHUM teste posterior foi medido. Nada de T1, T2 ou baseline existe nesta rodada — a rodada está invalidada. Retomar exige adjudicar a escala contra a fonte e um pré-registro novo."
+}

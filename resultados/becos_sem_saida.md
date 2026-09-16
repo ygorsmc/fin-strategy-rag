@@ -28,6 +28,13 @@ testes (AGENTS.md §3.7).
 
 ### A.1 Alvos que reprovaram o protocolo dos dois testes
 
+**Nota de escopo — 2026-09-08.** O padrão abaixo é alerta contra baselines
+mecânicos, não teorema de impossibilidade de previsão. Os T1/T2 congelados
+continuam valendo. A revisão do Rank 3 encontrou ausência da guarda de
+recebimento e seleção indevida por saúde futura; suas métricas não certificam
+o protocolo completo. O Rank 3-B admitido na própria tabela permanece outro
+experimento, ainda sem treino. Fontes: [retomada DFC](viabilidade_ml_dfc_2026-09-08.md).
+
 > **Padrão medido três vezes, com três roupas diferentes — leia antes de propor
 > alvo novo:** *alvo definido como **variação** de uma grandeza que reverte à
 > média fabrica o **nível** dessa grandeza como baseline.* Corte absoluto de
@@ -85,9 +92,9 @@ testes (AGENTS.md §3.7).
 | **Reapresentação como alvo** | ~~Censura à direita~~ **REABERTO E RESOLVIDO em 2026-08-26, depois morto por outro motivo.** A censura era do estimador antigo, não do fenômeno: a coluna `ORDEM_EXERC` dos CSVs (descartada pelo carregador) dá o mesmo período republicado como comparativo do ano seguinte, com defasagem **fixa de 365 dias** — 1.060.295 pares, 682 companhias, taxa **estável em 4,2%–7,6% de 2013 a 2025**. O alvo morreu depois, por **vazamento de observabilidade** (ver E.1), não por censura | O IPE não é mais necessário para esta linha. O que falta é sinal, não dado |
 | **Gerencial × contábil como alvo** | 5 emissores não dão amostra | Escala via IPE (~USD 12 de OCR para 40–60 não-financeiras), ancorada na **Res. CVM 156/2022**, que obriga conciliação de LAJIDA. Frente separada e exploratória |
 | **Viés de sobrevivência** | 277 de 741 companhias somem do painel; 41,2% delas em prejuízo na última declaração contra 34,1% das que ficam. A observação final **nunca recebe rótulo** (exige T+1) | Não tem correção com este dado. Torna o resultado **conservador para eventos extremos** — limitação declarada, não corrigida |
-| **CAND-03 — detector aprendido de “anomalia” antes de gold e shadow** | 5,55 M células → 23.346 companhia–trimestres; quatro correções são um episódio-raiz; nenhum gold E2/tempo; mapa 4,951%; setor 5/741; painel sem DFC/`DT_RECEB` e sem vintages numéricos. Dois especialistas convergiram | **Não implementar ML agora; INDECIDÍVEL.** Raridade, erro, prioridade de leitura e fraude não são proxies. Nem o baseline determinístico demonstrou utilidade | E2 prospectivo: snapshots imutáveis; piloto 30–150 releases até ≥30 releases P1/P2; baseline e recall congelados; confirmatório `N=max(100,N_poder,N_50+)`. Passar o piloto autoriza testar ML, não usar no produto |
-| **CAND-04A — prospective ROA no painel as-restated atual** | 3.218 releases; B3 MAE 950,94 bp × mediana 57,80. Top 1% = 83,55% do erro; 23 saltos de escala = 61,64%; 4T derivado MAE 2.602,46 bp. G0/G1 falham; dois especialistas validaram o encerramento | **Experimento rejeitado/invalidado; fórmula econômica e ML indecidíveis; não implementar ML agora.** Remover as 23 pós-hoc é proibido | Novo estimando e teste: vintages/`DT_RECEB`, escala e 4T adjudicados, setor completo, baselines/intervalos point-in-time. A2 ou lucro dos controladores começam do zero |
-| **Rank 5 — treinar risco de divergência gerencial × contábil no corpus atual** | 20 releases/5 bancos; LAJIDA/LAJIR = 0/20; K1 candidato = 20/20 e 31 páginas, mas sem gold, PIT ou workflow | **ML INDECIDÍVEL; não implementar agora.** Ponte encontrada não é rótulo nem réplica independente | K1 separado: ≥30 releases e ≥30 P2/P3 adjudicados; vintage, extrator auditado e B0–B4. Confirmatório ≥100 releases/10 emissores |
+| **Escala declarada errada em `valor_reais`** *(achado em 2026-09-11, números corrigidos em 12/09)* | **Transições de escala suspeitas**, não células adjudicadas: no painel inteiro 137 transições — 123 com `vl_conta` CONTÍNUO, 13 de redenominação aparentemente real, 1 indefinida, em 43 companhias; no universo do candidato e só entre adjacentes, **132/119/12/1 em 41**. O ITR passa a declarar `UNIDADE`, a DFP segue em `MIL`, e o painel aplica os dois fielmente: erro de **1.000×**. Mais **25 linhas de FCO `trimestral`**: 16 períodos curtos (12/31/38/41 dias) e 9 semestres da derivação (183). E **15 grupos** com linha válida e anômala juntas — que contêm os **curtos**, não os semestres, e em **12** o `max` elege o curto | **Bloqueia qualquer alvo que use `valor_reais` nessas companhias**, não só o Rank 3-B. Reprovou o G0 do Rank 3-B antes de o alvo ser testado | **Inventário com evidência, esquema v2 em 2026-09-15** ([relatório](inventario_escala_cvm_2026-09-12.md), [correção](implementacao_qw1_qw8_2026-09-15.md)): **34.952 casos em 51 companhias**; adjudicação **por declaração** — **3.401 casos, 6.456 declarações, 111 documentos em 35 companhias**, todas `PENÚLTIMO`, só balanço. A v1 dizia 10.261: 6.736 tinham só **zero** como prova e 292 declarações eram condenadas por extrapolação. Direção 2.430 `MIL` × 971 `UNIDADE`: correção em bloco numa direção só continua proibida. O desempate é a DFP anual: DRE/DFC trimestral fica indecidível por falta de instância auditada do mesmo período. Aplicar exige contrato próprio no padrão do §3.3 (guarda que **falha** se a CVM republicar). Nunca excluir a célula nem corrigir em silêncio. [Validação](validacao_rank03b_consumo_operacional_2026-09-11.md) |
+| **Rank 3-B — início de consumo operacional persistente** | **NÃO MEDIDO.** `Y = 1` se `FCO(q1)+FCO(q2) < 0` **e** `FCO(q3)+FCO(q4) < 0`, em não financeiras com FCO_TTM > 0 em D. G0 reprovou por escala antes de T1 rodar. O instrumento levou **duas** ondas de correção, cada uma depois de conferência independente: 12/09 (R1–R5 — devolvia `PRONTO PARA CHALLENGER` com os baselines falhos) e 15/09 (QW3–QW7 — G1 aprovava por existência, e o horizonte civil sobre rótulo fiscal aceitava trimestre já iniciado em 322 observações reais) | **REPROVADO EM G0 — rodada invalidada.** Não diz nada sobre a qualidade do alvo | Corrigir a escala (linha acima) e **pré-registro novo** — este foi consumido; retomar o mesmo alvo depois de mexer na população é ajustá-la tendo visto o resultado. **A previsão registrada de que `fco_ttm_sobre_sd8` reprovaria T1 segue SEM TESTE** e deve ser transportada literalmente |
+| **CAND-02, CAND-03, CAND-04 e Rank 5 — treinar antes de haver gold** | Em todos, o bloqueio é o mesmo em quatro roupas: **o lado que tem `n` não tem rótulo**. Mapa exato em 4,951%, setor em 5/741, zero vintages numéricos, 20 releases, e "quatro correções curadas" que são **um episódio-raiz em um emissor** | **INDECIDÍVEL — não é medição negativa.** Detalhe, medições e preço de entrada de cada um em **§F** | Ver **§F**. Nenhum deles reabre com modelo novo; todos reabrem com **gold anotado** |
 
 ---
 
@@ -183,6 +190,140 @@ de 5,55 M de linhas para 741 companhias e escapa do teto de 20 documentos. Mas:
   determinística é o ouro do analista, e **não tem ML**.
 - **Reabre com dado novo, não com modelo novo** — DFC, preços *point-in-time*,
   ou documentos além dos 20. As três reabrem coisas diferentes.
+
+---
+
+## C-bis. B-DFC-01J-M — custo de captação um trimestre à frente (2026-09-09)
+
+> **⛔ AVISO DE ESTADO (2026-09-11) — leia antes de usar qualquer número desta
+> seção.** Esta seção foi escrita quando o **instrumento de medição estava
+> quebrado**. Uma [revisão independente](revisao_independente_b_dfc_01j_2026-09-10.md)
+> mostrou que `construir_j` **fabricava os limites de J** (achado F1), e uma
+> [conferência posterior](parecer_correcao_b_dfc_01j_2026-09-11.md) achou mais
+> seis defeitos no auditor. Os números abaixo ficam como **registro do que foi
+> publicado**, não como resultado corrente.
+>
+> **O que muda na leitura desta seção:**
+>
+> | Afirmação abaixo | Estado em 2026-09-11 |
+> |---|---|
+> | "**G0 FOI RESOLVIDO**, pelo lado ruim" | **Falso hoje.** G0 voltou a reprovar: 24 dos 25 pacotes com J **não identificado**, 0 identificados, 0 limitados |
+> | **G2 = 1,0464** | **Não é mais produzido.** O gate devolve "alvos insuficientes para medir ruído/sinal" |
+> | "**J como ponto exato foi de 5 para ZERO**" | Continua certo — e **J como intervalo também foi a ZERO** (era 15). A série utilizável saiu de 69 pares para **zero** |
+> | "**~16 emissores**" na série diagnóstica | **Cálculo invalidado por F3** e posto em quarentena: segue publicado em `sensibilidade.json` com `decidivel: false` e `calculo_de_poder_invalidado_por: "F3"`. Publicado e invalidado, **não** "deixou de existir" |
+> | "os ~16 só valem para **um J limpo que não existe**" | **Não repetir.** A revisão derrubou a prova de não separabilidade **universal** (F5) e achou juros e câmbio **separados** na nota de movimentação de dívidas subordinadas do Bradesco |
+> | "Reabre com outro estimando, restrito às rubricas **sem crédito em nenhum trimestre**" | Critério **enfraquecido**: das 5 rubricas não identificadas, 3 têm crédito observado e 2 (do BB) não — mas ausência de crédito **não é prova** de pureza, e a pista viável hoje é **por família econômica** (subordinadas), não por ausência de crédito |
+>
+> **O que continua valendo:** o treino segue suspenso; as rubricas **não**
+> voltam para J sem prova; e as duas regras de método da seção — *fechamento
+> aritmético não é conformidade contratual* e *exigência de amostra é
+> propriedade da dispersão medida, não do universo*. Estado atual e próximos
+> passos: o instrumento levou **três** ondas de correção —
+> [C1–C6](implementacao_c1_c6_b_dfc_01j_2026-09-11.md), depois
+> [R-C5/R-C6/R-SUPORTE](implementacao_rc5_rc6_b_dfc_01j_2026-09-11.md) achadas
+> por [conferência independente](conferencia_independente_c1_c6_b_dfc_01j_2026-09-11.md).
+> **F3, o redesenho do cálculo de poder, segue sem correção** — em quarentena
+> que hoje **veta** a aprovação de G3, em vez de só estar escrita ao lado dela.
+
+**Sétimo candidato em que o baseline trivial vence.** Alvo pré-registrado
+`y = ln(J(t+1)/J(t))` sobre a série documental de J (3 emissores, 71 pares
+emissor-trimestre, 2018T1–2026T1). Relatório:
+`prontidao_b_dfc_01j_modelo_2026-09-09.md`. AGENTS.md §3.17.
+
+| O que foi medido | Valor | Limiar |
+|---|---:|---:|
+| **G0** rubricas com conformidade não demonstrada (antes de resolver) | **3** | 0 |
+| **G2** ruído/sinal depois de tornar J conforme | **1,0464** | < 0,10 |
+| G3 melhoria mínima detectável (bootstrap por emissor) | **130,6%** do MAE | ≤ 20% |
+| Emissores necessários — com a rubrica suspeita dentro | ~128 † | 3 disponíveis |
+| Emissores necessários — **sem** ela (série diagnóstica) | **~16** | 3 disponíveis |
+| MAE macro: B0 sem mudança × sazonal × mediana 4T | **0,1579** × 0,2151 × 0,1771 | — |
+| Acerto de direção: "sempre sobe" × sazonal × mediana | **0,6491** × 0,5652 × 0,5455 | — |
+| G2 ruído do rótulo sobre sinal | 0,021 | < 0,10 ✅ |
+
+**Duas coisas para não repetir.** (1) *Fechamento aritmético não é conformidade
+contratual* — três rubricas incluídas em J vêm credoras, e despesa de captação
+por competência não é crédito; a soma fechava. (2) *O gargalo era emissor, não
+trimestre* — a onda levou a série de 50 para 71 pares e G3 não se moveu, porque
+três clusters não sustentam inferência por mais trimestres que tenham. (3)
+*Exigência de amostra não é propriedade do universo, é da dispersão medida* — o
+"~128 emissores" foi publicado como limite dos bancos existentes e era, em boa
+parte, sintoma do defeito do G0.
+
+**G0 FOI RESOLVIDO em 2026-09-10, pelo lado ruim.** A leitura das notas mostrou
+que a parcela cambial **não é separável**: a maior sub-rubrica do `Recursos de
+Mercados Interbancários` do Itaú é declarada em moeda estrangeira, no 1T2020 o
+saldo dela subiu 30,1% enquanto a linha de juros saltou 21.119 (casam dentro de
+8%) e a taxa contratual de teto 9,60% proíbe a leitura alternativa. As duas
+rubricas com crédito impresso viraram `_NAO_IDENT` e **J como ponto exato foi de
+5 para ZERO**.
+
+| | Conforme (agora) | Anterior, não conforme |
+|---|---:|---:|
+| G2 ruído/sinal (limiar < 0,10) | **1,0464** ❌ | 0,0214 ✅ |
+| Alvos | 25 | 55 |
+| Emissores na população | **2** | 3 |
+
+**A folga de 48× do G2 era comprada pelo defeito.** Evidência:
+`artefatos/b_dfc_01j/prontidao/sensibilidade.json`.
+
+† O `~128` é da rodada de gate original, sobre a série contaminada, e **não
+reproduz** contra o artefato de hoje: reconstruindo aquele estado, o
+`sensibilidade.json` v2.0.0 devolve **102**. A diferença é a guarda de acumulado
+que encolhe, que retirou dois 4T derivados. Fica como registro do que foi
+publicado, não como número corrente.
+
+**O que reabriria, agora que o G0 fechou.** **Não é mais emissor** — cada emissor
+novo entra com o mesmo defeito de apresentação, e os ~16 da série diagnóstica só
+valem para um J limpo que não existe. Reabre com **outro estimando**, restrito às
+rubricas sem crédito em nenhum trimestre — **ciente de que esse critério não
+seleciona baixa dispersão** (CV vai de 0,11 a 0,96, e a pior é uma rubrica não
+cambial que segue em J, acima das duas cambiais removidas: 0,68 e 0,60), com pré-registro e G0 próprios e sem herdar número — e com a ressalva
+de que ausência de crédito **não é prova** de estar limpo. E `B3`, o benchmark
+econômico (meta Selic *point-in-time*) exigido pelo contrato, segue **não
+executado**: superar persistência sem superar a taxa de juros não diz nada sobre
+custo de captação, porque J é estoque × taxa.
+
+---
+
+## F. Candidatos parados por falta de gold, amostra ou vintage — não por medição negativa
+
+**Esta seção é diferente de todas as anteriores, e confundir as duas é o erro
+mais caro do registro.** Em A, B, C e E há um número que reprovou a ideia. Aqui
+**não há número nenhum**: o estado científico é **INDECIDÍVEL** e a decisão de
+engenharia é **NÃO IMPLEMENTAR ML AGORA**. Ninguém mediu que a ideia é ruim —
+mediu-se que ela **não é decidível** com o gold, a amostra e o vintage que
+existem. São candidatos vivos, com preço de entrada declarado.
+
+> **Não cite nenhuma linha desta seção como "foi medido e não funciona".** A
+> formulação correta é "não foi medido, e eis o que falta para medir".
+
+Consolidado a partir de AGENTS.md §3.9–§3.12 e §3.16, em 2026-09-11, quando
+aquelas seções saíram do plano por serem registro de medição, não regra de
+conduta. Cada relatório datado continua sendo a fonte.
+
+| Candidato | O que é | Por que é indecidível hoje | Preço de entrada para decidir |
+|---|---|---|---|
+| **CAND-02 — redline semântico** ([relatório](validacao_cand02_redline_2026-08-27.md) · [pré-registro](pre_registro_cand02_redline_2026-08-27.md)) | Compara releases consecutivos e ordena mudanças por **prioridade de leitura** | A estrutura **passou**: 20 docs → 15 pares, split purgado 5 dev · 5 embargo · 5 teste, zero PDF compartilhado. Faltam as três evidências **humanas**: dupla leitura, adjudicação e estudo de tempo. Nenhum modelo foi carregado | Dupla leitura completa dos 15 pares + adjudicação + **≥30 mudanças prioridade 2** + estudo humano contrabalanceado. O determinístico precisa antes de zero FN crítico, recall P2 ≥0,90, nDCG@20 ≥0,80 e procedência perfeita. Só então o aprendido roda contra B0/B1, exigindo ΔnDCG@10 ≥+0,10, ΔnDCG@20 ≥+0,05, ganho 5/5 e `N@R90` 20% menor. Generalizar exige 30–34 pares e dez emissores |
+| **CAND-03 — triagem de anomalias contábeis** ([relatório](validacao_cand03_anomalias_contabeis_2026-08-27.md) · [pré-registro](pre_registro_cand03_anomalias_contabeis_2026-08-27.md)) | Ordena episódios contábeis por prioridade de leitura (E2). Erro/reapresentação (E1) e fraude (E3) são estimandos **separados** e não servem de proxy | O painel tem 5.552.787 linhas mas só **23.346** companhia–trimestres; mapa exato em **4,951%**; setor em 5 de 741 companhias; 698 chaves semânticas duplicadas (587 conflitantes); **zero grupos com mais de um vintage numérico**. As quatro correções curadas são **um episódio-raiz em um emissor**, não quatro rótulos. `VERSAO>1` não localiza a conta alterada nem prova erro | Shadow prospectivo: 30 releases completos, seguindo até ≥30 com P1/P2 e rubrica estável, teto 150. Congelar snapshot, baseline, recall e break-even. Confirmatório `N=max(100, N_poder, N_50+)`, primária de minutos/itens sob 100% de recall crítico e recall P1/P2 ≥0,90. ML só avança com procedência perfeita e economia cujo IC supere `max(break-even+margem, 20%)` |
+| **CAND-04 — previsão de fundamentos** ([relatório](validacao_cand04_previsao_fundamentos_2026-08-27.md) · [pré-registro](pre_registro_cand04_previsao_fundamentos_2026-08-27.md)) | Prospective ROA em bps: `10.000 × lucro(T+1) / ativo(T)`, com B0 persistência, B1 sazonal T−3, B2 mediana 4T, B3 mediana dos três | **A rodada A está REJEITADA/INVALIDADA, mas a fórmula econômica NÃO foi refutada.** G0 integridade e G1 point-in-time falharam. O top 1% explica **83,55%** do erro; **23 linhas** (0,71%) com saltos de ativo próximos de 1.000× explicam **61,64%**. Rastreamento confirmou trocas `MIL`↔`UNIDADE` e subtração 4T contaminada | Preservar `DT_RECEB`/`ID_DOC`/todas as versões; validar escala **antes** da derivação; reconciliar 4T; completar setor; congelar teste novo e rodar baselines/intervalos PIT antes de qualquer challenger. **Divergência publicada entre os especialistas:** Ciência de Dados prefere **A2** corrigido, Finanças prefere **B** (lucro dos controladores em R$, materialidade em bps do PL atribuível). Ambos são estimandos novos e **não herdam número de A** |
+| **Rank 5 — divergência gerencial × contábil** ([relatório](validacao_rank05_divergencia_gerencial_contabil_2026-08-27.md) · [pré-registro](pre_registro_rank05_divergencia_gerencial_contabil_2026-08-27.md)) | Fila de reconciliações gerenciais que merecem revisão. **L e K são separados** | LAJIDA/LAJIR/EBITDA/EBIT como palavra inteira aparece em **0/20** releases — G0-L reprova. A ponte de resultado ajustado aparece em 20/20, mas isso passa só G0-K: **contagem de ponte é candidato à anotação, não gold**. G1 reprova por não haver data original de publicação e versão. G2/G3/G4 reprovam por falta de dupla leitura e por 20 releases/5 emissores contra as barras de 30/10 | ≥30 releases e ≥30 P2/P3 adjudicados; rubrica própria; concordância ponderada ≥0,70; vintage em 100%; extrator auditado; B0–B4 congelados; split temporal/emissor. Confirmação exige `N=max(100, N_poder, N_50+)`, ≥10 emissores, recall P3=1, recall P2/P3 ≥0,90, `N@R90` 20% menor, ΔnDCG@20 ≥+0,05 e procedência perfeita. **K1 não herda identidade, regra nem gold de LAJIDA/LAJIR** |
+| **Etapa 19 — FCF yield × retorno futuro** ([relatório](validacao_etapa19_fcf_yield_2026-09-08.md) · [pré-registro](pre_registro_etapa19_fcf_yield_2026-09-08.md)) | Terceiro e último destravador nomeado pelo negativo de E ("DFC, preços PIT, ou documentos além dos 20") | **T1 não reprovou pela primeira vez neste projeto — mas também não aprovou.** Os cinco componentes ficaram abaixo de 0,15 na leitura pontual (`valor_mercado` 0,120 é o maior), porém o bootstrap por companhia (2.000 reamostragens) dá **32% de chance de a amplitude verdadeira de `valor_mercado` exceder 0,15**. A amostra tem só 1.908 observações e 19 trimestres porque a `composicao_capital` da CVM só existe a partir de 2020. G0 de preço **aprovou** (4,19% de suspeitas contra limiar de 5%) | Amostra maior por fonte **não frágil** de ações pré-2020, ou G0 próprio para a derivação por LPA que descarte baixa precisão **antes** de medir. Ver em D por que a derivação por LPA foi examinada e recusada |
+
+### Um caminho de reabertura examinado e explicitamente NÃO tomado
+
+A CVM publica Lucro Básico por Ação (`cd_conta 3.99.01`) desde 2011, o que em
+tese permitiria derivar ações em circulação (`lucro_controladores / LPA`) antes
+de 2020 e resgatar o T1 ambíguo da Etapa 19. **Não foi feito, de propósito:** o
+campo vem com a precisão que a própria companhia declarou — 2 casas decimais na
+maioria dos arquivamentos — e arredonda a `0,00` justamente para companhias de
+LPA pequeno, produzindo ações derivadas indeterminadas ou com erro relativo
+enorme. É a mesma classe de defeito do CAND-04 (trocas de escala silenciosas que
+só aparecem no residual).
+
+**Usar essa derivação para resgatar um T1 ambíguo seria ajustar a população
+depois de ver o resultado, e o pré-registro proíbe.** Registrado aqui para que a
+próxima sessão não "descubra" o atalho e o tome sem ver a razão da recusa.
 
 ---
 

@@ -1,0 +1,141 @@
+id,estrato,texto,horizonte,metrica,camada_apontada,emissor,registro,observacao
+RAH001,PF,O Itaú Unibanco continuará ampliando o lucro líquido a cada trimestre até dezembro?,futuro,resultado,nenhuma,Itaú Unibanco,formal,futuro sintético com perífrase de continuidade sobre lucro líquido
+RAH002,PF,o bradesco vai conseguir voltar a lucrar bem ou ja era,futuro,resultado,nenhuma,bradesco,informal,"perífrase vai conseguir, informal sem acento e sem interrogação"
+RAH003,PF,A rentabilidade do Santander Brasil tende a se aproximar da dos concorrentes privados nos próximos anos?,futuro,resultado,nenhuma,Santander Brasil,formal,perífrase tende a sobre rentabilidade relativa aos pares
+RAH004,PF,vc acha q o lucro do btg vai continuar subindo ou uma hora estabiliza?,futuro,resultado,nenhuma,btg,informal,opinião pedida ao sistema com perífrase de futuro e abreviações
+RAH005,PF,O lucro do Banco do Brasil irá crescer de forma consistente até o fim da década?,futuro,resultado,nenhuma,Banco do Brasil,formal,futuro com auxiliar ir e horizonte vago
+RAH006,PF,SANB11 vai dar lucro maior esse ano do q no ano passado?,futuro,resultado,nenhuma,SANB11,informal,"ticker como emissor, ano corrente ainda aberto, abreviação"
+RAH007,PF,O Daycoval seguirá expandindo seu lucro no mesmo ritmo nos próximos anos?,futuro,resultado,nenhuma,Daycoval,formal,emissor só do painel com futuro sintético
+RAH008,PF,Qual é o seu prognóstico para o lucro do Itaú no próximo ano?,futuro,resultado,nenhuma,Itaú,formal,"substantivo prospectivo pedido ao sistema, sem atribuição à companhia"
+RAH009,PF,Que expectativa faz sentido ter para a rentabilidade do Bradesco no médio prazo?,futuro,resultado,nenhuma,Bradesco,formal,"substantivo expectativa sem atribuição, horizonte de médio prazo"
+RAH010,PF,qual o cenario pro resultado do BTG Pactual nos proximos trimestres,futuro,resultado,nenhuma,BTG Pactual,informal,substantivo cenário sem acento e sem interrogação
+RAH011,PF,Como estão as perspectivas de lucratividade do Inter para os próximos anos?,futuro,resultado,nenhuma,Inter,formal,verbo no presente com substantivo prospectivo não atribuído
+RAH012,PF,Qual a sua previsão de ROE médio para os grandes bancos brasileiros num ambiente de juros menores?,futuro,resultado,nenhuma,setor,formal,previsão setorial de ROE pedida ao sistema
+RAH013,PF,qual a tendencia do lucro do ITUB4 pros proximos trimestres?,futuro,resultado,nenhuma,ITUB4,informal,"tendência usada prospectivamente, contraste com D-H4, ticker"
+RAH014,PF,"Em quanto deve ficar o lucro líquido do Bradesco no quarto trimestre de 2026, na sua estimativa?",futuro,resultado,nenhuma,Bradesco,formal,período futuro por extenso com modal deve
+RAH015,PF,BB fecha 2026 no azul ou ta arriscado?,futuro,resultado,nenhuma,BB,informal,presente com valor de futuro sobre ano ainda aberto
+RAH016,PF,Qual lucro líquido o Santander deverá obter no primeiro semestre de 2027?,futuro,resultado,nenhuma,Santander,formal,semestre futuro explícito com futuro do verbo dever
+RAH017,PF,"Para o terceiro trimestre de 2026, que ROE é plausível esperar do BPAC11?",futuro,resultado,nenhuma,BPAC11,formal,"trimestre não encerrado, julgamento de plausibilidade, ticker"
+RAH018,PF,o IRB termina o 4T26 com lucro ou prejuizo,futuro,resultado,nenhuma,IRB,informal,"emissor só do painel, trimestre futuro abreviado, sem interrogação"
+RAH019,PF,"Em 2028, o lucro do Itaú estará acima ou abaixo do patamar atual?",futuro,resultado,nenhuma,Itaú,formal,ano futuro distante no início da frase
+RAH020,PF,"e no 3T26 o lucro dele sobe ou cai, na sua opiniao?",futuro,resultado,nenhuma,nenhum,informal,"continuação sem emissor nomeado, trimestre futuro"
+RAH021,PF,"Estime, com base no histórico recente, o lucro líquido do Banco do Brasil para o exercício de 2027.",futuro,resultado,nenhuma,Banco do Brasil,formal,"imperativo com histórico como insumo, sem interrogação"
+RAH022,PF,me da um chute de qto o itau vai lucrar no ano q vem,futuro,resultado,nenhuma,itau,informal,pedido de chute com abreviações e sem interrogação
+RAH023,PF,Projete o ROE do Bradesco para cada um dos quatro trimestres seguintes.,futuro,resultado,nenhuma,Bradesco,formal,imperativo projete sem período nomeado
+RAH024,PF,"Calcule, por favor, uma faixa provável para o lucro líquido do BTG em 2027.",futuro,resultado,nenhuma,BTG,formal,pedido de estimativa em faixa para ano futuro
+RAH025,PF,Faça uma estimativa do resultado líquido do Banco Pine para o próximo exercício.,futuro,resultado,nenhuma,Banco Pine,formal,imperativo de estimativa com emissor só do painel
+RAH026,PF,chuta ai o roe do santander no fim de 2026,futuro,resultado,nenhuma,santander,informal,imperativo coloquial sobre ano corrente ainda não fechado
+RAH027,PF,Dê uma ordem de grandeza para quanto o lucro somado dos maiores bancos listados deve variar em 2027.,futuro,resultado,nenhuma,setor,formal,estimativa setorial agregada em imperativo
+RAH028,PF,"Se o BTG mantiver o ritmo de crescimento atual, quanto lucraria no próximo ano?",futuro,resultado,nenhuma,BTG,formal,condicional com subjuntivo e futuro do pretérito
+RAH029,PF,"se a selic cair bastante, oq acontece com o lucro do bradesco?",futuro,resultado,nenhuma,bradesco,informal,"hipótese macroeconômica condicional, abreviação"
+RAH030,PF,"Caso a inadimplência das pessoas físicas volte a subir, o Itaú corre o risco de ver o lucro encolher em 2027?",futuro,resultado,nenhuma,Itaú,formal,"condicional com duas métricas, prevalece resultado"
+RAH031,PF,"Na hipótese de uma recessão em 2027, o Mercantil do Brasil ainda conseguiria fechar o ano com lucro?",futuro,resultado,nenhuma,Mercantil do Brasil,formal,"hipótese explícita sobre desfecho, emissor só do painel"
+RAH032,PF,"se o governo aumentar imposto dos bancos, qto cai a rentabilidade deles?",futuro,resultado,nenhuma,setor,informal,condicional regulatória setorial com abreviação
+RAH033,PF,"Supondo uma piora no crédito rural, como ficaria o lucro do BBAS3 no próximo ano?",futuro,resultado,nenhuma,BBAS3,formal,suposição com ticker e futuro do pretérito
+RAH034,PF,Qual a probabilidade de o Santander Brasil ter prejuízo em algum trimestre de 2027?,futuro,resultado,nenhuma,Santander Brasil,formal,probabilidade explícita de prejuízo em ano futuro
+RAH035,PF,tem chance do bmg dar prejuiso esse ano ainda?,futuro,resultado,nenhuma,bmg,informal,"chance de prejuízo, emissor só do painel, sem acento"
+RAH036,PF,Há risco de o Bradesco terminar o segundo semestre deste ano no vermelho?,futuro,resultado,nenhuma,Bradesco,formal,risco de resultado negativo em semestre aberto
+RAH037,PF,"Em termos percentuais, quais as chances de o BTG Pactual encerrar 2027 com ROE acima de 20%?",futuro,resultado,nenhuma,BTG Pactual,formal,chance quantificada de ROE acima de limiar
+RAH038,PF,na sua visao qual bancao tem mais risco de queda no lucro no 4T26,futuro,resultado,nenhuma,setor,informal,"risco comparado entre bancos, visão do sistema, sem interrogação"
+RAH039,PF,É provável que o Itaú sofra queda de lucro na comparação anual do próximo trimestre?,futuro,resultado,nenhuma,Itaú,formal,probabilidade de queda anual no próximo trimestre
+RAH040,PF,O Itaú conseguirá entregar em 2026 um lucro gerencial dentro do intervalo que prometeu ao mercado?,futuro,resultado,release,Itaú,formal,"cumprimento futuro de faixa prometida, marca gerencial"
+RAH041,PF,bradesco chega no guidance de lucro desse ano ou fica pra tras?,futuro,resultado,release,bradesco,informal,"cumprimento de guidance do ano aberto, coloquial"
+RAH042,PF,"Na sua avaliação, a meta de lucro ajustado que o Banco do Brasil estabeleceu para 2026 é alcançável?",futuro,resultado,release,Banco do Brasil,formal,julgamento de alcançabilidade de meta atribuída à companhia
+RAH043,PF,vcs acham q o santander bate a meta de rentabilidade ate dezembro?,futuro,resultado,nenhuma,santander,informal,"cumprimento de meta sem a palavra guidance, presente com valor futuro"
+RAH044,PF,"O BTG tem condições de atingir, ainda neste exercício, o retorno sobre patrimônio indicado no guidance?",futuro,resultado,release,BTG,formal,capacidade de atingir guidance de ROE no ano corrente
+RAH045,PF,O Banco Inter vai honrar no prazo a meta de ROE que anunciou?,futuro,resultado,release,Banco Inter,formal,"cumprimento de meta anunciada, emissor só do painel"
+RAH046,PG,O ROE entregue pelo Itaú em 2025 ficou dentro de alguma faixa que o próprio banco tivesse divulgado para aquele ano?,guidance_publicado,resultado,release,Itaú,formal,"ano encerrado confrontado com faixa divulgada, sem pressupor existência"
+RAH047,PG,o lucro ajustado do BB em 2025 ficou dentro da faixa q o banco deu no guidance ou nao,guidance_publicado,resultado,release,BB,informal,"cumprimento do guidance em ano encerrado, sem interrogação"
+RAH048,PG,"Ao fechar 2025, o Bradesco cumpriu o que tinha publicado como projeção de lucro para o ano, se é que publicou alguma?",guidance_publicado,resultado,release,Bradesco,formal,"período encerrado versus projeção publicada, com ressalva de existência"
+RAH049,PG,"Terminado o ano de 2025, o BTG Pactual alcançou a rentabilidade que ele próprio havia anunciado como objetivo?",guidance_publicado,resultado,release,BTG Pactual,formal,objetivo anunciado pela companhia conferido em ano já encerrado
+RAH050,PG,O Santander Brasil alterou em algum momento de 2026 a projeção de lucro que havia publicado para o ano?,guidance_publicado,resultado,release,Santander Brasil,formal,revisão de projeção publicada pela própria companhia
+RAH051,PG,o itau mexeu em alguma projecao de lucro q tinha publicado pra 2026 depois do 1T26?,guidance_publicado,resultado,release,itau,informal,revisão do publicado em registro coloquial
+RAH052,PG,O Banco do Brasil reduziu a faixa oficial de lucro ajustado que tinha informado para 2026?,guidance_publicado,resultado,release,Banco do Brasil,formal,corte de faixa oficial divulgada
+RAH053,PG,"Em que direção o Bradesco ajustou, ao longo do ano, a orientação de resultado que dá ao mercado?",guidance_publicado,resultado,release,Bradesco,formal,"direção da revisão, guidance em português sem a palavra"
+RAH054,PG,Qual ROE mínimo o Santander Brasil comunicou como objetivo para 2027?,guidance_publicado,resultado,release,Santander Brasil,formal,"valor publicado para ano futuro, verbo comunicar"
+RAH055,PG,qual faixa de lucro o BTG colocou no guidance pro ano q vem,guidance_publicado,resultado,release,BTG,informal,"guidance do ano seguinte, coloquial, sem interrogação"
+RAH056,PG,Informe qual projeção de lucro líquido recorrente o Itaú publicou para o exercício de 2027.,guidance_publicado,resultado,release,Itaú,formal,"imperativo que pede relato de projeção publicada, não estimativa"
+RAH057,PG,"Qual retorno sobre o patrimônio o Inter se comprometeu a atingir em 2027, segundo o plano divulgado?",guidance_publicado,resultado,release,Inter,formal,"compromisso publicado para ano futuro, emissor só do painel"
+RAH058,PP,Qual será que foi o lucro líquido do BTG Pactual no 1T26?,passado_ou_presente,resultado,nenhuma,BTG Pactual,formal,futuro de dúvida com verbo no passado sobre trimestre divulgado
+RAH059,PP,"E no próximo trimestre depois do 2T25, o lucro do Santander aumentou?",passado_ou_presente,resultado,nenhuma,Santander,formal,próximo trimestre ancorado em período já encerrado
+RAH060,PP,Qual seria o lucro do Bradesco no 3T25 sem os efeitos não recorrentes?,passado_ou_presente,resultado,release,Bradesco,formal,futuro do pretérito para ajuste de trimestre encerrado
+RAH061,PP,O lucro do Banco do Brasil no 2T25 veio melhor ou pior do que o mercado previa?,passado_ou_presente,resultado,nenhuma,Banco do Brasil,formal,"previsão do mercado, não da companhia, sobre período encerrado"
+RAH062,PP,Como evoluiu a tendência de rentabilidade do Itaú entre o 2T25 e o 1T26?,passado_ou_presente,resultado,nenhuma,Itaú,formal,"tendência histórica entre trimestres divulgados, caso D-H4"
+RAH063,PP,o lucro do bradesco no 4T25 ja antecipava o q viria no 1T26?,passado_ou_presente,resultado,nenhuma,bradesco,informal,futuro do pretérito narrativo entre dois trimestres encerrados
+RAH064,PP,"Quanto o Itaú terá lucrado no acumulado de 2025, considerando os quatro trimestres?",passado_ou_presente,resultado,nenhuma,Itaú,formal,futuro composto conjectural sobre ano encerrado
+RAH065,PP,qnto o BB deve ter lucrado no 3T25 mais ou menos,passado_ou_presente,resultado,nenhuma,BB,informal,"modal epistêmico sobre valor passado, sem interrogação"
+RAH066,PP,O 4T25 entregou o que o 3T25 parecia prometer em termos de lucro para o Santander?,passado_ou_presente,resultado,nenhuma,Santander,formal,"promessa figurada de trimestre, não da companhia"
+RAH067,PP,lucro do ITUB4 vai de qto a qto entre o 3T25 e o 2T26,passado_ou_presente,resultado,nenhuma,ITUB4,informal,"verbo ir descrevendo intervalo histórico, sem interrogação"
+RAH068,PP,"Na perspectiva do resultado acumulado de 2025, o Bradesco lucrou mais do que em 2024?",passado_ou_presente,resultado,nenhuma,Bradesco,formal,"perspectiva no sentido de ponto de vista, anos encerrados"
+RAH069,PP,O lucro recorrente do BTG no 1T26 superou as expectativas que havia no mercado antes da divulgação?,passado_ou_presente,resultado,release,BTG,formal,"expectativa de mercado sobre trimestre já divulgado, marca recorrente"
+RAH070,PP,"Olhando o ITR do 2T26, o lucro do Banco do Brasil ia melhorando ou piorando ao longo do semestre?",passado_ou_presente,resultado,painel_cvm,Banco do Brasil,formal,"auxiliar ir no passado progressivo, âncora no ITR"
+RAH071,PP,somando os 4 tri de 2025 quanto vai dar o lucro do inter?,passado_ou_presente,resultado,nenhuma,inter,informal,"vai dar como soma de dados passados, emissor só do painel"
+RAH072,PP,"Qual foi o ROE anualizado do Santander no 1T26, isto é, o lucro do trimestre projetado para doze meses?",passado_ou_presente,resultado,nenhuma,Santander,formal,projetado como anualização de trimestre encerrado
+RAH073,PO,A inadimplência acima de 90 dias do Bradesco deve subir ou recuar até o fim de 2026?,futuro,outra_financeira,nenhuma,Bradesco,formal,direção futura de inadimplência em ano ainda aberto
+RAH074,PO,o custo do risco do itau tende a piorar nos proximos tri?,futuro,outra_financeira,nenhuma,itau,informal,"custo do risco com perífrase de futuro, contraste D-H4"
+RAH075,PO,O índice de Basileia do BTG Pactual corre o risco de ficar abaixo do mínimo regulatório em 2027?,futuro,outra_financeira,nenhuma,BTG Pactual,formal,risco futuro sobre índice de capital
+RAH076,PO,Projete a carteira de crédito do agronegócio do Banco do Brasil para dezembro de 2027.,futuro,outra_financeira,nenhuma,Banco do Brasil,formal,"imperativo de projeção de carteira, sem interrogação"
+RAH077,PO,santander vai fechar mais agencia ano que vem?,futuro,outra_financeira,nenhuma,santander,informal,"número de agências no futuro, verbo fechar ambíguo"
+RAH078,PO,Quantos clientes o Inter deverá ter ao final de 2027?,futuro,outra_financeira,nenhuma,Inter,formal,"base de clientes futura, emissor só do painel"
+RAH079,PO,"Se a Selic subir de novo, as provisões para devedores duvidosos dos grandes bancos aumentam?",futuro,outra_financeira,nenhuma,setor,formal,condicional macroeconômica sobre provisões do setor
+RAH080,PO,Que nível de margem financeira com clientes você enxerga para o BBDC4 no 1T27?,futuro,outra_financeira,nenhuma,BBDC4,formal,"margem financeira em trimestre futuro, ticker"
+RAH081,PO,O Daycoval conseguirá manter a eficiência operacional nos níveis atuais daqui a dois anos?,futuro,outra_financeira,nenhuma,Daycoval,formal,"eficiência futura, emissor só do painel"
+RAH082,PO,"Na sua opinião, o Itaú vai aumentar o volume de JCP distribuído em 2027?",futuro,outra_financeira,nenhuma,Itaú,formal,JCP futuro pedido como opinião ao sistema
+RAH083,PO,qual a chance da inadimplencia do BB passar de 5% no 4T26,futuro,outra_financeira,nenhuma,BB,informal,"chance de inadimplência acima de limiar, sem interrogação"
+RAH084,PO,Qual a expectativa para o crescimento dos depósitos a prazo do Mercantil do Brasil em 2027?,futuro,outra_financeira,nenhuma,Mercantil do Brasil,formal,substantivo expectativa sobre captação futura
+RAH085,PS,"Quanto o Itaú Unibanco lucrou, em reais, no 3T26?",periodo_sem_dado,resultado,nenhuma,Itaú Unibanco,formal,pergunta fechada no passado sobre trimestre ainda sem dado
+RAH086,PS,qual foi a inadimplencia do bradesco no 4T26,periodo_sem_dado,outra_financeira,nenhuma,bradesco,informal,"fato ausente de trimestre futuro, sem interrogação"
+RAH087,PS,Qual o ativo total informado pelo BTG Pactual no ITR do 3T26?,periodo_sem_dado,outra_financeira,painel_cvm,BTG Pactual,formal,ITR de trimestre ainda não arquivado
+RAH088,PS,Qual ROE recorrente o Santander reportou no release do 4T26 para o ano fechado de 2026?,periodo_sem_dado,resultado,release,Santander,formal,release inexistente tratado como já publicado
+RAH089,PS,Qual era a carteira de crédito ampliada do Banco do Brasil ao fim do 1T27?,periodo_sem_dado,outra_financeira,nenhuma,Banco do Brasil,formal,"imperfeito sobre data futura, fato ausente"
+RAH090,PS,Qual resultado líquido o Banco Inter apurou no primeiro trimestre de 2027?,periodo_sem_dado,resultado,nenhuma,Banco Inter,formal,"apuração passada de período futuro, emissor só do painel"
+RAH091,CR,"No release do 3T25, qual foi o lucro líquido recorrente gerencial do Itaú?",passado_ou_presente,resultado,release,Itaú,formal,termo técnico release com lucro recorrente gerencial
+RAH092,CR,"Na visão gerencial do Bradesco, quanto somaram as despesas com PDD no 4T25?",passado_ou_presente,outra_financeira,release,Bradesco,formal,termo técnico visão gerencial sobre provisões
+RAH093,CR,"no press release do 2T25 do santander, quanto deu a receita de tarifas e servicos?",passado_ou_presente,outra_financeira,release,santander,informal,termo técnico press release em registro informal
+RAH094,CR,Qual o patrimônio líquido do Banco do Brasil informado pela área de Relações com Investidores referente ao 1T26?,passado_ou_presente,outra_financeira,release,Banco do Brasil,formal,termo técnico relações com investidores
+RAH095,CR,"Durante a teleconferência do 4T25, que valor de ativos totais o BTG Pactual mencionou para o fim de 2025?",passado_ou_presente,outra_financeira,release,BTG Pactual,formal,termo técnico teleconferência sobre ativo total
+RAH096,CR,Qual a diferença entre o lucro ajustado do Itaú no 1T26 e o lucro que consta no ITR do mesmo trimestre?,passado_ou_presente,resultado,release,Itaú,formal,"reconciliação ajustado versus ITR, caso D-C1"
+RAH097,CR,"No balanço que o Banco do Brasil apresentou na teleconferência do 3T25, qual foi o lucro ajustado?",passado_ou_presente,resultado,release,Banco do Brasil,formal,"balanço coloquial junto de teleconferência, caso D-C1"
+RAH098,CR,"Pelo critério BRGAAP gerencial, quanto o Santander gastou com despesas administrativas no 4T25?",passado_ou_presente,outra_financeira,release,Santander,formal,"BRGAAP gerencial como base, caso D-C2"
+RAH099,CR,quanto o itau falou q lucrou no 2T25 quando mostrou os numeros pro mercado?,passado_ou_presente,resultado,release,itau,informal,referência coloquial a mostrar números ao mercado
+RAH100,CR,Qual foi o total de depósitos que o Bradesco anunciou ao fechar o 4T25?,passado_ou_presente,outra_financeira,release,Bradesco,formal,referência indireta pelo verbo anunciar
+RAH101,CR,"Nos slides que o Santander usou para comentar o 3T25, quanto aparecia de despesas de pessoal?",passado_ou_presente,outra_financeira,release,Santander,formal,slides como referência indireta à apresentação
+RAH102,CR,o numero de lucro liquido q o BB passou pros analistas no 1T26,passado_ou_presente,resultado,release,BB,informal,"referência coloquial ao que foi passado a analistas, sem interrogação"
+RAH103,CR,"Na conversa com analistas após os números do 2T25, que patrimônio líquido o BTG mencionou?",passado_ou_presente,outra_financeira,release,BTG,formal,conversa com analistas como referência indireta à teleconferência
+RAH104,CR,"Nos números que a diretoria do Itaú levou ao mercado sobre o 4T25, quanto somava a carteira de crédito total?",passado_ou_presente,outra_financeira,release,Itaú,formal,"diretoria levando números ao mercado, referência indireta"
+RAH105,CR,"qdo o bradesco soltou os numeros do 1T26, qto ele informou de provisao pra perda de credito?",passado_ou_presente,outra_financeira,release,bradesco,informal,soltar os números como referência coloquial à divulgação
+RAH106,CR,Quero o lucro líquido do Santander no 4T25 conforme o banco comunicou aos acionistas,passado_ou_presente,resultado,release,Santander,formal,"comunicação aos acionistas, pedido sem interrogação"
+RAH107,CR,"Ao comentar o 2T25 com o mercado, qual volume de ativos totais o Banco do Brasil mostrou?",passado_ou_presente,outra_financeira,release,Banco do Brasil,formal,comentário ao mercado como referência indireta
+RAH108,CR,no material q o btg preparou pros investidores sobre o 3T25 qto foi a receita total,passado_ou_presente,outra_financeira,release,btg,informal,"material para investidores, referência coloquial, sem interrogação"
+RAH109,CR,"No comunicado oficial sobre o desempenho do 3T25, quanto o Itaú informou de receitas de prestação de serviços?",passado_ou_presente,outra_financeira,release,Itaú,formal,comunicado oficial como referência indireta ao press release
+RAH110,CR,"O lucro líquido do Bradesco no 2T25, do jeito que o próprio banco apresentou ao público, foi de quanto?",passado_ou_presente,resultado,release,Bradesco,formal,"versão apresentada pelo próprio banco, referência indireta"
+RAH111,CP,"Em IFRS, qual foi o lucro líquido atribuível aos acionistas controladores do Itaú no 2T26?",passado_ou_presente,resultado,painel_cvm,Itaú,formal,"IFRS como base, caso D-C2"
+RAH112,CP,pelo ifrs quanto era o patrimonio liquido do bradesco em junho de 2025?,passado_ou_presente,outra_financeira,painel_cvm,bradesco,informal,IFRS minúsculo em registro informal
+RAH113,CP,Lucro líquido do Santander Brasil no 1T25 sob as normas IFRS,passado_ou_presente,resultado,painel_cvm,Santander Brasil,formal,"IFRS como base, sem interrogação"
+RAH114,CP,Qual o total de ativos do Banco do Brasil declarado no ITR do 3T25?,passado_ou_presente,outra_financeira,painel_cvm,Banco do Brasil,formal,ITR citado como fonte
+RAH115,CP,"Na DFP de 2025, quanto o BTG Pactual apurou de lucro líquido consolidado?",passado_ou_presente,resultado,painel_cvm,BTG Pactual,formal,DFP anual citada como fonte
+RAH116,CP,Quais foram as receitas de intermediação financeira do Banco Inter no 2T26 segundo os dados enviados à CVM?,passado_ou_presente,outra_financeira,painel_cvm,Banco Inter,formal,"CVM citada, emissor só do painel"
+RAH117,CP,qto o bmg teve de despesa com provisao no 1T26 no formulario da cvm,passado_ou_presente,outra_financeira,painel_cvm,bmg,informal,"formulário da CVM em registro informal, sem interrogação"
+RAH118,CP,"No balanço patrimonial do Itaú de 31 de março de 2026, qual era o saldo de depósitos?",passado_ou_presente,outra_financeira,painel_cvm,Itaú,formal,balanço patrimonial com data de corte
+RAH119,CP,"Conforme as demonstrações financeiras anuais do Santander, qual foi o lucro líquido do exercício de 2025?",passado_ou_presente,resultado,painel_cvm,Santander,formal,demonstrações financeiras anuais como fonte
+RAH120,CP,no balanco do BB do 2T26 qto tinha de patrimonio liquido?,passado_ou_presente,outra_financeira,painel_cvm,BB,informal,balanço sem cedilha em registro informal
+RAH121,CP,De quanto foi o lucro líquido do Bradesco no segundo trimestre de 2026?,passado_ou_presente,resultado,nenhuma,Bradesco,formal,último trimestre do painel sem âncora de camada
+RAH122,CP,ITUB4 tinha qto de ativo total no fim do 1T25?,passado_ou_presente,outra_financeira,nenhuma,ITUB4,informal,"ticker com ativo total, sem âncora"
+RAH123,CP,Como variou o patrimônio líquido do Santander entre o 1T25 e o 2T26?,passado_ou_presente,outra_financeira,nenhuma,Santander,formal,evolução ao longo da janela inteira do painel
+RAH124,CP,lucro liquido do btg no 3T25 e no 4T25 lado a lado,passado_ou_presente,resultado,nenhuma,btg,informal,"comparação de dois trimestres, sem âncora e sem interrogação"
+RAH125,CP,Qual era o volume de depósitos a prazo do Daycoval em dezembro de 2025?,passado_ou_presente,outra_financeira,nenhuma,Daycoval,formal,"emissor só do painel, sem âncora"
+RAH126,CP,O Banco Pine teve lucro ou prejuízo no primeiro semestre de 2026?,passado_ou_presente,resultado,nenhuma,Banco Pine,formal,"semestre encerrado, emissor só do painel"
+RAH127,CP,Quanto somaram as despesas de pessoal do Banco do Brasil ao longo de 2025?,passado_ou_presente,outra_financeira,nenhuma,Banco do Brasil,formal,linha de despesa anual sem âncora
+RAH128,CP,mercantil do brasil fechou o 1T26 com qnto de carteira de credito?,passado_ou_presente,outra_financeira,nenhuma,mercantil do brasil,informal,"carteira de crédito, emissor só do painel, informal"
+RAH129,CP,Qual foi o lucro líquido do IRB acumulado nos nove meses até setembro de 2025?,passado_ou_presente,resultado,nenhuma,IRB,formal,"acumulado de nove meses, emissor só do painel"
+RAH130,CP,Quanto o Itaú pagou de imposto de renda e contribuição social no 1T26?,passado_ou_presente,outra_financeira,nenhuma,Itaú,formal,tributos do trimestre sem âncora de camada
+RAH131,AP,vale a pena comprar BBDC4 agora ou e melhor esperar?,futuro,preco_ou_acao,nenhuma,BBDC4,informal,pedido de recomendação de compra com ticker
+RAH132,AP,Qual preço-alvo você atribuiria às ações do Itaú para os próximos doze meses?,futuro,preco_ou_acao,nenhuma,Itaú,formal,preço-alvo pedido ao sistema
+RAH133,AP,Diga se BPAC11 ainda tem espaço para subir até o fim do ano,futuro,preco_ou_acao,nenhuma,BPAC11,formal,"valorização futura em imperativo, sem interrogação"
+RAH134,AP,Devo vender minhas ações do Banco do Brasil antes da próxima divulgação?,futuro,preco_ou_acao,release,Banco do Brasil,formal,recomendação de venda com divulgação só como marco temporal
+RAH135,AP,a acao do santander vai valoriza em 2027?,futuro,preco_ou_acao,nenhuma,santander,informal,valorização futura com erro de digitação
+RAH136,AP,Faz sentido montar posição nos papéis do Inter pensando no longo prazo?,futuro,preco_ou_acao,nenhuma,Inter,formal,"recomendação implícita de compra, emissor só do painel"
+RAH137,AP,Quais ações de bancos você recomendaria para uma carteira de dividendos em 2027?,futuro,preco_ou_acao,nenhuma,setor,formal,"recomendação setorial com dividendos, prevalece preço ou ação"
+RAH138,AP,Até quanto a cotação de SANB11 pode chegar no cenário mais otimista para o próximo ano?,futuro,preco_ou_acao,nenhuma,SANB11,formal,teto de cotação em cenário futuro
+RAH139,AP,me indica se compensa segurar BBAS3 ate o ano q vem,futuro,preco_ou_acao,nenhuma,BBAS3,informal,"pedido de recomendação de manter, sem interrogação"
+RAH140,AP,O potencial de valorização das units do BTG Pactual até dezembro de 2026 é grande?,futuro,preco_ou_acao,nenhuma,BTG Pactual,formal,potencial de valorização em data futura

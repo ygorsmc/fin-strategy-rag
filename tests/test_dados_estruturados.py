@@ -32,6 +32,7 @@ from pathlib import Path
 import duckdb
 import pytest
 
+from src import dados_estruturados
 from src.config import TABELAS_PERMITIDAS_SQL, Config
 from src.dados_estruturados import (
     ErroCargaCVM,
@@ -1532,3 +1533,221 @@ class TestDerivacaoDeTrimestreIntermediario:
             """
         ).fetchone()[0]
         assert atravessou == 0
+
+
+class TestDerivacaoSoCobreUmTrimestre:
+    """Contrato D1 — `contratos_correcao_derivacao_intermediaria_2026-09-12.md`.
+
+    O `lag` da derivação pareia o período anterior **disponível**, não o
+    trimestre imediatamente anterior. Faltando um acumulado intermediário, a
+    diferença cobria mais de um trimestre e saía rotulada `trimestral`.
+
+    Medido no painel de treino antes da correção: **7.734 linhas** em 513
+    companhias e 111 contas, com 182, 183, 184 ou 273 dias. (Dizia 507, que é
+    só o grupo de 183 dias — corrigido em 2026-09-15, conferência §3.3.)
+    """
+
+    @staticmethod
+    def _painel(acumulados):
+        """Painel mínimo em memória, com o schema real de `fatos_contabeis`.
+
+        Em memória, e não sobre a fixture de CSV, porque o que se exercita aqui
+        é a presença ou ausência de UM acumulado intermediário — construir isso
+        por arquivo-fonte esconderia o caso atrás da carga inteira.
+        """
+        con = duckdb.connect(":memory:")
+        con.execute(
+            "CREATE TABLE companhias (cd_cvm VARCHAR, plano_contas VARCHAR)"
+        )
+        con.execute("INSERT INTO companhias VALUES ('001023', 'plano_x')")
+        con.execute(
+            "CREATE TABLE mapa_contas (plano_contas VARCHAR, conceito VARCHAR, "
+            "cd_conta VARCHAR, ds_conta_norm VARCHAR)"
+        )
+        con.execute(
+            """
+            CREATE TABLE fatos_contabeis (
+                cd_cvm VARCHAR, conjunto VARCHAR, demonstrativo VARCHAR,
+                trimestre VARCHAR, tipo_periodo VARCHAR, dt_refer DATE,
+                dt_ini_exerc DATE, dt_fim_exerc DATE, cd_conta VARCHAR,
+                ds_conta VARCHAR, ds_conta_norm VARCHAR, vl_conta DOUBLE,
+                escala VARCHAR, valor_reais DOUBLE, versao_documento INTEGER,
+                origem VARCHAR
+            )
+            """
+        )
+        for trimestre, tipo, fim, valor in acumulados:
+            con.execute(
+                """
+                INSERT INTO fatos_contabeis VALUES
+                ('001023', 'itr', 'DFC_MI', ?, ?, ?, DATE '2025-01-01', ?,
+                 '6.01', 'Caixa Operacional', 'caixa operacional',
+                 ?, 'UNIDADE', ?, 1, 'arquivado')
+                """,
+                [trimestre, tipo, fim, fim, valor, valor],
+            )
+        return con
+
+    def test_sem_o_trimestre_anterior_a_derivacao_e_recusada(self):
+        """1T e acumulado de 9M presentes, **1S ausente**: nada de `3T` derivado.
+
+        Docstring corrigida em 2026-09-15 (conferência QW6): dizia "1T ausente,
+        acumulado do 1S presente", mas os dados sempre foram 1T e 9M sem o 1S.
+        As asserções são as mesmas.
+
+        O caso do parecer, em miniatura: `19.289.000` (jan–set) menos
+        `1.992.000` (jan–mar) produzia `17.297.000 de abr–set` **rotulado
+        trimestral**.
+        """
+        con = self._painel([
+            ("1T2025", "trimestral", "2025-03-31", 1_000.0),
+            ("3T2025", "acumulado", "2025-09-30", 9_000.0),
+        ])
+        # Contrato D2.3: retorno de três estados — desempacotamento adaptado.
+        criados, recusados, sem_antecedente = (
+            dados_estruturados._derivar_trimestres_intermediarios(con)
+        )
+        assert criados == 0, (
+            "de jan–mar para jan–set a diferença cobre SEIS meses: não é "
+            "trimestre isolado"
+        )
+        assert recusados == 1, "a recusa tem de ser contada, não silenciosa"
+        assert sem_antecedente == 0, "há antecedente: é recusa pela banda"
+        con.close()
+
+    def test_com_o_trimestre_anterior_a_derivacao_acontece(self):
+        """**Não-regressão obrigatória.** Sem este caso, recusar tudo passaria
+        no teste acima — e a função existe justamente para derivar."""
+        con = self._painel([
+            ("1T2025", "trimestral", "2025-03-31", 1_000.0),
+            ("2T2025", "acumulado", "2025-06-30", 3_000.0),
+        ])
+        criados, recusados, sem_antecedente = (  # D2.3
+            dados_estruturados._derivar_trimestres_intermediarios(con)
+        )
+        assert criados == 1
+        assert recusados == 0
+        assert sem_antecedente == 0
+        linha = con.execute(
+            """
+            SELECT valor_reais, dt_ini_exerc, dt_fim_exerc, origem, tipo_periodo
+            FROM fatos_contabeis
+            WHERE origem = 'derivado' AND trimestre = '2T2025'
+            """
+        ).fetchone()
+        assert linha[0] == pytest.approx(2_000.0)
+        assert str(linha[1]) == "2025-04-01"
+        assert str(linha[2]) == "2025-06-30"
+        assert linha[3] == "derivado" and linha[4] == "trimestral"
+        con.close()
+
+    def test_nenhum_derivado_sai_com_duracao_fora_da_banda(self):
+        """Varre os três acumulados juntos: 1T, 1S e 9M.
+
+        O 2T deriva (1S − 1T) e o 3T deriva (9M − 1S). Nenhum dos dois pode
+        sair com duração de semestre.
+        """
+        con = self._painel([
+            ("1T2025", "trimestral", "2025-03-31", 1_000.0),
+            ("2T2025", "acumulado", "2025-06-30", 3_000.0),
+            ("3T2025", "acumulado", "2025-09-30", 6_000.0),
+        ])
+        criados, _, _ = dados_estruturados._derivar_trimestres_intermediarios(con)  # D2.3
+        assert criados == 2
+        fora = con.execute(
+            f"""
+            SELECT count(*) FROM fatos_contabeis WHERE origem = 'derivado'
+              AND (dt_fim_exerc - dt_ini_exerc + 1) NOT BETWEEN
+                  {dados_estruturados.DIAS_MINIMOS_DE_UM_TRIMESTRE}
+                  AND {dados_estruturados.DIAS_MAXIMOS_DE_UM_TRIMESTRE}
+            """
+        ).fetchone()[0]
+        assert fora == 0
+        con.close()
+
+    def test_so_o_acumulado_sem_antecedente_nao_e_recusa(self):
+        """Contrato D2.2: o caso literal "só o 1S" que a conferência testou.
+
+        Não há aritmética possível — não é recusa pela banda. É estado próprio,
+        contado à parte, para que a ausência não seja silenciosa.
+        """
+        con = self._painel([("2T2025", "acumulado", "2025-06-30", 3_000.0)])
+        resultado = dados_estruturados._derivar_trimestres_intermediarios(con)
+        assert resultado == (0, 0, 1)
+        assert resultado.sem_antecedente == 1
+        con.close()
+
+    def test_recusa_e_contada_com_a_identidade_da_insercao(self):
+        """Contraprova B da conferência: outra descrição no 2T escondia a recusa.
+
+        A contagem usava `coalesce(conceito, cd_conta)`; a inserção,
+        `coalesce(conceito, cd_conta|descrição)`. Com a mesma conta no 1T e no
+        3T e outra descrição no 2T, a recusa acontecia e saía `(0, 0)`. Agora
+        a recusa é contada, e o 2T de outra descrição é `sem_antecedente`.
+        """
+        for descricao_diferente, esperado in ((False, (0, 1, 0)), (True, (0, 1, 1))):
+            linhas = [
+                ("1T2025", "trimestral", "2025-03-31", 1_000.0),
+                ("3T2025", "acumulado", "2025-09-30", 9_000.0),
+            ]
+            if descricao_diferente:
+                linhas.insert(1, ("2T2025", "acumulado", "2025-06-30", 3_000.0))
+            con = self._painel(linhas)
+            if descricao_diferente:
+                con.execute(
+                    "UPDATE fatos_contabeis SET ds_conta = 'Outra conta', "
+                    "ds_conta_norm = 'outra conta' WHERE trimestre = '2T2025'"
+                )
+            assert (
+                dados_estruturados._derivar_trimestres_intermediarios(con) == esperado
+            ), descricao_diferente
+            con.close()
+
+    def test_a_banda_esta_declarada_e_cobre_um_trimestre(self):
+        """Se a banda mudar, a falsificação nº 1 do contrato se verifica."""
+        assert dados_estruturados.DIAS_MINIMOS_DE_UM_TRIMESTRE == 80
+        assert dados_estruturados.DIAS_MAXIMOS_DE_UM_TRIMESTRE == 100
+
+
+class TestAvisosDaDerivacaoNoCarregador:
+    """Contrato D2.4 — o critério 6 do contrato D1 (*"o aviso aparece quando
+    houve recusa, e não aparece quando não houve"*) nunca tinha sido testado no
+    CARREGADOR: os casos D1 olhavam só o retorno da função. Foi assim que a
+    recusa silenciosa de QW6 passou.
+    """
+
+    def test_sem_recusa_nao_ha_aviso_de_recusa(self, painel_fluxo):
+        _, relatorio = painel_fluxo
+        assert not any("RECUSADAS" in aviso for aviso in relatorio.avisos)
+
+    def test_sem_antecedente_e_avisado(self, painel_fluxo):
+        """A fixture tem `6.02` só no acumulado de 9M: não há de onde derivar."""
+        _, relatorio = painel_fluxo
+        assert any("SEM ANTECEDENTE" in aviso for aviso in relatorio.avisos)
+        assert not any(
+            "SEM ANTECEDENTE" in aviso and "RECUSADAS" in aviso
+            for aviso in relatorio.avisos
+        ), "as duas causas não podem sair no mesmo aviso"
+
+    def test_recusa_pela_banda_e_avisada(self, fontes_com_fluxo, cabecalhos, tmp_path):
+        """Sem o acumulado do 1S de `6.01`, o 9M menos o 1T cobriria seis meses."""
+        original = DIR_FIXTURES / "itr_cia_aberta_DFC_MI_con_amostra.csv"
+        linhas = original.read_text(encoding="latin-1").splitlines(keepends=True)
+        sem_1s = [
+            linha for linha in linhas
+            if not (";2025-06-30;" in linha and ";6.01;" in linha and ";001023;" in linha)
+        ]
+        assert len(sem_1s) == len(linhas) - 1, "a fixture mudou: o 1S não é mais único"
+        modificada = tmp_path / original.name
+        modificada.write_text("".join(sem_1s), encoding="latin-1")
+        fontes = [
+            FonteCVM(modificada, "itr", "DFC_MI") if original.name in repr(fonte) else fonte
+            for fonte in fontes_com_fluxo
+        ]
+        assert sum(original.name in repr(f) for f in fontes_com_fluxo) == 1
+        relatorio = carregar_painel(
+            fontes, tmp_path / "cvm.duckdb", cabecalhos=list(cabecalhos)
+        )
+        recusas = [aviso for aviso in relatorio.avisos if "RECUSADAS" in aviso]
+        assert len(recusas) == 1
+        assert recusas[0].startswith("1 derivação")

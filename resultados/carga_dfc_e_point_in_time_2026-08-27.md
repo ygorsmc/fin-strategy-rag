@@ -1,5 +1,12 @@
 # Carga de fluxo de caixa (DFC) e cadastro point-in-time (2026-08-27)
 
+> **Ressalva posterior — 2026-09-08.** A carga de DFC e datas ocorreu, mas
+> não certificou vintages numéricos nem disponibilidade dos operandos de
+> valores derivados. As afirmações abaixo de que qualquer candidato já
+> poderia ser avaliado "point-in-time de verdade" são excessivas. Ver a
+> [auditoria da retomada, §2](viabilidade_ml_dfc_2026-09-08.md#2-evidência-reproduzível-da-base-atual).
+> Este relatório continua sendo o registro histórico da carga.
+
 **Custo de API: zero.** Os 31 ZIPs já estavam em disco, baixados e pinados por
 SHA-256 em `corpus/cvm/manifesto_cvm.csv`. Não houve download, OCR nem chamada
 paga — só leitura do que já estava pago.

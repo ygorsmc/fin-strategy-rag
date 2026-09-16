@@ -1,0 +1,172 @@
+{
+  "candidato": "Rank 3-B — início de consumo operacional persistente",
+  "pre_registro": "resultados/pre_registro_rank03b_consumo_operacional_2026-09-11.md",
+  "pre_registro_sha256": "fbae30cce2bde9b3ece5ccf254e300ce99ba11946568720441193b0a3ac644cc",
+  "modelo_carregado": false,
+  "cadeia": [
+    {
+      "gate": "G0",
+      "pergunta": "O dado é íntegro?",
+      "papel": "decisivo",
+      "observacoes_de_fco": 22013,
+      "observacoes_de_ativo": 22428,
+      "g0_1_companhia_trimestre_com_os_dois_metodos": 0,
+      "g0_2_fora_da_duracao_de_um_trimestre": 25,
+      "g0_2_grupos_com_trimestre_e_periodo_mais_longo": 15,
+      "g0_2_exemplos": [
+        {
+          "cd_cvm": "022586",
+          "trimestre": "1T2022",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "023990",
+          "trimestre": "1T2017",
+          "dias": 38,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "022586",
+          "trimestre": "1T2025",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "025887",
+          "trimestre": "3T2024",
+          "dias": 183,
+          "demonstrativo": "DFC_MI",
+          "origem": "derivado"
+        },
+        {
+          "cd_cvm": "027545",
+          "trimestre": "3T2025",
+          "dias": 183,
+          "demonstrativo": "DFC_MD",
+          "origem": "derivado"
+        },
+        {
+          "cd_cvm": "025720",
+          "trimestre": "3T2022",
+          "dias": 183,
+          "demonstrativo": "DFC_MI",
+          "origem": "derivado"
+        },
+        {
+          "cd_cvm": "023795",
+          "trimestre": "1T2016",
+          "dias": 41,
+          "demonstrativo": "DFC_MD",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "022586",
+          "trimestre": "1T2023",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "020451",
+          "trimestre": "1T2018",
+          "dias": 31,
+          "demonstrativo": "DFC_MI",
+          "origem": "arquivado"
+        },
+        {
+          "cd_cvm": "027545",
+          "trimestre": "3T2024",
+          "dias": 183,
+          "demonstrativo": "DFC_MD",
+          "origem": "derivado"
+        }
+      ],
+      "g0_2_duracoes_distintas": [
+        12,
+        31,
+        38,
+        41,
+        183
+      ],
+      "g0_3_saltos_de_escala": 136,
+      "g0_3_fracao": 0.006064,
+      "g0_3_exemplos": [
+        {
+          "cd_cvm": "003328",
+          "de": "2T2020",
+          "para": "3T2020",
+          "razao": 1052.9
+        },
+        {
+          "cd_cvm": "003328",
+          "de": "3T2020",
+          "para": "4T2020",
+          "razao": 991.3
+        },
+        {
+          "cd_cvm": "003328",
+          "de": "4T2020",
+          "para": "1T2021",
+          "razao": 28769069.0
+        },
+        {
+          "cd_cvm": "003328",
+          "de": "2T2021",
+          "para": "4T2024",
+          "razao": 71338795.0
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "2T2020",
+          "para": "3T2020",
+          "razao": 1009.6
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "3T2020",
+          "para": "4T2020",
+          "razao": 1003.4
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "4T2020",
+          "para": "1T2021",
+          "razao": 1031.9
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "3T2021",
+          "para": "4T2021",
+          "razao": 1000.6
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "4T2021",
+          "para": "1T2022",
+          "razao": 1001.0
+        },
+        {
+          "cd_cvm": "003549",
+          "de": "3T2022",
+          "para": "4T2022",
+          "razao": 995.2
+        }
+      ],
+      "limiar": "0 somas de método duplo · 0 fora de 80–100 dias · <= 0.5% de saltos de escala",
+      "aprovado": false,
+      "diagnostico_de_escala": {
+        "trocas_de_escala": 137,
+        "defeito_valor_bruto_continuo": 123,
+        "redenominacao_aparentemente_real": 13,
+        "companhias_com_defeito": 43
+      }
+    }
+  ],
+  "primeiro_reprovado": "G0",
+  "veredito": "REPROVADO EM G0/G1",
+  "quarentena": "As observações reprovadas por G0.3 NÃO foram removidas e NENHUM teste posterior foi medido. Nada de T1, T2 ou baseline existe nesta rodada — a rodada está invalidada. Retomar exige adjudicar a escala contra a fonte e um pré-registro novo."
+}

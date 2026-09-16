@@ -1,0 +1,76 @@
+{
+ "schema_version": "1.0.0",
+ "gerado_em": "2026-09-11T17:17:48.153328+00:00",
+ "documentos_no_manifesto": 65,
+ "documentos_coletados": 65,
+ "documentos_faltando": [],
+ "documentos_extraidos": 58,
+ "documentos_sem_nota_legivel": [
+  "bradesco_ifrs_2019A: Âncora '\\\\d+\\\\)\\\\s*RESULTADO LÍQUIDO DE JUROS\\\\s*$' não encontrada em bradesco_2019A_v1.pdf",
+  "bradesco_ifrs_2020A: Âncora '\\\\d+\\\\)\\\\s*RESULTADO LÍQUIDO DE JUROS\\\\s*$' não encontrada em bradesco_2020A_v1.pdf",
+  "bradesco_ifrs_2026T1: Seção 'Despesa de juros e similares' não encontrada na página.",
+  "bb_ifrs_2020A: Rubrica ('Obrigações com instituições financeiras',) não encontrada na página.",
+  "bb_ifrs_2023T2: Âncora '\\\\d+\\\\s*[–-]\\\\s*Receita líquida de juros\\\\s*$' não encontrada em bb_2023T2_v1.pdf",
+  "itau_ifrs_2022T2: Fecho de seção 'Total' não encontrado depois de 'b) Despesas de Juros e Similares|b) Despesas de Juros e Rendimentos'.",
+  "itau_ifrs_2022A: Âncora 'b\\\\)\\\\s*Despesas de Juros e (Similares|Rendimentos)' não encontrada em itau_2022A_v1.pdf"
+ ],
+ "fatos": 1386,
+ "registros_utilizaveis": 0,
+ "pares_emissor_trimestre_distintos": 0,
+ "trimestres_por_emissor": {},
+ "janela": "- .. -",
+ "identidades_conferidas": 24,
+ "identidades_conferidas_independentes": 24,
+ "identidades_que_fecham_por_construcao": [],
+ "identidades_divergentes": [],
+ "identidades_nao_verificaveis": 27,
+ "periodos_reapresentados": 4,
+ "periodos_com_credito_em_parcela_incluida": [],
+ "rubricas_com_conformidade_nao_demonstrada": [],
+ "quartos_trimestres_derivados": 17,
+ "quartos_trimestres_recusados": [
+  {
+   "schema_version": "1.0.0",
+   "cd_cvm": "000906",
+   "periodo_alvo": "2019T4",
+   "status": "recusada",
+   "motivo": "Operando ausente: 2019A em 1 fonte(s), 2019M9 em 0. Derivar exige os dois."
+  },
+  {
+   "schema_version": "1.0.0",
+   "cd_cvm": "000906",
+   "periodo_alvo": "2020T4",
+   "status": "recusada",
+   "motivo": "Operando ausente: 2020A em 2 fonte(s), 2020M9 em 0. Derivar exige os dois."
+  },
+  {
+   "schema_version": "1.0.0",
+   "cd_cvm": "000906",
+   "periodo_alvo": "2021T4",
+   "status": "recusada",
+   "motivo": "Operando ausente: 2021A em 3 fonte(s), 2021M9 em 0. Derivar exige os dois."
+  },
+  {
+   "schema_version": "1.0.0",
+   "cd_cvm": "001023",
+   "periodo_alvo": "2019T4",
+   "status": "recusada",
+   "motivo": "Operando ausente: 2019A em 1 fonte(s), 2019M9 em 0. Derivar exige os dois."
+  },
+  {
+   "schema_version": "1.0.0",
+   "cd_cvm": "001023",
+   "periodo_alvo": "2020T4",
+   "status": "recusada",
+   "motivo": "Operando ausente: 2020A em 2 fonte(s), 2020M9 em 0. Derivar exige os dois."
+  },
+  {
+   "schema_version": "1.0.0",
+   "cd_cvm": "019348",
+   "periodo_alvo": "2017T4",
+   "status": "recusada",
+   "motivo": "Operando ausente: 2017A em 1 fonte(s), 2017M9 em 0. Derivar exige os dois."
+  }
+ ],
+ "limite": "Extensão NÃO altera os 25 pacotes congelados do piloto e não autoriza treino: mede até onde a série de J existe, nada além."
+}
