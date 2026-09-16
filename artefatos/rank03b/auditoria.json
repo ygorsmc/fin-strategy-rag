@@ -1293,7 +1293,20 @@
           "adjacente": true
         }
       ],
-      "limiar": "0 somas de método duplo · 0 fora de 80–100 dias · <= 0.5% de saltos de escala",
+      "g0_0_fontes_vazias": [],
+      "g0_4_nulos_nas_contas_usadas": 0,
+      "g0_4_por_conta": {
+        "fco": {
+          "linhas": 22034,
+          "nulos": 0
+        },
+        "ativo": {
+          "linhas": 22471,
+          "nulos": 0
+        }
+      },
+      "g0_4_contas_sem_linha_alguma": [],
+      "limiar": "0 somas de método duplo · 0 fora de 80–100 dias · <= 0.5% de saltos de escala · 0 nulos em fco/ativo · universo não vazio",
       "aprovado": false,
       "diagnostico_de_escala": {
         "recortes": {

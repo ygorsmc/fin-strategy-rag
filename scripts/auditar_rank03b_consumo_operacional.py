@@ -194,6 +194,53 @@ def carregar_duracoes(con: duckdb.DuckDBPyConnection) -> list[dict]:
     ).df().to_dict("records")
 
 
+#: G0.4 do §4 do pré-registro: as contas cujo `valor_reais` não pode ser nulo,
+#: com o predicado que as identifica. Mesmo recorte dos carregadores — sem o
+#: filtro de nulo, que é justamente o que se quer medir.
+CONTAS_REQUERIDAS = {
+    "fco": (
+        f"f.demonstrativo LIKE 'DFC%' AND f.cd_conta = '{CONTA_FCO}' "
+        "AND f.tipo_periodo = 'trimestral'"
+    ),
+    "ativo": f"f.demonstrativo = 'BPA' AND f.cd_conta = '{CONTA_ATIVO}'",
+}
+
+
+def carregar_nulos(con: duckdb.DuckDBPyConnection) -> dict[str, dict[str, int]]:
+    """G0.4: nulos nas contas usadas, medidos **sem** o filtro de nulo.
+
+    **Correção de 2026-09-16 (contrato G4.1).** O §4 do pré-registro congela
+    G0.4 desde 11/09 — *`valor_reais` nunca nulo nas contas usadas, 0 nulos* —
+    e o código **nunca a implementou**: `gate_g0` publicava contador para G0.1,
+    G0.2 e G0.3 e nenhum para G0.4. E não bastaria acrescentá-lo lá dentro: os
+    três carregadores filtram `valor_reais IS NOT NULL`, então um contador
+    alimentado por eles seria incapaz de ver um nulo **por construção** — guarda
+    vazia, não guarda frouxa.
+
+    Medido em 2026-09-16, antes desta correção: FCO `6.01` com 22.034 linhas e
+    **0** nulos; Ativo `1` com 22.471 linhas e **0** nulos. Implementar G0.4
+    portanto não muda veredito nenhum — o que muda é a guarda deixar de aprovar
+    por ausência de medição (§4.4 regra 4).
+    """
+    medidas: dict[str, dict[str, int]] = {}
+    for nome, condicao in CONTAS_REQUERIDAS.items():
+        linhas, nulos = con.execute(
+            f"""
+            WITH elegiveis AS (
+                SELECT cd_cvm FROM companhias
+                WHERE plano_contas NOT LIKE 'll3_09_%' AND NOT is_banco
+            )
+            SELECT count(*),
+                   coalesce(sum(CASE WHEN f.valor_reais IS NULL THEN 1 ELSE 0 END), 0)
+            FROM fatos_contabeis AS f
+            JOIN elegiveis USING (cd_cvm)
+            WHERE {condicao}
+            """
+        ).fetchone()
+        medidas[nome] = {"linhas": int(linhas), "nulos": int(nulos)}
+    return medidas
+
+
 def carregar_ativo(con: duckdb.DuckDBPyConnection) -> list[dict]:
     """Ativo total, **uma entrada por LINHA-FONTE** (contrato R1.1).
 
@@ -213,7 +260,8 @@ def carregar_ativo(con: duckdb.DuckDBPyConnection) -> list[dict]:
             WHERE plano_contas NOT LIKE 'll3_09_%' AND NOT is_banco
         )
         SELECT f.cd_cvm, f.trimestre, f.valor_reais AS ativo, d.dt_receb,
-               f.versao_documento AS versao, f.demonstrativo, f.dt_ini_exerc AS dt_ini
+               f.versao_documento AS versao, f.demonstrativo,
+               f.dt_ini_exerc AS dt_ini, f.dt_fim_exerc AS dt_fim
         FROM fatos_contabeis AS f
         JOIN elegiveis USING (cd_cvm)
         JOIN documentos AS d
@@ -346,8 +394,16 @@ def diagnosticar_escala(con: duckdb.DuckDBPyConnection) -> dict:
     }
 
 
-def gate_g0(fco: list[dict], ativo: list[dict], duracoes: list[dict]) -> dict:
-    """Integridade. Decisivo: reprova a rodada, não é diagnóstico."""
+def gate_g0(
+    fco: list[dict], ativo: list[dict], duracoes: list[dict],
+    nulos: dict[str, dict[str, int]],
+) -> dict:
+    """Integridade. Decisivo: reprova a rodada, não é diagnóstico.
+
+    `nulos` é a medição de G0.4 feita por `carregar_nulos`, e é **exigida**
+    (contrato G4.2). A função continua pura — recebe listas e dicionários, nunca
+    a conexão —, que é o que sustenta as contraprovas de G0.1 a G0.4.
+    """
     # G0.1 — `DFC_MD` e `DFC_MI` no mesmo (companhia, trimestre). A contagem
     # agora sai das linhas, porque a carga deixou de agrupar (contrato R1.1);
     # o critério e o limiar são os mesmos do §4 do pré-registro.
@@ -408,7 +464,33 @@ def gate_g0(fco: list[dict], ativo: list[dict], duracoes: list[dict]) -> dict:
     saltos = [s for s in saltos if s["adjacente"]]
 
     fracao_saltos = len(saltos) / len(ativo) if ativo else 0.0
-    return {
+
+    # G0.0 — **correção de 2026-09-16 (contrato G4.5).** `gate_g0([], [], [])`
+    # devolvia `aprovado = True`: sem nada medido, aprovava. É o §4.4 regra 4,
+    # a mesma que já obrigara `gate_g1` a reprovar amostra vazia. A reprovação é
+    # do universo INTEIRO vazio, não de qualquer fonte vazia (G4.6): há caso de
+    # isolamento legítimo que passa `fco = []` de propósito para medir só G0.3,
+    # e enfraquecê-lo para fazer esta guarda passar é o que o §4.4 proíbe.
+    fontes_vazias = sorted(
+        nome for nome, fonte in
+        (("fco", fco), ("ativo", ativo), ("duracoes", duracoes)) if not fonte
+    )
+    universo_vazio = len(fontes_vazias) == 3
+
+    # G0.4 — conta requerida ausente do payload, ou sem linha nenhuma, é
+    # ausência de dado: reprova (G4.3/G4.4). Medição que não aconteceu não pode
+    # valer por medição limpa.
+    por_conta = {
+        nome: {
+            "linhas": int(nulos.get(nome, {}).get("linhas", 0)),
+            "nulos": int(nulos.get(nome, {}).get("nulos", 0)),
+        }
+        for nome in CONTAS_REQUERIDAS
+    }
+    sem_linha = sorted(n for n, v in por_conta.items() if not v["linhas"])
+    total_de_nulos = sum(v["nulos"] for v in por_conta.values())
+
+    resultado = {
         "gate": "G0",
         "pergunta": "O dado é íntegro?",
         "papel": "decisivo",
@@ -438,17 +520,35 @@ def gate_g0(fco: list[dict], ativo: list[dict], duracoes: list[dict]) -> dict:
         "g0_3_inventario": sorted(
             saltos, key=lambda r: (r["cd_cvm"], r["de"], r["para"])
         ),
+        "g0_0_fontes_vazias": fontes_vazias,
+        "g0_4_nulos_nas_contas_usadas": total_de_nulos,
+        "g0_4_por_conta": por_conta,
+        "g0_4_contas_sem_linha_alguma": sem_linha,
         "limiar": (
             f"0 somas de método duplo · 0 fora de "
             f"{DURACAO_MINIMA_DIAS}–{DURACAO_MAXIMA_DIAS} dias · "
-            f"<= {G0_TOLERANCIA_ESCALA:.1%} de saltos de escala"
+            f"<= {G0_TOLERANCIA_ESCALA:.1%} de saltos de escala · "
+            f"0 nulos em {'/'.join(CONTAS_REQUERIDAS)} · universo não vazio"
         ),
         "aprovado": (
-            not somados
+            not universo_vazio
+            and not somados
             and not fora_de_duracao
             and fracao_saltos <= G0_TOLERANCIA_ESCALA
+            and not total_de_nulos
+            and not sem_linha
         ),
     }
+    if universo_vazio:
+        resultado["motivo"] = (
+            "universo vazio: G0 não aprova por ausência de dado (§4.4 regra 4)"
+        )
+    elif sem_linha:
+        resultado["motivo"] = (
+            f"conta requerida sem linha alguma: {', '.join(sem_linha)} — "
+            "G0.4 não pode ser verificada sobre dado que não existe"
+        )
+    return resultado
 
 
 # --- construção da amostra -------------------------------------------------
@@ -515,10 +615,24 @@ def _encadeada(linhas: list[dict]) -> bool:
     )
 
 
+def _ou_nulo(valor):
+    """`NaT`/`NaN` do pandas viram `None`.
+
+    **Achado da implementação de 2026-09-16, ao exercitar H2.3 contra o painel
+    real.** Data ausente chega do `.df()` como `NaT`, e `NaT is None` é
+    **falso** — pior, toda comparação com `NaT` devolve falso, então esse
+    sentinel atravessa qualquer verificação sem acusar nada. Um saldo de balanço
+    não tem início, e "ausente" precisa ter UMA representação para ser
+    verificável. Isto normaliza um sentinel; não preenche nem inventa data.
+    """
+    return None if valor is None or valor != valor else valor
+
+
 def _procedencia(linha: dict) -> dict:
     return {
-        "trimestre": linha["trimestre"], "dt_ini": linha["dt_ini"],
-        "dt_fim": linha["dt_fim"], "dt_receb": linha["dt_receb"],
+        "trimestre": linha["trimestre"], "dt_ini": _ou_nulo(linha["dt_ini"]),
+        "dt_fim": _ou_nulo(linha["dt_fim"]),
+        "dt_receb": _ou_nulo(linha["dt_receb"]),
     }
 
 
@@ -533,8 +647,19 @@ def _contigua(linhas: list[dict]) -> bool:
     return ordens == list(range(ordens[0], ordens[0] + len(ordens)))
 
 
-def construir_amostra(fco: list[dict], ativo: list[dict]) -> tuple[list[dict], dict]:
+def _somas_do_rotulo(rotulo: list[dict]) -> tuple[float, float]:
+    """S1 e S2 do §2 do pré-registro — o único lugar onde o desfecho é somado."""
+    return rotulo[0]["fco"] + rotulo[1]["fco"], rotulo[2]["fco"] + rotulo[3]["fco"]
+
+
+def construir_amostra(fco: list[dict], ativo: list[dict],
+                      calcular_rotulo: bool = True) -> tuple[list[dict], dict]:
     """Um par (companhia, D) por data de recepção. D = `dt_receb`.
+
+    **`calcular_rotulo=False` (2026-09-16, auditoria dos lotes B/C):** constrói a
+    mesma amostra — mesmas censuras, mesma linhagem — sem NUNCA somar o FCO dos
+    trimestres do rótulo. É o modo de G1 enquanto o pré-registro não estiver
+    aprovado: apagar `y` depois de calculado não é cegueira.
 
     **A grade de decisão é a chegada do formulário, não o fim do trimestre.**
     Em cada `D` entram só as linhas com `dt_receb <= D`, e cada trimestre é
@@ -669,16 +794,12 @@ def construir_amostra(fco: list[dict], ativo: list[dict]) -> tuple[list[dict], d
             serie = [r["fco"] for r in janela]
             sd8 = statistics.stdev(serie)
             negativos = sum(1 for v in serie if v < 0)
-            s1 = rotulo[0]["fco"] + rotulo[1]["fco"]
-            s2 = rotulo[2]["fco"] + rotulo[3]["fco"]
-
             vistos.add(chave)
-            amostra.append({
+            observacao = {
                 "cd_cvm": cd,
                 "D": data_d.isoformat(),
                 "trimestre_ancora": passado[-1]["trimestre"],
                 "q1": rotulo[0]["trimestre"],
-                "y": 1 if (s1 < 0 and s2 < 0) else 0,
                 "fco_ttm_em_D": fco_ttm,
                 "sd8_fco_isolado": sd8,
                 # Sem `sd8` não há distância em desvios; `inf` diria
@@ -692,12 +813,19 @@ def construir_amostra(fco: list[dict], ativo: list[dict]) -> tuple[list[dict], d
                 "linhagem": {
                     "janela": [_procedencia(r) for r in janela],
                     "rotulo": [_procedencia(r) for r in rotulo],
-                    "ativo": {
-                        "trimestre": linha_ativo["trimestre"],
-                        "dt_receb": linha_ativo["dt_receb"],
-                    },
+                    # **Correção CQW-02 (contrato H2.2).** Carregava só
+                    # `trimestre` e `dt_receb`, contra os quatro campos que
+                    # H1.4 exige também do ativo. `dt_ini` sai `None` e assim
+                    # fica (H2.3): saldo de balanço é posição numa data, e as
+                    # 23.395 linhas de `BPA`/`1` do painel têm início nulo na
+                    # origem. Inventar um seria fabricar período.
+                    "ativo": _procedencia(linha_ativo),
                 },
-            })
+            }
+            if calcular_rotulo:
+                s1, s2 = _somas_do_rotulo(rotulo)
+                observacao["y"] = 1 if (s1 < 0 and s2 < 0) else 0
+            amostra.append(observacao)
 
     descarte["grupos_com_valores_conflitantes"] = conflitos_de_valor
     return amostra, descarte
@@ -1252,6 +1380,7 @@ def executar() -> dict:
         fco = carregar_fco(con)
         ativo = carregar_ativo(con)
         duracoes = carregar_duracoes(con)
+        nulos = carregar_nulos(con)
         escala = diagnosticar_escala(con)
     finally:
         con.close()
@@ -1275,7 +1404,7 @@ def executar() -> dict:
             decisivo = nome
         return resultado
 
-    g0 = _medir("G0", lambda: gate_g0(fco, ativo, duracoes))
+    g0 = _medir("G0", lambda: gate_g0(fco, ativo, duracoes, nulos))
     g0["diagnostico_de_escala"] = escala
     if not g0["aprovado"]:
         # G0 é decisivo: a rodada para aqui, e as observações reprovadas NÃO são
@@ -1422,6 +1551,13 @@ def _resumo_para_tela(relatorio: dict) -> tuple[list[str], int]:
         gate = next(x for x in relatorio["cadeia"] if x.get("gate") == nome)
         linhas.append(f"  REPROVA {nome}: {gate['pergunta']}")
         if nome == "G0":
+            if gate.get("motivo"):
+                linhas.append(f"    {gate['motivo']}")
+            if gate.get("g0_4_nulos_nas_contas_usadas"):
+                linhas.append(
+                    f"    G0.4 — nulos nas contas usadas: "
+                    f"{gate['g0_4_por_conta']}"
+                )
             linhas.append(
                 f"    saltos de escala: {gate['g0_3_saltos_de_escala']} "
                 f"({gate['g0_3_fracao']:.2%}), limiar {G0_TOLERANCIA_ESCALA:.2%}"

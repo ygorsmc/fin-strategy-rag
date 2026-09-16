@@ -96,7 +96,11 @@ from pathlib import Path
 
 import duckdb
 
-from scripts.inventariar_escala_cvm import ADJUDICA, VERSAO_DO_ESQUEMA
+from scripts.inventariar_escala_cvm import (
+    ADJUDICA,
+    ESTADOS_DE_DECLARACAO,
+    VERSAO_DO_ESQUEMA,
+)
 
 RAIZ = Path(__file__).resolve().parents[1]
 PAINEL = RAIZ / "artefatos" / "cvm_treino.duckdb"
@@ -158,6 +162,21 @@ def documentos_defeituosos(
                     raise InventarioIncompativel(
                         "declaração sem o campo `adjudicacao`: o resumo diz v2, "
                         "mas o inventário é de outra versão"
+                    )
+                # **Correção CQW-01 (contrato E2).** Conferir só a EXISTÊNCIA
+                # da chave fazia estado inválido — `None`, texto desconhecido,
+                # tipo errado, o estado adjudicante com um espaço a mais —
+                # significar "não adjudica", devolvendo `set()` em silêncio. Se
+                # fossem os únicos registros do documento, ele voltava ao
+                # universo do gerador. O vocabulário de E1.2 existia e não
+                # participava da decisão: §4.4 regra 7, terceira reincidência.
+                # Não normalizar (E2.3): espaço sobrando é inventário
+                # corrompido, não estado mal digitado.
+                if d["adjudicacao"] not in ESTADOS_DE_DECLARACAO:
+                    raise InventarioIncompativel(
+                        f"declaração com `adjudicacao` fora do vocabulário "
+                        f"fechado: {d['adjudicacao']!r}. Os estados válidos são "
+                        f"{ESTADOS_DE_DECLARACAO}"
                     )
                 if d["adjudicacao"] == ADJUDICA:
                     documentos.add(

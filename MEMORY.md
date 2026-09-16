@@ -205,17 +205,25 @@ outra tarefa.
   `resultados/conferencia_quatro_ondas_2026-09-15.md`.
   Não houve correção de código/dados nesta revisão. As mudanças paralelas de
   interface/geração acima não foram certificadas por ela.
-- **Conferência QW1–QW8 concluída em 15/09: aprovação parcial do pacote.**
-  `resultados/conferencia_independente_qw1_qw8_2026-09-15.md` traz fontes,
-  reproduções e critérios de fechamento. As contraprovas originais foram
-  superadas; faltam **CQW-01** (consumidor aceita estado de adjudicação
-  inválido como não adjudicado), **CQW-02** (H1.4: linhagem do ativo sem
-  `dt_ini`/`dt_fim`) e **CQW-03** (errata: 156.100 declarações, não 154.160).
-  Não foi demonstrada corrupção do inventário atual nem vazamento temporal
-  da amostra atual por esses achados. Suíte da execução independente:
-  **2.132 passed**, 30 warnings; recorte dos quatro arquivos: **275 passed**.
-  A contagem paralela de 2.139 da interface não é a execução desta revisão.
-  Só parecer e memória alterados; nenhum código/dado corrigido.
+- **Conferência QW1–QW8 (15/09) e correções CQW (16/09) — os três achados estão
+  FECHADOS, mais um quarto que veio do levantamento de treino.**
+  Parecer: `resultados/conferencia_independente_qw1_qw8_2026-09-15.md`.
+  Contrato antes do código: `resultados/contratos_correcao_cqw_2026-09-16.md`.
+  **CQW-01** (consumidor aceitava estado de adjudicação inválido como "não
+  adjudica") passou a levantar contra o vocabulário fechado de E1.2 — a
+  exclusão real continua **111 documentos em 35 companhias**. **CQW-02**: a
+  linhagem do ativo carrega os quatro campos de H1.4; `dt_ini` sai `None` e
+  **assim fica** (saldo de balanço não tem início — 23.395 de 23.395 linhas de
+  `BPA`/`1` o trazem nulo). **CQW-03**: errata publicada — **156.100**
+  declarações, não 154.160; as contagens por estado sempre estiveram certas.
+  **O quarto é de gate: `G0.4` estava congelada no §4 do pré-registro desde
+  11/09 e NUNCA fora implementada** — nem contador nem campo no artefato — e os
+  três carregadores filtram `IS NOT NULL`, então seria vazia por construção.
+  Implementada medindo **fora** do filtro: zero nulos em FCO `6.01` (22.034) e
+  Ativo `1` (22.471). `gate_g0([], [], [])` também aprovava. **Nada disso muda
+  veredito:** G0 segue reprovando pelos mesmos 132 saltos, fração 0,005874.
+  Não houve corrupção do inventário nem vazamento temporal por esses achados.
+  **Falta conferência independente desta onda CQW.**
 - **ESCALA — adjudicação refeita por declaração e conferida em 15/09.**
   Readjudicação dos 34.952 casos persistidos idêntica ao v2, caso a caso;
   não houve nova varredura integral dos ZIPs nesta conferência.
@@ -236,16 +244,46 @@ outra tarefa.
   de exercício social põe dois períodos sob o mesmo rótulo — resolver antes de
   reconstruir. O painel ainda carrega 7.734 derivados longos em **513**
   companhias. Reconstrução não decidida; períodos curtos pendentes.
-- **Rank 3-B — núcleo de QW3–QW7 conferido em 15/09; H1.4 parcial (CQW-02).** G1
+- **Rank 3-B — QW3–QW7 conferidos em 15/09; H1.4 completado em 16/09.** G1
   reconfere pela linhagem e para a cadeia; q1 vem das **datas** da linha — o
   rótulo civil sobre painel fiscal aceitava **322 observações reais** com
   trimestre já iniciado (N1; depois da correção: 278 reancoradas, 65
   censuradas segundo a implementação; conferência atual: **10.605 observações,
   494 companhias, G1 com zero violações**). Completude exige métricas e IC das três
-  métricas; piso de observações por componente; a CLI sai com 2 e regrava o
-  artefato byte-idêntico. JSON inalterado (**132/22.471**, só G0). Alvo não
-  avaliado; pré-registro `fbae30cc…` consumido; previsão sobre
-  `fco_ttm_sobre_sd8` sem teste.
+  métricas; piso de observações por componente; a CLI sai com 2 e compõe a tela
+  antes de gravar. Alvo não avaliado; pré-registro `fbae30cc…` consumido;
+  previsão sobre `fco_ttm_sobre_sd8` sem teste.
+  **Em 16/09 o JSON deixou de ser byte-idêntico, por decisão declarada:**
+  `a2ef88be…` → `8f7316ad…`, porque o artefato passou a publicar G0.0 e G0.4.
+  Veredito, `primeiro_reprovado`, `g0_3_fracao` (0,005874), os 132 saltos e os
+  inventários de G0.1–G0.3 foram conferidos **idênticos** campo a campo sobre os
+  bytes publicados. A linhagem do ativo agora tem os quatro campos de H1.4, com
+  `dt_ini` nulo — e normalizar o `NaT` do pandas para `None` foi necessário:
+  `NaT is None` é falso e toda comparação com ele devolve falso.
+- **Rank 3-B — PAINEL DE PESQUISA SEPARADO, G0 e G1 APROVADOS NELE (16/09).**
+  Decisões do Ygor: painel separado (`cvm.duckdb`/`cvm_treino.duckdb` e etapa 10
+  intocados), download público da CVM com piloto antes, parar no pré-registro.
+  `artefatos/painel_pesquisa_rank03b/` (binários fora do Git, 2,8 GB): lê os 31
+  ZIPs pinados; período por **datas** (N3 dissolvido, 0 colisões); método fora
+  da identidade (60 dos 131 N2 do recorte eram troca de método); disponibilidade
+  conservadora pela versão numérica (3.082 trimestres com intervalo cego — perda,
+  não vazamento). Escala adjudicada **com fonte** — cabeçalho de milhares nas
+  notas explicativas (grupos 193/412) **e** números do formulário impressos nelas
+  — em 405 documentos: **101 correções `UNIDADE → MIL` em 32 companhias**.
+  **"Em reais" declara moeda, não escala**: a primeira execução da adjudicação
+  foi descartada por isso (ressalvas RC1/RC1-bis, antes de qualquer G0 com
+  correções). Resultado: **G0.3 = 47 saltos (0,2092%)**, G1 = **10.750 obs em 502
+  companhias**, zero violações; digest `f9cb9da9…` (manifesto de correções
+  `4735fb10…`), reprodutível. Com a execução
+  descartada, também aprovaria (61 saltos). **Auditoria de conformidade feita
+  (16/09)**: nenhuma decisão de escala nem veredito mudou; corrigidos o G1 que
+  calculava `y` em memória (A1), o consumidor que não validava o manifesto
+  (M1/M2), manifesto de painel compartilhado entre as duas variantes, e textos.
+  Ressalvas RA7 (lote B) e RC2 (lote C). **G0.1 lido literalmente reprova**
+  (117 trimestres derivados entre métodos) — leitura vai a decisão no v2. Limite declarado: a regra quase não
+  detecta "rotulado `MIL`, na verdade em reais"; 4 dos 47 saltos foram criados
+  pela correção parcial. Dois formatos de fonte na CVM (formulário `.itr`/`.dfp`
+  até 2021 e XML único depois); o PDF renderizado vem cortado em 8 MiB.
 - **PLANO DE CONTAS — anotação dimensional por IA realizada em 15/09, não
   mapa operacional validado.** CSV atual `fa271cd3…`, 300 linhas, 20 colunas.
   Onze campos originais preservados; nove colunas novas separam classe,
@@ -262,9 +300,10 @@ outra tarefa.
   O revisor principal verificou os artefatos, sem alegar validação humana.
   O esqueleto original exclui só
   documentos com declaração adjudicada, identificados com `conjunto`; inventário
-  ausente ou de esquema anterior **falha**; estado desconhecido com campo
-  presente ainda passa silenciosamente (**CQW-01**, sem ocorrência no
-  inventário atual). Os 92,892% são do universo do
+  ausente ou de esquema anterior **falha**; e desde 16/09 estado fora do
+  vocabulário fechado de E1.2 **levanta** em vez de virar "não adjudica" em
+  silêncio (**CQW-01**, fechado; não havia ocorrência no inventário atual, e a
+  exclusão segue em 111 documentos / 35 companhias). Os 92,892% são do universo do
   gerador (arquivados fora dos 111 documentos), não cobertura semântica.
   Curadoria pode continuar; não autoriza reescala.
 - **`cad_cia_aberta.csv` nunca foi baixado**, ao contrário do que o antigo §3.7
@@ -297,7 +336,18 @@ outra tarefa.
   **`auditoria_manual_pendente`**. O README ainda publica a anterior
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
-- Suíte: **2.139 casos passando, zero skip** (2026-09-15). Composição: 2.093 da
+- Suíte: **2.495 casos passando, zero skip** (2026-09-16, depois da auditoria e da verificação
+  dos lotes B/C). Antes da auditoria: **2.456** (depois dos lotes B/C
+  do Rank 3-B: +226 contraprovas em `test_fonte_zip_cvm`, `test_fonte_rad_cvm`,
+  `test_piloto_fonte_rad_rank03b`, `test_painel_pesquisa_rank03b`,
+  `test_gates_painel_pesquisa_rank03b` e `test_adjudicar_escala_rank03b`; os
+  testes de rede usam dublês e proíbem processo real). Antes: **2.230** (onda CQW; +28
+  contraprovas sobre os 2.202 medidos antes dela). **Número medido, não
+  composto:** a árvore tem três frentes não commitadas misturadas — QW/CQW,
+  interface/rota e roteamento adversarial (`test_roteamento_adversarial*`, 51
+  casos) — e a soma por onda **não fecha**: ~18 casos não são atribuíveis sem a
+  coleta por arquivo de cada revisor. Separar antes de qualquer commit.
+  Histórico: **2.139** em 2026-09-15. Composição de então: 2.093 da
   véspera + 7 da onda da interface (38 no `test_rota_estruturada.py`) + 39
   atribuídos **por diferença** a edições feitas FORA daquela sessão entre
   06:46 e 07:08 de 15/09 — `src/dados_estruturados.py`,
@@ -717,6 +767,42 @@ do relatório específico.
 
 ## Próximo passo concreto
 
+**Levantamento até o treino, realizado em 15/09:**
+`resultados/pendencias_desbloqueio_treino_dfc_2026-09-15.md` separa o caminho
+Rank 3-B (D1–D8) da trilha bancária, com fontes e critérios de conclusão.
+G0 rechecado somente leitura continua reprovado; nenhuma correção ou treino.
+Recorte novo da simulação de derivação: no **FCO não financeiro**, N2 tem
+**131 grupos/94 companhias** sem antecedente e N3 **10 grupos/6 companhias**
+com mais de um período candidato. Não são exemplos finais de treino nem
+erros já adjudicados. O relatório registra ainda a aprovação de G0 isolado
+sobre entrada vazia e a ausência de verificação explícita de nulos antes do
+filtro dos carregadores; G1 barra vazio e não há nulos nas contas requeridas
+do universo atual, portanto não foi demonstrada aprovação indevida da cadeia.
+Recomenda-se delimitar a curadoria a FCO/ativo e considerar painel de pesquisa
+separado — **decidido em 16/09: painel separado** (ver item −1 abaixo) —, sem
+transformar toda dívida do projeto em pré-requisito. O novo protocolo deverá separar autorização de treino de
+aprovação por superioridade do modelo. Nenhum painel/CSV/código foi alterado
+por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
+
+−1. **PARADO NO RASCUNHO DO PRÉ-REGISTRO v2 DO RANK 3-B — aguarda aprovação do
+   Ygor.** `resultados/pre_registro_rank03b_v2_RASCUNHO_2026-09-16.md`, com três
+   pontos **[DECIDIR]**: excluir o plano de seguros `ll3_13` (3 companhias,
+   proposta: excluir); a leitura de G0.1 (proposta: unicidade; literal reprova
+   com 117); e acrescentar o G0.5 (derivação com escalas não adjudicadas,
+   ≤ 0,5%; mede 0,172%). **Nenhum T1, T2 ou baseline foi medido.** Mas
+   **estatística de rótulo já foi vista**: taxa do evento 0,0526 → 0,0530 no
+   painel compartilhado, publicada em 15/09 (QW1–QW8), e `y` calculado em
+   memória até a correção A1 — declarado no §11 do v2, que o Ygor deve ler
+   antes de aprovar. Aprovar = remover "RASCUNHO" do título
+   e do nome, publicar o SHA-256, e só então estender
+   `scripts/gates_painel_pesquisa_rank03b.py` para T1/T2/baselines lendo o
+   painel de pesquisa. Os lotes B e C estão feitos e **precisam de conferência
+   independente** antes disso: contratos
+   `resultados/contratos_lote_b_rank03b_2026-09-16.md` e
+   `resultados/contratos_lote_c_painel_pesquisa_rank03b_2026-09-16.md`;
+   relatórios `resultados/viabilidade_dados_rank03b_lote_b_2026-09-16.md` e
+   `resultados/painel_pesquisa_rank03b_lote_c_2026-09-16.md`. Lote D (primeiro
+   desafiante) só depois de PRONTO PARA CHALLENGER. **Nenhum treino autorizado.**
 0. **CONFERIDO COM PENDÊNCIAS: correções QW1–QW8 de 15/09.** Parecer em
    `resultados/conferencia_independente_qw1_qw8_2026-09-15.md`.
    Contrato
@@ -729,9 +815,14 @@ do relatório específico.
    sem antecedente, boa parte por deriva de descrição (contado, não curado);
    **N3** — a derivação é **não determinística** em 141 grupos de 7 companhias
    (não corrigido; impede reconstrução reproduzível).
-1. **Próximo trabalho: fechar CQW-01/CQW-02 e publicar errata CQW-03**, com
-   contraprovas no consumidor e na linhagem. Não exige reconstrução nem
-   treino; esta conferência não implementou as correções. A anotação IA do CSV
+1. **FEITO em 2026-09-16: CQW-01, CQW-02, errata CQW-03 e G0.4.** Contrato em
+   `resultados/contratos_correcao_cqw_2026-09-16.md`, relatório em
+   `resultados/implementacao_cqw_2026-09-16.md`. Suíte **2.230**, zero skip.
+   `auditoria.json` mudou de `a2ef88be…` para `8f7316ad…` — **quebra de hash
+   declarada**, porque o artefato passou a publicar G0.0/G0.4; veredito,
+   `primeiro_reprovado`, `g0_3_fracao` e os inventários de G0.1–G0.3 conferidos
+   **idênticos** campo a campo. **Próximo trabalho: conferência independente
+   desta onda.** A anotação IA do CSV
    **foi feita** (`fa271cd3…`, campos originais preservados, fontes/contextos
    por linha); resta validar escopo e adjudicar nove descrições inconclusivas,
    sem promover automaticamente `classe_anotada_ia` a `classe_confirmada`.

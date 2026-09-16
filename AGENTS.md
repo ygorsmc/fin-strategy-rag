@@ -406,7 +406,7 @@ publicado numa data fica como foi publicado.
 | **Rank 3** — deterioração de conversão de caixa *(era §3.14)* | ❌ **REJEITADO** em T1 antes do treino (`accrual` 0,266, `conversao` 0,229) | becos §A.1 · [validação](resultados/validacao_rank03_conversao_caixa_2026-08-27.md) |
 | **Etapa 19** — FCF yield × retorno futuro *(era §3.16)* | ⚠️ **INDECIDÍVEL.** T1 não reprovou pela primeira vez — mas 32% de chance de a amplitude verdadeira exceder o limiar | becos §F · [validação](resultados/validacao_etapa19_fcf_yield_2026-09-08.md) |
 | **B-DFC-01J-M** — custo de captação um trimestre à frente *(era §3.17)* | ❌ **NÃO AUTORIZA**, decisivo em G0. Ver o aviso abaixo | becos §C-bis · [prontidão](resultados/prontidao_b_dfc_01j_modelo_2026-09-09.md) |
-| **Rank 3-B** — início de consumo operacional persistente | ❌ **REPROVADO EM G0 — rodada invalidada.** O alvo **não chegou a ser testado**: o painel reprovou antes. O instrumento levou **duas ondas de correção**, cada uma depois de conferência independente: 12/09 (R1–R5) e 15/09 (QW1–QW8 — G1 aprovava por existência, e o horizonte civil sobre rótulo fiscal aceitava trimestre já iniciado). Ver o aviso abaixo | becos §A.5 · [validação](resultados/validacao_rank03b_consumo_operacional_2026-09-11.md) · [revisão](resultados/revisao_rank03b_consumo_operacional_2026-09-12.md) · [correções](resultados/implementacao_r1_r5_rank03b_2026-09-12.md) · [dossiê das quatro ondas](resultados/dossie_revisao_quatro_ondas_2026-09-14.md) · [conferência de 15/09, aprovação parcial](resultados/conferencia_quatro_ondas_2026-09-15.md) · [correções QW1–QW8](resultados/implementacao_qw1_qw8_2026-09-15.md) |
+| **Rank 3-B** — início de consumo operacional persistente | ❌ **REPROVADO EM G0 — rodada invalidada.** O alvo **não chegou a ser testado**: o painel reprovou antes. O instrumento levou **três ondas de correção**, cada uma depois de conferência independente: 12/09 (R1–R5), 15/09 (QW1–QW8 — G1 aprovava por existência, e o horizonte civil sobre rótulo fiscal aceitava trimestre já iniciado) e 16/09 (CQW-01 a CQW-03, mais **G0.4 — verificação congelada no §4 do pré-registro que o código nunca implementou**). **Em 16/09, num painel de pesquisa separado e com 101 correções de escala feitas com fonte, G0 e G1 aprovaram** — o alvo continua sem medição até o pré-registro v2, em rascunho, ser aprovado. Ver o aviso abaixo | becos §A.5 · [validação](resultados/validacao_rank03b_consumo_operacional_2026-09-11.md) · [revisão](resultados/revisao_rank03b_consumo_operacional_2026-09-12.md) · [correções](resultados/implementacao_r1_r5_rank03b_2026-09-12.md) · [dossiê das quatro ondas](resultados/dossie_revisao_quatro_ondas_2026-09-14.md) · [conferência de 15/09, aprovação parcial](resultados/conferencia_quatro_ondas_2026-09-15.md) · [correções QW1–QW8](resultados/implementacao_qw1_qw8_2026-09-15.md) · [conferência QW1–QW8](resultados/conferencia_independente_qw1_qw8_2026-09-15.md) · [contratos CQW](resultados/contratos_correcao_cqw_2026-09-16.md) · [lote B](resultados/viabilidade_dados_rank03b_lote_b_2026-09-16.md) · [lote C, painel de pesquisa](resultados/painel_pesquisa_rank03b_lote_c_2026-09-16.md) · [pré-registro v2, rascunho](resultados/pre_registro_rank03b_v2_RASCUNHO_2026-09-16.md) |
 
 > **⚠️ B-DFC-01J é o único candidato com trabalho em voo, e o estado dele não
 > cabe numa linha de tabela.** O instrumento de medição passou por **três ondas
@@ -490,6 +490,44 @@ publicado numa data fica como foi publicado.
 > escolhe ao acaso em **141 grupos de 7 companhias** onde a troca de exercício
 > social põe dois períodos sob o mesmo rótulo — reconstruir hoje não é
 > reproduzível.
+>
+> **Conferido de novo em 2026-09-16, e acrescenta um achado de gate**
+> ([conferência](resultados/conferencia_independente_qw1_qw8_2026-09-15.md),
+> [pendências até o treino](resultados/pendencias_desbloqueio_treino_dfc_2026-09-15.md),
+> [contratos CQW](resultados/contratos_correcao_cqw_2026-09-16.md)). Os números
+> de escala e derivação acima **sobrevivem**. Mudam três coisas: **não citar
+> "154.160 declarações"** — são **156.100** (as contagens por estado publicadas
+> junto sempre estiveram certas e somam isso); o consumidor do inventário
+> aceitava **estado de adjudicação inválido** como "não adjudica" e agora
+> levanta; e a linhagem do ativo cumpria dois dos quatro campos exigidos.
+> **O mais sério é de gate: `G0.4` — `valor_reais` nunca nulo nas contas
+> usadas — está congelada no §4 do pré-registro desde 11/09 e NUNCA foi
+> implementada**, nem como contador nem como campo do artefato; e os três
+> carregadores filtram `IS NOT NULL`, então ela seria vazia por construção.
+> Implementada agora, medindo fora do filtro: **zero nulos** em FCO `6.01`
+> (22.034 linhas) e Ativo `1` (22.471) — **não muda veredito nenhum**, muda a
+> guarda deixar de aprovar por ausência de medição. `gate_g0([], [], [])`
+> também aprovava. **Isto não desbloqueia nada:** G0 segue reprovando pelos
+> mesmos 132 saltos de escala, fração 0,005874 contra limiar 0,005.
+>
+> **Painel de pesquisa do Rank 3-B, 2026-09-16** ([lote C](resultados/painel_pesquisa_rank03b_lote_c_2026-09-16.md)).
+> A escala foi **adjudicada com fonte** fora do painel compartilhado: o
+> cabeçalho de milhares das notas explicativas **e** os números do formulário
+> impressos nelas. **101 correções `UNIDADE → MIL` em 32 companhias**; G0.3 no
+> painel de pesquisa cai de 132 para **47 saltos (0,2092%)**. Duas regras para
+> quem mexer em escala: **"em reais" declara a moeda, não a escala** (aparece no
+> parágrafo de moeda funcional e em rodapés por ação), e o `CodigoEscalaMoeda`
+> do formulário é a **origem** do rótulo, não prova. **O painel compartilhado
+> não foi corrigido** e continua com o defeito.
+>
+> **Regra de cegueira ao desfecho que saiu da auditoria (16/09):** antes de o
+> pré-registro estar congelado, **contagem estrutural não monta rótulo**. O
+> G1 do auditor calculava `y` em memória só para contar observações, e o
+> relatório de uma onda de correção (15/09) publicou a taxa do evento "para
+> medir o efeito da correção". Os dois passaram por revisão sem serem vistos
+> como vazamento. Quem medir efeito de correção publica **contagem de
+> observações**, nunca taxa, `y` alterado ou descarte por feature do alvo; e
+> quem montar amostra para gate usa `construir_amostra(..., calcular_rotulo=False)`.
 >
 > Nenhuma linha foi removida. Conserto exige
 > adjudicar contra a fonte pelo padrão do §3.3 (`correcoes_contabeis.csv`, com

@@ -1,0 +1,60 @@
+{
+  "codigo_sha256": {
+    "scripts/auditar_rank03b_consumo_operacional.py": "d7319dd6ff317c6096209b8d90700502f8941e9b0251223704f9964d1c93a557",
+    "scripts/fonte_zip_cvm.py": "44bc0b51313a78cbaf838a05b6bbbb121ccb043f5a91a4c36f4d5e2a8124a510",
+    "scripts/gates_painel_pesquisa_rank03b.py": "cb90fbf5052bae85fc71bb9623886f28ea6ca6353f7e6fa0b7843cf378b899bb",
+    "scripts/painel_pesquisa_rank03b.py": "f1b30744b45c996d3224be2c62eae362efba689b9e96e710aed450a24e385800"
+  },
+  "contrato": "resultados/contratos_lote_c_painel_pesquisa_rank03b_2026-09-16.md",
+  "digest_do_painel": {
+    "ativo": "a230650f24469da5f53a9e11b10c24b8edd22fed60bd0e95f2c6d165406fce65",
+    "conjunto": "08fffc8b1c436cbd33d5de26edecee5a5e0de6c514a51b9cb15041e4e847c089",
+    "fco_acumulado": "3f20b883bba80a2a28db6f191d0ebfd53f5340cee506d109580199b8299da612",
+    "fco_trimestral": "1993a6ae6bf85566709309b398a0738be4dffa91f95e707e9ad8d03782b1719a"
+  },
+  "entradas": {
+    "correcoes_escala": "SEM CORREÇÕES (--sem-correcoes)",
+    "cvm_treino_sha256": "c1a604453a9a2fa7df24b0b2dbc53df6fb5ef0d39fd06f492407028030bc069b",
+    "manifesto_aquisicao_sha256": "36902f4ce38add21889bb41bfaf8c83c6264c8cfa77049acf3c5c30633cb5f8b",
+    "zips_sha256": {
+      "dfp_cia_aberta_2011.zip": "858423fba40124d7a30abea4e70248f7251e1d2c792e9fcece5a57afd3115f34",
+      "dfp_cia_aberta_2012.zip": "3aff7a726d324d29924887eed45bbc58bc30b66cd9079bafe701d55efdfe0849",
+      "dfp_cia_aberta_2013.zip": "ef379ac9aab9567434ca6d36053d8bd1f0a2a47a0c65a2e1d218259da530e224",
+      "dfp_cia_aberta_2014.zip": "b8795dba134754475a485c0f88b6542face6613bb418d261caa011d90e032f28",
+      "dfp_cia_aberta_2015.zip": "39a7001be9eaa91a6acc83831c816794df4f92441d7702b80da6c4b234352b4e",
+      "dfp_cia_aberta_2016.zip": "772f06a73c5fe80534b61365ea5d03f9d8fcce21b87823bd5c9d48699bcf71d5",
+      "dfp_cia_aberta_2017.zip": "1ff8185d61759e49b406c55c5d0b593587c2e76e9032c95f836f7fea02fc9d58",
+      "dfp_cia_aberta_2018.zip": "280dcf5acd7bdb529acc186c9a1195092a1e06cf1e33ddcdca0b11c31261296f",
+      "dfp_cia_aberta_2019.zip": "bc82a1162b44686e8953b521e3424a5938b6661ff4655f832db4ea9488296a0d",
+      "dfp_cia_aberta_2020.zip": "8fb97d1887aed1e1e2d85e54cb133baf9f65b9f46f60fa8720f09c1f7a74362e",
+      "dfp_cia_aberta_2021.zip": "64b8693b709538a0357c5179ae02231cb380d0000956ee57a873a21d4efda2e4",
+      "dfp_cia_aberta_2022.zip": "92a538aa566b79885e05245129a84dfdc09f3db8f29a68cb8d55b303e8c3fb3a",
+      "dfp_cia_aberta_2023.zip": "edbfa41fd2d4ff03d5c15fdff7c387607b0325dbc17faf0cd2169a7b3c39236f",
+      "dfp_cia_aberta_2024.zip": "b46123d75ee881c774a8661692f167c0cc2a141baf25f901cd5f4e98f12f7a91",
+      "dfp_cia_aberta_2025.zip": "5690c0574e493adc92f6156bb859c8900769a82b4e56af05f043bf15a54bd2d1",
+      "itr_cia_aberta_2011.zip": "11f0d8cc47bad618a6e705a4615f8444d652967cc210dd29af8d18cad11b2a9a",
+      "itr_cia_aberta_2012.zip": "f1d642a1a644e2528ae96c7963e6319a87537d083d003f965cee637ff9d39842",
+      "itr_cia_aberta_2013.zip": "a336c9d5d5f2e4650bf2c16a80600daf3a423d7bbcd594f1d8dd94bf12f148ea",
+      "itr_cia_aberta_2014.zip": "c10271ea978a7da9c0fb2ef57d6b485dc9eb8032c0634479d8f4afa90ba0ead9",
+      "itr_cia_aberta_2015.zip": "2755f06e74668144620b4265e59db8149284252a1b3a5bb6404c0db22b21c64b",
+      "itr_cia_aberta_2016.zip": "3c2954a0d7e2c4c1c6dec157134e959fd0dea0ba53001d4bab01d04727d67c21",
+      "itr_cia_aberta_2017.zip": "f2e626260461ec4e04614d32212ca8dc5a1be7c5b56c261343eb8866c9ed5f26",
+      "itr_cia_aberta_2018.zip": "a551278c83e5c0584edd2a29b6035e34e833176176827e3f04a28f8373df536b",
+      "itr_cia_aberta_2019.zip": "dbfe1e32296563a9efdcb993ed5811876e3d50b778bc547fe004af15b9a75021",
+      "itr_cia_aberta_2020.zip": "4ca11b431eb21aa98f813a3c18086ca600f234f5eb0dcec0c51a8641fccbca0a",
+      "itr_cia_aberta_2021.zip": "c8723d5ccd4a6e99e9bc1566f2a558139cee1c2d96e4b940c4bcbedcb46a173a",
+      "itr_cia_aberta_2022.zip": "29b6d44011f35e3982ea572aec7133fb35a98c06f91fafe0d87ca4dcc31c86d5",
+      "itr_cia_aberta_2023.zip": "97394f88c9ebf30693fad65f35b4054f88bdd885a1aabeb5f42c2d381861341d",
+      "itr_cia_aberta_2024.zip": "feeb8b80dd5a86830d5450e37385a7df9b7f45282b5aac37d3ae4c4d69400837",
+      "itr_cia_aberta_2025.zip": "1a978e73b08afded2ad01b2e94cc2883ed4f9294fec77e2519f206bc6cfcb21d",
+      "itr_cia_aberta_2026.zip": "56b2be43df05adb0afa080b855bc5665f982832ab5364f60847fda3c44a60b2a"
+    }
+  },
+  "parametros": {
+    "banda_dias": [
+      80,
+      100
+    ],
+    "piso_nao_informativo": 1.0
+  }
+}

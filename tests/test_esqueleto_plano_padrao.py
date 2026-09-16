@@ -234,3 +234,78 @@ class TestDependenciaDoInventario:
         linhas = esqueleto.levantar(con, {("A", "itr", "2022-12-31", 1)})
         con.close()
         assert sum(l["linhas"] for l in linhas) == 1, "sai o ITR; a DFP fica"
+
+
+class TestVocabularioFechadoNoConsumidor:
+    """Contrato E2 — CQW-01 da conferência independente de 15/09.
+
+    O consumidor conferia a EXISTÊNCIA da chave `adjudicacao` e a comparava por
+    igualdade com `ADJUDICA`. Não conferia o domínio: estado inválido virava
+    silenciosamente "não adjudica", e o documento voltava ao universo do
+    gerador. O vocabulário de E1.2 existia e não participava da decisão —
+    §4.4 regra 7, terceira reincidência nesta linhagem de contratos.
+
+    Cada caso exercita a **exclusão**, não o JSON do inventário.
+    """
+
+    @staticmethod
+    def _com_estado(pasta, estado):
+        caso = {
+            "cd_cvm": "000001",
+            "declaracoes": [{
+                "adjudicacao": estado, "conjunto": "ITR",
+                "dt_refer": "2020-06-30", "versao": 1,
+            }],
+        }
+        return _gravar_inventario(pasta, [caso])
+
+    @pytest.mark.parametrize(
+        "estado", [None, "estado_desconhecido", inventario.ADJUDICA + " ",
+                   inventario.ADJUDICA.upper(), 123, ""],
+    )
+    def test_estado_fora_do_vocabulario_levanta(self, tmp_path, estado):
+        """Os quatro da contraprova do revisor, mais caixa alta e vazio."""
+        with pytest.raises(esqueleto.InventarioIncompativel) as erro:
+            esqueleto.documentos_defeituosos(*self._com_estado(tmp_path, estado))
+        assert "vocabulário" in str(erro.value)
+
+    @pytest.mark.parametrize("estado", inventario.ESTADOS_DE_DECLARACAO)
+    def test_os_nove_estados_validos_passam(self, tmp_path, estado):
+        """Válido e não adjudicante continua devolvendo vazio (E2.4)."""
+        excluidos = esqueleto.documentos_defeituosos(
+            *self._com_estado(tmp_path, estado)
+        )
+        esperado = (
+            {("000001", "ITR", "2020-06-30", 1)}
+            if estado == inventario.ADJUDICA else set()
+        )
+        assert excluidos == esperado
+
+    def test_o_vocabulario_tem_os_nove_estados_de_E1_2(self):
+        assert len(inventario.ESTADOS_DE_DECLARACAO) == 9
+        assert inventario.ADJUDICA in inventario.ESTADOS_DE_DECLARACAO
+
+    def test_estado_invalido_nao_e_normalizado_em_silencio(self, tmp_path):
+        """E2.3: espaço sobrando é inventário corrompido, não erro de digitação.
+
+        Se o consumidor fizesse `strip()`, este caso passaria a EXCLUIR o
+        documento — aceitando inventário corrompido como bom.
+        """
+        with pytest.raises(esqueleto.InventarioIncompativel):
+            esqueleto.documentos_defeituosos(
+                *self._com_estado(tmp_path, " " + inventario.ADJUDICA)
+            )
+
+    def test_uma_declaracao_invalida_derruba_o_caso_inteiro(self, tmp_path):
+        """Não basta ignorar a inválida e seguir com as boas do mesmo caso."""
+        caso = {
+            "cd_cvm": "000001",
+            "declaracoes": [
+                {"adjudicacao": inventario.ADJUDICA, "conjunto": "ITR",
+                 "dt_refer": "2020-06-30", "versao": 1},
+                {"adjudicacao": "lixo", "conjunto": "ITR",
+                 "dt_refer": "2020-09-30", "versao": 1},
+            ],
+        }
+        with pytest.raises(esqueleto.InventarioIncompativel):
+            esqueleto.documentos_defeituosos(*_gravar_inventario(tmp_path, [caso]))

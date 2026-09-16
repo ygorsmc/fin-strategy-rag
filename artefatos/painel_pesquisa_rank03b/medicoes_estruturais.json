@@ -1,0 +1,234 @@
+{
+  "codigo_sha256": {
+    "scripts/fonte_zip_cvm.py": "44bc0b51313a78cbaf838a05b6bbbb121ccb043f5a91a4c36f4d5e2a8124a510",
+    "scripts/medicoes_estruturais_rank03b.py": "87b7dbf72d0083f03a060877cb672abbd89af1446882bee1ee00813b19ef9757",
+    "scripts/painel_pesquisa_rank03b.py": "f1b30744b45c996d3224be2c62eae362efba689b9e96e710aed450a24e385800",
+    "scripts/piloto_fonte_rad_rank03b.py": "5d9a895a3480caad0fc33374f5a9c46d396683e5052e11f4213a308fcc88507d"
+  },
+  "fonte": {
+    "ativo_ate_1": {
+      "entre_0_e_1": 3,
+      "zerado_ou_negativo": 32
+    },
+    "companhias_com_6_01_de_seguradora": [
+      {
+        "cd_cvm": "023159",
+        "plano_contas": "ll3_13_48e4cd07"
+      },
+      {
+        "cd_cvm": "024180",
+        "plano_contas": "ll3_13_48e4cd07"
+      }
+    ],
+    "companhias_no_universo": 700,
+    "companhias_por_plano": {
+      "ll3_11_316e6f68": 1,
+      "ll3_11_8a4c5e97": 5,
+      "ll3_11_c8cd1e76": 2,
+      "ll3_11_d55d74d8": 688,
+      "ll3_11_ec4736ed": 1,
+      "ll3_13_48e4cd07": 3
+    },
+    "companhias_que_trocam_de_metodo": 53,
+    "conta_fixa": {
+      "1": {
+        "S": 45055
+      },
+      "2": {
+        "S": 45055
+      },
+      "6.01": {
+        "S": 45045
+      }
+    },
+    "descricoes_6_01": [
+      {
+        "companhias": 700,
+        "descricao": "Caixa Líquido Atividades Operacionais",
+        "linhas": 22516
+      },
+      {
+        "companhias": 2,
+        "descricao": "Caixa Líquido Atividades Seguradora/Resseguradora",
+        "linhas": 24
+      }
+    ],
+    "documentos_com_dfc_md_e_dfc_mi": 0,
+    "documentos_com_mais_de_uma_escala": 0,
+    "documentos_na_fonte": 22486,
+    "identidades_contabeis": {
+      "documentos_com_ativo_diferente_do_passivo": 6,
+      "periodos_dfc_em_que_a_soma_nao_fecha": 23,
+      "periodos_dfc_em_que_o_saldo_nao_fecha": 14
+    },
+    "versoes": {
+      "com_mais_de_uma_versao": 3863,
+      "dias_entre_v1_e_vmax": {
+        "maximo": 2093,
+        "mediana": 7.0,
+        "p90": 260.0
+      },
+      "documentos": 24925,
+      "numero_em_maos_e_a_versao_maxima": {
+        "iguais": 22486,
+        "total": 22486
+      },
+      "versoes_antigas": 4740
+    }
+  },
+  "n2_no_recorte_do_candidato": {
+    "antecedente_no_mesmo_metodo": 0,
+    "antecedente_no_outro_metodo": 60,
+    "companhias": 94,
+    "grupos": 131,
+    "sem_antecedente_no_exercicio": 71
+  },
+  "painel_compartilhado_contra_a_fonte": {
+    "ativo": {
+      "chaves_da_fonte_ausentes_do_painel": 15,
+      "das_quais_o_painel_tem_por_outro_documento": 11,
+      "linhas_do_painel_ausentes_da_fonte": 0,
+      "linhas_duplicadas_na_fonte": 60,
+      "linhas_na_fonte": 22546,
+      "linhas_no_painel_compartilhado": 22471,
+      "sem_nenhum_documento_no_painel": [
+        {
+          "cd_cvm": "003336",
+          "conjunto": "dfp",
+          "dt_fim": "2014-03-31",
+          "dt_ini": "None",
+          "dt_refer": "2014-03-31"
+        },
+        {
+          "cd_cvm": "021709",
+          "conjunto": "dfp",
+          "dt_fim": "2011-03-31",
+          "dt_ini": "None",
+          "dt_refer": "2011-03-31"
+        },
+        {
+          "cd_cvm": "025496",
+          "conjunto": "dfp",
+          "dt_fim": "2021-03-31",
+          "dt_ini": "None",
+          "dt_refer": "2021-03-31"
+        },
+        {
+          "cd_cvm": "080187",
+          "conjunto": "dfp",
+          "dt_fim": "2019-01-01",
+          "dt_ini": "None",
+          "dt_refer": "2019-01-01"
+        }
+      ]
+    },
+    "fco": {
+      "chaves_da_fonte_ausentes_do_painel": 13,
+      "das_quais_o_painel_tem_por_outro_documento": 9,
+      "linhas_do_painel_ausentes_da_fonte": 0,
+      "linhas_duplicadas_na_fonte": 60,
+      "linhas_na_fonte": 22540,
+      "linhas_no_painel_compartilhado": 22467,
+      "sem_nenhum_documento_no_painel": [
+        {
+          "cd_cvm": "003336",
+          "conjunto": "dfp",
+          "dt_fim": "2014-03-31",
+          "dt_ini": "2013-01-01",
+          "dt_refer": "2014-03-31"
+        },
+        {
+          "cd_cvm": "021709",
+          "conjunto": "dfp",
+          "dt_fim": "2011-03-31",
+          "dt_ini": "2010-01-01",
+          "dt_refer": "2011-03-31"
+        },
+        {
+          "cd_cvm": "025496",
+          "conjunto": "dfp",
+          "dt_fim": "2021-03-31",
+          "dt_ini": "2020-03-31",
+          "dt_refer": "2021-03-31"
+        },
+        {
+          "cd_cvm": "080187",
+          "conjunto": "dfp",
+          "dt_fim": "2019-01-01",
+          "dt_ini": "2019-01-01",
+          "dt_refer": "2019-01-01"
+        }
+      ]
+    }
+  },
+  "reprodutibilidade": {
+    "com_correcoes": {
+      "digests": [
+        "f9cb9da9d58673ff36e8d00abee45870fcd56d7966858762e4a006a528d8f279",
+        "f9cb9da9d58673ff36e8d00abee45870fcd56d7966858762e4a006a528d8f279"
+      ],
+      "identicos": true
+    },
+    "sem_correcoes": {
+      "digests": [
+        "08fffc8b1c436cbd33d5de26edecee5a5e0de6c514a51b9cb15041e4e847c089",
+        "08fffc8b1c436cbd33d5de26edecee5a5e0de6c514a51b9cb15041e4e847c089"
+      ],
+      "identicos": true
+    }
+  },
+  "rotulos_de_escala": {
+    "companhias_por_perfil": {
+      "mista": 54,
+      "so_MIL": 629,
+      "so_UNIDADE": 17
+    },
+    "documentos_em_companhias_mistas": 1683,
+    "documentos_em_companhias_so_unidade": 400,
+    "fronteiras": {
+      "documentos": 229,
+      "ja_adjudicadas_pelo_inventario_v2": 82,
+      "por_escala": {
+        "MIL": 119,
+        "UNIDADE": 110
+      }
+    },
+    "trechos_em_companhias_mistas": {
+      "de_um_documento": 71,
+      "trechos": 189
+    }
+  },
+  "zips_sha256": {
+    "dfp_cia_aberta_2011.zip": "858423fba40124d7a30abea4e70248f7251e1d2c792e9fcece5a57afd3115f34",
+    "dfp_cia_aberta_2012.zip": "3aff7a726d324d29924887eed45bbc58bc30b66cd9079bafe701d55efdfe0849",
+    "dfp_cia_aberta_2013.zip": "ef379ac9aab9567434ca6d36053d8bd1f0a2a47a0c65a2e1d218259da530e224",
+    "dfp_cia_aberta_2014.zip": "b8795dba134754475a485c0f88b6542face6613bb418d261caa011d90e032f28",
+    "dfp_cia_aberta_2015.zip": "39a7001be9eaa91a6acc83831c816794df4f92441d7702b80da6c4b234352b4e",
+    "dfp_cia_aberta_2016.zip": "772f06a73c5fe80534b61365ea5d03f9d8fcce21b87823bd5c9d48699bcf71d5",
+    "dfp_cia_aberta_2017.zip": "1ff8185d61759e49b406c55c5d0b593587c2e76e9032c95f836f7fea02fc9d58",
+    "dfp_cia_aberta_2018.zip": "280dcf5acd7bdb529acc186c9a1195092a1e06cf1e33ddcdca0b11c31261296f",
+    "dfp_cia_aberta_2019.zip": "bc82a1162b44686e8953b521e3424a5938b6661ff4655f832db4ea9488296a0d",
+    "dfp_cia_aberta_2020.zip": "8fb97d1887aed1e1e2d85e54cb133baf9f65b9f46f60fa8720f09c1f7a74362e",
+    "dfp_cia_aberta_2021.zip": "64b8693b709538a0357c5179ae02231cb380d0000956ee57a873a21d4efda2e4",
+    "dfp_cia_aberta_2022.zip": "92a538aa566b79885e05245129a84dfdc09f3db8f29a68cb8d55b303e8c3fb3a",
+    "dfp_cia_aberta_2023.zip": "edbfa41fd2d4ff03d5c15fdff7c387607b0325dbc17faf0cd2169a7b3c39236f",
+    "dfp_cia_aberta_2024.zip": "b46123d75ee881c774a8661692f167c0cc2a141baf25f901cd5f4e98f12f7a91",
+    "dfp_cia_aberta_2025.zip": "5690c0574e493adc92f6156bb859c8900769a82b4e56af05f043bf15a54bd2d1",
+    "itr_cia_aberta_2011.zip": "11f0d8cc47bad618a6e705a4615f8444d652967cc210dd29af8d18cad11b2a9a",
+    "itr_cia_aberta_2012.zip": "f1d642a1a644e2528ae96c7963e6319a87537d083d003f965cee637ff9d39842",
+    "itr_cia_aberta_2013.zip": "a336c9d5d5f2e4650bf2c16a80600daf3a423d7bbcd594f1d8dd94bf12f148ea",
+    "itr_cia_aberta_2014.zip": "c10271ea978a7da9c0fb2ef57d6b485dc9eb8032c0634479d8f4afa90ba0ead9",
+    "itr_cia_aberta_2015.zip": "2755f06e74668144620b4265e59db8149284252a1b3a5bb6404c0db22b21c64b",
+    "itr_cia_aberta_2016.zip": "3c2954a0d7e2c4c1c6dec157134e959fd0dea0ba53001d4bab01d04727d67c21",
+    "itr_cia_aberta_2017.zip": "f2e626260461ec4e04614d32212ca8dc5a1be7c5b56c261343eb8866c9ed5f26",
+    "itr_cia_aberta_2018.zip": "a551278c83e5c0584edd2a29b6035e34e833176176827e3f04a28f8373df536b",
+    "itr_cia_aberta_2019.zip": "dbfe1e32296563a9efdcb993ed5811876e3d50b778bc547fe004af15b9a75021",
+    "itr_cia_aberta_2020.zip": "4ca11b431eb21aa98f813a3c18086ca600f234f5eb0dcec0c51a8641fccbca0a",
+    "itr_cia_aberta_2021.zip": "c8723d5ccd4a6e99e9bc1566f2a558139cee1c2d96e4b940c4bcbedcb46a173a",
+    "itr_cia_aberta_2022.zip": "29b6d44011f35e3982ea572aec7133fb35a98c06f91fafe0d87ca4dcc31c86d5",
+    "itr_cia_aberta_2023.zip": "97394f88c9ebf30693fad65f35b4054f88bdd885a1aabeb5f42c2d381861341d",
+    "itr_cia_aberta_2024.zip": "feeb8b80dd5a86830d5450e37385a7df9b7f45282b5aac37d3ae4c4d69400837",
+    "itr_cia_aberta_2025.zip": "1a978e73b08afded2ad01b2e94cc2883ed4f9294fec77e2519f206bc6cfcb21d",
+    "itr_cia_aberta_2026.zip": "56b2be43df05adb0afa080b855bc5665f982832ab5364f60847fda3c44a60b2a"
+  }
+}

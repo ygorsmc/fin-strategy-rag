@@ -1,0 +1,7 @@
+# Painel de pesquisa do Rank 3-B (lote B/C, 2026-09-16).
+# Binários e sessão ficam fora do Git; manifestos, evidências e resultados entram.
+rad/brutos/
+rad/.cookies_cvm*
+*.duckdb
+*.duckdb.wal
+*.parcial

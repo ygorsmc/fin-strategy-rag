@@ -15,6 +15,39 @@ instrumento, evidência e consumidores.
 Suíte: **2.132 passed, zero falha, zero skip** (era 2.093). **+39
 contraprovas**, todas exercitando decisão.
 
+> ## ⚠️ RESSALVA POSTERIOR (2026-09-16)
+>
+> Este relatório **não é reescrito**: fica como foi publicado em 15/09. O que
+> ele afirma e não se sustenta mais está mapeado aqui. Origem:
+> [conferência independente QW1–QW8](conferencia_independente_qw1_qw8_2026-09-15.md),
+> [levantamento de desbloqueio de treino](pendencias_desbloqueio_treino_dfc_2026-09-15.md)
+> e [correções CQW](contratos_correcao_cqw_2026-09-16.md).
+>
+> | O que este relatório diz | Estado em 16/09 |
+> |---|---|
+> | **"Estado das 154.160 declarações"** (§2) | **Errata CQW-03: são 156.100.** Conferido em duas contas independentes — soma de `len(declaracoes)` no JSONL e soma de `declaracoes_por_estado` no resumo, sobre 34.952 casos. Diferença de 1.940. **As nove contagens por estado na mesma frase estão certas** e somam exatamente 156.100: só a manchete erra. Nada disso afeta os 3.401 casos / 6.456 declarações adjudicadas |
+> | `plano_padrao_contas.csv` = `db597d3a…` (§10 e §11) | Hoje é **`fa271cd3…`**, pela anotação dimensional por IA de 15/09. Cadeia completa: `b58dbe01` (pré-QW) → `db597d3a` (regeneração QW) → `fa271cd3` (anotado). Os onze campos originais estão preservados **célula a célula** e `classe_confirmada` continua vazia nas 300 linhas |
+> | O CSV tem 11 colunas | São **20**: onze originais mais nove da curadoria IA. O terminador de linha passou de CRLF para LF |
+> | QW8 fechado (inventário ausente/versão antiga falham) | Defeito original fechado; faltava o **domínio** do estado. **CQW-01**, corrigido em 16/09: estado fora do vocabulário de E1.2 agora levanta, em vez de virar "não adjudica" em silêncio |
+> | H1.4 cumprido (linhagem de janela, rótulo e ativo) | A linhagem do **ativo** carregava só dois dos quatro campos. **CQW-02**, corrigido em 16/09. Não houve vazamento temporal por esse achado |
+> | G0 implementa o §4 do pré-registro | **G0.4 nunca existiu no código** — nem contador, nem campo no artefato — embora o §4 a congele desde 11/09. E os três carregadores filtram `IS NOT NULL`, então ela seria vazia por construção. Implementada em 16/09, medindo **fora** do filtro. `gate_g0([], [], [])` também aprovava |
+> | `auditoria.json` = `a2ef88be…` | **Quebra de hash declarada** em 16/09: o artefato passa a publicar os campos de G0.0 e G0.4. Veredito, `primeiro_reprovado`, `g0_3_fracao` e todos os inventários de G0.1–G0.3 ficam idênticos, conferidos campo a campo |
+>
+> **Três medições sobre a anotação do CSV que nenhum dos dois documentos
+> traz**, feitas na conferência de 16/09:
+>
+> 1. O `fundamento_anotacao_ia` tem **7 valores distintos** em 300 linhas (o
+>    maior cobre 111); `fonte` tem 6; `escopo` tem 1. O que é genuinamente por
+>    linha é a procedência: **300/300** contextos distintos.
+> 2. A informação incremental da anotação sobre a proposta estatística é de
+>    **11 linhas** — 2 resolvem `INDEFINIDA`, 9 **retratam** para inconclusivo.
+>    Nas 289 restantes as duas concordam, e as 7 "por ação" são exatamente as 7
+>    que a magnitude já apontava.
+> 3. Só **110 de 300** `ds_conta_exemplo` são a descrição **modal** da chave;
+>    190 divergem, e 9 delas são o marcador `0`/`-`. É defeito do `min(ds_conta)`
+>    do gerador, não do dado. **A conclusão dimensional sobrevive:** entre as
+>    300 chaves não há descrição por ação fora de `3.99`.
+
 ---
 
 ## 1. Placar

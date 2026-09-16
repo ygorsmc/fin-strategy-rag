@@ -246,6 +246,17 @@ de um documento comprovadamente defeituoso*.
 | Campo que decide | `classe_confirmada`, **vazia em todas as 300 linhas** |
 | Trava | O script **recusa sobrescrever** o arquivo existente |
 
+> **⚠️ Ressalva de 2026-09-16.** A linha "Entrega" acima diz **11 colunas**: são
+> **20** desde a anotação dimensional por IA de 15/09
+> ([relatório](anotacao_classes_monetarias_2026-09-15.md)) — onze originais mais
+> nove de curadoria. O hash saiu de `db597d3a…` para `fa271cd3…`; os onze campos
+> originais estão preservados célula a célula e `classe_confirmada` **continua
+> vazia nas 300 linhas**, que é o que esta tabela afirma e segue valendo. A
+> anotação é por agente, **não é validação humana**, e não autoriza reescala.
+> Medido na conferência de 16/09: só **110 de 300** `ds_conta_exemplo` são a
+> descrição modal da chave — defeito do `min(ds_conta)` do gerador, com contrato
+> próprio ainda não escrito.
+
 **Correção ao §3.8 do AGENTS.md:** a alegação de que *"208 contas destravam 85%
 das linhas"* **não reproduz** — 208 contas dão **77,6%** por
 `(demonstrativo, cd_conta)`; 300 dão **92,9%**, onde a curva achata.

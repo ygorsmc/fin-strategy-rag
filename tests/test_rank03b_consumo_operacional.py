@@ -30,11 +30,39 @@ def _fco(cd_cvm, trimestre, valor, dt_ini, dt_fim, dt_receb,
     }
 
 
-def _ativo(cd_cvm, trimestre, valor, dt_receb, versao=1):
+def _ativo(cd_cvm, trimestre, valor, dt_receb, versao=1, dt_fim=None):
+    """Uma linha de Ativo Total (BPA).
+
+    **Mudança declarada de 2026-09-16 (contratos H2.1/H2.2).** Ganhou `dt_fim`
+    porque a linhagem do ativo passou a carregar os quatro campos que H1.4
+    exige. `dt_ini` continua `None` **de propósito** (H2.3): saldo de balanço é
+    posição numa data, não período, e no painel real as 23.395 linhas de
+    `BPA`/`cd_conta = '1'` trazem início nulo na origem — inventar um seria
+    fabricar dado.
+    """
+    if dt_fim is None:
+        tri, ano = int(trimestre[0]), int(trimestre[2:])
+        dt_fim = (
+            datetime.date(ano + (3 * tri) // 12, (3 * tri) % 12 + 1, 1)
+            - datetime.timedelta(days=1)
+        )
     return {
         "cd_cvm": cd_cvm, "trimestre": trimestre, "ativo": float(valor),
         "dt_receb": datetime.date.fromisoformat(dt_receb),
         "versao": versao, "demonstrativo": "BPA", "dt_ini": None,
+        "dt_fim": dt_fim,
+    }
+
+
+def _nulos(linhas=100, fco=0, ativo=0):
+    """Payload limpo de G0.4 (contrato G4.2).
+
+    Existe porque `gate_g0` passou a **exigir** a medição: gate que aprova sem
+    ter medido G0.4 é o defeito que esta onda fecha.
+    """
+    return {
+        "fco": {"linhas": linhas, "nulos": fco},
+        "ativo": {"linhas": linhas, "nulos": ativo},
     }
 
 
@@ -138,7 +166,7 @@ class TestGateG0:
         fco = [_fco("A", "1T2020", 10, "2020-01-01", "2020-03-31", "2020-05-10")]
         ativo = [_ativo("A", "1T2020", 1000, "2020-05-10")]
         dur = [_duracao("A", "1T2020", 91)]
-        assert auditor.gate_g0(fco, ativo, dur)["aprovado"] is True
+        assert auditor.gate_g0(fco, ativo, dur, _nulos())["aprovado"] is True
 
     def test_soma_dos_dois_metodos_reprova(self):
         """`DFC_MD` + `DFC_MI` no mesmo trimestre duplicaria o caixa."""
@@ -149,14 +177,15 @@ class TestGateG0:
                  "2020-05-10", demonstrativo="DFC_MD"),
         ]
         g0 = auditor.gate_g0(fco, [_ativo("A", "1T2020", 1000, "2020-05-10")],
-                             [_duracao("A", "1T2020", 91)])
+                             [_duracao("A", "1T2020", 91)], _nulos())
         assert g0["aprovado"] is False
         assert g0["g0_1_companhia_trimestre_com_os_dois_metodos"] == 1
 
     def test_periodo_semestral_rotulado_trimestral_reprova(self):
         fco = [_fco("A", "3T2020", 10, "2020-04-01", "2020-09-30", "2020-11-10")]
         g0 = auditor.gate_g0(fco, [_ativo("A", "3T2020", 1000, "2020-11-10")],
-                             [_duracao("A", "3T2020", 183, origem="derivado")])
+                             [_duracao("A", "3T2020", 183, origem="derivado")],
+                             _nulos())
         assert g0["aprovado"] is False
         assert g0["g0_2_fora_da_duracao_de_um_trimestre"] == 1
         assert 183 in g0["g0_2_duracoes_distintas"]
@@ -170,16 +199,23 @@ class TestGateG0:
         """
         dur = [_duracao("A", "1T2020", 91), _duracao("A", "1T2020", 90)]
         fco = [_fco("A", "1T2020", 10, "2019-10-01", "2020-03-31", "2020-05-10")]
-        g0 = auditor.gate_g0(fco, [_ativo("A", "1T2020", 1000, "2020-05-10")], dur)
+        g0 = auditor.gate_g0(fco, [_ativo("A", "1T2020", 1000, "2020-05-10")],
+                             dur, _nulos())
         assert g0["g0_2_fora_da_duracao_de_um_trimestre"] == 0
         assert g0["aprovado"] is True
 
     def test_salto_de_escala_reprova_acima_da_tolerancia(self):
+        """Isola G0.3: `fco` e `duracoes` vêm vazios **de propósito**.
+
+        Contrato G4.6. A guarda de universo vazio acrescentada em 2026-09-16
+        reprova quando as TRÊS fontes chegam vazias, e não quando uma chega —
+        justamente para não enfraquecer este isolamento, que é legítimo.
+        """
         ativo = [
             _ativo("A", "1T2020", 19_543_000, "2020-05-10"),
             _ativo("A", "2T2020", 19_358, "2020-08-10"),
         ]
-        g0 = auditor.gate_g0([], ativo, [])
+        g0 = auditor.gate_g0([], ativo, [], _nulos())
         assert g0["aprovado"] is False
         assert g0["g0_3_saltos_de_escala"] == 1
 
@@ -193,6 +229,58 @@ class TestGateG0:
         assert not issubclass(
             auditor.DefeitoDeIntegridade, auditor.AmostraInsuficiente
         )
+
+    # --- G0.0 e G0.4, correção de 2026-09-16 (contrato G4) ------------------
+
+    def test_universo_inteiramente_vazio_nao_aprova(self):
+        """§4.4 regra 4 — o achado do levantamento de desbloqueio.
+
+        `gate_g0([], [], [])` devolvia `aprovado = True`: nada medido, aprovado.
+        A mesma regra já obrigara `gate_g1` a reprovar amostra vazia.
+        """
+        g0 = auditor.gate_g0([], [], [], _nulos())
+        assert g0["aprovado"] is False
+        assert g0["g0_0_fontes_vazias"] == ["ativo", "duracoes", "fco"]
+        assert "ausência de dado" in g0["motivo"]
+
+    def test_nulo_na_conta_usada_reprova(self):
+        """G0.4 do §4 do pré-registro — que o código nunca implementara."""
+        fco = [_fco("A", "1T2020", 10, "2020-01-01", "2020-03-31", "2020-05-10")]
+        g0 = auditor.gate_g0(fco, [_ativo("A", "1T2020", 1000, "2020-05-10")],
+                             [_duracao("A", "1T2020", 91)], _nulos(ativo=1))
+        assert g0["aprovado"] is False
+        assert g0["g0_4_nulos_nas_contas_usadas"] == 1
+        assert g0["g0_4_por_conta"]["ativo"]["nulos"] == 1
+
+    def test_conta_requerida_sem_linha_alguma_nao_aprova(self):
+        """Contar zero nulos sobre zero linhas é aprovar por ausência."""
+        fco = [_fco("A", "1T2020", 10, "2020-01-01", "2020-03-31", "2020-05-10")]
+        medicao = _nulos()
+        medicao["fco"]["linhas"] = 0
+        g0 = auditor.gate_g0(fco, [_ativo("A", "1T2020", 1000, "2020-05-10")],
+                             [_duracao("A", "1T2020", 91)], medicao)
+        assert g0["aprovado"] is False
+        assert g0["g0_4_contas_sem_linha_alguma"] == ["fco"]
+
+    def test_medicao_de_G0_4_ausente_nao_aprova(self):
+        """Contrato G4.4: medição que não aconteceu não vale por medição limpa."""
+        fco = [_fco("A", "1T2020", 10, "2020-01-01", "2020-03-31", "2020-05-10")]
+        g0 = auditor.gate_g0(fco, [_ativo("A", "1T2020", 1000, "2020-05-10")],
+                             [_duracao("A", "1T2020", 91)], {})
+        assert g0["aprovado"] is False
+        assert set(g0["g0_4_contas_sem_linha_alguma"]) == {"ativo", "fco"}
+
+    def test_as_quatro_verificacoes_do_pre_registro_estao_publicadas(self):
+        """G0.4 existia no §4 do pré-registro e em lugar nenhum do artefato."""
+        g0 = auditor.gate_g0(
+            [_fco("A", "1T2020", 10, "2020-01-01", "2020-03-31", "2020-05-10")],
+            [_ativo("A", "1T2020", 1000, "2020-05-10")],
+            [_duracao("A", "1T2020", 91)], _nulos(),
+        )
+        for prefixo in ("g0_1_", "g0_2_", "g0_3_", "g0_4_"):
+            assert any(c.startswith(prefixo) for c in g0), prefixo
+        assert "nulos" in g0["limiar"]
+        assert set(auditor.CONTAS_REQUERIDAS) == {"fco", "ativo"}
 
 
 # --- point-in-time --------------------------------------------------------
@@ -541,6 +629,11 @@ class TestContratosR1aR5:
             for nome, valor in {
                 "carregar_fco": [], "carregar_ativo": [],
                 "carregar_duracoes": [], "diagnosticar_escala": {},
+                # Dublê acrescentado em 2026-09-16 (contrato G4.1): `executar`
+                # passou a carregar a medição de G0.4, e sem isto o carregador
+                # real rodava contra a conexão falsa. A assinatura verdadeira de
+                # `gate_g0` é exercitada por `TestGateG0`, não aqui.
+                "carregar_nulos": _nulos(),
                 "gate_g0": {"aprovado": True, "pergunta": "x"},
                 # Contrato H1.6/H1.7 (conferência de 15/09): G1 passou a
                 # verificar a linhagem de fato. Este auxiliar isola o
@@ -624,6 +717,96 @@ class TestContratosR1aR5:
 
 # --- correções QW3–QW7 da conferência de 2026-09-15 ------------------------
 
+class TestContratoH2DaLinhagemDoAtivo:
+    """Contrato H2 — CQW-02 da conferência independente de 15/09.
+
+    H1.4 exige `trimestre`, `dt_ini`, `dt_fim` e `dt_receb` da janela, do rótulo
+    **e do ativo**. Medido no painel real, a linhagem do ativo carregava só
+    `trimestre` e `dt_receb` nas 10.605 observações, e `carregar_ativo` nem
+    selecionava `dt_fim_exerc`. Pendência de linhagem contratada e
+    auditabilidade — **não** houve vazamento temporal por este achado.
+    """
+
+    @staticmethod
+    def _amostra():
+        fco = TestPointInTime._serie(n=24, inicio=2016)
+        ativo = [
+            _ativo("A", r["trimestre"], 10_000.0, r["dt_receb"].isoformat())
+            for r in fco
+        ]
+        return auditor.construir_amostra(fco, ativo)
+
+    def test_a_linhagem_do_ativo_tem_os_quatro_campos(self):
+        amostra, _ = self._amostra()
+        assert amostra, "a série regular tem de produzir observações"
+        esperado = {"trimestre", "dt_ini", "dt_fim", "dt_receb"}
+        for obs in amostra:
+            assert set(obs["linhagem"]["ativo"]) == esperado
+            # Os mesmos quatro do rótulo e da janela: a linhagem é uniforme.
+            assert set(obs["linhagem"]["rotulo"][0]) == esperado
+            assert set(obs["linhagem"]["janela"][0]) == esperado
+
+    def test_dt_ini_do_ativo_continua_nulo_e_nao_e_inventado(self):
+        """H2.3. Saldo de balanço é posição numa data, não período.
+
+        No painel real as 23.395 linhas de `BPA`/`cd_conta = '1'` trazem
+        `dt_ini_exerc` nulo na origem. Preencher com o fim, ou com o início do
+        trimestre, fabricaria período — §4.4 regra 9.
+        """
+        amostra, _ = self._amostra()
+        assert all(o["linhagem"]["ativo"]["dt_ini"] is None for o in amostra)
+        assert all(o["linhagem"]["ativo"]["dt_fim"] is not None for o in amostra)
+
+    def test_NaT_do_pandas_nao_sobrevive_na_linhagem(self):
+        """Achado da implementação: o ausente tem de ter UMA representação.
+
+        Em dado real a data ausente chega do `.df()` como `NaT`, e `NaT is None`
+        é falso. Como toda comparação com `NaT` também devolve falso, o sentinel
+        atravessaria a verificação de H2.3 sem acusar nada — a asserção acima
+        passaria na fixture e falharia no painel, que foi exatamente o que
+        aconteceu ao medir.
+        """
+        pd = pytest.importorskip("pandas")
+        linha = {
+            "trimestre": "1T2020", "dt_ini": pd.NaT,
+            "dt_fim": datetime.date(2020, 3, 31),
+            "dt_receb": datetime.date(2020, 5, 10),
+        }
+        procedencia = auditor._procedencia(linha)
+        assert procedencia["dt_ini"] is None
+        assert procedencia["dt_fim"] == datetime.date(2020, 3, 31)
+        # E o caminho inverso: data presente não vira `None` por engano.
+        assert auditor._ou_nulo(datetime.date(2020, 1, 1)) is not None
+
+    def test_a_linhagem_sai_toda_da_MESMA_linha_do_ativo(self):
+        """R1.1: valor, período e recepção saem juntos, nunca recombinados."""
+        fco = TestPointInTime._serie(n=24, inicio=2016)
+        ativo = [
+            _ativo("A", r["trimestre"], 10_000.0, r["dt_receb"].isoformat())
+            for r in fco
+        ]
+        por_trimestre = {a["trimestre"]: a for a in ativo}
+        amostra, _ = auditor.construir_amostra(fco, ativo)
+        for obs in amostra:
+            linhagem = obs["linhagem"]["ativo"]
+            fonte = por_trimestre[linhagem["trimestre"]]
+            assert linhagem["dt_receb"] == fonte["dt_receb"]
+            assert linhagem["dt_fim"] == fonte["dt_fim"]
+
+    def test_G1_continua_aprovando_a_serie_regular(self):
+        """H2.5: a correção é de linhagem, não de critério.
+
+        Acrescentar aqui uma verificação que o §5 do pré-registro não congelou
+        seria mudar o gate depois de conhecer o resultado.
+        """
+        amostra, descarte = self._amostra()
+        g1 = auditor.gate_g1(amostra, descarte)
+        assert g1["aprovado"] is True
+        assert not any(
+            v for c, v in g1.items() if c.startswith(("g1_", "r2_5_"))
+        )
+
+
 class TestContratosQW3aQW7:
     """Contraprovas da conferência das quatro ondas.
 
@@ -671,6 +854,11 @@ class TestContratosQW3aQW7:
             for nome, valor in {
                 "carregar_fco": [], "carregar_ativo": [],
                 "carregar_duracoes": [], "diagnosticar_escala": {},
+                # Dublê acrescentado em 2026-09-16 (contrato G4.1): `executar`
+                # passou a carregar a medição de G0.4. Sem ele o carregador
+                # real roda contra a conexão falsa. `gate_g0` também é dublê
+                # aqui — a assinatura verdadeira é exercitada por `TestGateG0`.
+                "carregar_nulos": _nulos(),
                 "gate_g0": {"aprovado": True, "gate": "G0", "pergunta": "x"},
                 "construir_amostra": (amostra, descarte),
                 **fixos,
@@ -941,3 +1129,32 @@ class TestContratosQW3aQW7:
         })
         assert codigo == 0
         assert any("INSUFICIENTE" in linha for linha in linhas)
+
+
+class TestConstrucaoCegaAoRotulo:
+    """Auditoria de 16/09 (achado A1): apagar `y` depois de calculado não é cegueira."""
+
+    @staticmethod
+    def _entrada():
+        fco = TestPointInTime._serie(n=24, inicio=2016)
+        ativo = [_ativo("A", r["trimestre"], 10_000.0, r["dt_receb"].isoformat()) for r in fco]
+        return fco, ativo
+
+    def test_modo_cego_nunca_soma_o_rotulo(self, monkeypatch):
+        def proibido(*_):
+            raise AssertionError("o rótulo foi somado")
+        monkeypatch.setattr(auditor, "_somas_do_rotulo", proibido)
+        amostra, _ = auditor.construir_amostra(*self._entrada(), calcular_rotulo=False)
+        assert amostra and all("y" not in o for o in amostra)
+        with pytest.raises(AssertionError, match="rótulo foi somado"):
+            auditor.construir_amostra(*self._entrada())
+
+    def test_modo_cego_constroi_a_mesma_amostra(self):
+        completa, d1 = auditor.construir_amostra(*self._entrada())
+        cega, d2 = auditor.construir_amostra(*self._entrada(), calcular_rotulo=False)
+        assert d1 == d2
+        assert [{k: v for k, v in o.items() if k != "y"} for o in completa] == cega
+
+    def test_modo_padrao_continua_calculando_y(self):
+        amostra, _ = auditor.construir_amostra(*self._entrada())
+        assert all(o["y"] in (0, 1) for o in amostra)
