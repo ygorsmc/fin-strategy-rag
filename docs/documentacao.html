@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assistente de Research Financeiro — Documentação da Etapa 1</title>
+<style>
+:root {
+    --color-primary: #1b3a4b;
+    --color-accent: #2e7d9a;
+    --color-bg: #f6f8f9;
+    --color-surface: #ffffff;
+    --color-text: #2b2f33;
+    --color-border: #dde3e7;
+    --radius: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.65;
+}
+
+.site-header {
+    position: relative;
+    background: var(--color-surface);
+    color: var(--color-primary);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+.header-logo {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    height: 110px;
+    width: auto;
+}
+.site-header h1 { font-size: 1.9em; margin-bottom: 8px; color: var(--color-primary); }
+.site-header p { color: #6b7a82; font-style: italic; margin-top: 0; }
+
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    overflow: visible;
+    padding: 0 10px;
+}
+.tab-wrapper { position: relative; display: inline-block; }
+.tab-btn {
+    background: none;
+    border: none;
+    color: #b9c9d1;
+    padding: 15px 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+}
+.tab-btn:hover { color: white; background: rgba(255,255,255,0.1); }
+.tab-btn.active {
+    color: white;
+    border-bottom-color: var(--color-accent);
+    background: rgba(255,255,255,0.05);
+}
+
+.tab-dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #f9fafb;
+    min-width: 280px;
+    max-height: 70vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 0 0 4px 4px;
+    z-index: 2000;
+    transition: opacity 0.2s, visibility 0.2s;
+    margin-top: 2px;
+}
+.tab-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+}
+.tab-wrapper:hover .tab-dropdown { visibility: visible; opacity: 1; }
+.dropdown-link {
+    display: block;
+    padding: 8px 16px;
+    color: #222;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-bottom: 1px solid #eee;
+    white-space: normal;
+}
+.dropdown-link:hover { background: #eef2f4; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.page-content { display: none; }
+.page-content.active { display: block; animation: fadeIn 0.3s; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.content-wrapper {
+    background: var(--color-surface);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+h1 {
+    font-size: 1.75em;
+    margin: 45px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--color-accent);
+    color: var(--color-primary);
+}
+h1:first-child { margin-top: 0; }
+h2 {
+    font-size: 1.4em;
+    margin: 35px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eef2f4;
+    color: var(--color-primary);
+}
+h3 { font-size: 1.15em; margin: 25px 0 10px; color: #35505f; }
+p { margin: 14px 0; }
+ul, ol { margin: 14px 0 14px 25px; }
+li { margin: 6px 0; }
+blockquote {
+    border-left: 4px solid var(--color-accent);
+    background: #eef6f9;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 0 4px 4px 0;
+}
+pre {
+    background: #1b3a4b;
+    color: #eef2f4;
+    padding: 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 20px 0;
+    line-height: 1.45;
+}
+code { font-family: Consolas, Monaco, monospace; font-size: 0.9em; }
+pre code { background: none; padding: 0; }
+p code, li code, td code {
+    background: #eef2f4;
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: #b5432c;
+}
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.table-wrap { overflow-x: auto; margin: 20px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+th, td { border: 1px solid var(--color-border); padding: 11px; text-align: left; vertical-align: top; }
+th { background: #eef2f4; }
+tr:nth-child(even) td { background: #fbfcfd; }
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #6b7a82;
+    font-size: 0.9em;
+    margin-top: 50px;
+}
+
+@media (max-width: 800px) {
+    .content-wrapper { padding: 20px; }
+    .header-logo { position: static; display: block; margin: 0 auto 15px; height: 80px; }
+}
+@media (max-width: 500px) {
+    .tab-btn { padding: 12px 15px; }
+}
+@media print {
+    .sticky-nav { display: none; }
+    .page-content { display: block !important; page-break-before: always; }
+    .content-wrapper { box-shadow: none; padding: 0; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <img src="logo.png" alt="Logo do projeto" class="header-logo">
+    <h1>Assistente de Research Financeiro — Documentação da Etapa 1</h1>
+    <p>AI Factory: Building Intelligent Systems · Etapa 1 (CBL — Engajar)</p>
+</header>
+
+<nav class="sticky-nav" id="mainNav">
+    
+    <div class="tab-wrapper" data-page="inicio">
+        <button class="tab-btn active" data-page="inicio">🎯 Visão Geral</button>
+        <div class="tab-dropdown">
+<a href="#vis-o-geral" class="dropdown-link" data-page="inicio">Visão geral</a>
+<a href="#as-camadas-do-sistema" class="dropdown-link" data-page="inicio">As camadas do sistema</a>
+<a href="#stack-tecnol-gica" class="dropdown-link" data-page="inicio">Stack tecnológica</a>
+<a href="#como-executar" class="dropdown-link" data-page="inicio">Como executar</a>
+<a href="#organiza-o-do-reposit-rio" class="dropdown-link" data-page="inicio">Organização do repositório</a>
+</div>
+    </div>
+
+    <div class="tab-wrapper" data-page="desafio">
+        <button class="tab-btn" data-page="desafio">💡 Desafio CBL</button>
+        <div class="tab-dropdown">
+<a href="#grande-ideia" class="dropdown-link" data-page="desafio">Grande ideia</a>
+<a href="#pergunta-essencial" class="dropdown-link" data-page="desafio">Pergunta essencial</a>
+<a href="#desafio" class="dropdown-link" data-page="desafio">Desafio</a>
+<a href="#o-desafio-em-oito-perguntas" class="dropdown-link" data-page="desafio">O desafio em oito perguntas</a>
+<a href="#justificativa-pessoal" class="dropdown-link" data-page="desafio">Justificativa pessoal</a>
+</div>
+    </div>
+
+    <div class="tab-wrapper" data-page="arquitetura">
+        <button class="tab-btn" data-page="arquitetura">⚙️ Arquitetura</button>
+        <div class="tab-dropdown">
+<a href="#como-o-sistema-est-montado" class="dropdown-link" data-page="arquitetura">Como o sistema está montado</a>
+<a href="#a-camada-documental" class="dropdown-link" data-page="arquitetura">A camada documental</a>
+<a href="#o-corpus" class="dropdown-link" data-page="arquitetura">O corpus</a>
+<a href="#a-extra-o" class="dropdown-link" data-page="arquitetura">A extração</a>
+<a href="#a-divis-o-em-blocos" class="dropdown-link" data-page="arquitetura">A divisão em blocos</a>
+<a href="#as-estrat-gias-de-recupera-o" class="dropdown-link" data-page="arquitetura">As estratégias de recuperação</a>
+<a href="#a-camada-de-dados-estruturados" class="dropdown-link" data-page="arquitetura">A camada de dados estruturados</a>
+<a href="#por-que-existe-um-mapa-de-contas" class="dropdown-link" data-page="arquitetura">Por que existe um mapa de contas</a>
+<a href="#consulta-em-linguagem-natural" class="dropdown-link" data-page="arquitetura">Consulta em linguagem natural</a>
+<a href="#as-regras-que-o-c-digo-verifica" class="dropdown-link" data-page="arquitetura">As regras que o código verifica</a>
+<a href="#o-prompt-e-a-verifica-o-da-resposta" class="dropdown-link" data-page="arquitetura">O prompt e a verificação da resposta</a>
+<a href="#a-interface" class="dropdown-link" data-page="arquitetura">A interface</a>
+</div>
+    </div>
+</nav>
+
+<main class="container">
+    <div class="page-content active" id="page-inicio">
+<div class="content-wrapper"><h1 id="vis-o-geral">🎯 Visão geral</h1>
+
+<p>Todo trimestre, os cinco bancos listados que este projeto acompanha — Banco do Brasil, Bradesco, BTG Pactual, Itaú Unibanco e Santander Brasil — publicam dois conjuntos de números sobre o mesmo período. De um lado está o release de resultados, um PDF de dezenas ou centenas de páginas que o banco escreve para o mercado, com métricas ajustadas e a leitura que a própria administração faz do trimestre. Do outro estão os formulários ITR e DFP que esse mesmo banco entrega à CVM, onde o número é contábil, padronizado e sujeito a auditoria. As duas fontes são públicas e gratuitas, mas vivem separadas: quem consulta uma raramente abre a outra, e quando os dois números divergem para o mesmo trimestre não há nada que explique por quê.</p>
+
+<p>O assistente responde perguntas sobre esses resultados consultando as duas fontes. A camada documental funciona por RAG: os releases estão indexados e, a cada pergunta, o sistema recupera os trechos que podem conter a resposta e pede ao modelo de linguagem que responda usando apenas aquilo, citando documento e página. A camada estruturada carrega o painel contábil da CVM em um banco analítico que responde a perguntas em linguagem natural sem depender de modelo de linguagem nenhum, e é ela que entrega o número arquivado quando a pergunta pede o dado oficial.</p>
+
+<p>O que diferencia o projeto de um chatbot sobre PDFs é a disciplina de recusa. Um modelo treinado em texto público provavelmente já viu esses releases e consegue produzir um número convincente mesmo sem documento algum, e um número convincente e errado, numa resposta sobre balanço de banco, é pior do que não responder. Por isso, depois de gerar a resposta, o sistema confere se cada valor numérico dela aparece nos trechos que foram citados. Quando não aparece, a resposta é rebaixada para uma recusa explícita, ainda que o modelo tenha respondido com toda a confiança do mundo.</p>
+
+<blockquote>
+<p>Projeto demonstrativo e educacional. Não constitui recomendação de investimento: o sistema recusa esse tipo de pedido por regra, com base nas Resoluções CVM 19/2021 e 20/2021.</p>
+</blockquote>
+
+<hr>
+
+<h2 id="as-camadas-do-sistema">🧩 As camadas do sistema</h2>
+
+<p>A conversa acontece em uma interface de chat feita em Streamlit, que mantém o histórico da sessão, transmite a resposta aos poucos enquanto ela aparece na tela e indica sempre em que modo está operando e qual provedor gerou cada resposta. Há dois modos: um de demonstração, que abre sem nenhuma chave configurada e consulta o painel contábil sem custo, e um de pergunta livre, que precisa ser habilitado explicitamente e aciona o modelo de linguagem sobre os releases.</p>
+
+<p>Por trás dela, os vinte releases do corpus foram extraídos, divididos em blocos e indexados em duas frentes complementares: um índice vetorial no ChromaDB, que encontra trechos por significado, e um índice BM25, que encontra por coincidência de palavras. O painel contábil, por sua vez, vive em DuckDB e reúne o cadastro das companhias, as linhas contábeis dos formulários e o mapa que traduz código de conta em conceito de negócio, todos relacionados entre si.</p>
+
+<p>A conversa com o modelo é governada por um prompt escrito para este domínio, que proíbe responder de memória, obriga a citação e manda copiar cada número exatamente como impresso, sem converter escala nem arredondar. Antes que qualquer texto saia da máquina, uma camada de segurança bloqueia tentativas de injeção de instruções, recusa pedidos de recomendação de investimento e anonimiza dados pessoais que o usuário porventura tenha digitado na própria pergunta, como CPF, e-mail ou telefone.</p>
+
+<hr>
+
+<h2 id="stack-tecnol-gica">🛠️ Stack tecnológica</h2>
+
+<div class="table-wrap"><table>
+<tr><th>Função</th><th>Tecnologia</th><th>Por que esta escolha</th></tr>
+<tr><td>Interface</td><td>Streamlit 1.59</td><td>Chat com transmissão progressiva e estado de sessão</td></tr>
+<tr><td>Banco vetorial</td><td>ChromaDB 1.4</td><td>O filtro por metadados precisa acontecer antes do ranqueamento, e o FAISS indexa vetores e nada mais</td></tr>
+<tr><td>Busca léxica</td><td>rank-bm25</td><td>Canal paralelo ao vetorial, que sustenta a estratégia híbrida</td></tr>
+<tr><td>Embeddings</td><td>BGE-M3 via Ollama</td><td>1024 dimensões, roda local, nenhum custo por consulta</td></tr>
+<tr><td>Dados estruturados</td><td>DuckDB 1.4</td><td>Analítico, embarcado, lê os formulários da CVM sem servidor</td></tr>
+<tr><td>Geração</td><td>Gemini 3.5 Flash Lite</td><td>Venceu o comparativo de acerto, custo e latência; Ollama, DeepSeek, OpenAI e Azure ficam atrás da mesma interface plugável</td></tr>
+<tr><td>Extração de PDF</td><td>Mistral OCR</td><td>Reconstrói a estrutura da tabela, que é onde os números moram</td></tr>
+<tr><td>Segurança</td><td>Presidio, Llama Prompt Guard 2 e detector próprio</td><td>Camada determinística sempre ativa; as duas de aprendizado de máquina são opcionais</td></tr>
+</table></div>
+
+<hr>
+
+<h2 id="como-executar">🚀 Como executar</h2>
+
+<p>O projeto exige Python 3.12 e o <a href="https://ollama.com">Ollama</a> ativo, que gera os embeddings das perguntas localmente e sem custo. A preparação do ambiente é a de sempre:</p>
+
+<pre><code class="lang-bash">
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+ollama pull bge-m3
+cp .env.example .env
+</code></pre>
+
+<p>Para abrir no modo de demonstração, que não exige segredo nenhum configurado e consulta o painel contábil da CVM sem gerar custo:</p>
+
+<pre><code class="lang-bash">
+streamlit run app_streamlit.py
+</code></pre>
+
+<p>Para habilitar também as perguntas livres, que acionam o modelo de linguagem sobre os releases, é preciso ter uma chave de API no <code>.env</code> e ligar o modo explicitamente. Ele vem desligado de propósito, para que uma instância exposta não gaste sem que alguém tenha decidido isso:</p>
+
+<pre><code class="lang-bash">
+HABILITAR_PERGUNTAS_LIVRES=true streamlit run app_streamlit.py
+</code></pre>
+
+<p>Nos dois casos a interface abre em <code>http://localhost:8501</code>. Nenhuma chave está no código: elas vivem apenas no <code>.env</code> local, que o Git ignora, e o repositório versiona somente o <code>.env.example</code>, com todas as variáveis documentadas e os valores em branco.</p>
+
+<hr>
+
+<h2 id="organiza-o-do-reposit-rio">📁 Organização do repositório</h2>
+
+<pre><code class="lang-text">
+├── app_streamlit.py          interface de chat
+├── src/                      ingestão, indexação, recuperação, geração,
+│                             dados estruturados, cobertura, segurança
+├── conjunto_padrao/          45 perguntas congeladas + 10 de dev + 20 ataques
+├── corpus/                   manifesto com SHA-256 e cache de OCR versionado
+├── artefatos/                índices, painel DuckDB, logs por execução
+├── resultados/               evidência datada de cada medição
+├── tests/                    suíte automatizada, sem skips
+└── docs/                     esta documentação
+</code></pre>
+
+<p>O corpus e os índices merecem uma observação. Os PDFs, o banco DuckDB e o índice vetorial não são versionados, porque são pesados e regeneráveis por script. O que entra no Git é o manifesto com o SHA-256 de cada documento e os metadados de construção do índice, o que permite verificar depois que o material usado numa medição é exatamente o mesmo que está descrito aqui.</p>
+</div>
+</div>
+<div class="page-content" id="page-desafio">
+<div class="content-wrapper"><h1 id="grande-ideia">💡 Grande ideia</h1>
+
+<p>Confiança na informação financeira pública. Toda companhia aberta é obrigada a divulgar seus resultados, mas divulgar não resolve dois problemas diferentes: tornar o conteúdo compreensível para quem não é do mercado, e tornar a busca por um número específico rápida e confiável para quem já é, o analista que precisa localizar e conferir um dado entre centenas de páginas e não pode se dar ao luxo de citar um valor que a fonte não sustenta.</p>
+
+<hr>
+
+<h1 id="pergunta-essencial">❓ Pergunta essencial</h1>
+
+<blockquote>
+<p>Como a tecnologia pode ajudar alguém a entender os resultados de uma empresa aberta sem depender exclusivamente da interpretação de terceiros, e como saber quando essa tecnologia está errada?</p>
+</blockquote>
+
+<hr>
+
+<h1 id="desafio">🎯 Desafio</h1>
+
+<p>Construir um assistente que responda perguntas sobre os resultados trimestrais dos cinco bancos listados do Brasil cruzando duas fontes que hoje vivem separadas: os releases de resultado que cada banco publica em PDF e os formulários contábeis que esses mesmos bancos arquivam na CVM. Os documentos são indexados para busca semântica e o painel contábil oficial é carregado em um banco analítico consultável por linguagem natural, de modo que a mesma pergunta possa ser respondida pela leitura do release, pelo dado arquivado no regulador, ou pelos dois lado a lado. É assim que o sistema alcança a pergunta que nenhuma das fontes responde sozinha: o número que o banco divulgou bate com o que ele arquivou, e por que existe diferença entre eles?</p>
+
+<p>Sobre essa base trabalham dois agentes separados por isolamento de contexto. O primeiro investiga e registra como chegou à resposta. O segundo recebe apenas a afirmação final e as fontes citadas, nunca o raciocínio que as produziu, e tenta derrubá-la refazendo as consultas por conta própria. A divisão não é por fonte de dado, e sim pelo que cada cabeça pode ver: o auditor acrescenta informação justamente porque desconhece o caminho percorrido pelo primeiro, o que o impede de apenas concordar com ele. Um modelo supervisionado treinado sobre o mesmo painel contábil mede se essa camada de dados sustenta uma tarefa de previsão, avaliado contra baselines e reportado com franqueza, mas deliberadamente não exposto como previsão sobre companhia nomeada, porque isso contradiria o limite que o próprio sistema impõe adiante.</p>
+
+<p>Esse limite é a parte mais importante do desafio. Uma camada de segurança bloqueia tentativas de injeção de instruções, anonimiza dados pessoais que o usuário porventura forneça e recusa pedidos de recomendação de investimento, atividade privativa de analista credenciado pela Resolução CVM 20/2021. A resposta sai por padrão em linguagem acessível a quem não é do mercado, explicando cada termo técnico no primeiro uso, com a evidência disponível em painéis para quem quiser conferir. E vale, acima de tudo, a restrição que atravessa o projeto inteiro e que precisa ser medida em vez de apenas afirmada: o assistente nunca afirma o que não está na fonte e declara explicitamente quando não sabe, mesmo que o modelo de linguagem saiba a resposta de memória.</p>
+
+<h2 id="o-desafio-em-oito-perguntas">🗣️ O desafio em oito perguntas</h2>
+
+<p>A forma mais direta de descrever o que o sistema precisa fazer é listar as perguntas que ele recebe de quem não é do mercado, porque duas delas não devem ser respondidas de jeito nenhum.</p>
+
+<div class="table-wrap"><table>
+<tr><th>Pergunta</th><th>O que o sistema faz</th></tr>
+<tr><td>"O Banco do Brasil ganhou ou perdeu dinheiro?"</td><td>Responde com o valor e cita documento, período e linha</td></tr>
+<tr><td>"Qual desses cinco bancos deu mais lucro?"</td><td>Compara, resolvendo antes que cada banco arquiva o lucro em um código de conta diferente</td></tr>
+<tr><td>"O lucro caiu? Por quê?"</td><td>Traz a variação calculada e o que a administração apontou como causa, com a página</td></tr>
+<tr><td>"O que é ROE?"</td><td>Explica em linguagem simples, com a definição de origem citada junto</td></tr>
+<tr><td>"Vi outro número na notícia. Quem está errado?"</td><td>Ninguém: mostra o gerencial e o contábil lado a lado e explica a diferença</td></tr>
+<tr><td>"E o Nubank? E o Inter?"</td><td>Respostas diferentes para perguntas que parecem iguais. O Inter está no painel do regulador mas não no corpus de documentos, então recebe o número com a declaração do que falta; o Nubank não está em nenhum dos dois e é recusado, com o motivo</td></tr>
+<tr><td>"Devo comprar essa ação?"</td><td>Recusa e explica: é atividade privativa de analista credenciado</td></tr>
+<tr><td>"E o quarto trimestre?"</td><td>Responde marcando que o valor é derivado, porque o regulador não recebe informação trimestral no 4T</td></tr>
+</table></div>
+
+<p>As duas últimas linhas são o desafio de verdade. Responder é a parte fácil; saber quando não responder é o que precisa ser medido.</p>
+
+<hr>
+
+<h1 id="justificativa-pessoal">🙋 Justificativa pessoal</h1>
+
+<p>Projeto de portfólio quase sempre cai em um de dois lados: ou é um exercício genérico, que não corresponde a nada que alguém precise de verdade, ou exige um repertório de mercado que quem está entrando na área ainda não tem. Sou engenheiro civil em transição para Dados e Inteligência Artificial. Reconheço um problema real numa obra, mas não sei, de saída, o que dói de verdade dentro de um banco, de uma seguradora ou de uma indústria.</p>
+
+<p>Foi para resolver isso que construí uma ferramenta de ideação. Ela parte de um setor real, pesquisa com fontes as dores que ele de fato tem e as competências que a área efetivamente cobra, e daí deriva escopo e especificação antes de qualquer linha de código. A intenção é que alguém sem repertório naquele domínio consiga entendimento inicial suficiente para começar um projeto que faça sentido fora da sala de aula.</p>
+
+<p>O que me fez escolher este recorte entre os possíveis não foi a sugestão da ferramenta. Foi ter esbarrado uma vez com um release de resultados de banco e achado o documento incompreensível para quem não é do mercado: a informação é pública e gratuita, mas está escrita para quem já sabe onde procurar e domina o vocabulário do setor.</p>
+
+<p>Reconheci ali o mesmo problema que a ferramenta tenta resolver, uma escala abaixo, alguém de fora diante de um conteúdo escrito para quem já está dentro. Por ser leigo na área, e ao ver que a informação é escrita para um público específico e fica esparsa dentro de um documento longo, resolvi criar uma ferramenta que ajude tanto o leigo quanto o especialista a buscar a informação mais rapidamente, economizando tempo nas próprias análises, sem decidir pela pessoa, mas devolvendo a ela a informação com a fonte à vista.</p>
+
+<p>Quando as aulas começaram, vi que a especificação já cobria boa parte do que a disciplina pede, e preferi aprofundar um único projeto a construir dois pela metade.</p>
+</div>
+</div>
+<div class="page-content" id="page-arquitetura">
+<div class="content-wrapper"><h1 id="como-o-sistema-est-montado">🏛️ Como o sistema está montado</h1>
+
+<p>O caminho de uma pergunta até a resposta atravessa quatro camadas. Duas delas preparam material antes de qualquer usuário aparecer: a ingestão dos releases em PDF, que termina em dois índices de busca, e a carga dos formulários da CVM, que termina em um banco analítico. As outras duas funcionam durante a conversa: as ferramentas que consultam esse material e os agentes que decidem o que perguntar a elas.</p>
+
+<pre><code class="lang-text">
+corpus público (PDF)                   dados abertos CVM (ITR/DFP)
+  │                                       │
+  ▼                                       ▼
+extração + chunking (600/100 tokens)   painel contábil em DuckDB
+validação estrutural + sentinelas      companhias ⋈ fatos_contabeis
+  │                                       │ mapa_contas ⇒ fatos_semanticos
+  │                                       │ (4º trimestre derivado e marcado)
+  ├──► índice BM25 (palavra-chave)        │
+  └──► embeddings ──► índice vetorial     │
+                        │                 │
+                        ▼                 ▼
+        ┌──────────────────────────────────────────┐
+        │ FERRAMENTAS: verificar_cobertura ·       │
+        │ buscar_trechos · consultar_cvm ·         │
+        │ calcular_indicadores                     │
+        └──────────────────────────────────────────┘
+                        ▲
+pergunta → guardrails → Investigador → [filtro de contexto]
+                                        │ só a afirmação + citações
+                                        ▼
+                                     Auditor → guardrails → resposta
+</code></pre>
+
+<p>Há um detalhe de projeto que vale explicar, porque não é óbvio olhando o diagrama. O sistema tem dois caminhos de execução separados de propósito. O caminho interativo, que é o produto, passa pelos guardrails e pelos agentes. Já o caminho de avaliação, usado para comparar as estratégias de busca, roda o pipeline determinístico de recuperação e geração sem a camada de agentes, porque a orquestração multiagente introduz variabilidade no plano de execução e isso destruiria a comparabilidade entre as estratégias, mesmo com a temperatura zerada. Os dois caminhos compartilham as mesmas ferramentas e o mesmo prompt; apenas a orquestração difere.</p>
+
+<hr>
+
+<h1 id="a-camada-documental">📄 A camada documental</h1>
+
+<h2 id="o-corpus">O corpus</h2>
+
+<p>São vinte releases de resultado, cinco bancos ao longo de quatro trimestres, todos baixados das páginas públicas de relações com investidores. O arquivo <code>corpus/metadados.csv</code> funciona como fonte de verdade e guarda, para cada documento, a URL de origem, a data e o SHA-256 do arquivo. Os PDFs em si ficam fora do Git, já que podem ser baixados de novo por script, e o hash é o que permite verificar depois que o arquivo usado numa medição é exatamente aquele que foi indexado.</p>
+
+<h2 id="a-extra-o">A extração</h2>
+
+<p>Release de banco é um documento hostil para extração automática. O conteúdo que interessa está em tabelas de muitas colunas, cercado de notas de rodapé, texto em duas colunas e números que só significam alguma coisa quando lidos junto do cabeçalho da coluna. O extrator primário escolhido foi o Mistral OCR, e a escolha se apoia em três características dele.</p>
+
+<p>A primeira é que ele lê a página como imagem e reconstrói a estrutura, em vez de raspar a camada de texto do PDF. A tabela volta como tabela, com a linha de cabeçalho preservada, e é isso que permite ao sistema saber que 11.508 é o Resultado Recorrente Gerencial do segundo trimestre de 2025, e não um número solto no meio da página. A segunda é que ele funciona mesmo quando a fonte embutida no PDF não tem mapa de caracteres, situação que parece exótica mas apareceu neste corpus: na demonstração anual do BTG, 63 das 71 páginas devolviam apenas sequências como <code>(cid:127)</code> para extratores que dependem da camada de texto. Para um modelo que enxerga a página, a codificação do arquivo é irrelevante. A terceira é a ordem de leitura, que ele preserva em layouts de múltiplas colunas, evitando que dois blocos de texto paralelos se intercalem e produzam frases sem sentido.</p>
+
+<p>O efeito disso aparece na estrutura recuperada: 37.612 linhas de tabela reconstruídas, contra 28.268 do extrator alternativo, o <code>pdfplumber</code>, que segue disponível atrás da mesma interface. Como OCR custa dinheiro, o resultado de cada documento fica gravado em um cache endereçado pelo hash do PDF, e reprocessar o corpus não gera nova cobrança.</p>
+
+<h2 id="a-divis-o-em-blocos">A divisão em blocos</h2>
+
+<p>O texto extraído é dividido em blocos de 600 tokens com 100 de sobreposição, e a divisão respeita o tipo de conteúdo. Prosa é cortada em fronteira de parágrafo ou de sentença. Tabela nunca é partida no meio de uma linha, e quando uma tabela é maior que o bloco ela é dividida em partes que repetem a linha de cabeçalho, pela mesma razão que motivou a escolha do extrator: valor sem o nome da coluna não pode ser citado. A sobreposição existe para que um trecho próximo da fronteira apareça em dois blocos, o que evita perder justamente o valor que caiu na divisão.</p>
+
+<p>Cada bloco carrega consigo os metadados que a citação exige, a saber, a empresa, o documento, o trimestre e as páginas inicial e final de onde o texto veio. O corpus inteiro resulta em 7.147 blocos.</p>
+
+<h2 id="as-estrat-gias-de-recupera-o">As estratégias de recuperação</h2>
+
+<p>A pergunta do usuário não vai direto ao modelo de linguagem. Antes disso, o sistema procura, entre os 7.147 blocos, os cinco mais promissores, e apenas esses cinco entram no prompt como contexto. O modelo responde olhando só para eles.</p>
+
+<p>É por isso que a recuperação decide o resultado. Se o trecho que contém a resposta não estiver entre os cinco selecionados, o modelo não tem como acertar, e a regra de fundamentação o obriga a recusar em vez de arriscar um palpite. Como não existe uma forma única e óbvia de escolher esses cinco trechos, o projeto implementa cinco maneiras diferentes e as compara sob o mesmo orçamento de contexto.</p>
+
+<div class="table-wrap"><table>
+<tr><th>Estratégia</th><th>Como escolhe os trechos</th><th>O que ela testa</th></tr>
+<tr><td>E0, closed-book</td><td>Não escolhe nada: o modelo responde sem documento algum</td><td>Serve de controle e mostra quanto o modelo já sabe de pré-treinamento</td></tr>
+<tr><td>E1, palavra-chave</td><td>BM25, por coincidência de termos entre pergunta e trecho</td><td>A linha de base clássica, forte quando a pergunta usa as palavras do documento</td></tr>
+<tr><td>E2, semântica</td><td>Compara o significado da pergunta com o do trecho, via embeddings</td><td>Encontrar o trecho certo mesmo quando ele usa outro vocabulário</td></tr>
+<tr><td>E3, híbrida</td><td>Funde as listas de E1 e E2 por Reciprocal Rank Fusion</td><td>Se combinar as duas evidências supera cada uma isolada</td></tr>
+<tr><td>E4, tabela de fatos</td><td>Ranqueia pelo quanto o trecho contém números da métrica perguntada</td><td>Encontrar a tabela, que é onde mora o valor exato</td></tr>
+</table></div>
+
+<p>A última merece explicação, porque nasceu de um problema concreto. Recuperar a página certa não basta: a prosa da página costuma arredondar, dizendo algo como "R$ 3,4 bilhões", enquanto a tabela com o valor exato, 3.431, fica de fora dos cinco selecionados. A estratégia E4 existe para alcançar essa tabela.</p>
+
+<hr>
+
+<h1 id="a-camada-de-dados-estruturados">🗄️ A camada de dados estruturados</h1>
+
+<p>O painel é carregado a partir dos conjuntos ITR e DFP do portal de dados abertos da CVM, e o resultado é um conjunto de tabelas relacionadas em DuckDB, não uma planilha solta. A relação central liga <code>companhias</code> a <code>fatos_contabeis</code> pelo código CVM da companhia, e cada linha contábil encontra seu significado em <code>mapa_contas</code> pelo par formado pelo plano de contas e o código da conta.</p>
+
+<div class="table-wrap"><table>
+<tr><th>Tabela</th><th>Registros</th><th>Papel</th></tr>
+<tr><td><code>companhias</code></td><td>470</td><td>Cadastro: código CVM, CNPJ, denominação social, setor, ticker e plano de contas</td></tr>
+<tr><td><code>fatos_contabeis</code></td><td>553.856</td><td>Linhas contábeis por companhia, trimestre, demonstrativo e conta</td></tr>
+<tr><td><code>mapa_contas</code></td><td>68</td><td>Mapa semântico que traduz código de conta em conceito de negócio</td></tr>
+<tr><td><code>indicadores</code></td><td>2.321</td><td>Indicadores derivados por companhia e trimestre</td></tr>
+<tr><td><code>correcoes_contabeis</code></td><td>4</td><td>Correções com procedência obrigatória: documento, página, SHA-256 e evidência</td></tr>
+<tr><td><code>fatos_semanticos</code></td><td>visão</td><td>Junta as demais e entrega o conceito já resolvido, marcando o que é derivado e o que foi corrigido</td></tr>
+</table></div>
+
+<h2 id="por-que-existe-um-mapa-de-contas">Por que existe um mapa de contas</h2>
+
+<p>Esta é a parte do projeto com maior potencial de causar dano silencioso, e a razão de o painel só ser liberado depois de passar por uma verificação bloqueante. O mesmo código de conta designa linhas diferentes conforme o plano de contas adotado pela companhia. O código 3.09, por exemplo, é lucro líquido no Itaú, no Santander e no BTG, mas significa resultado antes das participações no Banco do Brasil e no Bradesco. Uma consulta ingênua devolveria, para dois dos cinco bancos, um número plausível, não nulo e errado, sem levantar erro algum. É exatamente a falha que o projeto existe para combater, reproduzida dentro da própria base de dados.</p>
+
+<p>A consequência prática é que nenhuma consulta pode referenciar o código de conta diretamente. Todo conceito passa pelo mapa semântico validado, e a lista branca que governa o SQL rejeita qualquer tentativa de contornar esse caminho.</p>
+
+<h2 id="consulta-em-linguagem-natural">Consulta em linguagem natural</h2>
+
+<p>A rota estruturada da interface interpreta a pergunta, resolve de que companhia se trata, qual conceito está sendo pedido e a qual trimestre ele se refere, e só então monta a consulta. Todo esse percurso acontece sem chamar modelo de linguagem, o que significa que ele funciona sem nenhuma chave configurada e sem gerar custo. Uma resposta real da interface:</p>
+
+<blockquote>
+<p>ITAU UNIBANCO HOLDING S.A. (CD_CVM 019348) está nas duas camadas em 3T2025: há release indexado e fatos contábeis no painel da CVM. Patrimônio líquido consolidado em 3T2025: R$ 224,71 bilhões (R$ 224.707.000.000,00).</p>
+</blockquote>
+
+<p>Junto do texto, a interface mostra uma tabela com os fatos usados e a procedência de cada um deles no painel.</p>
+
+<hr>
+
+<h1 id="as-regras-que-o-c-digo-verifica">🛡️ As regras que o código verifica</h1>
+
+<p>Doze regras de negócio governam o comportamento do sistema, e a diferença entre elas e uma lista de boas intenções é que cada uma tem verificação em código e teste que falha quando ela é violada. As que o usuário percebe na tela são estas:</p>
+
+<div class="table-wrap"><table>
+<tr><th>Regra</th><th>O que exige</th></tr>
+<tr><td>RN01</td><td>Toda resposta cita empresa, documento, trimestre e página dos trechos usados</td></tr>
+<tr><td>RN02</td><td>Sem evidência suficiente no trecho recuperado, o sistema declara isso em vez de responder de memória</td></tr>
+<tr><td>RN05</td><td>Nada de recomendação de investimento, preço-alvo ou aconselhamento pessoal, conforme as Resoluções CVM 20/2021 e 19/2021</td></tr>
+<tr><td>RN06</td><td>Dado pessoal digitado pelo usuário é anonimizado antes de qualquer chamada externa e não entra em log nem em cache</td></tr>
+<tr><td>RN09</td><td>Código de conta nunca é chave de significado sozinho: todo conceito passa pelo mapa semântico</td></tr>
+<tr><td>RN10</td><td>Valor obtido por aritmética entre períodos sai marcado como derivado, com a conta explicitada</td></tr>
+<tr><td>RN11</td><td>Companhia é resolvida por código CVM, nunca por nome; nome ambíguo gera pergunta de desambiguação em vez de escolha automática</td></tr>
+<tr><td>RN12</td><td>A ausência de evidência é classificada em três estados: presente nas duas camadas, presente só no painel, ou ausente em ambas</td></tr>
+</table></div>
+
+<p>A RN12 é a que produz respostas diferentes para perguntas que parecem iguais. O Banco Inter arquiva na CVM mas não tem release no corpus, então a pergunta sobre ele recebe o número contábil acompanhado da declaração do que não pode ser dito. O Nubank não está em nenhuma das duas camadas, e a pergunta é recusada com o motivo explicado.</p>
+
+<p>A RN10 aparece sempre que alguém pergunta pelo quarto trimestre. O regulador não recebe informação trimestral nesse período, apenas o acumulado do ano, de modo que o valor do 4T precisa ser obtido subtraindo o acumulado do terceiro trimestre do total anual. O número é legítimo, mas não é um dado arquivado, e a interface diz isso em vez de apresentá-lo como se fosse.</p>
+
+<hr>
+
+<h1 id="o-prompt-e-a-verifica-o-da-resposta">💬 O prompt e a verificação da resposta</h1>
+
+<p>O prompt de geração foi escrito para este domínio e tem sete regras invioláveis. Três delas explicam a maior parte do comportamento observável. A primeira proíbe usar conhecimento próprio: se a informação não estiver literalmente nos trechos fornecidos, o modelo precisa recusar, mesmo que saiba a resposta. A segunda manda copiar o número exatamente como impresso, com os mesmos dígitos, a mesma pontuação e a mesma unidade, sem converter escala, de forma que um trecho dizendo "R$ 6.067 milhões" não vire "R$ 6,1 bilhões" na resposta. A terceira determina que tanto o trecho recuperado quanto a própria pergunta sejam tratados como entrada não confiável, ignorando qualquer instrução embutida neles.</p>
+
+<p>A saída não é texto livre, e sim um objeto JSON com a resposta, um sinalizador de recusa, o motivo da recusa quando houver, e a lista de citações. Esse contrato existe para que a citação possa ser verificada por código em vez de depender da formatação do texto.</p>
+
+<p>E a verificação de fato acontece. Depois da geração, uma guarda confere se todo valor numérico presente na resposta aparece nos trechos citados. Quando algum número não aparece, a resposta inteira é rebaixada para recusa. É essa etapa, e não a boa vontade do modelo, que impede a alucinação numérica de chegar à tela.</p>
+
+<hr>
+
+<h1 id="a-interface">🖥️ A interface</h1>
+
+<p>O chat foi feito em Streamlit e abre em um de dois modos, escolhidos na barra lateral. O modo de demonstração consulta o painel contábil e as respostas pré-computadas, funciona sem nenhum segredo configurado e não gera custo. O modo de pergunta livre aciona a inferência ao vivo sobre os releases, precisa ser habilitado explicitamente e está sujeito a uma cota de perguntas por sessão e a um teto de orçamento.</p>
+
+<p>A resposta aparece na tela aos poucos, palavra por palavra. Essa escolha tem uma consequência que vale registrar: o que é transmitido é a resposta já validada, não o texto cru que o provedor devolve. Como a guarda de fundamentação só consegue decidir depois de ver o texto inteiro, transmitir o rascunho colocaria na tela, ainda que por um segundo, exatamente o número que a guarda vai derrubar em seguida.</p>
+
+<p>Abaixo de cada resposta, a interface mostra os trechos recuperados, com os que foram efetivamente citados aparecendo primeiro e destacados. Nas consultas ao painel contábil ela exibe também a tabela de fatos, um aviso quando algum valor é derivado e a procedência de cada linha. Em toda resposta, por fim, ficam indicados o modo de operação e o provedor que a gerou, para que ninguém confunda uma resposta pré-computada com uma inferência feita na hora.</p>
+</div>
+</div>
+</main>
+
+<footer>
+    <p>Assistente de Research Financeiro — RAG sobre releases públicos + painel contábil da CVM</p>
+    <p>Documento gerado por <code>scripts/build_docs_html.py</code> · demonstração em vídeo entregue à parte</p>
+</footer>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const page = btn.dataset.page;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('page-' + page).classList.add('active');
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+});
+
+document.querySelectorAll('.dropdown-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        const targetAttr = link.getAttribute('href');
+        if (!targetAttr || !targetAttr.startsWith('#')) return;
+        e.preventDefault();
+        const targetId = targetAttr.slice(1);
+        const page = link.dataset.page;
+        if (page) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+            document.querySelector('.tab-btn[data-page="' + page + '"]').classList.add('active');
+            document.getElementById('page-' + page).classList.add('active');
+        }
+        const dropdown = link.closest('.tab-dropdown');
+        if (dropdown) {
+            dropdown.style.display = 'none';
+            setTimeout(() => dropdown.style.display = '', 100);
+        }
+        setTimeout(() => {
+            const el = document.getElementById(targetId);
+            if (el) {
+                const navHeight = document.getElementById('mainNav').offsetHeight;
+                const pos = el.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                window.scrollTo({top: pos, behavior: 'smooth'});
+            }
+        }, 50);
+    });
+});
+</script>
+</body>
+</html>

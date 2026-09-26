@@ -36,6 +36,120 @@ APELIDOS_BANCOS: dict[str, tuple[str, ...]] = {
 # derrubava TSTF004, TSTF007 e TSTF010, todas com valor e página certos).
 PADRAO_TRIMESTRE = re.compile(r"\b([1-4])T(20\d{2}|\d{2})\b", re.IGNORECASE)
 
+# Mesma armadilha do comentário acima, achada ao vivo em 2026-09-20: pergunta
+# em português corrido ("segundo trimestre de 2024") não casa em NADA no padrão
+# abreviado, `extrair_trimestres_citados` devolve lista vazia, e
+# `responder_por_gabarito` lê "lista vazia" como "pergunta sem período" —
+# despejando os seis trimestres do painel em vez de dizer, numa frase, que o
+# período pedido não está lá. O usuário DISSE o período; o sistema é que não
+# sabia ler. Nenhum acento nos ordinais 1º–4º em português, então a forma
+# extensa casa sem passar por `remover_acentos`; o símbolo de ordinal (º/°) e a
+# forma numérica (2º, 2°) são aceitos ao lado da forma por extenso.
+_ORDINAIS_TRIMESTRE: dict[str, str] = {
+    "primeiro": "1",
+    "primeira": "1",
+    "segundo": "2",
+    "segunda": "2",
+    "terceiro": "3",
+    "terceira": "3",
+    "quarto": "4",
+    "quarta": "4",
+}
+PADRAO_TRIMESTRE_POR_EXTENSO = re.compile(
+    r"\b(?:(" + "|".join(_ORDINAIS_TRIMESTRE) + r")|([1-4])\s*[°ºªoa])"
+    r"\s+trimestre\b"
+    r"(?:\s+d[eo])?\s+(20\d{2}|\d{2})\b",
+    re.IGNORECASE,
+)
+
+
+def _canonizar_trimestre_por_extenso(match: re.Match[str]) -> str:
+    """`match` de `PADRAO_TRIMESTRE_POR_EXTENSO` -> código canônico `NTAAAA`."""
+    palavra, digito, ano = match.group(1), match.group(2), match.group(3)
+    numero = _ORDINAIS_TRIMESTRE[palavra.lower()] if palavra else digito
+    return f"{numero}T{ano if len(ano) == 4 else f'20{ano}'}"
+
+
+# Semestre é o mesmo defeito do trimestre por extenso, um degrau acima: o painel
+# guarda trimestre, quem pergunta fala em semestre, e sem tradução a pergunta
+# vira "sem período" e devolve a série toda. Só 1º e 2º existem.
+_ORDINAIS_SEMESTRE: dict[str, str] = {
+    "primeiro": "1",
+    "primeira": "1",
+    "segundo": "2",
+    "segunda": "2",
+}
+PADRAO_SEMESTRE = re.compile(
+    r"\b(?:(" + "|".join(_ORDINAIS_SEMESTRE) + r")|([12])\s*[°ºªoa])"
+    r"\s+semestre\b"
+    r"(?:\s+d[eo])?\s+(20\d{2}|\d{2})\b",
+    re.IGNORECASE,
+)
+_TRIMESTRES_DO_SEMESTRE: dict[str, tuple[str, str]] = {"1": ("1", "2"), "2": ("3", "4")}
+
+
+@dataclass(frozen=True)
+class PeriodoPedido:
+    """Um período citado na pergunta, já traduzido para trimestres do painel.
+
+    Existe para que quem responde saiba **como o período foi pedido**, não só
+    quais trimestres ele cobre. "2º semestre de 2025" e "3T2025 e 4T2025"
+    selecionam as mesmas duas linhas, mas a primeira pede um número e a segunda
+    pede dois — e responder as duas igual é o que produzia a lista que ninguém
+    pediu.
+    """
+
+    rotulo: str
+    trimestres: tuple[str, ...]
+
+    @property
+    def e_intervalo(self) -> bool:
+        """Verdadeiro quando o período pedido abrange mais de um trimestre."""
+        return len(self.trimestres) > 1
+
+
+def extrair_periodos_citados(texto: str) -> list[PeriodoPedido]:
+    """Períodos citados no texto, na ordem de aparição e sem repetição.
+
+    Reconhece trimestre (abreviado ou por extenso) e semestre. Ano solto
+    continua NÃO sendo período, pela mesma razão de sempre: "em 2019 o banco
+    mudou de plano de contas" não é um pedido de filtro.
+    """
+    achados: list[tuple[int, PeriodoPedido]] = []
+    for match in PADRAO_TRIMESTRE.finditer(texto):
+        ano = match.group(2)
+        # A forma abreviada é canonizada para a extensa aqui, e só aqui: o
+        # resto do sistema (metadados do corpus, filtro da RF06, gabarito)
+        # continua falando um único dialeto, `1T2026`.
+        codigo = f"{match.group(1)}T{ano if len(ano) == 4 else f'20{ano}'}"
+        achados.append((match.start(), PeriodoPedido(codigo, (codigo,))))
+    for match in PADRAO_TRIMESTRE_POR_EXTENSO.finditer(texto):
+        codigo = _canonizar_trimestre_por_extenso(match)
+        achados.append((match.start(), PeriodoPedido(codigo, (codigo,))))
+    for match in PADRAO_SEMESTRE.finditer(texto):
+        palavra, digito, ano = match.group(1), match.group(2), match.group(3)
+        numero = _ORDINAIS_SEMESTRE[palavra.lower()] if palavra else digito
+        ano_completo = ano if len(ano) == 4 else f"20{ano}"
+        achados.append(
+            (
+                match.start(),
+                PeriodoPedido(
+                    rotulo=f"{numero}º semestre de {ano_completo}",
+                    trimestres=tuple(
+                        f"{t}T{ano_completo}"
+                        for t in _TRIMESTRES_DO_SEMESTRE[numero]
+                    ),
+                ),
+            )
+        )
+    achados.sort(key=lambda item: item[0])  # ordem de aparição no texto
+
+    periodos: list[PeriodoPedido] = []
+    for _, periodo in achados:
+        if periodo not in periodos:
+            periodos.append(periodo)
+    return periodos
+
 MULTIPLICADORES = {
     "mil": 1_000,
     "milhao": 1_000_000,
@@ -469,16 +583,22 @@ def extrair_trimestres_citados(texto: str) -> list[str]:
 
     Perguntas comparativas podem pedir, por exemplo, ``4T2025 e 1T2026``.
     Reduzi-las ao primeiro período filtra evidência válida do segundo.
+
+    Três grafias convergem para o mesmo código canônico: a abreviada
+    (``2T2024``), a por extenso (``segundo trimestre de 2024``) e o semestre
+    (``segundo semestre de 2025`` → ``3T2025`` e ``4T2025``). Sem elas, uma
+    pergunta genuína era lida como SEM período — não porque o usuário não
+    tivesse dito qual, mas porque o sistema só sabia ler uma das formas em que
+    se diz a mesma coisa em português.
+
+    Quem precisa saber **como** o período foi pedido — para responder um número
+    ao semestre em vez de dois — usa `extrair_periodos_citados`.
     """
     vistos: list[str] = []
-    for match in PADRAO_TRIMESTRE.finditer(texto):
-        ano = match.group(2)
-        # A forma abreviada é canonizada para a extensa aqui, e só aqui: o
-        # resto do sistema (metadados do corpus, filtro da RF06, gabarito)
-        # continua falando um único dialeto, `1T2026`.
-        trimestre = f"{match.group(1)}T{ano if len(ano) == 4 else f'20{ano}'}"
-        if trimestre not in vistos:
-            vistos.append(trimestre)
+    for periodo in extrair_periodos_citados(texto):
+        for trimestre in periodo.trimestres:
+            if trimestre not in vistos:
+                vistos.append(trimestre)
     return vistos
 
 

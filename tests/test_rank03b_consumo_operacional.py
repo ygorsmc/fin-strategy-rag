@@ -598,7 +598,8 @@ class TestContratosR1aR5:
 
     def test_R4_B0_publica_as_duas_coberturas(self):
         linhas = self._linhas(600, 60, lambda i: float(i))
-        b0 = auditor.medir_baselines(linhas)["baselines"]["B0_classe_majoritaria"]
+        # B0.1 (17/09): renomeado para a regra que é — "sempre não consumir".
+        b0 = auditor.medir_baselines(linhas)["baselines"]["B0_sempre_nao_consumir"]
         assert b0["cobertura_de_ranqueamento"] == 0.0
         assert b0["cobertura_de_previsao_de_classe"] == 1.0, (
             "abstenção de RANQUEAR não é ausência de previsão de CLASSE"
@@ -1158,3 +1159,94 @@ class TestConstrucaoCegaAoRotulo:
     def test_modo_padrao_continua_calculando_y(self):
         amostra, _ = auditor.construir_amostra(*self._entrada())
         assert all(o["y"] in (0, 1) for o in amostra)
+
+
+# --- contratos RF-03, RF-08 e B0.1 (17/09) ----------------------------------
+
+class TestParticaoDeQuintisQ1:
+    """Q1/Q2: empate grande não pode fabricar faixas unitárias."""
+
+    def test_exemplo_da_conferencia_da_duas_faixas(self):
+        x = [0] * 400 + list(range(1, 101))
+        y = [i % 2 for i in range(500)]
+        m = auditor.amplitude_por_quintis(x, y)
+        assert [f["n"] for f in m["faixas"]] == [400, 100]
+        assert m["amplitude"] == pytest.approx(0.0)
+
+    def test_sem_empate_da_cinco_faixas_iguais(self):
+        m = auditor.amplitude_por_quintis(list(range(500)), [i % 2 for i in range(500)])
+        assert [f["n"] for f in m["faixas"]] == [100] * 5
+
+    def test_constante_da_uma_faixa(self):
+        m = auditor.amplitude_por_quintis([3.0] * 500, [i % 2 for i in range(500)])
+        assert [f["n"] for f in m["faixas"]] == [500]
+
+    def test_empate_atravessando_um_corte(self):
+        x = list(range(90)) + [90] * 30 + list(range(91, 471))
+        m = auditor.amplitude_por_quintis(x, [0] * 500)
+        assert [f["n"] for f in m["faixas"]] == [120, 80, 100, 100, 100]
+
+    def test_empate_atravessando_varios_cortes_no_meio(self):
+        x = list(range(150)) + [150] * 250 + list(range(151, 251))
+        m = auditor.amplitude_por_quintis(x, [0] * 500)
+        assert [f["n"] for f in m["faixas"]] == [100, 300, 100]
+        assert all(f["n"] > 1 for f in m["faixas"])
+
+    def test_nenhuma_faixa_repete_valor(self):
+        x = [0] * 120 + [1] * 120 + [2] * 260
+        m = auditor.amplitude_por_quintis(x, [0] * 500)
+        assert [(f["valor_minimo"], f["valor_maximo"]) for f in m["faixas"]] == [
+            (0, 0), (1, 1), (2, 2)]
+
+    def test_invariante_a_permutacao_da_entrada(self):
+        import random
+        # B7 (auditoria de 17/09): `y` varia DENTRO do empate — do contrário
+        # uma partição que dividisse o empate também passaria.
+        x = [0] * 400 + list(range(1, 101))
+        y = [i % 2 for i in range(500)]
+        pares = list(zip(x, y))
+        base = auditor.amplitude_por_quintis(x, y)
+        random.Random(3).shuffle(pares)
+        outro = auditor.amplitude_por_quintis([p[0] for p in pares], [p[1] for p in pares])
+        assert base == outro
+
+    def test_limiar_de_t1_nao_mudou(self):
+        assert auditor.T1_AMPLITUDE == 0.15
+
+
+class TestT2AucZeroR6:
+    def test_auc_zero_e_publicada_como_zero(self, monkeypatch):
+        """O exemplo da conferência: dois exemplos, escores [0, 1], eventos [1, 0]."""
+        amostra = [{"cd_cvm": "A", "s": 0.0, "y": 1}, {"cd_cvm": "A", "s": 1.0, "y": 0}]
+        r = auditor.teste_t2(amostra, "s", +1)
+        assert r["auc_agregada"] == 0.0
+        assert r["auc_intra_companhia"] == 0.0
+        assert r["lacuna"] == 0.0
+
+
+class TestB0ComIntervalo:
+    @staticmethod
+    def _amostra(companhias, positivos_por_cia):
+        return [{"cd_cvm": f"C{c}", "y": int(i < positivos_por_cia),
+                 **{k: float(i) for k in auditor.COMPONENTES_T1}}
+                for c in range(companhias) for i in range(20)]
+
+    def test_acerto_com_ic95_agrupado(self):
+        b0 = auditor.medir_baselines(self._amostra(40, 2))["baselines"]["B0_sempre_nao_consumir"]
+        assert b0["acerto"] == pytest.approx(0.9)
+        ic = b0["acerto_ic95"]
+        assert ic["inferior"] <= 0.9 <= ic["superior"]
+        assert ic["reamostragens_validas"] >= auditor.MINIMO_DE_REAMOSTRAGENS_VALIDAS
+        assert b0["completo"] is True
+
+    def test_sem_ic_valido_b0_e_incompleto_e_bloqueia(self, monkeypatch):
+        monkeypatch.setattr(auditor, "REAMOSTRAGENS", 3)
+        r = auditor.medir_baselines(self._amostra(40, 2))
+        b0 = r["baselines"]["B0_sempre_nao_consumir"]
+        assert b0["completo"] is False and b0["motivos_de_incompletude"]
+        assert "B0_sempre_nao_consumir" in r["baselines_incompletos"]
+        assert r["todos_completos"] is False
+
+    def test_nome_antigo_nao_existe_mais(self):
+        r = auditor.medir_baselines(self._amostra(40, 2))
+        assert "B0_classe_majoritaria" not in r["baselines"]

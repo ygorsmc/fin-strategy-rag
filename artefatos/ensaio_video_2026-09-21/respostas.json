@@ -1,0 +1,58 @@
+[
+  {
+    "etapa": "livre · porta 4 (RAG pago)",
+    "pergunta": "Segundo o release do Bradesco, por que a margem financeira variou no 3T2025?",
+    "segundos": 14.73,
+    "excecao": [],
+    "erros_tela": [],
+    "resposta": "**Recusa (RN02):** Rebaixada por RN02: ao menos um valor numérico da resposta não aparece nos trechos citados.",
+    "modo": "pergunta livre (inferência ao vivo)",
+    "provedor": "gemini/gemini-3.5-flash-lite",
+    "fontes": [
+      {
+        "rotulo": "BRADESCO · bradesco_release_3T2025 · págs. 9–10",
+        "trecho": "movimentação do lucro recorrente no trimestre | R$ milhões\nSet25 · Jun25 · Set24 · Set25 x Set24\n,0** · **(1,7) p.p.**\nGE · 33,0 · 33,9 · 37,5 · (4,5) p.p.\nMPME · 23,3 · 22,6 · 20,5 · 2,8 p.p.\nvariação da margem com clientes | R$ milhões\nA margem financeira com clientes apresentou crescimento de 5% no trimestre, tracionada por todos os componentes, destacando a evolução consistente do volume de crédito, o aumento da margem com passivos, resultado da maior eficiência na captação, a melhoria no mix e, também, do efeito calendário no período. Como resultado dessa dinâmica, a taxa média bruta expandiu 0,2 p.p. no trimestre, atingindo 9% no 3T25.\nNa margem de crédito a evolução advém, principalmente, do aumento das operações no MPME, com destaque para capital de giro (FGI e FGO) e em pessoas fí",
+        "citada": false
+      },
+      {
+        "rotulo": "BRADESCO · bradesco_release_3T2025 · págs. 12–12",
+        "trecho": "variação da margem com clientes | R$ milhões\nR$ milhões · Set25 · Jun25 · Set24 · Variação %\nTrimestre · 12 meses\n**\\\\ Pessoas Físicas** · **451.568** · **442.446** · **396.837** · **2,1** · **13,8**\n**Financiamento ao Consumo** · **290.993** · **285.485** · **267.470** · **1,9** · **8,8**\nCrédito Consignado · 101.850 · 99.390 · 96.364 · 2,5 · 5,7\nCartão de Crédito · 77.645 · 76.303 · 71.040 · 1,8 · 9,3\nCrédito Pessoal · 71.322 · 71.797 · 64.666 · (0,7) · 10,3\nCDC/Leasing de Veículos · 40.176 · 37.993 · 35.400 · 5,7 · 13,5\n**Financiamento Imobiliário** · **111.993** · **111.303** · **97.797** · **0,6** · **14,5**\n**Demais Produtos** · **48.582** · **45.658** · **31.569** · **6,4** · **53,9**\nCrédito Rural · 39.067 · 36.123 · 22.245 · 8,2 · 75,6\nOutros · 9.515 · 9.535 · 9.324 · (0,2) · 2,0\n",
+        "citada": false
+      },
+      {
+        "rotulo": "BRADESCO · bradesco_release_3T2025 · págs. 12–12",
+        "trecho": "variação da margem com clientes | R$ milhões\nR$ milhões · Set25 · Jun25 · Set24 · Variação %\nTVMs · 86.943 · 90.666 · 90.016 · (4,1) · (3,4)\nFinanciamento ao Comércio Exterior · 51.770 · 53.114 · 56.107 · (2,5) · (7,7)\nCrédito Rural · 44.390 · 43.298 · 34.527 · 2,5 · 28,6\nFinanciamento Imobiliário · 32.869 · 31.404 · 28.187 · 4,7 · 16,6\nCDC/Leasing · 30.752 · 30.045 · 28.560 · 2,4 · 7,7\nRepasses BNDES/Finame · 20.975 · 20.636 · 17.443 · 1,6 · 20,2\nOutros · 41.124 · 40.535 · 41.408 · 1,5 · (0,7)\n**\\\\ Total da Carteira de Crédito Expandida** · **1.034.238** · **1.018.426** · **943.891** · **1,6** · **9,6**\nMoeda Nacional · 930.193 · 914.359 · 849.516 · 1,7 · 9,5\nMoeda Estrangeira · 104.045 · 104.067 · 94.375 · - · 10,2",
+        "citada": false
+      },
+      {
+        "rotulo": "BRADESCO · bradesco_release_3T2025 · págs. 8–8",
+        "trecho": "R$ milhões · 3T25 · 2T25 · 3T24 · 9M25 · 9M24 · Variação %\n3T25 x 2T25 · 3T25 x 3T24 · 9M25 x 9M24\n**\\\\ Margem Financeira** · **18.710** · **18.044** · **15.999** · **53.987** · **46.731** · **3,7** · **16,9** · **15,5**\nMargem com Clientes · 18.611 · 17.756 · 15.635 · 53.138 · 45.412 · 4,8 · 19,0 · 17,0\nMargem com Mercado · 99 · 288 · 364 · 849 · 1.319 · (65,6) · (72,8) · (35,6)\n**\\\\ Despesa de PDD Expandida** · **(8.560)** · **(8.142)** · **(7.127)** · **(24.344)** · **(22.228)** · **5,1** · **20,1** · **9,5**\n**\\\\ Margem Financeira Líquida** · **10.150** · **9.902** · **8.872** · **29.643** · **24.503** · **2,5** · **14,4** · **21,0**\n**\\\\ Margem com Clientes Líquida** · **10.051** · **9.614** · **8.508** · **28.794** · **23.184** · **4,5** · **18,1** · **24,2**\nResultado das Operações ",
+        "citada": false
+      },
+      {
+        "rotulo": "BRADESCO · bradesco_release_3T2025 · págs. 10–10",
+        "trecho": "variação da margem com clientes | R$ milhões\nR$ milhões · Set25 · Jun25 · Set24 · Variação %\nTrimestre · 12 meses\nDepósitos à Vista · 36.496 · 32.199 · 45.398 · 13,3 · (19,6)\nDepósitos de Poupança · 123.974 · 127.353 · 129.743 · (2,7) · (4,4)\nDepósitos a Prazo + Debêntures · 532.385 · 506.487 · 458.442 · 5,1 · 16,1\nEmpréstimos e Repasses · 76.012 · 80.257 · 66.273 · (5,3) · 14,7\nRecursos de Emissão de Títulos · 316.272 · 295.879 · 269.409 · 6,9 · 17,4\nDepósitos Interfinanceiros · 5.499 · 1.199 · 2.835 · - · 94,0\nDívidas Subordinadas · 51.962 · 60.254 · 52.495 · (13,8) · (1,0)\n**\\\\ Subtotal** · **1.142.600** · **1.103.628** · **1.024.594** · **3,5** · **11,5**\nCaptações no Mercado Aberto · 329.377 · 316.022 · 315.711 · 4,2 · 4,3\nCapital de Giro Próprio / Administrados · 132.810 · 130.447 · ",
+        "citada": false
+      }
+    ],
+    "fatos": null,
+    "citacoes": null,
+    "custo_sessao_usd": 0.0016902,
+    "chamadas_sessao": 1
+  },
+  {
+    "etapa": "livre · porta 4 (RAG pago)",
+    "pergunta": "Segundo o release do Santander, qual foi o resultado gerencial no 2T2019?",
+    "segundos": 3.4,
+    "excecao": [],
+    "erros_tela": [],
+    "resposta": "**Recusa (RN02):** Não há evidência suficiente nos trechos recuperados.",
+    "modo": "pergunta livre (inferência ao vivo)",
+    "provedor": "gemini/gemini-3.5-flash-lite",
+    "fontes": [],
+    "fatos": null,
+    "citacoes": null,
+    "custo_sessao_usd": 0.0020316,
+    "chamadas_sessao": 2
+  }
+]

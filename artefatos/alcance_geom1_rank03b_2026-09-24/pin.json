@@ -1,0 +1,17 @@
+{
+  "data": "2026-09-24",
+  "contrato": "resultados/contratos_alcance_geom1_rank03b_2026-09-24.md",
+  "contrato_sha256": "5b97018f1e5d7464898aa2c95043684eba42dfcf3202bac4c839a6d3dc206633",
+  "origem": "artefatos/escala_geometrica_rank03b_2026-09-18/extensao/evidencias.jsonl",
+  "origem_sha256": "d5fd851ce66e0b5c3005f1b106f22ffcfa016b4978770e9d21ccc3f28db27ad3",
+  "fontes": [
+    {"id_doc": "140867", "cd_cvm": "021520", "dt_refer": "2024-06-30", "sha256": "35571da80c582f26ace27f94b0f9f02dcddf30f70498e663d61f5ef75087f105"},
+    {"id_doc": "142900", "cd_cvm": "021520", "dt_refer": "2024-09-30", "sha256": "4cc8d45a42fecc590023b80255c1a5cbb48c8c9da0e86bc528c105faf945efb2"}
+  ],
+  "referencia_protegidos": "artefatos/escala_geometrica_rank03b_2026-09-18/selecao.json",
+  "sete_protegidos_identicos_antes": true,
+  "codigo_e_contratos_geom1_identicos_ao_pin_da_verificacao": true,
+  "fontes_adicionais_lidas_antes_deste_pin": false,
+  "promocao_autorizada": false,
+  "alvo_autorizado": false
+}

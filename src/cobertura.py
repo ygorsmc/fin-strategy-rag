@@ -47,14 +47,18 @@ from src.mapa_contas import (
     CONCEITO_ATIVO_TOTAL,
     CONCEITO_LUCRO_CONSOLIDADO,
     CONCEITO_LUCRO_CONTROLADORES,
+    CONCEITO_LUCRO_NAO_CONTROLADORES,
     CONCEITO_PATRIMONIO_LIQUIDO,
     CONCEITO_RECEITA_INTERMEDIACAO,
+    CONCEITOS_DE_FLUXO,
     normalizar_cd_cvm,
 )
 from src.normalizacao import (
     APELIDOS_BANCOS,
+    PeriodoPedido,
     canonizar_banco,
     extrair_bancos_citados,
+    extrair_periodos_citados,
     extrair_trimestres_citados,
     remover_acentos,
 )
@@ -811,6 +815,28 @@ def formatar_reais(valor: float) -> str:
     return f"R$ {sinal}{'.'.join(grupos)},{decimais}"
 
 
+def formatar_reais_legivel(valor: float) -> str:
+    """`R$ 5,24 bilhões` para leitura; o valor exato segue ao lado na tela.
+
+    Arredonda para duas casas na escala — é para ler em voz alta, nunca para
+    conferir. Por isso a resposta do painel mostra os dois, e a coluna `valor`
+    da tabela continua exata.
+    """
+    absoluto = abs(float(valor))
+    for escala, singular, plural in (
+        (1e12, "trilhão", "trilhões"),
+        (1e9, "bilhão", "bilhões"),
+        (1e6, "milhão", "milhões"),
+    ):
+        if absoluto >= escala:
+            numero = f"{absoluto / escala:.2f}".replace(".", ",")
+            # Norma culta: "1,5 bilhão", "2 bilhões" — singular abaixo de dois.
+            unidade = singular if absoluto / escala < 2 else plural
+            sinal = "-" if valor < 0 else ""
+            return f"{sinal}R$ {numero} {unidade}"
+    return formatar_reais(valor)
+
+
 @dataclass(frozen=True)
 class RespostaDeterministica:
     """Saída do braço C — montada por gabarito fixo, sem nenhuma chamada de LLM.
@@ -1031,6 +1057,125 @@ def responder_por_gabarito(
         parcial=parcial and not recusa,
         triagens=triagens,
         fatos=tuple(fatos),
+    )
+
+
+# Rótulo de prosa. `ROTULO_CONCEITO` é preciso e serve à auditoria — é ele que
+# vai para a tabela de fatos e para a citação da RN01. Repetido dentro de cada
+# frase, porém, era metade do que tornava a resposta ilegível: "lucro líquido
+# atribuído aos sócios da empresa controladora" seis vezes seguidas.
+#
+# O parêntese em "lucro líquido (controladores)" fica de propósito. As três
+# leituras de lucro diferem em centenas de milhões (medido: R$ 294 mi no
+# 3T2025 do Itaú), e chamar a leitura dos controladores só de "lucro líquido"
+# economizaria uma palavra ao preço da distinção que o projeto existe para
+# manter.
+ROTULO_CURTO_CONCEITO: Mapping[str, str] = {
+    CONCEITO_LUCRO_CONSOLIDADO: "lucro líquido consolidado",
+    CONCEITO_LUCRO_CONTROLADORES: "lucro líquido (controladores)",
+    CONCEITO_LUCRO_NAO_CONTROLADORES: "lucro líquido dos não controladores",
+    CONCEITO_PATRIMONIO_LIQUIDO: "patrimônio líquido",
+    CONCEITO_ATIVO_TOTAL: "ativo total",
+    CONCEITO_RECEITA_INTERMEDIACAO: "receita de intermediação financeira",
+}
+
+
+def rotulo_curto(conceito: str) -> str:
+    """Nome do conceito para prosa, com queda para o rótulo de auditoria."""
+    return ROTULO_CURTO_CONCEITO.get(
+        conceito, ROTULO_CONCEITO.get(conceito, conceito)
+    )
+
+
+def _valor_com_marca(fato: FatoEstruturado) -> str:
+    """`R$ 11,91 bilhões (derivado)` — legível, com a marca da RN10 colada."""
+    legivel = formatar_reais_legivel(fato.valor_reais)
+    return f"{legivel} (derivado)" if fato.derivado else legivel
+
+
+def _enumerar(partes: list[str]) -> str:
+    """`a`, `a e b`, `a, b e c` — enumeração em português, não lista de log."""
+    if len(partes) <= 1:
+        return "".join(partes)
+    return f"{', '.join(partes[:-1])} e {partes[-1]}"
+
+
+def _frase_do_grupo(
+    fatos: tuple[FatoEstruturado, ...], intervalo: PeriodoPedido | None
+) -> str:
+    """Uma frase para um (companhia, conceito) — somando só quando é lícito."""
+    conceito = fatos[0].conceito
+    rotulo = rotulo_curto(conceito)
+    empresa = fatos[0].denom_social
+
+    if len(fatos) == 1:
+        fato = fatos[0]
+        exato = formatar_reais(fato.valor_reais)
+        marca = " — valor derivado (RN10)" if fato.derivado else ""
+        return (
+            f"O {rotulo} de {empresa} em {fato.trimestre} foi de "
+            f"{formatar_reais_legivel(fato.valor_reais)} ({exato}){marca}."
+        )
+
+    cobre_o_intervalo = intervalo is not None and {
+        f.trimestre for f in fatos
+    } == set(intervalo.trimestres)
+    partes = _enumerar(
+        [f"{_valor_com_marca(f)} em {f.trimestre}" for f in fatos]
+    )
+
+    # Somar trimestres só vale para conta de resultado. Saldo de balanço é
+    # instantâneo: somar dois 31/12 não produz patrimônio nenhum, produz um
+    # número plausível e sem significado — a falha exata que o projeto combate.
+    if cobre_o_intervalo and conceito in CONCEITOS_DE_FLUXO:
+        total = sum(f.valor_reais for f in fatos)
+        houve_derivado = any(f.derivado for f in fatos)
+        nota = " Inclui valor derivado (RN10)." if houve_derivado else ""
+        return (
+            f"O {rotulo} de {empresa} no {intervalo.rotulo} foi de "
+            f"{formatar_reais_legivel(total)} ({formatar_reais(total)}), "
+            f"soma de {partes}.{nota}"
+        )
+    if cobre_o_intervalo:
+        return (
+            f"{rotulo.capitalize()} é saldo de balanço e não se soma entre "
+            f"trimestres. De {empresa}: {partes}."
+        )
+    return f"O {rotulo} de {empresa}: {partes}."
+
+
+def redigir_conversacional(
+    resposta: RespostaDeterministica, pergunta: str = ""
+) -> str:
+    """Resposta do painel em prosa direta, para a interface.
+
+    `RespostaDeterministica.resposta` descreve **cobertura** e depois enfileira
+    uma frase completa por fato — formato certo para o braço C, que é medido
+    contra os braços com agente e precisa expor o que sabe. Na tela do produto
+    isso virava uma parede: nome da companhia e do conceito repetidos a cada
+    trimestre, precedidos de um parágrafo sobre camadas que ninguém perguntou.
+
+    Aqui a mesma evidência é dita uma vez. O que sustenta as regras não sai da
+    tela, muda de lugar: a procedência da RN01 vive na tabela de fatos e no
+    expansor de citações, a marca da RN10 fica colada ao valor, e a ausência da
+    RN12 continua sendo declarada — quando há o que declarar.
+    """
+    if resposta.precisa_desambiguacao or resposta.recusa or not resposta.fatos:
+        # Desambiguação, recusa classificada e "o painel não traz X em Y" já
+        # são curtas e carregam o motivo; reescrevê-las só perderia informação.
+        return resposta.resposta
+
+    periodos = extrair_periodos_citados(pergunta or "")
+    intervalo = (
+        periodos[0] if len(periodos) == 1 and periodos[0].e_intervalo else None
+    )
+
+    grupos: dict[tuple[str, str], list[FatoEstruturado]] = {}
+    for fato in resposta.fatos:
+        grupos.setdefault((fato.cd_cvm, fato.conceito), []).append(fato)
+
+    return " ".join(
+        _frase_do_grupo(tuple(fatos), intervalo) for fatos in grupos.values()
     )
 
 

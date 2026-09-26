@@ -1,0 +1,54 @@
+{
+  "data": "2026-09-18",
+  "auditor": "auditor_conformidade_crf",
+  "registro": "Parecer do agente independente transcrito pelo agente principal",
+  "modo": "somente leitura, contexto separado",
+  "veredito": "CRF-01/02 fechados no instrumento e CRF-03 fechado na documentação; nenhum achado remanescente nesta conferência",
+  "instrumento": {
+    "contraprovas_e_controles_positivos_confirmados": true,
+    "sem_alteracao_operacional_apos_fechamento_auditado": true
+  },
+  "procedencia": {
+    "hashes_finais_e_pins_conferem": true,
+    "vinculo_dos_artefatos_confere": true,
+    "tres_arquivos_protegidos_inalterados": true,
+    "mesmos_405_ids_e_transicoes_recontados": true,
+    "script_e_saida_da_comparacao_exaustiva_revisados": true,
+    "diferencas_nas_tres_tabelas": 0
+  },
+  "cobertura_operacional": {
+    "veredito": "insuficiente",
+    "tabelas_reconhecidas": 0,
+    "provas_aceitas": 0,
+    "documentos_indecidiveis": 405,
+    "correcoes_vigentes": 0,
+    "ressalva": "Não demonstra que as 68 correções antigas eram economicamente erradas"
+  },
+  "documentacao": {
+    "pre_registro_rascunho": true,
+    "decisoes_pendentes": 5,
+    "execucoes_anteriores_rotuladas_historicas": true,
+    "p3_adjacente_achado_e_corrigido": "Aviso do lote C ainda dizia estado vigente v3/G0 aprovado; agora histórico/substituído, com link para a execução 4b"
+  },
+  "estado": {
+    "g0": "REPROVADO",
+    "g1": "somente diagnóstico",
+    "congelamento_autorizado": false,
+    "treino_autorizado": false
+  },
+  "suite_xml_conferida": {
+    "testes": 2615,
+    "falhas": 0,
+    "erros": 0,
+    "skips": 0
+  },
+  "limites_da_conferencia_independente": {
+    "readjudicacao_integral_repetida_pelo_auditor": false,
+    "reconstrucao_integral_repetida_pelo_auditor": false,
+    "registros_codigo_de_reproducao_e_vinculos_conferidos": true,
+    "nenhum_arquivo_editado_pelo_auditor": true,
+    "rotulo_real_nao_calculado": true,
+    "sem_holdout": true,
+    "sem_rede": true
+  }
+}

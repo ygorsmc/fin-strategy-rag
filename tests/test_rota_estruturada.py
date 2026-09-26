@@ -221,6 +221,45 @@ class TestEncaminhamento:
         assert "RN12" in item["modo"]
 
 
+class TestPeriodoPorExtenso:
+    """Regressão de 2026-09-20: pergunta com período em português corrido
+    devolvia a série inteira em vez do que foi pedido.
+
+    `_leitor()` só tem dado no 3T2025 e no 4T2025 do BB; qualquer outro
+    trimestre pedido é ausência real — o painel de produção teria a mesma
+    lacuna para 2T2024, fora da janela consultável (§3.5).
+    """
+
+    def test_periodo_por_extenso_e_reconhecido_e_nao_despeja_a_serie(self, rota):
+        item = app.responder_estruturada_se_couber(
+            "Qual foi o lucro líquido do Itaú no terceiro trimestre de 2025?"
+        )
+        assert item is not None
+        assert item["fatos"][0]["valor"] == "R$ 11.306.000.000,00"
+        assert item["fatos"][0]["trimestre"] == "3T2025"
+        # A prova de que não houve despejo: só um fato voltou, não a série.
+        assert len(item["fatos"]) == 1
+
+    def test_periodo_fora_da_janela_recusa_curto_em_vez_de_listar_outros(
+        self, rota
+    ):
+        """O usuário DISSE o período; ausência dele não pode virar "aqui está
+        tudo que eu tenho", que é informação que ninguém pediu.
+
+        `descrever_cobertura` ainda cita os trimestres que o painel TEM — isso
+        é RN12 (declarar o que existe), não o defeito. O defeito era o valor de
+        OUTRO trimestre aparecer como se respondesse à pergunta: é isso que a
+        asserção sobre `fatos` prova, sem depender da frase de cobertura.
+        """
+        item = app.responder_estruturada_se_couber(
+            "Qual foi o lucro líquido do Itaú no segundo trimestre de 2024?"
+        )
+        assert item is not None
+        assert item["fatos"] == []  # nenhum valor voltou como resposta
+        assert "2T2024" in item["resposta"]
+        assert "R$ 11.306.000.000,00" not in item["resposta"]  # valor do 3T2025
+
+
 class TestRN10:
     def test_valor_derivado_sai_marcado(self, rota):
         item = app.responder_estruturada_se_couber(
@@ -558,10 +597,20 @@ class TestStreaming:
 
     def test_nao_ha_streaming_de_token_cru_do_provedor(self):
         """RN02 só decide com o texto inteiro; transmitir o rascunho poria na
-        tela o número que a guarda derruba um segundo depois."""
+        tela o número que a guarda derruba um segundo depois.
+
+        Substituição declarada (2026-09-18): o literal era
+        `_fluxo_de_texto(msg["conteudo"])`. Passou a escapar o `$` na exibição
+        para que dois `R$` não virem fórmula LaTeX no markdown
+        (`tests/test_apresentacao_interface.py::TestCifrao`). A origem do
+        fluxo continua sendo o conteúdo validado do histórico, e o gerador
+        continua devolvendo o texto intacto (caso acima)."""
         fonte = (RAIZ / "app_streamlit.py").read_text(encoding="utf-8")
         assert "stream=True" not in fonte
-        assert 'st.write_stream(_fluxo_de_texto(msg["conteudo"]))' in fonte, (
+        assert (
+            'st.write_stream(_fluxo_de_texto(_escapar_cifrao(msg["conteudo"])))'
+            in fonte
+        ), (
             "o que se transmite é o conteúdo já validado do histórico"
         )
 

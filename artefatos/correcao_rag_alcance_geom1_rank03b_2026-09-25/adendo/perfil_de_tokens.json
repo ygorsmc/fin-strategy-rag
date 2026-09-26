@@ -1,0 +1,92 @@
+{
+  "sentido": "motivos dos tokens nas notas; independe de alvo; sem leitura do XML",
+  "codigo_sha256": "ebe90e3e594e95607be2e3be9b979402d1233a7827c07329d52d799f3487a735",
+  "documentos": [
+    {
+      "id_doc": "140867",
+      "modos": {
+        "-layout": {
+          "tokens": 3158,
+          "aceitos_com_sinal": {
+            "limpo": 2320,
+            "parenteses": 403
+          },
+          "recusados": {
+            "fora_da_gramatica": 141
+          },
+          "recusados_com_forma_de_data": 80,
+          "ambiguos": {
+            "abre_sem_fecha": 19,
+            "colado_a_palavra": 1,
+            "fecha_sem_abre": 46,
+            "sinal_depois_do_token": 3,
+            "sinal_seguido_de_espaco": 54,
+            "varios_sinais": 171
+          }
+        },
+        "-raw": {
+          "tokens": 3158,
+          "aceitos_com_sinal": {
+            "limpo": 2320,
+            "parenteses": 403
+          },
+          "recusados": {
+            "fora_da_gramatica": 141
+          },
+          "recusados_com_forma_de_data": 80,
+          "ambiguos": {
+            "abre_sem_fecha": 19,
+            "colado_a_palavra": 1,
+            "fecha_sem_abre": 46,
+            "sinal_depois_do_token": 3,
+            "sinal_seguido_de_espaco": 54,
+            "varios_sinais": 171
+          }
+        }
+      }
+    },
+    {
+      "id_doc": "142900",
+      "modos": {
+        "-layout": {
+          "tokens": 2769,
+          "aceitos_com_sinal": {
+            "limpo": 2062,
+            "parenteses": 342
+          },
+          "recusados": {
+            "fora_da_gramatica": 120
+          },
+          "recusados_com_forma_de_data": 64,
+          "ambiguos": {
+            "abre_sem_fecha": 21,
+            "colado_a_palavra": 1,
+            "fecha_sem_abre": 42,
+            "sinal_depois_do_token": 3,
+            "sinal_seguido_de_espaco": 41,
+            "varios_sinais": 137
+          }
+        },
+        "-raw": {
+          "tokens": 2769,
+          "aceitos_com_sinal": {
+            "limpo": 2062,
+            "parenteses": 342
+          },
+          "recusados": {
+            "fora_da_gramatica": 120
+          },
+          "recusados_com_forma_de_data": 64,
+          "ambiguos": {
+            "abre_sem_fecha": 21,
+            "colado_a_palavra": 1,
+            "fecha_sem_abre": 42,
+            "sinal_depois_do_token": 3,
+            "sinal_seguido_de_espaco": 41,
+            "varios_sinais": 137
+          }
+        }
+      }
+    }
+  ]
+}

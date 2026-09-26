@@ -1,0 +1,239 @@
+{
+  "desenho": [
+    {
+      "id_doc": "65416",
+      "cd_cvm": "014346",
+      "conjunto": "itr",
+      "dt_refer": "2017-03-31",
+      "versao": 1,
+      "formato": "formulario_zip",
+      "escala_declarada": "MIL",
+      "sha256": "45f05141786f2eb7fdcb7ffbd36864e772fcdee4cf3257556c1964b05d8bab3e"
+    },
+    {
+      "id_doc": "65246",
+      "cd_cvm": "023868",
+      "conjunto": "itr",
+      "dt_refer": "2017-03-31",
+      "versao": 1,
+      "formato": "formulario_zip",
+      "escala_declarada": "MIL",
+      "sha256": "38b44fc5f10e159e410e67c17b7dc41f64db4b0ffdc4b5c57b1fc5bf74693ff9"
+    },
+    {
+      "id_doc": "106749",
+      "cd_cvm": "020125",
+      "conjunto": "itr",
+      "dt_refer": "2021-06-30",
+      "versao": 1,
+      "formato": "formulario_zip",
+      "escala_declarada": "UNIDADE",
+      "sha256": "be268c288b6664399d2e28b6ca1780ac5c74cb1e97236113200d746552bbce56"
+    },
+    {
+      "id_doc": "96466",
+      "cd_cvm": "025470",
+      "conjunto": "dfp",
+      "dt_refer": "2019-12-31",
+      "versao": 1,
+      "formato": "formulario_zip",
+      "escala_declarada": "UNIDADE",
+      "sha256": "894bd64e456ed44d19cda0ca26508baafbb00d2397467a4736fa6bfc55ddd956"
+    },
+    {
+      "id_doc": "126849",
+      "cd_cvm": "026336",
+      "conjunto": "itr",
+      "dt_refer": "2023-03-31",
+      "versao": 1,
+      "formato": "xml_unico",
+      "escala_declarada": "MIL",
+      "sha256": "5e430f69afec51abc2065a9ed07a5dfdcfa4f6707b52a16aae618e6713af3cd0"
+    },
+    {
+      "id_doc": "157672",
+      "cd_cvm": "022810",
+      "conjunto": "itr",
+      "dt_refer": "2026-03-31",
+      "versao": 1,
+      "formato": "xml_unico",
+      "escala_declarada": "MIL",
+      "sha256": "4e1e80b6413276e526bf147963895881e1d29794ecfb0d7822a664dc8cacc920"
+    },
+    {
+      "id_doc": "142900",
+      "cd_cvm": "021520",
+      "conjunto": "itr",
+      "dt_refer": "2024-09-30",
+      "versao": 1,
+      "formato": "xml_unico",
+      "escala_declarada": "UNIDADE",
+      "sha256": "4cc8d45a42fecc590023b80255c1a5cbb48c8c9da0e86bc528c105faf945efb2"
+    },
+    {
+      "id_doc": "144031",
+      "cd_cvm": "080233",
+      "conjunto": "dfp",
+      "dt_refer": "2023-12-31",
+      "versao": 1,
+      "formato": "xml_unico",
+      "escala_declarada": "UNIDADE",
+      "sha256": "be3cb0a9187c9398877e1bc469c7596dd05bf8f047b5539115b897b2e1ac2b12"
+    }
+  ],
+  "verificacao": [
+    {
+      "id_doc": "88859",
+      "cd_cvm": "024597",
+      "conjunto": "itr",
+      "dt_refer": "2019-09-30",
+      "versao": 1,
+      "formato": "formulario_zip",
+      "escala_declarada": "MIL",
+      "sha256": "1adb6e5fa0fed3f9dd7afe5f2a5e5e8903188a619ae780914f512e03efd4a291"
+    },
+    {
+      "id_doc": "81935",
+      "cd_cvm": "024589",
+      "conjunto": "dfp",
+      "dt_refer": "2018-12-31",
+      "versao": 2,
+      "formato": "formulario_zip",
+      "escala_declarada": "MIL",
+      "sha256": "61f8f4c770c80c5b40f0ee3db3a1b57d34fa4c69a6221a5c58ab0e0ef1d86496"
+    },
+    {
+      "id_doc": "42996",
+      "cd_cvm": "010596",
+      "conjunto": "itr",
+      "dt_refer": "2012-03-31",
+      "versao": 1,
+      "formato": "formulario_zip",
+      "escala_declarada": "MIL",
+      "sha256": "288cb7a8ee264fd96d8e9e15807bb7bd9118920e947ef5f4f46de1d6297e090b"
+    },
+    {
+      "id_doc": "98282",
+      "cd_cvm": "003328",
+      "conjunto": "itr",
+      "dt_refer": "2020-09-30",
+      "versao": 1,
+      "formato": "formulario_zip",
+      "escala_declarada": "UNIDADE",
+      "sha256": "2a2464d7fd99acb712bc7d974926123bbbfc6c8b630c9ca60be0cc79a0474487"
+    },
+    {
+      "id_doc": "35423",
+      "cd_cvm": "022144",
+      "conjunto": "dfp",
+      "dt_refer": "2013-12-31",
+      "versao": 1,
+      "formato": "formulario_zip",
+      "escala_declarada": "UNIDADE",
+      "sha256": "b79aedbaacc72988d34cd59869e8116a3640800f55c08f537a68c476ec62f8f4"
+    },
+    {
+      "id_doc": "80202",
+      "cd_cvm": "017558",
+      "conjunto": "itr",
+      "dt_refer": "2018-03-31",
+      "versao": 1,
+      "formato": "formulario_zip",
+      "escala_declarada": "UNIDADE",
+      "sha256": "6a61049fd9505c15c2d508b08f48454163fa789a398b2807cb090dc7e4b47469"
+    },
+    {
+      "id_doc": "157621",
+      "cd_cvm": "026948",
+      "conjunto": "itr",
+      "dt_refer": "2026-03-31",
+      "versao": 1,
+      "formato": "xml_unico",
+      "escala_declarada": "MIL",
+      "sha256": "543ff38ff8d03a852c4a67aee8ef0fe0179b64c1a8b53159f1a651e9fa5221d7"
+    },
+    {
+      "id_doc": "113445",
+      "cd_cvm": "025976",
+      "conjunto": "dfp",
+      "dt_refer": "2021-12-31",
+      "versao": 1,
+      "formato": "xml_unico",
+      "escala_declarada": "MIL",
+      "sha256": "c6c64519050a085145e7cf886c44cc9df9998f9683291d0651793c6b9672b6a1"
+    },
+    {
+      "id_doc": "145037",
+      "cd_cvm": "007870",
+      "conjunto": "dfp",
+      "dt_refer": "2024-12-31",
+      "versao": 1,
+      "formato": "xml_unico",
+      "escala_declarada": "MIL",
+      "sha256": "2a917794a06eba0587ae79cbedb94017bf927377ea0c454b7576aba92759ad4f"
+    },
+    {
+      "id_doc": "156260",
+      "cd_cvm": "016705",
+      "conjunto": "dfp",
+      "dt_refer": "2025-12-31",
+      "versao": 2,
+      "formato": "xml_unico",
+      "escala_declarada": "UNIDADE",
+      "sha256": "392fa3ede1fa95dcbf2510ff0129f61c6e8ff06d27f45732c314a86cff78a730"
+    },
+    {
+      "id_doc": "128954",
+      "cd_cvm": "027006",
+      "conjunto": "itr",
+      "dt_refer": "2022-09-30",
+      "versao": 1,
+      "formato": "xml_unico",
+      "escala_declarada": "UNIDADE",
+      "sha256": "6dac0a202a205ce9ab03642f990b4b7e2eccbeebc06f1fed258eb98901a93f53"
+    },
+    {
+      "id_doc": "153388",
+      "cd_cvm": "023426",
+      "conjunto": "itr",
+      "dt_refer": "2025-09-30",
+      "versao": 1,
+      "formato": "xml_unico",
+      "escala_declarada": "UNIDADE",
+      "sha256": "0fd786407af3e34d89a1338bb92dffeb279a8dfdc55efb7ddd05a8f03c73601d"
+    }
+  ],
+  "sentinelas": [
+    {
+      "id_doc": "76468",
+      "cd_cvm": "021717",
+      "conjunto": "itr",
+      "dt_refer": "2018-06-30",
+      "versao": 1,
+      "formato": "formulario_zip",
+      "escala_declarada": "UNIDADE",
+      "sha256": "4875c76f8407b0db1377c8249e6f67742eb4b25ee19031b1c4aba117c6dc9e3b"
+    },
+    {
+      "id_doc": "152742",
+      "cd_cvm": "027570",
+      "conjunto": "itr",
+      "dt_refer": "2025-09-30",
+      "versao": 1,
+      "formato": "xml_unico",
+      "escala_declarada": "UNIDADE",
+      "sha256": "ff2b0b4d534d245962b1aab75ffa4c9c3eece14caaa530799fca1617806958ac"
+    }
+  ],
+  "entradas_sha256": {
+    "artefatos/painel_pesquisa_rank03b/adjudicacao/evidencias.jsonl": "49ea0bc0043218ac2f60be317642fce53449a34b00f485d3aa5674df0ba43103",
+    "resultados/contratos_escala_geometrica_rank03b_2026-09-18.md": "48e8f1e0ec60bf278794aae4fde1b6f80879da22950f359340aac2c35446f2bc",
+    "/home/ygor/Antigravity_Projects/fin-strategy-rag/scripts/reconhecer_geometria_rank03b.py": "7a763d50097ebb1d710754a1a231b6373d1aadc09500ee30a672649197f886e1",
+    "artefatos/cvm.duckdb": "43e31d9f150e535f1ab20576d9aacf1a53b83ecc5424ca7d48ba50781e4cef18",
+    "artefatos/cvm_treino.duckdb": "c1a604453a9a2fa7df24b0b2dbc53df6fb5ef0d39fd06f492407028030bc069b",
+    "/home/ygor/Antigravity_Projects/fin-strategy-rag/artefatos/painel_pesquisa_rank03b/rad/manifesto_aquisicao.jsonl": "36902f4ce38add21889bb41bfaf8c83c6264c8cfa77049acf3c5c30633cb5f8b",
+    "corpus/cvm/painel_pesquisa_rank03b/correcoes_escala.csv": "13520e61d99f221715a26ade80dc278de15a6b30c93e30a63ed6b6aa753ff07d",
+    "artefatos/painel_pesquisa_rank03b/painel.duckdb": "cbb51e8b86006c5fbc5db98b87aa3e6a544c2d51c66dbb82579f9d5073e00f53",
+    "artefatos/painel_pesquisa_rank03b/gates_g0_g1.json": "14c3a6df58c34369a11ea6c6402726e6cf0d7a4f94020bc28aecbf7260a8fbab"
+  }
+}

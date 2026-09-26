@@ -1,0 +1,5 @@
+{
+  "artefatos/cvm.duckdb": true,
+  "artefatos/cvm_treino.duckdb": true,
+  "artefatos/painel_pesquisa_rank03b/rad/manifesto_aquisicao.jsonl": true
+}

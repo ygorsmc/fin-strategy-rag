@@ -1,0 +1,113 @@
+{
+  "sentido": "execução nova contra a publicada; só booleanos e contagens",
+  "referencia": "artefatos/correcao_rag_alcance_geom1_rank03b_2026-09-25/busca/conferencia_revisao.json",
+  "referencia_sha256": "b42c7bced791ef3d1fdc07b8df293d8c90b5347ced7005251ce564bdd41e651f",
+  "nova_sha256": "bd946cad6cf5b56dc26917a620b9617aa42e635af04fde191f55341fa037933f",
+  "mudanca_de_sentido": {
+    "coluna": "Desde a correção RAG, ordem do token entre todos os tokens numéricos da linha, aceitos ou recusados. Na busca de 24/09, ordem entre os casamentos da expressão antiga, que partia token malformado em pedaços; as duas só diferem em linha com token assim.",
+    "tokens": "Desde a correção RAG, quantos tokens numéricos a linha tem, aceitos ou recusados. Na busca de 24/09, quantos casamentos da expressão antiga."
+  },
+  "sentido_de_coluna_na_nova": "Coluna é a ordem do token entre todos os tokens numéricos da linha, aceitos ou recusados, e tokens é quantos há na linha. Na busca de 24/09, os dois contavam os casamentos da expressão antiga, que partia token malformado em pedaços.",
+  "documentos": [
+    {
+      "id_doc": "140867",
+      "modos": {
+        "-layout": {
+          "paginas_iguais": true,
+          "ativo_mesmas_paginas_e_linhas": true,
+          "ativo_mesmas_colunas_e_tokens": true,
+          "ativo_mesmos_trechos": true,
+          "ativo_ocorrencias": 4,
+          "ativo_ambiguos": 0,
+          "ativo_ambiguos_na_referencia": 0,
+          "fco_mesmas_paginas": true,
+          "fco_paginas_com_correspondencia": [],
+          "tokens_fora_da_gramatica": 141,
+          "tokens_fora_da_gramatica_na_referencia": 141,
+          "tokens_com_sinal_ambiguo": 294,
+          "tokens_com_sinal_ambiguo_na_referencia": 291,
+          "paginas_com_pouco_texto": []
+        },
+        "-raw": {
+          "paginas_iguais": true,
+          "ativo_mesmas_paginas_e_linhas": true,
+          "ativo_mesmas_colunas_e_tokens": true,
+          "ativo_mesmos_trechos": true,
+          "ativo_ocorrencias": 4,
+          "ativo_ambiguos": 0,
+          "ativo_ambiguos_na_referencia": 0,
+          "fco_mesmas_paginas": true,
+          "fco_paginas_com_correspondencia": [],
+          "tokens_fora_da_gramatica": 141,
+          "tokens_fora_da_gramatica_na_referencia": 141,
+          "tokens_com_sinal_ambiguo": 294,
+          "tokens_com_sinal_ambiguo_na_referencia": 291,
+          "paginas_com_pouco_texto": []
+        }
+      },
+      "modos_concordam": [
+        true,
+        true
+      ],
+      "identidade_de_caixa_igual": true,
+      "reinventario_igual": true,
+      "xml_e_pdf_iguais": true,
+      "ativo_formas_que_so_casam_com_decimais": [
+        "consolidado_corrente_sobre_mil"
+      ]
+    },
+    {
+      "id_doc": "142900",
+      "modos": {
+        "-layout": {
+          "paginas_iguais": true,
+          "ativo_mesmas_paginas_e_linhas": true,
+          "ativo_mesmas_colunas_e_tokens": true,
+          "ativo_mesmos_trechos": true,
+          "ativo_ocorrencias": 0,
+          "ativo_ambiguos": 0,
+          "ativo_ambiguos_na_referencia": 0,
+          "fco_mesmas_paginas": true,
+          "fco_paginas_com_correspondencia": [],
+          "tokens_fora_da_gramatica": 120,
+          "tokens_fora_da_gramatica_na_referencia": 120,
+          "tokens_com_sinal_ambiguo": 245,
+          "tokens_com_sinal_ambiguo_na_referencia": 242,
+          "paginas_com_pouco_texto": []
+        },
+        "-raw": {
+          "paginas_iguais": true,
+          "ativo_mesmas_paginas_e_linhas": true,
+          "ativo_mesmas_colunas_e_tokens": true,
+          "ativo_mesmos_trechos": true,
+          "ativo_ocorrencias": 0,
+          "ativo_ambiguos": 0,
+          "ativo_ambiguos_na_referencia": 0,
+          "fco_mesmas_paginas": true,
+          "fco_paginas_com_correspondencia": [],
+          "tokens_fora_da_gramatica": 120,
+          "tokens_fora_da_gramatica_na_referencia": 120,
+          "tokens_com_sinal_ambiguo": 245,
+          "tokens_com_sinal_ambiguo_na_referencia": 242,
+          "paginas_com_pouco_texto": []
+        }
+      },
+      "modos_concordam": [
+        true,
+        true
+      ],
+      "identidade_de_caixa_igual": true,
+      "reinventario_igual": true,
+      "xml_e_pdf_iguais": true,
+      "ativo_formas_que_so_casam_com_decimais": [
+        "consolidado_corrente_sobre_mil"
+      ]
+    }
+  ],
+  "expectativas_do_adendo": {
+    "ativo_140867_nas_mesmas_paginas_linhas_colunas_e_trechos": true,
+    "nenhuma_ocorrencia_ambigua_do_ativo": true,
+    "fco_dos_dois_e_ativo_de_142900_sem_correspondencia": true
+  },
+  "todas_as_expectativas_cumpridas": true
+}

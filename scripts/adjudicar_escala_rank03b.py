@@ -11,7 +11,13 @@ texto — como estão, divididos ou multiplicados por mil. Uma sem a outra é
 indecidível.
 
 **O que não se publica** (O1): valor de FCO. A evidência numérica sai como
-contagem; o trecho literal é o do cabeçalho.
+contagem e como linhas com os valores de caixa mascarados; o trecho literal é o
+do cabeçalho.
+
+**Execução 3 (17/09, contratos RF-01 a RF-08):** a evidência numérica passou a
+ser LOCALIZADA (`rad.evidencia_numerica_localizada`, regra v3) — conta,
+período corrente, perímetro e unidade da página. A regra v2 fica disponível
+só para reproduzir a execução 2 (`regra="v2"`).
 """
 
 from __future__ import annotations
@@ -51,12 +57,15 @@ TABELA_S2_EXECUCAO_1 = {
     ("UNIDADE", "multiplicado"): "MIL",
 }
 VEREDITOS = ("confirmada", "corrigida", "indecidivel")
+#: Regra de evidência numérica da execução governante (contrato E1 de 17/09).
+REGRA_VIGENTE = "v4"
+REGRAS = ("v2", "v3", "v4")
 COLUNAS_MANIFESTO = [
     "id_correcao", "cd_cvm", "conjunto", "dt_refer", "versao", "id_doc",
     "sha256_pacote", "escala_declarada", "escala_aplicada", "base",
     "impressao_digital", "cabecalho_classe", "cabecalho_contagem",
     "numerica_classe", "numerica_contagem", "trecho", "evidencia_anexo",
-    "evidencia_pagina", "evidencia_trecho", "pontas",
+    "evidencia_pagina", "evidencia_trecho", "pontas", "evidencia_numerica",
 ]
 
 
@@ -70,11 +79,20 @@ def veredito(cabecalho: str, numerica: str, declarada: str | None) -> tuple[str 
     return escala, "confirmada" if escala == declarada else "corrigida"
 
 
-def adjudicar_formulario(formulario: rad.Formulario, declarada: str | None) -> dict:
-    notas = rad.texto_das_notas(formulario)
+def adjudicar_formulario(formulario: rad.Formulario, declarada: str | None,
+                         dt_refer=None, regra: str = REGRA_VIGENTE) -> dict:
+    """S2 sobre um formulário. `dt_refer` é obrigatório na regra v3 (E1a)."""
+    if regra not in REGRAS:
+        raise ValueError(f"regra desconhecida: {regra!r}")
     # RC1: cabeçalho DE APRESENTAÇÃO, não a frase em qualquer ponto das notas.
     cab = rad.classificar_cabecalho_de_apresentacao(formulario)
-    num = rad.evidencia_numerica(formulario, notas)
+    if regra in ("v3", "v4"):
+        if dt_refer is None:
+            raise ValueError(f"regra {regra} exige dt_refer: o período corrente decide")
+        num = (rad.evidencia_numerica_tabular(formulario, dt_refer) if regra == "v4"
+               else rad.evidencia_numerica_localizada(formulario, dt_refer))
+    else:
+        num = rad.evidencia_numerica(formulario, rad.texto_das_notas(formulario))
     escala, estado = veredito(cab["classe"], num["classe"], declarada)
     literal, motivo = None, None
     if estado != "indecidivel":
@@ -90,6 +108,7 @@ def adjudicar_formulario(formulario: rad.Formulario, declarada: str | None) -> d
         "cabecalho": cab, "numerica": num, "escala_do_formulario": escala,
         "veredito": estado, "motivo": motivo, "evidencia": literal,
         "formato": formulario.formato, "codigo_escala_moeda": formulario.codigo_escala_moeda,
+        "regra": regra,
     }
 
 
@@ -238,6 +257,9 @@ def linhas_do_manifesto(con, adjudicados: dict[str, dict], herdados: list[dict])
             "numerica_contagem": json.dumps(r["numerica"]["contagem"], sort_keys=True),
             "trecho": r["trecho"], "evidencia_anexo": ev["anexo"],
             "evidencia_pagina": ev["pagina"], "evidencia_trecho": ev["trecho"], "pontas": "",
+            # E3: onde cada número que decidiu está, para auditar um a um.
+            "evidencia_numerica": json.dumps(r["numerica"].get("casamentos", []),
+                                             ensure_ascii=False, sort_keys=True),
         })
     for h in herdados:
         if h["veredito"] != "corrigida":
@@ -257,8 +279,11 @@ def linhas_do_manifesto(con, adjudicados: dict[str, dict], herdados: list[dict])
                 for p in pontas),
             "pontas": json.dumps([{"id_doc": p["id_doc"], "sha256_pacote": p["sha256"],
                                    "dt_refer": p["dt_refer"], "veredito": p["veredito"],
-                                   "escala_do_formulario": p["escala_do_formulario"]}
+                                   "escala_do_formulario": p["escala_do_formulario"],
+                                   "regra": p.get("regra"),
+                                   "evidencia_numerica": p.get("numerica", {}).get("casamentos", [])}
                                   for p in pontas], sort_keys=True),
+            "evidencia_numerica": "",
         })
     linhas.sort(key=lambda r: (r["cd_cvm"], r["dt_refer"], r["conjunto"]))
     for n, linha in enumerate(linhas, start=1):
@@ -270,11 +295,15 @@ BASES_DO_MANIFESTO = ("corrigida_documento", "herdada_trecho")
 
 
 def validar_manifesto(linhas: list[dict], tabela: dict | None = None,
-                      exigir_escala_nas_pontas: bool = True) -> None:
+                      exigir_escala_nas_pontas: bool = True,
+                      exigir_evidencia_numerica: bool = True,
+                      exigir_escopo_v4: bool = True) -> None:
     """Condições de falsificação 11, 12 e 14 — no produtor E no consumidor.
 
     `tabela` e `exigir_escala_nas_pontas` existem só para reler o manifesto da
-    execução 1, escrito com a tabela anterior e sem a escala das pontas.
+    execução 1, escrito com a tabela anterior e sem a escala das pontas;
+    `exigir_evidencia_numerica` (E3, 17/09), para reler as execuções 1 e 2,
+    escritas antes da coluna `evidencia_numerica`.
     """
     tabela = TABELA_S2 if tabela is None else tabela
     for r in linhas:
@@ -293,6 +322,18 @@ def validar_manifesto(linhas: list[dict], tabela: dict | None = None,
                 raise AssertionError(f"{ident}: sem trecho literal/anexo/página")
             if len(r.get("sha256_pacote", "")) != 64:
                 raise AssertionError(f"{ident}: sem pacote de origem")
+            if exigir_evidencia_numerica:
+                casamentos = json.loads(r.get("evidencia_numerica") or "[]")
+                if not casamentos or not all(
+                        c.get("conta") and c.get("pagina") and c.get("trecho")
+                        and c.get("forma") for c in casamentos):
+                    raise AssertionError(
+                        f"{ident}: sem evidência numérica localizada (conta, página, trecho)")
+                if exigir_escopo_v4:
+                    for c in casamentos:
+                        rad.validar_escopo_numerico_v4(c, str(r.get("dt_refer")))
+                        if c["forma"] != r["numerica_classe"]:
+                            raise AssertionError(f"{ident}: forma v4 diferente da decisão")
         elif r["base"] == "herdada_trecho":
             pontas = json.loads(r["pontas"])
             if len(pontas) != 2 or any(p["veredito"] == "indecidivel" for p in pontas):
@@ -304,6 +345,14 @@ def validar_manifesto(linhas: list[dict], tabela: dict | None = None,
                 # Condição 12: um trecho tem um único rótulo declarado; pontas com
                 # escalas de formulário diferentes não transmitem nada.
                 raise AssertionError(f"{ident}: pontas com escala diferente da herdada")
+            if exigir_evidencia_numerica and exigir_escopo_v4:
+                for p in pontas:
+                    if p.get("regra") != "v4" or not p.get("evidencia_numerica"):
+                        raise AssertionError(f"{ident}: ponta sem evidência v4")
+                    for c in p["evidencia_numerica"]:
+                        rad.validar_escopo_numerico_v4(c, str(p.get("dt_refer")))
+                        if TABELA_S2.get(("MIL", c["forma"])) != p["escala_do_formulario"]:
+                            raise AssertionError(f"{ident}: prova v4 não justifica a escala da ponta")
         else:
             raise AssertionError(f"{ident}: base desconhecida {r['base']!r}")
 
@@ -333,7 +382,8 @@ def conferir_pacotes(linhas: list[dict], integros: dict[str, set[str]]) -> None:
                     "íntegro no manifesto de aquisição")
 
 
-def reescrever_manifesto(pasta: Path = DESTINO, manifesto: Path = MANIFESTO_CORRECOES) -> dict:
+def reescrever_manifesto(pasta: Path = DESTINO, manifesto: Path = MANIFESTO_CORRECOES,
+                         exigir_evidencia_numerica: bool = True) -> dict:
     """Regrava o manifesto a partir da evidência JÁ adjudicada, sem reler PDF.
 
     Existe para a correção M2 da auditoria (escala das pontas no manifesto):
@@ -353,7 +403,7 @@ def reescrever_manifesto(pasta: Path = DESTINO, manifesto: Path = MANIFESTO_CORR
             antes = {(r["cd_cvm"], r["conjunto"], r["dt_refer"], r["versao"]):
                      (r["escala_aplicada"], r["base"]) for r in csv.DictReader(fh)}
     linhas = linhas_do_manifesto(con, adjudicados, herdados)
-    validar_manifesto(linhas)
+    validar_manifesto(linhas, exigir_evidencia_numerica=exigir_evidencia_numerica)
     conferir_pacotes(linhas, pacotes_integros())
     depois = {(r["cd_cvm"], r["conjunto"], r["dt_refer"], str(r["versao"])):
               (r["escala_aplicada"], r["base"]) for r in linhas}
@@ -426,7 +476,7 @@ def _adjudicar_um(doc: dict) -> dict:
     except rad.PacoteInvalido as erro:
         return {**base, "veredito": "indecidivel", "motivo": f"leitura:{erro}",
                 "escala_do_formulario": None, "evidencia": None}
-    return {**base, **adjudicar_formulario(formulario, doc["escala"])}
+    return {**base, **adjudicar_formulario(formulario, doc["escala"], doc["dt_refer"])}
 
 
 def adjudicar_documentos(documentos: list[dict], leitores: int = LEITORES,
@@ -478,7 +528,8 @@ def _registros_e10(caminho: Path, con=None) -> list[dict]:
         escala = None
         if r.get("leitura") == "ok":
             formulario = rad.ler(rad.BRUTOS / f"{r['id_doc']}.zip", grupos=rad.GRUPOS_NOTAS)
-            escala = adjudicar_formulario(formulario, r["escala_declarada"])["escala_do_formulario"]
+            escala = adjudicar_formulario(
+                formulario, r["escala_declarada"], r["dt_refer"])["escala_do_formulario"]
         saida.append({**r, "escala_do_formulario": escala})
     return saida
 
@@ -503,7 +554,8 @@ def executar(destino: Path = DESTINO, manifesto: Path = MANIFESTO_CORRECOES,
 
     resumo = {
         "contrato": "resultados/contratos_lote_c_painel_pesquisa_rank03b_2026-09-16.md#parte-2",
-        "execucao": "2 (ressalvas RC1 e RC1-bis)",
+        "execucao": "4 (regra v4, contratos CRF-01 a CRF-03 de 17/09)",
+        "regra_numerica": REGRA_VIGENTE,
         "zips_sha256": zips,
         "premissa_s5": premissa,
         "documentos_no_escopo": len(documentos),

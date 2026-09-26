@@ -466,3 +466,15 @@ G0 reprovar depois das correções, o lote para e reporta; nenhum parâmetro de 
 >   **antes** de qualquer G0 com correções (RC1), não de ver o G0, que é o que
 >   S10 e a condição 15 existem para impedir. A execução 1 está preservada e
 >   medida (61 saltos, também aprovada).
+
+> ## ⚠️ RESSALVA RC3 — evidência numérica e disponibilidade da prova (17/09)
+>
+> A [conferência independente de 17/09](conferencia_pre_treino_rank03b_2026-09-17.md)
+> mostrou que a evidência numérica de S2 (magnitudes procuradas no texto
+> corrido das notas) aceita números de outras contas e de quantidade de ações,
+> e produziu um erro comprovado (ESC-0101). Mostrou também que a parte P
+> deste contrato não dava data à **prova** de uma escala herdada. As duas
+> cláusulas foram substituídas pelos contratos
+> [E e P4–P7 de 17/09](contratos_correcao_rf01_rf08_rank03b_2026-09-17.md),
+> escritos antes da reexecução. As cláusulas acima ficam como foram escritas;
+> a execução governante é a 3 ([relatório](correcao_rf01_rf08_rank03b_2026-09-17.md)).

@@ -178,6 +178,60 @@ class TestExtrairTrimestreCitado:
     def test_casos(self, texto, esperado):
         assert norm.extrair_trimestre_citado(texto) == esperado
 
+
+class TestTrimestrePorExtenso:
+    """Regressão de 2026-09-20: "segundo trimestre de 2024" não casava em
+    nada, `extrair_trimestres_citados` devolvia `[]`, e o gabarito lia lista
+    vazia como "pergunta sem período" — despejando os seis trimestres do
+    painel em vez de dizer, numa frase, que 2T2024 não está lá. O usuário
+    tinha dito o período; o sistema não sabia ler a forma em que foi dito.
+    """
+
+    @pytest.mark.parametrize(
+        "texto,esperado",
+        [
+            ("qual o lucro do Itaú no segundo trimestre de 2024?", "2T2024"),
+            ("resultado do primeiro trimestre de 2025", "1T2025"),
+            ("balanço do terceiro trimestre de 2025", "3T2025"),
+            ("lucro do quarto trimestre de 2025", "4T2025"),
+            # Ano com dois dígitos, mesma canonização da forma abreviada.
+            ("segundo trimestre de 24", "2T2024"),
+            # Sem "de": forma igualmente comum em português falado.
+            ("segundo trimestre 2024", "2T2024"),
+            # Símbolo de ordinal, com e sem o erro comum do sinal de grau.
+            ("no 2º trimestre de 2024", "2T2024"),
+            ("no 2° trimestre de 2024", "2T2024"),
+            ("no 1o trimestre de 2025", "1T2025"),
+            # Maiúsculas soltas não quebram o reconhecimento.
+            ("Segundo Trimestre de 2024", "2T2024"),
+        ],
+    )
+    def test_formas_por_extenso_sao_canonizadas(self, texto, esperado):
+        assert norm.extrair_trimestre_citado(texto) == esperado
+
+    @pytest.mark.parametrize(
+        "texto",
+        [
+            "no primeiro trimestre do ano",  # sem ano numérico: nada a ancorar
+            "nos dois primeiros trimestres de 2024",  # plural: é intervalo, não ponto
+            "o trimestre foi bom para o Itaú",  # sem ordinal: não é referência
+        ],
+    )
+    def test_formas_ambiguas_nao_viram_filtro(self, texto):
+        """Mesma disciplina de "ano sem trimestre não é filtro": preferir
+        devolver nada a inventar um período que o texto não determina."""
+        assert norm.extrair_trimestre_citado(texto) is None
+
+    def test_ordem_de_aparicao_mistura_as_duas_grafias(self):
+        """Comparativa com uma forma de cada tipo preserva a ordem do texto."""
+        texto = "Compare o quarto trimestre de 2025 com 1T2026"
+        assert norm.extrair_trimestres_citados(texto) == ["4T2025", "1T2026"]
+
+    def test_mesma_referencia_nas_duas_formas_nao_duplica(self):
+        texto = "no 2T2024, ou seja, no segundo trimestre de 2024"
+        assert norm.extrair_trimestres_citados(texto) == ["2T2024"]
+
+
 class TestRegressoesNumerosFinanceiros:
     def test_prioriza_valor_com_unidade_e_ignora_trimestre_ticker_e_ano(self):
         texto = "No 3T2025, BPAC11 reportou lucro de R$ 31.382 milhões."

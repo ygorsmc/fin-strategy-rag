@@ -5,8 +5,10 @@
 ## Grande ideia
 
 Confiança na informação financeira pública. Toda companhia aberta é obrigada a divulgar
-seus resultados, mas divulgar não é o mesmo que tornar compreensível — o dado existe, está
-disponível de graça, e ainda assim quase ninguém consegue usá-lo sem intermediário.
+seus resultados, mas divulgar não resolve dois problemas diferentes: tornar o conteúdo
+compreensível para quem não é do mercado, e tornar a busca por um número específico rápida
+e confiável para quem já é — o analista que precisa localizar e conferir um dado entre
+centenas de páginas, e não pode se dar ao luxo de citar um número que a fonte não sustenta.
 
 ## Pergunta essencial
 
@@ -77,11 +79,11 @@ incompreensível para quem não é do mercado: a informação é pública e grat
 escrita para quem já sabe onde procurar e domina o vocabulário do setor.
 
 Reconheci ali o mesmo problema que a ferramenta tenta resolver, uma escala abaixo — alguém
-de fora diante de um conteúdo escrito para quem já está dentro. A diferença é que essa
-barreira não é só minha: é de qualquer pessoa que queira saber como foi o resultado do banco
-onde ela tem conta. Foi isso que me convenceu a construir um assistente que tornasse esse
-conteúdo consultável em linguagem natural — sem decidir pela pessoa, mas devolvendo a ela a
-informação com a fonte à vista.
+de fora diante de um conteúdo escrito para quem já está dentro. Por ser leigo na área, e ao
+ver que a informação é escrita para um público específico e fica esparsa dentro de um
+documento longo, resolvi criar uma ferramenta que ajude tanto o leigo quanto o especialista
+a buscar a informação mais rapidamente, economizando tempo nas próprias análises — sem
+decidir pela pessoa, mas devolvendo a ela a informação com a fonte à vista.
 
 Quando as aulas começaram, vi que a especificação já cobria boa parte do que a disciplina
 pede, e preferi aprofundar um único projeto a construir dois pela metade.

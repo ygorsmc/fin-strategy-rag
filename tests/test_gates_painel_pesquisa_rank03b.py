@@ -14,6 +14,7 @@ from scripts import auditar_rank03b_consumo_operacional as auditor
 from scripts import gates_painel_pesquisa_rank03b as gates
 from scripts import painel_pesquisa_rank03b as pp
 from tests.test_painel_pesquisa_rank03b import Base
+from tests.fixtures_rank03b_crf import prova_v4
 
 
 def _colunas_do_select(funcao) -> set[str]:
@@ -176,7 +177,11 @@ class TestManifestoDeCorrecoes:
                 "impressao_digital": "h", "cabecalho_classe": "MIL", "cabecalho_contagem": "{}",
                 "numerica_classe": "bruto", "numerica_contagem": "{}", "trecho": "1",
                 "evidencia_anexo": "0", "evidencia_pagina": "2",
-                "evidencia_trecho": "x" * 60, "pontas": ""}
+                "evidencia_trecho": "x" * 60, "pontas": "",
+                "evidencia_numerica": json.dumps([{"conta": "1", "forma": "bruto", "anexo": 0,
+                                                   "pagina": 2, "trecho": "total do ativo 1"}])}
+        # CRF-01: fixture positiva carrega a coluna e o contexto da prova v4.
+        base["evidencia_numerica"] = json.dumps([prova_v4(base["dt_refer"])])
         base.update(mudar)
         return base
 
@@ -191,6 +196,28 @@ class TestManifestoDeCorrecoes:
         self._gravar(caminho, [self._linha()])
         c = gates.carregar_correcoes(caminho, aquisicao=self._aquisicao(tmp_path))
         assert list(c) == [("A", "itr", "2020-03-31", 1)]
+        assert isinstance(c, gates.CorrecoesValidadas)
+        assert c.origem_sha256 == gates._sha256(caminho)
+
+    def test_correcao_sem_evidencia_numerica_localizada_e_recusada(self, tmp_path):
+        """E3 (17/09), no consumidor."""
+        caminho = tmp_path / "c.csv"
+        self._gravar(caminho, [self._linha(evidencia_numerica="")])
+        with pytest.raises(AssertionError, match="localizada"):
+            gates.carregar_correcoes(caminho, aquisicao=self._aquisicao(tmp_path))
+
+    def test_executor_recusa_correcoes_montadas_a_mao(self):
+        """V1 (17/09): antes, só a CLI validava."""
+        with pytest.raises(gates.CorrecoesNaoValidadas):
+            gates.executar({("A", "itr", "2020-03-31", 1): self._linha()}, None)
+
+    def test_executor_recusa_manifesto_alterado_depois_de_validado(self, tmp_path):
+        caminho = tmp_path / "c.csv"
+        self._gravar(caminho, [self._linha()])
+        c = gates.carregar_correcoes(caminho, aquisicao=self._aquisicao(tmp_path))
+        caminho.write_text(caminho.read_text() + "\n")
+        with pytest.raises(gates.CorrecoesNaoValidadas, match="mudou"):
+            gates.executar(c, caminho)
 
     def test_sonda_do_auditor_milhao_sem_evidencia_e_recusada(self, tmp_path):
         """M1: com a impressão digital certa, uma escala sem evidência era aplicada."""
@@ -227,9 +254,45 @@ class TestDiagnosticoG05:
 
     def test_operando_sem_veredito_conta(self):
         d = gates.diagnostico_g0_5(self._painel(), decididos=set())
-        assert d["com_escalas_declaradas_diferentes"] == 1
+        # G5.1 (17/09): o nome da contagem mudou com a população.
+        assert d["com_escalas_heterogeneas"] == 1
+        assert d["por_configuracao"]["declaradas_diferentes|aplicadas_diferentes"] == {
+            "trimestres": 1, "sem_veredito": 1}
         assert d["sem_veredito_em_algum_operando"] == 1
         assert d["governa_este_lote"] is False
+        assert "DECIDIR" in d["limiar"]
+
+    def _painel_com_correcao_parcial(self):
+        """Declaradas iguais (UNIDADE+UNIDADE), um operando corrigido para MIL."""
+        b = _serie(Base(), "A", [2020])
+        b.doc("A", "itr", "2021-03-31", "2021-05-10", fco=[("2021-01-01", "2021-03-31", 1)],
+              escala="UNIDADE")
+        b.doc("A", "itr", "2021-06-30", "2021-08-10", fco=[("2021-01-01", "2021-06-30", 2)],
+              escala="UNIDADE")
+        con = b.con()
+        chave = ("A", "itr", "2021-06-30", 1)
+        brutos = con.execute(
+            "SELECT cd_conta, ordem, dt_ini, dt_fim, vl FROM declaracoes "
+            "WHERE cd_cvm = 'A' AND dt_refer = '2021-06-30'").fetchall()
+        id_doc = con.execute("SELECT id_doc FROM cadastro WHERE dt_refer = '2021-06-30'").fetchone()[0]
+        correcoes = {chave: {"escala_declarada": "UNIDADE", "escala_aplicada": "MIL",
+                             "base": "corrigida_documento", "id_correcao": "C1",
+                             "id_doc": id_doc, "impressao_digital": pp.impressao_digital(brutos)}}
+        return pp.construir(con, correcoes), chave
+
+    def test_correcao_parcial_entra_na_populacao(self):
+        """RF-04: 003549, 025461 e 027570 ficavam fora — declaradas iguais."""
+        painel, corrigido = self._painel_com_correcao_parcial()
+        d = gates.diagnostico_g0_5(painel, decididos={corrigido})
+        assert d["por_configuracao"]["declaradas_iguais|aplicadas_diferentes"] == {
+            "trimestres": 1, "sem_veredito": 1}
+        tudo = {corrigido, ("A", "itr", "2021-03-31", 1)}
+        assert gates.diagnostico_g0_5(painel, decididos=tudo)["sem_veredito_em_algum_operando"] == 0
+
+    def test_homogeneo_nao_conta_mesmo_sem_veredito(self):
+        d = gates.diagnostico_g0_5(pp.construir(_serie(Base(), "A", [2020]).con()), set())
+        assert d["sem_veredito_em_algum_operando"] == 0
+        assert list(d["por_configuracao"]) == ["declaradas_iguais|aplicadas_iguais"]
 
     def test_operandos_decididos_nao_contam(self):
         decididos = {("A", "itr", "2021-03-31", 1), ("A", "itr", "2021-06-30", 1)}
@@ -321,3 +384,114 @@ class TestFalsificacoesSobreOPainel:
         t["operandos"] = json.dumps(operandos)
         with pytest.raises(gates.PainelViolaContrato, match="c4"):
             gates.verificar_falsificacoes(painel, con)
+
+
+class TestProvaDeEscalaNoTempo:
+    """P6/P7 (17/09): a correção herdada só existe quando a última ponta existe.
+
+    Os valores e as datas dos documentos da companhia são sempre os mesmos;
+    só muda a recepção da ponta que prova a escala.
+    """
+
+    CORRIGIDO = ("A", "itr", "2018-06-30", 1)
+
+    def _montar(self, receb_ponta):
+        b = _serie(Base(), "A", range(2015, 2021))
+        for i, linha in enumerate(b.decl):
+            if linha[3] == "2018-06-30":
+                b.decl[i] = linha[:9] + ("UNIDADE",) + linha[10:]
+        b.cad.append(("itr", "Z", "2014-12-31", 1, "ponta_ini", "2015-02-01"))
+        b.cad.append(("itr", "Z", "2022-12-31", 1, "ponta_fim", receb_ponta))
+        con = b.con()
+        brutos = con.execute(
+            "SELECT cd_conta, ordem, dt_ini, dt_fim, vl FROM declaracoes "
+            "WHERE dt_refer = '2018-06-30'").fetchall()
+        id_doc = con.execute(
+            "SELECT id_doc FROM cadastro WHERE dt_refer = '2018-06-30'").fetchone()[0]
+        correcoes = {self.CORRIGIDO: {
+            "escala_declarada": "UNIDADE", "escala_aplicada": "MIL", "base": "herdada_trecho",
+            "id_correcao": "H1", "id_doc": id_doc,
+            "impressao_digital": pp.impressao_digital(brutos),
+            "pontas": json.dumps([{"id_doc": "ponta_ini"}, {"id_doc": "ponta_fim"}])}}
+        return con, correcoes
+
+    #: Trimestres cujo valor vem do documento corrigido: o 2T2018 (o próprio
+    #: acumulado) e o 3T2018 (que o subtrai como antecedente), e o ativo de 30/06.
+    DEPENDENTES = {"2018-06-30", "2018-09-30"}
+
+    def _usos(self, painel):
+        """Datas D em que algo que depende do documento corrigido foi usado."""
+        amostra, _ = auditor.construir_amostra(
+            gates.linhas_fco(painel), gates.linhas_ativo(painel), calcular_rotulo=False)
+        usos = [o["D"] for o in amostra
+                if {str(r["dt_fim"]) for r in o["linhagem"]["janela"]} & self.DEPENDENTES
+                or str(o["linhagem"]["ativo"]["dt_fim"]) == "2018-06-30"]
+        return amostra, usos
+
+    def test_ponta_tardia_adia_o_uso_e_g1_aprova(self):
+        con, correcoes = self._montar("2019-01-15")
+        painel = pp.construir(con, correcoes)
+        amostra, usos = self._usos(painel)
+        assert usos and min(usos) >= "2019-01-15", "antes da ponta, o valor corrigido não existe"
+        provas = gates.datas_das_provas(con, correcoes)
+        assert provas[self.CORRIGIDO] == date(2019, 1, 15)
+        assert gates.g1_provas_depois_de_d(amostra, painel, provas) == 0
+        assert gates.verificar_falsificacoes(painel, con, provas)["c3_disponibilidade_diferente_do_operando_mais_tardio"] == 0
+
+    def test_ponta_cedo_nao_adia(self):
+        con, correcoes = self._montar("2015-03-01")
+        _, usos = self._usos(pp.construir(con, correcoes))
+        assert "2018-08-09" in usos, "com a prova publicada antes, o uso na recepção vale"
+
+    def test_g1_independente_pega_construtor_que_ignora_a_prova(self, monkeypatch):
+        con, correcoes = self._montar("2019-01-15")
+        monkeypatch.setattr(pp.Documento, "disponivel_em", property(lambda d: d.dt_receb))
+        monkeypatch.setattr(pp.Documento, "disponivel_em_v1", property(lambda d: d.dt_receb_v1))
+        painel = pp.construir(con, correcoes)
+        provas = gates.datas_das_provas(con, correcoes)
+        amostra, usos = self._usos(painel)
+        assert min(usos) < "2019-01-15", "a sabotagem tem de produzir uso antecipado"
+        assert gates.g1_provas_depois_de_d(amostra, painel, provas) > 0
+        g1 = gates.medir(painel, provas=provas)["cadeia"][1]
+        assert g1["g1_4_prova_de_escala_publicada_depois_de_D"] > 0
+        assert g1["aprovado"] is False
+        with pytest.raises(gates.PainelViolaContrato, match="c3"):
+            gates.verificar_falsificacoes(painel, con, provas)
+
+    def test_sem_correcoes_nao_ha_prova_a_conferir(self):
+        con, _ = self._montar("2019-01-15")
+        assert gates.datas_das_provas(con, {}) == {}
+
+    def test_ponta_fora_do_cadastro_derruba(self):
+        con, correcoes = self._montar("2019-01-15")
+        correcoes[self.CORRIGIDO]["pontas"] = json.dumps([{"id_doc": "x"}, {"id_doc": "y"}])
+        with pytest.raises(gates.PainelViolaContrato, match="c9"):
+            gates.datas_das_provas(con, correcoes)
+
+
+class TestTravasDaAuditoria17_09:
+    """M1 e M2 do auditor de conformidade (17/09)."""
+
+    def test_medir_sem_provas_com_escala_corrigida_levanta(self):
+        con, correcoes = TestProvaDeEscalaNoTempo()._montar("2019-01-15")
+        painel = pp.construir(con, correcoes)
+        with pytest.raises(gates.ProvasAusentes):
+            gates.medir(painel)
+        with pytest.raises(gates.ProvasAusentes):
+            gates.verificar_falsificacoes(painel, con)
+        # Sem correção, não há prova a exigir.
+        assert gates.medir(pp.construir(con))["cadeia"][1]["g1_4_prova_de_escala_publicada_depois_de_D"] == 0
+
+    def test_correcoes_sem_caminho_sao_recusadas(self):
+        c = gates.CorrecoesValidadas({("A", "itr", "2020-03-31", 1): {"x": 1}}, "h")
+        with pytest.raises(gates.CorrecoesNaoValidadas, match="caminho"):
+            gates.executar(c, None)
+
+    def test_correcoes_alteradas_em_memoria_sao_recusadas(self, tmp_path):
+        t = TestManifestoDeCorrecoes()
+        caminho = tmp_path / "c.csv"
+        t._gravar(caminho, [t._linha()])
+        c = gates.carregar_correcoes(caminho, aquisicao=t._aquisicao(tmp_path))
+        next(iter(c.values()))["escala_aplicada"] = "MILHAO"
+        with pytest.raises(gates.CorrecoesNaoValidadas, match="memória"):
+            gates.executar(c, caminho)

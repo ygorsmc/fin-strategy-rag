@@ -1,0 +1,87 @@
+{
+  "data": "2026-09-17",
+  "escopo": "Revisao independente dos lotes B/C e pre-registro v2 Rank 3-B",
+  "veredito_da_revisao": "NAO CONGELAR NEM MEDIR O ALVO ANTES DAS CORRECOES",
+  "treino_do_candidato_executado": false,
+  "alvo_real_t1_t2_baselines_medidos": false,
+  "paineis_persistentes_alterados": false,
+  "testes": {
+    "focados": {"passed": 375, "segundos": 35.97},
+    "suite_completa": {"passed": 2495, "warnings": 30, "skipped": 0, "segundos": 157.11}
+  },
+  "reconstrucao_em_memoria": {
+    "zips_pinados_conferidos": 31,
+    "digest": "f9cb9da9d58673ff36e8d00abee45870fcd56d7966858762e4a006a528d8f279",
+    "diferencas_de_linhas_contra_painel_persistido": {"ativo": 0, "fco_acumulado": 0, "fco_trimestral": 0},
+    "contadores_de_falsificacao_implementados": "todos zero",
+    "cadeia_identica_ao_artefato_publicado": true,
+    "veredito_do_codigo_reproduzido": "G0 E G1 APROVADOS",
+    "g0_3_saltos": 47,
+    "g1_observacoes": 10750,
+    "g1_companhias": 502,
+    "ressalva": "Reproducao do codigo nao certifica a escala ou a disponibilidade das evidencias de correcao."
+  },
+  "esc_0101": {
+    "cd_cvm": "027570",
+    "data_posicao": "2025-09-30",
+    "id_doc": "152742",
+    "pacote": "artefatos/painel_pesquisa_rank03b/rad/brutos/152742.zip",
+    "sha256_pacote": "ff2b0b4d534d245962b1aab75ffa4c9c3eece14caaa530799fca1617806958ac",
+    "pdf_membro": "152742_027570_16092026084005.pdf",
+    "pagina_fisica_formulario_consolidado": 11,
+    "ativo_formulario_reais_unidade": 5073000,
+    "pagina_fisica_balanco_no_comentario_desempenho": 30,
+    "ativo_balanco_em_milhares": 5073,
+    "ativo_painel_reais": 5073000000,
+    "fator_do_erro_comprovado": 1000,
+    "manifesto_corrigido_nesta_revisao": false
+  },
+  "heranca_pit": {
+    "correcoes_herdadas": 24,
+    "companhias": 8,
+    "ativos_disponiveis_antes_da_evidencia_mais_tardia": 24,
+    "antecipacao_minima_dias": 12,
+    "antecipacao_maxima_dias": 734,
+    "amostra_cega_com_uso_antecipado": 5,
+    "companhias_da_amostra_afetada": 3,
+    "observacoes_afetadas_na_janela_fco": 5,
+    "observacoes_afetadas_no_ativo": 5,
+    "chaves_afetadas": [["003549", "2023-08-15"], ["003549", "2024-08-15"], ["007811", "2020-10-15"], ["022144", "2013-03-27"], ["022144", "2013-05-14"]],
+    "metodo": "construir_amostra(calcular_rotulo=False); comparacao de datas e identidades, sem publicar valores de features ou desfechos"
+  },
+  "quintis_sinteticos": {
+    "valores": "[0] * 400 + list(range(1, 101))",
+    "eventos": "[i % 2 for i in range(500)]",
+    "tamanhos_produzidos": [400, 1, 1, 1, 97],
+    "amplitude_produzida": 1.0,
+    "nao_e_resultado_do_alvo_real": true
+  },
+  "g05": {
+    "validos": 22088,
+    "mistura_declarada_publicada": 82,
+    "sem_veredito_publicado": 38,
+    "fracao_publicada": 0.00172,
+    "casos_adicionais_fora_do_predicado_atual": [
+      {"cd_cvm": "003549", "trimestre": "3T2025", "declaradas": "UNIDADE+UNIDADE", "aplicadas": "UNIDADE+MIL"},
+      {"cd_cvm": "025461", "trimestre": "2T2025", "declaradas": "UNIDADE+UNIDADE", "aplicadas": "MIL+UNIDADE"},
+      {"cd_cvm": "027570", "trimestre": "3T2025", "declaradas": "UNIDADE+UNIDADE", "aplicadas": "UNIDADE+MIL"}
+    ],
+    "ressalva": "Classe de risco omitida; escalas diferentes nao provam erro por si. Nao foi criado ou aprovado novo limiar."
+  },
+  "rastreabilidade": {
+    "manifesto_painel_sha256_registrado_na_verificacao_final": "c404c42284e4de33c25465b2b43e0a8e1a216087b6bffac988429d4a18619688",
+    "manifesto_painel_sha256_atual": "4b5e94926a3c66e5b8d5450b20d60ec3b9a96a1fca283c672073784226ee1d29",
+    "hashes_de_codigo_da_verificacao_final_conferem": true
+  },
+  "p2": {"pares_trimestre_decisao": 6735, "chaves_companhia_D_distintas": 4181},
+  "t2_sintetico_auc_zero": {"auc_real": 0.0, "auc_publicada": null, "aprovado": true},
+  "hashes_de_referencia": {
+    "artefatos/cvm.duckdb": "43e31d9f150e535f1ab20576d9aacf1a53b83ecc5424ca7d48ba50781e4cef18",
+    "artefatos/cvm_treino.duckdb": "c1a604453a9a2fa7df24b0b2dbc53df6fb5ef0d39fd06f492407028030bc069b",
+    "artefatos/painel_pesquisa_rank03b/painel.duckdb": "3ef3c548c8f421a508f1434880dda35202dc19169cd5aad7f68ab358ca5fed50",
+    "artefatos/painel_pesquisa_rank03b/gates_g0_g1.json": "f27cfd18a9efd6cd54aab8f57b9db1dc10d1460c2c103cfb54de5fae34075c04",
+    "artefatos/painel_pesquisa_rank03b/verificacoes_revisao_final.json": "032545b26040fccdd0a933e0fbd6a6e1be435cebf32dd3f1e6965595650a4b2c",
+    "corpus/cvm/painel_pesquisa_rank03b/correcoes_escala.csv": "4735fb107cce286e1c098a79f92f5856d200355a18a2b891a055edb9cdb33ae5",
+    "resultados/pre_registro_rank03b_v2_RASCUNHO_2026-09-16.md": "441ea184341e623129059653efab78977f6df2cbca9201c0eaf37f87fffa0be1"
+  }
+}

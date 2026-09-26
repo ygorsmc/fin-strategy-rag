@@ -9,6 +9,17 @@ import pytest
 
 from scripts import adjudicar_escala_rank03b as adj
 from scripts import fonte_rad_cvm as rad
+from tests.fixtures_rank03b_crf import prova_v4
+
+
+def _adjudicar_historico(*args, **kwargs):
+    """CRF-01: preservar integralmente os testes da v3, agora explícita.
+
+    Não adaptar expectativas antigas para aceitar menos evidência. Os
+    contratos positivos/negativos da regra vigente estão em test_rank03b_crf.
+    """
+    kwargs.setdefault("regra", "v3")
+    return adj.adjudicar_formulario(*args, **kwargs)
 
 
 def _form(cabecalho_texto, valores, grupo="193"):
@@ -49,26 +60,30 @@ class TestTabelaS2:
 
 
 class TestAdjudicarFormulario:
+    """Mudança declarada (17/09, contrato E1): a regra v3 exige `dt_refer` e o
+    rótulo da conta na linha do número. Os textos sintéticos ganharam o rótulo
+    onde o caso quer que o número decida; nenhuma asserção foi retirada."""
+
     def test_rotulo_unidade_com_notas_em_milhares_e_numero_bruto_e_corrigido(self):
         """O caso da Chesf, 3T2020."""
         f = _form("(valores expressos em milhares de reais, exceto quando indicado)",
                   [29020618.0], )
         f.anexos[0][1][1] += " ativo total 29.020.618 "
-        r = adj.adjudicar_formulario(f, "UNIDADE")
+        r = _adjudicar_historico(f, "UNIDADE", "2020-09-30")
         assert (r["escala_do_formulario"], r["veredito"]) == ("MIL", "corrigida")
         assert r["evidencia"]["pagina"] == 2 and len(r["evidencia"]["trecho"]) >= 60
 
     def test_sem_trecho_literal_vira_indecidivel(self, monkeypatch):
         f = _form("(em milhares de reais)", [29020618.0])
-        f.anexos[0][1][1] += " 29.020.618 "
+        f.anexos[0][1][1] += " ativo total 29.020.618 "
         monkeypatch.setattr(rad, "evidencia_de_cabecalho", lambda *a: None)
-        r = adj.adjudicar_formulario(f, "UNIDADE")
+        r = _adjudicar_historico(f, "UNIDADE", "2020-09-30")
         assert r["veredito"] == "indecidivel"
         assert r["motivo"] == "sem_trecho_literal_do_cabecalho"
 
     def test_so_o_anexo_de_notas_conta(self):
-        f = _form("(em milhares de reais) 29.020.618", [29020618.0], grupo="192")
-        r = adj.adjudicar_formulario(f, "UNIDADE")
+        f = _form("(em milhares de reais) ativo total 29.020.618", [29020618.0], grupo="192")
+        r = adj.adjudicar_formulario(f, "UNIDADE", "2020-09-30")
         assert r["veredito"] == "indecidivel" and r["motivo"].startswith("par_fora_da_tabela")
 
     def test_valor_de_fco_nao_e_publicado(self):
@@ -77,9 +92,11 @@ class TestAdjudicarFormulario:
         from datetime import date
         f = rad.Formulario("f", "2", {}, [
             ("6.01", date(2020, 1, 1), date(2020, 9, 30), -153918.0)],
-            anexos=[(0, ["fluxo 153.918 (em milhares de reais) nota 1 " + "x " * 50])],
+            anexos=[(0, ["caixa líquido das atividades operacionais 153.918 "
+                         "(em milhares de reais) nota 1 " + "x " * 50])],
             grupos_anexos={0: "193"})
-        r = adj.adjudicar_formulario(f, "MIL")
+        r = _adjudicar_historico(f, "MIL", "2020-09-30")
+        assert r["numerica"]["casamentos"], "o número tem de ter decidido"
         assert r["evidencia"] is not None and r["evidencia"]["pagina"] == 1
         # Mudança declarada (auditoria de 16/09): a versão anterior tirava
         # `evidencia` da verificação — exatamente o campo que carregava o valor.
@@ -185,18 +202,25 @@ SHA = "a" * 64
 
 
 def _linha(**mudar):
+    # CRF-01: a fixture válida recebe a procedência exigida pela v4.
     base = {"id_correcao": "ESC-0001", "base": "corrigida_documento", "id_doc": "10",
             "sha256_pacote": SHA, "cabecalho_classe": "MIL", "numerica_classe": "bruto",
             "escala_declarada": "UNIDADE", "escala_aplicada": "MIL",
             "evidencia_anexo": 0, "evidencia_pagina": 3, "evidencia_trecho": "x" * 60,
-            "pontas": ""}
+            "pontas": "", "evidencia_numerica": json.dumps(
+                [{"conta": "1", "forma": "bruto", "anexo": 0, "pagina": 3,
+                  "trecho": "total do ativo 1.234"}])}
+    base["dt_refer"] = "2020-09-30"
+    base["evidencia_numerica"] = json.dumps([prova_v4(base["dt_refer"])])
     base.update(mudar)
     return base
 
 
 def _pontas(*pares):
     return json.dumps([{"id_doc": str(i), "sha256_pacote": SHA, "veredito": v,
-                        "escala_do_formulario": e} for i, (v, e) in enumerate(pares)])
+                        "escala_do_formulario": e, "regra": "v4", "dt_refer": "2020-09-30",
+                        "evidencia_numerica": [prova_v4("2020-09-30")]}
+                       for i, (v, e) in enumerate(pares)])
 
 
 class TestValidacaoDoManifesto:
@@ -217,6 +241,10 @@ class TestValidacaoDoManifesto:
         {"escala_aplicada": "MILHAO"},
         {"sha256_pacote": ""},
         {"base": "outra"},
+        # E3 (17/09): a correção precisa dizer ONDE está o número que decidiu.
+        {"evidencia_numerica": ""},
+        {"evidencia_numerica": "[]"},
+        {"evidencia_numerica": json.dumps([{"conta": "1", "forma": "bruto", "trecho": "t"}])},
     ])
     def test_falsificacoes_11_e_14(self, mudar):
         with pytest.raises(AssertionError):
@@ -240,6 +268,12 @@ class TestValidacaoDoManifesto:
         with pytest.raises(AssertionError):
             adj.validar_manifesto([linha])
         adj.validar_manifesto([linha], tabela=adj.TABELA_S2_EXECUCAO_1)
+
+    def test_execucoes_anteriores_se_releem_sem_a_coluna_nova(self):
+        linha = _linha(evidencia_numerica="")
+        with pytest.raises(AssertionError, match="localizada"):
+            adj.validar_manifesto([linha])
+        adj.validar_manifesto([linha], exigir_evidencia_numerica=False)
 
     def test_pacote_citado_tem_de_constar_integro(self):
         adj.conferir_pacotes([_linha()], {"10": {SHA}})
@@ -402,9 +436,124 @@ class TestCabecalhoDeApresentacaoRC1:
         f = self._doc(self._meio(self.CABECALHO_BRF) + " ativo total 29.020.618",
                       self._meio(self.RODAPE_BRF))
         f.valores.append(("1", None, date(2022, 12, 31), 29020618.0))
-        r = adj.adjudicar_formulario(f, "MIL")
+        r = _adjudicar_historico(f, "MIL", "2022-12-31")
         assert (r["veredito"], r["escala_do_formulario"]) == ("confirmada", "MIL")
 
     def test_v1_preservado_para_reproduzir_o_piloto(self):
         assert rad.CABECALHOS is rad.CABECALHOS_V1
         assert "expressos? em milhares de reais" in rad.CABECALHOS_V1["MIL"]
+
+
+class TestEvidenciaNumericaLocalizada:
+    """Contrato E6 (17/09): o número só decide na linha, página, período e
+    perímetro certos. O primeiro caso é a forma de ESC-0101."""
+
+    CABECALHO = "(valores expressos em milhares de reais, exceto indicado)"
+    CORRENTE = "2025-09-30"
+
+    def _doc(self, *linhas, valores=None, individuais=(), cabecalho=CABECALHO):
+        from datetime import date
+        valores = valores if valores is not None else [
+            ("1", None, date(2025, 9, 30), 5073000.0),
+            ("6.05.01", date(2024, 1, 1), date(2024, 9, 30), 1000.0),
+        ]
+        pagina = "\n".join([cabecalho, "1. contexto operacional", *linhas])
+        return rad.Formulario("f", "1", {}, list(valores), anexos=[(0, [pagina])],
+                              grupos_anexos={0: "193"}, valores_individuais=list(individuais))
+
+    def _classe(self, f):
+        return rad.evidencia_numerica_localizada(f, self.CORRENTE)
+
+    def test_numero_em_linha_de_acoes_nao_decide(self):
+        """ESC-0101: "1.000" era o saldo inicial de caixa de 2024."""
+        f = self._doc("capital social de R$ 1.000,00 (mil reais), dividido em 1.000 (mil) "
+                      "ações ordinárias")
+        assert self._classe(f)["classe"] == "nenhum"
+        assert _adjudicar_historico(f, "UNIDADE", self.CORRENTE)["veredito"] == "indecidivel"
+
+    def test_capital_com_quantidade_igual_ao_ativo_nao_decide(self):
+        """A fixture do parecer: `1 = 1.234.567` e só 'capital ... 1.234.567 ações'."""
+        from datetime import date
+        f = self._doc("capital social dividido em 1.234.567 ações",
+                      valores=[("1", None, date(2025, 9, 30), 1234567.0)])
+        r = self._classe(f)
+        assert r["classe"] == "nenhum"
+        assert r["recusas"]["sem_rotulo"] == 1
+
+    def test_linha_de_ativo_com_acoes_nao_decide(self):
+        from datetime import date
+        f = self._doc("total do ativo por ações 1.234.567",
+                      valores=[("1", None, date(2025, 9, 30), 1234567.0)])
+        r = self._classe(f)
+        assert r["classe"] == "nenhum" and r["recusas"]["linha_de_acoes"] == 1
+
+    def test_numero_de_outra_conta_nao_decide(self):
+        f = self._doc("obras por administração 5.073.000 2.000")
+        assert self._classe(f)["classe"] == "nenhum"
+
+    def test_total_do_ativo_circulante_nao_e_o_ativo(self):
+        f = self._doc("total do ativo circulante 5.073.000")
+        assert self._classe(f)["classe"] == "nenhum"
+
+    def test_valor_comparativo_nao_e_testado(self):
+        """Só o período corrente decide; o 6.05.01 de 2024 não entra."""
+        f = self._doc("caixa e equivalentes de caixa no início do período 1.000")
+        r = self._classe(f)
+        assert r["valores_testados"] == 1 and r["classe"] == "nenhum"
+
+    def test_coincidencia_com_a_coluna_individual_nao_decide(self):
+        """Individual 5.073 (em milhares) = consolidado 5.073.000 ÷ 1.000? Não:
+        aqui o individual em milhares vale 5.073.000, e o número impresso casa as
+        duas leituras — bruto do consolidado e ×1.000 do individual."""
+        from datetime import date
+        f = self._doc("total do ativo 5.073.000 5.073.000.000",
+                      individuais=[("1", None, date(2025, 9, 30), 5073.0)])
+        r = self._classe(f)
+        assert r["recusas"]["ambiguo"] >= 1
+        assert r["contagem"]["bruto"] == 0
+
+    def test_pagina_sem_milhares_nao_decide(self):
+        f = self._doc("total do ativo 5.073", cabecalho="notas explicativas")
+        r = self._classe(f)
+        assert r["classe"] == "nenhum" and r["recusas"]["pagina_sem_milhares"] == 1
+
+    def test_pagina_intitulada_em_reais_nao_decide(self):
+        f = self._doc("total do ativo 5.073", cabecalho="(em reais) (em milhares de reais)")
+        assert self._classe(f)["classe"] == "nenhum"
+
+    def test_documento_em_reais_com_notas_em_milhares_continua_em_reais(self):
+        """A correção certa de ESC-0101: o balanço em milhares mostra 5.073."""
+        f = self._doc("total do ativo 5.073 4.100",
+                      "capital social dividido em 1.000 (mil) ações")
+        r = _adjudicar_historico(f, "UNIDADE", self.CORRENTE)
+        assert (r["numerica"]["classe"], r["escala_do_formulario"], r["veredito"]) == (
+            "dividido", "UNIDADE", "confirmada")
+        c = r["numerica"]["casamentos"][0]
+        assert (c["conta"], c["forma"], c["pagina"]) == ("1", "dividido", 1)
+        assert "total do ativo" in c["trecho"]
+
+    def test_linha_de_caixa_publicada_sem_numero(self):
+        from datetime import date
+        f = self._doc("caixa líquido das atividades operacionais 153.918 (12.345)",
+                      valores=[("6.01", date(2025, 1, 1), date(2025, 9, 30), 153918.0)])
+        c = self._classe(f)["casamentos"][0]
+        assert "153" not in c["trecho"] and "12.345" not in c["trecho"]
+        assert rad.VALOR_DE_CAIXA_OMITIDO in c["trecho"]
+
+    def test_regra_v3_exige_dt_refer_e_v2_segue_disponivel(self):
+        f = self._doc("capital social dividido em 1.000 (mil) ações")
+        with pytest.raises(ValueError, match="dt_refer"):
+            _adjudicar_historico(f, "UNIDADE")
+        # A v2 reproduz a execução 2 — e o defeito dela.
+        r = _adjudicar_historico(f, "UNIDADE", regra="v2")
+        assert (r["veredito"], r["escala_do_formulario"]) == ("corrigida", "MIL")
+
+    def test_evidencia_publicada_limitada(self):
+        f = self._doc(*["total do ativo 5.073"] * 9)
+        r = self._classe(f)
+        assert len(r["casamentos"]) == rad.CASAMENTOS_PUBLICADOS
+
+    def test_rede_bloqueada_para_alto(self, monkeypatch, tmp_path):
+        monkeypatch.setenv(rad.SEM_REDE, "1")
+        with pytest.raises(rad.RedeBloqueada):
+            rad.baixar("123", tmp_path / "x.zip", executar=lambda *a, **k: None)

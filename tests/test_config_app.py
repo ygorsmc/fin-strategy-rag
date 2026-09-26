@@ -151,7 +151,15 @@ def test_endpoint_mistral_ocr_e_estritamente_oficial(endpoint, esperado):
     assert endpoint_mistral_ocr_e_oficial(endpoint) is esperado
 
 
-def test_app_cacheado_sobe_sem_habilitar_respostas_dev_como_finais():
+def test_app_cacheado_sobe_sem_habilitar_respostas_dev_como_finais(monkeypatch):
+    """O modo padrão (RNF12) só oferece o cacheado.
+
+    **R6 (revisão de 24/09):** o teste passou a fixar a própria pré-condição.
+    Antes herdava `HABILITAR_PERGUNTAS_LIVRES=1` do `.env` local e falhava fora
+    de um ambiente limpo. `load_dotenv` não sobrescreve variável já definida,
+    então fixá-la no processo basta. Nenhuma asserção mudou.
+    """
+    monkeypatch.setenv("HABILITAR_PERGUNTAS_LIVRES", "0")
     app = AppTest.from_file("app_streamlit.py", default_timeout=20).run()
     assert not app.exception
     assert len(app.radio) == 1

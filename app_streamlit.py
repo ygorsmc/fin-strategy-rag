@@ -87,6 +87,55 @@ def _fluxo_de_texto(texto: str):
         time.sleep(INTERVALO_STREAMING_S)
 
 
+def _escapar_cifrao(texto: object) -> str:
+    """Impede que dois `R$` no mesmo texto virem fórmula LaTeX no markdown.
+
+    O markdown do Streamlit lê `$...$` como matemática: "R$ 3,4 bi e R$ 3,1 bi"
+    renderizaria o trecho entre os cifrões em itálico matemático e sumiria com
+    os dois símbolos — número financeiro desfigurado na tela.
+    """
+    return str(texto).replace("$", "\\$")
+
+
+_IMAGEM_MARKDOWN = re.compile(r"!\[[^\]]*\]\([^)]*\)")
+_SOBRESCRITO_LATEX = re.compile(r"\$?\^\{[^}]*\}\$?")
+_CELULA_SEPARADORA = re.compile(r":?-{3,}:?")
+_MARCADOR_DE_TITULO = re.compile(r"^#{1,6}\s*")
+
+
+def _limpar_trecho_ocr(texto: str) -> str:
+    """Tira do trecho recuperado a marcação do OCR que só polui a leitura.
+
+    Só apresentação: o chunk indexado e o texto que a RN02 confere não passam
+    por aqui. Remove referência a imagem (`![img-0.jpeg](img-0.jpeg)`), chamada
+    de nota em LaTeX (`^{(1)}`) e marcador de título; linha de tabela vira
+    células separadas por ` · `, sem as células `---` do cabeçalho markdown —
+    que no OCR às vezes vêm coladas a células de dado, por isso se descarta a
+    célula e não a linha.
+    """
+    linhas: list[str] = []
+    for linha in str(texto).splitlines():
+        linha = _SOBRESCRITO_LATEX.sub("", _IMAGEM_MARKDOWN.sub("", linha)).strip()
+        if linha.startswith("|"):
+            celulas = (celula.strip() for celula in linha.strip("|").split("|"))
+            linha = " · ".join(
+                celula
+                for celula in celulas
+                if celula and not _CELULA_SEPARADORA.fullmatch(celula)
+            )
+        linha = _MARCADOR_DE_TITULO.sub("", linha).strip()
+        if linha:
+            linhas.append(linha)
+    return "\n".join(linhas)
+
+
+# Mora em `src.cobertura`, ao lado de `formatar_reais`, porque a redação
+# conversacional do painel precisa dela e o módulo de dados não pode importar a
+# interface. Reexportado aqui pelo nome antigo: é assim que a tela e a suíte de
+# apresentação a chamam.
+from src.cobertura import formatar_reais_legivel  # noqa: E402
+
+
 def _redigir_para_exibicao(texto: object) -> str:
     """Redige PII antes de um trecho recuperado chegar ao navegador.
 
@@ -129,6 +178,33 @@ def _validar_metricas_publicaveis(
         meta["cache_demo_sha256"],
         meta["cache_demo_n_itens"],
     )
+
+
+STATUS_AUDITORIA_PENDENTE = "auditoria_manual_pendente"
+_ERRO_DE_STATUS = "Status das métricas de teste não permite esta operação."
+
+
+def _cache_aguarda_auditoria(
+    erro_cache: str, caminho_metricas: Path | None = None
+) -> bool:
+    """O erro do cache é o estado DECLARADO de auditoria pendente?
+
+    Só nesse caso a tela troca o erro vermelho por aviso: é trava de protocolo,
+    não defeito. As duas condições são exigidas juntas — a mensagem ser a do
+    status E o status gravado ser o de auditoria pendente —, para que métrica
+    corrompida, fingerprint divergente ou qualquer outro status continuem
+    aparecendo como erro. Na dúvida (arquivo ilegível), é erro.
+    """
+    if not erro_cache.endswith(_ERRO_DE_STATUS):
+        return False
+    try:
+        metricas = _carregar_objeto_json(
+            Path(caminho_metricas or ARQUIVO_METRICAS_TESTE), "Métricas de teste"
+        )
+    except (OSError, ValueError):
+        return False
+    meta = metricas.get("_meta")
+    return isinstance(meta, dict) and meta.get("status") == STATUS_AUDITORIA_PENDENTE
 
 
 def carregar_cache_demo(
@@ -631,11 +707,13 @@ _MARCAS_DA_CAMADA_DOCUMENTAL = (
 )
 
 
+# Compactado em 2026-09-20: o aviso ocupava quatro linhas em negrito depois de
+# toda resposta e competia com o número. O conteúdo que importa — este é o
+# contábil arquivado, o gerencial do release pode divergir — cabe em uma linha.
 AVISO_CONTABIL_E_GERENCIAL = (
-    "**Número contábil arquivado na CVM (ITR/DFP).** O release de resultados "
-    "pode divulgar, para o mesmo período, um número gerencial — ajustado ou "
-    "recorrente — diferente deste; essa leitura não foi consultada aqui. Para "
-    "obtê-la, pergunte no modo pergunta livre citando o release."
+    "_Número contábil arquivado na CVM (ITR/DFP). O release pode divulgar um "
+    "gerencial diferente para o mesmo período; essa leitura não foi consultada "
+    "aqui._"
 )
 
 
@@ -670,8 +748,10 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
         ROTULO_CONCEITO,
         EstadoCobertura,
         formatar_reais,
+        redigir_conversacional,
         responder_por_gabarito,
     )
+    from src.normalizacao import extrair_periodos_citados
     from src.projecao import (
         detectar_pergunta_prospectiva,
         recusa_de_ultimo_recurso,
@@ -731,6 +811,32 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
     ):
         return None
 
+    # Pergunta sem período pedia UM número e recebia a série inteira — seis
+    # trimestres que ninguém pediu, sem nem dizer que o período faltava. Mesma
+    # decisão já tomada para a rota do plano (`PeriodoIndefinido`): perguntar de
+    # volta, em uma frase. Só vale quando há mais de um trimestre a devolver;
+    # companhia com um trimestre só no painel não tem ambiguidade a resolver.
+    if (
+        resposta.fatos
+        and len(resposta.fatos) > 1
+        and not extrair_periodos_citados(pergunta)
+    ):
+        return {
+            "resposta": (
+                "De qual período? O painel tem "
+                + ", ".join(sorted({f.trimestre for f in resposta.fatos}))
+                + " para essa consulta — diga o trimestre (ex.: 3T2025) ou o "
+                "semestre (ex.: 2º semestre de 2025)."
+            ),
+            "fontes": [],
+            "fatos": [],
+            "citacoes": [],
+            "modo": "painel CVM · período não informado (nenhuma chamada externa)",
+            "provedor": "—",
+            "custo_usd": 0.0,
+            "consumiu_chamada": False,
+        }
+
     if resposta.precisa_desambiguacao:
         modo = "painel CVM · desambiguação (RN11, nenhuma chamada externa)"
     elif resposta.recusa:
@@ -738,7 +844,11 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
     else:
         modo = "painel CVM · consulta estruturada (nenhuma chamada externa)"
 
-    texto = resposta.resposta
+    # A prosa do braço C descreve cobertura e repete companhia e conceito a cada
+    # fato — formato do benchmark, não da tela. `redigir_conversacional` diz a
+    # mesma evidência uma vez; a procedência da RN01 segue na tabela de fatos e
+    # no expansor de citações, logo abaixo.
+    texto = redigir_conversacional(resposta, pergunta)
     # Mitigação da lacuna da deferência (auditoria de 2026-09-15): paráfrase
     # que aponta o release sem casar radical ainda chega aqui. Quando a
     # companhia TEM release no corpus, a resposta declara que é o contábil e
@@ -763,6 +873,7 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
                 "cd_cvm": fato.cd_cvm,
                 "trimestre": fato.trimestre,
                 "conceito": ROTULO_CONCEITO.get(fato.conceito, fato.conceito),
+                "valor_resumido": formatar_reais_legivel(fato.valor_reais),
                 "valor": formatar_reais(fato.valor_reais),
                 "origem": "derivado (RN10)" if fato.derivado else "arquivado",
             }
@@ -774,6 +885,227 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
         "custo_usd": 0.0,
         "consumiu_chamada": False,
     }
+
+
+@st.cache_resource(show_spinner=False)
+def _cache_de_celulas():
+    """Cache de (companhia, conceito, trimestre) → linhas, comum às sessões.
+
+    Compartilhar entre sessões é seguro e é o ponto: o conteúdo é número
+    contábil público do painel, idêntico para todo mundo, e nada aqui depende
+    de quem perguntou. Não há texto de usuário nem PII nesta estrutura — a
+    chave é código CVM, conceito e trimestre, e o valor são linhas do painel.
+
+    A validade é do ARQUIVO, não do tempo: `conferir_painel` esvazia tudo se o
+    painel for reconstruído, o que um TTL não garantiria.
+    """
+    from src.plano_consulta import CacheDeCelulas, assinatura_painel
+
+    return CacheDeCelulas(assinatura_painel(config.duckdb_path))
+
+
+@st.cache_resource(show_spinner=False)
+def _interprete_de_plano():
+    """Só o provedor de LLM, sem o índice vetorial.
+
+    `_pipeline_ao_vivo` materializa Chroma e BM25, que esta rota não usa: ela
+    responde do painel. Carregar o índice aqui pagaria memória e tempo de
+    abertura por uma consulta que nunca o consulta.
+    """
+    from src.geracao import fabricar_provedor_llm
+
+    return fabricar_provedor_llm(config)
+
+
+def responder_plano_se_couber(
+    pergunta: str, orcamento_restante_usd: float | None = None
+) -> dict | None:
+    """Painel contábil com o LLM como INTÉRPRETE — uma chamada paga por consulta.
+
+    Roda DEPOIS de `responder_estruturada_se_couber`, que cobre o vocabulário
+    canônico de graça, e ANTES do fluxo documental. A ordem é a que gasta menos:
+    quando o casador fixo resolve, nada é pago; quando ele não resolve, esta
+    rota abre comparação, variação e paráfrase, que ele não alcança; e quando
+    nem ela resolve, a pergunta segue para o corpus.
+
+    Devolve ``None`` quando a pergunta não é desta rota — e aí o chamador
+    encaminha ao corpus. Devolve recusa APRESENTÁVEL quando a pergunta é desta
+    rota mas está incompleta (`RecusaDeReformulacao`): período ausente ou réguas
+    misturadas não se resolvem no corpus, só reescrevendo, e mandar isso ao RAG
+    devolveria uma resposta pior em vez de um pedido de esclarecimento.
+
+    As guardas de entrada (RN05/RN06) e da RN07 moram AQUI DENTRO pelo mesmo
+    motivo do §3.6: um chamador futuro não pode abrir a porta esquecendo de
+    varrer antes. A guarda de saída também roda, porque o `motivo` da recusa é
+    o único texto do modelo que chega à tela nesta rota.
+    """
+    from src.dados_estruturados import executar_sql
+    from src.plano_consulta import (
+        ErroDeIntencao,
+        RecusaDeReformulacao,
+        assinatura_painel,
+        executar_plano,
+        interpretar_plano,
+        prompt_plano,
+        redigir_resposta,
+        validar_plano,
+    )
+    from src.intencao_consulta import _texto_json
+    from src.projecao import detectar_pergunta_prospectiva, recusa_de_ultimo_recurso
+
+    guarda = guardar_entrada(pergunta)
+    if guarda.bloqueado:
+        return _item_do_plano(
+            texto_de_recusa(guarda),
+            "painel CVM (plano) · recusa por guardrail no portão da consulta",
+            consumiu_chamada=False,
+        )
+    pergunta = guarda.texto_seguro  # RN06: só a forma anonimizada circula
+
+    achado = detectar_pergunta_prospectiva(pergunta)
+    if achado is not None:
+        saida = recusa_de_ultimo_recurso(
+            achado, motivo="rota prospectiva não atendeu esta pergunta"
+        )
+        return _item_do_plano(
+            saida.texto,
+            "painel CVM (plano) · RN07 no portão da consulta",
+            consumiu_chamada=False,
+        )
+
+    # Pergunta sobre release não vira consulta contábil, pela mesma razão da
+    # rota determinística: o painel guarda o número arquivado, o release publica
+    # o gerencial, e os dois divergem de propósito.
+    if _pergunta_pede_a_camada_documental(pergunta):
+        return None
+
+    recursos = carregar_rota_estruturada()
+    if recursos is None:
+        return None
+    try:
+        provedor = _interprete_de_plano()
+    except Exception as erro:  # sem chave configurada (RNF12): a rota some
+        LOGGER.warning("intérprete de plano indisponível: %s", erro)
+        return None
+
+    prompt_sistema = prompt_plano()
+    prompt_usuario = f"Pergunta: {pergunta}"
+    saldo = _saldo_disponivel(orcamento_restante_usd)
+    estimativa = provedor.estimar_custo_maximo(prompt_sistema, prompt_usuario)
+    if estimativa is None or not math.isfinite(float(estimativa)):
+        raise RuntimeError("O provedor não oferece estimativa auditável.")
+    if float(estimativa) > saldo:
+        raise RuntimeError("A próxima chamada excederia o orçamento da sessão.")
+
+    resposta_llm = provedor.gerar(prompt_sistema, prompt_usuario, temperatura=0.0)
+    custo = float(resposta_llm.uso.custo_usd or 0.0)
+    try:
+        bruto = interpretar_plano(_texto_json(resposta_llm.texto))
+        plano = validar_plano(bruto, recursos["indice"], pergunta)
+    except RecusaDeReformulacao as recusa:
+        # Volta à tela: só quem perguntou resolve. A chamada foi paga, então a
+        # cota conta — não cobrá-la faria a recusa sair de graça e convidaria o
+        # laço de tentativas sobre o provedor.
+        return _item_do_plano(
+            f"**Preciso de mais um detalhe.** {recusa}",
+            "painel CVM (plano) · pergunta incompleta",
+            custo_usd=custo,
+        )
+    except ErroDeIntencao as erro:
+        # Não é desta rota: o corpus documental pode ter. O custo já foi pago e
+        # é devolvido para que o chamador o debite mesmo encaminhando.
+        LOGGER.info("plano encaminhou ao corpus: %s", erro)
+        return {"encaminhar": True, "custo_usd": custo}
+
+    cache = _cache_de_celulas()
+    cache.conferir_painel(assinatura_painel(config.duckdb_path))
+    respondidas = executar_plano(
+        plano,
+        lambda sql: (
+            lambda r: (r.colunas, r.linhas)
+        )(executar_sql(sql, config, None)),
+        cache,
+    )
+    return _item_do_plano(
+        redigir_resposta(plano, respondidas),
+        "painel CVM (plano interpretado) · SQL por template, aritmética em Python",
+        custo_usd=custo,
+        fatos=_fatos_do_plano(respondidas),
+        provedor=f"{config.llm_provider}/{resposta_llm.modelo}",
+    )
+
+
+def _saldo_disponivel(orcamento_restante_usd: float | None) -> float:
+    """Saldo efetivo desta chamada, nunca acima do teto da sessão."""
+    informado = (
+        config.orcamento_teto_usd
+        if orcamento_restante_usd is None
+        else orcamento_restante_usd
+    )
+    if (
+        not isinstance(informado, (int, float))
+        or isinstance(informado, bool)
+        or not math.isfinite(float(informado))
+        or informado < 0
+    ):
+        raise ValueError("Saldo de orçamento inválido.")
+    return min(config.orcamento_teto_usd, float(informado))
+
+
+def _item_do_plano(
+    texto: str,
+    modo: str,
+    *,
+    custo_usd: float = 0.0,
+    fatos: list | None = None,
+    provedor: str = "—",
+    consumiu_chamada: bool = True,
+) -> dict:
+    """Empacota a saída da rota no formato que o histórico da interface lê.
+
+    A guarda de saída roda aqui, e não só no fluxo documental: o `motivo` de uma
+    recusa é texto que o modelo escreveu e que chega à tela sem passar por mais
+    ninguém.
+    """
+    saida = avaliar_saida(
+        texto,
+        tuple(config.guardrails_ativos),
+        presidio_habilitado=config.presidio_habilitado,
+        presidio_idioma=config.presidio_idioma,
+        presidio_modelo_spacy=config.presidio_modelo_spacy,
+    )
+    return {
+        "resposta": texto_de_recusa(saida) if saida.bloqueado else saida.texto_seguro,
+        "fontes": [],
+        "fatos": fatos or [],
+        "citacoes": [],
+        "modo": modo,
+        "provedor": provedor,
+        "custo_usd": custo_usd,
+        "consumiu_chamada": consumiu_chamada,
+    }
+
+
+def _fatos_do_plano(respondidas) -> list[dict]:
+    """Tabela de evidência: uma linha por número, com procedência (RN10)."""
+    from src.cobertura import ROTULO_CONCEITO, formatar_reais
+
+    return [
+        {
+            "companhia": linha.denom_social,
+            "cd_cvm": linha.cd_cvm,
+            "trimestre": linha.trimestre,
+            "conceito": ROTULO_CONCEITO.get(linha.conceito, linha.conceito),
+            "valor_resumido": formatar_reais_legivel(linha.valor_reais),
+            "valor": formatar_reais(linha.valor_reais),
+            "origem": (
+                "derivado (RN10)" if linha.origem != "arquivado" else "arquivado"
+            )
+            + (" · corrigido" if linha.corrigido else ""),
+        }
+        for respondida in respondidas
+        for linha in respondida.linhas
+    ]
 
 
 def _mensagem_do_painel(item: dict) -> dict:
@@ -836,6 +1168,49 @@ def validar_pergunta_livre(pergunta: str) -> str:
             f"{config.limite_caracteres_pergunta} caracteres."
         )
     return pergunta
+
+
+def _fontes_para_exibicao(recuperados, resposta) -> list[dict]:
+    """Trechos recuperados, com os que a resposta CITOU primeiro e marcados.
+
+    O top-k inteiro vai para a tela porque é o contexto que o modelo leu, mas
+    nem todo trecho recuperado foi usado: no ensaio de 2026-09-18 o sumário do
+    release do Itaú (págs. 1–5) aparecia como primeira fonte de uma resposta que
+    citava a pág. 5 da tabela. A marca vem da citação que a RN01 já validou —
+    documento e página —, nunca de similaridade de texto. Resposta recusada não
+    tem citação, e aí nada é marcado.
+    """
+    citadas = (
+        set()
+        if getattr(resposta, "recusa", False)
+        else {
+            (c.documento, int(c.pagina))
+            for c in (getattr(resposta, "citacoes", None) or ())
+        }
+    )
+    fontes = []
+    for r in recuperados:
+        chunk = r.chunk
+        citada = any(
+            documento == chunk.documento
+            and chunk.pagina_inicio <= pagina <= chunk.pagina_fim
+            for documento, pagina in citadas
+        )
+        fontes.append(
+            {
+                "rotulo": (
+                    ("✅ citado na resposta · " if citada else "")
+                    + f"{chunk.empresa} · {chunk.documento} · "
+                    f"págs. {chunk.pagina_inicio}–{chunk.pagina_fim}"
+                ),
+                "trecho": _redigir_para_exibicao(
+                    _limpar_trecho_ocr(chunk.texto.split("\n", 1)[-1])
+                )[:800],
+                "citada": citada,
+            }
+        )
+    # `sorted` é estável: dentro de cada grupo, a ordem do ranqueamento fica.
+    return sorted(fontes, key=lambda fonte: not fonte["citada"])
 
 
 def responder_pergunta_livre(
@@ -1001,18 +1376,7 @@ def responder_pergunta_livre(
         raise FalhaConsultaAoVivo(custo_a_debitar_em_falha) from exc
     return {
         "resposta": conteudo,
-        "fontes": [
-            {
-                "rotulo": (
-                    f"{r.chunk.empresa} · {r.chunk.documento} · "
-                    f"págs. {r.chunk.pagina_inicio}–{r.chunk.pagina_fim}"
-                ),
-                "trecho": _redigir_para_exibicao(
-                    r.chunk.texto.split("\n", 1)[-1]
-                )[:800],
-            }
-            for r in recuperados
-        ],
+        "fontes": _fontes_para_exibicao(recuperados, resposta),
         "custo_usd": float(uso.custo_usd),
         "modelo": uso.modelo,
     }
@@ -1042,6 +1406,9 @@ try:
 except (OSError, RuntimeError, ValueError, json.JSONDecodeError) as exc:
     cache_demo = {}
     erro_cache = f"{type(exc).__name__}: {exc}"
+cache_aguarda_auditoria = erro_cache is not None and _cache_aguarda_auditoria(
+    erro_cache
+)
 
 modo_livre_disponivel = (
     config.habilitar_perguntas_livres
@@ -1095,19 +1462,27 @@ for msg in st.session_state.historico:
         # de ter sido produzida. Sem isso, todo rerun (clique, troca de modo)
         # reescreveria o histórico inteiro palavra por palavra.
         if msg.pop("streamar", False):
-            st.write_stream(_fluxo_de_texto(msg["conteudo"]))
+            st.write_stream(_fluxo_de_texto(_escapar_cifrao(msg["conteudo"])))
         else:
-            st.markdown(msg["conteudo"])
+            st.markdown(_escapar_cifrao(msg["conteudo"]))
         if msg.get("fontes"):
             with st.expander(
-                "Trechos recuperados (não equivalem necessariamente às citações usadas)"
+                "Trechos recuperados — os marcados com ✅ foram citados na resposta"
             ):
                 for fonte in msg["fontes"]:
                     if isinstance(fonte, dict):
-                        st.markdown(f"**{fonte.get('rotulo', 'Fonte')}**")
-                        st.caption(_redigir_para_exibicao(fonte.get("trecho", "")))
+                        st.markdown(
+                            f"**{_escapar_cifrao(fonte.get('rotulo', 'Fonte'))}**"
+                        )
+                        st.caption(
+                            _escapar_cifrao(
+                                _redigir_para_exibicao(fonte.get("trecho", ""))
+                            ).replace("\n", "  \n")
+                        )
                     else:
-                        st.markdown(f"- {_redigir_para_exibicao(fonte)}")
+                        st.markdown(
+                            f"- {_escapar_cifrao(_redigir_para_exibicao(fonte))}"
+                        )
         if msg.get("fatos"):
             st.dataframe(msg["fatos"], hide_index=True, width="stretch")
             if any("derivado" in f.get("origem", "") for f in msg["fatos"]):
@@ -1119,16 +1494,25 @@ for msg in st.session_state.historico:
         if msg.get("citacoes"):
             with st.expander("Procedência no painel da CVM (RN01)"):
                 for citacao in msg["citacoes"]:
-                    st.markdown(f"- {citacao}")
+                    st.markdown(f"- {_escapar_cifrao(citacao)}")
         if msg.get("gabarito"):
             st.info(f"Gabarito verificado: {msg['gabarito']}")
         if msg.get("modo"):
             st.caption(f"modo: {msg['modo']} · provedor: {msg.get('provedor', '—')}")
 
 if modo == "Demonstração (cacheado)":
-    if erro_cache:
+    if cache_aguarda_auditoria:
+        st.warning(
+            "**Respostas pré-computadas: aguardando auditoria humana.** Ainda "
+            "não há cache final validado: o conjunto de teste congelado já foi "
+            "avaliado, mas as respostas só aparecem aqui depois da conferência "
+            "manual de fundamentação — é a trava que impede publicar resposta "
+            "não auditada. Enquanto isso, consulte o painel contábil abaixo ou "
+            "use o modo **Pergunta livre**."
+        )
+    elif erro_cache:
         st.error(f"Cache de demonstração inválido: {erro_cache}")
-    if not cache_demo:
+    elif not cache_demo:
         st.warning(
             "Ainda não há cache final validado do conjunto de teste congelado. "
             "O modo será habilitado somente após a segunda leitura, o congelamento "
@@ -1303,6 +1687,38 @@ else:
                     )
                     st.session_state.historico.append(
                         _mensagem_do_painel(item_painel)
+                    )
+                    st.rerun()
+                # Painel com LLM-intérprete: DEPOIS do casador fixo (que é de
+                # graça) e ANTES do corpus. Custa uma chamada, então debita cota
+                # e orçamento como qualquer outra — inclusive quando encaminha,
+                # porque a chamada já foi paga.
+                item_plano = None
+                try:
+                    item_plano = responder_plano_se_couber(
+                        pergunta,
+                        orcamento_restante_usd=max(
+                            0.0,
+                            config.orcamento_teto_usd
+                            - st.session_state.custo_usd_acumulado,
+                        ),
+                    )
+                except Exception as exc:  # nunca derruba o app por um extra
+                    LOGGER.warning("rota de plano falhou: %s", exc)
+                if item_plano is not None and item_plano.get("encaminhar"):
+                    # Não era desta rota; o corpus segue. O custo pago fica.
+                    st.session_state.custo_usd_acumulado += item_plano["custo_usd"]
+                    st.session_state.perguntas_livres_usadas += 1
+                    item_plano = None
+                elif item_plano is not None:
+                    st.session_state.custo_usd_acumulado += item_plano["custo_usd"]
+                    if item_plano.get("consumiu_chamada", True):
+                        st.session_state.perguntas_livres_usadas += 1
+                    st.session_state.historico.append(
+                        {"papel": "user", "conteudo": pergunta}
+                    )
+                    st.session_state.historico.append(
+                        _mensagem_do_painel(item_plano)
                     )
                     st.rerun()
                 st.session_state.historico.append(

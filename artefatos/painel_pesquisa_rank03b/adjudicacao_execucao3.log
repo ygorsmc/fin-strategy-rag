@@ -1,0 +1,63 @@
+{
+  "premissa_s5": {
+    "trechos_testados": [
+      [
+        "003549",
+        6
+      ]
+    ],
+    "trechos_nao_testaveis": [
+      [
+        "023426",
+        4
+      ],
+      [
+        "023604",
+        3
+      ]
+    ],
+    "trechos_com_interior_discordante": [],
+    "heranca_permitida": true
+  },
+  "documentos_no_escopo": 405,
+  "aquisicao": {
+    "integro": 405
+  },
+  "veredito_por_perfil": {
+    "mista|confirmada": 89,
+    "mista|corrigida": 56,
+    "mista|indecidivel": 162,
+    "piloto:E10_trecho_completo|corrigida": 1,
+    "piloto:E10_trecho_completo|indecidivel": 2,
+    "piloto:E3_interior_de_mista|confirmada": 2,
+    "piloto:E3_interior_de_mista|indecidivel": 4,
+    "piloto:E4_companhia_so_UNIDADE|indecidivel": 4,
+    "piloto:E5_companhia_so_MIL+E8_dfp|indecidivel": 2,
+    "piloto:E5_companhia_so_MIL|confirmada": 2,
+    "piloto:E5_companhia_so_MIL|indecidivel": 1,
+    "piloto:E6_ativo_ate_1_nao_nulo|indecidivel": 2,
+    "piloto:E7_varias_versoes|confirmada": 2,
+    "piloto:E7_varias_versoes|indecidivel": 6,
+    "piloto:E8_dfp|indecidivel": 2,
+    "piloto:E9_exercicio_2011_2012|indecidivel": 4,
+    "so_MIL|confirmada": 12,
+    "so_MIL|indecidivel": 18,
+    "so_UNIDADE|confirmada": 1,
+    "so_UNIDADE|corrigida": 2,
+    "so_UNIDADE|indecidivel": 31
+  },
+  "controles_corrigidos": 0,
+  "herdados": {
+    "confirmada": 296,
+    "corrigida": 9
+  },
+  "manifesto": {
+    "linhas": 68,
+    "por_base": {
+      "corrigida_documento": 59,
+      "herdada_trecho": 9
+    },
+    "sha256": "6330d78d02df05dae1cfe6cd478457b23786802634570d17afb685b6a40c9e2a"
+  }
+}
+exit 0

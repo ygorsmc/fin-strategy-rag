@@ -1,0 +1,215 @@
+{
+  "data": "2026-09-17",
+  "tipo": "conferencia_independente_rf01_rf08",
+  "parecer": "APROVACAO_PARCIAL_NAO_CONGELAR_V2",
+  "relatorio": "resultados/conferencia_rf01_rf08_rank03b_2026-09-17.md",
+  "escopo": {
+    "rotulo_real_calculado": false,
+    "t1_t2_baseline_real": false,
+    "treino_candidato": false,
+    "holdout": false,
+    "download_pacotes_cvm": false,
+    "chamada_paga": false,
+    "codigo_operacional_editado": false,
+    "paineis_editados": false,
+    "consulta_web": "Norma contábil primária CPC 03 R2, item 28"
+  },
+  "testes": {
+    "focados": {
+      "passaram": 351,
+      "segundos": 42.43
+    },
+    "suite": {
+      "passaram": 2544,
+      "skips": 0,
+      "avisos": 30,
+      "segundos": 167.71
+    },
+    "auditor": {
+      "passaram": 179,
+      "segundos": 48.63,
+      "somaveis_a_suite": false,
+      "oracle_rf03_amostras": 300
+    },
+    "contraprovas_adicionais_executadas": [
+      "reproduzir_escala.py",
+      "reproduzir_provas_parciais.py"
+    ]
+  },
+  "reconstrucao": {
+    "script": "reproduzir_estrutura.py",
+    "destino": ":memory:",
+    "persistido": "READ_ONLY",
+    "zips": 31,
+    "digest_conjunto": "1250cefb9a7276cec0642c722e1941b6e71262f965174dac9b34638014732e12",
+    "digest_confere": true,
+    "cadeia_confere": true,
+    "diferencas_exaustivas_bidirecionais": {
+      "ativo": 0,
+      "fco_acumulado": 0,
+      "fco_trimestral": 0
+    },
+    "falsificacoes_implementadas_todas_zero": true,
+    "veredito_reproduzido": "G0 E G1 APROVADOS",
+    "g0_3_saltos": 68,
+    "g1_observacoes": 10750,
+    "g1_companhias": 503,
+    "g1_4": 0,
+    "g05": {
+      "validos": 22088,
+      "heterogeneos": 87,
+      "sem_veredito": 56,
+      "fracao": 0.002535,
+      "decidido": false,
+      "configuracoes": [
+        {
+          "declaradas_diferentes": true,
+          "aplicadas_diferentes": true,
+          "trimestres": 43,
+          "sem_veredito": 43
+        },
+        {
+          "declaradas_diferentes": true,
+          "aplicadas_diferentes": false,
+          "trimestres": 39,
+          "sem_veredito": 8
+        },
+        {
+          "declaradas_diferentes": false,
+          "aplicadas_diferentes": true,
+          "trimestres": 5,
+          "sem_veredito": 5
+        },
+        {
+          "declaradas_diferentes": false,
+          "aplicadas_diferentes": false,
+          "trimestres": 22001,
+          "sem_veredito": 0
+        }
+      ]
+    },
+    "datas_provas_conferem": true,
+    "ativos_antes_da_prova": 0,
+    "versao_verificacoes_confere": true,
+    "quatro_hashes_codigo_verificacoes_conferem": true,
+    "cinco_hashes_pre_execucao3_conferem": true,
+    "antiga_esc0101": {
+      "cd_cvm": "027570",
+      "id_doc": "152742",
+      "valor_bruto": 5073000,
+      "valor_reais": 5073000,
+      "escala_aplicada": "UNIDADE",
+      "base_escala": "declarada"
+    }
+  },
+  "achados": [
+    {
+      "id": "CRF-01",
+      "prioridade": "P2",
+      "script": "reproduzir_escala.py",
+      "sintetico": {
+        "formulario_caixa_reais": 900000,
+        "nota_caixa_milhares": 900,
+        "nota_fornecedores_milhares": 900000,
+        "linhas_separadas": "indecidivel",
+        "mesma_linha": "corrigida_para_MIL"
+      },
+      "real": {
+        "id_correcao": "ESC-0029",
+        "linha_csv": 30,
+        "cd_cvm": "021717",
+        "id_doc": "76468",
+        "dt_refer": "2018-06-30",
+        "arquivo": "artefatos/painel_pesquisa_rank03b/rad/brutos/76468.zip",
+        "sha256": "4875c76f8407b0db1377c8249e6f67742eb4b25ee19031b1c4aba117c6dc9e3b",
+        "anexo_indice": 2,
+        "pagina_no_anexo": 12,
+        "conta_casada": "6.04",
+        "forma": "bruto",
+        "contagem": {
+          "bruto": 1,
+          "dividido": 0,
+          "multiplicado": 0
+        },
+        "trecho": "ajuste de variação cambial [valor de caixa omitido]",
+        "contexto": "Nota 10 - Investimento; TISA NY, Inc. - Movimentação do investimento (Em milhares de reais)",
+        "releitura_e_readjudicacao_concluidas": true,
+        "erro_monetario_real_demonstrado": false
+      }
+    },
+    {
+      "id": "CRF-02",
+      "prioridade": "P2",
+      "script": "reproduzir_provas_parciais.py",
+      "dados": "sinteticos",
+      "documentos_corrigidos": 2,
+      "controles": [
+        {
+          "construtor": "correto",
+          "provas": "completas",
+          "g1_aprovado": true,
+          "g1_4": 0,
+          "c3": 0
+        },
+        {
+          "construtor": "sabotado",
+          "provas": "completas",
+          "g1_aprovado": false,
+          "g1_4": 2,
+          "c3": 2
+        },
+        {
+          "construtor": "sabotado",
+          "provas": "parciais_1_de_2",
+          "g1_aprovado": true,
+          "g1_4": 0,
+          "c3": 0
+        },
+        {
+          "construtor": "sabotado",
+          "provas": "vazias_entrada_medir",
+          "excecao": "ProvasAusentes"
+        },
+        {
+          "construtor": "sabotado",
+          "provas": "omitidas_g1_cego_direto",
+          "g1_aprovado": true,
+          "g1_4": 0
+        }
+      ],
+      "vazamento_canonico_real_demonstrado": false
+    },
+    {
+      "id": "CRF-03",
+      "prioridade": "P3",
+      "objeto": "Historico de execucao2 sem rotulo local e descricao desatualizada da grade D"
+    }
+  ],
+  "limites": {
+    "readjudicacao_405_concluida": false,
+    "releitura_auxiliar_60": "Interrompida, sem resultado final; não contabilizada",
+    "gold_humano_todas_68_correcoes": false,
+    "correcoes_atuais_certificadas_integralmente": false,
+    "heranca_trechos_testaveis": 1,
+    "novas_politicas_escolhidas": false
+  },
+  "integridade": {
+    "hashes_inicio_iguais_fim": true,
+    "arquivos_sha256": {
+      "artefatos/cvm.duckdb": "43e31d9f150e535f1ab20576d9aacf1a53b83ecc5424ca7d48ba50781e4cef18",
+      "artefatos/cvm_treino.duckdb": "c1a604453a9a2fa7df24b0b2dbc53df6fb5ef0d39fd06f492407028030bc069b",
+      "artefatos/painel_pesquisa_rank03b/painel.duckdb": "06f36ae66ce80e90ff9b16c34527b6f30f883627e840693990998c6375dcb804",
+      "corpus/cvm/painel_pesquisa_rank03b/correcoes_escala.csv": "6330d78d02df05dae1cfe6cd478457b23786802634570d17afb685b6a40c9e2a",
+      "artefatos/painel_pesquisa_rank03b/manifesto_painel.json": "039abb5a429e1f10df71a2f60fb3e8599ddf9e5f7542114db29712bffd7929cf",
+      "artefatos/painel_pesquisa_rank03b/gates_g0_g1.json": "aaffb03e8aff9d6f13a5b5c0ecacac464aad8ce91befe033b553d67706f397a6",
+      "artefatos/painel_pesquisa_rank03b/verificacoes_revisao_final.json": "c74bc0500823911b7b50b602e5b488c3228deea4e40dfeb0bd548329cf0aed1b",
+      "scripts/fonte_rad_cvm.py": "0697d1fed36f683734c8f727c9046682c800fb004c2305bb404eefbaa9ca9485",
+      "scripts/adjudicar_escala_rank03b.py": "67444c160b2fc12a8f1b7a7a90f5baf679b55385270bf3379370c216ac5fd304",
+      "scripts/painel_pesquisa_rank03b.py": "f61f5ab115d3a48c144781cae6b62f51c0ea3d1cac2407e1fd1455d1531a3497",
+      "scripts/gates_painel_pesquisa_rank03b.py": "131e44129987bd8fe812cbc449bb2383a0a89c3cac653ac175ed8c1216c75586",
+      "scripts/auditar_rank03b_consumo_operacional.py": "a550108f46de238ba07d725155ec2a867b5cb70331aed41657ba20d129b81e9c",
+      "scripts/verificacoes_revisao_final_rank03b.py": "d4a9b7eec4f2843d20fff8b9cb67113a23f06f3555c661b5542d1ff4f0e2764a",
+      "resultados/pre_registro_rank03b_v2_RASCUNHO_2026-09-16.md": "1f4cb09cb0636fdbc124f34cb075ad503b1619f492ad176e0a3c14d6ebb42b2a"
+    }
+  }
+}

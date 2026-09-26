@@ -45,7 +45,10 @@ from src.cobertura import (
     descrever_cobertura,
     extrair_conceito,
     extrair_mencoes,
+    RespostaDeterministica,
     formatar_reais,
+    formatar_reais_legivel,
+    redigir_conversacional,
     resolver_entidade,
     responder_por_gabarito,
     tokenizar_nome,
@@ -836,3 +839,198 @@ class TestIndiceCobertura:
         )
         assert cobertura.no_painel is False
         assert cobertura.no_corpus is False
+
+
+# --------------------------------------------------------------------------- #
+# Redação conversacional — a resposta que vai para a tela
+# --------------------------------------------------------------------------- #
+
+
+def _fato(
+    conceito=CONCEITO_LUCRO_CONTROLADORES,
+    trimestre="3T2025",
+    valor=11_306_000_000.0,
+    derivado=False,
+    cd_cvm=CD_ITAU,
+    denom="ITAU UNIBANCO HOLDING S.A.",
+) -> FatoEstruturado:
+    return FatoEstruturado(
+        cd_cvm=cd_cvm,
+        denom_social=denom,
+        trimestre=trimestre,
+        conceito=conceito,
+        valor_reais=valor,
+        origem="derivado" if derivado else "arquivado",
+    )
+
+
+def _resposta(*fatos, **campos) -> RespostaDeterministica:
+    """Resposta com um texto de braço C propositalmente verboso.
+
+    Se a redação conversacional algum dia voltar a repassar `.resposta`, as
+    asserções destes casos falham — é essa a diferença que se está travando.
+    """
+    campos.setdefault(
+        "resposta", "TEXTO VERBOSO DO BRAÇO C QUE NÃO DEVE CHEGAR À TELA."
+    )
+    return RespostaDeterministica(
+        pergunta=campos.pop("pergunta", ""), fatos=tuple(fatos), **campos
+    )
+
+
+class TestRedacaoConversacional:
+    """Regressão de 2026-09-20: a tela recebia uma parede de texto.
+
+    O braço C descreve cobertura e repete companhia e conceito a cada fato —
+    correto para o benchmark, ilegível como resposta. Seis trimestres do Itaú
+    produziam seis frases completas, cada uma reabrindo "Lucro líquido
+    atribuído aos sócios da empresa controladora de ITAU UNIBANCO HOLDING S.A."
+    """
+
+    def test_um_fato_vira_uma_frase_direta(self):
+        texto = redigir_conversacional(
+            _resposta(_fato()), "qual o lucro do Itaú no 3T2025?"
+        )
+        assert texto == (
+            "O lucro líquido (controladores) de ITAU UNIBANCO HOLDING S.A. em "
+            "3T2025 foi de R$ 11,31 bilhões (R$ 11.306.000.000,00)."
+        )
+
+    def test_o_nome_da_companhia_aparece_uma_vez_so(self):
+        """A regressão medida: era uma vez por trimestre."""
+        texto = redigir_conversacional(
+            _resposta(
+                _fato(trimestre="3T2025"),
+                _fato(trimestre="4T2025", valor=11_907_000_000.0),
+            ),
+            "lucro do Itaú no segundo semestre de 2025",
+        )
+        assert texto.count("ITAU UNIBANCO HOLDING S.A.") == 1
+        assert texto.count("lucro líquido") == 1
+
+    def test_semestre_de_conta_de_resultado_soma_e_mostra_as_parcelas(self):
+        texto = redigir_conversacional(
+            _resposta(
+                _fato(trimestre="3T2025", valor=11_306_000_000.0),
+                _fato(trimestre="4T2025", valor=11_907_000_000.0),
+            ),
+            "qual o lucro do Itaú no segundo semestre de 2025?",
+        )
+        assert "no 2º semestre de 2025 foi de" in texto
+        assert "R$ 23.213.000.000,00" in texto  # a soma, exata
+        assert "R$ 11,31 bilhões em 3T2025" in texto  # a parcela
+        assert "R$ 11,91 bilhões em 4T2025" in texto
+
+    def test_semestre_de_saldo_de_balanco_recusa_somar(self):
+        """Somar dois 31/12 de patrimônio produz número sem significado.
+
+        É a mesma família do que o projeto combate: plausível, redondo e
+        errado. `CONCEITOS_DE_FLUXO` é quem separa os dois casos.
+        """
+        texto = redigir_conversacional(
+            _resposta(
+                _fato(conceito=CONCEITO_PATRIMONIO_LIQUIDO, trimestre="3T2025",
+                      valor=176_138_000_000.0),
+                _fato(conceito=CONCEITO_PATRIMONIO_LIQUIDO, trimestre="4T2025",
+                      valor=178_950_000_000.0),
+            ),
+            "qual o patrimônio líquido do Itaú no segundo semestre de 2025?",
+        )
+        assert "não se soma entre trimestres" in texto
+        assert "R$ 176,14 bilhões em 3T2025" in texto
+        assert "R$ 178,95 bilhões em 4T2025" in texto
+        # A soma errada não pode aparecer em lugar nenhum da frase.
+        assert "355" not in texto
+
+    def test_valor_derivado_sai_marcado_na_parcela_e_no_total(self):
+        texto = redigir_conversacional(
+            _resposta(
+                _fato(trimestre="3T2025", valor=11_306_000_000.0),
+                _fato(trimestre="4T2025", valor=11_907_000_000.0, derivado=True),
+            ),
+            "lucro do Itaú no segundo semestre de 2025",
+        )
+        assert "(derivado) em 4T2025" in texto
+        assert "RN10" in texto
+
+    def test_fato_unico_derivado_diz_a_regra(self):
+        texto = redigir_conversacional(
+            _resposta(_fato(trimestre="4T2025", valor=11_907_000_000.0, derivado=True)),
+            "lucro do Itaú no 4T2025",
+        )
+        assert "valor derivado (RN10)" in texto
+
+    def test_periodos_soltos_nao_somam_mesmo_sendo_fluxo(self):
+        """Dois trimestres citados avulsos são duas perguntas, não um intervalo."""
+        texto = redigir_conversacional(
+            _resposta(
+                _fato(trimestre="3T2025", valor=11_306_000_000.0),
+                _fato(trimestre="4T2025", valor=11_907_000_000.0),
+            ),
+            "compare o lucro do Itaú em 3T2025 e 4T2025",
+        )
+        assert "soma de" not in texto
+        assert "R$ 11,31 bilhões em 3T2025" in texto
+
+    def test_enumeracao_usa_e_em_vez_de_ponto_e_virgula(self):
+        texto = redigir_conversacional(
+            _resposta(
+                _fato(trimestre="3T2025"),
+                _fato(trimestre="4T2025", valor=11_907_000_000.0),
+            ),
+            "lucro do Itaú no segundo semestre de 2025",
+        )
+        assert " e R$ 11,91 bilhões em 4T2025" in texto
+
+    def test_duas_companhias_ganham_uma_frase_cada(self):
+        texto = redigir_conversacional(
+            _resposta(
+                _fato(trimestre="3T2025"),
+                _fato(cd_cvm=CD_BRADESCO, denom="BCO BRADESCO S.A.",
+                      trimestre="3T2025", valor=5_500_665_000.0),
+            ),
+            "lucro do Itaú e do Bradesco no 3T2025",
+        )
+        assert "ITAU UNIBANCO HOLDING S.A." in texto
+        assert "BCO BRADESCO S.A." in texto
+        assert texto.count("foi de") == 2
+
+    @pytest.mark.parametrize(
+        "campos",
+        [
+            {"precisa_desambiguacao": True},
+            {"recusa": True, "motivo_recusa": MOTIVO_FORA_DO_CORPUS},
+        ],
+    )
+    def test_desambiguacao_e_recusa_passam_intactas(self, campos):
+        """Já são curtas e carregam o motivo; reescrevê-las perderia conteúdo."""
+        resposta = _resposta(resposta="Texto original da recusa.", **campos)
+        assert redigir_conversacional(resposta, "pergunta") == (
+            "Texto original da recusa."
+        )
+
+    def test_sem_fatos_passa_intacta(self):
+        resposta = _resposta(resposta="O painel não traz X em 2T2024.")
+        assert redigir_conversacional(resposta, "pergunta") == (
+            "O painel não traz X em 2T2024."
+        )
+
+
+class TestFormatarReaisLegivel:
+    """Mudou de módulo em 2026-09-20 (de `app_streamlit` para cá), porque a
+    redação conversacional precisa dela e dados não importa interface."""
+
+    @pytest.mark.parametrize(
+        "valor,esperado",
+        [
+            (11_306_000_000.0, "R$ 11,31 bilhões"),
+            (1_500_000_000.0, "R$ 1,50 bilhão"),  # norma culta: singular < 2
+            (336_345_000.0, "R$ 336,35 milhões"),
+            (-2_000_000_000.0, "-R$ 2,00 bilhões"),
+        ],
+    )
+    def test_escala_e_plural(self, valor, esperado):
+        assert formatar_reais_legivel(valor) == esperado
+
+    def test_abaixo_de_um_milhao_cai_no_formato_exato(self):
+        assert formatar_reais_legivel(1_234.5) == formatar_reais(1_234.5)

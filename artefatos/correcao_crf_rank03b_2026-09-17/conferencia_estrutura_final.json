@@ -1,0 +1,89 @@
+{
+  "zips_conferidos": 31,
+  "compartilhado_sha256": "c1a604453a9a2fa7df24b0b2dbc53df6fb5ef0d39fd06f492407028030bc069b",
+  "digest_reconstruido": {
+    "ativo": "9cefae45bbb78829141091a823d6015e62b5f40901f4fef1d823628ecf9ee74e",
+    "fco_acumulado": "5126270ca7c5e4143e0f7f4dd3b4dac1c0b359972a74d3219922eb6a74e83328",
+    "fco_trimestral": "1993a6ae6bf85566709309b398a0738be4dffa91f95e707e9ad8d03782b1719a",
+    "conjunto": "6ca635a904f11140fa24c496a11b77e961f841b72f076edd5650212afe12e6cd"
+  },
+  "digest_confere": true,
+  "falsificacoes": {
+    "c1_valido_fora_da_banda": 0,
+    "c2_trimestre_valido_repetido": 0,
+    "c3_disponibilidade_diferente_do_operando_mais_tardio": 0,
+    "c4_subtracao_entre_exercicios": 0,
+    "c8_operando_sem_documento": 0,
+    "c5_candidato_sem_destino": 0,
+    "c8_linha_de_fco_fora_do_painel": 0,
+    "c8_linha_de_ativo_fora_do_painel": 0,
+    "c8_documento_fora_do_painel": 0
+  },
+  "cadeia_confere": true,
+  "resumo_gates": {
+    "veredito": "REPROVADO EM G0",
+    "g0_3_saltos": 132,
+    "g1_observacoes": 10748,
+    "g1_companhias": 502,
+    "g1_4": 0,
+    "g05": {
+      "trimestres_validos": 22088,
+      "com_escalas_heterogeneas": 82,
+      "por_configuracao": {
+        "declaradas_diferentes|aplicadas_diferentes": {
+          "trimestres": 82,
+          "sem_veredito": 82
+        },
+        "declaradas_iguais|aplicadas_iguais": {
+          "trimestres": 22006,
+          "sem_veredito": 0
+        }
+      },
+      "sem_veredito_em_algum_operando": 82,
+      "fracao": 0.003712,
+      "limiar": "[DECIDIR] — 0,5% seria política NOVA para outro evento e outro denominador; não é herdado de G0.3",
+      "governa_este_lote": false
+    }
+  },
+  "versao_verificacao_confere": true,
+  "hashes_codigo_verificacao": {
+    "scripts/adjudicar_escala_rank03b.py": true,
+    "scripts/fonte_rad_cvm.py": true,
+    "scripts/fonte_zip_cvm.py": true,
+    "scripts/verificacoes_revisao_final_rank03b.py": true
+  },
+  "diferencas_linhas_persistidas": {
+    "ativo": 0,
+    "fco_acumulado": 0,
+    "fco_trimestral": 0
+  },
+  "datas_das_provas_conferem": true,
+  "ativos_antes_da_prova": 0,
+  "esc_0101_anterior": [
+    {
+      "cd_cvm": "027570",
+      "id_doc": "152742",
+      "valor_bruto": 5073000.0,
+      "valor_reais": 5073000.0,
+      "escala_aplicada": "UNIDADE",
+      "base_escala": "declarada"
+    }
+  ],
+  "protegidos_inalterados": {
+    "artefatos/cvm.duckdb": true,
+    "artefatos/cvm_treino.duckdb": true,
+    "artefatos/painel_pesquisa_rank03b/rad/manifesto_aquisicao.jsonl": true
+  },
+  "script_conferencia_sha256": "0b1720b03aa3640c2e642a3182b4508d6acb1610a344b109a63d9368cbc1a719",
+  "script_envoltoria_sha256": "405c4587de572a46b1324d0d9c1d2e1753336e407d2579198e4481b7187a0345",
+  "suite_final": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "2615",
+    "time": "557.268",
+    "timestamp": "2026-09-18T00:49:09.374205-03:00",
+    "hostname": "ygor-Predator-PH315-52"
+  }
+}

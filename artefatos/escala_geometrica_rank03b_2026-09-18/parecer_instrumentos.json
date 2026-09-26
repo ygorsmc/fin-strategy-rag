@@ -1,0 +1,32 @@
+{
+  "data": "2026-09-18",
+  "auditor": "/root/auditor_geometria",
+  "registro": "Síntese estruturada pelo principal dos pareceres recebidos; não é saída assinada do auditor.",
+  "escopo": "Revisão somente leitura do produtor/consumidor GEOM-1 e orquestradores, sem inferência sobre precisão populacional.",
+  "antes_do_piloto": {
+    "achados_corrigidos": [
+      "Ressalva arbitrária de unidade podia excluir caixa da unidade MIL e ainda ser aceita.",
+      "Declaração de moeda ou unidade não enumerada podia ser tratada como ausência.",
+      "Dimensões não positivas ou não finitas da página precisavam de veto explícito.",
+      "Guarda de caminhos relativos ignorava manifesto de aquisição pinado com caminho absoluto."
+    ],
+    "verificacao_independente": "86 testes passaram; auditor repetiu contraprovas e positivos, conferiu seleção e simulação do runner, pin antes da leitura, falha registrada, sentinelas fora do denominador e recusa de sobrescrita.",
+    "conclusao": "Sem bloqueio remanescente identificado para o piloto; toda aceitação ainda sujeita à conferência contra a fonte.",
+    "verificacao_reservada_aberta_durante_revisao": false
+  },
+  "antes_da_extensao": {
+    "achados_corrigidos": [
+      "Exigir parecer também para eventual aceitação das sentinelas, não só dos 12 documentos.",
+      "Exigir conjunto completo de arquivos do mapa de hashes, não aceitar mapa parcial ou vazio."
+    ],
+    "verificacao_independente": "26 testes passaram; pré-condições reais e sete arquivos protegidos conferidos. A transcrição do parecer documental foi confirmada pelo auditor.",
+    "conclusao": "Sem bloqueio remanescente identificado para extensão documental aos 405, sem promoção, herança ou G0.",
+    "dados_reais_ajustaram_regra": false
+  },
+  "limites": [
+    "Ausência de achado não prova ausência de todos os defeitos.",
+    "Testes sintéticos não estimam precisão das decisões sobre fontes reais.",
+    "Fonte do piloto tem parecer separado; candidatas da extensão precisam de conferência antes da promoção.",
+    "Consumidor governante v4 não foi substituído nem conferido como se já aceitasse GEOM-1."
+  ]
+}

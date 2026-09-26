@@ -1,0 +1,100 @@
+{
+  "sentido": "nova busca de 25/09 contra a publicada em 24/09; só booleanos e contagens",
+  "publicada_sha256": "c19682bfde33480a66caeb088503f098360aebce57b6070a539f5f97a28eb3a3",
+  "nova_sha256": "b42c7bced791ef3d1fdc07b8df293d8c90b5347ced7005251ce564bdd41e651f",
+  "documentos": [
+    {
+      "id_doc": "140867",
+      "modos": {
+        "-layout": {
+          "paginas_iguais": true,
+          "ativo_mesmas_paginas_e_linhas": true,
+          "ativo_mesmas_colunas_e_tokens": true,
+          "ativo_mesmos_trechos": true,
+          "ativo_ocorrencias": 4,
+          "ativo_ambiguos": 0,
+          "fco_mesmas_paginas": true,
+          "fco_paginas_com_correspondencia": [],
+          "tokens_fora_da_gramatica": 141,
+          "paginas_com_token_fora_da_gramatica": 28,
+          "tokens_com_sinal_ambiguo": 291,
+          "paginas_com_pouco_texto_na_nova": []
+        },
+        "-raw": {
+          "paginas_iguais": true,
+          "ativo_mesmas_paginas_e_linhas": true,
+          "ativo_mesmas_colunas_e_tokens": true,
+          "ativo_mesmos_trechos": true,
+          "ativo_ocorrencias": 4,
+          "ativo_ambiguos": 0,
+          "fco_mesmas_paginas": true,
+          "fco_paginas_com_correspondencia": [],
+          "tokens_fora_da_gramatica": 141,
+          "paginas_com_token_fora_da_gramatica": 28,
+          "tokens_com_sinal_ambiguo": 291,
+          "paginas_com_pouco_texto_na_nova": []
+        }
+      },
+      "modos_concordam": [
+        true,
+        true
+      ],
+      "identidade_de_caixa_igual": true,
+      "reinventario_igual": true,
+      "xml_e_pdf_iguais": true,
+      "ativo_formas_que_so_casam_com_decimais": [
+        "consolidado_corrente_sobre_mil"
+      ]
+    },
+    {
+      "id_doc": "142900",
+      "modos": {
+        "-layout": {
+          "paginas_iguais": true,
+          "ativo_mesmas_paginas_e_linhas": true,
+          "ativo_mesmas_colunas_e_tokens": true,
+          "ativo_mesmos_trechos": true,
+          "ativo_ocorrencias": 0,
+          "ativo_ambiguos": 0,
+          "fco_mesmas_paginas": true,
+          "fco_paginas_com_correspondencia": [],
+          "tokens_fora_da_gramatica": 120,
+          "paginas_com_token_fora_da_gramatica": 25,
+          "tokens_com_sinal_ambiguo": 242,
+          "paginas_com_pouco_texto_na_nova": []
+        },
+        "-raw": {
+          "paginas_iguais": true,
+          "ativo_mesmas_paginas_e_linhas": true,
+          "ativo_mesmas_colunas_e_tokens": true,
+          "ativo_mesmos_trechos": true,
+          "ativo_ocorrencias": 0,
+          "ativo_ambiguos": 0,
+          "fco_mesmas_paginas": true,
+          "fco_paginas_com_correspondencia": [],
+          "tokens_fora_da_gramatica": 120,
+          "paginas_com_token_fora_da_gramatica": 25,
+          "tokens_com_sinal_ambiguo": 242,
+          "paginas_com_pouco_texto_na_nova": []
+        }
+      },
+      "modos_concordam": [
+        true,
+        true
+      ],
+      "identidade_de_caixa_igual": true,
+      "reinventario_igual": true,
+      "xml_e_pdf_iguais": true,
+      "ativo_formas_que_so_casam_com_decimais": [
+        "consolidado_corrente_sobre_mil"
+      ]
+    }
+  ],
+  "expectativas_do_contrato_c6_3": {
+    "ativo_140867_nas_mesmas_paginas_e_linhas": true,
+    "nenhuma_ocorrencia_ambigua_do_ativo": true,
+    "fco_dos_dois_e_ativo_de_142900_sem_correspondencia": true,
+    "coluna_so_mudaria_pelo_novo_sentido": true
+  },
+  "todas_as_expectativas_cumpridas": true
+}

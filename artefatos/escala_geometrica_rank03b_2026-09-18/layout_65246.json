@@ -1,0 +1,887 @@
+{
+  "id_doc": "65246",
+  "dt_refer": "2017-03-31",
+  "paginas": [
+    {
+      "anexo": 1,
+      "grupo": "193",
+      "pagina": 5,
+      "largura": 595.2,
+      "altura": 841.919,
+      "linhas": [
+        {
+          "texto": "Concebra - Concessionária das Rodovias Centrais do Brasil S.A.",
+          "x": 55.2,
+          "fim_x": 444.05,
+          "y": 119.1
+        },
+        {
+          "texto": "Balanço patrimonial",
+          "x": 55.2,
+          "fim_x": 149.16,
+          "y": 146.12
+        },
+        {
+          "texto": "[n] de março de [n] e [n] de dezembro de [n]",
+          "x": 55.2,
+          "fim_x": 287.29,
+          "y": 158.36
+        },
+        {
+          "texto": "(Em milhares de reais)",
+          "x": 55.2,
+          "fim_x": 163.04,
+          "y": 170.84
+        },
+        {
+          "texto": "Nota",
+          "x": 293.76,
+          "fim_x": 310.74,
+          "y": 207.35
+        },
+        {
+          "texto": "Ativo",
+          "x": 61.92,
+          "fim_x": 79.14,
+          "y": 216.71
+        },
+        {
+          "texto": "Circulante",
+          "x": 61.92,
+          "fim_x": 96.86,
+          "y": 225.59
+        },
+        {
+          "texto": "Caixa e equivalentes de caixa",
+          "x": 64.07,
+          "fim_x": 167.0,
+          "y": 234.71
+        },
+        {
+          "texto": "Clientes e operações a receber",
+          "x": 64.08,
+          "fim_x": 171.85,
+          "y": 243.59
+        },
+        {
+          "texto": "Impostos a recuperar",
+          "x": 64.16,
+          "fim_x": 137.33,
+          "y": 252.47
+        },
+        {
+          "texto": "Adiantamentos diversos",
+          "x": 64.08,
+          "fim_x": 147.1,
+          "y": 261.59
+        },
+        {
+          "texto": "Despesas antecipadas",
+          "x": 64.08,
+          "fim_x": 142.37,
+          "y": 270.47
+        },
+        {
+          "texto": "Não circulante",
+          "x": 61.92,
+          "fim_x": 111.73,
+          "y": 297.59
+        },
+        {
+          "texto": "Despesas antecipadas",
+          "x": 61.92,
+          "fim_x": 140.22,
+          "y": 306.47
+        },
+        {
+          "texto": "Adiantamento - partes relacionadas",
+          "x": 61.92,
+          "fim_x": 184.03,
+          "y": 315.59
+        },
+        {
+          "texto": "Impostos e contribuições diferidos",
+          "x": 61.92,
+          "fim_x": 179.12,
+          "y": 324.47
+        },
+        {
+          "texto": "Intangível",
+          "x": 61.92,
+          "fim_x": 95.26,
+          "y": 333.35
+        },
+        {
+          "texto": "[n]",
+          "x": 300.0,
+          "fim_x": 304.28,
+          "y": 234.71
+        },
+        {
+          "texto": "[n]",
+          "x": 300.0,
+          "fim_x": 304.28,
+          "y": 243.59
+        },
+        {
+          "texto": "[n]",
+          "x": 300.0,
+          "fim_x": 304.28,
+          "y": 261.59
+        },
+        {
+          "texto": "[n]",
+          "x": 300.0,
+          "fim_x": 304.28,
+          "y": 270.47
+        },
+        {
+          "texto": "[n]",
+          "x": 300.0,
+          "fim_x": 304.28,
+          "y": 306.47
+        },
+        {
+          "texto": "[n]",
+          "x": 300.0,
+          "fim_x": 304.28,
+          "y": 315.59
+        },
+        {
+          "texto": "[n]",
+          "x": 297.84,
+          "fim_x": 306.44,
+          "y": 324.47
+        },
+        {
+          "texto": "[n]",
+          "x": 300.0,
+          "fim_x": 304.28,
+          "y": 333.35
+        },
+        {
+          "texto": "Total do ativo",
+          "x": 61.92,
+          "fim_x": 108.39,
+          "y": 370.31
+        },
+        {
+          "texto": "31/03/2017",
+          "x": 362.4,
+          "fim_x": 401.19,
+          "y": 207.35
+        },
+        {
+          "texto": "31/12/2016",
+          "x": 472.56,
+          "fim_x": 511.37,
+          "y": 207.35
+        },
+        {
+          "texto": "[n]",
+          "x": 386.64,
+          "fim_x": 405.76,
+          "y": 234.71
+        },
+        {
+          "texto": "[n]",
+          "x": 382.08,
+          "fim_x": 405.77,
+          "y": 243.59
+        },
+        {
+          "texto": "[n]",
+          "x": 397.44,
+          "fim_x": 405.79,
+          "y": 252.47
+        },
+        {
+          "texto": "[n]",
+          "x": 386.64,
+          "fim_x": 405.76,
+          "y": 261.59
+        },
+        {
+          "texto": "[n]",
+          "x": 386.64,
+          "fim_x": 405.76,
+          "y": 270.47
+        },
+        {
+          "texto": "[n]",
+          "x": 382.08,
+          "fim_x": 405.77,
+          "y": 279.83
+        },
+        {
+          "texto": "[n]",
+          "x": 495.12,
+          "fim_x": 514.5,
+          "y": 234.71
+        },
+        {
+          "texto": "[n]",
+          "x": 495.12,
+          "fim_x": 514.5,
+          "y": 243.59
+        },
+        {
+          "texto": "[n]",
+          "x": 501.6,
+          "fim_x": 514.51,
+          "y": 252.47
+        },
+        {
+          "texto": "[n]",
+          "x": 495.12,
+          "fim_x": 514.5,
+          "y": 261.59
+        },
+        {
+          "texto": "[n]",
+          "x": 495.12,
+          "fim_x": 514.5,
+          "y": 270.47
+        },
+        {
+          "texto": "[n]",
+          "x": 490.8,
+          "fim_x": 514.47,
+          "y": 279.83
+        },
+        {
+          "texto": "[n]",
+          "x": 386.64,
+          "fim_x": 405.76,
+          "y": 306.47
+        },
+        {
+          "texto": "[n]",
+          "x": 386.64,
+          "fim_x": 405.76,
+          "y": 315.59
+        },
+        {
+          "texto": "[n]",
+          "x": 382.08,
+          "fim_x": 405.77,
+          "y": 324.47
+        },
+        {
+          "texto": "[n]",
+          "x": 371.52,
+          "fim_x": 405.76,
+          "y": 333.35
+        },
+        {
+          "texto": "[n]",
+          "x": 371.52,
+          "fim_x": 405.76,
+          "y": 342.95
+        },
+        {
+          "texto": "[n]",
+          "x": 495.12,
+          "fim_x": 514.5,
+          "y": 306.47
+        },
+        {
+          "texto": "[n]",
+          "x": 495.12,
+          "fim_x": 514.5,
+          "y": 315.59
+        },
+        {
+          "texto": "[n]",
+          "x": 490.8,
+          "fim_x": 514.47,
+          "y": 324.47
+        },
+        {
+          "texto": "[n]",
+          "x": 480.0,
+          "fim_x": 514.48,
+          "y": 333.35
+        },
+        {
+          "texto": "[n]",
+          "x": 480.0,
+          "fim_x": 514.48,
+          "y": 342.95
+        },
+        {
+          "texto": "[n]",
+          "x": 371.52,
+          "fim_x": 405.76,
+          "y": 370.31
+        },
+        {
+          "texto": "[n]",
+          "x": 480.0,
+          "fim_x": 514.48,
+          "y": 370.31
+        },
+        {
+          "texto": "Passivo",
+          "x": 61.92,
+          "fim_x": 88.96,
+          "y": 398.63
+        },
+        {
+          "texto": "Circulante",
+          "x": 61.92,
+          "fim_x": 96.86,
+          "y": 407.51
+        },
+        {
+          "texto": "Fornecedores",
+          "x": 65.99,
+          "fim_x": 113.9,
+          "y": 416.63
+        },
+        {
+          "texto": "Empréstimos e financiamentos",
+          "x": 65.99,
+          "fim_x": 172.41,
+          "y": 425.51
+        },
+        {
+          "texto": "Salários e obrigações trabalhistas",
+          "x": 65.99,
+          "fim_x": 182.85,
+          "y": 434.38
+        },
+        {
+          "texto": "[n]",
+          "x": 297.84,
+          "fim_x": 306.44,
+          "y": 416.63
+        },
+        {
+          "texto": "[n]",
+          "x": 297.84,
+          "fim_x": 306.44,
+          "y": 425.51
+        },
+        {
+          "texto": "[n]",
+          "x": 297.84,
+          "fim_x": 306.44,
+          "y": 434.38
+        },
+        {
+          "texto": "[n]",
+          "x": 382.08,
+          "fim_x": 405.77,
+          "y": 416.63
+        },
+        {
+          "texto": "[n]",
+          "x": 378.0,
+          "fim_x": 405.74,
+          "y": 425.51
+        },
+        {
+          "texto": "[n]",
+          "x": 382.08,
+          "fim_x": 405.77,
+          "y": 434.38
+        },
+        {
+          "texto": "[n]",
+          "x": 490.8,
+          "fim_x": 514.47,
+          "y": 416.63
+        },
+        {
+          "texto": "[n]",
+          "x": 486.48,
+          "fim_x": 514.49,
+          "y": 425.51
+        },
+        {
+          "texto": "[n]",
+          "x": 495.12,
+          "fim_x": 514.5,
+          "y": 434.38
+        },
+        {
+          "texto": "[n]",
+          "x": 378.0,
+          "fim_x": 405.74,
+          "y": 587.51
+        },
+        {
+          "texto": "[n]",
+          "x": 392.88,
+          "fim_x": 405.79,
+          "y": 596.63
+        },
+        {
+          "texto": "([n])",
+          "x": 377.04,
+          "fim_x": 405.69,
+          "y": 605.51
+        },
+        {
+          "texto": "[n]",
+          "x": 378.0,
+          "fim_x": 405.74,
+          "y": 614.87
+        },
+        {
+          "texto": "[n]",
+          "x": 486.48,
+          "fim_x": 514.49,
+          "y": 587.51
+        },
+        {
+          "texto": "[n]",
+          "x": 501.6,
+          "fim_x": 514.51,
+          "y": 596.63
+        },
+        {
+          "texto": "([n])",
+          "x": 489.84,
+          "fim_x": 514.45,
+          "y": 605.51
+        },
+        {
+          "texto": "[n]",
+          "x": 486.48,
+          "fim_x": 514.49,
+          "y": 614.87
+        },
+        {
+          "texto": "[n]",
+          "x": 371.52,
+          "fim_x": 405.76,
+          "y": 642.23
+        },
+        {
+          "texto": "[n]",
+          "x": 480.0,
+          "fim_x": 514.48,
+          "y": 642.23
+        },
+        {
+          "texto": "Patrimônio líquido",
+          "x": 61.92,
+          "fim_x": 123.93,
+          "y": 578.63
+        },
+        {
+          "texto": "Capital social",
+          "x": 65.92,
+          "fim_x": 112.27,
+          "y": 587.51
+        },
+        {
+          "texto": "Adiantamento para futuro aumento de capital",
+          "x": 66.0,
+          "fim_x": 221.79,
+          "y": 596.63
+        },
+        {
+          "texto": "Prejuízos acumulados",
+          "x": 65.99,
+          "fim_x": 142.39,
+          "y": 605.51
+        },
+        {
+          "texto": "Total do patrimônio líquido",
+          "x": 61.92,
+          "fim_x": 153.33,
+          "y": 614.87
+        },
+        {
+          "texto": "Total do passivo e do patrimônio líquido",
+          "x": 61.92,
+          "fim_x": 199.2,
+          "y": 642.23
+        },
+        {
+          "texto": "[n]",
+          "x": 297.84,
+          "fim_x": 306.44,
+          "y": 578.63
+        },
+        {
+          "texto": "As notas explicativas são parte integrante das informações financeiras intermediárias.",
+          "x": 55.2,
+          "fim_x": 462.43,
+          "y": 677.72
+        }
+      ]
+    },
+    {
+      "anexo": 1,
+      "grupo": "193",
+      "pagina": 9,
+      "largura": 595.2,
+      "altura": 841.919,
+      "linhas": [
+        {
+          "texto": "Concebra - Concessionária das Rodovias Centrais do Brasil S.A.",
+          "x": 55.2,
+          "fim_x": 443.92,
+          "y": 119.1
+        },
+        {
+          "texto": "Demonstração dos fluxos de caixa",
+          "x": 55.2,
+          "fim_x": 218.79,
+          "y": 146.12
+        },
+        {
+          "texto": "Períodos de três meses findos em [n] de março de [n] e [n]",
+          "x": 55.2,
+          "fim_x": 357.29,
+          "y": 158.36
+        },
+        {
+          "texto": "(Em milhares de reais)",
+          "x": 55.2,
+          "fim_x": 163.03,
+          "y": 170.84
+        },
+        {
+          "texto": "31/03/2017",
+          "x": 373.2,
+          "fim_x": 412.0,
+          "y": 207.35
+        },
+        {
+          "texto": "Fluxos de caixa das atividades operacionais",
+          "x": 74.64,
+          "fim_x": 226.83,
+          "y": 216.71
+        },
+        {
+          "texto": "31/03/2016",
+          "x": 451.44,
+          "fim_x": 490.46,
+          "y": 207.35
+        },
+        {
+          "texto": "Caixa aplicado nas atividades de investimentos",
+          "x": 72.96,
+          "fim_x": 236.18,
+          "y": 468.23
+        },
+        {
+          "texto": "([n])",
+          "x": 396.72,
+          "fim_x": 421.1,
+          "y": 468.23
+        },
+        {
+          "texto": "([n])",
+          "x": 461.52,
+          "fim_x": 490.21,
+          "y": 468.23
+        },
+        {
+          "texto": "Fluxos de caixa das atividades de financiamento:",
+          "x": 74.64,
+          "fim_x": 243.66,
+          "y": 486.23
+        },
+        {
+          "texto": "Pagamentos de empréstimos e financiamentos",
+          "x": 79.44,
+          "fim_x": 241.23,
+          "y": 495.11
+        },
+        {
+          "texto": "Pagamento de juros e remunerações sobre empréstimos e financiamentos",
+          "x": 79.44,
+          "fim_x": 336.13,
+          "y": 504.23
+        },
+        {
+          "texto": "Caixa líquido aplicado nas atividades de financiamento",
+          "x": 72.96,
+          "fim_x": 262.23,
+          "y": 513.59
+        },
+        {
+          "texto": "([n])",
+          "x": 392.4,
+          "fim_x": 421.09,
+          "y": 495.11
+        },
+        {
+          "texto": "([n])",
+          "x": 396.72,
+          "fim_x": 421.1,
+          "y": 504.23
+        },
+        {
+          "texto": "([n])",
+          "x": 392.4,
+          "fim_x": 421.09,
+          "y": 513.59
+        },
+        {
+          "texto": "([n])",
+          "x": 472.32,
+          "fim_x": 490.2,
+          "y": 495.11
+        },
+        {
+          "texto": "([n])",
+          "x": 472.32,
+          "fim_x": 490.2,
+          "y": 504.23
+        },
+        {
+          "texto": "([n])",
+          "x": 465.84,
+          "fim_x": 490.18,
+          "y": 513.59
+        },
+        {
+          "texto": "Aumento (redução) do caixa e equivalentes de caixa",
+          "x": 72.96,
+          "fim_x": 253.85,
+          "y": 532.07
+        },
+        {
+          "texto": "[n]",
+          "x": 402.0,
+          "fim_x": 421.13,
+          "y": 532.07
+        },
+        {
+          "texto": "([n])",
+          "x": 465.84,
+          "fim_x": 490.18,
+          "y": 532.07
+        },
+        {
+          "texto": "Caixa e equivalentes de caixa no início do período",
+          "x": 72.96,
+          "fim_x": 246.4,
+          "y": 551.51
+        },
+        {
+          "texto": "Caixa e equivalentes de caixa no fim do período",
+          "x": 72.96,
+          "fim_x": 238.52,
+          "y": 560.38
+        },
+        {
+          "texto": "Aumento (redução) do caixa e equivalentes de caixa",
+          "x": 72.96,
+          "fim_x": 253.85,
+          "y": 569.75
+        },
+        {
+          "texto": "[n]",
+          "x": 402.0,
+          "fim_x": 421.14,
+          "y": 551.51
+        },
+        {
+          "texto": "[n]",
+          "x": 402.0,
+          "fim_x": 421.13,
+          "y": 560.38
+        },
+        {
+          "texto": "[n]",
+          "x": 402.0,
+          "fim_x": 421.13,
+          "y": 569.75
+        },
+        {
+          "texto": "[n]",
+          "x": 471.12,
+          "fim_x": 490.49,
+          "y": 551.51
+        },
+        {
+          "texto": "[n]",
+          "x": 471.12,
+          "fim_x": 490.49,
+          "y": 560.38
+        },
+        {
+          "texto": "([n])",
+          "x": 465.84,
+          "fim_x": 490.18,
+          "y": 569.75
+        },
+        {
+          "texto": "As notas explicativas são parte integrante das informações financeiras intermediárias.",
+          "x": 55.2,
+          "fim_x": 462.43,
+          "y": 614.12
+        }
+      ]
+    },
+    {
+      "anexo": 1,
+      "grupo": "193",
+      "pagina": 14,
+      "largura": 595.2,
+      "altura": 841.919,
+      "linhas": [
+        {
+          "texto": "Concebra - Concessionária das Rodovias Centrais do Brasil S.A.",
+          "x": 55.2,
+          "fim_x": 443.92,
+          "y": 109.98
+        },
+        {
+          "texto": "Notas explicativas às informações financeiras intermediárias--Continuação",
+          "x": 55.2,
+          "fim_x": 408.95,
+          "y": 136.76
+        },
+        {
+          "texto": "[n] de março de [n]",
+          "x": 55.2,
+          "fim_x": 156.47,
+          "y": 149.0
+        },
+        {
+          "texto": "(Em milhares de reais, exceto quando indicado de outra forma)",
+          "x": 55.2,
+          "fim_x": 354.32,
+          "y": 161.48
+        },
+        {
+          "texto": "[n] Sumário das principais políticas contábeis",
+          "x": 55.2,
+          "fim_x": 331.91,
+          "y": 198.3
+        },
+        {
+          "texto": "As informações financeiras intermediárias foram elaboradas e estão apresentadas com base nas",
+          "x": 75.84,
+          "fim_x": 540.12,
+          "y": 219.56
+        },
+        {
+          "texto": "práticas contábeis adotadas na elaboração das demonstrações financeiras do exercício social",
+          "x": 75.84,
+          "fim_x": 540.04,
+          "y": 231.8
+        },
+        {
+          "texto": "encerrado em [n] de dezembro de [n] que devem ser lidas em conjunto com essas informações",
+          "x": 75.84,
+          "fim_x": 540.12,
+          "y": 244.04
+        },
+        {
+          "texto": "financeiras intermediárias. Cabe ressaltar que não houve alterações nas práticas contábeis até [n]",
+          "x": 75.84,
+          "fim_x": 540.18,
+          "y": 256.52
+        },
+        {
+          "texto": "de março de [n]",
+          "x": 75.84,
+          "fim_x": 165.13,
+          "y": 268.76
+        },
+        {
+          "texto": "[n] Caixa e equivalentes de caixa",
+          "x": 55.2,
+          "fim_x": 253.47,
+          "y": 287.82
+        },
+        {
+          "texto": "Disponibilidades",
+          "x": 79.92,
+          "fim_x": 136.19,
+          "y": 323.75
+        },
+        {
+          "texto": "Aplicações financeiras",
+          "x": 79.92,
+          "fim_x": 157.08,
+          "y": 332.63
+        },
+        {
+          "texto": "Indexador",
+          "x": 198.48,
+          "fim_x": 235.27,
+          "y": 314.38
+        },
+        {
+          "texto": "Natureza",
+          "x": 294.72,
+          "fim_x": 327.51,
+          "y": 314.38
+        },
+        {
+          "texto": "[n]% a [n]% do CDI",
+          "x": 184.08,
+          "fim_x": 249.89,
+          "y": 332.63
+        },
+        {
+          "texto": "Aplicação automática",
+          "x": 274.32,
+          "fim_x": 347.99,
+          "y": 332.63
+        },
+        {
+          "texto": "31/03/2017",
+          "x": 388.56,
+          "fim_x": 427.35,
+          "y": 314.38
+        },
+        {
+          "texto": "[n]",
+          "x": 411.84,
+          "fim_x": 430.96,
+          "y": 323.75
+        },
+        {
+          "texto": "[n]",
+          "x": 411.84,
+          "fim_x": 430.96,
+          "y": 332.63
+        },
+        {
+          "texto": "[n]",
+          "x": 411.84,
+          "fim_x": 430.96,
+          "y": 341.99
+        },
+        {
+          "texto": "31/12/2016",
+          "x": 478.08,
+          "fim_x": 517.1,
+          "y": 314.38
+        },
+        {
+          "texto": "[n]",
+          "x": 496.56,
+          "fim_x": 515.94,
+          "y": 323.75
+        },
+        {
+          "texto": "[n]",
+          "x": 496.56,
+          "fim_x": 515.94,
+          "y": 332.63
+        },
+        {
+          "texto": "[n]",
+          "x": 496.56,
+          "fim_x": 515.94,
+          "y": 341.99
+        }
+      ]
+    }
+  ],
+  "estado": "lido",
+  "codigo_sha256": "e02a2a9720bd5c162c274f5599e08e4da3a3a4ba07750e65b614f2db493d41b2"
+}

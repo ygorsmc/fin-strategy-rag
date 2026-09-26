@@ -252,8 +252,11 @@ class TestEscalaEFonte:
     def _correcao(self, con, **mudar):
         brutos = con.execute(
             "SELECT cd_conta, ordem, dt_ini, dt_fim, vl FROM declaracoes").fetchall()
+        # `id_doc` acrescentado em 17/09 (contrato P5): a data da prova da
+        # correção vem do cadastro pelo id do pacote, como no manifesto real.
+        id_doc = con.execute("SELECT min(id_doc) FROM cadastro WHERE cd_cvm = 'A'").fetchone()[0]
         c = {"escala_declarada": "UNIDADE", "escala_aplicada": "MIL",
-             "base": "corrigida_documento", "id_correcao": "C1",
+             "base": "corrigida_documento", "id_correcao": "C1", "id_doc": id_doc,
              "impressao_digital": pp.impressao_digital(brutos)}
         c.update(mudar)
         return {("A", "itr", "2020-03-31", 1): c}
@@ -288,6 +291,32 @@ class TestEscalaEFonte:
         correcoes[("B", "itr", "2020-03-31", 1)] = dict(correcoes[("A", "itr", "2020-03-31", 1)])
         with pytest.raises(pp.CorrecaoObsoleta, match="sem documento"):
             pp.construir(con, correcoes)
+
+    def test_prova_sem_cadastro_derruba(self):
+        """P5 (17/09): sem a data da prova, a disponibilidade não é demonstrável."""
+        con = self._base_unidade().con()
+        with pytest.raises(pp.DefeitoDeFonte, match="ausente do cadastro"):
+            pp.construir(con, self._correcao(con, id_doc="nao_existe"))
+
+    def test_correcao_herdada_so_vale_depois_da_ultima_ponta(self):
+        """P4 (17/09): mesmos valores e datas do documento; só a ponta muda."""
+        b = self._base_unidade()
+        b.cad.append(("itr", "Z", "2020-12-31", 1, "ponta_fim", "2021-02-01"))
+        b.cad.append(("itr", "Z", "2019-12-31", 1, "ponta_ini", "2020-02-01"))
+        con = b.con()
+        pontas = json.dumps([{"id_doc": "ponta_ini"}, {"id_doc": "ponta_fim"}])
+        p = pp.construir(con, self._correcao(con, base="herdada_trecho", pontas=pontas))
+        a, t = p.ativo[0], p.fco_trimestral[0]
+        assert a["disponivel_em"] == t["disponivel_em"] == date(2021, 2, 1)
+        assert a["dt_prova_escala"] == date(2021, 2, 1)
+        assert a["valor_reais"] == 7000.0, "o valor não muda; só quando se pode usá-lo"
+        # Sem correção, o mesmo documento está disponível na própria recepção.
+        assert pp.construir(con).ativo[0]["disponivel_em"] == date(2020, 5, 10)
+
+    def test_correcao_por_documento_nao_atrasa(self):
+        con = self._base_unidade().con()
+        a = pp.construir(con, self._correcao(con)).ativo[0]
+        assert a["disponivel_em"] == date(2020, 5, 10)
 
     def test_sem_correcao_o_rotulo_declarado_fica(self):
         """G4-pp: documento suspeito não adjudicado NÃO sai do painel."""
@@ -407,7 +436,11 @@ class TestInventarioP2eF6:
         # 1T: cego em [05-10, 09-01) → 05-10 e 08-10.
         # 2T: operandos 1T (v1 05-10, vmax 09-01) e 2T (08-10); cego em
         #     [max(05-10, 08-10), max(09-01, 08-10)) = [08-10, 09-01) → 08-10.
-        assert inv["p2_decisoes_da_mesma_companhia_no_intervalo_cego"] == 3
+        # RF-07 (17/09): a soma são PARES (trimestre, D); 08-10 cai nos dois
+        # intervalos. Nome trocado, e as chaves distintas publicadas ao lado.
+        assert inv["p2_pares_trimestre_decisao_no_intervalo_cego"] == 3
+        assert inv["p2_chaves_companhia_D_distintas_no_intervalo_cego"] == 2
+        assert "p2_decisoes_da_mesma_companhia_no_intervalo_cego" not in inv
 
     def test_penultimo_nunca_e_operando_mas_e_contado(self):
         """F6: o PENÚLTIMO que fecharia a lacuna é contado e não usado."""

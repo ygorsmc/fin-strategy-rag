@@ -1,0 +1,118 @@
+{
+  "data": "2026-09-24",
+  "regra": "conferencia_documental_de_alcance_nao_operacional",
+  "autoria": "Registro pelo principal do parecer de /root/auditor_alcance_geom1; não é assinatura digital nem gold humano.",
+  "contrato": "resultados/contratos_alcance_geom1_rank03b_2026-09-24.md",
+  "escopo": {
+    "documentos": [
+      "140867",
+      "142900"
+    ],
+    "contas": [
+      "1",
+      "6.01"
+    ],
+    "grupos": [
+      "193",
+      "412"
+    ],
+    "companhias": 1
+  },
+  "fontes": [
+    {
+      "id_doc": "140867",
+      "sha256_zip": "35571da80c582f26ace27f94b0f9f02dcddf30f70498e663d61f5ef75087f105",
+      "xml": "021520ITR30-06-2024v1.xml",
+      "sha256_xml": "28ca3369a0787548d5654d3ee08c8601b00f02ab97b8e663c17d0eef9e7e9258",
+      "anexo": 1,
+      "grupo": "193",
+      "paginas": 43,
+      "sha256_pdf": "1bf92ff2aefb00710d975aa84b5522c790d59eb53cda5f007afeb3fd7f39b808"
+    },
+    {
+      "id_doc": "142900",
+      "sha256_zip": "4cc8d45a42fecc590023b80255c1a5cbb48c8c9da0e86bc528c105faf945efb2",
+      "xml": "021520ITR30-09-2024v1.xml",
+      "sha256_xml": "4ee561c7f5cf601bc03b7cf44b0f331c891adc668d6508a057bd4cabdf93bc68",
+      "anexo": 1,
+      "grupo": "193",
+      "paginas": 38,
+      "sha256_pdf": "685eb99d0fd961de01c1a7621bc79a4b1b15055e6902671256d483ca85aad5d2"
+    }
+  ],
+  "declaracoes": [
+    {
+      "id_doc": "140867",
+      "conta": "1",
+      "descricao": "Ativo Total",
+      "inicio": null,
+      "fim": "2024-06-30",
+      "perimetro": "consolidado",
+      "estado": "mil_demonstrada_nesta_declaracao",
+      "pagina_anexo": 42,
+      "pagina_impressa": 42,
+      "nota": "30.2",
+      "titulo": "Principais ativos e passivos",
+      "linha": "Total dos ativos",
+      "coluna": "última, Consolidado",
+      "unidade": "valores expressos em milhares de reais, exceto quando indicado de outra forma",
+      "caminho_xml": "DadosITR/Formulario/DfConsolidadas/BalancoPatrimonialAtivo/Conta[CodigoConta='1']/TrimestreAtual",
+      "comparacao_assinada_exata": true,
+      "arredondamento_usado": false,
+      "contraprovas_auditor": {
+        "comparativo_2023_12_31_exato": true,
+        "cruzamento_de_datas_nao_coincide": true,
+        "individual_nao_coincide": true,
+        "quatro_segmentos_nao_coincidem_com_consolidado": true
+      },
+      "replica_principal_posterior": {
+        "corrente_exato": true,
+        "comparativo_exato": true,
+        "segmentos_nao_coincidem": true,
+        "multiplicar_ou_dividir_por_mil_nao_coincide": true
+      },
+      "limite": "Total consolidado de nota de segmentos, não subtotal; não prova FCO ou todas as contas do formulário."
+    },
+    {
+      "id_doc": "140867",
+      "conta": "6.01",
+      "descricao": "Caixa Líquido Atividades Operacionais",
+      "inicio": "2024-01-01",
+      "fim": "2024-06-30",
+      "perimetro": "consolidado",
+      "estado": "celula_pdf_nao_localizada",
+      "igualdade": "nao_executada",
+      "campo_xml": "AcumuladoAtualExercicio",
+      "limite": "Nota de financiamento p40 e menção a motores p12 não demonstram FCO; montante XML não consultado sem contraparte."
+    },
+    {
+      "id_doc": "142900",
+      "conta": "1",
+      "descricao": "Ativo Total",
+      "inicio": null,
+      "fim": "2024-09-30",
+      "perimetro": "consolidado",
+      "estado": "celula_pdf_nao_localizada",
+      "igualdade": "nao_executada",
+      "limite": "MIL geral nas notas não resolve correspondência numérica da conta."
+    },
+    {
+      "id_doc": "142900",
+      "conta": "6.01",
+      "descricao": "Caixa Líquido Atividades Operacionais",
+      "inicio": "2024-01-01",
+      "fim": "2024-09-30",
+      "perimetro": "consolidado",
+      "estado": "celula_pdf_nao_localizada",
+      "igualdade": "nao_executada",
+      "campo_xml": "AcumuladoAtualExercicio",
+      "limite": "Montante XML não consultado sem contraparte documental."
+    }
+  ],
+  "metodo_auditor": "XML direto com ElementTree e PDF embutido lido com pdfplumber/pdftotext. Decimal com sinal para Ativo, sem GEOM como árbitro.",
+  "limite_busca_lexical": "Inventário não reconhece Total dos ativos; falso negativo lexical demonstrado pela conferência. Não produz decisão de ausência.",
+  "correcao_promovida": false,
+  "heranca_executada": false,
+  "gates_medidos": false,
+  "treino_autorizado": false
+}

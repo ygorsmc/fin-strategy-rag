@@ -1,0 +1,20 @@
+{
+  "codigo": {
+    "scripts/fonte_rad_cvm.py": "6e78d8ee18a123b17a3aea721632ebc5e0e8bc3cffb9797ae643775e5f92e8b9",
+    "scripts/adjudicar_escala_rank03b.py": "4b035aa77687aeca95959908a14f34b75b7257576188ae069bd52c024615f2ca",
+    "scripts/gates_painel_pesquisa_rank03b.py": "096724db7dbbf0ea8f741136b7484bc86bcc66bbc68bc41233c4de53b1127d3f",
+    "scripts/painel_pesquisa_rank03b.py": "f61f5ab115d3a48c144781cae6b62f51c0ea3d1cac2407e1fd1455d1531a3497",
+    "scripts/fonte_zip_cvm.py": "44bc0b51313a78cbaf838a05b6bbbb121ccb043f5a91a4c36f4d5e2a8124a510",
+    "scripts/piloto_fonte_rad_rank03b.py": "5d9a895a3480caad0fc33374f5a9c46d396683e5052e11f4213a308fcc88507d",
+    "scripts/auditar_rank03b_consumo_operacional.py": "c549eb2953f939b5e96fae0625f96a6eb20bb97d42666f7e5fc1eb9c1d99258d",
+    "scripts/verificacoes_revisao_final_rank03b.py": "d4a9b7eec4f2843d20fff8b9cb67113a23f06f3555c661b5542d1ff4f0e2764a",
+    "resultados/contratos_correcao_crf01_crf03_rank03b_2026-09-17.md": "15734f042c57bf8e08e446a793c577d96d36b799f8b949a76b075dd14a2ef0fd",
+    "resultados/adendo_contratos_crf_2026-09-18.md": "d89abd0d51af1fdefb0fcd61040d4b4feefa1576845bb5c19775f3ec4b1a78b2",
+    "artefatos/correcao_crf_rank03b_2026-09-17/executar.py": "64742c3986ce9a51dc0a4f0dcb03d012365f214a2c5762030e14dc49d8c85dc4"
+  },
+  "protegidos": {
+    "artefatos/cvm.duckdb": "43e31d9f150e535f1ab20576d9aacf1a53b83ecc5424ca7d48ba50781e4cef18",
+    "artefatos/cvm_treino.duckdb": "c1a604453a9a2fa7df24b0b2dbc53df6fb5ef0d39fd06f492407028030bc069b",
+    "artefatos/painel_pesquisa_rank03b/rad/manifesto_aquisicao.jsonl": "36902f4ce38add21889bb41bfaf8c83c6264c8cfa77049acf3c5c30633cb5f8b"
+  }
+}

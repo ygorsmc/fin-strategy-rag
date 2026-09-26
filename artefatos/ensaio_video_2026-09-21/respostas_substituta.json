@@ -1,0 +1,13 @@
+[
+  {
+    "pergunta": "Segundo o release do Banco do Brasil, qual foi o índice de inadimplência acima de 90 dias no 3T2025?",
+    "segundos": 13.44,
+    "excecao": [],
+    "resposta": "O índice de inadimplência acima de 90 dias encerrou setembro em 4,93%.\n\n> 📄 BB · bb_release_3T2025 · 3T2025 · pág. 12",
+    "modo": "pergunta livre (inferência ao vivo)",
+    "provedor": "gemini/gemini-3.5-flash-lite",
+    "citacoes": null,
+    "custo_sessao_usd": 0.0013802999999999999,
+    "chamadas_sessao": 1
+  }
+]

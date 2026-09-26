@@ -882,8 +882,10 @@ def gate_g1(amostra: list[dict], descarte: dict) -> dict:
         "descartes": descarte,
         **contagens,
         "construcao": (
-            "D = dt_receb de cada documento. Features só de trimestres com "
-            "dt_receb <= D; q1 = trimestre de menor início posterior a D, até "
+            "D = datas distintas de disponibilidade das linhas de FCO fornecidas "
+            "ao construtor (campo dt_receb); no painel de pesquisa, inclui a "
+            "publicação das provas de escala. Features só disponíveis em D; "
+            "q1 = trimestre de menor início posterior a D, até "
             "D + 3 meses; q2..q4 pelo ordinal fiscal com datas encadeadas."
         ),
         "limiar": "zero em cada contagem, sobre amostra NÃO vazia",
@@ -906,6 +908,14 @@ def amplitude_por_quintis(valores: list[float], eventos: list[int]) -> dict:
     e separa em "quintis" observações indistinguíveis. Foi o achado C1 do
     B-DFC-01J. Aqui o corte se estende até o fim do grupo de valor empatado, e
     variável constante devolve exatamente UM grupo, com amplitude 0,0.
+
+    **Correção de 17/09 (contrato Q1, achado RF-03).** A versão anterior forçava
+    `fim = max(corte, inicio + 1)`: depois de um empate que engolia vários
+    cortes nominais, ela criava assim mesmo as faixas "atrasadas", uma
+    observação cada — `[0]*400 + 1..100` saía `[400, 1, 1, 1, 97]` e amplitude
+    1,0 com taxas reais de 0,5. Agora os cortes nominais `⌊k·n/5⌋` avançam até o
+    fim do empate e os redundantes (em 0, em n, ou não depois do anterior) são
+    eliminados.
     """
     if len(valores) < MINIMO_DE_OBSERVACOES:
         raise AmostraInsuficiente(
@@ -913,15 +923,16 @@ def amplitude_por_quintis(valores: list[float], eventos: list[int]) -> dict:
             f"{MINIMO_DE_OBSERVACOES} para quintis."
         )
     ordenados = sorted(zip(valores, eventos), key=lambda t: t[0])
-    tamanho = len(ordenados) / 5
+    n = len(ordenados)
+    cortes: list[int] = []
+    for k in range(1, 5):
+        corte = k * n // 5
+        while 0 < corte < n and ordenados[corte][0] == ordenados[corte - 1][0]:
+            corte += 1
+        if 0 < corte < n and (not cortes or corte > cortes[-1]):
+            cortes.append(corte)
     faixas: list[dict] = []
-    inicio = 0
-    for q in range(5):
-        if inicio >= len(ordenados):
-            break
-        fim = max(int((q + 1) * tamanho), inicio + 1)
-        while fim < len(ordenados) and ordenados[fim][0] == ordenados[fim - 1][0]:
-            fim += 1
+    for inicio, fim in zip([0, *cortes], [*cortes, n]):
         recorte = ordenados[inicio:fim]
         faixas.append({
             "quintil": len(faixas) + 1,
@@ -930,7 +941,6 @@ def amplitude_por_quintis(valores: list[float], eventos: list[int]) -> dict:
             "valor_maximo": recorte[-1][0],
             "taxa": statistics.fmean(e for _, e in recorte),
         })
-        inicio = fim
     taxas = [f["taxa"] for f in faixas]
     return {
         "amplitude": max(taxas) - min(taxas),
@@ -973,7 +983,10 @@ def _bootstrap_amplitude(amostra: list[dict], coluna: str) -> dict:
         "reamostragens_validas": len(medidas),
         "ic95_inferior": round(medidas[int(0.025 * len(medidas))], 4),
         "ic95_superior": round(medidas[int(0.975 * len(medidas)) - 1], 4),
-        "probabilidade_de_exceder_o_limiar": round(excede, 4),
+        # Q3 (17/09): FREQUÊNCIA entre reamostragens de companhias, não
+        # probabilidade posterior sobre a amplitude verdadeira. A regra do §6
+        # (> 10% ⇒ INDECIDÍVEL) usa este número como está.
+        "frequencia_bootstrap_acima_do_limiar": round(excede, 4),
     }
 
 
@@ -1040,7 +1053,7 @@ def teste_t1(amostra: list[dict]) -> dict:
             else:
                 entrada["veredito"] = (
                     "INDECIDIVEL"
-                    if entrada["bootstrap"]["probabilidade_de_exceder_o_limiar"]
+                    if entrada["bootstrap"]["frequencia_bootstrap_acima_do_limiar"]
                     > T1_PROB_MAXIMA
                     else "PASSA"
                 )
@@ -1132,13 +1145,18 @@ def teste_t2(amostra: list[dict], coluna: str, sentido: int) -> dict:
             "nenhuma companhia tem os dois rótulos: AUC intra não é medível."
         )
     media_intra = statistics.fmean(intra)
-    lacuna = (agregada or 0.0) - media_intra
+    if agregada is None:
+        # Com uma companhia de dois rótulos, a amostra tem os dois: não ocorre.
+        # Se ocorrer, é defeito — nunca lacuna medida contra zero.
+        raise AmostraInsuficiente("AUC agregada não calculável")
+    lacuna = agregada - media_intra
     return {
         "teste": "T2",
         "pergunta": "Há sinal temporal ou só ordenação de emissor?",
         "papel": "decisivo",
         "escore": coluna,
-        "auc_agregada": round(agregada, 4) if agregada else None,
+        # R6 (17/09): `if agregada` publicava AUC ZERO como ausente.
+        "auc_agregada": round(agregada, 4),
         "auc_intra_companhia": round(media_intra, 4),
         "companhias_com_os_dois_rotulos": com_dois_rotulos,
         "companhias_na_amostra": len(por_cia),
@@ -1260,6 +1278,25 @@ def _ic_das_metricas(amostra: list[dict], escores: list[float]) -> dict:
     return {f"{nome}_ic95": _intervalo(valores) for nome, valores in medidas.items()}
 
 
+def _ic_do_acerto_do_b0(amostra: list[dict]) -> dict:
+    """B0.1 (17/09): IC95% do acerto de "sempre não consumir", por companhia.
+
+    Acerto de B0 = fração de `y == 0`. Reamostragem de companhias inteiras, a
+    mesma semente e o mesmo mínimo de reamostragens válidas das outras métricas.
+    """
+    por_cia: dict[str, list[int]] = {}
+    for r in amostra:
+        por_cia.setdefault(r["cd_cvm"], []).append(r["y"])
+    chaves = sorted(por_cia)
+    aleatorio = random.Random(SEMENTE)
+    medidas = []
+    for _ in range(REAMOSTRAGENS):
+        eventos = [y for k in (aleatorio.choice(chaves) for _ in chaves) for y in por_cia[k]]
+        if eventos:
+            medidas.append(1 - statistics.fmean(eventos))
+    return _intervalo(medidas)
+
+
 def medir_baselines(amostra: list[dict]) -> dict:
     """Os quatro triviais do §8, ANTES de qualquer componente aprendido.
 
@@ -1273,10 +1310,14 @@ def medir_baselines(amostra: list[dict]) -> dict:
     """
     eventos = [r["y"] for r in amostra]
     taxa_base = statistics.fmean(eventos)
+    ic_b0 = _ic_do_acerto_do_b0(amostra)
     tabela: dict[str, dict] = {
-        "B0_classe_majoritaria": {
-            "descricao": "Prever sempre 'não vai consumir caixa'",
+        # B0.1 (17/09): o nome diz a regra. "Classe majoritária" sugeria uma
+        # classe ESTIMADA; a regra é fixa, "sempre não consumir".
+        "B0_sempre_nao_consumir": {
+            "descricao": "Prever sempre 'não vai consumir caixa' (regra fixa, não estimada)",
             "acerto": round(1 - taxa_base, 4),
+            "acerto_ic95": ic_b0,
             # R4.4: as duas coberturas, com o nome dizendo qual é qual.
             # Confundir abstenção de RANQUEAMENTO com ausência de previsão de
             # CLASSE foi ressalva da revisão de 12/09.
@@ -1285,12 +1326,18 @@ def medir_baselines(amostra: list[dict]) -> dict:
             "observacao": (
                 "Escore constante: abstém da ordenação, então AUC não se "
                 "aplica. A previsão de CLASSE, porém, cobre tudo. Publicar "
-                "cobertura ao lado do acerto é exigência do §3.11."
+                "cobertura ao lado do acerto é exigência do §3.11. A cobertura "
+                "de classe é 1,0 por construção: sem bootstrap, não há o que variar."
             ),
-            "completo": True,
+            "completo": ic_b0["inferior"] is not None,
+            "motivos_de_incompletude": (
+                [] if ic_b0["inferior"] is not None else
+                [f"acerto_ic95 com {ic_b0['reamostragens_validas']} reamostragens válidas, "
+                 f"abaixo de {MINIMO_DE_REAMOSTRAGENS_VALIDAS}"]),
         },
     }
-    incompletos: list[str] = []
+    incompletos: list[str] = [] if tabela["B0_sempre_nao_consumir"]["completo"] \
+        else ["B0_sempre_nao_consumir"]
     for nome, (coluna, sentido) in BASELINES.items():
         usaveis = [r for r in amostra if r[coluna] is not None]
         companhias = {r["cd_cvm"] for r in usaveis}
@@ -1354,7 +1401,7 @@ def medir_baselines(amostra: list[dict]) -> dict:
             incompletos.append(nome)
     validos = {
         n: v for n, v in tabela.items()
-        if n != "B0_classe_majoritaria" and v["completo"]
+        if n != "B0_sempre_nao_consumir" and v["completo"]
     }
     melhor = max(validos, key=lambda n: validos[n]["auc_agregada"]) if validos else None
     return {

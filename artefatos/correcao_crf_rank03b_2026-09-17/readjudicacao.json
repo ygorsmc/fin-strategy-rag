@@ -1,0 +1,46 @@
+{
+  "regra": "v4",
+  "manifesto": {
+    "linhas": 0,
+    "por_base": {},
+    "sha256": "13520e61d99f221715a26ade80dc278de15a6b30c93e30a63ed6b6aa753ff07d"
+  },
+  "premissa_s5": {
+    "trechos_testados": [],
+    "trechos_nao_testaveis": [
+      [
+        "003549",
+        6
+      ],
+      [
+        "023426",
+        4
+      ],
+      [
+        "023604",
+        3
+      ]
+    ],
+    "trechos_com_interior_discordante": [],
+    "heranca_permitida": false
+  },
+  "documentos": 405,
+  "vereditos": {
+    "indecidivel": 405
+  },
+  "transicoes": {
+    "indecidivel -> indecidivel": 238,
+    "confirmada -> indecidivel": 108,
+    "corrigida -> indecidivel": 59
+  },
+  "casos_conhecidos": {
+    "76468": {
+      "veredito": "indecidivel",
+      "motivo": "par_fora_da_tabela:MIL|nenhum"
+    },
+    "152742": {
+      "veredito": "indecidivel",
+      "motivo": "par_fora_da_tabela:MIL|nenhum"
+    }
+  }
+}

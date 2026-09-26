@@ -15,6 +15,11 @@ os sustente. Este script os recalcula e grava em
 
 **Não calcula rótulo nem lê FCO para publicar** (O1): valores de caixa só
 entram na máscara, e o artefato traz contagens.
+
+**17/09 (contrato T2 de RF-06):** a versão de 16/09 registrou o hash de um
+manifesto de painel que foi regravado depois. Agora o produtor confere que
+manifesto do painel, artefato de gates e manifesto de correções são da mesma
+versão, e grava os três hashes.
 """
 from __future__ import annotations
 
@@ -64,9 +69,10 @@ def amostra_de_desenho(evidencias_piloto: list[dict], ler=None) -> dict:
     for e in evidencias_piloto:
         if not e_amostra_de_desenho(e):
             continue
-        r = adj.adjudicar_formulario(ler(e["id_doc"]), e["escala_declarada"])
+        r = adj.adjudicar_formulario(ler(e["id_doc"]), e["escala_declarada"], e["dt_refer"])
         contagem[f"{e['escala_declarada']}|{r['veredito']}"] += 1
     return {"populacao": "piloto, papel vmax, integro, algum estrato E1-E4",
+            "regra": adj.REGRA_VIGENTE,
             "documentos": sum(contagem.values()), "por_declarada": dict(sorted(contagem.items()))}
 
 
@@ -114,7 +120,12 @@ def mascara_sobre_publicados(con, evidencias: list[dict], manifesto: Path) -> di
 
     com_trecho = [e for e in evidencias if e.get("evidencia")]
     with open(manifesto, encoding="utf-8", newline="") as fh:
-        linhas = [r for r in csv.DictReader(fh) if r["evidencia_trecho"]]
+        todas = list(csv.DictReader(fh))
+    linhas = [r for r in todas if r["evidencia_trecho"]]
+    casamentos = [(r, c) for r in todas
+                  for c in json.loads(r.get("evidencia_numerica") or "[]")]
+    nas_evidencias = [(e, c) for e in evidencias
+                      for c in (e.get("numerica") or {}).get("casamentos", [])]
     return {
         "fonte_dos_valores": "ZIPs (versao maxima), contas 6.x",
         "evidencias_com_trecho": len(com_trecho),
@@ -126,6 +137,18 @@ def mascara_sobre_publicados(con, evidencias: list[dict], manifesto: Path) -> di
         "linhas_do_manifesto": len(linhas),
         "linhas_que_a_mascara_mudaria": sum(
             muda(r["cd_cvm"], r["conjunto"], r["dt_refer"], r["evidencia_trecho"]) for r in linhas),
+        # E3: as linhas da evidência numérica também são publicadas.
+        "casamentos_numericos_publicados": len(casamentos),
+        "casamentos_que_a_mascara_mudaria": sum(
+            muda(r["cd_cvm"], r["conjunto"], r["dt_refer"], c["trecho"]) for r, c in casamentos),
+        # B6 (auditoria de 17/09): `evidencias.jsonl` publica os casamentos de
+        # TODOS os documentos, não só dos corrigidos.
+        "casamentos_nas_evidencias": len(nas_evidencias),
+        "casamentos_nas_evidencias_que_a_mascara_mudaria": sum(
+            muda(e["cd_cvm"], e["conjunto"], e["dt_refer"], c["trecho"]) for e, c in nas_evidencias),
+        "casamentos_de_caixa_com_digito": sum(
+            1 for _, c in (*casamentos, *nas_evidencias)
+            if c["conta"].startswith("6") and any(ch.isdigit() for ch in c["trecho"])),
     }
 
 
@@ -156,6 +179,64 @@ def comparar_reproducao(governante: Path, manifesto: Path, reproducao: Path) -> 
     }
 
 
+def ligacao_de_versao(pasta: Path, manifesto: Path) -> dict:
+    """T2: manifesto do painel, gates e correções são da mesma versão."""
+    manifesto_painel = json.loads((pasta / "manifesto_painel.json").read_text(encoding="utf-8"))
+    gates = json.loads((pasta / "gates_g0_g1.json").read_text(encoding="utf-8"))
+    if manifesto_painel["digest_do_painel"] != gates["digest_do_painel"]:
+        raise AssertionError("manifesto do painel e gates com digests diferentes")
+    for fonte in (manifesto_painel, gates):
+        if fonte["entradas"]["correcoes_escala"]["sha256"] != _sha(manifesto):
+            raise AssertionError("manifesto de correções diferente do usado no painel/gates")
+    return {
+        "manifesto_painel_sha256": _sha(pasta / "manifesto_painel.json"),
+        "gates_g0_g1_sha256": _sha(pasta / "gates_g0_g1.json"),
+        "digest_do_painel": gates["digest_do_painel"]["conjunto"],
+        "manifesto_de_correcoes_sha256": _sha(manifesto),
+    }
+
+
+#: As cinco chaves que a conferência de 17/09 achou usando prova futura.
+CHAVES_RF02 = [("003549", "2023-08-15"), ("003549", "2024-08-15"), ("007811", "2020-10-15"),
+               ("022144", "2013-03-27"), ("022144", "2013-05-14")]
+
+
+def contraprova_p6_execucao2(pasta: Path = None) -> dict:
+    """P6 em dado real: o manifesto da execução 2 com o construtor de 16/09
+    (disponibilidade sem a prova) e com o de hoje. Só contagens e chaves."""
+    from scripts import gates_painel_pesquisa_rank03b as gates
+    from scripts import auditar_rank03b_consumo_operacional as auditor
+    from scripts import painel_pesquisa_rank03b as pp
+
+    pasta = pasta or adj.DESTINO / "execucao2"
+    correcoes = gates.carregar_correcoes(pasta / "correcoes_escala.csv",
+                                         exigir_evidencia_numerica=False)
+    saida = {}
+    original = (pp.Documento.disponivel_em, pp.Documento.disponivel_em_v1)
+    for nome, ignorar_prova in (("construtor_de_16_09", True), ("construtor_atual", False)):
+        if ignorar_prova:
+            pp.Documento.disponivel_em = property(lambda d: d.dt_receb)
+            pp.Documento.disponivel_em_v1 = property(lambda d: d.dt_receb_v1)
+        try:
+            con = duckdb.connect(":memory:")
+            fz.extrair(con)
+            pp.preparar_universo(con)
+            painel = pp.construir(con, correcoes)
+        finally:
+            pp.Documento.disponivel_em, pp.Documento.disponivel_em_v1 = original
+        provas = gates.datas_das_provas(con, correcoes)
+        amostra, _ = auditor.construir_amostra(gates.linhas_fco(painel),
+                                               gates.linhas_ativo(painel), calcular_rotulo=False)
+        chaves = sorted({(o["cd_cvm"], o["D"]) for o in amostra})
+        saida[nome] = {
+            "g1_4_prova_de_escala_publicada_depois_de_D":
+                gates.g1_provas_depois_de_d(amostra, painel, provas),
+            "chaves_rf02_presentes": [list(c) for c in CHAVES_RF02 if c in set(chaves)],
+            "observacoes": len(amostra),
+        }
+    return saida
+
+
 def executar(reproducao: Path | None) -> dict:
     con = duckdb.connect(":memory:")
     zips = fz.extrair(con)
@@ -168,12 +249,12 @@ def executar(reproducao: Path | None) -> dict:
             "verificacoes_revisao_final_rank03b.py", "adjudicar_escala_rank03b.py",
             "fonte_rad_cvm.py", "fonte_zip_cvm.py")},
         "zips_sha256": zips,
-        "painel_sha256_do_manifesto": _sha(PASTA / "manifesto_painel.json"),
-        "manifesto_de_correcoes_sha256": _sha(manifesto),
+        "versao": ligacao_de_versao(PASTA, manifesto),
         "amostra_de_desenho": amostra_de_desenho(_jsonl(adj.EVIDENCIAS_DO_PILOTO)),
         "b8_correcoes_com_um_bruto": b8,
         "b8_resumo": dict(Counter(x["situacao"] for x in b8)),
         "mascara_o1_3": mascara_sobre_publicados(con, evidencias, manifesto),
+        "p6_contraprova_real_manifesto_execucao2": contraprova_p6_execucao2(),
         "reproducao_da_adjudicacao": (comparar_reproducao(adj.DESTINO, manifesto, reproducao)
                                       if reproducao else "não fornecida nesta execução"),
     }

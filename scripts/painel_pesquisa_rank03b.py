@@ -23,6 +23,10 @@ que recusou.
 3. **Disponibilidade conservadora** (P1). O número em mãos é o da maior versão;
    ele só é usado a partir da recepção dela — em derivação, da mais tardia
    entre os operandos. Não vaza; custa perda, e a perda é medida (P2).
+   **Correção de 17/09 (contrato P4):** a escala corrigida também é
+   informação — o documento só fica disponível quando as PROVAS da escala
+   aplicada existem. Uma correção herdada depende das duas pontas do trecho, e
+   a ponta final pode ser publicada anos depois do documento interior.
 """
 
 from __future__ import annotations
@@ -100,6 +104,16 @@ class Documento:
     escala_aplicada: str
     base_escala: str
     id_correcao: str | None = None
+    #: P4: recepção mais tardia entre os pacotes que provam a escala aplicada.
+    dt_prova: date | None = None
+
+    @property
+    def disponivel_em(self) -> date:
+        return max(self.dt_receb, self.dt_prova or self.dt_receb)
+
+    @property
+    def disponivel_em_v1(self) -> date:
+        return max(self.dt_receb_v1, self.dt_prova or self.dt_receb_v1)
 
 
 def impressao_digital(linhas: list[tuple]) -> str:
@@ -115,9 +129,39 @@ def impressao_digital(linhas: list[tuple]) -> str:
     return hashlib.sha256(corpo.encode()).hexdigest()
 
 
+def recepcao_por_id_doc(con) -> dict[str, date]:
+    """`{id_doc: dt_receb}` do cadastro inteiro; repetido vale o mais tardio."""
+    saida: dict[str, date] = {}
+    for i, r in con.execute("SELECT id_doc, dt_receb FROM cadastro").fetchall():
+        saida[str(i)] = max(r, saida.get(str(i), r))
+    return saida
+
+
+def pacotes_da_prova(correcao: dict) -> list[str]:
+    """P4: os documentos cuja publicação a escala aplicada exige."""
+    if correcao["base"] == "corrigida_documento":
+        return [str(correcao["id_doc"])]
+    if correcao["base"] == "herdada_trecho":
+        return [str(p["id_doc"]) for p in json.loads(correcao["pontas"])]
+    raise DefeitoDeFonte(f"{correcao.get('id_correcao')}: base desconhecida {correcao['base']!r}")
+
+
+def data_da_prova(correcao: dict, recepcao: dict[str, date]) -> date:
+    """P4/P5: a recepção mais tardia entre as provas; prova sem cadastro derruba."""
+    datas = []
+    for i in pacotes_da_prova(correcao):
+        if i not in recepcao:
+            raise DefeitoDeFonte(
+                f"{correcao.get('id_correcao')}: prova {i} ausente do cadastro — "
+                "sem data, a disponibilidade da correção não é demonstrável")
+        datas.append(recepcao[i])
+    return max(datas)
+
+
 def carregar_documentos(con, correcoes: dict | None = None) -> dict[tuple, Documento]:
     """Um `Documento` por versão NUMÉRICA (a que os ZIPs trazem), com a escala aplicada."""
     correcoes = correcoes or {}
+    recepcao = recepcao_por_id_doc(con) if correcoes else {}
     linhas = con.execute(
         """
         SELECT d.cd_cvm, d.conjunto, CAST(d.dt_refer AS VARCHAR), d.versao,
@@ -159,7 +203,7 @@ def carregar_documentos(con, correcoes: dict | None = None) -> dict[tuple, Docum
             raise DefeitoDeFonte(f"{cd} {cj} {dt} v{v}: versão numérica ausente do cadastro")
         chave = _chave_doc(cd, cj, dt, v)
         escala = escalas[0]
-        aplicada, base, id_correcao = escala, "declarada", None
+        aplicada, base, id_correcao, dt_prova = escala, "declarada", None, None
         if chave in correcoes:
             c = correcoes[chave]
             if c["escala_declarada"] != escala or c["impressao_digital"] != impressao_digital(brutos[chave]):
@@ -168,6 +212,7 @@ def carregar_documentos(con, correcoes: dict | None = None) -> dict[tuple, Docum
                     "versão da fonte — não se aplica às cegas"
                 )
             aplicada, base, id_correcao = c["escala_aplicada"], c["base"], c["id_correcao"]
+            dt_prova = data_da_prova(c, recepcao)
             usadas.add(chave)
         _fator(aplicada)
         documentos[chave] = Documento(
@@ -178,7 +223,7 @@ def carregar_documentos(con, correcoes: dict | None = None) -> dict[tuple, Docum
             dt_receb=max(r for _, r in desta),
             dt_receb_v1=min(r for _, _, r in versoes),
             escala_declarada=escala, escala_aplicada=aplicada,
-            base_escala=base, id_correcao=id_correcao,
+            base_escala=base, id_correcao=id_correcao, dt_prova=dt_prova,
         )
     sobrando = set(correcoes) - usadas
     if sobrando:
@@ -207,7 +252,7 @@ def construir_ativo(con, documentos: dict[tuple, Documento]) -> list[dict]:
         })
     saida = []
     for (cd, fim), decls in sorted(por_data.items()):
-        decls.sort(key=lambda r: (r["doc"].dt_receb, r["doc"].conjunto, r["doc"].id_doc))
+        decls.sort(key=lambda r: (r["doc"].disponivel_em, r["doc"].conjunto, r["doc"].id_doc))
         primeira = decls[0]
         valores = {r["valor_reais"] for r in decls}
         if any(r["valor_bruto"] is None for r in decls):
@@ -228,8 +273,9 @@ def construir_ativo(con, documentos: dict[tuple, Documento]) -> list[dict]:
             "escala_declarada": doc.escala_declarada, "escala_aplicada": doc.escala_aplicada,
             "base_escala": doc.base_escala, "id_correcao": doc.id_correcao,
             "conjunto": doc.conjunto, "dt_refer": doc.dt_refer, "versao": doc.versao,
-            "id_doc": doc.id_doc, "disponivel_em": doc.dt_receb,
-            "disponivel_em_v1": doc.dt_receb_v1, "declaracoes": len(decls),
+            "id_doc": doc.id_doc, "disponivel_em": doc.disponivel_em,
+            "disponivel_em_v1": doc.disponivel_em_v1, "dt_prova_escala": doc.dt_prova,
+            "declaracoes": len(decls),
             "estado": estado,
         })
     _marcar_colisoes(saida)
@@ -271,7 +317,7 @@ def construir_fco(con, documentos: dict[tuple, Documento]) -> tuple[list[dict], 
         })
     acumulados = []
     for (cd, ini, fim), decls in sorted(por_periodo.items()):
-        decls.sort(key=lambda r: (r["doc"].dt_receb, r["doc"].conjunto, r["doc"].id_doc))
+        decls.sort(key=lambda r: (r["doc"].disponivel_em, r["doc"].conjunto, r["doc"].id_doc))
         primeira = decls[0]
         if any(r["valor_bruto"] is None for r in decls):
             estado = "valor_nulo"
@@ -286,7 +332,8 @@ def construir_fco(con, documentos: dict[tuple, Documento]) -> tuple[list[dict], 
             "escala_declarada": doc.escala_declarada, "escala_aplicada": doc.escala_aplicada,
             "base_escala": doc.base_escala, "conjunto": doc.conjunto,
             "dt_refer": doc.dt_refer, "versao": doc.versao, "id_doc": doc.id_doc,
-            "disponivel_em": doc.dt_receb, "disponivel_em_v1": doc.dt_receb_v1,
+            "disponivel_em": doc.disponivel_em, "disponivel_em_v1": doc.disponivel_em_v1,
+            "dt_prova_escala": doc.dt_prova,
             "declaracoes": len(decls), "estado": estado,
         })
 
@@ -363,10 +410,12 @@ def inventario(ativo: list[dict], trimestres: list[dict], acumulados: list[dict]
         "SELECT DISTINCT c.cd_cvm, c.dt_receb FROM cadastro c JOIN universo USING (cd_cvm)"
     ).fetchall():
         decisoes[cd].append(receb)
-    decisoes_no_cego = sum(
-        1 for t in cegos for d in decisoes[t["cd_cvm"]]
+    # RF-07 (17/09): a soma conta PARES (trimestre, D) — uma decisão cai em
+    # mais de um intervalo. As chaves (companhia, D) distintas saem ao lado.
+    pares_no_cego = [
+        (t["cd_cvm"], d) for t in cegos for d in decisoes[t["cd_cvm"]]
         if t["disponivel_em_v1"] <= d < t["disponivel_em"]
-    )
+    ]
     # F6: lacunas que um `PENÚLTIMO` fecharia — contadas, não usadas.
     penultimos = {
         (cd, ini, fim) for cd, ini, fim in con.execute(
@@ -393,7 +442,8 @@ def inventario(ativo: list[dict], trimestres: list[dict], acumulados: list[dict]
             base: sum(1 for a in ativo if a["base_escala"] == base) for base in BASES_DE_ESCALA
         },
         "p2_trimestres_validos_com_intervalo_cego": len(cegos),
-        "p2_decisoes_da_mesma_companhia_no_intervalo_cego": decisoes_no_cego,
+        "p2_pares_trimestre_decisao_no_intervalo_cego": len(pares_no_cego),
+        "p2_chaves_companhia_D_distintas_no_intervalo_cego": len(set(pares_no_cego)),
         "f6_periodos_so_como_penultimo": len(so_penultimo),
         "f6_perdas_que_um_penultimo_fecharia": fechariam,
     }

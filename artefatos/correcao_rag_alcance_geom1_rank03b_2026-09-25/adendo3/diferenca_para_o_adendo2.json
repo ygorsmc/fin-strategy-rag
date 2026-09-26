@@ -1,0 +1,21 @@
+{
+  "sentido": "busca do adendo 3 contra a do adendo 2; só nomes de campos e booleanos",
+  "conferencia_revisao.json": {
+    "campos_diferentes": [
+      "limite"
+    ],
+    "campos_so_na_nova": []
+  },
+  "pin_revisao.json": {
+    "campos_diferentes": [
+      "adendo3_correcao",
+      "adendo3_correcao_sha256",
+      "codigo_sha256"
+    ],
+    "campos_so_na_nova": [
+      "adendo3_correcao",
+      "adendo3_correcao_sha256"
+    ]
+  },
+  "esperado_cumprido": true
+}

@@ -12,7 +12,7 @@ from scripts import verificacoes_revisao_final_rank03b as vr
 
 def _piloto(papel="vmax", estratos=("E1_fronteira_UNIDADE",), aquisicao="integro"):
     return {"papel": papel, "estratos": list(estratos), "aquisicao": aquisicao,
-            "id_doc": "1", "escala_declarada": "UNIDADE"}
+            "id_doc": "1", "escala_declarada": "UNIDADE", "dt_refer": "2020-03-31"}
 
 
 class TestAmostraDeDesenho:
@@ -27,12 +27,14 @@ class TestAmostraDeDesenho:
         assert not vr.e_amostra_de_desenho(_piloto(estratos=("E10_trecho_completo",)))
 
     def test_conta_so_a_populacao(self, monkeypatch):
+        vistos = []
         monkeypatch.setattr(vr.adj, "adjudicar_formulario",
-                            lambda f, d: {"veredito": "corrigida"})
+                            lambda f, d, dt: vistos.append(dt) or {"veredito": "corrigida"})
         r = vr.amostra_de_desenho([_piloto(), _piloto(papel="v1"),
                                    _piloto(estratos=("E5_x",))], ler=lambda d: None)
         assert r["documentos"] == 1
         assert r["por_declarada"] == {"UNIDADE|corrigida": 1}
+        assert vistos == ["2020-03-31"], "a regra v3 decide pelo período corrente"
 
 
 class TestContinuidadeB8:
@@ -107,3 +109,37 @@ class TestComparacaoDaReproducao:
         rep = self._pasta(tmp_path / "r", [{"id_doc": "1", "veredito": "indecidivel"}])
         r = vr.comparar_reproducao(gov, gov / "correcoes_escala.csv", rep)
         assert r["documentos_diferentes"] == ["1", "2"]
+
+
+class TestLigacaoDeVersao:
+    """RF-06 (17/09): o JSON de 16/09 citava um manifesto de painel regravado depois."""
+
+    def _pasta(self, tmp_path, digest_gates="d", sha_correcoes=None):
+        manifesto = tmp_path / "correcoes.csv"
+        manifesto.write_text("m", encoding="utf-8")
+        sha = sha_correcoes or vr._sha(manifesto)
+        entradas = {"correcoes_escala": {"sha256": sha}}
+        (tmp_path / "manifesto_painel.json").write_text(json.dumps(
+            {"digest_do_painel": {"conjunto": "d"}, "entradas": entradas}), encoding="utf-8")
+        (tmp_path / "gates_g0_g1.json").write_text(json.dumps(
+            {"digest_do_painel": {"conjunto": digest_gates},
+             "entradas": {"correcoes_escala": {"sha256": vr._sha(manifesto)}}}), encoding="utf-8")
+        return tmp_path, manifesto
+
+    def test_versao_coerente_grava_os_tres_hashes(self, tmp_path):
+        pasta, manifesto = self._pasta(tmp_path)
+        r = vr.ligacao_de_versao(pasta, manifesto)
+        assert r["digest_do_painel"] == "d"
+        assert r["gates_g0_g1_sha256"] == vr._sha(pasta / "gates_g0_g1.json")
+
+    def test_digest_divergente_para(self, tmp_path):
+        pasta, manifesto = self._pasta(tmp_path, digest_gates="outro")
+        import pytest
+        with pytest.raises(AssertionError, match="digests"):
+            vr.ligacao_de_versao(pasta, manifesto)
+
+    def test_correcoes_de_outra_versao_para(self, tmp_path):
+        pasta, manifesto = self._pasta(tmp_path, sha_correcoes="0" * 64)
+        import pytest
+        with pytest.raises(AssertionError, match="correções"):
+            vr.ligacao_de_versao(pasta, manifesto)

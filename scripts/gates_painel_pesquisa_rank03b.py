@@ -13,6 +13,11 @@ calculado em memória e apagado depois): a amostra do G1 é montada com
 `construir_amostra(..., calcular_rotulo=False)`, e a contagem de descartes por
 `FCO_TTM ≤ 0` sai omitida. O que sai daqui é estrutura: contagens de G0, de G1
 e de perdas.
+
+**Correções de 17/09 (contratos RF-01 a RF-08):** correções só entram
+validadas (`CorrecoesValidadas`, V1); o G1 reconfere, **pelo manifesto e pelo
+cadastro**, que a prova de cada escala corrigida já existia em D (P6); e o
+diagnóstico G0.5 olha a escala APLICADA, não só a declarada (G5.1).
 """
 
 from __future__ import annotations
@@ -22,6 +27,7 @@ import csv
 import hashlib
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 import duckdb
@@ -45,13 +51,39 @@ class ManifestoDeCorrecoesAusente(FileNotFoundError):
     """O painel final não se constrói sem o manifesto de correções declarado."""
 
 
+class CorrecoesValidadas(dict):
+    """Correções que passaram pelas validações do produtor (V1, 17/09).
+
+    O executor recusa um `dict` comum: montar correções à mão, sem as
+    condições 11, 12 e 14 e sem os pacotes conferidos, era possível pelo caminho
+    programático — só a CLI validava.
+    """
+
+    def __init__(self, correcoes: dict, origem_sha256: str):
+        super().__init__(correcoes)
+        self.origem_sha256 = origem_sha256
+        self.conteudo_sha256 = self.impressao()
+
+    def impressao(self) -> str:
+        """Hash do CONTEÚDO: mudar uma linha depois de validar também é recusado."""
+        corpo = json.dumps(sorted((list(k), v) for k, v in self.items()), sort_keys=True,
+                           default=str)
+        return hashlib.sha256(corpo.encode()).hexdigest()
+
+
+class CorrecoesNaoValidadas(TypeError):
+    """Correções que não vieram de `carregar_correcoes`."""
+
+
 def _sha256(caminho: Path) -> str:
     return hashlib.sha256(caminho.read_bytes()).hexdigest()
 
 
 def carregar_correcoes(caminho: Path, tabela: dict | None = None,
                        exigir_escala_nas_pontas: bool = True,
-                       aquisicao: Path | None = None) -> dict[tuple, dict]:
+                       aquisicao: Path | None = None,
+                       exigir_evidencia_numerica: bool = True,
+                       exigir_escopo_v4: bool = True) -> CorrecoesValidadas:
     """Manifesto da parte 2 do contrato, **validado antes de aplicar**.
 
     Ausente é ERRO, não "nenhuma correção". **Correção da auditoria de 16/09
@@ -75,9 +107,57 @@ def carregar_correcoes(caminho: Path, tabela: dict | None = None,
         if chave in correcoes:
             raise ValueError(f"correção duplicada para {chave}")
         correcoes[chave] = r
-    adj.validar_manifesto(linhas, tabela, exigir_escala_nas_pontas)
+    adj.validar_manifesto(linhas, tabela, exigir_escala_nas_pontas,
+                          exigir_evidencia_numerica, exigir_escopo_v4)
     adj.conferir_pacotes(linhas, adj.pacotes_integros(aquisicao or adj.rad.MANIFESTO))
-    return correcoes
+    return CorrecoesValidadas(correcoes, _sha256(caminho))
+
+
+def datas_das_provas(con, correcoes: dict) -> dict[tuple, object]:
+    """P6: `{documento: recepção mais tardia das provas}`, recalculado do manifesto
+    e do cadastro — **não** da data que o construtor gravou no painel."""
+    recepcao: dict[str, object] = {}
+    for i, r in con.execute("SELECT id_doc, dt_receb FROM cadastro").fetchall():
+        if type(r) is not date:
+            raise ProvasAusentes(f"recepção inválida no cadastro da prova {i}")
+        recepcao[str(i)] = max(r, recepcao.get(str(i), r))
+    saida = {}
+    for chave, c in correcoes.items():
+        ids = ([c["id_doc"]] if c["base"] == "corrigida_documento"
+               else [p["id_doc"] for p in json.loads(c["pontas"])])
+        faltando = [i for i in ids if str(i) not in recepcao]
+        if faltando:
+            raise PainelViolaContrato({"c9_prova_sem_cadastro": faltando})
+        saida[chave] = max(recepcao[str(i)] for i in ids)
+    return saida
+
+
+def g1_provas_depois_de_d(amostra: list[dict], painel: pp.Painel,
+                          provas: dict[tuple, object]) -> int:
+    """P6: observações que usam, em D, um documento cuja prova de escala é posterior.
+
+    A linhagem da observação diz QUAIS trimestres e qual ativo entraram; o painel
+    diz de quais documentos eles vêm; a data da prova vem de `provas`.
+    """
+    _exigir_provas(painel, provas)
+    provas = provas or {}
+    trimestres = {(t["cd_cvm"], str(t["dt_ini"]), str(t["dt_fim"])): t
+                  for t in painel.fco_trimestral if t["estado"] == "valido"}
+    ativos = {(a["cd_cvm"], str(a["dt_fim"])): a
+              for a in painel.ativo if a["estado"] == "valido"}
+    violadas = 0
+    for obs in amostra:
+        d = auditor._como_data(obs["D"])
+        chaves = []
+        for r in obs["linhagem"]["janela"]:
+            t = trimestres[(obs["cd_cvm"], str(r["dt_ini"]), str(r["dt_fim"]))]
+            chaves += [(obs["cd_cvm"], o["conjunto"], o["dt_refer"], int(o["versao"]))
+                       for o in json.loads(t["operandos"])]
+        a = ativos[(obs["cd_cvm"], str(obs["linhagem"]["ativo"]["dt_fim"]))]
+        chaves.append((obs["cd_cvm"], a["conjunto"], a["dt_refer"], int(a["versao"])))
+        if any(chave in provas and auditor._como_data(provas[chave]) > d for chave in chaves):
+            violadas += 1
+    return violadas
 
 
 # --- tradução para as formas do auditor ------------------------------------------
@@ -134,7 +214,8 @@ def unicidade(fco: list[dict]) -> int:
 DESCARTES_NAO_PUBLICADOS = ("fco_ttm_nao_positivo",)
 
 
-def g1_cego(fco: list[dict], ativo: list[dict]) -> dict:
+def g1_cego(fco: list[dict], ativo: list[dict], painel: pp.Painel | None = None,
+            provas: dict[tuple, object] | None = None) -> dict:
     """Constrói a amostra SEM calcular o rótulo e mede G1 (G6-pp).
 
     **Correção da auditoria de 16/09:** a versão anterior chamava a construção
@@ -142,10 +223,18 @@ def g1_cego(fco: list[dict], ativo: list[dict]) -> dict:
     o rótulo nunca é somado. E a contagem de FCO TTM não positivo, que a
     construção usa como filtro de elegibilidade, não sai no artefato.
     """
+    if painel is None:
+        raise ProvasAusentes("G1.4 exige painel para verificar cobertura das provas")
+    _exigir_provas(painel, provas)
     amostra, descarte = auditor.construir_amostra(fco, ativo, calcular_rotulo=False)
     if any("y" in o for o in amostra):
         raise AssertionError("O1: a construção cega devolveu rótulo")
     resultado = auditor.gate_g1(amostra, descarte)
+    # P6: a disponibilidade da prova de escala, reconferida fora do construtor.
+    resultado["g1_4_prova_de_escala_publicada_depois_de_D"] = (
+        g1_provas_depois_de_d(amostra, painel, provas or {}))
+    if resultado["g1_4_prova_de_escala_publicada_depois_de_D"]:
+        resultado["aprovado"] = False
     resultado["descartes"] = {
         k: ("omitido por O1" if k in DESCARTES_NAO_PUBLICADOS else v)
         for k, v in resultado["descartes"].items()
@@ -167,27 +256,68 @@ def documentos_decididos(pasta: Path) -> set[tuple]:
     return decididos
 
 
+def _configuracao_de_escala(t: dict) -> str:
+    declaradas = "declaradas_diferentes" if len(set(t["escalas_declaradas"].split("+"))) > 1 \
+        else "declaradas_iguais"
+    aplicadas = "aplicadas_diferentes" if len(set(t["escalas_aplicadas"].split("+"))) > 1 \
+        else "aplicadas_iguais"
+    return f"{declaradas}|{aplicadas}"
+
+
 def diagnostico_g0_5(painel: pp.Painel, decididos: set[tuple]) -> dict:
     """Proposta G0.5 do pré-registro v2 — medida, NÃO governa este lote.
 
-    Trimestre válido derivado de operandos com escalas declaradas diferentes em
-    que algum operando não tem veredito decidido.
+    **G5.1 (17/09):** trimestre válido com operandos heterogêneos na escala
+    declarada **ou aplicada**, em que algum operando não tem veredito decidido.
+    A versão de 16/09 olhava só a declarada e deixava fora a correção parcial
+    (declaradas iguais, aplicadas diferentes). Publicado por configuração.
     """
     validos = [t for t in painel.fco_trimestral if t["estado"] == "valido"]
-    mistos = [t for t in validos if len(set(t["escalas_declaradas"].split("+"))) > 1]
-    arriscados = [
-        t for t in mistos
+    por_configuracao = {}
+    arriscados = 0
+    for t in validos:
+        config = _configuracao_de_escala(t)
+        entrada = por_configuracao.setdefault(config, {"trimestres": 0, "sem_veredito": 0})
+        entrada["trimestres"] += 1
+        if config == "declaradas_iguais|aplicadas_iguais":
+            continue
         if any((t["cd_cvm"], o["conjunto"], o["dt_refer"], int(o["versao"])) not in decididos
-               for o in json.loads(t["operandos"]))
-    ]
+               for o in json.loads(t["operandos"])):
+            entrada["sem_veredito"] += 1
+            arriscados += 1
+    heterogeneos = sum(v["trimestres"] for k, v in por_configuracao.items()
+                       if k != "declaradas_iguais|aplicadas_iguais")
     return {
         "trimestres_validos": len(validos),
-        "com_escalas_declaradas_diferentes": len(mistos),
-        "sem_veredito_em_algum_operando": len(arriscados),
-        "fracao": round(len(arriscados) / len(validos), 6) if validos else None,
-        "limiar_proposto": auditor.G0_TOLERANCIA_ESCALA,
+        "com_escalas_heterogeneas": heterogeneos,
+        "por_configuracao": dict(sorted(por_configuracao.items())),
+        "sem_veredito_em_algum_operando": arriscados,
+        "fracao": round(arriscados / len(validos), 6) if validos else None,
+        "limiar": ("[DECIDIR] — 0,5% seria política NOVA para outro evento e outro "
+                   "denominador; não é herdado de G0.3"),
         "governa_este_lote": False,
     }
+
+
+class ProvasAusentes(Exception):
+    """Painel com escala corrigida e sem datas de prova: G1.4 não aprova no escuro."""
+
+
+def _exigir_provas(painel: pp.Painel, provas: dict | None) -> None:
+    """CRF-02: cobertura integral, inclusive nas entradas profundas do G1.
+
+    A data independente vem de datas_das_provas; NÃO usar dt_prova do painel
+    para completar/verificar este mapa: isso esconderia um construtor errado.
+    """
+    exigidas = {(d.cd_cvm, d.conjunto, d.dt_refer, d.versao)
+                for d in painel.documentos.values() if d.base_escala != "declarada"}
+    provas = {} if provas is None else provas
+    faltam = exigidas - provas.keys()
+    invalidas = {k for k in exigidas & provas.keys() if type(provas[k]) is not date}
+    if faltam or invalidas:
+        raise ProvasAusentes(
+            f"provas incompletas: {len(faltam)} ausentes, {len(invalidas)} datas inválidas; "
+            "passe `datas_das_provas(con, correcoes)`")
 
 
 class PainelViolaContrato(Exception):
@@ -198,12 +328,21 @@ class PainelViolaContrato(Exception):
     """
 
 
-def verificar_falsificacoes(painel: pp.Painel, con=None) -> dict[str, int]:
-    """Condições 1–5 e 8 da parte 1 do contrato do lote C, sobre o painel real."""
+def verificar_falsificacoes(painel: pp.Painel, con=None,
+                            provas: dict[tuple, object] | None = None) -> dict[str, int]:
+    """Condições 1–5 e 8 da parte 1 do contrato do lote C, sobre o painel real.
+
+    c3 (P6, 17/09): o operando mais tardio conta a recepção **e** a prova da
+    escala, esta recalculada por `datas_das_provas`.
+    """
+    _exigir_provas(painel, provas)
     validos = [t for t in painel.fco_trimestral if t["estado"] == "valido"]
     minimo, maximo = pp.BANDA_DIAS
-    receb = {(d.cd_cvm, d.conjunto, d.dt_refer, d.versao): d.dt_receb
-             for d in painel.documentos.values()}
+    provas = provas or {}
+    receb = {}
+    for d in painel.documentos.values():
+        chave = (d.cd_cvm, d.conjunto, d.dt_refer, d.versao)
+        receb[chave] = max(d.dt_receb, provas.get(chave, d.dt_receb))
     disponibilidade_errada = inicio_errado = sem_documento = 0
     for t in painel.fco_trimestral:
         operandos = json.loads(t["operandos"])
@@ -250,7 +389,9 @@ def verificar_falsificacoes(painel: pp.Painel, con=None) -> dict[str, int]:
     return violacoes
 
 
-def medir(painel: pp.Painel, decididos: set[tuple] | None = None) -> dict:
+def medir(painel: pp.Painel, decididos: set[tuple] | None = None,
+          provas: dict[tuple, object] | None = None) -> dict:
+    _exigir_provas(painel, provas)
     fco, ativo, dur = linhas_fco(painel), linhas_ativo(painel), duracoes(painel)
     g0 = auditor.gate_g0(fco, ativo, dur, nulos(painel))
     g0["g3_pp_trimestres_repetidos"] = unicidade(fco)
@@ -287,7 +428,7 @@ def medir(painel: pp.Painel, decididos: set[tuple] | None = None) -> dict:
     }
     if decididos is not None:
         g0["diagnostico_g0_5_proposto"] = diagnostico_g0_5(painel, decididos)
-    g1 = g1_cego(fco, ativo)
+    g1 = g1_cego(fco, ativo, painel, provas)
     primeiro = next((g["gate"] for g in (g0, g1) if not g["aprovado"]), None)
     return {
         "cadeia": [g0, g1],
@@ -305,11 +446,25 @@ def executar(correcoes: dict[tuple, dict], caminho_correcoes: Path | None,
              nome: str | None = None, gravar_painel: bool = True) -> dict:
     """`nome` e `gravar_painel` existem para o diagnóstico da execução 1 (RC1):
     medido ao lado, sem sobrescrever o painel governante."""
+    if correcoes and not isinstance(correcoes, CorrecoesValidadas):
+        raise CorrecoesNaoValidadas(
+            "correções precisam vir de `carregar_correcoes` (V1): um dict montado "
+            "à mão não passou pelas condições 11, 12 e 14 nem pela conferência de pacotes")
+    if correcoes and caminho_correcoes is None:
+        # M2 (17/09): o artefato registraria "SEM CORREÇÕES" num painel corrigido.
+        raise CorrecoesNaoValidadas("correções sem o caminho do manifesto de origem")
+    if isinstance(correcoes, CorrecoesValidadas) and caminho_correcoes is not None \
+            and correcoes.origem_sha256 != _sha256(caminho_correcoes):
+        raise CorrecoesNaoValidadas("o manifesto mudou depois de validado")
+    if isinstance(correcoes, CorrecoesValidadas) and \
+            correcoes.conteudo_sha256 != correcoes.impressao():
+        raise CorrecoesNaoValidadas("as correções mudaram em memória depois de validadas")
     con = duckdb.connect(":memory:")
     zips = fz.extrair(con)
     hash_compartilhado = pp.preparar_universo(con)
     painel = pp.construir(con, correcoes)
-    falsificacoes = verificar_falsificacoes(painel, con)
+    provas = datas_das_provas(con, correcoes)
+    falsificacoes = verificar_falsificacoes(painel, con, provas)
     resultado = {
         "falsificacoes_parte_1": falsificacoes,
         "contrato": "resultados/contratos_lote_c_painel_pesquisa_rank03b_2026-09-16.md",
@@ -330,7 +485,8 @@ def executar(correcoes: dict[tuple, dict], caminho_correcoes: Path | None,
                        "piso_nao_informativo": pp.PISO_NAO_INFORMATIVO},
         "digest_do_painel": painel.digest,
         "inventario": painel.inventario,
-        **medir(painel, documentos_decididos(adjudicacao) if caminho_correcoes else None),
+        **medir(painel, documentos_decididos(adjudicacao) if caminho_correcoes else None,
+                provas),
     }
     _sem_chave_proibida(resultado)
     destino.mkdir(parents=True, exist_ok=True)
@@ -361,7 +517,8 @@ def principal(argv=None) -> int:
         pasta = ADJUDICACAO / "execucao1"
         caminho = pasta / "correcoes_escala.csv"
         correcoes = carregar_correcoes(caminho, tabela=adj.TABELA_S2_EXECUCAO_1,
-                                       exigir_escala_nas_pontas=False)
+                                       exigir_escala_nas_pontas=False,
+                                       exigir_evidencia_numerica=False)
         resultado = executar(correcoes, caminho, adjudicacao=pasta,
                              nome="gates_g0_g1_diagnostico_execucao1.json", gravar_painel=False)
         print(f"diagnóstico execução 1: {resultado['veredito']}")

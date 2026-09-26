@@ -14,7 +14,39 @@ até a correção A1, o G1 montava a amostra calculando `S1`, `S2` e `y` em
 memória (e só depois apagava `y`), e publicava a contagem de descartes por
 `FCO_TTM ≤ 0`. Desde a A1 o rótulo não é calculado e a contagem sai omitida.
 
-**Veredito estrutural: G0 e G1 APROVADOS no painel de pesquisa**, com 101
+> **Atualização de 18/09 — não consumir os números abaixo como vigentes.**
+> A [onda CRF](correcao_crf01_crf03_rank03b_2026-09-18.md) substituiu a execução 3:
+> a regra tabular v4 não certificou nenhum dos 405 documentos. O manifesto
+> vigente tem zero correções; **G0 reprovou** (132 saltos, 0,5875%). Isso
+> demonstra falta de cobertura do extrator estrito, não 68 erros contábeis.
+> O histórico, inclusive as aprovações anteriores, fica preservado abaixo.
+
+> ## ⚠️ RESSALVA RC3 — conferência independente e execução 3 (17/09, histórica)
+>
+> A [conferência de 17/09](conferencia_pre_treino_rank03b_2026-09-17.md)
+> **comprovou erro** numa correção deste lote: **ESC-0101** (`027570`,
+> 3T2025) mudou para `MIL` um ativo que estava certo em reais. A evidência
+> numérica era um `1.000` de quantidade de ações. A conferência achou também:
+> correções herdadas usadas antes da publicação da ponta (**5 observações**),
+> faixas unitárias na partição de T1, uma classe omitida no G0.5 e um hash de
+> verificação desatualizado. Correções:
+> [contratos](contratos_correcao_rf01_rf08_rank03b_2026-09-17.md) e
+> [relatório](correcao_rf01_rf08_rank03b_2026-09-17.md).
+>
+> **O que deixa de valer neste relatório:** as **101 correções** (manifesto
+> `4735fb10…`), os **47 saltos (0,2092%)**, as **502 companhias** do G1
+> governante, o digest `f9cb9da9…`, a frase de §4 "custo de corrigir só o que
+> tem fonte" sobre os saltos novos, e a decisão do §8.4 de manter ESC-0101
+> "para evitar ajuste pós-hoc". **Corrigir erro demonstrado contra a fonte,
+> declarando a nova versão, não é ajuste pós-hoc.**
+>
+> **Estado de 17/09 (execução 3, regra v3, substituída em 18/09):** **68 correções** (manifesto
+> `6330d78d…`), G0.3 = **68 saltos (0,3026%)**, G1 = **10.750 observações em
+> 503 companhias**, G1.4 = 0, digest `1250cefb…`. **G0 e G1 foram
+> aprovados naquela execução.** Nenhuma escala decidida se inverteu entre as execuções 2 e 3.
+> O texto abaixo fica como foi publicado em 16/09.
+
+**Veredito estrutural (16/09, substituído pela RC3): G0 e G1 APROVADOS no painel de pesquisa**, com 101
 correções de escala feitas com fonte. G0.3 = **47 saltos (0,2092%)**, contra
 132 (0,5875%) sem correção e limite de 0,5%; G1 = **10.750 observações em 502
 companhias**, zero violações. **Isto não é aprovação do alvo** — é a condição

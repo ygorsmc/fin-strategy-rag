@@ -1,15 +1,15 @@
 {
   "codigo_sha256": {
-    "scripts/auditar_rank03b_consumo_operacional.py": "d7319dd6ff317c6096209b8d90700502f8941e9b0251223704f9964d1c93a557",
+    "scripts/auditar_rank03b_consumo_operacional.py": "a550108f46de238ba07d725155ec2a867b5cb70331aed41657ba20d129b81e9c",
     "scripts/fonte_zip_cvm.py": "44bc0b51313a78cbaf838a05b6bbbb121ccb043f5a91a4c36f4d5e2a8124a510",
-    "scripts/gates_painel_pesquisa_rank03b.py": "cb90fbf5052bae85fc71bb9623886f28ea6ca6353f7e6fa0b7843cf378b899bb",
-    "scripts/painel_pesquisa_rank03b.py": "f1b30744b45c996d3224be2c62eae362efba689b9e96e710aed450a24e385800"
+    "scripts/gates_painel_pesquisa_rank03b.py": "131e44129987bd8fe812cbc449bb2383a0a89c3cac653ac175ed8c1216c75586",
+    "scripts/painel_pesquisa_rank03b.py": "f61f5ab115d3a48c144781cae6b62f51c0ea3d1cac2407e1fd1455d1531a3497"
   },
   "contrato": "resultados/contratos_lote_c_painel_pesquisa_rank03b_2026-09-16.md",
   "digest_do_painel": {
-    "ativo": "a230650f24469da5f53a9e11b10c24b8edd22fed60bd0e95f2c6d165406fce65",
-    "conjunto": "08fffc8b1c436cbd33d5de26edecee5a5e0de6c514a51b9cb15041e4e847c089",
-    "fco_acumulado": "3f20b883bba80a2a28db6f191d0ebfd53f5340cee506d109580199b8299da612",
+    "ativo": "9cefae45bbb78829141091a823d6015e62b5f40901f4fef1d823628ecf9ee74e",
+    "conjunto": "6ca635a904f11140fa24c496a11b77e961f841b72f076edd5650212afe12e6cd",
+    "fco_acumulado": "5126270ca7c5e4143e0f7f4dd3b4dac1c0b359972a74d3219922eb6a74e83328",
     "fco_trimestral": "1993a6ae6bf85566709309b398a0738be4dffa91f95e707e9ad8d03782b1719a"
   },
   "entradas": {

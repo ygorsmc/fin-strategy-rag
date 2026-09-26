@@ -1,0 +1,583 @@
+{
+  "timestamp_utc": "2026-09-20T23:45:44.006484+00:00",
+  "modelo": "gemini",
+  "custo_total_usd": 0.01139,
+  "n_perguntas": 12,
+  "rotas": [
+    "deterministica",
+    "interpretada",
+    "planejada"
+  ],
+  "chamadas_llm_por_pergunta": 2,
+  "registros": [
+    {
+      "categoria": "canônica",
+      "pergunta": "Qual foi o lucro líquido do Itaú no 3T2025?",
+      "deterministica": {
+        "atendeu": true,
+        "resposta": "ITAU UNIBANCO HOLDING S.A. (CD_CVM 019348) está nas duas camadas em 3T2025: há release indexado (1T2026, 2T2025, 3T2025, 4T2025) e fatos contábeis no painel da CVM (1T2025, 1T2026, 2T2025, 2T2026, 3T2025, 4T2025). Lucro líquido atribuído aos sócios da empresa controladora de ITAU UNIBANCO HOLDING S.A. em 3T2025: R$ 11,31 bilhões (R$ 11.306.000.000,00).\n\n**Número contábil arquivado na CVM (ITR/DFP).** O release de resultados pode divulgar, para o mesmo período, um número gerencial — ajustado ou recorrente — diferente deste; essa leitura não foi consultada aqui. Para obtê-la, pergunte no modo pergunta livre citando o release.",
+        "valores": {
+          "019348·3T2025": "R$ 11.306.000.000,00"
+        }
+      },
+      "interpretada": {
+        "atendeu": true,
+        "resposta": "ITAU UNIBANCO HOLDING S.A. em 3T2025: R$ 11.306.000.000,00",
+        "custo_usd": 0.0004274,
+        "valores": {
+          "019348·3T2025": "R$ 11.306.000.000,00"
+        },
+        "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm IN ('019348')\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre IN ('3T2025')\nORDER BY cd_cvm, trimestre\nLIMIT 40",
+        "intencao": {
+          "conceito": "lucro_liquido_controladores",
+          "codigos": [
+            "019348"
+          ],
+          "trimestres": [
+            "3T2025"
+          ],
+          "operacao": "valor"
+        }
+      },
+      "planejada": {
+        "atendeu": true,
+        "resposta": "ITAU UNIBANCO HOLDING S.A. em 3T2025: R$ 11.306.000.000,00",
+        "custo_usd": 0.0004705,
+        "valores": {
+          "019348·3T2025": "R$ 11.306.000.000,00"
+        },
+        "n_celulas": 1,
+        "n_pendentes": 0,
+        "celulas": [
+          {
+            "termo": "Itaú",
+            "cd_cvm": "019348",
+            "conceito": "lucro_liquido_controladores",
+            "trimestre": "3T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '019348'\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre = '3T2025'\nORDER BY trimestre\nLIMIT 12"
+          }
+        ],
+        "pendentes": []
+      },
+      "valores_divergentes": null
+    },
+    {
+      "categoria": "canônica",
+      "pergunta": "Qual foi o patrimônio líquido do Bradesco no 2T2025?",
+      "deterministica": {
+        "atendeu": true,
+        "resposta": "BCO BRADESCO S.A. (CD_CVM 000906) está nas duas camadas em 2T2025: há release indexado (1T2026, 2T2025, 3T2025, 4T2025) e fatos contábeis no painel da CVM (1T2025, 1T2026, 2T2025, 2T2026, 3T2025, 4T2025). Patrimônio líquido consolidado de BCO BRADESCO S.A. em 2T2025: R$ 174,54 bilhões (R$ 174.542.189.000,00).\n\n**Número contábil arquivado na CVM (ITR/DFP).** O release de resultados pode divulgar, para o mesmo período, um número gerencial — ajustado ou recorrente — diferente deste; essa leitura não foi consultada aqui. Para obtê-la, pergunte no modo pergunta livre citando o release.",
+        "valores": {
+          "000906·2T2025": "R$ 174.542.189.000,00"
+        }
+      },
+      "interpretada": {
+        "atendeu": true,
+        "resposta": "BCO BRADESCO S.A. em 2T2025: R$ 174.542.189.000,00",
+        "custo_usd": 0.0004005,
+        "valores": {
+          "000906·2T2025": "R$ 174.542.189.000,00"
+        },
+        "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm IN ('000906')\n  AND conceito = 'patrimonio_liquido_consolidado'\n  AND trimestre IN ('2T2025')\nORDER BY cd_cvm, trimestre\nLIMIT 40",
+        "intencao": {
+          "conceito": "patrimonio_liquido_consolidado",
+          "codigos": [
+            "000906"
+          ],
+          "trimestres": [
+            "2T2025"
+          ],
+          "operacao": "valor"
+        }
+      },
+      "planejada": {
+        "atendeu": true,
+        "resposta": "BCO BRADESCO S.A. em 2T2025: R$ 174.542.189.000,00",
+        "custo_usd": 0.00047359999999999997,
+        "valores": {
+          "000906·2T2025": "R$ 174.542.189.000,00"
+        },
+        "n_celulas": 1,
+        "n_pendentes": 0,
+        "celulas": [
+          {
+            "termo": "Bradesco",
+            "cd_cvm": "000906",
+            "conceito": "patrimonio_liquido_consolidado",
+            "trimestre": "2T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '000906'\n  AND conceito = 'patrimonio_liquido_consolidado'\n  AND trimestre = '2T2025'\nORDER BY trimestre\nLIMIT 12"
+          }
+        ],
+        "pendentes": []
+      },
+      "valores_divergentes": null
+    },
+    {
+      "categoria": "cobertura parcial",
+      "pergunta": "Qual foi o lucro do Banco Inter no 3T2025?",
+      "deterministica": {
+        "atendeu": true,
+        "resposta": "INTER & CO, INC. (CD_CVM 080217) arquiva na CVM e o painel cobre 1T2025, 1T2026, 2T2025, 2T2026, 3T2025, 4T2025, mas NÃO há release indexado para 3T2025 no corpus documental. Logo, o número contábil é respondível e nada pode ser dito sobre o que a administração declarou no release. Lucro líquido atribuído aos sócios da empresa controladora de INTER & CO, INC. em 3T2025: R$ 336,35 milhões (R$ 336.345.000,00).",
+        "valores": {
+          "080217·3T2025": "R$ 336.345.000,00"
+        }
+      },
+      "interpretada": {
+        "atendeu": true,
+        "resposta": "INTER & CO, INC. em 3T2025: R$ 336.345.000,00",
+        "custo_usd": 0.0004246,
+        "valores": {
+          "080217·3T2025": "R$ 336.345.000,00"
+        },
+        "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm IN ('080217')\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre IN ('3T2025')\nORDER BY cd_cvm, trimestre\nLIMIT 40",
+        "intencao": {
+          "conceito": "lucro_liquido_controladores",
+          "codigos": [
+            "080217"
+          ],
+          "trimestres": [
+            "3T2025"
+          ],
+          "operacao": "valor"
+        }
+      },
+      "planejada": {
+        "atendeu": true,
+        "resposta": "INTER & CO, INC. em 3T2025: R$ 336.345.000,00",
+        "custo_usd": 0.0004677,
+        "valores": {
+          "080217·3T2025": "R$ 336.345.000,00"
+        },
+        "n_celulas": 1,
+        "n_pendentes": 0,
+        "celulas": [
+          {
+            "termo": "Banco Inter",
+            "cd_cvm": "080217",
+            "conceito": "lucro_liquido_controladores",
+            "trimestre": "3T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '080217'\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre = '3T2025'\nORDER BY trimestre\nLIMIT 12"
+          }
+        ],
+        "pendentes": []
+      },
+      "valores_divergentes": null
+    },
+    {
+      "categoria": "recusa (RN12)",
+      "pergunta": "Qual foi o lucro do Nubank no 3T2025?",
+      "deterministica": {
+        "atendeu": true,
+        "resposta": "Não há cobertura para 'nubank' em nenhuma das duas camadas. Motivo: a Nu Holdings Ltd. é listada na NYSE e não arquiva ITR/DFP na CVM, logo não existe no painel contábil; e não há release dela no corpus documental, que cobre cinco bancos brasileiros.",
+        "valores": {}
+      },
+      "interpretada": {
+        "atendeu": false,
+        "resposta": "(recusa da intenção) nenhuma companhia da pergunta existe no painel: Nubank",
+        "custo_usd": 0.0004246
+      },
+      "planejada": {
+        "atendeu": false,
+        "resposta": "(recusa do plano) nenhuma companhia da pergunta virou consulta: Nubank",
+        "custo_usd": 0.0004677
+      },
+      "valores_divergentes": null
+    },
+    {
+      "categoria": "derivado (RN10)",
+      "pergunta": "Qual foi o lucro líquido do Banco do Brasil no 4T2025?",
+      "deterministica": {
+        "atendeu": true,
+        "resposta": "BCO BRASIL S.A. (CD_CVM 001023) está nas duas camadas em 4T2025: há release indexado (1T2026, 2T2025, 3T2025, 4T2025) e fatos contábeis no painel da CVM (1T2025, 1T2026, 2T2025, 3T2025, 4T2025). Lucro líquido atribuído aos sócios da empresa controladora de BCO BRASIL S.A. em 4T2025: R$ 5,24 bilhões (R$ 5.239.936.000,00) (valor derivado, RN10).\n\n**Número contábil arquivado na CVM (ITR/DFP).** O release de resultados pode divulgar, para o mesmo período, um número gerencial — ajustado ou recorrente — diferente deste; essa leitura não foi consultada aqui. Para obtê-la, pergunte no modo pergunta livre citando o release.",
+        "valores": {
+          "001023·4T2025": "R$ 5.239.936.000,00"
+        }
+      },
+      "interpretada": {
+        "atendeu": true,
+        "resposta": "BCO BRASIL S.A. em 4T2025: R$ 5.239.936.000,00 (derivado)",
+        "custo_usd": 0.0004102,
+        "valores": {
+          "001023·4T2025": "R$ 5.239.936.000,00"
+        },
+        "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm IN ('001023')\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre IN ('4T2025')\nORDER BY cd_cvm, trimestre\nLIMIT 40",
+        "intencao": {
+          "conceito": "lucro_liquido_controladores",
+          "codigos": [
+            "001023"
+          ],
+          "trimestres": [
+            "4T2025"
+          ],
+          "operacao": "valor"
+        }
+      },
+      "planejada": {
+        "atendeu": true,
+        "resposta": "BCO BRASIL S.A. em 4T2025: R$ 5.239.936.000,00 (derivado)",
+        "custo_usd": 0.0004708,
+        "valores": {
+          "001023·4T2025": "R$ 5.239.936.000,00"
+        },
+        "n_celulas": 1,
+        "n_pendentes": 0,
+        "celulas": [
+          {
+            "termo": "Banco do Brasil",
+            "cd_cvm": "001023",
+            "conceito": "lucro_liquido_controladores",
+            "trimestre": "4T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '001023'\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre = '4T2025'\nORDER BY trimestre\nLIMIT 12"
+          }
+        ],
+        "pendentes": []
+      },
+      "valores_divergentes": null
+    },
+    {
+      "categoria": "comparação",
+      "pergunta": "Qual dos cinco bancos teve o maior lucro no 3T2025?",
+      "deterministica": {
+        "atendeu": true,
+        "resposta": "Nenhuma companhia foi identificada na pergunta. O braço determinístico responde cobertura e número contábil por companhia; sem companhia não há o que consultar.",
+        "valores": {}
+      },
+      "interpretada": {
+        "atendeu": true,
+        "resposta": "Desambiguação necessária (RN11) para: BTG Pactual",
+        "custo_usd": 0.0005124,
+        "valores": {}
+      },
+      "planejada": {
+        "atendeu": true,
+        "resposta": "Comparação incompleta — sem eleger o maior. Ordem entre os 4 que responderam: ITAU UNIBANCO HOLDING S.A. R$ 11.306.000.000,00; BCO BRADESCO S.A. R$ 5.500.665.000,00; BCO SANTANDER (BRASIL) S.A. R$ 3.828.204.000,00 (corrigido); BCO BRASIL S.A. R$ 2.237.301.000,00. Ficaram de fora: BTG Pactual (identifica 2 companhias — falta desambiguar, RN11).",
+        "custo_usd": 0.000943,
+        "valores": {
+          "001023·3T2025": "R$ 2.237.301.000,00",
+          "000906·3T2025": "R$ 5.500.665.000,00",
+          "019348·3T2025": "R$ 11.306.000.000,00",
+          "020532·3T2025": "R$ 3.828.204.000,00"
+        },
+        "n_celulas": 4,
+        "n_pendentes": 1,
+        "celulas": [
+          {
+            "termo": "Banco do Brasil",
+            "cd_cvm": "001023",
+            "conceito": "lucro_liquido_controladores",
+            "trimestre": "3T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '001023'\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre = '3T2025'\nORDER BY trimestre\nLIMIT 12"
+          },
+          {
+            "termo": "Bradesco",
+            "cd_cvm": "000906",
+            "conceito": "lucro_liquido_controladores",
+            "trimestre": "3T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '000906'\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre = '3T2025'\nORDER BY trimestre\nLIMIT 12"
+          },
+          {
+            "termo": "Itaú",
+            "cd_cvm": "019348",
+            "conceito": "lucro_liquido_controladores",
+            "trimestre": "3T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '019348'\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre = '3T2025'\nORDER BY trimestre\nLIMIT 12"
+          },
+          {
+            "termo": "Santander",
+            "cd_cvm": "020532",
+            "conceito": "lucro_liquido_controladores",
+            "trimestre": "3T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '020532'\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre = '3T2025'\nORDER BY trimestre\nLIMIT 12"
+          }
+        ],
+        "pendentes": [
+          {
+            "termo": "BTG Pactual",
+            "estado": "ambigua",
+            "candidatas": [
+              "022616",
+              "027774"
+            ]
+          }
+        ]
+      },
+      "valores_divergentes": null
+    },
+    {
+      "categoria": "comparação",
+      "pergunta": "Entre Itaú e Santander, quem lucrou mais no 2T2025?",
+      "deterministica": {
+        "atendeu": true,
+        "resposta": "ITAU UNIBANCO HOLDING S.A. (CD_CVM 019348) está nas duas camadas em 2T2025: há release indexado (1T2026, 2T2025, 3T2025, 4T2025) e fatos contábeis no painel da CVM (1T2025, 1T2026, 2T2025, 2T2026, 3T2025, 4T2025). Lucro líquido atribuído aos sócios da empresa controladora de ITAU UNIBANCO HOLDING S.A. em 2T2025: R$ 11,14 bilhões (R$ 11.137.000.000,00). BCO SANTANDER (BRASIL) S.A. (CD_CVM 020532) está nas duas camadas em 2T2025: há release indexado (1T2026, 2T2025, 3T2025, 4T2025) e fatos contábeis no painel da CVM (1T2025, 1T2026, 2T2025, 2T2026, 3T2025, 4T2025). Lucro líquido atribuído aos sócios da empresa controladora de BCO SANTANDER (BRASIL) S.A. em 2T2025: R$ 1,93 bilhão (R$ 1.928.066.000,00). GIGA MAIS FIBRA TELECOMUNICAÇÕES S.A. (CD_CVM 027502) arquiva na CVM e o painel cobre 1T2025, 1T2026, 2T2025, 3T2025, 4T2025, mas NÃO há release indexado para 2T2025 no corpus documental. Logo, o número contábil é respondível e nada pode ser dito sobre o que a administração declarou no release. Lucro líquido atribuído aos sócios da empresa controladora de GIGA MAIS FIBRA TELECOMUNICAÇÕES S.A. em 2T2025: -R$ 11,49 milhões (R$ -11.491.000,00).\n\n**Número contábil arquivado na CVM (ITR/DFP).** O release de resultados pode divulgar, para o mesmo período, um número gerencial — ajustado ou recorrente — diferente deste; essa leitura não foi consultada aqui. Para obtê-la, pergunte no modo pergunta livre citando o release.",
+        "valores": {
+          "019348·2T2025": "R$ 11.137.000.000,00",
+          "020532·2T2025": "R$ 1.928.066.000,00",
+          "027502·2T2025": "R$ -11.491.000,00"
+        }
+      },
+      "interpretada": {
+        "atendeu": true,
+        "resposta": "Maior: ITAU UNIBANCO HOLDING S.A.. Ordem decrescente: ITAU UNIBANCO HOLDING S.A. R$ 11.137.000.000,00; BCO SANTANDER (BRASIL) S.A. R$ 1.928.066.000,00.",
+        "custo_usd": 0.000458,
+        "valores": {
+          "019348·2T2025": "R$ 11.137.000.000,00",
+          "020532·2T2025": "R$ 1.928.066.000,00"
+        },
+        "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm IN ('019348', '020532')\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre IN ('2T2025')\nORDER BY cd_cvm, trimestre\nLIMIT 40",
+        "intencao": {
+          "conceito": "lucro_liquido_controladores",
+          "codigos": [
+            "019348",
+            "020532"
+          ],
+          "trimestres": [
+            "2T2025"
+          ],
+          "operacao": "comparacao"
+        }
+      },
+      "planejada": {
+        "atendeu": true,
+        "resposta": "Maior: ITAU UNIBANCO HOLDING S.A.. Ordem decrescente: ITAU UNIBANCO HOLDING S.A. R$ 11.137.000.000,00; BCO SANTANDER (BRASIL) S.A. R$ 1.928.066.000,00.",
+        "custo_usd": 0.0005885999999999999,
+        "valores": {
+          "019348·2T2025": "R$ 11.137.000.000,00",
+          "020532·2T2025": "R$ 1.928.066.000,00"
+        },
+        "n_celulas": 2,
+        "n_pendentes": 0,
+        "celulas": [
+          {
+            "termo": "Itaú",
+            "cd_cvm": "019348",
+            "conceito": "lucro_liquido_controladores",
+            "trimestre": "2T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '019348'\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre = '2T2025'\nORDER BY trimestre\nLIMIT 12"
+          },
+          {
+            "termo": "Santander",
+            "cd_cvm": "020532",
+            "conceito": "lucro_liquido_controladores",
+            "trimestre": "2T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '020532'\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre = '2T2025'\nORDER BY trimestre\nLIMIT 12"
+          }
+        ],
+        "pendentes": []
+      },
+      "valores_divergentes": null
+    },
+    {
+      "categoria": "variação",
+      "pergunta": "Quanto o lucro do Itaú cresceu do 3T2025 para o 4T2025?",
+      "deterministica": {
+        "atendeu": true,
+        "resposta": "ITAU UNIBANCO HOLDING S.A. (CD_CVM 019348) está nas duas camadas em 3T2025: há release indexado (1T2026, 2T2025, 3T2025, 4T2025) e fatos contábeis no painel da CVM (1T2025, 1T2026, 2T2025, 2T2026, 3T2025, 4T2025). Lucro líquido atribuído aos sócios da empresa controladora de ITAU UNIBANCO HOLDING S.A. em 3T2025: R$ 11,31 bilhões (R$ 11.306.000.000,00). Lucro líquido atribuído aos sócios da empresa controladora de ITAU UNIBANCO HOLDING S.A. em 4T2025: R$ 11,91 bilhões (R$ 11.907.000.000,00) (valor derivado, RN10).\n\n**Número contábil arquivado na CVM (ITR/DFP).** O release de resultados pode divulgar, para o mesmo período, um número gerencial — ajustado ou recorrente — diferente deste; essa leitura não foi consultada aqui. Para obtê-la, pergunte no modo pergunta livre citando o release.",
+        "valores": {
+          "019348·3T2025": "R$ 11.306.000.000,00",
+          "019348·4T2025": "R$ 11.907.000.000,00"
+        }
+      },
+      "interpretada": {
+        "atendeu": true,
+        "resposta": "ITAU UNIBANCO HOLDING S.A.: 3T2025 R$ 11.306.000.000,00 → 4T2025 R$ 11.907.000.000,00 (derivado). Variação +5,3% (R$ 601.000.000,00). Valor derivado envolvido (RN10).",
+        "custo_usd": 0.0004576,
+        "valores": {
+          "019348·3T2025": "R$ 11.306.000.000,00",
+          "019348·4T2025": "R$ 11.907.000.000,00"
+        },
+        "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm IN ('019348')\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre IN ('3T2025', '4T2025')\nORDER BY cd_cvm, trimestre\nLIMIT 40",
+        "intencao": {
+          "conceito": "lucro_liquido_controladores",
+          "codigos": [
+            "019348"
+          ],
+          "trimestres": [
+            "3T2025",
+            "4T2025"
+          ],
+          "operacao": "variacao"
+        }
+      },
+      "planejada": {
+        "atendeu": true,
+        "resposta": "ITAU UNIBANCO HOLDING S.A.: 3T2025 R$ 11.306.000.000,00 → 4T2025 R$ 11.907.000.000,00 (derivado). Variação +5,3% (R$ 601.000.000,00). Valor derivado envolvido (RN10).",
+        "custo_usd": 0.0005932,
+        "valores": {
+          "019348·3T2025": "R$ 11.306.000.000,00",
+          "019348·4T2025": "R$ 11.907.000.000,00"
+        },
+        "n_celulas": 2,
+        "n_pendentes": 0,
+        "celulas": [
+          {
+            "termo": "Itaú",
+            "cd_cvm": "019348",
+            "conceito": "lucro_liquido_controladores",
+            "trimestre": "3T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '019348'\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre = '3T2025'\nORDER BY trimestre\nLIMIT 12"
+          },
+          {
+            "termo": "Itaú",
+            "cd_cvm": "019348",
+            "conceito": "lucro_liquido_controladores",
+            "trimestre": "4T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '019348'\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre = '4T2025'\nORDER BY trimestre\nLIMIT 12"
+          }
+        ],
+        "pendentes": []
+      },
+      "valores_divergentes": null
+    },
+    {
+      "categoria": "paráfrase",
+      "pergunta": "Me diga quanto o Bradesco ganhou de lucro no terceiro trimestre de 2025",
+      "deterministica": {
+        "atendeu": true,
+        "resposta": "BCO BRADESCO S.A. (CD_CVM 000906) está nas duas camadas: há release indexado (1T2026, 2T2025, 3T2025, 4T2025) e fatos contábeis no painel da CVM (1T2025, 1T2026, 2T2025, 2T2026, 3T2025, 4T2025). Lucro líquido atribuído aos sócios da empresa controladora de BCO BRADESCO S.A. em 1T2025: R$ 5,60 bilhões (R$ 5.604.829.000,00). Lucro líquido atribuído aos sócios da empresa controladora de BCO BRADESCO S.A. em 1T2026: R$ 5,18 bilhões (R$ 5.177.940.000,00). Lucro líquido atribuído aos sócios da empresa controladora de BCO BRADESCO S.A. em 2T2025: R$ 6,07 bilhões (R$ 6.066.721.000,00). Lucro líquido atribuído aos sócios da empresa controladora de BCO BRADESCO S.A. em 2T2026: R$ 7,14 bilhões (R$ 7.139.847.000,00). Lucro líquido atribuído aos sócios da empresa controladora de BCO BRADESCO S.A. em 3T2025: R$ 5,50 bilhões (R$ 5.500.665.000,00). Lucro líquido atribuído aos sócios da empresa controladora de BCO BRADESCO S.A. em 4T2025: R$ 6,50 bilhões (R$ 6.500.491.000,00) (valor derivado, RN10).\n\n**Número contábil arquivado na CVM (ITR/DFP).** O release de resultados pode divulgar, para o mesmo período, um número gerencial — ajustado ou recorrente — diferente deste; essa leitura não foi consultada aqui. Para obtê-la, pergunte no modo pergunta livre citando o release.",
+        "valores": {
+          "000906·1T2025": "R$ 5.604.829.000,00",
+          "000906·1T2026": "R$ 5.177.940.000,00",
+          "000906·2T2025": "R$ 6.066.721.000,00",
+          "000906·2T2026": "R$ 7.139.847.000,00",
+          "000906·3T2025": "R$ 5.500.665.000,00",
+          "000906·4T2025": "R$ 6.500.491.000,00"
+        }
+      },
+      "interpretada": {
+        "atendeu": true,
+        "resposta": "BCO BRADESCO S.A. em 3T2025: R$ 5.500.665.000,00",
+        "custo_usd": 0.000428,
+        "valores": {
+          "000906·3T2025": "R$ 5.500.665.000,00"
+        },
+        "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm IN ('000906')\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre IN ('3T2025')\nORDER BY cd_cvm, trimestre\nLIMIT 40",
+        "intencao": {
+          "conceito": "lucro_liquido_controladores",
+          "codigos": [
+            "000906"
+          ],
+          "trimestres": [
+            "3T2025"
+          ],
+          "operacao": "valor"
+        }
+      },
+      "planejada": {
+        "atendeu": true,
+        "resposta": "BCO BRADESCO S.A. em 3T2025: R$ 5.500.665.000,00",
+        "custo_usd": 0.00047109999999999996,
+        "valores": {
+          "000906·3T2025": "R$ 5.500.665.000,00"
+        },
+        "n_celulas": 1,
+        "n_pendentes": 0,
+        "celulas": [
+          {
+            "termo": "Bradesco",
+            "cd_cvm": "000906",
+            "conceito": "lucro_liquido_controladores",
+            "trimestre": "3T2025",
+            "n_linhas": 1,
+            "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm = '000906'\n  AND conceito = 'lucro_liquido_controladores'\n  AND trimestre = '3T2025'\nORDER BY trimestre\nLIMIT 12"
+          }
+        ],
+        "pendentes": []
+      },
+      "valores_divergentes": null
+    },
+    {
+      "categoria": "sem período",
+      "pergunta": "Qual o lucro do Santander?",
+      "deterministica": {
+        "atendeu": true,
+        "resposta": "BCO SANTANDER (BRASIL) S.A. (CD_CVM 020532) está nas duas camadas: há release indexado (1T2026, 2T2025, 3T2025, 4T2025) e fatos contábeis no painel da CVM (1T2025, 1T2026, 2T2025, 2T2026, 3T2025, 4T2025). Lucro líquido atribuído aos sócios da empresa controladora de BCO SANTANDER (BRASIL) S.A. em 1T2025: R$ 3,11 bilhões (R$ 3.108.800.000,00). Lucro líquido atribuído aos sócios da empresa controladora de BCO SANTANDER (BRASIL) S.A. em 1T2026: R$ 3,22 bilhões (R$ 3.217.994.000,00). Lucro líquido atribuído aos sócios da empresa controladora de BCO SANTANDER (BRASIL) S.A. em 2T2025: R$ 1,93 bilhão (R$ 1.928.066.000,00). Lucro líquido atribuído aos sócios da empresa controladora de BCO SANTANDER (BRASIL) S.A. em 2T2026: R$ 2,89 bilhões (R$ 2.893.754.000,00). Lucro líquido atribuído aos sócios da empresa controladora de BCO SANTANDER (BRASIL) S.A. em 3T2025: R$ 3,83 bilhões (R$ 3.828.204.000,00). Lucro líquido atribuído aos sócios da empresa controladora de BCO SANTANDER (BRASIL) S.A. em 4T2025: R$ 3,90 bilhões (R$ 3.900.964.000,00) (valor derivado, RN10).\n\n**Número contábil arquivado na CVM (ITR/DFP).** O release de resultados pode divulgar, para o mesmo período, um número gerencial — ajustado ou recorrente — diferente deste; essa leitura não foi consultada aqui. Para obtê-la, pergunte no modo pergunta livre citando o release.",
+        "valores": {
+          "020532·1T2025": "R$ 3.108.800.000,00",
+          "020532·1T2026": "R$ 3.217.994.000,00",
+          "020532·2T2025": "R$ 1.928.066.000,00",
+          "020532·2T2026": "R$ 2.893.754.000,00",
+          "020532·3T2025": "R$ 3.828.204.000,00",
+          "020532·4T2025": "R$ 3.900.964.000,00"
+        }
+      },
+      "interpretada": {
+        "atendeu": true,
+        "resposta": "BCO SANTANDER (BRASIL) S.A. em 1T2025: R$ 3.108.800.000,00; BCO SANTANDER (BRASIL) S.A. em 1T2026: R$ 3.217.994.000,00; BCO SANTANDER (BRASIL) S.A. em 2T2025: R$ 1.928.066.000,00; BCO SANTANDER (BRASIL) S.A. em 2T2026: R$ 2.893.754.000,00; BCO SANTANDER (BRASIL) S.A. em 3T2025: R$ 3.828.204.000,00 (corrigido); BCO SANTANDER (BRASIL) S.A. em 4T2025: R$ 3.900.964.000,00 (derivado, corrigido)",
+        "custo_usd": 0.00037410000000000004,
+        "valores": {
+          "020532·1T2025": "R$ 3.108.800.000,00",
+          "020532·1T2026": "R$ 3.217.994.000,00",
+          "020532·2T2025": "R$ 1.928.066.000,00",
+          "020532·2T2026": "R$ 2.893.754.000,00",
+          "020532·3T2025": "R$ 3.828.204.000,00",
+          "020532·4T2025": "R$ 3.900.964.000,00"
+        },
+        "sql": "SELECT cd_cvm, denom_social, trimestre, conceito, valor_reais, origem, corrigido, tipo_periodo\nFROM fatos_semanticos\nWHERE cd_cvm IN ('020532')\n  AND conceito = 'lucro_liquido_controladores'\nORDER BY cd_cvm, trimestre\nLIMIT 40",
+        "intencao": {
+          "conceito": "lucro_liquido_controladores",
+          "codigos": [
+            "020532"
+          ],
+          "trimestres": [],
+          "operacao": "valor"
+        }
+      },
+      "planejada": {
+        "atendeu": false,
+        "resposta": "(recusa do plano) Falta o trimestre de referência para a consulta.",
+        "custo_usd": 0.0003672
+      },
+      "valores_divergentes": null
+    },
+    {
+      "categoria": "fora do vocabulário",
+      "pergunta": "Qual foi o índice de Basileia do Itaú no 3T2025?",
+      "deterministica": {
+        "atendeu": false,
+        "resposta": "(encaminhou ao fluxo documental)"
+      },
+      "interpretada": {
+        "atendeu": false,
+        "resposta": "(recusa da intenção) O índice de Basileia não é um conceito contábil presente no painel.",
+        "custo_usd": 0.00045329999999999996
+      },
+      "planejada": {
+        "atendeu": false,
+        "resposta": "(recusa do plano) O conceito 'índice de Basileia' não é suportado pelo painel contábil.",
+        "custo_usd": 0.0004014
+      },
+      "valores_divergentes": null
+    },
+    {
+      "categoria": "deferência ao release",
+      "pergunta": "Segundo a análise gerencial do Itaú, qual foi o resultado recorrente no 2T2025?",
+      "deterministica": {
+        "atendeu": false,
+        "resposta": "(encaminhou ao fluxo documental)"
+      },
+      "interpretada": {
+        "atendeu": false,
+        "resposta": "(recusa da intenção) A pergunta solicita o resultado recorrente baseado na análise gerencial, e o painel contábil armazena dados oficiais, não visões gerenciais ou ajustadas.",
+        "custo_usd": 0.000497
+      },
+      "planejada": {
+        "atendeu": false,
+        "resposta": "(recusa do plano) A pergunta solicita resultado recorrente (análise gerencial), conceito que não está disponível no painel contábil.",
+        "custo_usd": 0.0004076
+      },
+      "valores_divergentes": null
+    }
+  ]
+}

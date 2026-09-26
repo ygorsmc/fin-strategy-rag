@@ -42,6 +42,7 @@ import base64
 import hashlib
 import io
 import json
+import os
 import re
 import subprocess
 import threading
@@ -49,6 +50,7 @@ import time
 import zipfile
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta, timezone
+from decimal import Decimal, ROUND_HALF_EVEN
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
@@ -69,8 +71,9 @@ URL_DOCUMENTO = (
 #: Contas extraídas (X1.1): as do candidato e as de identidade contábil.
 CONTAS = ("1", "1.01.01", "2", "6.01", "6.02", "6.03", "6.04", "6.05",
           "6.05.01", "6.05.02")
-#: `CodigoTipoInformacaoFinanceira` do consolidado (X1.1).
+#: `CodigoTipoInformacaoFinanceira` do consolidado (X1.1) e do individual.
 CONSOLIDADO = "2"
+INDIVIDUAL = "1"
 #: Membros sem os quais o formulário não serve (V1.2).
 MEMBROS_EXIGIDOS = ("InfoFinaDFin.xml", "PeriodoDemonstracaoFinanceira.xml")
 PREFIXO_FORMULARIO = "FormularioDemonstracaoFinanceira"
@@ -127,6 +130,15 @@ class FormatoNaoReconhecido(Exception):
 
 class FalhaDeAcesso(Exception):
     """Nenhuma tentativa produziu pacote íntegro. **Não** prova inexistência."""
+
+
+#: Variável de ambiente que proíbe download (reexecuções só sobre o disco).
+#: Ambiente, e não monkeypatch, para valer também nos processos filhos.
+SEM_REDE = "RAD_SEM_REDE"
+
+
+class RedeBloqueada(RuntimeError):
+    """Download pedido numa execução declarada sem rede."""
 
 
 # --- aquisição ---------------------------------------------------------------
@@ -198,6 +210,10 @@ def baixar(id_doc: str, destino: Path, tentativas: int = 4,
     """
     if not str(id_doc).isdigit():
         raise ValueError(f"ID_DOC inválido: {id_doc!r}")
+    if os.environ.get(SEM_REDE):
+        # Não é `FalhaDeAcesso`: uma reexecução que pediria download é defeito
+        # de escopo e tem de parar alto, não virar documento indecidível.
+        raise RedeBloqueada(f"ID_DOC {id_doc}: download pedido com {SEM_REDE} ligado")
     # Resolvido na CHAMADA, não na definição: um padrão `=subprocess.run`
     # congela a referência e escapa de dublês — um teste chegou a chamar o
     # `curl` real por isso.
@@ -331,6 +347,10 @@ class Formulario:
     formato: str = "formulario_zip"
     #: `{indice_do_anexo: NumeroGrupoRelacionado}` — 193/412 são as notas.
     grupos_anexos: dict[int, str] = field(default_factory=dict)
+    #: Mesma forma de `valores`, do balanço INDIVIDUAL. Só serve à guarda de
+    #: perímetro da evidência numérica (contrato E1e de 17/09); nunca é valor
+    #: do painel.
+    valores_individuais: list[tuple[str, date | None, date, float]] = field(default_factory=list)
 
 
 def _data(texto: str | None) -> date | None:
@@ -353,7 +373,8 @@ def _periodos(xml: bytes) -> dict[int, tuple[date | None, date]]:
     return saida
 
 
-def _valores(xml: bytes, periodos: dict) -> list[tuple[str, date | None, date, float]]:
+def _valores(xml: bytes, periodos: dict, tipo_desejado: str = CONSOLIDADO
+             ) -> list[tuple[str, date | None, date, float]]:
     saida = []
     for _, elemento in ET.iterparse(io.BytesIO(xml), events=("end",)):
         if elemento.tag != "InfoFinaDFin":
@@ -361,7 +382,7 @@ def _valores(xml: bytes, periodos: dict) -> list[tuple[str, date | None, date, f
         conta = (elemento.findtext("PlanoConta/NumeroConta") or "").strip()
         tipo = (elemento.findtext(
             "PlanoConta/VersaoPlanoConta/CodigoTipoInformacaoFinanceira") or "").strip()
-        if conta in CONTAS and tipo == CONSOLIDADO:
+        if conta in CONTAS and tipo == tipo_desejado:
             for filho in elemento:
                 casamento = re.fullmatch(r"ValorConta(\d+)", filho.tag)
                 if not casamento:
@@ -517,13 +538,11 @@ def periodos_xml_unico(raiz: ET.Element) -> dict[str, tuple[date | None, date]]:
     return {k: v for k, v in periodos.items() if v[1] is not None}
 
 
-def _ler_xml_unico(dados: bytes, nome: str) -> Formulario:
-    raiz = ET.fromstring(dados)
-    cab = raiz.find(RAIZES_XML_UNICO[raiz.tag])
-    periodos = periodos_xml_unico(raiz)
+def _valores_xml_unico(cab: ET.Element, caminho: str, periodos: dict
+                       ) -> list[tuple[str, date | None, date, float]]:
     valores = []
-    consolidadas = cab.find("Formulario/DfConsolidadas")
-    for bloco in (consolidadas if consolidadas is not None else []):
+    bloco_raiz = cab.find(caminho)
+    for bloco in (bloco_raiz if bloco_raiz is not None else []):
         if bloco.tag not in BLOCOS_XML_UNICO:
             continue
         for conta in bloco.iter("Conta"):
@@ -541,11 +560,21 @@ def _ler_xml_unico(dados: bytes, nome: str) -> Formulario:
                     continue
                 dt_ini, dt_fim = periodos[coluna.tag]
                 valores.append((codigo, dt_ini, dt_fim, valor))
+    return valores
+
+
+def _ler_xml_unico(dados: bytes, nome: str) -> Formulario:
+    raiz = ET.fromstring(dados)
+    cab = raiz.find(RAIZES_XML_UNICO[raiz.tag])
+    periodos = periodos_xml_unico(raiz)
     codigo_escala = cab.findtext("EscalaMoeda")
     return Formulario(
         formulario=nome,
         codigo_escala_moeda=codigo_escala.strip() if codigo_escala else None,
-        periodos=periodos, valores=valores, formato="xml_unico",
+        periodos=periodos,
+        valores=_valores_xml_unico(cab, "Formulario/DfConsolidadas", periodos),
+        valores_individuais=_valores_xml_unico(cab, "Formulario/DfIndividuais", periodos),
+        formato="xml_unico",
     )
 
 
@@ -565,7 +594,9 @@ def ler(caminho: Path, com_anexos: bool = True,
         form_xml = next(n for n in nomes if n.startswith(PREFIXO_FORMULARIO))
         codigo = ET.fromstring(interno.read(form_xml)).findtext(".//CodigoEscalaMoeda")
         periodos = _periodos(interno.read("PeriodoDemonstracaoFinanceira.xml"))
-        valores = _valores(interno.read("InfoFinaDFin.xml"), periodos)
+        info = interno.read("InfoFinaDFin.xml")
+        valores = _valores(info, periodos)
+        individuais = _valores(info, periodos, INDIVIDUAL)
         anexos, grupos = (
             _anexos(interno.read("AnexoDocumento.xml"), grupos)
             if com_anexos and "AnexoDocumento.xml" in nomes else ([], {})
@@ -574,6 +605,7 @@ def ler(caminho: Path, com_anexos: bool = True,
         formulario=nome,
         codigo_escala_moeda=codigo.strip() if codigo else None,
         periodos=periodos, valores=valores, anexos=anexos, grupos_anexos=grupos,
+        valores_individuais=individuais,
     )
 
 
@@ -785,7 +817,9 @@ def mascarar_valores_de_caixa(trecho: str, formulario: Formulario) -> str:
     justamente o trecho da verificação.)
     """
     formas = set()
-    for conta, _, _, v in formulario.valores:
+    # O individual também (17/09): o FCO da controladora sai na mesma linha
+    # da tabela das notas que o consolidado.
+    for conta, _, _, v in (*formulario.valores, *formulario.valores_individuais):
         if not conta.startswith("6") or not v:
             continue
         for x in (abs(v), abs(v) / 1000, abs(v) * 1000):
@@ -814,3 +848,270 @@ def evidencia_de_cabecalho(formulario: Formulario, unidade: str) -> dict | None:
         evidencia["trecho"] = mascarar_valores_de_caixa(evidencia["trecho"], formulario)
         return evidencia
     return None
+
+
+# --- v3: evidência numérica LOCALIZADA (contratos RF-01, 17/09) -------------------
+#
+# A v2 (`evidencia_numerica`) reduzia o formulário a um conjunto de magnitudes e
+# as procurava no texto corrido das notas: perdia conta, período, perímetro e
+# unidade da tabela. Na conferência de 17/09, `ESC-0101` foi "confirmada" por
+# `1.000` — o saldo inicial de caixa de 2024 — casando com "dividido em 1.000
+# (mil) ações", e corrigiu para `MIL` um ativo que estava certo em reais.
+# `evidencia_numerica` fica como estava: reproduz o piloto e as execuções 1–2.
+
+#: E2 — rótulo que a LINHA precisa conter para o número valer por aquela conta.
+#: Tirado da descrição da conta no plano padrão, não das linhas casadas.
+ROTULOS_DE_CONTA: dict[str, tuple[str, ...]] = {
+    "1": (r"total do ativo(?! (n[ãa]o )?circulante)", r"\bativo total\b"),
+    "2": (r"total do passivo(?! (n[ãa]o )?circulante)", r"\bpassivo total\b"),
+    "1.01.01": (r"caixa e equivalentes de caixa",),
+    "6.01": (r"atividades operacionais",),
+    "6.02": (r"atividades de investimento",),
+    "6.03": (r"atividades de financiamento",),
+    "6.04": (r"varia[çc][ãa]o cambial",),
+    "6.05": (r"(aumento|redu[çc][ãa]o|varia[çc][ãa]o).*caixa",),
+    "6.05.01": (r"caixa.*(in[íi]cio|inicial)", r"(in[íi]cio|inicial).*caixa"),
+    "6.05.02": (r"caixa.*\b(final|fim)\b", r"\b(final|fim)\b.*caixa"),
+}
+#: E1c — linha que fala de ações conta quantidade, não reais.
+LINHA_DE_ACOES = re.compile(r"\baç(ão|ões)\b")
+#: Multiplicador que leva o valor do formulário ao número impresso nas notas.
+FORMAS = {"bruto": 1.0, "dividido": 1 / 1000, "multiplicado": 1000.0}
+#: E3 — casamentos publicados por documento.
+CASAMENTOS_PUBLICADOS = 5
+#: Padrões com que uma PÁGINA declara a tabela em milhares (E1d).
+MIL_NA_PAGINA = tuple(dict.fromkeys(PADROES_DE_UNIDADE["MIL"] + CABECALHOS_V2["MIL"]))
+
+
+def pagina_em_milhares(texto_normalizado: str) -> bool:
+    """E1d: a página declara milhares e não se intitula em reais."""
+    if not any(re.search(p, texto_normalizado) for p in MIL_NA_PAGINA):
+        return False
+    titulo = texto_normalizado[:INICIO_DE_PAGINA]
+    return not any(re.search(p, titulo) for p in CABECALHOS_V2["UNIDADE"])
+
+
+def _como_data_iso(d) -> date:
+    return d if isinstance(d, date) else date.fromisoformat(str(d)[:10])
+
+
+def _formas_de(valor: float) -> dict[str, str]:
+    """`{forma: texto}` das formas com módulo ≥ `MODULO_MINIMO`."""
+    return {f: _inteiro_ptbr(abs(valor) * m) for f, m in FORMAS.items()
+            if abs(valor) * m >= MODULO_MINIMO}
+
+
+def _trecho_publicavel(linha: str, conta: str, formulario: Formulario) -> str:
+    """O1.3: linha de conta de caixa sai sem número nenhum."""
+    if conta.startswith("6"):
+        return re.sub(r"\d[\d.,]*", VALOR_DE_CAIXA_OMITIDO, linha)
+    return mascarar_valores_de_caixa(linha, formulario)
+
+
+def evidencia_numerica_localizada(formulario: Formulario, dt_refer) -> dict:
+    """Regra v3 (contrato E1): o número vale só na linha, página e perímetro certos.
+
+    Devolve a mesma classe da v2 (`bruto`, `dividido`, `multiplicado`,
+    `nenhum`, `conflitante`, `sem_notas`), a contagem de valores do formulário
+    achados em cada forma, até `CASAMENTOS_PUBLICADOS` casamentos com conta,
+    forma, anexo, página e trecho, e quantas ocorrências cada condição recusou.
+    """
+    if texto_das_notas(formulario) is None:
+        return {"classe": "sem_notas", "contagem": {}, "casamentos": [], "recusas": {}}
+    corrente = _como_data_iso(dt_refer)
+    testados = sorted({
+        (c, abs(v)) for c, _, fim, v in formulario.valores
+        if v and abs(v) >= MODULO_MINIMO and fim == corrente and c in ROTULOS_DE_CONTA
+    })
+    # E1e: todas as formas de todos os valores da mesma conta, por forma.
+    formas_da_conta: dict[str, dict[str, set[str]]] = {}
+    for c, _, _, v in (*formulario.valores, *formulario.valores_individuais):
+        if not v:
+            continue
+        for forma, texto in _formas_de(v).items():
+            formas_da_conta.setdefault(c, {}).setdefault(forma, set()).add(texto)
+
+    paginas = []
+    for indice, ps in formulario.anexos:
+        if formulario.grupos_anexos.get(indice) not in GRUPOS_NOTAS:
+            continue
+        for numero, pagina in enumerate(ps, start=1):
+            linhas = [_normalizar(l) for l in pagina.splitlines()]
+            paginas.append((indice, numero, pagina_em_milhares(_normalizar(pagina)), linhas))
+
+    achados: dict[str, set[tuple[str, float]]] = {f: set() for f in FORMAS}
+    casamentos: list[dict] = []
+    recusas = {"sem_rotulo": 0, "linha_de_acoes": 0, "pagina_sem_milhares": 0, "ambiguo": 0}
+    for conta, valor in testados:
+        rotulos = ROTULOS_DE_CONTA[conta]
+        for forma, texto in _formas_de(valor).items():
+            outras = set().union(*(s for f, s in formas_da_conta.get(conta, {}).items()
+                                   if f != forma))
+            for indice, numero, em_milhares, linhas in paginas:
+                for linha in linhas:
+                    if not _aparece(texto, linha):
+                        continue
+                    if not any(re.search(r, linha) for r in rotulos):
+                        recusas["sem_rotulo"] += 1
+                    elif LINHA_DE_ACOES.search(linha):
+                        recusas["linha_de_acoes"] += 1
+                    elif not em_milhares:
+                        recusas["pagina_sem_milhares"] += 1
+                    elif texto in outras:
+                        recusas["ambiguo"] += 1
+                    else:
+                        achados[forma].add((conta, valor))
+                        if len(casamentos) < CASAMENTOS_PUBLICADOS:
+                            casamentos.append({
+                                "conta": conta, "forma": forma, "anexo": indice,
+                                "pagina": numero,
+                                "trecho": _trecho_publicavel(linha, conta, formulario),
+                            })
+    contagem = {f: len(s) for f, s in achados.items()}
+    presentes = [f for f, n in contagem.items() if n]
+    classe = ("nenhum" if not presentes
+              else presentes[0] if len(presentes) == 1 else "conflitante")
+    return {"classe": classe, "contagem": contagem, "valores_testados": len(testados),
+            "casamentos": casamentos, "recusas": recusas, "regra": "v3"}
+
+
+# CRF-01: v4 estrita para SALDOS. Não extrapolar data final para intervalo DFC.
+ROTULOS_SALDOS_V4 = {
+    "ativo total": "1", "total do ativo": "1",
+    "passivo total": "2", "total do passivo": "2",
+    "total do passivo e patrimônio líquido": "2",
+    "total do passivo e do patrimônio líquido": "2",
+    "caixa e equivalentes de caixa": "1.01.01",
+}
+UNIDADE_LOCAL_V4 = re.compile(
+    r"\(?(?:valores )?(?:(?:expressos|apresentados) )?em milhares de reais\)?")
+DATA_CELULA_V4 = re.compile(r"(?:\d{2}/\d{2}/\d{4}|\d{4}-\d{2}-\d{2})")
+NUMERO_CELULA_V4 = r"(?:\(?[+-]?(?:\d{1,3}(?:\.\d{3})+|\d+)(?:,\d+)?\)?|[-–—])"
+LINHA_CELULAS_V4 = re.compile(
+    rf"(?P<rotulo>[^\d]+?)\s+(?P<celulas>{NUMERO_CELULA_V4}(?:\s+{NUMERO_CELULA_V4})*)")
+
+
+def _datas_de_colunas_v4(linha: str) -> list[str] | None:
+    itens = linha.replace("|", " ").split()
+    if not itens or not all(DATA_CELULA_V4.fullmatch(x) for x in itens):
+        return None
+    try:
+        datas = [(datetime.strptime(x, "%d/%m/%Y").date() if "/" in x
+                  else date.fromisoformat(x)).isoformat() for x in itens]
+    except ValueError:
+        return None
+    return datas if len(datas) == len(set(datas)) else None
+
+
+def _cabecalho_local_v4(anteriores: list[str]) -> bool:
+    if len(anteriores) != 2 or anteriores.count("consolidado") != 1:
+        return False
+    unidade = next(l for l in anteriores if l != "consolidado")
+    return UNIDADE_LOCAL_V4.fullmatch(unidade) is not None
+
+
+def _celulas_da_linha_v4(linha: str):
+    m = LINHA_CELULAS_V4.fullmatch(linha)
+    if not m:
+        return None
+    itens = m["celulas"].split()
+    if any(x.startswith("(") != x.endswith(")") for x in itens):
+        return None
+    return m["rotulo"].strip(), itens
+
+
+def validar_escopo_numerico_v4(c: dict, dt_refer: str) -> None:
+    """Produtor E consumidor: uma prova histórica sem coluna não vira v4."""
+    datas = _datas_de_colunas_v4(c.get("datas_colunas", ""))
+    ok = (c.get("regra") == "v4" and c.get("perimetro") == "consolidado"
+          and c.get("unidade") == "MIL" and c.get("dt_fim") == dt_refer
+          and c.get("conta") in set(ROTULOS_SALDOS_V4.values())
+          and c.get("forma") in FORMAS
+          and type(c.get("anexo")) is int and c["anexo"] >= 0
+          and all(type(c.get(k)) is int and c[k] > 0 for k in ("pagina", "linha", "coluna"))
+          and isinstance(c.get("cabecalho_local"), list)
+          and _cabecalho_local_v4(c["cabecalho_local"]) and bool(c.get("trecho")))
+    if not ok or not datas or c["coluna"] > len(datas) or datas[c["coluna"] - 1] != dt_refer:
+        raise AssertionError("evidência numérica sem escopo de conta/coluna v4")
+    # O consumidor também verifica o vínculo do rótulo à conta e a
+    # cardinalidade de células; metadata plausível não conserta outra linha.
+    row = _celulas_da_linha_v4(c["trecho"].replace("[valor omitido]", "1"))
+    if (re.search(r"\d", c["trecho"]) or row is None
+            or ROTULOS_SALDOS_V4.get(row[0]) != c["conta"] or len(row[1]) != len(datas)):
+        raise AssertionError("evidência v4 sem rótulo/células correspondentes à conta")
+    if row[1][c["coluna"] - 1] in ("-", "–", "—"):
+        raise AssertionError("célula corrente vazia não prova escala v4")
+
+
+def evidencia_numerica_tabular(formulario: Formulario, dt_refer) -> dict:
+    """CRF-01/C1: só célula identificada sob cabeçalho local explícito.
+
+    Rejeição aqui é incapacidade deste extrator, não prova de escala contrária.
+    A v3 permanece intacta para reproduzir sua execução histórica.
+    """
+    corrente = _como_data_iso(dt_refer)
+    candidatos: dict[str, set[Decimal]] = {}
+    for conta, _, fim, valor in formulario.valores:
+        if conta in ROTULOS_SALDOS_V4.values() and fim == corrente and valor is not None:
+            candidatos.setdefault(conta, set()).add(Decimal(str(valor)))
+    # C1.5: unicidade ANTES do módulo; +x e -x são declarações distintas.
+    valores = {c: abs(next(iter(vs))) for c, vs in candidatos.items()
+               if len(vs) == 1 and next(iter(vs)).is_finite() and abs(next(iter(vs))) >= MODULO_MINIMO}
+    outras_formas = {}
+    for conta, _, _, valor in (*formulario.valores, *formulario.valores_individuais):
+        if valor:
+            for forma, texto in _formas_de(valor).items():
+                outras_formas.setdefault(conta, {}).setdefault(forma, set()).add(texto)
+    achados = {f: set() for f in FORMAS}
+    casamentos = []
+    tabelas = 0
+    for anexo, paginas in formulario.anexos:
+        if formulario.grupos_anexos.get(anexo) not in GRUPOS_NOTAS:
+            continue
+        for pagina, texto in enumerate(paginas, 1):
+            anteriores = []
+            contexto = None
+            for nlinha, original in enumerate(texto.splitlines(), 1):
+                linha = _normalizar(original)
+                datas = _datas_de_colunas_v4(linha)
+                if datas and _cabecalho_local_v4(anteriores[-2:]) and corrente.isoformat() in datas:
+                    contexto = (datas, anteriores[-2:], linha)
+                    tabelas += 1
+                elif contexto:
+                    row = _celulas_da_linha_v4(linha)
+                    if row is None or len(row[1]) != len(contexto[0]):
+                        contexto = None
+                    else:
+                        rotulo, celulas = row
+                        conta = ROTULOS_SALDOS_V4.get(rotulo)
+                        if conta in valores:
+                            coluna = contexto[0].index(corrente.isoformat())
+                            celula = celulas[coluna]
+                            if celula not in ("-", "–", "—"):
+                                impresso = abs(Decimal(celula.strip("()").replace(".", "").replace(",", ".")))
+                                for forma, fator in (("bruto", Decimal(1)),
+                                                     ("dividido", Decimal("0.001")),
+                                                     ("multiplicado", Decimal(1000))):
+                                    esperado = valores[conta] * fator
+                                    if forma == "dividido" and esperado < MODULO_MINIMO:
+                                        continue
+                                    alvo = esperado if "," in celula else esperado.quantize(Decimal(1), rounding=ROUND_HALF_EVEN)
+                                    concorrentes = set().union(*(v for f, v in outras_formas.get(conta, {}).items() if f != forma))
+                                    if impresso and impresso == alvo and _inteiro_ptbr(float(impresso)) not in concorrentes:
+                                        achados[forma].add(conta)
+                                        if len(casamentos) < CASAMENTOS_PUBLICADOS:
+                                            c = {"regra": "v4", "conta": conta, "forma": forma,
+                                                 "anexo": anexo, "pagina": pagina, "linha": nlinha,
+                                                 "coluna": coluna + 1, "dt_fim": corrente.isoformat(),
+                                                 "perimetro": "consolidado", "unidade": "MIL",
+                                                 "cabecalho_local": contexto[1], "datas_colunas": contexto[2],
+                                                 "trecho": re.sub(r"\d[\d.,]*", "[valor omitido]", linha)}
+                                            validar_escopo_numerico_v4(c, corrente.isoformat())
+                                            casamentos.append(c)
+                if linha:
+                    anteriores.append(linha)
+    contagem = {f: len(v) for f, v in achados.items()}
+    presentes = [f for f, n in contagem.items() if n]
+    classe = "nenhum" if not presentes else presentes[0] if len(presentes) == 1 else "conflitante"
+    return {"classe": classe, "contagem": contagem, "valores_testados": len(valores),
+            "casamentos": casamentos, "tabelas_com_cabecalho_local": tabelas, "regra": "v4"}

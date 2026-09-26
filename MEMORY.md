@@ -132,9 +132,13 @@ decisão explícita do Ygor.
 
 **Rodada nova: `c3a03ff7`, run `20260915T011103Z-85fbfadd35`, US$ 0,2577,
 zero erros** (grade nominal de 225 chamadas; o artefato registra 226 tentativas
-— `semantica` teve uma repetição sem telemetria). Factual: E0 0,000 · E2 0,400
-· E1 0,333 · E3 0,333 · E4 0,400. Comparativa: E4 0,400 · E1/E3 0,100 · E2
-0,000. **Recall idêntico em 225/225** — a recuperação é determinística e toda
+— `semantica` teve uma repetição sem telemetria). **Rótulos E1/E2 corrigidos em
+2026-09-19** — a versão anterior trocava os dois (dizia "E2 0,400 · E1 0,333"),
+recontado do JSONL por NOME de estratégia. Factual: E0 `closed_book` 0,000 ·
+E1 `keyword` 0,400 · E2 `semantica` 0,333 · E3 `hibrida` 0,333 · E4 `fatos`
+0,400. Comparativa: E4 0,400 · E2/E3 0,100 · E1 0,000. Recall@5: E1 0,920 ·
+E3/E4 0,880 · E2 0,800. Recusa 10/10 em todas com documento; E0 8/10.
+**Recall idêntico em 225/225** — a recuperação é determinística e toda
 variação está na geração: 15 vereditos mudaram, 8 para melhor e 7 para pior,
 com o MESMO modelo. Pelo limiar do §4.2 (6 discordâncias na mesma direção),
 indistinguível. A melhora das comparativas foi **isolada** como efeito da
@@ -150,6 +154,116 @@ o que o §4.2 existe para impedir — **decidir antes de qualquer entrega**.
 **E o fingerprint de hoje já nasceu vencido:** a correção de deferência entrou
 depois da rodada e mudou `app_streamlit.py`. Reexecutar de novo custa outros
 ~US$ 0,26 e só vale a pena depois que o código parar de mudar.
+
+**Ensaio do roteiro do vídeo da Etapa 1 (2026-09-18, 2 chamadas, US$ 0,0027):**
+7/7 passos sem exceção pela interface real; TSTF004 e TSTF014 acertaram ao vivo.
+Achou 4 defeitos de tela; 1–3 **corrigidos no mesmo dia** (só apresentação:
+aviso em vez de erro vermelho na auditoria pendente, fontes limpas com as
+citadas primeiro, valor legível ao lado do exato), 4 é desenho (13 s de espera
+pela RN02). Suíte 2753 verdes; uma asserção de literal substituída e declarada
+(`resultados/ensaio_roteiro_video_2026-09-18.md`). Falta ensaiar a 3ª pergunta
+RAG (TSTF011) — não autorizada ainda. A avaliação da Etapa 1 é
+por vídeo: o que aparece na tela durante a gravação é o que conta.
+
+**Entrega escrita da Etapa 1 (2026-09-19, reduzida em 2026-09-20):** `docs/`
+com 3 páginas em Markdown (visão geral, desafio CBL, arquitetura) +
+`scripts/build_docs_html.py`, que emite `docs/documentacao.html` (HTML único,
+autocontido, mesmo padrão do projeto anterior do Ygor). O HTML é ARTEFATO
+GERADO — editar o Markdown, nunca ele. **Decisão do Ygor:** entregar só o que a
+Etapa 1 pede; evidências medidas e limitações saíram para
+`docs/nao_entregue_etapa1/` e voltam na Etapa 3 (basta reinseri-las em `PAGES`).
+Com isso a entrega não publica número de rodada nenhum, e a decisão sobre qual
+rodada o README publica segue aberta.
+
+**Rota do painel com LLM-intérprete, LIGADA à interface (2026-09-20).** A etapa
+15 ganhou uma terceira rota, `responder_plano_se_couber` em `app_streamlit.py`,
+entre o casador de graça e o corpus. O LLM devolve, **numa chamada**, um plano
+de consultas atômicas — uma por (companhia, conceito, trimestre) — e cada célula
+vira seu próprio `SELECT`; o SQL é template, a aritmética é Python, o modelo
+nunca vê número. `src/plano_consulta.py`, `tests/test_plano_consulta.py` (55) e
+`tests/test_rota_plano_interface.py` (20). A rota anterior de intenção única
+(`src/intencao_consulta.py`, 31 casos) **continua**, como base compartilhada e
+como termo de comparação — não está ligada à interface.
+
+**Três comparações reais com as 12 perguntas de `scripts/comparar_rotas_painel.py`
+(US$ 0,0115 a rodada, artefato em `artefatos/comparacao_rotas_painel.json`):
+zero divergência de valor entre as três rotas em todas as execuções.** O ganho
+medido é um caso que nenhuma das outras duas resolve — "qual dos cinco bancos
+lucrou mais" devolve os 4 resolvidos e declara o BTG pendente, onde a
+determinística não identifica companhia nenhuma e a intenção única morre inteira
+na desambiguação.
+
+**Quatro guardas que existem só por causa do formato de célula**, cada uma com
+contraprova: conceito único em comparação/variação (com uma célula por
+companhia, nada impedia comparar `consolidado` de um com `controladores` de
+outro); comparação incompleta **não elege vencedor** (o ausente pode ser o
+maior — publica-se a ordem, nunca o superlativo); teto de 24 células; e período
+obrigatório. **Decisão do Ygor (20/09):** pergunta sem trimestre deixou de
+devolver a série inteira e virou recusa com justificativa
+(`PeriodoIndefinido`), para o usuário reformular.
+
+**Duas famílias de recusa, com destinos diferentes** — a distinção é do código,
+não do prompt: `RecusaDeReformulacao` (período ausente, réguas misturadas) vai
+à tela, porque só quem perguntou resolve; `ErroDeIntencao` genérico (conceito
+fora do painel, companhia inexistente) encaminha ao corpus, que pode ter a
+resposta. **A chamada é paga nos dois casos e debita cota e orçamento inclusive
+quando encaminha** — não contá-la abriria um caminho de gasto fora do teto da
+RN03.
+
+**Cache por célula** (`CacheDeCelulas`, `st.cache_resource`), chaveado por
+(cd_cvm, conceito, trimestre) e compartilhado entre sessões — é número público
+do painel, sem texto de usuário nem PII. **A validade é do ARQUIVO, não do
+tempo:** `conferir_painel` compara tamanho e mtime e esvazia tudo se o painel
+for reconstruído; um TTL serviria número velho depois de uma reconstrução.
+Economia medida no arnês: 3 de 13 consultas.
+
+**O que esta rota NÃO resolve, e continua aberto:** ela roda **depois** do
+casador determinístico, então herda a lacuna do detector prospectivo (§3.6) e a
+da deferência documental — as duas guardas moram dentro dela, mas têm o tamanho
+dos detectores de sempre. E o `motivo` de recusa é o único texto escrito pelo
+modelo que chega à tela; passa por `avaliar_saida`, nada mais.
+
+**Vídeo da Etapa 1 — roteiro e slides prontos (2026-09-21).**
+`docs/roteiro_apresentacao_etapa1.md` (584 palavras faladas = 3m54 a 150 ppm,
+cronometrado bloco a bloco contra o alvo) e
+`docs/apresentacao_etapa1.pptx` (8 slides), emitido por
+`scripts/gerar_slides_apresentacao.py`. O `.pptx` é ARTEFATO GERADO — editar o
+script e reemitir, como o HTML da entrega. `python-pptx` fica **fora** do
+`requirements.txt` (RNF12) e do `.venv` do projeto, que tem o conflito de pin
+aberto; o script diz como criar o ambiente à parte. Slides conferidos por
+renderização (LibreOffice → PNG): uma colisão de título com subtítulo foi
+achada e corrigida assim.
+
+**Notas do apresentador acrescentadas em 21/09**, uma por slide, com o texto da
+fala do roteiro — fonte única é o `.md`, o script é reescrito se o roteiro
+mudar. QA completo: conteúdo (`markitdown`, sem placeholder), estrutura
+(`validate.py` da skill de pptx, `All validations PASSED`) e visual
+(re-renderizado, sem regressão).
+
+O roteiro dá 2m20 dos 4 min à demonstração, porque a rubrica de 70% nomeia
+quatro coisas que precisam **aparecer na tela** — streaming, session state, UX
+writing e system prompt —, e cada uma é dita em voz alta no momento em que
+aparece. **Nenhum número de rodada é publicado nos slides**, pela pendência de
+publicação ainda aberta (README publica `5b9b142d`, vigente é `c3a03ff7`); só
+entram fatos estáveis (20 documentos, guardrails 20/20 e 0/45).
+
+**Dois slides acrescentados em 21/09, com o estado real declarado.** O de
+*relevância* argumenta com os dois números já medidos no projeto (Santander
+2T2025 contábil × gerencial; a conta `3.09` valendo lucro líquido em 3 dos 5
+bancos), em vez de adjetivo. O de *como a resposta é montada* explica os cinco
+passos da rota sem LLM e **declara a camada de agentes como "construído e
+testado"** — `src/agentes.py` existe com o isolamento travado por 16 casos em
+`tests/test_isolamento.py`, mas **não está ligada a `app_streamlit.py`** e a
+comparação dos três braços não rodou. O roteiro tem uma seção "o que NÃO
+afirmar" por causa disso.
+
+**Achado que o roteiro registra como "não demonstrar":** na interface ao vivo, a
+rota determinística INTERCEPTA pergunta de comparação e de variação — responde
+listando os valores, sem comparar e sem calcular a variação —, e com isso a rota
+do plano nunca é chamada para elas. Os ganhos medidos em
+`artefatos/comparacao_rotas_painel.json` valem para o arnês, **não** para a
+tela. Corrigir exige `responder_estruturada_se_couber` ceder a vez quando
+detecta operação que não sabe cumprir; **não foi feito**, é decisão do Ygor.
 
 ### Bloqueio de dependências, em aberto
 
@@ -260,7 +374,149 @@ outra tarefa.
   bytes publicados. A linhagem do ativo agora tem os quatro campos de H1.4, com
   `dt_ini` nulo — e normalizar o `NaT` do pandas para `None` foi necessário:
   `NaT is None` é falso e toda comparação com ele devolve falso.
-- **Rank 3-B — PAINEL DE PESQUISA SEPARADO, G0 e G1 APROVADOS NELE (16/09).**
+- **Rank 3-B — GEOM-1, piloto e extensão documental concluídos (18/09).**
+  `resultados/escala_geometrica_rank03b_2026-09-18.md` e evidências em
+  `artefatos/escala_geometrica_rank03b_2026-09-18/`. Regra nova separada da v4,
+  com vínculo geométrico de unidade/conta/perímetro/data/coluna e consumidor
+  por replay da fonte pinada. Seleção por hash e quatro estratos, antes da
+  leitura; emissor de desenho não aparece na verificação. Piloto reservado:
+  uma aceitação, conferida independentemente no PDF/XML original; confirma
+  MIL já declarada, **não valida correção de escala nem precisão geral**.
+  Verificação não pode ser reaberta para ajustar a regra. Defeitos de unidade,
+  coordenadas e guarda de caminho absoluto corrigidos/conferidos antes dela.
+  **Nenhuma correção promovida; sete arquivos protegidos intactos; G0 vigente
+  permanece reprovado.** Extensão aos 405 concluída, apenas evidências
+  candidatas; duas divergências de escala de caixa conferidas na fonte, ambas
+  na mesma companhia e uma já do desenho. Isso **não autoriza extrapolar para
+  outras contas/DFC**. Sem herança S5, CSV, painel, gates ou alvo real.
+  **Alcance conferido em 24/09:** somente Ativo Total/140867 ganhou prova
+  direta adicional (PDF p42, nota 30.2, total consolidado em nota de
+  segmentos). FCO dos dois períodos e Ativo/142900: **busca numérica exata sem
+  correspondência nas notas 193/412** (revisão da mesma noite; antes,
+  "igualdade não executada") — não é ausência em outra fonte.
+  `resultados/alcance_geom1_rank03b_2026-09-24.md` (com ressalva da revisão) e
+  `artefatos/alcance_geom1_rank03b_2026-09-24/` (`revisao/` tem pin, busca e o
+  código que gerou o inventário publicado).
+  **Revisão de 24/09** (`resultados/contratos_revisao_alcance_geom1_rank03b_2026-09-24.md`):
+  a correção só do ativo foi **RETIRADA** do próximo passo — não reduz o G0.3
+  (o salto só muda de lugar) e deixaria G0.3 (só ativo) e G0.5 (veredito por
+  documento) cegos ao FCO. Máscara do inventário agora por classe Unicode e
+  sem trecho em linha de fluxo; o inventário publicado não vazou nada e não
+  foi regravado. **Novo [DECIDIR] no v2 (§12-bis):** prova de saldo corrige o
+  FCO do mesmo documento? A v4 diz que sim, por construção; a GEOM-1, que não
+  (proposta: B, não). Consumidor, construtor, CSV, painéis e gates não foram
+  alterados. Próximo passo: decidir o §12-bis; qualquer rota de prova do FCO
+  (anexo do grupo 192, ou identidade interna da DFC, que soma o FCO e o O1
+  veda) exige contrato próprio. Seguem pendentes os seis [DECIDIR] do v2 e o
+  executor v2. Não treinar.
+  **Auditoria da revisão (25/09): 1 ALTA, 1 MÉDIA, 4 BAIXA**, corrigidos sob
+  `resultados/adendo_revisao_alcance_geom1_rank03b_2026-09-25.md`, menos o B4
+  (o consumidor não confere o cabeçalho do manifesto), que fica como
+  pré-condição do contrato que criar correção por conta. Execuções de 24/09
+  preservadas; reconferência dos publicados sob as regras novas sem vazamento
+  e com texto legível (`revisao/reconferencia_pos_auditoria.json`). A
+  reconferência do auditor então fechou A1–B3 e achou só o N1 (hashes não
+  registrados), corrigido e reconferido naquele parecer, com B4 declarado.
+  **Conferência independente posterior (25/09): aprovação parcial, não
+  fechamento integral.** Parecer:
+  `resultados/conferencia_revisao_alcance_geom1_rank03b_2026-09-25.md`.
+  Três defeitos P2 reproduzidos em sintético: **RAG-01**, reconferência aceita
+  pin de fontes vazio e de hash diferente; **RAG-02**, busca exata casa
+  prefixo de número malformado ou perde sinal; **RAG-03**, autoverificação
+  aceita valores equivalentes com zeros decimais extras. **RAG-04 (P3):**
+  resíduo de "cinco decisões" no bloco CRF, descrito no parecer.
+  Resultados reais reproduzidos, sete protegidos íntegros e suíte 3.111
+  passando sem override do modo. Nenhum erro monetário/vazamento real
+  demonstrado. Evidências: `artefatos/conferencia_revisao_alcance_geom1_rank03b_2026-09-25/`.
+  **Correção RAG (25/09):** contrato
+  `resultados/contratos_correcao_rag_alcance_geom1_rank03b_2026-09-25.md`,
+  adendo `resultados/adendo_correcao_rag_alcance_geom1_rank03b_2026-09-25.md`,
+  relatório `resultados/correcao_rag_alcance_geom1_rank03b_2026-09-25.md`,
+  evidência em `artefatos/correcao_rag_alcance_geom1_rank03b_2026-09-25/`.
+  Toda entrada das duas funções conferida por hash antes do uso (inclusive
+  `pin_execucao.json` e `selecao.json`, também lidos sem conferência);
+  universo e versão = pin; pacote lido uma vez. Token inteiro; sinal só nas
+  formas explícitas, e o resto é ambíguo, publicado à parte. O que nega ou
+  afirma é definido por categoria e NFKC. Invisível e sinal depois do token
+  viram recusa. Autoverificação por equivalência numérica, sem lista de
+  separadores; isenção pela forma. Nada é gravado antes das recusas. Limite da
+  forma ÷1.000 declarado: ela não testa "XML em reais, notas em milhares".
+  A primeira conferência da correção **reabriu** (2 MÉDIA, 5 BAIXA); o
+  adendo tratou os sete achados. Mutação: 45 de 45 mortas. As contraprovas da
+  conferência não reproduzem, e a busca repetida (não cega) dá o mesmo
+  resultado de 24/09. Adendos 2 e 3 (26/09) fecharam as ressalvas. Houve DOTALL e serialização antes de gravar, e o limite do sinal ficou declarado inteiro na saída: ignorável fora de Cf/Cc e "R $" perdem o sinal. **Corrigir isso é pré-condição para usar o instrumento em outros emissores.** **Conferência final: FECHADO**; mutação com 52 de 52 mortas. B4, seis
+  decisões, executor v2 e a forma arredondada (ativo: contrato; FCO: decisão
+  sob O1) seguem pendentes; não treinar.
+- **Rank 3-B — CRF-01/02/03 CORRIGIDAS E CONFERIDAS; G0 REPROVADO (18/09).
+  NÃO CONGELAR NEM TREINAR.**
+  Contratos: `resultados/contratos_correcao_crf01_crf03_rank03b_2026-09-17.md`
+  e adendo `resultados/adendo_contratos_crf_2026-09-18.md`. V4 estrita para
+  saldos implementada; v3 preservada explicitamente. Cobertura integral de
+  provas no G1 implementada. Execução 3 preservada em `adjudicacao/execucao3/`.
+  Readjudicação 4b: **405/405 indecidíveis**, zero cabeçalhos tabulares
+  elegíveis reconhecidos, **zero correções** (antes: 68). Isso mede a falta
+  de cobertura do extrator estrito; **não prova 68 correções erradas**, nem
+  ausência da informação nos PDFs. S5 sem trechos testáveis, herança barrada.
+  CSV anterior recuperável no snapshot; nenhuma declaração bruta apagada.
+  Painel/gates/verificações regenerados: digest **`6ca635a9…`**, manifesto
+  **`13520e61…`**. **G0.3 = 132 saltos (0,5875% > 0,5%)**; G1 diagnóstico
+  aprovado (10.748 observações / 502 companhias, G1.4 zero). G0.5 proposto:
+  **82/22.088 = 0,3712%**, sem força de gate. Suíte final: **2.615**, zero
+  falhas/erros/skips. Painéis compartilhados e manifesto de aquisição intactos.
+  Relatório: `resultados/correcao_crf01_crf03_rank03b_2026-09-18.md`;
+  evidências/reproduções: `artefatos/correcao_crf_rank03b_2026-09-17/`.
+  Auditor independente encontrou sinal oposto antes da unicidade, escopo e
+  traço corrente no consumidor; corrigidos com contraprovas, instrumento
+  reconferido. Conferência final independente: sem achado remanescente no
+  escopo CRF; hashes/vínculos conferem, mesmas 405 decisões e zero diferenças
+  nas três tabelas reconstruídas. O auditor conferiu registros e código da
+  reconstrução/readjudicação, sem repetir essas execuções integrais nem
+  adjudicar a verdade contábil. Parecer em `auditoria_final.json` na pasta
+  da onda. A cobertura operacional continua insuficiente.
+  CRF-03 separa medições históricas da vigente e corrige a descrição de D;
+  as cinco decisões pendentes eram as de 18/09 — desde 24/09 são seis, com o
+  §12-bis do v2. Nenhum alvo real/T1/T2/baseline/treino.
+  **Registro da revisão anterior (achados tratados acima):**
+  Parecer: `resultados/conferencia_rf01_rf08_rank03b_2026-09-17.md`;
+  evidências e reproduções: `artefatos/conferencia_rf01_rf08_rank03b_2026-09-17/`.
+  Reconstrução em memória idêntica às três tabelas persistidas; G0/G1
+  reproduzidos, 2.544 testes passando, antiga ESC-0101 corrigida. **Achados
+  de então — CRF-01 (P2):** prova então vigente de ESC-0029 casa variação cambial de investimento
+  com conta de caixa; uma contraprova sintética usa o valor de outra conta na
+  mesma linha. **Não foi provado novo erro monetário real. CRF-02 (P2):** mapa
+  parcial de provas permite aprovação indevida de G1/c3 em contraprova; o mapa
+  completo da execução canônica confere, **sem vazamento real demonstrado**.
+  **CRF-03 (P3):** prosa ainda mistura execuções e descreve mal a grade de D.
+  Não congelar v2: fechar os achados, decidir os cinco pontos e implementar/
+  testar o executor v2 cego. Nenhum alvo real ou treino nesta conferência;
+  hashes de código operacional, manifesto, painéis e pré-registro preservados.
+  **Registro da implementação RF revisada (execução 3, substituída pela CRF acima):**
+  Contratos `resultados/contratos_correcao_rf01_rf08_rank03b_2026-09-17.md`,
+  relatório `resultados/correcao_rf01_rf08_rank03b_2026-09-17.md`. Regra de
+  escala v3 (evidência numérica localizada) reexecutada offline: **101 → 68
+  correções** (manifesto `6330d78d…`), nenhuma escala invertida, ESC-0101 fora.
+  Disponibilidade exige a publicação da prova da escala (pontas da herança) e
+  G1.4 confere isso independentemente (reproduz as 5 observações do parecer no
+  manifesto antigo). Painel novo `1250cefb…`: **G0 e G1 aprovados**, G0.3 = 68
+  saltos (0,3026%), G1 = 10.750 obs / 503 cias. T1 com partição corrigida,
+  AUC zero em T2, B0 `sempre_nao_consumir` com IC, correções só validadas.
+  Execução 2 preservada em `adjudicacao/execucao2/`. **Suíte: 2.544, zero skip.** Auditoria de conformidade da onda: sem ALTA; M1–M3 e B1–B4/B6–B8 corrigidos; B5 (buracos residuais da v3) declarado para uma v4.
+  Nenhum T1/T2/baseline real, nenhum rótulo, nada nos painéis compartilhados.
+- **Rank 3-B — CONFERÊNCIA DE 17/09 (registro, parcialmente superado acima).**
+  Parecer: `resultados/conferencia_pre_treino_rank03b_2026-09-17.md`;
+  reproduções: `artefatos/revisao_pre_treino_rank03b_2026-09-17/`.
+  A reconstrução **em memória** reproduziu o painel e a saída de aprovação
+  G0/G1 de 16/09, mas **não certifica sua validade**: ESC-0101 introduz erro
+  de 1.000× no ativo, a disponibilidade ignora provas futuras das 24 correções
+  herdadas (cinco observações elegíveis afetadas), e o algoritmo de quintis
+  fabrica grupos unitários depois de empates grandes. Também há lacuna no
+  G0.5 proposto, contratos estatísticos incompletos e vínculo de hash
+  desatualizado. **375 testes focados e 2.495 da suíte passaram**, sem fechar
+  essas contraprovas. Próximo passo: contratos de correção RF01–RF08 do parecer,
+  implementação e nova conferência; não basta aprovar os três [DECIDIR].
+  Nenhum código operacional, CSV ou painel foi alterado nesta revisão;
+  nenhum alvo real, T1/T2 ou baseline foi medido e nenhum modelo foi treinado.
+  **Registro da entrega de 16/09, parcialmente contestado acima:**
   Decisões do Ygor: painel separado (`cvm.duckdb`/`cvm_treino.duckdb` e etapa 10
   intocados), download público da CVM com piloto antes, parar no pré-registro.
   `artefatos/painel_pesquisa_rank03b/` (binários fora do Git, 2,8 GB): lê os 31
@@ -336,8 +592,36 @@ outra tarefa.
   **`auditoria_manual_pendente`**. O README ainda publica a anterior
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
-- Suíte: **2.495 casos passando, zero skip** (2026-09-16, depois da auditoria e da verificação
-  dos lotes B/C). Antes da auditoria: **2.456** (depois dos lotes B/C
+- Suíte atual: **4.019 casos passando, zero falhas/erros/skips** (correção RAG
+  com adendo 3, 26/09: a busca tem 970 testes, contra 62 antes da onda), XML em
+  `artefatos/correcao_rag_alcance_geom1_rank03b_2026-09-25/adendo3/pytest_suite.xml`.
+  Antes: 4.016 no adendo 2, 3.976 no adendo, 3.297 na primeira execução da correção e 3.111 na conferência
+  independente de 2026-09-25, sem alterar testes ou sobrescrever o modo: XML em
+  `artefatos/conferencia_revisao_alcance_geom1_rank03b_2026-09-25/pytest_suite.xml`.
+  A execução anterior do fechamento da revisão GEOM-1 está no XML
+  `artefatos/alcance_geom1_rank03b_2026-09-24/revisao/pytest_suite_final.xml`.
+  +3 do N1 sobre **3.108** (`revisao/pytest_suite_pos_auditoria.xml`), que
+  somaram +104 contraprovas do adendo (79 do inventário, 25 da busca; uma substituição
+  declarada no docstring) sobre **3.004** (24/09, revisão: +90, 56 da máscara e
+  34 da busca, `revisao/pytest_suite_sem_override.xml`). **Roda com o `.env`
+  local, sem sobrescrever variável:** o teste de interface que pressupunha modo
+  cacheado passou a fixar `HABILITAR_PERGUNTAS_LIVRES=0` no próprio processo
+  (R6, declarado no docstring, nenhuma asserção mudou). Antes: **2.914**
+  (24/09, alcance GEOM-1, só com a variável sobrescrita no processo; a
+  primeira execução, 2.906/2.907, herdou o `.env` e está preservada). Alcance
+  GEOM acrescentou 20 testes; há também adições paralelas desde a contagem
+  anterior, não atribuir todas a esta onda. **Contagem anterior: 2.860** (2026-09-20, rota do
+  plano ligada à interface). São 75 casos novos sobre os 2.785 da rodada
+  anterior do mesmo dia (55 em `test_plano_consulta.py` + 20 em
+  `test_rota_plano_interface.py`); uma asserção foi **substituída e declarada**
+  no docstring (`test_sem_trimestre_nao_monta_sql` troca
+  `test_sem_trimestre_nao_filtra_periodo`, porque o contrato do período mudou).
+  Antes: **2.727** (2026-09-18,
+  piloto e extensão GEOM-1; XML em `artefatos/escala_geometrica_rank03b_2026-09-18/pytest_extensao_final.xml`).
+  Eram 112 casos novos em relação aos 2.615 após CRF, que acrescentou
+  71 casos aos **2.544** de 17/09 (correções RF-01..RF-08);
+  execuções focadas não se somam à suíte. Eram 2.495 em 16/09, depois da auditoria
+  e da verificação dos lotes B/C. Antes da auditoria: **2.456** (depois dos lotes B/C
   do Rank 3-B: +226 contraprovas em `test_fonte_zip_cvm`, `test_fonte_rad_cvm`,
   `test_piloto_fonte_rad_rank03b`, `test_painel_pesquisa_rank03b`,
   `test_gates_painel_pesquisa_rank03b` e `test_adjudicar_escala_rank03b`; os
@@ -784,23 +1068,75 @@ transformar toda dívida do projeto em pré-requisito. O novo protocolo deverá 
 aprovação por superioridade do modelo. Nenhum painel/CSV/código foi alterado
 por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
 
-−1. **PARADO NO RASCUNHO DO PRÉ-REGISTRO v2 DO RANK 3-B — aguarda aprovação do
-   Ygor.** `resultados/pre_registro_rank03b_v2_RASCUNHO_2026-09-16.md`, com três
-   pontos **[DECIDIR]**: excluir o plano de seguros `ll3_13` (3 companhias,
+−2. **GEOM-1 — alcance conferido em 24/09 e revisado (24–25/09):** caixa dos
+   dois candidatos confirmado; Ativo/140867 demonstrado diretamente;
+   FCO/140867, Ativo/142900 e FCO/142900 com busca numérica exata sem
+   correspondência nas notas 193/412. A conferência independente de 25/09
+   reabriu o instrumento (RAG-01–03), e a correção RAG do mesmo dia, com
+   adendo, o refez (bloco acima). O resultado se manteve. A forma ÷1.000 não
+   testa "XML em reais, notas em milhares". Instrumento **conferido e fechado em 26/09** (4 conferências;
+   relatório da correção RAG), válido para estas notas. Para outros
+   emissores, antes, corrigir o limite do sinal declarado.
+   **Quanto à política, o responsável decide o
+   [DECIDIR] do §12-bis do v2** (prova de saldo corrige o FCO do mesmo
+   documento? A = sim, é o que a v4 faz; B = não, é o que a GEOM-1 pede;
+   proposta B). Sob A, 140867 e 142900 se qualificam pela prova de caixa
+   depois de integrada a GEOM-1 (G0.3 132 → 130, ainda reprova); sob B,
+   nenhum hoje. **Correção só do ativo, por conta, está RETIRADA** enquanto
+   G0.3 e G0.5 lerem o veredito por documento; e o contrato que criar
+   manifesto por conta começa pela guarda de schema no consumidor, que hoje
+   não recusa coluna desconhecida (achado B4, aberto). Rotas para provar o
+   FCO (anexo do grupo 192 do mesmo pacote; identidade interna da DFC, que
+   soma o FCO e o O1 veda) exigem contrato próprio. Fontes e critérios em
+   `resultados/alcance_geom1_rank03b_2026-09-24.md` (com a ressalva).
+   Extrator permanece congelado; nenhuma promoção/herança ou novo G0.
+   Conferir demais provas necessárias e suficiência de S5; integração exige
+   produtor/consumidor próprios, não desligar ou falsificar a validação v4.
+   Nova versão se ampliar cobertura; verificação já vista não vira teste novo.
+   Não treinar.
+−1. **CRF CORRIGIDA E CONFERIDA EM 18/09 — o bloqueio agora é a cobertura da prova
+   de escala e a reprovação de G0, não os dois defeitos já corrigidos.**
+   Relatório e evidências: `resultados/correcao_crf01_crf03_rank03b_2026-09-18.md`.
+   A v4 não certificou nenhum dos 405 documentos; não treinar nem voltar às
+   provas v3 sem resolver sua correspondência contábil. Contrato próprio para
+   extração/adjudicação com fonte já iniciado na GEOM-1 (item −2), com controles
+   de correção e cobertura. Reconstrução e gates ainda não iniciados nessa onda.
+   Não baixar o limiar de G0, excluir companhias pelo efeito no gate ou chamar
+   abstinência do extrator de inexistência de informação. CRF-03 é atualização
+   documental, não licença para mudar a política. O v2 tem **seis** [DECIDIR]
+   (o sexto desde 24/09): §3.2 seguradoras, §5.1 G0.1 (a conferência recomenda
+   unicidade), §5.5 G0.5 e seu limiar (0,5% seria política nova; mede
+   0,3712% na execução vigente; 0,2535% era a execução 3), §6.1 grade de D,
+   §8.1 suporte intra de T2, §12-bis alcance da prova de escala. Depois da suficiência de dados e das decisões:
+   escrever e testar em sintético o **executor v2** (G0/G1 cegos, só então `y`),
+   conferir, aprovar, congelar hash, medir. Registro anterior:
+   **CONFERÊNCIA DO PRÉ-TREINO CONCLUÍDA EM 17/09 — corrigir antes de aprovar
+   o v2.** Parecer e critérios de fechamento em
+   `resultados/conferencia_pre_treino_rank03b_2026-09-17.md` (RF01–RF08).
+   Bloqueios principais: adjudicação de escala sem contexto (ESC-0101
+   comprovadamente errada), disponibilidade PIT sem a data das provas herdadas
+   e quintis artificiais após empates. Fechar também o escopo do G0.5,
+   explicitar os contratos estatísticos e regenerar a cadeia de procedência.
+   Fazer contratos antes da correção, reavaliar as decisões produzidas pela
+   mesma heurística e suas heranças, reconstruir **somente o painel de
+   pesquisa** e conferir independentemente. Não generalizar uma correção
+   comprovadamente errada às outras 100; não certificar as outras por silêncio.
+   **Estado histórico de 16/09, substituído:** o pré-registro v2 era rascunho
+   com três pontos **[DECIDIR]** (hoje são seis, acima): excluir o plano de seguros `ll3_13` (3 companhias,
    proposta: excluir); a leitura de G0.1 (proposta: unicidade; literal reprova
    com 117); e acrescentar o G0.5 (derivação com escalas não adjudicadas,
    ≤ 0,5%; mede 0,172%). **Nenhum T1, T2 ou baseline foi medido.** Mas
    **estatística de rótulo já foi vista**: taxa do evento 0,0526 → 0,0530 no
    painel compartilhado, publicada em 15/09 (QW1–QW8), e `y` calculado em
    memória até a correção A1 — declarado no §11 do v2, que o Ygor deve ler
-   antes de aprovar. Aprovar = remover "RASCUNHO" do título
-   e do nome, publicar o SHA-256, e só então estender
+   antes de aprovar. **Só após fechar os achados e revalidar G0/G1**, aprovar =
+   remover "RASCUNHO" do título e do nome, publicar o SHA-256, e só então estender
    `scripts/gates_painel_pesquisa_rank03b.py` para T1/T2/baselines lendo o
-   painel de pesquisa. Os lotes B e C estão feitos e **precisam de conferência
-   independente** antes disso: contratos
+   painel de pesquisa. A conferência independente encontrou pendências nos
+   lotes B/C e no instrumento; não é aprovação integral. Contratos originais:
    `resultados/contratos_lote_b_rank03b_2026-09-16.md` e
    `resultados/contratos_lote_c_painel_pesquisa_rank03b_2026-09-16.md`;
-   relatórios `resultados/viabilidade_dados_rank03b_lote_b_2026-09-16.md` e
+   relatórios originais `resultados/viabilidade_dados_rank03b_lote_b_2026-09-16.md` e
    `resultados/painel_pesquisa_rank03b_lote_c_2026-09-16.md`. Lote D (primeiro
    desafiante) só depois de PRONTO PARA CHALLENGER. **Nenhum treino autorizado.**
 0. **CONFERIDO COM PENDÊNCIAS: correções QW1–QW8 de 15/09.** Parecer em

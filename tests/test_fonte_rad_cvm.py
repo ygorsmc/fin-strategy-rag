@@ -665,3 +665,10 @@ class TestPausa:
                "dt_refer": "2020-09-30", "versao": 1}
         rad.adquirir(doc, brutos=tmp_path, manifesto=tmp_path / "m.jsonl")
         assert esperas == [rad.PAUSA_ENTRE_DOCUMENTOS] and rad.PAUSA_ENTRE_DOCUMENTOS > 0
+
+
+@pytest.fixture(autouse=True)
+def _sem_trava_de_rede_herdada(monkeypatch):
+    """Os dublês de download não podem depender do ambiente de quem roda a suíte:
+    `RAD_SEM_REDE` exportado para uma reexecução derrubava estes casos (17/09)."""
+    monkeypatch.delenv(rad.SEM_REDE, raising=False)

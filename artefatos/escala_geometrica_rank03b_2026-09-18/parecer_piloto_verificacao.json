@@ -1,0 +1,37 @@
+{
+  "data": "2026-09-18",
+  "auditor": "/root/auditor_geometria",
+  "registro": "Transcrição estruturada pelo agente principal do parecer independente recebido na sessão; não é assinatura digital nem gold humano.",
+  "veredito": "sem_erro_nas_aceitacoes_conferidas",
+  "piloto_sha256": "20e699ca35d5d72b49f99bcb16ce6c67556bae8d47a77402d0ee80a1f42fc532",
+  "provas_conferidas": [
+    {
+      "id_doc": "145037",
+      "anexo": 1,
+      "pagina": 3,
+      "conta": "1.01.01",
+      "sha256_prova": "cf09ac7d52abf0a41ec958dd3992f53064f748bcc6157ae47fa77baabcf38eb2"
+    }
+  ],
+  "metodo": "Leitura direta do pacote com zipfile e ElementTree, e do PDF original embutido com pdfplumber; não usou GEOM nem seu replay como árbitro.",
+  "fonte": {
+    "xml": "007870DFP31-12-2024v1.xml",
+    "grupo": "412",
+    "indice_anexo_base_zero": 1,
+    "pagina_base_um": 3,
+    "rotulo": "Caixa e equivalentes de caixa",
+    "unidade": "(Em milhares de reais)",
+    "perimetro": "Consolidado",
+    "data": "2024-12-31",
+    "coluna_base_um": 3,
+    "forma": "bruto"
+  },
+  "achados": "As quatro células PDF coincidem exatamente com XML nos quatro pares de perímetro e data. Só a terceira coincide com o saldo candidato consolidado corrente. Não requer arredondamento; dividido ou multiplicado por mil não coincide. Nenhuma contradição encontrada.",
+  "integridade": "Auditor confirmou hashes do pacote, PDF, seleção, pin, seis arquivos de código/contrato e sete artefatos protegidos.",
+  "limites": [
+    "Uma aceitação em 12 documentos, não estimativa de precisão geral.",
+    "Confirma documento já declarado MIL; não valida empiricamente correção UNIDADE para MIL.",
+    "Não confere a verdade contábil das 11 abstinências.",
+    "Não autoriza promoção ao manifesto, mudança de G0 ou treino."
+  ]
+}
