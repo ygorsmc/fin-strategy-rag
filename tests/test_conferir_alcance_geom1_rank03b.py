@@ -821,6 +821,9 @@ def test_controle_positivo_examina_exatamente_as_duas_fontes_nas_duas_entradas(t
     assert identidade["adendo_correcao_sha256"] == c.ADENDO_CORRECAO_SHA256
     assert identidade["adendo2_correcao_sha256"] == c.ADENDO2_CORRECAO_SHA256
     assert identidade["adendo3_correcao_sha256"] == c.ADENDO3_CORRECAO_SHA256
+    assert identidade["contrato_pendencias_sha256"] == c.CONTRATO_PENDENCIAS_SHA256
+    assert identidade["adendo_pendencias_sha256"] == c.ADENDO_PENDENCIAS_SHA256
+    assert identidade["unicode"] == unicodedata.unidata_version
 
     _fixar_publicados(amb, monkeypatch)
     reconferencia = c.reconferir_publicados(tmp_path / "reconferencia.json")
@@ -1020,11 +1023,15 @@ def test_referencia_alterada_e_recusada(tmp_path, monkeypatch, entrada, arquivo)
                                                ("executar", "ADENDO_CORRECAO_SHA256"),
                                                ("executar", "ADENDO2_CORRECAO_SHA256"),
                                                ("executar", "ADENDO3_CORRECAO_SHA256"),
+                                               ("executar", "CONTRATO_PENDENCIAS_SHA256"),
+                                               ("executar", "ADENDO_PENDENCIAS_SHA256"),
                                                ("reconferir", "ADENDO_SHA256"),
                                                ("reconferir", "CONTRATO_CORRECAO_SHA256"),
                                                ("reconferir", "ADENDO_CORRECAO_SHA256"),
                                                ("reconferir", "ADENDO2_CORRECAO_SHA256"),
-                                               ("reconferir", "ADENDO3_CORRECAO_SHA256")])
+                                               ("reconferir", "ADENDO3_CORRECAO_SHA256"),
+                                               ("reconferir", "CONTRATO_PENDENCIAS_SHA256"),
+                                               ("reconferir", "ADENDO_PENDENCIAS_SHA256")])
 def test_documento_governante_diferente_do_fixado_e_recusado(tmp_path, monkeypatch, entrada, constante):
     amb = _ambiente(tmp_path, monkeypatch)
     _publicar_revisao(amb, monkeypatch)
@@ -1157,9 +1164,10 @@ def test_parenteses_ornamentais_dos_dois_lados_tambem_sao_ambiguos():
         assert _sinal_de(linha) is None, linha
 
 
-def test_limite_declara_o_residuo_do_sinal():
-    """B2: combinante, seletores de variação e moeda com espaço interno ficam declarados."""
+def test_limite_declara_a_barreira_conservadora_do_sinal():
+    """P1 (26/09) substitui B2: defeito corrigido, sem prometer cobertura universal."""
     assert "seletores de variação" in c.LIMITE and "moeda com espaço interno" in c.LIMITE
+    assert "barreira conservadora" in c.LIMITE and "validação de corpus" in c.LIMITE
 
 
 @pytest.mark.parametrize("texto,barrado", [("1\n234\n567", True), ("valor\n1.234.567\nfim", True),
@@ -1197,16 +1205,15 @@ def test_campo_que_nao_e_json_nao_deixa_a_identidade_sozinha(tmp_path, monkeypat
 
 # --- Adendo 3 (26/09): o limite declarado, dito inteiro e preso ao comportamento ---
 
-def test_limite_declarado_descreve_o_comportamento_atual():
-    """C2 do adendo 3 — teste de CARACTERIZAÇÃO de um limite declarado, não aprovação
-    do defeito: prende o comportamento atual junto com a frase que o declara. Quem
-    corrigir o limite tem de mudar este teste e o texto do `limite` juntos."""
+def test_defeito_de_sinal_e_prefixo_agora_e_recusado():
+    """P1 (26/09) substitui declaradamente a caracterização C2 do adendo 3.
+    A versão que fixava o defeito foi preservada no snapshot da onda."""
     alvo = {"a": Decimal(1234)}
     for linha in ("Total \u2212\u034f1.234", "Total (\ufe00" "1.234\ufe00)", "Total -\u3164" "1.234",
                   "Total -R $ 1.234"):
-        assert c.ocorrencias([linha], alvo, por_modulo=False)["a"], linha  # sinal perdido: casa positivo
-        assert not c.ocorrencias_de_sinal_ambiguo([linha], alvo)["a"], linha
-    assert c.ocorrencias(["Total 1.234.\u034f567"], alvo, por_modulo=False)["a"]  # prefixo casa
-    for efeito in ("se perde, e o número pode casar como positivo", "dentro do número parte o token",
-                   "o prefixo pode casar", "pré-condição para usar o instrumento em notas de outros emissores"):
-        assert efeito in c.LIMITE, efeito
+        assert not c.ocorrencias([linha], alvo, por_modulo=False)["a"], linha
+        assert c.ocorrencias_de_sinal_ambiguo([linha], alvo)["a"], linha
+    linha = "Total 1.234.\u034f567"
+    assert not c.ocorrencias([linha], alvo, por_modulo=False)["a"]
+    assert [(t.modulo, t.sinal) for t in c.tokens_da_linha(linha)] == [(None, None)]
+    assert "recusam o token inteiro" in c.LIMITE

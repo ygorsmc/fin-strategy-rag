@@ -444,9 +444,25 @@ outra tarefa.
   A primeira conferência da correção **reabriu** (2 MÉDIA, 5 BAIXA); o
   adendo tratou os sete achados. Mutação: 45 de 45 mortas. As contraprovas da
   conferência não reproduzem, e a busca repetida (não cega) dá o mesmo
-  resultado de 24/09. Adendos 2 e 3 (26/09) fecharam as ressalvas. Houve DOTALL e serialização antes de gravar, e o limite do sinal ficou declarado inteiro na saída: ignorável fora de Cf/Cc e "R $" perdem o sinal. **Corrigir isso é pré-condição para usar o instrumento em outros emissores.** **Conferência final: FECHADO**; mutação com 52 de 52 mortas. B4, seis
-  decisões, executor v2 e a forma arredondada (ativo: contrato; FCO: decisão
-  sob O1) seguem pendentes; não treinar.
+  resultado de 24/09. Adendos 2 e 3 (26/09) fecharam as ressalvas daquela
+  onda; mutação com 52 de 52 mortas. **Pendências corrigidas em 26/09:**
+  marcas/preenchedores e `R $` agora geram ambiguidade/recusa integral; B4
+  exige esquema CSV fechado e sintaxe válida antes de carregar correções.
+  Primeira revisão independente encontrou falsa recusa em `TOTAL R$` e aspa
+  solta aceita pelo CSV; ambas corrigidas sob adendo e **reconferidas como
+  fechadas**. Limite residual: `PL R$` pode ser ambíguo; não há garantia
+  universal de Unicode/OCR nem validação em outros emissores.
+  Ativo arredondado ganhou contrato e função **só sintética, desconectada da
+  busca real**, sem adjudicar escala. O1 original não autoriza explicitamente
+  piso/teto do FCO; exceção exclusivamente protetiva proposta ao responsável,
+  **ainda sem aprovação**. Detector preservado, nenhuma busca/reconferência
+  com FCO real nesta onda. Busca arredondada de FCO, seis decisões e executor
+  v2 permanecem pendentes; não treinar. Contrato/relatório:
+  `resultados/contratos_pendencias_geom1_rank03b_2026-09-26.md`,
+  `resultados/adendo_pendencias_geom1_rank03b_2026-09-26.md`,
+  `resultados/correcao_pendencias_geom1_rank03b_2026-09-26.md`;
+  passagem e decisões em `resultados/decisoes_executor_v2_rank03b_2026-09-26.md`.
+  Evidências em `artefatos/pendencias_geom1_rank03b_2026-09-26/`.
 - **Rank 3-B — CRF-01/02/03 CORRIGIDAS E CONFERIDAS; G0 REPROVADO (18/09).
   NÃO CONGELAR NEM TREINAR.**
   Contratos: `resultados/contratos_correcao_crf01_crf03_rank03b_2026-09-17.md`
@@ -592,8 +608,13 @@ outra tarefa.
   **`auditoria_manual_pendente`**. O README ainda publica a anterior
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
-- Suíte atual: **4.019 casos passando, zero falhas/erros/skips** (correção RAG
-  com adendo 3, 26/09: a busca tem 970 testes, contra 62 antes da onda), XML em
+- Suíte atual: **4.184 casos passando, zero falhas/erros/skips**, 28 avisos
+  (pendências GEOM-1, pós-auditoria AP1/AP2, 26/09), XML em
+  `artefatos/pendencias_geom1_rank03b_2026-09-26/pytest_suite_pos_auditoria.xml`.
+  Testes dirigidos: 1.179; os dois achados da auditoria independente foram
+  corrigidos e reconferidos, sem executar busca real/gates/treino de Rank 3-B.
+  Antes: **4.019** na correção RAG
+  com adendo 3 (a busca tinha 970 testes, contra 62 antes da onda), XML em
   `artefatos/correcao_rag_alcance_geom1_rank03b_2026-09-25/adendo3/pytest_suite.xml`.
   Antes: 4.016 no adendo 2, 3.976 no adendo, 3.297 na primeira execução da correção e 3.111 na conferência
   independente de 2026-09-25, sem alterar testes ou sobrescrever o modo: XML em
@@ -1076,7 +1097,11 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    adendo, o refez (bloco acima). O resultado se manteve. A forma ÷1.000 não
    testa "XML em reais, notas em milhares". Instrumento **conferido e fechado em 26/09** (4 conferências;
    relatório da correção RAG), válido para estas notas. Para outros
-   emissores, antes, corrigir o limite do sinal declarado.
+   emissores ainda exige validação de corpus; as classes de interferência e
+   `R $` foram corrigidas na onda de pendências de 26/09, conferida sob AP1/AP2.
+   A forma arredondada do ativo ganhou diagnóstico sintético separado, não
+   conectado à busca real. Uso protetivo de piso/teto do FCO aguarda adendo
+   aprovado de O1; busca arredondada de FCO continua sem autorização.
    **Quanto à política, o responsável decide o
    [DECIDIR] do §12-bis do v2** (prova de saldo corrige o FCO do mesmo
    documento? A = sim, é o que a v4 faz; B = não, é o que a GEOM-1 pede;
@@ -1084,8 +1109,10 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    depois de integrada a GEOM-1 (G0.3 132 → 130, ainda reprova); sob B,
    nenhum hoje. **Correção só do ativo, por conta, está RETIRADA** enquanto
    G0.3 e G0.5 lerem o veredito por documento; e o contrato que criar
-   manifesto por conta começa pela guarda de schema no consumidor, que hoje
-   não recusa coluna desconhecida (achado B4, aberto). Rotas para provar o
+   manifesto por conta depende de contrato e gates próprios. **B4 fechado em
+   26/09:** o consumidor já recusa coluna desconhecida, ausente ou duplicada
+   e sintaxe inválida, inclusive em manifesto sem linhas. Isso não autoriza
+   correção por conta. Rotas para provar o
    FCO (anexo do grupo 192 do mesmo pacote; identidade interna da DFC, que
    soma o FCO e o O1 veda) exigem contrato próprio. Fontes e critérios em
    `resultados/alcance_geom1_rank03b_2026-09-24.md` (com a ressalva).

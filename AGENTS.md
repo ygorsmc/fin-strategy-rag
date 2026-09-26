@@ -406,7 +406,7 @@ publicado numa data fica como foi publicado.
 | **Rank 3** — deterioração de conversão de caixa *(era §3.14)* | ❌ **REJEITADO** em T1 antes do treino (`accrual` 0,266, `conversao` 0,229) | becos §A.1 · [validação](resultados/validacao_rank03_conversao_caixa_2026-08-27.md) |
 | **Etapa 19** — FCF yield × retorno futuro *(era §3.16)* | ⚠️ **INDECIDÍVEL.** T1 não reprovou pela primeira vez — mas 32% de chance de a amplitude verdadeira exceder o limiar | becos §F · [validação](resultados/validacao_etapa19_fcf_yield_2026-09-08.md) |
 | **B-DFC-01J-M** — custo de captação um trimestre à frente *(era §3.17)* | ❌ **NÃO AUTORIZA**, decisivo em G0. Ver o aviso abaixo | becos §C-bis · [prontidão](resultados/prontidao_b_dfc_01j_modelo_2026-09-09.md) |
-| **Rank 3-B** — início de consumo operacional persistente | ❌ **REPROVADO EM G0 — rodada invalidada.** O alvo **não chegou a ser testado**: o painel reprovou antes. O instrumento levou **três ondas de correção**, cada uma depois de conferência independente: 12/09 (R1–R5), 15/09 (QW1–QW8 — G1 aprovava por existência, e o horizonte civil sobre rótulo fiscal aceitava trimestre já iniciado) e 16/09 (CQW-01 a CQW-03, mais **G0.4 — verificação congelada no §4 do pré-registro que o código nunca implementou**). **Em 16/09, num painel de pesquisa separado e com 101 correções de escala feitas com fonte, G0 e G1 aprovaram** — o alvo continua sem medição até o pré-registro v2, em rascunho, ser aprovado. Ver o aviso abaixo | becos §A.5 · [validação](resultados/validacao_rank03b_consumo_operacional_2026-09-11.md) · [revisão](resultados/revisao_rank03b_consumo_operacional_2026-09-12.md) · [correções](resultados/implementacao_r1_r5_rank03b_2026-09-12.md) · [dossiê das quatro ondas](resultados/dossie_revisao_quatro_ondas_2026-09-14.md) · [conferência de 15/09, aprovação parcial](resultados/conferencia_quatro_ondas_2026-09-15.md) · [correções QW1–QW8](resultados/implementacao_qw1_qw8_2026-09-15.md) · [conferência QW1–QW8](resultados/conferencia_independente_qw1_qw8_2026-09-15.md) · [contratos CQW](resultados/contratos_correcao_cqw_2026-09-16.md) · [lote B](resultados/viabilidade_dados_rank03b_lote_b_2026-09-16.md) · [lote C, painel de pesquisa](resultados/painel_pesquisa_rank03b_lote_c_2026-09-16.md) · [pré-registro v2, rascunho](resultados/pre_registro_rank03b_v2_RASCUNHO_2026-09-16.md) |
+| **Rank 3-B** — início de consumo operacional persistente | ❌ **REPROVADO EM G0 — rodada invalidada.** O alvo **não chegou a ser testado**: o painel reprovou antes. O instrumento levou **três ondas de correção**, cada uma depois de conferência independente: 12/09 (R1–R5), 15/09 (QW1–QW8 — G1 aprovava por existência, e o horizonte civil sobre rótulo fiscal aceitava trimestre já iniciado) e 16/09 (CQW-01 a CQW-03, mais **G0.4 — verificação congelada no §4 do pré-registro que o código nunca implementou**). **Em 16/09, num painel de pesquisa separado e com 101 correções de escala feitas com fonte, G0 e G1 aprovaram; em 17/09, depois de conferência que comprovou uma correção errada, a regra foi refeita: 68 correções, G0 e G1 ainda aprovados** — o alvo continua sem medição até o pré-registro v2, em rascunho, ser aprovado. **Em 18/09 a regra v4, mais estrita, zerou as correções e G0 voltou a reprovar (132 saltos); a linha GEOM-1 (18–24/09) só produziu candidatas.** Ver o aviso abaixo | becos §A.5 · [validação](resultados/validacao_rank03b_consumo_operacional_2026-09-11.md) · [revisão](resultados/revisao_rank03b_consumo_operacional_2026-09-12.md) · [correções](resultados/implementacao_r1_r5_rank03b_2026-09-12.md) · [dossiê das quatro ondas](resultados/dossie_revisao_quatro_ondas_2026-09-14.md) · [conferência de 15/09, aprovação parcial](resultados/conferencia_quatro_ondas_2026-09-15.md) · [correções QW1–QW8](resultados/implementacao_qw1_qw8_2026-09-15.md) · [conferência QW1–QW8](resultados/conferencia_independente_qw1_qw8_2026-09-15.md) · [contratos CQW](resultados/contratos_correcao_cqw_2026-09-16.md) · [lote B](resultados/viabilidade_dados_rank03b_lote_b_2026-09-16.md) · [lote C, painel de pesquisa](resultados/painel_pesquisa_rank03b_lote_c_2026-09-16.md) · [pré-registro v2, rascunho](resultados/pre_registro_rank03b_v2_RASCUNHO_2026-09-16.md) · [conferência de 17/09](resultados/conferencia_pre_treino_rank03b_2026-09-17.md) · [correções RF-01..RF-08](resultados/correcao_rf01_rf08_rank03b_2026-09-17.md) · [correções CRF](resultados/correcao_crf01_crf03_rank03b_2026-09-18.md) · [GEOM-1](resultados/escala_geometrica_rank03b_2026-09-18.md) · [alcance GEOM-1 e revisão](resultados/alcance_geom1_rank03b_2026-09-24.md) |
 
 > **⚠️ B-DFC-01J é o único candidato com trabalho em voo, e o estado dele não
 > cabe numa linha de tabela.** O instrumento de medição passou por **três ondas
@@ -514,7 +514,8 @@ publicado numa data fica como foi publicado.
 > A escala foi **adjudicada com fonte** fora do painel compartilhado: o
 > cabeçalho de milhares das notas explicativas **e** os números do formulário
 > impressos nelas. **101 correções `UNIDADE → MIL` em 32 companhias**; G0.3 no
-> painel de pesquisa cai de 132 para **47 saltos (0,2092%)**. Duas regras para
+> painel de pesquisa cai de 132 para **47 saltos (0,2092%)** *(números de 16/09,
+> substituídos em 17/09 — ver abaixo)*. Duas regras para
 > quem mexer em escala: **"em reais" declara a moeda, não a escala** (aparece no
 > parágrafo de moeda funcional e em rodapés por ação), e o `CodigoEscalaMoeda`
 > do formulário é a **origem** do rótulo, não prova. **O painel compartilhado
@@ -528,6 +529,32 @@ publicado numa data fica como foi publicado.
 > como vazamento. Quem medir efeito de correção publica **contagem de
 > observações**, nunca taxa, `y` alterado ou descarte por feature do alvo; e
 > quem montar amostra para gate usa `construir_amostra(..., calcular_rotulo=False)`.
+>
+> **Duas regras da conferência de 17/09**
+> ([correções](resultados/correcao_rf01_rf08_rank03b_2026-09-17.md)): (1) um
+> número só prova escala **localizado** — mesma conta (rótulo na linha),
+> período corrente, perímetro consolidado, página que declara a unidade.
+> Magnitude casada em texto corrido já "provou" `MIL` com uma quantidade de
+> ações (ESC-0101, erro de 1.000×). (2) **Correção também é informação com
+> data:** um valor corrigido só está disponível quando **todas** as provas da
+> correção foram publicadas (numa herança, as duas pontas), e o G1 confere isso
+> pelo manifesto, não pela data do construtor. Na **execução 3 de 17/09,
+> histórica e substituída**, eram 68 correções em 26 companhias e G0.3 = 68
+> saltos (0,3026%). O estado vigente está em `MEMORY.md` e nas
+> [correções CRF](resultados/correcao_crf01_crf03_rank03b_2026-09-18.md).
+>
+> **Regra da revisão do alcance GEOM-1 (24/09)**
+> ([ressalva](resultados/alcance_geom1_rank03b_2026-09-24.md)): o G0.3 só vê
+> o ativo, e o G0.5 proposto lê o veredito por documento. Correção que alcance
+> uma conta e não a outra do mesmo documento tira o sinal do único detector de
+> escala, enquanto o FCO — de onde sai o rótulo, por diferença de acumulados —
+> continua na escala declarada. **Não fazer sem antes tornar G0.3 e G0.5 por
+> conta.** E, antes disso, o consumidor tem de recusar coluna desconhecida no
+> manifesto, antes de qualquer aplicação. Cabeçalho deve ser completo e sem
+> extras ou duplicatas, inclusive em CSV sem linhas; uma linha "por conta"
+> não pode ser aplicada ao documento inteiro. Se uma prova de saldo autoriza corrigir o FCO
+> do mesmo documento é **[DECIDIR]** no rascunho v2 (§12-bis): a v4 corrige o
+> documento inteiro; a linha GEOM-1 exige prova de cada conta.
 >
 > Nenhuma linha foi removida. Conserto exige
 > adjudicar contra a fonte pelo padrão do §3.3 (`correcoes_contabeis.csv`, com

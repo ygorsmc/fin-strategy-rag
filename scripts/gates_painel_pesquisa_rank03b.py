@@ -25,6 +25,7 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import io
 import json
 import sys
 from datetime import date
@@ -79,6 +80,34 @@ def _sha256(caminho: Path) -> str:
     return hashlib.sha256(caminho.read_bytes()).hexdigest()
 
 
+def _validar_sintaxe_csv(texto: str) -> None:
+    """AP2: o strict do módulo csv ainda aceita aspas soltas em campo não
+    delimitado. Conferir essa fronteira antes de construir linhas, sem ecoar
+    valores em erro; vírgula/quebra de linha dentro de aspas são válidas."""
+    estado = "inicio"
+    for ch in texto:
+        if estado == "aspas":
+            if ch == '"':
+                estado = "fechou"
+        elif estado == "fechou":
+            if ch == '"':  # aspa escapada: duas aspas dentro do campo
+                estado = "aspas"
+            elif ch in ",\r\n":
+                estado = "inicio"
+            else:
+                raise csv.Error("sintaxe CSV inválida após fechar aspas (conteúdo omitido)")
+        elif ch in ",\r\n":
+            estado = "inicio"
+        elif ch == '"':
+            if estado != "inicio":
+                raise csv.Error("aspa em campo CSV não delimitado (conteúdo omitido)")
+            estado = "aspas"
+        else:
+            estado = "campo"
+    if estado == "aspas":
+        raise csv.Error("campo CSV com aspas não fechadas (conteúdo omitido)")
+
+
 def carregar_correcoes(caminho: Path, tabela: dict | None = None,
                        exigir_escala_nas_pontas: bool = True,
                        aquisicao: Path | None = None,
@@ -99,8 +128,22 @@ def carregar_correcoes(caminho: Path, tabela: dict | None = None,
             f"{caminho} não existe. Sem ele o painel aplicaria só os rótulos "
             "declarados em silêncio; para isso existe `--sem-correcoes`, explícito."
         )
-    with open(caminho, encoding="utf-8", newline="") as fh:
-        linhas = list(csv.DictReader(fh))
+    # B4 (26/09): schema fechado ANTES de consultar evidências. Uma coluna
+    # cd_conta ignorada faria uma correção parcial atingir o documento todo.
+    # Parser e hash de origem precisam referir-se aos mesmos bytes.
+    dados = caminho.read_bytes()
+    texto = dados.decode("utf-8")
+    _validar_sintaxe_csv(texto)
+    leitor = csv.DictReader(io.StringIO(texto, newline=""), strict=True)
+    colunas = leitor.fieldnames
+    esquemas = [set(adj.COLUNAS_MANIFESTO)]
+    if not exigir_evidencia_numerica:
+        esquemas.append(set(adj.COLUNAS_MANIFESTO) - {"evidencia_numerica"})
+    if not colunas or len(colunas) != len(set(colunas)) or set(colunas) not in esquemas:
+        raise ValueError("esquema do manifesto inválido: colunas ausentes, extras ou duplicadas")
+    linhas = list(leitor)
+    if any(None in r or any(v is None for v in r.values()) for r in linhas):
+        raise ValueError("linha do manifesto com quantidade de campos diferente do cabeçalho")
     correcoes = {}
     for r in linhas:
         chave = (r["cd_cvm"], r["conjunto"], r["dt_refer"], int(r["versao"]))
@@ -110,7 +153,7 @@ def carregar_correcoes(caminho: Path, tabela: dict | None = None,
     adj.validar_manifesto(linhas, tabela, exigir_escala_nas_pontas,
                           exigir_evidencia_numerica, exigir_escopo_v4)
     adj.conferir_pacotes(linhas, adj.pacotes_integros(aquisicao or adj.rad.MANIFESTO))
-    return CorrecoesValidadas(correcoes, _sha256(caminho))
+    return CorrecoesValidadas(correcoes, hashlib.sha256(dados).hexdigest())
 
 
 def datas_das_provas(con, correcoes: dict) -> dict[tuple, object]:

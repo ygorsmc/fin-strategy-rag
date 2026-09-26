@@ -32,7 +32,7 @@ correção (`codigo_primeira_execucao/`) e a do adendo (`codigo_adendo/`).
 from __future__ import annotations
 
 from datetime import date
-from decimal import ROUND_CEILING, ROUND_FLOOR, Decimal, InvalidOperation
+from decimal import ROUND_CEILING, ROUND_FLOOR, ROUND_HALF_UP, Decimal, InvalidOperation
 from functools import lru_cache
 import hashlib
 import json
@@ -64,6 +64,10 @@ ADENDO2_CORRECAO = "resultados/adendo2_correcao_rag_alcance_geom1_rank03b_2026-0
 ADENDO2_CORRECAO_SHA256 = "4328e69ee4e378c6022ee3795a26feba2b43026b25f7542362f78e2b6c8cc96e"
 ADENDO3_CORRECAO = "resultados/adendo3_correcao_rag_alcance_geom1_rank03b_2026-09-26.md"
 ADENDO3_CORRECAO_SHA256 = "ee89b795bd06cbab1d918e7e37710e11379c7ab8df24faef2e92c27b03155959"
+CONTRATO_PENDENCIAS = "resultados/contratos_pendencias_geom1_rank03b_2026-09-26.md"
+CONTRATO_PENDENCIAS_SHA256 = "97a7d537fdb7c683b7566a2c90e6758e15656d66c58443b334b97fc6bff10068"
+ADENDO_PENDENCIAS = "resultados/adendo_pendencias_geom1_rank03b_2026-09-26.md"
+ADENDO_PENDENCIAS_SHA256 = "4c0c50f695ddfd3b2c377307f94adbb513af10dc2e0f28cbf198a48da73d38d3"
 #: Hash do inventário publicado, registrado pelo auditor em parecer_auditor.json.
 INVENTARIO_PUBLICADO_SHA256 = "4bb25cf08b87843c0ccab5610415e49284d306f04307818059b15960716c84b3"
 #: N1 (reconferência da auditoria, 25/09): as saídas da execução de 24/09, presas a uma
@@ -102,13 +106,12 @@ LIMITE = ("Sem correspondência vale só para estas notas e para tokens inteiros
           "não conta como correspondência do ativo. A forma dividida por mil compara exatamente e só "
           "casaria se as notas imprimissem as casas decimais do milhar: não testa a hipótese de XML em "
           "reais com notas em milhares arredondados. Nada disso demonstra ausência em outra fonte. A "
-          "identidade de caixa não envolve o FCO e não prova a escala dele. Limite do sinal (adendos "
-          "dois e três): um sinal separado do número por caractere ignorável fora de formatação e "
-          "controle, como seletores de variação, o combinante de grafema ou preenchedores, ou posto antes de "
-          "moeda com espaço interno, se perde, e o número pode casar como positivo; um ignorável desses "
-          "dentro do número parte o token, e o prefixo pode casar. Nenhum desses caracteres aparece "
-          "nestas notas; corrigir isso é pré-condição para usar o instrumento em notas de outros "
-          "emissores.")
+          "identidade de caixa não envolve o FCO e não prova a escala dele. Marcas Unicode, inclusive "
+          "seletores de variação e combinante de grafema, e preenchedores são tratados como "
+          "interferências: no contexto do sinal tornam a leitura ambígua; dentro do número recusam o "
+          "token inteiro. Prefixo de moeda com espaço interno também torna a leitura ambígua. É uma "
+          "barreira conservadora, não uma garantia sobre todo Unicode, caractere não atribuído ou OCR. "
+          "O comportamento em notas de outros emissores ainda exige validação de corpus.")
 #: A8 (adendo): o sentido das posições publicadas mudou com a correção RAG.
 SENTIDO_DE_COLUNA = ("Coluna é a ordem do token entre todos os tokens numéricos da linha, aceitos ou "
                      "recusados, e tokens é quantos há na linha. Na busca de 24/09, os dois contavam os "
@@ -277,9 +280,12 @@ def _classes() -> dict[str, frozenset[str]]:
         "abre_amplo": frozenset(c for c in sinais if "PARENTHESIS" in nome(c) and "LEFT" in nome(c)),
         "fecha_amplo": frozenset(c for c in sinais if "PARENTHESIS" in nome(c) and "RIGHT" in nome(c)),
         "moedas": frozenset(classe_de_moedas()),
-        # A2 (adendo): formatação (Cf) ou controle (Cc) que não é espaço nem sinal.
+        # P1 (26/09): barreira conservadora; nem toda marca é invisível. Não
+        # normalizar/remover: isso converteria um token ambíguo em evidência.
         "invisiveis": frozenset(c for c in map(chr, range(0x110000))
-                                if unicodedata.category(c) in ("Cf", "Cc") and not c.isspace() and c not in sinais),
+                                if (unicodedata.category(c) in ("Cf", "Cc", "Mn", "Mc", "Me")
+                                    or "FILLER" in nome(c))
+                                and not c.isspace() and c not in sinais),
     }
 
 
@@ -318,9 +324,22 @@ def _contexto_esquerdo(linha: str, inicio: int) -> tuple[list[tuple[str, bool]],
             continue
         if ch in k["moedas"]:
             j = i - 1
-            while j > 0 and i - 1 - j < 3 and "A" <= linha[j - 1] <= "Z":
-                j -= 1
-            tipo, i_antes = "moeda", j
+            fragmentada, letras = False, 0
+            while letras < 3:
+                p = j
+                while p > 0 and (linha[p - 1].isspace() or linha[p - 1] in k["invisiveis"]):
+                    p -= 1
+                a = p
+                while a > 0 and "A" <= linha[a - 1] <= "Z":
+                    a -= 1
+                # AP1: não cortar TOTAL/ATIVO para encaixar seu sufixo no
+                # limite. Se a palavra não cabe, nem seu espaço é consumido.
+                if a == p or letras + p - a > 3 or (a > 0 and linha[a - 1].isalnum()):
+                    break
+                fragmentada |= p != j
+                letras += p - a
+                j = a
+            tipo, i_antes = ("moeda_fragmentada" if fragmentada else "moeda"), j
         elif (i >= 3 and linha[i - 3:i] in CODIGOS_ISO_4217
               and (i == 3 or not linha[i - 4].isalnum()) and not linha[i:i + 1].isalpha()):
             # Colado ao número (`−USD1.234`) ainda é moeda; colado a letra, não.
@@ -372,6 +391,8 @@ def _classificar(linha: str, inicio: int, fim: int) -> tuple[int | None, str]:
     fecha, sinal_depois, invisivel_dir = _contexto_direito(linha[fim:])
     if sinal_depois:
         return None, "sinal_depois_do_token"
+    if any(tipo == "moeda_fragmentada" for tipo, _ in itens):
+        return None, "moeda_fragmentada"
     nucleo = [(tipo, espaco) for tipo, espaco in itens if tipo != "moeda"]
     if not nucleo:
         return (None, "fecha_sem_abre") if fecha else (1, "limpo")
@@ -445,6 +466,28 @@ def ocorrencias_de_sinal_ambiguo(paginas: list[str], alvos: dict[str, Decimal]) 
     """C2: token de mesmo módulo e sinal ambíguo. Publicado à parte — NUNCA é
     correspondência; existe para que a ausência de correspondência não seja muda."""
     return _varrer(paginas, alvos, lambda t, alvo: t.sinal is None and t.modulo == abs(alvo))
+
+
+def candidatas_ativo_arredondado(paginas: list[str], ativo_reais: Decimal) -> list[dict]:
+    """P3: diagnóstico isolado, não conectado à busca real nem ao manifesto.
+
+    Exclusivo de ativo: divide por mil e arredonda com ROUND_HALF_UP. Retorna
+    candidatas, não prova de escala; ainda é preciso conferir conta, período,
+    perímetro, unidade e regra de arredondamento da fonte. Não usar para FCO.
+    """
+    if not isinstance(ativo_reais, Decimal) or not ativo_reais.is_finite() or ativo_reais == 0:
+        raise ValueError("ativo precisa ser Decimal finito e não nulo (valor omitido)")
+    # Deslocar o expoente é divisão exata: não deixar a precisão ambiente
+    # arredondar um valor imediatamente abaixo do empate antes da regra P3.
+    sinal, digitos, expoente = ativo_reais.as_tuple()
+    milhar = Decimal((sinal, digitos, expoente - 3))
+    arredondado = milhar.to_integral_value(rounding=ROUND_HALF_UP)
+    if arredondado == 0:
+        return []
+    return _varrer(paginas, {"ativo": arredondado}, lambda t, alvo:
+                   t.sinal is not None and t.modulo == t.modulo.to_integral_value()
+                   and t.sinal == (-1 if alvo.is_signed() else 1)
+                   and t.modulo == alvo.copy_abs())["ativo"]
 
 
 def contagem_de_tokens(paginas: list[str]) -> dict[str, dict[str, int]]:
@@ -748,6 +791,8 @@ def executar(destino: Path = DESTINO) -> dict:
         (rad.RAIZ / ADENDO_CORRECAO, ADENDO_CORRECAO_SHA256, "adendo da correção RAG"),
         (rad.RAIZ / ADENDO2_CORRECAO, ADENDO2_CORRECAO_SHA256, "adendo 2 da correção RAG"),
         (rad.RAIZ / ADENDO3_CORRECAO, ADENDO3_CORRECAO_SHA256, "adendo 3 da correção RAG"),
+        (rad.RAIZ / CONTRATO_PENDENCIAS, CONTRATO_PENDENCIAS_SHA256, "contrato das pendências"),
+        (rad.RAIZ / ADENDO_PENDENCIAS, ADENDO_PENDENCIAS_SHA256, "adendo das pendências"),
     ])
     execucao = json.loads(execucao_bytes)
     if any(rad.sha256(rad.RAIZ / p) != execucao["codigo_sha256"][p] for p in CODIGO_CONGELADO):
@@ -796,6 +841,10 @@ def executar(destino: Path = DESTINO) -> dict:
         "adendo_correcao": ADENDO_CORRECAO, "adendo_correcao_sha256": ADENDO_CORRECAO_SHA256,
         "adendo2_correcao": ADENDO2_CORRECAO, "adendo2_correcao_sha256": ADENDO2_CORRECAO_SHA256,
         "adendo3_correcao": ADENDO3_CORRECAO, "adendo3_correcao_sha256": ADENDO3_CORRECAO_SHA256,
+        "contrato_pendencias": CONTRATO_PENDENCIAS,
+        "contrato_pendencias_sha256": CONTRATO_PENDENCIAS_SHA256,
+        "adendo_pendencias": ADENDO_PENDENCIAS, "adendo_pendencias_sha256": ADENDO_PENDENCIAS_SHA256,
+        "unicode": unicodedata.unidata_version,
         "pin_alcance_sha256": PIN_ALCANCE_SHA256, "pin_execucao_sha256": PIN_EXECUCAO_SHA256,
         "selecao_sha256": SELECAO_SHA256, "inventario_publicado_sha256": INVENTARIO_PUBLICADO_SHA256,
         "poppler": versao, "codigo_sha256": {p: rad.sha256(rad.RAIZ / p) for p in CODIGO},
@@ -839,7 +888,9 @@ def reconferir_publicados(destino: Path = DESTINO_RECONFERENCIA) -> dict:
                 (rad.RAIZ / CONTRATO_CORRECAO, CONTRATO_CORRECAO_SHA256),
                 (rad.RAIZ / ADENDO_CORRECAO, ADENDO_CORRECAO_SHA256),
                 (rad.RAIZ / ADENDO2_CORRECAO, ADENDO2_CORRECAO_SHA256),
-                (rad.RAIZ / ADENDO3_CORRECAO, ADENDO3_CORRECAO_SHA256)]
+                (rad.RAIZ / ADENDO3_CORRECAO, ADENDO3_CORRECAO_SHA256),
+                (rad.RAIZ / CONTRATO_PENDENCIAS, CONTRATO_PENDENCIAS_SHA256),
+                (rad.RAIZ / ADENDO_PENDENCIAS, ADENDO_PENDENCIAS_SHA256)]
     conferencia_bytes, pin_rev_bytes, inventario_bytes, pin_bytes, selecao_bytes, *_ = _ler_fixados(
         [(caminho, esperado, "entrada") for caminho, esperado in entradas])
     conferencia, pin_revisao = json.loads(conferencia_bytes), json.loads(pin_rev_bytes)
@@ -889,6 +940,7 @@ def reconferir_publicados(destino: Path = DESTINO_RECONFERENCIA) -> dict:
         "adendo2_correcao": ADENDO2_CORRECAO, "adendo2_correcao_sha256": ADENDO2_CORRECAO_SHA256,
         "adendo3_correcao": ADENDO3_CORRECAO, "adendo3_correcao_sha256": ADENDO3_CORRECAO_SHA256,
         "entradas_sha256": {caminho.name: esperado for caminho, esperado in entradas},
+        "unicode": unicodedata.unidata_version,
         "codigo_sha256": {p: rad.sha256(rad.RAIZ / p) for p in CODIGO},
         "autoverificacao_estrita_nos_publicados": autoverificacao, "documentos": documentos,
         "protegidos": conferir_protegidos(selecao),
