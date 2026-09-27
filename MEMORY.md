@@ -402,13 +402,12 @@ outra tarefa.
   (o salto só muda de lugar) e deixaria G0.3 (só ativo) e G0.5 (veredito por
   documento) cegos ao FCO. Máscara do inventário agora por classe Unicode e
   sem trecho em linha de fluxo; o inventário publicado não vazou nada e não
-  foi regravado. **Novo [DECIDIR] no v2 (§12-bis):** prova de saldo corrige o
-  FCO do mesmo documento? A v4 diz que sim, por construção; a GEOM-1, que não
-  (proposta: B, não). Consumidor, construtor, CSV, painéis e gates não foram
-  alterados. Próximo passo: decidir o §12-bis; qualquer rota de prova do FCO
-  (anexo do grupo 192, ou identidade interna da DFC, que soma o FCO e o O1
-  veda) exige contrato próprio. Seguem pendentes os seis [DECIDIR] do v2 e o
-  executor v2. Não treinar.
+  foi regravado. **§12-bis do v2 (prova de saldo corrige o FCO do mesmo
+  documento?) decidido em 26/09: B, não** (item −3 do próximo passo).
+  Consumidor, construtor, CSV, painéis e gates não foram alterados. Qualquer
+  rota de prova do FCO (anexo do grupo 192, ou identidade interna da DFC, que
+  o adendo O1 de 26/09 permite com saída booleana) exige contrato próprio.
+  Executor v2 pendente. Não treinar.
   **Auditoria da revisão (25/09): 1 ALTA, 1 MÉDIA, 4 BAIXA**, corrigidos sob
   `resultados/adendo_revisao_alcance_geom1_rank03b_2026-09-25.md`, menos o B4
   (o consumidor não confere o cabeçalho do manifesto), que fica como
@@ -454,10 +453,11 @@ outra tarefa.
   universal de Unicode/OCR nem validação em outros emissores.
   Ativo arredondado ganhou contrato e função **só sintética, desconectada da
   busca real**, sem adjudicar escala. O1 original não autoriza explicitamente
-  piso/teto do FCO; exceção exclusivamente protetiva proposta ao responsável,
-  **ainda sem aprovação**. Detector preservado, nenhuma busca/reconferência
-  com FCO real nesta onda. Busca arredondada de FCO, seis decisões e executor
-  v2 permanecem pendentes; não treinar. Contrato/relatório:
+  piso/teto do FCO; a exceção exclusivamente protetiva foi **aprovada em
+  26/09, por delegação** (`resultados/adendo_o1_rank03b_2026-09-26.md`).
+  Detector preservado, nenhuma busca/reconferência com FCO real nesta onda.
+  Busca arredondada de FCO e executor v2 permanecem pendentes (as seis
+  decisões foram tomadas em 26/09); não treinar. Contrato/relatório:
   `resultados/contratos_pendencias_geom1_rank03b_2026-09-26.md`,
   `resultados/adendo_pendencias_geom1_rank03b_2026-09-26.md`,
   `resultados/correcao_pendencias_geom1_rank03b_2026-09-26.md`;
@@ -690,30 +690,27 @@ outra tarefa.
 
 ### Branch de trabalho
 
-Branch **`corrige-contrato-corpus`**, HEAD `38f6d43` ao iniciar. Não mesclar ou
-commitar como efeito lateral da pesquisa; integração de branch é tarefa
-separada. Pendente de commit, além do que já estava:
-`scripts/piloto_bancos_dfc.py`, `scripts/auditar_prontidao_b_dfc_01j.py`,
-`tests/test_piloto_bancos_dfc.py`, `tests/test_prontidao_b_dfc_01j.py`,
-`artefatos/b_dfc_01j/` (os binários novos ficam fora do Git por regra no
-`.gitignore`), `resultados/piloto_bancos_dfc_2026-09-09.md`,
-`resultados/extensao_janela_dfc_2026-09-09.md`,
-`resultados/pre_registro_b_dfc_01j_modelo_2026-09-09.md`,
-`resultados/prontidao_b_dfc_01j_modelo_2026-09-09.md`,
-`resultados/revisao_independente_b_dfc_01j_2026-09-10.md`,
-`scripts/sensibilidade_rubricas_suspeitas_b_dfc_01j.py`,
-`tests/test_sensibilidade_b_dfc_01j.py`, `AGENTS.md` (§3.17),
-`resultados/becos_sem_saida.md` e `MEMORY.md`. Somam-se os relatórios de
-correção/verificação de 10/09, o parecer de 11/09 e a conferência
-`resultados/conferencia_parecer_b_dfc_01j_2026-09-11.md`, agora revisada em
-`resultados/revisao_conferencia_parecer_b_dfc_01j_2026-09-11.md`. Somam-se
-os contratos e o relatório de implementação de C1–C6 e a conferência atual:
-`resultados/conferencia_independente_c1_c6_b_dfc_01j_2026-09-11.md`.
-Suíte completa reexecutada nesta conferência: **1.973 passed, zero skips**,
-sem alteração de testes pelo revisor.
-Os **68 PDFs** recuperados do IPE ficam em `artefatos/b_dfc_01j/raw/` (218 MB),
-fora do Git por regra do `.gitignore`; o manifesto e os JSONL da extensão, em
-`artefatos/b_dfc_01j/extensao/`, são leves e entram.
+Branch **`corrige-contrato-corpus`**, não mesclada em `main`. Integração de
+branch é tarefa separada; não commitar como efeito lateral da pesquisa. Em
+26/09, a pedido, todo o pendente foi commitado: `bd07216` (17–26/09: Rank 3-B,
+GEOM-1, interface, Etapa 1) e `0a6a838` (pendências GEOM-1, feitas pelo Codex).
+Os **68 PDFs** do IPE em `artefatos/b_dfc_01j/raw/` (218 MB) seguem fora do Git
+por regra do `.gitignore`: apagá-los não tem volta sem novo download.
+
+**Limpeza de 26/09 — o que saiu do diretório e onde recuperar.** A extração
+`artefatos/cvm/` (2,5 GB; o `construir_painel_cvm.py` a refaz dos ZIPs de
+`corpus/cvm/`), caches e locks velhos; e as opções de logo de
+`assets/branding/` (`f84e834`). Material de ML **não** saiu: os cinco
+candidatos do becos §F são vivos, o Rank 3 é a origem do Rank 3-B e o C1 é
+citado pelo README. **`artefatos/snapshots/` (101 MB) ficou**, com remoção
+pendente de decisão do responsável: só cinco relatórios de 15–16/09 o citam, os
+34 arquivos rastreados voltam por `git show 0a6a838:<caminho>`, mas as cópias de
+AGENTS.md e MEMORY.md lá dentro são ignoradas pelo git e três não existem em
+commit nenhum.
+
+**Sem commit desde 26/09 (tarde):** as decisões do v2 (registro, adendo O1,
+rascunho v2), as notas em AGENTS.md, becos e neste arquivo, a proposta v3 e a
+pasta da orquestração `artefatos/preenchimento_decidir_v2_rank03b_2026-09-26/`.
 
 ## Decisões e bloqueios em aberto
 
@@ -953,7 +950,8 @@ filtrou lucro/ativo antes de construir o futuro, impondo saúde também em
 `t+4`. A medição negativa continua histórica, **não confirmação PIT**;
 não foi refeita. Procedência e plano no relatório da retomada.
 
-**Rank 3-B foi pré-registrado e executado em 11/09, mas parou em G0.** São
+**Rank 3-B: em 27/09 o G0 aprovou sem rótulo no painel v2** (95 saltos;
+item −3 do próximo passo). Histórico: **foi pré-registrado e executado em 11/09, mas parou em G0.** São
 dois semestres futuros não sobrepostos de FCO negativo, em não financeiras
 com FCO TTM positivo conhecido em D; não herda filtro de lucro positivo/porte.
 A revisão de 12/09 confirmou o bloqueio e encontrou falhas no instrumento,
@@ -1089,6 +1087,65 @@ transformar toda dívida do projeto em pré-requisito. O novo protocolo deverá 
 aprovação por superioridade do modelo. Nenhum painel/CSV/código foi alterado
 por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
 
+−3. **DECISÕES DO v2 TOMADAS EM 26/09, por delegação do responsável.** Ele
+   disse: "Deixo as decisões de aprovação com você". Registro com motivos e
+   alternativas em `resultados/registro_decisoes_v2_rank03b_2026-09-26.md`;
+   adendo em `resultados/adendo_o1_rank03b_2026-09-26.md` (versão vigente
+   `7f51ab27…414b0f`, revisada em 27/09 depois da auditoria; é o hash que a
+   primeira execução fixa). O texto foi aplicado ao rascunho v2, que continua
+   RASCUNHO. Auditoria da onda: APTA COM RESSALVAS; reconferência e conferência
+   final: FECHADO COM RESSALVAS, com todos os ajustes aplicados (registro,
+   "Auditoria da onda"). As decisões:
+   - §3.2: exclui `ll3_13_%`, com falha fechada se surgir outro plano;
+   - §5.1: unicidade;
+   - §5.5: censura C+E em três níveis (o terceiro torna ausente
+     `fco_ttm_sobre_ativo` quando ativo e TTM divergem de escala), comparando
+     a escala aplicada ao FCO; G0.5 = uso zero. **No painel sem correções**, a
+     perda alcança no máximo 54 companhias (da ordem de 1.683 observações);
+     com correções, o teto é recalculado;
+   - §6.1: uma observação por (companhia, q1), a de maior D, escolhida antes
+     de janela e elegibilidade, sem reposição; ordem fixa de doze filtros;
+     antes do congelamento, nada que recomponha a contagem omitida pelo O1;
+   - §8.1: piso de 30 companhias com os dois rótulos e zona cinzenta de T2
+     (bootstrap, 10%);
+   - §12-bis: opção B, com três condições para a correção por conta;
+   - O1: exceção protetiva aprovada, e identidade contábil com saída booleana
+     permitida.
+
+   Proposta v3 e orquestração em
+   `resultados/proposta_preenchimento_decidir_v2_rank03b_2026-09-26.md` e
+   `artefatos/preenchimento_decidir_v2_rank03b_2026-09-26/`.
+   **Estado em 27/09: os passos 1 a 4 estão FEITOS; G0 aprovou sem rótulo.**
+   Documento de revisão para o responsável:
+   `resultados/revisao_caminho_ate_treino_rank03b_2026-09-27.md`. Contratos e
+   emendas: `resultados/contratos_caminho_medicao_rank03b_2026-09-27.md`.
+   1. Correção por conta: feita (parte A). Consumidor em
+      `scripts/correcoes_por_conta_rank03b.py`; o painel aplica escala por conta.
+   2. Rota de prova: a ROTA-1 rodou e **parou na B7**, porque a conferência
+      recusou 4 correções (`60719`, unidade não demonstrada; `80868`, item 4
+      ambíguo). Fica em `artefatos/rota_prova_rank03b_2026-09-27/`, sem
+      manifesto. A **ROTA-2** só estreita a regra (apresentação exige objeto e
+      só vale nos grupos 193/412) e rodou em
+      `artefatos/rota_prova_rank03b_v2_2026-09-27/`: 42 correções do ativo, 48
+      do caixa e 35 do FCO; B6 com 50 documentos e nenhuma discordância.
+      Dois conferentes aprovaram 125 correções e 10 confirmações, **sem
+      recusa**.
+   3. Manifesto por conta: `corpus/cvm/painel_pesquisa_rank03b/correcoes_escala_por_conta.csv`,
+      77 linhas, `f26ede4d…`. Painel v2: digest `fd2932e7…`. **G0.3 = 95
+      saltos (0,4255%)**; G0.5 e G1 sem violação; amostra de 10.168
+      observações em 495 companhias (`artefatos/executor_v2_rank03b/estrutural.json`).
+      O `140867` continua pendente: conta no G0.3 e não entra em observação.
+   4. Executor v2: feito e conferido. Emendas C8 (serialização do inventário)
+      e C9 (conferência como pin), ambas depois de ver o G0 e sem mudar regra
+      de dado.
+   5. **Pendente, ato do responsável:** congelar. Remover RASCUNHO do nome e
+      do título, colar os pins do §4 do rascunho (o `codigo_de_medicao` vem do
+      estrutural regerado sobre o código final), publicar o SHA-256.
+   6. Pendente: medir com
+      `python -m scripts.executor_v2_rank03b --medir --pre-registro <arquivo> --sha256 <hash> --rota artefatos/rota_prova_rank03b_v2_2026-09-27 --correcoes-por-conta corpus/cvm/painel_pesquisa_rank03b/correcoes_escala_por_conta.csv`.
+
+   Previsão registrada: T1 reprova por `fco_ttm_sobre_sd8`. **Não treinar**
+   antes de PRONTO PARA CHALLENGER. Nada foi commitado.
 −2. **GEOM-1 — alcance conferido em 24/09 e revisado (24–25/09):** caixa dos
    dois candidatos confirmado; Ativo/140867 demonstrado diretamente;
    FCO/140867, Ativo/142900 e FCO/142900 com busca numérica exata sem
@@ -1100,21 +1157,21 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    emissores ainda exige validação de corpus; as classes de interferência e
    `R $` foram corrigidas na onda de pendências de 26/09, conferida sob AP1/AP2.
    A forma arredondada do ativo ganhou diagnóstico sintético separado, não
-   conectado à busca real. Uso protetivo de piso/teto do FCO aguarda adendo
-   aprovado de O1; busca arredondada de FCO continua sem autorização.
-   **Quanto à política, o responsável decide o
-   [DECIDIR] do §12-bis do v2** (prova de saldo corrige o FCO do mesmo
-   documento? A = sim, é o que a v4 faz; B = não, é o que a GEOM-1 pede;
-   proposta B). Sob A, 140867 e 142900 se qualificam pela prova de caixa
-   depois de integrada a GEOM-1 (G0.3 132 → 130, ainda reprova); sob B,
-   nenhum hoje. **Correção só do ativo, por conta, está RETIRADA** enquanto
-   G0.3 e G0.5 lerem o veredito por documento; e o contrato que criar
-   manifesto por conta depende de contrato e gates próprios. **B4 fechado em
-   26/09:** o consumidor já recusa coluna desconhecida, ausente ou duplicada
-   e sintaxe inválida, inclusive em manifesto sem linhas. Isso não autoriza
-   correção por conta. Rotas para provar o
-   FCO (anexo do grupo 192 do mesmo pacote; identidade interna da DFC, que
-   soma o FCO e o O1 veda) exigem contrato próprio. Fontes e critérios em
+   conectado à busca real. Uso protetivo de piso/teto do FCO: adendo O1
+   aprovado em 26/09; busca arredondada de FCO continua sem autorização.
+   **O §12-bis do v2 foi decidido em 26/09: B** (item −3). Sob B, nenhum
+   documento se qualifica hoje; sob A, 140867 e 142900 se qualificariam, e o
+   G0.3 iria de 132 para 130, ainda reprovado. **Correção só do ativo, por
+   conta,** só com as três condições do §12-bis: esquema do manifesto fechado,
+   G0.3 e G0.5 por conta e a regra 3 do §5.5 lida por conta
+   (`fco_ttm_sobre_ativo` ausente onde as escalas do ativo e do FCO divergirem
+   e um dos lados não tiver veredito para a própria conta; a regra vale mesmo
+   sem correção). **B4 fechado em 26/09:** o consumidor já recusa coluna
+   desconhecida, ausente ou duplicada e sintaxe inválida, inclusive em
+   manifesto sem linhas. Isso não autoriza correção por conta. Rotas para
+   provar o FCO (anexo do grupo 192 do mesmo pacote; identidade interna da
+   DFC, permitida com saída booleana pelo adendo O1) exigem contrato próprio.
+   Fontes e critérios em
    `resultados/alcance_geom1_rank03b_2026-09-24.md` (com a ressalva).
    Extrator permanece congelado; nenhuma promoção/herança ou novo G0.
    Conferir demais provas necessárias e suficiência de S5; integração exige
@@ -1130,13 +1187,11 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    de correção e cobertura. Reconstrução e gates ainda não iniciados nessa onda.
    Não baixar o limiar de G0, excluir companhias pelo efeito no gate ou chamar
    abstinência do extrator de inexistência de informação. CRF-03 é atualização
-   documental, não licença para mudar a política. O v2 tem **seis** [DECIDIR]
-   (o sexto desde 24/09): §3.2 seguradoras, §5.1 G0.1 (a conferência recomenda
-   unicidade), §5.5 G0.5 e seu limiar (0,5% seria política nova; mede
-   0,3712% na execução vigente; 0,2535% era a execução 3), §6.1 grade de D,
-   §8.1 suporte intra de T2, §12-bis alcance da prova de escala. Depois da suficiência de dados e das decisões:
-   escrever e testar em sintético o **executor v2** (G0/G1 cegos, só então `y`),
-   conferir, aprovar, congelar hash, medir. Registro anterior:
+   documental, não licença para mudar a política. Os **seis** [DECIDIR] do v2
+   foram decididos em 26/09 (item −3). Falta escrever e testar em sintético o
+   **executor v2** (G0/G1 cegos, só então `y`), conferir, resolver o G0 com
+   pins novos, congelar hash por ato explícito do responsável, medir.
+   Registro anterior:
    **CONFERÊNCIA DO PRÉ-TREINO CONCLUÍDA EM 17/09 — corrigir antes de aprovar
    o v2.** Parecer e critérios de fechamento em
    `resultados/conferencia_pre_treino_rank03b_2026-09-17.md` (RF01–RF08).

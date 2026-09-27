@@ -27,6 +27,13 @@ que recusou.
    informação — o documento só fica disponível quando as PROVAS da escala
    aplicada existem. Uma correção herdada depende das duas pontas do trecho, e
    a ponta final pode ser publicada anos depois do documento interior.
+
+**Correção por conta (27/09, contrato A de
+`resultados/contratos_caminho_medicao_rank03b_2026-09-27.md`).** Uma prova do
+ativo não prova o FCO do mesmo documento (§12-bis do rascunho v2). A escala
+aplicada, a base e a data da prova passam a existir por conta: as linhas de
+ativo usam as do ativo, os acumulados de FCO as do FCO. Sem correção por
+conta, as duas herdam as do documento, e o painel sai idêntico ao de antes.
 """
 
 from __future__ import annotations
@@ -62,7 +69,9 @@ ESTADOS_ATIVO = (
     "valido", "nao_informativo", "conflito_de_declaracoes", "valor_nulo",
     "ambiguo_exercicio",
 )
-BASES_DE_ESCALA = ("declarada", "corrigida_documento", "herdada_trecho")
+BASES_DE_ESCALA = ("declarada", "corrigida_documento", "herdada_trecho", "corrigida_conta")
+#: Contas do manifesto por conta (contrato A1) → a conta do painel que corrigem.
+CONTAS_DA_CORRECAO = {CONTA_ATIVO: "ativo", CONTA_FCO: "fco"}
 
 
 class DefeitoDeFonte(Exception):
@@ -92,6 +101,15 @@ def _chave_doc(cd_cvm, conjunto, dt_refer, versao) -> tuple:
 # --- documentos -------------------------------------------------------------------
 
 @dataclass
+class EscalaDaConta:
+    """Escala aplicada a UMA conta do documento, com a base e a data da prova."""
+    aplicada: str
+    base: str
+    id_correcao: str | None = None
+    dt_prova: date | None = None
+
+
+@dataclass
 class Documento:
     cd_cvm: str
     conjunto: str
@@ -106,6 +124,9 @@ class Documento:
     id_correcao: str | None = None
     #: P4: recepção mais tardia entre os pacotes que provam a escala aplicada.
     dt_prova: date | None = None
+    #: Contrato A3 (27/09): correção de UMA conta (`"ativo"` ou `"fco"`), que
+    #: sobrepõe a escala do documento só nela.
+    por_conta: dict = field(default_factory=dict)
 
     @property
     def disponivel_em(self) -> date:
@@ -114,6 +135,33 @@ class Documento:
     @property
     def disponivel_em_v1(self) -> date:
         return max(self.dt_receb_v1, self.dt_prova or self.dt_receb_v1)
+
+    def escala_de(self, conta: str) -> EscalaDaConta:
+        """A escala da conta: a corrigida por conta, se houver; senão a do documento."""
+        if conta not in ("ativo", "fco"):
+            raise ValueError(f"conta do painel desconhecida: {conta!r}")
+        return self.por_conta.get(conta) or EscalaDaConta(
+            self.escala_aplicada, self.base_escala, self.id_correcao, self.dt_prova)
+
+    def disponivel_em_de(self, conta: str) -> date:
+        """P4 por conta: a recepção ou a prova da escala DESTA conta, a mais tardia.
+
+        Sem correção por conta, é exatamente `disponivel_em` — e passa por ele,
+        para que as contraprovas que sabotam essa propriedade (G1.4, CRF-02)
+        continuem alcançando o construtor.
+        """
+        self.escala_de(conta)  # valida o nome da conta
+        if conta not in self.por_conta:
+            return self.disponivel_em
+        prova = self.por_conta[conta].dt_prova
+        return max(self.dt_receb, prova or self.dt_receb)
+
+    def disponivel_em_v1_de(self, conta: str) -> date:
+        self.escala_de(conta)
+        if conta not in self.por_conta:
+            return self.disponivel_em_v1
+        prova = self.por_conta[conta].dt_prova
+        return max(self.dt_receb_v1, prova or self.dt_receb_v1)
 
 
 def impressao_digital(linhas: list[tuple]) -> str:
@@ -138,8 +186,11 @@ def recepcao_por_id_doc(con) -> dict[str, date]:
 
 
 def pacotes_da_prova(correcao: dict) -> list[str]:
-    """P4: os documentos cuja publicação a escala aplicada exige."""
-    if correcao["base"] == "corrigida_documento":
+    """P4: os documentos cuja publicação a escala aplicada exige.
+
+    Na correção por conta da ROTA-1 a prova está no próprio pacote do documento.
+    """
+    if correcao["base"] in ("corrigida_documento", "corrigida_conta"):
         return [str(correcao["id_doc"])]
     if correcao["base"] == "herdada_trecho":
         return [str(p["id_doc"]) for p in json.loads(correcao["pontas"])]
@@ -158,10 +209,17 @@ def data_da_prova(correcao: dict, recepcao: dict[str, date]) -> date:
     return max(datas)
 
 
-def carregar_documentos(con, correcoes: dict | None = None) -> dict[tuple, Documento]:
-    """Um `Documento` por versão NUMÉRICA (a que os ZIPs trazem), com a escala aplicada."""
+def carregar_documentos(con, correcoes: dict | None = None,
+                        correcoes_por_conta: dict | None = None) -> dict[tuple, Documento]:
+    """Um `Documento` por versão NUMÉRICA (a que os ZIPs trazem), com a escala aplicada.
+
+    `correcoes_por_conta`: `{chave do documento: {conta: linha}}`, com `conta`
+    em `CONTAS_DA_CORRECAO` (contrato A). Documento corrigido por conta não
+    pode ter correção por documento.
+    """
     correcoes = correcoes or {}
-    recepcao = recepcao_por_id_doc(con) if correcoes else {}
+    correcoes_por_conta = correcoes_por_conta or {}
+    recepcao = recepcao_por_id_doc(con) if (correcoes or correcoes_por_conta) else {}
     linhas = con.execute(
         """
         SELECT d.cd_cvm, d.conjunto, CAST(d.dt_refer AS VARCHAR), d.versao,
@@ -191,6 +249,7 @@ def carregar_documentos(con, correcoes: dict | None = None) -> dict[tuple, Docum
 
     documentos: dict[tuple, Documento] = {}
     usadas = set()
+    usadas_por_conta = set()
     for cd, cj, dt, v, escalas in linhas:
         if len(escalas) != 1:
             raise DefeitoDeFonte(
@@ -215,6 +274,26 @@ def carregar_documentos(con, correcoes: dict | None = None) -> dict[tuple, Docum
             dt_prova = data_da_prova(c, recepcao)
             usadas.add(chave)
         _fator(aplicada)
+        por_conta = {}
+        if chave in correcoes_por_conta:
+            if chave in correcoes:
+                raise CorrecaoObsoleta(
+                    f"{chave}: correção por documento e por conta no mesmo documento")
+            for conta, c in sorted(correcoes_por_conta[chave].items()):
+                nome = CONTAS_DA_CORRECAO.get(conta)
+                if nome is None or c.get("base") != "corrigida_conta":
+                    raise DefeitoDeFonte(f"{chave}: correção por conta inválida ({conta!r})")
+                if c["escala_declarada"] != escala or \
+                        c["impressao_digital"] != impressao_digital(brutos[chave]):
+                    raise CorrecaoObsoleta(
+                        f"{chave}: a correção {c['id_correcao']} foi escrita para outra "
+                        "versão da fonte — não se aplica às cegas"
+                    )
+                _fator(c["escala_aplicada"])
+                por_conta[nome] = EscalaDaConta(
+                    c["escala_aplicada"], "corrigida_conta", c["id_correcao"],
+                    data_da_prova(c, recepcao))
+            usadas_por_conta.add(chave)
         documentos[chave] = Documento(
             cd_cvm=cd, conjunto=cj, dt_refer=dt, versao=int(v),
             # Cadastro com a mesma versão repetida (1 caso medido): vale a
@@ -224,10 +303,15 @@ def carregar_documentos(con, correcoes: dict | None = None) -> dict[tuple, Docum
             dt_receb_v1=min(r for _, _, r in versoes),
             escala_declarada=escala, escala_aplicada=aplicada,
             base_escala=base, id_correcao=id_correcao, dt_prova=dt_prova,
+            por_conta=por_conta,
         )
     sobrando = set(correcoes) - usadas
     if sobrando:
         raise CorrecaoObsoleta(f"correções sem documento correspondente: {sorted(sobrando)[:3]}")
+    sobrando = set(correcoes_por_conta) - usadas_por_conta
+    if sobrando:
+        raise CorrecaoObsoleta(
+            f"correções por conta sem documento correspondente: {sorted(sobrando)[:3]}")
     return documentos
 
 
@@ -247,12 +331,13 @@ def construir_ativo(con, documentos: dict[tuple, Documento]) -> list[dict]:
         doc = documentos[_chave_doc(cd, cj, dt, v)]
         por_data[(cd, fim)].append({
             "cd_cvm": cd, "dt_fim": fim, "valor_bruto": vl,
-            "valor_reais": None if vl is None else vl * _fator(doc.escala_aplicada),
+            "valor_reais": None if vl is None else vl * _fator(doc.escala_de("ativo").aplicada),
             "doc": doc,
         })
     saida = []
     for (cd, fim), decls in sorted(por_data.items()):
-        decls.sort(key=lambda r: (r["doc"].disponivel_em, r["doc"].conjunto, r["doc"].id_doc))
+        decls.sort(key=lambda r: (r["doc"].disponivel_em_de("ativo"), r["doc"].conjunto,
+                                  r["doc"].id_doc))
         primeira = decls[0]
         valores = {r["valor_reais"] for r in decls}
         if any(r["valor_bruto"] is None for r in decls):
@@ -267,14 +352,16 @@ def construir_ativo(con, documentos: dict[tuple, Documento]) -> list[dict]:
         else:
             estado = "valido"
         doc = primeira["doc"]
+        escala = doc.escala_de("ativo")
         saida.append({
             "cd_cvm": cd, "dt_fim": fim, "trimestre": rotulo_civil(fim),
             "valor_bruto": primeira["valor_bruto"], "valor_reais": primeira["valor_reais"],
-            "escala_declarada": doc.escala_declarada, "escala_aplicada": doc.escala_aplicada,
-            "base_escala": doc.base_escala, "id_correcao": doc.id_correcao,
+            "escala_declarada": doc.escala_declarada, "escala_aplicada": escala.aplicada,
+            "base_escala": escala.base, "id_correcao": escala.id_correcao,
             "conjunto": doc.conjunto, "dt_refer": doc.dt_refer, "versao": doc.versao,
-            "id_doc": doc.id_doc, "disponivel_em": doc.disponivel_em,
-            "disponivel_em_v1": doc.disponivel_em_v1, "dt_prova_escala": doc.dt_prova,
+            "id_doc": doc.id_doc, "disponivel_em": doc.disponivel_em_de("ativo"),
+            "disponivel_em_v1": doc.disponivel_em_v1_de("ativo"),
+            "dt_prova_escala": escala.dt_prova,
             "declaracoes": len(decls),
             "estado": estado,
         })
@@ -313,11 +400,12 @@ def construir_fco(con, documentos: dict[tuple, Documento]) -> tuple[list[dict], 
         doc = documentos[_chave_doc(cd, cj, dt, v)]
         por_periodo[(cd, ini, fim)].append({
             "valor_bruto": vl, "metodo": dem, "doc": doc,
-            "valor_reais": None if vl is None else vl * _fator(doc.escala_aplicada),
+            "valor_reais": None if vl is None else vl * _fator(doc.escala_de("fco").aplicada),
         })
     acumulados = []
     for (cd, ini, fim), decls in sorted(por_periodo.items()):
-        decls.sort(key=lambda r: (r["doc"].disponivel_em, r["doc"].conjunto, r["doc"].id_doc))
+        decls.sort(key=lambda r: (r["doc"].disponivel_em_de("fco"), r["doc"].conjunto,
+                                  r["doc"].id_doc))
         primeira = decls[0]
         if any(r["valor_bruto"] is None for r in decls):
             estado = "valor_nulo"
@@ -326,14 +414,16 @@ def construir_fco(con, documentos: dict[tuple, Documento]) -> tuple[list[dict], 
         else:
             estado = "ok"
         doc = primeira["doc"]
+        escala = doc.escala_de("fco")
         acumulados.append({
             "cd_cvm": cd, "dt_ini": ini, "dt_fim": fim,
             "valor_reais": primeira["valor_reais"], "metodo": primeira["metodo"],
-            "escala_declarada": doc.escala_declarada, "escala_aplicada": doc.escala_aplicada,
-            "base_escala": doc.base_escala, "conjunto": doc.conjunto,
+            "escala_declarada": doc.escala_declarada, "escala_aplicada": escala.aplicada,
+            "base_escala": escala.base, "conjunto": doc.conjunto,
             "dt_refer": doc.dt_refer, "versao": doc.versao, "id_doc": doc.id_doc,
-            "disponivel_em": doc.disponivel_em, "disponivel_em_v1": doc.disponivel_em_v1,
-            "dt_prova_escala": doc.dt_prova,
+            "disponivel_em": doc.disponivel_em_de("fco"),
+            "disponivel_em_v1": doc.disponivel_em_v1_de("fco"),
+            "dt_prova_escala": escala.dt_prova,
             "declaracoes": len(decls), "estado": estado,
         })
 
@@ -516,9 +606,10 @@ def identidades_contabeis(con) -> dict[str, int]:
     }
 
 
-def construir(con, correcoes: dict | None = None) -> Painel:
+def construir(con, correcoes: dict | None = None,
+              correcoes_por_conta: dict | None = None) -> Painel:
     """Espera `declaracoes`, `cadastro` (de `fonte_zip_cvm.extrair`) e `universo`."""
-    documentos = carregar_documentos(con, correcoes)
+    documentos = carregar_documentos(con, correcoes, correcoes_por_conta)
     ativo = construir_ativo(con, documentos)
     acumulados, trimestres = construir_fco(con, documentos)
     # U2: o painel não decide elegibilidade, mas carrega o plano de contas.
