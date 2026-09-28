@@ -954,8 +954,9 @@ filtrou lucro/ativo antes de construir o futuro, impondo saúde também em
 `t+4`. A medição negativa continua histórica, **não confirmação PIT**;
 não foi refeita. Procedência e plano no relatório da retomada.
 
-**Rank 3-B: em 27/09 o G0 aprovou sem rótulo no painel v2** (95 saltos;
-item −3 do próximo passo). Histórico: **foi pré-registrado e executado em 11/09, mas parou em G0.** São
+**Rank 3-B: REJEITADO em 28/09** (T2 com lacuna de 0,207; T1 com 0,1555;
+item −3 do próximo passo). Em 27/09 o G0 tinha aprovado sem rótulo no painel
+v2, com 95 saltos. Histórico: **foi pré-registrado e executado em 11/09, mas parou em G0.** São
 dois semestres futuros não sobrepostos de FCO negativo, em não financeiras
 com FCO TTM positivo conhecido em D; não herda filtro de lucro positivo/porte.
 A revisão de 12/09 confirmou o bloqueio e encontrou falhas no instrumento,
@@ -1091,7 +1092,8 @@ transformar toda dívida do projeto em pré-requisito. O novo protocolo deverá 
 aprovação por superioridade do modelo. Nenhum painel/CSV/código foi alterado
 por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
 
-−3. **DECISÕES DO v2 TOMADAS EM 26/09, por delegação do responsável.** Ele
+−3. **RANK 3-B ENCERRADO EM 28/09: congelado e REJEITADO (itens 5 e 6).**
+   **DECISÕES DO v2 TOMADAS EM 26/09, por delegação do responsável.** Ele
    disse: "Deixo as decisões de aprovação com você". Registro com motivos e
    alternativas em `resultados/registro_decisoes_v2_rank03b_2026-09-26.md`;
    adendo em `resultados/adendo_o1_rank03b_2026-09-26.md` (versão vigente
@@ -1158,12 +1160,20 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
       0,053 contra 17–20% nos precedentes); `113026` mantido sem ROTA-3
       (`54783` está no mesmo caso, como confirmação); §14 aponta os
       artefatos governantes.
-   6. Pendente: medir com
-      `python -m scripts.executor_v2_rank03b --medir --pre-registro <arquivo> --sha256 <hash> --rota artefatos/rota_prova_rank03b_v2_2026-09-27 --correcoes-por-conta corpus/cvm/painel_pesquisa_rank03b/correcoes_escala_por_conta.csv`.
+   6. **MEDIDO em 28/09: REJEITADO.** `artefatos/executor_v2_rank03b/medicao.json`
+      (não refazer: o executor recusa sobrescrever); relatório em
+      `resultados/medicao_rank03b_v2_2026-09-28.md`. O T2 decide: lacuna
+      0,207, IC 0,167–0,250. O T1 reprova raspando (0,1555) por
+      `trimestres_com_fco_negativo_nos_ultimos_8`, e não por `fco_ttm_sobre_sd8`,
+      que ficou em 0,126 e passou. **Sem D8 e sem treino. Rank 3-B encerrado.**
+      Registrado em `becos_sem_saida.md` §A.1 e no AGENTS.md §3.7. Reabre só
+      como Rank 3-C, com outro estimando e pré-registro próprio.
 
-   Previsão registrada: T1 reprova por `fco_ttm_sobre_sd8`. **Não treinar**
-   antes de PRONTO PARA CHALLENGER. A onda de 27/09 está no `9049579`; as
-   correções de 28/09, no `c210e00`.
+   Achado de método que ficou aberto: o T1 do §4.4 usa limiar absoluto de
+   0,15, pouco sensível em prevalência baixa (taxa-base 0,05 contra 0,17–0,20
+   nos precedentes). Qualquer alvo raro futuro precisa de proposta de limiar
+   relativo, escrita **antes** de medir. O §4.4 não foi mudado. A onda de 27/09
+   está no `9049579`; as correções de 28/09, no `c210e00`.
 −2. **GEOM-1 — alcance conferido em 24/09 e revisado (24–25/09):** caixa dos
    dois candidatos confirmado; Ativo/140867 demonstrado diretamente;
    FCO/140867, Ativo/142900 e FCO/142900 com busca numérica exata sem

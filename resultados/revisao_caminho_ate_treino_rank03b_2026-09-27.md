@@ -2,10 +2,10 @@
 
 **Data:** 2026-09-27, revisado em 28/09 depois da auditoria final. **Para:** o
 responsável, antes do ato de congelamento.
-**Estado:** o G0 foi resolvido, sem rótulo. O pré-registro v2 continua
-**RASCUNHO**.
+**Estado:** o G0 foi resolvido, sem rótulo. *(28/09: o pré-registro v2 foi
+**congelado** e medido. Veja a seção 7.)*
 - A onda de 27/09 está no commit `9049579`, feito por você.
-- As correções da auditoria final, de 28/09, ainda não têm commit.
+- As correções da auditoria final, de 28/09, estão no commit `c210e00`.
 
 ## Em uma tela
 
@@ -248,3 +248,54 @@ Nada disto foi feito:
   pesquisa foi corrigido, que é o que a medição usa.
 - Mais cobertura de prova, com download de pacotes internos ausentes ou uma
   ROTA-3, só aumentaria a folga do G0. Não é necessária para medir.
+
+## 7. Revisão e congelamento (28/09)
+
+Feitos por Claude, a pedido expresso do responsável ("Seja crítico, atue como
+um especialista, e garanta as melhores decisões"). Antes, conferido:
+- as correções de 28/09 já estavam no commit `c210e00`, feito pelo
+  responsável às 14h17, com tudo o que o passo 2 da seção 4 lista;
+- a suíte tinha 4.480 aprovados e nenhum pulado;
+- os cinco pins do §4 batiam com o disco, e o `codigo_de_medicao` com o HEAD;
+- T1, T2, baselines e veredito no código seguem os §§7 a 10 do rascunho.
+
+**Os seis pontos da seção 3:**
+
+| # | Decisão | Motivo |
+|---|---|---|
+| 1 | **`113026` mantido, sem ROTA-3** | A linha cumpre a B3 como foi fixada: o rótulo só precisa conter "caixa e equivalentes de caixa". O caso **não é único**: `54783-1.01.01` também se apoia só no saldo final da DFC. É confirmação, ancora a cadeia que torna decidida a `6.01` do documento, e não estava na amostra da conferência. Esta revisão não o contava. Tirar linha de DFC seria regra nova, escrita depois do G0, e mais larga que "as duas correções". Para ancorar a cadeia da `6.01`, o saldo final da DFC é a prova mais direta: é a `6.05.02` impressa, e d3 confere `6.05.02 = 1.01.01`. O ativo do documento foi provado pela própria célula. Nota no §12-bis |
+| 2 | De acordo | Pendente e visível, e a AF3 reprova o G0.5 se houver uso |
+| 3 | De acordo | O dado fica fixado pelo digest; nada se remove (regra 9) |
+| 4 | De acordo | O que a auditoria viu da `021520` expõe a elegibilidade de uma companhia, misturada com outros motivos. Não é estatística de rótulo, e está declarado |
+| 5 | De acordo | Estreitar só reduz correções. Qualquer viés empurraria o G0 para reprovar |
+| 6 | De acordo | A declaração interna `MIL` do formulário corrobora a prova |
+
+**Achado novo, de método: o T1 é pouco sensível para este alvo.** O limiar de
+0,15 é absoluto. Os precedentes que reprovaram tinham prevalência de 17% a 20%
+(C1 0,174; Rank 3 0,203), e este alvo tem 0,053 (§11.1). O padrão que reprovou
+o C1, transposto, daria amplitude de 0,075. O limiar não foi mudado: é
+identidade da v1, e mudá-lo conhecendo a taxa-base seria ajuste ao dado. O
+que se fixou antes de medir foi a leitura (§1.1 novo): T1 aprovado não refuta
+o mecanismo e não gera achado de método.
+
+**Também corrigido:** o §14 apontava o painel, as correções e os gates da v4
+como artefatos. Agora aponta os governantes.
+
+**Congelamento.** O rascunho revisado foi commitado em `c815930`, e o
+estrutural, regerado; mudou só o hash informativo do rascunho. A cópia é
+`resultados/pre_registro_rank03b_v2_2026-09-16.md`, com SHA-256
+`8fdbd145b614628392fc1e53433c73a552eed5d2d250f54e46ecf4592e1660b2`, publicada
+no commit `fcbb26d` antes da medição. A trava aceitou a cópia e recusou o
+rascunho.
+
+**Medição: REJEITADO.** O resultado está no
+[relatório da medição](medicao_rank03b_v2_2026-09-28.md). O T2 decide, com
+lacuna de 0,207 (IC 0,167–0,250). O T1 reprova raspando, com 0,1555, por
+`trimestres_com_fco_negativo_nos_ultimos_8`. O `fco_ttm_sobre_sd8` ficou em
+0,126, com taxas monotônicas de 13,1% a 0,5%: é o caso que o §1.1 previu.
+Pela seção 4, passo 5, não há D8 nem treino.
+
+**Anotação para o histórico:** as mensagens de `9049579` ("Refactor code
+structure…") e `c210e00` ("Add report for ROTA-2 conference…") não descrevem o
+que os commits contêm. Num projeto em que o Git é parte da prova de ordem,
+vale descrever o conteúdo.
