@@ -175,3 +175,10 @@ artefatos/b_dfc_01j/raw/*
 # Cookie de sessão do rad.cvm.gov.br usado na coleta. É credencial de sessão e
 # não entra no Git (RNF04); os artefatos leves da extensão, sim.
 artefatos/b_dfc_01j/extensao/.cookies_cvm
+
+# Piloto CAND-02-P (protocolo de 28/09): o universo de eventos e os documentos
+# exportados se regeneram do cache de OCR versionado (`cand02p_piloto eventos`).
+# O pickle do M fica fora como qualquer peso; o hash está em modelo/congelado.json.
+artefatos/cand02p/eventos/
+artefatos/cand02p/docs/
+artefatos/cand02p/modelo/m.pkl

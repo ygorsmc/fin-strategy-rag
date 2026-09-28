@@ -1,0 +1,290 @@
+{
+  "pares": {
+    "ABC_2T2025_3T2025": {
+      "anterior": "abc_release_2T2025",
+      "atual": "abc_release_3T2025",
+      "b1_nivel1": 31,
+      "eventos": 112,
+      "paginas": [
+        23,
+        25
+      ],
+      "papel": "treino",
+      "por_tipo": {
+        "texto:adicao": 38,
+        "texto:alteracao": 41,
+        "texto:remocao": 33
+      }
+    },
+    "ABC_4T2025_1T2026": {
+      "anterior": "abc_release_4T2025",
+      "atual": "abc_release_1T2026",
+      "b1_nivel1": 20,
+      "eventos": 100,
+      "paginas": [
+        25,
+        23
+      ],
+      "papel": "teste",
+      "por_tipo": {
+        "texto:adicao": 27,
+        "texto:alteracao": 37,
+        "texto:remocao": 36
+      }
+    },
+    "BANESTES_2T2025_3T2025": {
+      "anterior": "banestes_release_2T2025",
+      "atual": "banestes_release_3T2025",
+      "b1_nivel1": 28,
+      "eventos": 333,
+      "paginas": [
+        26,
+        27
+      ],
+      "papel": "treino",
+      "por_tipo": {
+        "texto:adicao": 138,
+        "texto:alteracao": 50,
+        "texto:remocao": 145
+      }
+    },
+    "BANESTES_4T2025_1T2026": {
+      "anterior": "banestes_release_4T2025",
+      "atual": "banestes_release_1T2026",
+      "b1_nivel1": 0,
+      "eventos": 419,
+      "paginas": [
+        28,
+        29
+      ],
+      "papel": "teste",
+      "por_tipo": {
+        "texto:adicao": 200,
+        "texto:alteracao": 5,
+        "texto:remocao": 214
+      }
+    },
+    "BB_2T2025_3T2025": {
+      "anterior": "bb_release_2T2025",
+      "atual": "bb_release_3T2025",
+      "b1_nivel1": 322,
+      "eventos": 2278,
+      "paginas": [
+        291,
+        288
+      ],
+      "papel": "treino",
+      "por_tipo": {
+        "tabela:adicao": 240,
+        "tabela:alteracao": 457,
+        "tabela:remocao": 220,
+        "texto:adicao": 425,
+        "texto:alteracao": 421,
+        "texto:remocao": 515
+      }
+    },
+    "BB_4T2025_1T2026": {
+      "anterior": "bb_release_4T2025",
+      "atual": "bb_release_1T2026",
+      "b1_nivel1": 630,
+      "eventos": 4090,
+      "paginas": [
+        312,
+        301
+      ],
+      "papel": "teste",
+      "por_tipo": {
+        "tabela:adicao": 753,
+        "tabela:alteracao": 1255,
+        "tabela:remocao": 497,
+        "texto:adicao": 421,
+        "texto:alteracao": 355,
+        "texto:remocao": 809
+      }
+    },
+    "BMG_2T2025_3T2025": {
+      "anterior": "bmg_release_2T2025",
+      "atual": "bmg_release_3T2025",
+      "b1_nivel1": 62,
+      "eventos": 187,
+      "paginas": [
+        35,
+        35
+      ],
+      "papel": "treino",
+      "por_tipo": {
+        "texto:adicao": 54,
+        "texto:alteracao": 95,
+        "texto:remocao": 38
+      }
+    },
+    "BMG_4T2025_1T2026": {
+      "anterior": "bmg_release_4T2025",
+      "atual": "bmg_release_1T2026",
+      "b1_nivel1": 22,
+      "eventos": 348,
+      "paginas": [
+        35,
+        31
+      ],
+      "papel": "teste",
+      "por_tipo": {
+        "texto:adicao": 120,
+        "texto:alteracao": 48,
+        "texto:remocao": 180
+      }
+    },
+    "BRADESCO_2T2025_3T2025": {
+      "anterior": "bradesco_release_2T2025",
+      "atual": "bradesco_release_3T2025",
+      "b1_nivel1": 202,
+      "eventos": 1780,
+      "paginas": [
+        185,
+        158
+      ],
+      "papel": "treino",
+      "por_tipo": {
+        "tabela:adicao": 179,
+        "tabela:alteracao": 339,
+        "tabela:remocao": 152,
+        "texto:adicao": 281,
+        "texto:alteracao": 255,
+        "texto:remocao": 574
+      }
+    },
+    "BRADESCO_4T2025_1T2026": {
+      "anterior": "bradesco_release_4T2025",
+      "atual": "bradesco_release_1T2026",
+      "b1_nivel1": 223,
+      "eventos": 3469,
+      "paginas": [
+        222,
+        167
+      ],
+      "papel": "teste",
+      "por_tipo": {
+        "tabela:adicao": 457,
+        "tabela:alteracao": 752,
+        "tabela:remocao": 346,
+        "texto:adicao": 421,
+        "texto:alteracao": 243,
+        "texto:remocao": 1250
+      }
+    },
+    "BTG_2T2025_3T2025": {
+      "anterior": "btg_release_2T2025",
+      "atual": "btg_release_3T2025",
+      "b1_nivel1": 52,
+      "eventos": 307,
+      "paginas": [
+        32,
+        32
+      ],
+      "papel": "treino",
+      "por_tipo": {
+        "tabela:alteracao": 108,
+        "texto:adicao": 91,
+        "texto:alteracao": 22,
+        "texto:remocao": 86
+      }
+    },
+    "BTG_4T2025_1T2026": {
+      "anterior": "btg_release_4T2025",
+      "atual": "btg_release_1T2026",
+      "b1_nivel1": 41,
+      "eventos": 461,
+      "paginas": [
+        36,
+        33
+      ],
+      "papel": "teste",
+      "por_tipo": {
+        "tabela:adicao": 37,
+        "tabela:alteracao": 71,
+        "tabela:remocao": 79,
+        "texto:adicao": 101,
+        "texto:alteracao": 22,
+        "texto:remocao": 151
+      }
+    },
+    "ITAU_2T2025_3T2025": {
+      "anterior": "itau_release_2T2025",
+      "atual": "itau_release_3T2025",
+      "b1_nivel1": 183,
+      "eventos": 1532,
+      "paginas": [
+        163,
+        153
+      ],
+      "papel": "treino",
+      "por_tipo": {
+        "tabela:adicao": 285,
+        "tabela:alteracao": 274,
+        "tabela:remocao": 266,
+        "texto:adicao": 201,
+        "texto:alteracao": 212,
+        "texto:remocao": 294
+      }
+    },
+    "ITAU_4T2025_1T2026": {
+      "anterior": "itau_release_4T2025",
+      "atual": "itau_release_1T2026",
+      "b1_nivel1": 315,
+      "eventos": 3172,
+      "paginas": [
+        169,
+        153
+      ],
+      "papel": "teste",
+      "por_tipo": {
+        "tabela:adicao": 597,
+        "tabela:alteracao": 938,
+        "tabela:remocao": 618,
+        "texto:adicao": 277,
+        "texto:alteracao": 255,
+        "texto:remocao": 487
+      }
+    },
+    "SANTANDER_2T2025_3T2025": {
+      "anterior": "santander_release_2T2025",
+      "atual": "santander_release_3T2025",
+      "b1_nivel1": 113,
+      "eventos": 386,
+      "paginas": [
+        25,
+        25
+      ],
+      "papel": "treino",
+      "por_tipo": {
+        "tabela:adicao": 7,
+        "tabela:alteracao": 89,
+        "tabela:remocao": 11,
+        "texto:adicao": 86,
+        "texto:alteracao": 107,
+        "texto:remocao": 86
+      }
+    },
+    "SANTANDER_4T2025_1T2026": {
+      "anterior": "santander_release_4T2025",
+      "atual": "santander_release_1T2026",
+      "b1_nivel1": 91,
+      "eventos": 458,
+      "paginas": [
+        25,
+        20
+      ],
+      "papel": "teste",
+      "por_tipo": {
+        "tabela:adicao": 23,
+        "tabela:alteracao": 89,
+        "tabela:remocao": 31,
+        "texto:adicao": 69,
+        "texto:alteracao": 67,
+        "texto:remocao": 179
+      }
+    }
+  },
+  "protocolo_sha256": "354f47c35d64d934d53d0f117c87f557278c33af2cd716699483e5c852f6655a",
+  "redline_sha256": "40a655be448fa3973f4ade1481d1db405743ea290175e7b234173c99a7bfeeb8"
+}
