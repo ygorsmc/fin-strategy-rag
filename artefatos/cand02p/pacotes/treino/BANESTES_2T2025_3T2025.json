@@ -1,0 +1,1207 @@
+{
+ "par": "BANESTES_2T2025_3T2025",
+ "documento_anterior": "banestes_release_2T2025",
+ "documento_atual": "banestes_release_3T2025",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "",
+   "trecho_atual": "Performance positiva dos indicadores: ROA de 1,1%, ROE de 18,4% e IEO de 51,7%, demonstrando resultados sólidos e crescimento sustentável."
+  },
+  {
+   "item": "E002",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "ECOSSISTEMA DE INOVAÇÃO",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse aporte visa garantir competitividade e eficiência no mercado cada vez mais digital, abrangendo áreas cruciais como: desenvolvimento e manutenção de software e sistemas; segurança da informação e infraestrutura de TI; serviços em nuvem, governança e proteção de dados; avanços em inteligência artificial (IA) e aprimoramento constante do App Banestes."
+  },
+  {
+   "item": "E003",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "ECOSSISTEMA DE INOVAÇÃO",
+   "trecho_anterior": "Em paralelo, houve expansão do *Data Warehouse*, com a ampliação do volume de dados reunidos e disponíveis para apoiar a operação de Business Intelligence, Analytics e Inteligência Artificial.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E004",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "MARGEM FINANCEIRA LÍQUIDA",
+   "trecho_anterior": "",
+   "trecho_atual": "Adicionalmente, o custo das despesas de captação avançou 43,5%."
+  },
+  {
+   "item": "E005",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "GESTÃO DE PESSOAS",
+   "trecho_anterior": "O investimento em desenvolvimento profissional foi evidenciado pelo lançamento do Programa Altitude de Desenvolvimento de Lideranças, que capacitou 335 colaboradores em liderança e gestão de vendas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E006",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 8,
+   "secao": "RECEITAS DE PRESTAÇÃO DE SERVIÇOS",
+   "trecho_anterior": "As receitas com prestação de serviços totalizaram R$ 184 milhões no primeiro semestre, representando um crescimento de 6,5% em relação ao mesmo período de 2024.",
+   "trecho_atual": "As receitas com prestação de serviços totalizaram R$ 282 milhões no acumulado do terceiro trimestre de 2025, representando um crescimento de 5,5% em relação ao mesmo período de 2024."
+  },
+  {
+   "item": "E007",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA",
+   "trecho_anterior": "No segundo trimestre de 2025, com a implantação da Resolução nº 4.966, de 25 de novembro de 2021, foram registradas despesas com provisões para créditos de liquidação duvidosa no montante de R$ 18 milhões, representando redução de 71,4% em relação ao trimestre anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E008",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "",
+   "trecho_atual": "Este projeto incentiva a economia circular e o descarte correto de recicláveis através das Retorna Machines e as convertem em pontos Triciclo ou *vouchers*, que podem ser trocados por benefícios."
+  },
+  {
+   "item": "E009",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 23,
+   "secao": "RATING",
+   "trecho_anterior": "A Fitch reafirmou o rating do Banestes em AA+(bra) em escala nacional (moeda local) para risco de crédito.",
+   "trecho_atual": "A Fitch reafirmou o nosso rating em AA+(bra) em escala nacional (moeda local) para risco de crédito do Banestes."
+  },
+  {
+   "item": "E010",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "DESPESAS DE PESSOAL E ADMINISTRATIVAS",
+   "trecho_anterior": "Os gastos com pessoal totalizaram R$ 270 milhões, crescimento de 12,5% em relação ao mesmo semestre do ano anterior, reflexo da implantação do Plano de Desligamento Voluntário (PDV) em 2024, cujo impacto das adesões dos colaboradores foi registrado no primeiro trimestre de 2025.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E011",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": 4,
+   "secao": "PRINCIPAIS INFORMAÇÕES",
+   "trecho_anterior": "$$ AS DESPESAS DE PROVISÕES DE CRÉDITO DO SEGUNDO TRIMESTRE DE 2025 FORAM CALCULADAS COM BASE NA NOVA METODOLOGIA APRESENTADA PELA RESOLUÇÃO CMN Nº 4.966/21.",
+   "trecho_atual": "*AS DESPESAS DE PROVISÕES DE CRÉDITO DO TERCEIRO TRIMESTRE DE 2025 FORAM CALCULADAS COM BASE NA NOVA METODOLOGIA APRESENTADA PELA RESOLUÇÃO CMN Nº 4.966/21, ENQUANTO AS DO TERCEIRO TRIMESTRE DE 2024 UTILIZÁVAM O MODELO DA RESOLUÇÃO 2.682/99."
+  },
+  {
+   "item": "E012",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": 3,
+   "secao": "PRINCIPAIS INFORMAÇÕES",
+   "trecho_anterior": "*AS DESPESAS DE PROVISÕES DE CRÉDITO DO SEGUNDO TRIMESTRE DE 2025 FORAM CALCULADAS COM BASE NA NOVA METODOLOGIA APRESENTADA PELA RESOLUÇÃO CMN Nº 4.966/21, ENQUANTO AS DO PRIMEIRO TRIMESTRE DE 2024 UTILIZÁVAM O MODELO DA RESOLUÇÃO 2.682/99.",
+   "trecho_atual": "$$ AS DESPESAS DE PROVISÕES DE CRÉDITO DO TERCEIRO TRIMESTRE DE 2025 FORAM CALCULADAS COM BASE NA NOVA METODOLOGIA APRESENTADA PELA RESOLUÇÃO CMN Nº 4.966/21, ENQUANTO AS DO TERCEIRO TRIMESTRE DE 2024 UTILIZÁVAM O MODELO DA RESOLUÇÃO 2.682/99."
+  },
+  {
+   "item": "E013",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "MARGEM FINANCEIRA LÍQUIDA",
+   "trecho_anterior": "Esse desempenho foi impulsionado, principalmente, pelo avanço das receitas com operações de crédito, que somaram R$ 1 bilhão no semestre (+24,4% em doze meses), e pelo resultado com receitas de títulos e valores mobiliários (TVM), que atingiu R$ 1,5 bilhão, com leve retração de 2,5% no mesmo intervalo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E014",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "NPL CREATION E INADIMPLÊNCIA > 90 DIAS",
+   "trecho_anterior": "A manutenção do nível de endividamento das famílias e o controle da inflação no período também se destacam como fatores relevantes na análise da inadimplência, por serem indicadores importantes das condições econômicas sistêmicas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E015",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "",
+   "trecho_atual": "Indicador de taxa de inadimplência da Carteira de Crédito Comercial em 2,4%, significativamente abaixo da média de 3,9% da Carteira Total do BACEN (Banco Central do Brasil)."
+  },
+  {
+   "item": "E016",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "GESTÃO DE PESSOAS",
+   "trecho_anterior": "As ações abrangeram os pilares de saúde física, emocional e social, com destaque para o apoio ao bem-estar emocional com 175 atendimentos, reforçando o cuidado integral com o colaborador.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E017",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "REDE DE ATENDIMENTO",
+   "trecho_anterior": "",
+   "trecho_atual": "Os investimentos em Tecnologia da Informação e Comunicação alcançaram R$ 110 milhões no acumulado do ano."
+  },
+  {
+   "item": "E018",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "",
+   "trecho_atual": "Com base nesses dados, o Banco poderá traçar metas e estratégias mais eficazes para a redução de sua pegada de carbono, posicionando-se como um agente relevante na agenda climática e no desenvolvimento de uma economia de baixo carbono no Espírito Santo."
+  },
+  {
+   "item": "E019",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "RECEITAS DE PRESTAÇÃO DE SERVIÇOS",
+   "trecho_anterior": "",
+   "trecho_atual": "A composição das receitas com prestação de serviços se dividiu conforme o gráfico a seguir, com destaque para os produtos cartão de crédito e seguros."
+  },
+  {
+   "item": "E020",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 14,
+   "secao": "PATRIMÔNIO LÍQUIDO",
+   "trecho_anterior": "Com patrimônio líquido de R$ 2,4 bilhões (crescimento de 4,5% em relação ao segundo trimestre de 2024 e expansão de 3,6% frente ao trimestre anterior), mantemos uma estrutura de capital sólida, essencial para sustentar o financiamento da atividade produtiva e atender, com eficiência e competitividade, às necessidades dos nossos clientes.",
+   "trecho_atual": "Com patrimônio líquido de R$ 2,4 bilhões (crescimento de 5,1% em relação ao terceiro trimestre de 2024 e expansão de 3,8% frente ao trimestre anterior), mantemos uma estrutura de capital sólida, essencial para sustentar o financiamento da atividade produtiva e atender, com eficiência e competitividade, às necessidades dos nossos clientes."
+  },
+  {
+   "item": "E021",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "DESPESAS DE PESSOAL E ADMINISTRATIVAS",
+   "trecho_anterior": "",
+   "trecho_atual": "O impacto maior veio dos gastos com pessoal, que atingiram R$ 129 milhões (+5,5% a/a e +3,9% t/t)."
+  },
+  {
+   "item": "E022",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "MARGEM FINANCEIRA LÍQUIDA",
+   "trecho_anterior": "Entre os destaques positivos estão: o crescimento das receitas com operações de crédito, que avançaram 25,6% no trimestre (frente ao segundo trimestre do ano anterior), e as receitas com TVM, que totalizaram R$ 789 milhões (+8,3% em três meses).",
+   "trecho_atual": "Entre os destaques positivos estão o crescimento das receitas com operações de crédito, que avançaram 26,8% (frente ao 3T24), e as receitas com TVM, que totalizaram R$ 896 milhões (+13,6% em três meses e +36,3% em doze meses)."
+  },
+  {
+   "item": "E023",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "NPL CREATION E INADIMPLÊNCIA > 90 DIAS",
+   "trecho_anterior": "",
+   "trecho_atual": "A recuperação de créditos baixados como prejuízo totalizou R$ 15 milhões no terceiro trimestre de 2025, um crescimento de 21,3% em relação ao 3T2024."
+  },
+  {
+   "item": "E024",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "Receitas com títulos e valores mobiliários, que apresentaram crescimento de 6,5% em doze meses e 8,3% no comparativo trimestral;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E025",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 9,
+   "secao": "DESPESAS DE PESSOAL E ADMINISTRATIVAS",
+   "trecho_anterior": "As despesas administrativas (pessoal e outras) somaram R$ 491 milhões no primeiro semestre de 2025, representando avanço de 5,4% em relação ao mesmo período de 2024.",
+   "trecho_atual": "As despesas administrativas (pessoal e outras) somaram R$ 736 milhões no acumulado do terceiro trimestre de 2025, representando avanço de 5,3% em relação ao mesmo período de 2024."
+  },
+  {
+   "item": "E026",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 10,
+   "secao": "ATIVOS TOTAIS",
+   "trecho_anterior": "Na comparação anual, destacam-se o crescimento de 13,4% no saldo das operações de crédito e o expressivo avanço de 76,9% nas Aplicações Interfinanceiras de Liquidez.",
+   "trecho_atual": "Na comparação anual, os principais destaques foram o crescimento de 8,3% no saldo das operações de crédito e o expressivo avanço de 63,3% nas Aplicações Interfinanceiras de Liquidez."
+  },
+  {
+   "item": "E027",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "",
+   "trecho_atual": "Em linha com esse compromisso, participa do Projeto Triciclo, em parceria com a Ambipar."
+  },
+  {
+   "item": "E028",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "GESTÃO DE PESSOAS",
+   "trecho_anterior": "",
+   "trecho_atual": "Foram priorizados também no período os programas de treinamento para garantir a conformidade legal e o alcance de objetivos estratégicos, foi promovido um treinamento presencial de grande relevância para 426 gerentes gerais e de relacionamento, com foco em temas gerenciais e controle de risco de crédito."
+  },
+  {
+   "item": "E029",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "CONTEXTO ECONÔMICO",
+   "trecho_anterior": "",
+   "trecho_atual": "Para o ano de 2025, a projeção de crescimento do estado para 2025 é de aproximadamente 0,5%, sustentada pela expectativa de aumento na produção de minério de ferro e de petróleo e gás, o que sugere que a força da produção de *commodities* pode superar, em parte, os impactos do cenário global e dos juros altos."
+  },
+  {
+   "item": "E030",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "CARTÕES",
+   "trecho_anterior": "Esse montante representa 82,5% do volume total transacionado em cartões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E031",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "NPL CREATION E INADIMPLÊNCIA > 90 DIAS",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse patamar é 0,2 p.p superior ao registrado no mesmo trimestre de 2024, mas manteve-se estável em relação ao trimestre anterior."
+  },
+  {
+   "item": "E032",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "MARGEM FINANCEIRA LÍQUIDA",
+   "trecho_anterior": "Do lado das despesas, houve uma expressiva redução nas provisões para créditos de liquidação duvidosa: -71,4% no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E033",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "NPL CREATION E INADIMPLÊNCIA > 90 DIAS",
+   "trecho_anterior": "O índice de inadimplência (>90 dias) da carteira de crédito comercial encerrou o período em 2,43%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E034",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "CARTÕES",
+   "trecho_anterior": "As transações dos cartões Banescard Visa atingiram a soma de R$ 2,2 bilhões no primeiro semestre deste ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E035",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 5,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "No mesmo período, o Índice de Eficiência Operacional (IEO) anualizado atingiu 53,0%, com melhora de 0,3 p.p. em relação ao semestre anterior.",
+   "trecho_atual": "No mesmo período, o Índice de Eficiência Operacional (IEO) anualizado atingiu 51,7%, uma melhora de 0,7 p.p. em relação a 2024."
+  },
+  {
+   "item": "E036",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "Esse movimento, associado ao crescimento de 24,4% nas receitas de crédito e à redução de 36,5% nas provisões para créditos de liquidação duvidosa, contribuiu de forma relevante para a rentabilidade da intermediação financeira.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E037",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "Alinhado às diretrizes internacionais de sustentabilidade, o Banco formalizou o envio da sua Comunicação de Progresso (CoP) de 2025 ao Pacto Global da ONU.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E038",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "BIZI",
+   "trecho_anterior": "Em um movimento estratégico para expandir sua base de convênios de crédito consignado, firmou uma nova parceria com a Universidade de São Paulo (USP).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E039",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "GERAÇÃO DE VALOR À SOCIEDADE",
+   "trecho_anterior": "",
+   "trecho_atual": "O Banco investiu mais de R$ 2 milhões em 57 projetos de patrocínios e eventos, com destaque para os patrocínios de negócios como as feiras agropecuárias – Cooabriel e Expo Rio Preto SP (onde foram aprovados mais de R$ 90 milhões em propostas de crédito rural) e eventos culturais como a Feira dos Municípios do ES e o Festival Gastronômico Roda de Boteco, estratégico para fortalecer o relacionamento e promover produtos como o lançamento do “Pagar com Pontos” no Banescard Visa."
+  },
+  {
+   "item": "E040",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "CONTEXTO ECONÔMICO",
+   "trecho_anterior": "",
+   "trecho_atual": "O principal desafio reside no controle da inflação IPCA (Índice Nacional de Preços ao Consumidor Amplo), que acumulou em +3,64% até setembro de 2025."
+  },
+  {
+   "item": "E041",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "",
+   "trecho_atual": "No terceiro trimestre de 2025, o lucro líquido registrado totalizou R$ 111 milhões."
+  },
+  {
+   "item": "E042",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "CANAIS E SERVIÇOS DIGITAIS",
+   "trecho_anterior": "No segundo trimestre de 2025, o App Banestes registrou um volume impressionante de quase 51 milhões de transações, incluindo consultas (como, por exemplo, o extrato da conta).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E043",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 19,
+   "secao": "LIMITES OPERACIONAIS",
+   "trecho_anterior": "O Índice de Basileia ficou em 14,0%, formado integralmente de capital nível I.",
+   "trecho_atual": "O Índice de Basileia ficou em 14,5%, formado integralmente de capital nível"
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "CARTÕES",
+   "trecho_anterior": "No trimestre, foi realizada a campanha de aniversário de três anos do Banescard Visa, que impulsionou o engajamento ao oferecer condições especiais aos clientes em abril.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 10,
+   "secao": "ATIVOS TOTAIS",
+   "trecho_anterior": "Títulos e valores mobiliários (TVM): R$ 15,7 bilhões (-25,4% em 12 meses e -0,4% em três meses);",
+   "trecho_atual": "Títulos e valores mobiliários (TVM): R$ 10,6 bilhões (-4,9% em 12 meses e 32,1% em três meses);"
+  },
+  {
+   "item": "E046",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "CANAIS E SERVIÇOS DIGITAIS",
+   "trecho_anterior": "O Banestes está consolidando sua presença digital, mesmo com uma vasta rede de 753 pontos de atendimento físicos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E047",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "GESTÃO DE PESSOAS",
+   "trecho_anterior": "Adicionalmente, 300 licenças para cursos na plataforma Alura foram distribuídas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E048",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "REMUNERAÇÃO AOS ACIONISTAS",
+   "trecho_anterior": "",
+   "trecho_atual": "No acumulado de 2025, reforçamos nosso compromisso com a remuneração aos acionistas, distribuindo um total de R$ 105,2 milhões em Juros sobre Capital Próprio (JCP) no acumulado do ano."
+  },
+  {
+   "item": "E049",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "GERAÇÃO DE VALOR À SOCIEDADE",
+   "trecho_anterior": "",
+   "trecho_atual": "O “Crédito do Trabalhador”, nova modalidade de crédito consignado instituída pelo governo, ampliou o mercado de crédito consignado e impulsionou significativamente a operação do Banestes desde seu lançamento."
+  },
+  {
+   "item": "E050",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "CANAIS E SERVIÇOS DIGITAIS",
+   "trecho_anterior": "",
+   "trecho_atual": "Foram registradas mais de 50 milhões de transações totais (incluindo consultas), representando um aumento de 2,8% em doze meses."
+  },
+  {
+   "item": "E051",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "GESTÃO DE PESSOAS",
+   "trecho_anterior": "",
+   "trecho_atual": "No âmbito do bem-estar e da responsabilidade social, o Banco manteve sua agenda de sensibilização interna, promovendo ativamente campanhas focadas em diversidade e inclusão."
+  },
+  {
+   "item": "E052",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "MARGEM FINANCEIRA LÍQUIDA",
+   "trecho_anterior": "A Margem Financeira Líquida totalizou R$ 660 milhões neste semestre, representando um crescimento de 15,5% em relação ao mesmo período de 2024.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E053",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse desempenho positivo deve-se, principalmente, ao crescimento nas receitas: tivemos uma elevação de 25,2% nas operações de crédito comercial, 5,5% nas receitas com prestação de serviços, 9,0% no resultado de Títulos e Valores Mobiliários e uma alta de 20% nos resultados das controladas (Banestes Seguros, Banestes Corretora e Banestes Asset Management)."
+  },
+  {
+   "item": "E054",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "MÚLTIPLOS",
+   "trecho_anterior": "",
+   "trecho_atual": "O Valor Patrimonial por Ação (VPA) encerrou o trimestre em R$ 7,03."
+  },
+  {
+   "item": "E055",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 8,
+   "secao": "MIX DE PRESTAÇÃO DE SERVIÇOS",
+   "trecho_anterior": "No período, o Banestes manteve relacionamento com a base de 1,4 milhão de clientes, expansão de 3,6% em clientes pessoa jurídica, e avanço de 3,7% na pessoa física.",
+   "trecho_atual": "No período, o Banestes manteve relacionamento com a base de 1,4 milhão de clientes, expansão de 3,6% em clientes pessoa jurídica, e avanço de 3,7% na pessoa física em relação ao fim do ano anterior."
+  },
+  {
+   "item": "E056",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "",
+   "trecho_atual": "O Banestes reforçou seu compromisso com a sustentabilidade, integrando-a como pilar cultural."
+  },
+  {
+   "item": "E057",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "CARTÕES",
+   "trecho_anterior": "",
+   "trecho_atual": "Com foco em inovação e experiência do cliente, o Banestes expandiu as funcionalidades do aplicativo, bem como incrementou o Programa de Fidelidade, com novas opções de resgate (*vouchers* e vales-combustível) e com a ampliação do Pagar com Pontos, que possibilita ao cliente utilizar seus pontos para consumo em estabelecimentos comerciais, com destaque para a participação no festival gastronômico Roda de Boteco, no qual os clientes puderam usar pontos para consumir no evento."
+  },
+  {
+   "item": "E058",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "CONTEXTO ECONÔMICO",
+   "trecho_anterior": "",
+   "trecho_atual": "No entanto, a inflação na Grande Vitória para setembro foi de 0,76%, resultado superior à média nacional, devido à alta no custo da energia elétrica residencial, que refletiu o reajuste de 15,3% na tarifa vigente a partir de agosto."
+  },
+  {
+   "item": "E059",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "CONTEXTO ECONÔMICO",
+   "trecho_anterior": "A inadimplência total do SFN manteve-se estável em 3,5% (4,9% no crédito livre), e o endividamento das famílias em 48,9%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E060",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "GERAÇÃO DE VALOR À SOCIEDADE",
+   "trecho_anterior": "",
+   "trecho_atual": "O Banestes reforça seu papel como pilar da economia capixaba no apoio às Micro e Pequenas Empresas (MPEs) incluindo profissionais liberais, injetando cerca de R$ 142 milhões em mais de 2.767 operações via PRONAMPE (Programa Nacional de Apoio às Microempresas e Empresas de Pequeno Porte) em 2025 (com cerca de R$ 45 milhões em 878 operações somente no 3T2025)."
+  },
+  {
+   "item": "E061",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "NPL CREATION E INADIMPLÊNCIA > 90 DIAS",
+   "trecho_anterior": "Esse comportamento reflete um cenário de expansão das concessões de crédito, tendência que pode se intensificar caso a taxa Selic seja reduzida para níveis inferiores aos registrados em 2024 e no primeiro trimestre de 2025.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E062",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 11,
+   "secao": "CARTEIRA DE CRÉDITO AMPLIADA",
+   "trecho_anterior": "A carteira de crédito ampliada alcançou R$ 15 bilhões, registrando crescimento de 12,3% em 12 meses e retração de 0,5% em relação ao trimestre anterior.",
+   "trecho_atual": "A carteira de crédito ampliada alcançou R$ 15,1 bilhões, registrando crescimento de 8,3% em 12 meses e leve avanço de 0,5% em relação ao trimestre anterior."
+  },
+  {
+   "item": "E063",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "CANAIS E SERVIÇOS DIGITAIS",
+   "trecho_anterior": "Isso representa um notável aumento de 11,7% em relação ao ano anterior, reforçando a migração dos clientes para as plataformas digitais no atendimento das suas necessidades bancárias.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E064",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 5,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "No conceito ajustado ao risco, o índice ficou em 58,1%, refletindo uma melhora expressiva de 4,4 p.p.",
+   "trecho_atual": "No conceito ajustado ao risco, o índice ficou em 57,2%, refletindo uma melhora expressiva de 3,7 p.p. no mesmo período."
+  },
+  {
+   "item": "E065",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 8,
+   "secao": "MIX DE PRESTAÇÃO DE SERVIÇOS",
+   "trecho_anterior": "O número de contas correntes cresceu 5,0% em doze meses, atingindo 1.060.912 contas; enquanto o número de contas de poupança somou 654.054 (+0,7% em 12 meses).",
+   "trecho_atual": "O número de contas correntes cresceu 2,3% em doze meses, atingindo 1,1 milhão de contas; enquanto o número de contas de poupança somou 656 mil (+1,0% em 12 meses)."
+  },
+  {
+   "item": "E066",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "",
+   "trecho_atual": "No pilar de Compliance e Risco, o Banco realizou o Treinamento em Prevenção à Lavagem de Dinheiro e ao Financiamento do Terrorismo (PLD/FTP), que incluiu a reciclagem anual para todos os colaboradores, além de sessões específicas para as áreas de controle, e iniciou o programa de Documentoscopia e Prevenção à Fraude, capacitando 120 colaboradores."
+  },
+  {
+   "item": "E067",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "ÍNDICE DE EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "O índice de eficiência operacional (IEO) atingiu 53,0% no semestre, melhor 0,3 p.p. em relação ao mesmo trimestre do ano anterior e performance impactada negativamente em 1,8 p.p. em comparação com o trimestre anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E068",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "CONTEXTO ECONÔMICO",
+   "trecho_anterior": "",
+   "trecho_atual": "O crescimento dos empréstimos que compõem o crédito ampliado foi de 9,6% em doze meses."
+  },
+  {
+   "item": "E069",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 13,
+   "secao": "CARTEIRA COMERCIAL ESTÁGIOS DE RISCO",
+   "trecho_anterior": "No segundo trimestre de 2025, em consonância com a Resolução 4.966 do CMN foram contabilizados em estoque de provisão para Carteira de Crédito Comercial o valor de R$ 540 milhões, posicionados nos seguintes estágios operacionais: 32,5% no Estágio 1;",
+   "trecho_atual": "No terceiro trimestre de 2025, em consonância com a Resolução 4.966 do CMN, o estoque de provisão para Carteira de Crédito Comercial foi de R$ 530 milhões, posicionado nos seguintes estágios: 32,8% no Estágio 1;"
+  },
+  {
+   "item": "E070",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "DESPESAS DE PESSOAL E ADMINISTRATIVAS",
+   "trecho_anterior": "Mantivemos a implementação de ações de racionalização e corte de custos nos processos operacionais, com a diretriz de preservar a qualidade dos serviços prestados e oferecer a melhor experiência ao cliente.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E071",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "CONTEXTO ECONÔMICO",
+   "trecho_anterior": "",
+   "trecho_atual": "A economia do Espírito Santo tem mostrado resiliência interna, sustentada por um mercado de trabalho aquecido, apesar de ser vulnerável a choques externos, como a queda dos preços internacionais de *commodities* (minério de ferro, petróleo e celulose) e de ser limitada pela persistência da inflação e dos juros elevados, que limitam o poder de compra e o consumo das famílias."
+  },
+  {
+   "item": "E072",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "Com esse repasse, o montante acumulado no primeiro semestre de 2025 já superou os R$ 76 milhões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E073",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "O Banco também estendeu seu apoio a projetos culturais via Lei Rouanet e ao Fundo da Infância e Adolescência, incluindo o festival “PCD: Pinta, Canta e Dança” e a “Casa de Acolhida e Educação Infantil – Creche Alegria”, em total alinhamento com os princípios do Estatuto da Criança e do Adolescente (ECA).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E074",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "GERAÇÃO DE VALOR À SOCIEDADE",
+   "trecho_anterior": "Até o momento, o Banco realizou mais de 1.800 operações via Pronampe, injetando cerca de R$ 93 milhões na economia local.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E075",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA",
+   "trecho_anterior": "",
+   "trecho_atual": "Considerando esta mudança de metodologia, não apresentamos a variação comparativa anual (contra 2024), pois os valores de trimestres anteriores a 2025 foram apurados de acordo com as regras da Resolução nº 2.682 do BACEN."
+  },
+  {
+   "item": "E076",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "DEPÓSITOS TOTAIS",
+   "trecho_anterior": "O saldo de recursos captados e administrados encerrou o primeiro trimestre de 2025 em R$ 43,4 bilhões, o que representa um acréscimo de 4,9% na comparação anual e um crescimento de 2,6% em relação ao trimestre anterior, influenciado diretamente pela captação em Letras de Crédito do Agronegócio e Letras de Crédito Imobiliário (+185,2% em 12 meses e +32,9% no ano), Fundos de Investimentos (+23,9% em 12 meses e +13,5 no ano) e Depósitos de Poupança (+5,0% em 12 meses e +2,4% no ano);",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E077",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "NPL CREATION E INADIMPLÊNCIA > 90 DIAS",
+   "trecho_anterior": "As operações de crédito com atraso superior a 90 dias totalizaram R$ 303 milhões no segundo trimestre de 2025, montante 0,19 p.p. superior ao registrado no mesmo trimestre de 2024 e 0,35 p.p. acima do observado no trimestre anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E078",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 18,
+   "secao": "VOLUME DE ACIONISTAS",
+   "trecho_anterior": "Cinco anos depois, nossa base acionária mais do que triplicou, aproximando-se de 45 mil acionistas.",
+   "trecho_atual": "Cinco anos depois, em 2025, nossa base acionária mais do que triplicou, superando a marca de 43 mil acionistas."
+  },
+  {
+   "item": "E079",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "CARTÕES",
+   "trecho_anterior": "",
+   "trecho_atual": "No terceiro trimestre de 2025, os cartões Banestes faturaram R$ 1,38 bilhão, um aumento de 3,17% em relação ao terceiro trimestre de 2024."
+  },
+  {
+   "item": "E080",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 19,
+   "secao": "LIMITES OPERACIONAIS",
+   "trecho_anterior": "O Patrimônio de Referência do Conglomerado Prudencial fechou o trimestre em R$ 1,9 bilhões frente aos Ativos Ponderados pelo Risco (RWA) de R$ 14,3 bilhões.",
+   "trecho_atual": "O Patrimônio de Referência do Conglomerado Prudencial fechou o trimestre em R$ 2,1 bilhões frente aos Ativos Ponderados pelo Risco (RWA) de R$ 14,6 bilhões."
+  },
+  {
+   "item": "E081",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "MARGEM FINANCEIRA LÍQUIDA",
+   "trecho_anterior": "O resultado reflete tanto fatores internos — como o foco estratégico na ampliação das operações de crédito, com a migração de recursos da Tesouraria para essa frente —, quanto fatores externos, como as sucessivas elevações da taxa Selic, que impactaram o custo de captação nas Despesas de Intermediação Financeira, com ampliação de 7,0% no *funding* do primeiro semestre de 2025 frente ao mesmo semestre do ano anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E082",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "",
+   "trecho_atual": "Isso é reflexo, principalmente, da gestão eficiente do risco de crédito, que mantém as despesas de provisão (PDD) em linha com o controle aplicado."
+  },
+  {
+   "item": "E083",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "A Margem Financeira Líquida atingiu R$ 660 milhões no semestre, representando um crescimento de 15,5% em doze meses.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse movimento em TVM, associado ao forte crescimento de 25,2% nas receitas de crédito, contribuiu de forma relevante para a rentabilidade da intermediação financeira."
+  },
+  {
+   "item": "E085",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse avanço foi impulsionado, principalmente, pelo cenário de juros elevados que se manteve ao longo dos primeiros nove meses de 2025."
+  },
+  {
+   "item": "E086",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 5,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "Esses avanços foram impulsionados principalmente pelo crescimento da margem financeira e pela elevação de 6,5% nas receitas de prestação de serviços, na comparação com o primeiro semestre de 2024.",
+   "trecho_atual": "Esses avanços foram impulsionados principalmente pelo crescimento da margem financeira (14,0%) e pela elevação das receitas de prestação de serviços (5,5%), na comparação com o acumulado dos nove primeiros meses de 2024."
+  },
+  {
+   "item": "E087",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas avançaram 26,8% em Operações de Crédito, 3,6% em Prestação de Serviços e 34,0% no Resultado das controladas (em comparação anual)."
+  },
+  {
+   "item": "E088",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "CONTEXTO ECONÔMICO",
+   "trecho_anterior": "",
+   "trecho_atual": "Contudo, a inadimplência da carteira de crédito total subiu para 3,9% em setembro, aumento de 0,7 p.p. em doze meses."
+  },
+  {
+   "item": "E089",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "",
+   "trecho_atual": "Em linha com a gestão de risco e a excelência no relacionamento, o Banestes lançou uma ferramenta digital inovadora para combate à inadimplência, que notifica o cliente de forma proativa antes e após o vencimento da operação de crédito, aprimorando a experiência e atuando como ferramenta essencial para a redução dos índices de atraso."
+  },
+  {
+   "item": "E090",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "RETORNO SOBRE O PATRIMÔNIO LÍQUIDO (ROE) E RETORNO SOBRE O ATIVO (ROA)",
+   "trecho_anterior": "O retorno sobre o patrimônio líquido (ROE) foi de 18,2%, crescimento de 1,9 p.p. na comparação em doze meses e de 1,5 p.p. em três meses.",
+   "trecho_atual": "O retorno sobre o patrimônio líquido (ROE) foi de 18,4%, registrando crescimento de 2,9 p.p. na comparação em doze meses e de 0,2 p.p. em três meses."
+  },
+  {
+   "item": "E091",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "",
+   "trecho_atual": "Conquistamos este excelente desempenho paralelamente a uma gestão eficiente de custos, com destaque para a mitigação permanente e o monitoramento do risco de crédito, refletidos nas despesas de provisões para créditos de liquidação duvidosa, e o controle das despesas administrativas, principalmente nos reajustes contratuais."
+  },
+  {
+   "item": "E092",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "MÚLTIPLOS",
+   "trecho_anterior": "",
+   "trecho_atual": "A redução registrada no valor em 4,4% no ano e 5,6% no trimestre não reflete o desempenho operacional (uma vez que o Patrimônio Líquido total cresceu), mas é decorrente do impacto técnico da bonificação de 10% em ações."
+  },
+  {
+   "item": "E093",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "O documento, elaborado com base nos padrões da *Global Reporting Initiative* (GRI), apresentará de forma detalhada o desempenho e as iniciativas ESG do Banco ao longo do último ano, reforçando o diálogo transparente com todos os seus públicos de interesse.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E094",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "NPL CREATION E INADIMPLÊNCIA > 90 DIAS",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência (>90 dias) da carteira de crédito comercial encerrou o período em 2,4%, totalizando R$ 302 milhões no terceiro trimestre de 2025."
+  },
+  {
+   "item": "E095",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "CONTEXTO ECONÔMICO",
+   "trecho_anterior": "Complementando o panorama, as estatísticas monetárias e de crédito do Banco Central (dados de maio) indicaram um crescimento de 12,2% no crédito ampliado em 12 meses, com destaque para R$ 6,7 trilhões em operações de crédito ampliado do SFN (alta de 11,8% em 12 meses).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E096",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "O desempenho positivo reflete, principalmente, o crescimento de 24,4% nas operações de crédito comercial, o avanço de 6,5% nas receitas com prestação de serviços e a redução de 36,5% nas provisões para créditos de liquidação duvidosa.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E097",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "MARGEM FINANCEIRA LÍQUIDA",
+   "trecho_anterior": "No segundo trimestre de 2025, a Margem Financeira alcançou R$ 367 milhões, com crescimento de 24,8% em relação ao primeiro trimestre do ano e de 21,0% na comparação com o mesmo trimestre de 2024.",
+   "trecho_atual": "No terceiro trimestre de 2025, a Margem Financeira alcançou R$ 344 milhões, apresentando uma redução de 6,2% em relação ao segundo trimestre do ano e de 11,5% na comparação com o mesmo trimestre de 2024."
+  },
+  {
+   "item": "E098",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "GESTÃO DE PESSOAS",
+   "trecho_anterior": "",
+   "trecho_atual": "No pilar de Capital Humano, o Banestes priorizou a expansão do quadro de pessoal no 3T2025, realizando 132 convocações do Concurso Público."
+  },
+  {
+   "item": "E099",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 11,
+   "secao": "CARTEIRA DE CRÉDITO AMPLIADA",
+   "trecho_anterior": "Desse volume, 68,4% correspondem a operações com pessoas físicas e 31,6% com pessoas jurídicas.",
+   "trecho_atual": "Desse volume da carteira comercial, 68,9% correspondem a operações com pessoas físicas e 31,1% com pessoas jurídicas."
+  },
+  {
+   "item": "E100",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "DESPESAS DE PESSOAL E ADMINISTRATIVAS",
+   "trecho_anterior": "As outras despesas administrativas somaram R$ 221 milhões no primeiro semestre de 2025, apresentando redução de 2,1% na comparação com o mesmo semestre do ano anterior, influenciada pela continuidade de investimentos em projetos relacionados à tecnologia da informação, cartões e melhorias no atendimento aos clientes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E101",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 17,
+   "secao": "REMUNERAÇÃO AOS ACIONISTAS",
+   "trecho_anterior": "O montante distribuído corresponde a um payout anualizado de 38,8% do lucro líquido.",
+   "trecho_atual": "O lucro por ação anualizado atingiu R$ 1,35 (R$ 0,32 no trimestre), e o montante distribuído corresponde a um payout anualizado de 37,3% do lucro líquido."
+  },
+  {
+   "item": "E102",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 15,
+   "secao": "DEPÓSITOS TOTAIS",
+   "trecho_anterior": "Ao final de junho de 2025, os depósitos de clientes totalizaram R$ 23,8 bilhões, representando uma leve redução de 1,3% em relação ao mesmo período do ano anterior.",
+   "trecho_atual": "Ao final de setembro de 2025 (3T25), os Depósitos de Clientes totalizaram R$ 23,6 bilhões, representando um acréscimo de 1,3% em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E103",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 13,
+   "secao": "CARTEIRA COMERCIAL ESTÁGIOS DE RISCO",
+   "trecho_anterior": "6,1% no Estágio 2; e 61,4% no Estágio 3.",
+   "trecho_atual": "7,4% no Estágio 2; e 59,8% no Estágio 3."
+  },
+  {
+   "item": "E104",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "CARTÕES",
+   "trecho_anterior": "Já em junho, iniciou-se a campanha “Se Liga nos Pontos”, com objetivo de fomentar a ativação de cartões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E105",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "Outro destaque do semestre foi a renovação do contrato que destina as embalagens coletadas pelas “Retorna Machines” para a “Associação de Catadores de Materiais Recicláveis - Recicla Capixaba”, gerando renda para seus associados.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E106",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "",
+   "trecho_atual": "A Margem Financeira Líquida atingiu R$ 1,0 bilhão no acumulado de 2025, representando um crescimento de 14,0% na comparação com o ano anterior."
+  },
+  {
+   "item": "E107",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "CONTEXTO ECONÔMICO",
+   "trecho_anterior": "Embora os dados consolidados do PIB do 2º trimestre de 2025 ainda não tenham sido divulgados, as projeções anuais para o Brasil indicam um crescimento moderado (2,1% a 2,5%), impulsionado pelo consumo das famílias.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E108",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "GERAÇÃO DE VALOR À SOCIEDADE",
+   "trecho_anterior": "",
+   "trecho_atual": "A atuação de marketing e patrocínios ainda abrangeu o compromisso social e esportivo, alinhado à proposta ESG, com apoio a eventos esportivos, como a Maratona de Vitória e o Campeonato Estadual Banestes de *Beach Soccer* e a projetos via Lei *Rouanet* e ao Fundo da Infância e Adolescência."
+  },
+  {
+   "item": "E109",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA",
+   "trecho_anterior": "Ressaltamos que o perfil da nossa carteira de crédito influencia diretamente a constituição de provisões, uma vez que priorizamos modalidades com menor exposição ao risco, reforçando nossa estratégia de crédito responsável e sustentável.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E110",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "O Banestes conquistou o Selo Prata, que reconhece e atesta a transparência e a qualidade dos dados reportados pelo Banco, que incluem o mapeamento completo de suas emissões de escopo 1 e 2, e parte do escopo 3.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E111",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "Conservadorismo orçamentário aplicado no 1º trimestre, com foco na absorção dos impactos do Programa de Desligamento Voluntário (PDV) e da implementação da Resolução nº 4.966 do Banco Central.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E112",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 12,
+   "secao": "NPL CREATION E INADIMPLÊNCIA > 90 DIAS",
+   "trecho_anterior": "Na segmentação por tipo de cliente, a inadimplência da pessoa física foi de 1,7%, representando acréscimo de 0,2 ponto percentual, enquanto a da pessoa jurídica atingiu 4,1%, com aumento de 0,7 ponto percentual frente ao trimestre anterior.",
+   "trecho_atual": "Na segmentação por tipo de cliente, a inadimplência da pessoa física foi de 1,7% e a da pessoa jurídica atingiu 4,1%, ambas permanecendo estáveis frente ao trimestre anterior."
+  },
+  {
+   "item": "E113",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "CONTEXTO ECONÔMICO",
+   "trecho_anterior": "A inflação (IPCA) acumulada no período foi de 0,93%, representando uma redução significativa em comparação aos 2,03% registrados no primeiro trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E114",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 10,
+   "secao": "ATIVOS TOTAIS",
+   "trecho_anterior": "Os ativos totais atingiram R$ 39 bilhões no segundo trimestre de 2025, registrando aumento de 1,4% em 12 meses e expansão de 2,1% em relação ao trimestre anterior.",
+   "trecho_atual": "Os ativos totais atingiram R$ 39,2 bilhões no terceiro trimestre de 2025, um aumento de 4,5% em 12 meses e de 0,6% em relação ao trimestre anterior."
+  },
+  {
+   "item": "E115",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "NPL CREATION E INADIMPLÊNCIA > 90 DIAS",
+   "trecho_anterior": "",
+   "trecho_atual": "No acumulado do ano, a eficácia das iniciativas é ainda mais evidente, com a recuperação alcançando R$ 53 milhões, um relevante avanço de 29,0% sobre o desempenho de 2024."
+  },
+  {
+   "item": "E116",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+   "trecho_anterior": "Redução significativa nas provisões para créditos de liquidação duvidosa, com queda de 71,4% no trimestre;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E117",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+   "trecho_anterior": "",
+   "trecho_atual": "Paralelamente, a parceria com a startup AUMO ampliou a capacidade do assistente Sab.IA, transformando-o em uma plataforma de orquestração de assistentes e agentes inteligentes."
+  },
+  {
+   "item": "E118",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 13,
+   "secao": "CARTEIRA COMERCIAL ESTÁGIOS DE RISCO",
+   "trecho_anterior": "A excelente gestão na recuperação de dívidas, o empenho das agências com abordagem ativa na negociação dos contratos de créditos inadimplentes e as ações do Feirão Zera Dívida durante o semestre têm apresentado retornos previstos e vêm alavancando positivamente o resultado nas unidades comerciais.",
+   "trecho_atual": "A excelente gestão na recuperação de dívidas, com abordagem ativa das agências e ações como o Feirão Zera Dívida, tem apresentado os retornos previstos e alavancado positivamente o resultado nas unidades comerciais."
+  },
+  {
+   "item": "E119",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": 4,
+   "secao": "PRINCIPAIS INFORMAÇÕES",
+   "trecho_anterior": "POR SE TRATAREM DE METODOLOGIAS DISTINTAS, NÃO REGISTRAMOS A VARIAÇÃO ENTRE OS PERÍODOS.",
+   "trecho_atual": "POR SE TRATAREM DE METODOLOGIAS DISTINTAS, NÃO REGISTRAMOS A VARIAÇÃO ENTRE OS PERÍODIOS."
+  },
+  {
+   "item": "E120",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "MARGEM FINANCEIRA LÍQUIDA",
+   "trecho_anterior": "",
+   "trecho_atual": "Do lado das despesas, houve um acréscimo nas provisões para créditos de liquidação duvidosa no trimestre, somado à elevação de 11,5% nas despesas de intermediação financeira (vs."
+  }
+ ]
+}

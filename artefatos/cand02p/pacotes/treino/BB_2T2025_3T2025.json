@@ -1,0 +1,1567 @@
+{
+ "par": "BB_2T2025_3T2025",
+ "documento_anterior": "bb_release_2T2025",
+ "documento_atual": "bb_release_3T2025",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Abertura das Realocações",
+   "trecho_anterior": "",
+   "trecho_atual": "a) segregar os itens extraordinários e apresentar o lucro líquido ajustado do período; b) realocar a disposição dos itens de receitas e despesas, para possibilitar um melhor entendimento do negócio e do desempenho da empresa; c) permitir que a Margem Financeira Bruta (MFB) reflita, efetivamente, o ganho de todos os ativos rentáveis. d) destacar os efeitos relacionados ao custo do crédito."
+  },
+  {
+   "item": "E002",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 35,
+   "pagina_atual": 33,
+   "secao": "Spread com Clientes",
+   "trecho_anterior": "Spread com Clientes %: 7,79 | 7,48 | 8,04 | 7,90 | 7,68",
+   "trecho_atual": "Spread com Clientes %: 7,95 | 8,05 | 8,94 | 7,82 | 8,00",
+   "titulo_da_tabela": "Tabela 26. Spread com Clientes Ajustado pelo Risco – R$ milhões",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Spread com Clientes %",
+   "colunas_anterior": [
+    "2T24",
+    "1T25",
+    "2T25",
+    "1S24",
+    "1S25"
+   ],
+   "colunas_atual": [
+    "3T24",
+    "2T25",
+    "3T25",
+    "9M24",
+    "9M25"
+   ]
+  },
+  {
+   "item": "E003",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 133,
+   "pagina_atual": null,
+   "secao": "Relatório da Administração | 1S25",
+   "trecho_anterior": "Sabemos que o ano de 2025 será um ano de ajuste.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E004",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 64,
+   "pagina_atual": null,
+   "secao": "Créditos Reestruturados",
+   "trecho_anterior": "Renegociações: 4.731 | 4.798 | ",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Tabela 47. Carteira de Créditos Renegociado e Reestruturados – Banco Múltiplo$$ – R$ milhões",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Renegociações",
+   "colunas_anterior": [
+    "1T25",
+    "2T25",
+    ""
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E005",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 61,
+   "secao": "Créditos Reestruturados",
+   "trecho_anterior": "",
+   "trecho_atual": "Reestruturações: 4.758 | 6.325 | 5.863 | ",
+   "titulo_da_tabela": "Tabela 47. Carteira de Créditos Renegociado e Reestruturados – Banco Múltiplo¹ – R$ milhões",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Reestruturações",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "1T25",
+    "2T25",
+    "3T25",
+    ""
+   ]
+  },
+  {
+   "item": "E006",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 131,
+   "pagina_atual": 132,
+   "secao": "interna",
+   "trecho_anterior": "Cumprimos com os requisitos de independência e outros requisitos éticos do Código de Ética Profissional do Contador e das Normas Profissionais (incluindo as Normas de Independência), baseados nos princípios fundamentais de integridade, objetividade, competência profissional e devido zelo, confidencialidade e comportamento profissional.",
+   "trecho_atual": "(incluindo as Normas de Independência), baseados nos princípios fundamentais de integridade, objetividade, competência profissional e devido zelo, confidencialidade e comportamento profissional."
+  },
+  {
+   "item": "E007",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 135,
+   "secao": "Reposicionamento segmento Estilo",
+   "trecho_anterior": "",
+   "trecho_atual": "Com a estratégia renovada do segmento, projetamos um salto de desempenho para os próximos cinco anos, com expectativa de ampliar a base de clientes em 25%, garantindo o crescimento sustentável da receita e rentabilidade."
+  },
+  {
+   "item": "E008",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 124,
+   "secao": "Mercado de Carbono",
+   "trecho_anterior": "",
+   "trecho_atual": "Em linha com a diversificação, foram formalizados 15 projetos na modalidade de carbono no solo (ALM) para recuperação de pastagens degradadas contribuindo para uma agricultura mais sustentável e gerando receitas adicionais para os produtores."
+  },
+  {
+   "item": "E009",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 60,
+   "pagina_atual": 57,
+   "secao": "Custo do Crédito",
+   "trecho_anterior": "O Custo do Crédito, que corresponde às despesas de perda esperada (conforme a Resolução CMN nº 4.966/21), somada aos descontos concedidos e deduzidas das receitas com recuperação de crédito, totalizou R$ 15,9 bilhões no 2T25 e R$ 26,1 bilhões no semestre.",
+   "trecho_atual": "O Custo do Crédito, que corresponde ao total das despesas de perda esperada (conforme a Resolução CMN nº 4.966/21), somada aos descontos concedidos e deduzidas das receitas com recuperação de crédito, totalizou R$ 17,9 bilhões no 3T25 e R$ 44,0 bilhões nos nove primeiros meses do ano."
+  },
+  {
+   "item": "E010",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 140,
+   "pagina_atual": null,
+   "secao": "Diversidade, Equidade e Inclusão",
+   "trecho_anterior": "Por fim, o CA também inclui um membro autodeclarado como pessoa com deficiência (PCD).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E011",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 281,
+   "pagina_atual": null,
+   "secao": "Mensuração da provisão para perdas esperadas com operações de crédito e títulos com característica de concessão de crédito",
+   "trecho_anterior": "Ademais, o Banco utiliza pontualmente de análises individualizadas para avaliar o risco de crédito em certas exposições monitoradas pela Administração, nestes casos, as premissas utilizadas envolvem indicadores financeiros e aspectos qualitativos das empresas, do ambiente de negócios e dos instrumentos financeiros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E012",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 284,
+   "pagina_atual": null,
+   "secao": "Demonstrações do valor adicionado",
+   "trecho_anterior": "As demonstrações individuais e consolidadas do valor adicionado (DVA) referentes ao semestre findo em 30 de junho de 2025, elaboradas sob a responsabilidade da administração do Banco, e apresentadas como informações suplementares em relação às práticas contábeis adotadas no Brasil aplicáveis às instituições financeiras autorizadas a funcionar pelo Banco Central do Brasil, foram submetidas a procedimentos de auditoria executados em conjunto com a auditoria das demonstrações contábeis individuais e consolidadas do Banco.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E013",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 151,
+   "pagina_atual": 151,
+   "secao": "Demonstração do valor adicionado",
+   "trecho_anterior": "Dividendos de acionistas não controladores:  | -- | 1.312.654 | ",
+   "trecho_atual": "Dividendos de acionistas não controladores:  | -- |  | 1.312.654 | ",
+   "titulo_da_tabela": "Demonstração do valor adicionado",
+   "unidade": "milhares",
+   "rotulo_da_linha": "Dividendos de acionistas não controladores",
+   "colunas_anterior": [
+    "Nota",
+    "Banco Millipso 1º Semestre/2025",
+    "Consolidado 1º Semestre/2025",
+    ""
+   ],
+   "colunas_atual": [
+    "Nota",
+    "Banco Múltiplo",
+    "",
+    "Consolidado",
+    ""
+   ]
+  },
+  {
+   "item": "E014",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 129,
+   "pagina_atual": 130,
+   "secao": "Introdução",
+   "trecho_anterior": "As informações contábeis suplementares foram compiladas e apresentadas partindo das demonstrações contábeis consolidadas elaboradas de acordo com as práticas contábeis adotadas no Brasil, aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil, referentes ao período de seis meses findo em 30 de junho de 2025 e registros contábeis do Banco, auditadas por nós de acordo com as normas brasileiras e internacionais de auditoria, sobre as quais emitimos relatório de auditoria em 13 de agosto de 2025.",
+   "trecho_atual": "As informações contábeis suplementares foram compiladas e apresentadas partindo das demonstrações contábeis consolidadas elaboradas de acordo com as práticas contábeis adotadas no Brasil, aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil, relativas à data-base de 30 de setembro de 2025 e registros contábeis do Banco, revisadas por nós de acordo com as normas brasileiras e internacionais de revisão, sobre as quais emitimos relatório de revisão em 11 de novembro de 2025."
+  },
+  {
+   "item": "E015",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 11,
+   "secao": "Agro",
+   "trecho_anterior": "Custo do Crédito: formado pelas despesas de perda esperada (conforme a Resolução CMN nº 4.966/21), somada aos descontos concedidos e deduzidas das receitas com recuperação de crédito, alcançou R$ 26,1 bilhões.",
+   "trecho_atual": "Custo do Crédito: formado pelas despesas de perda esperada, somada aos descontos concedidos e deduzidas das receitas com recuperação de crédito, alcançou R$ 44,0 bilhões no 9M25, elevação de 66,4% em um ano."
+  },
+  {
+   "item": "E016",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 136,
+   "pagina_atual": null,
+   "secao": "Estratégia e Governança Corporativa",
+   "trecho_anterior": "O CA, possui, no mínimo 30% de membros independentes, observado o disposto no Estatuto Social, na legislação e no Regulamento do Novo Mercado da B3.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E017",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 109,
+   "secao": "CRM ágil",
+   "trecho_anterior": "",
+   "trecho_atual": "suas pendências ainda no trimestre, evidenciando a efetividade dessas ações."
+  },
+  {
+   "item": "E018",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 20,
+   "secao": "Glossário das Realocações",
+   "trecho_anterior": "(16) Reversão de provisões operacionais.",
+   "trecho_atual": "(04) Reversão de provisões operacionais."
+  },
+  {
+   "item": "E019",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 72,
+   "secao": "Crédito Pessoa Jurídica",
+   "trecho_anterior": "",
+   "trecho_atual": "(1) Em março/25, série reprocessada, entre capital de giro e investimentos;"
+  },
+  {
+   "item": "E020",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 288,
+   "secao": "DIRETORES",
+   "trecho_anterior": "",
+   "trecho_atual": "Alan Carlos Guedes de Oliveira Alberto Martinhago Vieira Alexandre Bocchetti Nunes Antonio Carlos Wagner Chiarello Carlos Eduardo Guedes Pinto Euler Antonio Luz Mathias João Vagnes de Moura Silva José Salvador Constantino Zarcos Filho Julio César Vezzaro Kamillo Tononi Oliveira Silva Larissa da Silva Novais Vieira Luciano Matarazzo Regno Marcelo Henrique Gomes da Silva Mariana Pires Dias Neudson Peres de Freitas Paula Sayão Carvalho Araujo Pedro Bramont Pedro Henrique Duarte Oliveira Rafael Machado Giovanella Rodrigo Costa Vasconcelos Rodrigo Mulinari Rosiane Barbosa Laviola Thiago Affonso Borsari"
+  },
+  {
+   "item": "E021",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "Pessoas Jurídicas",
+   "trecho_anterior": "Desde o 1T25 e por força da adoção da Resolução 4.966/2021, houve mudança nas regras de reconhecimento de juros (*accrual*), que traz um efeito combinado de (i) aumento do prazo de apropriação de juros das operações em inadimplência de 60 para 90 dias (que adicionou R$ 168 milhões nas receitas de crédito no 2T25) e (ii) reconhecimento das receitas de juros das operações do estágio 3 por regime de caixa (que deixou de reconhecer R$ 867 milhões em receitas de crédito no 2T25).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E022",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 198,
+   "pagina_atual": 197,
+   "secao": "b) Resultado da carteira de crédito",
+   "trecho_anterior": "1 - Foram recuperadas, por meio de cessões de crédito sem coobrigação a entidades não integrantes do Sistema Financeiro Nacional, conforme Resolução CMN nº 2.836/2001, operações baixadas em prejuízo no montante de R$ 630.856 mil no 1º Semestre/2025 (com impacto no resultado de R$ 346.971 mil, líquido de tributos).",
+   "trecho_atual": "1 - Foram recuperadas, por meio de cessões de crédito sem coobrigação a entidades não integrantes do Sistema Financeiro Nacional, conforme Resolução CMN nº 2.836/2001, operações baixadas em prejuízo no montante de R$ 779.459 mil no período de 01/01 a 30/09/2025 (com impacto no resultado de R$ 428.703 mil, líquido de tributos)."
+  },
+  {
+   "item": "E023",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Indicadores de Inadimplência",
+   "trecho_anterior": "",
+   "trecho_atual": "A carteira de pessoas físicas encerrou o período em 6,01%, elevação de 42 bps, influenciada, principalmente, pela sobreposição de operações realizadas com produtores rurais, e pela elevação da inadimplência na carteira renegociada e na linha de cartão de crédito."
+  },
+  {
+   "item": "E024",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 113,
+   "pagina_atual": null,
+   "secao": "Tecnologia que Transforma",
+   "trecho_anterior": "No 2T25, diversas iniciativas reforçaram esse papel, dentre elas: (i) o engajamento no crédito por meio do WhatsApp, que combina inteligência de dados, automação e interações humanas para ofertar crédito de forma contextualizada e assertiva, (ii) a abordagem ativa pós-*onboarding* (subsequente à abertura da conta), que potencializa a rentabilização da base recém-adquirida e (iii) a confirmação de pendências via “duplo sim”, que reduz fricções e perdas de oportunidade.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E025",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 111,
+   "pagina_atual": 112,
+   "secao": "Clientes MPE",
+   "trecho_anterior": "Estratégia para clientes Micro e Pequenas Empresas (MPE) conta com mais de 7 mil profissionais exclusivos e 4,4 mil pontos de atendimento no país, incluindo 215 agências especializadas e um centro de apoio de middle office.",
+   "trecho_atual": "O atendimento às Micro e Pequenas Empresas (MPE) conta com uma estrutura de 7,4 mil profissionais especializados e 4,4 mil pontos de atendimento no país, incluindo 215 agências especializadas e um centro de apoio de *middle office*."
+  },
+  {
+   "item": "E026",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 284,
+   "pagina_atual": null,
+   "secao": "Como nossa auditoria abordou esse assunto",
+   "trecho_anterior": "Avaliação do desenho e da efetividade operacional, bem como controles compensatórios de certos controles internos chave, de acesso a sistemas e aplicações, tais como: de autorização de novos usuários, de revogação de usuários desligados e de revisão dos usuários ativos;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E027",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 149,
+   "secao": "Demonstração das mutações do patrimônio líquido",
+   "trecho_anterior": "",
+   "trecho_atual": "Devolução parcial do instrumento elegível ao capital principal 23.c — (1.000.000) — — — — — — —: (1.000.000)",
+   "titulo_da_tabela": "",
+   "unidade": "milhares",
+   "rotulo_da_linha": "Devolução parcial do instrumento elegível ao capital principal 23.c — (1.000.000) — — — — — — —",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "Total"
+   ]
+  },
+  {
+   "item": "E028",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 35,
+   "pagina_atual": 33,
+   "secao": "Spread com Clientes",
+   "trecho_anterior": "Saldo Médio com Clientes: 1.048.787 | 1.117.639 | 1.142.503 | 1.035.155 | 1.130.071",
+   "trecho_atual": "Saldo Médio com Clientes: 1.074.491 | 1.141.597 | 1.138.486 | 1.048.267 | 1.132.574",
+   "titulo_da_tabela": "Tabela 26. Spread com Clientes Ajustado pelo Risco – R$ milhões",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Saldo Médio com Clientes",
+   "colunas_anterior": [
+    "2T24",
+    "1T25",
+    "2T25",
+    "1S24",
+    "1S25"
+   ],
+   "colunas_atual": [
+    "3T24",
+    "2T25",
+    "3T25",
+    "9M24",
+    "9M25"
+   ]
+  },
+  {
+   "item": "E029",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Pessoas Jurídicas",
+   "trecho_anterior": "O RSPL do semestre foi 12,6% contra 8,4% no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E030",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Demonstração do Resultado Consolidado",
+   "trecho_anterior": "Outras Despesas Administrativas ⁸: (3.171) | (3.174) | (3.232) | (6.169) | (6.406)",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Tabela 3. Demonstração do Resultado com Realocações¹ – R$ milhões",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Outras Despesas Administrativas ⁸",
+   "colunas_anterior": [
+    "2T24",
+    "1T25",
+    "2T25",
+    "1S24",
+    "1S25"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E031",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 291,
+   "pagina_atual": null,
+   "secao": "DIRETORES",
+   "trecho_anterior": "Alan Carlos Guedes de Oliveira Alberto Martinhago Vieira Antonio Carlos Wagner Chiarello Carlos Eduardo Guedes Pinto Eduardo Cesar Pasa Euler Antonio Luz Mathias João Francisco Fruet Júnior João Vagnes de Moura Silva Julio César Vezzaro Kamillo Tononi Oliveira Silva Larissa da Silva Novais Vieira Luciano Matarazzo Regno Lucinéia Possar Marcelo Henrique Gomes da Silva Mariana Pires Dias Neudson Peres de Freitas Paula Sayão Carvalho Araujo Pedro Bramont Rafael Machado Giovanella Rodrigo Costa Vasconcelos Rodrigo Mulinari Rosiane Barbosa Laviola Thiago Affonso Borsari",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E032",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 158,
+   "pagina_atual": 158,
+   "secao": "g.2) Resolução CMN nº 4.975, de 16 de dezembro de 2021",
+   "trecho_anterior": "Para os arrendadores, haverá mudança na contabilização das operações de arrendamento mercantil financeiro, porém sem alterar a forma de apresentação, uma vez que essas operações já são apresentadas pelo valor presente dos montantes totais a receber previstos em contrato, incluindo a provisão para perdas esperadas associadas ao risco de crédito, em cumprimento à Resolução BCB nº 2/2020.",
+   "trecho_atual": "Para os arrendadores, haverá mudança na contabilização das operações de arrendamento mercantil financeiro, porém sem alterar a forma de apresentação, uma vez que essas operações já são apresentadas pelo valor presente"
+  },
+  {
+   "item": "E033",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 20,
+   "secao": "Glossário das Realocações",
+   "trecho_anterior": "(02), (03), (04) e (05) Receitas (despesas) relacionadas ao custo do crédito contabilizadas em recuperação de créditos baixados como prejuízo, descontos concedidos em renegociação, perdas permanentes de ativos financeiros, alienação e/ou transferência de ativos financeiros e alienação de bens arrendados.",
+   "trecho_atual": "(01), (02), (03) e (09) Receitas (despesas) relacionadas ao custo do crédito contabilizadas em recuperação de créditos baixados como prejuízo, descontos concedidos em renegociação, perdas permanentes de ativos financeiros."
+  },
+  {
+   "item": "E034",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 137,
+   "pagina_atual": null,
+   "secao": "Tecnologia que Transforma",
+   "trecho_anterior": "Para garantir crescimento orgânico e continuidade dos negócios, seguimos investindo em tecnologia: foram R$ 3,2 bilhões no 1S25, reforçando nosso compromisso com uma experiência digital de excelência — onde, quando e como o cliente quiser.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E035",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 122,
+   "pagina_atual": null,
+   "secao": "Negócios Sustentáveis",
+   "trecho_anterior": "Este montante foi contratado em linhas de crédito com grande enfoque ambiental e/ou social ou para financiar atividades e/ou segmentos que tragam impactos socioambientais positivos para os setores de energias renováveis, eficiência energética, construção, transporte e turismo sustentáveis, água, pesca, floresta, agricultura sustentável, gestão de resíduos, educação, saúde e desenvolvimento local e regional, para assim reforçar o papel transformador no desenvolvimento do país e na construção de um futuro cada vez mais sustentável para a sociedade.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E036",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Indicadores de Inadimplência",
+   "trecho_anterior": "",
+   "trecho_atual": "A inadimplência da carteira de pessoas jurídicas foi de 4,06%, redução de 12 bps."
+  },
+  {
+   "item": "E037",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 195,
+   "pagina_atual": null,
+   "secao": "Composição da carteira de derivativos designados para hedge de valor de mercado",
+   "trecho_anterior": "Aplicações em depósitos interfinanceiros: 2.741.200 | 2.741.200",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Composição da carteira de derivativos designados para hedge de valor de mercado",
+   "unidade": "milhares",
+   "rotulo_da_linha": "Aplicações em depósitos interfinanceiros",
+   "colunas_anterior": [
+    "Banco Múltiplo 30/06/2025",
+    "Consolidado 30/06/2025"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E038",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 194,
+   "secao": "Composição da carteira de derivativos designados para hedge de valor de mercado",
+   "trecho_anterior": "",
+   "trecho_atual": "Recursos de instituições financeiras: (1.642.247) | (1.642.247)",
+   "titulo_da_tabela": "Composição da carteira de derivativos designados para hedge de valor de mercado",
+   "unidade": "milhares",
+   "rotulo_da_linha": "Recursos de instituições financeiras",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "Banco Múltiplo 30/09/2025",
+    "Consolidado 30/09/2025"
+   ]
+  },
+  {
+   "item": "E039",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 141,
+   "secao": "Março",
+   "trecho_anterior": "",
+   "trecho_atual": "conceituado veículo especializado Euromoney."
+  },
+  {
+   "item": "E040",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 285,
+   "pagina_atual": null,
+   "secao": "Responsabilidades do auditor pela auditoria das demonstrações contábeis individuais e consolidadas",
+   "trecho_anterior": "Avaliamos a adequação das políticas contábeis utilizadas e a razoabilidade das estimativas contábeis e respectivas divulgações feitas pela Administração.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E041",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 56,
+   "secao": "Carteira Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "(3) A partir de 2025, a visão apresentada no quadro está de acordo com o divulgado na NE 12 – Crédito."
+  },
+  {
+   "item": "E042",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 144,
+   "secao": "Índice",
+   "trecho_anterior": "",
+   "trecho_atual": "141 Relatório do auditor independente ..."
+  },
+  {
+   "item": "E043",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 283,
+   "pagina_atual": null,
+   "secao": "Ambiente de Tecnologia da informação",
+   "trecho_anterior": "Os controles para autorizar, monitorar, restringir e/ou revogar os respectivos acessos a esse ambiente devem prover segurança razoável de que os acessos e as atualizações das informações sejam efetivados de forma íntegra e precisa e realizados pelos funcionários apropriados, para mitigar o potencial risco de fraude ou erro decorrentes de acesso indevido ou mudança em um sistema ou em informação, e para garantir a integridade das informações financeiras e dos registros contábeis gerados por esses sistemas e aplicativos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E044",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 25,
+   "pagina_atual": 23,
+   "secao": "Receita Financeira de Operações de Crédito",
+   "trecho_anterior": "Além disso, houve menor apropriação de juros das operações do estágio 3 por regime de caixa, em torno de R$ 1,9 bilhão no 1S25 (R$ 1 bilhão no 1T25 e R$ 867 milhões no 2T25).",
+   "trecho_atual": "Além disso, houve menor apropriação de juros das operações do estágio 3 por regime de caixa, em torno de R$ 2,5 bilhões no 9M25."
+  },
+  {
+   "item": "E045",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 125,
+   "secao": "Diversidade, Equidade & Inclusão",
+   "trecho_anterior": "",
+   "trecho_atual": "O engajamento com a Diversidade permanece como prioridade."
+  },
+  {
+   "item": "E046",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": 26,
+   "secao": "Resultado de Tesouraria",
+   "trecho_anterior": "Importante ressaltar que em função da Resolução nº 4.966, a partir do 1T25, houve a migração do resultado da carteira de TVMs Privados com característica de crédito para as Receitas Financeiras de Crédito, reduzindo o resultado de tesouraria em cerca de R$ 8,0 bilhões no 1S25 (TVM – Receitas de Juros), o que prejudica a comparabilidade entre os semestres.",
+   "trecho_atual": "Importante ressaltar que em função da Resolução nº 4.966, a partir do 1T25, houve a migração do resultado da carteira de TVMs Privados com característica de crédito para as Receitas Financeiras de Crédito, reduzindo o resultado de tesouraria em cerca de R$ 12,9 bilhões no 9M25 (TVM – Receitas de Juros), em contrapartida do aumento em mesmo volume das receitas financeiras de operações de crédito, o que prejudica a comparabilidade entre os períodos acumulados em nove meses."
+  },
+  {
+   "item": "E047",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 150,
+   "secao": "Demonstração dos fluxos de caixa",
+   "trecho_anterior": "",
+   "trecho_atual": "Dividendos e juros sobre o capital próprio pagos:  | (6.008.672) | (6.008.672)",
+   "titulo_da_tabela": "Demonstração dos fluxos de caixa",
+   "unidade": "milhares",
+   "rotulo_da_linha": "Dividendos e juros sobre o capital próprio pagos",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "Nota",
+    "Banco Mocipão 01/01 a 30/09/2025",
+    "Consolidado 01/01 a 30/09/2025"
+   ]
+  },
+  {
+   "item": "E048",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 285,
+   "pagina_atual": null,
+   "secao": "Responsabilidade da administração e da governança pelas demonstrações contábeis individuais e consolidadas",
+   "trecho_anterior": "Na elaboração das demonstrações contábeis individuais e consolidadas, a administração é responsável pela avaliação da capacidade de o Banco continuar operando, divulgando, quando aplicável, os assuntos relacionados com a sua continuidade operacional e o uso dessa base contábil na elaboração das demonstrações contábeis, a não ser que a administração pretenda liquidar o Banco ou cessar suas operações, ou não tenha nenhuma alternativa realista para evitar o encerramento das operações.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E049",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "Balanço Patrimonial Consolidado",
+   "trecho_anterior": "",
+   "trecho_atual": "(1) A tabela é elaborada a partir de base contábil, mas pode apresentar ajustes gerenciais, para possibilitar um melhor entendimento do negócio e do desempenho da empresa."
+  },
+  {
+   "item": "E050",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 122,
+   "secao": "Negócios Sustentáveis",
+   "trecho_anterior": "",
+   "trecho_atual": "O BB foi habilitado no segundo leilão do programa Ecoinvest, voltado à recuperação de terras degradadas."
+  },
+  {
+   "item": "E051",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 134,
+   "secao": "Relatório da Administração | 9M25",
+   "trecho_anterior": "",
+   "trecho_atual": "O ano de 2025 é um ano de ajustes, marcado pela resiliência do nosso balanço diante de desafios."
+  },
+  {
+   "item": "E052",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 12,
+   "secao": "Indicadores de Inadimplência",
+   "trecho_anterior": "O indicador de inadimplência acima de 90 dias encerrou junho em 4,21%, elevação de 35 bps na comparação com março/25.",
+   "trecho_atual": "O indicador acima de 90 dias encerrou setembro em 4,93%, elevação de 72 bps na comparação com junho/25."
+  },
+  {
+   "item": "E053",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 39,
+   "pagina_atual": 37,
+   "secao": "3. Receitas de Prestação de Serviços",
+   "trecho_anterior": "Devido à implementação da Resolução nº CMN 4.966/21, as tarifas atreladas à originação de operações de crédito passaram a ser reconhecidas de maneira diferida pelo prazo das operações na linha de Receitas Financeiras de Operações de Crédito, que integram a Margem Financeira Bruta (MFB), o que ocasionou uma redução de cerca de R$ 350 milhões em receitas com prestação de serviços no 2T25, com efeito na MFB de maneira diferida.",
+   "trecho_atual": "Na comparação com o ano anterior, deve-se levar em conta as alterações trazidas pela Resolução CMN nº 4.966 a partir do 1T25 a partir da qual as tarifas atreladas à originação de operações de crédito passaram a ser reconhecidas de maneira diferida pelo prazo das operações na linha de Receitas Financeiras de Operações de Crédito, que integram a Margem Financeira Bruta (MFB), o que ocasionou redução de R$ 1,1 bilhão em receitas de prestação de serviços no 9M25, com efeito na MFB de maneira diferida."
+  },
+  {
+   "item": "E054",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 134,
+   "secao": "Relatório da Administração | 9M25",
+   "trecho_anterior": "",
+   "trecho_atual": "Provisão para perdas associadas ao risco de crédito"
+  },
+  {
+   "item": "E055",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 25,
+   "pagina_atual": 23,
+   "secao": "Receita Financeira de Operações de Crédito",
+   "trecho_anterior": "Por outro lado, houve aumento do prazo de apropriação de juros das operações em inadimplência de 60 para 90 dias, com impacto positivo de R$ 368 milhões no 1S25 (R$ 200 milhões no 1T25 e R$ 168 milhões no 2T25).",
+   "trecho_atual": "Por outro lado, houve aumento do prazo de apropriação de juros das operações em inadimplência de 60 para 90 dias, com impacto positivo de R$ 757 milhões no 9M25."
+  },
+  {
+   "item": "E056",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 134,
+   "secao": "Relatório da Administração | 9M25",
+   "trecho_anterior": "",
+   "trecho_atual": "Avançamos no Crédito do Trabalhador, oportunidade para diversificar o mix da carteira com melhor relação risco-retorno."
+  },
+  {
+   "item": "E057",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 137,
+   "secao": "Tecnologia que Transforma",
+   "trecho_anterior": "",
+   "trecho_atual": "Ao unir tecnologia e negócio em torno de uma visão comum, o banco se torna mais leve, adaptável e preparado para surpreender, encantar e entregar valor real no tempo do cliente."
+  },
+  {
+   "item": "E058",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 95,
+   "pagina_atual": null,
+   "secao": "Serviços de Cash Management",
+   "trecho_anterior": "Na frente de recebimentos, o BB integrou os recursos do Pix Automático à API Pix, sendo o primeiro Provedor de Serviço de Pagamento (PSP) aprovado em todos os testes do produto junto ao Bacen.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E059",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 217,
+   "pagina_atual": null,
+   "secao": "15 – Imobilizado de uso",
+   "trecho_anterior": "Veículos 10 a 20%: 8.684 | (551) | (693) | 16.365 | (8.925) | 7.440",
+   "trecho_atual": "",
+   "titulo_da_tabela": "15 – Imobilizado de uso",
+   "unidade": "milhares",
+   "rotulo_da_linha": "Veículos 10 a 20%",
+   "colunas_anterior": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E060",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 14,
+   "pagina_atual": 13,
+   "secao": "Desempenho",
+   "trecho_anterior": "JCP/Dividendos – R$ milhões: 3.828 | 2.761 | 516 | 7.612 | 3.277",
+   "trecho_atual": "JCP/Dividendos – R$ milhões: 3.824 | 516 | 411 | 11.436 | 3.687",
+   "titulo_da_tabela": "Tabela 1. Destaques do Resultado¹",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "JCP/Dividendos – R$ milhões",
+   "colunas_anterior": [
+    "2T24",
+    "1T25",
+    "2T25",
+    "1S24",
+    "1S25"
+   ],
+   "colunas_atual": [
+    "3T24",
+    "2T25",
+    "3T25",
+    "9M24",
+    "9M25"
+   ]
+  },
+  {
+   "item": "E061",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 144,
+   "pagina_atual": null,
+   "secao": "Índice",
+   "trecho_anterior": "Resumo do Relatório do Comite de Auditoria: 145",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Índice",
+   "unidade": "",
+   "rotulo_da_linha": "Resumo do Relatório do Comite de Auditoria",
+   "colunas_anterior": [
+    "2"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E062",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 179,
+   "pagina_atual": 150,
+   "secao": "Demonstração dos fluxos de caixa",
+   "trecho_anterior": "Imposto de Renda e Contribuição Social: 5.303.108 | (198.117) | (521.578) | 2.829.878",
+   "trecho_atual": "Imposto de Renda e Contribuição Social:  | (9.208.003) | (4.899.770)",
+   "titulo_da_tabela": "Demonstração dos fluxos de caixa",
+   "unidade": "milhares",
+   "rotulo_da_linha": "Imposto de Renda e Contribuição Social",
+   "colunas_anterior": [
+    "1º Semestre/2025",
+    "",
+    "",
+    ""
+   ],
+   "colunas_atual": [
+    "Nota",
+    "Banco Mocipão 01/01 a 30/09/2025",
+    "Consolidado 01/01 a 30/09/2025"
+   ]
+  },
+  {
+   "item": "E063",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 109,
+   "secao": "CRM ágil",
+   "trecho_anterior": "",
+   "trecho_atual": "De maneira a acelerar e trazer maior gestão e controle sobre o desenvolvimento de jornadas, ações e campanhas comerciais e relacionais, o BB migrou seu CRM do modelo tradicional em esteiras para o modelo ágil no 3T25."
+  },
+  {
+   "item": "E064",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 35,
+   "pagina_atual": 33,
+   "secao": "Spread com Clientes",
+   "trecho_anterior": "Margem com Clientes: 19.852 | 20.328 | 22.291 | 40.129 | 42.619",
+   "trecho_atual": "Margem com Clientes: 20.758 | 22.311 | 24.628 | 60.888 | 67.267",
+   "titulo_da_tabela": "Tabela 26. Spread com Clientes Ajustado pelo Risco – R$ milhões",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Margem com Clientes",
+   "colunas_anterior": [
+    "2T24",
+    "1T25",
+    "2T25",
+    "1S24",
+    "1S25"
+   ],
+   "colunas_atual": [
+    "3T24",
+    "2T25",
+    "3T25",
+    "9M24",
+    "9M25"
+   ]
+  },
+  {
+   "item": "E065",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 281,
+   "pagina_atual": null,
+   "secao": "Como nossa auditoria abordou o assunto",
+   "trecho_anterior": "(iii) marcação de operações como ativos problemáticos e aumento significativo de risco de crédito;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E066",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 282,
+   "pagina_atual": null,
+   "secao": "Como nossa auditoria abordou o assunto",
+   "trecho_anterior": "Avaliação, com base em amostragem, da perda esperada calculada individualmente, analisando as premissas e inspecionando a documentação relacionada utilizada pelo Banco; e - Avaliação sobre se as divulgações nas demonstrações contábeis individuais e consolidadas estão de acordo com os requerimentos das normas contábeis aplicáveis e consideram todas as informações relevantes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E067",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 120,
+   "pagina_atual": null,
+   "secao": "Soluções Digitais",
+   "trecho_anterior": "Já são mais de 90 mil clientes, sendo 65% jovens investidores, com um volume superior a R$ 145 milhões investidos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E068",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 278,
+   "pagina_atual": 282,
+   "secao": "d) Cessão de empregados a órgãos externos",
+   "trecho_anterior": "2 - No 1º Semestre/2025, o Banco foi ressarcido em R$ 382.973 mil referente aos custos com empregados cedidos sem ônus.",
+   "trecho_atual": "2 - No período de 01/01 a 30/09/2025, o Banco foi ressarcido em R$ 577.798 mil, referente aos custos com empregados cedidos sem ônus."
+  },
+  {
+   "item": "E069",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 144,
+   "secao": "Índice",
+   "trecho_anterior": "",
+   "trecho_atual": "84 20 – Outros passivos ..."
+  },
+  {
+   "item": "E070",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 149,
+   "pagina_atual": null,
+   "secao": "Demonstração das mutações do patrimônio líquido",
+   "trecho_anterior": "- Dividendos 23.f -- -- -- -- --: -- | (1.312.654) | (1.312.654)",
+   "trecho_atual": "",
+   "titulo_da_tabela": "",
+   "unidade": "milhares",
+   "rotulo_da_linha": "- Dividendos 23.f -- -- -- -- --",
+   "colunas_anterior": [
+    "Outros resultados abrangentes",
+    "Participação dos não controladores",
+    "Total"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E071",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 285,
+   "secao": "Demonstrações contábeis consolidadas",
+   "trecho_anterior": "",
+   "trecho_atual": "Essas demonstrações contábeis consolidadas para o período findo em 30 de setembro de 2025, que foram elaboradas de acordo com as práticas contábeis adotadas no Brasil aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil, estão sendo apresentadas de maneira adicional, conforme faculdade prevista no Art. nº 77 da Resolução CMN nº 4.966/2021, às demonstrações contábeis intermediárias consolidadas condensadas preparadas de acordo com a norma internacional de contabilidade IAS 34 - *Interim Financial Reporting*, emitida pelo *International Accounting Standards Board – (IASB)*, e foram apresentadas separadamente pelo Banco do Brasil S.A, nesta data, e sobre as quais emitimos relatório de revisão, não contendo qualquer modificação, com data em 11 de novembro de 2025."
+  },
+  {
+   "item": "E072",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 45,
+   "pagina_atual": 85,
+   "secao": "Participação no Agronegócio",
+   "trecho_anterior": "Análise do Desempenho 2T25 | Despesas Administrativas",
+   "trecho_atual": "Análise do Desempenho 3T25 | Crédito"
+  },
+  {
+   "item": "E073",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 112,
+   "pagina_atual": null,
+   "secao": "Clientes MPE",
+   "trecho_anterior": "A Área de Recomendações Inteligentes (ARI), solução que utiliza inteligência artificial generativa e analytics para criar recomendações personalizadas para cada empresa cliente do BB, a qual fez do BB pioneiro no uso de IA generativa em canais voltados diretamente ao cliente, já impactou mais de 72 mil empresas, superando as 60 milhões recomendações disponibilizadas no App e no Painel PJ.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E074",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 280,
+   "pagina_atual": 285,
+   "secao": "Ênfase – Valores comparativos",
+   "trecho_anterior": "Chamamos a atenção para a Nota explicativa nº 2 às demonstrações contábeis individuais e consolidadas que descreve que as referidas demonstrações foram elaboradas de acordo com as práticas contábeis adotadas no Brasil, aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil, que considera a dispensa da apresentação, nas demonstrações contábeis referentes aos períodos do ano de 2025, dos valores comparativos relativos aos períodos anteriores, conforme previsto na Resolução nº 4.966 do Conselho Monetário Nacional (CMN).",
+   "trecho_atual": "Chamamos a atenção para a nota explicativa nº 3 das demonstrações contábeis individuais e consolidadas que descreve que as referidas demonstrações foram elaboradas de acordo com as práticas contábeis adotadas no Brasil, aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil, considerando a dispensa da apresentação nas demonstrações contábeis referentes aos períodos do ano de 2025, dos valores comparativos relativos aos períodos anteriores, conforme previsto na Resolução nº 4.966 do Conselho Monetário Nacional (CMN) e na Resolução BCB nº 352 do Banco Central do Brasil (BACEN)."
+  },
+  {
+   "item": "E075",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 137,
+   "pagina_atual": null,
+   "secao": "Tecnologia que Transforma",
+   "trecho_anterior": "Hoje, 94% das transações são realizadas por canais digitais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E076",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 236,
+   "pagina_atual": 238,
+   "secao": "Expectativa de realização",
+   "trecho_anterior": "No 1º semestre/2025, observou-se a realização de créditos tributários no Banco Múltiplo no montante de R$ 23.404.733 mil (R$ 23.434.799 mil no Consolidado), correspondente a 139,85% da respectiva projeção de utilização para o período de 2025, que constava no estudo técnico elaborado em 31/12/2024.",
+   "trecho_atual": "No período de 01/01 a 30/09/2025, observou-se a realização de créditos tributários no Banco Múltiplo no montante de R$ 22.798.490 mil (R$ 22.852.500 mil no Consolidado), correspondente a 136,22% da respectiva projeção de utilização para o período de 2025, que constava no estudo técnico elaborado em 31/12/2024."
+  },
+  {
+   "item": "E077",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 133,
+   "pagina_atual": 134,
+   "secao": "Relatório da Administração | 9M25",
+   "trecho_anterior": "Com isso, o lucro líquido do primeiro semestre foi de R$ 9,8 bilhões e o banco entregou R$ 28,4 bilhões em valor adicionado, considerando impostos, salários, dividendos e demais componentes.",
+   "trecho_atual": "Com isso, o lucro líquido dos nove meses de 2025 foi de R$ 12,8 bilhões e o valor adicionado foi de R$ 39,7 bilhões, considerando impostos, salários, dividendos e demais componentes."
+  },
+  {
+   "item": "E078",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 107,
+   "pagina_atual": 107,
+   "secao": "Banco Patagonia",
+   "trecho_anterior": "Receitas com Prestação de Serviços: 238 | 330 | 310 | 459 | 640",
+   "trecho_atual": "Receitas com Prestação de Serviços: 295 | 310 | 289 | 754 | 929",
+   "titulo_da_tabela": "Tabela 84. Banco Patagonia – Principais Linhas do Resultado – R$ milhões",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Receitas com Prestação de Serviços",
+   "colunas_anterior": [
+    "2T24",
+    "1T25",
+    "2T25",
+    "1S24",
+    "1S25"
+   ],
+   "colunas_atual": [
+    "3T24",
+    "2T25",
+    "3T25",
+    "9M24",
+    "9M25"
+   ]
+  },
+  {
+   "item": "E079",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 159,
+   "pagina_atual": 159,
+   "secao": "g.3) Lei nº 14.467, de 16 de novembro de 2022",
+   "trecho_anterior": "Em relação aos créditos que se encontravam inadimplidos em 31 de dezembro de 2024, cujas perdas não foram deduzidas até aquela data e que não tenham sido recuperadas, a referida Lei estabelece que essas perdas somente poderão ser excluídas do lucro líquido, na determinação do lucro real e da base de cálculo da CSLL, à razão de 1/84 (um e oitenta e quatro avos) para cada mês do período de apuração, a partir do mês de janeiro de 2026.",
+   "trecho_atual": "Em relação aos créditos que se encontravam inadimplidos em 31 de dezembro de 2024, cujas perdas não foram deduzidas até aquela data e que não tenham sido recuperadas, a referida Lei estabelece que essas perdas somente poderão ser excluídas do lucro líquido, na determinação do lucro real e da base de cálculo da CSLL, à razão de 1/84 (um e oitenta e quatro avos) ou 1/120 (um e cento e vinte avos) para cada mês do período de apuração, a partir do mês de janeiro de 2026."
+  },
+  {
+   "item": "E080",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 114,
+   "pagina_atual": null,
+   "secao": "Inteligência Artificial e inovação no DNA dos negócios",
+   "trecho_anterior": "A expansão e diversificação dos negócios do BB, por sua vez, passa por iniciativas como o Shopping BB, o BB Pay e Iniciador de Transações de Pagamento (ITP), o Pix, cujas APIs tiveram 5,5 bilhões de acessos no 1S25, e o BB Ventures, que investe em startups com sinergias estratégicas com o BB, contando com cinco fundos de investimentos em participações para um total de 51 startups investidas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E081",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 65,
+   "secao": "Crédito Não Consignado",
+   "trecho_anterior": "",
+   "trecho_atual": "A carteira de crédito não consignado atingiu R$ 48,7 bilhões em setembro/25, crescimento de 12,9% em 12 meses e de 2,9% em relação a junho/25, sendo parte do resultado fruto do desempenho das linhas de Empréstimo com Garantia de Imóveis e com Garantia de Investimento e Previdência, materializando a estratégia de crescimento em linhas de menor risco e com jornada digital de ponta a ponta."
+  },
+  {
+   "item": "E082",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 140,
+   "pagina_atual": null,
+   "secao": "Diversidade, Equidade e Inclusão",
+   "trecho_anterior": "No mesmo período, participamos de mais uma edição da Feira Cultural da Diversidade LGBT+, realizada no Memorial da América Latina, em São Paulo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E083",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 112,
+   "secao": "Clientes MPE",
+   "trecho_anterior": "",
+   "trecho_atual": "Com isso, o BB busca incentivar a centralização de"
+  },
+  {
+   "item": "E084",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 286,
+   "pagina_atual": null,
+   "secao": "Responsabilidades do auditor pela auditoria das demonstrações contábeis individuais e consolidadas",
+   "trecho_anterior": "Se concluirmos que existe incerteza relevante, devemos chamar atenção em nosso relatório de auditoria para as respectivas divulgações nas demonstrações contábeis individuais e consolidadas ou incluir modificação em nossa opinião, se as divulgações forem inadequadas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E085",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 247,
+   "pagina_atual": null,
+   "secao": "d) Sumário das transações com partes relacionadas",
+   "trecho_anterior": "2 - As transações com o Controlador referem-se, principalmente, à equalização de taxas – safra agrícola, títulos e créditos a receber do Tesouro Nacional.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E086",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 149,
+   "pagina_atual": null,
+   "secao": "Demonstração das mutações do patrimônio líquido",
+   "trecho_anterior": "Saldos em 01/01/2025 120.000.000 5.100.000 1.412.071 15.221.388 65.994.017: (21.315.177) | 4.413.380 | 179.031.818",
+   "trecho_atual": "",
+   "titulo_da_tabela": "",
+   "unidade": "milhares",
+   "rotulo_da_linha": "Saldos em 01/01/2025 120.000.000 5.100.000 1.412.071 15.221.388 65.994.017",
+   "colunas_anterior": [
+    "Outros resultados abrangentes",
+    "Participação dos não controladores",
+    "Total"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E087",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 214,
+   "pagina_atual": 214,
+   "secao": "a) Movimentações nas participações em controladas, coligadas e controladas em conjunto",
+   "trecho_anterior": "(Provisão para perdas):  |  |  |  | (10.488) | -- | 5.315 | -- | (5.173)",
+   "trecho_atual": "(Provisão para perdas):  |  |  |  |  | (10.488) | -- | 3.493 | -- | (6.995)",
+   "titulo_da_tabela": "",
+   "unidade": "milhares",
+   "rotulo_da_linha": "(Provisão para perdas)",
+   "colunas_anterior": [
+    "Capital social",
+    "Patrimônio líquido ajustado",
+    "Lucro/(Prejuízo) líquido 1º Semestre/2025",
+    "Quantidade de ações (em milhares)",
+    "Saldo contábil 01/01/2025",
+    "Movimentações – 1º Semestre/2025",
+    "",
+    "",
+    "Saldo contábil 30/06/2025"
+   ],
+   "colunas_atual": [
+    "Capital social",
+    "Patrimônio líquido ajustado",
+    "Lucro líquido 01/01 a 30/09/2025",
+    "Quantidade de ações (em milhares)",
+    "Saldo contábil",
+    "Movimentações – 01/01 a 30/09/2025",
+    "Saldo contábil",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "item": "E088",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Indicadores de Inadimplência",
+   "trecho_anterior": "",
+   "trecho_atual": "A Resolução CMN 4.966/2021, vigente desde janeiro de 2025, trouxe mudanças na contabilização de ativos financeiros e na provisão para perdas esperadas por risco de crédito, aplicadas de forma prospectiva, sem retroagir a períodos anteriores."
+  },
+  {
+   "item": "E089",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 281,
+   "pagina_atual": null,
+   "secao": "Como nossa auditoria abordou o assunto",
+   "trecho_anterior": "Com o auxílio dos nossos especialistas internos com conhecimento especializados em risco de crédito realizamos: (i) avaliação qualitativa das metodologias de perda esperada através da revisão dos modelos com base nos requisitos técnicos da Resolução CMN 4.966/21; e (ii) recálculo independente das PDs, EADs, LGDs, e cenários macroeconômicos ponderados, incluindo a aplicação dos percentuais mínimos definidos pela Res.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E090",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 25,
+   "pagina_atual": 23,
+   "secao": "Receita Financeira de Operações de Crédito",
+   "trecho_anterior": "Operações de Arrendamento Mercantil: 22 | 26 | 29 | 46 | 55",
+   "trecho_atual": "Operações de Arrendamento Mercantil: 24 | 29 | 33 | 70 | 88",
+   "titulo_da_tabela": "Tabela 8. Receita Financeira de Operação de Crédito $$ – R$ milhões",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Operações de Arrendamento Mercantil",
+   "colunas_anterior": [
+    "2T24",
+    "1T25",
+    "2T25",
+    "1S24",
+    "1S25"
+   ],
+   "colunas_atual": [
+    "3T24",
+    "2T25",
+    "3T25",
+    "9M24",
+    "9M25"
+   ]
+  },
+  {
+   "item": "E091",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 267,
+   "pagina_atual": 271,
+   "secao": "Política Específica de Gerenciamento de Riscos e Capital",
+   "trecho_anterior": "Em aderência aos requisitos da Resolução CMN nº 4.557/2017 a política permeia as atividades relacionadas ao gerenciamento do risco operacional, com objetivo de identificar, mensurar, avaliar, mitigar, controlar, monitorar, reportar e aprimorar o risco associado ao Conglomerado Prudencial e a cada instituição individualmente, bem como identificar e acompanhar os riscos associados às demais entidades controladas por seus integrantes ou das quais estes participem.",
+   "trecho_atual": "Em aderência aos requisitos da Resolução CMN n.º 4.557/2017 a política permeia as atividades relacionadas ao gerenciamento do risco operacional, com objetivo de identificar, mensurar, avaliar, mitigar, controlar, monitorar, reportar e aprimorar o risco associado ao Conglomerado Prudencial e a cada instituição individualmente, bem como identificar e acompanhar os riscos associados às demais entidades controladas por seus integrantes ou das quais estes participem."
+  },
+  {
+   "item": "E092",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 157,
+   "pagina_atual": 157,
+   "secao": "(ii) Perdas esperadas associadas ao risco de crédito",
+   "trecho_anterior": "Estágio 2 – Operações com aumento significativo do risco de crédito (ASR) – Os ativos enquadrados nesse estágio apresentam atraso superior a 30 dias no pagamento do principal ou de encargos ou outro critério indicativo de aumento significativo no risco de crédito em relação ao apurado na alocação original do instrumento.",
+   "trecho_atual": "Estágio 2 – Operações com aumento significativo do risco de crédito (ASR) – Os ativos classificados nesse estágio apresentam atraso superior a 30 dias (ou 60 dias, mediante avaliação) no pagamento de principal ou de encargos, ou outro critério que indique aumento significativo do risco de crédito em relação ao apurado na alocação inicial do instrumento."
+  },
+  {
+   "item": "E093",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 109,
+   "secao": "CRM ágil",
+   "trecho_anterior": "",
+   "trecho_atual": "Com a mudança, observa-se maior eficiência na condução das ações e campanhas, redução do *time-to-market*, obtenção de uma visão integrada do cliente, adoção de novas soluções em nuvens e engajamento e protagonismo das equipes."
+  },
+  {
+   "item": "E094",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 144,
+   "pagina_atual": null,
+   "secao": "Índice",
+   "trecho_anterior": "5 – Aquisições, vendas e reestruturações societárias: 34",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Índice",
+   "unidade": "",
+   "rotulo_da_linha": "5 – Aquisições, vendas e reestruturações societárias",
+   "colunas_anterior": [
+    "2"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E095",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Pessoas Jurídicas",
+   "trecho_anterior": "A Resolução gera mudanças principalmente na forma dos cálculos de perda esperada, no reconhecimento de juros das operações de crédito, seja pelo aumento do prazo de *accrual* das operações inadimplidas de 60 para 90 dias, seja pelo reconhecimento pelo regime de caixa das operações no estágio 3, e o diferimento de receitas e custos atrelados a uma operação de crédito a partir da taxa efetiva de juros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E096",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Indicadores de Inadimplência",
+   "trecho_anterior": "",
+   "trecho_atual": "O Capital Principal encerrou setembro/25 em 11,16%, com Índice de Basileia de 14,81%."
+  },
+  {
+   "item": "E097",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Agro",
+   "trecho_anterior": "",
+   "trecho_atual": "Destaca-se que, além do aumento da inadimplência, em especial na carteira agro, houve agravamentos em casos específicos em Grandes Empresas."
+  },
+  {
+   "item": "E098",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 281,
+   "pagina_atual": null,
+   "secao": "Principais assuntos de auditoria",
+   "trecho_anterior": "Principais assuntos de auditoria são aqueles que, em nosso julgamento profissional, foram os mais significativos em nossa auditoria do semestre corrente.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E099",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 27,
+   "pagina_atual": 25,
+   "secao": "Despesa Financeira de Captação Institucional",
+   "trecho_anterior": "Obrigações de Emp., Cessões e Repasses: (1.718) | (1.994) | (2.208) | (3.395) | (4.202)",
+   "trecho_atual": "Obrigações de Emp., Cessões e Repasses: (1.707) | (2.208) | (1.992) | (5.103) | (6.194)",
+   "titulo_da_tabela": "Tabela 11. Despesa de Captação Institucional – R$ milhões",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Obrigações de Emp., Cessões e Repasses",
+   "colunas_anterior": [
+    "2T24",
+    "1T25",
+    "2T25",
+    "1S24",
+    "1S25"
+   ],
+   "colunas_atual": [
+    "3T24",
+    "2T25",
+    "3T25",
+    "9M24",
+    "9M25"
+   ]
+  },
+  {
+   "item": "E100",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 144,
+   "secao": "Índice",
+   "trecho_anterior": "",
+   "trecho_atual": "31 5 – Aquisições, vendas e reestruturações societárias ..."
+  },
+  {
+   "item": "E101",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 113,
+   "secao": "Atacado Corporate",
+   "trecho_anterior": "",
+   "trecho_atual": "A satisfação dos clientes é uma prioridade e o resultado reflete o compromisso do Banco: em setembro/25, o segmento manteve o indicador CSAT, referente à satisfação do cliente, dentro da zona de excelência."
+  },
+  {
+   "item": "E102",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 284,
+   "pagina_atual": null,
+   "secao": "Demonstrações contábeis consolidadas",
+   "trecho_anterior": "Essas demonstrações contábeis consolidadas para o semestre findo em 30 de junho de 2025, foram elaboradas de acordo com as práticas contábeis adotadas no Brasil aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil (BACEN), estão sendo apresentadas de maneira adicional, conforme faculdade prevista no Art. nº 77 da Resolução CMN nº 4.966, às demonstrações contábeis consolidadas preparadas de acordo com as normas contábeis internacionais (IFRS Accounting Standards) emitidas pelo International Accounting Standards Board (IASB), que foram apresentadas separadamente pelo Banco do Brasil S.A, nesta data e sobre as quais emitimos relatório de revisão, não contendo qualquer modificação, com data de 13 de agosto de 2025.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E103",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "2. Margem Financeira Bruta",
+   "trecho_anterior": "Nas Despesas de Captação Comercial, as despesas com Outros Depósitos passam a fazer parte da linha de Depósitos a Prazo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E104",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 198,
+   "pagina_atual": 197,
+   "secao": "b) Resultado da carteira de crédito",
+   "trecho_anterior": "2 - Inclui despesas no montante de R$ 339.571 mil (R$ 186.764 mil, líquido de tributos) no 1º Semestre/2025, oriundas de cessões de crédito sem coobrigação a entidades não integrantes do Sistema Financeiro Nacional, conforme Resolução CMN nº 2.836/2001.",
+   "trecho_atual": "2 - Inclui despesas no montante de R$ 1.441.680 mil (R$ 792.924 mil, líquido de tributos) no período de 01/01 a 30/09/2025, oriundas de cessões de crédito sem coobrigação a entidades não integrantes do Sistema Financeiro Nacional, conforme Resolução CMN nº 2.836/2001."
+  },
+  {
+   "item": "E105",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 111,
+   "secao": "Educação Financeira",
+   "trecho_anterior": "",
+   "trecho_atual": "Entre os principais recursos disponíveis, destacam-se: o Minhas Finanças, ferramenta que permite o controle de receitas e despesas com integração bancária; o Índice de Saúde Financeira do Brasileiro (I-SFB): ferramenta de avaliação gratuita da situação financeira do usuário; conteúdos especializados adaptados ao perfil do usuário; e Drops de Educação Financeira: vídeos curtos e objetivos que facilitam o aprendizado de forma prática e descomplicada."
+  },
+  {
+   "item": "E106",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 25,
+   "secao": "Despesa Financeira de Captação Institucional",
+   "trecho_anterior": "A despesa financeira de captação institucional totalizou R$ 4,7 bilhões no 2T25, influenciada pelas despesas com as Dívidas Subordinadas no País (Letras Financeiras Perpétuas) e Obrigações de Empréstimos, Cessões e Repasses, que refletem um ambiente de taxas mais elevadas.",
+   "trecho_atual": "A despesa financeira de captação institucional totalizou R$ 4,9 bilhões no 3T25, influenciada pelas despesas com as Dívidas Subordinadas no País (Letras Financeiras Perpétuas), que refletem um ambiente de taxas mais elevadas."
+  },
+  {
+   "item": "E107",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 151,
+   "pagina_atual": 151,
+   "secao": "Demonstração do valor adicionado",
+   "trecho_anterior": "Despesas de amortização/depreciação:  | (2.165.258) | (2.238.211) | ",
+   "trecho_atual": "Despesas de amortização/depreciação:  | (3.389.366) |  | (3.500.472) | ",
+   "titulo_da_tabela": "Demonstração do valor adicionado",
+   "unidade": "milhares",
+   "rotulo_da_linha": "Despesas de amortização/depreciação",
+   "colunas_anterior": [
+    "Nota",
+    "Banco Millipso 1º Semestre/2025",
+    "Consolidado 1º Semestre/2025",
+    ""
+   ],
+   "colunas_atual": [
+    "Nota",
+    "Banco Múltiplo",
+    "",
+    "Consolidado",
+    ""
+   ]
+  },
+  {
+   "item": "E108",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 14,
+   "pagina_atual": 13,
+   "secao": "Desempenho",
+   "trecho_anterior": "(P/LPA) Preço / Lucro por Ação 12 Meses: 4,37 | 4,84 | 4,59 | 4,37 | 4,59",
+   "trecho_atual": "(P/LPA) Preço / Lucro por Ação 12 Meses: 4,39 | 4,59 | 5,83 | 4,39 | 5,83",
+   "titulo_da_tabela": "Tabela 1. Destaques do Resultado¹",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "(P/LPA) Preço / Lucro por Ação 12 Meses",
+   "colunas_anterior": [
+    "2T24",
+    "1T25",
+    "2T25",
+    "1S24",
+    "1S25"
+   ],
+   "colunas_atual": [
+    "3T24",
+    "2T25",
+    "3T25",
+    "9M24",
+    "9M25"
+   ]
+  },
+  {
+   "item": "E109",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 34,
+   "pagina_atual": 32,
+   "secao": "Spread Global",
+   "trecho_anterior": "(d.I) Receitas de Juros: 63.622 | 70.493 | 77.943 | 128.374 | 148.436",
+   "trecho_atual": "(d.I) Receitas de Juros: 65.892 | 77.962 | 85.079 | 194.266 | 233.534",
+   "titulo_da_tabela": "Tabela 24. Spread Global e Margem Financeira Bruta $$ – R$ milhões",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "(d.I) Receitas de Juros",
+   "colunas_anterior": [
+    "2T24",
+    "1T25",
+    "2T25",
+    "1S24",
+    "1S25"
+   ],
+   "colunas_atual": [
+    "3T24",
+    "2T25",
+    "3T25",
+    "9M24",
+    "9M25"
+   ]
+  },
+  {
+   "item": "E110",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 67,
+   "pagina_atual": 65,
+   "secao": "Crédito Consignado",
+   "trecho_anterior": "A taxa média das operações de crédito consignado contratadas é de 1,64% a.m., com o prazo médio de 72 meses.",
+   "trecho_atual": "A taxa média das operações de crédito consignado contratadas é de 1,70% a.m., com o prazo médio de 71 meses."
+  },
+  {
+   "item": "E111",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 249,
+   "secao": "d) Sumário das transações com partes relacionadas",
+   "trecho_anterior": "",
+   "trecho_atual": "a) Controlador: União (Tesouro Nacional e órgãos da administração direta do Governo Federal); b) Controladas: Empresas relacionadas na Nota 2.e; c) Coligadas e controladas em conjunto: Referem-se, principalmente, ao Banco Votorantim, Cielo, BB Mapfre Participações, Brasilprev, Brasilcap, Alelo, Cateno e Tecban; d) Pessoal-chave da administração: Conselho de Administração e Diretoria Executiva; e e) Outras partes relacionadas: Empresas públicas e sociedades de economia mista controladas pelo Governo Federal, tais como: Petrobras, CEF e BNDES."
+  },
+  {
+   "item": "E112",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 282,
+   "pagina_atual": null,
+   "secao": "Reconhecimento e mensuração das provisões para contingências fiscais, cíveis e trabalhistas",
+   "trecho_anterior": "A mensuração desta estimativa envolve julgamentos da administração para a determinação dos métodos “Individualizado” e “Massificado”, bem como para a escolha das premissas a serem utilizadas em cada método, que se baseia em: valor indenizatório pretendido, o valor provável de condenação, provas apresentadas e provas produzidas nos autos, jurisprudência sobre a matéria, subsídios fáticos levantados, decisões judiciais, classificação e grau de risco de perda da ação judicial, para a mensuração do valor da probabilidade de perda das ações.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E113",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 146,
+   "pagina_atual": 146,
+   "secao": "Demonstração do resultado",
+   "trecho_anterior": "Número médio ponderado de ações – básico e diluído: 5.708.696.148 | ",
+   "trecho_atual": "Número médio ponderado de ações – básico e diluído: 5.708.696.148 | --",
+   "titulo_da_tabela": "Demonstração do resultado",
+   "unidade": "milhares",
+   "rotulo_da_linha": "Número médio ponderado de ações – básico e diluído",
+   "colunas_anterior": [
+    "Banco Multisto 1º Semestre/2025",
+    "Consolidado 1º Semestre/2025"
+   ],
+   "colunas_atual": [
+    "Banco Multiplo 01/01 a 30/09/2025",
+    "Consolidado 01/01 a 30/09/2025"
+   ]
+  },
+  {
+   "item": "E114",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 273,
+   "pagina_atual": 276,
+   "secao": "i) Instrumentos elegíveis a capital",
+   "trecho_anterior": "1) na modalidade perpétua, há opção de recompra ou resgate, atentando para os seguintes requisitos: a. intervalo mínimo de cinco anos entre a data da emissão e a primeira data de exercício de opção de recompra ou resgate; b. o exercício de opção de recompra ou resgate está condicionado, na data do exercício, à autorização do Banco Central do Brasil; c. inexistência de características que acarretem a expectativa de que a opção de recompra ou resgate será exercida, constituindo-se faculdade da Emitente; e d. o intervalo entre as datas de exercício das opções deve ser de, no mínimo, 180 dias.",
+   "trecho_atual": "1) na modalidade perpétua, há opção de recompra ou resgate, atentando para os seguintes requisitos: a. intervalo mínimo de cinco anos entre a data da emissão e a primeira data de exercício de opção de recompra ou resgate; b. o exercício de opção de recompra ou resgate está condicionado, na data do exercício, à autorização do Banco Central do Brasil;"
+  },
+  {
+   "item": "E115",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 247,
+   "pagina_atual": null,
+   "secao": "d) Sumário das transações com partes relacionadas",
+   "trecho_anterior": "b) Controladas: Empresas relacionadas na Nota 2.e;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E116",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 92,
+   "pagina_atual": null,
+   "secao": "9. Soluções Financeiras",
+   "trecho_anterior": "Abrangem, portanto, desde os serviços de meios de pagamentos, que contam com um amplo portfólio de soluções para pessoa física, jurídica, agronegócio e governo; passando pela gestão de recursos de terceiros, por meio de uma variedade de produtos de investimento; mercado de capitais, como uma das principais fontes de financiamento da atividade produtiva no país e da oferta de diferentes instrumentos de captação; até a flexibilidade oferecida pelos consórcios.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E117",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 9,
+   "secao": "Índice de Figuras",
+   "trecho_anterior": "Consumo de RWA – R$ bilhões...50 Figura 13.",
+   "trecho_atual": "Consumo de RWA – R$ bilhões...47 Figura 12."
+  },
+  {
+   "item": "E118",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 267,
+   "pagina_atual": 271,
+   "secao": "Política Específica de Gerenciamento de Riscos e Capital",
+   "trecho_anterior": "O Banco do Brasil define a política específica de gerenciamento de riscos e de capital, abrangendo direcionadores aplicáveis ao Risco Operacional, com objetivo de estabelecer as diretrizes relacionadas ao gerenciamento contínuo e integrado de riscos e de capital e de divulgação das informações sobre esses temas para o Conglomerado Prudencial, cujo escopo de consolidação é definido pela Resolução CMN nº 4.950/2021, resguardadas aquelas de natureza confidencial e proprietária.",
+   "trecho_atual": "O Banco define a política específica de gerenciamento de riscos e de capital, abrangendo direcionadores aplicáveis ao Risco Operacional, com objetivo de estabelecer as diretrizes relacionadas ao gerenciamento contínuo e integrado de riscos e de capital e de divulgação das informações sobre esses temas para o Conglomerado Prudencial, resguardadas aquelas de natureza confidencial e proprietária."
+  },
+  {
+   "item": "E119",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 262,
+   "pagina_atual": 266,
+   "secao": "Composição das captações",
+   "trecho_anterior": "Compromissadas: 592.960.451 | 13.775.412 | 370.639 | 10.624.982 | 617.731.484 | 33,3%",
+   "trecho_atual": "Compromissadas: 654.875.130 | 15.213.788 | 409.339 | 11.734.402 | 682.232.659",
+   "titulo_da_tabela": "Composição das captações",
+   "unidade": "milhares",
+   "rotulo_da_linha": "Compromissadas",
+   "colunas_anterior": [
+    "30/06/2025",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "colunas_atual": [
+    "30/09/2025",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "item": "E120",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 285,
+   "secao": "Demonstrações do valor adicionado",
+   "trecho_anterior": "",
+   "trecho_atual": "As demonstrações contábeis individuais e consolidadas acima referidas incluem as demonstrações do valor adicionado (DVA) individuais e consolidadas, referentes ao período de nove meses findo em 30 de setembro de 2025, elaboradas sob a responsabilidade da Administração do Banco cuja apresentação não é requerida para fins das práticas contábeis adotadas no Brasil aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil."
+  }
+ ]
+}
