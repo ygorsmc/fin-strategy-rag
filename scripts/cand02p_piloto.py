@@ -662,6 +662,49 @@ def cmd_avaliar(args) -> int:
     return 0
 
 
+# --- conferência humana, só se PROMISSOR (§6) ----------------------------------------------
+
+AMOSTRA_HUMANA = 60
+
+
+def sortear_amostra_humana(pares_do_teste: list[str]) -> list[tuple[str, str]]:
+    """60 itens do pool de teste, estratificados por par (7 ou 8 por par),
+    semente fixa. Devolve (par, item) em ordem aleatória."""
+    import random
+    base, extra = divmod(AMOSTRA_HUMANA, len(pares_do_teste))
+    escolhidos = []
+    for n, par in enumerate(sorted(pares_do_teste)):
+        pool = json.loads((DESTINO / "pool" / "teste" / f"{par}.json").read_text(encoding="utf-8"))
+        aleatorio = random.Random(f"{SEMENTE}:humana:{par}")
+        k = base + (1 if n < extra else 0)
+        escolhidos.extend((par, item) for item in aleatorio.sample(sorted(pool["itens"]), k))
+    random.Random(f"{SEMENTE}:humana:ordem").shuffle(escolhidos)
+    return escolhidos
+
+
+def cmd_amostra_humana(_args) -> int:
+    resultado = DESTINO / "resultado_teste.json"
+    if not resultado.exists() or json.loads(resultado.read_text())["veredito"] != "PROMISSOR":
+        raise SystemExit("a conferência humana só existe se o veredito do teste for PROMISSOR (§6)")
+    resumo = json.load(open(DESTINO / "resumo_eventos.json"))["pares"]
+    pares_teste = [par for par, info in resumo.items() if info["papel"] == "teste"]
+    pasta = DESTINO / "humana"
+    pasta.mkdir(parents=True, exist_ok=True)
+    itens, mapa = [], {}
+    for n, (par, item) in enumerate(sortear_amostra_humana(pares_teste), 1):
+        pacote = json.loads((DESTINO / "pacotes" / "teste" / f"{par}.json").read_text(encoding="utf-8"))
+        conteudo = next(i for i in pacote["itens"] if i["item"] == item)
+        novo = f"H{n:02d}"
+        itens.append({**conteudo, "item": novo, "documento_anterior": pacote["documento_anterior"],
+                      "documento_atual": pacote["documento_atual"]})
+        mapa[novo] = {"par": par, "item": item}
+    (pasta / "pacote.json").write_text(json.dumps({"itens": itens}, ensure_ascii=False, indent=1),
+                                       encoding="utf-8")
+    (pasta / "mapa.json").write_text(json.dumps(mapa, indent=1), encoding="utf-8")
+    print(f"{len(itens)} itens em {pasta / 'pacote.json'}; rótulos em {pasta / 'rotulos.jsonl'}")
+    return 0
+
+
 def principal(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     sub = parser.add_subparsers(dest="comando", required=True)
@@ -676,10 +719,11 @@ def principal(argv=None) -> int:
     sub.add_parser("treinar")
     a = sub.add_parser("avaliar")
     a.add_argument("--papel", choices=("treino", "teste"), required=True)
+    sub.add_parser("amostra-humana")
     args = parser.parse_args(argv)
     return {"eventos": cmd_eventos, "desafiante": cmd_desafiante, "rubrica": cmd_rubrica,
             "pool": cmd_pool, "rotular-gemini": cmd_rotular_gemini, "treinar": cmd_treinar,
-            "avaliar": cmd_avaliar}[args.comando](args)
+            "avaliar": cmd_avaliar, "amostra-humana": cmd_amostra_humana}[args.comando](args)
 
 
 if __name__ == "__main__":

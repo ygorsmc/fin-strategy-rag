@@ -184,3 +184,32 @@ def test_pacote_nao_carrega_braco_score_nem_sinal_do_b1():
 def test_texto_do_desafiante_e_truncado():
     ev = {"tipo": "texto", "operacao": "adicao", "antes": "", "depois": "x" * 5000}
     assert len(p.texto_c(ev)) == p.TAMANHO_TEXTO_C
+
+
+# --- conferência humana (§6) --------------------------------------------------------
+
+def _pools_de_teste(tmp_path, pares):
+    (tmp_path / "pool" / "teste").mkdir(parents=True, exist_ok=True)
+    for par in pares:
+        itens = {f"E{n:03d}": f"{par}-ev{n}" for n in range(1, 121)}
+        (tmp_path / "pool" / "teste" / f"{par}.json").write_text(json.dumps({"itens": itens}))
+
+
+def test_amostra_humana_tem_60_estratificada_e_deterministica(tmp_path, monkeypatch):
+    monkeypatch.setattr(p, "DESTINO", tmp_path)
+    pares = [f"P{n}" for n in range(8)]
+    _pools_de_teste(tmp_path, pares)
+    amostra = p.sortear_amostra_humana(pares)
+    assert len(amostra) == 60 and len(set(amostra)) == 60
+    por_par = {}
+    for par, _ in amostra:
+        por_par[par] = por_par.get(par, 0) + 1
+    assert sorted(por_par.values()) == [7, 7, 7, 7, 8, 8, 8, 8]
+    assert p.sortear_amostra_humana(pares) == amostra
+
+
+def test_amostra_humana_so_existe_se_promissor(tmp_path, monkeypatch):
+    monkeypatch.setattr(p, "DESTINO", tmp_path)
+    (tmp_path / "resultado_teste.json").write_text(json.dumps({"veredito": "INVIAVEL"}))
+    with pytest.raises(SystemExit, match="PROMISSOR"):
+        p.principal(["amostra-humana"])
