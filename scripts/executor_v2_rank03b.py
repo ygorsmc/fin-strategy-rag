@@ -26,8 +26,10 @@ import calendar
 import hashlib
 import json
 import random
+import re
 import statistics
 import sys
+import unicodedata
 from collections import Counter, defaultdict
 from datetime import date, timedelta
 from pathlib import Path
@@ -435,15 +437,50 @@ def erros_demonstrados(correcoes_por_conta: dict) -> list[dict]:
             for e in ERROS_DEMONSTRADOS]
 
 
+def _ids(id_doc) -> set[str]:
+    """`id_doc` do painel pode ser lista separada por vírgula (cadastro repetido)."""
+    return {i for i in str(id_doc or "").split(",") if i}
+
+
+def uso_dos_erros_demonstrados(erros: list[dict], amostra: list[dict], ativos: list[dict],
+                               trimestres: list[dict]) -> list[dict]:
+    """Emenda AF3 (28/09), §12-bis: erro demonstrado pendente "não é tolerado por
+    caber em limiar nenhum". Conta, por erro, as observações que usam o documento
+    na conta demonstrada: como ativo em D (conta `1`) ou pelo FCO na janela ou no
+    rótulo (conta `6.01`). Contagem estrutural, sem valor."""
+    id_do_ativo = {_doc(a["cd_cvm"], a): _ids(a["id_doc"]) for a in ativos}
+    id_do_fco: dict[tuple, set[str]] = defaultdict(set)
+    for t in trimestres:
+        for o in json.loads(t["operandos"]):
+            id_do_fco[_doc(t["cd_cvm"], o)] |= _ids(o["id_doc"])
+    saida = []
+    for e in erros:
+        if e["conta"] == "1":
+            n = sum(1 for o in amostra
+                    if e["id_doc"] in id_do_ativo.get(tuple(o["linhagem"]["ativo"]["doc"]), ()))
+        elif e["conta"] == "6.01":
+            n = sum(1 for o in amostra if any(
+                e["id_doc"] in id_do_fco.get(d, ())
+                for d, _ in _docs_da_linhagem([*o["linhagem"]["janela"], *o["linhagem"]["rotulo"]])))
+        else:
+            raise pp.DefeitoDeFonte(f"erro demonstrado na conta {e['conta']}: sem regra de uso")
+        saida.append({**e, "observacoes_que_usam": n})
+    return saida
+
+
 # --- G0.5 e G1 (§§5.5, 6) ------------------------------------------------------------------
 
 def _docs_da_linhagem(linhas: list[dict]) -> list[tuple[tuple, str]]:
     return [(tuple(x[:4]), x[4]) for t in linhas for x in t["docs"]]
 
 
-def gate_g0_5(amostra: list[dict], decididos: dict) -> dict:
-    """Uso zero, recalculado da LINHAGEM e dos vereditos — não das marcas da construção."""
-    violacoes = Counter({"regra_1": 0, "regra_2": 0, "regra_3": 0})
+def gate_g0_5(amostra: list[dict], decididos: dict, erros_usados: list[dict] = ()) -> dict:
+    """Uso zero, recalculado da LINHAGEM e dos vereditos — não das marcas da construção.
+    AF3 (28/09): uso de documento com erro demonstrado PENDENTE também reprova."""
+    violacoes = Counter({"regra_1": 0, "regra_2": 0, "regra_3": 0,
+                         "erro_demonstrado_pendente": sum(
+                             e["observacoes_que_usam"] for e in erros_usados
+                             if e["estado"] == "pendente")})
     for obs in amostra:
         janela, rotulo = obs["linhagem"]["janela"], obs["linhagem"]["rotulo"]
         if any(heterogeneo_sem_veredito(_docs_da_linhagem([t]), decididos["fco"])
@@ -667,7 +704,9 @@ def estrutura(ativos, trimestres, nulos, decididos, provas, correcoes_por_conta)
     g0["g0_1_v2"]["observacoes_que_usam_derivacao_entre_metodos"] = sum(
         1 for o in amostra if any(len(set(t["metodos"].split("+"))) > 1
                                   for t in (*o["linhagem"]["janela"], *o["linhagem"]["rotulo"])))
-    g0_5 = gate_g0_5(amostra, decididos)
+    g0["erros_demonstrados"] = uso_dos_erros_demonstrados(g0["erros_demonstrados"], amostra,
+                                                          ativos, trimestres)
+    g0_5 = gate_g0_5(amostra, decididos, g0["erros_demonstrados"])
     g1 = gate_g1_v2(amostra, descartes_publicaveis(inventario), provas)
     prep = preparar_trimestres(trimestres, decididos, pop["incluidas"])
     return {"populacao": pop, "g0": g0, "g0_5": g0_5, "g1": g1, "amostra": amostra,
@@ -711,13 +750,31 @@ def artefato_estrutural(e: dict) -> dict:
 
 # --- trava do congelamento (C9) -----------------------------------------------------------
 
+#: AF1 (28/09): o que conta como linha de status — com ou sem negrito, dentro de
+#: citação ou de item de lista, sem distinguir caixa…
+LINHA_DE_STATUS = re.compile(r"^[>\s\-*+]*status\s*\**\s*:", re.IGNORECASE)
+#: …e a única forma aceita no congelado, casada positivamente em TODAS elas.
+STATUS_CONGELADO = re.compile(r"^\*\*Status: CONGELADO em \d{4}-\d{2}-\d{2}\b")
+
+
 def verificar_congelamento(caminho: Path, sha_informado: str, pins: dict[str, str]) -> dict:
-    """C9: nome e título sem RASCUNHO, hash igual ao informado e os pins no texto."""
+    """C9: nome e título sem RASCUNHO, linhas de status só CONGELADO (AF1), hash
+    igual ao informado e os pins no texto."""
     if "RASCUNHO" in caminho.name.upper():
         raise NaoCongelado(f"{caminho.name}: o nome ainda diz RASCUNHO")
     texto = caminho.read_text(encoding="utf-8")
     if "RASCUNHO" in (texto.splitlines() or [""])[0].upper():
         raise NaoCongelado("o título ainda diz RASCUNHO")
+    # AF1 (28/09): a marca do rascunho real está na linha de status, não no título.
+    # Toda linha de status tem de declarar congelamento com data: acrescentar uma
+    # linha CONGELADO e manter a de RASCUNHO não congela.
+    linhas = [unicodedata.normalize("NFC", l.strip()) for l in texto.splitlines()]
+    status = [l for l in linhas if LINHA_DE_STATUS.match(l)]
+    if not status:
+        raise NaoCongelado("sem linha de status (`**Status: CONGELADO em AAAA-MM-DD …`)")
+    fora = [l for l in status if not STATUS_CONGELADO.match(l)]
+    if fora:
+        raise NaoCongelado(f"a linha de status não declara congelamento: {fora[0][:80]}")
     obtido = sha256(caminho)
     if obtido != sha_informado:
         raise NaoCongelado("SHA-256 do pré-registro diferente do informado")

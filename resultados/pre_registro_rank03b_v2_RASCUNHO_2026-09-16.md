@@ -5,7 +5,12 @@
 Enquanto estiver neste estado, **nenhum T1, T2 ou baseline é medido** sobre dado
 real. O congelamento é: aprovação explícita do responsável → remoção de
 "RASCUNHO" do título e do nome do arquivo → SHA-256 publicado → só então a
-medição.
+medição. *(28/09, M1 e AF1 da auditoria final: congela-se **por cópia**. Este
+rascunho fica no lugar, e o congelado é um arquivo novo, com nome sem
+RASCUNHO e com esta linha de status trocada por `**Status: CONGELADO em
+<data>, por ato do responsável.**`. A medição recusa se a linha de status não
+declarar congelamento. A ordem está no [contrato](contratos_caminho_medicao_rank03b_2026-09-27.md),
+seção "Auditoria final (28/09)".)*
 
 **Substitui** o [pré-registro de 11/09](pre_registro_rank03b_consumo_operacional_2026-09-11.md)
 (`fbae30cc…`), **consumido** pela rodada que parou em G0. **Não é Rank 3-C:** o
@@ -55,6 +60,11 @@ cumpridas:
 
 Os pins propostos estão no §4 e o que se viu, no §11.8. **O rascunho continua
 não congelado.** Congelar é o próximo ato, e é do responsável.
+
+*(28/09: a conferência independente do executor, que a primeira condição cita,
+ficou completa com a auditoria final sobre o commit `9049579`: APTA COM
+RESSALVAS. As ressalvas (M1 e B1–B5) foram tratadas antes do congelamento,
+com as emendas AF1 a AF3 e os pareceres versionados.)*
 
 > **Revisão de 17/09.** A [conferência independente](conferencia_pre_treino_rank03b_2026-09-17.md)
 > achou erro de escala comprovado (ESC-0101), uso de prova de escala antes da
@@ -260,6 +270,18 @@ final. Se diferir do que a medição calcula, ela recusa.
 O manifesto por documento (`13520e61…`, zero linhas) continua como entrada, e
 o painel v2 é construído pelos mesmos 31 ZIPs pinados.
 
+*(28/09, B4 da auditoria final.)* Os hashes das entradas ficam aqui **como
+procedência**. O pin que a medição verifica é o digest de conteúdo do painel:
+entradas diferentes que gerem o mesmo conteúdo não mudam a medição, e
+conteúdo diferente a recusa.
+
+| Entrada | SHA-256 |
+|---|---|
+| manifesto de correções por documento (zero linhas) | `13520e61d99f221715a26ade80dc278de15a6b30c93e30a63ed6b6aa753ff07d` |
+| `cvm_treino.duckdb` (lido só para o universo) | `c1a604453a9a2fa7df24b0b2dbc53df6fb5ef0d39fd06f492407028030bc069b` |
+| manifesto de aquisição dos pacotes RAD | `36902f4ce38add21889bb41bfaf8c83c6264c8cfa77049acf3c5c30633cb5f8b` |
+| os 31 ZIPs | `entradas.zips_sha256` de `artefatos/executor_v2_rank03b/estrutural.json` |
+
 ---
 
 ## 5. G0 — integridade, decisivo
@@ -270,7 +292,7 @@ o painel v2 é construído pelos mesmos 31 ZIPs pinados.
 | G0.2 | Nenhum trimestre fora de 80–100 dias | 0 | Duração **recomputada das datas** das linhas trimestrais; período fora da banda nunca é linha trimestral, é perda inventariada |
 | G0.3 | Saltos de ativo ≥ 100× entre trimestres adjacentes | ≤ 0,5% | Depois das correções com fonte, e só delas. **Fórmula (RF-05):** pares de linhas de ativo **válidas** da mesma companhia, consecutivas e com ordinal adjacente, com `max/min ≥ 100`, divididos pelo **número de linhas de ativo válidas** (não pelo número de pares) |
 | G0.4 | Nenhum valor nulo nas contas usadas | 0 | Contado em **todos** os candidatos, antes dos estados |
-| G0.5 | Nenhum trimestre, observação ou componente censurados pelo §5.5 usados na amostra | 0 (uso) | **Censura em três níveis (§5.5, decidida em 26/09).** Perda publicada antes de montar `y`, em observações e em companhias |
+| G0.5 | Nenhum trimestre, observação ou componente censurados pelo §5.5 usados na amostra | 0 (uso) | **Censura em três níveis (§5.5, decidida em 26/09).** Perda publicada antes de montar `y`, em observações e em companhias. *(28/09, AF3: também reprova o uso de documento com erro demonstrado **pendente** na conta que o demonstra (§12-bis). Hoje o uso é zero.)* |
 | G0.0 | Universo não vazio; toda conta requerida com linha | — | Implementado em 16/09 |
 
 **As observações que G0.3 reprovar NÃO são removidas** (§4.4 regra 9). A
@@ -979,6 +1001,22 @@ e as pastas `artefatos/rota_prova_rank03b_2026-09-27/` e
 - **Nenhuma** taxa de evento, T1, T2, AUC ou baseline foi calculada. O rótulo
   não foi montado.
 
+**Auditoria final e correções (acrescentado em 28/09).**
+- **A auditoria** montou em memória a amostra sem rótulo do painel v2. Imprimiu
+  contagens estruturais e, para uma única companhia (`021520`), a lista de
+  trimestres com estado, escalas e datas de disponibilidade, além das datas
+  dos documentos de ativo das 20 observações. Isso deixa ver quais datas D
+  dessa companhia sobreviveram a todos os filtros, inclusive ao de TTM
+  positivo, misturado com os outros motivos. O inventário com o motivo 11 foi
+  descartado sem leitura. Não houve rótulo, `--medir` nem soma de FCO.
+- **A sessão principal** reconstruiu os pareceres da conferência a partir do
+  `conferencia.json` e dos parâmetros de serialização das transcrições, sem
+  ler conta 6.x. Rodou de novo o modo estrutural depois das emendas AF1 a
+  AF3: G0, G0.5 e G1 continuam aprovados, e os dois campos novos
+  (`observacoes_que_usam` e `erro_demonstrado_pendente`) dão zero.
+- **Nenhuma** taxa de evento, T1, T2, AUC ou baseline foi calculada. O rótulo
+  não foi montado.
+
 ## 12. O que esta rodada não fará
 
 Nenhum modelo; nenhuma escrita nos painéis compartilhados; nenhum acesso ao
@@ -1116,7 +1154,9 @@ adjudicado.
 
 **Correção só do ativo.** Continua vedada enquanto o manifesto não tiver
 esquema por conta (hoje o consumidor recusa coluna por conta) e o G0.3 ler o
-veredito por documento. O contrato que criar a correção por conta tem de,
+veredito por documento. *(28/09: as três condições abaixo foram cumpridas pela
+parte A do [contrato de 27/09](contratos_caminho_medicao_rank03b_2026-09-27.md).
+O manifesto por conta existe, com 77 linhas.)* O contrato que criar a correção por conta tem de,
 antes de aplicar a primeira linha:
 1. fechar o esquema do manifesto no produtor e no consumidor;
 2. ler o G0.3 pela escala aplicada ao ativo, e o G0.5 pela aplicada ao FCO;
@@ -1136,6 +1176,11 @@ Corrigir só o ativo desfaz esse cancelamento.
 no manifesto enquanto o FCO do mesmo documento não for provado ou não houver
 correção por conta. Fica registrado como erro demonstrado e pendente, e o
 executor o lista no artefato de G0. Não é tolerado por caber em limiar nenhum.
+*(28/09: as duas condições já valem. O FCO de `140867` foi provado pela
+cadeia da DFC, e existe correção por conta. O ativo continua fora por outro
+motivo: a ROTA-2 não achou linha com os dois números, e a demonstração da
+GEOM-1 não é prova da ROTA-2. Segue pendente. Pela AF3, o G0.5 reprova se
+alguma observação o usar como ativo em D; hoje são zero.)*
 
 **Rotas para provar o FCO** (anexo do grupo 192; identidade interna da DFC)
 exigem contrato próprio. *(27/09: a identidade interna da DFC ganhou o
@@ -1162,7 +1207,8 @@ recusada por dois motivos:
 ## 13. Condições de falsificação
 
 As da v1 (§11), mais: o painel medido ter digest diferente do registrado aqui
-no congelamento (os pins atuais do §4 não serão esses); o manifesto de
+no congelamento (os pins atuais do §4 não serão esses; *28/09: o §4 traz
+agora os pins propostos, que são os do congelamento*); o manifesto de
 correções ter hash diferente; alguma regra de dado (F, A, P, S)
 ter mudado depois do congelamento; qualquer estatística de rótulo **além das
 declaradas no §11** ter sido calculada antes do congelamento; o G1 da medição

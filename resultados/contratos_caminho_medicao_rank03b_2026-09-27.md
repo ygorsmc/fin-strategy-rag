@@ -772,3 +772,58 @@ conteúdo.
 O erro demonstrado de `140867` continua pendente, porque a ROTA-2 não achou
 linha com os dois números do ativo. Ele conta no G0.3 e não entra em
 observação nenhuma (verificado por contagem, sem ler valor).
+
+## Auditoria final (28/09): APTA COM RESSALVAS — emendas antes do congelamento
+
+Auditoria de conformidade, somente leitura, sobre o commit `9049579`. O
+responsável fez o commit de toda a onda em 27/09, às 20h37. Suíte: 4.452
+aprovados, nenhum pulado.
+
+Não houve achado ALTA. Houve um MÉDIA, que é o procedimento de congelamento
+entregue ao responsável, e cinco BAIXA. Todos são tratados abaixo **antes** do
+congelamento. Nenhum altera veredito, e nenhuma asserção é enfraquecida.
+
+| Achado | O que a auditoria mostrou | Tratamento |
+|---|---|---|
+| **M1** | Renomear o rascunho quebra o executor, porque `PRE_REGISTRO_RASCUNHO` faz o hash do arquivo em todo `executar_estrutural` e `test_rascunho_vigente_nao_mede` usa o arquivo. Ajustar o código depois de copiar o digest deixa o digest velho, e a medição recusa **depois** de o SHA ter sido publicado | **Congelar por cópia.** O rascunho fica no lugar, como histórico, e o congelado é um arquivo novo com nome sem RASCUNHO. Ordem fixa: (1) todo o código final, com a suíte verde; (2) regerar o estrutural; (3) copiar o rascunho, trocar a linha de status e colar os pins, com o `codigo_de_medicao` do passo 2; (4) calcular o SHA-256. Depois do passo 4, qualquer edição de código medido exige congelar de novo. Nenhum código muda por causa do M1 |
+| **B1 → AF1** | A trava do título não decide nada no arquivo real, porque a primeira linha do rascunho nunca teve "RASCUNHO" e a marca está na linha de status. Uma cópia com o nome trocado passou como congelada | `verificar_congelamento` exige uma linha de status (a primeira que começa com `**Status:`) que diga `CONGELADO` e não diga `RASCUNHO` nem `NÃO CONGELADO`. Sem linha de status, recusa. Contraprova sobre uma **cópia do rascunho real**: só com o nome trocado, recusa; com a linha de status trocada, aceita |
+| **B2 → AF2** | Tirar as duas linhas da guarda de folga do motivo 11 não derrubava nenhum teste (mutante sobreviveu) | Contraprova: painel sintético sem colisão de disponibilidade e sem companhia excluída → `PublicacaoInsegura`, sem gravar nada em `destino` nem em `destino_painel` |
+| **B3 → AF3** | "O `140867` não entra" valia por acaso do dado: nem o código nem o artefato garantiam o zero, e o §12-bis diz "não é tolerado por caber em limiar nenhum" | Para cada erro demonstrado, o artefato publica `observacoes_que_usam`, uma contagem estrutural sem valor: para a conta `1`, as observações que usam o documento como ativo em D; para a `6.01`, as que usam o FCO dele na janela ou no rótulo. **G0.5 reprova** se um erro **pendente** tiver uso maior que zero. Isso implementa texto do §12-bis escrito antes de o G0 ser visto. O valor neste dado já é conhecido (zero, contado em 27/09 e pela auditoria) e não muda veredito. Declarado |
+| **B4** | Três passagens do rascunho ficaram contraditas pelo estado de 27/09 sem nota datada, e os hashes das entradas não estavam no §4 | Notas datadas nos três pontos. No §4, os hashes das entradas (`cvm_treino`, manifesto de aquisição e manifesto por documento, completos) entram **como procedência**; o pin verificado é o digest de conteúdo do painel |
+| **B5** | Os dois pareceres da conferência B8, fixados por hash em `fontes`, estavam no scratchpad, que foi limpo | **Reconstruídos byte a byte.** Os conferentes gravaram com `json.dump(..., ensure_ascii=False, indent=1)`, sem quebra de linha final, e os pareceres foram copiados sem alteração para o `conferencia.json`. Reserializados na ordem de string dos ids, os dois arquivos dão exatamente os hashes de `fontes` (`ba9540b5…3424` e `498e083b…a62f`). Versionados em `artefatos/rota_prova_rank03b_v2_2026-09-27/pareceres/`, com os relatórios finais dos conferentes. Os scripts dos conferentes não são recuperáveis; o método de cada um está em `conferentes[].metodo` |
+
+**Atualizações de texto:**
+- o documento de revisão e o `MEMORY.md` passam a registrar o commit
+  `9049579`;
+- no `MEMORY.md`, "não entra em observação" vira "não é usado como ativo em
+  D";
+- ainda no `MEMORY.md`: só a C9 veio depois de o G0 ter sido visto. A primeira
+  execução parou antes de imprimir.
+
+### Verificação curta das correções (28/09): FECHADO COM RESSALVAS
+
+Os seis achados (M1 e B1 a B5) foram dados como fechados, sem asserção
+enfraquecida e sem veredito alterado. Ficaram seis ressalvas BAIXA, todas
+tratadas antes do congelamento:
+
+| Ressalva | Tratamento |
+|---|---|
+| 1. A trava da linha de status era contornável: aceitava uma linha CONGELADO acrescentada antes da linha RASCUNHO, que continuava lá, e aceitava "NAO CONGELADO", "não está congelado", "a ser congelado", "DESCONGELADO" e "NÃO" em Unicode decomposto | **AF1 endurecida.** Linha de status é toda linha que, depois da normalização NFC e sem os prefixos de citação e de lista, começa por `status:`, sem distinguir caixa e com ou sem negrito. **Todas** elas têm de casar positivamente com `**Status: CONGELADO em AAAA-MM-DD`. Contraprovas: a linha acrescentada sem trocar a antiga, as variantes da sonda e uma segunda linha de status em minúsculas, em citação ou em lista. A sonda da verificação, rodada de novo, recusa todas as variantes e aceita só a troca correta |
+| 2. Dois ramos da AF3 sem contraprova: FCO usado só no rótulo e `id_doc` composto (dois mutantes sobreviviam) | `TestUsoDosErrosDemonstrados`, com entradas montadas à mão. O caso do rótulo afirma a **decisão** do gate (reprova com uso 1, aprova a mesma amostra com uso 0). Os cinco mutantes da verificação (`sem_rotulo`, `sem_janela`, `sem_split`, `sem_filtro_pendente`, `conta_desconhecida_zero`) morrem |
+| 3. "C10" nomeava três coisas: o item C10 da parte C, a trava do rótulo e a emenda da linha de status | As emendas de 28/09 passam a se chamar **AF1** (linha de status), **AF2** (contraprova da folga) e **AF3** (erro demonstrado pendente). A troca foi feita só nas linhas escritas em 28/09 e ainda sem commit, inclusive na tabela da seção anterior. As referências antigas a C10 ficam como estão |
+| 4. O estrutural registrava um hash de rascunho anterior às notas de 28/09, e o documento de revisão omitia que o hash do rascunho também tinha mudado | O estrutural é regerado depois de todas as edições desta onda, e o documento de revisão cita os três hashes informativos que mudam (código, contrato e rascunho) |
+| 5. O `MEMORY.md` trazia a contagem de suíte de 26/09 (4.184) | Atualizada com a contagem final desta onda |
+| 6. As mudanças de fixture estavam declaradas no arquivo de teste, mas não no contrato | Declaradas abaixo |
+
+**Substituições de fixture declaradas (28/09).** Em nenhuma delas mudou um
+`assert` ou um `match`:
+- `TestCongelamento._arquivo` passou a escrever a linha de status
+  `**Status: CONGELADO em 2026-10-01, por ato do responsável.**` (constante
+  `STATUS`). Sem ela, os casos de nome, título, SHA e pin seriam recusados pelo
+  motivo errado. O parâmetro `status` permite omitir ou trocar a linha nos
+  casos novos;
+- `test_pin_fixa_a_conferencia_pelos_dois_caminhos` passou a escrever a mesma
+  linha de status no pré-registro sintético, para que a recusa venha do pin da
+  conferência;
+- `TestLigacoesDeCarregarEntradas._preparar` ganhou os parâmetros `construir` e
+  `planos` e substitui só a conexão `:memory:` (27/09, emenda C8).

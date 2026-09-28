@@ -1,0 +1,214 @@
+{
+ "correcoes": {
+  "ROTA-2-102304-1.01.01": {
+   "resultado": "aprovada",
+   "nota": "B1 e B2 fecham; caixa e ativo do formulário iguais ao CSV; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-102304-1 existe (célula própria corrigida, mesma escala); nenhuma linha dividido do caixa nos anexos"
+  },
+  "ROTA-2-107648-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-107648-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-108371-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-108371-1.01.01 existe, corrigida MIL por célula própria; CodigoCvm do formulário interno é provisório (093890), identidade pelo envelope RAD (026336) e pelo igual_ao_csv"
+  },
+  "ROTA-2-110005-1.01.01": {
+   "resultado": "aprovada",
+   "nota": "B1 e B2 fecham; caixa e ativo do formulário iguais ao CSV; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-110005-1 existe (célula própria corrigida, mesma escala); nenhuma linha dividido do caixa nos anexos"
+  },
+  "ROTA-2-110229-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-110229-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-113026-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-113026-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-120158-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-120158-1.01.01 existe, corrigida MIL por célula própria; 1T, acumulado sem ambiguidade no XML único"
+  },
+  "ROTA-2-126873-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-126873-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-131612-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-131612-1.01.01 existe, corrigida MIL por célula própria; DFC método direto (DFC_MD_con); CodigoCvm do XML é provisório (095494), identidade pelo envelope RAD (027430) e pelo igual_ao_csv"
+  },
+  "ROTA-2-132677-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-132677-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-137390-1.01.01": {
+   "resultado": "aprovada",
+   "nota": "B1 e B2 fecham; caixa e ativo do formulário iguais ao CSV; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-137390-1 existe (célula própria corrigida, mesma escala); nenhuma linha dividido do caixa nos anexos"
+  },
+  "ROTA-2-137390-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-137390-1.01.01 existe, corrigida MIL por elo do balanço, aprovado neste lote"
+  },
+  "ROTA-2-140867-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-140867-1.01.01 existe, corrigida MIL por célula própria; documento do erro demonstrado citado na C3"
+  },
+  "ROTA-2-142900-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-142900-1.01.01 existe, corrigida MIL por célula própria; marcado GEOM-1"
+  },
+  "ROTA-2-143037-1.01.01": {
+   "resultado": "aprovada",
+   "nota": "B1 e B2 fecham; caixa e ativo do formulário iguais ao CSV; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-143037-1 existe (célula própria corrigida, mesma escala); nenhuma linha dividido do caixa nos anexos"
+  },
+  "ROTA-2-143037-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-143037-1.01.01 existe, corrigida MIL por elo do balanço, aprovado neste lote"
+  },
+  "ROTA-2-145753-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-145753-1.01.01 existe, corrigida MIL por célula própria; documento de desenho (fica fora do B6, não da correção)"
+  },
+  "ROTA-2-147954-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-147954-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-149291-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-149291-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-153322-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-153322-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-153435-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-153435-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-154916-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-154916-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-155968-1.01.01": {
+   "resultado": "aprovada",
+   "nota": "B1 e B2 fecham; caixa e ativo do formulário iguais ao CSV; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-155968-1 existe (célula própria corrigida, mesma escala); nenhuma linha dividido do caixa nos anexos"
+  },
+  "ROTA-2-155968-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-155968-1.01.01 existe, corrigida MIL por elo do balanço, aprovado neste lote"
+  },
+  "ROTA-2-158526-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-158526-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-19302-1.01.01": {
+   "resultado": "aprovada",
+   "nota": "B1 e B2 fecham; caixa e ativo do formulário iguais ao CSV; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-19302-1 existe (célula própria corrigida, mesma escala); nenhuma linha dividido do caixa nos anexos; DFP 2011 sem comparativo de balanço preenchido, o que não afeta o elo"
+  },
+  "ROTA-2-19708-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-19708-1.01.01 existe, corrigida MIL por célula própria; DFP com exercício de abril a março; período casado com DT_INI_EXERC do CSV"
+  },
+  "ROTA-2-30517-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-30517-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-35423-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-35423-1.01.01 existe, corrigida MIL por célula própria; marcado GEOM-1"
+  },
+  "ROTA-2-48495-1.01.01": {
+   "resultado": "aprovada",
+   "nota": "B1 e B2 fecham; caixa e ativo do formulário iguais ao CSV; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-48495-1 existe (célula própria corrigida, mesma escala); nenhuma linha dividido do caixa nos anexos"
+  },
+  "ROTA-2-58657-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-58657-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-63976-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-63976-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-67945-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-67945-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-70549-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-70549-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-72362-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-72362-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-72976-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-72976-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-80868-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (mesma versão); período e bloco DFC únicos; escala declarada UNIDADE no CSV e no envelope RAD (item 4 reescrito); decidida MIL; âncora ROTA-2-80868-1.01.01 corrigida MIL por célula própria. NOTA (informativa, não recusa): o formulário da companhia (.dfp interno, CodigoCvm provisório 090441) declara MIL, divergente do envelope; o registro ROTA-2-80868-1 guarda envelope 1 e formulário 2, igual à minha leitura. A divergência concorda com a correção"
+  },
+  "ROTA-2-81833-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-81833-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-86218-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-86218-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-88661-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-88661-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-96048-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-96048-1.01.01 existe, corrigida MIL por célula própria"
+  },
+  "ROTA-2-97899-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 fecham e igual_ao_csv (uma linha ÚLTIMO, mesma versão); período corrente e bloco DFC consolidado únicos; escala declarada UNIDADE no CSV e no envelope RAD; formulário da companhia UNIDADE; decidida MIL; âncora ROTA-2-97899-1.01.01 existe, corrigida MIL por célula própria"
+  }
+ },
+ "confirmacoes": {
+  "ROTA-2-100665-1.01.01": {
+   "resultado": "aprovada",
+   "nota": "anexo 1 (412), pág. 2, linha 10: v e âncora individual nas posições do registro; rótulo de caixa; declaração local de milhares na linha 4, sem declaração contrária entre ela e a linha; -raw e pdfplumber confirmam os dígitos; v igual ao CSV; CSV, envelope e formulário da companhia MIL; sem linha dividido"
+  },
+  "ROTA-2-107495-1.01.01": {
+   "resultado": "aprovada",
+   "nota": "anexo 1 (193), pág. 43, linha 14: números, posições, rótulo e milhares local (linha 4) conferidos; -raw e pdfplumber confirmam; v igual ao CSV; escalas MIL; sem linha dividido; CodigoCvm interno provisório (093572), identidade pelo envelope e pelo CSV"
+  },
+  "ROTA-2-114850-1.01.01": {
+   "resultado": "aprovada",
+   "nota": "na ROTA-2 restaram as 2 linhas com milhares local (págs. 1 e 6, linha 3), ambas conferidas; as 3 que dependiam de apresentação saíram (sem_unidade_de_milhares), coerente com o estreitamento; v igual ao CSV; escalas MIL; sem linha dividido; controle"
+  },
+  "ROTA-2-146083-1": {
+   "resultado": "aprovada",
+   "nota": "anexo 1 (412), pág. 1, linha 30 'Total do ativo'; milhares local na linha 4; -raw e pdfplumber confirmam; v igual ao CSV; codigos_de_escala do registro (envelope 2, formulário 2) iguais à minha leitura; sem linha dividido"
+  },
+  "ROTA-2-155283-1": {
+   "resultado": "aprovada",
+   "nota": "release (grupo 1653), pág. 25, linha 42 'Total do ativo'; unidade só por cabeçalho local ('Em milhares de reais', linha 6), como a ROTA-2 exige fora dos grupos 193/412; âncora consolidada do exercício anterior; v igual ao CSV; códigos de escala conferem; sem linha dividido; controle"
+  },
+  "ROTA-2-158838-1.01.01": {
+   "resultado": "aprovada",
+   "nota": "4 linhas (anexo 1, 412) conferidas: números, posições, milhares local sem declaração contrária, -raw e pdfplumber; a linha 'Total' (pág. 67) tem como título mais próximo 'Caixa e equivalentes de caixa' (linha 17, pulando dados e cabeçalho); v igual ao CSV; escalas MIL; sem linha dividido"
+  },
+  "ROTA-2-54694-1.01.01": {
+   "resultado": "aprovada",
+   "nota": "elo confirmado: B1 e B2 fecham; caixa e ativo iguais ao CSV; MIL no CSV, envelope e formulário da companhia; âncora ROTA-2-54694-1 célula confirmada MIL; sem linha dividido do caixa; as linhas bruto do caixa nos anexos falham no rótulo, então o elo é a via correta; controle"
+  },
+  "ROTA-2-67787-1": {
+   "resultado": "aprovada",
+   "nota": "3 linhas: pág. 12 (anexo 0, 192) e pág. 14 (anexo 3, 193) sob 'R$ milhares' local; pág. 19 sob '(Em milhares de reais)', com ativo e passivo lado a lado (o -raw separa as colunas, mas confirma os dois números na página; pdfplumber confirma); v igual ao CSV; códigos de escala conferem; sem linha dividido; controle"
+  },
+  "ROTA-2-79071-6.01": {
+   "resultado": "aprovada",
+   "nota": "D1, D2 e D3 e igual_ao_csv fecham; MIL no CSV, envelope e formulário da companhia; âncora ROTA-2-79071-1.01.01 célula confirmada MIL"
+  },
+  "ROTA-2-88859-1": {
+   "resultado": "aprovada",
+   "nota": "anexo 1 (193), pág. 5, linha 32 'Total do ativo'; milhares local na linha 3; âncora individual; -raw e pdfplumber confirmam; v igual ao CSV; códigos de escala conferem; sem linha dividido; GEOM-1"
+  }
+ }
+}

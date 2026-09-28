@@ -608,8 +608,9 @@ outra tarefa.
   **`auditoria_manual_pendente`**. O README ainda publica a anterior
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
-- Suíte atual: **4.184 casos passando, zero falhas/erros/skips**, 28 avisos
-  (pendências GEOM-1, pós-auditoria AP1/AP2, 26/09), XML em
+- Suíte atual: **4.480 casos passando, zero falhas/erros/skips**, 28 avisos
+  (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
+  (4.184) tem XML em
   `artefatos/pendencias_geom1_rank03b_2026-09-26/pytest_suite_pos_auditoria.xml`.
   Testes dirigidos: 1.179; os dois achados da auditoria independente foram
   corrigidos e reconferidos, sem executar busca real/gates/treino de Rank 3-B.
@@ -708,9 +709,12 @@ pendente de decisão do responsável: só cinco relatórios de 15–16/09 o cita
 AGENTS.md e MEMORY.md lá dentro são ignoradas pelo git e três não existem em
 commit nenhum.
 
-**Sem commit desde 26/09 (tarde):** as decisões do v2 (registro, adendo O1,
-rascunho v2), as notas em AGENTS.md, becos e neste arquivo, a proposta v3 e a
-pasta da orquestração `artefatos/preenchimento_decidir_v2_rank03b_2026-09-26/`.
+**Commit `9049579` (27/09, 20h37, feito pelo responsável):** toda a onda de
+26–27/09, com as decisões do v2, a correção por conta, as ROTAs 1 e 2, o
+executor v2 e o G0 aprovado. A mensagem ("Refactor code structure…") não
+descreve o conteúdo; não foi reescrita. **Sem commit:** as correções da
+auditoria final de 28/09 (emendas AF1 a AF3, pareceres versionados, estrutural
+regerado e notas).
 
 ## Decisões e bloqueios em aberto
 
@@ -1134,18 +1138,29 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
       77 linhas, `f26ede4d…`. Painel v2: digest `fd2932e7…`. **G0.3 = 95
       saltos (0,4255%)**; G0.5 e G1 sem violação; amostra de 10.168
       observações em 495 companhias (`artefatos/executor_v2_rank03b/estrutural.json`).
-      O `140867` continua pendente: conta no G0.3 e não entra em observação.
-   4. Executor v2: feito e conferido. Emendas C8 (serialização do inventário)
-      e C9 (conferência como pin), ambas depois de ver o G0 e sem mudar regra
-      de dado.
-   5. **Pendente, ato do responsável:** congelar. Remover RASCUNHO do nome e
-      do título, colar os pins do §4 do rascunho (o `codigo_de_medicao` vem do
-      estrutural regerado sobre o código final), publicar o SHA-256.
+      O `140867` continua pendente: conta no G0.3 e não é usado como ativo em D
+      por nenhuma observação. Desde a AF3 isso é verificado em código, e uso
+      reprovaria o G0.5.
+   4. Executor v2: feito e conferido. A auditoria final de 28/09, sobre o
+      `9049579`, deu **APTA COM RESSALVAS**. M1 e B1–B5 foram tratados antes do
+      congelamento com as emendas AF1 (linha de status), AF2 (contraprova da
+      folga) e AF3 (erro demonstrado pendente reprova o G0.5), mais os
+      pareceres reconstruídos byte a byte e versionados. A C8 (serialização)
+      veio antes de o G0 ser visto; a C9 e as AF1 a AF3, depois. Nenhuma mudou
+      regra de dado.
+   5. **Pendente, ato do responsável:** congelar **por cópia**. O rascunho fica
+      no lugar, porque o executor e um teste o leem pelo nome. Passos: suíte
+      verde e código commitado; regerar o estrutural; copiar o rascunho para
+      um nome sem RASCUNHO; trocar a linha de status por `**Status: CONGELADO
+      em <data>…**`; colar os seis pins do §4, com o `codigo_de_medicao`
+      regerado; publicar o SHA-256. Ordem completa no documento de revisão,
+      seção 4.
    6. Pendente: medir com
       `python -m scripts.executor_v2_rank03b --medir --pre-registro <arquivo> --sha256 <hash> --rota artefatos/rota_prova_rank03b_v2_2026-09-27 --correcoes-por-conta corpus/cvm/painel_pesquisa_rank03b/correcoes_escala_por_conta.csv`.
 
    Previsão registrada: T1 reprova por `fco_ttm_sobre_sd8`. **Não treinar**
-   antes de PRONTO PARA CHALLENGER. Nada foi commitado.
+   antes de PRONTO PARA CHALLENGER. A onda de 27/09 está no `9049579`; as
+   correções de 28/09 ainda não têm commit.
 −2. **GEOM-1 — alcance conferido em 24/09 e revisado (24–25/09):** caixa dos
    dois candidatos confirmado; Ativo/140867 demonstrado diretamente;
    FCO/140867, Ativo/142900 e FCO/142900 com busca numérica exata sem

@@ -533,7 +533,7 @@
     "scripts/adjudicar_escala_rank03b.py": "4b035aa77687aeca95959908a14f34b75b7257576188ae069bd52c024615f2ca",
     "scripts/auditar_rank03b_consumo_operacional.py": "c549eb2953f939b5e96fae0625f96a6eb20bb97d42666f7e5fc1eb9c1d99258d",
     "scripts/correcoes_por_conta_rank03b.py": "5aa70039941c39b36ec1864f024328ba6b818bc69f2fb277c6cf0a3d18becdaf",
-    "scripts/executor_v2_rank03b.py": "35487fbd606444a337fb87d4a703e28e72f57ce79da482086f424ead276ce068",
+    "scripts/executor_v2_rank03b.py": "f2d9d52f0db8373c59ee6eb156eb1e74c53e96db1587ad26fbd6b6c107906f19",
     "scripts/fonte_rad_cvm.py": "57902e1da1acd156300a4501c36751de10e4c7b62159f391ef765a517627a075",
     "scripts/fonte_zip_cvm.py": "44bc0b51313a78cbaf838a05b6bbbb121ccb043f5a91a4c36f4d5e2a8124a510",
     "scripts/gates_painel_pesquisa_rank03b.py": "09affef114fe740bfc5bb5e77aef68240805256cdc32d32e21ec06c97b10c394",
@@ -543,8 +543,8 @@
     "src/normalizacao.py": "a2ae429c8d66209523b36957113948e7566942f78fb0fe93bd5a1593b8e250e4"
   },
   "contrato": "resultados/contratos_caminho_medicao_rank03b_2026-09-27.md",
-  "contrato_sha256": "23f8f37c9c32f5169bad0fde49c398b5bb43b9fdb27e5149c221fc43847e8750",
-  "digest_do_codigo_de_medicao": "def655caea299b8e61a55c86c64d9a215a44b70872dc48eba86599f2e50f8839",
+  "contrato_sha256": "13770a55a08e1109bc12f68a4e95e50a29e43312adca6321309da54910ffa2df",
+  "digest_do_codigo_de_medicao": "3de953a599eface1e7c0462aa381c446e940b32336257a5181b370d04e2601ca",
   "digest_do_painel": {
     "ativo": "cb885a5b0fc2e0fd76668f6b17e579a9ef68dda23f59853e05cb92843a6580ff",
     "conjunto": "fd2932e7d026ea6c56ed69ce86d187114f02c87942331dadc0e85383a657c23b",
@@ -622,7 +622,8 @@
         "dt_refer": "2024-06-30",
         "estado": "pendente",
         "fonte": "resultados/alcance_geom1_rank03b_2026-09-24.md",
-        "id_doc": "140867"
+        "id_doc": "140867",
+        "observacoes_que_usam": 0
       }
     ],
     "g0_0_fontes_vazias": [],
@@ -1499,6 +1500,7 @@
       "regra_3_fco_ttm_sobre_ativo_ausente": 0
     },
     "violacoes": {
+      "erro_demonstrado_pendente": 0,
       "regra_1": 0,
       "regra_2": 0,
       "regra_3": 0
@@ -1595,7 +1597,7 @@
   "modo": "estrutural",
   "pins_propostos_para_o_congelamento": {
     "adendo_o1": "7f51ab27aff2604e8ec2b3a46f7e39cc12dd8aa82d52a44b2bb47dd158414b0f",
-    "codigo_de_medicao": "def655caea299b8e61a55c86c64d9a215a44b70872dc48eba86599f2e50f8839",
+    "codigo_de_medicao": "3de953a599eface1e7c0462aa381c446e940b32336257a5181b370d04e2601ca",
     "conferencia_da_rota": "734e7e709390cca8356cf4f31e50f457f62d53864e58f807584046411654aa68",
     "digest_do_painel": "fd2932e7d026ea6c56ed69ce86d187114f02c87942331dadc0e85383a657c23b",
     "evidencias_da_rota": "e2001e0615c3e9a482ac78d2b69e22d7dc5ceffb34f570de165f6cb61dc54c24",
@@ -1612,6 +1614,6 @@
       "ll3_13_48e4cd07"
     ]
   },
-  "pre_registro_rascunho_sha256": "db783b8db06ab9b58ed369f9e25835400232bd86f68a83aeaa652c274833f44a",
+  "pre_registro_rascunho_sha256": "d0fad474d76395d86aad7e754fa3b511a8912f020df576cc0842a1ae1c7ac08c",
   "veredito_estrutural": "G0, G0.5 E G1 APROVADOS"
 }

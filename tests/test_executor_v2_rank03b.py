@@ -11,6 +11,7 @@ from __future__ import annotations
 import calendar
 import json
 import random
+import unicodedata
 from datetime import date, timedelta
 
 import pytest
@@ -681,13 +682,101 @@ class TestCongelamento:
             "evidencias_da_rota": "e" * 64, "conferencia_da_rota": "c" * 64,
             "adendo_o1": "a" * 64, "executor_v2": "x" * 64}
 
+    #: AF1 (28/09): o sintético ganhou a linha de status que o congelado real terá;
+    #: as asserções dos casos já existentes não mudaram.
+    STATUS = "**Status: CONGELADO em 2026-10-01, por ato do responsável.**"
+
     def _arquivo(self, tmp_path, nome="pre_registro_rank03b_v2_2026-10-01.md",
-                 titulo="# Pré-registro v2", pins=None):
+                 titulo="# Pré-registro v2", pins=None, status=STATUS):
         pins = self.PINS if pins is None else pins
         caminho = tmp_path / nome
-        caminho.write_text(titulo + "\n\n" + "\n".join(f"- {k}: `{v}`" for k, v in pins.items()),
+        cabecalho = titulo + "\n\n" + (status + "\n\n" if status is not None else "")
+        caminho.write_text(cabecalho + "\n".join(f"- {k}: `{v}`" for k, v in pins.items()),
                            encoding="utf-8")
         return caminho, ex.sha256(caminho)
+
+    @pytest.mark.parametrize("status", [
+        "**Status: RASCUNHO — NÃO CONGELADO. O congelamento aguarda ato explícito.**",
+        "**Status: NÃO CONGELADO.**",
+        "**Status: em revisão.**",
+    ])
+    def test_status_que_nao_declara_congelamento_recusa(self, tmp_path, status):
+        caminho, sha = self._arquivo(tmp_path, status=status)
+        with pytest.raises(ex.NaoCongelado, match="status"):
+            ex.verificar_congelamento(caminho, sha, self.PINS)
+
+    def test_sem_linha_de_status_recusa(self, tmp_path):
+        caminho, sha = self._arquivo(tmp_path, status=None)
+        with pytest.raises(ex.NaoCongelado, match="status"):
+            ex.verificar_congelamento(caminho, sha, self.PINS)
+
+    def _copia_do_rascunho_real(self, tmp_path, status=None):
+        texto = ex.PRE_REGISTRO_RASCUNHO.read_text(encoding="utf-8")
+        if status is not None:
+            linha = next(l for l in texto.splitlines() if l.startswith("**Status:"))
+            texto = texto.replace(linha, status, 1)
+        caminho = tmp_path / "pre_registro_rank03b_v2_2026-09-16.md"
+        caminho.write_text(texto + "\n" + "\n".join(f"- {k}: `{v}`" for k, v in self.PINS.items())
+                           + "\n", encoding="utf-8")
+        return caminho, ex.sha256(caminho)
+
+    def test_copia_do_rascunho_real_so_com_o_nome_trocado_recusa(self, tmp_path):
+        """Achado B1 da auditoria final: a primeira linha do rascunho real nunca teve
+        RASCUNHO, e a cópia só renomeada passava como congelada."""
+        assert "RASCUNHO" not in ex.PRE_REGISTRO_RASCUNHO.read_text(encoding="utf-8").splitlines()[0]
+        caminho, sha = self._copia_do_rascunho_real(tmp_path)
+        with pytest.raises(ex.NaoCongelado, match="status"):
+            ex.verificar_congelamento(caminho, sha, self.PINS)
+
+    def test_linha_congelado_acrescentada_sem_trocar_a_do_rascunho_recusa(self, tmp_path):
+        """Ressalva 1 da verificação de 28/09: acrescentar uma linha CONGELADO antes
+        da linha RASCUNHO, sem trocá-la, passava. Toda linha de status tem de
+        declarar congelamento."""
+        texto = ex.PRE_REGISTRO_RASCUNHO.read_text(encoding="utf-8")
+        linhas = texto.splitlines()
+        linhas.insert(2, self.STATUS)
+        caminho = tmp_path / "pre_registro_rank03b_v2_2026-09-16.md"
+        caminho.write_text("\n".join(linhas) + "\n"
+                           + "\n".join(f"- {k}: `{v}`" for k, v in self.PINS.items()) + "\n",
+                           encoding="utf-8")
+        with pytest.raises(ex.NaoCongelado, match="status"):
+            ex.verificar_congelamento(caminho, ex.sha256(caminho), self.PINS)
+
+    @pytest.mark.parametrize("variante", [
+        "**Status: NAO CONGELADO.**",
+        "**Status: não está congelado.**",
+        "**Status: a ser congelado.**",
+        "**Status: DESCONGELADO.**",
+        "**Status: CONGELADO.**",
+        "**Status: CONGELADO em breve.**",
+        "**Status: CONGELADO em 2026-10-01**",
+        unicodedata.normalize("NFD", "**Status: NÃO CONGELADO em 2026-10-01.**"),
+    ])
+    def test_variantes_de_status_que_nao_declaram_congelamento_com_data(self, tmp_path, variante):
+        """Ressalva 1: casamento POSITIVO com `**Status: CONGELADO em AAAA-MM-DD`,
+        depois de normalizar para NFC. O penúltimo caso, sem ponto final, passa;
+        os outros recusam."""
+        caminho, sha = self._arquivo(tmp_path, status=variante)
+        if variante == "**Status: CONGELADO em 2026-10-01**":
+            assert ex.verificar_congelamento(caminho, sha, self.PINS)["sha256"] == sha
+            return
+        with pytest.raises(ex.NaoCongelado, match="status"):
+            ex.verificar_congelamento(caminho, sha, self.PINS)
+
+    @pytest.mark.parametrize("segunda", [
+        "status: rascunho", "> **Status: RASCUNHO — NÃO CONGELADO.**", "- **Status:** rascunho",
+    ])
+    def test_segunda_linha_de_status_em_qualquer_forma_tambem_conta(self, tmp_path, segunda):
+        """Minúsculas, sem negrito, em citação ou em lista: toda linha de status
+        tem de declarar congelamento com data."""
+        caminho, sha = self._arquivo(tmp_path, status=self.STATUS + "\n\n" + segunda)
+        with pytest.raises(ex.NaoCongelado, match="status"):
+            ex.verificar_congelamento(caminho, sha, self.PINS)
+
+    def test_copia_do_rascunho_real_com_o_status_trocado_passa(self, tmp_path):
+        """O procedimento do M1: cópia com nome novo, linha de status trocada e pins."""
+        caminho, sha = self._copia_do_rascunho_real(tmp_path, status=self.STATUS)
+        assert ex.verificar_congelamento(caminho, sha, self.PINS)["sha256"] == sha
 
     def test_congelado_passa(self, tmp_path):
         caminho, sha = self._arquivo(tmp_path)
@@ -780,7 +869,9 @@ class TestEntradas:
         assert {k: v for k, v in pela_entrada.items() if k != "digest_do_painel"} == por_arquivo
         sem = {k: v for k, v in pela_entrada.items() if k != "conferencia_da_rota"}
         caminho = tmp_path / "pre_registro.md"
-        caminho.write_text("# Pré-registro\n\n" + "\n".join(sem.values()) + "\n", encoding="utf-8")
+        # AF1 (28/09): o fixture ganhou a linha de status, para a recusa vir do pin.
+        caminho.write_text("# Pré-registro\n\n" + TestCongelamento.STATUS + "\n\n"
+                           + "\n".join(sem.values()) + "\n", encoding="utf-8")
         with pytest.raises(ex.NaoCongelado, match="conferencia_da_rota"):
             ex.verificar_congelamento(caminho, ex.sha256(caminho), pela_entrada)
 
@@ -909,6 +1000,20 @@ class TestLigacoesDeCarregarEntradas:
         assert saida["inventario_do_painel"]["fco_trimestral_por_estado"] == publicado
         assert (tmp_path / "painel" / "painel.duckdb").exists()
 
+    def test_folga_zero_do_motivo_11_nao_publica_nem_grava(self, monkeypatch, tmp_path):
+        """Achado B2 da auditoria final: o mutante sem a guarda da folga sobrevivia.
+        Uma companhia só, sem colisão de disponibilidade e sem excluída: os números
+        publicados recomporiam o motivo 11 exatamente."""
+        manifesto = self._preparar(monkeypatch, tmp_path, {})
+        e = ex.carregar_entradas(tmp_path, manifesto)
+        pop = ex.populacao_v2(e["painel"].ativo, e["painel"].fco_trimestral)
+        assert not pop["excluidas"], "pré-condição: nenhuma companhia excluída"
+        assert ex.folga_do_motivo_11(e["painel"].fco_trimestral, e["decididos"], pop) == 0
+        destino, destino_painel = tmp_path / "saida", tmp_path / "painel"
+        with pytest.raises(ex.PublicacaoInsegura, match="motivo 11"):
+            ex.executar_estrutural(tmp_path, manifesto, destino=destino, destino_painel=destino_painel)
+        assert not destino.exists() and not destino_painel.exists()
+
     def test_medicao_confere_o_pre_registro_antes_de_ler_o_painel(self, monkeypatch, tmp_path):
         def nao_pode(*a, **k):
             raise AssertionError("leu o painel antes de conferir o congelamento")
@@ -972,3 +1077,140 @@ class TestInventarioPublicavel:
             ex.verificar_publicavel({"t2": {"x": 1}})
         with pytest.raises(AssertionError, match="O1"):
             ex.verificar_publicavel({"resultado": {"lacuna": 0.03}})
+
+
+class TestErrosDemonstrados:
+    """Emenda AF3 (28/09): erro demonstrado pendente usado na amostra reprova G0.5."""
+
+    @staticmethod
+    def _base():
+        b = empresa(empresa(Base(), "A", escala=_u_no((2018, 2))), "B")
+        p, _ = painel(b)
+        return p
+
+    @staticmethod
+    def _estrutura(p, erros, monkeypatch, correcoes=None):
+        monkeypatch.setattr(ex, "ERROS_DEMONSTRADOS", tuple(erros))
+        return ex.estrutura(p.ativo, p.fco_trimestral, _nulos(p), NENHUM, SEM_PROVAS,
+                            correcoes or {})
+
+    @staticmethod
+    def _ativo_usado(p, e):
+        doc = tuple(e["amostra"][0]["linhagem"]["ativo"]["doc"])
+        return next(a for a in p.ativo if ex._doc(a["cd_cvm"], a) == doc)
+
+    def _erro(self, linha, conta="1"):
+        return {"id_doc": linha["id_doc"], "cd_cvm": linha["cd_cvm"], "conta": conta,
+                "dt_refer": str(linha["dt_refer"]), "fonte": "sintético"}
+
+    def test_sem_erro_aprova(self, monkeypatch):
+        e = self._estrutura(self._base(), [], monkeypatch)
+        assert e["g0_5"]["aprovado"] and e["g0_5"]["violacoes"]["erro_demonstrado_pendente"] == 0
+
+    def test_ativo_com_erro_pendente_usado_em_D_reprova(self, monkeypatch):
+        p = self._base()
+        usado = self._ativo_usado(p, self._estrutura(p, [], monkeypatch))
+        e = self._estrutura(p, [self._erro(usado)], monkeypatch)
+        erro = e["g0"]["erros_demonstrados"][0]
+        assert erro["estado"] == "pendente" and erro["observacoes_que_usam"] >= 1
+        assert e["g0_5"]["violacoes"]["erro_demonstrado_pendente"] == erro["observacoes_que_usam"]
+        assert not e["g0_5"]["aprovado"]
+
+    def test_erro_corrigido_pelo_manifesto_nao_reprova(self, monkeypatch):
+        p = self._base()
+        usado = self._ativo_usado(p, self._estrutura(p, [], monkeypatch))
+        corrigido = {("X",): {"1": {"id_doc": usado["id_doc"]}}}
+        e = self._estrutura(p, [self._erro(usado)], monkeypatch, correcoes=corrigido)
+        erro = e["g0"]["erros_demonstrados"][0]
+        assert erro["estado"] == "corrigido_pelo_manifesto_por_conta"
+        assert erro["observacoes_que_usam"] >= 1
+        assert e["g0_5"]["aprovado"]
+
+    def test_erro_pendente_em_documento_nao_usado_conta_zero(self, monkeypatch):
+        p = self._base()
+        base = self._estrutura(p, [], monkeypatch)
+        usados = {tuple(o["linhagem"]["ativo"]["doc"]) for o in base["amostra"]}
+        fora = next(a for a in p.ativo if ex._doc(a["cd_cvm"], a) not in usados)
+        e = self._estrutura(p, [self._erro(fora)], monkeypatch)
+        assert e["g0"]["erros_demonstrados"][0]["observacoes_que_usam"] == 0
+        assert e["g0_5"]["aprovado"]
+
+    def test_fco_com_erro_pendente_na_janela_reprova(self, monkeypatch):
+        p = self._base()
+        base = self._estrutura(p, [], monkeypatch)
+        doc = tuple(base["amostra"][0]["linhagem"]["janela"][-1]["docs"][-1][:4])
+        t = next(t for t in p.fco_trimestral for o in json.loads(t["operandos"])
+                 if ex._doc(t["cd_cvm"], o) == doc)
+        id_doc = next(o["id_doc"] for o in json.loads(t["operandos"]) if ex._doc(t["cd_cvm"], o) == doc)
+        erro = {"id_doc": id_doc, "cd_cvm": t["cd_cvm"], "conta": "6.01", "dt_refer": doc[2],
+                "fonte": "sintético"}
+        e = self._estrutura(p, [erro], monkeypatch)
+        assert e["g0"]["erros_demonstrados"][0]["observacoes_que_usam"] >= 1
+        assert not e["g0_5"]["aprovado"]
+
+    def test_conta_sem_regra_de_uso_derruba(self, monkeypatch):
+        p = self._base()
+        erro = {"id_doc": "1", "cd_cvm": "A", "conta": "1.01.01", "dt_refer": "2018-06-30",
+                "fonte": "sintético"}
+        with pytest.raises(pp.DefeitoDeFonte, match="sem regra de uso"):
+            self._estrutura(p, [erro], monkeypatch)
+
+
+class TestUsoDosErrosDemonstrados:
+    """Ressalva 2 da verificação de 28/09: dois ramos da AF3 sem contraprova —
+    `id_doc` composto e FCO usado só no rótulo. Entradas mínimas, montadas à mão."""
+
+    DOC = ("A", "itr", "2020-06-30", 1)
+    OUTRO = ("A", "itr", "2020-09-30", 1)
+
+    @staticmethod
+    def _obs(ativo, janela=(), rotulo=()):
+        def proc(d):
+            return {"docs": [list(d) + ["MIL"]]}
+        return {"fco_ttm_sobre_ativo": None,
+                "linhagem": {"ativo": {"doc": list(ativo)},
+                             "janela": [proc(d) for d in janela],
+                             "rotulo": [proc(d) for d in rotulo]}}
+
+    @staticmethod
+    def _ativo(doc, id_doc):
+        cd, cj, dt, v = doc
+        return {"cd_cvm": cd, "conjunto": cj, "dt_refer": dt, "versao": v, "id_doc": id_doc}
+
+    @staticmethod
+    def _tri(doc, id_doc):
+        cd, cj, dt, v = doc
+        return {"cd_cvm": cd, "operandos": json.dumps([
+            {"conjunto": cj, "dt_refer": dt, "versao": v, "id_doc": id_doc}])}
+
+    @staticmethod
+    def _erro(id_doc, conta):
+        return {"id_doc": id_doc, "cd_cvm": "A", "conta": conta, "dt_refer": "2020-06-30",
+                "fonte": "sintético", "estado": "pendente"}
+
+    def test_id_doc_composto_do_ativo_conta_por_pertinencia(self):
+        ativos = [self._ativo(self.DOC, "140867,140999")]
+        amostra = [self._obs(self.DOC)]
+        usos = ex.uso_dos_erros_demonstrados(
+            [self._erro("140999", "1"), self._erro("14099", "1")], amostra, ativos, [])
+        assert [u["observacoes_que_usam"] for u in usos] == [1, 0]
+
+    def test_id_doc_composto_do_fco_conta_por_pertinencia(self):
+        amostra = [self._obs(self.OUTRO, janela=[self.DOC])]
+        usos = ex.uso_dos_erros_demonstrados(
+            [self._erro("140999", "6.01"), self._erro("14099", "6.01")], amostra,
+            [self._ativo(self.OUTRO, "1")], [self._tri(self.DOC, "140867,140999")])
+        assert [u["observacoes_que_usam"] for u in usos] == [1, 0]
+
+    def test_fco_usado_so_no_rotulo_conta_e_reprova(self):
+        amostra = [self._obs(self.OUTRO, rotulo=[self.DOC])]
+        usos = ex.uso_dos_erros_demonstrados(
+            [self._erro("140867", "6.01")], amostra,
+            [self._ativo(self.OUTRO, "1")], [self._tri(self.DOC, "140867")])
+        assert usos[0]["observacoes_que_usam"] == 1
+        g = ex.gate_g0_5(amostra, NENHUM, usos)
+        assert g["violacoes"] == {"regra_1": 0, "regra_2": 0, "regra_3": 0,
+                                  "erro_demonstrado_pendente": 1}
+        assert g["aprovado"] is False
+        # A mesma amostra, sem uso do erro, aprova: a decisão vem só da AF3.
+        assert ex.gate_g0_5(amostra, NENHUM, [{**usos[0], "observacoes_que_usam": 0}])["aprovado"]
