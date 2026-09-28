@@ -105,6 +105,46 @@ com as emendas AF1 a AF3 e os pareceres versionados.)*
 
 A previsão **continua não testada**: a rodada de 11/09 parou em G0.
 
+### 1.1 O que um T1 aprovado permite afirmar — acrescentado em 28/09, antes do congelamento
+
+A citação acima continua sem alteração. Este item só restringe o que se pode
+afirmar se a previsão **não** se confirmar. Não muda limiar, componente,
+código nem veredito.
+
+**O limiar do T1 é absoluto, e a taxa-base deste alvo é baixa.** Os
+precedentes em que o T1 reprovou tinham prevalência de 17% a 20%: C1, 0,174
+(1.761 eventos em 10.117 observações, `validacao_c1_2026-08-26.md`); Rank 3,
+0,203 (`validacao_rank03_conversao_caixa_2026-08-27.md`). A taxa-base deste
+alvo já foi vista (§11.1): 0,053, no painel compartilhado. Com ela, a maior
+amplitude possível entre cinco quintis é de cerca de 0,26, com todos os
+eventos num só quintil.
+
+**Consequência, só por aritmética.** O padrão que reprovou o C1 foi 30,2% no
+quintil de menor `sd8` contra 5,5% no maior, com AUC agregada de 0,70.
+Transposto para a taxa-base de 0,053, mantendo a razão entre as taxas, dá
+cerca de 9,2% contra 1,7%: amplitude de 0,075, abaixo até da zona cinzenta.
+O mesmo mecanismo, com a mesma força, passaria aqui sem bootstrap.
+
+**Regra de leitura, fixada antes de medir:**
+- T1 **reprovado** continua conclusivo, como no §7.
+- T1 **aprovado não refuta o mecanismo do §1.** O parágrafo "Se ela NÃO se
+  confirmar" **não se aplica** a esta medição. Dela não sai correção do §4.4
+  nem achado de método. Um achado de método exigiria pré-registro próprio, com
+  limiar relativo à taxa-base.
+- Em qualquer desfecho, publica-se ao lado da amplitude de cada componente a
+  razão entre a maior taxa por quintil e a taxa-base. É **descritiva e não
+  decisória**. Sai da `taxa_por_quintil` que o T1 já publica, e nenhum código
+  muda.
+
+**Por que o limiar não muda.** Ele é identidade da v1 (topo deste rascunho),
+e a taxa-base é estatística de rótulo já vista. Escolher agora outro limiar,
+conhecendo-a, seria ajustar o teste ao dado, e criaria o Rank 3-C.
+
+**O que protege o desfecho PRONTO PARA CHALLENGER.** Ele só autoriza escrever
+o D8 (§9). O D8 exige que o desafiante supere o **melhor** trivial, e o B1
+ordena justamente por `fco_ttm_sobre_sd8`. Se o mecanismo existir abaixo do
+limiar, ele aparece como um B1 forte, e o desafiante tem de vencê-lo.
+
 ---
 
 ## 2. Alvo — o da v1, com as operacionalizações escritas
@@ -1017,6 +1057,23 @@ e as pastas `artefatos/rota_prova_rank03b_2026-09-27/` e
 - **Nenhuma** taxa de evento, T1, T2, AUC ou baseline foi calculada. O rótulo
   não foi montado.
 
+**Sessão de congelamento (acrescentado em 28/09).**
+- Leu documentos, código, o `estrutural.json` e os registros de evidência de
+  caixa da ROTA-2, com os trechos já mascarados. Contou, por padrão de
+  rótulo, os registros de caixa apoiados só em linha de DFC. Não leu conta
+  6.x nem abriu painel fora do executor.
+- Rodou a suíte, que é sintética, e o modo estrutural, que é o passo 2 do
+  congelamento. As contagens estruturais já tinham sido vistas.
+- Para o §1.1, usou a taxa-base já declarada no §11.1 e as prevalências
+  publicadas do C1 e do Rank 3. Não calculou estatística de rótulo nova.
+- Depois do G0, só mudou texto:
+  - o §1.1, que restringe a leitura de um T1 aprovado;
+  - a nota do `113026` no §12-bis, que mantém o que a ROTA-2 decidiu;
+  - o §14, que aponta os artefatos governantes.
+
+  Nenhuma regra de dado, população, limiar, componente, correção ou código
+  mudou.
+
 ## 12. O que esta rodada não fará
 
 Nenhum modelo; nenhuma escrita nos painéis compartilhados; nenhum acesso ao
@@ -1127,6 +1184,31 @@ o G0.3 do painel v2 caiu de 132 para 95 saltos.
 indecidível pela regra de apresentação. O caso limítrofe `113026-1.01.01` foi
 provado só pelo saldo final da DFC impressa. Se linha de DFC deixar de valer
 como célula própria, é este o registro que muda.
+
+*(28/09, antes do congelamento: **mantido, sem ROTA-3.** Decidido por Claude,
+na sessão de congelamento, a pedido expresso do responsável ("garanta as
+melhores decisões"). Motivos:*
+- *A linha cumpre a B3 como foi fixada antes da execução. O rótulo só precisa
+  **conter** `caixaeequivalentesdecaixa`; os dois valores são exatos (31/12/2021
+  e 31/12/2020); a unidade é o "(Em milhares de reais)" local; o PDF é do
+  próprio pacote. A regra não privilegia a linha do balanço.*
+- *O caso não é único. `54783-1.01.01` (companhia `023434`, DFP 2015) também
+  se apoia só no saldo final da DFC ("final do período"). É confirmação, não
+  correção, e ancora a cadeia que confirma a `6.01` do documento, que por isso
+  conta como decidida no G0.5. Não estava na amostra da conferência. Outros
+  dez registros de caixa têm linha de DFC acessória. Tirar só o `113026` seria
+  regra ad hoc. Tirar toda linha de DFC seria regra nova, escrita depois de
+  ver o G0, e alcançaria mais que "as duas correções" que a revisão de 27/09
+  descrevia.*
+- *Para o uso que tem, que é ancorar a cadeia da `6.01`, o saldo final da DFC
+  é prova mais direta que a linha do balanço: é a célula impressa da
+  `6.05.02`, na mesma demonstração da `6.01`, e a cadeia confere
+  `6.05.02 = 1.01.01` (d3).*
+- *A conta `1` do mesmo formulário foi provada `MIL` pela própria célula, com
+  sete dígitos nas duas datas. A alternativa seria um formulário corretamente
+  em unidades, com dígitos de caixa coincidindo em duas datas numa linha com o
+  rótulo, e ela não é plausível.*
+- *O efeito no G0.3 é nulo: a correção do ativo não depende deste caixa.)*
 
 ### Alcance da prova de escala — decidido em 26/09, revisado em 27/09: opção B
 
@@ -1254,9 +1336,9 @@ Acrescentadas em 27/09, com a ROTA-2:
 
 | | |
 |---|---|
-| Painel | `artefatos/painel_pesquisa_rank03b/painel.duckdb` + `manifesto_painel.json` (o painel sem correções tem `manifesto_painel_sem_correcoes.json` próprio desde 16/09) |
-| Correções | `corpus/cvm/painel_pesquisa_rank03b/correcoes_escala.csv` |
-| Gates estruturais | `artefatos/painel_pesquisa_rank03b/gates_g0_g1.json` (governante), `gates_g0_g1_sem_correcoes.json`, `gates_g0_g1_diagnostico_execucao1.json` |
+| Painel | *(28/09)* **Governante na medição:** o painel v2, com os pins do §4 (linha "Executor v2 e painel v2", abaixo). Histórico: `artefatos/painel_pesquisa_rank03b/painel.duckdb` + `manifesto_painel.json` (o painel sem correções tem `manifesto_painel_sem_correcoes.json` próprio desde 16/09) |
+| Correções | *(28/09)* **Governante:** por conta (linha "Correções por conta", abaixo). `corpus/cvm/painel_pesquisa_rank03b/correcoes_escala.csv`, por documento, continua como entrada, com zero linhas |
+| Gates estruturais | *(28/09)* **Governante:** `artefatos/executor_v2_rank03b/estrutural.json`. Históricos: `artefatos/painel_pesquisa_rank03b/gates_g0_g1.json` (governante até 27/09), `gates_g0_g1_sem_correcoes.json`, `gates_g0_g1_diagnostico_execucao1.json` |
 | Medições estruturais | `artefatos/painel_pesquisa_rank03b/medicoes_estruturais.json` (`scripts/medicoes_estruturais_rank03b.py`) |
 | Auditor | `scripts/auditar_rank03b_consumo_operacional.py` (a medição de T1/T2 lerá o painel de pesquisa por `scripts/gates_painel_pesquisa_rank03b.py`). **Cumpridos em 17/09:** IC do acerto do B0, partição de T1, AUC zero em T2, correções só validadas. **Ainda não cumpridos, e exigidos antes de congelar:** o executor v2 com a ordem do §6 e as decisões de 26/09 (§§3.2, 5.1, 5.5, 6.1, 8.1 e 12-bis), testado em sintético e conferido de forma independente; a resolução estrutural do G0, num painel com pins novos (§4) |
 | Decisões de 26/09 | `resultados/registro_decisoes_v2_rank03b_2026-09-26.md` (motivos e alternativas); `resultados/adendo_o1_rank03b_2026-09-26.md` (exceção protetiva e identidade contábil) |
