@@ -1148,19 +1148,22 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
       pareceres reconstruídos byte a byte e versionados. A C8 (serialização)
       veio antes de o G0 ser visto; a C9 e as AF1 a AF3, depois. Nenhuma mudou
       regra de dado.
-   5. **Pendente, ato do responsável:** congelar **por cópia**. O rascunho fica
-      no lugar, porque o executor e um teste o leem pelo nome. Passos: suíte
-      verde e código commitado; regerar o estrutural; copiar o rascunho para
-      um nome sem RASCUNHO; trocar a linha de status por `**Status: CONGELADO
-      em <data>…**`; colar os seis pins do §4, com o `codigo_de_medicao`
-      regerado; publicar o SHA-256. Ordem completa no documento de revisão,
-      seção 4.
+   5. **CONGELADO em 28/09, por cópia**, por delegação expressa do responsável
+      nesta data (palavras no topo do congelado):
+      `resultados/pre_registro_rank03b_v2_2026-09-16.md`, SHA-256
+      **`8fdbd145b614628392fc1e53433c73a552eed5d2d250f54e46ecf4592e1660b2`**.
+      `codigo_de_medicao` `3de953a5…01ca`. O rascunho fica no lugar.
+      Antes da cópia, a revisão do responsável (commit `c815930`, só texto):
+      §1.1 (T1 aprovado não refuta o mecanismo: limiar absoluto, taxa-base
+      0,053 contra 17–20% nos precedentes); `113026` mantido sem ROTA-3
+      (`54783` está no mesmo caso, como confirmação); §14 aponta os
+      artefatos governantes.
    6. Pendente: medir com
       `python -m scripts.executor_v2_rank03b --medir --pre-registro <arquivo> --sha256 <hash> --rota artefatos/rota_prova_rank03b_v2_2026-09-27 --correcoes-por-conta corpus/cvm/painel_pesquisa_rank03b/correcoes_escala_por_conta.csv`.
 
    Previsão registrada: T1 reprova por `fco_ttm_sobre_sd8`. **Não treinar**
    antes de PRONTO PARA CHALLENGER. A onda de 27/09 está no `9049579`; as
-   correções de 28/09 ainda não têm commit.
+   correções de 28/09, no `c210e00`.
 −2. **GEOM-1 — alcance conferido em 24/09 e revisado (24–25/09):** caixa dos
    dois candidatos confirmado; Ativo/140867 demonstrado diretamente;
    FCO/140867, Ativo/142900 e FCO/142900 com busca numérica exata sem
