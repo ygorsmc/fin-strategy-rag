@@ -256,3 +256,47 @@ def test_leitura_herdada_devolve_o_diretorio_original(tmp_path, monkeypatch):
     with p._Em(tmp_path / "herdado"):
         assert p.DESTINO == tmp_path / "herdado"
     assert p.DESTINO == tmp_path / "atual"
+
+
+# --- conferência humana: medição (§6) ------------------------------------------------
+
+def _humana(tmp_path, monkeypatch, notas_humano, notas_ia):
+    monkeypatch.setattr(p, "DESTINO", tmp_path)
+    monkeypatch.setattr(p, "LEITORES", ("claude",))
+    (tmp_path / "humana").mkdir()
+    mapa = {f"H{n:02d}": {"par": "P", "item": f"E{n:03d}"} for n in range(1, len(notas_humano) + 1)}
+    (tmp_path / "humana" / "mapa.json").write_text(json.dumps(mapa))
+    with open(tmp_path / "humana" / "rotulos.csv", "w") as f:
+        f.write("item,nota,motivo,acao,critico,julgavel,justificativa\n")
+        for n, nota in enumerate(notas_humano, 1):
+            motivo, acao = ("numero" if nota else ""), ("verificar" if nota == 2 else "")
+            f.write(f"H{n:02d},{nota},{motivo},{acao},false,true,x\n")
+    pasta = tmp_path / "rotulos" / "claude" / "teste"
+    pasta.mkdir(parents=True)
+    with open(pasta / "P.jsonl", "w") as f:
+        for n, nota in enumerate(notas_ia, 1):
+            f.write(json.dumps(_r(item=f"E{n:03d}", nota=nota, motivo="numero" if nota else None,
+                                  acao="verificar" if nota == 2 else None)) + "\n")
+
+
+def test_humano_concordando_confirma(tmp_path, monkeypatch):
+    notas = [0, 0, 1, 2, 0, 1, 2, 0, 0, 1] * 3
+    _humana(tmp_path, monkeypatch, notas, notas)
+    p.cmd_avaliar_humana(None)
+    r = json.loads((tmp_path / "resultado_humana.json").read_text())
+    assert r["alfa"] == pytest.approx(1.0) and r["veredito"].startswith("PROMISSOR")
+
+
+def test_humano_discordando_e_indecidivel(tmp_path, monkeypatch):
+    _humana(tmp_path, monkeypatch, [0, 2, 0, 2, 1, 0] * 5, [2, 0, 2, 0, 0, 2] * 5)
+    p.cmd_avaliar_humana(None)
+    r = json.loads((tmp_path / "resultado_humana.json").read_text())
+    assert r["veredito"] == "INDECIDIVEL"
+
+
+def test_planilha_incompleta_levanta(tmp_path, monkeypatch):
+    _humana(tmp_path, monkeypatch, [0, 1], [0, 1, 2])
+    (tmp_path / "humana" / "mapa.json").write_text(json.dumps(
+        {f"H{n:02d}": {"par": "P", "item": f"E{n:03d}"} for n in range(1, 4)}))
+    with pytest.raises(SystemExit, match="não cobre"):
+        p.cmd_avaliar_humana(None)

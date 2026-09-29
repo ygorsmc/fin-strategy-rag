@@ -756,7 +756,76 @@ def cmd_amostra_humana(_args) -> int:
     (pasta / "pacote.json").write_text(json.dumps({"itens": itens}, ensure_ascii=False, indent=1),
                                        encoding="utf-8")
     (pasta / "mapa.json").write_text(json.dumps(mapa, indent=1), encoding="utf-8")
-    print(f"{len(itens)} itens em {pasta / 'pacote.json'}; rótulos em {pasta / 'rotulos.jsonl'}")
+    # Versão para leitura humana: cada item com o PDF e a página; e a planilha
+    # em branco. Nenhuma nota da IA aparece em nenhum dos dois arquivos.
+    linhas_md = ["# Conferência humana — pacote cego (§6)\n",
+                 "Rubrica: `rubrica.md` na pasta do piloto. Preencha `rotulos.csv`. "
+                 "Não abra `mapa.json` nem a pasta `rotulos/` antes de terminar.\n"]
+    for it in itens:
+        linhas_md.append(
+            f"\n## {it['item']} — {it['operacao']} ({it['tipo']})\n\n"
+            f"- Anterior: `{it['documento_anterior']}.pdf`, página {it['pagina_anterior']}\n"
+            f"- Atual: `{it['documento_atual']}.pdf`, página {it['pagina_atual']}\n"
+            f"- Seção: {it['secao']}\n"
+            + (f"- Tabela: {it.get('titulo_da_tabela', '')} — linha: {it.get('rotulo_da_linha', '')}\n"
+               f"- Colunas antes: {it.get('colunas_anterior')} · depois: {it.get('colunas_atual')}\n"
+               if it["tipo"] == "tabela" else "")
+            + f"\n**Antes:** {it['trecho_anterior'] or '(nada)'}\n\n**Depois:** {it['trecho_atual'] or '(nada)'}\n")
+    (pasta / "pacote.md").write_text("".join(linhas_md), encoding="utf-8")
+    with open(pasta / "rotulos.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["item", "nota", "motivo", "acao", "critico", "julgavel", "justificativa"])
+        for it in itens:
+            w.writerow([it["item"], "", "", "", "false", "true", ""])
+    print(f"{len(itens)} itens: leia {pasta / 'pacote.md'} e preencha {pasta / 'rotulos.csv'}")
+    return 0
+
+
+LIMIAR_HUMANO = 0.67
+
+
+def ler_rotulos_humanos(caminho: Path) -> dict[str, dict]:
+    """A planilha do responsável, validada pelo mesmo contrato dos leitores."""
+    saida = {}
+    for linha in csv.DictReader(open(caminho, encoding="utf-8")):
+        r = {"item": linha["item"].strip(), "nota": int(linha["nota"]),
+             "motivo": linha["motivo"].strip() or None, "acao": linha["acao"].strip() or None,
+             "critico": linha["critico"].strip().lower() == "true",
+             "julgavel": linha["julgavel"].strip().lower() != "false",
+             "justificativa": linha["justificativa"]}
+        saida[r["item"]] = validar_rotulo(r)
+    return saida
+
+
+def cmd_avaliar_humana(_args) -> int:
+    """α ordinal entre o humano e a nota da IA, só nos itens julgáveis (§6)."""
+    from scripts.auditar_cand02_redline import alpha_krippendorff_ordinal
+
+    pasta = DESTINO / "humana"
+    humano = ler_rotulos_humanos(pasta / "rotulos.csv")
+    mapa = json.loads((pasta / "mapa.json").read_text(encoding="utf-8"))
+    if set(humano) != set(mapa):
+        raise SystemExit(f"a planilha não cobre exatamente os {len(mapa)} itens da amostra")
+    pares, exatos, binarios = [], 0, 0
+    for h, ref in sorted(mapa.items()):
+        ia = ler_rotulos(LEITORES[0], "teste", ref["par"])[ref["item"]]
+        if not (humano[h]["julgavel"] and ia["julgavel"]):
+            continue
+        a, b = humano[h]["nota"], ia["nota"]
+        pares.append((a, b))
+        exatos += a == b
+        binarios += (a >= 1) == (b >= 1)
+    alfa = alpha_krippendorff_ordinal(pares) if pares else None
+    alfa = None if alfa is None or alfa != alfa else alfa
+    veredito = ("PROMISSOR, rótulo de IA conferido por amostra humana"
+                if alfa is not None and alfa >= LIMIAR_HUMANO else "INDECIDIVEL")
+    resultado = {"itens_comparados": len(pares), "alfa": alfa,
+                 "acordo_exato": exatos / len(pares) if pares else None,
+                 "acordo_binario_nota_ge_1": binarios / len(pares) if pares else None,
+                 "limiar": LIMIAR_HUMANO, "veredito": veredito}
+    (DESTINO / "resultado_humana.json").write_text(json.dumps(resultado, indent=2, ensure_ascii=False),
+                                                   encoding="utf-8")
+    print(json.dumps(resultado, indent=2, ensure_ascii=False))
     return 0
 
 
@@ -776,11 +845,13 @@ def principal(argv=None) -> int:
     a = sub.add_parser("avaliar")
     a.add_argument("--papel", choices=("treino", "teste"), required=True)
     sub.add_parser("amostra-humana")
+    sub.add_parser("avaliar-humana")
     args = parser.parse_args(argv)
     configurar(args.piloto)
     return {"eventos": cmd_eventos, "desafiante": cmd_desafiante, "rubrica": cmd_rubrica,
             "pool": cmd_pool, "rotular-gemini": cmd_rotular_gemini, "treinar": cmd_treinar,
-            "avaliar": cmd_avaliar, "amostra-humana": cmd_amostra_humana}[args.comando](args)
+            "avaliar": cmd_avaliar, "amostra-humana": cmd_amostra_humana,
+            "avaliar-humana": cmd_avaliar_humana}[args.comando](args)
 
 
 if __name__ == "__main__":
