@@ -1,0 +1,39 @@
+{
+  "hiperparametros": {
+    "max_iter": 200,
+    "learning_rate": 0.05,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 20,
+    "l2_regularization": 1.0,
+    "random_state": 20260928
+  },
+  "observacoes_de_treino": 2602,
+  "observacoes_por_par": {
+    "ABC_4T2023_1T2024": 110,
+    "BMG_4T2023_1T2024": 120,
+    "BRADESCO_4T2023_1T2024": 120,
+    "BTG_4T2023_1T2024": 120,
+    "ITAU_4T2023_1T2024": 120,
+    "SANTANDER_4T2023_1T2024": 120,
+    "ABC_2T2025_3T2025": 112,
+    "ABC_4T2025_1T2026": 100,
+    "BANESTES_2T2025_3T2025": 120,
+    "BANESTES_4T2025_1T2026": 120,
+    "BB_2T2025_3T2025": 120,
+    "BB_4T2025_1T2026": 120,
+    "BMG_2T2025_3T2025": 120,
+    "BMG_4T2025_1T2026": 120,
+    "BRADESCO_2T2025_3T2025": 120,
+    "BRADESCO_4T2025_1T2026": 120,
+    "BTG_2T2025_3T2025": 120,
+    "BTG_4T2025_1T2026": 120,
+    "ITAU_2T2025_3T2025": 120,
+    "ITAU_4T2025_1T2026": 120,
+    "SANTANDER_2T2025_3T2025": 120,
+    "SANTANDER_4T2025_1T2026": 120
+  },
+  "ganho_medio_treino": 0.515,
+  "m_pkl_sha256": "efe186e5d91ac767315c9157a300e42c05fae7100dfd1033ce07fff1c8a281ff",
+  "script_sha256": "5fa82e03f709fc79fd801fe98271b3e4fa947b5b44305e469629ec403484665f",
+  "redline_sha256": "40a655be448fa3973f4ade1481d1db405743ea290175e7b234173c99a7bfeeb8"
+}
