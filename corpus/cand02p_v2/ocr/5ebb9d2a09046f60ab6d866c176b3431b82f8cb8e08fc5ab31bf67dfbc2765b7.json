@@ -1,0 +1,3802 @@
+{
+ "documento": "btg_release_4T2024",
+ "empresa": "BTG",
+ "hash_pdf": "5ebb9d2a09046f60ab6d866c176b3431b82f8cb8e08fc5ab31bf67dfbc2765b7",
+ "modelo": "mistral-ocr-4-0",
+ "ocr": {
+  "document_annotation": null,
+  "model": "mistral-ocr-4-0",
+  "pages": [
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 468,
+      "bottom_right_y": 344,
+      "confidence_scores": null,
+      "content": "![img-0.jpeg](img-0.jpeg)",
+      "image_id": "img-0.jpeg",
+      "top_left_x": 192,
+      "top_left_y": 237,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 799,
+      "bottom_right_y": 349,
+      "confidence_scores": null,
+      "content": "# Apresentação Teleconferência",
+      "top_left_x": 562,
+      "top_left_y": 275,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 742,
+      "bottom_right_y": 402,
+      "confidence_scores": null,
+      "content": "4º trimestre 2024",
+      "top_left_x": 562,
+      "top_left_y": 377,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 820,
+      "bottom_right_y": 525,
+      "confidence_scores": null,
+      "content": "Para informações adicionais, leia atentamente os Avisos Adicionais no final da apresentação",
+      "top_left_x": 564,
+      "top_left_y": 496,
+      "type": "text"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9516375775664143,
+     "minimum_page_confidence_score": 0.34550148884699466,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 468,
+      "bottom_right_y": 344,
+      "id": "img-0.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 192,
+      "top_left_y": 237
+     }
+    ],
+    "index": 0,
+    "markdown": "![img-0.jpeg](img-0.jpeg)\n\n# Apresentação Teleconferência\n\n4º trimestre 2024\n\nPara informações adicionais, leia atentamente os Avisos Adicionais no final da apresentação",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 308,
+      "bottom_right_y": 78,
+      "confidence_scores": null,
+      "content": "# Divulgação de resultados:\nQuarto trimestre de 2024",
+      "top_left_x": 41,
+      "top_left_y": 29,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 515,
+      "bottom_right_y": 198,
+      "confidence_scores": null,
+      "content": "# Teleconferência em inglês\n(com tradução simultânea para português)",
+      "top_left_x": 163,
+      "top_left_y": 152,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 504,
+      "bottom_right_y": 307,
+      "confidence_scores": null,
+      "content": "- 10 de fevereiro de 2025 (segunda-feira)\n- 11:00 (Brasília) / 9:00 (New York)\n- https://nucleodeimagem.com.br/btg/4q24.html",
+      "top_left_x": 163,
+      "top_left_y": 238,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 141,
+      "bottom_right_y": 525,
+      "confidence_scores": null,
+      "content": "![img-1.jpeg](img-1.jpeg)",
+      "image_id": "img-1.jpeg",
+      "top_left_x": 49,
+      "top_left_y": 435,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 471,
+      "confidence_scores": null,
+      "content": "**Webcast:** O áudio da teleconferência será transmitido ao vivo, por meio de um sistema webcast disponível em nosso website www.btgpactual.com/ir",
+      "top_left_x": 153,
+      "top_left_y": 436,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 525,
+      "confidence_scores": null,
+      "content": "*Solicitamos que os participantes se conectem 15 minutos antes do horário marcado para início das teleconferências*",
+      "top_left_x": 153,
+      "top_left_y": 489,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 980,
+      "bottom_right_y": 550,
+      "confidence_scores": null,
+      "content": "2",
+      "top_left_x": 966,
+      "top_left_y": 537,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9597255371250714,
+     "minimum_page_confidence_score": 0.3292369645523168,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [
+     "https://nucleodeimagem.com.br/btg/4q24.html",
+     "http://www.btgpactual.com/ir"
+    ],
+    "images": [
+     {
+      "bottom_right_x": 141,
+      "bottom_right_y": 525,
+      "id": "img-1.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 49,
+      "top_left_y": 435
+     }
+    ],
+    "index": 1,
+    "markdown": "# Divulgação de resultados:\nQuarto trimestre de 2024\n\n# Teleconferência em inglês\n(com tradução simultânea para português)\n\n- 10 de fevereiro de 2025 (segunda-feira)\n- 11:00 (Brasília) / 9:00 (New York)\n- https://nucleodeimagem.com.br/btg/4q24.html\n\n![img-1.jpeg](img-1.jpeg)\n\n**Webcast:** O áudio da teleconferência será transmitido ao vivo, por meio de um sistema webcast disponível em nosso website www.btgpactual.com/ir\n\n*Solicitamos que os participantes se conectem 15 minutos antes do horário marcado para início das teleconferências*\n\n2",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 392,
+      "bottom_right_y": 73,
+      "confidence_scores": null,
+      "content": "# Destaques de 2024",
+      "top_left_x": 42,
+      "top_left_y": 30,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 989,
+      "bottom_right_y": 459,
+      "confidence_scores": null,
+      "content": "1 Recordes de receita e lucro líquido, com ROAE de 23,1%, à medida que nos beneficiamos de uma maior alavancagem operacional e da diversificação dos nossos negócios\n2 AuM/WuM atingiu R$1,9 trilhão, 21% acima de 2023, impulsionado pela forte captação ao longo do ano de R$247 bilhões\n3 Portfólio de crédito cresceu 29% a.a com spreads líquidos atrativos, devido à diversificação de produtos, segmentos e geografias, assim como à contínua redução do custo de funding\n4 Receita de Investment Banking cresceu 30% no ano, com contribuição recorde de DCM e forte atividade no mercado de M&A\n5 Continuamos expandindo nossa oferta de produtos e serviços, com transações estratégicas como as aquisições de Órama, MY Safra, Sertrading e Julius Baer(1)",
+      "top_left_x": 42,
+      "top_left_y": 90,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 755,
+      "bottom_right_y": 538,
+      "confidence_scores": null,
+      "content": "## Esperamos expansão de ROAE em 2025",
+      "top_left_x": 261,
+      "top_left_y": 510,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 57,
+      "bottom_right_y": 560,
+      "confidence_scores": null,
+      "content": "Notas:",
+      "top_left_x": 34,
+      "top_left_y": 552,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 683,
+      "bottom_right_y": 569,
+      "confidence_scores": null,
+      "content": "(1) A conclusão da Transação está sujeita à verificação de determinadas condições precedentes, incluindo a obtenção da aprovação do Banco Central do Brasil e demais aprovações regulatórias necessárias",
+      "top_left_x": 34,
+      "top_left_y": 560,
+      "type": "references"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9701240660773536,
+     "minimum_page_confidence_score": 0.2926709437730275,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 2,
+    "markdown": "# Destaques de 2024\n\n1 Recordes de receita e lucro líquido, com ROAE de 23,1%, à medida que nos beneficiamos de uma maior alavancagem operacional e da diversificação dos nossos negócios\n2 AuM/WuM atingiu R$1,9 trilhão, 21% acima de 2023, impulsionado pela forte captação ao longo do ano de R$247 bilhões\n3 Portfólio de crédito cresceu 29% a.a com spreads líquidos atrativos, devido à diversificação de produtos, segmentos e geografias, assim como à contínua redução do custo de funding\n4 Receita de Investment Banking cresceu 30% no ano, com contribuição recorde de DCM e forte atividade no mercado de M&A\n5 Continuamos expandindo nossa oferta de produtos e serviços, com transações estratégicas como as aquisições de Órama, MY Safra, Sertrading e Julius Baer(1)\n\n## Esperamos expansão de ROAE em 2025\n\nNotas:\n\n(1) A conclusão da Transação está sujeita à verificação de determinadas condições precedentes, incluindo a obtenção da aprovação do Banco Central do Brasil e demais aprovações regulatórias necessárias",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 355,
+      "bottom_right_y": 90,
+      "confidence_scores": null,
+      "content": "# Destaques 2024",
+      "top_left_x": 58,
+      "top_left_y": 48,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 237,
+      "bottom_right_y": 183,
+      "confidence_scores": null,
+      "content": "Receitas totais",
+      "top_left_x": 100,
+      "top_left_y": 162,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 134,
+      "bottom_right_y": 229,
+      "confidence_scores": null,
+      "content": "(R$)",
+      "top_left_x": 100,
+      "top_left_y": 210,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 296,
+      "bottom_right_y": 318,
+      "confidence_scores": null,
+      "content": "25,1bi",
+      "top_left_x": 99,
+      "top_left_y": 251,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 290,
+      "bottom_right_y": 348,
+      "confidence_scores": null,
+      "content": "16% de crescimento a.a.",
+      "top_left_x": 100,
+      "top_left_y": 329,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 300,
+      "bottom_right_y": 425,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2023</td><td>21,6bi</td></tr></table>",
+      "table_id": "tbl-0.html",
+      "top_left_x": 105,
+      "top_left_y": 406,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 300,
+      "bottom_right_y": 456,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2022</td><td>17,2bi</td></tr></table>",
+      "table_id": "tbl-1.html",
+      "top_left_x": 105,
+      "top_left_y": 437,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 300,
+      "bottom_right_y": 487,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2021</td><td>13,9bi</td></tr></table>",
+      "table_id": "tbl-2.html",
+      "top_left_x": 105,
+      "top_left_y": 468,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 541,
+      "bottom_right_y": 184,
+      "confidence_scores": null,
+      "content": "Lucro Líquido",
+      "top_left_x": 415,
+      "top_left_y": 162,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 449,
+      "bottom_right_y": 229,
+      "confidence_scores": null,
+      "content": "(R$)",
+      "top_left_x": 415,
+      "top_left_y": 210,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 605,
+      "bottom_right_y": 318,
+      "confidence_scores": null,
+      "content": "12,3bi",
+      "top_left_x": 408,
+      "top_left_y": 251,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 599,
+      "bottom_right_y": 348,
+      "confidence_scores": null,
+      "content": "18% de crescimento a.a.",
+      "top_left_x": 408,
+      "top_left_y": 329,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 425,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2023</td><td>10,4bi</td></tr></table>",
+      "table_id": "tbl-3.html",
+      "top_left_x": 421,
+      "top_left_y": 406,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 456,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2022</td><td>8,3bi</td></tr></table>",
+      "table_id": "tbl-4.html",
+      "top_left_x": 421,
+      "top_left_y": 437,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 487,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2021</td><td>6,5bi</td></tr></table>",
+      "table_id": "tbl-5.html",
+      "top_left_x": 421,
+      "top_left_y": 468,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 859,
+      "bottom_right_y": 184,
+      "confidence_scores": null,
+      "content": "ROAE ajustado",
+      "top_left_x": 714,
+      "top_left_y": 162,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 912,
+      "bottom_right_y": 312,
+      "confidence_scores": null,
+      "content": "23,1%",
+      "top_left_x": 711,
+      "top_left_y": 247,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 763,
+      "bottom_right_y": 348,
+      "confidence_scores": null,
+      "content": "2024",
+      "top_left_x": 717,
+      "top_left_y": 329,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 912,
+      "bottom_right_y": 425,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2023</td><td>22,7%</td></tr></table>",
+      "table_id": "tbl-6.html",
+      "top_left_x": 717,
+      "top_left_y": 406,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 912,
+      "bottom_right_y": 456,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2022</td><td>20,8%</td></tr></table>",
+      "table_id": "tbl-7.html",
+      "top_left_x": 717,
+      "top_left_y": 437,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 912,
+      "bottom_right_y": 487,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2021</td><td>20,3%</td></tr></table>",
+      "table_id": "tbl-8.html",
+      "top_left_x": 717,
+      "top_left_y": 468,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 979,
+      "bottom_right_y": 550,
+      "confidence_scores": null,
+      "content": "4",
+      "top_left_x": 966,
+      "top_left_y": 537,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.975069103136863,
+     "minimum_page_confidence_score": 0.27313656390552205,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 3,
+    "markdown": "# Destaques 2024\n\nReceitas totais\n\n(R$)\n\n25,1bi\n\n16% de crescimento a.a.\n\n[tbl-0.html](tbl-0.html)\n\n[tbl-1.html](tbl-1.html)\n\n[tbl-2.html](tbl-2.html)\n\nLucro Líquido\n\n(R$)\n\n12,3bi\n\n18% de crescimento a.a.\n\n[tbl-3.html](tbl-3.html)\n\n[tbl-4.html](tbl-4.html)\n\n[tbl-5.html](tbl-5.html)\n\nROAE ajustado\n\n23,1%\n\n2024\n\n[tbl-6.html](tbl-6.html)\n\n[tbl-7.html](tbl-7.html)\n\n[tbl-8.html](tbl-8.html)\n\n4",
+    "tables": [
+     {
+      "content": "<table><tr><td>2023</td><td>21,6bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-0.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>2022</td><td>17,2bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-1.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>2021</td><td>13,9bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-2.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>2023</td><td>10,4bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-3.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>2022</td><td>8,3bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-4.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>2021</td><td>6,5bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-5.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>2023</td><td>22,7%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-6.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>2022</td><td>20,8%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-7.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>2021</td><td>20,3%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-8.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 412,
+      "bottom_right_y": 90,
+      "confidence_scores": null,
+      "content": "# Destaques 4T 2024",
+      "top_left_x": 58,
+      "top_left_y": 48,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 237,
+      "bottom_right_y": 183,
+      "confidence_scores": null,
+      "content": "Receitas totais",
+      "top_left_x": 100,
+      "top_left_y": 162,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 134,
+      "bottom_right_y": 229,
+      "confidence_scores": null,
+      "content": "(R$)",
+      "top_left_x": 99,
+      "top_left_y": 210,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 259,
+      "bottom_right_y": 318,
+      "confidence_scores": null,
+      "content": "6,7bi",
+      "top_left_x": 99,
+      "top_left_y": 251,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 290,
+      "bottom_right_y": 348,
+      "confidence_scores": null,
+      "content": "19% de crescimento a.a.",
+      "top_left_x": 99,
+      "top_left_y": 329,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 300,
+      "bottom_right_y": 425,
+      "confidence_scores": null,
+      "content": "<table><tr><td>3T 24</td><td>6,4bi</td></tr></table>",
+      "table_id": "tbl-9.html",
+      "top_left_x": 105,
+      "top_left_y": 405,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 300,
+      "bottom_right_y": 456,
+      "confidence_scores": null,
+      "content": "<table><tr><td>4T 23</td><td>5,7bi</td></tr></table>",
+      "table_id": "tbl-10.html",
+      "top_left_x": 105,
+      "top_left_y": 437,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 300,
+      "bottom_right_y": 488,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2024</td><td>25,1bi</td></tr></table>",
+      "table_id": "tbl-11.html",
+      "top_left_x": 105,
+      "top_left_y": 468,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 541,
+      "bottom_right_y": 184,
+      "confidence_scores": null,
+      "content": "Lucro Líquido",
+      "top_left_x": 415,
+      "top_left_y": 162,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 449,
+      "bottom_right_y": 229,
+      "confidence_scores": null,
+      "content": "(R$)",
+      "top_left_x": 415,
+      "top_left_y": 210,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 567,
+      "bottom_right_y": 318,
+      "confidence_scores": null,
+      "content": "3,3bi",
+      "top_left_x": 406,
+      "top_left_y": 251,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 599,
+      "bottom_right_y": 348,
+      "confidence_scores": null,
+      "content": "15% de crescimento a.a.",
+      "top_left_x": 408,
+      "top_left_y": 329,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 425,
+      "confidence_scores": null,
+      "content": "<table><tr><td>3T 24</td><td>3,2bi</td></tr></table>",
+      "table_id": "tbl-12.html",
+      "top_left_x": 421,
+      "top_left_y": 405,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 456,
+      "confidence_scores": null,
+      "content": "<table><tr><td>4T 23</td><td>2,8bi</td></tr></table>",
+      "table_id": "tbl-13.html",
+      "top_left_x": 421,
+      "top_left_y": 437,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 488,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2024</td><td>12,3bi</td></tr></table>",
+      "table_id": "tbl-14.html",
+      "top_left_x": 421,
+      "top_left_y": 468,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 859,
+      "bottom_right_y": 184,
+      "confidence_scores": null,
+      "content": "ROAE ajustado",
+      "top_left_x": 714,
+      "top_left_y": 162,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 912,
+      "bottom_right_y": 312,
+      "confidence_scores": null,
+      "content": "23,0%",
+      "top_left_x": 710,
+      "top_left_y": 247,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 786,
+      "bottom_right_y": 348,
+      "confidence_scores": null,
+      "content": "4T 2024",
+      "top_left_x": 717,
+      "top_left_y": 329,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 912,
+      "bottom_right_y": 425,
+      "confidence_scores": null,
+      "content": "<table><tr><td>3T 24</td><td>23,5%</td></tr></table>",
+      "table_id": "tbl-15.html",
+      "top_left_x": 717,
+      "top_left_y": 405,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 912,
+      "bottom_right_y": 456,
+      "confidence_scores": null,
+      "content": "<table><tr><td>4T 23</td><td>23,4%</td></tr></table>",
+      "table_id": "tbl-16.html",
+      "top_left_x": 717,
+      "top_left_y": 437,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 912,
+      "bottom_right_y": 488,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2024</td><td>23,1%</td></tr></table>",
+      "table_id": "tbl-17.html",
+      "top_left_x": 717,
+      "top_left_y": 468,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 980,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "5",
+      "top_left_x": 966,
+      "top_left_y": 537,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9797644169290308,
+     "minimum_page_confidence_score": 0.3179164176702374,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 4,
+    "markdown": "# Destaques 4T 2024\n\nReceitas totais\n\n(R$)\n\n6,7bi\n\n19% de crescimento a.a.\n\n[tbl-9.html](tbl-9.html)\n\n[tbl-10.html](tbl-10.html)\n\n[tbl-11.html](tbl-11.html)\n\nLucro Líquido\n\n(R$)\n\n3,3bi\n\n15% de crescimento a.a.\n\n[tbl-12.html](tbl-12.html)\n\n[tbl-13.html](tbl-13.html)\n\n[tbl-14.html](tbl-14.html)\n\nROAE ajustado\n\n23,0%\n\n4T 2024\n\n[tbl-15.html](tbl-15.html)\n\n[tbl-16.html](tbl-16.html)\n\n[tbl-17.html](tbl-17.html)\n\n5",
+    "tables": [
+     {
+      "content": "<table><tr><td>3T 24</td><td>6,4bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-9.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>4T 23</td><td>5,7bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-10.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>2024</td><td>25,1bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-11.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>3T 24</td><td>3,2bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-12.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>4T 23</td><td>2,8bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-13.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>2024</td><td>12,3bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-14.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>3T 24</td><td>23,5%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-15.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>4T 23</td><td>23,4%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-16.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>2024</td><td>23,1%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-17.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 412,
+      "bottom_right_y": 90,
+      "confidence_scores": null,
+      "content": "# Destaques 4T 2024",
+      "top_left_x": 59,
+      "top_left_y": 48,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 247,
+      "bottom_right_y": 184,
+      "confidence_scores": null,
+      "content": "Net New Money",
+      "top_left_x": 101,
+      "top_left_y": 162,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 134,
+      "bottom_right_y": 229,
+      "confidence_scores": null,
+      "content": "(R$)",
+      "top_left_x": 100,
+      "top_left_y": 210,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 241,
+      "bottom_right_y": 310,
+      "confidence_scores": null,
+      "content": "50bi",
+      "top_left_x": 100,
+      "top_left_y": 252,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 167,
+      "bottom_right_y": 347,
+      "confidence_scores": null,
+      "content": "4T 2024",
+      "top_left_x": 100,
+      "top_left_y": 330,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 300,
+      "bottom_right_y": 425,
+      "confidence_scores": null,
+      "content": "<table><tr><td>3T 24</td><td>78bi</td></tr></table>",
+      "table_id": "tbl-18.html",
+      "top_left_x": 106,
+      "top_left_y": 406,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 300,
+      "bottom_right_y": 456,
+      "confidence_scores": null,
+      "content": "<table><tr><td>4T 23</td><td>41bi</td></tr></table>",
+      "table_id": "tbl-19.html",
+      "top_left_x": 106,
+      "top_left_y": 437,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 300,
+      "bottom_right_y": 486,
+      "confidence_scores": null,
+      "content": "<table><tr><td>2024</td><td>247bi</td></tr></table>",
+      "table_id": "tbl-20.html",
+      "top_left_x": 106,
+      "top_left_y": 468,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 468,
+      "bottom_right_y": 183,
+      "confidence_scores": null,
+      "content": "WuM",
+      "top_left_x": 415,
+      "top_left_y": 162,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 449,
+      "bottom_right_y": 229,
+      "confidence_scores": null,
+      "content": "(R$)",
+      "top_left_x": 415,
+      "top_left_y": 210,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 549,
+      "bottom_right_y": 310,
+      "confidence_scores": null,
+      "content": "26%",
+      "top_left_x": 408,
+      "top_left_y": 252,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 544,
+      "bottom_right_y": 345,
+      "confidence_scores": null,
+      "content": "crescimento a.a.",
+      "top_left_x": 415,
+      "top_left_y": 330,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 425,
+      "confidence_scores": null,
+      "content": "<table><tr><td>4T 24</td><td>901bi</td></tr></table>",
+      "table_id": "tbl-21.html",
+      "top_left_x": 421,
+      "top_left_y": 406,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 456,
+      "confidence_scores": null,
+      "content": "<table><tr><td>3T 24</td><td>857bi</td></tr></table>",
+      "table_id": "tbl-22.html",
+      "top_left_x": 421,
+      "top_left_y": 437,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 486,
+      "confidence_scores": null,
+      "content": "<table><tr><td>4T 23</td><td>713bi</td></tr></table>",
+      "table_id": "tbl-23.html",
+      "top_left_x": 421,
+      "top_left_y": 468,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 806,
+      "bottom_right_y": 183,
+      "confidence_scores": null,
+      "content": "AuM/AuA",
+      "top_left_x": 714,
+      "top_left_y": 162,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 757,
+      "bottom_right_y": 229,
+      "confidence_scores": null,
+      "content": "(R$)",
+      "top_left_x": 721,
+      "top_left_y": 210,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 855,
+      "bottom_right_y": 305,
+      "confidence_scores": null,
+      "content": "16%",
+      "top_left_x": 714,
+      "top_left_y": 248,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 848,
+      "bottom_right_y": 347,
+      "confidence_scores": null,
+      "content": "crescimento a.a.",
+      "top_left_x": 717,
+      "top_left_y": 330,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 912,
+      "bottom_right_y": 425,
+      "confidence_scores": null,
+      "content": "<table><tr><td>4T 24</td><td>992bi</td></tr></table>",
+      "table_id": "tbl-24.html",
+      "top_left_x": 719,
+      "top_left_y": 406,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 912,
+      "bottom_right_y": 456,
+      "confidence_scores": null,
+      "content": "<table><tr><td>3T 24</td><td>970bi</td></tr></table>",
+      "table_id": "tbl-25.html",
+      "top_left_x": 719,
+      "top_left_y": 437,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 912,
+      "bottom_right_y": 486,
+      "confidence_scores": null,
+      "content": "<table><tr><td>4T 23</td><td>856bi</td></tr></table>",
+      "table_id": "tbl-26.html",
+      "top_left_x": 719,
+      "top_left_y": 468,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 980,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "6",
+      "top_left_x": 966,
+      "top_left_y": 537,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9797352103150465,
+     "minimum_page_confidence_score": 0.3211061686421929,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 5,
+    "markdown": "# Destaques 4T 2024\n\nNet New Money\n\n(R$)\n\n50bi\n\n4T 2024\n\n[tbl-18.html](tbl-18.html)\n\n[tbl-19.html](tbl-19.html)\n\n[tbl-20.html](tbl-20.html)\n\nWuM\n\n(R$)\n\n26%\n\ncrescimento a.a.\n\n[tbl-21.html](tbl-21.html)\n\n[tbl-22.html](tbl-22.html)\n\n[tbl-23.html](tbl-23.html)\n\nAuM/AuA\n\n(R$)\n\n16%\n\ncrescimento a.a.\n\n[tbl-24.html](tbl-24.html)\n\n[tbl-25.html](tbl-25.html)\n\n[tbl-26.html](tbl-26.html)\n\n6",
+    "tables": [
+     {
+      "content": "<table><tr><td>3T 24</td><td>78bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-18.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>4T 23</td><td>41bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-19.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>2024</td><td>247bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-20.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>4T 24</td><td>901bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-21.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>3T 24</td><td>857bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-22.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>4T 23</td><td>713bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-23.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>4T 24</td><td>992bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-24.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>3T 24</td><td>970bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-25.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>4T 23</td><td>856bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-26.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 412,
+      "bottom_right_y": 90,
+      "confidence_scores": null,
+      "content": "# Destaques 4T 2024",
+      "top_left_x": 58,
+      "top_left_y": 48,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 257,
+      "bottom_right_y": 184,
+      "confidence_scores": null,
+      "content": "Base de Funding",
+      "top_left_x": 100,
+      "top_left_y": 162,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 134,
+      "bottom_right_y": 229,
+      "confidence_scores": null,
+      "content": "(R$)",
+      "top_left_x": 100,
+      "top_left_y": 210,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 241,
+      "bottom_right_y": 310,
+      "confidence_scores": null,
+      "content": "30%",
+      "top_left_x": 100,
+      "top_left_y": 253,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 229,
+      "bottom_right_y": 347,
+      "confidence_scores": null,
+      "content": "crescimento a.a.",
+      "top_left_x": 100,
+      "top_left_y": 330,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 300,
+      "bottom_right_y": 486,
+      "confidence_scores": null,
+      "content": "<table><tr><td>4T 24</td><td>265bi</td></tr><tr><td>3T 24</td><td>256bi</td></tr><tr><td>4T 23</td><td>204bi</td></tr></table>",
+      "table_id": "tbl-27.html",
+      "top_left_x": 100,
+      "top_left_y": 405,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 490,
+      "bottom_right_y": 183,
+      "confidence_scores": null,
+      "content": "Basileia",
+      "top_left_x": 415,
+      "top_left_y": 162,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 449,
+      "bottom_right_y": 229,
+      "confidence_scores": null,
+      "content": "(R$)",
+      "top_left_x": 415,
+      "top_left_y": 210,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 605,
+      "bottom_right_y": 318,
+      "confidence_scores": null,
+      "content": "15,7%",
+      "top_left_x": 410,
+      "top_left_y": 253,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 476,
+      "bottom_right_y": 347,
+      "confidence_scores": null,
+      "content": "4T 2024",
+      "top_left_x": 408,
+      "top_left_y": 330,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 560,
+      "bottom_right_y": 396,
+      "confidence_scores": null,
+      "content": "Patrimônio Líquido",
+      "top_left_x": 412,
+      "top_left_y": 376,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 615,
+      "bottom_right_y": 486,
+      "confidence_scores": null,
+      "content": "<table><tr><td>4T 24</td><td>57bi</td></tr><tr><td>3T 24</td><td>56bi</td></tr><tr><td>4T 23</td><td>49bi</td></tr></table>",
+      "table_id": "tbl-28.html",
+      "top_left_x": 412,
+      "top_left_y": 405,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 945,
+      "bottom_right_y": 186,
+      "confidence_scores": null,
+      "content": "Portfolio Corporate e PME",
+      "top_left_x": 707,
+      "top_left_y": 162,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 752,
+      "bottom_right_y": 229,
+      "confidence_scores": null,
+      "content": "(R$)",
+      "top_left_x": 717,
+      "top_left_y": 210,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 854,
+      "bottom_right_y": 305,
+      "confidence_scores": null,
+      "content": "29%",
+      "top_left_x": 711,
+      "top_left_y": 247,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 848,
+      "bottom_right_y": 347,
+      "confidence_scores": null,
+      "content": "crescimento a.a.",
+      "top_left_x": 717,
+      "top_left_y": 330,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 956,
+      "bottom_right_y": 486,
+      "confidence_scores": null,
+      "content": "<table><tr><td></td><td>Total</td><td>SME</td></tr><tr><td>4T 24</td><td>222bi</td><td>26bi</td></tr><tr><td>3T 24</td><td>210bi</td><td>26bi</td></tr><tr><td>4T 23</td><td>172bi</td><td>21bi</td></tr></table>",
+      "table_id": "tbl-29.html",
+      "top_left_x": 717,
+      "top_left_y": 376,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 977,
+      "bottom_right_y": 550,
+      "confidence_scores": null,
+      "content": "7",
+      "top_left_x": 966,
+      "top_left_y": 537,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9708468667961803,
+     "minimum_page_confidence_score": 0.3103095750236438,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 6,
+    "markdown": "# Destaques 4T 2024\n\nBase de Funding\n\n(R$)\n\n30%\n\ncrescimento a.a.\n\n[tbl-27.html](tbl-27.html)\n\nBasileia\n\n(R$)\n\n15,7%\n\n4T 2024\n\nPatrimônio Líquido\n\n[tbl-28.html](tbl-28.html)\n\nPortfolio Corporate e PME\n\n(R$)\n\n29%\n\ncrescimento a.a.\n\n[tbl-29.html](tbl-29.html)\n\n7",
+    "tables": [
+     {
+      "content": "<table><tr><td>4T 24</td><td>265bi</td></tr><tr><td>3T 24</td><td>256bi</td></tr><tr><td>4T 23</td><td>204bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-27.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td>4T 24</td><td>57bi</td></tr><tr><td>3T 24</td><td>56bi</td></tr><tr><td>4T 23</td><td>49bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-28.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><tr><td></td><td>Total</td><td>SME</td></tr><tr><td>4T 24</td><td>222bi</td><td>26bi</td></tr><tr><td>3T 24</td><td>210bi</td><td>26bi</td></tr><tr><td>4T 23</td><td>172bi</td><td>21bi</td></tr></table>",
+      "format": "html",
+      "id": "tbl-29.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 285,
+      "bottom_right_y": 75,
+      "confidence_scores": null,
+      "content": "# Resumo do Desempenho\n4T24",
+      "top_left_x": 41,
+      "top_left_y": 30,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 802,
+      "bottom_right_y": 49,
+      "confidence_scores": null,
+      "content": "23,0% de ROAE com recorde de receitas",
+      "top_left_x": 484,
+      "top_left_y": 30,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 273,
+      "bottom_right_y": 155,
+      "confidence_scores": null,
+      "content": "Receitas totais de R$6.728mm e lucro líquido ajustado(1) de R$3.276mm",
+      "top_left_x": 50,
+      "top_left_y": 124,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 278,
+      "bottom_right_y": 230,
+      "confidence_scores": null,
+      "content": "- ROAE ajustado(1,2): 23,0%\n- Lucro líquido por unit(2): R$0,86\n- Lucro líquido contábil: R$3.124mm",
+      "top_left_x": 55,
+      "top_left_y": 184,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 620,
+      "bottom_right_y": 155,
+      "confidence_scores": null,
+      "content": "Índice de eficiência sob controle e abaixo da média histórica",
+      "top_left_x": 382,
+      "top_left_y": 124,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 588,
+      "bottom_right_y": 215,
+      "confidence_scores": null,
+      "content": "- Índice de eficiência(3): 38,5%\n- Índice de remuneração: 21,6%",
+      "top_left_x": 389,
+      "top_left_y": 184,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 956,
+      "bottom_right_y": 170,
+      "confidence_scores": null,
+      "content": "Total de ativos de R$647bi, índice de Basileia de 15,7% e Patrimônio Líquido de R$57,5bi",
+      "top_left_x": 707,
+      "top_left_y": 124,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 929,
+      "bottom_right_y": 230,
+      "confidence_scores": null,
+      "content": "- Distribuição de JCP de R$1,72bi\n- VaR médio reduziu para 0,13% do patrimônio líquido médio",
+      "top_left_x": 707,
+      "top_left_y": 184,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 176,
+      "bottom_right_y": 294,
+      "confidence_scores": null,
+      "content": "Receitas Totais\n(R$ milhões)",
+      "top_left_x": 55,
+      "top_left_y": 257,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 305,
+      "bottom_right_y": 468,
+      "confidence_scores": null,
+      "content": "![img-2.jpeg](img-2.jpeg)",
+      "image_id": "img-4.jpeg",
+      "top_left_x": 32,
+      "top_left_y": 318,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 568,
+      "bottom_right_y": 293,
+      "confidence_scores": null,
+      "content": "Lucro Líquido Ajustado(1)\n(R$ milhões)",
+      "top_left_x": 375,
+      "top_left_y": 257,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 500,
+      "confidence_scores": null,
+      "content": "![img-3.jpeg](img-3.jpeg)",
+      "image_id": "img-3.jpeg",
+      "top_left_x": 373,
+      "top_left_y": 301,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 937,
+      "bottom_right_y": 293,
+      "confidence_scores": null,
+      "content": "Patrimônio Líquido e ROAE(1,2)\n(R$ milhões)",
+      "top_left_x": 705,
+      "top_left_y": 257,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 972,
+      "bottom_right_y": 500,
+      "confidence_scores": null,
+      "content": "![img-4.jpeg](img-4.jpeg)",
+      "image_id": "img-4.jpeg",
+      "top_left_x": 700,
+      "top_left_y": 301,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 70,
+      "bottom_right_y": 529,
+      "confidence_scores": null,
+      "content": "Notas:",
+      "top_left_x": 46,
+      "top_left_y": 520,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 255,
+      "bottom_right_y": 538,
+      "confidence_scores": null,
+      "content": "(1) Números de balanço referente ao final do período em questão",
+      "top_left_x": 46,
+      "top_left_y": 529,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 394,
+      "bottom_right_y": 547,
+      "confidence_scores": null,
+      "content": "(2) ROAE anualizado e lucro líquido por units consideram o lucro líquido ajustado como base para os cálculos",
+      "top_left_x": 46,
+      "top_left_y": 537,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 259,
+      "bottom_right_y": 555,
+      "confidence_scores": null,
+      "content": "(3) Índice de eficiência ajustado exclui apenas amortização de ágio",
+      "top_left_x": 46,
+      "top_left_y": 546,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 979,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "8",
+      "top_left_x": 966,
+      "top_left_y": 538,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9634946878557388,
+     "minimum_page_confidence_score": 0.19306915363141705,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 305,
+      "bottom_right_y": 468,
+      "id": "img-2.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 32,
+      "top_left_y": 318
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 500,
+      "id": "img-3.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 373,
+      "top_left_y": 301
+     },
+     {
+      "bottom_right_x": 972,
+      "bottom_right_y": 500,
+      "id": "img-4.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 700,
+      "top_left_y": 301
+     }
+    ],
+    "index": 7,
+    "markdown": "# Resumo do Desempenho\n4T24\n\n23,0% de ROAE com recorde de receitas\n\nReceitas totais de R$6.728mm e lucro líquido ajustado(1) de R$3.276mm\n\n- ROAE ajustado(1,2): 23,0%\n- Lucro líquido por unit(2): R$0,86\n- Lucro líquido contábil: R$3.124mm\n\nÍndice de eficiência sob controle e abaixo da média histórica\n\n- Índice de eficiência(3): 38,5%\n- Índice de remuneração: 21,6%\n\nTotal de ativos de R$647bi, índice de Basileia de 15,7% e Patrimônio Líquido de R$57,5bi\n\n- Distribuição de JCP de R$1,72bi\n- VaR médio reduziu para 0,13% do patrimônio líquido médio\n\nReceitas Totais\n(R$ milhões)\n\n![img-2.jpeg](img-2.jpeg)\n\nLucro Líquido Ajustado(1)\n(R$ milhões)\n\n![img-3.jpeg](img-3.jpeg)\n\nPatrimônio Líquido e ROAE(1,2)\n(R$ milhões)\n\n![img-4.jpeg](img-4.jpeg)\n\nNotas:\n\n(1) Números de balanço referente ao final do período em questão\n\n(2) ROAE anualizado e lucro líquido por units consideram o lucro líquido ajustado como base para os cálculos\n\n(3) Índice de eficiência ajustado exclui apenas amortização de ágio\n\n8",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 285,
+      "bottom_right_y": 75,
+      "confidence_scores": null,
+      "content": "# Resumo do Desempenho\n2024",
+      "top_left_x": 41,
+      "top_left_y": 30,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 886,
+      "bottom_right_y": 73,
+      "confidence_scores": null,
+      "content": "Expansão de ROAE com recorde de receitas e maior alavancagem operacional",
+      "top_left_x": 480,
+      "top_left_y": 32,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 280,
+      "bottom_right_y": 155,
+      "confidence_scores": null,
+      "content": "Receitas totais de R$25,054mm e lucro líquido ajustado(1) de R$12,322mm",
+      "top_left_x": 51,
+      "top_left_y": 124,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 285,
+      "bottom_right_y": 230,
+      "confidence_scores": null,
+      "content": "- ROAE ajustado(1,2): 23,1%\n- Lucro Líquido por unit(2): R$3,24\n- Lucro líquido contábil: R$11.789mm",
+      "top_left_x": 55,
+      "top_left_y": 184,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 639,
+      "bottom_right_y": 155,
+      "confidence_scores": null,
+      "content": "Ganho de eficiência ao longo do ano através de uma gestão disciplinada de custos",
+      "top_left_x": 382,
+      "top_left_y": 124,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 628,
+      "bottom_right_y": 215,
+      "confidence_scores": null,
+      "content": "- Índice de eficiência ajustado(3): 37,5%\n- Índice de remuneração: 21,2%",
+      "top_left_x": 389,
+      "top_left_y": 184,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 943,
+      "bottom_right_y": 155,
+      "confidence_scores": null,
+      "content": "Patrimônio Líquido cresceu 16,4% a.a. e encerrou o ano em R$57,5bi",
+      "top_left_x": 706,
+      "top_left_y": 124,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 934,
+      "bottom_right_y": 230,
+      "confidence_scores": null,
+      "content": "- VaR médio foi 0,21% do patrimônio líquido médio, ainda em patamar conservador",
+      "top_left_x": 706,
+      "top_left_y": 184,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 176,
+      "bottom_right_y": 294,
+      "confidence_scores": null,
+      "content": "Receitas Totais\n(R$ milhões)",
+      "top_left_x": 55,
+      "top_left_y": 257,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 305,
+      "bottom_right_y": 468,
+      "confidence_scores": null,
+      "content": "![img-5.jpeg](img-5.jpeg)",
+      "image_id": "img-5.jpeg",
+      "top_left_x": 33,
+      "top_left_y": 310,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 554,
+      "bottom_right_y": 293,
+      "confidence_scores": null,
+      "content": "Lucro Líquido Ajustado\n(R$ milhões)",
+      "top_left_x": 375,
+      "top_left_y": 257,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 648,
+      "bottom_right_y": 496,
+      "confidence_scores": null,
+      "content": "![img-6.jpeg](img-6.jpeg)",
+      "image_id": "img-6.jpeg",
+      "top_left_x": 375,
+      "top_left_y": 298,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 970,
+      "bottom_right_y": 293,
+      "confidence_scores": null,
+      "content": "Shareholders' Equity and ROAE(1,2)\n(R$ million)",
+      "top_left_x": 703,
+      "top_left_y": 257,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 972,
+      "bottom_right_y": 500,
+      "confidence_scores": null,
+      "content": "![img-7.jpeg](img-7.jpeg)",
+      "image_id": "img-7.jpeg",
+      "top_left_x": 700,
+      "top_left_y": 298,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 70,
+      "bottom_right_y": 529,
+      "confidence_scores": null,
+      "content": "Notas:",
+      "top_left_x": 46,
+      "top_left_y": 520,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 254,
+      "bottom_right_y": 538,
+      "confidence_scores": null,
+      "content": "(1) Números de balanço referente ao final do período em questão",
+      "top_left_x": 46,
+      "top_left_y": 529,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 394,
+      "bottom_right_y": 547,
+      "confidence_scores": null,
+      "content": "(2) ROAE anualizado e lucro líquido por units consideram o lucro líquido ajustado como base para os cálculos",
+      "top_left_x": 46,
+      "top_left_y": 537,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 259,
+      "bottom_right_y": 555,
+      "confidence_scores": null,
+      "content": "(3) Índice de eficiência ajustado exclui apenas amortização de ágio",
+      "top_left_x": 46,
+      "top_left_y": 546,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 978,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "9",
+      "top_left_x": 965,
+      "top_left_y": 538,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9613068114117893,
+     "minimum_page_confidence_score": 0.15528081389218523,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 305,
+      "bottom_right_y": 468,
+      "id": "img-5.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 33,
+      "top_left_y": 310
+     },
+     {
+      "bottom_right_x": 648,
+      "bottom_right_y": 496,
+      "id": "img-6.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 375,
+      "top_left_y": 298
+     },
+     {
+      "bottom_right_x": 972,
+      "bottom_right_y": 500,
+      "id": "img-7.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 700,
+      "top_left_y": 298
+     }
+    ],
+    "index": 8,
+    "markdown": "# Resumo do Desempenho\n2024\n\nExpansão de ROAE com recorde de receitas e maior alavancagem operacional\n\nReceitas totais de R$25,054mm e lucro líquido ajustado(1) de R$12,322mm\n\n- ROAE ajustado(1,2): 23,1%\n- Lucro Líquido por unit(2): R$3,24\n- Lucro líquido contábil: R$11.789mm\n\nGanho de eficiência ao longo do ano através de uma gestão disciplinada de custos\n\n- Índice de eficiência ajustado(3): 37,5%\n- Índice de remuneração: 21,2%\n\nPatrimônio Líquido cresceu 16,4% a.a. e encerrou o ano em R$57,5bi\n\n- VaR médio foi 0,21% do patrimônio líquido médio, ainda em patamar conservador\n\nReceitas Totais\n(R$ milhões)\n\n![img-5.jpeg](img-5.jpeg)\n\nLucro Líquido Ajustado\n(R$ milhões)\n\n![img-6.jpeg](img-6.jpeg)\n\nShareholders' Equity and ROAE(1,2)\n(R$ million)\n\n![img-7.jpeg](img-7.jpeg)\n\nNotas:\n\n(1) Números de balanço referente ao final do período em questão\n\n(2) ROAE anualizado e lucro líquido por units consideram o lucro líquido ajustado como base para os cálculos\n\n(3) Índice de eficiência ajustado exclui apenas amortização de ágio\n\n9",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 447,
+      "bottom_right_y": 54,
+      "confidence_scores": null,
+      "content": "# Breakdown da receita por área de negócio",
+      "top_left_x": 42,
+      "top_left_y": 30,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 184,
+      "bottom_right_y": 125,
+      "confidence_scores": null,
+      "content": "FY2024 x FY2023",
+      "top_left_x": 42,
+      "top_left_y": 107,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 306,
+      "bottom_right_y": 148,
+      "confidence_scores": null,
+      "content": "Receitas Totais FY2024 = R$25,1 bilhões",
+      "top_left_x": 42,
+      "top_left_y": 132,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 453,
+      "bottom_right_y": 144,
+      "confidence_scores": null,
+      "content": "2023\n2024",
+      "top_left_x": 400,
+      "top_left_y": 110,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 948,
+      "bottom_right_y": 533,
+      "confidence_scores": null,
+      "content": "![img-8.jpeg](img-8.jpeg)",
+      "image_id": "img-8.jpeg",
+      "top_left_x": 34,
+      "top_left_y": 176,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 980,
+      "bottom_right_y": 553,
+      "confidence_scores": null,
+      "content": "10",
+      "top_left_x": 957,
+      "top_left_y": 538,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9453677548045487,
+     "minimum_page_confidence_score": 0.2540664309977617,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 948,
+      "bottom_right_y": 533,
+      "id": "img-8.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 34,
+      "top_left_y": 176
+     }
+    ],
+    "index": 9,
+    "markdown": "# Breakdown da receita por área de negócio\n\nFY2024 x FY2023\n\nReceitas Totais FY2024 = R$25,1 bilhões\n\n2023\n2024\n\n![img-8.jpeg](img-8.jpeg)\n\n10",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 990,
+      "bottom_right_y": 59,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 907,
+      "top_left_y": 26,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 176,
+      "bottom_right_y": 194,
+      "confidence_scores": null,
+      "content": "Seção 1",
+      "top_left_x": 97,
+      "top_left_y": 169,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 585,
+      "bottom_right_y": 353,
+      "confidence_scores": null,
+      "content": "# Áreas de Negócio",
+      "top_left_x": 94,
+      "top_left_y": 275,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 994,
+      "bottom_right_y": 558,
+      "confidence_scores": null,
+      "content": "11",
+      "top_left_x": 976,
+      "top_left_y": 544,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9540116950119953,
+     "minimum_page_confidence_score": 0.3993700112717391,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 10,
+    "markdown": "btg pactual\n\nSeção 1\n\n# Áreas de Negócio\n\n11",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 53,
+      "confidence_scores": null,
+      "content": "# Investment Banking",
+      "top_left_x": 41,
+      "top_left_y": 31,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 730,
+      "bottom_right_y": 73,
+      "confidence_scores": null,
+      "content": "Forte desempenho em 2024, com contribuição recorde de DCM e maior atividade em M&A",
+      "top_left_x": 41,
+      "top_left_y": 53,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "## Resumo do 4T 2024",
+      "top_left_x": 45,
+      "top_left_y": 133,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 252,
+      "bottom_right_y": 217,
+      "confidence_scores": null,
+      "content": "Receitas de R$510mm no trimestre, um aumento de 34,2% comparado ao trimestre anterior",
+      "top_left_x": 33,
+      "top_left_y": 173,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 259,
+      "bottom_right_y": 309,
+      "confidence_scores": null,
+      "content": "DCM apresentou resultado recorde em 2024 com mais de 140 transações concluídas no Brasil enquanto M&A teve forte contribuição, com mais de 60 operações assessoradas",
+      "top_left_x": 33,
+      "top_left_y": 232,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 239,
+      "bottom_right_y": 340,
+      "confidence_scores": null,
+      "content": "Fomos eleitos pela Global Finance:",
+      "top_left_x": 33,
+      "top_left_y": 325,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 259,
+      "bottom_right_y": 475,
+      "confidence_scores": null,
+      "content": "- \"Best Bank for Sustainable Finance\"\n- \"Sustainable Finance Deal of the Year\"\n- \"Best Impact Investing Solution\"\n- \"Circular Economy Commitment Award\"\n- \"Best Bank for Sustaining Communities\" in LatAm\n- \"Sustainable Finance Awards\" in Brazil\n- \"Best Impact Investing Solution\" Global",
+      "top_left_x": 33,
+      "top_left_y": 342,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 477,
+      "bottom_right_y": 150,
+      "confidence_scores": null,
+      "content": "## Receitas Trimestrais",
+      "top_left_x": 306,
+      "top_left_y": 131,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 371,
+      "bottom_right_y": 174,
+      "confidence_scores": null,
+      "content": "(R$ milhões)",
+      "top_left_x": 306,
+      "top_left_y": 160,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 605,
+      "bottom_right_y": 447,
+      "confidence_scores": null,
+      "content": "![img-9.jpeg](img-9.jpeg)",
+      "image_id": "img-9.jpeg",
+      "top_left_x": 302,
+      "top_left_y": 201,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 824,
+      "bottom_right_y": 150,
+      "confidence_scores": null,
+      "content": "## Receitas Anuais",
+      "top_left_x": 687,
+      "top_left_y": 131,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 754,
+      "bottom_right_y": 174,
+      "confidence_scores": null,
+      "content": "(R$ milhões)",
+      "top_left_x": 687,
+      "top_left_y": 160,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 987,
+      "bottom_right_y": 447,
+      "confidence_scores": null,
+      "content": "![img-10.jpeg](img-10.jpeg)",
+      "image_id": "img-10.jpeg",
+      "top_left_x": 682,
+      "top_left_y": 193,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 438,
+      "bottom_right_y": 524,
+      "confidence_scores": null,
+      "content": "## Rankings de Mercado¹",
+      "top_left_x": 331,
+      "top_left_y": 481,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 396,
+      "bottom_right_y": 545,
+      "confidence_scores": null,
+      "content": "4T 2024",
+      "top_left_x": 336,
+      "top_left_y": 528,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 544,
+      "bottom_right_y": 500,
+      "confidence_scores": null,
+      "content": "## M&A",
+      "top_left_x": 500,
+      "top_left_y": 483,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 633,
+      "bottom_right_y": 548,
+      "confidence_scores": null,
+      "content": "#1 em volume e número de transações no Brasil e LatAm",
+      "top_left_x": 500,
+      "top_left_y": 503,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 734,
+      "bottom_right_y": 500,
+      "confidence_scores": null,
+      "content": "## ECM",
+      "top_left_x": 690,
+      "top_left_y": 483,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 824,
+      "bottom_right_y": 548,
+      "confidence_scores": null,
+      "content": "#1 em volume e número de transações no Brasil",
+      "top_left_x": 690,
+      "top_left_y": 503,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 122,
+      "bottom_right_y": 569,
+      "confidence_scores": null,
+      "content": "Nota:\n(1) Fonte: Dealogic e Anbima",
+      "top_left_x": 7,
+      "top_left_y": 547,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 980,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "12",
+      "top_left_x": 958,
+      "top_left_y": 537,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9616798069516386,
+     "minimum_page_confidence_score": 0.1561312488516804,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 605,
+      "bottom_right_y": 447,
+      "id": "img-9.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 302,
+      "top_left_y": 201
+     },
+     {
+      "bottom_right_x": 987,
+      "bottom_right_y": 447,
+      "id": "img-10.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 682,
+      "top_left_y": 193
+     }
+    ],
+    "index": 11,
+    "markdown": "# Investment Banking\n\nForte desempenho em 2024, com contribuição recorde de DCM e maior atividade em M&A\n\n## Resumo do 4T 2024\n\nReceitas de R$510mm no trimestre, um aumento de 34,2% comparado ao trimestre anterior\n\nDCM apresentou resultado recorde em 2024 com mais de 140 transações concluídas no Brasil enquanto M&A teve forte contribuição, com mais de 60 operações assessoradas\n\nFomos eleitos pela Global Finance:\n\n- \"Best Bank for Sustainable Finance\"\n- \"Sustainable Finance Deal of the Year\"\n- \"Best Impact Investing Solution\"\n- \"Circular Economy Commitment Award\"\n- \"Best Bank for Sustaining Communities\" in LatAm\n- \"Sustainable Finance Awards\" in Brazil\n- \"Best Impact Investing Solution\" Global\n\n## Receitas Trimestrais\n\n(R$ milhões)\n\n![img-9.jpeg](img-9.jpeg)\n\n## Receitas Anuais\n\n(R$ milhões)\n\n![img-10.jpeg](img-10.jpeg)\n\n## Rankings de Mercado¹\n\n4T 2024\n\n## M&A\n\n#1 em volume e número de transações no Brasil e LatAm\n\n## ECM\n\n#1 em volume e número de transações no Brasil\n\nNota:\n(1) Fonte: Dealogic e Anbima\n\n12",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 421,
+      "bottom_right_y": 53,
+      "confidence_scores": null,
+      "content": "# Corporate Lending & Business Banking",
+      "top_left_x": 41,
+      "top_left_y": 30,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 758,
+      "bottom_right_y": 94,
+      "confidence_scores": null,
+      "content": "Recorde de receitas para o trimestre e ano, com forte expansão de portfólio e mantendo a alta qualidade de ativos",
+      "top_left_x": 41,
+      "top_left_y": 53,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "## Resumo do 4T 2024",
+      "top_left_x": 45,
+      "top_left_y": 132,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 278,
+      "confidence_scores": null,
+      "content": "Mais um trimestre de resultados recordes, atingindo R$1,8bi no 4T e R$6,5bi no ano, à medida que expandimos nossas receitas recorrentes, mantendo *spreads* competitivos e níveis adequados de provisão",
+      "top_left_x": 41,
+      "top_left_y": 171,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 223,
+      "bottom_right_y": 386,
+      "confidence_scores": null,
+      "content": "O portfólio de crédito expandiu 5,4% no trimestre e 29,2% no ano, atingindo R$221,6bi, impulsionado pela maior diversificação de produtos, segmentos e geografias",
+      "top_left_x": 41,
+      "top_left_y": 294,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 240,
+      "bottom_right_y": 492,
+      "confidence_scores": null,
+      "content": "A carteira de PME cresceu 26,8% no ano. Continuamos focados em alavancar o business de banking através de um serviço de primeira linha e uma oferta completa de produtos",
+      "top_left_x": 41,
+      "top_left_y": 400,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 227,
+      "bottom_right_y": 555,
+      "confidence_scores": null,
+      "content": "O portfólio ex-Brasil continua crescendo e já representa mais de 20% do total de exposição",
+      "top_left_x": 41,
+      "top_left_y": 508,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 382,
+      "bottom_right_y": 150,
+      "confidence_scores": null,
+      "content": "## Receitas",
+      "top_left_x": 306,
+      "top_left_y": 131,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 371,
+      "bottom_right_y": 174,
+      "confidence_scores": null,
+      "content": "(R$ milhões)",
+      "top_left_x": 306,
+      "top_left_y": 160,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 604,
+      "bottom_right_y": 353,
+      "confidence_scores": null,
+      "content": "![img-11.jpeg](img-11.jpeg)",
+      "image_id": "img-11.jpeg",
+      "top_left_x": 299,
+      "top_left_y": 196,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 604,
+      "bottom_right_y": 538,
+      "confidence_scores": null,
+      "content": "![img-12.jpeg](img-12.jpeg)",
+      "image_id": "img-12.jpeg",
+      "top_left_x": 299,
+      "top_left_y": 382,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 976,
+      "bottom_right_y": 150,
+      "confidence_scores": null,
+      "content": "## Portfólio de Crédito Corporate e PME",
+      "top_left_x": 668,
+      "top_left_y": 131,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 735,
+      "bottom_right_y": 174,
+      "confidence_scores": null,
+      "content": "(R$ bilhões)",
+      "top_left_x": 671,
+      "top_left_y": 160,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 978,
+      "bottom_right_y": 353,
+      "confidence_scores": null,
+      "content": "![img-13.jpeg](img-13.jpeg)",
+      "image_id": "img-13.jpeg",
+      "top_left_x": 660,
+      "top_left_y": 186,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 978,
+      "bottom_right_y": 564,
+      "confidence_scores": null,
+      "content": "![img-14.jpeg](img-14.jpeg)",
+      "image_id": "img-14.jpeg",
+      "top_left_x": 660,
+      "top_left_y": 370,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 978,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "13",
+      "top_left_x": 957,
+      "top_left_y": 538,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9640947908534405,
+     "minimum_page_confidence_score": 0.1678757967486805,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 604,
+      "bottom_right_y": 353,
+      "id": "img-11.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 299,
+      "top_left_y": 196
+     },
+     {
+      "bottom_right_x": 604,
+      "bottom_right_y": 538,
+      "id": "img-12.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 299,
+      "top_left_y": 382
+     },
+     {
+      "bottom_right_x": 978,
+      "bottom_right_y": 353,
+      "id": "img-13.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 660,
+      "top_left_y": 186
+     },
+     {
+      "bottom_right_x": 978,
+      "bottom_right_y": 564,
+      "id": "img-14.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 660,
+      "top_left_y": 370
+     }
+    ],
+    "index": 12,
+    "markdown": "# Corporate Lending & Business Banking\n\nRecorde de receitas para o trimestre e ano, com forte expansão de portfólio e mantendo a alta qualidade de ativos\n\n## Resumo do 4T 2024\n\nMais um trimestre de resultados recordes, atingindo R$1,8bi no 4T e R$6,5bi no ano, à medida que expandimos nossas receitas recorrentes, mantendo *spreads* competitivos e níveis adequados de provisão\n\nO portfólio de crédito expandiu 5,4% no trimestre e 29,2% no ano, atingindo R$221,6bi, impulsionado pela maior diversificação de produtos, segmentos e geografias\n\nA carteira de PME cresceu 26,8% no ano. Continuamos focados em alavancar o business de banking através de um serviço de primeira linha e uma oferta completa de produtos\n\nO portfólio ex-Brasil continua crescendo e já representa mais de 20% do total de exposição\n\n## Receitas\n\n(R$ milhões)\n\n![img-11.jpeg](img-11.jpeg)\n\n![img-12.jpeg](img-12.jpeg)\n\n## Portfólio de Crédito Corporate e PME\n\n(R$ bilhões)\n\n![img-13.jpeg](img-13.jpeg)\n\n![img-14.jpeg](img-14.jpeg)\n\n13",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 52,
+      "confidence_scores": null,
+      "content": "## Sales & Trading",
+      "top_left_x": 41,
+      "top_left_y": 30,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 896,
+      "bottom_right_y": 93,
+      "confidence_scores": null,
+      "content": "Sólida performance em 2024 impulsionada pela atividade de clientes, uma vez que tivemos a menor alocação de risco da nossa história",
+      "top_left_x": 41,
+      "top_left_y": 53,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "### Resumo do 4T 2024",
+      "top_left_x": 45,
+      "top_left_y": 133,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 238,
+      "bottom_right_y": 220,
+      "confidence_scores": null,
+      "content": "Receita de R$1,5bi no trimestre, apesar de condições de mercado mais desafiadoras",
+      "top_left_x": 41,
+      "top_left_y": 174,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 238,
+      "bottom_right_y": 342,
+      "confidence_scores": null,
+      "content": "Em 2024, o total de receitas foi R$6,0bi, impulsionadas, principalmente, pela expansão das nossas franquias de clientes. O VaR médio atingiu 0,21% no trimestre e 0,13% no ano, nosso menor nível histórico",
+      "top_left_x": 41,
+      "top_left_y": 235,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 224,
+      "bottom_right_y": 448,
+      "confidence_scores": null,
+      "content": "Concluímos a aquisição da Sertrading, ampliando nossa oferta de produtos no mercado de importação de bens e expandindo a nossa base de clientes",
+      "top_left_x": 41,
+      "top_left_y": 359,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 474,
+      "bottom_right_y": 150,
+      "confidence_scores": null,
+      "content": "### Receitas trimestrais",
+      "top_left_x": 306,
+      "top_left_y": 131,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 371,
+      "bottom_right_y": 174,
+      "confidence_scores": null,
+      "content": "(R$ milhões)",
+      "top_left_x": 306,
+      "top_left_y": 160,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 604,
+      "bottom_right_y": 527,
+      "confidence_scores": null,
+      "content": "![img-15.jpeg](img-15.jpeg)",
+      "image_id": "img-15.jpeg",
+      "top_left_x": 301,
+      "top_left_y": 188,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 934,
+      "bottom_right_y": 160,
+      "confidence_scores": null,
+      "content": "### Receitas anuais, VaR e Risco de Mercado",
+      "top_left_x": 667,
+      "top_left_y": 121,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 895,
+      "bottom_right_y": 220,
+      "confidence_scores": null,
+      "content": "VaR médio diário / PL médio\nComponente de risco de mercado do RWA\nReceitas Totais",
+      "top_left_x": 662,
+      "top_left_y": 174,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 984,
+      "bottom_right_y": 527,
+      "confidence_scores": null,
+      "content": "![img-16.jpeg](img-16.jpeg)",
+      "image_id": "img-16.jpeg",
+      "top_left_x": 660,
+      "top_left_y": 231,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 979,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "14",
+      "top_left_x": 957,
+      "top_left_y": 538,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9612593615819818,
+     "minimum_page_confidence_score": 0.2236212686423688,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 604,
+      "bottom_right_y": 527,
+      "id": "img-15.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 301,
+      "top_left_y": 188
+     },
+     {
+      "bottom_right_x": 984,
+      "bottom_right_y": 527,
+      "id": "img-16.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 660,
+      "top_left_y": 231
+     }
+    ],
+    "index": 13,
+    "markdown": "## Sales & Trading\n\nSólida performance em 2024 impulsionada pela atividade de clientes, uma vez que tivemos a menor alocação de risco da nossa história\n\n### Resumo do 4T 2024\n\nReceita de R$1,5bi no trimestre, apesar de condições de mercado mais desafiadoras\n\nEm 2024, o total de receitas foi R$6,0bi, impulsionadas, principalmente, pela expansão das nossas franquias de clientes. O VaR médio atingiu 0,21% no trimestre e 0,13% no ano, nosso menor nível histórico\n\nConcluímos a aquisição da Sertrading, ampliando nossa oferta de produtos no mercado de importação de bens e expandindo a nossa base de clientes\n\n### Receitas trimestrais\n\n(R$ milhões)\n\n![img-15.jpeg](img-15.jpeg)\n\n### Receitas anuais, VaR e Risco de Mercado\n\nVaR médio diário / PL médio\nComponente de risco de mercado do RWA\nReceitas Totais\n\n![img-16.jpeg](img-16.jpeg)\n\n14",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 228,
+      "bottom_right_y": 53,
+      "confidence_scores": null,
+      "content": "## Asset Management",
+      "top_left_x": 41,
+      "top_left_y": 30,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 876,
+      "bottom_right_y": 93,
+      "confidence_scores": null,
+      "content": "Recorde de receita no trimestre e no ano, impulsionada pelo crescimento consistente de AuM/AuA e ganho de market share",
+      "top_left_x": 41,
+      "top_left_y": 53,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "### Resumo do 4T 2024",
+      "top_left_x": 45,
+      "top_left_y": 132,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 244,
+      "bottom_right_y": 267,
+      "confidence_scores": null,
+      "content": "Receitas de R$661mm, um aumento de 9% no trimestre, decorrentes de maiores fees de gestão e performance. Em 2024, as receitas aumentaram 29%, alcançando R$2,4bi",
+      "top_left_x": 41,
+      "top_left_y": 175,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 243,
+      "bottom_right_y": 344,
+      "confidence_scores": null,
+      "content": "Captações consistentes de R$17,8bi no trimestre e R$96,7bi no ano, mesmo em um cenário de taxas de juros altas.",
+      "top_left_x": 41,
+      "top_left_y": 283,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 243,
+      "bottom_right_y": 409,
+      "confidence_scores": null,
+      "content": "A captação se deu principalmente nas estratégias de Renda Fixa e fundos Alternativos geridos pela BTG Pactual AM",
+      "top_left_x": 41,
+      "top_left_y": 347,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 241,
+      "bottom_right_y": 461,
+      "confidence_scores": null,
+      "content": "AuM/AuA CAGR2020-2024 de 27%, atingindo R$992bi",
+      "top_left_x": 41,
+      "top_left_y": 430,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 238,
+      "bottom_right_y": 531,
+      "confidence_scores": null,
+      "content": "Fomos votados pelo Euromoney como \"Best Real Estate manager both for Brazil and Latin America\"",
+      "top_left_x": 41,
+      "top_left_y": 485,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 435,
+      "bottom_right_y": 150,
+      "confidence_scores": null,
+      "content": "### Receitas Totais",
+      "top_left_x": 306,
+      "top_left_y": 131,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 371,
+      "bottom_right_y": 174,
+      "confidence_scores": null,
+      "content": "(R$ milhões)",
+      "top_left_x": 306,
+      "top_left_y": 160,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 604,
+      "bottom_right_y": 540,
+      "confidence_scores": null,
+      "content": "![img-17.jpeg](img-17.jpeg)",
+      "image_id": "img-17.jpeg",
+      "top_left_x": 300,
+      "top_left_y": 202,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 833,
+      "bottom_right_y": 150,
+      "confidence_scores": null,
+      "content": "### AuM, AuA and NNM",
+      "top_left_x": 668,
+      "top_left_y": 131,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 734,
+      "bottom_right_y": 168,
+      "confidence_scores": null,
+      "content": "(R$ bilhões)",
+      "top_left_x": 668,
+      "top_left_y": 154,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 959,
+      "bottom_right_y": 563,
+      "confidence_scores": null,
+      "content": "![img-18.jpeg](img-18.jpeg)",
+      "image_id": "img-18.jpeg",
+      "top_left_x": 660,
+      "top_left_y": 168,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 979,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "15",
+      "top_left_x": 957,
+      "top_left_y": 537,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9603187727494407,
+     "minimum_page_confidence_score": 0.28322133497817026,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 604,
+      "bottom_right_y": 540,
+      "id": "img-17.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 300,
+      "top_left_y": 202
+     },
+     {
+      "bottom_right_x": 959,
+      "bottom_right_y": 563,
+      "id": "img-18.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 660,
+      "top_left_y": 168
+     }
+    ],
+    "index": 14,
+    "markdown": "## Asset Management\n\nRecorde de receita no trimestre e no ano, impulsionada pelo crescimento consistente de AuM/AuA e ganho de market share\n\n### Resumo do 4T 2024\n\nReceitas de R$661mm, um aumento de 9% no trimestre, decorrentes de maiores fees de gestão e performance. Em 2024, as receitas aumentaram 29%, alcançando R$2,4bi\n\nCaptações consistentes de R$17,8bi no trimestre e R$96,7bi no ano, mesmo em um cenário de taxas de juros altas.\n\nA captação se deu principalmente nas estratégias de Renda Fixa e fundos Alternativos geridos pela BTG Pactual AM\n\nAuM/AuA CAGR2020-2024 de 27%, atingindo R$992bi\n\nFomos votados pelo Euromoney como \"Best Real Estate manager both for Brazil and Latin America\"\n\n### Receitas Totais\n\n(R$ milhões)\n\n![img-17.jpeg](img-17.jpeg)\n\n### AuM, AuA and NNM\n\n(R$ bilhões)\n\n![img-18.jpeg](img-18.jpeg)\n\n15",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 430,
+      "bottom_right_y": 53,
+      "confidence_scores": null,
+      "content": "# Wealth Management & Personal Banking",
+      "top_left_x": 41,
+      "top_left_y": 30,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 456,
+      "bottom_right_y": 73,
+      "confidence_scores": null,
+      "content": "Recorde de receita com captação expressiva em 2024",
+      "top_left_x": 41,
+      "top_left_y": 53,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "## Resumo do 4T 2024",
+      "top_left_x": 45,
+      "top_left_y": 133,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 243,
+      "bottom_right_y": 219,
+      "confidence_scores": null,
+      "content": "Mais um ano com receita recorde, totalizando R$3,8bi, um aumento de 23% a.a.",
+      "top_left_x": 45,
+      "top_left_y": 173,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 249,
+      "bottom_right_y": 342,
+      "confidence_scores": null,
+      "content": "Captação líquida de R$32bi no trimestre, demonstrando a força da nossa rede de distribuição e contínuo ganho de *market share*. Apesar do cenário macroeconômico desafiador, a captação no ano foi de R$151bi",
+      "top_left_x": 45,
+      "top_left_y": 234,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 244,
+      "bottom_right_y": 402,
+      "confidence_scores": null,
+      "content": "WuM ultrapassou a marca de R$900bi, um aumento de 5,1% no trimestre e 26,3% no ano",
+      "top_left_x": 45,
+      "top_left_y": 358,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 248,
+      "bottom_right_y": 448,
+      "confidence_scores": null,
+      "content": "Desde 2020, aumentamos as receitas em 4,4x e o WuM em 3,5x",
+      "top_left_x": 45,
+      "top_left_y": 418,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 238,
+      "bottom_right_y": 525,
+      "confidence_scores": null,
+      "content": "Em janeiro, anunciamos a aquisição do Julius Baer Brasil$^{(1)}$, Family Office com mais de R$60 bilhões sob gestão",
+      "top_left_x": 45,
+      "top_left_y": 465,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 382,
+      "bottom_right_y": 150,
+      "confidence_scores": null,
+      "content": "## Receitas",
+      "top_left_x": 306,
+      "top_left_y": 132,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 371,
+      "bottom_right_y": 174,
+      "confidence_scores": null,
+      "content": "(R$ milhões)",
+      "top_left_x": 306,
+      "top_left_y": 160,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 605,
+      "bottom_right_y": 540,
+      "confidence_scores": null,
+      "content": "![img-19.jpeg](img-19.jpeg)",
+      "image_id": "img-19.jpeg",
+      "top_left_x": 301,
+      "top_left_y": 215,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 793,
+      "bottom_right_y": 150,
+      "confidence_scores": null,
+      "content": "## WuM and NNM",
+      "top_left_x": 668,
+      "top_left_y": 132,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 734,
+      "bottom_right_y": 168,
+      "confidence_scores": null,
+      "content": "(R$ bilhões)",
+      "top_left_x": 668,
+      "top_left_y": 154,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 959,
+      "bottom_right_y": 567,
+      "confidence_scores": null,
+      "content": "![img-20.jpeg](img-20.jpeg)",
+      "image_id": "img-20.jpeg",
+      "top_left_x": 668,
+      "top_left_y": 168,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 57,
+      "bottom_right_y": 560,
+      "confidence_scores": null,
+      "content": "Notas:",
+      "top_left_x": 34,
+      "top_left_y": 551,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 433,
+      "bottom_right_y": 569,
+      "confidence_scores": null,
+      "content": "(1) O fechamento da transação está sujeito à verificação de certas condições precedentes, bem como aprovações regulatórias",
+      "top_left_x": 34,
+      "top_left_y": 560,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 979,
+      "bottom_right_y": 553,
+      "confidence_scores": null,
+      "content": "16",
+      "top_left_x": 958,
+      "top_left_y": 538,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9614723511481885,
+     "minimum_page_confidence_score": 0.27851370611104176,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 605,
+      "bottom_right_y": 540,
+      "id": "img-19.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 301,
+      "top_left_y": 215
+     },
+     {
+      "bottom_right_x": 959,
+      "bottom_right_y": 567,
+      "id": "img-20.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 668,
+      "top_left_y": 168
+     }
+    ],
+    "index": 15,
+    "markdown": "# Wealth Management & Personal Banking\n\nRecorde de receita com captação expressiva em 2024\n\n## Resumo do 4T 2024\n\nMais um ano com receita recorde, totalizando R$3,8bi, um aumento de 23% a.a.\n\nCaptação líquida de R$32bi no trimestre, demonstrando a força da nossa rede de distribuição e contínuo ganho de *market share*. Apesar do cenário macroeconômico desafiador, a captação no ano foi de R$151bi\n\nWuM ultrapassou a marca de R$900bi, um aumento de 5,1% no trimestre e 26,3% no ano\n\nDesde 2020, aumentamos as receitas em 4,4x e o WuM em 3,5x\n\nEm janeiro, anunciamos a aquisição do Julius Baer Brasil$^{(1)}$, Family Office com mais de R$60 bilhões sob gestão\n\n## Receitas\n\n(R$ milhões)\n\n![img-19.jpeg](img-19.jpeg)\n\n## WuM and NNM\n\n(R$ bilhões)\n\n![img-20.jpeg](img-20.jpeg)\n\nNotas:\n\n(1) O fechamento da transação está sujeito à verificação de certas condições precedentes, bem como aprovações regulatórias\n\n16",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 408,
+      "bottom_right_y": 53,
+      "confidence_scores": null,
+      "content": "# Participations & Principal Investments",
+      "top_left_x": 41,
+      "top_left_y": 30,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "## Resumo do 4T 2024",
+      "top_left_x": 44,
+      "top_left_y": 133,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 208,
+      "bottom_right_y": 178,
+      "confidence_scores": null,
+      "content": "Resultado de Participations:",
+      "top_left_x": 44,
+      "top_left_y": 163,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 239,
+      "bottom_right_y": 383,
+      "confidence_scores": null,
+      "content": "- EFG: equivalência patrimonial R$32mm\n- Too Seguros: equivalência patrimonial de R$64mm\n- Banco Pan: equivalência patrimonial de R$149mm\n- Accrual do portfólio do BPAN adquirido nos trimestres anteriores: R$98mm\n- Efeitos contábeis da compra de portfólio do BPAN no trimestre : -R$45mm",
+      "top_left_x": 44,
+      "top_left_y": 183,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 524,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "## Resultado de Participations",
+      "top_left_x": 293,
+      "top_left_y": 133,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 356,
+      "bottom_right_y": 172,
+      "confidence_scores": null,
+      "content": "(R$ milhões)",
+      "top_left_x": 291,
+      "top_left_y": 158,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 604,
+      "bottom_right_y": 526,
+      "confidence_scores": null,
+      "content": "![img-21.jpeg](img-21.jpeg)",
+      "image_id": "img-21.jpeg",
+      "top_left_x": 308,
+      "top_left_y": 202,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 732,
+      "bottom_right_y": 168,
+      "confidence_scores": null,
+      "content": "(R$ milhões)",
+      "top_left_x": 666,
+      "top_left_y": 154,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 985,
+      "bottom_right_y": 335,
+      "confidence_scores": null,
+      "content": "![img-22.jpeg](img-22.jpeg)",
+      "image_id": "img-22.jpeg",
+      "top_left_x": 666,
+      "top_left_y": 186,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 979,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "17",
+      "top_left_x": 957,
+      "top_left_y": 538,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9557396961749028,
+     "minimum_page_confidence_score": 0.09876297591650576,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 604,
+      "bottom_right_y": 526,
+      "id": "img-21.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 308,
+      "top_left_y": 202
+     },
+     {
+      "bottom_right_x": 985,
+      "bottom_right_y": 335,
+      "id": "img-22.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 666,
+      "top_left_y": 186
+     }
+    ],
+    "index": 16,
+    "markdown": "# Participations & Principal Investments\n\n## Resumo do 4T 2024\n\nResultado de Participations:\n\n- EFG: equivalência patrimonial R$32mm\n- Too Seguros: equivalência patrimonial de R$64mm\n- Banco Pan: equivalência patrimonial de R$149mm\n- Accrual do portfólio do BPAN adquirido nos trimestres anteriores: R$98mm\n- Efeitos contábeis da compra de portfólio do BPAN no trimestre : -R$45mm\n\n## Resultado de Participations\n\n(R$ milhões)\n\n![img-21.jpeg](img-21.jpeg)\n\n(R$ milhões)\n\n![img-22.jpeg](img-22.jpeg)\n\n17",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 990,
+      "bottom_right_y": 59,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 907,
+      "top_left_y": 26,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 179,
+      "bottom_right_y": 195,
+      "confidence_scores": null,
+      "content": "Seção 2",
+      "top_left_x": 97,
+      "top_left_y": 169,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 376,
+      "bottom_right_y": 353,
+      "confidence_scores": null,
+      "content": "# Despesas",
+      "top_left_x": 97,
+      "top_left_y": 288,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 998,
+      "bottom_right_y": 559,
+      "confidence_scores": null,
+      "content": "18",
+      "top_left_x": 975,
+      "top_left_y": 544,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.946428862120385,
+     "minimum_page_confidence_score": 0.2818305675145157,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 17,
+    "markdown": "btg pactual\n\nSeção 2\n\n# Despesas\n\n18",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 371,
+      "bottom_right_y": 52,
+      "confidence_scores": null,
+      "content": "## Despesas e principais indicadores",
+      "top_left_x": 41,
+      "top_left_y": 30,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 861,
+      "bottom_right_y": 73,
+      "confidence_scores": null,
+      "content": "2024 foi mais um ano de alavancagem operacional, comprovando a eficiência do nosso modelo de negócios",
+      "top_left_x": 41,
+      "top_left_y": 53,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "### Resumo do 4T 2024",
+      "top_left_x": 45,
+      "top_left_y": 132,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 222,
+      "bottom_right_y": 218,
+      "confidence_scores": null,
+      "content": "Índice de eficiência encerrou o ano em 37,5%, uma queda comparado ao 38,2% de 2023",
+      "top_left_x": 45,
+      "top_left_y": 171,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 240,
+      "bottom_right_y": 356,
+      "confidence_scores": null,
+      "content": "As despesas com S&B tiveram um leve aumento devido ao crescimento inorgânico de HC (relacionado à aquisição da Sertrading), enquanto as despesas de A&O cresceram 9,6% devido a algumas despesas pontuais",
+      "top_left_x": 45,
+      "top_left_y": 234,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 222,
+      "bottom_right_y": 431,
+      "confidence_scores": null,
+      "content": "Alíquota efetiva de imposto de renda ficou estável em 19,1%, impactada pela distribuição de JCP",
+      "top_left_x": 45,
+      "top_left_y": 371,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 900,
+      "bottom_right_y": 150,
+      "confidence_scores": null,
+      "content": "### Índice de eficiência ajustado$^{(1)}$ de 37,5% no ano e índice de remuneração de 21,2%",
+      "top_left_x": 285,
+      "top_left_y": 130,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 352,
+      "bottom_right_y": 168,
+      "confidence_scores": null,
+      "content": "(R$ milhões)",
+      "top_left_x": 285,
+      "top_left_y": 155,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 968,
+      "bottom_right_y": 468,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">(em R$ milhões, a menos que indicado)</th><th colspan=\"3\">Trimestre</th><th colspan=\"2\">Variação % para 4T 2024</th><th colspan=\"2\">Acumulado no ano</th><th>Variação % para 2024</th></tr><tr><th>4T 2023</th><th>3T 2024</th><th>4T 2024</th><th>4T 2023</th><th>3T 2024</th><th>2023</th><th>2024</th><th>2023</th></tr></thead><tr><td>Bônus</td><td>(583)</td><td>(727)</td><td>(791)</td><td>36%</td><td>9%</td><td>(2.507)</td><td>(2.777)</td><td>11%</td></tr><tr><td>Salários e benefícios</td><td>(548)</td><td>(638)</td><td>(664)</td><td>21%</td><td>4%</td><td>(2.153)</td><td>(2.543)</td><td>18%</td></tr><tr><td>Administrativas e outras</td><td>(656)</td><td>(687)</td><td>(752)</td><td>15%</td><td>10%</td><td>(2.505)</td><td>(2.748)</td><td>10%</td></tr><tr><td>Amortização de ágio</td><td>(218)</td><td>(253)</td><td>(276)</td><td>27%</td><td>9%</td><td>(899)</td><td>(968)</td><td>8%</td></tr><tr><td>Despesas tributárias, exceto imposto de renda</td><td>(247)</td><td>(296)</td><td>(384)</td><td>56%</td><td>30%</td><td>(1.063)</td><td>(1.316)</td><td>24%</td></tr><tr><td><b>Despesas operacionais totais</b></td><td><b>(2.251)</b></td><td><b>(2.601)</b></td><td><b>(2.868)</b></td><td><b>27%</b></td><td><b>10%</b></td><td><b>(9.127)</b></td><td><b>(10.351)</b></td><td><b>13%</b></td></tr><tr><td>Índice de eficiência ajustado</td><td>36%</td><td>36%</td><td>39%</td><td></td><td></td><td>38%</td><td>37%</td><td></td></tr><tr><td>Índice de remuneração</td><td>20%</td><td>21%</td><td>22%</td><td></td><td></td><td>22%</td><td>21%</td><td></td></tr><tr><td><b>Imposto de renda e contribuição social</b></td><td><b>(675)</b></td><td><b>(776)</b></td><td><b>(736)</b></td><td></td><td></td><td><b>(2.507)</b></td><td><b>(2.913)</b></td><td><b>16%</b></td></tr><tr><td>Alíquota de imposto de renda efetiva (%)</td><td>19,8%</td><td>20,2%</td><td>19,1%</td><td></td><td></td><td>20,2%</td><td>19,8%</td><td></td></tr></table>",
+      "table_id": "tbl-30.html",
+      "top_left_x": 279,
+      "top_left_y": 188,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 63,
+      "bottom_right_y": 540,
+      "confidence_scores": null,
+      "content": "Nota:",
+      "top_left_x": 39,
+      "top_left_y": 529,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 265,
+      "bottom_right_y": 551,
+      "confidence_scores": null,
+      "content": "(1) Índice de eficiência ajustado exclui amortização do ágio",
+      "top_left_x": 39,
+      "top_left_y": 540,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 979,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "19",
+      "top_left_x": 957,
+      "top_left_y": 537,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9849925223136234,
+     "minimum_page_confidence_score": 0.33550177284171556,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 18,
+    "markdown": "## Despesas e principais indicadores\n\n2024 foi mais um ano de alavancagem operacional, comprovando a eficiência do nosso modelo de negócios\n\n### Resumo do 4T 2024\n\nÍndice de eficiência encerrou o ano em 37,5%, uma queda comparado ao 38,2% de 2023\n\nAs despesas com S&B tiveram um leve aumento devido ao crescimento inorgânico de HC (relacionado à aquisição da Sertrading), enquanto as despesas de A&O cresceram 9,6% devido a algumas despesas pontuais\n\nAlíquota efetiva de imposto de renda ficou estável em 19,1%, impactada pela distribuição de JCP\n\n### Índice de eficiência ajustado$^{(1)}$ de 37,5% no ano e índice de remuneração de 21,2%\n\n(R$ milhões)\n\n[tbl-30.html](tbl-30.html)\n\nNota:\n\n(1) Índice de eficiência ajustado exclui amortização do ágio\n\n19",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">(em R$ milhões, a menos que indicado)</th><th colspan=\"3\">Trimestre</th><th colspan=\"2\">Variação % para 4T 2024</th><th colspan=\"2\">Acumulado no ano</th><th>Variação % para 2024</th></tr><tr><th>4T 2023</th><th>3T 2024</th><th>4T 2024</th><th>4T 2023</th><th>3T 2024</th><th>2023</th><th>2024</th><th>2023</th></tr></thead><tr><td>Bônus</td><td>(583)</td><td>(727)</td><td>(791)</td><td>36%</td><td>9%</td><td>(2.507)</td><td>(2.777)</td><td>11%</td></tr><tr><td>Salários e benefícios</td><td>(548)</td><td>(638)</td><td>(664)</td><td>21%</td><td>4%</td><td>(2.153)</td><td>(2.543)</td><td>18%</td></tr><tr><td>Administrativas e outras</td><td>(656)</td><td>(687)</td><td>(752)</td><td>15%</td><td>10%</td><td>(2.505)</td><td>(2.748)</td><td>10%</td></tr><tr><td>Amortização de ágio</td><td>(218)</td><td>(253)</td><td>(276)</td><td>27%</td><td>9%</td><td>(899)</td><td>(968)</td><td>8%</td></tr><tr><td>Despesas tributárias, exceto imposto de renda</td><td>(247)</td><td>(296)</td><td>(384)</td><td>56%</td><td>30%</td><td>(1.063)</td><td>(1.316)</td><td>24%</td></tr><tr><td><b>Despesas operacionais totais</b></td><td><b>(2.251)</b></td><td><b>(2.601)</b></td><td><b>(2.868)</b></td><td><b>27%</b></td><td><b>10%</b></td><td><b>(9.127)</b></td><td><b>(10.351)</b></td><td><b>13%</b></td></tr><tr><td>Índice de eficiência ajustado</td><td>36%</td><td>36%</td><td>39%</td><td></td><td></td><td>38%</td><td>37%</td><td></td></tr><tr><td>Índice de remuneração</td><td>20%</td><td>21%</td><td>22%</td><td></td><td></td><td>22%</td><td>21%</td><td></td></tr><tr><td><b>Imposto de renda e contribuição social</b></td><td><b>(675)</b></td><td><b>(776)</b></td><td><b>(736)</b></td><td></td><td></td><td><b>(2.507)</b></td><td><b>(2.913)</b></td><td><b>16%</b></td></tr><tr><td>Alíquota de imposto de renda efetiva (%)</td><td>19,8%</td><td>20,2%</td><td>19,1%</td><td></td><td></td><td>20,2%</td><td>19,8%</td><td></td></tr></table>",
+      "format": "html",
+      "id": "tbl-30.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 990,
+      "bottom_right_y": 59,
+      "confidence_scores": null,
+      "content": "btg pactual",
+      "top_left_x": 907,
+      "top_left_y": 26,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 178,
+      "bottom_right_y": 194,
+      "confidence_scores": null,
+      "content": "Seção 3",
+      "top_left_x": 97,
+      "top_left_y": 170,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 406,
+      "bottom_right_y": 414,
+      "confidence_scores": null,
+      "content": "# Balanço Patrimonial",
+      "top_left_x": 97,
+      "top_left_y": 288,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 994,
+      "bottom_right_y": 558,
+      "confidence_scores": null,
+      "content": "20",
+      "top_left_x": 974,
+      "top_left_y": 544,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9555892448276669,
+     "minimum_page_confidence_score": 0.38872519239419084,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 19,
+    "markdown": "btg pactual\n\nSeção 3\n\n# Balanço Patrimonial\n\n20",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 343,
+      "bottom_right_y": 53,
+      "confidence_scores": null,
+      "content": "# Análise do Balanço Patrimonial",
+      "top_left_x": 41,
+      "top_left_y": 30,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "## Resumo do 4T 2024",
+      "top_left_x": 45,
+      "top_left_y": 133,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 253,
+      "bottom_right_y": 218,
+      "confidence_scores": null,
+      "content": "Total de ativos (9,8x PL¹) aumentou 5,8% no trimestre",
+      "top_left_x": 45,
+      "top_left_y": 187,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 241,
+      "bottom_right_y": 279,
+      "confidence_scores": null,
+      "content": "Níveis robustos de liquidez, com R$79,9bi de caixa e equivalentes, resultaram em um LCR de 200%",
+      "top_left_x": 45,
+      "top_left_y": 232,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 259,
+      "bottom_right_y": 387,
+      "confidence_scores": null,
+      "content": "Índice de cobertura confortável de 161%, à medida que a base total de *unsecured funding* (+R$9,2bi) cresce em ritmo mais acelerado que o portfólio de crédito *onbalance* (+R$7,2bi)",
+      "top_left_x": 45,
+      "top_left_y": 293,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 432,
+      "confidence_scores": null,
+      "content": "Portfólio de Corporate Lending & PME representa 3,9x PL",
+      "top_left_x": 45,
+      "top_left_y": 400,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 253,
+      "bottom_right_y": 524,
+      "confidence_scores": null,
+      "content": "Impacto da implementação da Resolução Bacen 4.966 é esperado em -R$0,9 bilhões no Patrimônio Líquido, principalmente devido à nossa participação no Banco Pan.",
+      "top_left_x": 45,
+      "top_left_y": 447,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 970,
+      "bottom_right_y": 524,
+      "confidence_scores": null,
+      "content": "![img-23.jpeg](img-23.jpeg)",
+      "image_id": "img-23.jpeg",
+      "top_left_x": 270,
+      "top_left_y": 121,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 63,
+      "bottom_right_y": 544,
+      "confidence_scores": null,
+      "content": "Nota:",
+      "top_left_x": 39,
+      "top_left_y": 533,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 162,
+      "bottom_right_y": 555,
+      "confidence_scores": null,
+      "content": "(1) Inclui acionistas minoritários",
+      "top_left_x": 39,
+      "top_left_y": 544,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 978,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "21",
+      "top_left_x": 957,
+      "top_left_y": 538,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9617008589853351,
+     "minimum_page_confidence_score": 0.2359307177674384,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 970,
+      "bottom_right_y": 524,
+      "id": "img-23.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 270,
+      "top_left_y": 121
+     }
+    ],
+    "index": 20,
+    "markdown": "# Análise do Balanço Patrimonial\n\n## Resumo do 4T 2024\n\nTotal de ativos (9,8x PL¹) aumentou 5,8% no trimestre\n\nNíveis robustos de liquidez, com R$79,9bi de caixa e equivalentes, resultaram em um LCR de 200%\n\nÍndice de cobertura confortável de 161%, à medida que a base total de *unsecured funding* (+R$9,2bi) cresce em ritmo mais acelerado que o portfólio de crédito *onbalance* (+R$7,2bi)\n\nPortfólio de Corporate Lending & PME representa 3,9x PL\n\nImpacto da implementação da Resolução Bacen 4.966 é esperado em -R$0,9 bilhões no Patrimônio Líquido, principalmente devido à nossa participação no Banco Pan.\n\n![img-23.jpeg](img-23.jpeg)\n\nNota:\n\n(1) Inclui acionistas minoritários\n\n21",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 314,
+      "bottom_right_y": 52,
+      "confidence_scores": null,
+      "content": "# Base de Unsecured Funding",
+      "top_left_x": 41,
+      "top_left_y": 30,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "## Resumo do 4T 2024",
+      "top_left_x": 44,
+      "top_left_y": 132,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 224,
+      "bottom_right_y": 245,
+      "confidence_scores": null,
+      "content": "A base de *funding* total atingiu R$265,5 bi, crescimento de 30,3% no ano ou R$61,7 bilhões e 3,6% no trimestre ou R$9,2bi.",
+      "top_left_x": 44,
+      "top_left_y": 169,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 226,
+      "bottom_right_y": 337,
+      "confidence_scores": null,
+      "content": "A participação de *funding* de varejo permaneceu estável em 29%, acompanhando o ritmo acelerado de crescimento da base total",
+      "top_left_x": 44,
+      "top_left_y": 261,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 220,
+      "bottom_right_y": 413,
+      "confidence_scores": null,
+      "content": "Depósitos a vista cresceram R$7,3bi no ano (+62,0%) e representam 7,2% do *funding* total",
+      "top_left_x": 44,
+      "top_left_y": 353,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 233,
+      "bottom_right_y": 521,
+      "confidence_scores": null,
+      "content": "Ao longo do trimestre concluímos com sucesso mais uma emissão de título de dívida sênior, no valor total de US$500 mn, impactando a linha de \"títulos emitidos\"",
+      "top_left_x": 44,
+      "top_left_y": 430,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 475,
+      "bottom_right_y": 151,
+      "confidence_scores": null,
+      "content": "## Evolução Trimestral",
+      "top_left_x": 307,
+      "top_left_y": 131,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 370,
+      "bottom_right_y": 169,
+      "confidence_scores": null,
+      "content": "(R$ bilhões)",
+      "top_left_x": 307,
+      "top_left_y": 155,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 628,
+      "bottom_right_y": 518,
+      "confidence_scores": null,
+      "content": "![img-24.jpeg](img-24.jpeg)",
+      "image_id": "img-24.jpeg",
+      "top_left_x": 287,
+      "top_left_y": 215,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 802,
+      "bottom_right_y": 151,
+      "confidence_scores": null,
+      "content": "## Evolução Anual",
+      "top_left_x": 668,
+      "top_left_y": 131,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 734,
+      "bottom_right_y": 169,
+      "confidence_scores": null,
+      "content": "(R$ bilhões)",
+      "top_left_x": 668,
+      "top_left_y": 155,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 997,
+      "bottom_right_y": 524,
+      "confidence_scores": null,
+      "content": "![img-25.jpeg](img-25.jpeg)",
+      "image_id": "img-25.jpeg",
+      "top_left_x": 668,
+      "top_left_y": 169,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 63,
+      "bottom_right_y": 540,
+      "confidence_scores": null,
+      "content": "Nota:",
+      "top_left_x": 38,
+      "top_left_y": 529,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 202,
+      "bottom_right_y": 551,
+      "confidence_scores": null,
+      "content": "(1) Inclui a base de *funding* do Banco Pan",
+      "top_left_x": 38,
+      "top_left_y": 540,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 979,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "22",
+      "top_left_x": 956,
+      "top_left_y": 537,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9578907632230282,
+     "minimum_page_confidence_score": 0.24731835843496913,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 628,
+      "bottom_right_y": 518,
+      "id": "img-24.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 287,
+      "top_left_y": 215
+     },
+     {
+      "bottom_right_x": 997,
+      "bottom_right_y": 524,
+      "id": "img-25.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 668,
+      "top_left_y": 169
+     }
+    ],
+    "index": 21,
+    "markdown": "# Base de Unsecured Funding\n\n## Resumo do 4T 2024\n\nA base de *funding* total atingiu R$265,5 bi, crescimento de 30,3% no ano ou R$61,7 bilhões e 3,6% no trimestre ou R$9,2bi.\n\nA participação de *funding* de varejo permaneceu estável em 29%, acompanhando o ritmo acelerado de crescimento da base total\n\nDepósitos a vista cresceram R$7,3bi no ano (+62,0%) e representam 7,2% do *funding* total\n\nAo longo do trimestre concluímos com sucesso mais uma emissão de título de dívida sênior, no valor total de US$500 mn, impactando a linha de \"títulos emitidos\"\n\n## Evolução Trimestral\n\n(R$ bilhões)\n\n![img-24.jpeg](img-24.jpeg)\n\n## Evolução Anual\n\n(R$ bilhões)\n\n![img-25.jpeg](img-25.jpeg)\n\nNota:\n\n(1) Inclui a base de *funding* do Banco Pan\n\n22",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 273,
+      "bottom_right_y": 51,
+      "confidence_scores": null,
+      "content": "# Índice de Basileia e VaR",
+      "top_left_x": 41,
+      "top_left_y": 29,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "## Resumo do 4T 2024",
+      "top_left_x": 45,
+      "top_left_y": 133,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 216,
+      "bottom_right_y": 248,
+      "confidence_scores": null,
+      "content": "Índice de Basileia encerrou o ano em 15,7%, considerando uma distribuição de JCP de R$1,72bi",
+      "top_left_x": 45,
+      "top_left_y": 186,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 232,
+      "bottom_right_y": 294,
+      "confidence_scores": null,
+      "content": "Capital principal total terminou o ano em 12,3%",
+      "top_left_x": 45,
+      "top_left_y": 264,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 234,
+      "bottom_right_y": 416,
+      "confidence_scores": null,
+      "content": "VaR médio diário como percentual do patrimônio líquido médio do período reduziu para o menor nível histórico, de 0,13%, em linha com a nossa abordagem mais conservadora de risco durante o trimestre",
+      "top_left_x": 45,
+      "top_left_y": 310,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 455,
+      "bottom_right_y": 151,
+      "confidence_scores": null,
+      "content": "## Índice de Basileia",
+      "top_left_x": 306,
+      "top_left_y": 130,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 527,
+      "confidence_scores": null,
+      "content": "![img-26.jpeg](img-26.jpeg)",
+      "image_id": "img-26.jpeg",
+      "top_left_x": 306,
+      "top_left_y": 160,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 813,
+      "bottom_right_y": 151,
+      "confidence_scores": null,
+      "content": "## VaR médio diário",
+      "top_left_x": 668,
+      "top_left_y": 130,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 827,
+      "bottom_right_y": 175,
+      "confidence_scores": null,
+      "content": "(% do patrimônio líquido médio)",
+      "top_left_x": 671,
+      "top_left_y": 160,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 962,
+      "bottom_right_y": 527,
+      "confidence_scores": null,
+      "content": "![img-27.jpeg](img-27.jpeg)",
+      "image_id": "img-27.jpeg",
+      "top_left_x": 661,
+      "top_left_y": 242,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 980,
+      "bottom_right_y": 553,
+      "confidence_scores": null,
+      "content": "23",
+      "top_left_x": 957,
+      "top_left_y": 538,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.961841231620887,
+     "minimum_page_confidence_score": 0.18574321186257756,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 527,
+      "id": "img-26.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 306,
+      "top_left_y": 160
+     },
+     {
+      "bottom_right_x": 962,
+      "bottom_right_y": 527,
+      "id": "img-27.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 661,
+      "top_left_y": 242
+     }
+    ],
+    "index": 22,
+    "markdown": "# Índice de Basileia e VaR\n\n## Resumo do 4T 2024\n\nÍndice de Basileia encerrou o ano em 15,7%, considerando uma distribuição de JCP de R$1,72bi\n\nCapital principal total terminou o ano em 12,3%\n\nVaR médio diário como percentual do patrimônio líquido médio do período reduziu para o menor nível histórico, de 0,13%, em linha com a nossa abordagem mais conservadora de risco durante o trimestre\n\n## Índice de Basileia\n\n![img-26.jpeg](img-26.jpeg)\n\n## VaR médio diário\n\n(% do patrimônio líquido médio)\n\n![img-27.jpeg](img-27.jpeg)\n\n23",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 148,
+      "bottom_right_y": 54,
+      "confidence_scores": null,
+      "content": "## Disclaimer",
+      "top_left_x": 41,
+      "top_left_y": 33,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 984,
+      "bottom_right_y": 537,
+      "confidence_scores": null,
+      "content": "Informações, prazos, taxas e condições aqui contidos são meramente indicativos, e não constituem nenhuma declaração ou garantia, de forma expressa ou implícita, por parte do Banco BTG Pactual S.A. Os dados constantes deste material devem ser considerados tão somente na data de sua publicação e estão sujeitos a atualizações a qualquer momento e sem aviso prévio. É recomendável a confirmação das informações contempladas neste material previamente à conclusão de qualquer negócio. Este material tem caráter meramente informativo e não deve ser entendido como análise de valor mobiliário, material promocional, oferta de compra ou venda, recomendação de investimento, sugestão de alocação ou adoção de estratégias por parte dos destinatários. O Banco BTG Pactual S.A. não se responsabiliza por decisões de investimentos que venham a ser tomadas com base nas informações divulgadas e se exime de qualquer responsabilidade por quaisquer prejuízos, diretos ou indiretos, que venham a decorrer do conteúdo deste material. Este material foi preparado com base em informações públicas, dados desenvolvidos internamente e outras fontes externas. Os instrumentos financeiros porventura discutidos neste domínio podem não ser adequados para todos os investidores. As informações ora veiculadas não levam em consideração os objetivos de investimento, situação financeira ou necessidades específicas de cada investidor. Os investidores devem obter orientação financeira independente, com base em suas características pessoais, antes de tomar uma decisão de investimento. Os títulos de renda fixa se caracterizam por possuírem regras definidas de remuneração. Operações com instrumentos de renda fixa apresenta riscos que devem ser avaliados pelo investidor no momento de sua aquisição, incluídos, mas não limitados, ao risco de crédito, risco de liquidez e risco de mercado. Para maiores informações, consulte o site da Corretora: www.btgpactual.com.br. O Banco BTG Pactual S.A. ou quaisquer de seus diretores e/ou colaboradores poderão adquirir ou manter ativos direta ou indiretamente relacionados às empresas aqui mencionadas. O Banco BTG Pactual S.A. ou empresas do Grupo BTG podem (a) ter coordenado ou participado da colocação de oferta pública dos títulos destas companhias; ou (b) ter recebido ou vir a receber compensações destas empresas por serviços financeiros prestados, inclusive relacionados ao mercado de capitais, ou de outro mercado. É terminantemente proibida a utilização, acesso, cópia, reprodução ou distribuição das informações veiculadas neste material para qualquer pessoa, no todo ou em parte, qualquer que seja o propósito, sem o prévio consentimento por escrito do Banco BTG Pactual S.A. Para reclamações, contate nossa Ouvidoria no telefone nº 0800-722-0048.",
+      "top_left_x": 32,
+      "top_left_y": 198,
+      "type": "text"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9897319342513242,
+     "minimum_page_confidence_score": 0.3560600244415468,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [
+     "http://www.btgpactual.com.br/"
+    ],
+    "images": [],
+    "index": 23,
+    "markdown": "## Disclaimer\n\nInformações, prazos, taxas e condições aqui contidos são meramente indicativos, e não constituem nenhuma declaração ou garantia, de forma expressa ou implícita, por parte do Banco BTG Pactual S.A. Os dados constantes deste material devem ser considerados tão somente na data de sua publicação e estão sujeitos a atualizações a qualquer momento e sem aviso prévio. É recomendável a confirmação das informações contempladas neste material previamente à conclusão de qualquer negócio. Este material tem caráter meramente informativo e não deve ser entendido como análise de valor mobiliário, material promocional, oferta de compra ou venda, recomendação de investimento, sugestão de alocação ou adoção de estratégias por parte dos destinatários. O Banco BTG Pactual S.A. não se responsabiliza por decisões de investimentos que venham a ser tomadas com base nas informações divulgadas e se exime de qualquer responsabilidade por quaisquer prejuízos, diretos ou indiretos, que venham a decorrer do conteúdo deste material. Este material foi preparado com base em informações públicas, dados desenvolvidos internamente e outras fontes externas. Os instrumentos financeiros porventura discutidos neste domínio podem não ser adequados para todos os investidores. As informações ora veiculadas não levam em consideração os objetivos de investimento, situação financeira ou necessidades específicas de cada investidor. Os investidores devem obter orientação financeira independente, com base em suas características pessoais, antes de tomar uma decisão de investimento. Os títulos de renda fixa se caracterizam por possuírem regras definidas de remuneração. Operações com instrumentos de renda fixa apresenta riscos que devem ser avaliados pelo investidor no momento de sua aquisição, incluídos, mas não limitados, ao risco de crédito, risco de liquidez e risco de mercado. Para maiores informações, consulte o site da Corretora: www.btgpactual.com.br. O Banco BTG Pactual S.A. ou quaisquer de seus diretores e/ou colaboradores poderão adquirir ou manter ativos direta ou indiretamente relacionados às empresas aqui mencionadas. O Banco BTG Pactual S.A. ou empresas do Grupo BTG podem (a) ter coordenado ou participado da colocação de oferta pública dos títulos destas companhias; ou (b) ter recebido ou vir a receber compensações destas empresas por serviços financeiros prestados, inclusive relacionados ao mercado de capitais, ou de outro mercado. É terminantemente proibida a utilização, acesso, cópia, reprodução ou distribuição das informações veiculadas neste material para qualquer pessoa, no todo ou em parte, qualquer que seja o propósito, sem o prévio consentimento por escrito do Banco BTG Pactual S.A. Para reclamações, contate nossa Ouvidoria no telefone nº 0800-722-0048.",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 649,
+      "bottom_right_y": 338,
+      "confidence_scores": null,
+      "content": "![img-28.jpeg](img-28.jpeg)",
+      "image_id": "img-28.jpeg",
+      "top_left_x": 372,
+      "top_left_y": 231,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 1020,
+      "bottom_right_y": 574,
+      "confidence_scores": null,
+      "content": "![img-29.jpeg](img-29.jpeg)",
+      "image_id": "img-29.jpeg",
+      "top_left_x": 0,
+      "top_left_y": 0,
+      "type": "image"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9334065164692145,
+     "minimum_page_confidence_score": 0.05747203734018007,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 102,
+     "height": 574,
+     "width": 1020
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 649,
+      "bottom_right_y": 338,
+      "id": "img-28.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 372,
+      "top_left_y": 231
+     },
+     {
+      "bottom_right_x": 1020,
+      "bottom_right_y": 574,
+      "id": "img-29.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 0,
+      "top_left_y": 0
+     }
+    ],
+    "index": 24,
+    "markdown": "![img-28.jpeg](img-28.jpeg)\n\n![img-29.jpeg](img-29.jpeg)",
+    "tables": []
+   }
+  ],
+  "usage_info": {
+   "doc_size_bytes": 438003,
+   "pages_processed": 25
+  }
+ },
+ "trimestre": "4T2024"
+}

@@ -1,0 +1,3450 @@
+{
+ "documento": "banestes_release_4T2024",
+ "empresa": "BANESTES",
+ "hash_pdf": "7f4e48f342bd96a2e052e4454b48c74210fd679e2f00ebd95562b923152be2d3",
+ "modelo": "mistral-ocr-4-0",
+ "ocr": {
+  "document_annotation": null,
+  "model": "mistral-ocr-4-0",
+  "pages": [
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 629,
+      "bottom_right_y": 287,
+      "confidence_scores": null,
+      "content": "BANESTES apresenta:",
+      "top_left_x": 427,
+      "top_left_y": 265,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 682,
+      "bottom_right_y": 479,
+      "confidence_scores": null,
+      "content": "# #Press Release",
+      "top_left_x": 372,
+      "top_left_y": 296,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 613,
+      "bottom_right_y": 518,
+      "confidence_scores": null,
+      "content": "2024",
+      "top_left_x": 533,
+      "top_left_y": 486,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 700,
+      "bottom_right_y": 989,
+      "confidence_scores": null,
+      "content": "#SomosAzul",
+      "top_left_x": 523,
+      "top_left_y": 942,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9316094034263778,
+     "minimum_page_confidence_score": 0.2228965288841763,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 0,
+    "markdown": "BANESTES apresenta:\n\n# #Press Release\n\n2024\n\n#SomosAzul",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 326,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "# PRINCIPAIS INFORMAÇÕES",
+      "top_left_x": 35,
+      "top_left_y": 52,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 107,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "(R$ MILHÕES)",
+      "top_left_x": 42,
+      "top_left_y": 95,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 677,
+      "bottom_right_y": 342,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>DEMONSTRAÇÃO DO RESULTADO</th><th>4.1.2024</th><th>3.1.2024</th><th>2.1.2024</th><th>1.1.2024</th><th>4.1.2023</th><th>3.1.2023</th><th>2.1.2023</th><th>1.1.2023</th><th colspan=\"2\">VARIAÇÃO<br/>4.1.2024 x 1.2024 - 1.2024 x 4.2023</th></tr></thead><tr><td>RECEITAS DE INTERMEDIAÇÃO FINANCEIRA</td><td>1.141</td><td>1.101</td><td>1.172</td><td>1.220</td><td>1.279</td><td>1.350</td><td>1.257</td><td>1.227</td><td>+3,6%</td><td>-10,8%</td></tr><tr><td>DESPESAS DE INTERMEDIAÇÃO FINANCEIRA</td><td>(739)</td><td>(737)</td><td>(808)</td><td>(886)</td><td>(910)</td><td>(983)</td><td>(897)</td><td>(918)</td><td>+0,3%</td><td>-18,8%</td></tr><tr><td>PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA</td><td>(51)</td><td>(57)</td><td>(61)</td><td>(67)</td><td>(27)</td><td>(55)</td><td>(47)</td><td>(75)</td><td>-11,5%</td><td>+84,0%</td></tr><tr><td>MARGEM FINANCEIRA LÍQUIDA<sup>1</sup></td><td>351</td><td>308</td><td>303</td><td>268</td><td>341</td><td>312</td><td>313</td><td>235</td><td>+14,1%</td><td>+2,8%</td></tr><tr><td>RECEITAS DE PRESTAÇÃO DE SERVIÇOS</td><td>97</td><td>96</td><td>91</td><td>83</td><td>87</td><td>87</td><td>87</td><td>89</td><td>+1,2%</td><td>+12,0%</td></tr><tr><td>DESPESAS DE PESSOAL</td><td>(110)</td><td>(122)</td><td>(123)</td><td>(117)</td><td>(121)</td><td>(112)</td><td>(110)</td><td>(108)</td><td>+6,3%</td><td>+7,5%</td></tr><tr><td>OUTRAS DESPESAS ADMINISTRATIVAS</td><td>(103)</td><td>(111)</td><td>(108)</td><td>(117)</td><td>(103)</td><td>(100)</td><td>(95)</td><td>(91)</td><td>-7,6%</td><td>-0,1%</td></tr><tr><td>RESULTADO OPERACIONAL</td><td>200</td><td>145</td><td>144</td><td>105</td><td>156</td><td>159</td><td>161</td><td>112</td><td>+37,9%</td><td>+28,0%</td></tr><tr><td>RESULTADO ANTES DA TRIBUTAÇÃO</td><td>236</td><td>145</td><td>139</td><td>105</td><td>162</td><td>157</td><td>161</td><td>112</td><td>+62,4%</td><td>+45,3%</td></tr><tr><td>JCP E DIVIDENDOS<sup>2</sup></td><td>57,8</td><td>21,6</td><td>50,7</td><td>21,6</td><td>106,1</td><td>21,0</td><td>53,2</td><td>21,0</td><td>+167,5%</td><td>-45,5%</td></tr><tr><td>LUCRO LÍQUIDO</td><td>133</td><td>91</td><td>100</td><td>68</td><td>90</td><td>96</td><td>115</td><td>71</td><td>+46,2%</td><td>+48,3%</td></tr></table>",
+      "table_id": "tbl-0.html",
+      "top_left_x": 35,
+      "top_left_y": 108,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 107,
+      "bottom_right_y": 368,
+      "confidence_scores": null,
+      "content": "(R$ MILHÕES)",
+      "top_left_x": 42,
+      "top_left_y": 354,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 677,
+      "bottom_right_y": 555,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>BALANÇO PATRIMONIAL</th><th>4.1.2024</th><th>3.1.2024</th><th>2.1.2024</th><th>1.1.2024</th><th>4.1.2023</th><th>3.1.2023</th><th>2.1.2023</th><th>1.1.2023</th><th colspan=\"2\">VARIAÇÃO<br/>4.1.2024 x 1.2024 - 1.2024 x 1.2023</th></tr></thead><tr><td>ATIVOS TOTAIS</td><td>36.997</td><td>37.541</td><td>38.464</td><td>42.729</td><td>41.515</td><td>41.762</td><td>38.785</td><td>37.168</td><td>-1,4%</td><td>-10,9%</td></tr><tr><td>CARTEIRA DE CRÉDITO AMPLIADA</td><td>14.706</td><td>13.964</td><td>13.378</td><td>13.172</td><td>12.750</td><td>12.423</td><td>12.201</td><td>11.865</td><td>+5,3%</td><td>+15,3%</td></tr><tr><td>NPL CREATION</td><td>246</td><td>243</td><td>236</td><td>247</td><td>223</td><td>216</td><td>238</td><td>234</td><td>+1,5%</td><td>+10,2%</td></tr><tr><td>PATRIMÔNIO LÍQUIDO</td><td>2.357</td><td>2.323</td><td>2.251</td><td>2.272</td><td>2.216</td><td>2.179</td><td>2.093</td><td>2.072</td><td>+1,5%</td><td>+6,4%</td></tr><tr><td>APLICAÇÕES INTERFINANCEIRAS DE LIQUIDEZ</td><td>4.457</td><td>12.820</td><td>4.577</td><td>3.065</td><td>2.600</td><td>3.927</td><td>4.562</td><td>3.672</td><td>-65,2%</td><td>+71,4%</td></tr><tr><td>DEPÓSITOS TOTAIS</td><td>22.875</td><td>23.326</td><td>24.113</td><td>23.133</td><td>22.635</td><td>22.783</td><td>22.770</td><td>21.445</td><td>-1,9%</td><td>+1,1%</td></tr><tr><td>TÍTULOS E VALORES MOBILIÁRIOS</td><td>18.286</td><td>11.190</td><td>21.008</td><td>26.889</td><td>27.105</td><td>25.766</td><td>23.202</td><td>22.297</td><td>+63,4%</td><td>-32,5%</td></tr><tr><td>CAPTAÇÃO MERCADO ABERTO</td><td>8.691</td><td>8.845</td><td>9.668</td><td>14.966</td><td>14.305</td><td>14.368</td><td>11.604</td><td>11.459</td><td>-1,7%</td><td>-39,2%</td></tr><tr><td>RECURSOS CAPTADOS E ADMINISTRADOS</td><td>40.411</td><td>40.331</td><td>41.347</td><td>45.517</td><td>44.427</td><td>44.156</td><td>40.922</td><td>40.445</td><td>+0,2%</td><td>-9,0%</td></tr></table>",
+      "table_id": "tbl-1.html",
+      "top_left_x": 35,
+      "top_left_y": 367,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 677,
+      "bottom_right_y": 787,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>INDICADORES DE DESEMPENHO</th><th>4.1.2024</th><th>3.1.2024</th><th>2.1.2024</th><th>1.1.2024</th><th>4.1.2023</th><th>3.1.2023</th><th>2.1.2023</th><th>1.1.2023</th><th colspan=\"2\">VARIAÇÃO<br/>4.1.2024 x 1.2024 - 1.2024 x 1.2023</th></tr></thead><tr><td>LUCRO LÍQUIDO POR AÇÃO (R$)</td><td>0,42</td><td>0,29</td><td>0,32</td><td>0,22</td><td>0,28</td><td>0,30</td><td>0,36</td><td>0,22</td><td>+46,2%</td><td>+48,3%</td></tr><tr><td>VALOR PATRIMONIAL POR AÇÃO (R$)</td><td>7,46</td><td>7,35</td><td>7,12</td><td>7,19</td><td>7,02</td><td>6,90</td><td>6,63</td><td>6,56</td><td>+1,5%</td><td>+6,4%</td></tr><tr><td>ROA - RETORNO SOBRE ATIVOS MÉDIOS<sup>3</sup></td><td>1,0%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>+0,1 p.p.</td><td>+0,1 p.p.</td></tr><tr><td>ROE - RETORNO SOBRE PATRIMÔNIO LÍQUIDO<sup>4</sup></td><td>17,2%</td><td>15,5%</td><td>16,3%</td><td>17,0%</td><td>17,4%</td><td>16,8%</td><td>16,5%</td><td>15,8%</td><td>+1,7 p.p.</td><td>-0,2 p.p.</td></tr><tr><td>EFICIÊNCIA OPERACIONAL<sup>5</sup></td><td>46,7%</td><td>50,7%</td><td>50,8%</td><td>56,1%</td><td>49,1%</td><td>46,7%</td><td>45,9%</td><td>49,9%</td><td>-4,0 p.p.</td><td>-2,5 p.p.</td></tr><tr><td>EFICIÊNCIA OPERACIONAL AJUSTADA AO RISCO<sup>6</sup></td><td>51,9%</td><td>57,9%</td><td>58,7%</td><td>66,7%</td><td>52,3%</td><td>53,1%</td><td>51,3%</td><td>61,4%</td><td>-5,9 p.p.</td><td>-0,4 p.p.</td></tr><tr><td>VALOR DE MERCADO (R$ MILHÕES)<sup>7</sup></td><td>2.707</td><td>2.852</td><td>2.893</td><td>2.846</td><td>3.058</td><td>2.850</td><td>2.949</td><td>2.058</td><td>-5,1%</td><td>-11,5%</td></tr><tr><td>ÍNDICE DE INADIMPLÊNCIA &gt; 90 DIAS<sup>8</sup></td><td>1,2%</td><td>1,7%</td><td>1,8%</td><td>1,9%</td><td>1,8%</td><td>1,7%</td><td>2,0%</td><td>2,0%</td><td>0,0 p.p.</td><td>-0,1 p.p.</td></tr><tr><td>ÍNDICE DE COBERTURA GERAL<sup>9</sup></td><td>41,7%</td><td>41,0%</td><td>39,4%</td><td>35,5%</td><td>38,7%</td><td>41,1%</td><td>42,6%</td><td>44,6%</td><td>+0,6 p.p.</td><td>+3,0 p.p.</td></tr><tr><td>ÍNDICE DE COBERTURA IMEDIATA<sup>10</sup></td><td>74,7%</td><td>78,4%</td><td>74,2%</td><td>70,9%</td><td>71,7%</td><td>77,7%</td><td>79,6%</td><td>82,2%</td><td>-3,7 p.p.</td><td>+3,0 p.p.</td></tr></table>",
+      "table_id": "tbl-2.html",
+      "top_left_x": 35,
+      "top_left_y": 581,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 677,
+      "bottom_right_y": 872,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>LIMITES OPERACIONAIS</th><th>4.1.2024</th><th>3.1.2024</th><th>2.1.2024</th><th>1.1.2024</th><th>4.1.2023</th><th>3.1.2023</th><th>2.1.2023</th><th>1.1.2023</th><th colspan=\"2\">VARIAÇÃO<br/>4.1.2024 x 1.2024 - 1.2024 x 1.2023</th></tr></thead><tr><td>ÍNDICE DE BASILEIA (%)</td><td>14,0</td><td>14,1</td><td>14,7</td><td>14,4</td><td>14,6</td><td>15,3</td><td>14,7</td><td>14,8</td><td>-0,1 p.p.</td><td>-0,6 p.p.</td></tr><tr><td>CAPITAL NÍVEL I - 100%</td><td>14,0</td><td>14,1</td><td>14,7</td><td>14,4</td><td>14,6</td><td>15,3</td><td>14,7</td><td>14,8</td><td>-0,1 p.p.</td><td>-0,6 p.p.</td></tr></table>",
+      "table_id": "tbl-3.html",
+      "top_left_x": 35,
+      "top_left_y": 812,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "2",
+      "top_left_x": 688,
+      "top_left_y": 985,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9951603857635357,
+     "minimum_page_confidence_score": 0.3322717929676301,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 1,
+    "markdown": "# PRINCIPAIS INFORMAÇÕES\n\n(R$ MILHÕES)\n\n[tbl-0.html](tbl-0.html)\n\n(R$ MILHÕES)\n\n[tbl-1.html](tbl-1.html)\n\n[tbl-2.html](tbl-2.html)\n\n[tbl-3.html](tbl-3.html)\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n2",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>DEMONSTRAÇÃO DO RESULTADO</th><th>4.1.2024</th><th>3.1.2024</th><th>2.1.2024</th><th>1.1.2024</th><th>4.1.2023</th><th>3.1.2023</th><th>2.1.2023</th><th>1.1.2023</th><th colspan=\"2\">VARIAÇÃO<br/>4.1.2024 x 1.2024 - 1.2024 x 4.2023</th></tr></thead><tr><td>RECEITAS DE INTERMEDIAÇÃO FINANCEIRA</td><td>1.141</td><td>1.101</td><td>1.172</td><td>1.220</td><td>1.279</td><td>1.350</td><td>1.257</td><td>1.227</td><td>+3,6%</td><td>-10,8%</td></tr><tr><td>DESPESAS DE INTERMEDIAÇÃO FINANCEIRA</td><td>(739)</td><td>(737)</td><td>(808)</td><td>(886)</td><td>(910)</td><td>(983)</td><td>(897)</td><td>(918)</td><td>+0,3%</td><td>-18,8%</td></tr><tr><td>PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA</td><td>(51)</td><td>(57)</td><td>(61)</td><td>(67)</td><td>(27)</td><td>(55)</td><td>(47)</td><td>(75)</td><td>-11,5%</td><td>+84,0%</td></tr><tr><td>MARGEM FINANCEIRA LÍQUIDA<sup>1</sup></td><td>351</td><td>308</td><td>303</td><td>268</td><td>341</td><td>312</td><td>313</td><td>235</td><td>+14,1%</td><td>+2,8%</td></tr><tr><td>RECEITAS DE PRESTAÇÃO DE SERVIÇOS</td><td>97</td><td>96</td><td>91</td><td>83</td><td>87</td><td>87</td><td>87</td><td>89</td><td>+1,2%</td><td>+12,0%</td></tr><tr><td>DESPESAS DE PESSOAL</td><td>(110)</td><td>(122)</td><td>(123)</td><td>(117)</td><td>(121)</td><td>(112)</td><td>(110)</td><td>(108)</td><td>+6,3%</td><td>+7,5%</td></tr><tr><td>OUTRAS DESPESAS ADMINISTRATIVAS</td><td>(103)</td><td>(111)</td><td>(108)</td><td>(117)</td><td>(103)</td><td>(100)</td><td>(95)</td><td>(91)</td><td>-7,6%</td><td>-0,1%</td></tr><tr><td>RESULTADO OPERACIONAL</td><td>200</td><td>145</td><td>144</td><td>105</td><td>156</td><td>159</td><td>161</td><td>112</td><td>+37,9%</td><td>+28,0%</td></tr><tr><td>RESULTADO ANTES DA TRIBUTAÇÃO</td><td>236</td><td>145</td><td>139</td><td>105</td><td>162</td><td>157</td><td>161</td><td>112</td><td>+62,4%</td><td>+45,3%</td></tr><tr><td>JCP E DIVIDENDOS<sup>2</sup></td><td>57,8</td><td>21,6</td><td>50,7</td><td>21,6</td><td>106,1</td><td>21,0</td><td>53,2</td><td>21,0</td><td>+167,5%</td><td>-45,5%</td></tr><tr><td>LUCRO LÍQUIDO</td><td>133</td><td>91</td><td>100</td><td>68</td><td>90</td><td>96</td><td>115</td><td>71</td><td>+46,2%</td><td>+48,3%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-0.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>BALANÇO PATRIMONIAL</th><th>4.1.2024</th><th>3.1.2024</th><th>2.1.2024</th><th>1.1.2024</th><th>4.1.2023</th><th>3.1.2023</th><th>2.1.2023</th><th>1.1.2023</th><th colspan=\"2\">VARIAÇÃO<br/>4.1.2024 x 1.2024 - 1.2024 x 1.2023</th></tr></thead><tr><td>ATIVOS TOTAIS</td><td>36.997</td><td>37.541</td><td>38.464</td><td>42.729</td><td>41.515</td><td>41.762</td><td>38.785</td><td>37.168</td><td>-1,4%</td><td>-10,9%</td></tr><tr><td>CARTEIRA DE CRÉDITO AMPLIADA</td><td>14.706</td><td>13.964</td><td>13.378</td><td>13.172</td><td>12.750</td><td>12.423</td><td>12.201</td><td>11.865</td><td>+5,3%</td><td>+15,3%</td></tr><tr><td>NPL CREATION</td><td>246</td><td>243</td><td>236</td><td>247</td><td>223</td><td>216</td><td>238</td><td>234</td><td>+1,5%</td><td>+10,2%</td></tr><tr><td>PATRIMÔNIO LÍQUIDO</td><td>2.357</td><td>2.323</td><td>2.251</td><td>2.272</td><td>2.216</td><td>2.179</td><td>2.093</td><td>2.072</td><td>+1,5%</td><td>+6,4%</td></tr><tr><td>APLICAÇÕES INTERFINANCEIRAS DE LIQUIDEZ</td><td>4.457</td><td>12.820</td><td>4.577</td><td>3.065</td><td>2.600</td><td>3.927</td><td>4.562</td><td>3.672</td><td>-65,2%</td><td>+71,4%</td></tr><tr><td>DEPÓSITOS TOTAIS</td><td>22.875</td><td>23.326</td><td>24.113</td><td>23.133</td><td>22.635</td><td>22.783</td><td>22.770</td><td>21.445</td><td>-1,9%</td><td>+1,1%</td></tr><tr><td>TÍTULOS E VALORES MOBILIÁRIOS</td><td>18.286</td><td>11.190</td><td>21.008</td><td>26.889</td><td>27.105</td><td>25.766</td><td>23.202</td><td>22.297</td><td>+63,4%</td><td>-32,5%</td></tr><tr><td>CAPTAÇÃO MERCADO ABERTO</td><td>8.691</td><td>8.845</td><td>9.668</td><td>14.966</td><td>14.305</td><td>14.368</td><td>11.604</td><td>11.459</td><td>-1,7%</td><td>-39,2%</td></tr><tr><td>RECURSOS CAPTADOS E ADMINISTRADOS</td><td>40.411</td><td>40.331</td><td>41.347</td><td>45.517</td><td>44.427</td><td>44.156</td><td>40.922</td><td>40.445</td><td>+0,2%</td><td>-9,0%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-1.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>INDICADORES DE DESEMPENHO</th><th>4.1.2024</th><th>3.1.2024</th><th>2.1.2024</th><th>1.1.2024</th><th>4.1.2023</th><th>3.1.2023</th><th>2.1.2023</th><th>1.1.2023</th><th colspan=\"2\">VARIAÇÃO<br/>4.1.2024 x 1.2024 - 1.2024 x 1.2023</th></tr></thead><tr><td>LUCRO LÍQUIDO POR AÇÃO (R$)</td><td>0,42</td><td>0,29</td><td>0,32</td><td>0,22</td><td>0,28</td><td>0,30</td><td>0,36</td><td>0,22</td><td>+46,2%</td><td>+48,3%</td></tr><tr><td>VALOR PATRIMONIAL POR AÇÃO (R$)</td><td>7,46</td><td>7,35</td><td>7,12</td><td>7,19</td><td>7,02</td><td>6,90</td><td>6,63</td><td>6,56</td><td>+1,5%</td><td>+6,4%</td></tr><tr><td>ROA - RETORNO SOBRE ATIVOS MÉDIOS<sup>3</sup></td><td>1,0%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>+0,1 p.p.</td><td>+0,1 p.p.</td></tr><tr><td>ROE - RETORNO SOBRE PATRIMÔNIO LÍQUIDO<sup>4</sup></td><td>17,2%</td><td>15,5%</td><td>16,3%</td><td>17,0%</td><td>17,4%</td><td>16,8%</td><td>16,5%</td><td>15,8%</td><td>+1,7 p.p.</td><td>-0,2 p.p.</td></tr><tr><td>EFICIÊNCIA OPERACIONAL<sup>5</sup></td><td>46,7%</td><td>50,7%</td><td>50,8%</td><td>56,1%</td><td>49,1%</td><td>46,7%</td><td>45,9%</td><td>49,9%</td><td>-4,0 p.p.</td><td>-2,5 p.p.</td></tr><tr><td>EFICIÊNCIA OPERACIONAL AJUSTADA AO RISCO<sup>6</sup></td><td>51,9%</td><td>57,9%</td><td>58,7%</td><td>66,7%</td><td>52,3%</td><td>53,1%</td><td>51,3%</td><td>61,4%</td><td>-5,9 p.p.</td><td>-0,4 p.p.</td></tr><tr><td>VALOR DE MERCADO (R$ MILHÕES)<sup>7</sup></td><td>2.707</td><td>2.852</td><td>2.893</td><td>2.846</td><td>3.058</td><td>2.850</td><td>2.949</td><td>2.058</td><td>-5,1%</td><td>-11,5%</td></tr><tr><td>ÍNDICE DE INADIMPLÊNCIA &gt; 90 DIAS<sup>8</sup></td><td>1,2%</td><td>1,7%</td><td>1,8%</td><td>1,9%</td><td>1,8%</td><td>1,7%</td><td>2,0%</td><td>2,0%</td><td>0,0 p.p.</td><td>-0,1 p.p.</td></tr><tr><td>ÍNDICE DE COBERTURA GERAL<sup>9</sup></td><td>41,7%</td><td>41,0%</td><td>39,4%</td><td>35,5%</td><td>38,7%</td><td>41,1%</td><td>42,6%</td><td>44,6%</td><td>+0,6 p.p.</td><td>+3,0 p.p.</td></tr><tr><td>ÍNDICE DE COBERTURA IMEDIATA<sup>10</sup></td><td>74,7%</td><td>78,4%</td><td>74,2%</td><td>70,9%</td><td>71,7%</td><td>77,7%</td><td>79,6%</td><td>82,2%</td><td>-3,7 p.p.</td><td>+3,0 p.p.</td></tr></table>",
+      "format": "html",
+      "id": "tbl-2.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>LIMITES OPERACIONAIS</th><th>4.1.2024</th><th>3.1.2024</th><th>2.1.2024</th><th>1.1.2024</th><th>4.1.2023</th><th>3.1.2023</th><th>2.1.2023</th><th>1.1.2023</th><th colspan=\"2\">VARIAÇÃO<br/>4.1.2024 x 1.2024 - 1.2024 x 1.2023</th></tr></thead><tr><td>ÍNDICE DE BASILEIA (%)</td><td>14,0</td><td>14,1</td><td>14,7</td><td>14,4</td><td>14,6</td><td>15,3</td><td>14,7</td><td>14,8</td><td>-0,1 p.p.</td><td>-0,6 p.p.</td></tr><tr><td>CAPITAL NÍVEL I - 100%</td><td>14,0</td><td>14,1</td><td>14,7</td><td>14,4</td><td>14,6</td><td>15,3</td><td>14,7</td><td>14,8</td><td>-0,1 p.p.</td><td>-0,6 p.p.</td></tr></table>",
+      "format": "html",
+      "id": "tbl-3.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 326,
+      "bottom_right_y": 83,
+      "confidence_scores": null,
+      "content": "# PRINCIPAIS INFORMAÇÕES",
+      "top_left_x": 35,
+      "top_left_y": 53,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 677,
+      "bottom_right_y": 204,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>INDICADORES ESTRUTURAIS</th><th>4T 2024</th><th>3T 2024</th><th>2T 2024</th><th>1T 2024</th><th>4T 2023</th><th>3T 2023</th><th>2T 2023</th><th>1T 2023</th></tr></thead><tr><td>UNIDADES DE ATENDIMENTO<sup>8</sup></td><td>151</td><td>152</td><td>152</td><td>152</td><td>151</td><td>151</td><td>151</td><td>151</td></tr><tr><td>PONTOS DE ATENDIMENTO ELETRÔNICO</td><td>278</td><td>286</td><td>286</td><td>285</td><td>288</td><td>294</td><td>294</td><td>294</td></tr><tr><td>CORRESPONDENTES</td><td>341</td><td>343</td><td>344</td><td>353</td><td>343</td><td>379</td><td>371</td><td>369</td></tr><tr><td>COLABORADORES</td><td>2.365</td><td>2.369</td><td>2.314</td><td>2.282</td><td>2.201</td><td>2.221</td><td>2.204</td><td>2.201</td></tr></table>",
+      "table_id": "tbl-4.html",
+      "top_left_x": 35,
+      "top_left_y": 108,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 677,
+      "bottom_right_y": 326,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>INDICADORES ECONÔMICOS<sup>10</sup></th><th>4T 2024</th><th>3T 2024</th><th>2T 2024</th><th>1T 2024</th><th>4T 2023</th><th>3T 2023</th><th>2T 2023</th><th>1T 2023</th></tr></thead><tr><td>SÉLIC (%)</td><td>12,35</td><td>10,75</td><td>10,50</td><td>10,75</td><td>11,75</td><td>12,75</td><td>13,75</td><td>13,75</td></tr><tr><td>TAXA DE CÂMBIO (R$/US$ - FINAL DE PERÍODO)</td><td>6,15</td><td>5,45</td><td>5,59</td><td>5,01</td><td>4,85</td><td>5,04</td><td>4,79</td><td>5,06</td></tr><tr><td>IGP-M (%)</td><td>-3,02</td><td>1,52</td><td>2,01</td><td>-0,92</td><td>1,83</td><td>-0,49</td><td>-4,72</td><td>0,20</td></tr><tr><td>IPCA<sup>11</sup> (%)</td><td>1,47</td><td>0,80</td><td>1,05</td><td>1,41</td><td>1,08</td><td>0,35</td><td>0,76</td><td>1,37</td></tr></table>",
+      "table_id": "tbl-5.html",
+      "top_left_x": 35,
+      "top_left_y": 231,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 208,
+      "bottom_right_y": 359,
+      "confidence_scores": null,
+      "content": "$^{1}$ RESULTADO BRUTO DA INTERMEDIAÇÃO FINANCEIRA.",
+      "top_left_x": 37,
+      "top_left_y": 346,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 333,
+      "bottom_right_y": 372,
+      "confidence_scores": null,
+      "content": "$^{2}$ JUROS SOBRE O CAPITAL PRÓPRIO PAGOS E/OU PROVISIONADOS (ANTES DO IR) E DIVIDENDOS.",
+      "top_left_x": 37,
+      "top_left_y": 359,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 545,
+      "bottom_right_y": 386,
+      "confidence_scores": null,
+      "content": "$^{3}$ RELAÇÃO ENTRE O LUCRO LÍQUIDO DOS ÚLTIMOS DOZE MESES E A MÉDIA DOS ATIVOS TOTAIS DO TRIMESTRE VIGENTE E DO MESMO TRIMESTRE DO ANO ANTERIOR.",
+      "top_left_x": 37,
+      "top_left_y": 372,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 572,
+      "bottom_right_y": 399,
+      "confidence_scores": null,
+      "content": "$^{4}$ RELAÇÃO ENTRE O LUCRO LÍQUIDO DOS ÚLTIMOS DOZE MESES E A MÉDIA DOS PATRIMÔNIOS LÍQUIDOS DO TRIMESTRE VIGENTE E DO MESMO TRIMESTRE DO ANO ANTERIOR.",
+      "top_left_x": 37,
+      "top_left_y": 386,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 620,
+      "bottom_right_y": 422,
+      "confidence_scores": null,
+      "content": "$^{5}$ RELAÇÃO ENTRE O TOTAL DE DESPESAS ADMINISTRATIVAS (PESSOAL E OUTRAS) E O TOTAL DAS RECEITAS COM SERVIÇOS, TARIFAS E O RESULTADO BRUTO DA INTERMEDIAÇÃO FINANCEIRA (EXCLUÍDA A PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DÚVIDOSA).",
+      "top_left_x": 37,
+      "top_left_y": 399,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 625,
+      "bottom_right_y": 435,
+      "confidence_scores": null,
+      "content": "$^{6}$ RELAÇÃO ENTRE O TOTAL DAS DESPESAS ADMINISTRATIVAS (PESSOAL E OUTRAS) E O TOTAL DAS RECEITAS COM SERVIÇOS, TARIFAS E O RESULTADO BRUTO DA INTERMEDIAÇÃO FINANCEIRA.",
+      "top_left_x": 37,
+      "top_left_y": 422,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 154,
+      "bottom_right_y": 448,
+      "confidence_scores": null,
+      "content": "$^{7}$ EM 31.12.2024, ON = 8,52 E PN = 8,70.",
+      "top_left_x": 37,
+      "top_left_y": 435,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 273,
+      "bottom_right_y": 463,
+      "confidence_scores": null,
+      "content": "$^{8}$ ÍNDICE DE INADIMPLÊNCIA > 90 DIAS DA CARTEIRA DE CRÉDITO AMPLIADA.",
+      "top_left_x": 37,
+      "top_left_y": 448,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 453,
+      "bottom_right_y": 477,
+      "confidence_scores": null,
+      "content": "$^{9}$ RELAÇÃO ENTRE O TOTAL DAS RECEITAS COM SERVIÇOS E TARIFAS E O TOTAL DAS DESPESAS ADMINISTRATIVAS (PESSOAL E OUTRAS).",
+      "top_left_x": 37,
+      "top_left_y": 463,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 367,
+      "bottom_right_y": 490,
+      "confidence_scores": null,
+      "content": "$^{10}$ RELAÇÃO ENTRE O TOTAL DAS RECEITAS COM SERVIÇOS E TARIFAS E O TOTAL DAS DESPESAS DE PESSOAL.",
+      "top_left_x": 37,
+      "top_left_y": 477,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 167,
+      "bottom_right_y": 504,
+      "confidence_scores": null,
+      "content": "$^{11}$ AGÊNCIAS E PONTOS DE ATENDIMENTO.",
+      "top_left_x": 37,
+      "top_left_y": 490,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 157,
+      "bottom_right_y": 518,
+      "confidence_scores": null,
+      "content": "$^{12}$ FONTE: BANCO CENTRAL, FGV E IBGE.",
+      "top_left_x": 37,
+      "top_left_y": 504,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 226,
+      "bottom_right_y": 532,
+      "confidence_scores": null,
+      "content": "$^{13}$ ÍNDICE DE PREÇOS AO CONSUMIDOR AMPLO – TRIMESTRAL.",
+      "top_left_x": 37,
+      "top_left_y": 518,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 983,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "3",
+      "top_left_x": 688,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9854769189808896,
+     "minimum_page_confidence_score": 0.3031548326137962,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 2,
+    "markdown": "# PRINCIPAIS INFORMAÇÕES\n\n[tbl-4.html](tbl-4.html)\n\n[tbl-5.html](tbl-5.html)\n\n$^{1}$ RESULTADO BRUTO DA INTERMEDIAÇÃO FINANCEIRA.\n\n$^{2}$ JUROS SOBRE O CAPITAL PRÓPRIO PAGOS E/OU PROVISIONADOS (ANTES DO IR) E DIVIDENDOS.\n\n$^{3}$ RELAÇÃO ENTRE O LUCRO LÍQUIDO DOS ÚLTIMOS DOZE MESES E A MÉDIA DOS ATIVOS TOTAIS DO TRIMESTRE VIGENTE E DO MESMO TRIMESTRE DO ANO ANTERIOR.\n\n$^{4}$ RELAÇÃO ENTRE O LUCRO LÍQUIDO DOS ÚLTIMOS DOZE MESES E A MÉDIA DOS PATRIMÔNIOS LÍQUIDOS DO TRIMESTRE VIGENTE E DO MESMO TRIMESTRE DO ANO ANTERIOR.\n\n$^{5}$ RELAÇÃO ENTRE O TOTAL DE DESPESAS ADMINISTRATIVAS (PESSOAL E OUTRAS) E O TOTAL DAS RECEITAS COM SERVIÇOS, TARIFAS E O RESULTADO BRUTO DA INTERMEDIAÇÃO FINANCEIRA (EXCLUÍDA A PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DÚVIDOSA).\n\n$^{6}$ RELAÇÃO ENTRE O TOTAL DAS DESPESAS ADMINISTRATIVAS (PESSOAL E OUTRAS) E O TOTAL DAS RECEITAS COM SERVIÇOS, TARIFAS E O RESULTADO BRUTO DA INTERMEDIAÇÃO FINANCEIRA.\n\n$^{7}$ EM 31.12.2024, ON = 8,52 E PN = 8,70.\n\n$^{8}$ ÍNDICE DE INADIMPLÊNCIA > 90 DIAS DA CARTEIRA DE CRÉDITO AMPLIADA.\n\n$^{9}$ RELAÇÃO ENTRE O TOTAL DAS RECEITAS COM SERVIÇOS E TARIFAS E O TOTAL DAS DESPESAS ADMINISTRATIVAS (PESSOAL E OUTRAS).\n\n$^{10}$ RELAÇÃO ENTRE O TOTAL DAS RECEITAS COM SERVIÇOS E TARIFAS E O TOTAL DAS DESPESAS DE PESSOAL.\n\n$^{11}$ AGÊNCIAS E PONTOS DE ATENDIMENTO.\n\n$^{12}$ FONTE: BANCO CENTRAL, FGV E IBGE.\n\n$^{13}$ ÍNDICE DE PREÇOS AO CONSUMIDOR AMPLO – TRIMESTRAL.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n3",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>INDICADORES ESTRUTURAIS</th><th>4T 2024</th><th>3T 2024</th><th>2T 2024</th><th>1T 2024</th><th>4T 2023</th><th>3T 2023</th><th>2T 2023</th><th>1T 2023</th></tr></thead><tr><td>UNIDADES DE ATENDIMENTO<sup>8</sup></td><td>151</td><td>152</td><td>152</td><td>152</td><td>151</td><td>151</td><td>151</td><td>151</td></tr><tr><td>PONTOS DE ATENDIMENTO ELETRÔNICO</td><td>278</td><td>286</td><td>286</td><td>285</td><td>288</td><td>294</td><td>294</td><td>294</td></tr><tr><td>CORRESPONDENTES</td><td>341</td><td>343</td><td>344</td><td>353</td><td>343</td><td>379</td><td>371</td><td>369</td></tr><tr><td>COLABORADORES</td><td>2.365</td><td>2.369</td><td>2.314</td><td>2.282</td><td>2.201</td><td>2.221</td><td>2.204</td><td>2.201</td></tr></table>",
+      "format": "html",
+      "id": "tbl-4.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>INDICADORES ECONÔMICOS<sup>10</sup></th><th>4T 2024</th><th>3T 2024</th><th>2T 2024</th><th>1T 2024</th><th>4T 2023</th><th>3T 2023</th><th>2T 2023</th><th>1T 2023</th></tr></thead><tr><td>SÉLIC (%)</td><td>12,35</td><td>10,75</td><td>10,50</td><td>10,75</td><td>11,75</td><td>12,75</td><td>13,75</td><td>13,75</td></tr><tr><td>TAXA DE CÂMBIO (R$/US$ - FINAL DE PERÍODO)</td><td>6,15</td><td>5,45</td><td>5,59</td><td>5,01</td><td>4,85</td><td>5,04</td><td>4,79</td><td>5,06</td></tr><tr><td>IGP-M (%)</td><td>-3,02</td><td>1,52</td><td>2,01</td><td>-0,92</td><td>1,83</td><td>-0,49</td><td>-4,72</td><td>0,20</td></tr><tr><td>IPCA<sup>11</sup> (%)</td><td>1,47</td><td>0,80</td><td>1,05</td><td>1,41</td><td>1,08</td><td>0,35</td><td>0,76</td><td>1,37</td></tr></table>",
+      "format": "html",
+      "id": "tbl-5.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 177,
+      "bottom_right_y": 37,
+      "confidence_scores": null,
+      "content": "# RESULTADOS",
+      "top_left_x": 34,
+      "top_left_y": 12,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 55,
+      "confidence_scores": null,
+      "content": "EM R$ MILHÕES",
+      "top_left_x": 34,
+      "top_left_y": 40,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 676,
+      "bottom_right_y": 341,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>DEMONSTRAÇÃO DO RESULTADO</th><th>4T 2024</th><th>3T 2024</th><th>2T 2024</th><th>1T 2024</th><th>4T 2023</th><th>3T 2023</th><th>2T 2023</th><th>1T 2023</th><th colspan=\"2\">VARIAÇÃO</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>+ 2024x</th><th>2024 + 2023x</th></tr></thead><tr><td>RECEITAS DE INTERMEDIAÇÃO FINANCEIRA</td><td>1.141</td><td>1.101</td><td>1.172</td><td>1.220</td><td>1.279</td><td>1.350</td><td>1.257</td><td>1.227</td><td>+3,6%</td><td>-10,8%</td></tr><tr><td>DESPESAS DE INTERMEDIAÇÃO FINANCEIRA</td><td>(739)</td><td>(737)</td><td>(808)</td><td>(886)</td><td>(910)</td><td>(983)</td><td>(897)</td><td>(918)</td><td>+0,3%</td><td>-18,8%</td></tr><tr><td>PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA</td><td>(51)</td><td>(57)</td><td>(61)</td><td>(67)</td><td>(27)</td><td>(55)</td><td>(47)</td><td>(75)</td><td>-11,5%</td><td>+84,0%</td></tr><tr><td>MARGEM FINANCEIRA LÍQUIDA</td><td>351</td><td>308</td><td>303</td><td>268</td><td>341</td><td>312</td><td>313</td><td>235</td><td>+14,1%</td><td>+2,8%</td></tr><tr><td>RECEITAS DE PRESTAÇÃO DE SERVIÇOS</td><td>97</td><td>96</td><td>91</td><td>83</td><td>87</td><td>87</td><td>87</td><td>89</td><td>+1,2%</td><td>+12,0%</td></tr><tr><td>DESPESAS DE PESSOAL</td><td>(130)</td><td>(122)</td><td>(123)</td><td>(117)</td><td>(121)</td><td>(112)</td><td>(110)</td><td>(108)</td><td>+6,3%</td><td>+7,5%</td></tr><tr><td>OUTRAS DESPESAS ADMINISTRATIVAS</td><td>(103)</td><td>(111)</td><td>(108)</td><td>(117)</td><td>(103)</td><td>(100)</td><td>(95)</td><td>(91)</td><td>-7,6%</td><td>-0,1%</td></tr><tr><td>RESULTADO OPERACIONAL</td><td>200</td><td>145</td><td>144</td><td>105</td><td>156</td><td>159</td><td>161</td><td>112</td><td>+37,9%</td><td>+28,0%</td></tr><tr><td>RESULTADO ANTES DA TRIBUTAÇÃO</td><td>236</td><td>145</td><td>139</td><td>105</td><td>162</td><td>157</td><td>161</td><td>112</td><td>+62,4%</td><td>+45,3%</td></tr><tr><td>JCP E DIVIDENDOS</td><td>57,8</td><td>21,6</td><td>50,7</td><td>21,6</td><td>106,1</td><td>21,0</td><td>53,2</td><td>21,0</td><td>+167,5%</td><td>-45,5%</td></tr><tr><td>LUCRO LÍQUIDO</td><td>133</td><td>91</td><td>100</td><td>68</td><td>90</td><td>96</td><td>115</td><td>71</td><td>+46,2%</td><td>+48,3%</td></tr></table>",
+      "table_id": "tbl-6.html",
+      "top_left_x": 34,
+      "top_left_y": 108,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 516,
+      "bottom_right_y": 395,
+      "confidence_scores": null,
+      "content": "## LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL",
+      "top_left_x": 198,
+      "top_left_y": 375,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 597,
+      "bottom_right_y": 751,
+      "confidence_scores": null,
+      "content": "![img-0.jpeg](img-0.jpeg)",
+      "image_id": "img-0.jpeg",
+      "top_left_x": 112,
+      "top_left_y": 408,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 870,
+      "confidence_scores": null,
+      "content": "O Banestes registrou um lucro líquido de R$ 392 milhões em 2024, aumento de 5,9% frente ao lucro líquido de 2023. Deste resultado, destacamos o controle do custo da captação de recursos no mercado (-14,7%), o crescimento das receitas com operações de crédito (+12,6%) e a expansão das receitas de prestação de serviço (+4,9%). O lucro absorveu o impacto do crescimento das provisões de crédito em relação ao ano anterior (+15,6%) e do menor desempenho das operações com títulos e valores mobiliários (TVM), efeito da priorização de recursos nas carteiras de crédito.",
+      "top_left_x": 63,
+      "top_left_y": 772,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 966,
+      "confidence_scores": null,
+      "content": "No quarto trimestre, o lucro líquido foi de R$ 133 milhões, representando um crescimento de 46,2% contra o trimestre anterior e de 48,3% em doze meses. Além do destaque positivo para o controle do custo de captação (-19,0% em doze meses), ressaltamos o resultado com operações de crédito, que somou R$ 459 milhões (+14,4% em doze meses). Na comparação em três meses, destacamos ainda a provisão para operações de crédito, que apresentou redução de 11,5% no período.",
+      "top_left_x": 63,
+      "top_left_y": 885,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "4",
+      "top_left_x": 688,
+      "top_left_y": 985,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9892192081315964,
+     "minimum_page_confidence_score": 0.3218177940460414,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 597,
+      "bottom_right_y": 751,
+      "id": "img-0.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 112,
+      "top_left_y": 408
+     }
+    ],
+    "index": 3,
+    "markdown": "# RESULTADOS\n\nEM R$ MILHÕES\n\n[tbl-6.html](tbl-6.html)\n\n## LUCRO LÍQUIDO E EFICIÊNCIA OPERACIONAL\n\n![img-0.jpeg](img-0.jpeg)\n\nO Banestes registrou um lucro líquido de R$ 392 milhões em 2024, aumento de 5,9% frente ao lucro líquido de 2023. Deste resultado, destacamos o controle do custo da captação de recursos no mercado (-14,7%), o crescimento das receitas com operações de crédito (+12,6%) e a expansão das receitas de prestação de serviço (+4,9%). O lucro absorveu o impacto do crescimento das provisões de crédito em relação ao ano anterior (+15,6%) e do menor desempenho das operações com títulos e valores mobiliários (TVM), efeito da priorização de recursos nas carteiras de crédito.\n\nNo quarto trimestre, o lucro líquido foi de R$ 133 milhões, representando um crescimento de 46,2% contra o trimestre anterior e de 48,3% em doze meses. Além do destaque positivo para o controle do custo de captação (-19,0% em doze meses), ressaltamos o resultado com operações de crédito, que somou R$ 459 milhões (+14,4% em doze meses). Na comparação em três meses, destacamos ainda a provisão para operações de crédito, que apresentou redução de 11,5% no período.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n4",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>DEMONSTRAÇÃO DO RESULTADO</th><th>4T 2024</th><th>3T 2024</th><th>2T 2024</th><th>1T 2024</th><th>4T 2023</th><th>3T 2023</th><th>2T 2023</th><th>1T 2023</th><th colspan=\"2\">VARIAÇÃO</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>+ 2024x</th><th>2024 + 2023x</th></tr></thead><tr><td>RECEITAS DE INTERMEDIAÇÃO FINANCEIRA</td><td>1.141</td><td>1.101</td><td>1.172</td><td>1.220</td><td>1.279</td><td>1.350</td><td>1.257</td><td>1.227</td><td>+3,6%</td><td>-10,8%</td></tr><tr><td>DESPESAS DE INTERMEDIAÇÃO FINANCEIRA</td><td>(739)</td><td>(737)</td><td>(808)</td><td>(886)</td><td>(910)</td><td>(983)</td><td>(897)</td><td>(918)</td><td>+0,3%</td><td>-18,8%</td></tr><tr><td>PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA</td><td>(51)</td><td>(57)</td><td>(61)</td><td>(67)</td><td>(27)</td><td>(55)</td><td>(47)</td><td>(75)</td><td>-11,5%</td><td>+84,0%</td></tr><tr><td>MARGEM FINANCEIRA LÍQUIDA</td><td>351</td><td>308</td><td>303</td><td>268</td><td>341</td><td>312</td><td>313</td><td>235</td><td>+14,1%</td><td>+2,8%</td></tr><tr><td>RECEITAS DE PRESTAÇÃO DE SERVIÇOS</td><td>97</td><td>96</td><td>91</td><td>83</td><td>87</td><td>87</td><td>87</td><td>89</td><td>+1,2%</td><td>+12,0%</td></tr><tr><td>DESPESAS DE PESSOAL</td><td>(130)</td><td>(122)</td><td>(123)</td><td>(117)</td><td>(121)</td><td>(112)</td><td>(110)</td><td>(108)</td><td>+6,3%</td><td>+7,5%</td></tr><tr><td>OUTRAS DESPESAS ADMINISTRATIVAS</td><td>(103)</td><td>(111)</td><td>(108)</td><td>(117)</td><td>(103)</td><td>(100)</td><td>(95)</td><td>(91)</td><td>-7,6%</td><td>-0,1%</td></tr><tr><td>RESULTADO OPERACIONAL</td><td>200</td><td>145</td><td>144</td><td>105</td><td>156</td><td>159</td><td>161</td><td>112</td><td>+37,9%</td><td>+28,0%</td></tr><tr><td>RESULTADO ANTES DA TRIBUTAÇÃO</td><td>236</td><td>145</td><td>139</td><td>105</td><td>162</td><td>157</td><td>161</td><td>112</td><td>+62,4%</td><td>+45,3%</td></tr><tr><td>JCP E DIVIDENDOS</td><td>57,8</td><td>21,6</td><td>50,7</td><td>21,6</td><td>106,1</td><td>21,0</td><td>53,2</td><td>21,0</td><td>+167,5%</td><td>-45,5%</td></tr><tr><td>LUCRO LÍQUIDO</td><td>133</td><td>91</td><td>100</td><td>68</td><td>90</td><td>96</td><td>115</td><td>71</td><td>+46,2%</td><td>+48,3%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-6.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 177,
+      "bottom_right_y": 37,
+      "confidence_scores": null,
+      "content": "# RESULTADOS",
+      "top_left_x": 34,
+      "top_left_y": 11,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 55,
+      "confidence_scores": null,
+      "content": "EM R\\$ MILHÕES",
+      "top_left_x": 34,
+      "top_left_y": 40,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 172,
+      "confidence_scores": null,
+      "content": "Registramos uma economia tributária da ordem de R$ 11 milhões no ano, na forma de benefícios fiscais decorrente de investimentos em projetos de inovação tecnológica, conforme previstos na Lei 11.196/2005, conhecida como “Lei do Bem”. Também maximizamos os benefícios tributários da distribuição de JCP, perfazendo um ganho de R$ 68 milhões.",
+      "top_left_x": 63,
+      "top_left_y": 107,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 299,
+      "confidence_scores": null,
+      "content": "A expansão das operações de crédito e o controle do custo de *funding* geraram um crescimento de 14,1% da margem financeira, em três meses, e de 2,8% na comparação em doze meses. No ano, a margem acumulou o montante de R$ 1,2 bilhão. Após a dedução das despesas, o resultado operacional do ano somou R$ 594 milhões, acréscimo de 1,0% na comparação com 2023. Esse resultado absorveu o impacto das despesas administrativas e de pessoal, decorrentes de gastos com transformação digital, modernização de sistemas, planos de desligamentos e movimentações do quadro de funcionários no período.",
+      "top_left_x": 63,
+      "top_left_y": 187,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 470,
+      "bottom_right_y": 336,
+      "confidence_scores": null,
+      "content": "## MARGEM FINANCEIRA LÍQUIDA",
+      "top_left_x": 246,
+      "top_left_y": 316,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 618,
+      "bottom_right_y": 645,
+      "confidence_scores": null,
+      "content": "![img-1.jpeg](img-1.jpeg)",
+      "image_id": "img-1.jpeg",
+      "top_left_x": 92,
+      "top_left_y": 352,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 790,
+      "confidence_scores": null,
+      "content": "A margem financeira líquida acumulou R$ 1,2 bilhão em 2024, resultado 2,4% maior do que o apurado em 2023, impactada positivamente pelo crescimento do resultado de crédito (+12,6%) e pela redução das despesas de intermediação financeira (-14,5%), proporcionando aumento de ganhos entre receitas e captação. É importante ressaltar que, mesmo com expansão de 23,4% da carteira de crédito em doze meses, mantivemos o controle do risco de crédito com a redução da inadimplência no período. Como resultado desse controle do risco de crédito cedido, a despesa com provisão para créditos cresceu apenas 15,6% em relação ao acumulado de 2023, bem abaixo do crescimento observado na carteira.",
+      "top_left_x": 63,
+      "top_left_y": 676,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 854,
+      "confidence_scores": null,
+      "content": "As despesas de captação somaram R$ 3,2 bilhões em doze meses, redução de 14,7% em relação ao ano anterior, refletindo a redução da taxa Selic nos períodos comparados. Esse cenário também permitiu a minimização do custo dos depósitos totais e das despesas com operações compromissadas financiadas.",
+      "top_left_x": 63,
+      "top_left_y": 804,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 949,
+      "confidence_scores": null,
+      "content": "No quarto trimestre, o crescimento foi de 14,1% em relação ao trimestre anterior e de 2,8% em relação ao mesmo período de 2023. Esse resultado foi positivamente impactado pelas receitas de operações de crédito, (+14,4% em doze meses) e pela redução expressiva do custo de captação (-19,0% em doze meses). A aplicação do esforço comercial na expansão das operações de crédito e o aproveitamento de janelas do mercado para a venda de TVM foram fatores determinantes para impulsionar esse resultado.",
+      "top_left_x": 63,
+      "top_left_y": 868,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 696,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "5",
+      "top_left_x": 689,
+      "top_left_y": 985,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9858354782655042,
+     "minimum_page_confidence_score": 0.36614872301712376,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 618,
+      "bottom_right_y": 645,
+      "id": "img-1.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 92,
+      "top_left_y": 352
+     }
+    ],
+    "index": 4,
+    "markdown": "# RESULTADOS\n\nEM R\\$ MILHÕES\n\nRegistramos uma economia tributária da ordem de R$ 11 milhões no ano, na forma de benefícios fiscais decorrente de investimentos em projetos de inovação tecnológica, conforme previstos na Lei 11.196/2005, conhecida como “Lei do Bem”. Também maximizamos os benefícios tributários da distribuição de JCP, perfazendo um ganho de R$ 68 milhões.\n\nA expansão das operações de crédito e o controle do custo de *funding* geraram um crescimento de 14,1% da margem financeira, em três meses, e de 2,8% na comparação em doze meses. No ano, a margem acumulou o montante de R$ 1,2 bilhão. Após a dedução das despesas, o resultado operacional do ano somou R$ 594 milhões, acréscimo de 1,0% na comparação com 2023. Esse resultado absorveu o impacto das despesas administrativas e de pessoal, decorrentes de gastos com transformação digital, modernização de sistemas, planos de desligamentos e movimentações do quadro de funcionários no período.\n\n## MARGEM FINANCEIRA LÍQUIDA\n\n![img-1.jpeg](img-1.jpeg)\n\nA margem financeira líquida acumulou R$ 1,2 bilhão em 2024, resultado 2,4% maior do que o apurado em 2023, impactada positivamente pelo crescimento do resultado de crédito (+12,6%) e pela redução das despesas de intermediação financeira (-14,5%), proporcionando aumento de ganhos entre receitas e captação. É importante ressaltar que, mesmo com expansão de 23,4% da carteira de crédito em doze meses, mantivemos o controle do risco de crédito com a redução da inadimplência no período. Como resultado desse controle do risco de crédito cedido, a despesa com provisão para créditos cresceu apenas 15,6% em relação ao acumulado de 2023, bem abaixo do crescimento observado na carteira.\n\nAs despesas de captação somaram R$ 3,2 bilhões em doze meses, redução de 14,7% em relação ao ano anterior, refletindo a redução da taxa Selic nos períodos comparados. Esse cenário também permitiu a minimização do custo dos depósitos totais e das despesas com operações compromissadas financiadas.\n\nNo quarto trimestre, o crescimento foi de 14,1% em relação ao trimestre anterior e de 2,8% em relação ao mesmo período de 2023. Esse resultado foi positivamente impactado pelas receitas de operações de crédito, (+14,4% em doze meses) e pela redução expressiva do custo de captação (-19,0% em doze meses). A aplicação do esforço comercial na expansão das operações de crédito e o aproveitamento de janelas do mercado para a venda de TVM foram fatores determinantes para impulsionar esse resultado.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n5",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 177,
+      "bottom_right_y": 37,
+      "confidence_scores": null,
+      "content": "# RESULTADOS",
+      "top_left_x": 34,
+      "top_left_y": 12,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 55,
+      "confidence_scores": null,
+      "content": "EM R\\$ MILHÕES",
+      "top_left_x": 34,
+      "top_left_y": 40,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 458,
+      "bottom_right_y": 149,
+      "confidence_scores": null,
+      "content": "## PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA",
+      "top_left_x": 257,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 649,
+      "bottom_right_y": 466,
+      "confidence_scores": null,
+      "content": "![img-2.jpeg](img-2.jpeg)",
+      "image_id": "img-2.jpeg",
+      "top_left_x": 60,
+      "top_left_y": 158,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 566,
+      "confidence_scores": null,
+      "content": "A provisão para créditos de liquidação duvidosa acumulou R$ 236 milhões no ano, expansão de 15,6% em relação a 2023. Esse aumento tem relação com a expansão orgânica da nossa carteira de crédito no período (+23,4% em doze meses). Cabe ressaltar que o controle na qualidade da gestão e da concessão do crédito permitiu o crescimento da carteira de crédito acima da provisão.",
+      "top_left_x": 64,
+      "top_left_y": 500,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 678,
+      "confidence_scores": null,
+      "content": "No trimestre, foram registrados R$ 31 milhões como reversões de provisão e R$ 81 milhões como despesas de provisão, resultando em um saldo de provisão para créditos de liquidação duvidosa de R$ 51 milhões. Esse montante representa acréscimo de 84,0% contra o mesmo trimestre de 2023, também impactado pelo maior volume de operações, decorrente da expansão da carteira comercial no período. Em três meses, a queda de inadimplência e a qualidade na concessão do crédito cedido resultou em uma redução de 11,5% dessa provisão.",
+      "top_left_x": 64,
+      "top_left_y": 580,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 790,
+      "confidence_scores": null,
+      "content": "Temos direcionado nossas ações à adequação da política e dos processos de concessão de crédito neste novo cenário econômico, buscando maior qualidade e efetividade das garantias adquiridas nas novas concessões, e o aprimoramento dos processos de reestruturação de ativos e de recuperação de créditos. O perfil da nossa carteira de crédito exerce influência direta na constituição de provisionamento das concessões, uma vez que priorizamos modalidades de crédito que possuam garantias reais e representem menores riscos.",
+      "top_left_x": 64,
+      "top_left_y": 693,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 886,
+      "confidence_scores": null,
+      "content": "Em nossa carteira de crédito comercial, registramos uma pulverização de crédito para mais de 437 mil clientes. Nossas operações posicionadas entre os níveis de risco AA e A representaram 73,7% do saldo da carteira comercial, acréscimo de 14,2 p.p. em relação ao mesmo trimestre do ano anterior. Cooperam para esses resultados as novas safras de crédito, que apresentam menor inadimplência com menor exposição ao risco no trimestre, além do controle do custo de crédito na gestão da qualidade da ampliação do crédito.",
+      "top_left_x": 64,
+      "top_left_y": 804,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 696,
+      "bottom_right_y": 997,
+      "confidence_scores": null,
+      "content": "6",
+      "top_left_x": 688,
+      "top_left_y": 985,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9861012697975513,
+     "minimum_page_confidence_score": 0.371720143645951,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 649,
+      "bottom_right_y": 466,
+      "id": "img-2.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 60,
+      "top_left_y": 158
+     }
+    ],
+    "index": 5,
+    "markdown": "# RESULTADOS\n\nEM R\\$ MILHÕES\n\n## PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA\n\n![img-2.jpeg](img-2.jpeg)\n\nA provisão para créditos de liquidação duvidosa acumulou R$ 236 milhões no ano, expansão de 15,6% em relação a 2023. Esse aumento tem relação com a expansão orgânica da nossa carteira de crédito no período (+23,4% em doze meses). Cabe ressaltar que o controle na qualidade da gestão e da concessão do crédito permitiu o crescimento da carteira de crédito acima da provisão.\n\nNo trimestre, foram registrados R$ 31 milhões como reversões de provisão e R$ 81 milhões como despesas de provisão, resultando em um saldo de provisão para créditos de liquidação duvidosa de R$ 51 milhões. Esse montante representa acréscimo de 84,0% contra o mesmo trimestre de 2023, também impactado pelo maior volume de operações, decorrente da expansão da carteira comercial no período. Em três meses, a queda de inadimplência e a qualidade na concessão do crédito cedido resultou em uma redução de 11,5% dessa provisão.\n\nTemos direcionado nossas ações à adequação da política e dos processos de concessão de crédito neste novo cenário econômico, buscando maior qualidade e efetividade das garantias adquiridas nas novas concessões, e o aprimoramento dos processos de reestruturação de ativos e de recuperação de créditos. O perfil da nossa carteira de crédito exerce influência direta na constituição de provisionamento das concessões, uma vez que priorizamos modalidades de crédito que possuam garantias reais e representem menores riscos.\n\nEm nossa carteira de crédito comercial, registramos uma pulverização de crédito para mais de 437 mil clientes. Nossas operações posicionadas entre os níveis de risco AA e A representaram 73,7% do saldo da carteira comercial, acréscimo de 14,2 p.p. em relação ao mesmo trimestre do ano anterior. Cooperam para esses resultados as novas safras de crédito, que apresentam menor inadimplência com menor exposição ao risco no trimestre, além do controle do custo de crédito na gestão da qualidade da ampliação do crédito.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n6",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 177,
+      "bottom_right_y": 39,
+      "confidence_scores": null,
+      "content": "# RESULTADOS",
+      "top_left_x": 34,
+      "top_left_y": 13,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 57,
+      "confidence_scores": null,
+      "content": "EM R\\$ MILHÕES",
+      "top_left_x": 34,
+      "top_left_y": 43,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 490,
+      "bottom_right_y": 128,
+      "confidence_scores": null,
+      "content": "## RECEITAS DE PRESTAÇÃO DE SERVIÇOS",
+      "top_left_x": 210,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 599,
+      "bottom_right_y": 490,
+      "confidence_scores": null,
+      "content": "![img-3.jpeg](img-3.jpeg)",
+      "image_id": "img-3.jpeg",
+      "top_left_x": 94,
+      "top_left_y": 141,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 653,
+      "bottom_right_y": 612,
+      "confidence_scores": null,
+      "content": "As receitas com prestação de serviços somaram R$ 367 milhões no ano, crescimento de 4,9% em doze meses. No trimestre, o crescimento foi de 12,0% contra o mesmo período de 2023 e de 1,2% contra o trimestre anterior. Foram importantes direcionadores desse resultado as taxas de cartões de crédito, que totalizaram R$ 20 milhões e representaram 21% dessas receitas no trimestre, e as receitas de seguros, que somaram R$ 13 milhões e representaram 13,1% do total.",
+      "top_left_x": 64,
+      "top_left_y": 530,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 653,
+      "bottom_right_y": 660,
+      "confidence_scores": null,
+      "content": "A composição das receitas com prestação de serviços se dividiu conforme o gráfico a seguir, com maior participação das rendas de cartão de crédito e pacotes de serviços.",
+      "top_left_x": 64,
+      "top_left_y": 626,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 997,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 696,
+      "bottom_right_y": 997,
+      "confidence_scores": null,
+      "content": "7",
+      "top_left_x": 689,
+      "top_left_y": 985,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9841808670544924,
+     "minimum_page_confidence_score": 0.4333657167745146,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 599,
+      "bottom_right_y": 490,
+      "id": "img-3.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 94,
+      "top_left_y": 141
+     }
+    ],
+    "index": 6,
+    "markdown": "# RESULTADOS\n\nEM R\\$ MILHÕES\n\n## RECEITAS DE PRESTAÇÃO DE SERVIÇOS\n\n![img-3.jpeg](img-3.jpeg)\n\nAs receitas com prestação de serviços somaram R$ 367 milhões no ano, crescimento de 4,9% em doze meses. No trimestre, o crescimento foi de 12,0% contra o mesmo período de 2023 e de 1,2% contra o trimestre anterior. Foram importantes direcionadores desse resultado as taxas de cartões de crédito, que totalizaram R$ 20 milhões e representaram 21% dessas receitas no trimestre, e as receitas de seguros, que somaram R$ 13 milhões e representaram 13,1% do total.\n\nA composição das receitas com prestação de serviços se dividiu conforme o gráfico a seguir, com maior participação das rendas de cartão de crédito e pacotes de serviços.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n7",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 177,
+      "bottom_right_y": 37,
+      "confidence_scores": null,
+      "content": "# RESULTADOS",
+      "top_left_x": 34,
+      "top_left_y": 12,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 56,
+      "confidence_scores": null,
+      "content": "EM R$ MILHÕES",
+      "top_left_x": 34,
+      "top_left_y": 40,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 479,
+      "bottom_right_y": 127,
+      "confidence_scores": null,
+      "content": "## MIX DE PRESTAÇÃO DE SERVIÇOS",
+      "top_left_x": 236,
+      "top_left_y": 105,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 656,
+      "bottom_right_y": 368,
+      "confidence_scores": null,
+      "content": "![img-4.jpeg](img-4.jpeg)",
+      "image_id": "img-4.jpeg",
+      "top_left_x": 54,
+      "top_left_y": 144,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 460,
+      "confidence_scores": null,
+      "content": "O Banestes manteve relacionamento com uma base de 1,4 milhão de clientes, sendo 1,3 milhão PF e 81 mil PJ. O número de contas corrente totalizou 1,0 milhão, das quais 948 mil são contas de PF (+5,8% em doze meses), e 87 mil são contas de PJ (+2,9% em doze meses). As contas de poupança somaram 651 mil, sendo 642 mil de PF e 9 mil de PJ.",
+      "top_left_x": 54,
+      "top_left_y": 394,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 439,
+      "bottom_right_y": 539,
+      "confidence_scores": null,
+      "content": "## DESPESAS DE PESSOAL E ADMINISTRATIVAS",
+      "top_left_x": 277,
+      "top_left_y": 499,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 929,
+      "confidence_scores": null,
+      "content": "![img-5.jpeg](img-5.jpeg)",
+      "image_id": "img-5.jpeg",
+      "top_left_x": 64,
+      "top_left_y": 545,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 696,
+      "bottom_right_y": 997,
+      "confidence_scores": null,
+      "content": "8",
+      "top_left_x": 688,
+      "top_left_y": 985,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9653617447034637,
+     "minimum_page_confidence_score": 0.24759148895983152,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 656,
+      "bottom_right_y": 368,
+      "id": "img-4.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 54,
+      "top_left_y": 144
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 929,
+      "id": "img-5.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 64,
+      "top_left_y": 545
+     }
+    ],
+    "index": 7,
+    "markdown": "# RESULTADOS\n\nEM R$ MILHÕES\n\n## MIX DE PRESTAÇÃO DE SERVIÇOS\n\n![img-4.jpeg](img-4.jpeg)\n\nO Banestes manteve relacionamento com uma base de 1,4 milhão de clientes, sendo 1,3 milhão PF e 81 mil PJ. O número de contas corrente totalizou 1,0 milhão, das quais 948 mil são contas de PF (+5,8% em doze meses), e 87 mil são contas de PJ (+2,9% em doze meses). As contas de poupança somaram 651 mil, sendo 642 mil de PF e 9 mil de PJ.\n\n## DESPESAS DE PESSOAL E ADMINISTRATIVAS\n\n![img-5.jpeg](img-5.jpeg)\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n8",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 177,
+      "bottom_right_y": 37,
+      "confidence_scores": null,
+      "content": "# RESULTADOS",
+      "top_left_x": 33,
+      "top_left_y": 11,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 55,
+      "confidence_scores": null,
+      "content": "EM R$ MILHÕES",
+      "top_left_x": 33,
+      "top_left_y": 40,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 220,
+      "confidence_scores": null,
+      "content": "As despesas administrativas (pessoal e outras) somaram R$ 932 milhões em 2024, avanço de 11,0% em relação a 2023. Desse valor, R$ 492 milhões são de despesas de pessoal (+9,2% em doze meses) e R$ 440 milhões são de outras despesas administrativas (+13,0% em doze meses). Na análise trimestral, as despesas administrativa somaram R$ 233 milhões, aumento de 4,0% sobre o mesmo período de 2023 e estável sobre o trimestre anterior. Desse montante, os gastos com pessoal atingiram R$ 130 milhões (+7,4% em três meses e +6,3% em doze meses), refletindo as movimentações do quadro de funcionários no período e a realização de plano de desligamento voluntário (PDV).",
+      "top_left_x": 57,
+      "top_left_y": 107,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 379,
+      "confidence_scores": null,
+      "content": "As outras despesas administrativas somaram R$ 103 milhões no trimestre, registrando estabilidade em relação ao mesmo trimestre de 2023 e redução de 7,6% ante o trimestre anterior. O comportamento dessas despesas é decorrente da continuidade de gastos com projetos relacionados à tecnologia da informação, com cartões e com melhorias no atendimento aos clientes. Essas despesas ainda incluem custos da atividade bancária, como aluguéis, manutenção de bens, processamento de dados e transporte de numerários, que periodicamente sofrem também impactos da pressão inflacionária nos reajustes contratuais. Ainda destacamos os investimentos em campanhas de marketing e os trabalhos de apresentação e inovação do portfólio de novos produtos do Banestes, da modernização de nossas agências e do crescimento nas parcerias comerciais.",
+      "top_left_x": 57,
+      "top_left_y": 233,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 444,
+      "confidence_scores": null,
+      "content": "Seguimos implementando ações de racionalização e de cortes de custos em processos da operação bancária. Os trabalhos em andamento e as ações aplicadas para redução de despesas têm como diretriz a preservação da qualidade dos serviços prestados, sempre focando na melhor experiência do cliente.",
+      "top_left_x": 57,
+      "top_left_y": 394,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 696,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "9",
+      "top_left_x": 689,
+      "top_left_y": 985,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9861693493237759,
+     "minimum_page_confidence_score": 0.3888332251369059,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 8,
+    "markdown": "# RESULTADOS\n\nEM R$ MILHÕES\n\nAs despesas administrativas (pessoal e outras) somaram R$ 932 milhões em 2024, avanço de 11,0% em relação a 2023. Desse valor, R$ 492 milhões são de despesas de pessoal (+9,2% em doze meses) e R$ 440 milhões são de outras despesas administrativas (+13,0% em doze meses). Na análise trimestral, as despesas administrativa somaram R$ 233 milhões, aumento de 4,0% sobre o mesmo período de 2023 e estável sobre o trimestre anterior. Desse montante, os gastos com pessoal atingiram R$ 130 milhões (+7,4% em três meses e +6,3% em doze meses), refletindo as movimentações do quadro de funcionários no período e a realização de plano de desligamento voluntário (PDV).\n\nAs outras despesas administrativas somaram R$ 103 milhões no trimestre, registrando estabilidade em relação ao mesmo trimestre de 2023 e redução de 7,6% ante o trimestre anterior. O comportamento dessas despesas é decorrente da continuidade de gastos com projetos relacionados à tecnologia da informação, com cartões e com melhorias no atendimento aos clientes. Essas despesas ainda incluem custos da atividade bancária, como aluguéis, manutenção de bens, processamento de dados e transporte de numerários, que periodicamente sofrem também impactos da pressão inflacionária nos reajustes contratuais. Ainda destacamos os investimentos em campanhas de marketing e os trabalhos de apresentação e inovação do portfólio de novos produtos do Banestes, da modernização de nossas agências e do crescimento nas parcerias comerciais.\n\nSeguimos implementando ações de racionalização e de cortes de custos em processos da operação bancária. Os trabalhos em andamento e as ações aplicadas para redução de despesas têm como diretriz a preservação da qualidade dos serviços prestados, sempre focando na melhor experiência do cliente.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n9",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 197,
+      "bottom_right_y": 37,
+      "confidence_scores": null,
+      "content": "# PATRIMONIAIS",
+      "top_left_x": 33,
+      "top_left_y": 12,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 55,
+      "confidence_scores": null,
+      "content": "EM R$ MILHÕES",
+      "top_left_x": 33,
+      "top_left_y": 40,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 676,
+      "bottom_right_y": 293,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>BALANÇO PATRIMONIAL</th><th>4T 2024</th><th>3T 2024</th><th>2T 2024</th><th>1T 2024</th><th>4T 2023</th><th>3T 2023</th><th>2T 2023</th><th>1T 2023</th><th colspan=\"2\">VARIAÇÃO</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>+ 2024 + 2024</th><th>+ 2023 + 2022</th></tr></thead><tr><td>ATIVOS TOTAIS</td><td>36.997</td><td>37.541</td><td>38.464</td><td>42.729</td><td>41.515</td><td>41.762</td><td>38.785</td><td>37.168</td><td>-1,4%</td><td>-10,9%</td></tr><tr><td>CARTEIRA DE CRÉDITO AMPLIADA</td><td>14.706</td><td>13.964</td><td>13.378</td><td>13.172</td><td>12.750</td><td>12.423</td><td>12.201</td><td>11.865</td><td>+5,3%</td><td>+15,3%</td></tr><tr><td>NPL CREATION</td><td>246</td><td>243</td><td>236</td><td>247</td><td>223</td><td>216</td><td>238</td><td>234</td><td>+1,5%</td><td>+10,2%</td></tr><tr><td>PATRIMÔNIO LÍQUIDO</td><td>2.357</td><td>2.323</td><td>2.251</td><td>2.272</td><td>2.216</td><td>2.179</td><td>2.093</td><td>2.072</td><td>+1,5%</td><td>+6,4%</td></tr><tr><td>APLICAÇÕES INTERFINANCEIRAS DE LIQUIDEZ</td><td>4.457</td><td>12.820</td><td>4.577</td><td>3.065</td><td>2.600</td><td>3.927</td><td>4.562</td><td>3.672</td><td>-65,2%</td><td>+71,4%</td></tr><tr><td>DEPÓSITOS TOTAIS</td><td>22.875</td><td>23.326</td><td>24.113</td><td>23.133</td><td>22.635</td><td>22.783</td><td>22.770</td><td>21.445</td><td>-1,9%</td><td>+1,1%</td></tr><tr><td>TÍTULOS E VALORES MOBILIÁRIOS</td><td>18.286</td><td>11.190</td><td>21.008</td><td>26.889</td><td>27.105</td><td>25.766</td><td>23.202</td><td>22.297</td><td>+63,4%</td><td>-32,5%</td></tr><tr><td>CAPTAÇÃO MERCADO ABERTO</td><td>8.691</td><td>8.845</td><td>9.668</td><td>14.966</td><td>14.305</td><td>14.368</td><td>11.604</td><td>11.459</td><td>-1,7%</td><td>-39,2%</td></tr><tr><td>RECURSOS CAPTADOS E ADMINISTRADOS</td><td>40.411</td><td>40.331</td><td>41.347</td><td>45.517</td><td>44.427</td><td>44.156</td><td>40.922</td><td>40.445</td><td>+0,2%</td><td>-9,0%</td></tr></table>",
+      "table_id": "tbl-7.html",
+      "top_left_x": 33,
+      "top_left_y": 107,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 415,
+      "bottom_right_y": 344,
+      "confidence_scores": null,
+      "content": "## ATIVOS TOTAIS",
+      "top_left_x": 300,
+      "top_left_y": 326,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 561,
+      "bottom_right_y": 631,
+      "confidence_scores": null,
+      "content": "![img-6.jpeg](img-6.jpeg)",
+      "image_id": "img-6.jpeg",
+      "top_left_x": 150,
+      "top_left_y": 360,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 740,
+      "confidence_scores": null,
+      "content": "Os ativos totais registraram saldo de R$ 37,0 bilhões no encerramento do ano, redução de 1,4% contra a posição registrada no trimestre anterior e de 10,9% em doze meses. Esse saldo, na análise de doze meses, tem como destaque o crescimento do saldo das operações de crédito (+23,4%) e a redução da carteira de TVM vinculados a compromissos de recompras (-39,1%). Na comparação trimestral, destacamos a expansão das operações de crédito (+6,0%) e o crescimento da carteira de TVM (+63,4%).",
+      "top_left_x": 53,
+      "top_left_y": 659,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 670,
+      "bottom_right_y": 788,
+      "confidence_scores": null,
+      "content": "Os ativos são compostos, principalmente, por R$ 4,6 bilhões em caixa e agregados de caixa, R$ 18,3 bilhões em carteira de TVM, e R$ 11,8 bilhões em operações de crédito.",
+      "top_left_x": 53,
+      "top_left_y": 755,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 700,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "10",
+      "top_left_x": 687,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9879217201911499,
+     "minimum_page_confidence_score": 0.3239851646557517,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 561,
+      "bottom_right_y": 631,
+      "id": "img-6.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 150,
+      "top_left_y": 360
+     }
+    ],
+    "index": 9,
+    "markdown": "# PATRIMONIAIS\n\nEM R$ MILHÕES\n\n[tbl-7.html](tbl-7.html)\n\n## ATIVOS TOTAIS\n\n![img-6.jpeg](img-6.jpeg)\n\nOs ativos totais registraram saldo de R$ 37,0 bilhões no encerramento do ano, redução de 1,4% contra a posição registrada no trimestre anterior e de 10,9% em doze meses. Esse saldo, na análise de doze meses, tem como destaque o crescimento do saldo das operações de crédito (+23,4%) e a redução da carteira de TVM vinculados a compromissos de recompras (-39,1%). Na comparação trimestral, destacamos a expansão das operações de crédito (+6,0%) e o crescimento da carteira de TVM (+63,4%).\n\nOs ativos são compostos, principalmente, por R$ 4,6 bilhões em caixa e agregados de caixa, R$ 18,3 bilhões em carteira de TVM, e R$ 11,8 bilhões em operações de crédito.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n10",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>BALANÇO PATRIMONIAL</th><th>4T 2024</th><th>3T 2024</th><th>2T 2024</th><th>1T 2024</th><th>4T 2023</th><th>3T 2023</th><th>2T 2023</th><th>1T 2023</th><th colspan=\"2\">VARIAÇÃO</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>+ 2024 + 2024</th><th>+ 2023 + 2022</th></tr></thead><tr><td>ATIVOS TOTAIS</td><td>36.997</td><td>37.541</td><td>38.464</td><td>42.729</td><td>41.515</td><td>41.762</td><td>38.785</td><td>37.168</td><td>-1,4%</td><td>-10,9%</td></tr><tr><td>CARTEIRA DE CRÉDITO AMPLIADA</td><td>14.706</td><td>13.964</td><td>13.378</td><td>13.172</td><td>12.750</td><td>12.423</td><td>12.201</td><td>11.865</td><td>+5,3%</td><td>+15,3%</td></tr><tr><td>NPL CREATION</td><td>246</td><td>243</td><td>236</td><td>247</td><td>223</td><td>216</td><td>238</td><td>234</td><td>+1,5%</td><td>+10,2%</td></tr><tr><td>PATRIMÔNIO LÍQUIDO</td><td>2.357</td><td>2.323</td><td>2.251</td><td>2.272</td><td>2.216</td><td>2.179</td><td>2.093</td><td>2.072</td><td>+1,5%</td><td>+6,4%</td></tr><tr><td>APLICAÇÕES INTERFINANCEIRAS DE LIQUIDEZ</td><td>4.457</td><td>12.820</td><td>4.577</td><td>3.065</td><td>2.600</td><td>3.927</td><td>4.562</td><td>3.672</td><td>-65,2%</td><td>+71,4%</td></tr><tr><td>DEPÓSITOS TOTAIS</td><td>22.875</td><td>23.326</td><td>24.113</td><td>23.133</td><td>22.635</td><td>22.783</td><td>22.770</td><td>21.445</td><td>-1,9%</td><td>+1,1%</td></tr><tr><td>TÍTULOS E VALORES MOBILIÁRIOS</td><td>18.286</td><td>11.190</td><td>21.008</td><td>26.889</td><td>27.105</td><td>25.766</td><td>23.202</td><td>22.297</td><td>+63,4%</td><td>-32,5%</td></tr><tr><td>CAPTAÇÃO MERCADO ABERTO</td><td>8.691</td><td>8.845</td><td>9.668</td><td>14.966</td><td>14.305</td><td>14.368</td><td>11.604</td><td>11.459</td><td>-1,7%</td><td>-39,2%</td></tr><tr><td>RECURSOS CAPTADOS E ADMINISTRADOS</td><td>40.411</td><td>40.331</td><td>41.347</td><td>45.517</td><td>44.427</td><td>44.156</td><td>40.922</td><td>40.445</td><td>+0,2%</td><td>-9,0%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-7.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 196,
+      "bottom_right_y": 36,
+      "confidence_scores": null,
+      "content": "PATRIMONIAIS",
+      "top_left_x": 33,
+      "top_left_y": 11,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 55,
+      "confidence_scores": null,
+      "content": "EM R\\$ MILHÕES",
+      "top_left_x": 33,
+      "top_left_y": 40,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 479,
+      "bottom_right_y": 125,
+      "confidence_scores": null,
+      "content": "# CARTEIRA DE CRÉDITO AMPLIADA",
+      "top_left_x": 233,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 587,
+      "bottom_right_y": 440,
+      "confidence_scores": null,
+      "content": "![img-7.jpeg](img-7.jpeg)",
+      "image_id": "img-7.jpeg",
+      "top_left_x": 124,
+      "top_left_y": 137,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 575,
+      "confidence_scores": null,
+      "content": "A carteira de crédito ampliada registrou saldo de R$ 14,7 bilhões, evolução de 15,3% em doze meses e de 5,3% contra a posição do trimestre anterior. No conceito comercial, a carteira atingiu saldo de R$ 11,8 bilhões, expansões de 23,4% em doze meses e de 6,0% contra o trimestre anterior. Desse montante, 68,4% são operações com pessoas físicas e 31,6% com pessoas jurídicas. Da carteira de pessoa jurídica, 68,0% são concessões a micro, pequenas e médias empresas e 32,0% a grandes empresas. O Banestes adota critérios rigorosos de segurança e de avaliação dos processos de concessão de crédito, de forma a manter o equilíbrio entre a expansão da carteira e a inadimplência.",
+      "top_left_x": 63,
+      "top_left_y": 463,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 576,
+      "bottom_right_y": 607,
+      "confidence_scores": null,
+      "content": "A carteira de crédito comercial está direcionada proporcionalmente nos seguintes produtos:",
+      "top_left_x": 63,
+      "top_left_y": 590,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 646,
+      "bottom_right_y": 898,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>OPERAÇÕES DE CRÉDITO</th><th>SALDO</th><th>% a/a</th></tr></thead><tr><td>EMPRÉSTIMOS</td><td>R$ 7,1 bi</td><td>+17,5%</td></tr><tr><td>CRÉDITO CONSIGNADO, CAPITAL DE GIRO E CRÉDITO PESSOAL</td><td>R$ 6,4 bi</td><td>+17,4%</td></tr><tr><td>OUTRAS LINHAS DE CRÉDITO</td><td>R$ 0,7 bi</td><td>+18,4%</td></tr><tr><td>FINANCIAMENTOS IMOBILIÁRIOS</td><td>R$ 2,8 bi</td><td>+30,4%</td></tr><tr><td>FINANCIAMENTOS RURAIS</td><td>R$ 865 mi</td><td>+73,3%</td></tr><tr><td>OPERAÇÕES COM CARTÃO DE CRÉDITO</td><td>R$ 684 mi</td><td>+7,1%</td></tr><tr><td>FINANCIAMENTOS DE BENS</td><td>R$ 246 mi</td><td>+96,0%</td></tr><tr><td>TÍTULOS DESCONTADOS</td><td>R$ 67 mi</td><td>-0,8%</td></tr><tr><td><b>SALDO DA CARTEIRA DE CRÉDITO COMERCIAL</b></td><td><b>R$ 11,8 bi</b></td><td><b>+23,4%</b></td></tr></table>",
+      "table_id": "tbl-8.html",
+      "top_left_x": 63,
+      "top_left_y": 626,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "11",
+      "top_left_x": 687,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9838818948596373,
+     "minimum_page_confidence_score": 0.25777241371938,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 587,
+      "bottom_right_y": 440,
+      "id": "img-7.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 124,
+      "top_left_y": 137
+     }
+    ],
+    "index": 10,
+    "markdown": "PATRIMONIAIS\n\nEM R\\$ MILHÕES\n\n# CARTEIRA DE CRÉDITO AMPLIADA\n\n![img-7.jpeg](img-7.jpeg)\n\nA carteira de crédito ampliada registrou saldo de R$ 14,7 bilhões, evolução de 15,3% em doze meses e de 5,3% contra a posição do trimestre anterior. No conceito comercial, a carteira atingiu saldo de R$ 11,8 bilhões, expansões de 23,4% em doze meses e de 6,0% contra o trimestre anterior. Desse montante, 68,4% são operações com pessoas físicas e 31,6% com pessoas jurídicas. Da carteira de pessoa jurídica, 68,0% são concessões a micro, pequenas e médias empresas e 32,0% a grandes empresas. O Banestes adota critérios rigorosos de segurança e de avaliação dos processos de concessão de crédito, de forma a manter o equilíbrio entre a expansão da carteira e a inadimplência.\n\nA carteira de crédito comercial está direcionada proporcionalmente nos seguintes produtos:\n\n[tbl-8.html](tbl-8.html)\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n11",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>OPERAÇÕES DE CRÉDITO</th><th>SALDO</th><th>% a/a</th></tr></thead><tr><td>EMPRÉSTIMOS</td><td>R$ 7,1 bi</td><td>+17,5%</td></tr><tr><td>CRÉDITO CONSIGNADO, CAPITAL DE GIRO E CRÉDITO PESSOAL</td><td>R$ 6,4 bi</td><td>+17,4%</td></tr><tr><td>OUTRAS LINHAS DE CRÉDITO</td><td>R$ 0,7 bi</td><td>+18,4%</td></tr><tr><td>FINANCIAMENTOS IMOBILIÁRIOS</td><td>R$ 2,8 bi</td><td>+30,4%</td></tr><tr><td>FINANCIAMENTOS RURAIS</td><td>R$ 865 mi</td><td>+73,3%</td></tr><tr><td>OPERAÇÕES COM CARTÃO DE CRÉDITO</td><td>R$ 684 mi</td><td>+7,1%</td></tr><tr><td>FINANCIAMENTOS DE BENS</td><td>R$ 246 mi</td><td>+96,0%</td></tr><tr><td>TÍTULOS DESCONTADOS</td><td>R$ 67 mi</td><td>-0,8%</td></tr><tr><td><b>SALDO DA CARTEIRA DE CRÉDITO COMERCIAL</b></td><td><b>R$ 11,8 bi</b></td><td><b>+23,4%</b></td></tr></table>",
+      "format": "html",
+      "id": "tbl-8.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 196,
+      "bottom_right_y": 36,
+      "confidence_scores": null,
+      "content": "PATRIMONIAIS",
+      "top_left_x": 33,
+      "top_left_y": 11,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 55,
+      "confidence_scores": null,
+      "content": "EM R$ MILHÕES",
+      "top_left_x": 33,
+      "top_left_y": 40,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 511,
+      "bottom_right_y": 124,
+      "confidence_scores": null,
+      "content": "# NPL CREATION E INADIMPLÊNCIA > 90 DIAS",
+      "top_left_x": 204,
+      "top_left_y": 106,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 597,
+      "bottom_right_y": 465,
+      "confidence_scores": null,
+      "content": "![img-8.jpeg](img-8.jpeg)",
+      "image_id": "img-8.jpeg",
+      "top_left_x": 115,
+      "top_left_y": 138,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 553,
+      "confidence_scores": null,
+      "content": "As operações de crédito que passaram a ser devedoras acima de 90 dias apresentaram saldo de R$ 246 milhões no quarto trimestre, montante 10,2% maior do que o registrado no mesmo trimestre de 2023 e 1,5% maior em relação ao trimestre anterior. O índice de inadimplência (> 90 dias) da carteira de crédito comercial encerrou o trimestre em 2,1%.",
+      "top_left_x": 63,
+      "top_left_y": 488,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 665,
+      "confidence_scores": null,
+      "content": "A inadimplência de pessoa física foi de 1,6% no trimestre (-0,1 p.p. em doze meses), enquanto a inadimplência de pessoa jurídica foi de 3,1% (-0,5 p.p. em doze meses). O comportamento desses indicadores reflete um cenário econômico ainda desafiador, mas também evidencia nossos esforços para a manutenção da qualidade do crédito cedido. A manutenção do endividamento das famílias e o comportamento da inflação no período também são critérios que devem ser considerados na análise da inadimplência, visto que são importantes indicadores da condição macroeconômica.",
+      "top_left_x": 63,
+      "top_left_y": 569,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 760,
+      "confidence_scores": null,
+      "content": "A recuperação de créditos transferidos para prejuízo alcançou R$ 22 milhões no trimestre. Esse resultado é atribuído ao sucesso das estratégias constantemente inovadoras, com destaque principal ao Feirão Acordo Fácil Itinerante. O Banestes mantém o aperfeiçoamento da política de concessão de crédito, buscando qualidade e eficiência na gestão de crédito, dentro dos parâmetros aceitáveis de tolerância a risco.",
+      "top_left_x": 63,
+      "top_left_y": 681,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 809,
+      "confidence_scores": null,
+      "content": "A classificação por níveis de risco (Resolução nº 2.682/99 do CMN) das operações que compõem a carteira de crédito comercial do Banestes se posicionou da seguinte forma no encerramento do trimestre:",
+      "top_left_x": 63,
+      "top_left_y": 775,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 428,
+      "bottom_right_y": 889,
+      "confidence_scores": null,
+      "content": "- 73,7% encontravam-se classificadas nos níveis de risco AA e A;\n- 21,2% entre os níveis de risco B e C;\n- 3,4% entre D e G; e\n- 1,7% no nível de risco H.",
+      "top_left_x": 63,
+      "top_left_y": 824,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "12",
+      "top_left_x": 687,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9824701166785047,
+     "minimum_page_confidence_score": 0.25258795477079193,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 597,
+      "bottom_right_y": 465,
+      "id": "img-8.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 115,
+      "top_left_y": 138
+     }
+    ],
+    "index": 11,
+    "markdown": "PATRIMONIAIS\n\nEM R$ MILHÕES\n\n# NPL CREATION E INADIMPLÊNCIA > 90 DIAS\n\n![img-8.jpeg](img-8.jpeg)\n\nAs operações de crédito que passaram a ser devedoras acima de 90 dias apresentaram saldo de R$ 246 milhões no quarto trimestre, montante 10,2% maior do que o registrado no mesmo trimestre de 2023 e 1,5% maior em relação ao trimestre anterior. O índice de inadimplência (> 90 dias) da carteira de crédito comercial encerrou o trimestre em 2,1%.\n\nA inadimplência de pessoa física foi de 1,6% no trimestre (-0,1 p.p. em doze meses), enquanto a inadimplência de pessoa jurídica foi de 3,1% (-0,5 p.p. em doze meses). O comportamento desses indicadores reflete um cenário econômico ainda desafiador, mas também evidencia nossos esforços para a manutenção da qualidade do crédito cedido. A manutenção do endividamento das famílias e o comportamento da inflação no período também são critérios que devem ser considerados na análise da inadimplência, visto que são importantes indicadores da condição macroeconômica.\n\nA recuperação de créditos transferidos para prejuízo alcançou R$ 22 milhões no trimestre. Esse resultado é atribuído ao sucesso das estratégias constantemente inovadoras, com destaque principal ao Feirão Acordo Fácil Itinerante. O Banestes mantém o aperfeiçoamento da política de concessão de crédito, buscando qualidade e eficiência na gestão de crédito, dentro dos parâmetros aceitáveis de tolerância a risco.\n\nA classificação por níveis de risco (Resolução nº 2.682/99 do CMN) das operações que compõem a carteira de crédito comercial do Banestes se posicionou da seguinte forma no encerramento do trimestre:\n\n- 73,7% encontravam-se classificadas nos níveis de risco AA e A;\n- 21,2% entre os níveis de risco B e C;\n- 3,4% entre D e G; e\n- 1,7% no nível de risco H.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n12",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 197,
+      "bottom_right_y": 37,
+      "confidence_scores": null,
+      "content": "# PATRIMONIAIS",
+      "top_left_x": 33,
+      "top_left_y": 11,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 55,
+      "confidence_scores": null,
+      "content": "EM R\\$ MILHÕES",
+      "top_left_x": 33,
+      "top_left_y": 40,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 464,
+      "bottom_right_y": 124,
+      "confidence_scores": null,
+      "content": "## NÍVEIS DE RISCO DO CRÉDITO",
+      "top_left_x": 252,
+      "top_left_y": 104,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 536,
+      "bottom_right_y": 401,
+      "confidence_scores": null,
+      "content": "![img-9.jpeg](img-9.jpeg)",
+      "image_id": "img-9.jpeg",
+      "top_left_x": 175,
+      "top_left_y": 141,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 489,
+      "confidence_scores": null,
+      "content": "As concessões classificadas nos níveis de risco AA e A cresceram 4,1 p.p. em três meses, enquanto as operações classificadas entre os níveis B e C também cresceram 1,3 p.p em três meses e 4,1 p.p em doze meses. Os níveis G e H se mantiveram estáveis em três meses, com acréscimo de 0,3 p.p em relação a doze meses.",
+      "top_left_x": 63,
+      "top_left_y": 425,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 587,
+      "confidence_scores": null,
+      "content": "O Banestes realiza constantemente o aperfeiçoamento da política de concessão de crédito, buscando aliar qualidade e eficiência na gestão de crédito, dentro dos parâmetros aceitáveis de tolerância a risco. A excelente gestão na recuperação de dívidas, o empenho nas agências com abordagem ativa com a negociação dos contratos de créditos inadimplentes e as ações do Feirão Zera Dívidas durante o ano têm apresentado retornos previstos e vêm alavancando positivamente o resultado nas unidades comerciais.",
+      "top_left_x": 63,
+      "top_left_y": 505,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "13",
+      "top_left_x": 687,
+      "top_left_y": 985,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9723316041368862,
+     "minimum_page_confidence_score": 0.32714808447668675,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 536,
+      "bottom_right_y": 401,
+      "id": "img-9.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 175,
+      "top_left_y": 141
+     }
+    ],
+    "index": 12,
+    "markdown": "# PATRIMONIAIS\n\nEM R\\$ MILHÕES\n\n## NÍVEIS DE RISCO DO CRÉDITO\n\n![img-9.jpeg](img-9.jpeg)\n\nAs concessões classificadas nos níveis de risco AA e A cresceram 4,1 p.p. em três meses, enquanto as operações classificadas entre os níveis B e C também cresceram 1,3 p.p em três meses e 4,1 p.p em doze meses. Os níveis G e H se mantiveram estáveis em três meses, com acréscimo de 0,3 p.p em relação a doze meses.\n\nO Banestes realiza constantemente o aperfeiçoamento da política de concessão de crédito, buscando aliar qualidade e eficiência na gestão de crédito, dentro dos parâmetros aceitáveis de tolerância a risco. A excelente gestão na recuperação de dívidas, o empenho nas agências com abordagem ativa com a negociação dos contratos de créditos inadimplentes e as ações do Feirão Zera Dívidas durante o ano têm apresentado retornos previstos e vêm alavancando positivamente o resultado nas unidades comerciais.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n13",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 197,
+      "bottom_right_y": 37,
+      "confidence_scores": null,
+      "content": "PATRIMONIAIS",
+      "top_left_x": 34,
+      "top_left_y": 12,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 55,
+      "confidence_scores": null,
+      "content": "EM R\\$ MILHÕES",
+      "top_left_x": 34,
+      "top_left_y": 40,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 439,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## PATRIMÔNIO LÍQUIDO",
+      "top_left_x": 276,
+      "top_left_y": 110,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 577,
+      "bottom_right_y": 472,
+      "confidence_scores": null,
+      "content": "![img-10.jpeg](img-10.jpeg)",
+      "image_id": "img-10.jpeg",
+      "top_left_x": 133,
+      "top_left_y": 147,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 588,
+      "confidence_scores": null,
+      "content": "O patrimônio líquido se aproximou da marca de R$ 2,4 bilhões, crescendo 6,4% em doze meses e 1,5% em três meses. Mantemos uma sólida estrutura de capital, fator indispensável para suportar o financiamento da atividade produtiva e as necessidades dos clientes de forma eficiente e competitiva. A relação entre o ativo total e o patrimônio líquido foi de 6,4% no trimestre, e o retorno sobre o patrimônio líquido anualizado foi de 17,2% no encerramento do ano.",
+      "top_left_x": 63,
+      "top_left_y": 507,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 667,
+      "confidence_scores": null,
+      "content": "O comportamento histórico do nosso patrimônio e a manutenção do retorno de nossos negócios em níveis elevados evidenciam todo o esforço e a estratégia empregados para entregar uma rentabilidade adequada aos nossos acionistas, sempre agindo de forma prudencial e respeitando as características dos cenários econômicos apresentados.",
+      "top_left_x": 63,
+      "top_left_y": 603,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "14",
+      "top_left_x": 686,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9706263056068183,
+     "minimum_page_confidence_score": 0.28443034765969366,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 577,
+      "bottom_right_y": 472,
+      "id": "img-10.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 133,
+      "top_left_y": 147
+     }
+    ],
+    "index": 13,
+    "markdown": "PATRIMONIAIS\n\nEM R\\$ MILHÕES\n\n## PATRIMÔNIO LÍQUIDO\n\n![img-10.jpeg](img-10.jpeg)\n\nO patrimônio líquido se aproximou da marca de R$ 2,4 bilhões, crescendo 6,4% em doze meses e 1,5% em três meses. Mantemos uma sólida estrutura de capital, fator indispensável para suportar o financiamento da atividade produtiva e as necessidades dos clientes de forma eficiente e competitiva. A relação entre o ativo total e o patrimônio líquido foi de 6,4% no trimestre, e o retorno sobre o patrimônio líquido anualizado foi de 17,2% no encerramento do ano.\n\nO comportamento histórico do nosso patrimônio e a manutenção do retorno de nossos negócios em níveis elevados evidenciam todo o esforço e a estratégia empregados para entregar uma rentabilidade adequada aos nossos acionistas, sempre agindo de forma prudencial e respeitando as características dos cenários econômicos apresentados.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n14",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 197,
+      "bottom_right_y": 37,
+      "confidence_scores": null,
+      "content": "PATRIMONIAIS",
+      "top_left_x": 33,
+      "top_left_y": 11,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 124,
+      "bottom_right_y": 55,
+      "confidence_scores": null,
+      "content": "EM R\\$ MILHÕES",
+      "top_left_x": 33,
+      "top_left_y": 40,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 429,
+      "bottom_right_y": 128,
+      "confidence_scores": null,
+      "content": "## DEPÓSITOS TOTAIS",
+      "top_left_x": 287,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 577,
+      "bottom_right_y": 415,
+      "confidence_scores": null,
+      "content": "![img-11.jpeg](img-11.jpeg)",
+      "image_id": "img-11.jpeg",
+      "top_left_x": 133,
+      "top_left_y": 140,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 513,
+      "confidence_scores": null,
+      "content": "Os depósitos de clientes somaram R$ 22,9 bilhões, avanço de 1,1% em doze meses, impulsionados principalmente pela captação via depósitos a prazo (+2,2%) e via depósitos de poupança (+10,0). Na comparação trimestral, foi registrada leve queda de 1,9% no saldo total, impactado pela redução de curto prazo dos depósitos à vista e a prazo.",
+      "top_left_x": 63,
+      "top_left_y": 446,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 577,
+      "confidence_scores": null,
+      "content": "O saldo de recursos captados e administrados encerrou o ano de 2024 em R$ 40,4 bilhões, retração de 9,0% em doze meses e leve crescimento de 0,2% em relação ao trimestre anterior. A composição desse saldo está descrita a seguir:",
+      "top_left_x": 63,
+      "top_left_y": 528,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 634,
+      "bottom_right_y": 814,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>RECURSOS CAPTADOS E ADMINISTRADOS</th><th>SALDO</th><th>% a/a</th></tr></thead><tr><td>DEPÓSITOS A PRAZO</td><td>R$ 17,2 bi</td><td>+2,2%</td></tr><tr><td>CAPTAÇÃO NO MERCADO ABERTO</td><td>R$ 8,7 bi</td><td>-39,2%</td></tr><tr><td>FUNDOS ADMINISTRADOS</td><td>R$ 7,5 bi</td><td>+12,0%</td></tr><tr><td>DEPÓSITOS DE POUPANÇA</td><td>R$ 4,6 bi</td><td>+10,0%</td></tr><tr><td>DEPÓSITOS À VISTA</td><td>R$ 1,0 bi</td><td>-25,6%</td></tr><tr><td>OUTROS DEPÓSITOS E TÍTULOS</td><td>R$ 1,4 bi</td><td>+33,8%</td></tr><tr><td><b>SALDO DE RECURSOS CAPTADOS E ADMINISTRADOS</b></td><td><b>R$ 40,4 bi</b></td><td><b>-9,0%</b></td></tr></table>",
+      "table_id": "tbl-9.html",
+      "top_left_x": 75,
+      "top_left_y": 605,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "15",
+      "top_left_x": 686,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9814004734667995,
+     "minimum_page_confidence_score": 0.3002790400241681,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 577,
+      "bottom_right_y": 415,
+      "id": "img-11.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 133,
+      "top_left_y": 140
+     }
+    ],
+    "index": 14,
+    "markdown": "PATRIMONIAIS\n\nEM R\\$ MILHÕES\n\n## DEPÓSITOS TOTAIS\n\n![img-11.jpeg](img-11.jpeg)\n\nOs depósitos de clientes somaram R$ 22,9 bilhões, avanço de 1,1% em doze meses, impulsionados principalmente pela captação via depósitos a prazo (+2,2%) e via depósitos de poupança (+10,0). Na comparação trimestral, foi registrada leve queda de 1,9% no saldo total, impactado pela redução de curto prazo dos depósitos à vista e a prazo.\n\nO saldo de recursos captados e administrados encerrou o ano de 2024 em R$ 40,4 bilhões, retração de 9,0% em doze meses e leve crescimento de 0,2% em relação ao trimestre anterior. A composição desse saldo está descrita a seguir:\n\n[tbl-9.html](tbl-9.html)\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n15",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>RECURSOS CAPTADOS E ADMINISTRADOS</th><th>SALDO</th><th>% a/a</th></tr></thead><tr><td>DEPÓSITOS A PRAZO</td><td>R$ 17,2 bi</td><td>+2,2%</td></tr><tr><td>CAPTAÇÃO NO MERCADO ABERTO</td><td>R$ 8,7 bi</td><td>-39,2%</td></tr><tr><td>FUNDOS ADMINISTRADOS</td><td>R$ 7,5 bi</td><td>+12,0%</td></tr><tr><td>DEPÓSITOS DE POUPANÇA</td><td>R$ 4,6 bi</td><td>+10,0%</td></tr><tr><td>DEPÓSITOS À VISTA</td><td>R$ 1,0 bi</td><td>-25,6%</td></tr><tr><td>OUTROS DEPÓSITOS E TÍTULOS</td><td>R$ 1,4 bi</td><td>+33,8%</td></tr><tr><td><b>SALDO DE RECURSOS CAPTADOS E ADMINISTRADOS</b></td><td><b>R$ 40,4 bi</b></td><td><b>-9,0%</b></td></tr></table>",
+      "format": "html",
+      "id": "tbl-9.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 383,
+      "bottom_right_y": 46,
+      "confidence_scores": null,
+      "content": "# INDICADORES DE DESEMPENHO",
+      "top_left_x": 34,
+      "top_left_y": 20,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 677,
+      "bottom_right_y": 315,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>INDICADORES DE DESEMPENHO</th><th>1ª 2024</th><th>3ª 2024</th><th>2ª 2024</th><th>1ª 2024</th><th>3ª 2023</th><th>3ª 2023</th><th>2ª 2023</th><th>1ª 2023</th><th colspan=\"2\">VARIAÇÃO</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>1ª 2024</th><th>2ª 2024</th></tr></thead><tr><td>LUCRO LÍQUIDO POR AÇÃO (R$)</td><td>0,42</td><td>0,29</td><td>0,32</td><td>0,22</td><td>0,28</td><td>0,30</td><td>0,36</td><td>0,22</td><td>+46,2%</td><td>+48,3%</td></tr><tr><td>VALOR PATRIMONIAL POR AÇÃO (R$)</td><td>7,46</td><td>7,35</td><td>7,12</td><td>7,19</td><td>7,02</td><td>6,90</td><td>6,63</td><td>6,56</td><td>+1,5%</td><td>+6,4%</td></tr><tr><td>ROA - RETORNO SOBRE ATIVOS MÉDIOS</td><td>1,0%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>+0,1 p.p.</td><td>+0,1 p.p.</td></tr><tr><td>ROE - RETORNO SOBRE PATRIMÔNIO LÍQUIDO</td><td>17,2%</td><td>15,5%</td><td>16,3%</td><td>17,0%</td><td>17,4%</td><td>16,8%</td><td>16,5%</td><td>15,8%</td><td>+1,7 p.p.</td><td>-0,2 p.p.</td></tr><tr><td>EFICIÊNCIA OPERACIONAL</td><td>46,7%</td><td>50,7%</td><td>50,8%</td><td>56,1%</td><td>49,1%</td><td>46,7%</td><td>45,9%</td><td>49,9%</td><td>-4,0 p.p.</td><td>-2,5 p.p.</td></tr><tr><td>EFICIÊNCIA OPERACIONAL AJUSTADA AO RISCO</td><td>51,9%</td><td>57,9%</td><td>58,7%</td><td>66,7%</td><td>52,3%</td><td>53,1%</td><td>51,3%</td><td>61,4%</td><td>-5,9 p.p.</td><td>-0,4 p.p.</td></tr><tr><td>VALOR DE MERCADO (R$ MILHÕES)</td><td>2.707</td><td>2.852</td><td>2.893</td><td>2.846</td><td>3.058</td><td>2.850</td><td>2.949</td><td>2.058</td><td>-5,1%</td><td>-11,5%</td></tr><tr><td>ÍNDICE DE INADIMPLÊNCIA &gt; 90 DIAS</td><td>1,7%</td><td>1,7%</td><td>1,8%</td><td>1,9%</td><td>1,8%</td><td>1,7%</td><td>2,0%</td><td>2,0%</td><td>0,0 p.p.</td><td>-0,1 p.p.</td></tr><tr><td>ÍNDICE DE COBERTURA GERAL</td><td>41,7%</td><td>41,0%</td><td>39,4%</td><td>35,5%</td><td>38,7%</td><td>41,1%</td><td>42,6%</td><td>44,6%</td><td>+0,6 p.p.</td><td>+3,0 p.p.</td></tr><tr><td>ÍNDICE DE COBERTURA IMEDIATA</td><td>74,7%</td><td>78,4%</td><td>74,2%</td><td>70,9%</td><td>71,7%</td><td>77,7%</td><td>79,6%</td><td>82,2%</td><td>-3,7 p.p.</td><td>+3,0 p.p.</td></tr></table>",
+      "table_id": "tbl-10.html",
+      "top_left_x": 34,
+      "top_left_y": 108,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 572,
+      "bottom_right_y": 383,
+      "confidence_scores": null,
+      "content": "## RETORNO SOBRE O PATRIMÔNIO LÍQUIDO (ROE) E RETORNO SOBRE O ATIVO (ROA)",
+      "top_left_x": 143,
+      "top_left_y": 342,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 473,
+      "confidence_scores": null,
+      "content": "O retorno sobre o patrimônio líquido (ROE) foi de 17,2%, avanço de 1,7 p.p. na comparação em três meses e de redução de 0,2 p.p. em doze meses. O retorno sobre os ativos totais (ROA) encerrou o trimestre em 1,0%, crescimento de 0,1 p.p. nas comparações trimestral e anual. O posicionamento desses índices em patamares satisfatórios evidencia a solidez da performance e a manutenção da qualidade dos nossos resultados.",
+      "top_left_x": 64,
+      "top_left_y": 392,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 488,
+      "bottom_right_y": 518,
+      "confidence_scores": null,
+      "content": "## ÍNDICE DE EFICIÊNCIA OPERACIONAL",
+      "top_left_x": 223,
+      "top_left_y": 497,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 610,
+      "confidence_scores": null,
+      "content": "O índice de eficiência operacional (IEO) anual atingiu 50,8%, acréscimo de 3,0 p.p. na performance em relação ao ano anterior. No trimestre, o índice registrou 46,7%, melhora de 2,4 p.p. em doze meses. No conceito ajustado ao risco, o índice registrou melhora de 0,4 p.p. em doze meses, encerrando o trimestre em 51,9%. O comportamento desses índices reflete o crescimento da margem financeira bruta e das receitas de prestação de serviço, e o controle da provisão de crédito e das despesas administrativas.",
+      "top_left_x": 64,
+      "top_left_y": 529,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 997,
+      "confidence_scores": null,
+      "content": "16",
+      "top_left_x": 686,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9930146780454169,
+     "minimum_page_confidence_score": 0.38393337706615505,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 15,
+    "markdown": "# INDICADORES DE DESEMPENHO\n\n[tbl-10.html](tbl-10.html)\n\n## RETORNO SOBRE O PATRIMÔNIO LÍQUIDO (ROE) E RETORNO SOBRE O ATIVO (ROA)\n\nO retorno sobre o patrimônio líquido (ROE) foi de 17,2%, avanço de 1,7 p.p. na comparação em três meses e de redução de 0,2 p.p. em doze meses. O retorno sobre os ativos totais (ROA) encerrou o trimestre em 1,0%, crescimento de 0,1 p.p. nas comparações trimestral e anual. O posicionamento desses índices em patamares satisfatórios evidencia a solidez da performance e a manutenção da qualidade dos nossos resultados.\n\n## ÍNDICE DE EFICIÊNCIA OPERACIONAL\n\nO índice de eficiência operacional (IEO) anual atingiu 50,8%, acréscimo de 3,0 p.p. na performance em relação ao ano anterior. No trimestre, o índice registrou 46,7%, melhora de 2,4 p.p. em doze meses. No conceito ajustado ao risco, o índice registrou melhora de 0,4 p.p. em doze meses, encerrando o trimestre em 51,9%. O comportamento desses índices reflete o crescimento da margem financeira bruta e das receitas de prestação de serviço, e o controle da provisão de crédito e das despesas administrativas.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n16",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>INDICADORES DE DESEMPENHO</th><th>1ª 2024</th><th>3ª 2024</th><th>2ª 2024</th><th>1ª 2024</th><th>3ª 2023</th><th>3ª 2023</th><th>2ª 2023</th><th>1ª 2023</th><th colspan=\"2\">VARIAÇÃO</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>1ª 2024</th><th>2ª 2024</th></tr></thead><tr><td>LUCRO LÍQUIDO POR AÇÃO (R$)</td><td>0,42</td><td>0,29</td><td>0,32</td><td>0,22</td><td>0,28</td><td>0,30</td><td>0,36</td><td>0,22</td><td>+46,2%</td><td>+48,3%</td></tr><tr><td>VALOR PATRIMONIAL POR AÇÃO (R$)</td><td>7,46</td><td>7,35</td><td>7,12</td><td>7,19</td><td>7,02</td><td>6,90</td><td>6,63</td><td>6,56</td><td>+1,5%</td><td>+6,4%</td></tr><tr><td>ROA - RETORNO SOBRE ATIVOS MÉDIOS</td><td>1,0%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>0,9%</td><td>+0,1 p.p.</td><td>+0,1 p.p.</td></tr><tr><td>ROE - RETORNO SOBRE PATRIMÔNIO LÍQUIDO</td><td>17,2%</td><td>15,5%</td><td>16,3%</td><td>17,0%</td><td>17,4%</td><td>16,8%</td><td>16,5%</td><td>15,8%</td><td>+1,7 p.p.</td><td>-0,2 p.p.</td></tr><tr><td>EFICIÊNCIA OPERACIONAL</td><td>46,7%</td><td>50,7%</td><td>50,8%</td><td>56,1%</td><td>49,1%</td><td>46,7%</td><td>45,9%</td><td>49,9%</td><td>-4,0 p.p.</td><td>-2,5 p.p.</td></tr><tr><td>EFICIÊNCIA OPERACIONAL AJUSTADA AO RISCO</td><td>51,9%</td><td>57,9%</td><td>58,7%</td><td>66,7%</td><td>52,3%</td><td>53,1%</td><td>51,3%</td><td>61,4%</td><td>-5,9 p.p.</td><td>-0,4 p.p.</td></tr><tr><td>VALOR DE MERCADO (R$ MILHÕES)</td><td>2.707</td><td>2.852</td><td>2.893</td><td>2.846</td><td>3.058</td><td>2.850</td><td>2.949</td><td>2.058</td><td>-5,1%</td><td>-11,5%</td></tr><tr><td>ÍNDICE DE INADIMPLÊNCIA &gt; 90 DIAS</td><td>1,7%</td><td>1,7%</td><td>1,8%</td><td>1,9%</td><td>1,8%</td><td>1,7%</td><td>2,0%</td><td>2,0%</td><td>0,0 p.p.</td><td>-0,1 p.p.</td></tr><tr><td>ÍNDICE DE COBERTURA GERAL</td><td>41,7%</td><td>41,0%</td><td>39,4%</td><td>35,5%</td><td>38,7%</td><td>41,1%</td><td>42,6%</td><td>44,6%</td><td>+0,6 p.p.</td><td>+3,0 p.p.</td></tr><tr><td>ÍNDICE DE COBERTURA IMEDIATA</td><td>74,7%</td><td>78,4%</td><td>74,2%</td><td>70,9%</td><td>71,7%</td><td>77,7%</td><td>79,6%</td><td>82,2%</td><td>-3,7 p.p.</td><td>+3,0 p.p.</td></tr></table>",
+      "format": "html",
+      "id": "tbl-10.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 114,
+      "bottom_right_y": 48,
+      "confidence_scores": null,
+      "content": "AÇÕES",
+      "top_left_x": 34,
+      "top_left_y": 18,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 480,
+      "bottom_right_y": 128,
+      "confidence_scores": null,
+      "content": "## REMUNERAÇÃO AOS ACIONISTAS",
+      "top_left_x": 236,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 650,
+      "bottom_right_y": 206,
+      "confidence_scores": null,
+      "content": "No quarto trimestre, foram destinados R$ 58 milhões aos acionistas a título de juros sobre capital próprio (JCP), totalizando a distribuição de R$ 152 milhões em 2024. O lucro líquido por ação atingiu R$ 0,42 no trimestre, acumulando R$ 1,24 no ano. O montante distribuído corresponde a um *payout* anualizado de 38,7% do lucro líquido do período.",
+      "top_left_x": 64,
+      "top_left_y": 141,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 634,
+      "bottom_right_y": 449,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>AÇÕES</th><th>BEES3 (ON)</th><th>BEES4 (PN)</th></tr></thead><tr><td>COTAÇÃO DE FECHAMENTO DO TRIMESTRE (R$)</td><td>8,52</td><td>8,70</td></tr><tr><td>COTAÇÃO MÉDIA DO TRIMESTRE (R$)</td><td>8,55</td><td>8,80</td></tr><tr><td>PREÇO/LUCRO (P/E)</td><td>6,86</td><td>7,00</td></tr><tr><td>PREÇO/PATRIMÔNIO LÍQUIDO (P/B)</td><td>1,14</td><td>1,17</td></tr><tr><td>DIVIDEND YIELD (ON)</td><td>5,6%</td><td></td></tr><tr><td>PAYOUT RATIO</td><td>38,7%</td><td></td></tr><tr><td>VALOR PATRIMONIAL POR AÇÃO (R$)</td><td>7,46</td><td></td></tr><tr><td>LUCRO LÍQUIDO POR AÇÃO ANUALIZADO (R$)</td><td>1,24</td><td></td></tr></table>",
+      "table_id": "tbl-11.html",
+      "top_left_x": 76,
+      "top_left_y": 220,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 401,
+      "bottom_right_y": 501,
+      "confidence_scores": null,
+      "content": "## MÚLTIPLOS",
+      "top_left_x": 315,
+      "top_left_y": 482,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 650,
+      "bottom_right_y": 609,
+      "confidence_scores": null,
+      "content": "O *dividend yield*, indicador do retorno do investimento ao acionista pela participação no lucro do período, foi de 5,6% para as ações ordinárias (BEES3) e de 5,5% para as preferenciais (BEES4), totalizando 5,6% para as duas ações no cálculo por média ponderada. O valor patrimonial por ação no fechamento do trimestre cresceu 6,4% em relação ao mesmo trimestre de 2023, seguindo a evolução do patrimônio líquido, e encerrou o trimestre em R$ 7,46. A relação entre preço e patrimônio líquido das ações BEES3 e BEES4 foi de 1,14 e de 1,17, respectivamente.",
+      "top_left_x": 64,
+      "top_left_y": 513,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 435,
+      "bottom_right_y": 660,
+      "confidence_scores": null,
+      "content": "## VALOR DE MERCADO",
+      "top_left_x": 280,
+      "top_left_y": 642,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 650,
+      "bottom_right_y": 720,
+      "confidence_scores": null,
+      "content": "Os preços de fechamento das ações BEES3 e BEES4 foram, respectivamente, R$ 8,52 e R$ 8,70 no último dia de negociação de 2024. Essas cotações resultaram num valor de mercado de R$ 2,7 bilhões, que equivale a uma redução 5,1% quando comparado ao trimestre anterior.",
+      "top_left_x": 64,
+      "top_left_y": 672,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 449,
+      "bottom_right_y": 771,
+      "confidence_scores": null,
+      "content": "## VOLUME DE ACIONISTAS",
+      "top_left_x": 267,
+      "top_left_y": 753,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 650,
+      "bottom_right_y": 832,
+      "confidence_scores": null,
+      "content": "Desde 2018, o número de acionistas do Banestes cresceu mais de 17 vezes. No fim do trimestre, registramos quase 46 mil acionistas em nossa base. Desse total, 60% está presente no sudeste, sendo 31% somente no estado de São Paulo.",
+      "top_left_x": 64,
+      "top_left_y": 783,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 997,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 997,
+      "confidence_scores": null,
+      "content": "17",
+      "top_left_x": 686,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9893301119375205,
+     "minimum_page_confidence_score": 0.40479660563181313,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 16,
+    "markdown": "AÇÕES\n\n## REMUNERAÇÃO AOS ACIONISTAS\n\nNo quarto trimestre, foram destinados R$ 58 milhões aos acionistas a título de juros sobre capital próprio (JCP), totalizando a distribuição de R$ 152 milhões em 2024. O lucro líquido por ação atingiu R$ 0,42 no trimestre, acumulando R$ 1,24 no ano. O montante distribuído corresponde a um *payout* anualizado de 38,7% do lucro líquido do período.\n\n[tbl-11.html](tbl-11.html)\n\n## MÚLTIPLOS\n\nO *dividend yield*, indicador do retorno do investimento ao acionista pela participação no lucro do período, foi de 5,6% para as ações ordinárias (BEES3) e de 5,5% para as preferenciais (BEES4), totalizando 5,6% para as duas ações no cálculo por média ponderada. O valor patrimonial por ação no fechamento do trimestre cresceu 6,4% em relação ao mesmo trimestre de 2023, seguindo a evolução do patrimônio líquido, e encerrou o trimestre em R$ 7,46. A relação entre preço e patrimônio líquido das ações BEES3 e BEES4 foi de 1,14 e de 1,17, respectivamente.\n\n## VALOR DE MERCADO\n\nOs preços de fechamento das ações BEES3 e BEES4 foram, respectivamente, R$ 8,52 e R$ 8,70 no último dia de negociação de 2024. Essas cotações resultaram num valor de mercado de R$ 2,7 bilhões, que equivale a uma redução 5,1% quando comparado ao trimestre anterior.\n\n## VOLUME DE ACIONISTAS\n\nDesde 2018, o número de acionistas do Banestes cresceu mais de 17 vezes. No fim do trimestre, registramos quase 46 mil acionistas em nossa base. Desse total, 60% está presente no sudeste, sendo 31% somente no estado de São Paulo.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n17",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>AÇÕES</th><th>BEES3 (ON)</th><th>BEES4 (PN)</th></tr></thead><tr><td>COTAÇÃO DE FECHAMENTO DO TRIMESTRE (R$)</td><td>8,52</td><td>8,70</td></tr><tr><td>COTAÇÃO MÉDIA DO TRIMESTRE (R$)</td><td>8,55</td><td>8,80</td></tr><tr><td>PREÇO/LUCRO (P/E)</td><td>6,86</td><td>7,00</td></tr><tr><td>PREÇO/PATRIMÔNIO LÍQUIDO (P/B)</td><td>1,14</td><td>1,17</td></tr><tr><td>DIVIDEND YIELD (ON)</td><td>5,6%</td><td></td></tr><tr><td>PAYOUT RATIO</td><td>38,7%</td><td></td></tr><tr><td>VALOR PATRIMONIAL POR AÇÃO (R$)</td><td>7,46</td><td></td></tr><tr><td>LUCRO LÍQUIDO POR AÇÃO ANUALIZADO (R$)</td><td>1,24</td><td></td></tr></table>",
+      "format": "html",
+      "id": "tbl-11.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 293,
+      "bottom_right_y": 46,
+      "confidence_scores": null,
+      "content": "# LIMITES OPERACIONAIS",
+      "top_left_x": 34,
+      "top_left_y": 20,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 676,
+      "bottom_right_y": 171,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>LIMITES OPERACIONAIS</th><th>4T 2024</th><th>3T 2024</th><th>2T 2024</th><th>1T 2024</th><th>4T 2023</th><th>3T 2023</th><th>2T 2023</th><th>1T 2023</th><th colspan=\"2\">VARIAÇÃO</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>1T 2024 a 1T 2024</th><th>1T 2024 a 1T 2023</th></tr></thead><tr><td>ÍNDICE DE BASILEIA (%)</td><td>14,0</td><td>14,1</td><td>14,7</td><td>14,4</td><td>14,6</td><td>15,3</td><td>14,7</td><td>14,8</td><td>-0,1 p.p.</td><td>-0,6 p.p.</td></tr><tr><td>CAPITAL NÍVEL I - 100%</td><td>14,0</td><td>14,1</td><td>14,7</td><td>14,4</td><td>14,6</td><td>15,3</td><td>14,7</td><td>14,8</td><td>-0,1 p.p.</td><td>-0,6 p.p.</td></tr></table>",
+      "table_id": "tbl-12.html",
+      "top_left_x": 34,
+      "top_left_y": 111,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 251,
+      "confidence_scores": null,
+      "content": "O Patrimônio de Referência do Conglomerado Prudencial fechou o trimestre em R$ 2,0 bilhões frente aos Ativos Ponderados pelo Risco (RWA) de R$ 14,1 bilhões. O Índice de Basileia ficou em 14,0%, formado integralmente de capital nível I.",
+      "top_left_x": 64,
+      "top_left_y": 202,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 460,
+      "bottom_right_y": 298,
+      "confidence_scores": null,
+      "content": "## INDICADORES ESTRUTURAIS",
+      "top_left_x": 255,
+      "top_left_y": 278,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 676,
+      "bottom_right_y": 418,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>INDICADORES ESTRUTURAIS</th><th>4T 2024</th><th>3T 2024</th><th>2T 2024</th><th>1T 2024</th><th>4T 2023</th><th>3T 2023</th><th>2T 2023</th><th>1T 2023</th></tr></thead><tr><td>UNIDADES DE ATENDIMENTO</td><td>151</td><td>152</td><td>152</td><td>152</td><td>151</td><td>151</td><td>151</td><td>151</td></tr><tr><td>PONTOS DE ATENDIMENTO ELETRÔNICO</td><td>278</td><td>286</td><td>286</td><td>285</td><td>288</td><td>294</td><td>294</td><td>294</td></tr><tr><td>CORRESPONDENTES</td><td>341</td><td>343</td><td>344</td><td>353</td><td>343</td><td>379</td><td>371</td><td>369</td></tr><tr><td>COLABORADORES</td><td>2.355</td><td>2.369</td><td>2.314</td><td>2.282</td><td>2.201</td><td>2.221</td><td>2.204</td><td>2.201</td></tr></table>",
+      "table_id": "tbl-13.html",
+      "top_left_x": 34,
+      "top_left_y": 321,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 445,
+      "bottom_right_y": 474,
+      "confidence_scores": null,
+      "content": "## REDE DE ATENDIMENTO",
+      "top_left_x": 270,
+      "top_left_y": 454,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 533,
+      "confidence_scores": null,
+      "content": "Mantivemos à disposição de nossos clientes e usuários uma extensa rede de atendimento, presente em todos os municípios do Espírito Santo. Ao todo, são 770 pontos de atendimento, compostos por 151 unidades de atendimento, 278 pontos de atendimento eletrônico e 341 correspondentes Banesfácil.",
+      "top_left_x": 64,
+      "top_left_y": 484,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 628,
+      "confidence_scores": null,
+      "content": "Para impulsionar a transformação digital e oferecer serviços bancários ainda mais modernos e eficientes, o Banestes investiu R$ 216 milhões em Tecnologia da Informação e Comunicação em 2024. Esses recursos foram destinados à modernização dos sistemas de informação, infraestrutura de comunicação, segurança da informação e rede de autoatendimento, aprimorando a experiência do cliente e otimizando as operações do Sistema Financeiro Banestes.",
+      "top_left_x": 64,
+      "top_left_y": 547,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "18",
+      "top_left_x": 686,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9877659129334944,
+     "minimum_page_confidence_score": 0.4178161380934817,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 17,
+    "markdown": "# LIMITES OPERACIONAIS\n\n[tbl-12.html](tbl-12.html)\n\nO Patrimônio de Referência do Conglomerado Prudencial fechou o trimestre em R$ 2,0 bilhões frente aos Ativos Ponderados pelo Risco (RWA) de R$ 14,1 bilhões. O Índice de Basileia ficou em 14,0%, formado integralmente de capital nível I.\n\n## INDICADORES ESTRUTURAIS\n\n[tbl-13.html](tbl-13.html)\n\n## REDE DE ATENDIMENTO\n\nMantivemos à disposição de nossos clientes e usuários uma extensa rede de atendimento, presente em todos os municípios do Espírito Santo. Ao todo, são 770 pontos de atendimento, compostos por 151 unidades de atendimento, 278 pontos de atendimento eletrônico e 341 correspondentes Banesfácil.\n\nPara impulsionar a transformação digital e oferecer serviços bancários ainda mais modernos e eficientes, o Banestes investiu R$ 216 milhões em Tecnologia da Informação e Comunicação em 2024. Esses recursos foram destinados à modernização dos sistemas de informação, infraestrutura de comunicação, segurança da informação e rede de autoatendimento, aprimorando a experiência do cliente e otimizando as operações do Sistema Financeiro Banestes.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n18",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>LIMITES OPERACIONAIS</th><th>4T 2024</th><th>3T 2024</th><th>2T 2024</th><th>1T 2024</th><th>4T 2023</th><th>3T 2023</th><th>2T 2023</th><th>1T 2023</th><th colspan=\"2\">VARIAÇÃO</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>1T 2024 a 1T 2024</th><th>1T 2024 a 1T 2023</th></tr></thead><tr><td>ÍNDICE DE BASILEIA (%)</td><td>14,0</td><td>14,1</td><td>14,7</td><td>14,4</td><td>14,6</td><td>15,3</td><td>14,7</td><td>14,8</td><td>-0,1 p.p.</td><td>-0,6 p.p.</td></tr><tr><td>CAPITAL NÍVEL I - 100%</td><td>14,0</td><td>14,1</td><td>14,7</td><td>14,4</td><td>14,6</td><td>15,3</td><td>14,7</td><td>14,8</td><td>-0,1 p.p.</td><td>-0,6 p.p.</td></tr></table>",
+      "format": "html",
+      "id": "tbl-12.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>INDICADORES ESTRUTURAIS</th><th>4T 2024</th><th>3T 2024</th><th>2T 2024</th><th>1T 2024</th><th>4T 2023</th><th>3T 2023</th><th>2T 2023</th><th>1T 2023</th></tr></thead><tr><td>UNIDADES DE ATENDIMENTO</td><td>151</td><td>152</td><td>152</td><td>152</td><td>151</td><td>151</td><td>151</td><td>151</td></tr><tr><td>PONTOS DE ATENDIMENTO ELETRÔNICO</td><td>278</td><td>286</td><td>286</td><td>285</td><td>288</td><td>294</td><td>294</td><td>294</td></tr><tr><td>CORRESPONDENTES</td><td>341</td><td>343</td><td>344</td><td>353</td><td>343</td><td>379</td><td>371</td><td>369</td></tr><tr><td>COLABORADORES</td><td>2.355</td><td>2.369</td><td>2.314</td><td>2.282</td><td>2.201</td><td>2.221</td><td>2.204</td><td>2.201</td></tr></table>",
+      "format": "html",
+      "id": "tbl-13.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 430,
+      "bottom_right_y": 62,
+      "confidence_scores": null,
+      "content": "# COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+      "top_left_x": 33,
+      "top_left_y": 7,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 204,
+      "confidence_scores": null,
+      "content": "Em nossa cultura organizacional, desenvolvemos os conceitos de Governança Ambiental, Social e Corporativa (ESG, na sigla em inglês), incorporando visões conectadas com os anseios de todos os stakeholders. A sustentabilidade está incorporada na nossa estratégia, que tem por premissas a geração de valor, a transparência, a governança corporativa e a responsabilidade social, ambiental e climática. Dado o caráter estratégico da pauta, criamos a gerência de ESG, para que os temas da área sejam tratados com exclusividade e atenção, de modo que levem o Banestes à vanguarda dessa agenda no Espírito Santo.",
+      "top_left_x": 64,
+      "top_left_y": 106,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 362,
+      "confidence_scores": null,
+      "content": "Contratamos o Projeto Triciclo visando impulsionar a economia circular e o descarte responsável de resíduos recicláveis. A ação é um dos pilares de consolidação do papel do Banestes como agentes de transformação socioambiental no Espírito Santo. Resultado da parceria com a Ambipar, multinacional líder em soluções ambientais, a iniciativa busca promover o consciente coletivo sobre o descarte correto de materiais recicláveis e a importância da economia circular. A Retorna Machine é uma máquina de logística reserva, destinada a coletar embalagens pós consumo em geral, de alumínio, plástico (PET, PP e PE), aço, longa vida e vidro, gerando pontos Triciclo e/ ou vouchers, que posteriormente podem ser trocados por benefícios. Inédito na capital capixaba, o projeto oferece aos usuários as facilidades do Programa de Fidelidade da Ambipar e conta com dez pontos de entrega voluntária estrategicamente selecionados.",
+      "top_left_x": 64,
+      "top_left_y": 218,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 442,
+      "confidence_scores": null,
+      "content": "Em constantes análises dos indicadores do projeto, identificamos subutilização em algumas máquinas e as redirecionamos para atender parceiros estratégicos, como a Assembleia Legislativa, o Ministério Público e o Tribunal de Justiça, contribuindo para a estratégia de sustentabilidade desses entes, alcançando mais pessoas e gerando mais impacto.",
+      "top_left_x": 64,
+      "top_left_y": 377,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 461,
+      "bottom_right_y": 491,
+      "confidence_scores": null,
+      "content": "## ADESÃO AO PACTO GLOBAL",
+      "top_left_x": 254,
+      "top_left_y": 472,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 584,
+      "confidence_scores": null,
+      "content": "O Banco se mantém como signatário do Pacto Global das Nações Unidas, a maior iniciativa de sustentabilidade corporativa do mundo, com participação de empresas e organizações de 160 países. O Pacto Global visa alinhar as estratégias e as operações das empresas a Dez Princípios Universais nas áreas de Direitos Humanos, Trabalho, Meio Ambiente e Anticorrupção, de modo que elas desenvolvam ações que contribuam para o enfrentamento dos desafios da sociedade.",
+      "top_left_x": 64,
+      "top_left_y": 502,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 662,
+      "confidence_scores": null,
+      "content": "Em 2024, ampliamos a nossa atuação e fizemos adesão ao Movimento “Mente em Foco”. A iniciativa convida a agir em benefício dos colaboradores e da sociedade como um todo no combate ao estigma e ao preconceito social ao redor da saúde mental. Além desse movimento, mantemos o compromisso público com os Movimentos “Elas Lideram”, “Raça é Prioridade”, “Ambição Net Zero” e “Transparência 100%”.",
+      "top_left_x": 64,
+      "top_left_y": 598,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 525,
+      "bottom_right_y": 724,
+      "confidence_scores": null,
+      "content": "## LINHAS DE CRÉDITO PARA BICICLETAS ELÉTRICAS",
+      "top_left_x": 173,
+      "top_left_y": 703,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 785,
+      "confidence_scores": null,
+      "content": "O Banestes lançou uma nova linha de financiamento para a aquisição de bicicletas e ciclomotores elétricos, com foco na mobilidade urbana sustentável. A iniciativa visa a facilitar o acesso a meios de transporte mais eficientes e ecológicos para os capixabas.",
+      "top_left_x": 64,
+      "top_left_y": 736,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 864,
+      "confidence_scores": null,
+      "content": "O financiamento é destinado aos correntistas do banco e pode cobrir até 100% do valor do veículo, com limite máximo de R$ 50 mil. As taxas de juros são atrativas, a partir de 1,49% ao mês para servidores públicos e 1,79% ao mês para clientes em geral. O prazo máximo para pagamento é de 48 meses, com possibilidade de carência de até 90 dias.",
+      "top_left_x": 64,
+      "top_left_y": 800,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 698,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "19",
+      "top_left_x": 687,
+      "top_left_y": 985,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9876314659953565,
+     "minimum_page_confidence_score": 0.3462857953908018,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 18,
+    "markdown": "# COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)\n\nEm nossa cultura organizacional, desenvolvemos os conceitos de Governança Ambiental, Social e Corporativa (ESG, na sigla em inglês), incorporando visões conectadas com os anseios de todos os stakeholders. A sustentabilidade está incorporada na nossa estratégia, que tem por premissas a geração de valor, a transparência, a governança corporativa e a responsabilidade social, ambiental e climática. Dado o caráter estratégico da pauta, criamos a gerência de ESG, para que os temas da área sejam tratados com exclusividade e atenção, de modo que levem o Banestes à vanguarda dessa agenda no Espírito Santo.\n\nContratamos o Projeto Triciclo visando impulsionar a economia circular e o descarte responsável de resíduos recicláveis. A ação é um dos pilares de consolidação do papel do Banestes como agentes de transformação socioambiental no Espírito Santo. Resultado da parceria com a Ambipar, multinacional líder em soluções ambientais, a iniciativa busca promover o consciente coletivo sobre o descarte correto de materiais recicláveis e a importância da economia circular. A Retorna Machine é uma máquina de logística reserva, destinada a coletar embalagens pós consumo em geral, de alumínio, plástico (PET, PP e PE), aço, longa vida e vidro, gerando pontos Triciclo e/ ou vouchers, que posteriormente podem ser trocados por benefícios. Inédito na capital capixaba, o projeto oferece aos usuários as facilidades do Programa de Fidelidade da Ambipar e conta com dez pontos de entrega voluntária estrategicamente selecionados.\n\nEm constantes análises dos indicadores do projeto, identificamos subutilização em algumas máquinas e as redirecionamos para atender parceiros estratégicos, como a Assembleia Legislativa, o Ministério Público e o Tribunal de Justiça, contribuindo para a estratégia de sustentabilidade desses entes, alcançando mais pessoas e gerando mais impacto.\n\n## ADESÃO AO PACTO GLOBAL\n\nO Banco se mantém como signatário do Pacto Global das Nações Unidas, a maior iniciativa de sustentabilidade corporativa do mundo, com participação de empresas e organizações de 160 países. O Pacto Global visa alinhar as estratégias e as operações das empresas a Dez Princípios Universais nas áreas de Direitos Humanos, Trabalho, Meio Ambiente e Anticorrupção, de modo que elas desenvolvam ações que contribuam para o enfrentamento dos desafios da sociedade.\n\nEm 2024, ampliamos a nossa atuação e fizemos adesão ao Movimento “Mente em Foco”. A iniciativa convida a agir em benefício dos colaboradores e da sociedade como um todo no combate ao estigma e ao preconceito social ao redor da saúde mental. Além desse movimento, mantemos o compromisso público com os Movimentos “Elas Lideram”, “Raça é Prioridade”, “Ambição Net Zero” e “Transparência 100%”.\n\n## LINHAS DE CRÉDITO PARA BICICLETAS ELÉTRICAS\n\nO Banestes lançou uma nova linha de financiamento para a aquisição de bicicletas e ciclomotores elétricos, com foco na mobilidade urbana sustentável. A iniciativa visa a facilitar o acesso a meios de transporte mais eficientes e ecológicos para os capixabas.\n\nO financiamento é destinado aos correntistas do banco e pode cobrir até 100% do valor do veículo, com limite máximo de R$ 50 mil. As taxas de juros são atrativas, a partir de 1,49% ao mês para servidores públicos e 1,79% ao mês para clientes em geral. O prazo máximo para pagamento é de 48 meses, com possibilidade de carência de até 90 dias.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n19",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 430,
+      "bottom_right_y": 61,
+      "confidence_scores": null,
+      "content": "# COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+      "top_left_x": 33,
+      "top_left_y": 7,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 434,
+      "bottom_right_y": 128,
+      "confidence_scores": null,
+      "content": "## GESTÃO DE PESSOAS",
+      "top_left_x": 283,
+      "top_left_y": 110,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 220,
+      "confidence_scores": null,
+      "content": "A Gerência de Gente e Gestão permanece focada em fomentar a cultura do bem-estar, promovendo ações de impacto na saúde física e emocional dos colaboradores. Pelo terceiro ano consecutivo, conquistamos a certificação Great Place to Work - GPTW por meio da pesquisa de clima organizacional. Com base nos resultados da pesquisa de clima organizacional, fomos novamente premiados, desta vez com o selo Great People Mental Health, com uma pontuação entre 90 e 100.",
+      "top_left_x": 63,
+      "top_left_y": 140,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 364,
+      "confidence_scores": null,
+      "content": "Objetivando o fortalecimento do trabalho desenvolvido pelo Time Cuidar (Serviço Social e Psiquiatria Organizacional), em agosto, contratamos uma Psicóloga Organizacional. No período, foram realizados 438 atendimentos sociais, 117 atendimentos psiquiátricos e 37 atendimentos psicológicos, reforçando o cuidado integral com o colaborador. No incentivo à saúde física, o programa WellHub registrou 1.100 colaboradores ativos, com a realização de dois desafios voltados para o engajamento e o cuidado com a saúde física e mental. O Desafio Caminhando Juntos contou com a participação de 114 colaboradores, incentivando e desafiando todos a construir uma rotina de bem-estar equilibrada, além de criar novos hábitos saudáveis, promovendo premiações que engajaram ainda mais os envolvidos.",
+      "top_left_x": 63,
+      "top_left_y": 233,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 426,
+      "confidence_scores": null,
+      "content": "No âmbito do voluntariado, reforçamos nosso compromisso social promovendo quatro importantes iniciativas ao longo do ano. Também concretizamos cinco edições de Campanha Solidária em 2024, visando o compromisso com a responsabilidade social e contribuindo para causas relevantes.",
+      "top_left_x": 63,
+      "top_left_y": 377,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 484,
+      "bottom_right_y": 479,
+      "confidence_scores": null,
+      "content": "## GERAÇÃO DE VALOR À SOCIEDADE",
+      "top_left_x": 231,
+      "top_left_y": 458,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 552,
+      "confidence_scores": null,
+      "content": "Em continuidade ao apoio às micro e pequenas empresas capixabas, concedemos mais de R$ 85 milhões em microcrédito no ano, com mais de 5.800 empreendedores atendidos. A carteira ativa de microcrédito fechou o período em aproximadamente R$ 119 milhões, alcançando o maior volume registrado em 21 anos do programa 'Nossocrédito'.",
+      "top_left_x": 63,
+      "top_left_y": 487,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 711,
+      "confidence_scores": null,
+      "content": "Realizamos mais de 500 operações no trimestre por meio do Programa Nacional de Apoio às Microempresas e Empresas de Pequeno Porte (PRONAMPE), com o montante de aproximadamente R$ 26 milhões concedido a micro e pequenas empresas, e a profissionais liberais. Ao todo, em 2024, foram repassados, aproximadamente, R$ 115 milhões a mais de 2.300 micro e pequenas empresas capixabas. Pelo CrescerCidadES, durante o ano de 2024 o Banestes liberou R$ 81 milhões em recursos para a realização de obras de infraestrutura dos municípios capixabas. As operações contam com garantia da quota-parte dos municípios sobre o ICMS ou garantia integral da União. Por vedação legal, as novas contratações estiveram fechadas durante os 120 dias antes do final do mandato dos prefeitos municipais, com retorno das operações em janeiro de 2025.",
+      "top_left_x": 63,
+      "top_left_y": 568,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 807,
+      "confidence_scores": null,
+      "content": "Distribuímos à sociedade capixaba o valor de R$ 1,3 bilhão por meio de impostos e contribuições, remuneração de pessoal, distribuição de lucros e remuneração de capitais de terceiros. Foram destinados R$ 152 milhões ao acionista controlador sob a forma de JCP. Esse valor pode ser aplicado conforme as prioridades de investimentos definidas no orçamento estadual, podendo ser revertido diretamente em benefício à sociedade capixaba.",
+      "top_left_x": 63,
+      "top_left_y": 727,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 700,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "20",
+      "top_left_x": 685,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9882270541147236,
+     "minimum_page_confidence_score": 0.42511946090222563,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 19,
+    "markdown": "# COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)\n\n## GESTÃO DE PESSOAS\n\nA Gerência de Gente e Gestão permanece focada em fomentar a cultura do bem-estar, promovendo ações de impacto na saúde física e emocional dos colaboradores. Pelo terceiro ano consecutivo, conquistamos a certificação Great Place to Work - GPTW por meio da pesquisa de clima organizacional. Com base nos resultados da pesquisa de clima organizacional, fomos novamente premiados, desta vez com o selo Great People Mental Health, com uma pontuação entre 90 e 100.\n\nObjetivando o fortalecimento do trabalho desenvolvido pelo Time Cuidar (Serviço Social e Psiquiatria Organizacional), em agosto, contratamos uma Psicóloga Organizacional. No período, foram realizados 438 atendimentos sociais, 117 atendimentos psiquiátricos e 37 atendimentos psicológicos, reforçando o cuidado integral com o colaborador. No incentivo à saúde física, o programa WellHub registrou 1.100 colaboradores ativos, com a realização de dois desafios voltados para o engajamento e o cuidado com a saúde física e mental. O Desafio Caminhando Juntos contou com a participação de 114 colaboradores, incentivando e desafiando todos a construir uma rotina de bem-estar equilibrada, além de criar novos hábitos saudáveis, promovendo premiações que engajaram ainda mais os envolvidos.\n\nNo âmbito do voluntariado, reforçamos nosso compromisso social promovendo quatro importantes iniciativas ao longo do ano. Também concretizamos cinco edições de Campanha Solidária em 2024, visando o compromisso com a responsabilidade social e contribuindo para causas relevantes.\n\n## GERAÇÃO DE VALOR À SOCIEDADE\n\nEm continuidade ao apoio às micro e pequenas empresas capixabas, concedemos mais de R$ 85 milhões em microcrédito no ano, com mais de 5.800 empreendedores atendidos. A carteira ativa de microcrédito fechou o período em aproximadamente R$ 119 milhões, alcançando o maior volume registrado em 21 anos do programa 'Nossocrédito'.\n\nRealizamos mais de 500 operações no trimestre por meio do Programa Nacional de Apoio às Microempresas e Empresas de Pequeno Porte (PRONAMPE), com o montante de aproximadamente R$ 26 milhões concedido a micro e pequenas empresas, e a profissionais liberais. Ao todo, em 2024, foram repassados, aproximadamente, R$ 115 milhões a mais de 2.300 micro e pequenas empresas capixabas. Pelo CrescerCidadES, durante o ano de 2024 o Banestes liberou R$ 81 milhões em recursos para a realização de obras de infraestrutura dos municípios capixabas. As operações contam com garantia da quota-parte dos municípios sobre o ICMS ou garantia integral da União. Por vedação legal, as novas contratações estiveram fechadas durante os 120 dias antes do final do mandato dos prefeitos municipais, com retorno das operações em janeiro de 2025.\n\nDistribuímos à sociedade capixaba o valor de R$ 1,3 bilhão por meio de impostos e contribuições, remuneração de pessoal, distribuição de lucros e remuneração de capitais de terceiros. Foram destinados R$ 152 milhões ao acionista controlador sob a forma de JCP. Esse valor pode ser aplicado conforme as prioridades de investimentos definidas no orçamento estadual, podendo ser revertido diretamente em benefício à sociedade capixaba.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n20",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 430,
+      "bottom_right_y": 62,
+      "confidence_scores": null,
+      "content": "# COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)",
+      "top_left_x": 33,
+      "top_left_y": 7,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 463,
+      "bottom_right_y": 128,
+      "confidence_scores": null,
+      "content": "## ECOSSISTEMA DE INOVAÇÃO",
+      "top_left_x": 252,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 204,
+      "confidence_scores": null,
+      "content": "O Banestes investe em inovação aberta e parcerias estratégicas, como Base 27 e AMCHAM, para impulsionar a transformação digital e o desenvolvimento de soluções inovadoras. Destacamos o BanesHub e o Programa Inov.AI, que visa desenvolver talentos e democratizar o acesso à tecnologia *low-code*, gerando maior agilidade e flexibilidade no desenvolvimento das aplicações menos complexas.",
+      "top_left_x": 63,
+      "top_left_y": 140,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 314,
+      "confidence_scores": null,
+      "content": "O banco experimentou soluções de Inteligência Artificial (IA) generativa, como o “Sab.IA”, assistente inteligente para aprimorar e agilizar o atendimento interno dos colaboradores, otimizando a busca por informações estruturadas no formato de *chatbot*. Também passamos a explorar o Gemini Code Assist, um assistente de codificação com inteligência artificial que integra recursos de IA generativa aos aplicativos utilizados pelos colaboradores, contribuindo para o aumento da produtividade, eficiência e otimização de processos em diversas áreas.",
+      "top_left_x": 63,
+      "top_left_y": 218,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 442,
+      "confidence_scores": null,
+      "content": "Visando aprimorar o relacionamento com os clientes, otimizar processos internos e fortalecer a tomada de decisão estratégica, temos investido em inteligência de dados. As frentes de inovação atuam na extração e análise de informações, permitindo a personalização do atendimento e o refinamento das operações. Além disso, visando a modernização da operação de *Business Intelligence*, *Analytics* e Inteligência Artificial, realizamos uma consulta formal ao mercado para contratação de consultoria especializada, treinamentos e plataforma tecnológica. O objetivo é construir um ecossistema de *Data & Analytics* robusto e integrado, que forneça suporte orientado a dados para a tomada de decisão em todos os níveis da instituição.",
+      "top_left_x": 63,
+      "top_left_y": 328,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 374,
+      "bottom_right_y": 500,
+      "confidence_scores": null,
+      "content": "## BIZI",
+      "top_left_x": 342,
+      "top_left_y": 482,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 577,
+      "confidence_scores": null,
+      "content": "O Bizi, nossa plataforma digital para servidores públicos, encerrou o ano de 2024 alcançando a marca de R$ 23 milhões em crédito consignado em mais de 1.000 contratos originados digitalmente. Com clientes em diversas regiões do país, o Bizi demonstra sua capacidade de expansão dos negócios para além das fronteiras do Espírito Santo, promovendo o bem-estar financeiro para os servidores de todo o Brasil.",
+      "top_left_x": 63,
+      "top_left_y": 512,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "21",
+      "top_left_x": 687,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9834858038403024,
+     "minimum_page_confidence_score": 0.38693708517154773,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 20,
+    "markdown": "# COMPROMISSO AMBIENTAL, SOCIAL E GOVERNANÇA CORPORATIVA (ESG)\n\n## ECOSSISTEMA DE INOVAÇÃO\n\nO Banestes investe em inovação aberta e parcerias estratégicas, como Base 27 e AMCHAM, para impulsionar a transformação digital e o desenvolvimento de soluções inovadoras. Destacamos o BanesHub e o Programa Inov.AI, que visa desenvolver talentos e democratizar o acesso à tecnologia *low-code*, gerando maior agilidade e flexibilidade no desenvolvimento das aplicações menos complexas.\n\nO banco experimentou soluções de Inteligência Artificial (IA) generativa, como o “Sab.IA”, assistente inteligente para aprimorar e agilizar o atendimento interno dos colaboradores, otimizando a busca por informações estruturadas no formato de *chatbot*. Também passamos a explorar o Gemini Code Assist, um assistente de codificação com inteligência artificial que integra recursos de IA generativa aos aplicativos utilizados pelos colaboradores, contribuindo para o aumento da produtividade, eficiência e otimização de processos em diversas áreas.\n\nVisando aprimorar o relacionamento com os clientes, otimizar processos internos e fortalecer a tomada de decisão estratégica, temos investido em inteligência de dados. As frentes de inovação atuam na extração e análise de informações, permitindo a personalização do atendimento e o refinamento das operações. Além disso, visando a modernização da operação de *Business Intelligence*, *Analytics* e Inteligência Artificial, realizamos uma consulta formal ao mercado para contratação de consultoria especializada, treinamentos e plataforma tecnológica. O objetivo é construir um ecossistema de *Data & Analytics* robusto e integrado, que forneça suporte orientado a dados para a tomada de decisão em todos os níveis da instituição.\n\n## BIZI\n\nO Bizi, nossa plataforma digital para servidores públicos, encerrou o ano de 2024 alcançando a marca de R$ 23 milhões em crédito consignado em mais de 1.000 contratos originados digitalmente. Com clientes em diversas regiões do país, o Bizi demonstra sua capacidade de expansão dos negócios para além das fronteiras do Espírito Santo, promovendo o bem-estar financeiro para os servidores de todo o Brasil.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n21",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 285,
+      "bottom_right_y": 61,
+      "confidence_scores": null,
+      "content": "# OUTRAS INFORMAÇÕES IMPORTANTES",
+      "top_left_x": 34,
+      "top_left_y": 6,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 388,
+      "bottom_right_y": 124,
+      "confidence_scores": null,
+      "content": "## RATING",
+      "top_left_x": 328,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 202,
+      "confidence_scores": null,
+      "content": "A Fitch manteve a nota de rating em escala nacional (moeda local) para risco de crédito do Banestes em AA+(bra), com perspectiva estável, em 2024. A Fitch destacou o perfil de negócios estável do Banestes, a qualidade do crédito e as boas métricas de ativos e rentabilidade, além da solidez financeira e de governança.",
+      "top_left_x": 64,
+      "top_left_y": 139,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 394,
+      "bottom_right_y": 248,
+      "confidence_scores": null,
+      "content": "## CARTÕES",
+      "top_left_x": 322,
+      "top_left_y": 228,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 356,
+      "confidence_scores": null,
+      "content": "Em 2024, foram entregues serviços relevantes para os usuários do Banescard Visa. Os clientes agora contam com a tag automotiva, em parceria com a Veloe, para uso em estacionamentos e pedágios com débito direto no cartão de crédito. O serviço de notificações também foi aprimorado, informando os clientes sobre transações e pagamentos em atraso. No contexto do Programa de Fidelidade, foi realizada ação para validar a funcionalidade de Pagar com Pontos e as comunicações foram intensificadas, resultando em um crescimento de 58,3% na base de clientes cadastrados no programa.",
+      "top_left_x": 64,
+      "top_left_y": 260,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 435,
+      "confidence_scores": null,
+      "content": "As transações dos cartões Banescard Visa, fruto da nossa parceria com a Visa, atingiram a soma de R$ 4,0 bilhões em 2024. Esse montante representa 72,8% do volume total transacionado em cartões, que totalizou R$ 5,5 bilhões no ano. As operações de cartões de bandeira Visa corresponderam a 26,2% do volume total transacionado, totalizando R$ 1,4 bilhão.",
+      "top_left_x": 64,
+      "top_left_y": 370,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 463,
+      "bottom_right_y": 491,
+      "confidence_scores": null,
+      "content": "## CANAIS E SERVIÇOS DIGITAIS",
+      "top_left_x": 253,
+      "top_left_y": 473,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 549,
+      "confidence_scores": null,
+      "content": "Seguindo a agenda de transformação digital, demos continuidade às ações e soluções práticas já entregues e que estão relacionadas à expansão dos serviços digitais que melhoram a experiência dos nossos clientes e racionalizam nossas despesas operacionais.",
+      "top_left_x": 64,
+      "top_left_y": 501,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 630,
+      "confidence_scores": null,
+      "content": "O Bizi, plataforma digital de crédito consignado do Banestes para servidores públicos, encerrou o ano de 2024 alcançando a marca de R$ 23 milhões em créditos em mais de 1.000 contratos originados digitalmente. Com o objetivo de democratizar o acesso ao crédito consignado e promover o bem-estar financeiro dos servidores, o Bizi expande sua atuação para novas regiões do país.",
+      "top_left_x": 64,
+      "top_left_y": 566,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 725,
+      "confidence_scores": null,
+      "content": "No acumulado, foram registradas 273 milhões de transações totais (financeiras e de consulta). Desse total, o aplicativo foi responsável por 184 milhões de transações (+27,4% em doze meses) e continua sendo o principal canal de transações totais para os clientes. Analisando apenas as transações financeiras, os canais digitais (internet banking e App Banestes) foram responsáveis por mais de 75 milhões de transações (+25,1% em doze meses).",
+      "top_left_x": 64,
+      "top_left_y": 645,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 997,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 18,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 997,
+      "confidence_scores": null,
+      "content": "22",
+      "top_left_x": 686,
+      "top_left_y": 985,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9904885825547133,
+     "minimum_page_confidence_score": 0.4190544922462026,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 21,
+    "markdown": "# OUTRAS INFORMAÇÕES IMPORTANTES\n\n## RATING\n\nA Fitch manteve a nota de rating em escala nacional (moeda local) para risco de crédito do Banestes em AA+(bra), com perspectiva estável, em 2024. A Fitch destacou o perfil de negócios estável do Banestes, a qualidade do crédito e as boas métricas de ativos e rentabilidade, além da solidez financeira e de governança.\n\n## CARTÕES\n\nEm 2024, foram entregues serviços relevantes para os usuários do Banescard Visa. Os clientes agora contam com a tag automotiva, em parceria com a Veloe, para uso em estacionamentos e pedágios com débito direto no cartão de crédito. O serviço de notificações também foi aprimorado, informando os clientes sobre transações e pagamentos em atraso. No contexto do Programa de Fidelidade, foi realizada ação para validar a funcionalidade de Pagar com Pontos e as comunicações foram intensificadas, resultando em um crescimento de 58,3% na base de clientes cadastrados no programa.\n\nAs transações dos cartões Banescard Visa, fruto da nossa parceria com a Visa, atingiram a soma de R$ 4,0 bilhões em 2024. Esse montante representa 72,8% do volume total transacionado em cartões, que totalizou R$ 5,5 bilhões no ano. As operações de cartões de bandeira Visa corresponderam a 26,2% do volume total transacionado, totalizando R$ 1,4 bilhão.\n\n## CANAIS E SERVIÇOS DIGITAIS\n\nSeguindo a agenda de transformação digital, demos continuidade às ações e soluções práticas já entregues e que estão relacionadas à expansão dos serviços digitais que melhoram a experiência dos nossos clientes e racionalizam nossas despesas operacionais.\n\nO Bizi, plataforma digital de crédito consignado do Banestes para servidores públicos, encerrou o ano de 2024 alcançando a marca de R$ 23 milhões em créditos em mais de 1.000 contratos originados digitalmente. Com o objetivo de democratizar o acesso ao crédito consignado e promover o bem-estar financeiro dos servidores, o Bizi expande sua atuação para novas regiões do país.\n\nNo acumulado, foram registradas 273 milhões de transações totais (financeiras e de consulta). Desse total, o aplicativo foi responsável por 184 milhões de transações (+27,4% em doze meses) e continua sendo o principal canal de transações totais para os clientes. Analisando apenas as transações financeiras, os canais digitais (internet banking e App Banestes) foram responsáveis por mais de 75 milhões de transações (+25,1% em doze meses).\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n22",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 285,
+      "bottom_right_y": 61,
+      "confidence_scores": null,
+      "content": "# OUTRAS INFORMAÇÕES IMPORTANTES",
+      "top_left_x": 33,
+      "top_left_y": 7,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 449,
+      "bottom_right_y": 124,
+      "confidence_scores": null,
+      "content": "## CONTEXTO ECONÔMICO",
+      "top_left_x": 267,
+      "top_left_y": 104,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 214,
+      "confidence_scores": null,
+      "content": "Em 2024, a economia brasileira apresentou um cenário misto. Houve avanços em indicadores como emprego (+3,7% a.a.) e PIB, com crescimento acima do esperado, impulsionado pelos setores de serviços e indústria. A projeção de crescimento para o PIB é de 3,5% a.a., amparado pelo setor de serviços. Por outro lado, a política fiscal do governo gerou incertezas no mercado, impactando nos indicadores econômicos e contribuindo para a desvalorização do real.",
+      "top_left_x": 63,
+      "top_left_y": 136,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 326,
+      "confidence_scores": null,
+      "content": "A inflação (IPCA) acumulou 4,8% em 12 meses, acima do teto da meta de 4,5% definida pelo CMN, levando o Banco Central a elevar a taxa Selic para 12,25%. O consumo das famílias manteve-se aquecido, impulsionado por programas de transferência de renda e pelo bom desempenho do mercado de trabalho, com taxas de desocupação e informalidade em níveis historicamente baixos. O mercado de crédito expandiu 10,9% (R$ 6,4 trilhões), com crescimento tanto no crédito às famílias (+12,1%) quanto às empresas (+9,1%). A inadimplência recuou para 3,0%, em comparação a 3,2% em 2023.",
+      "top_left_x": 63,
+      "top_left_y": 229,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 407,
+      "confidence_scores": null,
+      "content": "No Espírito Santo, projeta-se que a economia cresça 4,8%, com destaque para os setores de serviços (+6,0%) e comércio (+1,2%). O IPCA estadual ficou em 4,3% e foram criados mais de 42 mil empregos formais. O mercado de crédito capixaba apresentou variação positiva de 13,8% até outubro. A taxa de inadimplência recuou para 2,7%, com quedas tanto para pessoa física (2,9%) quanto jurídica (2,3%).",
+      "top_left_x": 63,
+      "top_left_y": 341,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 996,
+      "confidence_scores": null,
+      "content": "23",
+      "top_left_x": 686,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9846612737146134,
+     "minimum_page_confidence_score": 0.42653451596333014,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 22,
+    "markdown": "# OUTRAS INFORMAÇÕES IMPORTANTES\n\n## CONTEXTO ECONÔMICO\n\nEm 2024, a economia brasileira apresentou um cenário misto. Houve avanços em indicadores como emprego (+3,7% a.a.) e PIB, com crescimento acima do esperado, impulsionado pelos setores de serviços e indústria. A projeção de crescimento para o PIB é de 3,5% a.a., amparado pelo setor de serviços. Por outro lado, a política fiscal do governo gerou incertezas no mercado, impactando nos indicadores econômicos e contribuindo para a desvalorização do real.\n\nA inflação (IPCA) acumulou 4,8% em 12 meses, acima do teto da meta de 4,5% definida pelo CMN, levando o Banco Central a elevar a taxa Selic para 12,25%. O consumo das famílias manteve-se aquecido, impulsionado por programas de transferência de renda e pelo bom desempenho do mercado de trabalho, com taxas de desocupação e informalidade em níveis historicamente baixos. O mercado de crédito expandiu 10,9% (R$ 6,4 trilhões), com crescimento tanto no crédito às famílias (+12,1%) quanto às empresas (+9,1%). A inadimplência recuou para 3,0%, em comparação a 3,2% em 2023.\n\nNo Espírito Santo, projeta-se que a economia cresça 4,8%, com destaque para os setores de serviços (+6,0%) e comércio (+1,2%). O IPCA estadual ficou em 4,3% e foram criados mais de 42 mil empregos formais. O mercado de crédito capixaba apresentou variação positiva de 13,8% até outubro. A taxa de inadimplência recuou para 2,7%, com quedas tanto para pessoa física (2,9%) quanto jurídica (2,3%).\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n23",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 207,
+      "bottom_right_y": 46,
+      "confidence_scores": null,
+      "content": "# GUIDANCE 2024",
+      "top_left_x": 34,
+      "top_left_y": 20,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 577,
+      "bottom_right_y": 281,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">INDICADORES</th><th colspan=\"2\">2024</th></tr><tr><th>GUIDANCE PROJETADO (%)</th><th>GUIDANCE REALIZADO (%)</th></tr></thead><tr><td>CARTEIRA DE CRÉDITO AMPLIADA<sup>1</sup></td><td>7 - 11</td><td>15,3</td></tr><tr><td>DEPÓSITO TOTAL<sup>2</sup></td><td>6 - 10</td><td>1,1</td></tr><tr><td>PROVISÃO DE CRÉDITO/CARTEIRA DE CRÉDITO AMPLIADA<sup>3</sup></td><td>1,7 - 2,1</td><td>1,6</td></tr><tr><td>ÍNDICE DE EFICIÊNCIA OPERACIONAL<sup>4</sup></td><td>45 - 49</td><td>50,8</td></tr><tr><td>DESPESAS OPERACIONAIS<sup>5</sup></td><td>9 - 13</td><td>11,0</td></tr><tr><td>RECEITAS DE SERVIÇOS E SEGUROS<sup>6</sup></td><td>5 - 9</td><td>7,4</td></tr></table>",
+      "table_id": "tbl-14.html",
+      "top_left_x": 134,
+      "top_left_y": 136,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 582,
+      "bottom_right_y": 320,
+      "confidence_scores": null,
+      "content": "$^{1}$TOTAL DOS SALDOS DA CARTEIRA DE CRÉDITO (CONCEITO BACEN), DE TVM PRIVADO (DEBÊNTURES, NOTAS PROMISSÓRIAS, CDBS - CERTIFICADO DE DEPÓSITOS BANCÁRIOS, LETRAS FINANCEIRAS, LETRAS DE CRÉDITO IMOBILIÁRIO, LETRAS DE CRÉDITO DO AGRONEGÓCIO, FIDCS - FUNDO DE INVESTIMENTO EM DIREITOS CREDITÓRIOS E CRIS - CERTIFICADO DE RECERVEIS IMOBILIÁRIOS) E GARANTIAS PRESTADAS (ITANÇAS E AINIS).",
+      "top_left_x": 134,
+      "top_left_y": 294,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 458,
+      "bottom_right_y": 328,
+      "confidence_scores": null,
+      "content": "$^{2}$TRATA-SE DO TOTAL DOS SALDOS DE DEPÓSITOS À VISTA, POUPANÇA, A PRAZO, INTERFINANCEIROS E OUTROS DEPÓSITOS.",
+      "top_left_x": 134,
+      "top_left_y": 316,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 582,
+      "bottom_right_y": 345,
+      "confidence_scores": null,
+      "content": "$^{3}$RELAÇÃO DO RESULTADO DE PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA (RESOLUÇÃO 2.682/99 DO CMN) E TVM PRIVADO NOS ÚLTIMOS 12 MESES E O SALDO DA CARTEIRA DE CRÉDITO AMPLIADA.",
+      "top_left_x": 134,
+      "top_left_y": 326,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 582,
+      "bottom_right_y": 364,
+      "confidence_scores": null,
+      "content": "$^{4}$RELAÇÃO ENTRE O TOTAL DA DESPESA ADMINISTRATIVA (PESSOAL E OUTRAS) E O TOTAL DO RESULTADO BRUTO DA INTERMEDIAÇÃO FINANCEIRA (EXCLUÍDA A PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA), RECEITAS COM SERVIÇOS E RECEITAS COM TARIFAS.",
+      "top_left_x": 134,
+      "top_left_y": 345,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 335,
+      "bottom_right_y": 375,
+      "confidence_scores": null,
+      "content": "$^{5}$TOTAL DAS DESPESAS DE PESSOAL E OUTRAS DESPESAS ADMINISTRATIVAS.",
+      "top_left_x": 134,
+      "top_left_y": 363,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 582,
+      "bottom_right_y": 391,
+      "confidence_scores": null,
+      "content": "$^{6}$TOTAL DAS RECEITAS COM SERVIÇOS E TARIFAS, DE PRÉVEOS RETIDOS, VARIAÇÕES DAS PROVISÕES TÉCNICAS, SINISTROS RETIDOS, DESPESAS DE COMERCIALIZAÇÃO DE SEGUROS E RESULTADO LÍQUIDO DE RESSEGURO.",
+      "top_left_x": 134,
+      "top_left_y": 373,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 276,
+      "bottom_right_y": 403,
+      "confidence_scores": null,
+      "content": "OBS: AS VARIAÇÕES ESTÃO BASEADAS EM 12 MESES.",
+      "top_left_x": 134,
+      "top_left_y": 391,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "24",
+      "top_left_x": 685,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9762274806092892,
+     "minimum_page_confidence_score": 0.3013069248942559,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 23,
+    "markdown": "# GUIDANCE 2024\n\n[tbl-14.html](tbl-14.html)\n\n$^{1}$TOTAL DOS SALDOS DA CARTEIRA DE CRÉDITO (CONCEITO BACEN), DE TVM PRIVADO (DEBÊNTURES, NOTAS PROMISSÓRIAS, CDBS - CERTIFICADO DE DEPÓSITOS BANCÁRIOS, LETRAS FINANCEIRAS, LETRAS DE CRÉDITO IMOBILIÁRIO, LETRAS DE CRÉDITO DO AGRONEGÓCIO, FIDCS - FUNDO DE INVESTIMENTO EM DIREITOS CREDITÓRIOS E CRIS - CERTIFICADO DE RECERVEIS IMOBILIÁRIOS) E GARANTIAS PRESTADAS (ITANÇAS E AINIS).\n\n$^{2}$TRATA-SE DO TOTAL DOS SALDOS DE DEPÓSITOS À VISTA, POUPANÇA, A PRAZO, INTERFINANCEIROS E OUTROS DEPÓSITOS.\n\n$^{3}$RELAÇÃO DO RESULTADO DE PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA (RESOLUÇÃO 2.682/99 DO CMN) E TVM PRIVADO NOS ÚLTIMOS 12 MESES E O SALDO DA CARTEIRA DE CRÉDITO AMPLIADA.\n\n$^{4}$RELAÇÃO ENTRE O TOTAL DA DESPESA ADMINISTRATIVA (PESSOAL E OUTRAS) E O TOTAL DO RESULTADO BRUTO DA INTERMEDIAÇÃO FINANCEIRA (EXCLUÍDA A PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA), RECEITAS COM SERVIÇOS E RECEITAS COM TARIFAS.\n\n$^{5}$TOTAL DAS DESPESAS DE PESSOAL E OUTRAS DESPESAS ADMINISTRATIVAS.\n\n$^{6}$TOTAL DAS RECEITAS COM SERVIÇOS E TARIFAS, DE PRÉVEOS RETIDOS, VARIAÇÕES DAS PROVISÕES TÉCNICAS, SINISTROS RETIDOS, DESPESAS DE COMERCIALIZAÇÃO DE SEGUROS E RESULTADO LÍQUIDO DE RESSEGURO.\n\nOBS: AS VARIAÇÕES ESTÃO BASEADAS EM 12 MESES.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n24",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">INDICADORES</th><th colspan=\"2\">2024</th></tr><tr><th>GUIDANCE PROJETADO (%)</th><th>GUIDANCE REALIZADO (%)</th></tr></thead><tr><td>CARTEIRA DE CRÉDITO AMPLIADA<sup>1</sup></td><td>7 - 11</td><td>15,3</td></tr><tr><td>DEPÓSITO TOTAL<sup>2</sup></td><td>6 - 10</td><td>1,1</td></tr><tr><td>PROVISÃO DE CRÉDITO/CARTEIRA DE CRÉDITO AMPLIADA<sup>3</sup></td><td>1,7 - 2,1</td><td>1,6</td></tr><tr><td>ÍNDICE DE EFICIÊNCIA OPERACIONAL<sup>4</sup></td><td>45 - 49</td><td>50,8</td></tr><tr><td>DESPESAS OPERACIONAIS<sup>5</sup></td><td>9 - 13</td><td>11,0</td></tr><tr><td>RECEITAS DE SERVIÇOS E SEGUROS<sup>6</sup></td><td>5 - 9</td><td>7,4</td></tr></table>",
+      "format": "html",
+      "id": "tbl-14.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 206,
+      "bottom_right_y": 46,
+      "confidence_scores": null,
+      "content": "# GUIDANCE 2025",
+      "top_left_x": 34,
+      "top_left_y": 20,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 152,
+      "confidence_scores": null,
+      "content": "O guidance Banestes contém declarações prospectivas, as quais estão sujeitas a riscos e incertezas, pois foram baseadas em expectativas e premissas da administração e em informações disponíveis no mercado até a presente data.",
+      "top_left_x": 63,
+      "top_left_y": 103,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 577,
+      "bottom_right_y": 318,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>INDICADORES</th><th>PROJECÃO (%)</th></tr></thead><tr><td>CARTEIRA DE CRÉDITO AMPLIADA<sup>1</sup></td><td>6 - 10</td></tr><tr><td>DEPÓSITO TOTAL<sup>2</sup></td><td>5 - 9</td></tr><tr><td>PROVISÃO DE CRÉDITO/CARTEIRA DE CRÉDITO AMPLIADA<sup>3</sup></td><td>1,9 - 2,3</td></tr><tr><td>MARGEM FINANCEIRA LÍQUIDA<sup>4</sup></td><td>3 - 7</td></tr><tr><td>DESPESAS OPERACIONAIS<sup>5</sup></td><td>10 - 14</td></tr><tr><td>RECEITAS DE SERVIÇOS E SEGUROS<sup>6</sup></td><td>6 - 10</td></tr></table>",
+      "table_id": "tbl-15.html",
+      "top_left_x": 134,
+      "top_left_y": 173,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 582,
+      "bottom_right_y": 357,
+      "confidence_scores": null,
+      "content": "$^{1}$TOTAL DOS SALDOS DA CARTEIRA DE CRÉDITO (CONCEITO BACON), DE TVM PRIVADO (DEBÊNTURES, NOTAS PROMISSÓRIAS, CDRS - CERTIFICADO DE DEPÓSITOS BANCÁRIOS, LETRAS FINANCEIRAS, LETRAS DE CRÉDITO IMOBILIÁRIO, LETRAS DE CRÉDITO DO AGRONEGÓCIO, FIDCS - FUNDO DE INVESTIMENTO EM DIREITOS CRÉDITORIOS E CRIS - CERTIFICADO DE RECEBÍVEIS IMOBILIÁRIOS) E GARANTIAS PRESTADAS (FIANÇAS E AVAIS).",
+      "top_left_x": 135,
+      "top_left_y": 331,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 425,
+      "bottom_right_y": 369,
+      "confidence_scores": null,
+      "content": "$^{2}$TOTAL DOS SALDOS DE DEPÓSITOS À VISTA, POUPANÇA, A PRAZO, INTERFINANCEIROS E OUTROS DEPÓSITOS.",
+      "top_left_x": 135,
+      "top_left_y": 358,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 582,
+      "bottom_right_y": 386,
+      "confidence_scores": null,
+      "content": "$^{3}$RELAÇÃO DO RESULTADO DE PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA E TVM PRIVADO NOS ÚLTIMOS 12 MESES E O SALDO DA CARTEIRA DE CRÉDITO AMPLIADA.",
+      "top_left_x": 135,
+      "top_left_y": 369,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 582,
+      "bottom_right_y": 406,
+      "confidence_scores": null,
+      "content": "$^{4}$TOTAL DA RECEITA DA INTERMEDIAÇÃO FINANCEIRA, DESCONTADO DAS DESPESAS DA INTERMEDIAÇÃO FINANCEIRA E DA PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA.",
+      "top_left_x": 135,
+      "top_left_y": 388,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 336,
+      "bottom_right_y": 418,
+      "confidence_scores": null,
+      "content": "$^{5}$TOTAL DAS DESPESAS DE PESSOAL E OUTRAS DESPESAS ADMINISTRATIVAS.",
+      "top_left_x": 135,
+      "top_left_y": 407,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 582,
+      "bottom_right_y": 437,
+      "confidence_scores": null,
+      "content": "$^{6}$TOTAL DAS RECEITAS COM SERVIÇOS E TARIFAS, DE PRÊMIOS RETIDOS, VARIAÇÕES DAS PROVISÕES TÉCNICAS, SINISTROS RETIDOS, DESPESAS DE COMERCIALIZAÇÃO DE SEGUROS E RESULTADO LÍQUIDO DE RESSEGURO.",
+      "top_left_x": 135,
+      "top_left_y": 419,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "RELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA",
+      "top_left_x": 17,
+      "top_left_y": 984,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 998,
+      "confidence_scores": null,
+      "content": "25",
+      "top_left_x": 686,
+      "top_left_y": 984,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9780214980632953,
+     "minimum_page_confidence_score": 0.3623253713130652,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 24,
+    "markdown": "# GUIDANCE 2025\n\nO guidance Banestes contém declarações prospectivas, as quais estão sujeitas a riscos e incertezas, pois foram baseadas em expectativas e premissas da administração e em informações disponíveis no mercado até a presente data.\n\n[tbl-15.html](tbl-15.html)\n\n$^{1}$TOTAL DOS SALDOS DA CARTEIRA DE CRÉDITO (CONCEITO BACON), DE TVM PRIVADO (DEBÊNTURES, NOTAS PROMISSÓRIAS, CDRS - CERTIFICADO DE DEPÓSITOS BANCÁRIOS, LETRAS FINANCEIRAS, LETRAS DE CRÉDITO IMOBILIÁRIO, LETRAS DE CRÉDITO DO AGRONEGÓCIO, FIDCS - FUNDO DE INVESTIMENTO EM DIREITOS CRÉDITORIOS E CRIS - CERTIFICADO DE RECEBÍVEIS IMOBILIÁRIOS) E GARANTIAS PRESTADAS (FIANÇAS E AVAIS).\n\n$^{2}$TOTAL DOS SALDOS DE DEPÓSITOS À VISTA, POUPANÇA, A PRAZO, INTERFINANCEIROS E OUTROS DEPÓSITOS.\n\n$^{3}$RELAÇÃO DO RESULTADO DE PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA E TVM PRIVADO NOS ÚLTIMOS 12 MESES E O SALDO DA CARTEIRA DE CRÉDITO AMPLIADA.\n\n$^{4}$TOTAL DA RECEITA DA INTERMEDIAÇÃO FINANCEIRA, DESCONTADO DAS DESPESAS DA INTERMEDIAÇÃO FINANCEIRA E DA PROVISÃO PARA CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA.\n\n$^{5}$TOTAL DAS DESPESAS DE PESSOAL E OUTRAS DESPESAS ADMINISTRATIVAS.\n\n$^{6}$TOTAL DAS RECEITAS COM SERVIÇOS E TARIFAS, DE PRÊMIOS RETIDOS, VARIAÇÕES DAS PROVISÕES TÉCNICAS, SINISTROS RETIDOS, DESPESAS DE COMERCIALIZAÇÃO DE SEGUROS E RESULTADO LÍQUIDO DE RESSEGURO.\n\nRELATÓRIO DE ANÁLISE ECONÔMICA E FINANCEIRA\n\n25",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>INDICADORES</th><th>PROJECÃO (%)</th></tr></thead><tr><td>CARTEIRA DE CRÉDITO AMPLIADA<sup>1</sup></td><td>6 - 10</td></tr><tr><td>DEPÓSITO TOTAL<sup>2</sup></td><td>5 - 9</td></tr><tr><td>PROVISÃO DE CRÉDITO/CARTEIRA DE CRÉDITO AMPLIADA<sup>3</sup></td><td>1,9 - 2,3</td></tr><tr><td>MARGEM FINANCEIRA LÍQUIDA<sup>4</sup></td><td>3 - 7</td></tr><tr><td>DESPESAS OPERACIONAIS<sup>5</sup></td><td>10 - 14</td></tr><tr><td>RECEITAS DE SERVIÇOS E SEGUROS<sup>6</sup></td><td>6 - 10</td></tr></table>",
+      "format": "html",
+      "id": "tbl-15.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 334,
+      "bottom_right_y": 128,
+      "confidence_scores": null,
+      "content": "# CONSELHO DE ADMINISTRAÇÃO",
+      "top_left_x": 43,
+      "top_left_y": 104,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 131,
+      "bottom_right_y": 160,
+      "confidence_scores": null,
+      "content": "### **PRESIDENTE**",
+      "top_left_x": 43,
+      "top_left_y": 146,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 235,
+      "bottom_right_y": 179,
+      "confidence_scores": null,
+      "content": "MAELCIO MAURÍCIO SOARES",
+      "top_left_x": 43,
+      "top_left_y": 163,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 151,
+      "bottom_right_y": 213,
+      "confidence_scores": null,
+      "content": "### **CONSELHEIROS**",
+      "top_left_x": 43,
+      "top_left_y": 197,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 156,
+      "bottom_right_y": 231,
+      "confidence_scores": null,
+      "content": "CARLA BARRETO",
+      "top_left_x": 43,
+      "top_left_y": 215,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 364,
+      "bottom_right_y": 249,
+      "confidence_scores": null,
+      "content": "DANILO RONALDO ALVES DOS SANTOS BICALHO",
+      "top_left_x": 43,
+      "top_left_y": 232,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 259,
+      "bottom_right_y": 267,
+      "confidence_scores": null,
+      "content": "JOÃO LUIZ PEREIRA DE OLIVEIRA",
+      "top_left_x": 43,
+      "top_left_y": 251,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 252,
+      "bottom_right_y": 284,
+      "confidence_scores": null,
+      "content": "JOSÉ AMARILDO CASAGRANDE",
+      "top_left_x": 43,
+      "top_left_y": 268,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 261,
+      "bottom_right_y": 302,
+      "confidence_scores": null,
+      "content": "JOSÉ ROBERTO MACEDO FONTES",
+      "top_left_x": 43,
+      "top_left_y": 285,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 177,
+      "bottom_right_y": 319,
+      "confidence_scores": null,
+      "content": "MARCELLO RINALDI",
+      "top_left_x": 43,
+      "top_left_y": 303,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 297,
+      "bottom_right_y": 336,
+      "confidence_scores": null,
+      "content": "MARINETE ANDRIÃO FRANCISCHETTO",
+      "top_left_x": 43,
+      "top_left_y": 320,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 221,
+      "bottom_right_y": 354,
+      "confidence_scores": null,
+      "content": "SEBASTIÃO JOSÉ BALARINI",
+      "top_left_x": 43,
+      "top_left_y": 337,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 425,
+      "confidence_scores": null,
+      "content": "# CONSELHO FISCAL",
+      "top_left_x": 43,
+      "top_left_y": 404,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 185,
+      "bottom_right_y": 459,
+      "confidence_scores": null,
+      "content": "### **MEMBROS EFETIVOS**",
+      "top_left_x": 43,
+      "top_left_y": 443,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 285,
+      "bottom_right_y": 477,
+      "confidence_scores": null,
+      "content": "ALAIMAR RIBEIRO RODRIGUES FIUZA",
+      "top_left_x": 43,
+      "top_left_y": 461,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 190,
+      "bottom_right_y": 494,
+      "confidence_scores": null,
+      "content": "ELISEU JOSÉ FIDÊNCIO",
+      "top_left_x": 43,
+      "top_left_y": 478,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 244,
+      "bottom_right_y": 512,
+      "confidence_scores": null,
+      "content": "MURILO DE CAMPOS CUESTAS",
+      "top_left_x": 43,
+      "top_left_y": 495,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 228,
+      "bottom_right_y": 529,
+      "confidence_scores": null,
+      "content": "TAMIRES ENDRINGER DEPES",
+      "top_left_x": 43,
+      "top_left_y": 514,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 197,
+      "bottom_right_y": 582,
+      "confidence_scores": null,
+      "content": "### **MEMBROS SUPLENTES**",
+      "top_left_x": 43,
+      "top_left_y": 567,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 330,
+      "bottom_right_y": 600,
+      "confidence_scores": null,
+      "content": "DÁMARIS RAFAELA RIZZI MAÇÃO PEROZINI",
+      "top_left_x": 43,
+      "top_left_y": 584,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 301,
+      "bottom_right_y": 618,
+      "confidence_scores": null,
+      "content": "GUSTAVO ROCHA BULGARELI FERREIRA",
+      "top_left_x": 43,
+      "top_left_y": 601,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 228,
+      "bottom_right_y": 635,
+      "confidence_scores": null,
+      "content": "GUSTAVO TEIXEIRA SOARES",
+      "top_left_x": 43,
+      "top_left_y": 619,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 226,
+      "bottom_right_y": 652,
+      "confidence_scores": null,
+      "content": "KLAUS XAVIER DE OLIVEIRA",
+      "top_left_x": 43,
+      "top_left_y": 636,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 208,
+      "bottom_right_y": 669,
+      "confidence_scores": null,
+      "content": "PAULO TEIXEIRA SOARES",
+      "top_left_x": 43,
+      "top_left_y": 653,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 146,
+      "bottom_right_y": 740,
+      "confidence_scores": null,
+      "content": "# DIRETORIA",
+      "top_left_x": 43,
+      "top_left_y": 719,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 194,
+      "bottom_right_y": 780,
+      "confidence_scores": null,
+      "content": "### **DIRETOR-PRESIDENTE**",
+      "top_left_x": 43,
+      "top_left_y": 763,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 252,
+      "bottom_right_y": 798,
+      "confidence_scores": null,
+      "content": "JOSÉ AMARILDO CASAGRANDE",
+      "top_left_x": 43,
+      "top_left_y": 782,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 254,
+      "bottom_right_y": 850,
+      "confidence_scores": null,
+      "content": "### **DIRETOR DE RELAÇÕES COM INVESTIDORES E DE FINANÇAS**",
+      "top_left_x": 43,
+      "top_left_y": 816,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 278,
+      "bottom_right_y": 868,
+      "confidence_scores": null,
+      "content": "SILVIO HENRIQUE BRUNORO GRILLO",
+      "top_left_x": 43,
+      "top_left_y": 851,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 490,
+      "bottom_right_y": 160,
+      "confidence_scores": null,
+      "content": "### **DIRETORES**",
+      "top_left_x": 411,
+      "top_left_y": 146,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 533,
+      "bottom_right_y": 179,
+      "confidence_scores": null,
+      "content": "ALCIO DE ARAÚJO",
+      "top_left_x": 411,
+      "top_left_y": 163,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 596,
+      "bottom_right_y": 197,
+      "confidence_scores": null,
+      "content": "CARLOS ARTUR HAUSCHILD",
+      "top_left_x": 411,
+      "top_left_y": 180,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 598,
+      "bottom_right_y": 214,
+      "confidence_scores": null,
+      "content": "FERNANDO VALLI CARDOSO",
+      "top_left_x": 411,
+      "top_left_y": 198,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 671,
+      "bottom_right_y": 231,
+      "confidence_scores": null,
+      "content": "JOSEANE DE FÁTIMA GERALDO ZOGHBI",
+      "top_left_x": 411,
+      "top_left_y": 215,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 249,
+      "confidence_scores": null,
+      "content": "MARCOS VINÍCIUS NUNES MONTES",
+      "top_left_x": 411,
+      "top_left_y": 232,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 572,
+      "bottom_right_y": 267,
+      "confidence_scores": null,
+      "content": "VICENTE LOPES DUARTE",
+      "top_left_x": 411,
+      "top_left_y": 251,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 621,
+      "bottom_right_y": 335,
+      "confidence_scores": null,
+      "content": "# COMITÊ DE AUDITORIA",
+      "top_left_x": 411,
+      "top_left_y": 314,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 523,
+      "bottom_right_y": 370,
+      "confidence_scores": null,
+      "content": "### **COORDENADOR**",
+      "top_left_x": 411,
+      "top_left_y": 354,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 549,
+      "bottom_right_y": 387,
+      "confidence_scores": null,
+      "content": "MÁRIO ZAN BARROS",
+      "top_left_x": 411,
+      "top_left_y": 371,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 485,
+      "bottom_right_y": 423,
+      "confidence_scores": null,
+      "content": "### **MEMBROS**",
+      "top_left_x": 411,
+      "top_left_y": 407,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 611,
+      "bottom_right_y": 441,
+      "confidence_scores": null,
+      "content": "CHRISTIANO SANTOS CORRÊA",
+      "top_left_x": 411,
+      "top_left_y": 425,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 663,
+      "bottom_right_y": 459,
+      "confidence_scores": null,
+      "content": "MARINETE ANDRIÃO FRANCISCHETTO",
+      "top_left_x": 411,
+      "top_left_y": 442,
+      "type": "text"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9734011614924658,
+     "minimum_page_confidence_score": 0.2715347160100657,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 25,
+    "markdown": "# CONSELHO DE ADMINISTRAÇÃO\n\n### **PRESIDENTE**\n\nMAELCIO MAURÍCIO SOARES\n\n### **CONSELHEIROS**\n\nCARLA BARRETO\n\nDANILO RONALDO ALVES DOS SANTOS BICALHO\n\nJOÃO LUIZ PEREIRA DE OLIVEIRA\n\nJOSÉ AMARILDO CASAGRANDE\n\nJOSÉ ROBERTO MACEDO FONTES\n\nMARCELLO RINALDI\n\nMARINETE ANDRIÃO FRANCISCHETTO\n\nSEBASTIÃO JOSÉ BALARINI\n\n# CONSELHO FISCAL\n\n### **MEMBROS EFETIVOS**\n\nALAIMAR RIBEIRO RODRIGUES FIUZA\n\nELISEU JOSÉ FIDÊNCIO\n\nMURILO DE CAMPOS CUESTAS\n\nTAMIRES ENDRINGER DEPES\n\n### **MEMBROS SUPLENTES**\n\nDÁMARIS RAFAELA RIZZI MAÇÃO PEROZINI\n\nGUSTAVO ROCHA BULGARELI FERREIRA\n\nGUSTAVO TEIXEIRA SOARES\n\nKLAUS XAVIER DE OLIVEIRA\n\nPAULO TEIXEIRA SOARES\n\n# DIRETORIA\n\n### **DIRETOR-PRESIDENTE**\n\nJOSÉ AMARILDO CASAGRANDE\n\n### **DIRETOR DE RELAÇÕES COM INVESTIDORES E DE FINANÇAS**\n\nSILVIO HENRIQUE BRUNORO GRILLO\n\n### **DIRETORES**\n\nALCIO DE ARAÚJO\n\nCARLOS ARTUR HAUSCHILD\n\nFERNANDO VALLI CARDOSO\n\nJOSEANE DE FÁTIMA GERALDO ZOGHBI\n\nMARCOS VINÍCIUS NUNES MONTES\n\nVICENTE LOPES DUARTE\n\n# COMITÊ DE AUDITORIA\n\n### **COORDENADOR**\n\nMÁRIO ZAN BARROS\n\n### **MEMBROS**\n\nCHRISTIANO SANTOS CORRÊA\n\nMARINETE ANDRIÃO FRANCISCHETTO",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 409,
+      "bottom_right_y": 410,
+      "confidence_scores": null,
+      "content": "![img-12.jpeg](img-12.jpeg)",
+      "image_id": "img-12.jpeg",
+      "top_left_x": 315,
+      "top_left_y": 289,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 469,
+      "bottom_right_y": 466,
+      "confidence_scores": null,
+      "content": "**BANESTES**",
+      "top_left_x": 246,
+      "top_left_y": 418,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 469,
+      "bottom_right_y": 497,
+      "confidence_scores": null,
+      "content": "crescemos juntos",
+      "top_left_x": 246,
+      "top_left_y": 465,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 442,
+      "bottom_right_y": 599,
+      "confidence_scores": null,
+      "content": "**#Somos**",
+      "top_left_x": 272,
+      "top_left_y": 556,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 420,
+      "bottom_right_y": 667,
+      "confidence_scores": null,
+      "content": "*Azul*",
+      "top_left_x": 292,
+      "top_left_y": 594,
+      "type": "text"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9496939373289972,
+     "minimum_page_confidence_score": 0.24866856210866628,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 409,
+      "bottom_right_y": 410,
+      "id": "img-12.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 315,
+      "top_left_y": 289
+     }
+    ],
+    "index": 26,
+    "markdown": "![img-12.jpeg](img-12.jpeg)\n\n**BANESTES**\n\ncrescemos juntos\n\n**#Somos**\n\n*Azul*",
+    "tables": []
+   }
+  ],
+  "usage_info": {
+   "doc_size_bytes": 6817103,
+   "pages_processed": 27
+  }
+ },
+ "trimestre": "4T2024"
+}

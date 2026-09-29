@@ -313,15 +313,31 @@ def _gravar_journal(dados: dict) -> None:
     )
 
 
-def subir_pdf(chave: str, doc: Documento, timeout: float) -> str:
-    with open(doc.caminho, "rb") as arquivo:
-        resposta = requests.post(
-            f"{BASE}/files",
-            headers=_cabecalhos(chave),
-            files={"file": (doc.caminho.name, arquivo, "application/pdf")},
-            data={"purpose": "ocr"},
-            timeout=timeout,
-        )
+def subir_pdf(chave: str, doc: Documento, timeout: float, tentativas: int = 5) -> str:
+    """Sobe um PDF, repetindo só falha de conexão.
+
+    Em 2026-09-29 o lote de 28 documentos caiu três vezes com `SSLEOFError`,
+    cada vez num upload diferente, e cada queda recomeçava a fila inteira.
+    Upload não é cobrado e ainda não existe job, então repetir o arquivo que
+    falhou é seguro. Erro HTTP continua falhando na primeira.
+    """
+    espera = 3.0
+    for tentativa in range(1, tentativas + 1):
+        try:
+            with open(doc.caminho, "rb") as arquivo:
+                resposta = requests.post(
+                    f"{BASE}/files",
+                    headers=_cabecalhos(chave),
+                    files={"file": (doc.caminho.name, arquivo, "application/pdf")},
+                    data={"purpose": "ocr"},
+                    timeout=timeout,
+                )
+            break
+        except (requests.exceptions.SSLError, requests.exceptions.ConnectionError):
+            if tentativa == tentativas:
+                raise
+            time.sleep(espera)
+            espera = min(espera * 2, 30.0)
     if not resposta.ok:
         raise ErroBatchOCR(f"upload de {doc.nome} falhou: HTTP {resposta.status_code}")
     return resposta.json()["id"]
