@@ -1092,6 +1092,13 @@ transformar toda dívida do projeto em pré-requisito. O novo protocolo deverá 
 aprovação por superioridade do modelo. Nenhum painel/CSV/código foi alterado
 por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
 
+−5. **CAND-02-P v2: PROMISSOR em 29/09, AGUARDANDO O RESPONSÁVEL.** Com 22 pares de
+   treino (OCR de 28 releases do RAD, US$ 4,02), o M venceu o B1 (nDCG@10 0,508
+   × 0,342, 7 de 8 pares). Próximo passo concreto: o responsável rotula às cegas
+   `artefatos/cand02p_v2/humana/rotulos.csv` (60 itens, lendo `pacote.md` e os
+   PDFs de `corpus/cand02p_v2/raw/`), sem abrir `mapa.json` nem `rotulos/`;
+   depois `python -m scripts.cand02p_piloto --piloto v2 avaliar-humana`
+   (α ≥ 0,67 confirma). Relatório: `resultados/piloto_cand02p_v2_2026-09-29.md`.
 −4. **CAND-02-P (piloto do redline com rótulo de IA) ENCERRADO EM 29/09: INVIÁVEL
    sob o julgamento do Claude.** Primeiro treino feito (M em 952 eventos), mas
    Δ nDCG@10 +0,027 sobre o B1 e vitória em só 3 de 8 pares. Leitor único por
