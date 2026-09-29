@@ -1,0 +1,1107 @@
+{
+ "par": "ABC_4T2023_1T2024",
+ "documento_anterior": "abc_release_4T2023",
+ "documento_atual": "abc_release_1T2024",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "Destaque para a contribuição crescente de Corretagem de Seguros e Tarifas, que no ano cresceu 33,9%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E002",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "",
+   "trecho_atual": "Destaque para o Banco de Investimentos que teve seu melhor resultado histórico em um primeiro trimestre do ano."
+  },
+  {
+   "item": "E003",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Os índices acima ainda não consideram o efeito do aumento de capital relativo aos proventos distribuídos no segundo semestre de 2023, finalizado em maio de 2024."
+  },
+  {
+   "item": "E004",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": 3,
+   "secao": "SUMÁRIO EXECUTIVO",
+   "trecho_anterior": "Apresentamos, abaixo, informações e indicadores financeiros do Banco ABC Brasil ao final do quarto trimestre de 2023.",
+   "trecho_atual": "Apresentamos, abaixo, informações e indicadores financeiros do Banco ABC Brasil ao final do primeiro trimestre de 2024."
+  },
+  {
+   "item": "E005",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "4T23 x 3T23 | Recorrente",
+   "trecho_anterior": "Sendo parcialmente compensada pela redução da Margem com Mercado e do Patrimônio Líquido ao CDI.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E006",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Guidance 2023",
+   "trecho_anterior": "Já o segmento Middle fechou 2023 com um crescimento de 2,5%, reflexo principalmente de um ambiente de maiores taxas de juros, o que exigiu uma abordagem mais prudente na concessão de crédito.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E007",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Fechamos o trimestre com uma Despesa de Provisão Ampliada de R$43,7 milhões, equivalente a 0,4% da Carteira de Crédito Expandida, índice baixo quando comparado a nossa média histórica."
+  },
+  {
+   "item": "E008",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 12,
+   "secao": "Empréstimos Classificados entre D-H (Resolução Nº 2.682 BACEN)",
+   "trecho_anterior": "O saldo total de créditos renegociados no fim do quarto trimestre de 2023 foi de R$164,8 milhões – equivalente a 0,7% da Carteira de Empréstimos (2.682).",
+   "trecho_atual": "O saldo total de créditos renegociados no fim do primeiro trimestre de 2024 foi de R$220,1 milhões – equivalente a 0,9% da Carteira de Empréstimos (2.682)."
+  },
+  {
+   "item": "E009",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Spread com Clientes Anualizado (Empréstimos e Títulos Privados)",
+   "trecho_anterior": "",
+   "trecho_atual": "Vale lembrar que o primeiro trimestre é sazonalmente influenciado por um menor nível de atividade econômica e por um menor número de dias úteis no período."
+  },
+  {
+   "item": "E010",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Adequação do Capital",
+   "trecho_anterior": "",
+   "trecho_atual": "No início de maio 2024, o BACEN homologou a recapitalização de JCP referentes aos proventos do 2S23, que influenciará positivamente o capital do 2T24."
+  },
+  {
+   "item": "E011",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Encerramos 2023 com Lucro Líquido de R$852 milhões, equivalente a um Retorno sobre Patrimônio Anualizado (ROAE) de 15,5% e de 16,0% excluindo o impacto de um caso isolado de um cliente do segmento C&IB.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E012",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "Provisões",
+   "trecho_anterior": "Em relação à Carteira Expandida, a Despesa de Provisão Ampliada encerrou o 4T23 em 0,5%, uma queda de 35 pontos base em relação ao trimestre anterior e de 59 pontos base quando comparada ao mesmo período de 2022.",
+   "trecho_atual": "Em relação à Carteira Expandida, a Despesa de Provisão Ampliada encerrou o 1T24 em 0,4%, uma queda de 9 pontos base em relação ao trimestre anterior e de 53 pontos base quando comparada ao mesmo período de 2023."
+  },
+  {
+   "item": "E013",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "Resultado Operacional",
+   "trecho_anterior": "O Resultado Operacional totalizou R$426,6 milhões no quarto trimestre de 2023, crescimento de 1,5% em relação ao trimestre anterior e de 18,0% no comparativo com o mesmo período de 2022.",
+   "trecho_atual": "O Resultado Operacional totalizou R$396,0 milhões no primeiro trimestre de 2024, redução de 7,2% em relação ao trimestre anterior e aumento de 21,3% no comparativo com o mesmo período de 2023."
+  },
+  {
+   "item": "E014",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Guidance 2024",
+   "trecho_anterior": "Desta forma, nossa expectativa é que 2024 apresente uma expansão das receitas superior ao das despesas, através de ganhos de escala e da maturação de novas iniciativas, bem como da captura de alavancagens operacionais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E015",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "A Carteira de Crédito Expandida apresentou uma redução de 0,9% no trimestre e expansão de 5,3% nos últimos 12 meses, com destaque para o crescimento dos segmentos Middle e C&IB, com uma expansão de 7,7% e 6,8%, respectivamente, nos últimos 12 meses."
+  },
+  {
+   "item": "E016",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "ESG",
+   "trecho_anterior": "",
+   "trecho_atual": "Iniciativa da ONU para mobilizar a comunidade empresarial na adoção e promoção, em suas práticas de negócios, de Dez Princípios universalmente aceitos nas áreas de direitos humanos, trabalho, meio ambiente e combate à corrupção."
+  },
+  {
+   "item": "E017",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "O volume foi quase 3x maior que o mesmo trimestre de 2023 e 12,3% maior que do 4T23."
+  },
+  {
+   "item": "E018",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Continuidade no Crescimento da Base de Clientes",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E019",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "1T23 – Conciliação entre os Resultados Contábeis e Gerenciais",
+   "trecho_anterior": "",
+   "trecho_atual": "(2) Reclassificação de efeitos fiscais de “Despesas tributárias” e “Imposto de renda e contribuição social” para “Resultado Bruto da Intermediação Financeira”."
+  },
+  {
+   "item": "E020",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "ESG",
+   "trecho_anterior": "Paralelamente, o Banco emitiu mais de R$350 milhões em Letras Financeiras Sociais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E021",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "Despesas de Pessoal, Administrativas e PLR",
+   "trecho_anterior": "As Despesas de Pessoal, Outras Despesas Administrativas e PLR atingiram R$247,8 milhões no quarto trimestre de 2023, redução de 4,5% em relação ao trimestre anterior e crescimento de 2,5% em relação ao mesmo período de 2022.",
+   "trecho_atual": "As Despesas de Pessoal, Outras Despesas Administrativas e PLR atingiram R$243,7 milhões no primeiro trimestre de 2024, redução de 1,7% em relação ao trimestre anterior e aumento de 6,1% em relação ao mesmo período de 2023."
+  },
+  {
+   "item": "E022",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 17,
+   "secao": "Adequação do Capital",
+   "trecho_anterior": "No 4T23, a exposição média a risco de mercado medido pelo VaR da carteira *trading* foi de R$3,1 milhões (valor em risco estimado através do método de simulação histórica com horizonte de tempo de um dia e intervalo de confiança de 99%).",
+   "trecho_atual": "No 1T24, a exposição média a risco de mercado medido pelo VaR da carteira *trading* foi de R$3,6 milhões (valor em risco estimado através do método de simulação histórica com horizonte de tempo de um dia e intervalo de confiança de 99%)."
+  },
+  {
+   "item": "E023",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "ESG",
+   "trecho_anterior": "",
+   "trecho_atual": "Alinhado à estratégia de fomentar soluções que suportem o desenvolvimento sustentável dos clientes, o ABC Brasil atingiu R$975 milhões em captações financeiras sociais, emitidas através de Letras Financeiras e CDBs."
+  },
+  {
+   "item": "E024",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Rentabilidade",
+   "trecho_anterior": "",
+   "trecho_atual": "Lucro Líquido Recorrente (R$ milhões)"
+  },
+  {
+   "item": "E025",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Abertura Setorial da Carteira Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "Em março de 2024, o Banco apresentou um portfólio de crédito bem diversificado, com um incremento na participação dos subsetores de Geração (+2,1 p.p.), Cadeia de Grãos (+0,5 p.p.) e Mineração & Siderurgia (+0,4 p.p.) e uma diminuição na participação dos setores de Indústria de Bens de Consumo (-0,5 p.p.), Açúcar e Álcool (-0,5 p.p.) e Bancos (-0,5 p.p.)."
+  },
+  {
+   "item": "E026",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Este resultado foi atingido mesmo sem contar com recuperações relevantes no período e com uma formação de inadimplência de créditos classificados entre ratings E-H praticamente inexistente."
+  },
+  {
+   "item": "E027",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Esta consistência de resultados mostra a resiliência de nosso modelo de negócios, que vem aumentando sua diversificação ao longo dos trimestres, seja na exposição ao crédito, seja nas fontes de receitas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E028",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Guidance 2023",
+   "trecho_anterior": "$$ Inclui as carteiras de empréstimos, garantias prestadas e títulos privados.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E029",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Controle de Despesas e Flexibilidade para Crescimento",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E030",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Guidance 2024",
+   "trecho_anterior": "*Este Guidance contém declarações perspectivas, as quais estão sujeitas a riscos e incertezas, pois foram baseadas em expectativas e premissas da Administração e em informações disponíveis no mercado até a presente data.*",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E031",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "ABCB4 NÍVEL 2 PROVISO - BANCO",
+   "trecho_atual": "ABCB4 NÍVEL 2 PROVISO - BRASIL"
+  },
+  {
+   "item": "E032",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Este menor custo de crédito tem contribuído, trimestre após trimestre, para o crescimento de nossa Margem Financeira Gerencial pós-Provisão."
+  },
+  {
+   "item": "E033",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Provisões",
+   "trecho_anterior": "",
+   "trecho_atual": "A Despesa de Provisão Ampliada do 1T24 apresentou uma queda de 19,6% quando comparada com o 4T23, e de 55,8% quando comparada ao mesmo período de 2023, resultado principalmente pela redução da Provisão para Devedores Duvidosos (PDD)."
+  },
+  {
+   "item": "E034",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "1T24 x 1T23 | Recorrente",
+   "trecho_anterior": "",
+   "trecho_atual": "Pelo aumento da Receita de Serviços; e - Pelo aumento da Margem com Mercado;"
+  },
+  {
+   "item": "E035",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "ESG",
+   "trecho_anterior": "O ano de 2023 foi marcado por avanços importantes na Agenda ESG que destacaram o compromisso do ABC Brasil com a sustentabilidade e a responsabilidade social.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E036",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Guidance 2023",
+   "trecho_anterior": "Por fim, o Índice de Eficiência fechou 2023 em 38,6%, levemente acima do *Guidance* de 36-38% para o ano, influenciado por um menor crescimento das receitas, que expandiram 10,3% na base anual.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E037",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "A Margem Financeira Gerencial atingiu R$560,1 milhões no 4T23, uma queda de 5,2% em relação ao 3T23, e um aumento de 0,6% em relação ao mesmo trimestre do ano anterior.",
+   "trecho_atual": "A Margem Financeira Gerencial atingiu R$530,7 milhões no 1T24, uma redução de 5,3% em relação ao 4T23 e de 3,5% em relação ao mesmo trimestre do ano anterior."
+  },
+  {
+   "item": "E038",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "A Margem Financeira Gerencial pós-Provisão apresentou uma queda de 1,6% no trimestre e um crescimento de 11,8% em comparação ao quarto trimestre de 2022.",
+   "trecho_atual": "A Margem Financeira Gerencial pós-Provisão apresentou uma redução de 1,1% no trimestre e um crescimento de 10,1% em comparação ao primeiro trimestre de 2023."
+  },
+  {
+   "item": "E039",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 11,
+   "secao": "Classificação da Carteira de Empréstimos (Resolução Nº 2.682 BACEN)",
+   "trecho_anterior": "O saldo da carteira de empréstimos ao final de dezembro de 2023 era de R$24,8 bilhões, com um saldo de PDD de R$867,1 milhões.",
+   "trecho_atual": "O saldo da carteira de empréstimos ao final de março de 2024 era de R$23,4 bilhões, com um saldo de PDD de R$854,5 milhões."
+  },
+  {
+   "item": "E040",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Eficiência",
+   "trecho_anterior": "Temos a expectativa que o ambiente de negócios em 2024 possa contribuir para que as receitas voltem a crescer a níveis mais próximos às taxas históricas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E041",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "2023 – Conciliação entre os Resultados Contábeis e Gerenciais",
+   "trecho_anterior": "(1) Reclassificações de 'Despesas de Pessoal' (referente ao INSS da remuneração variável) para 'Participação nos Lucros e Resultados', de 'Outras Despesas Administrativas' (vinculadas ao volume de receitas) para 'Resultado Bruto da Intermediação Financeira' e 'Receita de Serviços', de 'Outras Despesas Administrativas' (referente a despesas de recuperação de encargos e de crédito) para 'Despesa de Provisão', de 'Resultado Bruto da Intermediação Financeira' (referente às recuperações de crédito e Provisão para Desvalorização de Títulos (PDT)) para 'Despesa de Provisão', de 'Receita de Serviços' (referente às receitas de estruturação de crédito) para 'Resultado Bruto da Intermediação Financeira' e de 'Outras Receitas (Despesas) Operacionais' (referente às provisões da Comercializadora de Energia) para 'Despesa de Provisão'.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E042",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Embora as condições de mercado em 2023 não tenham possibilitado a expansão mais expressiva de receitas com geração de valor sustentável a longo prazo, estamos preparados para aproveitar as oportunidades em 2024, visando ganhos de escala tanto de negócios já consolidados, quanto de iniciativas mais recentes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E043",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Eficiência",
+   "trecho_anterior": "Este nível foi resultado tanto da desaceleração significativa das despesas – com um crescimento de 10,9% em base anual e uma queda de 4,5% vs. o trimestre anterior – quanto de um comportamento menos dinâmico das receitas, que cresceram 10,3% no ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "ESG",
+   "trecho_anterior": "O foco é oferecer produtos sustentáveis que ajudem os clientes na transição para uma economia de baixo carbono.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "Resultados",
+   "trecho_anterior": "O Lucro Líquido recorrente atingiu R$231,5 milhões no quarto trimestre de 2023, crescimento de 1,4% em relação aos R$228,2 milhões apresentados no trimestre anterior e de 17,3% em relação aos R$197,3 milhões apresentados no mesmo período de 2022.",
+   "trecho_atual": "O Lucro Líquido recorrente atingiu R$223,0 milhões no primeiro trimestre de 2024, redução de 3,6% em relação aos R$231,5 milhões apresentados no trimestre anterior e crescimento de 17,4% em relação aos R$190,0 milhões apresentados no mesmo período de 2023."
+  },
+  {
+   "item": "E046",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Guidance 2023",
+   "trecho_anterior": "Atribuímos a este menor dinamismo, tanto um menor crescimento de carteira, reflexo de uma menor demanda de crédito pelas empresas, quanto uma performance mais fraca de Banco de Investimentos no primeiro semestre do ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E047",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "ESG",
+   "trecho_anterior": "Esta ação teve como objetivo auxiliar na elaboração da estratégia climática do Banco e no desenvolvimento de um plano de descarbonização.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E048",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Spread com Clientes Anualizado (Empréstimos e Títulos Privados)",
+   "trecho_anterior": "O Spread com Clientes Anualizado apresentou uma redução de aproximadamente 30 pontos base vs. o trimestre anterior, causado principalmente pelo crescimento da carteira concentrado no final do trimestre, gerando menores receitas de juros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E049",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "11h30 Brasília / 9h30 US EST",
+   "trecho_atual": "11h00 Brasília / 10h00 US EDT"
+  },
+  {
+   "item": "E050",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "1T23 – Conciliação entre os Resultados Contábeis e Gerenciais",
+   "trecho_anterior": "",
+   "trecho_atual": "(1) Reclassificações de “Despesas de Pessoal” (referente ao INSS da remuneração variável) para “Participação nos Lucros e Resultados”, de “Outras Despesas Administrativas” (vinculadas ao volume de receitas) para “Resultado Bruto da Intermediação Financeira” e “Receita de Serviços”, de “Outras Despesas Administrativas” (referente a despesas de recuperação de encargos e de crédito) para “Despesa de Provisão”, de “Resultado Bruto da Intermediação Financeira” (referente às recuperações de crédito e Provisão para Desvalorização de Títulos (PDT)) para “Despesa de Provisão”, de “Receita de Serviços” (referente às receitas de estruturação de crédito) para “Resultado Bruto da Intermediação Financeira” e de “Outras Receitas (Despesas) Operacionais” (referente às provisões da Comercializadora de Energia) para “Despesa de Provisão”."
+  },
+  {
+   "item": "E051",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "ESG",
+   "trecho_anterior": "Adicionalmente, recebeu o Prêmio de Melhor Programa ESG no segmento Financials Banks – Small Cap pela Institutional Investor e foi também premiado por seu impacto social, sendo reconhecido como uma das empresas que mais apoiaram unidades individuais do Instituto de Oportunidade Social (IOS).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E052",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 13,
+   "secao": "Classificação da Carteira de Garantias Prestadas (Resolução Nº 2.682 BACEN)",
+   "trecho_anterior": "O saldo da carteira de garantias prestadas ao final de dezembro de 2023 era de R$11,3 bilhões, com um saldo de provisão de R$50,2 milhões.",
+   "trecho_atual": "O saldo da carteira de garantias prestadas ao final de março de 2024 era de R$11,5 bilhões, com um saldo de provisão de R$52,3 milhões."
+  },
+  {
+   "item": "E053",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "ESG",
+   "trecho_anterior": "Alinhado à estratégia de fomentar negócios sustentáveis, o ABC Brasil publicou o Framework de Finanças Sustentáveis, que recebeu um parecer de segunda opinião de uma consultoria independente especializada.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E054",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "1T24 x 4T23 | Recorrente",
+   "trecho_anterior": "",
+   "trecho_atual": "Pela redução da Receita de Serviços; e - Pela redução da Margem com Clientes (antes de provisão);"
+  },
+  {
+   "item": "E055",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Eficiência",
+   "trecho_anterior": "",
+   "trecho_atual": "O Índice de Eficiência encerrou o primeiro trimestre de 2024 em 39,4%."
+  },
+  {
+   "item": "E056",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Estes novos instrumentos contribuíram para elevar nosso Capital Nível I e nosso Índice de Basileia para 13,8% e 16,6%, respectivamente, ao mesmo tempo que criam as bases para o crescimento com uma estrutura de capital otimizada."
+  },
+  {
+   "item": "E057",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Eficiência",
+   "trecho_anterior": "Esta performance se deve tanto a um menor crescimento de carteira, reflexo de uma menor demanda de crédito pelas empresas, quanto a uma performance mais fraca de Banco de Investimentos no primeiro semestre de 2023.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E058",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Composição Acionária",
+   "trecho_anterior": "",
+   "trecho_atual": "$$ Não inclui ações emitidas com o aumento da capital de proventos referentes ao segundo semestre de 2023, homologada pelo Banco Central em 3 de maio de 2024."
+  },
+  {
+   "item": "E059",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "ESG",
+   "trecho_anterior": "",
+   "trecho_atual": "O ABC Brasil se tornou signatário do Pacto Global das Nações Unidas (ONU) no Brasil."
+  },
+  {
+   "item": "E060",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Guidance 2023",
+   "trecho_anterior": "Atingimos um crescimento anual em 2023 na Carteira de Crédito Expandida de 7,2%, parte superior do *Guidance* revisado para o ano de 4% a 8%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E061",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Reforçamos nossa base de capital no trimestre com a emissão de instrumentos de capital Nível I e II no mercado local – incluindo R$500 milhões em Letras Financeiras Subordinadas Perpétuas."
+  },
+  {
+   "item": "E062",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Adequação do Capital",
+   "trecho_anterior": "Neste trimestre o Índice de Basileia teve um aumento de 30 pontos base, positivamente impactado pela apropriação do resultado do trimestre, pela conclusão da recapitalização dos proventos referentes ao primeiro semestre de 2023 e pela emissão de instrumentos subordinados.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E063",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": 4,
+   "secao": "1T24 – Conciliação entre os Resultados Contábeis e Gerenciais",
+   "trecho_anterior": "(2) Reclassificação do efeito fiscal do hedge de 'Despesas tributárias' e 'Imposto de renda e contribuição social' para 'Resultado Bruto da Intermediação Financeira'.",
+   "trecho_atual": "(2) Reclassificação de efeitos fiscais de 'Despesas tributárias' e 'Imposto de renda e contribuição social' para 'Resultado Bruto da Intermediação Financeira'."
+  },
+  {
+   "item": "E064",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "1T24 x 1T23 | Recorrente",
+   "trecho_anterior": "A expansão do resultado no quarto trimestre de 2023 em comparação com o mesmo período do ano anterior é explicada principalmente:",
+   "trecho_atual": "A expansão do resultado no primeiro trimestre de 2024 em comparação com o mesmo período do ano anterior é explicada principalmente:"
+  },
+  {
+   "item": "E065",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Guidance 2024",
+   "trecho_anterior": "Este é o racional para a definição do *Guidance* do Índice de Eficiência para 2024, entre 36% a 38%, em um movimento gradual de melhoria ao longo do ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E066",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "O Banco de Investimentos teve uma receita de R$41,6 milhões, o maior valor para um primeiro trimestre, sazonalmente menos ativo no ano."
+  },
+  {
+   "item": "E067",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Provisões",
+   "trecho_anterior": "A Despesa de Provisão Ampliada do 4T23 apresentou uma queda de 39,4% quando comparada com o 3T23, e de 52,7% quando comparada ao mesmo período de 2022, resultado principalmente de reversões de provisões, tanto de Títulos Privados (PDT), quanto de Garantias Prestadas (PDG).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E068",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Encerramos 2023 com um crescimento de despesas de 11%, na parte inferior de nosso guidance revisado para o ano (entre 10% e 15%).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E069",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Guidance 2024",
+   "trecho_anterior": "$$ Inclui as carteiras de empréstimos, garantias prestadas e títulos privados.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E070",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "A Carteira de Crédito Expandida apresentou um crescimento de 6,2% no trimestre e de 7,2% nos últimos 12 meses, com destaque para o crescimento do segmento Corporate, com uma expansão de 12,1% nos últimos 12 meses, atingindo 59,2% da Carteira de Crédito Expandida.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Guidance 2024",
+   "trecho_anterior": "Em relação às Despesas (Pessoal, Outras Administrativas e PLR), projetamos um crescimento entre 9% e 14% em 2024.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E072",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "Na comparação anual, a expansão foi de 11,2%, com crescimento em todas as linhas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E073",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Acreditamos que a expansão da base de clientes continuará a contribuir para o crescimento futuro de nossa receita.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E074",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "Ativos e Passivos por Vencimento",
+   "trecho_anterior": "No 4º trimestre de 2023, a posição de caixa líquida no vértice até 30 dias era de R$12,5 bilhões – equivalente a aproximadamente 2,1x o patrimônio líquido.",
+   "trecho_atual": "No 1º trimestre de 2024, a posição de caixa líquida no vértice até 30 dias era de R$11,1 bilhões – equivalente a aproximadamente 1,8x o patrimônio líquido."
+  },
+  {
+   "item": "E075",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Indicadores da Carteira de Crédito Expandida por Segmento",
+   "trecho_anterior": "No trimestre, houve um incremento de 152 clientes vs. o trimestre anterior, equivalente a 3,2% de crescimento na base trimestral.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E076",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Guidance 2023",
+   "trecho_anterior": "Esta performance foi sustentada principalmente pelo segmento Corporate, que apresentou expansão de 12,1% no período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E077",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "No quarto trimestre de 2023, a Receita de Serviços representou 16,2% da Receita Total.",
+   "trecho_atual": "No primeiro trimestre de 2024, a Receita de Serviços representou 16,5% da Receita Total."
+  },
+  {
+   "item": "E078",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Spread com Clientes Anualizado (Empréstimos e Títulos Privados)",
+   "trecho_anterior": "",
+   "trecho_atual": "O Spread com Clientes Anualizado apresentou uma redução de aproximadamente 40 pontos base vs. o trimestre anterior, resultado de um mix de produtos e clientes que comandaram menores spreads."
+  },
+  {
+   "item": "E079",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "1T24 x 1T23 | Recorrente",
+   "trecho_anterior": "Sendo parcialmente compensada pela aumento da linha de Imposto de Renda e Contribuição Social.",
+   "trecho_atual": "Sendo parcialmente compensada pelo aumento da linha de Imposto de Renda & Contribuição Social."
+  },
+  {
+   "item": "E080",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2023 x 2022 | Recorrente",
+   "trecho_anterior": "O gráfico abaixo demonstra as principais variações no resultado acumulado deste ano em relação ao anterior:",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E081",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Além disso, temos focado nosso crescimento em linhas de negócio sem ou com baixa alocação de capital – como cash management, derivativos, corretagem de seguros, e outros – que tem contribuído para a melhora da qualidade do resultado e o aumento estrutural de rentabilidade do ABC Brasil.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E082",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Eficiência",
+   "trecho_anterior": "O Índice de Eficiência encerrou 2023 em 38,6%, levemente acima do *Guidance* de 36-38% para o ano, mas com uma tendência de melhora no quarto trimestre, que fechou em 37,7%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E083",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "NIM",
+   "trecho_anterior": "Comparando 2023 com o ano anterior, a NIM se manteve estável em 4,6%, nível superior ao apresentado em períodos recentes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E084",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 10,
+   "secao": "Indicadores da Carteira de Crédito Expandida por Segmento",
+   "trecho_anterior": "O ABC Brasil atingiu 4.930 clientes corporativos com relacionamento ativo no 4T23, uma expansão de 9,7% nos últimos 12 meses.",
+   "trecho_atual": "O ABC Brasil atingiu 4.894 clientes corporativos com relacionamento ativo no 1T24, uma expansão de 11,4% nos últimos 12 meses."
+  },
+  {
+   "item": "E085",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Modelo de Negócios Mais Diversificado e com Maior Rentabilidade Estrutural",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E086",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 17,
+   "secao": "Adequação do Capital",
+   "trecho_anterior": "Este aumento foi parcialmente compensado pelo provisionamento da distribuição de proventos referentes ao quarto trimestre, e pelo aumento de Ativos Ponderados pelo Risco (RWA).",
+   "trecho_atual": "Este aumento foi parcialmente compensado pelo provisionamento para distribuição de proventos, e pelo aumento de Ativos Ponderados pelo Risco (RWA)."
+  },
+  {
+   "item": "E087",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "O crescimento trimestral foi liderado pelo segmento Corporate (+145 clientes) – que ultrapassou a marca de 2.000 clientes ativos – e complementado pelo segmento C&IB (+19 clientes).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E088",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Fechamos o 4T23 com um ROAE de 16,0% – nos beneficiando por uma Margem com Clientes ajustada pelas Provisões crescente, uma Receita de Serviços novamente acima da marca de R$100 milhões e foco na disciplina de custos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E089",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "2023 – Conciliação entre os Resultados Contábeis e Gerenciais",
+   "trecho_anterior": "(2) Reclassificação do efeito fiscal do hedge de 'Despesas tributárias' e 'Imposto de renda e contribuição social' para 'Resultado Bruto da Intermediação Financeira'.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E090",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "1T24 x 4T23 | Recorrente",
+   "trecho_anterior": "",
+   "trecho_atual": "Pela redução do Patrimônio Líquido Remunerado a CDI;"
+  },
+  {
+   "item": "E091",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Adequação do Capital",
+   "trecho_anterior": "",
+   "trecho_atual": "Neste trimestre o Índice de Basileia teve um aumento de 163 pontos base, positivamente impactado pela apropriação do resultado do trimestre e, principalmente, pela emissão de instrumentos de capital Nível I e II."
+  },
+  {
+   "item": "E092",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Hoje possuímos uma infraestrutura física e de capital humano preparada para suportar nossa ambição de crescimento, tanto de clientes quanto de transações.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E093",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Este resultado foi obtido apesar de um crescimento de mercado de crédito significativamente abaixo da média histórica, e de importantes eventos de crédito que influenciaram negativamente o mercado de renda fixa local (DCM) no primeiro semestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E094",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "NIM",
+   "trecho_anterior": "A NIM (taxa anualizada da margem financeira gerencial) foi de 4,4% a.a. no 4T23, uma diminuição de 37 pontos base em relação ao 3T23 e de 34 pontos base em relação ao mesmo período de 2022.",
+   "trecho_atual": "A NIM (taxa anualizada da margem financeira gerencial) foi de 4,1% a.a. no 1T24, uma redução de 33 pontos base em relação ao 4T23 e de 62 pontos base em relação ao mesmo período de 2023."
+  },
+  {
+   "item": "E095",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "O Lucro Líquido atingiu R$223,0 milhões no primeiro trimestre de 2024, crescimento de 17,4% em relação ao mesmo período de 2023, enquanto o Retorno sobre Patrimônio Anualizado (ROAE) foi de 15,1% – uma expansão de 64 pontos base no período."
+  },
+  {
+   "item": "E096",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 15,
+   "secao": "Captação Histórica",
+   "trecho_anterior": "Em dezembro de 2023 o saldo da captação totalizava R$49,3 bilhões, crescimento de 3,3% no trimestre e de 8,0% em 12 meses.",
+   "trecho_atual": "Em março de 2024 o saldo da captação totalizava R$50,5 bilhões, crescimento de 2,3% no trimestre e de 14,7% em 12 meses."
+  },
+  {
+   "item": "E097",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "ESG",
+   "trecho_anterior": "O ABC Brasil também finalizou a mensuração das suas emissões financiadas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E098",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Esta unidade de negócio se beneficiou tanto do aumento do volume de operações de DCM no período, quanto do fechamento de operações de assessoria."
+  },
+  {
+   "item": "E099",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Eficiência",
+   "trecho_anterior": "",
+   "trecho_atual": "O crescimento anual das despesas (+6,1% vs. o mesmo trimestre do ano anterior) ficou abaixo do guidance para o ano, enquanto que as receitas apresentaram um crescimento de 4,5% na comparação anual."
+  },
+  {
+   "item": "E100",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "ESG",
+   "trecho_anterior": "",
+   "trecho_atual": "Adicionalmente, o ABC Brasil foi reconhecido pela ABBC (Associação Brasileira de Bancos) com o Selo Mais Mulheres na Liderança, certificado que incentiva a participação feminina no mercado financeiro, e reconhece as instituições comprometidas com equidade de gênero na alta liderança."
+  },
+  {
+   "item": "E101",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Em linha com nossa estratégia de crescimento e diversificação, continuamos a expandir nossa base de clientes corporativos, com a adição de 152 novos clientes no trimestre e de 436 na comparação anual – equivalente a uma expansão anual de 9,7%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E102",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "ESG",
+   "trecho_anterior": "",
+   "trecho_atual": "Esta adesão não apenas reforça a evolução constante das práticas internas de sustentabilidade, como abre oportunidades para colaborações globais e compartilhamento de melhores práticas."
+  },
+  {
+   "item": "E103",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Abertura Setorial da Carteira Expandida",
+   "trecho_anterior": "Em dezembro de 2023, o Banco apresentou um portfólio de crédito bem diversificado e defensivo, com um incremento na participação dos subsetores de Serviços (+2,6 p.p.), Construção Civil e Incorporadoras – Outros (+0,8 p.p.) e Outros (+0,4 p.p.) e uma diminuição na participação dos setores de Geração (-1,1 p.p.), Transportes e Logística – Outros (-0,7 p.p.) e Cadeia de Grãos (-0,3 p.p.).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E104",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Guidance 2023",
+   "trecho_anterior": "Já o Crescimento de Despesas encerrou 2023 em 10,9%, na parte inferior do *Guidance* revisado de 10% a 15% – resultado de um menor crescimento na base de colaboradores e do início da captura de economias de escala, fruto da implementação de iniciativas de ganhos de produtividade.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E105",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "A Receita de Serviços encerrou o trimestre em R$108 milhões – novamente acima da marca de R$100 milhões – com redução de 7,5% em relação ao trimestre anterior e aumento de 9,3% em relação ao mesmo período de 2022.",
+   "trecho_atual": "A Receita de Serviços encerrou o trimestre em R$102 milhões – novamente acima da marca de R$100 milhões – com redução de 5,4% em relação ao trimestre anterior e aumento de 28,2% em relação ao mesmo período de 2023."
+  },
+  {
+   "item": "E106",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Esta performance reflete nossa flexibilidade no ajuste do crescimento das despesas, e nossa disciplina de foco em rentabilidade.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E107",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "1T24 x 4T23 | Recorrente",
+   "trecho_anterior": "A expansão do lucro líquido recorrente, comparando o quarto trimestre de 2023 com o terceiro trimestre de 2023 é explicada principalmente:",
+   "trecho_atual": "A redução do lucro líquido recorrente, comparando o primeiro trimestre de 2024 com o quarto trimestre de 2023 é explicada principalmente:"
+  },
+  {
+   "item": "E108",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Guidance 2024",
+   "trecho_anterior": "Projetamos um crescimento entre 10% e 15% para a Carteira de Crédito Expandida em 2024, se beneficiando de uma expansão anual entre 15% e 25% no segmento Middle.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E109",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "1T24 x 4T23 | Recorrente",
+   "trecho_anterior": "",
+   "trecho_atual": "Sendo parcialmente compensada pela redução da Despesa com Provisão."
+  },
+  {
+   "item": "E110",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 21,
+   "secao": "Presença Geográfica",
+   "trecho_anterior": "Atualmente o Banco ABC Brasil conta com presença comercial em 52 cidades brasileiras:",
+   "trecho_atual": "Atualmente o Banco ABC Brasil conta com presença comercial em 53 cidades brasileiras:"
+  }
+ ]
+}

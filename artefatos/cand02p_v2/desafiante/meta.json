@@ -1,0 +1,19 @@
+{
+  "modelo": "bge-m3:latest",
+  "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+  "ancoras": [
+    "revisão do guidance, das projeções ou das metas para o ano",
+    "mudança de política contábil ou reapresentação de resultados de períodos anteriores",
+    "alteração relevante no índice de Basileia, no capital principal ou na liquidez",
+    "piora ou melhora relevante na inadimplência, no custo do crédito ou nas provisões",
+    "mudança de perímetro: aquisição, venda ou consolidação de participação",
+    "nova incerteza, risco regulatório, processo judicial ou contingência relevante",
+    "mudança na política de dividendos, juros sobre capital próprio ou recompra de ações",
+    "inversão de tendência: crescimento que virou queda, ou lucro que virou prejuízo",
+    "mudança na definição ou na metodologia de cálculo de um indicador",
+    "evento não recorrente relevante que afeta o resultado do trimestre"
+  ],
+  "tamanho_texto": 600,
+  "script_sha256": "5fa82e03f709fc79fd801fe98271b3e4fa947b5b44305e469629ec403484665f",
+  "redline_sha256": "40a655be448fa3973f4ade1481d1db405743ea290175e7b234173c99a7bfeeb8"
+}
