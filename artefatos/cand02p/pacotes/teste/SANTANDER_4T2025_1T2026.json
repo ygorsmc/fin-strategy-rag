@@ -1,0 +1,1520 @@
+{
+ "par": "SANTANDER_4T2025_1T2026",
+ "documento_anterior": "santander_release_4T2025",
+ "documento_atual": "santander_release_1T2026",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Indicadores de desempenho",
+   "trecho_anterior": "Índice de cobertura da carteira em estágio 3 66,4% 66,2%: 0,2 p.p. | -",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Indicadores de desempenho",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Índice de cobertura da carteira em estágio 3 66,4% 66,2%",
+   "colunas_anterior": [
+    "0,02 p.p.",
+    "-0,1 p.p."
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E002",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Informe de Resultados do 1º trimestre de 2026 (BRGAAP)",
+   "trecho_anterior": "",
+   "trecho_atual": "O retorno sobre patrimônio foi de 16,0%, queda de 1,6 p.p. no trimestre e 1,5 p.p. na comparação com o mesmo período de 2025."
+  },
+  {
+   "item": "E003",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Transacionalidade",
+   "trecho_anterior": "Pilar fundamental para a principalidade dos clientes",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E004",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 11,
+   "secao": "NPL Formation$$",
+   "trecho_anterior": "A relação entre o NPL Formation e a carteira de crédito atingiu 1,17% no período, redução de 0,06 p.p. no trimestre.",
+   "trecho_atual": "A relação entre o NPL Formation e a carteira de crédito atingiu 1,01% no período, incremento de 0,05 p.p. no trimestre e queda de 0,01 p.p. no ano."
+  },
+  {
+   "item": "E005",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Resultado de PDD e custo de crédito",
+   "trecho_anterior": "A partir de 2025, o indicador passou a incorporar nova metodologia, decorrente da Resolução CMN nº 4.966/21, não sendo comparável aos períodos anteriores a 2025.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E006",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Despesas",
+   "trecho_anterior": "",
+   "trecho_atual": "As despesas gerais totalizaram R$ 6.633 milhões no 1T26, estáveis em três meses, com destaque para o incremento nas linhas de despesas relacionadas aos investimentos em tecnologia, bem como a amortização destes investimentos, que continuam a evoluir ao longo dos trimestres."
+  },
+  {
+   "item": "E007",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Indicadores de desempenho",
+   "trecho_anterior": "Índice de inadimplência (acima de 90 dias) 3,7% 3,4%: 0,3 p.p. | 0,5 p.p.",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Indicadores de desempenho",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Índice de inadimplência (acima de 90 dias) 3,7% 3,4%",
+   "colunas_anterior": [
+    "0,02 p.p.",
+    "-0,1 p.p."
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E008",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Investimentos",
+   "trecho_anterior": "Já a Santander Corretora passa a concentrar a oferta integrada de investimentos para o público em geral, integrada ao ecossistema do banco.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E009",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Operações de crédito e cobranças e arrecadações",
+   "trecho_anterior": "As comissões de operações de crédito totalizaram R$ 513 milhões no 4T25, redução de 1,6% no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E010",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Sumário executivo",
+   "trecho_anterior": "",
+   "trecho_atual": "Índice de inadimplência (acima de 90 dias): 3,3% | 3,1% | 2,8%",
+   "titulo_da_tabela": "Sumário executivo",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Índice de inadimplência (acima de 90 dias)",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E011",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Índice de inadimplência de 15 a 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência de 15 a 90 dias de Pessoa Física apresentou incremento no 1T26 atingindo 5,2%, em função (i) da sazonalidade do primeiro trimestre, (ii) de um cenário macroeconômico desafiador, especialmente na baixa renda, e (iii) de uma menor base de carteira de Pessoa Física no período."
+  },
+  {
+   "item": "E012",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Índice",
+   "trecho_anterior": "Crédito: 6",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Índice",
+   "unidade": "",
+   "rotulo_da_linha": "Crédito",
+   "colunas_anterior": [
+    "3"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E013",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Write-off",
+   "trecho_anterior": "Com esse cenário, a relação entre o write-off e a carteira de crédito caiu 0,15 p.p. no trimestre e 0,27 p.p. no ano, atingindo 0,74%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E014",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Margem financeira",
+   "trecho_anterior": "",
+   "trecho_atual": "A margem com o mercado apresentou recuperação no trimestre, totalizando perda de R$ 771 milhões, ante R$ 1.486 milhões negativos no trimestre anterior, beneficiada especialmente pela sensibilidade positiva à queda da taxa de juros, menor número de dias úteis e maior *accrual* de títulos atrelados a inflação bem como por maiores resultados de tesouraria."
+  },
+  {
+   "item": "E015",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "Despesas",
+   "trecho_anterior": "As despesas gerais totalizaram R$ 6.633 milhões no 4T25, com crescimento de 3,3% em três meses, por maiores investimentos em tecnologia e despesas com publicidade, que são sazonalmente maiores no 4T, bem como maiores gastos de pessoal, refletindo principalmente o acordo coletivo 2025 de 5,68% aplicado sobre a base salarial dos colaboradores a partir de setembro de 2025 e por incremento nas remunerações variáveis.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E016",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 11,
+   "secao": "NPL Formation$$",
+   "trecho_anterior": "O NPL Formation somou R$ 6.460 milhões no 4T25, redução de 2,7% no trimestre e aumento de 12,5% no ano.",
+   "trecho_atual": "O NPL Formation somou R$ 7.186 milhões no 1T26, avanço de 7,6% no trimestre e alta de 2,7% no ano."
+  },
+  {
+   "item": "E017",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Análise do desempenho 4º trimestre de 2025",
+   "trecho_anterior": "Excluindo estes efeitos, as comissões teriam crescido 6,9% no ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E018",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 19,
+   "secao": "Capital",
+   "trecho_anterior": "O Capital principal atingiu 11,6%, queda de 0,2 p.p. no trimestre e avanço de 0,6 p.p. em 12 meses.",
+   "trecho_atual": "O capital principal atingiu 11,2%, com queda de 0,3 p.p. no trimestre e avanço de 0,2 p.p. em 12 meses."
+  },
+  {
+   "item": "E019",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 25,
+   "pagina_atual": 20,
+   "secao": "Reconciliação dos resultados contábil e gerencial",
+   "trecho_anterior": "Resultados de Part. em Coligadas e Controladas: 71 | - | 71",
+   "trecho_atual": "Resultados de Part. em Coligadas e Controladas: 89 | - | 89",
+   "titulo_da_tabela": "Para melhor compreensão dos resultados em BRGAAP, a seguir apresentamos a reconciliação entre o resultado contábil e o resultado gerencial.",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Resultados de Part. em Coligadas e Controladas",
+   "colunas_anterior": [
+    "4T25",
+    "4T25",
+    ""
+   ],
+   "colunas_atual": [
+    "1T26",
+    "1T26",
+    ""
+   ]
+  },
+  {
+   "item": "E020",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 25,
+   "pagina_atual": 20,
+   "secao": "Reconciliação dos resultados contábil e gerencial",
+   "trecho_anterior": "Resultado não operacional: 7 | - | 7",
+   "trecho_atual": "Resultado não operacional: (25) | - | (25)",
+   "titulo_da_tabela": "Para melhor compreensão dos resultados em BRGAAP, a seguir apresentamos a reconciliação entre o resultado contábil e o resultado gerencial.",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Resultado não operacional",
+   "colunas_anterior": [
+    "4T25",
+    "4T25",
+    ""
+   ],
+   "colunas_atual": [
+    "1T26",
+    "1T26",
+    ""
+   ]
+  },
+  {
+   "item": "E021",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 11,
+   "pagina_atual": 5,
+   "secao": "Sumário executivo",
+   "trecho_anterior": "Lucro líquido gerencial por unit (R$) - anualizado: 4,38 | 4,29 | 4,13",
+   "trecho_atual": "Lucro líquido gerencial por unit (R$) - anualizado: 4,05 | 4,38 | 4,13",
+   "titulo_da_tabela": "Sumário executivo",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Lucro líquido gerencial por unit (R$) - anualizado",
+   "colunas_anterior": [
+    "4T25",
+    "3T25",
+    "4T24"
+   ],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E022",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Financeira como destaque do pilar de crédito",
+   "trecho_anterior": "Seguimos como a maior e mais digital financeira do país, sendo referência na praticidade, com jornada simplificada na contratação, com apenas 4 cliques, e qualidade do atendimento ao cliente desde o seu primeiro contato.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E023",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Margem financeira",
+   "trecho_anterior": "",
+   "trecho_atual": "Na comparação anual, a deterioração se deve principalmente à sensibilidade negativa ao aumento da taxa de juros e ao menor resultado de tesouraria."
+  },
+  {
+   "item": "E024",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 25,
+   "pagina_atual": 20,
+   "secao": "Reconciliação dos resultados contábil e gerencial",
+   "trecho_anterior": "Imposto de renda e contribuição social: (110) | - | (110)",
+   "trecho_atual": "Imposto de renda e contribuição social: (677) | - | (677)",
+   "titulo_da_tabela": "Para melhor compreensão dos resultados em BRGAAP, a seguir apresentamos a reconciliação entre o resultado contábil e o resultado gerencial.",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Imposto de renda e contribuição social",
+   "colunas_anterior": [
+    "4T25",
+    "4T25",
+    ""
+   ],
+   "colunas_atual": [
+    "1T26",
+    "1T26",
+    ""
+   ]
+  },
+  {
+   "item": "E025",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Índice de inadimplência de 15 a 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "Na comparação anual, redução de 0,2 p.p. alinhada à disciplina de originação, com foco em rentabilidade."
+  },
+  {
+   "item": "E026",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 21,
+   "pagina_atual": 15,
+   "secao": "Carteira de crédito ampliada",
+   "trecho_anterior": "Total: 566.074 | 550.261 | 549.657",
+   "trecho_atual": "Total: 705.582 | 708.201 | 682.293",
+   "titulo_da_tabela": "Carteira de crédito ampliada",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Total",
+   "colunas_anterior": [
+    "Dez/25",
+    "Set/25",
+    "Dez/24"
+   ],
+   "colunas_atual": [
+    "Mar/26",
+    "Dez/25",
+    "Mar/25"
+   ]
+  },
+  {
+   "item": "E027",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 25,
+   "pagina_atual": 6,
+   "secao": "Demonstração de resultado gerencial",
+   "trecho_anterior": "Lucro Líquido: 4.023 | - | 4.086",
+   "trecho_atual": "Lucro líquido: 3.788 | 4.086 | 3.861",
+   "titulo_da_tabela": "Demonstração de resultado gerencial",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Lucro líquido",
+   "colunas_anterior": [
+    "4T25",
+    "4T25",
+    ""
+   ],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E028",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "Carteira ampliada por produto",
+   "trecho_anterior": "",
+   "trecho_atual": "Carteira ampliada: 705.582 | 708.201 | 682.293",
+   "titulo_da_tabela": "Carteira ampliada por produto",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Carteira ampliada",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "Mar/26",
+    "Dez/25",
+    "Mar/25"
+   ]
+  },
+  {
+   "item": "E029",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Presença ampla e diferenciais competitivos para impulsionar o negócio",
+   "trecho_anterior": "Além disso, renovamos a oferta e modelo de atendimento no ano passado, investimos no reforço do nosso time de especialistas e mantivemos o foco em digitalizar nossos processos, além de investirmos no fortalecimento da nossa marca.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E030",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Informe de Resultados do 1º trimestre de 2026 (BRGAAP)",
+   "trecho_anterior": "",
+   "trecho_atual": "Na comparação trimestral, a melhora é explicada principalmente pela margem com mercados, efeito da sensibilidade positiva à queda da taxa de juros, menor número de dias úteis, bem como pelos melhores resultados da tesouraria."
+  },
+  {
+   "item": "E031",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Despesas",
+   "trecho_anterior": "",
+   "trecho_atual": "Outras: (340) | (294) | (310)",
+   "titulo_da_tabela": "Despesas",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Outras",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E032",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 19,
+   "pagina_atual": 13,
+   "secao": "Despesas",
+   "trecho_anterior": "Propaganda, promoções e publicidade: (211) | (116) | (217)",
+   "trecho_atual": "Propaganda, promoções e publicidade: (123) | (211) | (164)",
+   "titulo_da_tabela": "Despesas",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Propaganda, promoções e publicidade",
+   "colunas_anterior": [
+    "4T25",
+    "3T25",
+    "4T24"
+   ],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E033",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Resultado de PDD e custo de crédito",
+   "trecho_anterior": "As despesas de provisão apresentaram redução de 9,9% no trimestre, reflexo da aceleração da cobertura realizada no primeiro semestre e a ausência de efeitos pontuais relevantes, conforme mencionado acima, e aumento de 1,3% no ano, ainda pressionadas pelo cenário macroeconômico, com a manutenção de altas taxas de juros e elevado nível de endividamento das famílias, bem como aumento de pedidos de recuperação judicial.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E034",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 20,
+   "pagina_atual": 14,
+   "secao": "Outras receitas e despesas operacionais",
+   "trecho_anterior": "Provisões para contingências: (901) | (957) | (924)",
+   "trecho_atual": "Provisões para contingências: (1.126) | (901) | (928)",
+   "titulo_da_tabela": "Outras receitas e despesas operacionais",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Provisões para contingências",
+   "colunas_anterior": [
+    "4T25",
+    "3T25",
+    "4T24"
+   ],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E035",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Margem financeira",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, a margem com clientes reduziu 1,4%; apesar do aumento do volume médio, com destaque para o incremento em produtos de menor risco, tivemos (i) menos dias no trimestre afetando tanto a margem de crédito quanto captações bem como o (ii) efeito do diferimento das comissões migradas para a margem, que também afetaram o spread negativamente."
+  },
+  {
+   "item": "E036",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Índice de inadimplência acima de 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "Em Pessoa Física o índice inadimplência acima de 90 dias registrou alta de 0,3 p.p. no trimestre e 0,6 p.p. no ano."
+  },
+  {
+   "item": "E037",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Corretagem e colocação de títulos",
+   "trecho_anterior": "",
+   "trecho_atual": "Ambas as variações são explicadas por maior número de operações de renda fixa no período, com foco em clientes institucionais."
+  },
+  {
+   "item": "E038",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Informe de Resultados do 4º trimestre de 2025 (BRGAAP)",
+   "trecho_anterior": "Esses resultados refletem a consistência da nossa execução estratégica e reforçam nossa ambição de sermos a principal plataforma financeira na vida de nossos clientes, o banco que cada cliente escolhe todos os dias, que apoia os clientes nos seus começos, o banco do #ComeçaAgora, e que trata cada cliente como Cliente Principal e único.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E039",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 17,
+   "secao": "Pessoa jurídica",
+   "trecho_anterior": "A carteira ampliada de Pessoa Jurídica totalizou R$ 345.353 milhões, com expansão de 3,0% em três meses e 5,0% em doze meses.",
+   "trecho_atual": "A carteira ampliada de Pessoa Jurídica totalizou R$ 344.880 milhões, praticamente estável em três meses e com avanço de 4,3% em doze meses."
+  },
+  {
+   "item": "E040",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 12,
+   "secao": "Índice de inadimplência acima de 90 dias",
+   "trecho_anterior": "Já em Grandes Empresas, o índice ficou em 0,2%, com melhora de 0,1 p.p. no trimestre e piora de 0,2 p.p. no ano.",
+   "trecho_atual": "Já em Grandes Empresas, o índice ficou em 0,2%, com piora de 0,1 p.p. na comparação trimestral e 0,2 p.p. no ano."
+  },
+  {
+   "item": "E041",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Análise do desempenho 4º trimestre de 2025",
+   "trecho_anterior": "Com relação as provisões, observamos um desempenho melhor em relação ao trimestre anterior, refletindo principalmente a aceleração do reforço de cobertura ao longo do ano e a ausência de efeitos pontuais relevantes, como casos específicos no atacado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E042",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Índice de inadimplência acima de 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "Na Pessoa Jurídica o incremento foi de 0,2 p.p. no trimestre e 0,6 p.p. ano."
+  },
+  {
+   "item": "E043",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 25,
+   "pagina_atual": 20,
+   "secao": "Reconciliação dos resultados contábil e gerencial",
+   "trecho_anterior": "Participações no lucro: (695) | - | -",
+   "trecho_atual": "Participações no lucro: (749) | - | -",
+   "titulo_da_tabela": "Para melhor compreensão dos resultados em BRGAAP, a seguir apresentamos a reconciliação entre o resultado contábil e o resultado gerencial.",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Participações no lucro",
+   "colunas_anterior": [
+    "4T25",
+    "4T25",
+    ""
+   ],
+   "colunas_atual": [
+    "1T26",
+    "1T26",
+    ""
+   ]
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Foco na qualidade e rentabilidade",
+   "trecho_anterior": "No massivo, seguimos evoluindo com a hiperpersonalização e aprimoramento da experiência e jornada do cliente, além do foco na transacionalidade, crescendo 14% YoY em depósitos, *versus* queda de 5% YoY do crédito, e com redução de 19% YoY do custo de servir, melhorando nossa eficiência.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "Captações",
+   "trecho_anterior": "",
+   "trecho_atual": "Reconciliação dos resultados contábil e gerencial"
+  },
+  {
+   "item": "E046",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 12,
+   "secao": "Índice de inadimplência de 15 a 90 dias",
+   "trecho_anterior": "O índice de inadimplência de 15 a 90 dias encerra o quarto trimestre em 4,0%, com elevação de 0,1 p.p. no trimestre, praticamente estável, apesar de um cenário macroeconômico mais desafiador.",
+   "trecho_atual": "O índice de inadimplência de 15 a 90 dias encerra o trimestre em 3,4%, com elevação de 0,1 p.p. no trimestre, praticamente estável, apesar de um cenário macroeconômico mais desafiador e da sazonalidade mais negativa devido à menor liquidez no período."
+  },
+  {
+   "item": "E047",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Carteira de crédito ampliada",
+   "trecho_anterior": "Desconsiderando esse último, o crescimento dessa carteira seria de 0,5% nos três meses e 3,3% no ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E048",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Índice",
+   "trecho_anterior": "Análise do desempenho: 10",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Índice",
+   "unidade": "",
+   "rotulo_da_linha": "Análise do desempenho",
+   "colunas_anterior": [
+    "3"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E049",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "Capital",
+   "trecho_anterior": "Comparado ao mesmo período do ano anterior, o índice de Basileia apresentou aumento de 1,1 p.p.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E050",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Informe de Resultados do 1º trimestre de 2026 (BRGAAP)",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, efeito de menos dias úteis e corridos, já na comparação anual o incremento se deve principalmente a volume, mix e disciplina de preço, contribuindo para o aumento do spread."
+  },
+  {
+   "item": "E051",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 11,
+   "secao": "Write-off",
+   "trecho_anterior": "Write-off atingiu R$ 4.147 milhões no 4T25, com queda de 14,9% no trimestre e de 24,5% no ano.",
+   "trecho_atual": "Write-off atingiu R$ 5.508 milhões no 1T26, incremento de 31,9% no trimestre e redução de 13,2% no ano."
+  },
+  {
+   "item": "E052",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Operações de crédito e cobranças e arrecadações",
+   "trecho_anterior": "",
+   "trecho_atual": "As comissões de operações de crédito totalizaram R$ 483 milhões no 1T26, redução de 6,0% no trimestre devido ao efeito sazonal, com maior volume de financiamentos no final do ano."
+  },
+  {
+   "item": "E053",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "Outras receitas e despesas operacionais",
+   "trecho_anterior": "",
+   "trecho_atual": "As outras receitas e despesas operacionais totalizaram uma despesa de R$ 2.300 milhões no 1T26, queda de 11,8% no trimestre, em parte devido à sazonalidade de maior volume de negócios no 4T25, que resultou em maiores despesas com transacionalidade no período, dentre outros efeitos."
+  },
+  {
+   "item": "E054",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "Outras receitas e despesas operacionais",
+   "trecho_anterior": "",
+   "trecho_atual": "No ano, houve aumento de 8,2%, em especial pelo aumento das provisões para contingências."
+  },
+  {
+   "item": "E055",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 25,
+   "pagina_atual": 20,
+   "secao": "Reconciliação dos resultados contábil e gerencial",
+   "trecho_anterior": "Participações dos acionistas minoritários: (150) | - | (150)",
+   "trecho_atual": "Participações dos acionistas minoritários: (118) | - | (118)",
+   "titulo_da_tabela": "Para melhor compreensão dos resultados em BRGAAP, a seguir apresentamos a reconciliação entre o resultado contábil e o resultado gerencial.",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Participações dos acionistas minoritários",
+   "colunas_anterior": [
+    "4T25",
+    "4T25",
+    ""
+   ],
+   "colunas_atual": [
+    "1T26",
+    "1T26",
+    ""
+   ]
+  },
+  {
+   "item": "E056",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Write-off",
+   "trecho_anterior": "",
+   "trecho_atual": "Ao longo de 2025 aprimoramos nossa política de baixas a prejuízo com base em uma expectativa mais apurada de recuperabilidade de cada portfólio, em implementação no 1S26."
+  },
+  {
+   "item": "E057",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Sumário executivo",
+   "trecho_anterior": "Lucro líquido gerencial: 4.086 | 4.009 | 3.855",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Sumário executivo",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Lucro líquido gerencial",
+   "colunas_anterior": [
+    "4T25",
+    "3T25",
+    "4T24"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E058",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Investimentos",
+   "trecho_anterior": "Foco na expansão de captações do varejo e na construção da melhor plataforma de investimentos do mercado, pautada no relacionamento humano com escala e excelência digital",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E059",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 25,
+   "pagina_atual": 20,
+   "secao": "Reconciliação dos resultados contábil e gerencial",
+   "trecho_anterior": "Variações Cambiais (Líquidas): (1.444) | - | -",
+   "trecho_atual": "Variações Cambiais (Líquidas): 1.430 | - | -",
+   "titulo_da_tabela": "Para melhor compreensão dos resultados em BRGAAP, a seguir apresentamos a reconciliação entre o resultado contábil e o resultado gerencial.",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Variações Cambiais (Líquidas)",
+   "colunas_anterior": [
+    "4T25",
+    "4T25",
+    ""
+   ],
+   "colunas_atual": [
+    "1T26",
+    "1T26",
+    ""
+   ]
+  },
+  {
+   "item": "E060",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "Carteira de crédito ampliada",
+   "trecho_anterior": "",
+   "trecho_atual": "Os avanços nestes portfólios foram compensados pelos decréscimos em (i) cartões, pelo efeito sazonal usual do primeiro trimestre com redução de 3,1%, (ii) consignado com redução de 5,2% e (iii) pelo efeito da variação cambial nas grandes empresas que apresentaram redução de 0,1%; quando excluído o efeito da variação cambial o crescimento seria de 1,0%."
+  },
+  {
+   "item": "E061",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Resultado de PDD e custo de crédito",
+   "trecho_anterior": "A comparação anual também é impactada pelas mudanças no modelo de provisionamento promovidas pela Resolução CMN nº 4.966/21, adotada a partir de 2025.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E062",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "Comissões",
+   "trecho_anterior": "Desconsiderando os efeitos da normativa, a linha de operações de crédito teria crescido 3,7% no ano e, no total de comissões, o crescimento seria de 6,9% YoY.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E063",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Margem financeira",
+   "trecho_anterior": "A margem com o mercado aumentou a sua perda no trimestre, totalizando perda de R$ 1.486 milhões, ante R$ 1.348 milhões negativos no trimestre anterior, impactada especialmente por menores resultados de tesouraria.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E064",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Administração de recursos",
+   "trecho_anterior": "",
+   "trecho_atual": "A aceleração comercial, combinada à ampliação da oferta de consórcios e a uma força de vendas especializada, tem contribuído para o avanço de consórcios que cresceram 15,6% no ano."
+  },
+  {
+   "item": "E065",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Administração de recursos",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas de administração de recursos totalizaram R$ 525 milhões no período, redução de 4,1% no trimestre."
+  },
+  {
+   "item": "E066",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Informe de Resultados do 1º trimestre de 2026 (BRGAAP)",
+   "trecho_anterior": "",
+   "trecho_atual": "O resultado de PDD gerencial totalizou R$ 6.344 milhões, avanço de 3,9% no trimestre e queda de 0,7% no ano."
+  },
+  {
+   "item": "E067",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Foco na qualidade e rentabilidade",
+   "trecho_anterior": "Seguimos com disciplina na concessão de crédito, focados na qualidade e rentabilidade dos ativos, aumentando a receita de 2025 do segmento em 2% YoY mesmo com a ligeira redução da carteira.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E068",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Informe de Resultados do 1º trimestre de 2026 (BRGAAP)",
+   "trecho_anterior": "",
+   "trecho_atual": "Na comparação trimestral, essas receitas reduziram em 5,5%, devido à sazonalidade do trimestre que afeta especialmente as receitas de cartões."
+  },
+  {
+   "item": "E069",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Resultado de PDD e custo de crédito",
+   "trecho_anterior": "Na comparação anual, o aumento foi de 2,9%, impactado tanto pelo cenário macroeconômico como pela implementação da Resolução CMN nº 4.966/21.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E070",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Jornada de pagamentos",
+   "trecho_anterior": "Em paralelo, seguimos investindo continuamente em tecnologias de ponta e adotando processos rigorosos de proteção em todo o ciclo das transações, reforçando a segurança digital de nossos clientes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E071",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 16,
+   "secao": "Pessoa Física",
+   "trecho_anterior": "O saldo de crédito pessoal/outros, incluindo as operações renegociadas, também declinou 2,5% e 5,3% no trimestre e ano, respectivamente, somando R$ 36.647 milhões no fechamento.",
+   "trecho_atual": "O saldo de crédito pessoal/outros, incluindo as operações renegociadas, apresentou incremento de 1,5% no trimestre e redução de 3,5% no ano totalizando R$ 37.201 milhões no fechamento."
+  },
+  {
+   "item": "E072",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 13,
+   "pagina_atual": 7,
+   "secao": "Margem financeira",
+   "trecho_anterior": "Margem de produtos: 15.995 | 15.753 | 15.179",
+   "trecho_atual": "Margem de produtos: 15.472 | 15.688 | 14.865",
+   "titulo_da_tabela": "Margem financeira",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Margem de produtos",
+   "colunas_anterior": [
+    "4T25",
+    "3T25",
+    "4T24"
+   ],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E073",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Balanço patrimonial",
+   "trecho_anterior": "Patrimônio líquido: 95.650 | 94.171 | 90.744",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Balanço patrimonial",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Patrimônio líquido",
+   "colunas_anterior": [
+    "Dez/25",
+    "Set/25",
+    "Dez/24"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E074",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 12,
+   "secao": "Índice de inadimplência acima de 90 dias",
+   "trecho_anterior": "O índice de inadimplência superior a 90 dias atingiu 3,7% em dezembro de 2025, com alta de 0,3 p.p. no trimestre e 0,5 p.p. no ano, especialmente em Pessoa Física nas faixas de menor renda e, em Pessoa Jurídica, nas empresas de menor faturamento.",
+   "trecho_atual": "O índice de inadimplência superior a 90 dias atingiu 3,3% no 1T26, com alta de 0,2 p.p. no trimestre e 0,6 p.p. no ano, especialmente em Pessoa Física nas faixas de menor renda e, em Pessoa Jurídica, nas empresas de menor faturamento."
+  },
+  {
+   "item": "E075",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 5,
+   "secao": "Sumário executivo",
+   "trecho_anterior": "(6) Inclui Poupança, Depósitos à vista, Depósitos a prazo, Debêntures, LCA, LCI, Letras Financeiras, Certificados de Operações Estruturadas e LIG.",
+   "trecho_atual": "(5) Inclui Poupança, Depósitos à vista, Depósitos a prazo, Debêntures, LCA, LCI, Letras Financeiras, Certificados de Operações Estruturadas e LIG."
+  },
+  {
+   "item": "E076",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 5,
+   "secao": "Sumário executivo",
+   "trecho_anterior": "(8) Dez/25: distribuição de JCP de R$ 2.000 milhões, aprovada em 10 de outubro de 2025 e distribuição de JCP de R$ 620 milhões, aprovada em 22 de dezembro de 2025.",
+   "trecho_atual": "(7) Mar/26: distribuição de JCP de R$ 2.000 milhões, aprovada em 9 de janeiro de 2026."
+  },
+  {
+   "item": "E077",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Informe de Resultados do 1º trimestre de 2026 (BRGAAP)",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas totais avançaram 0,8% no trimestre e 0,9% no ano."
+  },
+  {
+   "item": "E078",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Informe de Resultados do 4º trimestre de 2025 (BRGAAP)",
+   "trecho_anterior": "(ii) em PMEs, reafirmamos nosso compromisso de estar próximos de nossos clientes, “saindo do banco” para estar dentro de seus negócios, com soluções completas e personalizadas que privilegiam o relacionamento principal, refletindo em maior transacionalidade, produtividade e rentabilidade; e (iii) em investimentos, neste trimestre, a Toro passou a ser Santander Corretora, reforçando nosso posicionamento e ecossistema de investimentos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E079",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 25,
+   "pagina_atual": 20,
+   "secao": "Reconciliação dos resultados contábil e gerencial",
+   "trecho_anterior": "Resultado de Créditos de Liquidação Duvidosa: (5.180) | (112) | (6.105)",
+   "trecho_atual": "Resultado de Créditos de Liquidação Duvidosa: (5.828) | 1 | (6.344)",
+   "titulo_da_tabela": "Para melhor compreensão dos resultados em BRGAAP, a seguir apresentamos a reconciliação entre o resultado contábil e o resultado gerencial.",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Resultado de Créditos de Liquidação Duvidosa",
+   "colunas_anterior": [
+    "4T25",
+    "4T25",
+    ""
+   ],
+   "colunas_atual": [
+    "1T26",
+    "1T26",
+    ""
+   ]
+  },
+  {
+   "item": "E080",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Sustentabilidade",
+   "trecho_anterior": "Nessa trajetória, destacam-se a avaliação e mitigação de riscos sociais, ambientais e climáticos para a concessão de crédito a projetos e empresas; a geração de negócios que apoiem a transição dos clientes para uma economia de baixo carbono; e a construção de uma sociedade mais inclusiva, por meio de ações de educação, empregabilidade e empreendedorismo, além de inclusão financeira e social.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E081",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 12,
+   "pagina_atual": 6,
+   "secao": "Demonstração de resultado gerencial",
+   "trecho_anterior": "Receita total: 21.086 | 20.760 | 21.493",
+   "trecho_atual": "Receita total: 21.248 | 21.086 | 21.058",
+   "titulo_da_tabela": "Demonstração de resultado gerencial",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Receita total",
+   "colunas_anterior": [
+    "4T25",
+    "3T25",
+    "4T24"
+   ],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E082",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Índice de inadimplência acima de 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "Importante destacar que o aprimoramento das regras de baixa a prejuízo, desenvolvido ao longo de 2025, deve impactar os índices de inadimplência ao longo de 2026."
+  },
+  {
+   "item": "E083",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Resultado de PDD e custo de crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "O resultado de PDD gerencial totalizou R$ 6.344 milhões no 1T26, avanço de 3,9% no trimestre e queda de 0,7% no ano."
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "Ressignificar toda a oferta de valor do Banco baseada na Principalidade",
+   "trecho_anterior": "",
+   "trecho_atual": "Nesse programa, o nível de engajamento e a profundidade do vínculo orientam o benefício de aceleração de pontos nos cartões de crédito."
+  },
+  {
+   "item": "E085",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Concentração de crédito$$",
+   "trecho_anterior": "",
+   "trecho_atual": "Reconciliação dos resultados contábil e gerencial"
+  },
+  {
+   "item": "E086",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Pessoa jurídica",
+   "trecho_anterior": "",
+   "trecho_atual": "A carteira ampliada de Grandes Empresas somou R$ 251.176 milhões, estável no trimestre, com queda na carteira de crédito, impactada pela variação cambial, sendo compensada por avanço em títulos (+3,7%) e avais (+3,4%)."
+  },
+  {
+   "item": "E087",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Análise do desempenho 4º trimestre de 2025",
+   "trecho_anterior": "As despesas seguem controladas, declinando 2,0% no ano (-2,6% em termos reais) e com alta de 3,3% no trimestre (+2,7% em termos reais), dada a sazonalidade de fim de ano, refletindo nosso compromisso com uma gestão eficiente de custos e uso da tecnologia para otimizar processos e maximizar produtividade.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E088",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Carteira de crédito ampliada",
+   "trecho_anterior": "Na mesma tendência, a carteira de Pessoa Física avançou 1,6% no trimestre, com contribuição relevante das carteiras de cartão de crédito (+9,3%) e crédito imobiliário (+2,7%), parcialmente compensada pela retração no crédito consignado (-3,2%) e Rural (-2,3%), refletindo a continuidade da estratégia de seletividade na concessão e foco em maior retorno sobre o capital.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E089",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Investimentos",
+   "trecho_anterior": "Essa união representa um salto na experiência do cliente, que passará a contar com um ecossistema ainda mais amplo de produtos e soluções, além de recomendações personalizadas e insights de mercado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Destaques financeiros | 4T25",
+   "trecho_anterior": "Comissões R$ 5,8 bilhões (+3,6% QoQ e +4,3% YoY) Expansão por diversificação de receitas, pilar relevante de crescimento",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 5,
+   "secao": "Sumário executivo",
+   "trecho_anterior": "Set/25: distribuição de JCP de R$ 2.000 milhões, aprovada em 10 de julho de 2025.",
+   "trecho_atual": "Mar/25: distribuição de JCP de R$ 1.500 milhões, aprovada em 10 de janeiro de 2025."
+  },
+  {
+   "item": "E092",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Comissões",
+   "trecho_anterior": "",
+   "trecho_atual": "As comissões totalizaram R$ 5.435 milhões no 1T26, recuo de 5,5% em três meses, explicado principalmente pela sazonalidade usual do primeiro trimestre, em especial nas linhas de cartões e operações de crédito, bem como menores receitas com capitalização e de prestação de serviço com ligadas na linha de outras."
+  },
+  {
+   "item": "E093",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Índice de inadimplência acima de 90 dias",
+   "trecho_anterior": "O índice de inadimplência acima de 90 dias registrou alta, no trimestre, de 0,4 p.p. e 0,2 p.p. nos segmentos de Pessoa Física e Pessoa Jurídica, respectivamente.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E094",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "Capital",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de Basileia atingiu 15,2%, queda de 0,2 p.p. no trimestre, refletindo o aumento dos ativos ponderados pelo risco (RWA), impactados pela implementação gradual do novo modelo de apuração do RWA Operacional, conforme a Resolução BCB nº 356/2023."
+  },
+  {
+   "item": "E095",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Análise do desempenho 4º trimestre de 2025",
+   "trecho_anterior": "No ano, as comissões avançaram 4,3%, com destaque para cartões, seguros e administração de recursos, compensadas parcialmente pelas receitas reclassificadas para margem financeira, conforme Resolução CMN nº 4.966/21 adotada em 2025.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E096",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 16,
+   "secao": "Financiamento ao consumo",
+   "trecho_anterior": "A carteira total de veículos para pessoa física, que inclui tanto as operações realizadas pela financeira quanto pelos canais de distribuição do banco, alcançou R$ 80.665 milhões no trimestre, crescendo 3,2% na comparação trimestral e 7,8% em doze meses.",
+   "trecho_atual": "A carteira total de veículos para pessoa física, que inclui tanto as operações realizadas pela financeira quanto pelos canais de distribuição do banco, alcançou R$ 82.349 milhões no trimestre, crescendo 2,1% na comparação trimestral e 8,8% em doze meses."
+  },
+  {
+   "item": "E097",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 25,
+   "pagina_atual": 20,
+   "secao": "Reconciliação dos resultados contábil e gerencial",
+   "trecho_anterior": "Margem Financeira Bruta: 15.984 | (112) | 15.332",
+   "trecho_atual": "Margem Financeira Bruta: 14.257 | (220) | 15.812",
+   "titulo_da_tabela": "Para melhor compreensão dos resultados em BRGAAP, a seguir apresentamos a reconciliação entre o resultado contábil e o resultado gerencial.",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Margem Financeira Bruta",
+   "colunas_anterior": [
+    "4T25",
+    "4T25",
+    ""
+   ],
+   "colunas_atual": [
+    "1T26",
+    "1T26",
+    ""
+   ]
+  },
+  {
+   "item": "E098",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 11,
+   "secao": "Carteira renegociada",
+   "trecho_anterior": "A cobertura dessa carteira encerrou o trimestre em 44,9%, ante 45,2% no trimestre anterior.",
+   "trecho_atual": "A cobertura dessa carteira encerrou o trimestre em 44,6%, ante 44,9% no trimestre anterior."
+  },
+  {
+   "item": "E099",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Resultado de PDD e custo de crédito",
+   "trecho_anterior": "O resultado de PDD gerencial totalizou R$ 6.105 milhões no 4T25, queda de 6,4% no trimestre em especial como reflexo da aceleração da cobertura realizada ao longo do ano e a ausência de efeitos pontuais relevantes, como casos específicos do atacado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E100",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 7,
+   "secao": "Margem financeira",
+   "trecho_anterior": "Na comparação anual, a margem financeira cai 4,0%, refletindo o resultado da margem com o mercado impactada pela sensibilidade negativa ao aumento da taxa de juros, enquanto a margem com clientes teve evolução de 6,6%, beneficiada por aumento de spread e volume no período.",
+   "trecho_atual": "Na comparação anual, a margem financeira caiu 0,7%, refletindo o resultado da margem com o mercado, impactada pela sensibilidade negativa ao aumento da taxa de juros, enquanto a margem com clientes teve evolução de 4,8%, beneficiada por ambos aumento de spread e volume no período."
+  },
+  {
+   "item": "E101",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "Capital",
+   "trecho_anterior": "O índice de Basileia atingiu 15,4%, alta de 0,2 p.p. no trimestre, explicado principalmente pelo lucro do trimestre e pela emissão de letras financeiras que compõem o Nível II, contribuindo para aumento de 4,4% do patrimônio de referência, acima do crescimento nos ativos ponderados pelo risco.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E102",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Análise do desempenho 4º trimestre de 2025",
+   "trecho_anterior": "A margem financeira contraiu 4,0% no ano, explicada pela queda na margem de mercado, impactada pela sensibilidade negativa ao aumento da taxa de juros, sendo compensada parcialmente pelo incremento da margem de clientes, beneficiada principalmente por volume, mix e disciplina de preço, contribuindo para o aumento do spread.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E103",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Foco na qualidade e rentabilidade",
+   "trecho_anterior": "As receitas do segmento Select cresceram 7% YoY, destacando-se que este segmento possui inadimplência 31% menor que os demais segmentos de Pessoa Física.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E104",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 25,
+   "pagina_atual": 20,
+   "secao": "Reconciliação dos resultados contábil e gerencial",
+   "trecho_anterior": "Despesas Tributárias: (1.370) | - | (1.471)",
+   "trecho_atual": "Despesas Tributárias: (1.613) | - | (1.453)",
+   "titulo_da_tabela": "Para melhor compreensão dos resultados em BRGAAP, a seguir apresentamos a reconciliação entre o resultado contábil e o resultado gerencial.",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Despesas Tributárias",
+   "colunas_anterior": [
+    "4T25",
+    "4T25",
+    ""
+   ],
+   "colunas_atual": [
+    "1T26",
+    "1T26",
+    ""
+   ]
+  },
+  {
+   "item": "E105",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Sumário executivo",
+   "trecho_anterior": "",
+   "trecho_atual": "Índice de inadimplência (15 a 90 dias): 3,4% | 3,3% | 3,3%",
+   "titulo_da_tabela": "Sumário executivo",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Índice de inadimplência (15 a 90 dias)",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E106",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Elemento chave da transacionalidade",
+   "trecho_anterior": "Neste trimestre, mantivemos uma crescente recorrência na utilização de nossos cartões, reflexo do aumento em volume de transações de crédito (+3% YoY e +3% QoQ) e do incremento no *spending* médio (+14% YoY e +9% QoQ), contribuindo para o crescimento consistente e sustentável do faturamento de crédito (+7% YoY e +8% QoQ).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E107",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Destaques financeiros | 4T25",
+   "trecho_anterior": "Margem financeira R$ 15,3 bilhões (+0,8% QoQ e -4,0% YoY) Clientes com desempenho sólido e mercados apresentando perda, conforme o previsto",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E108",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Financeira como destaque do pilar de crédito",
+   "trecho_anterior": "Essa estrutura é potencializada pela capilaridade da rede comercial, com forte presença em pontos de venda inseridos diretamente em parceiros, como lojas e correspondentes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E109",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Destaques financeiros | 4T25",
+   "trecho_anterior": "YoY) Estável, mas ainda pressionado pelo contexto macroeconômico",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E110",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "Comissões",
+   "trecho_anterior": "No comparativo anual, houve aumento de 4,3%, com destaque para receitas de cartões, seguros e administração de recursos, tanto fundos quanto consórcios, parcialmente compensado pela redução nas linhas de operações de crédito, impactadas pela reclassificação decorrente da Resolução CMN nº 4.966/21.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E111",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "Captações",
+   "trecho_anterior": "Em depósitos à vista a queda é explicada especialmente pela migração de recursos para depósitos a prazo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E112",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 5,
+   "secao": "Sumário executivo",
+   "trecho_anterior": "Dez/24: distribuição de JCP de R$ 1.500 milhões, aprovada em 10 de outubro de 2024.",
+   "trecho_atual": "Dez/25: distribuição de JCP de R$ 2.000 milhões, aprovada em 10 de outubro de 2025 e distribuição de JCP de R$ 620 milhões, aprovada em 22 de dezembro de 2025."
+  },
+  {
+   "item": "E113",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Resultado de PDD e custo de crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "As despesas de provisão apresentaram aumento de 0,9% no trimestre, ainda pressionadas pelo cenário macroeconômico, com altas taxas de juros e elevado nível de endividamento das famílias."
+  },
+  {
+   "item": "E114",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Informe de Resultados do 1º trimestre de 2026 (BRGAAP)",
+   "trecho_anterior": "",
+   "trecho_atual": "Encerramos o trimestre com um lucro líquido de R$ 3,8 bilhões, o que representou uma redução de 7,3% no trimestre e 1,9% no ano."
+  },
+  {
+   "item": "E115",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Jornada de pagamentos",
+   "trecho_anterior": "Assim, estamos transformando a jornada de pagamentos com uma experiência integrada, unificando transferências e pagamentos em um só lugar, permitindo ao cliente ter mais conveniência, melhor atendimento e gestão de suas movimentações, em soluções como Pix por aproximação, Pix automático, Pix no cartão de crédito e Trazer dinheiro.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E116",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 12,
+   "pagina_atual": 6,
+   "secao": "Demonstração de resultado gerencial",
+   "trecho_anterior": "Resultado não operacional: 7 | 97 | 8",
+   "trecho_atual": "Resultado não operacional: (25) | 7 | 43",
+   "titulo_da_tabela": "Demonstração de resultado gerencial",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Resultado não operacional",
+   "colunas_anterior": [
+    "4T25",
+    "3T25",
+    "4T24"
+   ],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E117",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Seguros",
+   "trecho_anterior": "Na comparação anual, as receitas expandiram 14,7%, refletindo a boa performance em seguros não atrelados a crédito, especialmente no produto auto e no lançamento do seguro conta cartão.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E118",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Resultado de PDD e custo de crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "Na comparação trimestral a PDD mantém-se pressionada pelo cenário macroeconômico, já na comparação anual a queda reflete a ativa gestão de risco e os efeitos de mix do portfólio."
+  },
+  {
+   "item": "E119",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Indicadores de desempenho",
+   "trecho_anterior": "Índice de inadimplência (15 a 90 dias) 4,0% 3,9%: 0,1 p.p. | 0,3 p.p.",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Indicadores de desempenho",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Índice de inadimplência (15 a 90 dias) 4,0% 3,9%",
+   "colunas_anterior": [
+    "0,02 p.p.",
+    "-0,1 p.p."
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E120",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Operações de crédito e cobranças e arrecadações",
+   "trecho_anterior": "No ano, a queda de 18,7% no ano é explicada por efeito da migração de comissões relacionadas à originação de crédito para margem, alinhada à implantação da Resolução CMN nº 4.966/21.",
+   "trecho_atual": ""
+  }
+ ]
+}

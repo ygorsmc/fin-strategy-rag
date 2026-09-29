@@ -1,0 +1,1620 @@
+{
+ "par": "ITAU_4T2025_1T2026",
+ "documento_anterior": "itau_release_4T2025",
+ "documento_atual": "itau_release_1T2026",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 167,
+   "pagina_atual": null,
+   "secao": "Responsabilidades do auditor pela auditoria das demonstrações contábeis individuais e consolidadas",
+   "trecho_anterior": "Descrevemos esses assuntos em nosso relatório de auditoria, a menos que lei ou regulamento tenha proibido divulgação pública do assunto, ou quando, em circunstâncias extremamente raras, determinarmos que o assunto não deve ser comunicado em nosso relatório porque as consequências adversas de tal comunicação podem, dentro de uma perspectiva razoável, superar os benefícios da comunicação para o interesse público.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E002",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 55,
+   "pagina_atual": null,
+   "secao": "Itaú Unibanco Holding S.A.",
+   "trecho_anterior": "Obrigações por Empréstimos e Repasses: 27.671 | 12.051",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Demonstração Consolidada dos Fluxos de Caixa *(Em milhões de reais)*",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Obrigações por Empréstimos e Repasses",
+   "colunas_anterior": [
+    "01/07 a 31/12/2025",
+    "01/01 a 31/12/2025"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E003",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Valor transacionado em adquirência",
+   "trecho_anterior": "",
+   "trecho_atual": "A redução de 7,0%, em relação ao mesmo período do ano anterior, ocorreu principalmente devido ao aumento do custo de funding nas operações de adquirência, além da mudança do mix de faturamento, que impactou apenas a comparação anual, mas não afetou a variação trimestral."
+  },
+  {
+   "item": "E004",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 99,
+   "secao": "Ações Fiscais e Previdenciárias",
+   "trecho_anterior": "",
+   "trecho_atual": "IRPJ e CSLL – Glosa de Prejuízos – R$ 5.932: autuações lavradas para a cobrança de IRPJ e CSLL por suposta insuficiência de saldos de prejuízo fiscal e base negativa de CSLL compensados na apuração desses tributos, por entender a Receita Federal que diversos processos administrativos e judiciais, que ainda não transitaram em julgado, impactariam os referidos saldos de maneira definitiva."
+  },
+  {
+   "item": "E005",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 157,
+   "pagina_atual": null,
+   "secao": "RESUMO DO RELATÓRIO DO COMITÊ DE AUDITORIA",
+   "trecho_anterior": "Para realização das atividades e dos procedimentos acima descritos, o Comitê reuniu-se 32 dias no período de 18 de agosto de 2025 a 27 de janeiro de 2026, totalizando 133 reuniões, com a participação de auditores independentes, auditoria interna, gestores responsáveis pelos riscos corporativos e Compliance Corporativo e de executivos das áreas administrativas, financeiras, tecnologia da informação e de negócios do Conglomerado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E006",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Análise Gerencial da Operação > Balanço Patrimonial",
+   "trecho_anterior": "A alta de 7,3%, na comparação com 01 de janeiro de 2025*, ocorreu devido aos crescimentos de: (i) R$ 72,7 bilhões em operações de crédito, tanto no Brasil quanto na América Latina; e (ii) R$ 66,5 bilhões em títulos e valores mobiliários.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E007",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Carteira de Crédito com Garantias Financeiras Prestadas e Títulos Privados",
+   "trecho_anterior": "",
+   "trecho_atual": "Veículos: 35,7 | 36,3 | 36,8",
+   "titulo_da_tabela": "Carteira de Crédito com Garantias Financeiras Prestadas e Títulos Privados",
+   "unidade": "bilhoes",
+   "rotulo_da_linha": "Veículos",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "mar/26",
+    "dez/25",
+    "mar/25"
+   ]
+  },
+  {
+   "item": "E008",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 157,
+   "pagina_atual": null,
+   "secao": "RESUMO DO RELATÓRIO DO COMITÊ DE AUDITORIA",
+   "trecho_anterior": "Nessas reuniões, realizadas principalmente com periodicidade trimestral e semestral, com diversas diretorias e áreas de risco do Conglomerado são discutidos aspectos relevantes relacionados a: qualidade e efetividade dos controles internos, gestão de riscos, gestão dos negócios, risco de capital / mercado / liquidez, monitoramento do apetite de risco, risco operacional, contencioso, risco de crédito, risco de modelos, segurança da informação / cyber, prevenção à fraude, prevenção a lavagem de dinheiro, compliance, atuação da Ouvidoria, riscos socioambientais e climáticos, além de temas regulatórios e tecnológicos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E009",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 109,
+   "pagina_atual": 105,
+   "secao": "b) Depósitos",
+   "trecho_anterior": "Não Circulante: 587.116",
+   "trecho_atual": "Não Circulante: 646.165 | 587.116",
+   "titulo_da_tabela": "b) Depósitos",
+   "unidade": "",
+   "rotulo_da_linha": "Não Circulante",
+   "colunas_anterior": [
+    "31/12/2025 Custo Amortizado"
+   ],
+   "colunas_atual": [
+    "31/03/2026 Custo Amortizado",
+    "31/12/2025 Custo Amortizado"
+   ]
+  },
+  {
+   "item": "E010",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 95,
+   "pagina_atual": 91,
+   "secao": "b) Valor contábil bruto por estágios",
+   "trecho_anterior": "No ITAÚ UNIBANCO HOLDING, do saldo total dos 3 estágios, R$ 6.716 são operações renegociadas das quais 65% referem-se às operações reestruturadas.",
+   "trecho_atual": "No ITAÚ UNIBANCO HOLDING, do saldo total dos 3 estágios, R$ 6.633 (R$ 6.716 em 31/12/2025) são operações renegociadas das quais 64% (65% em 31/12/2025) referem-se às operações reestruturadas."
+  },
+  {
+   "item": "E011",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Margem Financeira Gerencial",
+   "trecho_anterior": "",
+   "trecho_atual": "Desconsiderando esse impacto negativo, a margem financeira com clientes teria crescido 1,1%."
+  },
+  {
+   "item": "E012",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 105,
+   "pagina_atual": 101,
+   "secao": "Nota 12 - Investimentos",
+   "trecho_anterior": "1) Ajustes decorrentes de uniformização das demonstrações contábeis da investida às políticas contábeis da investidora.",
+   "trecho_atual": "(1) Ajustes decorrentes de uniformização das demonstrações contábeis da investida de políticas contábeis de investimento."
+  },
+  {
+   "item": "E013",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 144,
+   "secao": "VII - Riscos Social, Ambiental e Climático",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso, a instituição mensura a sensibilidade do seu portfólio de crédito aos riscos climáticos aplicando a Régua de Sensibilidade aos Riscos Climáticos, que categoriza clientes e setores considerando tanto os riscos físicos (decorrentes de mudanças nos padrões climáticos, como aumento das chuvas, da temperatura e eventos climáticos extremos) quanto os de transição (resultantes de mudanças na economia, em consequência de ações climáticas, como precificação do carbono, regulamentação climática, riscos de mercado e riscos de reputação)."
+  },
+  {
+   "item": "E014",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 63,
+   "secao": "IV.I - Classificação de Ativos Financeiros",
+   "trecho_anterior": "",
+   "trecho_atual": "O ITAÚ UNIBANCO HOLDING CONSOLIDADO avalia, principalmente, as seguintes situações: alterações de taxa por mudança no risco de crédito; taxas de juros determinadas por órgãos reguladores; alavancagem; derivativos embutidos; e cláusulas de extensão de prazos e variação cambial."
+  },
+  {
+   "item": "E015",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 8,
+   "secao": "Em relação ao primeiro trimestre de 2025",
+   "trecho_anterior": "O custo do crédito avançou 6,1% em função do crescimento da carteira de crédito, com redução de 0,1 p.p. no indicador de custo de crédito sobre a carteira, que fechou o ano em 2,6%.",
+   "trecho_atual": "O custo do crédito avançou 4,5% em função do crescimento da carteira de crédito, com estabilidade do indicador de custo do crédito sobre a carteira, que ficou em 2,7%."
+  },
+  {
+   "item": "E016",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 45,
+   "pagina_atual": null,
+   "secao": "Renovação do Programa de Recompra de Ações de Emissão Própria",
+   "trecho_anterior": "Aprovar novo programa de recompra de ações de emissão própria¹, que estará em vigor a partir de 04.02.2026 até 05.08.2027, autorizando a aquisição de até 200.000.000 de ações preferenciais de emissão própria, sem redução do valor do capital social.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E017",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Administração de Fundos",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas de administração de fundos reduziram 11,0% no trimestre, em função do reconhecimento de performance fee, que ocorreu no trimestre anterior."
+  },
+  {
+   "item": "E018",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 27,
+   "pagina_atual": 27,
+   "secao": "Atuação internacional",
+   "trecho_anterior": "Despesas Tributárias de ISS, PIS, Cofins e Outras: (27) | (30) | (11) | (9) | 2 | 3",
+   "trecho_atual": "Despesas Tributárias de ISS, PIS, Cofins e Outras: (36) | (27) | (11) | (11) | 0 | 2",
+   "titulo_da_tabela": "Destaques da América Latina em moeda nominal, utilizando o conceito gerencial.",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Despesas Tributárias de ISS, PIS, Cofins e Outras",
+   "colunas_anterior": [
+    "Itaú Chile 4T25",
+    "Itaú Chile 3T25",
+    "Itaú Paraguai 4T25",
+    "Itaú Paraguai 3T25",
+    "Itaú Uruguai 4T25",
+    "Itaú Uruguai 3T25"
+   ],
+   "colunas_atual": [
+    "Itaú Chile 1T26",
+    "Itaú Chile 4T25",
+    "Itaú Paraguai 1T26",
+    "Itaú Paraguai 4T25",
+    "Itaú Uruguai 1T26",
+    "Itaú Uruguai 4T25"
+   ]
+  },
+  {
+   "item": "E019",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 81,
+   "pagina_atual": 73,
+   "secao": "a) Resumo",
+   "trecho_anterior": "Os Títulos e Valores Mobiliários estão classificados: R$ 325.585 no estágio 1, R$ 209 no estágio 2 e R$ 1.161 no estágio 3.",
+   "trecho_atual": "Os Títulos e Valores Mobiliários estão classificados: R$ 363.611 no estágio 1, R$ 268 no estágio 2 e R$ 1.281 no estágio 3 (R$ 325.585, R$ 209 e R$ 1.161 em 31/12/2025)."
+  },
+  {
+   "item": "E020",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Análise Gerencial da Operação > Captações",
+   "trecho_anterior": "",
+   "trecho_atual": "O funding de clientes reduziu 1,3% no trimestre, especialmente em função da diminuição de R$ 12,3 bilhões em depósitos à vista, principalmente no exterior, por conta do efeito da variação cambial, além da redução de R$ 5,1 bilhões dos depósitos de poupança."
+  },
+  {
+   "item": "E021",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 127,
+   "pagina_atual": 122,
+   "secao": "b) Tributos Diferidos",
+   "trecho_anterior": "No ITAÚ UNIBANCO HOLDING, os Ativos Fiscais Diferidos totalizam R$ 18.928 e estão representados basicamente por Prejuízo Fiscal e Base Negativa de R$ 17, Provisão para Perda de Crédito Esperada de R$ 16.660, Provisões Administrativas de R$ 203, Provisões relativas a Obrigações Legais, Fiscais e Previdenciárias de R$ 434, cuja expectativa de realização depende da evolução processual do litígio, Ajustes ao Valor Justo de Títulos Valor Justo por meio de Outros Resultados Abrangentes de R$ 2, e Provisão para Programa de Recompensa de R$ 741.",
+   "trecho_atual": "No ITAÚ UNIBANCO HOLDING, os Ativos Fiscais Diferidos totalizam R$ 18.672 (R$ 18.928 em 31/12/2025) e estão representados basicamente por Prejuízo Fiscal e Base Negativa de R$ 20 (R$ 17 em 31/12/2025), Provisão para Perda de Crédito Esperada de R$ 16.486 (R$ 16.660 em 31/12/2025), Provisões Administrativas de R$ 220 (R$ 203 em 31/12/2025), Provisões relativas a Obrigações Legais, Fiscais e Previdenciárias de R$ 343 (R$ 434 em 31/12/2025), cuja expectativa de realização depende da evolução processual do litígio, Ajustes ao Valor Justo de Títulos Valor Justo por meio de Outros Resultados Abrangentes de R$ 34 (R$ 2 em 31/12/2025), e Provisão para Programa de Recompensa de R$ 838 (R$ 741 em 31/12/2025)."
+  },
+  {
+   "item": "E022",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Análise Gerencial da Operação > Balanço Patrimonial",
+   "trecho_anterior": "Ambos os movimentos ocorreram devido ao pagamento de dividendos e juros sobre o capital próprio, além da aquisição de ações próprias.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E023",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 157,
+   "pagina_atual": null,
+   "secao": "RESUMO DO RELATÓRIO DO COMITÊ DE AUDITORIA",
+   "trecho_anterior": "O Comitê manteve ainda reuniões trimestrais com os membros do Conselho Fiscal; revisou determinadas Políticas Corporativas; e efetuou reuniões semestrais com supervisores do Departamento de Supervisão Bancária do Banco Central (“DESUP”) e do Departamento de Supervisão de Conduta do Banco Central (“DECON”), quando foram discutidas as preocupações trazidas pelos reguladores e os principais assuntos em acompanhamento pelo Comitê.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E024",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 116,
+   "pagina_atual": 111,
+   "secao": "II - Resultado de Ajuste ao Valor Justo de Ativos e Passivos",
+   "trecho_anterior": "Ações: 338 | 9 | 349",
+   "trecho_atual": "Ações: 12 | - | 12 | 160 | (7) | 153",
+   "titulo_da_tabela": "II - Resultado de Ajuste ao Valor Justo de Ativos e Passivos",
+   "unidade": "",
+   "rotulo_da_linha": "Ações",
+   "colunas_anterior": [
+    "01/01 a 31/12/2025",
+    "",
+    ""
+   ],
+   "colunas_atual": [
+    "01/01 a 31/03/2026",
+    "",
+    "",
+    "01/01 a 31/03/2025",
+    "",
+    ""
+   ]
+  },
+  {
+   "item": "E025",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Principais variações no trimestre",
+   "trecho_anterior": "Índice de Basileia: queda de 1,2 p.p. em relação a setembro/25, em função do pagamento de dividendos e juros sobre o capital próprio, da recompra de ações e do crescimento do RWA, atenuados pelo resultado positivo do período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E026",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 65,
+   "pagina_atual": null,
+   "secao": "I - Aplicáveis para o Período Findo em 31 de dezembro de 2025",
+   "trecho_anterior": "Títulos Mantidos até o Vencimento: 179.775 | 133.217 |  | CA | 157.639",
+   "trecho_atual": "",
+   "titulo_da_tabela": "(Em milhões de Reais)",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Títulos Mantidos até o Vencimento",
+   "colunas_anterior": [
+    "31/12/2024",
+    "31/12/2024",
+    "",
+    "01/01/2025",
+    ""
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E027",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Serviços e Seguros",
+   "trecho_anterior": "↗+5,9% 4T25 x 3T25",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E028",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 144,
+   "pagina_atual": 138,
+   "secao": "I.V - Carteira Homogênea de Risco",
+   "trecho_anterior": "No Varejo, o ITAÚ UNIBANCO HOLDING CONSOLIDADO possui 130 Grupos Homogêneos: 86 no Estágio 1, 29 no Estágio 2 e 15 no Estágio 3.",
+   "trecho_atual": "No Varejo, o ITAÚ UNIBANCO HOLDING CONSOLIDADO possui 130 (130 em 31/12/2025) Grupos Homogêneos: 87 no Estágio 1 (86 em 31/12/2025), 28 no Estágio 2 (29 em 31/12/2025) e 15 no Estágio 3"
+  },
+  {
+   "item": "E029",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 63,
+   "pagina_atual": null,
+   "secao": "a) Base de Preparação",
+   "trecho_anterior": "Com o objetivo de melhor compreensão destas Demonstrações Contábeis Individuais e Consolidadas, foram incluídas informações suplementares no Balanço Patrimonial Consolidado e Demonstração da Mutação do Patrimônio Líquido Individual e Consolidada, que corresponde aos saldos de 31 de dezembro de 2024, ajustados com os novos conceitos na data inicial da vigência da Resolução CMN nº 4.966/21.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E030",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 93,
+   "secao": "f) Exigibilidade de Crédito Rural",
+   "trecho_anterior": "",
+   "trecho_atual": "Os custos para atendimento do normativo foram de R$ 19 (R$ 182 em 31/12/2025)."
+  },
+  {
+   "item": "E031",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 156,
+   "pagina_atual": null,
+   "secao": "Regulamento, atribuições e responsabilidades do Comitê",
+   "trecho_anterior": "O Comitê na sua atuação segue as exigências aplicáveis das normativas do CMN, CNSP, Comissão de Valores Mobiliários (“CVM”), BACEN e SUSEP, assim como normativa para FPIs e atribuições incluídas nos regulamentos e políticas do Conglomerado, sendo responsável, previamente à divulgação das demonstrações financeiras, pela supervisão dos processos de controles internos e de gestão de riscos, das atividades da Auditoria Interna (“AI”) e das empresas de auditoria independente do Conglomerado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E032",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 155,
+   "pagina_atual": null,
+   "secao": "f) Financeira Itaú CBD S.A. e Banco Investcred Unibanco S.A.",
+   "trecho_anterior": "As efetivas aquisições e liquidações financeiras ocorrerão após as aprovações regulatórias necessárias.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E033",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 8,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "O índice de inadimplência entre 15 e 90 dias, incluindo títulos e valores mobiliários, recuou 0,4 p.p. e fechou o trimestre em 1,6%.",
+   "trecho_atual": "O índice de inadimplência entre 15 e 90 dias, avançou 0,1 p.p. e fechou o trimestre em 1,7%."
+  },
+  {
+   "item": "E034",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 155,
+   "pagina_atual": 71,
+   "secao": "Avenue Holding Cayman Ltd",
+   "trecho_anterior": "Em 30 de janeiro de 2026, o ITAÚ UNIBANCO HOLDING, por meio de sua controlada ITB Holding Brasil Participações Ltda., adquiriu 17,2% de participação adicional na Avenue Holding Cayman Ltd e passou a deter o controle com 50,1% de participação no capital social total.",
+   "trecho_atual": "Na segunda etapa, realizada em 30 de janeiro de 2026, o ITAÚ UNIBANCO HOLDING por meio de sua controlada ITB HOLDING, adquiriu 17,2% de participação adicional na AVENUE, pelo valor aproximado de R$ 730 e passou a deter o controle com 50,1% do capital da AVENUE."
+  },
+  {
+   "item": "E035",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 152,
+   "pagina_atual": null,
+   "secao": "I - Composição e Suficiência do Capital",
+   "trecho_anterior": "A variação reflete os efeitos do pagamento de juros sobre capital próprio e dividendos adicionais, recompra de ações e crescimento de ativos ponderados pelo risco, atenuados pelo impacto positivo do resultado do período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E036",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 67,
+   "pagina_atual": null,
+   "secao": "Transição para a Resolução CMN nº 4.975/21",
+   "trecho_anterior": "O ITAÚ UNIBANCO HOLDING adotou o Pronunciamento Contábil (CPC) 06 (R2) – Arrendamentos, prospectivamente, desde 1º de janeiro de 2025, utilizando os seguintes critérios: (1) taxa de desconto unificada, considerando uma carteira de contratos semelhantes; e (2) cálculo do Ativo de Direito de Uso e do passivo de arrendamento para os novos contratos firmados, nos quais o ITAÚ UNIBANCO HOLDING figura como arrendatário, a partir da vigência da norma.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E037",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 42,
+   "secao": "Relatórios",
+   "trecho_anterior": "",
+   "trecho_atual": "Os documentos apresentam nossa governança, visão estratégica, resultados financeiros, gestão de riscos, alocação de recursos e outros assuntos relevantes para os nossos públicos."
+  },
+  {
+   "item": "E038",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 86,
+   "pagina_atual": 77,
+   "secao": "a) Derivativos por prazo de vencimento e contraparte",
+   "trecho_anterior": "Bolsa: - | 418 | 7.996 | 20.217 | 1.138 | 163 | 590 | 30.522",
+   "trecho_atual": "Bolsa: - | 424 | 8.082 | 21.108 | 1.756 | 138 | 865 | 32.373 | 30.522",
+   "titulo_da_tabela": "a) Derivativos por prazo de vencimento e contraparte",
+   "unidade": "",
+   "rotulo_da_linha": "Bolsa",
+   "colunas_anterior": [
+    "31/12/2025",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "colunas_atual": [
+    "31/03/2026",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "31/12/2025",
+    ""
+   ]
+  },
+  {
+   "item": "E039",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 151,
+   "secao": "Outros assuntos - Demonstrações condensadas do Valor Adicionado",
+   "trecho_anterior": "",
+   "trecho_atual": "Essas demonstrações foram submetidas a procedimentos de revisão executados em conjunto com a revisão das demonstrações contábeis condensadas, com o objetivo de concluir se elas estão conciliadas com as demonstrações contábeis condensadas individuais e consolidadas e registros contábeis, conforme aplicável, e se sua forma e conteúdo estão de acordo com os critérios definidos no Pronunciamento Técnico CPC 09 - \"Demonstração do Valor Adicionado\"."
+  },
+  {
+   "item": "E040",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 118,
+   "pagina_atual": 113,
+   "secao": "b) Ativos e Passivos Financeiros não Mensurados ao Valor Justo",
+   "trecho_anterior": "Passivos Financeiros ao Custo Amortizado: 2.377.184 | 2.380.433",
+   "trecho_atual": "Passivos Financeiros ao Custo Amortizado: 2.445.485 | 2.441.860 | 2.377.184 | 2.380.433",
+   "titulo_da_tabela": "b) Ativos e Passivos Financeiros não Mensurados ao Valor Justo",
+   "unidade": "",
+   "rotulo_da_linha": "Passivos Financeiros ao Custo Amortizado",
+   "colunas_anterior": [
+    "31/12/2025",
+    ""
+   ],
+   "colunas_atual": [
+    "31/03/2026",
+    "",
+    "31/12/2025",
+    ""
+   ]
+  },
+  {
+   "item": "E041",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 60,
+   "secao": "II - Aplicáveis para Períodos Futuros",
+   "trecho_anterior": "",
+   "trecho_atual": "Os possíveis impactos estão em avaliação e serão concluídos até o início de vigência normativa."
+  },
+  {
+   "item": "E042",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "Carteira de crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "Excluindo o efeito da variação cambial, o crescimento foi de 0,7% no trimestre e de 8,8% na comparação anual."
+  },
+  {
+   "item": "E043",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 5,
+   "pagina_atual": 5,
+   "secao": "Sumário do Resultado Gerencial",
+   "trecho_anterior": "Índice de Capital Nível I - Basileia III: 13,8% | 14,8% | 15,0% |  | ",
+   "trecho_atual": "Índice de Capital Nível I - Basileia III: 13,4% | 13,8% | 14,1%",
+   "titulo_da_tabela": "Em R$ milhões (exceto onde indicado)",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Índice de Capital Nível I - Basileia III",
+   "colunas_anterior": [
+    "4T25",
+    "3T25",
+    "4T24",
+    "2025",
+    "2024"
+   ],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 158,
+   "pagina_atual": null,
+   "secao": "Conclusões",
+   "trecho_anterior": "as práticas contábeis relevantes adotadas pelo Conglomerado estão alinhadas com as adotadas no Brasil, incluindo o cumprimento das normas emanadas do CMN e do BACEN, bem como com as normas contábeis internacionais emitidas pelo IASB; e - as informações fornecidas pela PwC são adequadas, inclusive quanto à verificação do cumprimento de dispositivos legais e regulamentares e dos regulamentos e códigos internos, com evidenciação das deficiências detectadas, nas quais o Comitê apoia sua recomendação sobre as demonstrações contábeis, não sendo identificada qualquer situação que pudesse prejudicar a objetividade e independência do Auditor Independente.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Custo do crédito",
+   "trecho_anterior": "Na qualidade de crédito, a venda das carteiras em atraso acima de 90 dias, teria trazido um impacto de 0,9 p.p. no indicador de grandes empresas, de 0,3 p.p. no Brasil e de 0,2 p.p. no indicador total.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E046",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 149,
+   "pagina_atual": 142,
+   "secao": "III - Risco de Liquidez",
+   "trecho_anterior": "O documento “Relatório de Acesso Público – Gestão e Controle de Risco de Liquidez”, que detalha as diretrizes estabelecidas pelo normativo institucional de controle de risco de liquidez, e não faz parte das demonstrações contábeis, pode ser visualizado no site www.itau.com.br/relacoes-com-investidores, na seção Itaú Unibanco, Governança corporativa, Políticas, Relatórios.",
+   "trecho_atual": "O documento “Relatório de Acesso Público – Gestão e Controle de Risco de Liquidez”, que detalha as diretrizes estabelecidas pelo normativo institucional de controle de risco de liquidez, e não faz parte das demonstrações"
+  },
+  {
+   "item": "E047",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 91,
+   "pagina_atual": 86,
+   "secao": "c) Hedge de Investimento Líquido em Operação no Exterior",
+   "trecho_anterior": "Futuro / Ativos Financeiros: 7.503 | (1.978) | (2.043) | 65",
+   "trecho_atual": "Futuro / Ativos Financeiros: 6.465 | 35 | (1.444) | (1.506) | 62",
+   "titulo_da_tabela": "",
+   "unidade": "",
+   "rotulo_da_linha": "Futuro / Ativos Financeiros",
+   "colunas_anterior": [
+    "31/12/2025",
+    "",
+    "",
+    ""
+   ],
+   "colunas_atual": [
+    "31/03/2026",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "item": "E048",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "Conta Corrente Pessoa Física",
+   "trecho_anterior": "As receitas de serviços de conta corrente pessoa física reduziram 2,9% na comparação com o trimestre anterior e diminuíram 16,8% em relação ao acumulado do ano de 2024.",
+   "trecho_atual": "As receitas de serviços de conta corrente pessoa física reduziram 5,1% no trimestre e diminuíram 21,5% em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E049",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "Carteira de crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "A carteira de micro, pequenas e médias empresas se manteve estável no trimestre, e cresceu 1,2% excluindo o efeito da variação cambial."
+  },
+  {
+   "item": "E050",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 152,
+   "pagina_atual": 145,
+   "secao": "I - Composição e Suficiência do Capital",
+   "trecho_anterior": "O Índice de Basileia atingiu 15,2% em 31/12/2025, redução de 1,3 p.p. em relação ao apurado em 31/12/2024.",
+   "trecho_atual": "O Índice de Basileia atingiu 14,8% em 31/03/2026, redução de 0,4 p.p. em relação ao apurado em 31/12/2025."
+  },
+  {
+   "item": "E051",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Projeção 2025",
+   "trecho_anterior": "$$ Inclui garantias financeiras prestadas e títulos privados; $$ Composto pela Despesa de Penda Esperada, Descontos Concedidos e Recuperação de Créditos Baixados como Prejuízo; $$ Receitas de Prestação de Serviços (+) Resultado de Operações de Seguros, Previdência e Capitalização (-) Despesas com Sinistros (-) Despesas de Comercialização de Seguros, Previdência e Capitalização.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E052",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 88,
+   "pagina_atual": 80,
+   "secao": "a) Resumos por Instrumento e Objeto de *Hedge*, Valor Nominal e Prazo de Vencimento",
+   "trecho_anterior": "*Hedge de Operações de Crédito*: 20.950 | 78 | 20.950",
+   "trecho_atual": "*Hedge de Operações de Crédito*: 30.489 | (36) | 30.489 | 20.950 | 78 | 20.950",
+   "titulo_da_tabela": "a) Resumos por Instrumento e Objeto de *Hedge*, Valor Nominal e Prazo de Vencimento",
+   "unidade": "",
+   "rotulo_da_linha": "*Hedge de Operações de Crédito*",
+   "colunas_anterior": [
+    "31/12/2025",
+    "",
+    ""
+   ],
+   "colunas_atual": [
+    "31/03/2026",
+    "",
+    "",
+    "31/12/2025",
+    "",
+    ""
+   ]
+  },
+  {
+   "item": "E053",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 51,
+   "pagina_atual": null,
+   "secao": "Itaú Unibanco Holding S.A.",
+   "trecho_anterior": "(Ações em Tesouraria): (13) | (909)",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Balanço Patrimonial Consolidado *(Em milhões de reais)*",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "(Ações em Tesouraria)",
+   "colunas_anterior": [
+    "31/12/2025",
+    "01/01/2025"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E054",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 35,
+   "pagina_atual": 33,
+   "secao": "Relatório dos auditores independentes",
+   "trecho_anterior": "(\"Banco\") e do Itaú Unibanco Holding S.A. e suas controladas (\"Consolidado\") em 31 de dezembro de 2025, cujo relatório foi emitido, sem ressalvas, datado de 4 de fevereiro de 2025, procedemos à revisão das informações contábeis contidas nas informações suplementares incluídas no Relatório da Análise Gerencial da Operação do Itaú Unibanco Holding S.A. e suas controladas referentes ao exercício findo em 31 de dezembro de 2025.",
+   "trecho_atual": "(\"Banco\") e do Itaú Unibanco Holding S.A. e suas controladas (\"Consolidado\") em 31 de março de 2026, cujo relatório foi emitido, sem ressalvas, datado de 5 de maio de 2026, procedemos à revisão das informações contábeis contidas nas informações suplementares incluídas no Relatório da Análise Gerencial da Operação do Itaú Unibanco Holding S.A. e suas controladas referentes ao trimestre findo em 31 de março de 2026."
+  },
+  {
+   "item": "E055",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 38,
+   "secao": "Lançamos o feito.itaú!",
+   "trecho_anterior": "",
+   "trecho_atual": "Acreditamos que o conhecimento e a clareza são essenciais para lidar com o novo cenário financeiro com segurança."
+  },
+  {
+   "item": "E056",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 121,
+   "pagina_atual": 116,
+   "secao": "d) Conciliação do Lucro Líquido e do Patrimônio Líquido (Nota 2c I)",
+   "trecho_anterior": "ITAÚ UNIBANCO HOLDING CONSOLIDADO: 45.671 | 196.146",
+   "trecho_atual": "ITAÚ UNIBANCO HOLDING CONSOLIDADO: 11.938 | 10.894 | 200.098 | 196.146",
+   "titulo_da_tabela": "d) Conciliação do Lucro Líquido e do Patrimônio Líquido (Nota 2c I)",
+   "unidade": "",
+   "rotulo_da_linha": "ITAÚ UNIBANCO HOLDING CONSOLIDADO",
+   "colunas_anterior": [
+    "Lucro Líquido 01/01 a 31/12/2025",
+    "Patrimônio Líquido 31/12/2025"
+   ],
+   "colunas_atual": [
+    "Lucro Líquido 01/01 a 31/03/2026",
+    "Lucro Líquido 01/01 a 31/03/2025",
+    "Patrimônio Líquido 31/03/2026",
+    "Patrimônio Líquido 31/12/2025"
+   ]
+  },
+  {
+   "item": "E057",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 166,
+   "pagina_atual": null,
+   "secao": "Responsabilidades do auditor pela auditoria das demonstrações contábeis individuais e consolidadas",
+   "trecho_anterior": "Avaliamos a adequação das políticas contábeis utilizadas e a razoabilidade das estimativas contábeis e respectivas divulgações feitas pela administração.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E058",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 44,
+   "pagina_atual": null,
+   "secao": "Letras Financeiras Subordinadas Nível 2",
+   "trecho_anterior": "Informamos ao mercado que exercemos, nos dias 13, 16, 18, 19 e 24 de novembro, e em 2 de dezembro de 2025$$, a opção de recompra da totalidade das Letras Financeiras Subordinadas Nível 2, indexadas ao DI, emitidas pela Companhia entre 12 de novembro e 02 de dezembro de 2020, com vencimentos em novembro e dezembro de 2030, respectivamente, no valor de R$ 3,6 bilhões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E059",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 118,
+   "pagina_atual": 113,
+   "secao": "Análise de Sensibilidade de Operações Nível 3",
+   "trecho_anterior": "II: (10,8)",
+   "trecho_atual": "II: (55,5) | (10,8)",
+   "titulo_da_tabela": "Análise de Sensibilidade de Operações Nível 3",
+   "unidade": "",
+   "rotulo_da_linha": "II",
+   "colunas_anterior": [
+    "31/12/2025"
+   ],
+   "colunas_atual": [
+    "31/03/2026",
+    "31/12/2025"
+   ]
+  },
+  {
+   "item": "E060",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 90,
+   "secao": "b) Valor contábil bruto por estágios",
+   "trecho_anterior": "",
+   "trecho_atual": "Pessoas Jurídicas: 708 | (102) | (90) | 172 | 5 | (56) | 637",
+   "titulo_da_tabela": "b) Valor contábil bruto por estágios",
+   "unidade": "",
+   "rotulo_da_linha": "Pessoas Jurídicas",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "Saldo em 31/12/2025",
+    "Transferência para Estágio 2",
+    "Transferência para Estágio 3",
+    "Transferência do Estágio 2",
+    "Transferência do Estágio 3",
+    "Aquisição / (Liquidação)",
+    "Saldo em 31/03/2026"
+   ]
+  },
+  {
+   "item": "E061",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 124,
+   "pagina_atual": 119,
+   "secao": "a) Transações com Partes Relacionadas",
+   "trecho_anterior": "Outras Receitas / (Despesas) Operacionais: 7 | (261) | (481) | (735)",
+   "trecho_atual": "Outras Receitas / (Despesas) Operacionais: 1 | 66 | (124) | (57) | (191)",
+   "titulo_da_tabela": "a) Transações com Partes Relacionadas",
+   "unidade": "",
+   "rotulo_da_linha": "Outras Receitas / (Despesas) Operacionais",
+   "colunas_anterior": [
+    "31/12/2025",
+    "",
+    "",
+    ""
+   ],
+   "colunas_atual": [
+    "31/03/2026",
+    "",
+    "",
+    "",
+    "31/12/2025"
+   ]
+  },
+  {
+   "item": "E062",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": 25,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "↗ +5,3% x set/25",
+   "trecho_atual": "↗ +8,9% x mar/25"
+  },
+  {
+   "item": "E063",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "Qualidade do crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse aumento está relacionado com o crescimento de 0,23 p.p. no índice da carteira de pessoas físicas no Brasil, por conta da sazonalidade típica do período, quando há a concentração de gastos das famílias, fechando o trimestre em 3,0%."
+  },
+  {
+   "item": "E064",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 94,
+   "pagina_atual": 90,
+   "secao": "b) Valor contábil bruto por estágios",
+   "trecho_anterior": "Do saldo total dos 3 estágios, R$ 35.108 são operações renegociadas das quais 52,1% referem-se às operações reestruturadas.",
+   "trecho_atual": "Do saldo total dos 3 estágios, R$ 34.751 (R$ 35.108 em 31/12/2025) são operações renegociadas das quais 51,8% (52,1% em 31/12/2025) referem-se às operações reestruturadas."
+  },
+  {
+   "item": "E065",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 165,
+   "pagina_atual": null,
+   "secao": "Responsabilidades da administração e da governança pelas demonstrações contábeis individuais e consolidadas",
+   "trecho_anterior": "Na elaboração das demonstrações contábeis individuais e consolidadas, a administração é responsável pela avaliação da capacidade do Banco e suas controladas, em seu conjunto, continuar operando, divulgando, quando aplicável, os assuntos relacionados com a sua continuidade operacional e o uso dessa base contábil na elaboração das demonstrações contábeis, a não ser que a administração pretenda liquidar o Banco e suas controladas, em seu conjunto, ou cessar suas operações, ou não tenha nenhuma alternativa realista para evitar o encerramento das operações.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E066",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 44,
+   "pagina_atual": 41,
+   "secao": "Pagamento de Juros sobre o Capital Próprio (JCP)",
+   "trecho_anterior": "(ii) JCP, no valor de R$ 0,369750 por ação, com retenção de 15% de imposto de renda na fonte$$, resultando em juros líquidos de R$ 0,3142875 por ação, que serão pagos em 06.03.2026.",
+   "trecho_atual": "Comunicamos aos nossos acionistas a aprovação do pagamento de JCP no valor de R$ 3,85 bilhões, sendo R$ 0,34888 por ação, com retenção de 17,5% de imposto de renda na fonte, resultando em juros líquidos de R$ 0,287826 por ação¹, que serão pagos até 31.08.2026."
+  },
+  {
+   "item": "E067",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 13,
+   "secao": "Custo do crédito",
+   "trecho_anterior": "Essas vendas de carteiras ativas geraram um impacto negativo de R$ 180 milhões no custo do crédito e negativo de R$ 21 milhões no resultado recorrente gerencial.",
+   "trecho_atual": "Essas vendas de carteiras ativas não impactaram o indicador de atraso longo e geraram um impacto positivo de R$ 3,7 milhões no custo do crédito e de R$ 1,8 milhão no resultado recorrente gerencial."
+  },
+  {
+   "item": "E068",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 41,
+   "secao": "Assembleia Geral Ordinária e Extraordinária",
+   "trecho_anterior": "",
+   "trecho_atual": "Atualização e consolidação do Estatuto Social da companhia."
+  },
+  {
+   "item": "E069",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 160,
+   "pagina_atual": null,
+   "secao": "Ênfase - Informações comparativas",
+   "trecho_anterior": "Chamamos a atenção para a Nota 2 (a) às demonstrações contábeis individuais e consolidadas que descreve que as referidas demonstrações foram elaboradas de acordo com as práticas contábeis adotadas no Brasil, aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil, considerando a dispensa de apresentação das cifras comparativas nas demonstrações contábeis do exercício findo em 31 de dezembro de 2025, conforme previsto na Resolução nº 4.966 do Conselho Monetário Nacional (CMN) e na Resolução nº 352 do Banco Central do Brasil (BCB).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E070",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 45,
+   "pagina_atual": null,
+   "secao": "Aquisição de Participação Societária (FIC e Investcred)",
+   "trecho_anterior": "Além disso, o Itaú Unibanco S.A. irá adquirir a totalidade da participação do GCB no Banco Investcred, passando a controlar integralmente o Investcred.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 61,
+   "pagina_atual": null,
+   "secao": "ITAÚ UNIBANCO HOLDING S.A.",
+   "trecho_anterior": "(Aquisição) / Alienação de Investimentos: (2.883) | 894",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Demonstração dos Fluxos de Caixa *(Em milhões de reais)*",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "(Aquisição) / Alienação de Investimentos",
+   "colunas_anterior": [
+    "01/07 a 31/12/2025",
+    "01/01 a 31/12/2025"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E072",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 105,
+   "pagina_atual": 101,
+   "secao": "Nota 12 - Investimentos",
+   "trecho_anterior": "3) Contemplam eventos societários decorrentes de aquisições, alienações, cisões, incorporações, aumentos ou reduções de capital.",
+   "trecho_atual": "(3) Contempem eventos societários decorrentes de aquisições, alienações, custeis, incontrolações, aumentos ou reduções de capital."
+  },
+  {
+   "item": "E073",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 66,
+   "pagina_atual": null,
+   "secao": "Itaú Unibanco Holding S.A.",
+   "trecho_anterior": "Obrigações por Empréstimos e Repasses: 135.113 | 135.113 | CA | 135.113",
+   "trecho_atual": "",
+   "titulo_da_tabela": "(Em milhões de Reais)",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Obrigações por Empréstimos e Repasses",
+   "colunas_anterior": [
+    "31/12/2024",
+    "31/12/2024",
+    "01/01/2025",
+    ""
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E074",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 81,
+   "pagina_atual": 73,
+   "secao": "a) Resumo",
+   "trecho_anterior": "As provisões para perda de crédito esperada dos Títulos e Valores Mobiliários estão classificadas: R$ (105) no estágio 1, R$ (30) no estágio 2 e R$ (601) no estágio 3.",
+   "trecho_atual": "As provisões para perda de crédito esperada dos Títulos e Valores Mobiliários estão classificadas: R$ (106) no estágio 1, R$ (40) no estágio 2 e R$ (554) no estágio 3 (R$ (105), R$ (30) e R$ (601) em 31/12/2025)."
+  },
+  {
+   "item": "E075",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 97,
+   "pagina_atual": 93,
+   "secao": "a) Outros Ativos",
+   "trecho_anterior": "Outros: 1.116",
+   "trecho_atual": "Outros: 1.117 | 1.116",
+   "titulo_da_tabela": "a) Outros Ativos",
+   "unidade": "",
+   "rotulo_da_linha": "Outros",
+   "colunas_anterior": [
+    "31/12/2025"
+   ],
+   "colunas_atual": [
+    "31/03/2026",
+    "31/12/2025"
+   ]
+  },
+  {
+   "item": "E076",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "",
+   "trecho_atual": "As despesas não decorrentes de juros são sazonalmente menores no 1º trimestre e reduziram 5,0% no trimestre."
+  },
+  {
+   "item": "E077",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Sumário do Resultado Gerencial",
+   "trecho_anterior": "",
+   "trecho_atual": "A partir do primeiro trimestre de 2026, a demonstração de resultado considera as reclassificações gerenciais anunciadas no fechamento do quarto trimestre de 2025, além da consolidação do resultado da Avenue em função da aquisição do controle da companhia."
+  },
+  {
+   "item": "E078",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "Qualidade do crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "A baixa de créditos da carteira (write-off) aumentou 17,4% em relação ao trimestre anterior, devido aos Negócios Varejo no Brasil que fechou o trimestre em R$ 8,9 bilhões, alinhado ao comportamento do NPL Creation dos últimos três trimestres de 2025."
+  },
+  {
+   "item": "E079",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 148,
+   "pagina_atual": 142,
+   "secao": "III - Risco de Liquidez",
+   "trecho_anterior": "Recursos de Emissões: 96.925 | 168.561",
+   "trecho_atual": "Recursos de Emissões: 103.912 | 168.487 | 96.925 | 168.561",
+   "titulo_da_tabela": "As Captações de Recursos de acordo com os vencimentos são apresentados abaixo:",
+   "unidade": "",
+   "rotulo_da_linha": "Recursos de Emissões",
+   "colunas_anterior": [
+    "31/12/2025",
+    ""
+   ],
+   "colunas_atual": [
+    "31/03/2026",
+    "",
+    "31/12/2025",
+    ""
+   ]
+  },
+  {
+   "item": "E080",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 8,
+   "secao": "Em relação ao primeiro trimestre de 2025",
+   "trecho_anterior": "A margem com o mercado recuou 25,8% em função do aumento do custo do hedge do índice de capital.",
+   "trecho_atual": "A margem com o mercado recuou 11,2% em função do aumento do custo do hedge do índice de capital."
+  },
+  {
+   "item": "E081",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 145,
+   "secao": "I - Composição e Suficiência do Capital",
+   "trecho_anterior": "",
+   "trecho_atual": "A variação reflete principalmente a implantação das mudanças regulatórias relacionadas aos riscos de crédito e operacional, o crescimento dos ativos ponderados pelo risco e o pagamento de juros sobre capital próprio, efeitos parcialmente compensados pelo resultado do período."
+  },
+  {
+   "item": "E082",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 156,
+   "pagina_atual": null,
+   "secao": "Regulamento, atribuições e responsabilidades do Comitê",
+   "trecho_anterior": "A PricewaterhouseCoopers Auditores Independentes (“PwC”) é a responsável pela auditoria independente das demonstrações contábeis individuais e consolidadas do Itaú Unibanco Holding S.A., devendo atestar se elas apresentam adequadamente, em todos os aspectos relevantes, a posição patrimonial e financeira individual e consolidada do Conglomerado, e o desempenho individual e consolidado das operações, de acordo com as práticas contábeis adotadas no Brasil e com as normas contábeis internacionais emitidas pelo International Accounting Standards Board (“IASB”), sendo também de sua responsabilidade auditar as demonstrações contábeis do Conglomerado Prudencial.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E083",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 15,
+   "secao": "Qualidade do crédito",
+   "trecho_anterior": "Nota: O NPL Creation do 4T25 foi calculado com a inclusão das carteiras de crédito ativas de R$ 132 milhões (sendo R$107 milhões dos Negócios de Atacado no Brasil e R$ 25 milhões da América Latina) vendidas para empresas não ligadas, e o NPL Creation de TVM.",
+   "trecho_atual": "Nota: O NPL Creation do 1T26 foi calculado com a inclusão da carteira de crédito ativa de R$ 2,9 milhões do Atacado e Varejo vendida para empresas não ligadas, e o NPL Creation de TVM."
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 83,
+   "secao": "b) Hedge de Fluxo de Caixa",
+   "trecho_anterior": "",
+   "trecho_atual": "*Hedge* de Operações Ativas Operações com Característica de Concessão de Crédito: 2.590 | 9 | (5) | 2.609 | 9",
+   "titulo_da_tabela": "",
+   "unidade": "",
+   "rotulo_da_linha": "*Hedge* de Operações Ativas Operações com Característica de Concessão de Crédito",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "31/03/2026",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "item": "E085",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 5,
+   "pagina_atual": 5,
+   "secao": "Sumário do Resultado Gerencial",
+   "trecho_anterior": "Índice de Capital Principal (*Common Equity Tier I*) - Basileia III: 12,3% | 13,5% | 13,7% |  | ",
+   "trecho_atual": "Índice de Capital Principal (*Common Equity Tier I*) - Basileia III: 12,0% | 12,3% | 12,6%",
+   "titulo_da_tabela": "Em R$ milhões (exceto onde indicado)",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Índice de Capital Principal (*Common Equity Tier I*) - Basileia III",
+   "colunas_anterior": [
+    "4T25",
+    "3T25",
+    "4T24",
+    "2025",
+    "2024"
+   ],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E086",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "",
+   "trecho_atual": "Na comparação trimestral, a margem financeira com clientes recuou 0,7% e, excluindo o efeito da distribuição antecipada de dividendos ocorrida no final de 2025, teria apresentado um crescimento de 1,1%."
+  },
+  {
+   "item": "E087",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 58,
+   "secao": "Demonstração Condensada do Valor Adicionado",
+   "trecho_anterior": "",
+   "trecho_atual": "Pessoal:  | 57 | 85",
+   "titulo_da_tabela": "(Em milhões de reais)",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Pessoal",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "Nota",
+    "01/01 a 31/03/2026",
+    "01/01 a 31/03/2025"
+   ]
+  },
+  {
+   "item": "E088",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Carteira de Crédito com Garantias Financeiras Prestadas e Títulos Privados",
+   "trecho_anterior": "Cartão de Crédito: 153,5 | 142,2 | 142,2",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Carteira de Crédito com Garantias Financeiras Prestadas e Títulos Privados",
+   "unidade": "bilhoes",
+   "rotulo_da_linha": "Cartão de Crédito",
+   "colunas_anterior": [
+    "4T25",
+    "3T25",
+    "4T24"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E089",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 143,
+   "pagina_atual": 57,
+   "secao": "Demonstração Condensada dos Fluxos de Caixa",
+   "trecho_anterior": "Títulos e Valores Mobiliários: 197.424",
+   "trecho_atual": "Títulos e Valores Mobiliários: 1.230 | (7.234)",
+   "titulo_da_tabela": "(Em milhões de reais)",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Títulos e Valores Mobiliários",
+   "colunas_anterior": [
+    "31/12/2025"
+   ],
+   "colunas_atual": [
+    "01/01 a 31/03/2026",
+    "01/01 a 31/03/2025"
+   ]
+  },
+  {
+   "item": "E090",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Custo do crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso, a sazonalidade típica do primeiro trimestre, também afetou de forma negativa a recuperação de crédito do segmento."
+  },
+  {
+   "item": "E091",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 31,
+   "pagina_atual": 29,
+   "secao": "Divulgação dos resultados do primeiro trimestre de 2026, de acordo com o padrão contábil internacional – IFRS",
+   "trecho_anterior": "(6) Conciliação do Patrimônio Líquido dos Acionistas Controladores demonstrada na próxima tabela.",
+   "trecho_atual": "(5) Conciliação do Patrimônio Líquido dos Acionistas Controladores demonstrada na próxima tabela."
+  },
+  {
+   "item": "E092",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "Qualidade do crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "Em ambos os casos, as reduções estão relacionadas com a carteira do varejo, em função da redução da carteira de composição de dívida."
+  },
+  {
+   "item": "E093",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 65,
+   "secao": "IV.III - Mensuração subsequente de Instrumentos Financeiros",
+   "trecho_anterior": "",
+   "trecho_atual": "mediante seleção de *inputs* específicos e em alguns casos, aplicação de ajustes de avaliação ao valor do modelo ou preço cotado para instrumentos financeiros que não são negociados ativamente."
+  },
+  {
+   "item": "E094",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 166,
+   "pagina_atual": null,
+   "secao": "Responsabilidades do auditor pela auditoria das demonstrações contábeis individuais e consolidadas",
+   "trecho_anterior": "Identificamos e avaliamos os riscos de distorção relevante nas demonstrações contábeis individuais e consolidadas, independentemente se causada por fraude ou erro, planejamos e executamos procedimentos de auditoria em resposta a tais riscos, bem como obtemos evidência de auditoria apropriada e suficiente para fundamentar nossa opinião.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E095",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": null,
+   "secao": "Atuação internacional",
+   "trecho_anterior": "O custo do crédito cresceu em função de maiores provisões para clientes pessoa jurídica.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E096",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 104,
+   "pagina_atual": 100,
+   "secao": "c) Contas a Receber – Reembolso de Provisões",
+   "trecho_anterior": "O saldo de valores a receber relativo a reembolso de provisões totaliza R$ 387 (Nota 9a) e decorre, basicamente, da garantia estabelecida em 1997, no processo de privatização do Banco Banerj S.A., quando o Estado do Rio de Janeiro constituiu um fundo para garantir a recomposição patrimonial em Provisões Cíveis, Trabalhistas, Fiscais e Previdenciárias.",
+   "trecho_atual": "O saldo de valores a receber relativo a reembolso de provisões totaliza R$ 379 (R$ 387 em 31/12/2025) (Nota 9a) e decorre, basicamente, da garantia estabelecida em 1997, no processo de privatização do Banco Banerj S.A., quando o Estado do Rio de Janeiro constituiu um fundo para garantir a recomposição patrimonial em Provisões Cíveis e Trabalhistas."
+  },
+  {
+   "item": "E097",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 151,
+   "pagina_atual": 145,
+   "secao": "I - Composição e Suficiência do Capital",
+   "trecho_anterior": "Em 31/12/2025, o montante de dívidas subordinadas perpétuas que compõe o capital de Nível I é de R$ 21.543 e o montante de dívidas subordinadas que compõe o capital de Nível II é de R$ 19.034.",
+   "trecho_atual": "Em 31/03/2026, o montante de dívidas subordinadas perpétuas que compõe o capital de Nível I é de R$ 21.456 (R$ 21.543 em 31/12/2025) e o montante de dívidas subordinadas que compõe o capital de Nível II é de R$ 20.072 (R$ 19.034 em 31/12/2025)."
+  },
+  {
+   "item": "E098",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 84,
+   "pagina_atual": 76,
+   "secao": "d) Títulos e Valores Mobiliários ao Valor Justo por Meio do Resultado (VJR)",
+   "trecho_anterior": "*Eurobonds* e *Assemelhados*: 2.644 | (5) | 2.639",
+   "trecho_atual": "*Eurobonds* e *Assemelhados*: 3.043 | (33) | 3.010 | 2.644 | (5) | 2.639",
+   "titulo_da_tabela": "d) Títulos e Valores Mobiliários ao Valor Justo por Meio do Resultado (VJR)",
+   "unidade": "",
+   "rotulo_da_linha": "*Eurobonds* e *Assemelhados*",
+   "colunas_anterior": [
+    "31/12/2025",
+    "",
+    ""
+   ],
+   "colunas_atual": [
+    "31/03/2026",
+    "",
+    "",
+    "31/12/2025",
+    "",
+    ""
+   ]
+  },
+  {
+   "item": "E099",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 86,
+   "pagina_atual": 77,
+   "secao": "a) Derivativos por prazo de vencimento e contraparte",
+   "trecho_anterior": "366 - 720: - | 543 | 1.861 | 9.371 | 749 | 97 | 19 | 12.640",
+   "trecho_atual": "366 - 720: - | 237 | 2.653 | 7.393 | 896 | 107 | 17 | 11.303 | 12.640",
+   "titulo_da_tabela": "a) Derivativos por prazo de vencimento e contraparte",
+   "unidade": "",
+   "rotulo_da_linha": "366 - 720",
+   "colunas_anterior": [
+    "31/12/2025",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "colunas_atual": [
+    "31/03/2026",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "31/12/2025",
+    ""
+   ]
+  },
+  {
+   "item": "E100",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Margem Financeira Gerencial",
+   "trecho_anterior": "",
+   "trecho_atual": "Houve aumento na margem sensível a spreads, com destaque para: (i) efeito positivo do melhor mix de produtos, em função do maior crescimento relativo de produtos mais rentáveis, como cheque especial; e (ii) maior volume médio de ativos, em função do aumento da carteira rentável média, especialmente das carteiras de crédito imobiliário, consignado privado, além do aumento do saldo médio da carteira de micro, pequenas e médias empresas, principalmente relacionado aos programas governamentais em pequenas e médias empresas."
+  },
+  {
+   "item": "E101",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 60,
+   "secao": "II - Aplicáveis para Períodos Futuros",
+   "trecho_anterior": "",
+   "trecho_atual": "Os possíveis impactos estão em avaliação e serão concluídos até o início de vigência normativa."
+  },
+  {
+   "item": "E102",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 72,
+   "pagina_atual": 64,
+   "secao": "IV.III - Mensuração subsequente de Instrumentos Financeiros",
+   "trecho_anterior": "Os principais julgamentos aplicados no cálculo do valor justo de instrumentos financeiros mais complexos, ou que não são negociados em mercados ativos ou não possuam liquidez, são: determinação do modelo utilizado mediante seleção de *inputs* específicos e em alguns casos, aplicação de ajustes de avaliação ao valor do modelo ou preço cotado para instrumentos financeiros que não são negociados ativamente.",
+   "trecho_atual": "Os principais julgamentos aplicados no cálculo do valor justo de instrumentos financeiros mais complexos, ou que não são negociados em mercados ativos ou não possuam liquidez, são: determinação do modelo utilizado"
+  },
+  {
+   "item": "E103",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "Demonstração de Resultado Ajustada - Base para o Guidance 2026",
+   "trecho_anterior": "Essa nova forma de divulgação é a base para o Guidance de 2026.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E104",
+   "operacao": "alteracao",
+   "tipo": "tabela",
+   "pagina_anterior": 24,
+   "pagina_atual": 24,
+   "secao": "Demonstração de Resultados por Localidade",
+   "trecho_anterior": "Resultado Recorrente Gerencial: 595 | 797 | 586 | 2.800 | 2.378",
+   "trecho_atual": "Resultado Recorrente Gerencial: 660 | 595 | 676",
+   "titulo_da_tabela": "América Latina (em R$ milhões, ao final do período)",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Resultado Recorrente Gerencial",
+   "colunas_anterior": [
+    "4T25",
+    "3T25",
+    "4T24",
+    "2025",
+    "2024"
+   ],
+   "colunas_atual": [
+    "1T26",
+    "4T25",
+    "1T25"
+   ]
+  },
+  {
+   "item": "E105",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 94,
+   "pagina_atual": 90,
+   "secao": "b) Valor contábil bruto por estágios",
+   "trecho_anterior": "No período, o ITAÚ UNIBANCO HOLDING CONSOLIDADO renegociou R$ 1.559 de ativos financeiros baixados anteriormente, sendo constituído R$ (1.559) de provisão para perda de crédito esperada.",
+   "trecho_atual": "No período, o ITAÚ UNIBANCO HOLDING CONSOLIDADO renegociou R$ 558 (R$ 1.559 em 31/12/2025) de ativos financeiros baixados anteriormente, sendo constituído R$ (558) (R$ 1.559) em 31/12/2025) de provisão para perda de crédito esperada."
+  },
+  {
+   "item": "E106",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 70,
+   "secao": "XII - Provisões, Ativos Contingentes e Passivos Contingentes",
+   "trecho_anterior": "",
+   "trecho_atual": "que tramitam (Juizado Especial Cível ou Justiça Comum)."
+  },
+  {
+   "item": "E107",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 117,
+   "secao": "Movimentação da Remuneração Variável em Ações",
+   "trecho_anterior": "",
+   "trecho_atual": "1) Para fins de comparabilidade, as informações contemplam os efeitos das bonificações de ações deliberadas e efetivamente emitidas ao longo do exercício de 2025, conforme as respectivas datas de emissão."
+  },
+  {
+   "item": "E108",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 66,
+   "pagina_atual": null,
+   "secao": "Itaú Unibanco Holding S.A.",
+   "trecho_anterior": "Depósitos: 1.054.741 | 1.054.741 | CA | 1.054.741",
+   "trecho_atual": "",
+   "titulo_da_tabela": "(Em milhões de Reais)",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Depósitos",
+   "colunas_anterior": [
+    "31/12/2024",
+    "31/12/2024",
+    "01/01/2025",
+    ""
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E109",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 43,
+   "pagina_atual": null,
+   "secao": "Investimento Social Privado",
+   "trecho_anterior": "Desenv. e Participação Local: — | — | 1,7 | 8 | 1,7",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Investimento Social Privado",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Desenv. e Participação Local",
+   "colunas_anterior": [
+    "BRASIL",
+    "",
+    "LATAM",
+    "",
+    "TOTAL"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E110",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 150,
+   "pagina_atual": null,
+   "secao": "VII - Riscos Social, Ambiental e Climático",
+   "trecho_anterior": "Na gestão dos Riscos Social, Ambiental e Climático as áreas de negócios realizam a gestão do risco em suas atividades diárias, seguindo as diretrizes da Política de Riscos SAC e processos específicos, contando com avaliação especializada de equipes técnicas dedicadas situadas nos times de Crédito, que atende o segmento do Atacado, Risco de Crédito e Modelagem e Jurídico Institucional, que atuam de forma integrada na gestão de todas as dimensões dos Riscos Social, Ambiental e Climático atreladas às atividades do conglomerado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E111",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 12,
+   "secao": "Margem Financeira Gerencial",
+   "trecho_anterior": "No ano de 2025, em comparação com o ano anterior, a redução foi de 25,8%, e está relacionada com o maior custo do hedge do índice de capital.",
+   "trecho_atual": "Na comparação com o ano anterior, houve redução de 11,2%, em função do aumento do custo do hedge do índice de capital."
+  },
+  {
+   "item": "E112",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "Principais variações no trimestre",
+   "trecho_anterior": "",
+   "trecho_atual": "Índice de Basileia: redução de 0,4 p.p. em relação a dezembro/25, refletindo principalmente a implantação das mudanças regulatórias relacionadas aos riscos de crédito e operacional, o crescimento dos ativos ponderados pelo risco, o pagamento de juros sobre capital próprio e a recompra de ações, efeitos parcialmente compensados pelo resultado do período."
+  },
+  {
+   "item": "E113",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 15,
+   "secao": "Qualidade do crédito",
+   "trecho_anterior": "A relação entre as operações levadas a write-off e o saldo médio da carteira de crédito fechou o 4º trimestre em 0,6%.",
+   "trecho_atual": "A relação entre as operações levadas a write-off e o saldo médio da carteira de crédito fechou o primeiro trimestre em 0,7%, um crescimento de 0,1 p.p. em relação ao trimestre anterior."
+  },
+  {
+   "item": "E114",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 64,
+   "pagina_atual": null,
+   "secao": "I - Aplicáveis para o Período Findo em 31 de dezembro de 2025",
+   "trecho_anterior": "Adicionalmente, com o objetivo de eliminar assimetrias contábeis, houve designação de ativos financeiros ao VJR que fazem parte da estratégia de gerenciamento de risco de mercado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E115",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 156,
+   "pagina_atual": null,
+   "secao": "Regulamento, atribuições e responsabilidades do Comitê",
+   "trecho_anterior": "Atualmente, é composto por seis membros efetivos e independentes, sendo um integrante do Conselho, eleitos observados os critérios constantes da regulamentação do Conselho Monetário Nacional (“CMN”), do Conselho Nacional de Seguros Privados (“CNSP”), da Lei Sarbanes-Oxley (“SOX”) e das normas da *New York Stock Exchange* (“NYSE”), nesses dois últimos casos no que for aplicável aos emissores estrangeiros, *Foreign Private Issuers* (“FPIs”).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E116",
+   "operacao": "adicao",
+   "tipo": "tabela",
+   "pagina_anterior": null,
+   "pagina_atual": 57,
+   "secao": "Demonstração Condensada dos Fluxos de Caixa",
+   "trecho_anterior": "",
+   "trecho_atual": "Amortização de Ágio: 11 | 11",
+   "titulo_da_tabela": "(Em milhões de reais)",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Amortização de Ágio",
+   "colunas_anterior": [],
+   "colunas_atual": [
+    "01/01 a 31/03/2026",
+    "01/01 a 31/03/2025"
+   ]
+  },
+  {
+   "item": "E117",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 61,
+   "pagina_atual": null,
+   "secao": "ITAÚ UNIBANCO HOLDING S.A.",
+   "trecho_anterior": "Aplicações Interfinanceiras de Liquidez: 3.296 | 11.216",
+   "trecho_atual": "",
+   "titulo_da_tabela": "Demonstração dos Fluxos de Caixa *(Em milhões de reais)*",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Aplicações Interfinanceiras de Liquidez",
+   "colunas_anterior": [
+    "01/07 a 31/12/2025",
+    "01/01 a 31/12/2025"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E118",
+   "operacao": "remocao",
+   "tipo": "tabela",
+   "pagina_anterior": 25,
+   "pagina_atual": null,
+   "secao": "Negócios de Varejo",
+   "trecho_anterior": "Índice de Eficiência (IE): 43,1% | 43,9% | 46,2%",
+   "trecho_atual": "",
+   "titulo_da_tabela": "4T25 x 4T24",
+   "unidade": "milhoes",
+   "rotulo_da_linha": "Índice de Eficiência (IE)",
+   "colunas_anterior": [
+    "4T25",
+    "3T25",
+    "4T24"
+   ],
+   "colunas_atual": []
+  },
+  {
+   "item": "E119",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Análise Gerencial da Operação > Serviços e Seguros",
+   "trecho_anterior": "(ii) emissão de cartões, em função do maior faturamento de crédito;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E120",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 25,
+   "secao": "Negócios de Varejo",
+   "trecho_anterior": "",
+   "trecho_atual": "O resultado recorrente gerencial cresceu 5,1% na comparação com o último trimestre de 2025, devido à maior margem financeira com clientes, principalmente em função do melhor mix de produtos, decorrente do crescimento relativo de produtos mais rentáveis, além do maior volume médio de crédito, principalmente nas carteiras de imobiliário, consignado privado e de programas governamentais para pequenas e médias empresas."
+  }
+ ]
+}

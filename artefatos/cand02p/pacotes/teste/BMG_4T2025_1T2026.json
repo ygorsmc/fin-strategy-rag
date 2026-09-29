@@ -1,0 +1,1207 @@
+{
+ "par": "BMG_4T2025_1T2026",
+ "documento_anterior": "bmg_release_4T2025",
+ "documento_atual": "bmg_release_1T2026",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 25,
+   "secao": "BMGB4",
+   "trecho_anterior": "",
+   "trecho_atual": "Com base no fechamento do pregão do dia 04/05/2026 e considerando a declaração de JCP do 1T26 divulgado no dia 28/04/2026."
+  },
+  {
+   "item": "E002",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 5,
+   "secao": "Geração recorrente de resultados com disciplina na execução",
+   "trecho_anterior": "O resultado operacional atingiu R$ 759 milhões (+11,9% YoY).",
+   "trecho_atual": "O resultado operacional atingiu R$ 180 milhões (+2,7% YoY)."
+  },
+  {
+   "item": "E003",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Despesa de provisão operacional líquida (R$ Milhões)",
+   "trecho_anterior": "",
+   "trecho_atual": "O Banco também mantém provisões adequadas para contingências cíveis estratégicas, trabalhistas e fiscais, classificadas conforme a probabilidade de perda (provável, possível e remota), em linha com a opinião dos assessores jurídicos."
+  },
+  {
+   "item": "E004",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 21,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "Ainda, o Banco anunciou em 21 de janeiro de 2026 aumento de capital privado no montante mínimo R$ 156 milhões e máximo de R$ 214 milhões, visando fortalecer a posição de capital do Banco com vistas à melhoria do Índice de Basileia.",
+   "trecho_atual": "O Banco concluiu o aumento de capital, atingindo o montante máximo de R$ 214 milhões, visando fortalecer a posição de capital do Banco com vistas à melhoria do Índice de Basileia."
+  },
+  {
+   "item": "E005",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "",
+   "trecho_atual": "Obs: O índice mínimo exigido pelo Bacen para o Índice de Basileia é de 8,0% mais 2,5% de adicional de conservação de capital principal, enquanto para o Nível I o mínimo exigido é de 6,0% mais 2,5% de adicional de conservação de capital principal."
+  },
+  {
+   "item": "E006",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 29,
+   "pagina_atual": null,
+   "secao": "ASG - COMPROMISSO COM O FUTURO",
+   "trecho_anterior": "Além dos colaboradores, também expandimos as ações do programa para nossos clientes por meio dos canais digitais de comunicação, reforçando o compromisso com a educação financeira como vetor de transformação social.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E007",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "A margem financeira após o custo do crédito (líquida de despesas de provisão e de comissão) atingiu R$ 3.361 milhões no exercício de 2025, aumento de 8,8% ante 2024, e R$ 815 milhões no 4T25, redução de 7,5% em relação ao 3T25 e estável em relação ao 4T24.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E008",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Despesa de provisão operacional líquida (R$ Milhões)",
+   "trecho_anterior": "(provisionada no balanço com base nos montantes envolvidos), possível (apenas divulgado em nota explicativa) e remota (não requer provisão ou divulgação).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E009",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "Digital",
+   "trecho_anterior": "",
+   "trecho_atual": "Originação digital + compras dos cartões."
+  },
+  {
+   "item": "E010",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "Bmg Seguro",
+   "trecho_anterior": "Abaixo detalhamos nossos negócios no ramo de seguros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E011",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 31,
+   "secao": "Outros",
+   "trecho_anterior": "",
+   "trecho_atual": "Caixa Livre: disponibilidades + aplicações interfinanceiras de liquidez + títulos e valores mobiliários públicos e privados, exceto vinculados a operações compromissadas."
+  },
+  {
+   "item": "E012",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Despesa de provisão operacional líquida (R$ Milhões)",
+   "trecho_anterior": "",
+   "trecho_atual": "As ações cíveis massificadas são integralmente provisionadas no momento de sua entrada, com critérios objetivos baseados em ticket médio por produto e região, atualizados mensalmente e aplicáveis ao estoque de processos."
+  },
+  {
+   "item": "E013",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Bmg Seguradora",
+   "trecho_anterior": "",
+   "trecho_atual": "Foram emitidos R$ 99 milhões em prêmios no 1T26 (-15,8% YoY e -10,2% QoQ), gerando R$ 37 milhões de margem operacional com operações de seguros (referente aos prêmios ganhos deduzidos de sinistros, custos de aquisição e despesas operacionais), e um índice combinado de 76,1% (-0,8 p.p. vs ano de 2025)."
+  },
+  {
+   "item": "E014",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Bmg Seguradora",
+   "trecho_anterior": "A operação foi concluída em agosto de 2025.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E015",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Disciplina na gestão de custos e eficiência operacional",
+   "trecho_anterior": "",
+   "trecho_atual": "O Banco segue focado na gestão de custos através da transformação tecnológica e evolução operacional, com uso crescente de automação, inteligência artificial e digitalização de processos, o que tem permitido ganhos de escala, maior eficiência e melhoria na experiência do cliente"
+  },
+  {
+   "item": "E016",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "Cartão de Crédito Consignado e Cartão Consignado Benefício",
+   "trecho_anterior": "No 4T25, foram originados R$ 828 milhões em valor liberado e compras para o cliente, redução de 6,1% em relação ao trimestre anterior, com ênfase para o uso dos cartões para uso em compras.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E017",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": 3,
+   "secao": "Mix mais rentável da carteira de crédito",
+   "trecho_anterior": "↓ 1,4% QoQ | ↓ 11,9% YoY",
+   "trecho_atual": "↑ 3,9% QoQ | ↓ 10,2% YoY"
+  },
+  {
+   "item": "E018",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Despesa de provisão operacional líquida (R$ Milhões)",
+   "trecho_anterior": "",
+   "trecho_atual": "Iniciativas como (i) inteligência artificial para análise e elaboração de defesas, com objetivo de aumentar eficiência e êxito, (ii) formalização por vídeo no momento da contratação, (iii) termo de consentimento junto ao cliente, dentre outras, têm contribuído para maior eficiência operacional e melhor experiência do cliente."
+  },
+  {
+   "item": "E019",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Empresas",
+   "trecho_anterior": "No exercício de 2025, o Banco participou de 44 ofertas, sendo 38 como coordenador líder, perfazendo um montante total de mais de R$ 1 bilhão.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E020",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "Digital",
+   "trecho_anterior": "",
+   "trecho_atual": "Banco digital com experiência para o público 50+ (top 10 aplicativos bancários, com nota 4,7 nas lojas de apps)."
+  },
+  {
+   "item": "E021",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "Presença e reconhecimento",
+   "trecho_anterior": "",
+   "trecho_atual": "Por fim, além de participar dos fóruns específicos em suas associações setoriais, o Banco Bmg também é signatário de movimentos importantes, conforme abaixo:"
+  },
+  {
+   "item": "E022",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "Carteira e qualidade de crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "4T25 e redução de 14,1% vs."
+  },
+  {
+   "item": "E023",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "ASG - COMPROMISSO COM O FUTURO",
+   "trecho_anterior": "No Banco Bmg, a sustentabilidade dos nossos negócios está ligada à agenda ASG: nossa responsabilidade com o meio Ambiente, a geração de impacto Social positivo e uma Governança ética e transparente.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E024",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Despesas Administrativas e Operacionais",
+   "trecho_anterior": "No exercício de 2025, as despesas administrativas e operacionais apresentaram um aumento de 5,6% em relação a 2024.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E025",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Geração recorrente de resultados com disciplina na execução",
+   "trecho_anterior": "",
+   "trecho_atual": "A redução do lucro no 1T26 vs."
+  },
+  {
+   "item": "E026",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 31,
+   "pagina_atual": null,
+   "secao": "BMGB4",
+   "trecho_anterior": "Dividend Yield (%): 11,2% (últimos 12 meses)$$",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E027",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": null,
+   "secao": "Relacionamento com os Clientes",
+   "trecho_anterior": "O Banco vem trabalhando fortemente na modernização e automação de processos, por conta disso, em todas as suas operações, a originação é formalizada digitalmente (salvo em caso de exceções legais).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E028",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 20,
+   "secao": "GESTÃO DE ATIVOS E PASSIVOS",
+   "trecho_anterior": "No 4T25 o caixa livre encerrou em R$ 6,5 bilhões.",
+   "trecho_atual": "No 1T26 o caixa livre encerrou em R$ 4,5 bilhões."
+  },
+  {
+   "item": "E029",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "Operações Estruturadas",
+   "trecho_anterior": "",
+   "trecho_atual": "1T25, devido, principalmente, a estratégia do Banco de pagar parte relevante do comissionamento à vista aos corbans e franqueados e mudança de regra contábil."
+  },
+  {
+   "item": "E030",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "Digital",
+   "trecho_anterior": "No 1T25 lançamos o shopping de crédito dentro do nosso aplicativo, onde o cliente consegue visualizar em uma única tela todas as ofertas de crédito disponíveis e efetuar a contratação de forma simples, sem precisar abrir conta com o Banco, trazendo a experiência do físico para o online.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E031",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Geração recorrente de resultados com disciplina na execução",
+   "trecho_anterior": "",
+   "trecho_atual": "1T25 é justificado, principalmente, pela mudança no mix dos ativos refletindo no aumento da margem financeira."
+  },
+  {
+   "item": "E032",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "Ainda, por conta da estrutura de *hedge* natural via NTN-Bs, essa linha tende a variar de acordo com a oscilação do IPCA, com efeito correspondente na linha de despesas de captação.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E033",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Fortalecimento de Capital",
+   "trecho_anterior": "Aumento de capital previsto para mar/26 de até R$ 214 milhões reforça o Índice de Basileia",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E034",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 6,
+   "secao": "Expansão da margem com mix de carteira mais rentável",
+   "trecho_anterior": "Receita de TVM: As variações na linha de receita de TVM são justificadas pelo volume elevado de títulos públicos, decorrente do nível de caixa conservador adotado pelo Banco para gestão do fluxo de vencimento de seus ativos e passivos, e da posição de *hedge* natural via título público atrelado ao IPCA (NTN-B).",
+   "trecho_atual": "Receita de TVM: esta linha segue influenciada pelo elevado nível de títulos públicos, decorrente do nível de caixa conservador adotado pelo Banco para gestão do fluxo de vencimento de seus ativos e passivos, e da posição de *hedge* natural via título público atrelado a variação do IPCA (NTN-B), com efeito correspondente na linha de despesas de captação."
+  },
+  {
+   "item": "E035",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Operações Estruturadas",
+   "trecho_anterior": "A carteira é composta por operações estruturadas com garantias que mitigam os riscos do emissor para os correspondentes bancários e franqueados e para clubes de futebol.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E036",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Patrimônio Líquido",
+   "trecho_anterior": "",
+   "trecho_atual": "O Banco provisionou R$ 64,8 milhões de Juros sobre o Capital Próprio referentes ao período de três meses findo em 31 de março de 2026, dos quais R$ 64,8 milhões foram declarados referentes ao mesmo período e serão pagos em 21 de maio de 2026."
+  },
+  {
+   "item": "E037",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 13,
+   "secao": "Cartão de crédito",
+   "trecho_anterior": "Ainda, no 4T25 o volume de originação da antecipação do FGTS atingiu R$ 58 milhões de valor liberado, redução de 52,4% em relação ao 3T25 devido a redução do potencial de crescimento do mercado.",
+   "trecho_atual": "Por fim, no 1T26 o volume de originação da antecipação do FGTS atingiu R$ 18 milhões de valor liberado, redução de 68,3% em relação ao 4T25 devido a redução do potencial de crescimento do mercado."
+  },
+  {
+   "item": "E038",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 31,
+   "pagina_atual": null,
+   "secao": "RATINGS",
+   "trecho_anterior": "Em outubro de 2025, a Moody’s Local reafirmou o Rating Local de Emissor de Longo Prazo do Banco em A-.br, elevando a perspectiva de estável para positiva.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E039",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Fortalecimento de Capital",
+   "trecho_anterior": "",
+   "trecho_atual": "Índice de Basileia pro forma¹"
+  },
+  {
+   "item": "E040",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": 25,
+   "secao": "BMGB4",
+   "trecho_anterior": "o direito de tag along de 100%, garantindo a todos os acionistas o mesmo preço e condições oferecidas ao acionista controlador em caso de venda de controle;",
+   "trecho_atual": "o direito de *tag along* de 100%, garantindo a todos os acionistas o mesmo preço e condições oferecidas ao acionista controlador em caso de venda de controle;"
+  },
+  {
+   "item": "E041",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Geração recorrente de resultados com disciplina na execução",
+   "trecho_anterior": "",
+   "trecho_atual": "4T25 deu-se, principalmente, pelo fato que no 4T25 houve benefício tributário do pagamento de JCP Complementar realizado naquele período, e pelo aumento da despesa de PDD já esperado por conta do aumento da originação do consignado privado e crédito pessoal (dada a metodologia de perda esperada – Res."
+  },
+  {
+   "item": "E042",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 15,
+   "secao": "ATACADO",
+   "trecho_anterior": "O objetivo da aquisição foi trazer competência dedicada para acelerar o crescimento dos negócios do Banco, expandindo a oferta de produtos e serviços.",
+   "trecho_atual": "O Banco detém 50% de participação na AF Controle, com objetivo de trazer competência dedicada para acelerar o crescimento dos negócios do Banco, expandindo a oferta de produtos e serviços."
+  },
+  {
+   "item": "E043",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Outras despesas/receitas operacionais",
+   "trecho_anterior": "O Banco segue atuando proativamente em frentes estratégicas em quatro pilares jurídicos que visam mitigar a entrada de novas ações e aumentar a taxa de êxito nas ações judiciais já existentes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E044",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Expansão da margem com mix de carteira mais rentável",
+   "trecho_anterior": "",
+   "trecho_atual": "Já na comparação anual houve redução tanto em termos nominais quanto em relação à carteira de crédito."
+  },
+  {
+   "item": "E045",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 20,
+   "secao": "GESTÃO DE ATIVOS E PASSIVOS",
+   "trecho_anterior": "Ainda, o Índice de Liquidez de Curto Prazo (LCR) encerrou o trimestre em 627%, enquanto o Índice de Liquidez de Longo Prazo (NSFR) foi de 127%.",
+   "trecho_atual": "Ainda, o Índice de Liquidez de Curto Prazo (LCR) encerrou o trimestre em 284%, enquanto o Índice de Liquidez de Longo Prazo (NSFR) foi de 123%, acima das exigências regulatórias."
+  },
+  {
+   "item": "E046",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 13,
+   "secao": "Cartão de crédito",
+   "trecho_anterior": "No 4T25, foram originados R$ 257 milhões em valor liberado para o cliente no crédito pessoal, aumento de 6,1% em comparação ao 3T25.",
+   "trecho_atual": "No 1T26, foram originados R$ 296 milhões em valor liberado para o cliente no crédito pessoal (+15,2% QoQ)."
+  },
+  {
+   "item": "E047",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "ASG - COMPROMISSO COM O FUTURO",
+   "trecho_anterior": "",
+   "trecho_atual": "O Instituto Marina e Flávio Guimarães (IMFG), iniciativa que centraliza todas as ações sociais do Grupo Bmg, Guimarães está há 3 anos promovendo transformações sociais e o fortalecimento das comunidades onde atua."
+  },
+  {
+   "item": "E048",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Bemi – Educação Financeira para Transformar Futuros",
+   "trecho_anterior": "O jogo de tabuleiro “Missão Financeira” foi lançado e 1.200 unidades foram colocadas em distribuição para escolas públicas e instituições sociais da região metropolitana de Belo Horizonte.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E049",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Despesas Administrativas e Operacionais",
+   "trecho_anterior": "Despesas de pessoal: no 4T25, atingimos 2.216 colaboradores, aumento de 6,7% no trimestre e de 11,7% em relação a 4T24.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E050",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "GESTÃO DE ATIVOS E PASSIVOS",
+   "trecho_anterior": "O Banco Bmg adota, na sua gestão de ativos e passivos (AL&M), a estratégia de adequar o perfil de seus passivos (prazo médio, indexadores e taxas) à composição da carteira de ativos, buscando eficiência na alocação de capital e proteção da margem financeira diante de mudanças no cenário econômico.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E051",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 7,
+   "secao": "Expansão da margem com mix de carteira mais rentável",
+   "trecho_anterior": "No 4T25, esta receita reduziu 14,4% no trimestre devido ao menor *fee* em mercado de capitais.",
+   "trecho_atual": "No atacado, esta receita reduziu 29,3% no trimestre devido ao menor fee em mercado de capitais."
+  },
+  {
+   "item": "E052",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 29,
+   "pagina_atual": null,
+   "secao": "ASG - COMPROMISSO COM O FUTURO",
+   "trecho_anterior": "A ferramenta realiza um diagnóstico da saúde financeira do usuário com base no Índice de Saúde Financeira do Brasileiro (I-SFB) e, a partir disso, propõe trilhas de aprendizado personalizadas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E053",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Despesas Administrativas e Operacionais",
+   "trecho_anterior": "No 4T25, as despesas administrativas aumentaram 6,6% em relação ao trimestre anterior, em especial na linha de processamento de dados.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E054",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": 22,
+   "secao": "Centralidade no cliente com modelo *omnichannel*",
+   "trecho_anterior": "No 4T25 o *cross-selling* index do Banco atingiu um consumo médio de 2,22 produtos por cliente, aumento de 8,8% em comparação aos 2,04 no 4T24.",
+   "trecho_atual": "No 1T26 o *cross-selling* index do Banco atingiu um consumo médio de 2,22 produtos por cliente, aumento de 6,2% em comparação aos 2,09 no 1T25."
+  },
+  {
+   "item": "E055",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "Evolução da Carteira (R$ Milhões)",
+   "trecho_anterior": "",
+   "trecho_atual": "Carteira de consignado privado atingiu R$ 875 milhões no 1T26, produto que vem ganhando cada vez mais relevância no Banco"
+  },
+  {
+   "item": "E056",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Índice de eficiência operacional",
+   "trecho_anterior": "",
+   "trecho_atual": "4T25 e aumento de 4,6 p.p. vs."
+  },
+  {
+   "item": "E057",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 21,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "Em 31 de dezembro de 2025, o Patrimônio de Referência correspondeu a 13,2% dos ativos ponderados pelo risco, aumento de 0,1 p.p. no trimestre e estável em comparação com o 4T24.",
+   "trecho_atual": "Em 31 de março de 2026, o Patrimônio de Referência correspondeu a 12,1% dos ativos ponderados pelo risco, redução de 1,1 p.p. no trimestre e de 0,1 vs."
+  },
+  {
+   "item": "E058",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 31,
+   "pagina_atual": null,
+   "secao": "BMGB4",
+   "trecho_anterior": "Em 26 de junho de 2025, o Banco anunciou novo programa de recompra de ações com vigência de 18 meses, autorizando a aquisição de até 12.961.497 ações preferenciais, correspondentes a até 10,0% das ações em circulação para manutenção em tesouraria, cancelamento, recolocação no mercado ou pagamento de remuneração a executivos e demais beneficiários do Banco no âmbito de planos de incentivo de longo prazo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E059",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Disciplina na gestão de custos e eficiência operacional",
+   "trecho_anterior": "",
+   "trecho_atual": "As despesas de pessoal atingiram R$ 131 milhões no trimestre (-1,5% QoQ)."
+  },
+  {
+   "item": "E060",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "Bmg Corretora de Seguros",
+   "trecho_anterior": "Ampliando o escopo de atuação, a Bmg Corretora pode atuar com outras seguradoras de mercado com relação a outros tipos de seguros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E061",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Originação trimestral formalizada digitalmente (R$ Milhões)",
+   "trecho_anterior": "A inadimplência Over90 da carteira de varejo PF encerrou o 4T25 em 14,7%, redução de 3,5 p.p. em relação ao 3T25 e aumento de 7,4 p.p. em comparação ao 4T24, principalmente pela mudança no mix da carteira e intensificada pela cessão da carteira de FGTS que o Banco ao longo de 2025.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E062",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "Cartão de Crédito Consignado e Cartão Consignado Benefício",
+   "trecho_anterior": "Os cartões podem ser utilizados tanto para compras quanto para saque.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E063",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Outras despesas/receitas operacionais",
+   "trecho_anterior": "São eles: (i) projeto de visitas junto ao Poder Judiciário com o objetivo de esclarecer os produtos existentes do Banco e a atuação no mercado, (ii) combate à litigância abusiva em âmbito nacional, (iii) performance dos escritórios parceiros, e (iv) a constante retroalimentação de fluxos e procedimentos internos, com o objetivo de melhoria contínua na experiência do cliente e redução de novas ações judiciais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E064",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 5,
+   "secao": "Geração recorrente de resultados com disciplina na execução",
+   "trecho_anterior": "As despesas atingiram R$ 2.375 milhões (+5,6% YoY);",
+   "trecho_atual": "As despesas atingiram R$ 608 milhões (+10,6% YoY);"
+  },
+  {
+   "item": "E065",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Patrimônio Líquido",
+   "trecho_anterior": "",
+   "trecho_atual": "No 1T26, o Patrimônio Líquido variou principalmente em decorrência: (i) do aumento de capital;"
+  },
+  {
+   "item": "E066",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Bmg Seguradora",
+   "trecho_anterior": "No 4T25, a Bmg Seguradora gerou R$ 35 milhões de margem operacional com operações de seguros (referente aos prêmios ganhos deduzidos de sinistros, custos de aquisição e despesas operacionais), e apresentou um lucro líquido de R$ 21 milhões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E067",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Fortalecimento de Capital",
+   "trecho_anterior": "",
+   "trecho_atual": "Basileia pro forma considerando o aumento de capital de R$ 214 milhões, homologado pelo BACEN em 27 de abril de 2026."
+  },
+  {
+   "item": "E068",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Expansão da margem com mix de carteira mais rentável",
+   "trecho_anterior": "",
+   "trecho_atual": "Evolução da Margem Financeira (R$ Milhões)"
+  },
+  {
+   "item": "E069",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Despesa de provisão operacional líquida (R$ Milhões)",
+   "trecho_anterior": "",
+   "trecho_atual": "O Banco mantém uma atuação proativa e estruturada na gestão do contencioso, com foco na mitigação do ingresso de novas ações e no aumento do êxito das demandas existentes, apoiada por aprimoramentos contínuos de processos, reforço de governança e uso intensivo de tecnologia."
+  },
+  {
+   "item": "E070",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 14,
+   "secao": "Carteira e qualidade de crédito",
+   "trecho_anterior": "A carteira de varejo PF totalizou R$ 2.637 milhões em 31 de dezembro de 2025, aumento de 10,7% em relação ao trimestre anterior e redução de 26,5% frente ao 4T24, devido a cessão sem retenção de riscos e benefícios de R$ 1,8 bilhão da carteira de antecipação do FGTS realizada ao longo de 2025.",
+   "trecho_atual": "1T25, devido a cessão sem retenção de riscos e benefícios de R$ 1,8 bilhão da carteira de antecipação do FGTS realizada ao longo de 2025."
+  },
+  {
+   "item": "E071",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Disciplina na gestão de custos e eficiência operacional",
+   "trecho_anterior": "",
+   "trecho_atual": "4T25 e aumento de 10,6% vs."
+  },
+  {
+   "item": "E072",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Evolução Inadimplência - Over90 (%)",
+   "trecho_anterior": "Conforme aprovado pelo CNPS no dia 25 de março de 2025, a taxa máxima de juros vigente é de 2,46% a.m. para novas operações no cartão consignado e cartão benefício para aposentados e pensionistas do INSS.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E073",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Provisão operacional líquida",
+   "trecho_anterior": "",
+   "trecho_atual": "98% êxito nas ações em videochamadas"
+  },
+  {
+   "item": "E074",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "DESEMPENHO FINANCEIRO",
+   "trecho_anterior": "Desde o 1T25 nossos resultados estão sendo apresentados dentro de novos padrões normativos, principalmente em relação a Resolução CMN nº 4.966/21, que alteram a base de capital, Basileia e os conceitos das provisões para perdas de crédito, critérios de custos de originação e contabilização entre linhas do resultado com efeitos na comparabilidade dos períodos anteriores.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E075",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": null,
+   "secao": "Rede de Franquias help!",
+   "trecho_anterior": "Atualmente, a help! atua também com outros formatos de franquias, como o online e *pocket*, e vem aumentando o portfólio de produtos e serviços.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E076",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 20,
+   "secao": "Patrimônio Líquido",
+   "trecho_anterior": "O Patrimônio Líquido e Índice de Basileia foram impactados pela entrada em vigor da Resolução 4.966/21 e Resolução 452/25, que reduziu o patrimônio líquido do Banco em R$ 694 milhões.",
+   "trecho_atual": "O Patrimônio Líquido e Índice de Basileia foram impactados pela entrada em vigor da Resolução 4.966/21 e Resolução 452/25, que reduziu o patrimônio líquido do Banco em R$ 694 milhões no início do ano de 2025."
+  },
+  {
+   "item": "E077",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 5,
+   "secao": "Geração recorrente de resultados com disciplina na execução",
+   "trecho_anterior": "A margem financeira após o custo de crédito totalizou R$ 3.361 milhões, (+8,8% YoY);",
+   "trecho_atual": "A margem financeira após o custo de crédito totalizou R$ 853 milhões, (+10,1% YoY);"
+  },
+  {
+   "item": "E078",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Originação trimestral formalizada digitalmente (R$ Milhões)",
+   "trecho_anterior": "",
+   "trecho_atual": "A inadimplência Over90 encerrou o 1T26 em 1,7% nos cartões consignados e benefício (+0,4 p.p."
+  },
+  {
+   "item": "E079",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "ASG - COMPROMISSO COM O FUTURO",
+   "trecho_anterior": "",
+   "trecho_atual": "O Banco mantém o foco em entregar soluções financeiras que promovam o bem-estar na maturidade para o público 50+ das classes C e D."
+  },
+  {
+   "item": "E080",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Despesa de provisão operacional líquida (R$ Milhões)",
+   "trecho_anterior": "visitas periódicas ao Judiciário para esclarecimento do produto;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E081",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 15,
+   "secao": "Receita não crédito (R$ Milhões)",
+   "trecho_anterior": "Em 31 de dezembro de 2025, o ticket médio por empresa era de R$ 14 milhões, com parte da carteira coberta por garantias, principalmente por meio de direitos creditórios.",
+   "trecho_atual": "Em 31 de março de 2026, o ticket médio por empresa era de R$ 18 milhões, com parte da carteira coberta por garantias, principalmente por meio de direitos creditórios."
+  },
+  {
+   "item": "E082",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "GESTÃO DE ATIVOS E PASSIVOS",
+   "trecho_anterior": "O Banco conta com um arcabouço robusto de limites e possui controles definidos em política aprovada pelo Conselho de Administração, abrangendo tanto a carteira bancária quanto a de negociação, com monitoração e reportes diários à alta administração, por área apartada a tesouraria, visando garantir as melhores práticas de governança e o enquadramento dentro dos limites de riscos de mercado e de liquidez definidos na RAS (apetite a riscos).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E083",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 17,
+   "secao": "Levando proteção a quem não tem",
+   "trecho_anterior": "Além da cobertura, os seguros podem incluir benefícios de assistência funeral, assistência a medicamentos, telemedicina, exames com preços acessíveis, assistência residencial e sorteios mensais.",
+   "trecho_atual": "Além da cobertura, os seguros podem incluir benefícios de assistência funeral, assistência a medicamentos, telemedicina, exames com preços acessíveis, assistência de realocação profissional e sorteios mensais."
+  },
+  {
+   "item": "E084",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Despesa de provisão operacional líquida (R$ Milhões)",
+   "trecho_anterior": "contratação de serviço de inteligência artificial para monitoramento, cadastro, coleta de subsídios e elaboração de defesas em ações judiciais, com o objetivo de aumentar a eficiência no tempo e exaurimento das informações dos subsídios, visando maior êxito, - inclusão de formalização por vídeo, proporcionando prestação de informações adequadas e claras sobre os produtos, bem como a confirmação com o cliente e o seu interesse na contratação, - termo de consentimento no qual o cliente concorda com as principais características do produto cartão consignado;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E085",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "*Excelência na formalização permite estratégia de cessões recorrentes com múltiplos parceiros, visando maximizar o retorno sobre o capital alocado*",
+   "trecho_anterior": "",
+   "trecho_atual": "Toda originação do empréstimo consignado também é 100% formalizada digitalmente."
+  },
+  {
+   "item": "E086",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Índice de eficiência operacional",
+   "trecho_anterior": "",
+   "trecho_atual": "No 1T26, o índice de eficiência foi de 52,5%, melhora de 5,3 p.p. vs."
+  },
+  {
+   "item": "E087",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "Despesa de provisão líquida de recuperação: no 4T25, as despesas de provisão líquidas de recuperação sobre a carteira média alcançaram 5,6% a.a., um aumento de 1,6 p.p. em relação ao 3T25, influenciado pela carteira de consignado e pelo crescimento das carteiras de crédito pessoal e consignado privado dado a metodologia de perda esperada.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E088",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 5,
+   "secao": "Geração recorrente de resultados com disciplina na execução",
+   "trecho_anterior": "Índice de eficiência foi de 54,2% (+1,4 p.p.",
+   "trecho_atual": "Índice de eficiência foi de 52,5% (+4,6 p.p."
+  },
+  {
+   "item": "E089",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Presença e reconhecimento",
+   "trecho_anterior": "Por fim, além de participar dos fóruns específicos em suas associações setoriais, o Banco Bmg também é signatário de movimentos importantes como Pacto Global da ONU, Pacto de Promoção pela Equidade Racial, Rede Empresarial de Inclusão Social, Movimento Mulher 360, Women on Board (WOB), Fórum de Empresas e Direitos LGBTI+, OUTstand Brasil e Pacto Empresarial pela Integridade e Contra Corrupção (Empresa Limpa) do Instituto Ethos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Crédito pessoal, consignado privado, cartão de crédito e antecipação FGTS",
+   "trecho_anterior": "O Bmg oferta o produto tanto nos canais físicos, através das lojas help! e correspondentes bancários, ou via autocontratação pelo WhatsApp.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Provisão operacional líquida",
+   "trecho_anterior": "",
+   "trecho_atual": "*Com processos mais robustos, transparência na contratação e uso de inteligência artificial, o Banco atua na origem para reduzir a entrada de novas ações judiciais*"
+  },
+  {
+   "item": "E092",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 6,
+   "secao": "Expansão da margem com mix de carteira mais rentável",
+   "trecho_anterior": "Despesa de captação e derivativos: apresentou aumento de 0,7% no trimestre.",
+   "trecho_atual": "Despesa de captação e derivativos: redução de 7,4% no trimestre."
+  },
+  {
+   "item": "E093",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 14,
+   "secao": "Empréstimo Consignado nos Estados Unidos",
+   "trecho_anterior": "Essa carteira foi definida como não estratégica no 4T24, reduzindo 73,0% desde então, e encerrou com saldo de R$ 1.171 milhões no 4T25, principalmente pela redução da carteira tanto em reais quanto em dólares pela venda de crédito e amortização das parcelas.",
+   "trecho_atual": "A carteira de empréstimo consignado nos EUA foi definida como não estratégica no 4T24, reduzindo 76,9% desde então, e encerrou com saldo de R$ 1.000 milhões no 1T26, principalmente pela redução da carteira tanto em reais quanto em dólares pela venda de crédito e amortização das parcelas."
+  },
+  {
+   "item": "E094",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Aumento da exposição aos consignados e crédito pessoal e redução de carteiras menos rentáveis",
+   "trecho_anterior": "",
+   "trecho_atual": "Ainda, o Banco vem reduzindo as carteiras de empréstimo consignado nos Estados Unidos (ativo não estratégico) e antecipação do saque-aniversário do FGTS."
+  },
+  {
+   "item": "E095",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "Digital",
+   "trecho_anterior": "Em 31 de dezembro de 2025, o Bmg contava com 5,5 milhões de contas digitais abertas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E096",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "ASG - COMPROMISSO COM O FUTURO",
+   "trecho_anterior": "",
+   "trecho_atual": "Um dos pilares estratégicos do Banco é a Educação Financeira na qual possui as seguintes iniciativas:"
+  },
+  {
+   "item": "E097",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "Digital",
+   "trecho_anterior": "",
+   "trecho_atual": "Whatsapp: principal canal de relacionamento digital, trazendo mais agilidade e proximidade."
+  },
+  {
+   "item": "E098",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Centralidade no cliente com modelo omnichannel",
+   "trecho_anterior": "",
+   "trecho_atual": "48% da originação via autocontratação"
+  },
+  {
+   "item": "E099",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 13,
+   "secao": "Crédito pessoal",
+   "trecho_anterior": "O produto crédito pessoal utiliza o conceito de *risk based price* e, assim, embora o índice de inadimplência seja naturalmente mais elevada, é compatível com a precificação do produto.",
+   "trecho_atual": "O produto utiliza o conceito de *risk based price* e, embora o índice de inadimplência seja naturalmente mais elevada, é compatível com a precificação do produto."
+  },
+  {
+   "item": "E100",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "SUMÁRIO",
+   "trecho_anterior": "DESTAQUES DO PERÍODO ...3 PRINCIPAIS INDICADORES ...4 DESEMPENHO FINANCEIRO ...5 Rentabilidade...5 Margem Financeira...6 Despesas Administrativas e Operacionais ...8 NEGÓCIOS ...11 Produtos de Crédito...11 Bmg Seguro...18 CAPTAÇÃO DE RECURSOS ...21 GESTÃO DE ATIVOS E PASSIVOS...23 CAPITAL E BASILEIA ...23 PERFIL CORPORATIVO ...25 ASG - COMPROMISSO COM O FUTURO ...28 BMGB4...30 RATINGS...31 ANEXO I – DRE Gerencial ...32 ANEXO II – Balanço Patrimonial ...34 ANEXO III - Glossário ...35",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E101",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "Empréstimo Consignado",
+   "trecho_anterior": "O Bmg vem priorizando a qualidade e rentabilidade da originação.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E102",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "Conforme Resolução CMN nº 4.193/13 e regulamentações complementares, as instituições financeiras devem manter um patrimônio líquido compatível com o grau de risco da estrutura de seus ativos ponderados pelos fatores que variam de 0% a 1.250%, além de observar um índice mínimo de 8,0% de patrimônio em relação aos ativos ponderados pelo risco, somado ao adicional de conservação de capital principal (ACP) de 2,5%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E103",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "",
+   "trecho_atual": "Considerando esta operação, Índice de Basileia pro forma seria de 12,9%"
+  },
+  {
+   "item": "E104",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "Cartão de Crédito Consignado e Cartão Consignado Benefício",
+   "trecho_anterior": "Visando dar mais transparência para a contratação dos clientes e segurança ao produto, a partir de outubro de 2020, o Bmg passou a formalizar digitalmente toda a sua originação, e desde outubro de 2023, as operações passaram a ter a confirmação da contratação através de videochamada, medida que trouxe ainda mais robustez jurídica e tem sido relevante para mitigar as ações cíveis.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E105",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "Correspondentes Bancários",
+   "trecho_anterior": "Contamos com uma rede de correspondentes bancários e nossa vantagem competitiva para atuar neste canal é pautada em três grandes pilares: marca forte, relacionamento próximo e de longo prazo, e ampla gama de produtos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E106",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Bmg Corretora de Seguros",
+   "trecho_anterior": "",
+   "trecho_atual": "Para seguros de pessoas e determinados ramos elementares, a Corretora opera com acordo de exclusividade com a Generali, mantendo flexibilidade para atuar com outras seguradoras em produtos específicos."
+  },
+  {
+   "item": "E107",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "SUMÁRIO",
+   "trecho_anterior": "",
+   "trecho_atual": "DESTAQUES DO PERÍODO...3 PRINCIPAIS INDICADORES...4 DESEMPENHO FINANCEIRO...5 Rentabilidade...5 Margem Financeira...6 Despesas Administrativas e Operacionais...8 NEGÓCIOS...10 Carteira de Crédito...10 Indicadores de Crédito...16 Bmg Seguro...17 CAPTAÇÃO DE RECURSOS...19 GESTÃO DE ATIVOS E PASSIVOS...20 CAPITAL E BASILEIA...20 PERFIL CORPORATIVO...22 ASG – COMPROMISSO COM O FUTURO...24 BMGB4...25 RATINGS...26 ANEXO I – DRE GERENCIAL...27 ANEXO II – BALANÇO PATRIMONIAL...29 ANEXO III – GLOSSÁRIO...30"
+  },
+  {
+   "item": "E108",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 7,
+   "secao": "Expansão da margem com mix de carteira mais rentável",
+   "trecho_anterior": "No 4T25, a despesa de comissão aumentou 3,3% em relação ao 3T25.",
+   "trecho_atual": "No 1T26, a despesa de comissão aumentou 4,3% QoQ."
+  },
+  {
+   "item": "E109",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 29,
+   "pagina_atual": null,
+   "secao": "ASG - COMPROMISSO COM O FUTURO",
+   "trecho_anterior": "Entre os conteúdos disponibilizados estão temas essenciais como: introdução ao planejamento financeiro, reforço do hábito de poupar, orientações sobre como sair do endividamento, planejamento da aposentadoria, os efeitos colaterais das apostas, a relação entre dinheiro e metas, investimentos, tipos de risco e retorno, além de explicações práticas sobre o funcionamento do cartão de crédito.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E110",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Bemi – Educação Financeira para Transformar Futuros",
+   "trecho_anterior": "Durante o ano, foram distribuídos 14 mil exemplares físicos do livro “Lições de Valor”, voltado para crianças e adolescentes, e registrados mais de 27 mil acessos à versão digital.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E111",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "Apesar da variação no trimestre, na comparação anual houve redução tanto em termos nominais quanto em relação à carteira de crédito que encerrou 2025 em 5,2%, ante 5,5% em 2024.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E112",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 20,
+   "secao": "Patrimônio Líquido",
+   "trecho_anterior": "(ii) do Lucro Líquido contábil de R$ 561 milhões; e (iii) pagamento de JCP.",
+   "trecho_atual": "(ii) do lucro líquido contábil de R$ 147 milhões; e (iii) provisionamento de JCP."
+  },
+  {
+   "item": "E113",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "*Excelência na formalização permite estratégia de cessões recorrentes com múltiplos parceiros, visando maximizar o retorno sobre o capital alocado*",
+   "trecho_anterior": "",
+   "trecho_atual": "A inadimplência Over90 encerrou o 1T26 em 3,5% (+0,6 p.p."
+  },
+  {
+   "item": "E114",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "Empréstimo Consignado",
+   "trecho_anterior": "A inadimplência Over90 encerrou o 4T25 em 2,9%, aumento de 0,8 p.p. em relação ao 3T25.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E115",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "Evolução da Carteira (R$ Milhões)",
+   "trecho_anterior": "",
+   "trecho_atual": "1T25, principalmente pela mudança no mix da carteira e intensificada pela cessão da carteira de FGTS."
+  },
+  {
+   "item": "E116",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Despesa de provisão operacional líquida (R$ Milhões)",
+   "trecho_anterior": "Além disso, o Banco possui outras contingências de natureza cível, trabalhista e fiscal.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E117",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 5,
+   "secao": "Geração recorrente de resultados com disciplina na execução",
+   "trecho_anterior": "O lucro líquido recorrente registrou R$ 561 milhões (+27,2% YoY);",
+   "trecho_atual": "O lucro líquido recorrente registrou R$ 147 milhões (+ 27,2% YoY);"
+  },
+  {
+   "item": "E118",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Patrimônio Líquido",
+   "trecho_anterior": "",
+   "trecho_atual": "O Patrimônio Líquido em 31 de março de 2026 atingiu R$ 4.241 milhões (+9,0% QoQ e +16,2% YoY)."
+  },
+  {
+   "item": "E119",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 29,
+   "pagina_atual": null,
+   "secao": "ASG - COMPROMISSO COM O FUTURO",
+   "trecho_anterior": "Desde sua criação, em 2022, o Instituto Marina e Flávio Guimarães já investiu mais de R$ 31 milhões em projetos culturais, esportivos, sociais e educacionais, dos quais mais de R$ 21 milhões foram para iniciativas incentivadas e R$ 11 milhões para projetos próprios e ações filantrópicas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E120",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Bmg Corretora de Seguros",
+   "trecho_anterior": "",
+   "trecho_atual": "Apólices de seguros 9,1 milhões"
+  }
+ ]
+}
