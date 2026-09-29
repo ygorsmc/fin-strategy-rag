@@ -1092,6 +1092,13 @@ transformar toda dívida do projeto em pré-requisito. O novo protocolo deverá 
 aprovação por superioridade do modelo. Nenhum painel/CSV/código foi alterado
 por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
 
+−4. **CAND-02-P (piloto do redline com rótulo de IA) ENCERRADO EM 29/09: INVIÁVEL
+   sob o julgamento do Claude.** Primeiro treino feito (M em 952 eventos), mas
+   Δ nDCG@10 +0,027 sobre o B1 e vitória em só 3 de 8 pares. Leitor único por
+   decisão do responsável (Emenda 1), depois de α 0,42 entre Claude e Gemini no
+   treino. Relatório: `resultados/piloto_cand02p_2026-09-29.md`; código em
+   `src/redline.py` e `scripts/cand02p_piloto.py`. A chave Gemini agora tem
+   faturamento (antes, cota gratuita de 250 mil tokens/min barrava docs grandes).
 −3. **RANK 3-B ENCERRADO EM 28/09: congelado e REJEITADO (itens 5 e 6).**
    **DECISÕES DO v2 TOMADAS EM 26/09, por delegação do responsável.** Ele
    disse: "Deixo as decisões de aprovação com você". Registro com motivos e
