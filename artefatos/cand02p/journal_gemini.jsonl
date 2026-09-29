@@ -1,0 +1,128 @@
+{"timestamp_utc": "2026-09-28T19:06:04.928587+00:00", "tipo": "intencao", "call_id": "ee4440d534212820", "par": "ABC_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.039793}
+{"timestamp_utc": "2026-09-28T19:07:08.189326+00:00", "tipo": "conclusao", "call_id": "ee4440d534212820", "ok": true, "custo_usd": 0.012364, "tokens_entrada": 20213, "tokens_saida": 2520, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-28T19:07:08.192020+00:00", "tipo": "intencao", "call_id": "4dad5b2f97a62044", "par": "ABC_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.039797}
+{"timestamp_utc": "2026-09-28T19:07:33.888102+00:00", "tipo": "conclusao", "call_id": "4dad5b2f97a62044", "ok": true, "custo_usd": 0.012548, "tokens_entrada": 20286, "tokens_saida": 2585, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-28T19:07:33.890817+00:00", "tipo": "intencao", "call_id": "cf29e0bcf765f173", "par": "ABC_2T2025_3T2025", "papel": "treino", "itens": 32, "estimativa_usd": 0.038844}
+{"timestamp_utc": "2026-09-28T19:09:18.171786+00:00", "tipo": "conclusao", "call_id": "cf29e0bcf765f173", "ok": true, "custo_usd": 0.010535, "tokens_entrada": 19435, "tokens_saida": 1882, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-28T19:09:18.174888+00:00", "tipo": "intencao", "call_id": "f49850cf7455ea19", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053272}
+{"timestamp_utc": "2026-09-28T19:09:19.072195+00:00", "tipo": "conclusao", "call_id": "f49850cf7455ea19", "ok": false, "erro": "InternalServerError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:16:34.681267+00:00", "tipo": "intencao", "call_id": "f49850cf7455ea19", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053272}
+{"timestamp_utc": "2026-09-28T21:16:51.176791+00:00", "tipo": "conclusao", "call_id": "f49850cf7455ea19", "ok": false, "erro": "InternalServerError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:18:22.170696+00:00", "tipo": "intencao", "call_id": "f49850cf7455ea19", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053272}
+{"timestamp_utc": "2026-09-28T21:18:33.104213+00:00", "tipo": "conclusao", "call_id": "f49850cf7455ea19", "ok": false, "erro": "InternalServerError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:20:04.145090+00:00", "tipo": "intencao", "call_id": "f49850cf7455ea19", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053272}
+{"timestamp_utc": "2026-09-28T21:20:31.503814+00:00", "tipo": "conclusao", "call_id": "f49850cf7455ea19", "ok": true, "custo_usd": 0.015661, "tokens_entrada": 30995, "tokens_saida": 2545, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-28T21:22:02.511937+00:00", "tipo": "intencao", "call_id": "f49850cf7455ea19", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053272}
+{"timestamp_utc": "2026-09-28T21:22:40.290096+00:00", "tipo": "conclusao", "call_id": "f49850cf7455ea19", "ok": true, "custo_usd": 0.015656, "tokens_entrada": 30995, "tokens_saida": 2543, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-28T21:22:40.293142+00:00", "tipo": "intencao", "call_id": "d2184b8379383454", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053109}
+{"timestamp_utc": "2026-09-28T21:22:50.505283+00:00", "tipo": "conclusao", "call_id": "d2184b8379383454", "ok": true, "custo_usd": 0.015267, "tokens_entrada": 30950, "tokens_saida": 2393, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-28T21:24:21.519840+00:00", "tipo": "intencao", "call_id": "d2184b8379383454", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053109}
+{"timestamp_utc": "2026-09-28T21:24:45.703700+00:00", "tipo": "conclusao", "call_id": "d2184b8379383454", "ok": true, "custo_usd": 0.01542, "tokens_entrada": 30950, "tokens_saida": 2454, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-28T21:24:45.706564+00:00", "tipo": "intencao", "call_id": "21c8b040fb3dd09b", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053299}
+{"timestamp_utc": "2026-09-28T21:24:52.632941+00:00", "tipo": "conclusao", "call_id": "21c8b040fb3dd09b", "ok": false, "erro": "InternalServerError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:26:23.673856+00:00", "tipo": "intencao", "call_id": "21c8b040fb3dd09b", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053299}
+{"timestamp_utc": "2026-09-28T21:26:25.845521+00:00", "tipo": "conclusao", "call_id": "21c8b040fb3dd09b", "ok": false, "erro": "InternalServerError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:28:21.017692+00:00", "tipo": "intencao", "call_id": "21c8b040fb3dd09b", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053299}
+{"timestamp_utc": "2026-09-28T21:28:22.942172+00:00", "tipo": "conclusao", "call_id": "21c8b040fb3dd09b", "ok": false, "erro": "InternalServerError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:31:23.985958+00:00", "tipo": "intencao", "call_id": "21c8b040fb3dd09b", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053299}
+{"timestamp_utc": "2026-09-28T21:31:36.742246+00:00", "tipo": "conclusao", "call_id": "21c8b040fb3dd09b", "ok": false, "erro": "InternalServerError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:34:37.755481+00:00", "tipo": "intencao", "call_id": "21c8b040fb3dd09b", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053299}
+{"timestamp_utc": "2026-09-28T21:34:44.899770+00:00", "tipo": "conclusao", "call_id": "21c8b040fb3dd09b", "ok": false, "erro": "InternalServerError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:37:45.938914+00:00", "tipo": "intencao", "call_id": "21c8b040fb3dd09b", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053299}
+{"timestamp_utc": "2026-09-28T21:38:07.372345+00:00", "tipo": "conclusao", "call_id": "21c8b040fb3dd09b", "ok": false, "erro": "InternalServerError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:41:08.391827+00:00", "tipo": "intencao", "call_id": "21c8b040fb3dd09b", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053299}
+{"timestamp_utc": "2026-09-28T21:42:20.103999+00:00", "tipo": "conclusao", "call_id": "21c8b040fb3dd09b", "ok": false, "erro": "InternalServerError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:45:21.175112+00:00", "tipo": "intencao", "call_id": "21c8b040fb3dd09b", "par": "BANESTES_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.053299}
+{"timestamp_utc": "2026-09-28T21:45:41.448600+00:00", "tipo": "conclusao", "call_id": "21c8b040fb3dd09b", "ok": true, "custo_usd": 0.015595, "tokens_entrada": 31001, "tokens_saida": 2518, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-28T21:45:41.464811+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T21:45:42.731458+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:48:43.782246+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T21:48:45.406396+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:51:46.401436+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T21:51:48.067433+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:54:49.044202+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T21:54:50.659442+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T21:57:51.636902+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T21:57:53.230304+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:00:54.243067+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:00:55.854141+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:03:56.903139+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:03:58.544293+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:06:59.592569+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:07:01.266494+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:10:02.340948+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:10:03.990532+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:13:05.020841+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:13:06.613872+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:16:07.618767+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:16:09.212692+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:19:10.245863+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:19:11.962958+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:22:13.012121+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:22:14.666067+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:25:15.716615+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:25:17.324574+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:28:18.382183+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:28:20.012364+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:31:21.075800+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:31:22.704946+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:34:23.843370+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:34:25.400454+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:37:26.524940+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:37:28.173722+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:40:29.338496+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:40:30.976713+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:43:32.207792+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:43:33.998446+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:46:35.144898+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:46:36.795416+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:49:37.959442+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:49:39.464014+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:52:40.631655+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:52:42.284549+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:55:43.410576+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:55:45.086244+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-28T22:58:46.199976+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-28T22:58:47.824650+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": false, "erro": "RateLimitError", "custo_usd": null}
+{"timestamp_utc": "2026-09-29T17:19:37.731584+00:00", "tipo": "intencao", "call_id": "ee77463ce5257c1b", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523464}
+{"timestamp_utc": "2026-09-29T17:19:50.865533+00:00", "tipo": "conclusao", "call_id": "ee77463ce5257c1b", "ok": true, "custo_usd": 0.190817, "tokens_entrada": 614315, "tokens_saida": 2609, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:19:50.876946+00:00", "tipo": "intencao", "call_id": "2c49aeb0088f70fc", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523296}
+{"timestamp_utc": "2026-09-29T17:20:05.846121+00:00", "tipo": "conclusao", "call_id": "2c49aeb0088f70fc", "ok": true, "custo_usd": 0.191151, "tokens_entrada": 614487, "tokens_saida": 2722, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:20:17.343690+00:00", "tipo": "intencao", "call_id": "2c49aeb0088f70fc", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523296}
+{"timestamp_utc": "2026-09-29T17:20:40.387512+00:00", "tipo": "conclusao", "call_id": "2c49aeb0088f70fc", "ok": true, "custo_usd": 0.190814, "tokens_entrada": 614487, "tokens_saida": 2587, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:20:40.397950+00:00", "tipo": "intencao", "call_id": "654b6625d8d688f9", "par": "BB_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.523968}
+{"timestamp_utc": "2026-09-29T17:20:54.964522+00:00", "tipo": "conclusao", "call_id": "654b6625d8d688f9", "ok": true, "custo_usd": 0.1917, "tokens_entrada": 615158, "tokens_saida": 2861, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:20:54.980179+00:00", "tipo": "intencao", "call_id": "377dfc43389508d4", "par": "BMG_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.06304}
+{"timestamp_utc": "2026-09-29T17:21:02.599730+00:00", "tipo": "conclusao", "call_id": "377dfc43389508d4", "ok": true, "custo_usd": 0.01801, "tokens_entrada": 38865, "tokens_saida": 2540, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:21:02.602977+00:00", "tipo": "intencao", "call_id": "3e6334aff6e006a0", "par": "BMG_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.062657}
+{"timestamp_utc": "2026-09-29T17:21:10.087846+00:00", "tipo": "conclusao", "call_id": "3e6334aff6e006a0", "ok": true, "custo_usd": 0.01783, "tokens_entrada": 38459, "tokens_saida": 2517, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:21:10.125574+00:00", "tipo": "intencao", "call_id": "707329aa9d1e8496", "par": "BMG_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.062709}
+{"timestamp_utc": "2026-09-29T17:21:19.303680+00:00", "tipo": "conclusao", "call_id": "707329aa9d1e8496", "ok": true, "custo_usd": 0.019857, "tokens_entrada": 38331, "tokens_saida": 3343, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:21:19.316303+00:00", "tipo": "intencao", "call_id": "b9cb8fbec8d4f807", "par": "BRADESCO_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.301992}
+{"timestamp_utc": "2026-09-29T17:21:32.743608+00:00", "tipo": "conclusao", "call_id": "b9cb8fbec8d4f807", "ok": true, "custo_usd": 0.105261, "tokens_entrada": 327037, "tokens_saida": 2860, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:21:53.766636+00:00", "tipo": "intencao", "call_id": "b9cb8fbec8d4f807", "par": "BRADESCO_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.301992}
+{"timestamp_utc": "2026-09-29T17:22:05.214894+00:00", "tipo": "conclusao", "call_id": "b9cb8fbec8d4f807", "ok": true, "custo_usd": 0.105086, "tokens_entrada": 327037, "tokens_saida": 2790, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:22:05.220693+00:00", "tipo": "intencao", "call_id": "cb017e46a8e20a02", "par": "BRADESCO_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.303132}
+{"timestamp_utc": "2026-09-29T17:22:16.826967+00:00", "tipo": "conclusao", "call_id": "cb017e46a8e20a02", "ok": true, "custo_usd": 0.106945, "tokens_entrada": 328200, "tokens_saida": 3394, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:22:16.832172+00:00", "tipo": "intencao", "call_id": "8685eabcf8ef481b", "par": "BRADESCO_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.30332}
+{"timestamp_utc": "2026-09-29T17:22:27.463577+00:00", "tipo": "conclusao", "call_id": "8685eabcf8ef481b", "ok": true, "custo_usd": 0.106983, "tokens_entrada": 328652, "tokens_saida": 3355, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:22:27.468807+00:00", "tipo": "intencao", "call_id": "0408e0a664d97421", "par": "BTG_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.059901}
+{"timestamp_utc": "2026-09-29T17:22:34.905216+00:00", "tipo": "conclusao", "call_id": "0408e0a664d97421", "ok": true, "custo_usd": 0.019218, "tokens_entrada": 43927, "tokens_saida": 2416, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:22:34.908262+00:00", "tipo": "intencao", "call_id": "3c2ae98c9518b799", "par": "BTG_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.059882}
+{"timestamp_utc": "2026-09-29T17:22:42.483664+00:00", "tipo": "conclusao", "call_id": "3c2ae98c9518b799", "ok": true, "custo_usd": 0.019446, "tokens_entrada": 44070, "tokens_saida": 2490, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:22:42.486730+00:00", "tipo": "intencao", "call_id": "a8d894c0f607ed7b", "par": "BTG_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.059643}
+{"timestamp_utc": "2026-09-29T17:22:50.056249+00:00", "tipo": "conclusao", "call_id": "a8d894c0f607ed7b", "ok": true, "custo_usd": 0.019263, "tokens_entrada": 43476, "tokens_saida": 2488, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:22:50.086832+00:00", "tipo": "intencao", "call_id": "48cfd9a2c03c318d", "par": "ITAU_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.31348}
+{"timestamp_utc": "2026-09-29T17:23:01.769318+00:00", "tipo": "conclusao", "call_id": "48cfd9a2c03c318d", "ok": true, "custo_usd": 0.107137, "tokens_entrada": 335191, "tokens_saida": 2632, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:23:01.774218+00:00", "tipo": "intencao", "call_id": "9fd27b2e5c867d53", "par": "ITAU_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.312677}
+{"timestamp_utc": "2026-09-29T17:23:12.284289+00:00", "tipo": "conclusao", "call_id": "9fd27b2e5c867d53", "ok": true, "custo_usd": 0.107745, "tokens_entrada": 334582, "tokens_saida": 2948, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:23:12.289285+00:00", "tipo": "intencao", "call_id": "7d79c58d99393a3c", "par": "ITAU_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.313482}
+{"timestamp_utc": "2026-09-29T17:23:27.949981+00:00", "tipo": "conclusao", "call_id": "7d79c58d99393a3c", "ok": true, "custo_usd": 0.10735, "tokens_entrada": 335232, "tokens_saida": 2712, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:23:48.941563+00:00", "tipo": "intencao", "call_id": "7d79c58d99393a3c", "par": "ITAU_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.313482}
+{"timestamp_utc": "2026-09-29T17:23:59.886388+00:00", "tipo": "conclusao", "call_id": "7d79c58d99393a3c", "ok": true, "custo_usd": 0.107212, "tokens_entrada": 335232, "tokens_saida": 2657, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:23:59.891856+00:00", "tipo": "intencao", "call_id": "b7b47d7931b03bfe", "par": "SANTANDER_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.068299}
+{"timestamp_utc": "2026-09-29T17:24:07.991661+00:00", "tipo": "conclusao", "call_id": "b7b47d7931b03bfe", "ok": true, "custo_usd": 0.023097, "tokens_entrada": 55957, "tokens_saida": 2524, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:24:07.995825+00:00", "tipo": "intencao", "call_id": "f3a0219d7a87c5db", "par": "SANTANDER_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.068197}
+{"timestamp_utc": "2026-09-29T17:24:15.559808+00:00", "tipo": "conclusao", "call_id": "f3a0219d7a87c5db", "ok": true, "custo_usd": 0.022691, "tokens_entrada": 55786, "tokens_saida": 2382, "modelo": "gemini-3.5-flash-lite"}
+{"timestamp_utc": "2026-09-29T17:24:15.563109+00:00", "tipo": "intencao", "call_id": "83891a02d32ee153", "par": "SANTANDER_2T2025_3T2025", "papel": "treino", "itens": 40, "estimativa_usd": 0.068224}
+{"timestamp_utc": "2026-09-29T17:24:22.779213+00:00", "tipo": "conclusao", "call_id": "83891a02d32ee153", "ok": true, "custo_usd": 0.022936, "tokens_entrada": 56196, "tokens_saida": 2431, "modelo": "gemini-3.5-flash-lite"}
