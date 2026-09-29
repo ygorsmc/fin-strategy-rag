@@ -185,3 +185,6 @@ artefatos/cand02p/modelo/m.pkl
 
 # Piloto v2 do CAND-02-P: PDFs regeneráveis pelo manifesto (URLs do RAD).
 corpus/cand02p_v2/raw/*
+artefatos/cand02p_v2/eventos/
+artefatos/cand02p_v2/docs/
+artefatos/cand02p_v2/modelo/m.pkl
