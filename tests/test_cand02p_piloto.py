@@ -131,7 +131,7 @@ def test_consolidacao_media_dos_ganhos_e_critico_dos_dois(tmp_path, monkeypatch)
     c = [_r(item="E001", nota=2, motivo="credito", acao="verificar", critico=True), _r(item="E002")]
     g = [_r(item="E001", nota=1, motivo="credito"), _r(item="E002")]
     _preparar(tmp_path, monkeypatch, c, g)
-    r = p.consolidar("teste", "P")
+    r = p.consolidar("teste", "P", leitores=("claude", "gemini"))
     assert r["ev1"]["ganho"] == pytest.approx((3 + 1) / 2) and r["ev1"]["nota_final"] == 1.5
     assert not r["ev1"]["critico"]
 
@@ -139,14 +139,14 @@ def test_consolidacao_media_dos_ganhos_e_critico_dos_dois(tmp_path, monkeypatch)
 def test_leitura_incompleta_levanta_em_vez_de_virar_zero(tmp_path, monkeypatch):
     _preparar(tmp_path, monkeypatch, [_r(item="E001")], [_r(item="E001"), _r(item="E002")])
     with pytest.raises(ValueError, match="sem rótulo"):
-        p.consolidar("teste", "P")
+        p.consolidar("teste", "P", leitores=("claude", "gemini"))
 
 
 def test_item_rotulado_duas_vezes_levanta(tmp_path, monkeypatch):
     _preparar(tmp_path, monkeypatch, [_r(item="E001"), _r(item="E001"), _r(item="E002")],
               [_r(item="E001"), _r(item="E002")])
     with pytest.raises(ValueError, match="duas vezes"):
-        p.consolidar("teste", "P")
+        p.consolidar("teste", "P", leitores=("claude", "gemini"))
 
 
 def _eventos_sinteticos(tmp_path, n=300):
@@ -213,3 +213,20 @@ def test_amostra_humana_so_existe_se_promissor(tmp_path, monkeypatch):
     (tmp_path / "resultado_teste.json").write_text(json.dumps({"veredito": "INVIAVEL"}))
     with pytest.raises(SystemExit, match="PROMISSOR"):
         p.principal(["amostra-humana"])
+
+
+# --- Emenda 1 (29/09): leitor único ------------------------------------------------
+
+def test_leitor_unico_pula_o_alfa_mas_mantem_nao_julgaveis():
+    """Os três casos de consolidação acima passaram a nomear os dois leitores
+    explicitamente (substituição declarada: o padrão virou só o Claude)."""
+    assert p.decidir(_metricas(alfa=None, leitores=1))[0] == "PROMISSOR"
+    assert p.decidir(_metricas(alfa=None, leitores=1, fracao_nao_julgavel=0.06))[0] == "INDECIDIVEL"
+    assert p.decidir(_metricas(alfa=None, leitores=2))[0] == "INDECIDIVEL"
+
+
+def test_leitor_unico_usa_a_nota_dele(tmp_path, monkeypatch):
+    c = [_r(item="E001", nota=2, motivo="credito", acao="verificar", critico=True), _r(item="E002")]
+    _preparar(tmp_path, monkeypatch, c, [_r(item="E001"), _r(item="E002")])
+    r = p.consolidar("teste", "P")
+    assert r["ev1"]["ganho"] == 3.0 and r["ev1"]["critico"]

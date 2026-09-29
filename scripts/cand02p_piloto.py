@@ -454,7 +454,8 @@ def cmd_rotular_gemini(args) -> int:
 
 # --- consolidação dos dois leitores ------------------------------------------------------
 
-LEITORES = ("claude", "gemini")
+#: Emenda 1 (29/09): só o Claude. Os rótulos do Gemini ficam como registro.
+LEITORES = ("claude",)
 
 
 def ler_rotulos(leitor: str, papel: str, par: str) -> dict[str, dict]:
@@ -470,24 +471,25 @@ def ler_rotulos(leitor: str, papel: str, par: str) -> dict[str, dict]:
     return saida
 
 
-def consolidar(papel: str, par: str) -> dict[str, dict]:
+def consolidar(papel: str, par: str, leitores: tuple[str, ...] | None = None) -> dict[str, dict]:
     """evento → notas dos dois leitores, ganho médio e marcas. Leitura
     incompleta levanta: nota que falta não vira zero."""
     pool = json.loads((DESTINO / "pool" / papel / f"{par}.json").read_text(encoding="utf-8"))
-    leituras = {l: ler_rotulos(l, papel, par) for l in LEITORES}
+    leitores = leitores or LEITORES
+    leituras = {l: ler_rotulos(l, papel, par) for l in leitores}
     for leitor, rotulos in leituras.items():
         faltam = set(pool["itens"]) - set(rotulos)
         if faltam:
             raise ValueError(f"{leitor}/{papel}/{par}: {len(faltam)} itens sem rótulo")
     saida = {}
     for item, evento in pool["itens"].items():
-        a, b = (leituras[l][item] for l in LEITORES)
+        rs = [leituras[l][item] for l in leitores]
         saida[evento] = {
-            "item": item, "notas": [a["nota"], b["nota"]],
-            "julgavel": a["julgavel"] and b["julgavel"],
-            "nota_final": (a["nota"] + b["nota"]) / 2,
-            "ganho": (rl.GANHO[a["nota"]] + rl.GANHO[b["nota"]]) / 2,
-            "critico": a["critico"] and b["critico"], "origem": pool["origem"][evento],
+            "item": item, "notas": [r["nota"] for r in rs],
+            "julgavel": all(r["julgavel"] for r in rs),
+            "nota_final": sum(r["nota"] for r in rs) / len(rs),
+            "ganho": sum(rl.GANHO[r["nota"]] for r in rs) / len(rs),
+            "critico": all(r["critico"] for r in rs), "origem": pool["origem"][evento],
         }
     return saida
 
@@ -585,7 +587,8 @@ def decidir(m: dict) -> tuple[str, str]:
     `not (x >= limiar)` e não `x < limiar`: α sai NaN sem dado, e NaN < 0,67 é
     falso — a parada aprovaria por ausência de medição (AGENTS.md §4.4, regra 4)."""
     alfa = m["alfa"]
-    if alfa is None or not (alfa >= LIMIAR_ALFA):
+    # Emenda 1: com um leitor só não há α; a parada 1 fica com os não julgáveis.
+    if m.get("leitores", 2) >= 2 and (alfa is None or not (alfa >= LIMIAR_ALFA)):
         return "INDECIDIVEL", f"parada 1: α = {alfa}, não ≥ {LIMIAR_ALFA}"
     if m["fracao_nao_julgavel"] > MAX_NAO_JULGAVEL:
         return "INDECIDIVEL", f"parada 1: não julgáveis {m['fracao_nao_julgavel']:.3f} > {MAX_NAO_JULGAVEL}"
@@ -625,7 +628,7 @@ def medir(papel: str, bracos: tuple[str, ...]) -> dict:
         total += len(rot)
         nao_julgaveis += sum(not r["julgavel"] for r in rot.values())
         julgados = {i: r for i, r in rot.items() if r["julgavel"]}
-        pares_notas.extend(tuple(r["notas"]) for r in julgados.values())
+        pares_notas.extend(tuple(r["notas"]) for r in julgados.values() if len(r["notas"]) == 2)
         nota2 += sum(r["nota_final"] >= 1.5 for r in julgados.values())
         ganhos = {i: r["ganho"] for i, r in julgados.items()}
         excluidos = set(rot) - set(julgados)
@@ -644,7 +647,7 @@ def medir(papel: str, bracos: tuple[str, ...]) -> dict:
                    if "m" in v and v["m"]["ndcg10"] is not None and v["b1"]["ndcg10"] is not None
                    and v["m"]["ndcg10"] > v["b1"]["ndcg10"])
     alfa = alpha_krippendorff_ordinal(pares_notas) if pares_notas else None
-    return {"papel": papel, "itens": total, "alfa": None if alfa is None or alfa != alfa else alfa,
+    return {"papel": papel, "itens": total, "leitores": len(LEITORES), "alfa": None if alfa is None or alfa != alfa else alfa,
             "fracao_nao_julgavel": nao_julgaveis / total if total else 1.0, "eventos_nota_2": nota2,
             "macro": macro, "por_par": por_par, "pares_vencidos_m_sobre_b1": vencidos,
             "criticos_top20": criticos}

@@ -139,3 +139,25 @@ Em nenhum caso algo entra no produto.
 
 Cada passo é commitado antes do seguinte. Depois de ver um rótulo de teste,
 nada acima muda. Se algo precisar mudar, é outro piloto.
+
+## Emenda 1 (29/09) — leitor único, antes do M e de qualquer rótulo de teste
+
+**Decisão do responsável, em 29/09**, depois de ver a medição do treino
+(α entre leitores de 0,42): "Eu confio muito mais no Claude. Podemos utilizar
+ele e pular para o caminho 2". O caminho 2 é seguir o protocolo até o teste.
+
+O que muda:
+- **O leitor é só o Claude** (agente de contexto limpo, instruções inalteradas)
+  no treino e no teste. Os rótulos do Gemini do treino ficam versionados como
+  registro e não entram em nenhuma métrica. O ganho e a marca de crítico são
+  os do Claude.
+- **A parada 1 perde a parte do α,** que exige dois leitores. Fica só o teto
+  de 5% de não julgáveis. As paradas 2, 3 e 4 continuam iguais.
+- **A confiabilidade do rótulo não é medida.** Por isso:
+  - INVIÁVEL passa a significar "inviável sob o julgamento do Claude";
+  - PROMISSOR continua exigindo a conferência humana do §6, que vira o único
+    teste de confiabilidade.
+
+O que não muda: pares, divisão, braços, hiperparâmetros do M, pool, limiares
+e ordem de congelamento. Nenhum rótulo de teste existia quando esta emenda foi
+escrita, e o M não tinha sido treinado.
