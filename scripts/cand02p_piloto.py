@@ -40,6 +40,52 @@ FONTES = (
 )
 #: §2: treino e teste não compartilham documento; o embargo não é usado.
 PAPEIS = {("2T2025", "3T2025"): "treino", ("4T2025", "1T2026"): "teste"}
+PARES_ESPERADOS = 16
+#: Pares já rotulados de outro piloto que entram no treino: (diretório, papéis).
+HERDADOS: tuple[tuple[Path, tuple[str, ...]], ...] = ()
+
+_OITO = ("BTG", "ITAU", "BRADESCO", "SANTANDER", "BB", "BMG", "ABC", "BANESTES")
+#: Piloto v2 (protocolo de 29/09): teste novo 4T2024→1T2025; treino com os 16
+#: pares rotulados do v1 (inclusive o antigo teste) e seis pares 4T2023→1T2024.
+PILOTOS = {
+    "v1": None,
+    "v2": {
+        "DESTINO": RAIZ / "artefatos" / "cand02p_v2",
+        "PROTOCOLO": RAIZ / "resultados" / "protocolo_cand02p_v2_2026-09-29.md",
+        "FONTES": ((RAIZ / "corpus" / "cand02p_v2" / "manifesto.csv",
+                    RAIZ / "corpus" / "cand02p_v2" / "ocr", _OITO),),
+        "PAPEIS": {("4T2023", "1T2024"): "treino", ("4T2024", "1T2025"): "teste"},
+        "PARES_ESPERADOS": 14,
+        "HERDADOS": ((RAIZ / "artefatos" / "cand02p", ("treino", "teste")),),
+    },
+}
+
+
+def configurar(piloto: str) -> None:
+    """Troca as constantes do módulo para o piloto escolhido. O v1 é o padrão
+    e continua reproduzível sem argumento."""
+    global DESTINO, PROTOCOLO, FONTES, PAPEIS, PARES_ESPERADOS, HERDADOS, JOURNAL
+    cfg = PILOTOS[piloto]
+    if cfg is None:
+        return
+    DESTINO, PROTOCOLO, FONTES = cfg["DESTINO"], cfg["PROTOCOLO"], cfg["FONTES"]
+    PAPEIS, PARES_ESPERADOS, HERDADOS = cfg["PAPEIS"], cfg["PARES_ESPERADOS"], cfg["HERDADOS"]
+    JOURNAL = DESTINO / "journal_gemini.jsonl"
+
+
+class _Em:
+    """Lê temporariamente os artefatos de outro piloto (pares herdados)."""
+
+    def __init__(self, destino: Path):
+        self.destino = destino
+
+    def __enter__(self):
+        global DESTINO
+        self.anterior, DESTINO = DESTINO, self.destino
+
+    def __exit__(self, *_):
+        global DESTINO
+        DESTINO = self.anterior
 
 
 def sha256_arquivo(caminho: Path) -> str:
@@ -93,8 +139,8 @@ def exportar_documento(nome: str, paginas: list[str]) -> Path:
 
 def cmd_eventos(_args) -> int:
     lista = pares()
-    if len(lista) != 16:
-        raise SystemExit(f"esperados 16 pares (8 treino + 8 teste), achados {len(lista)}")
+    if len(lista) != PARES_ESPERADOS:
+        raise SystemExit(f"esperados {PARES_ESPERADOS} pares, achados {len(lista)}")
     resumo = {"protocolo_sha256": sha256_arquivo(PROTOCOLO),
               "redline_sha256": sha256_arquivo(RAIZ / "src" / "redline.py"), "pares": {}}
     (DESTINO / "eventos").mkdir(parents=True, exist_ok=True)
@@ -535,17 +581,23 @@ def cmd_treinar(_args) -> int:
         raise SystemExit("o M já está congelado; treinar de novo é outro piloto (§7)")
     resumo = json.load(open(DESTINO / "resumo_eventos.json"))["pares"]
     X, y, n_por_par = [], [], {}
-    for par, info in sorted(resumo.items()):
-        if info["papel"] != "treino":
-            continue
-        rotulos = consolidar("treino", par)
-        eventos = {e["id"]: e for e in ler_eventos(par)}
-        c = _c_do_par(par)
-        usados = [(i, r) for i, r in rotulos.items() if r["julgavel"]]
-        n_por_par[par] = len(usados)
-        for i, r in usados:
-            X.append(features(eventos[i], c[i]))
-            y.append(r["ganho"])
+    # Fontes do treino: os pares de treino deste piloto e, no v2, os pares já
+    # rotulados do v1 (inclusive o antigo teste, que aqui é só treino).
+    fontes_treino = [(DESTINO, ("treino",))] + list(HERDADOS)
+    for destino, papeis in fontes_treino:
+        with _Em(destino):
+            resumo_fonte = json.load(open(DESTINO / "resumo_eventos.json"))["pares"]
+            for par, info in sorted(resumo_fonte.items()):
+                if info["papel"] not in papeis:
+                    continue
+                rotulos = consolidar(info["papel"], par)
+                eventos = {e["id"]: e for e in ler_eventos(par)}
+                c = _c_do_par(par)
+                usados = [(i, r) for i, r in rotulos.items() if r["julgavel"]]
+                n_por_par[par] = len(usados)
+                for i, r in usados:
+                    X.append(features(eventos[i], c[i]))
+                    y.append(r["ganho"])
     modelo = HistGradientBoostingRegressor(**HIPERPARAMETROS_M).fit(np.asarray(X, float), np.asarray(y))
     (pasta / "ranks").mkdir(parents=True, exist_ok=True)
     with open(pasta / "m.pkl", "wb") as f:
@@ -710,6 +762,7 @@ def cmd_amostra_humana(_args) -> int:
 
 def principal(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--piloto", choices=sorted(PILOTOS), default="v1")
     sub = parser.add_subparsers(dest="comando", required=True)
     sub.add_parser("eventos")
     sub.add_parser("desafiante")
@@ -724,6 +777,7 @@ def principal(argv=None) -> int:
     a.add_argument("--papel", choices=("treino", "teste"), required=True)
     sub.add_parser("amostra-humana")
     args = parser.parse_args(argv)
+    configurar(args.piloto)
     return {"eventos": cmd_eventos, "desafiante": cmd_desafiante, "rubrica": cmd_rubrica,
             "pool": cmd_pool, "rotular-gemini": cmd_rotular_gemini, "treinar": cmd_treinar,
             "avaliar": cmd_avaliar, "amostra-humana": cmd_amostra_humana}[args.comando](args)

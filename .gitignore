@@ -182,3 +182,6 @@ artefatos/b_dfc_01j/extensao/.cookies_cvm
 artefatos/cand02p/eventos/
 artefatos/cand02p/docs/
 artefatos/cand02p/modelo/m.pkl
+
+# Piloto v2 do CAND-02-P: PDFs regeneráveis pelo manifesto (URLs do RAD).
+corpus/cand02p_v2/raw/*

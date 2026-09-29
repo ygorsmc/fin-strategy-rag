@@ -230,3 +230,29 @@ def test_leitor_unico_usa_a_nota_dele(tmp_path, monkeypatch):
     _preparar(tmp_path, monkeypatch, c, [_r(item="E001"), _r(item="E002")])
     r = p.consolidar("teste", "P")
     assert r["ev1"]["ganho"] == 3.0 and r["ev1"]["critico"]
+
+
+# --- piloto v2 (29/09) ----------------------------------------------------------------
+
+def test_v2_troca_diretorio_pares_e_herda_os_rotulos_do_v1(monkeypatch):
+    for nome in ("DESTINO", "PROTOCOLO", "FONTES", "PAPEIS", "PARES_ESPERADOS", "HERDADOS", "JOURNAL"):
+        monkeypatch.setattr(p, nome, getattr(p, nome))
+    p.configurar("v2")
+    assert p.DESTINO.name == "cand02p_v2" and p.PARES_ESPERADOS == 14
+    assert p.PAPEIS == {("4T2023", "1T2024"): "treino", ("4T2024", "1T2025"): "teste"}
+    (herdado, papeis), = p.HERDADOS
+    assert herdado.name == "cand02p" and papeis == ("treino", "teste")
+    assert p.JOURNAL.parent == p.DESTINO
+
+
+def test_v1_continua_o_padrao(monkeypatch):
+    monkeypatch.setattr(p, "DESTINO", p.DESTINO)
+    p.configurar("v1")
+    assert p.DESTINO.name == "cand02p" and p.HERDADOS == ()
+
+
+def test_leitura_herdada_devolve_o_diretorio_original(tmp_path, monkeypatch):
+    monkeypatch.setattr(p, "DESTINO", tmp_path / "atual")
+    with p._Em(tmp_path / "herdado"):
+        assert p.DESTINO == tmp_path / "herdado"
+    assert p.DESTINO == tmp_path / "atual"
