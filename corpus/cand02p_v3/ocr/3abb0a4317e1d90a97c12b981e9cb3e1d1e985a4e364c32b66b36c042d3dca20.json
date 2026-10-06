@@ -1,0 +1,3317 @@
+{
+ "documento": "bmg_release_4T2018",
+ "empresa": "BMG",
+ "hash_pdf": "3abb0a4317e1d90a97c12b981e9cb3e1d1e985a4e364c32b66b36c042d3dca20",
+ "modelo": "mistral-ocr-4-0",
+ "ocr": {
+  "document_annotation": null,
+  "model": "mistral-ocr-4-0",
+  "pages": [
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco BMG",
+      "top_left_x": 512,
+      "top_left_y": 23,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 580,
+      "bottom_right_y": 209,
+      "confidence_scores": null,
+      "content": "## BANCO BMG ANUNCIA SEUS RESULTADOS CONSOLIDADOS DO 4T18",
+      "top_left_x": 138,
+      "top_left_y": 163,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 271,
+      "confidence_scores": null,
+      "content": "**São Paulo, 14 de fevereiro de 2019** – O Banco BMG S.A. e suas controladas (“BMG” ou “Banco”) divulgam seus resultados consolidados referentes ao período encerrado em 31 de dezembro de 2018, auditados pela PwC (*PricewaterhouseCoopers*) – auditores independentes.",
+      "top_left_x": 53,
+      "top_left_y": 224,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 319,
+      "confidence_scores": null,
+      "content": "Com intuito de oferecer maior transparência para seus clientes, investidores e para o mercado em geral e sempre buscando as melhores práticas de governança corporativa, a administração do Banco BMG divulga o presente relatório realçando os principais aspectos do desempenho do Banco no período.",
+      "top_left_x": 53,
+      "top_left_y": 272,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 367,
+      "confidence_scores": null,
+      "content": "As informações operacionais e financeiras, exceto onde estiver indicado de outra forma, são apresentadas com base em números consolidados e em reais, em conformidade com as regras contábeis adotadas no Brasil aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil (Bacen).",
+      "top_left_x": 53,
+      "top_left_y": 319,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 276,
+      "bottom_right_y": 426,
+      "confidence_scores": null,
+      "content": "### DESTAQUES DO PERÍODO",
+      "top_left_x": 53,
+      "top_left_y": 406,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 436,
+      "bottom_right_y": 868,
+      "confidence_scores": null,
+      "content": "- ✓ O **Lucro Líquido Recorrente** no exercício de 2018 foi de **R$ 258 milhões**, demonstrando forte evolução no desempenho financeiro dos últimos 12 meses;\n- ✓ O **Retorno sobre o Patrimônio Líquido Médio Recorrente** no exercício de 2018 foi **10,8% a.a.**;\n- ✓ O **Patrimônio Líquido** encerrou 31 de dezembro de 2018 com saldo de **R$ 2.640 milhões**;\n- ✓ O **Índice de Basileia** atingiu **12,4%** em 31 de dezembro de 2018, sendo composto exclusivamente de Capital Principal;\n- ✓ Como reflexo do crescimento da carteira de varejo, a **Margem Financeira Líquida** reforça a dinâmica de crescimento apresentada nos trimestres anteriores e encerra o exercício de 2018 com **19,0% a.a.**;\n- ✓ Com a estratégia voltada para o financiamento ao consumo, a carteira de **Varejo** atingiu **R$8.026 milhões**, representando um crescimento de 17,4% nos últimos doze meses.",
+      "top_left_x": 61,
+      "top_left_y": 444,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 610,
+      "bottom_right_y": 526,
+      "confidence_scores": null,
+      "content": "### Relações com Investidores",
+      "top_left_x": 491,
+      "top_left_y": 486,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 633,
+      "bottom_right_y": 638,
+      "confidence_scores": null,
+      "content": "**Flavio Guimarães Neto**\nDiretor Financeiro e de\nRelações com Investidores",
+      "top_left_x": 469,
+      "top_left_y": 592,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 626,
+      "bottom_right_y": 685,
+      "confidence_scores": null,
+      "content": "**Danilo Herculano**\nRelações com Investidores",
+      "top_left_x": 475,
+      "top_left_y": 654,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 617,
+      "bottom_right_y": 785,
+      "confidence_scores": null,
+      "content": "ri@bancobmg.com.br",
+      "top_left_x": 484,
+      "top_left_y": 768,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 629,
+      "bottom_right_y": 814,
+      "confidence_scores": null,
+      "content": "www.bancobmg.com.br/ri",
+      "top_left_x": 473,
+      "top_left_y": 798,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 610,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "1",
+      "top_left_x": 599,
+      "top_left_y": 939,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9743065455659798,
+     "minimum_page_confidence_score": 0.14836147487152648,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [
+     "mailto:ri%40bancobmg.com.br",
+     "http://www.bancobmg.com.br/"
+    ],
+    "images": [],
+    "index": 0,
+    "markdown": "Release de Resultados 4T18\n\nBanco BMG\n\n## BANCO BMG ANUNCIA SEUS RESULTADOS CONSOLIDADOS DO 4T18\n\n**São Paulo, 14 de fevereiro de 2019** – O Banco BMG S.A. e suas controladas (“BMG” ou “Banco”) divulgam seus resultados consolidados referentes ao período encerrado em 31 de dezembro de 2018, auditados pela PwC (*PricewaterhouseCoopers*) – auditores independentes.\n\nCom intuito de oferecer maior transparência para seus clientes, investidores e para o mercado em geral e sempre buscando as melhores práticas de governança corporativa, a administração do Banco BMG divulga o presente relatório realçando os principais aspectos do desempenho do Banco no período.\n\nAs informações operacionais e financeiras, exceto onde estiver indicado de outra forma, são apresentadas com base em números consolidados e em reais, em conformidade com as regras contábeis adotadas no Brasil aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil (Bacen).\n\n### DESTAQUES DO PERÍODO\n\n- ✓ O **Lucro Líquido Recorrente** no exercício de 2018 foi de **R$ 258 milhões**, demonstrando forte evolução no desempenho financeiro dos últimos 12 meses;\n- ✓ O **Retorno sobre o Patrimônio Líquido Médio Recorrente** no exercício de 2018 foi **10,8% a.a.**;\n- ✓ O **Patrimônio Líquido** encerrou 31 de dezembro de 2018 com saldo de **R$ 2.640 milhões**;\n- ✓ O **Índice de Basileia** atingiu **12,4%** em 31 de dezembro de 2018, sendo composto exclusivamente de Capital Principal;\n- ✓ Como reflexo do crescimento da carteira de varejo, a **Margem Financeira Líquida** reforça a dinâmica de crescimento apresentada nos trimestres anteriores e encerra o exercício de 2018 com **19,0% a.a.**;\n- ✓ Com a estratégia voltada para o financiamento ao consumo, a carteira de **Varejo** atingiu **R$8.026 milhões**, representando um crescimento de 17,4% nos últimos doze meses.\n\n### Relações com Investidores\n\n**Flavio Guimarães Neto**\nDiretor Financeiro e de\nRelações com Investidores\n\n**Danilo Herculano**\nRelações com Investidores\n\nri@bancobmg.com.br\n\nwww.bancobmg.com.br/ri\n\n1",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 575,
+      "bottom_right_y": 43,
+      "confidence_scores": null,
+      "content": "Banco",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 88,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 277,
+      "confidence_scores": null,
+      "content": "- ✓ Especialista no que o cliente precisa, o BMG encerrou o trimestre com 3,5 milhões de clientes ativos e conquistou 2,1 mil novos clientes por dia útil em 2018;\n- ✓ Em outubro de 2018, de forma a complementar sua estratégia omnichannel, o BMG lançou o seu full digital bank. No encerramento do ano, o Banco contava com mais de 100 mil contas abertas.",
+      "top_left_x": 61,
+      "top_left_y": 165,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 220,
+      "bottom_right_y": 344,
+      "confidence_scores": null,
+      "content": "# RECONHECIMENTO",
+      "top_left_x": 53,
+      "top_left_y": 324,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 717,
+      "confidence_scores": null,
+      "content": "- ✓ Pelo terceiro ano consecutivo, o BMG foi reconhecido como Best Investor Relations Bank Brazil 2018 pela revista inglesa Global Banking & Finance Review. O Banco acredita que as melhores práticas são aquelas adotadas por princípio e não por exigência. Foi assim que construiu com seus investidores uma relação baseada em transparência, respeito, equidade e geração de valor;\n- ✓ O Banco foi classificado, pelo terceiro ano consecutivo, para participação do Prêmio Época ReclameAQUI, conquistando o segundo lugar na categoria Bancos e Serviços Financeiros;\n- ✓ O Banco foi ganhador no Prêmio Ouvidorias Brasil 2018 promovido pela ABRAREC (Associação Brasileira das Relações Empresas Cliente). Ainda, pela segunda vez consecutiva, o BMG foi finalista no Prêmio Atendimento Ouro 2018 da ABRAREC;\n- ✓ O BMG foi premiado na categoria Excelência em SAC e Ouvidoria do Prêmio BestPerformance 2018, ganhando troféu de prata e de bronze com dois cases.",
+      "top_left_x": 61,
+      "top_left_y": 375,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "2",
+      "top_left_x": 597,
+      "top_left_y": 937,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9759221439149549,
+     "minimum_page_confidence_score": 0.24042729254968973,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 1,
+    "markdown": "Banco\n\n# Release de Resultados 4T18\n\n- ✓ Especialista no que o cliente precisa, o BMG encerrou o trimestre com 3,5 milhões de clientes ativos e conquistou 2,1 mil novos clientes por dia útil em 2018;\n- ✓ Em outubro de 2018, de forma a complementar sua estratégia omnichannel, o BMG lançou o seu full digital bank. No encerramento do ano, o Banco contava com mais de 100 mil contas abertas.\n\n# RECONHECIMENTO\n\n- ✓ Pelo terceiro ano consecutivo, o BMG foi reconhecido como Best Investor Relations Bank Brazil 2018 pela revista inglesa Global Banking & Finance Review. O Banco acredita que as melhores práticas são aquelas adotadas por princípio e não por exigência. Foi assim que construiu com seus investidores uma relação baseada em transparência, respeito, equidade e geração de valor;\n- ✓ O Banco foi classificado, pelo terceiro ano consecutivo, para participação do Prêmio Época ReclameAQUI, conquistando o segundo lugar na categoria Bancos e Serviços Financeiros;\n- ✓ O Banco foi ganhador no Prêmio Ouvidorias Brasil 2018 promovido pela ABRAREC (Associação Brasileira das Relações Empresas Cliente). Ainda, pela segunda vez consecutiva, o BMG foi finalista no Prêmio Atendimento Ouro 2018 da ABRAREC;\n- ✓ O BMG foi premiado na categoria Excelência em SAC e Ouvidoria do Prêmio BestPerformance 2018, ganhando troféu de prata e de bronze com dois cases.\n\n2",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 61,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 574,
+      "bottom_right_y": 43,
+      "confidence_scores": null,
+      "content": "Banco",
+      "top_left_x": 512,
+      "top_left_y": 23,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 111,
+      "confidence_scores": null,
+      "content": "![img-0.jpeg](img-0.jpeg)",
+      "image_id": "img-0.jpeg",
+      "top_left_x": 512,
+      "top_left_y": 51,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 249,
+      "bottom_right_y": 181,
+      "confidence_scores": null,
+      "content": "## PERFIL CORPORATIVO",
+      "top_left_x": 53,
+      "top_left_y": 163,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 375,
+      "confidence_scores": null,
+      "content": "Com **88 anos de sólida presença** no mercado financeiro, o BMG é um banco de varejo com foco no financiamento ao consumo e oferece aos seus clientes pessoa física, através de seus canais físicos e digitais: cartão de crédito consignado, crédito pessoal com débito em conta, ambos exclusivos para aposentados e pensionistas do INSS e servidores públicos, crédito pessoal digital e seguros massificados via parceria. Adicionalmente, oferece aos clientes de varejo uma gama completa de produtos e serviços em seu banco digital. Aos clientes pessoa jurídica, o BMG oferece prestação de serviços financeiros estruturados, instrumentos derivativos e seguro garantia. O BMG disponibiliza produtos de investimento em renda fixa para todos os públicos.",
+      "top_left_x": 53,
+      "top_left_y": 206,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 277,
+      "bottom_right_y": 438,
+      "confidence_scores": null,
+      "content": "## PRINCIPAIS INDICADORES",
+      "top_left_x": 53,
+      "top_left_y": 419,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 666,
+      "bottom_right_y": 656,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Indicadores Financeiros (%)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th><th>2018</th><th>2017</th><th>18/17 (%)</th></tr></thead><tr><td>Lucro Líquido</td><td>40</td><td>55</td><td>-28,1%</td><td>6</td><td>574,3%</td><td>171</td><td>26</td><td>549,5%</td></tr><tr><td>Lucro Líquido Recorrente <sup>1</sup></td><td>61</td><td>77</td><td>-20,2%</td><td>28</td><td>122,1%</td><td>258</td><td>113</td><td>127,5%</td></tr><tr><td>ROAE</td><td>6,0%</td><td>8,3%</td><td>-2,3 p.p</td><td>0,9%</td><td>5,1 p.p</td><td>6,4%</td><td>1,0%</td><td>5,4 p.p</td></tr><tr><td>ROAE Recorrente <sup>1</sup></td><td>10,4%</td><td>13,1%</td><td>-2,7 p.p</td><td>5,0%</td><td>5,4 p.p</td><td>10,8%</td><td>5,1%</td><td>5,7 p.p</td></tr><tr><td>ROAA</td><td>0,9%</td><td>1,3%</td><td>-0,4 p.p</td><td>0,1%</td><td>0,8 p.p</td><td>1,0%</td><td>0,2%</td><td>0,8 p.p</td></tr><tr><td>Índice de Basileia</td><td>12,4%</td><td>13,1%</td><td>-0,7 p.p</td><td>15,7%</td><td>-3,3 p.p</td><td>12,4%</td><td>15,7%</td><td>-3,3 p.p</td></tr><tr><td>Margem Financeira Líquida</td><td>22,6%</td><td>20,2%</td><td>2,4 p.p</td><td>16,2%</td><td>6,4 p.p</td><td>19,0%</td><td>15,7%</td><td>3,3 p.p</td></tr><tr><td>Índice de Eficiência</td><td>45,6%</td><td>54,3%</td><td>-8,7 p.p</td><td>77,8%</td><td>-32,2 p.p</td><td>50,9%</td><td>61,7%</td><td>-10,8 p.p</td></tr><tr><td>Inadimplência <sup>2</sup> – Carteira E-H</td><td>6,6%</td><td>6,7%</td><td>-0,1 p.p</td><td>7,6%</td><td>-1,0 p.p</td><td>6,6%</td><td>7,6%</td><td>-1,0 p.p</td></tr><tr><td>Inadimplência <sup>3</sup> – Parcelas vencidas</td><td>3,9%</td><td>3,9%</td><td>0,0 p.p</td><td>4,0%</td><td>-0,1 p.p</td><td>3,9%</td><td>4,0%</td><td>-0,1 p.p</td></tr></table>",
+      "table_id": "tbl-0.html",
+      "top_left_x": 46,
+      "top_left_y": 448,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 523,
+      "bottom_right_y": 815,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Balanço Patrimonial (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th></tr></thead><tr><td>Carteira de Crédito Total</td><td>9.513</td><td>9.265</td><td>2,7%</td><td>8.633</td><td>10,2%</td></tr><tr><td>Carteira Varejo <sup>4</sup></td><td>8.026</td><td>7.759</td><td>3,4%</td><td>6.834</td><td>17,4%</td></tr><tr><td>Carteira Atacado</td><td>1.215</td><td>1.193</td><td>1,8%</td><td>1.293</td><td>-6,0%</td></tr><tr><td>Carteira Run Off <sup>5</sup></td><td>271</td><td>313</td><td>-13,2%</td><td>505</td><td>-46,3%</td></tr><tr><td>Ativos Totais</td><td>16.938</td><td>16.959</td><td>-0,1%</td><td>16.260</td><td>4,2%</td></tr><tr><td>Patrimônio Líquido</td><td>2.640</td><td>2.757</td><td>-4,2%</td><td>2.572</td><td>2,7%</td></tr><tr><td>Captação Total</td><td>12.354</td><td>12.489</td><td>-1,1%</td><td>11.939</td><td>3,5%</td></tr></table>",
+      "table_id": "tbl-1.html",
+      "top_left_x": 46,
+      "top_left_y": 666,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 507,
+      "bottom_right_y": 837,
+      "confidence_scores": null,
+      "content": "1) Lucro Líquido e ROAE recorrentes, excluindo os efeitos do ágio, ver 'Lucro Líquido e Rentabilidade'.",
+      "top_left_x": 53,
+      "top_left_y": 823,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 578,
+      "bottom_right_y": 850,
+      "confidence_scores": null,
+      "content": "2) Metodologia de cálculo: Carteira classificada em E-H/Carteira Total, considerando parcelas vencidas mais vincendas.",
+      "top_left_x": 53,
+      "top_left_y": 836,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 404,
+      "bottom_right_y": 862,
+      "confidence_scores": null,
+      "content": "3) Metodologia de cálculo: parcelas vencidas há mais de 90 dias/ Carteira total.",
+      "top_left_x": 53,
+      "top_left_y": 849,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 388,
+      "bottom_right_y": 874,
+      "confidence_scores": null,
+      "content": "4) Carteira Varejo inclui o Cartão de Crédito Consignado e Crédito Pessoal.",
+      "top_left_x": 53,
+      "top_left_y": 861,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 434,
+      "bottom_right_y": 888,
+      "confidence_scores": null,
+      "content": "5) Carteira Run Off inclui o empréstimo consignado, veículos e empréstimo imobiliário.",
+      "top_left_x": 53,
+      "top_left_y": 873,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "3",
+      "top_left_x": 596,
+      "top_left_y": 937,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9917724371221723,
+     "minimum_page_confidence_score": 0.21121837298033191,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 111,
+      "id": "img-0.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 512,
+      "top_left_y": 51
+     }
+    ],
+    "index": 2,
+    "markdown": "# Release de Resultados 4T18\n\nBanco\n\n![img-0.jpeg](img-0.jpeg)\n\n## PERFIL CORPORATIVO\n\nCom **88 anos de sólida presença** no mercado financeiro, o BMG é um banco de varejo com foco no financiamento ao consumo e oferece aos seus clientes pessoa física, através de seus canais físicos e digitais: cartão de crédito consignado, crédito pessoal com débito em conta, ambos exclusivos para aposentados e pensionistas do INSS e servidores públicos, crédito pessoal digital e seguros massificados via parceria. Adicionalmente, oferece aos clientes de varejo uma gama completa de produtos e serviços em seu banco digital. Aos clientes pessoa jurídica, o BMG oferece prestação de serviços financeiros estruturados, instrumentos derivativos e seguro garantia. O BMG disponibiliza produtos de investimento em renda fixa para todos os públicos.\n\n## PRINCIPAIS INDICADORES\n\n[tbl-0.html](tbl-0.html)\n\n[tbl-1.html](tbl-1.html)\n\n1) Lucro Líquido e ROAE recorrentes, excluindo os efeitos do ágio, ver 'Lucro Líquido e Rentabilidade'.\n\n2) Metodologia de cálculo: Carteira classificada em E-H/Carteira Total, considerando parcelas vencidas mais vincendas.\n\n3) Metodologia de cálculo: parcelas vencidas há mais de 90 dias/ Carteira total.\n\n4) Carteira Varejo inclui o Cartão de Crédito Consignado e Crédito Pessoal.\n\n5) Carteira Run Off inclui o empréstimo consignado, veículos e empréstimo imobiliário.\n\n3",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Indicadores Financeiros (%)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th><th>2018</th><th>2017</th><th>18/17 (%)</th></tr></thead><tr><td>Lucro Líquido</td><td>40</td><td>55</td><td>-28,1%</td><td>6</td><td>574,3%</td><td>171</td><td>26</td><td>549,5%</td></tr><tr><td>Lucro Líquido Recorrente <sup>1</sup></td><td>61</td><td>77</td><td>-20,2%</td><td>28</td><td>122,1%</td><td>258</td><td>113</td><td>127,5%</td></tr><tr><td>ROAE</td><td>6,0%</td><td>8,3%</td><td>-2,3 p.p</td><td>0,9%</td><td>5,1 p.p</td><td>6,4%</td><td>1,0%</td><td>5,4 p.p</td></tr><tr><td>ROAE Recorrente <sup>1</sup></td><td>10,4%</td><td>13,1%</td><td>-2,7 p.p</td><td>5,0%</td><td>5,4 p.p</td><td>10,8%</td><td>5,1%</td><td>5,7 p.p</td></tr><tr><td>ROAA</td><td>0,9%</td><td>1,3%</td><td>-0,4 p.p</td><td>0,1%</td><td>0,8 p.p</td><td>1,0%</td><td>0,2%</td><td>0,8 p.p</td></tr><tr><td>Índice de Basileia</td><td>12,4%</td><td>13,1%</td><td>-0,7 p.p</td><td>15,7%</td><td>-3,3 p.p</td><td>12,4%</td><td>15,7%</td><td>-3,3 p.p</td></tr><tr><td>Margem Financeira Líquida</td><td>22,6%</td><td>20,2%</td><td>2,4 p.p</td><td>16,2%</td><td>6,4 p.p</td><td>19,0%</td><td>15,7%</td><td>3,3 p.p</td></tr><tr><td>Índice de Eficiência</td><td>45,6%</td><td>54,3%</td><td>-8,7 p.p</td><td>77,8%</td><td>-32,2 p.p</td><td>50,9%</td><td>61,7%</td><td>-10,8 p.p</td></tr><tr><td>Inadimplência <sup>2</sup> – Carteira E-H</td><td>6,6%</td><td>6,7%</td><td>-0,1 p.p</td><td>7,6%</td><td>-1,0 p.p</td><td>6,6%</td><td>7,6%</td><td>-1,0 p.p</td></tr><tr><td>Inadimplência <sup>3</sup> – Parcelas vencidas</td><td>3,9%</td><td>3,9%</td><td>0,0 p.p</td><td>4,0%</td><td>-0,1 p.p</td><td>3,9%</td><td>4,0%</td><td>-0,1 p.p</td></tr></table>",
+      "format": "html",
+      "id": "tbl-0.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>Balanço Patrimonial (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th></tr></thead><tr><td>Carteira de Crédito Total</td><td>9.513</td><td>9.265</td><td>2,7%</td><td>8.633</td><td>10,2%</td></tr><tr><td>Carteira Varejo <sup>4</sup></td><td>8.026</td><td>7.759</td><td>3,4%</td><td>6.834</td><td>17,4%</td></tr><tr><td>Carteira Atacado</td><td>1.215</td><td>1.193</td><td>1,8%</td><td>1.293</td><td>-6,0%</td></tr><tr><td>Carteira Run Off <sup>5</sup></td><td>271</td><td>313</td><td>-13,2%</td><td>505</td><td>-46,3%</td></tr><tr><td>Ativos Totais</td><td>16.938</td><td>16.959</td><td>-0,1%</td><td>16.260</td><td>4,2%</td></tr><tr><td>Patrimônio Líquido</td><td>2.640</td><td>2.757</td><td>-4,2%</td><td>2.572</td><td>2,7%</td></tr><tr><td>Captação Total</td><td>12.354</td><td>12.489</td><td>-1,1%</td><td>11.939</td><td>3,5%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-1.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 61,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 574,
+      "bottom_right_y": 43,
+      "confidence_scores": null,
+      "content": "Banco",
+      "top_left_x": 512,
+      "top_left_y": 23,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 288,
+      "bottom_right_y": 181,
+      "confidence_scores": null,
+      "content": "## DESEMPENHO FINANCEIRO",
+      "top_left_x": 53,
+      "top_left_y": 163,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 211,
+      "bottom_right_y": 236,
+      "confidence_scores": null,
+      "content": "### Margem Financeira",
+      "top_left_x": 53,
+      "top_left_y": 217,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 367,
+      "confidence_scores": null,
+      "content": "A margem financeira ajustada ao custo do crédito no 4T18 totalizou R$ 454 milhões, representando um crescimento de 14,2% na comparação com o trimestre anterior e de 54,6% em relação ao 4T17. No acumulado de 2018, o crescimento foi de 41,7% em comparação a 2017, tendo como principal referência o aumento nas receitas de operações de crédito aliado a redução do custo do *funding* e a despesa de provisão da operação de cartão de crédito consignado ser comparativamente mais baixa que demais produtos.",
+      "top_left_x": 53,
+      "top_left_y": 255,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 614,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Margem financeira (R$ Milhões) (% a.a.)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th><th>2018</th><th>2017</th><th>18/17 (%)</th></tr></thead><tr><td><b>Produto bancário e tesouraria (a)</b></td><td><b>649</b></td><td><b>571</b></td><td><b>13,7%</b></td><td><b>450</b></td><td><b>44,1%</b></td><td><b>2.283</b></td><td><b>1.769</b></td><td><b>29,1%</b></td></tr><tr><td>Margem financeira de juros</td><td>640</td><td>562</td><td>14,0%</td><td>441</td><td>45,0%</td><td>2.242</td><td>1.732</td><td>29,4%</td></tr><tr><td>Receitas de prestação de serviços</td><td>9</td><td>9</td><td>-3,9%</td><td>9</td><td>-0,8%</td><td>42</td><td>37</td><td>13,7%</td></tr><tr><td><b>Custo do crédito (b)</b></td><td><b>(195)</b></td><td><b>(173)</b></td><td><b>12,3%</b></td><td><b>(157)</b></td><td><b>24,4%</b></td><td><b>(731)</b></td><td><b>(673)</b></td><td><b>8,6%</b></td></tr><tr><td>Despesa de provisão líquida de recuperação</td><td>(91)</td><td>(65)</td><td>40,3%</td><td>(77)</td><td>19,4%</td><td>(318)</td><td>(371)</td><td>-14,2%</td></tr><tr><td>Despesa de comissão de agentes</td><td>(103)</td><td>(108)</td><td>-4,5%</td><td>(80)</td><td>29,1%</td><td>(413)</td><td>(302)</td><td>36,6%</td></tr><tr><td><b>Margem financeira ajustada do custo do crédito (a+b)</b></td><td><b>454</b></td><td><b>397</b></td><td><b>14,2%</b></td><td><b>294</b></td><td><b>54,6%</b></td><td><b>1.552</b></td><td><b>1.095</b></td><td><b>41,7%</b></td></tr><tr><td><b>Margem financeira líquida (a/c)</b></td><td><b>22,6%</b></td><td><b>20,2%</b></td><td><b>2,4 p.p</b></td><td><b>16,2%</b></td><td><b>6,4 p.p</b></td><td><b>19,0%</b></td><td><b>15,7%</b></td><td><b>3,3 p.p</b></td></tr><tr><td><b>Margem financeira ajustada ao custo do crédito (a+b/c)</b></td><td><b>15,4%</b></td><td><b>13,8%</b></td><td><b>1,6 p.p</b></td><td><b>10,4%</b></td><td><b>5,0 p.p</b></td><td><b>12,9%</b></td><td><b>9,7%</b></td><td><b>3,2 p.p</b></td></tr><tr><td><b>Ativos rentáveis médios (c)</b></td><td><b>12.438</b></td><td><b>12.120</b></td><td><b>2,6%</b></td><td><b>11.749</b></td><td><b>5,9%</b></td><td><b>12.047</b></td><td><b>11.274</b></td><td><b>6,9%</b></td></tr></table>",
+      "table_id": "tbl-2.html",
+      "top_left_x": 16,
+      "top_left_y": 372,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 728,
+      "confidence_scores": null,
+      "content": "No trimestre, a margem financeira líquida foi de 22,6% a.a., aumento de 2,4 p.p. e 6,4 p.p. em comparação ao 3T18 e 4T17, respectivamente. Em 2018, a margem foi de 19,0%, aumento de 3,3 p.p. em comparação ao mesmo período de 2017. A melhora constante da margem financeira é reflexo da redistribuição da carteira, que vem ocorrendo nos últimos anos, focando em cartão de crédito consignado e crédito pessoal e do menor custo dos seus passivos.",
+      "top_left_x": 53,
+      "top_left_y": 632,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 485,
+      "bottom_right_y": 752,
+      "confidence_scores": null,
+      "content": "### Evolução da Margem Financeira (% a.a.)",
+      "top_left_x": 227,
+      "top_left_y": 735,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 947,
+      "confidence_scores": null,
+      "content": "![img-1.jpeg](img-1.jpeg)",
+      "image_id": "img-1.jpeg",
+      "top_left_x": 39,
+      "top_left_y": 763,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 609,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "4",
+      "top_left_x": 597,
+      "top_left_y": 939,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9922636719181007,
+     "minimum_page_confidence_score": 0.2652225198929665,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 947,
+      "id": "img-1.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 39,
+      "top_left_y": 763
+     }
+    ],
+    "index": 3,
+    "markdown": "# Release de Resultados 4T18\n\nBanco\n\n## DESEMPENHO FINANCEIRO\n\n### Margem Financeira\n\nA margem financeira ajustada ao custo do crédito no 4T18 totalizou R$ 454 milhões, representando um crescimento de 14,2% na comparação com o trimestre anterior e de 54,6% em relação ao 4T17. No acumulado de 2018, o crescimento foi de 41,7% em comparação a 2017, tendo como principal referência o aumento nas receitas de operações de crédito aliado a redução do custo do *funding* e a despesa de provisão da operação de cartão de crédito consignado ser comparativamente mais baixa que demais produtos.\n\n[tbl-2.html](tbl-2.html)\n\nNo trimestre, a margem financeira líquida foi de 22,6% a.a., aumento de 2,4 p.p. e 6,4 p.p. em comparação ao 3T18 e 4T17, respectivamente. Em 2018, a margem foi de 19,0%, aumento de 3,3 p.p. em comparação ao mesmo período de 2017. A melhora constante da margem financeira é reflexo da redistribuição da carteira, que vem ocorrendo nos últimos anos, focando em cartão de crédito consignado e crédito pessoal e do menor custo dos seus passivos.\n\n### Evolução da Margem Financeira (% a.a.)\n\n![img-1.jpeg](img-1.jpeg)\n\n4",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Margem financeira (R$ Milhões) (% a.a.)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th><th>2018</th><th>2017</th><th>18/17 (%)</th></tr></thead><tr><td><b>Produto bancário e tesouraria (a)</b></td><td><b>649</b></td><td><b>571</b></td><td><b>13,7%</b></td><td><b>450</b></td><td><b>44,1%</b></td><td><b>2.283</b></td><td><b>1.769</b></td><td><b>29,1%</b></td></tr><tr><td>Margem financeira de juros</td><td>640</td><td>562</td><td>14,0%</td><td>441</td><td>45,0%</td><td>2.242</td><td>1.732</td><td>29,4%</td></tr><tr><td>Receitas de prestação de serviços</td><td>9</td><td>9</td><td>-3,9%</td><td>9</td><td>-0,8%</td><td>42</td><td>37</td><td>13,7%</td></tr><tr><td><b>Custo do crédito (b)</b></td><td><b>(195)</b></td><td><b>(173)</b></td><td><b>12,3%</b></td><td><b>(157)</b></td><td><b>24,4%</b></td><td><b>(731)</b></td><td><b>(673)</b></td><td><b>8,6%</b></td></tr><tr><td>Despesa de provisão líquida de recuperação</td><td>(91)</td><td>(65)</td><td>40,3%</td><td>(77)</td><td>19,4%</td><td>(318)</td><td>(371)</td><td>-14,2%</td></tr><tr><td>Despesa de comissão de agentes</td><td>(103)</td><td>(108)</td><td>-4,5%</td><td>(80)</td><td>29,1%</td><td>(413)</td><td>(302)</td><td>36,6%</td></tr><tr><td><b>Margem financeira ajustada do custo do crédito (a+b)</b></td><td><b>454</b></td><td><b>397</b></td><td><b>14,2%</b></td><td><b>294</b></td><td><b>54,6%</b></td><td><b>1.552</b></td><td><b>1.095</b></td><td><b>41,7%</b></td></tr><tr><td><b>Margem financeira líquida (a/c)</b></td><td><b>22,6%</b></td><td><b>20,2%</b></td><td><b>2,4 p.p</b></td><td><b>16,2%</b></td><td><b>6,4 p.p</b></td><td><b>19,0%</b></td><td><b>15,7%</b></td><td><b>3,3 p.p</b></td></tr><tr><td><b>Margem financeira ajustada ao custo do crédito (a+b/c)</b></td><td><b>15,4%</b></td><td><b>13,8%</b></td><td><b>1,6 p.p</b></td><td><b>10,4%</b></td><td><b>5,0 p.p</b></td><td><b>12,9%</b></td><td><b>9,7%</b></td><td><b>3,2 p.p</b></td></tr><tr><td><b>Ativos rentáveis médios (c)</b></td><td><b>12.438</b></td><td><b>12.120</b></td><td><b>2,6%</b></td><td><b>11.749</b></td><td><b>5,9%</b></td><td><b>12.047</b></td><td><b>11.274</b></td><td><b>6,9%</b></td></tr></table>",
+      "format": "html",
+      "id": "tbl-2.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 396,
+      "bottom_right_y": 183,
+      "confidence_scores": null,
+      "content": "## Outras Receitas e Despesas Operacionais",
+      "top_left_x": 53,
+      "top_left_y": 163,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 256,
+      "confidence_scores": null,
+      "content": "No quarto trimestre de 2018, as outras despesas operacionais, líquidas de outras receitas operacionais, apresentaram uma redução de 1,4% em relação ao trimestre anterior e de 9,4% em comparação ao 4T17. Em 2018, as despesas aumentaram 5,4% em comparação a 2017.",
+      "top_left_x": 53,
+      "top_left_y": 199,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 693,
+      "bottom_right_y": 419,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Outras Receitas e Despesas Operacionais (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th><th>2018</th><th>2017</th><th>18/17 (%)</th></tr></thead><tr><td><b>Outras Receitas (Despesas) Operacionais</b></td><td><b>(294)</b></td><td><b>(298)</b></td><td><b>-1,4%</b></td><td><b>(325)</b></td><td><b>-9,4%</b></td><td><b>(1.123)</b></td><td><b>(1.066)</b></td><td><b>5,4%</b></td></tr><tr><td>Receitas de prestação de serviços</td><td>9</td><td>9</td><td>-3,9%</td><td>9</td><td>-0,8%</td><td>42</td><td>37</td><td>13,7%</td></tr><tr><td>Despesas de pessoal</td><td>(45)</td><td>(43)</td><td>4,9%</td><td>(48)</td><td>-6,1%</td><td>(166)</td><td>(164)</td><td>1,3%</td></tr><tr><td>Outras despesas administrativas</td><td>(175)</td><td>(165)</td><td>5,9%</td><td>(148)</td><td>18,2%</td><td>(632)</td><td>(607)</td><td>4,1%</td></tr><tr><td>Ágio</td><td>(36)</td><td>(36)</td><td>0,0%</td><td>(36)</td><td>0,0%</td><td>(145)</td><td>(145)</td><td>0,0%</td></tr><tr><td>Despesas tributárias</td><td>(27)</td><td>(26)</td><td>3,9%</td><td>(23)</td><td>16,4%</td><td>(100)</td><td>(78)</td><td>27,6%</td></tr><tr><td>Participações em coligadas e controladas</td><td>3</td><td>(3)</td><td>194,8%</td><td>1</td><td>433,3%</td><td>2</td><td>(4)</td><td>158,7%</td></tr><tr><td>Outras despesas/ receitas operacionais líquidas</td><td>(58)</td><td>(70)</td><td>-16,8%</td><td>(115)</td><td>-49,1%</td><td>(270)</td><td>(249)</td><td>8,2%</td></tr></table>",
+      "table_id": "tbl-3.html",
+      "top_left_x": 19,
+      "top_left_y": 260,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 538,
+      "confidence_scores": null,
+      "content": "O BMG reforça seu compromisso e centricidade no cliente e para tal, investe de forma contínua na estrutura operacional e canais de atendimento, de modo a suportar a operação e garantir a qualidade no seu relacionamento. No quarto trimestre de 2018, as despesas foram impactadas devido aos investimentos em sua estratégia *omnichannel*, marketing e processo de registro na Comissão de Valores Mobiliários.",
+      "top_left_x": 53,
+      "top_left_y": 443,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 693,
+      "bottom_right_y": 643,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Outras Receitas e Despesas Operacionais (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th><th>2018</th><th>2017</th><th>18/17 (%)</th></tr></thead><tr><td><b>Despesas de pessoal, administrativas e operacionais</b></td><td><b>(242)</b></td><td><b>(242)</b></td><td><b>0,0%</b></td><td><b>(275)</b></td><td><b>-11,8%</b></td><td><b>(923)</b></td><td><b>(875)</b></td><td><b>5,4%</b></td></tr><tr><td>Despesas de pessoal</td><td>(45)</td><td>(43)</td><td>4,9%</td><td>(48)</td><td>-6,1%</td><td>(166)</td><td>(164)</td><td>1,3%</td></tr><tr><td>Despesas administrativas sem ágio</td><td>(139)</td><td>(129)</td><td>7,5%</td><td>(112)</td><td>24,1%</td><td>(487)</td><td>(462)</td><td>5,3%</td></tr><tr><td>Despesas/Receitas operacionais líquidas</td><td>(58)</td><td>(70)</td><td>-16,8%</td><td>(115)</td><td>-49,1%</td><td>(270)</td><td>(249)</td><td>8,2%</td></tr></table>",
+      "table_id": "tbl-4.html",
+      "top_left_x": 19,
+      "top_left_y": 542,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 317,
+      "bottom_right_y": 708,
+      "confidence_scores": null,
+      "content": "## Índice de Eficiência Operacional",
+      "top_left_x": 53,
+      "top_left_y": 686,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 781,
+      "confidence_scores": null,
+      "content": "No quarto trimestre, a eficiência foi de 45,6%, melhora de 8,7 p.p. em relação ao 3T18 e de 32,2 p.p. em comparação ao 4T17. Em 2018, a eficiência foi de 50,9%, representando uma melhora de 10,8 p.p. em comparação ao mesmo período do ano anterior.",
+      "top_left_x": 53,
+      "top_left_y": 725,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 693,
+      "bottom_right_y": 834,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Índice de Eficiência Operacional (%)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th><th>2018</th><th>2017</th><th>18/17 (%)</th></tr></thead><tr><td>Índice de Eficiência</td><td>45,6%</td><td>54,3%</td><td>-8,7 p.p</td><td>77,8%</td><td>-32,2 p.p</td><td>50,9%</td><td>61,7%</td><td>-10,8 p.p</td></tr></table>",
+      "table_id": "tbl-5.html",
+      "top_left_x": 19,
+      "top_left_y": 784,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 667,
+      "bottom_right_y": 885,
+      "confidence_scores": null,
+      "content": "Metodologia de cálculo: (Despesas de Pessoal + Outras Despesas Administrativas (não considera amortização e depreciação) + Outras Despesas Operacionais Líquidas de Receitas) / (Resultado da Intermediação financeira antes da PDD + Receitas de Prestação de Serviços + Despesas Tributárias)",
+      "top_left_x": 53,
+      "top_left_y": 845,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "5",
+      "top_left_x": 597,
+      "top_left_y": 937,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9897031577448819,
+     "minimum_page_confidence_score": 0.2905341496424464,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 4,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\n## Outras Receitas e Despesas Operacionais\n\nNo quarto trimestre de 2018, as outras despesas operacionais, líquidas de outras receitas operacionais, apresentaram uma redução de 1,4% em relação ao trimestre anterior e de 9,4% em comparação ao 4T17. Em 2018, as despesas aumentaram 5,4% em comparação a 2017.\n\n[tbl-3.html](tbl-3.html)\n\nO BMG reforça seu compromisso e centricidade no cliente e para tal, investe de forma contínua na estrutura operacional e canais de atendimento, de modo a suportar a operação e garantir a qualidade no seu relacionamento. No quarto trimestre de 2018, as despesas foram impactadas devido aos investimentos em sua estratégia *omnichannel*, marketing e processo de registro na Comissão de Valores Mobiliários.\n\n[tbl-4.html](tbl-4.html)\n\n## Índice de Eficiência Operacional\n\nNo quarto trimestre, a eficiência foi de 45,6%, melhora de 8,7 p.p. em relação ao 3T18 e de 32,2 p.p. em comparação ao 4T17. Em 2018, a eficiência foi de 50,9%, representando uma melhora de 10,8 p.p. em comparação ao mesmo período do ano anterior.\n\n[tbl-5.html](tbl-5.html)\n\nMetodologia de cálculo: (Despesas de Pessoal + Outras Despesas Administrativas (não considera amortização e depreciação) + Outras Despesas Operacionais Líquidas de Receitas) / (Resultado da Intermediação financeira antes da PDD + Receitas de Prestação de Serviços + Despesas Tributárias)\n\n5",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Outras Receitas e Despesas Operacionais (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th><th>2018</th><th>2017</th><th>18/17 (%)</th></tr></thead><tr><td><b>Outras Receitas (Despesas) Operacionais</b></td><td><b>(294)</b></td><td><b>(298)</b></td><td><b>-1,4%</b></td><td><b>(325)</b></td><td><b>-9,4%</b></td><td><b>(1.123)</b></td><td><b>(1.066)</b></td><td><b>5,4%</b></td></tr><tr><td>Receitas de prestação de serviços</td><td>9</td><td>9</td><td>-3,9%</td><td>9</td><td>-0,8%</td><td>42</td><td>37</td><td>13,7%</td></tr><tr><td>Despesas de pessoal</td><td>(45)</td><td>(43)</td><td>4,9%</td><td>(48)</td><td>-6,1%</td><td>(166)</td><td>(164)</td><td>1,3%</td></tr><tr><td>Outras despesas administrativas</td><td>(175)</td><td>(165)</td><td>5,9%</td><td>(148)</td><td>18,2%</td><td>(632)</td><td>(607)</td><td>4,1%</td></tr><tr><td>Ágio</td><td>(36)</td><td>(36)</td><td>0,0%</td><td>(36)</td><td>0,0%</td><td>(145)</td><td>(145)</td><td>0,0%</td></tr><tr><td>Despesas tributárias</td><td>(27)</td><td>(26)</td><td>3,9%</td><td>(23)</td><td>16,4%</td><td>(100)</td><td>(78)</td><td>27,6%</td></tr><tr><td>Participações em coligadas e controladas</td><td>3</td><td>(3)</td><td>194,8%</td><td>1</td><td>433,3%</td><td>2</td><td>(4)</td><td>158,7%</td></tr><tr><td>Outras despesas/ receitas operacionais líquidas</td><td>(58)</td><td>(70)</td><td>-16,8%</td><td>(115)</td><td>-49,1%</td><td>(270)</td><td>(249)</td><td>8,2%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-3.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>Outras Receitas e Despesas Operacionais (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th><th>2018</th><th>2017</th><th>18/17 (%)</th></tr></thead><tr><td><b>Despesas de pessoal, administrativas e operacionais</b></td><td><b>(242)</b></td><td><b>(242)</b></td><td><b>0,0%</b></td><td><b>(275)</b></td><td><b>-11,8%</b></td><td><b>(923)</b></td><td><b>(875)</b></td><td><b>5,4%</b></td></tr><tr><td>Despesas de pessoal</td><td>(45)</td><td>(43)</td><td>4,9%</td><td>(48)</td><td>-6,1%</td><td>(166)</td><td>(164)</td><td>1,3%</td></tr><tr><td>Despesas administrativas sem ágio</td><td>(139)</td><td>(129)</td><td>7,5%</td><td>(112)</td><td>24,1%</td><td>(487)</td><td>(462)</td><td>5,3%</td></tr><tr><td>Despesas/Receitas operacionais líquidas</td><td>(58)</td><td>(70)</td><td>-16,8%</td><td>(115)</td><td>-49,1%</td><td>(270)</td><td>(249)</td><td>8,2%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-4.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>Índice de Eficiência Operacional (%)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th><th>2018</th><th>2017</th><th>18/17 (%)</th></tr></thead><tr><td>Índice de Eficiência</td><td>45,6%</td><td>54,3%</td><td>-8,7 p.p</td><td>77,8%</td><td>-32,2 p.p</td><td>50,9%</td><td>61,7%</td><td>-10,8 p.p</td></tr></table>",
+      "format": "html",
+      "id": "tbl-5.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 301,
+      "bottom_right_y": 183,
+      "confidence_scores": null,
+      "content": "## Lucro Líquido e Rentabilidade",
+      "top_left_x": 53,
+      "top_left_y": 163,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 275,
+      "confidence_scores": null,
+      "content": "Em linha com o esperado, a rentabilidade do banco vem crescendo constantemente. O lucro líquido nos doze meses de 2018 foi de R$ 171 milhões, aumento de 549,5% em relação ao mesmo período do ano anterior. No quarto trimestre, o lucro líquido foi de R$ 40 milhões. O retorno sobre o patrimônio líquido médio (ROAE) foi de 6,4% a.a. nos doze meses de 2018 e de 6,0% a.a. no 4T18.",
+      "top_left_x": 53,
+      "top_left_y": 200,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 359,
+      "confidence_scores": null,
+      "content": "Em agosto de 2011 o Banco BMG adquiriu instituições financeiras, apurando um ágio no montante de R$1.450 milhões, fundamentado na expectativa de rentabilidade futura. O ágio possui amortização linear mensal no montante de R$ 12 milhões, de forma que 73,4% já foi amortizado, restando um saldo de R$ 386 milhões a amortizar até julho de 2021.",
+      "top_left_x": 53,
+      "top_left_y": 283,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 464,
+      "confidence_scores": null,
+      "content": "Visto que todos os efeitos do ágio já estão integralmente deduzidos do patrimônio de referência para cálculo de Basileia, o BMG optou por demonstrar seus resultados excluindo o efeito da amortização do ágio. Dessa forma, o lucro líquido nos doze meses de 2018 seria de R$ 258 milhões, o patrimônio líquido em 31 de dezembro de 2018 de R$2.409 milhões e o retorno sobre patrimônio líquido médio (ROAE) de 10,8% a.a..",
+      "top_left_x": 53,
+      "top_left_y": 368,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 303,
+      "bottom_right_y": 499,
+      "confidence_scores": null,
+      "content": "**Lucro Líquido e ROAE (R$ Milhões)**",
+      "top_left_x": 74,
+      "top_left_y": 482,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 329,
+      "bottom_right_y": 693,
+      "confidence_scores": null,
+      "content": "![img-2.jpeg](img-2.jpeg)",
+      "image_id": "img-2.jpeg",
+      "top_left_x": 43,
+      "top_left_y": 508,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 669,
+      "bottom_right_y": 499,
+      "confidence_scores": null,
+      "content": "**Lucro Líquido e ROAE Recorrentes (R$ Milhões)**",
+      "top_left_x": 359,
+      "top_left_y": 482,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 654,
+      "bottom_right_y": 693,
+      "confidence_scores": null,
+      "content": "![img-3.jpeg](img-3.jpeg)",
+      "image_id": "img-3.jpeg",
+      "top_left_x": 368,
+      "top_left_y": 508,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 773,
+      "confidence_scores": null,
+      "content": "Adicionalmente, em dezembro de 2018, ocorreram outros eventos como: (i) redução na alíquota de contribuição social que impactou negativamente em R$ 92 milhões; e (ii) efeito fiscal sobre os juros sobre capital próprio que impactou positivamente em R$ 56 milhões.",
+      "top_left_x": 53,
+      "top_left_y": 717,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 610,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "6",
+      "top_left_x": 598,
+      "top_left_y": 937,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.974729243937238,
+     "minimum_page_confidence_score": 0.23638419266097532,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 329,
+      "bottom_right_y": 693,
+      "id": "img-2.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 43,
+      "top_left_y": 508
+     },
+     {
+      "bottom_right_x": 654,
+      "bottom_right_y": 693,
+      "id": "img-3.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 368,
+      "top_left_y": 508
+     }
+    ],
+    "index": 5,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\n## Lucro Líquido e Rentabilidade\n\nEm linha com o esperado, a rentabilidade do banco vem crescendo constantemente. O lucro líquido nos doze meses de 2018 foi de R$ 171 milhões, aumento de 549,5% em relação ao mesmo período do ano anterior. No quarto trimestre, o lucro líquido foi de R$ 40 milhões. O retorno sobre o patrimônio líquido médio (ROAE) foi de 6,4% a.a. nos doze meses de 2018 e de 6,0% a.a. no 4T18.\n\nEm agosto de 2011 o Banco BMG adquiriu instituições financeiras, apurando um ágio no montante de R$1.450 milhões, fundamentado na expectativa de rentabilidade futura. O ágio possui amortização linear mensal no montante de R$ 12 milhões, de forma que 73,4% já foi amortizado, restando um saldo de R$ 386 milhões a amortizar até julho de 2021.\n\nVisto que todos os efeitos do ágio já estão integralmente deduzidos do patrimônio de referência para cálculo de Basileia, o BMG optou por demonstrar seus resultados excluindo o efeito da amortização do ágio. Dessa forma, o lucro líquido nos doze meses de 2018 seria de R$ 258 milhões, o patrimônio líquido em 31 de dezembro de 2018 de R$2.409 milhões e o retorno sobre patrimônio líquido médio (ROAE) de 10,8% a.a..\n\n**Lucro Líquido e ROAE (R$ Milhões)**\n\n![img-2.jpeg](img-2.jpeg)\n\n**Lucro Líquido e ROAE Recorrentes (R$ Milhões)**\n\n![img-3.jpeg](img-3.jpeg)\n\nAdicionalmente, em dezembro de 2018, ocorreram outros eventos como: (i) redução na alíquota de contribuição social que impactou negativamente em R$ 92 milhões; e (ii) efeito fiscal sobre os juros sobre capital próprio que impactou positivamente em R$ 56 milhões.\n\n6",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 307,
+      "bottom_right_y": 182,
+      "confidence_scores": null,
+      "content": "## DESEMPENHO OPERACIONAL",
+      "top_left_x": 53,
+      "top_left_y": 163,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 243,
+      "bottom_right_y": 223,
+      "confidence_scores": null,
+      "content": "### Centricidade no cliente",
+      "top_left_x": 53,
+      "top_left_y": 204,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 333,
+      "bottom_right_y": 384,
+      "confidence_scores": null,
+      "content": "Com base em uma longa experiência no financiamento ao consumo, o BMG desenvolveu uma filosofia de centricidade no cliente. O desenvolvimento e a oferta de produtos, bem como os canais de distribuição são concebidos com base nas necessidades dos clientes ao longo de todo o seu ciclo de vida.",
+      "top_left_x": 53,
+      "top_left_y": 232,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 333,
+      "bottom_right_y": 529,
+      "confidence_scores": null,
+      "content": "O modelo de negócios multiprodutos para diferentes estágios do ciclo de vida do cliente, confere ao BMG baixa volatilidade de resultados em relação aos ciclos econômicos do país, permitindo atuar de forma sustentável em um mercado endereçável em contínua expansão.",
+      "top_left_x": 53,
+      "top_left_y": 395,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 652,
+      "confidence_scores": null,
+      "content": "De acordo com pesquisa conduzida pelo IBOPE entre os meses de agosto e setembro de 2018, o BMG possui uma média de 8,67 de satisfação (em escala de 0 a 10), com Net Promoter Score (NPS)$^{1}$ de +58, sendo 70% dos entrevistados classificados como “promotores” da marca, o que demonstra compromisso do Banco com o cliente nos diversos canais de distribuição. Como reflexo do alto engajamento dos clientes com o BMG, no 4T18 os clientes apresentaram um consumo médio de 1,82 produtos (*cross-selling index*), considerando apenas produtos e serviços geradores de receita.",
+      "top_left_x": 53,
+      "top_left_y": 538,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 623,
+      "bottom_right_y": 497,
+      "confidence_scores": null,
+      "content": "![img-4.jpeg](img-4.jpeg)",
+      "image_id": "img-4.jpeg",
+      "top_left_x": 352,
+      "top_left_y": 247,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 316,
+      "bottom_right_y": 681,
+      "confidence_scores": null,
+      "content": "Evolução da qtd. de clientes (Milhões)",
+      "top_left_x": 63,
+      "top_left_y": 662,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 329,
+      "bottom_right_y": 873,
+      "confidence_scores": null,
+      "content": "![img-5.jpeg](img-5.jpeg)",
+      "image_id": "img-5.jpeg",
+      "top_left_x": 40,
+      "top_left_y": 714,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 619,
+      "bottom_right_y": 681,
+      "confidence_scores": null,
+      "content": "Evolução do *cross-selling index*",
+      "top_left_x": 411,
+      "top_left_y": 662,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 871,
+      "confidence_scores": null,
+      "content": "![img-6.jpeg](img-6.jpeg)",
+      "image_id": "img-6.jpeg",
+      "top_left_x": 371,
+      "top_left_y": 709,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 937,
+      "confidence_scores": null,
+      "content": "$^{1}$ Net Promoter Score é uma metodologia de mensuração do grau de satisfação e lealdade do cliente, na qual clientes que avaliam a empresa com nota de 0 a 6 são considerados detratores, 7 e 8 são neutros e 9 e 10 são promotores da marca com tendência a falar bem da empresa.",
+      "top_left_x": 53,
+      "top_left_y": 893,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 610,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "7",
+      "top_left_x": 597,
+      "top_left_y": 937,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9665175003544781,
+     "minimum_page_confidence_score": 0.23605632991418218,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 623,
+      "bottom_right_y": 497,
+      "id": "img-4.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 352,
+      "top_left_y": 247
+     },
+     {
+      "bottom_right_x": 329,
+      "bottom_right_y": 873,
+      "id": "img-5.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 40,
+      "top_left_y": 714
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 871,
+      "id": "img-6.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 371,
+      "top_left_y": 709
+     }
+    ],
+    "index": 6,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\n## DESEMPENHO OPERACIONAL\n\n### Centricidade no cliente\n\nCom base em uma longa experiência no financiamento ao consumo, o BMG desenvolveu uma filosofia de centricidade no cliente. O desenvolvimento e a oferta de produtos, bem como os canais de distribuição são concebidos com base nas necessidades dos clientes ao longo de todo o seu ciclo de vida.\n\nO modelo de negócios multiprodutos para diferentes estágios do ciclo de vida do cliente, confere ao BMG baixa volatilidade de resultados em relação aos ciclos econômicos do país, permitindo atuar de forma sustentável em um mercado endereçável em contínua expansão.\n\nDe acordo com pesquisa conduzida pelo IBOPE entre os meses de agosto e setembro de 2018, o BMG possui uma média de 8,67 de satisfação (em escala de 0 a 10), com Net Promoter Score (NPS)$^{1}$ de +58, sendo 70% dos entrevistados classificados como “promotores” da marca, o que demonstra compromisso do Banco com o cliente nos diversos canais de distribuição. Como reflexo do alto engajamento dos clientes com o BMG, no 4T18 os clientes apresentaram um consumo médio de 1,82 produtos (*cross-selling index*), considerando apenas produtos e serviços geradores de receita.\n\n![img-4.jpeg](img-4.jpeg)\n\nEvolução da qtd. de clientes (Milhões)\n\n![img-5.jpeg](img-5.jpeg)\n\nEvolução do *cross-selling index*\n\n![img-6.jpeg](img-6.jpeg)\n\n$^{1}$ Net Promoter Score é uma metodologia de mensuração do grau de satisfação e lealdade do cliente, na qual clientes que avaliam a empresa com nota de 0 a 6 são considerados detratores, 7 e 8 são neutros e 9 e 10 são promotores da marca com tendência a falar bem da empresa.\n\n7",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 90,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco BMG",
+      "top_left_x": 512,
+      "top_left_y": 23,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 239,
+      "bottom_right_y": 183,
+      "confidence_scores": null,
+      "content": "## Canais de Distribuição",
+      "top_left_x": 53,
+      "top_left_y": 163,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 267,
+      "confidence_scores": null,
+      "content": "O BMG conta com uma rede de distribuição *omnichannel* e *asset light*, composta por correspondentes bancários, rede de franquias de lojas de crédito, agências, *call center* e parcerias, que em conjunto operam de maneira sinérgica com os canais digitais. Tal estratégia permite ao BMG estar presente em todo o território nacional, oferecendo aos clientes o melhor entre os mundos físico e digital.",
+      "top_left_x": 53,
+      "top_left_y": 192,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 236,
+      "bottom_right_y": 302,
+      "confidence_scores": null,
+      "content": "### Correspondentes Bancários",
+      "top_left_x": 53,
+      "top_left_y": 284,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 464,
+      "confidence_scores": null,
+      "content": "A principal rede de distribuição física do Banco é composta de correspondentes bancários que são regulados pela Resolução nº 3.954, que estabelece normas de contratação e requer certificação obrigatória. Os correspondentes são supervisionados pelos administradores do Banco para garantir a qualidade do processo de certificação. O canal conta com mais de dois mil correspondentes bancários, que possuem uma equipe especializada e capacitada para originar os produtos do BMG. A vantagem competitiva do Banco para atuar neste canal se pauta em quatro grandes pilares: (i) marca forte; (ii) relacionamento próximo e de longo prazo; (iii) melhores produtos; e (iv) melhor sistema de consignação do mercado, proprietário do BMG.",
+      "top_left_x": 53,
+      "top_left_y": 310,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 241,
+      "bottom_right_y": 508,
+      "confidence_scores": null,
+      "content": "### Rede de Franquias help!",
+      "top_left_x": 53,
+      "top_left_y": 486,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 666,
+      "confidence_scores": null,
+      "content": "A “help! loja de crédito” é uma rede de franquias de lojas de crédito ao redor do Brasil. Focada no varejo segmentado para aposentados e pensionistas do INSS e servidores públicos, a rede tem como conceito ser *one-stop shop*. As lojas estão estrategicamente localizadas em pontos de fácil acesso e alta circulação dos clientes alvo. O BMG desenvolveu um sistema próprio que permite ao banco e ao franqueado uma visão horizontal do seu cliente, possibilitando uma venda de produtos aderente ao perfil e necessidade de cada um. Em 31 de dezembro de 2018, o Banco contava com 472 lojas “help! Loja de Crédito”, representando um total de 1,5 mil consultores cadastrados e capacitados para originar os produtos do Banco.",
+      "top_left_x": 53,
+      "top_left_y": 514,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 848,
+      "confidence_scores": null,
+      "content": "A operação é formalizada por meio do perfil biométrico completo, integrado ao sistema operacional, que traz mais segurança na qualidade do crédito e mitiga potenciais fraudes. O perfil biométrico permite também uma maior facilidade e segurança no atendimento dos canais digitais, como o leitor de impressão digital para os ATM’s, biometria facial para acesso via aplicativo e o gravador de voz para atendimento via *call center*.",
+      "top_left_x": 53,
+      "top_left_y": 676,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 603,
+      "bottom_right_y": 883,
+      "confidence_scores": null,
+      "content": "![img-7.jpeg](img-7.jpeg)",
+      "image_id": "img-7.jpeg",
+      "top_left_x": 384,
+      "top_left_y": 653,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 610,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "8",
+      "top_left_x": 597,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9766860506314718,
+     "minimum_page_confidence_score": 0.19822452688726463,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 603,
+      "bottom_right_y": 883,
+      "id": "img-7.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 384,
+      "top_left_y": 653
+     }
+    ],
+    "index": 7,
+    "markdown": "# Release de Resultados 4T18\n\nBanco BMG\n\n## Canais de Distribuição\n\nO BMG conta com uma rede de distribuição *omnichannel* e *asset light*, composta por correspondentes bancários, rede de franquias de lojas de crédito, agências, *call center* e parcerias, que em conjunto operam de maneira sinérgica com os canais digitais. Tal estratégia permite ao BMG estar presente em todo o território nacional, oferecendo aos clientes o melhor entre os mundos físico e digital.\n\n### Correspondentes Bancários\n\nA principal rede de distribuição física do Banco é composta de correspondentes bancários que são regulados pela Resolução nº 3.954, que estabelece normas de contratação e requer certificação obrigatória. Os correspondentes são supervisionados pelos administradores do Banco para garantir a qualidade do processo de certificação. O canal conta com mais de dois mil correspondentes bancários, que possuem uma equipe especializada e capacitada para originar os produtos do BMG. A vantagem competitiva do Banco para atuar neste canal se pauta em quatro grandes pilares: (i) marca forte; (ii) relacionamento próximo e de longo prazo; (iii) melhores produtos; e (iv) melhor sistema de consignação do mercado, proprietário do BMG.\n\n### Rede de Franquias help!\n\nA “help! loja de crédito” é uma rede de franquias de lojas de crédito ao redor do Brasil. Focada no varejo segmentado para aposentados e pensionistas do INSS e servidores públicos, a rede tem como conceito ser *one-stop shop*. As lojas estão estrategicamente localizadas em pontos de fácil acesso e alta circulação dos clientes alvo. O BMG desenvolveu um sistema próprio que permite ao banco e ao franqueado uma visão horizontal do seu cliente, possibilitando uma venda de produtos aderente ao perfil e necessidade de cada um. Em 31 de dezembro de 2018, o Banco contava com 472 lojas “help! Loja de Crédito”, representando um total de 1,5 mil consultores cadastrados e capacitados para originar os produtos do Banco.\n\nA operação é formalizada por meio do perfil biométrico completo, integrado ao sistema operacional, que traz mais segurança na qualidade do crédito e mitiga potenciais fraudes. O perfil biométrico permite também uma maior facilidade e segurança no atendimento dos canais digitais, como o leitor de impressão digital para os ATM’s, biometria facial para acesso via aplicativo e o gravador de voz para atendimento via *call center*.\n\n![img-7.jpeg](img-7.jpeg)\n\n8",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 88,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 153,
+      "bottom_right_y": 182,
+      "confidence_scores": null,
+      "content": "## Canais Digitais",
+      "top_left_x": 53,
+      "top_left_y": 165,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 219,
+      "bottom_right_y": 393,
+      "confidence_scores": null,
+      "content": "![img-8.jpeg](img-8.jpeg)",
+      "image_id": "img-8.jpeg",
+      "top_left_x": 75,
+      "top_left_y": 202,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 439,
+      "bottom_right_y": 209,
+      "confidence_scores": null,
+      "content": "### *Any time, anywhere, any device*",
+      "top_left_x": 234,
+      "top_left_y": 192,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 332,
+      "confidence_scores": null,
+      "content": "De forma a complementar sua estratégia *omnichannel*, o Banco lançou em outubro de 2018 o seu *full digital banking*. Desta forma, o BMG oferece ao cliente nativo digital toda a usabilidade desenvolvida para gerar a melhor experiência neste canal. Ainda, é possível que o cliente inicie o seu relacionamento com o Banco em sua rede física e siga com a contratação dos produtos de forma digital.",
+      "top_left_x": 234,
+      "top_left_y": 220,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 436,
+      "confidence_scores": null,
+      "content": "Como parte dessa experiência, o banco digital conta com uma especialista virtual, Duda, que faz uso do reconhecimento de voz e inteligência artificial para ajudar os clientes a realizar operações bancárias de maneira simples e intuitiva. Em dezembro, o Banco contava com mais de 100 mil contas abertas.",
+      "top_left_x": 234,
+      "top_left_y": 341,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 337,
+      "bottom_right_y": 517,
+      "confidence_scores": null,
+      "content": "## Distribuição da Carteira de Crédito",
+      "top_left_x": 53,
+      "top_left_y": 495,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 562,
+      "confidence_scores": null,
+      "content": "A carteira de crédito total atingiu R$ 9.513 milhões no 4T18, representando um aumento de 2,7% no trimestre e de 10,2% em comparação ao 4T17.",
+      "top_left_x": 53,
+      "top_left_y": 525,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 608,
+      "confidence_scores": null,
+      "content": "Em linha com a estratégia do Banco, a carteira de varejo apresentou crescimento de 17,4% nos últimos 12 meses e já representa 84,4% da carteira total.",
+      "top_left_x": 53,
+      "top_left_y": 571,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 879,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Distribuição Carteira de Crédito Total (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th></tr></thead><tr><td><b>Carteira Varejo</b></td><td><b>8.026</b></td><td><b>7.759</b></td><td><b>3,4%</b></td><td><b>6.834</b></td><td><b>17,4%</b></td></tr><tr><td>Cartão de Crédito Consignado</td><td>7.120</td><td>6.928</td><td>2,8%</td><td>6.321</td><td>12,6%</td></tr><tr><td>Crédito Pessoal</td><td>906</td><td>831</td><td>9,0%</td><td>513</td><td>76,7%</td></tr><tr><td>Crédito na Conta</td><td>447</td><td>400</td><td>11,9%</td><td>250</td><td>78,9%</td></tr><tr><td>BMG Money</td><td>299</td><td>266</td><td>12,5%</td><td>140</td><td>113,5%</td></tr><tr><td>Lendico</td><td>160</td><td>166</td><td>-3,4%</td><td>123</td><td>30,2%</td></tr><tr><td><b>Carteira Atacado</b></td><td><b>1.215</b></td><td><b>1.193</b></td><td><b>1,8%</b></td><td><b>1.293</b></td><td><b>-6,0%</b></td></tr><tr><td>Operações Estruturadas</td><td>747</td><td>686</td><td>8,8%</td><td>537</td><td>39,0%</td></tr><tr><td>Empresas</td><td>469</td><td>507</td><td>-7,6%</td><td>756</td><td>-38,0%</td></tr><tr><td><b>Carteira run off</b></td><td><b>271</b></td><td><b>313</b></td><td><b>-13,2%</b></td><td><b>505</b></td><td><b>-46,3%</b></td></tr><tr><td>Empréstimo Consignado</td><td>247</td><td>284</td><td>-12,9%</td><td>457</td><td>-45,9%</td></tr><tr><td>Empréstimo Imobiliário</td><td>21</td><td>22</td><td>-6,3%</td><td>27</td><td>-23,9%</td></tr><tr><td>Veículos</td><td>3</td><td>6</td><td>-52,1%</td><td>21</td><td>-85,3%</td></tr><tr><td><b>Carteira de Crédito Total</b></td><td><b>9.513</b></td><td><b>9.265</b></td><td><b>2,7%</b></td><td><b>8.633</b></td><td><b>10,2%</b></td></tr></table>",
+      "table_id": "tbl-6.html",
+      "top_left_x": 53,
+      "top_left_y": 618,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 610,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "9",
+      "top_left_x": 597,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9892180443861059,
+     "minimum_page_confidence_score": 0.24360772297148842,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 219,
+      "bottom_right_y": 393,
+      "id": "img-8.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 75,
+      "top_left_y": 202
+     }
+    ],
+    "index": 8,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\n## Canais Digitais\n\n![img-8.jpeg](img-8.jpeg)\n\n### *Any time, anywhere, any device*\n\nDe forma a complementar sua estratégia *omnichannel*, o Banco lançou em outubro de 2018 o seu *full digital banking*. Desta forma, o BMG oferece ao cliente nativo digital toda a usabilidade desenvolvida para gerar a melhor experiência neste canal. Ainda, é possível que o cliente inicie o seu relacionamento com o Banco em sua rede física e siga com a contratação dos produtos de forma digital.\n\nComo parte dessa experiência, o banco digital conta com uma especialista virtual, Duda, que faz uso do reconhecimento de voz e inteligência artificial para ajudar os clientes a realizar operações bancárias de maneira simples e intuitiva. Em dezembro, o Banco contava com mais de 100 mil contas abertas.\n\n## Distribuição da Carteira de Crédito\n\nA carteira de crédito total atingiu R$ 9.513 milhões no 4T18, representando um aumento de 2,7% no trimestre e de 10,2% em comparação ao 4T17.\n\nEm linha com a estratégia do Banco, a carteira de varejo apresentou crescimento de 17,4% nos últimos 12 meses e já representa 84,4% da carteira total.\n\n[tbl-6.html](tbl-6.html)\n\n9",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Distribuição Carteira de Crédito Total (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th></tr></thead><tr><td><b>Carteira Varejo</b></td><td><b>8.026</b></td><td><b>7.759</b></td><td><b>3,4%</b></td><td><b>6.834</b></td><td><b>17,4%</b></td></tr><tr><td>Cartão de Crédito Consignado</td><td>7.120</td><td>6.928</td><td>2,8%</td><td>6.321</td><td>12,6%</td></tr><tr><td>Crédito Pessoal</td><td>906</td><td>831</td><td>9,0%</td><td>513</td><td>76,7%</td></tr><tr><td>Crédito na Conta</td><td>447</td><td>400</td><td>11,9%</td><td>250</td><td>78,9%</td></tr><tr><td>BMG Money</td><td>299</td><td>266</td><td>12,5%</td><td>140</td><td>113,5%</td></tr><tr><td>Lendico</td><td>160</td><td>166</td><td>-3,4%</td><td>123</td><td>30,2%</td></tr><tr><td><b>Carteira Atacado</b></td><td><b>1.215</b></td><td><b>1.193</b></td><td><b>1,8%</b></td><td><b>1.293</b></td><td><b>-6,0%</b></td></tr><tr><td>Operações Estruturadas</td><td>747</td><td>686</td><td>8,8%</td><td>537</td><td>39,0%</td></tr><tr><td>Empresas</td><td>469</td><td>507</td><td>-7,6%</td><td>756</td><td>-38,0%</td></tr><tr><td><b>Carteira run off</b></td><td><b>271</b></td><td><b>313</b></td><td><b>-13,2%</b></td><td><b>505</b></td><td><b>-46,3%</b></td></tr><tr><td>Empréstimo Consignado</td><td>247</td><td>284</td><td>-12,9%</td><td>457</td><td>-45,9%</td></tr><tr><td>Empréstimo Imobiliário</td><td>21</td><td>22</td><td>-6,3%</td><td>27</td><td>-23,9%</td></tr><tr><td>Veículos</td><td>3</td><td>6</td><td>-52,1%</td><td>21</td><td>-85,3%</td></tr><tr><td><b>Carteira de Crédito Total</b></td><td><b>9.513</b></td><td><b>9.265</b></td><td><b>2,7%</b></td><td><b>8.633</b></td><td><b>10,2%</b></td></tr></table>",
+      "format": "html",
+      "id": "tbl-6.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 61,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 574,
+      "bottom_right_y": 43,
+      "confidence_scores": null,
+      "content": "Banco",
+      "top_left_x": 512,
+      "top_left_y": 23,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 171,
+      "bottom_right_y": 183,
+      "confidence_scores": null,
+      "content": "## Carteira Varejo",
+      "top_left_x": 53,
+      "top_left_y": 163,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 249,
+      "bottom_right_y": 217,
+      "confidence_scores": null,
+      "content": "### Cartão de Crédito Consignado",
+      "top_left_x": 53,
+      "top_left_y": 199,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 320,
+      "confidence_scores": null,
+      "content": "O Cartão de Crédito Consignado do BMG funciona como um cartão de crédito tradicional. Devido as características do produto, o cartão de crédito consignado, além de não cobrar anuidade, tem a vantagem de oferecer maior limite de crédito, taxas de juros reduzidas e prazo de pagamento alongado, quando comparado aos cartões de crédito tradicionais. A principal diferença é que o pagamento mínimo da fatura é descontado diretamente na folha de pagamento.",
+      "top_left_x": 53,
+      "top_left_y": 227,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 425,
+      "confidence_scores": null,
+      "content": "O BMG iniciou suas operações com cartão de crédito consignado em 2005 ao celebrar acordos com diversos estados brasileiros. Em outubro de 2015 foi alterada a Lei nº 10.820, permitindo o desconto em folha de pagamento dos aposentados e pensionistas do INSS, dos servidores federais civis e dos empregados regidos pela CLT até o limite de 35%, sendo 5% destinados exclusivamente para a amortização de despesas contraídas por meio de cartão de crédito consignado.",
+      "top_left_x": 53,
+      "top_left_y": 329,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 547,
+      "confidence_scores": null,
+      "content": "A carteira de cartão de crédito consignado atingiu em 31 de dezembro de 2018 o saldo de R$ 7.120 milhões, representando um aumento de 12,6% em relação ao mesmo período do ano anterior e de 2,8% em comparação ao 3T18. Em relação a carteira, 80,8% está concentrado em aposentados e pensionistas do INSS e servidores públicos federais. Nos últimos doze meses, dentre a quantidade de transações feitas pelos clientes utilizando o cartão de crédito consignado, 94,7% foram para realização de compras. Esse indicador tem permanecido estável nos últimos trimestres.",
+      "top_left_x": 53,
+      "top_left_y": 434,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 633,
+      "confidence_scores": null,
+      "content": "O aumento do índice de inadimplência é esperado com a maturação do produto. Importante enfatizar que, como característica do produto, o cartão tem sua margem consignável subordinada à margem do empréstimo consignado, portanto reflete de forma mais aparente a provisão técnica do produto. Todavia, os principais ofensores de perda são os mesmos para ambos produtos de consignação.",
+      "top_left_x": 53,
+      "top_left_y": 557,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 303,
+      "bottom_right_y": 667,
+      "confidence_scores": null,
+      "content": "#### Evolução da Carteira (R$ Milhões)",
+      "top_left_x": 83,
+      "top_left_y": 650,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 330,
+      "bottom_right_y": 852,
+      "confidence_scores": null,
+      "content": "![img-9.jpeg](img-9.jpeg)",
+      "image_id": "img-9.jpeg",
+      "top_left_x": 48,
+      "top_left_y": 677,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 667,
+      "confidence_scores": null,
+      "content": "#### Qualidade da Carteira – Evolução Inadimplência",
+      "top_left_x": 364,
+      "top_left_y": 650,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 850,
+      "confidence_scores": null,
+      "content": "![img-10.jpeg](img-10.jpeg)",
+      "image_id": "img-10.jpeg",
+      "top_left_x": 370,
+      "top_left_y": 677,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "10",
+      "top_left_x": 589,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9828645344795838,
+     "minimum_page_confidence_score": 0.2460014671682921,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 330,
+      "bottom_right_y": 852,
+      "id": "img-9.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 48,
+      "top_left_y": 677
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 850,
+      "id": "img-10.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 370,
+      "top_left_y": 677
+     }
+    ],
+    "index": 9,
+    "markdown": "# Release de Resultados 4T18\n\nBanco\n\n## Carteira Varejo\n\n### Cartão de Crédito Consignado\n\nO Cartão de Crédito Consignado do BMG funciona como um cartão de crédito tradicional. Devido as características do produto, o cartão de crédito consignado, além de não cobrar anuidade, tem a vantagem de oferecer maior limite de crédito, taxas de juros reduzidas e prazo de pagamento alongado, quando comparado aos cartões de crédito tradicionais. A principal diferença é que o pagamento mínimo da fatura é descontado diretamente na folha de pagamento.\n\nO BMG iniciou suas operações com cartão de crédito consignado em 2005 ao celebrar acordos com diversos estados brasileiros. Em outubro de 2015 foi alterada a Lei nº 10.820, permitindo o desconto em folha de pagamento dos aposentados e pensionistas do INSS, dos servidores federais civis e dos empregados regidos pela CLT até o limite de 35%, sendo 5% destinados exclusivamente para a amortização de despesas contraídas por meio de cartão de crédito consignado.\n\nA carteira de cartão de crédito consignado atingiu em 31 de dezembro de 2018 o saldo de R$ 7.120 milhões, representando um aumento de 12,6% em relação ao mesmo período do ano anterior e de 2,8% em comparação ao 3T18. Em relação a carteira, 80,8% está concentrado em aposentados e pensionistas do INSS e servidores públicos federais. Nos últimos doze meses, dentre a quantidade de transações feitas pelos clientes utilizando o cartão de crédito consignado, 94,7% foram para realização de compras. Esse indicador tem permanecido estável nos últimos trimestres.\n\nO aumento do índice de inadimplência é esperado com a maturação do produto. Importante enfatizar que, como característica do produto, o cartão tem sua margem consignável subordinada à margem do empréstimo consignado, portanto reflete de forma mais aparente a provisão técnica do produto. Todavia, os principais ofensores de perda são os mesmos para ambos produtos de consignação.\n\n#### Evolução da Carteira (R$ Milhões)\n\n![img-9.jpeg](img-9.jpeg)\n\n#### Qualidade da Carteira – Evolução Inadimplência\n\n![img-10.jpeg](img-10.jpeg)\n\n10",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 23,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 473,
+      "bottom_right_y": 182,
+      "confidence_scores": null,
+      "content": "## Crédito na Conta – Crédito pessoal com débito em conta corrente",
+      "top_left_x": 53,
+      "top_left_y": 165,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 249,
+      "confidence_scores": null,
+      "content": "Em janeiro de 2016 o banco lançou o Crédito na Conta, crédito pessoal debitado em conta corrente, exclusivo para aposentados e pensionistas do INSS e servidores públicos. O produto está diretamente correlacionado com o público do cartão de crédito consignado e tem alto potencial de *cross-sell*.",
+      "top_left_x": 53,
+      "top_left_y": 192,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 390,
+      "confidence_scores": null,
+      "content": "O BMG participou de leilões que o permitiu ser pagador de benefício a aposentados e pensionistas do INSS. Esse fato confere ao Banco importante vantagem competitiva, permitindo mais eficiência na arrecadação das parcelas, menores taxas de inadimplência, melhor avaliação do crédito, maior potencial de *cross-selling* e maior poder de barganha ao celebrar acordos para débito de parcelas do crédito pessoal com desconto em conta corrente. Em 31 de dezembro de 2018, cerca de 32% da carteira do produto se refere a clientes que recebem o benefício no BMG, sendo que na originação do 4T18 esse percentual já está em cerca de 45%.",
+      "top_left_x": 53,
+      "top_left_y": 257,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 456,
+      "confidence_scores": null,
+      "content": "A carteira de crédito na conta atingiu em 31 de dezembro de 2018 o saldo de R$ 447 milhões, representando um aumento de 78,9% em relação ao mesmo período do ano anterior e de 11,9% em comparação ao 3T18.",
+      "top_left_x": 53,
+      "top_left_y": 399,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 559,
+      "confidence_scores": null,
+      "content": "O índice de inadimplência do produto pode variar de acordo com o perfil da carteira de crédito. Novas operações tendem a ter uma inadimplência maior que as operações de refinanciamento, uma vez que no refinanciamento o Banco já tem o histórico de comportamento do cliente. Da mesma forma, clientes que recebem o seu benefício no BMG tendem a apresentar melhor inadimplência em comparação a clientes que recebem em outros bancos.",
+      "top_left_x": 53,
+      "top_left_y": 465,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 302,
+      "bottom_right_y": 595,
+      "confidence_scores": null,
+      "content": "### Evolução da Carteira (R$ Milhões)",
+      "top_left_x": 83,
+      "top_left_y": 576,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 324,
+      "bottom_right_y": 773,
+      "confidence_scores": null,
+      "content": "![img-11.jpeg](img-11.jpeg)",
+      "image_id": "img-11.jpeg",
+      "top_left_x": 47,
+      "top_left_y": 612,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 595,
+      "confidence_scores": null,
+      "content": "### Qualidade da Carteira – Evolução Inadimplência",
+      "top_left_x": 364,
+      "top_left_y": 576,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 654,
+      "bottom_right_y": 780,
+      "confidence_scores": null,
+      "content": "![img-12.jpeg](img-12.jpeg)",
+      "image_id": "img-12.jpeg",
+      "top_left_x": 375,
+      "top_left_y": 612,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 211,
+      "bottom_right_y": 824,
+      "confidence_scores": null,
+      "content": "## Crédito Pessoal - outros",
+      "top_left_x": 53,
+      "top_left_y": 807,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 406,
+      "bottom_right_y": 859,
+      "confidence_scores": null,
+      "content": "### BMG Money – Crédito consignado nos Estados Unidos",
+      "top_left_x": 53,
+      "top_left_y": 841,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 925,
+      "confidence_scores": null,
+      "content": "Desde 2011 os acionistas do Banco BMG tem participação majoritária de uma companhia de crédito ao consumo (*fully-licensed consumer finance*) com escritório na Flórida/EUA denominada “BMG Money”, que opera com foco em crédito consignado para funcionários do setor público, atuando em 17",
+      "top_left_x": 53,
+      "top_left_y": 868,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 610,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "11",
+      "top_left_x": 589,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9779458322147504,
+     "minimum_page_confidence_score": 0.17781685014283988,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 324,
+      "bottom_right_y": 773,
+      "id": "img-11.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 47,
+      "top_left_y": 612
+     },
+     {
+      "bottom_right_x": 654,
+      "bottom_right_y": 780,
+      "id": "img-12.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 375,
+      "top_left_y": 612
+     }
+    ],
+    "index": 10,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\n## Crédito na Conta – Crédito pessoal com débito em conta corrente\n\nEm janeiro de 2016 o banco lançou o Crédito na Conta, crédito pessoal debitado em conta corrente, exclusivo para aposentados e pensionistas do INSS e servidores públicos. O produto está diretamente correlacionado com o público do cartão de crédito consignado e tem alto potencial de *cross-sell*.\n\nO BMG participou de leilões que o permitiu ser pagador de benefício a aposentados e pensionistas do INSS. Esse fato confere ao Banco importante vantagem competitiva, permitindo mais eficiência na arrecadação das parcelas, menores taxas de inadimplência, melhor avaliação do crédito, maior potencial de *cross-selling* e maior poder de barganha ao celebrar acordos para débito de parcelas do crédito pessoal com desconto em conta corrente. Em 31 de dezembro de 2018, cerca de 32% da carteira do produto se refere a clientes que recebem o benefício no BMG, sendo que na originação do 4T18 esse percentual já está em cerca de 45%.\n\nA carteira de crédito na conta atingiu em 31 de dezembro de 2018 o saldo de R$ 447 milhões, representando um aumento de 78,9% em relação ao mesmo período do ano anterior e de 11,9% em comparação ao 3T18.\n\nO índice de inadimplência do produto pode variar de acordo com o perfil da carteira de crédito. Novas operações tendem a ter uma inadimplência maior que as operações de refinanciamento, uma vez que no refinanciamento o Banco já tem o histórico de comportamento do cliente. Da mesma forma, clientes que recebem o seu benefício no BMG tendem a apresentar melhor inadimplência em comparação a clientes que recebem em outros bancos.\n\n### Evolução da Carteira (R$ Milhões)\n\n![img-11.jpeg](img-11.jpeg)\n\n### Qualidade da Carteira – Evolução Inadimplência\n\n![img-12.jpeg](img-12.jpeg)\n\n## Crédito Pessoal - outros\n\n### BMG Money – Crédito consignado nos Estados Unidos\n\nDesde 2011 os acionistas do Banco BMG tem participação majoritária de uma companhia de crédito ao consumo (*fully-licensed consumer finance*) com escritório na Flórida/EUA denominada “BMG Money”, que opera com foco em crédito consignado para funcionários do setor público, atuando em 17\n\n11",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco BMG",
+      "top_left_x": 512,
+      "top_left_y": 23,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 239,
+      "confidence_scores": null,
+      "content": "estados americanos. Essa operação é refletida no Banco BMG através de acordos de participação (participation agreements) celebrados entre BMG Money e BMG Bank (Cayman) - subsidiária integral do Banco BMG (na qualidade de participante (participant)). Essa carteira encerrou o 4T18 com saldo de R$ 299 milhões.",
+      "top_left_x": 52,
+      "top_left_y": 165,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 303,
+      "bottom_right_y": 276,
+      "confidence_scores": null,
+      "content": "Evolução da Carteira (R$ Milhões)",
+      "top_left_x": 83,
+      "top_left_y": 259,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 330,
+      "bottom_right_y": 448,
+      "confidence_scores": null,
+      "content": "![img-13.jpeg](img-13.jpeg)",
+      "image_id": "img-13.jpeg",
+      "top_left_x": 48,
+      "top_left_y": 305,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 276,
+      "confidence_scores": null,
+      "content": "Qualidade da Carteira – Evolução Inadimplência",
+      "top_left_x": 364,
+      "top_left_y": 259,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 647,
+      "bottom_right_y": 450,
+      "confidence_scores": null,
+      "content": "![img-14.jpeg](img-14.jpeg)",
+      "image_id": "img-14.jpeg",
+      "top_left_x": 383,
+      "top_left_y": 297,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 266,
+      "bottom_right_y": 521,
+      "confidence_scores": null,
+      "content": "# Lendico – Crédito pessoal digital",
+      "top_left_x": 52,
+      "top_left_y": 503,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 606,
+      "confidence_scores": null,
+      "content": "Lançada em julho de 2015, a Lendico é um correspondente bancário digital que oferece crédito pessoal por meio de uma plataforma 100% online. Em 31 de dezembro de 2018 a carteira de crédito pessoal do BMG originada pela Lendico atingiu R$ 160 milhões. Em novembro de 2018, os acionistas do BMG venderam a totalidade da sua participação na empresa Lendico.",
+      "top_left_x": 52,
+      "top_left_y": 530,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 303,
+      "bottom_right_y": 640,
+      "confidence_scores": null,
+      "content": "Evolução da Carteira (R$ Milhões)",
+      "top_left_x": 83,
+      "top_left_y": 622,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 330,
+      "bottom_right_y": 824,
+      "confidence_scores": null,
+      "content": "![img-15.jpeg](img-15.jpeg)",
+      "image_id": "img-15.jpeg",
+      "top_left_x": 48,
+      "top_left_y": 666,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 640,
+      "confidence_scores": null,
+      "content": "Qualidade da Carteira – Evolução Inadimplência",
+      "top_left_x": 364,
+      "top_left_y": 622,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 831,
+      "confidence_scores": null,
+      "content": "![img-16.jpeg](img-16.jpeg)",
+      "image_id": "img-16.jpeg",
+      "top_left_x": 378,
+      "top_left_y": 658,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "12",
+      "top_left_x": 589,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9694573077341857,
+     "minimum_page_confidence_score": 0.2340658370591435,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 330,
+      "bottom_right_y": 448,
+      "id": "img-13.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 48,
+      "top_left_y": 305
+     },
+     {
+      "bottom_right_x": 647,
+      "bottom_right_y": 450,
+      "id": "img-14.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 383,
+      "top_left_y": 297
+     },
+     {
+      "bottom_right_x": 330,
+      "bottom_right_y": 824,
+      "id": "img-15.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 48,
+      "top_left_y": 666
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 831,
+      "id": "img-16.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 378,
+      "top_left_y": 658
+     }
+    ],
+    "index": 11,
+    "markdown": "# Release de Resultados 4T18\n\nBanco BMG\n\nestados americanos. Essa operação é refletida no Banco BMG através de acordos de participação (participation agreements) celebrados entre BMG Money e BMG Bank (Cayman) - subsidiária integral do Banco BMG (na qualidade de participante (participant)). Essa carteira encerrou o 4T18 com saldo de R$ 299 milhões.\n\nEvolução da Carteira (R$ Milhões)\n\n![img-13.jpeg](img-13.jpeg)\n\nQualidade da Carteira – Evolução Inadimplência\n\n![img-14.jpeg](img-14.jpeg)\n\n# Lendico – Crédito pessoal digital\n\nLançada em julho de 2015, a Lendico é um correspondente bancário digital que oferece crédito pessoal por meio de uma plataforma 100% online. Em 31 de dezembro de 2018 a carteira de crédito pessoal do BMG originada pela Lendico atingiu R$ 160 milhões. Em novembro de 2018, os acionistas do BMG venderam a totalidade da sua participação na empresa Lendico.\n\nEvolução da Carteira (R$ Milhões)\n\n![img-15.jpeg](img-15.jpeg)\n\nQualidade da Carteira – Evolução Inadimplência\n\n![img-16.jpeg](img-16.jpeg)\n\n12",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 88,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 23,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 198,
+      "bottom_right_y": 179,
+      "confidence_scores": null,
+      "content": "## Seguros Massificados",
+      "top_left_x": 53,
+      "top_left_y": 163,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 302,
+      "confidence_scores": null,
+      "content": "Em janeiro de 2016, através da parceria com a Generali, o Banco BMG ampliou sua gama de produtos e passou a oferecer também seguros massificados para seus clientes. O BMG oferece seguros prestamistas, seguro de vida e acidentes pessoais, incluindo assistência funeral, assistência de medicamentos e assistência residencial aos seus clientes. Esse segmento de negócios tem alto potencial de *cross-selling* e desde o início da operação, o Banco já acumulou R$ 220 milhões de prêmios emitidos, o que reflete em 5,9 milhões de seguros vendidos.",
+      "top_left_x": 53,
+      "top_left_y": 189,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 324,
+      "bottom_right_y": 334,
+      "confidence_scores": null,
+      "content": "### Evolução Prêmios Emitidos (R$ Milhões)",
+      "top_left_x": 61,
+      "top_left_y": 316,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 342,
+      "bottom_right_y": 501,
+      "confidence_scores": null,
+      "content": "![img-17.jpeg](img-17.jpeg)",
+      "image_id": "img-17.jpeg",
+      "top_left_x": 55,
+      "top_left_y": 364,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 585,
+      "bottom_right_y": 336,
+      "confidence_scores": null,
+      "content": "### Penetração na Carteira",
+      "top_left_x": 434,
+      "top_left_y": 318,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 653,
+      "bottom_right_y": 510,
+      "confidence_scores": null,
+      "content": "![img-18.jpeg](img-18.jpeg)",
+      "image_id": "img-18.jpeg",
+      "top_left_x": 365,
+      "top_left_y": 354,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 184,
+      "bottom_right_y": 580,
+      "confidence_scores": null,
+      "content": "## Carteira Atacado",
+      "top_left_x": 53,
+      "top_left_y": 560,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 646,
+      "confidence_scores": null,
+      "content": "Conforme esperado, a carteira apresentou uma redução de 6,0% em relação ao mesmo período do ano anterior, atingindo o saldo de R$ 1.215 milhões. O segmento de Atacado é dividido em dois: Operações Estruturadas e Empresas.",
+      "top_left_x": 53,
+      "top_left_y": 589,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 212,
+      "bottom_right_y": 681,
+      "confidence_scores": null,
+      "content": "### Operações Estruturadas",
+      "top_left_x": 53,
+      "top_left_y": 663,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 727,
+      "confidence_scores": null,
+      "content": "A carteira é composta por operações estruturadas para os correspondentes bancários e clubes de futebol, com garantias que mitigam os riscos do emissor.",
+      "top_left_x": 53,
+      "top_left_y": 690,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 765,
+      "confidence_scores": null,
+      "content": "A operação com os correspondentes refere-se a antecipação de recebíveis das comissões pagas pelo BMG ao longo do prazo dos contratos originados pelos correspondentes.",
+      "top_left_x": 53,
+      "top_left_y": 729,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 803,
+      "confidence_scores": null,
+      "content": "As operações com clubes de futebol são substancialmente antecipação de recebíveis dos direitos televisivos.",
+      "top_left_x": 53,
+      "top_left_y": 767,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 843,
+      "confidence_scores": null,
+      "content": "A carteira atingiu em 31 de dezembro de 2018 o saldo de R$ 747 milhões, representando um aumento de 39,0% em relação ao mesmo período do ano anterior e de 8,8% em comparação ao 3T18.",
+      "top_left_x": 53,
+      "top_left_y": 806,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "13",
+      "top_left_x": 589,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9746056663433624,
+     "minimum_page_confidence_score": 0.25371262163126124,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 342,
+      "bottom_right_y": 501,
+      "id": "img-17.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 55,
+      "top_left_y": 364
+     },
+     {
+      "bottom_right_x": 653,
+      "bottom_right_y": 510,
+      "id": "img-18.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 365,
+      "top_left_y": 354
+     }
+    ],
+    "index": 12,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\n## Seguros Massificados\n\nEm janeiro de 2016, através da parceria com a Generali, o Banco BMG ampliou sua gama de produtos e passou a oferecer também seguros massificados para seus clientes. O BMG oferece seguros prestamistas, seguro de vida e acidentes pessoais, incluindo assistência funeral, assistência de medicamentos e assistência residencial aos seus clientes. Esse segmento de negócios tem alto potencial de *cross-selling* e desde o início da operação, o Banco já acumulou R$ 220 milhões de prêmios emitidos, o que reflete em 5,9 milhões de seguros vendidos.\n\n### Evolução Prêmios Emitidos (R$ Milhões)\n\n![img-17.jpeg](img-17.jpeg)\n\n### Penetração na Carteira\n\n![img-18.jpeg](img-18.jpeg)\n\n## Carteira Atacado\n\nConforme esperado, a carteira apresentou uma redução de 6,0% em relação ao mesmo período do ano anterior, atingindo o saldo de R$ 1.215 milhões. O segmento de Atacado é dividido em dois: Operações Estruturadas e Empresas.\n\n### Operações Estruturadas\n\nA carteira é composta por operações estruturadas para os correspondentes bancários e clubes de futebol, com garantias que mitigam os riscos do emissor.\n\nA operação com os correspondentes refere-se a antecipação de recebíveis das comissões pagas pelo BMG ao longo do prazo dos contratos originados pelos correspondentes.\n\nAs operações com clubes de futebol são substancialmente antecipação de recebíveis dos direitos televisivos.\n\nA carteira atingiu em 31 de dezembro de 2018 o saldo de R$ 747 milhões, representando um aumento de 39,0% em relação ao mesmo período do ano anterior e de 8,8% em comparação ao 3T18.\n\n13",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 61,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 660,
+      "bottom_right_y": 111,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 23,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 302,
+      "bottom_right_y": 190,
+      "confidence_scores": null,
+      "content": "## Evolução da Carteira (R$ Milhões)",
+      "top_left_x": 83,
+      "top_left_y": 171,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 326,
+      "bottom_right_y": 376,
+      "confidence_scores": null,
+      "content": "![img-19.jpeg](img-19.jpeg)",
+      "image_id": "img-19.jpeg",
+      "top_left_x": 46,
+      "top_left_y": 206,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 190,
+      "confidence_scores": null,
+      "content": "## Qualidade da Carteira – Evolução Inadimplência",
+      "top_left_x": 364,
+      "top_left_y": 171,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 655,
+      "bottom_right_y": 375,
+      "confidence_scores": null,
+      "content": "![img-20.jpeg](img-20.jpeg)",
+      "image_id": "img-20.jpeg",
+      "top_left_x": 369,
+      "top_left_y": 233,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 121,
+      "bottom_right_y": 457,
+      "confidence_scores": null,
+      "content": "### Empresas",
+      "top_left_x": 53,
+      "top_left_y": 440,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 521,
+      "confidence_scores": null,
+      "content": "A carteira de Empresas é composta pelo financiamento e prestação de serviços financeiros estruturados para empresas de médio e grande porte, focando em produtos com baixa alocação de capital, por meio da mesa de derivativos que oferece proteção de balanço aos clientes.",
+      "top_left_x": 53,
+      "top_left_y": 466,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 560,
+      "confidence_scores": null,
+      "content": "A carteira atingiu em 31 de dezembro de 2018 o saldo de R$ 469 milhões, representando uma queda de 38,0% em relação ao mesmo período do ano anterior e de 7,6% em comparação ao 3T18.",
+      "top_left_x": 53,
+      "top_left_y": 524,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 599,
+      "confidence_scores": null,
+      "content": "O índice de inadimplência vem sendo impactado por um cenário desafiador, pela redução da carteira de crédito e pela deterioração de casos específicos do portfólio.",
+      "top_left_x": 53,
+      "top_left_y": 562,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 302,
+      "bottom_right_y": 639,
+      "confidence_scores": null,
+      "content": "## Evolução da Carteira (R$ Milhões)",
+      "top_left_x": 83,
+      "top_left_y": 621,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 326,
+      "bottom_right_y": 821,
+      "confidence_scores": null,
+      "content": "![img-21.jpeg](img-21.jpeg)",
+      "image_id": "img-21.jpeg",
+      "top_left_x": 53,
+      "top_left_y": 654,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 639,
+      "confidence_scores": null,
+      "content": "## Qualidade da Carteira – Evolução Inadimplência",
+      "top_left_x": 364,
+      "top_left_y": 621,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 655,
+      "bottom_right_y": 818,
+      "confidence_scores": null,
+      "content": "![img-22.jpeg](img-22.jpeg)",
+      "image_id": "img-22.jpeg",
+      "top_left_x": 369,
+      "top_left_y": 654,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 146,
+      "bottom_right_y": 874,
+      "confidence_scores": null,
+      "content": "### BMG Seguros",
+      "top_left_x": 53,
+      "top_left_y": 857,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 919,
+      "confidence_scores": null,
+      "content": "Criada em julho de 2016, a BMG Seguros já é a sétima maior seguradora do Brasil no segmento de seguro garantia. É uma subsidiária do Banco BMG, cujo resultado é refletido via equivalência",
+      "top_left_x": 53,
+      "top_left_y": 882,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "14",
+      "top_left_x": 589,
+      "top_left_y": 937,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9796117983350212,
+     "minimum_page_confidence_score": 0.2490824640913298,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 326,
+      "bottom_right_y": 376,
+      "id": "img-19.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 46,
+      "top_left_y": 206
+     },
+     {
+      "bottom_right_x": 655,
+      "bottom_right_y": 375,
+      "id": "img-20.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 369,
+      "top_left_y": 233
+     },
+     {
+      "bottom_right_x": 326,
+      "bottom_right_y": 821,
+      "id": "img-21.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 53,
+      "top_left_y": 654
+     },
+     {
+      "bottom_right_x": 655,
+      "bottom_right_y": 818,
+      "id": "img-22.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 369,
+      "top_left_y": 654
+     }
+    ],
+    "index": 13,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\n## Evolução da Carteira (R$ Milhões)\n\n![img-19.jpeg](img-19.jpeg)\n\n## Qualidade da Carteira – Evolução Inadimplência\n\n![img-20.jpeg](img-20.jpeg)\n\n### Empresas\n\nA carteira de Empresas é composta pelo financiamento e prestação de serviços financeiros estruturados para empresas de médio e grande porte, focando em produtos com baixa alocação de capital, por meio da mesa de derivativos que oferece proteção de balanço aos clientes.\n\nA carteira atingiu em 31 de dezembro de 2018 o saldo de R$ 469 milhões, representando uma queda de 38,0% em relação ao mesmo período do ano anterior e de 7,6% em comparação ao 3T18.\n\nO índice de inadimplência vem sendo impactado por um cenário desafiador, pela redução da carteira de crédito e pela deterioração de casos específicos do portfólio.\n\n## Evolução da Carteira (R$ Milhões)\n\n![img-21.jpeg](img-21.jpeg)\n\n## Qualidade da Carteira – Evolução Inadimplência\n\n![img-22.jpeg](img-22.jpeg)\n\n### BMG Seguros\n\nCriada em julho de 2016, a BMG Seguros já é a sétima maior seguradora do Brasil no segmento de seguro garantia. É uma subsidiária do Banco BMG, cujo resultado é refletido via equivalência\n\n14",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 203,
+      "confidence_scores": null,
+      "content": "patrimonial. A Seguradora oferece soluções financeiras diferenciadas no segmento corporate, com estrutura especializada em avaliação de crédito corporativo com agilidade e qualidade.",
+      "top_left_x": 52,
+      "top_left_y": 165,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 260,
+      "confidence_scores": null,
+      "content": "A Seguradora conta com uma estrutura de governança própria e independente, com um Conselho de Administração composto por 4 membros sendo 3 independentes e também com uma diretoria exclusiva composta por profissionais altamente experientes.",
+      "top_left_x": 52,
+      "top_left_y": 204,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 318,
+      "confidence_scores": null,
+      "content": "Em 31 de dezembro de 2018, a BMG Seguros atingiu R$ 272 milhões de prêmios emitidos acumulados, sendo R$ 137 milhões de prêmios retidos. Em 2018, a Seguradora apresentou um lucro líquido de R$ 1,2 milhão.",
+      "top_left_x": 52,
+      "top_left_y": 262,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 182,
+      "bottom_right_y": 375,
+      "confidence_scores": null,
+      "content": "## Carteira *Run Off*",
+      "top_left_x": 52,
+      "top_left_y": 356,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 419,
+      "confidence_scores": null,
+      "content": "Além dos produtos e serviços oferecidos pelo Banco indicados acima, o Banco possui as seguintes carteiras em *run off*: empréstimo consignado, financiamento de veículos e empréstimo imobiliário.",
+      "top_left_x": 52,
+      "top_left_y": 381,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 491,
+      "confidence_scores": null,
+      "content": "Em janeiro de 2015, após a celebração de acordo de unificação de negócios com o Itaú Unibanco, o Banco descontinuou a sua carteira de empréstimo consignado. Ainda, em outubro de 2015 e em janeiro de 2016, o Banco optou por descontinuar suas operações de empréstimo imobiliário e de financiamento de veículos, respectivamente, devido ao baixo potencial de *cross-sell*.",
+      "top_left_x": 52,
+      "top_left_y": 419,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 534,
+      "confidence_scores": null,
+      "content": "A carteira em *run off* atingiu em 31 de dezembro de 2018 o saldo de R$ 271 milhões, representando uma redução 46,3% em relação ao mesmo período do ano anterior e de 13,2% em relação ao 3T18.",
+      "top_left_x": 52,
+      "top_left_y": 495,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 610,
+      "confidence_scores": null,
+      "content": "O índice de inadimplência da carteira em *run off* vem sendo impactado por um efeito aritmético de redução da carteira (denominador) a um ritmo mais acelerado que a rolagem da inadimplência (numerador). Foram realizadas cessões de crédito sem retenção de riscos e benefícios em volumes expressivos da carteira de empréstimo consignado para 2015 e da carteira de veículos em 2017.",
+      "top_left_x": 52,
+      "top_left_y": 534,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 302,
+      "bottom_right_y": 644,
+      "confidence_scores": null,
+      "content": "### Evolução da Carteira (R$ Milhões)",
+      "top_left_x": 83,
+      "top_left_y": 625,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 326,
+      "bottom_right_y": 821,
+      "confidence_scores": null,
+      "content": "![img-23.jpeg](img-23.jpeg)",
+      "image_id": "img-23.jpeg",
+      "top_left_x": 43,
+      "top_left_y": 668,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 644,
+      "confidence_scores": null,
+      "content": "### Qualidade da Carteira – Evolução Inadimplência",
+      "top_left_x": 364,
+      "top_left_y": 625,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 824,
+      "confidence_scores": null,
+      "content": "![img-24.jpeg](img-24.jpeg)",
+      "image_id": "img-24.jpeg",
+      "top_left_x": 374,
+      "top_left_y": 673,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "15",
+      "top_left_x": 589,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9773814122065132,
+     "minimum_page_confidence_score": 0.2961798843244438,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 326,
+      "bottom_right_y": 821,
+      "id": "img-23.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 43,
+      "top_left_y": 668
+     },
+     {
+      "bottom_right_x": 652,
+      "bottom_right_y": 824,
+      "id": "img-24.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 374,
+      "top_left_y": 673
+     }
+    ],
+    "index": 14,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\npatrimonial. A Seguradora oferece soluções financeiras diferenciadas no segmento corporate, com estrutura especializada em avaliação de crédito corporativo com agilidade e qualidade.\n\nA Seguradora conta com uma estrutura de governança própria e independente, com um Conselho de Administração composto por 4 membros sendo 3 independentes e também com uma diretoria exclusiva composta por profissionais altamente experientes.\n\nEm 31 de dezembro de 2018, a BMG Seguros atingiu R$ 272 milhões de prêmios emitidos acumulados, sendo R$ 137 milhões de prêmios retidos. Em 2018, a Seguradora apresentou um lucro líquido de R$ 1,2 milhão.\n\n## Carteira *Run Off*\n\nAlém dos produtos e serviços oferecidos pelo Banco indicados acima, o Banco possui as seguintes carteiras em *run off*: empréstimo consignado, financiamento de veículos e empréstimo imobiliário.\n\nEm janeiro de 2015, após a celebração de acordo de unificação de negócios com o Itaú Unibanco, o Banco descontinuou a sua carteira de empréstimo consignado. Ainda, em outubro de 2015 e em janeiro de 2016, o Banco optou por descontinuar suas operações de empréstimo imobiliário e de financiamento de veículos, respectivamente, devido ao baixo potencial de *cross-sell*.\n\nA carteira em *run off* atingiu em 31 de dezembro de 2018 o saldo de R$ 271 milhões, representando uma redução 46,3% em relação ao mesmo período do ano anterior e de 13,2% em relação ao 3T18.\n\nO índice de inadimplência da carteira em *run off* vem sendo impactado por um efeito aritmético de redução da carteira (denominador) a um ritmo mais acelerado que a rolagem da inadimplência (numerador). Foram realizadas cessões de crédito sem retenção de riscos e benefícios em volumes expressivos da carteira de empréstimo consignado para 2015 e da carteira de veículos em 2017.\n\n### Evolução da Carteira (R$ Milhões)\n\n![img-23.jpeg](img-23.jpeg)\n\n### Qualidade da Carteira – Evolução Inadimplência\n\n![img-24.jpeg](img-24.jpeg)\n\n15",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 321,
+      "bottom_right_y": 182,
+      "confidence_scores": null,
+      "content": "## Qualidade da Carteira de Crédito",
+      "top_left_x": 53,
+      "top_left_y": 163,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 248,
+      "confidence_scores": null,
+      "content": "A política de crédito é constantemente retroalimentada pela área de risco de acordo com a conjuntura econômica e a probabilidade de *default* de cada produto, visando assim a sua permanente aderência às características do mercado de atuação.",
+      "top_left_x": 53,
+      "top_left_y": 192,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 291,
+      "bottom_right_y": 285,
+      "confidence_scores": null,
+      "content": "### Inadimplência - Carteira E-H",
+      "top_left_x": 108,
+      "top_left_y": 268,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 335,
+      "bottom_right_y": 327,
+      "confidence_scores": null,
+      "content": "![img-25.jpeg](img-25.jpeg)",
+      "image_id": "img-25.jpeg",
+      "top_left_x": 63,
+      "top_left_y": 303,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 285,
+      "confidence_scores": null,
+      "content": "### Inadimplência – Parcelas vencidas over 90",
+      "top_left_x": 388,
+      "top_left_y": 268,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 327,
+      "confidence_scores": null,
+      "content": "![img-26.jpeg](img-26.jpeg)",
+      "image_id": "img-26.jpeg",
+      "top_left_x": 394,
+      "top_left_y": 303,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 349,
+      "bottom_right_y": 444,
+      "confidence_scores": null,
+      "content": "![img-27.jpeg](img-27.jpeg)",
+      "image_id": "img-27.jpeg",
+      "top_left_x": 46,
+      "top_left_y": 395,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 670,
+      "bottom_right_y": 444,
+      "confidence_scores": null,
+      "content": "![img-28.jpeg](img-28.jpeg)",
+      "image_id": "img-28.jpeg",
+      "top_left_x": 378,
+      "top_left_y": 395,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 169,
+      "bottom_right_y": 497,
+      "confidence_scores": null,
+      "content": "## Outros Ativos",
+      "top_left_x": 53,
+      "top_left_y": 479,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 544,
+      "confidence_scores": null,
+      "content": "Além da carteira de crédito, o BMG possui outros ativos relevantes: (i) caixa total, (ii) crédito tributário e (iii) ágio.",
+      "top_left_x": 53,
+      "top_left_y": 508,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 673,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Outros ativos</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th></tr></thead><tr><td>Caixa Total</td><td>3.053</td><td>3.281</td><td>-6,9%</td><td>3.115</td><td>-2,0%</td></tr><tr><td>Crédito tributário</td><td>2.267</td><td>2.323</td><td>-2,4%</td><td>2.362</td><td>-4,0%</td></tr><tr><td>    Oriundo de PDD</td><td>1.164</td><td>1.203</td><td>-3,3%</td><td>1.163</td><td>0,1%</td></tr><tr><td>    Outras adições temporárias</td><td>449</td><td>463</td><td>-3,1%</td><td>534</td><td>-15,9%</td></tr><tr><td>    Prejuízo fiscal</td><td>654</td><td>657</td><td>-0,4%</td><td>665</td><td>-1,7%</td></tr><tr><td>Ágio</td><td>386</td><td>423</td><td>-8,6%</td><td>531</td><td>-27,3%</td></tr></table>",
+      "table_id": "tbl-7.html",
+      "top_left_x": 53,
+      "top_left_y": 548,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 133,
+      "bottom_right_y": 732,
+      "confidence_scores": null,
+      "content": "## Captação",
+      "top_left_x": 53,
+      "top_left_y": 710,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 776,
+      "confidence_scores": null,
+      "content": "A captação total encerrou o 4T18 com saldo de R$ 12.354 milhões, apresentando uma redução de 1,1% em relação ao trimestre anterior e um aumento de 3,5% em relação ao 4T17.",
+      "top_left_x": 53,
+      "top_left_y": 740,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 815,
+      "confidence_scores": null,
+      "content": "O Banco trabalha na diversificação do *funding* para clientes institucionais e de varejo, buscando linhas sustentáveis e de longo prazo, de forma a garantir o melhor casamento entre seus ativos e passivos.",
+      "top_left_x": 53,
+      "top_left_y": 779,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 893,
+      "confidence_scores": null,
+      "content": "O BMG opera via estrutura própria de captação, por meio físico e pelo seu *full digital bank*, e também via mais de 50 distribuidores. Em 2018, sua estrutura de captação própria foi responsável por 55% dos recursos captados. Para o varejo, o BMG busca pulverizar sua base e conta com mais de 130 mil investidores diretos e indiretos.",
+      "top_left_x": 53,
+      "top_left_y": 817,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "16",
+      "top_left_x": 590,
+      "top_left_y": 937,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.978022910972355,
+     "minimum_page_confidence_score": 0.19366754193783864,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 335,
+      "bottom_right_y": 327,
+      "id": "img-25.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 63,
+      "top_left_y": 303
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 327,
+      "id": "img-26.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 394,
+      "top_left_y": 303
+     },
+     {
+      "bottom_right_x": 349,
+      "bottom_right_y": 444,
+      "id": "img-27.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 46,
+      "top_left_y": 395
+     },
+     {
+      "bottom_right_x": 670,
+      "bottom_right_y": 444,
+      "id": "img-28.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 378,
+      "top_left_y": 395
+     }
+    ],
+    "index": 15,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\n## Qualidade da Carteira de Crédito\n\nA política de crédito é constantemente retroalimentada pela área de risco de acordo com a conjuntura econômica e a probabilidade de *default* de cada produto, visando assim a sua permanente aderência às características do mercado de atuação.\n\n### Inadimplência - Carteira E-H\n\n![img-25.jpeg](img-25.jpeg)\n\n### Inadimplência – Parcelas vencidas over 90\n\n![img-26.jpeg](img-26.jpeg)\n\n![img-27.jpeg](img-27.jpeg)\n\n![img-28.jpeg](img-28.jpeg)\n\n## Outros Ativos\n\nAlém da carteira de crédito, o BMG possui outros ativos relevantes: (i) caixa total, (ii) crédito tributário e (iii) ágio.\n\n[tbl-7.html](tbl-7.html)\n\n## Captação\n\nA captação total encerrou o 4T18 com saldo de R$ 12.354 milhões, apresentando uma redução de 1,1% em relação ao trimestre anterior e um aumento de 3,5% em relação ao 4T17.\n\nO Banco trabalha na diversificação do *funding* para clientes institucionais e de varejo, buscando linhas sustentáveis e de longo prazo, de forma a garantir o melhor casamento entre seus ativos e passivos.\n\nO BMG opera via estrutura própria de captação, por meio físico e pelo seu *full digital bank*, e também via mais de 50 distribuidores. Em 2018, sua estrutura de captação própria foi responsável por 55% dos recursos captados. Para o varejo, o BMG busca pulverizar sua base e conta com mais de 130 mil investidores diretos e indiretos.\n\n16",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Outros ativos</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th></tr></thead><tr><td>Caixa Total</td><td>3.053</td><td>3.281</td><td>-6,9%</td><td>3.115</td><td>-2,0%</td></tr><tr><td>Crédito tributário</td><td>2.267</td><td>2.323</td><td>-2,4%</td><td>2.362</td><td>-4,0%</td></tr><tr><td>    Oriundo de PDD</td><td>1.164</td><td>1.203</td><td>-3,3%</td><td>1.163</td><td>0,1%</td></tr><tr><td>    Outras adições temporárias</td><td>449</td><td>463</td><td>-3,1%</td><td>534</td><td>-15,9%</td></tr><tr><td>    Prejuízo fiscal</td><td>654</td><td>657</td><td>-0,4%</td><td>665</td><td>-1,7%</td></tr><tr><td>Ágio</td><td>386</td><td>423</td><td>-8,6%</td><td>531</td><td>-27,3%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-7.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 575,
+      "bottom_right_y": 44,
+      "confidence_scores": null,
+      "content": "Banco",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 88,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 413,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Captação (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th></tr></thead><tr><td><b>Depósitos</b></td><td>9.415</td><td>9.339</td><td>0,8%</td><td>8.341</td><td>12,9%</td></tr><tr><td>CDB</td><td>9.365</td><td>9.235</td><td>1,4%</td><td>7.828</td><td>19,6%</td></tr><tr><td>DPGE</td><td>-</td><td>103</td><td>-100,0%</td><td>443</td><td>-100,0%</td></tr><tr><td>CDI</td><td>50</td><td>1</td><td>5757,5%</td><td>70</td><td>-29,0%</td></tr><tr><td><b>Dívidas Subordinadas</b></td><td>1.624</td><td>1.697</td><td>-4,3%</td><td>1.399</td><td>16,1%</td></tr><tr><td><b>Securitização</b></td><td>472</td><td>504</td><td>-6,2%</td><td>504</td><td>-6,3%</td></tr><tr><td><b>Letras Financeiras</b></td><td>381</td><td>428</td><td>-11,0%</td><td>632</td><td>-39,8%</td></tr><tr><td><b>Cessões de Crédito</b></td><td>298</td><td>340</td><td>-12,4%</td><td>494</td><td>-39,7%</td></tr><tr><td><b>LCA &amp; LCI</b></td><td>96</td><td>130</td><td>-26,4%</td><td>183</td><td>-47,6%</td></tr><tr><td><b>Repasses</b></td><td>69</td><td>51</td><td>35,2%</td><td>96</td><td>-28,3%</td></tr><tr><td><b>Captações Externas</b></td><td>-</td><td>-</td><td>n/a</td><td>290</td><td>-100,0%</td></tr><tr><td><b>Total</b></td><td><b>12.354</b></td><td><b>12.489</b></td><td><b>-1,1%</b></td><td><b>11.939</b></td><td><b>3,5%</b></td></tr></table>",
+      "table_id": "tbl-8.html",
+      "top_left_x": 61,
+      "top_left_y": 167,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 439,
+      "bottom_right_y": 465,
+      "confidence_scores": null,
+      "content": "Estrutura de Funding (%)",
+      "top_left_x": 275,
+      "top_left_y": 445,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 545,
+      "bottom_right_y": 684,
+      "confidence_scores": null,
+      "content": "![img-29.jpeg](img-29.jpeg)",
+      "image_id": "img-29.jpeg",
+      "top_left_x": 181,
+      "top_left_y": 479,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 193,
+      "bottom_right_y": 745,
+      "confidence_scores": null,
+      "content": "## Captação Externa",
+      "top_left_x": 53,
+      "top_left_y": 725,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 828,
+      "confidence_scores": null,
+      "content": "O BMG realizou a sua primeira emissão de dívida externa em 2005 e, desde então, o Banco continua acessando linhas de financiamento externas e mantém um relacionamento ativo com os investidores. Respeitando a política de risco de mercado do BMG, todas as captações externas são protegidas por meio de instrumentos financeiros derivativos.",
+      "top_left_x": 53,
+      "top_left_y": 753,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 868,
+      "confidence_scores": null,
+      "content": "No 4T18 o saldo de captações externa era de US$ 408 milhões. Em novembro de 2019 está previsto o vencimento do *bond* BMG19 no montante de US$ 234 milhões.",
+      "top_left_x": 53,
+      "top_left_y": 831,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "17",
+      "top_left_x": 589,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9856259102239491,
+     "minimum_page_confidence_score": 0.1724479764677915,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 545,
+      "bottom_right_y": 684,
+      "id": "img-29.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 181,
+      "top_left_y": 479
+     }
+    ],
+    "index": 16,
+    "markdown": "Banco\n\n# Release de Resultados 4T18\n\n[tbl-8.html](tbl-8.html)\n\nEstrutura de Funding (%)\n\n![img-29.jpeg](img-29.jpeg)\n\n## Captação Externa\n\nO BMG realizou a sua primeira emissão de dívida externa em 2005 e, desde então, o Banco continua acessando linhas de financiamento externas e mantém um relacionamento ativo com os investidores. Respeitando a política de risco de mercado do BMG, todas as captações externas são protegidas por meio de instrumentos financeiros derivativos.\n\nNo 4T18 o saldo de captações externa era de US$ 408 milhões. Em novembro de 2019 está previsto o vencimento do *bond* BMG19 no montante de US$ 234 milhões.\n\n17",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Captação (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th></tr></thead><tr><td><b>Depósitos</b></td><td>9.415</td><td>9.339</td><td>0,8%</td><td>8.341</td><td>12,9%</td></tr><tr><td>CDB</td><td>9.365</td><td>9.235</td><td>1,4%</td><td>7.828</td><td>19,6%</td></tr><tr><td>DPGE</td><td>-</td><td>103</td><td>-100,0%</td><td>443</td><td>-100,0%</td></tr><tr><td>CDI</td><td>50</td><td>1</td><td>5757,5%</td><td>70</td><td>-29,0%</td></tr><tr><td><b>Dívidas Subordinadas</b></td><td>1.624</td><td>1.697</td><td>-4,3%</td><td>1.399</td><td>16,1%</td></tr><tr><td><b>Securitização</b></td><td>472</td><td>504</td><td>-6,2%</td><td>504</td><td>-6,3%</td></tr><tr><td><b>Letras Financeiras</b></td><td>381</td><td>428</td><td>-11,0%</td><td>632</td><td>-39,8%</td></tr><tr><td><b>Cessões de Crédito</b></td><td>298</td><td>340</td><td>-12,4%</td><td>494</td><td>-39,7%</td></tr><tr><td><b>LCA &amp; LCI</b></td><td>96</td><td>130</td><td>-26,4%</td><td>183</td><td>-47,6%</td></tr><tr><td><b>Repasses</b></td><td>69</td><td>51</td><td>35,2%</td><td>96</td><td>-28,3%</td></tr><tr><td><b>Captações Externas</b></td><td>-</td><td>-</td><td>n/a</td><td>290</td><td>-100,0%</td></tr><tr><td><b>Total</b></td><td><b>12.354</b></td><td><b>12.489</b></td><td><b>-1,1%</b></td><td><b>11.939</b></td><td><b>3,5%</b></td></tr></table>",
+      "format": "html",
+      "id": "tbl-8.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 701,
+      "bottom_right_y": 259,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>(USD Milhões)</th><th>Tipo</th><th>Principal Emitido</th><th>Yield</th><th>Pagamento Principal</th><th>Vencimento Final</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th></tr></thead><tr><td><b>BMG 18</b></td><td>Sênior</td><td>300</td><td>8,00% a.a.</td><td>Amortizing</td><td>15/04/2018</td><td>-</td><td>-</td><td>n/a</td><td>86</td><td>-100,0%</td></tr><tr><td><b>BMG 19</b></td><td>Subordinado</td><td>300</td><td>9,95% a.a.</td><td>Bullet</td><td>05/11/2019</td><td>243</td><td>245</td><td>-0,8%</td><td>247</td><td>-1,5%</td></tr><tr><td><b>BMG 20</b></td><td>Subordinado</td><td>250</td><td>8,875% a.a.</td><td>Bullet</td><td>05/08/2020</td><td>165</td><td>165</td><td>0,0%</td><td>165</td><td>0,0%</td></tr><tr><td><b>Total</b></td><td></td><td><b>850</b></td><td></td><td></td><td></td><td><b>408</b></td><td><b>410</b></td><td><b>-0,5%</b></td><td><b>498</b></td><td><b>-18,0%</b></td></tr></table>",
+      "table_id": "tbl-9.html",
+      "top_left_x": 19,
+      "top_left_y": 167,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 211,
+      "bottom_right_y": 318,
+      "confidence_scores": null,
+      "content": "## Patrimônio Líquido",
+      "top_left_x": 53,
+      "top_left_y": 298,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 403,
+      "confidence_scores": null,
+      "content": "O Patrimônio Líquido em 31 de dezembro de 2018 atingiu R$ 2.640 milhões, redução de 1,1% em relação ao trimestre anterior e crescimento de 2,7% comparando ao mesmo período do ano anterior. As principais variações no Patrimônio Líquido foram devido ao lucro do período e a provisão para Juros sobre Capital Próprio no volume de R$ 140 milhões ocorrida em dezembro de 2018.",
+      "top_left_x": 53,
+      "top_left_y": 326,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 592,
+      "bottom_right_y": 708,
+      "confidence_scores": null,
+      "content": "![img-30.jpeg](img-30.jpeg)",
+      "image_id": "img-30.jpeg",
+      "top_left_x": 116,
+      "top_left_y": 408,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 199,
+      "bottom_right_y": 779,
+      "confidence_scores": null,
+      "content": "## Índice de Basileia",
+      "top_left_x": 53,
+      "top_left_y": 757,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 882,
+      "confidence_scores": null,
+      "content": "Conforme Resolução CMN nº 4.193/13 e regulamentações complementares, as instituições financeiras estão obrigadas a manter um patrimônio líquido compatível com o grau de risco da estrutura de seus ativos ponderados pelos fatores que variam de 0% a 1.250% e um índice mínimo de 8,625% de patrimônio em relação aos ativos ponderados pelo risco mais um adicional de conservação de capital principal de 1,875%.",
+      "top_left_x": 53,
+      "top_left_y": 788,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 922,
+      "confidence_scores": null,
+      "content": "O Patrimônio de Referência correspondeu a 12,4% dos ativos ponderados pelo risco em 31 de dezembro de 2018, sendo composto exclusivamente por Capital Principal (Capital Nível I).",
+      "top_left_x": 53,
+      "top_left_y": 885,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "18",
+      "top_left_x": 589,
+      "top_left_y": 937,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9848305808926934,
+     "minimum_page_confidence_score": 0.18092612312711,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 592,
+      "bottom_right_y": 708,
+      "id": "img-30.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 116,
+      "top_left_y": 408
+     }
+    ],
+    "index": 17,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\n[tbl-9.html](tbl-9.html)\n\n## Patrimônio Líquido\n\nO Patrimônio Líquido em 31 de dezembro de 2018 atingiu R$ 2.640 milhões, redução de 1,1% em relação ao trimestre anterior e crescimento de 2,7% comparando ao mesmo período do ano anterior. As principais variações no Patrimônio Líquido foram devido ao lucro do período e a provisão para Juros sobre Capital Próprio no volume de R$ 140 milhões ocorrida em dezembro de 2018.\n\n![img-30.jpeg](img-30.jpeg)\n\n## Índice de Basileia\n\nConforme Resolução CMN nº 4.193/13 e regulamentações complementares, as instituições financeiras estão obrigadas a manter um patrimônio líquido compatível com o grau de risco da estrutura de seus ativos ponderados pelos fatores que variam de 0% a 1.250% e um índice mínimo de 8,625% de patrimônio em relação aos ativos ponderados pelo risco mais um adicional de conservação de capital principal de 1,875%.\n\nO Patrimônio de Referência correspondeu a 12,4% dos ativos ponderados pelo risco em 31 de dezembro de 2018, sendo composto exclusivamente por Capital Principal (Capital Nível I).\n\n18",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>(USD Milhões)</th><th>Tipo</th><th>Principal Emitido</th><th>Yield</th><th>Pagamento Principal</th><th>Vencimento Final</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th></tr></thead><tr><td><b>BMG 18</b></td><td>Sênior</td><td>300</td><td>8,00% a.a.</td><td>Amortizing</td><td>15/04/2018</td><td>-</td><td>-</td><td>n/a</td><td>86</td><td>-100,0%</td></tr><tr><td><b>BMG 19</b></td><td>Subordinado</td><td>300</td><td>9,95% a.a.</td><td>Bullet</td><td>05/11/2019</td><td>243</td><td>245</td><td>-0,8%</td><td>247</td><td>-1,5%</td></tr><tr><td><b>BMG 20</b></td><td>Subordinado</td><td>250</td><td>8,875% a.a.</td><td>Bullet</td><td>05/08/2020</td><td>165</td><td>165</td><td>0,0%</td><td>165</td><td>0,0%</td></tr><tr><td><b>Total</b></td><td></td><td><b>850</b></td><td></td><td></td><td></td><td><b>408</b></td><td><b>410</b></td><td><b>-0,5%</b></td><td><b>498</b></td><td><b>-18,0%</b></td></tr></table>",
+      "format": "html",
+      "id": "tbl-9.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 88,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "![img-31.jpeg](img-31.jpeg)",
+      "image_id": "img-31.jpeg",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 424,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th></th><th>BIS III</th><th>BIS III</th><th></th><th>BIS III</th><th></th></tr><tr><th>Adequação de Capital (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th></tr></thead><tr><td><b>Patrimônio de Referência</b></td><td><b>1.367</b></td><td><b>1.408</b></td><td><b>-2,9%</b></td><td><b>1.470</b></td><td><b>-7,0%</b></td></tr><tr><td>Nível I</td><td>1.367</td><td>1.408</td><td>-2,9%</td><td>1.252</td><td>9,2%</td></tr><tr><td>Nível II</td><td>-</td><td>-</td><td>n/a</td><td>218</td><td>-100,0%</td></tr><tr><td><b>Ativo Ponderado pelo Risco</b></td><td><b>11.074</b></td><td><b>10.756</b></td><td><b>3,0%</b></td><td><b>9.371</b></td><td><b>18,2%</b></td></tr><tr><td>Risco de Crédito</td><td>10.414</td><td>10.079</td><td>3,3%</td><td>8.741</td><td>19,1%</td></tr><tr><td>Risco de Mercado</td><td>1</td><td>17</td><td>-96,0%</td><td>13</td><td>-94,7%</td></tr><tr><td>Risco Operacional</td><td>659</td><td>659</td><td>0,0%</td><td>616</td><td>7,0%</td></tr><tr><td><b>Índice de Basileia</b></td><td><b>12,4%</b></td><td><b>13,1%</b></td><td><b>-0,7 p.p</b></td><td><b>15,7%</b></td><td><b>-3,3 p.p</b></td></tr><tr><td>  Mínimo exigido pelo BACEN</td><td>8,625%</td><td>8,625%</td><td></td><td>9,250%</td><td></td></tr><tr><td>  Adicional de Conservação de Capital Principal</td><td>1,875%</td><td>1,875%</td><td></td><td>1,250%</td><td></td></tr><tr><td><b>Nível I</b></td><td><b>12,4%</b></td><td><b>13,1%</b></td><td><b>-0,7 p.p</b></td><td><b>15,7%</b></td><td><b>-3,3 p.p</b></td></tr><tr><td>  Mínimo exigido pelo BACEN</td><td>6,000%</td><td>6,000%</td><td></td><td>6,000%</td><td></td></tr><tr><td>  Adicional de Conservação de Capital Principal</td><td>1,875%</td><td>1,875%</td><td></td><td>1,250%</td><td></td></tr><tr><td><b>Nível II</b></td><td><b>-</b></td><td><b>-</b></td><td><b>-</b></td><td><b>2,3%</b></td><td><b>-2,3 p.p</b></td></tr></table>",
+      "table_id": "tbl-10.html",
+      "top_left_x": 49,
+      "top_left_y": 166,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 123,
+      "bottom_right_y": 463,
+      "confidence_scores": null,
+      "content": "## Basileia III",
+      "top_left_x": 53,
+      "top_left_y": 446,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 541,
+      "confidence_scores": null,
+      "content": "Em janeiro de 2018 todas as deduções previstas para o capital principal foram realizadas sendo apresentado em dezembro 2018 o patrimônio de referência nível I já 100% carregado (*fully loaded*). Sendo assim, já foram deduzidos integralmente o saldo de ágio amortizar e o excesso de crédito tributário oriundo de prejuízo fiscal e adições temporárias (exceto PDD).",
+      "top_left_x": 53,
+      "top_left_y": 466,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 658,
+      "bottom_right_y": 599,
+      "confidence_scores": null,
+      "content": "O patrimônio de referência nível II está zerado, visto que, por liberalidade do BMG, já foram integralmente deduzidas as dívidas subordinadas com vencimento em outubro de 2019 e agosto de 2020, emitidas sob as antigas regras de subordinação.",
+      "top_left_x": 53,
+      "top_left_y": 544,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 133,
+      "bottom_right_y": 657,
+      "confidence_scores": null,
+      "content": "## RATINGS",
+      "top_left_x": 53,
+      "top_left_y": 638,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 633,
+      "bottom_right_y": 874,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Agência</th><th>Data</th><th>Rating</th><th>Perspectiva</th></tr></thead><tr><td rowspan=\"2\"><b>FITCH Ratings</b></td><td rowspan=\"2\"><b>Janeiro 2019</b></td><td><b>Escala local A- (bra)</b></td><td rowspan=\"2\"><b>Estável</b></td></tr><tr><td><b>Escala internacional B+</b></td></tr><tr><td rowspan=\"2\"><b>Moody's</b></td><td rowspan=\"2\"><b>Julho 2018</b></td><td><b>Moeda local Baa3.br</b></td><td rowspan=\"2\"><b>Negativa</b></td></tr><tr><td><b>Moeda estrangeira B1</b></td></tr><tr><td><b>RISKbank</b></td><td><b>Janeiro 2019</b></td><td><b>9,93</b></td><td><b>Baixo Risco para Médio Prazo 2</b></td></tr></table>",
+      "table_id": "tbl-11.html",
+      "top_left_x": 63,
+      "top_left_y": 676,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "19",
+      "top_left_x": 589,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9892939654935371,
+     "minimum_page_confidence_score": 0.2554155340238721,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "id": "img-31.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 512,
+      "top_left_y": 22
+     }
+    ],
+    "index": 18,
+    "markdown": "# Release de Resultados 4T18\n\n![img-31.jpeg](img-31.jpeg)\n\n[tbl-10.html](tbl-10.html)\n\n## Basileia III\n\nEm janeiro de 2018 todas as deduções previstas para o capital principal foram realizadas sendo apresentado em dezembro 2018 o patrimônio de referência nível I já 100% carregado (*fully loaded*). Sendo assim, já foram deduzidos integralmente o saldo de ágio amortizar e o excesso de crédito tributário oriundo de prejuízo fiscal e adições temporárias (exceto PDD).\n\nO patrimônio de referência nível II está zerado, visto que, por liberalidade do BMG, já foram integralmente deduzidas as dívidas subordinadas com vencimento em outubro de 2019 e agosto de 2020, emitidas sob as antigas regras de subordinação.\n\n## RATINGS\n\n[tbl-11.html](tbl-11.html)\n\n19",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th></th><th>BIS III</th><th>BIS III</th><th></th><th>BIS III</th><th></th></tr><tr><th>Adequação de Capital (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T/3T (%)</th><th>4T17</th><th>4T/4T (%)</th></tr></thead><tr><td><b>Patrimônio de Referência</b></td><td><b>1.367</b></td><td><b>1.408</b></td><td><b>-2,9%</b></td><td><b>1.470</b></td><td><b>-7,0%</b></td></tr><tr><td>Nível I</td><td>1.367</td><td>1.408</td><td>-2,9%</td><td>1.252</td><td>9,2%</td></tr><tr><td>Nível II</td><td>-</td><td>-</td><td>n/a</td><td>218</td><td>-100,0%</td></tr><tr><td><b>Ativo Ponderado pelo Risco</b></td><td><b>11.074</b></td><td><b>10.756</b></td><td><b>3,0%</b></td><td><b>9.371</b></td><td><b>18,2%</b></td></tr><tr><td>Risco de Crédito</td><td>10.414</td><td>10.079</td><td>3,3%</td><td>8.741</td><td>19,1%</td></tr><tr><td>Risco de Mercado</td><td>1</td><td>17</td><td>-96,0%</td><td>13</td><td>-94,7%</td></tr><tr><td>Risco Operacional</td><td>659</td><td>659</td><td>0,0%</td><td>616</td><td>7,0%</td></tr><tr><td><b>Índice de Basileia</b></td><td><b>12,4%</b></td><td><b>13,1%</b></td><td><b>-0,7 p.p</b></td><td><b>15,7%</b></td><td><b>-3,3 p.p</b></td></tr><tr><td>  Mínimo exigido pelo BACEN</td><td>8,625%</td><td>8,625%</td><td></td><td>9,250%</td><td></td></tr><tr><td>  Adicional de Conservação de Capital Principal</td><td>1,875%</td><td>1,875%</td><td></td><td>1,250%</td><td></td></tr><tr><td><b>Nível I</b></td><td><b>12,4%</b></td><td><b>13,1%</b></td><td><b>-0,7 p.p</b></td><td><b>15,7%</b></td><td><b>-3,3 p.p</b></td></tr><tr><td>  Mínimo exigido pelo BACEN</td><td>6,000%</td><td>6,000%</td><td></td><td>6,000%</td><td></td></tr><tr><td>  Adicional de Conservação de Capital Principal</td><td>1,875%</td><td>1,875%</td><td></td><td>1,250%</td><td></td></tr><tr><td><b>Nível II</b></td><td><b>-</b></td><td><b>-</b></td><td><b>-</b></td><td><b>2,3%</b></td><td><b>-2,3 p.p</b></td></tr></table>",
+      "format": "html",
+      "id": "tbl-10.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>Agência</th><th>Data</th><th>Rating</th><th>Perspectiva</th></tr></thead><tr><td rowspan=\"2\"><b>FITCH Ratings</b></td><td rowspan=\"2\"><b>Janeiro 2019</b></td><td><b>Escala local A- (bra)</b></td><td rowspan=\"2\"><b>Estável</b></td></tr><tr><td><b>Escala internacional B+</b></td></tr><tr><td rowspan=\"2\"><b>Moody's</b></td><td rowspan=\"2\"><b>Julho 2018</b></td><td><b>Moeda local Baa3.br</b></td><td rowspan=\"2\"><b>Negativa</b></td></tr><tr><td><b>Moeda estrangeira B1</b></td></tr><tr><td><b>RISKbank</b></td><td><b>Janeiro 2019</b></td><td><b>9,93</b></td><td><b>Baixo Risco para Médio Prazo 2</b></td></tr></table>",
+      "format": "html",
+      "id": "tbl-11.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 563,
+      "bottom_right_y": 183,
+      "confidence_scores": null,
+      "content": "## ANEXO I – Demonstração do Resultado do Exercício Gerencial",
+      "top_left_x": 53,
+      "top_left_y": 162,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 644,
+      "bottom_right_y": 805,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>DEMONSTRAÇÃO DE RESULTADO (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T17</th><th>2018</th><th>2017</th></tr></thead><tr><td><b>Receitas da Intermediação Financeira</b></td><td><b>783</b></td><td><b>778</b></td><td><b>675</b></td><td><b>3.004</b></td><td><b>2.707</b></td></tr><tr><td>Operações de Crédito e Arrendamento Mercantil</td><td>719</td><td>728</td><td>618</td><td>2.797</td><td>2.401</td></tr><tr><td>Receitas de Operações de Crédito</td><td>852</td><td>859</td><td>731</td><td>3.311</td><td>2.793</td></tr><tr><td>Despesa com cessão</td><td>(29)</td><td>(22)</td><td>(33)</td><td>(101)</td><td>(90)</td></tr><tr><td>Despesas de Comissões de Agentes</td><td>(103)</td><td>(108)</td><td>(80)</td><td>(413)</td><td>(302)</td></tr><tr><td>Resultado de Operações com TVM</td><td>64</td><td>49</td><td>57</td><td>206</td><td>307</td></tr><tr><td><b>Despesas da Intermediação Financeira</b></td><td><b>(246)</b></td><td><b>(325)</b></td><td><b>(313)</b></td><td><b>(1.175)</b></td><td><b>(1.278)</b></td></tr><tr><td>Captações no Mercado</td><td>(215)</td><td>(343)</td><td>(322)</td><td>(1.310)</td><td>(1.022)</td></tr><tr><td>Resultado com Inst. Financeiros Derivativos</td><td>(23)</td><td>26</td><td>20</td><td>176</td><td>(195)</td></tr><tr><td>Empréstimos, Cessões e Repasses</td><td>(8)</td><td>(8)</td><td>(12)</td><td>(41)</td><td>(61)</td></tr><tr><td><b>Resultado da Intermediação financeira antes da provisão para créditos de liquidação duvidosa</b></td><td><b>537</b></td><td><b>453</b></td><td><b>361</b></td><td><b>1.829</b></td><td><b>1.430</b></td></tr><tr><td>Provisão para Créditos de Liquidação Duvidosa</td><td>(124)</td><td>(107)</td><td>(133)</td><td>(509)</td><td>(554)</td></tr><tr><td>Recuperação de créditos baixados para prejuízo</td><td>33</td><td>41</td><td>56</td><td>191</td><td>183</td></tr><tr><td><b>Resultado Bruto da Intermediação Financeira</b></td><td><b>445</b></td><td><b>388</b></td><td><b>285</b></td><td><b>1.511</b></td><td><b>1.059</b></td></tr><tr><td><b>Outras Receitas ou Despesas Operacionais</b></td><td><b>(294)</b></td><td><b>(298)</b></td><td><b>(325)</b></td><td><b>(1.123)</b></td><td><b>(1.066)</b></td></tr><tr><td>Receitas de Prestação de Serviços</td><td>9</td><td>9</td><td>9</td><td>42</td><td>37</td></tr><tr><td>Despesas de Pessoal</td><td>(45)</td><td>(43)</td><td>(48)</td><td>(166)</td><td>(164)</td></tr><tr><td>Outras Despesas Administrativas</td><td>(175)</td><td>(165)</td><td>(148)</td><td>(632)</td><td>(607)</td></tr><tr><td>Despesas Tributárias</td><td>(27)</td><td>(26)</td><td>(23)</td><td>(100)</td><td>(78)</td></tr><tr><td>Resultado de Part. em Coligadas e Controladas</td><td>3</td><td>(3)</td><td>1</td><td>2</td><td>(4)</td></tr><tr><td>Outras Receitas/ Despesas Operacionais</td><td>(58)</td><td>(70)</td><td>(115)</td><td>(270)</td><td>(249)</td></tr><tr><td><b>Resultado Operacional</b></td><td><b>151</b></td><td><b>90</b></td><td><b>(40)</b></td><td><b>387</b></td><td><b>(7)</b></td></tr><tr><td>Resultado Não Operacional</td><td>(1)</td><td>0</td><td>(1)</td><td>(8)</td><td>19</td></tr><tr><td><b>Resultado antes da Tributação sobre o Lucro e Participações</b></td><td><b>150</b></td><td><b>90</b></td><td><b>(41)</b></td><td><b>379</b></td><td><b>12</b></td></tr><tr><td>Imposto de Renda e Contribuição Social</td><td>(74)</td><td>(26)</td><td>39</td><td>(145)</td><td>28</td></tr><tr><td>Participações Estatutárias e de Minoritários</td><td>(37)</td><td>(9)</td><td>7</td><td>(63)</td><td>(13)</td></tr><tr><td><b>Lucro Líquido</b></td><td><b>40</b></td><td><b>55</b></td><td><b>6</b></td><td><b>171</b></td><td><b>26</b></td></tr><tr><td><b>Despesa de ágio líquida de impostos</b></td><td><b>22</b></td><td><b>22</b></td><td><b>22</b></td><td><b>87</b></td><td><b>87</b></td></tr><tr><td><b>Lucro Líquido Recorrente</b></td><td><b>61</b></td><td><b>77</b></td><td><b>28</b></td><td><b>258</b></td><td><b>113</b></td></tr></table>",
+      "table_id": "tbl-12.html",
+      "top_left_x": 73,
+      "top_left_y": 212,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 455,
+      "bottom_right_y": 831,
+      "confidence_scores": null,
+      "content": "As informações financeiras de 2017 foram normalizadas, conforme Anexo III.",
+      "top_left_x": 78,
+      "top_left_y": 815,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "20",
+      "top_left_x": 587,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9934768849640461,
+     "minimum_page_confidence_score": 0.19800934896453895,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 19,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\n## ANEXO I – Demonstração do Resultado do Exercício Gerencial\n\n[tbl-12.html](tbl-12.html)\n\nAs informações financeiras de 2017 foram normalizadas, conforme Anexo III.\n\n20",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>DEMONSTRAÇÃO DE RESULTADO (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T17</th><th>2018</th><th>2017</th></tr></thead><tr><td><b>Receitas da Intermediação Financeira</b></td><td><b>783</b></td><td><b>778</b></td><td><b>675</b></td><td><b>3.004</b></td><td><b>2.707</b></td></tr><tr><td>Operações de Crédito e Arrendamento Mercantil</td><td>719</td><td>728</td><td>618</td><td>2.797</td><td>2.401</td></tr><tr><td>Receitas de Operações de Crédito</td><td>852</td><td>859</td><td>731</td><td>3.311</td><td>2.793</td></tr><tr><td>Despesa com cessão</td><td>(29)</td><td>(22)</td><td>(33)</td><td>(101)</td><td>(90)</td></tr><tr><td>Despesas de Comissões de Agentes</td><td>(103)</td><td>(108)</td><td>(80)</td><td>(413)</td><td>(302)</td></tr><tr><td>Resultado de Operações com TVM</td><td>64</td><td>49</td><td>57</td><td>206</td><td>307</td></tr><tr><td><b>Despesas da Intermediação Financeira</b></td><td><b>(246)</b></td><td><b>(325)</b></td><td><b>(313)</b></td><td><b>(1.175)</b></td><td><b>(1.278)</b></td></tr><tr><td>Captações no Mercado</td><td>(215)</td><td>(343)</td><td>(322)</td><td>(1.310)</td><td>(1.022)</td></tr><tr><td>Resultado com Inst. Financeiros Derivativos</td><td>(23)</td><td>26</td><td>20</td><td>176</td><td>(195)</td></tr><tr><td>Empréstimos, Cessões e Repasses</td><td>(8)</td><td>(8)</td><td>(12)</td><td>(41)</td><td>(61)</td></tr><tr><td><b>Resultado da Intermediação financeira antes da provisão para créditos de liquidação duvidosa</b></td><td><b>537</b></td><td><b>453</b></td><td><b>361</b></td><td><b>1.829</b></td><td><b>1.430</b></td></tr><tr><td>Provisão para Créditos de Liquidação Duvidosa</td><td>(124)</td><td>(107)</td><td>(133)</td><td>(509)</td><td>(554)</td></tr><tr><td>Recuperação de créditos baixados para prejuízo</td><td>33</td><td>41</td><td>56</td><td>191</td><td>183</td></tr><tr><td><b>Resultado Bruto da Intermediação Financeira</b></td><td><b>445</b></td><td><b>388</b></td><td><b>285</b></td><td><b>1.511</b></td><td><b>1.059</b></td></tr><tr><td><b>Outras Receitas ou Despesas Operacionais</b></td><td><b>(294)</b></td><td><b>(298)</b></td><td><b>(325)</b></td><td><b>(1.123)</b></td><td><b>(1.066)</b></td></tr><tr><td>Receitas de Prestação de Serviços</td><td>9</td><td>9</td><td>9</td><td>42</td><td>37</td></tr><tr><td>Despesas de Pessoal</td><td>(45)</td><td>(43)</td><td>(48)</td><td>(166)</td><td>(164)</td></tr><tr><td>Outras Despesas Administrativas</td><td>(175)</td><td>(165)</td><td>(148)</td><td>(632)</td><td>(607)</td></tr><tr><td>Despesas Tributárias</td><td>(27)</td><td>(26)</td><td>(23)</td><td>(100)</td><td>(78)</td></tr><tr><td>Resultado de Part. em Coligadas e Controladas</td><td>3</td><td>(3)</td><td>1</td><td>2</td><td>(4)</td></tr><tr><td>Outras Receitas/ Despesas Operacionais</td><td>(58)</td><td>(70)</td><td>(115)</td><td>(270)</td><td>(249)</td></tr><tr><td><b>Resultado Operacional</b></td><td><b>151</b></td><td><b>90</b></td><td><b>(40)</b></td><td><b>387</b></td><td><b>(7)</b></td></tr><tr><td>Resultado Não Operacional</td><td>(1)</td><td>0</td><td>(1)</td><td>(8)</td><td>19</td></tr><tr><td><b>Resultado antes da Tributação sobre o Lucro e Participações</b></td><td><b>150</b></td><td><b>90</b></td><td><b>(41)</b></td><td><b>379</b></td><td><b>12</b></td></tr><tr><td>Imposto de Renda e Contribuição Social</td><td>(74)</td><td>(26)</td><td>39</td><td>(145)</td><td>28</td></tr><tr><td>Participações Estatutárias e de Minoritários</td><td>(37)</td><td>(9)</td><td>7</td><td>(63)</td><td>(13)</td></tr><tr><td><b>Lucro Líquido</b></td><td><b>40</b></td><td><b>55</b></td><td><b>6</b></td><td><b>171</b></td><td><b>26</b></td></tr><tr><td><b>Despesa de ágio líquida de impostos</b></td><td><b>22</b></td><td><b>22</b></td><td><b>22</b></td><td><b>87</b></td><td><b>87</b></td></tr><tr><td><b>Lucro Líquido Recorrente</b></td><td><b>61</b></td><td><b>77</b></td><td><b>28</b></td><td><b>258</b></td><td><b>113</b></td></tr></table>",
+      "format": "html",
+      "id": "tbl-12.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 88,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 314,
+      "bottom_right_y": 183,
+      "confidence_scores": null,
+      "content": "## ANEXO II – Balanço Patrimonial",
+      "top_left_x": 53,
+      "top_left_y": 162,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 590,
+      "bottom_right_y": 501,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>ATIVO (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T17</th></tr></thead><tr><td>Disponibilidades</td><td>47</td><td>44</td><td>25</td></tr><tr><td>Aplicações Interfinanceiras de Liquidez</td><td>826</td><td>1.472</td><td>1.425</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>2.447</td><td>1.973</td><td>2.052</td></tr><tr><td>Relações Interfinanceiras</td><td>26</td><td>144</td><td>11</td></tr><tr><td>Operações de Crédito e Arrendamento Mercantil</td><td>8.604</td><td>8.447</td><td>7.821</td></tr><tr><td>  Operações de Crédito</td><td>9.158</td><td>8.998</td><td>8.380</td></tr><tr><td>  Provisão para Créditos de Liquidação Duvidosa</td><td>(554)</td><td>(551)</td><td>(558)</td></tr><tr><td>Outros Créditos</td><td>4.032</td><td>4.002</td><td>3.924</td></tr><tr><td>Outros Valores e Bens</td><td>232</td><td>229</td><td>278</td></tr><tr><td>Permanente</td><td>722</td><td>646</td><td>724</td></tr><tr><td>  Investimentos</td><td>233</td><td>130</td><td>108</td></tr><tr><td>  Imobilizado de Uso</td><td>103</td><td>94</td><td>84</td></tr><tr><td>  Intangível</td><td>386</td><td>423</td><td>532</td></tr><tr><td><b>Total do Ativo</b></td><td><b>16.938</b></td><td><b>16.959</b></td><td><b>16.260</b></td></tr></table>",
+      "table_id": "tbl-13.html",
+      "top_left_x": 124,
+      "top_left_y": 220,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 590,
+      "bottom_right_y": 738,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>PASSIVO (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T17</th></tr></thead><tr><td>Depósitos</td><td>9.452</td><td>9.371</td><td>8.365</td></tr><tr><td>Captações no Mercado Aberto</td><td>-</td><td>-</td><td>9</td></tr><tr><td>Recursos de Aceites e Emissão de Títulos</td><td>526</td><td>603</td><td>1.119</td></tr><tr><td>Relações Interfinanceiras</td><td>123</td><td>102</td><td>0</td></tr><tr><td>Obrigações por Empréstimos e Repasses</td><td>537</td><td>512</td><td>540</td></tr><tr><td>Instrumentos Financeiros Derivativos</td><td>84</td><td>149</td><td>236</td></tr><tr><td>Outras Obrigações</td><td>3.575</td><td>3.465</td><td>3.419</td></tr><tr><td>Participação de acionistas não Controladores</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Patrimônio Líquido</td><td>2.640</td><td>2.757</td><td>2.572</td></tr><tr><td><b>Total do Passivo</b></td><td><b>16.938</b></td><td><b>16.959</b></td><td><b>16.260</b></td></tr></table>",
+      "table_id": "tbl-14.html",
+      "top_left_x": 124,
+      "top_left_y": 527,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 610,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "21",
+      "top_left_x": 590,
+      "top_left_y": 936,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.989071581196313,
+     "minimum_page_confidence_score": 0.18956903610885842,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 20,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\n## ANEXO II – Balanço Patrimonial\n\n[tbl-13.html](tbl-13.html)\n\n[tbl-14.html](tbl-14.html)\n\n21",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>ATIVO (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T17</th></tr></thead><tr><td>Disponibilidades</td><td>47</td><td>44</td><td>25</td></tr><tr><td>Aplicações Interfinanceiras de Liquidez</td><td>826</td><td>1.472</td><td>1.425</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>2.447</td><td>1.973</td><td>2.052</td></tr><tr><td>Relações Interfinanceiras</td><td>26</td><td>144</td><td>11</td></tr><tr><td>Operações de Crédito e Arrendamento Mercantil</td><td>8.604</td><td>8.447</td><td>7.821</td></tr><tr><td>  Operações de Crédito</td><td>9.158</td><td>8.998</td><td>8.380</td></tr><tr><td>  Provisão para Créditos de Liquidação Duvidosa</td><td>(554)</td><td>(551)</td><td>(558)</td></tr><tr><td>Outros Créditos</td><td>4.032</td><td>4.002</td><td>3.924</td></tr><tr><td>Outros Valores e Bens</td><td>232</td><td>229</td><td>278</td></tr><tr><td>Permanente</td><td>722</td><td>646</td><td>724</td></tr><tr><td>  Investimentos</td><td>233</td><td>130</td><td>108</td></tr><tr><td>  Imobilizado de Uso</td><td>103</td><td>94</td><td>84</td></tr><tr><td>  Intangível</td><td>386</td><td>423</td><td>532</td></tr><tr><td><b>Total do Ativo</b></td><td><b>16.938</b></td><td><b>16.959</b></td><td><b>16.260</b></td></tr></table>",
+      "format": "html",
+      "id": "tbl-13.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>PASSIVO (R$ Milhões)</th><th>4T18</th><th>3T18</th><th>4T17</th></tr></thead><tr><td>Depósitos</td><td>9.452</td><td>9.371</td><td>8.365</td></tr><tr><td>Captações no Mercado Aberto</td><td>-</td><td>-</td><td>9</td></tr><tr><td>Recursos de Aceites e Emissão de Títulos</td><td>526</td><td>603</td><td>1.119</td></tr><tr><td>Relações Interfinanceiras</td><td>123</td><td>102</td><td>0</td></tr><tr><td>Obrigações por Empréstimos e Repasses</td><td>537</td><td>512</td><td>540</td></tr><tr><td>Instrumentos Financeiros Derivativos</td><td>84</td><td>149</td><td>236</td></tr><tr><td>Outras Obrigações</td><td>3.575</td><td>3.465</td><td>3.419</td></tr><tr><td>Participação de acionistas não Controladores</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Patrimônio Líquido</td><td>2.640</td><td>2.757</td><td>2.572</td></tr><tr><td><b>Total do Passivo</b></td><td><b>16.938</b></td><td><b>16.959</b></td><td><b>16.260</b></td></tr></table>",
+      "format": "html",
+      "id": "tbl-14.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "# Release de Resultados 4T18",
+      "top_left_x": 55,
+      "top_left_y": 60,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 662,
+      "bottom_right_y": 110,
+      "confidence_scores": null,
+      "content": "Banco  \n**BMG**",
+      "top_left_x": 512,
+      "top_left_y": 22,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 445,
+      "bottom_right_y": 181,
+      "confidence_scores": null,
+      "content": "## ANEXO III - Resultado Contábil x Gerencial 1T17",
+      "top_left_x": 53,
+      "top_left_y": 161,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 397,
+      "bottom_right_y": 228,
+      "confidence_scores": null,
+      "content": "### Veículos: cessão sem retenção de riscos e benefícios",
+      "top_left_x": 53,
+      "top_left_y": 211,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 367,
+      "confidence_scores": null,
+      "content": "Em janeiro de 2016, a operação de veículos foi descontinuada, tendo em vista a baixa correlação da base de clientes com os demais produtos do banco. Com intuito de mitigar o impacto da margem de contribuição negativa que o produto vinha apresentando, ao longo do primeiro trimestre de 2017, o BMG realizou cessões sem retenção de riscos e benefícios de parte significativa de suas operações de veículos. A venda abrangeu contratos registrados como carteira de crédito e contratos já baixados para prejuízo. Dessa forma, a venda definitiva permite ao BMG uma desalavancagem de capital, maior liquidez e maior potencial de geração de resultados.",
+      "top_left_x": 53,
+      "top_left_y": 233,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 445,
+      "confidence_scores": null,
+      "content": "Tais cessões resultaram em uma despesa extraordinária com cessão de crédito no valor de R$ 101 milhões, compensada pela reversão de provisões e recuperação de crédito no montante de R$ 129 milhões. Para facilitar a comparabilidade, todos os efeitos foram gerencialmente realocados para a linha de despesa com cessão, gerando um impacto positivo de R$ 28 milhões na margem.",
+      "top_left_x": 53,
+      "top_left_y": 370,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 538,
+      "bottom_right_y": 479,
+      "confidence_scores": null,
+      "content": "### Liquidação do programa de liquidez do Fundo Garantidor de Créditos - FGC",
+      "top_left_x": 53,
+      "top_left_y": 461,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 659,
+      "bottom_right_y": 579,
+      "confidence_scores": null,
+      "content": "Em junho de 2016, em função da mudança do *mix* de ativos de crédito originados pelo BMG, o Banco e o FGC firmaram uma transação irretratável, nos termos do artigo 840 do Código Civil e reduziram a utilização do programa de liquidez do FGC. Em complemento, em janeiro de 2017, ocorreu a liquidação definitiva do programa, resultando no recebimento de R$ 38 milhões, reconhecidos pelo BMG como resultado não operacional.",
+      "top_left_x": 53,
+      "top_left_y": 484,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 618,
+      "confidence_scores": null,
+      "content": "Gerencialmente, o valor foi realocado para margem na linha de despesas de captações no mercado. Abaixo as reclassificações supracitadas, ressaltando que não há impacto no lucro líquido do período:",
+      "top_left_x": 53,
+      "top_left_y": 581,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 654,
+      "bottom_right_y": 937,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th></th><th>Contábil</th><th></th><th></th><th>Gerencial</th></tr><tr><th>(R$ Milhões)</th><th>1T17</th><th>FGC</th><th>Cessão</th><th>1T17</th></tr></thead><tr><td><b>Receitas da Intermediação financeira</b></td><td><b>536</b></td><td></td><td><b>129</b></td><td><b>665</b></td></tr><tr><td>Operações de Crédito e Arrendamento Mercantil</td><td>448</td><td></td><td>129</td><td>577</td></tr><tr><td>Receitas de Operações de Crédito</td><td>664</td><td></td><td></td><td>664</td></tr><tr><td>Despesa com cessão</td><td>(135)</td><td></td><td>129</td><td>(6)</td></tr><tr><td>Despesas de Comissões de Agentes</td><td>(82)</td><td></td><td></td><td>(82)</td></tr><tr><td>Resultado de Operações com TVM</td><td>89</td><td></td><td></td><td>89</td></tr><tr><td><b>Despesas da Intermediação Financeira</b></td><td><b>(396)</b></td><td><b>38</b></td><td></td><td><b>(358)</b></td></tr><tr><td>Captações no Mercado e Resultado com Derivativos</td><td>(376)</td><td>38</td><td></td><td>(338)</td></tr><tr><td>Empréstimos, Cessões e Repasses</td><td>(20)</td><td></td><td></td><td>(20)</td></tr><tr><td><b>Resultado da Int. Financeira antes da PCLD</b></td><td><b>140</b></td><td><b>38</b></td><td><b>129</b></td><td><b>307</b></td></tr><tr><td>Despesa de Provisão Líquida de Recuperação</td><td>41</td><td></td><td>(129)</td><td>(88)</td></tr><tr><td><b>Resultado Bruto da Intermediação Financeira</b></td><td><b>181</b></td><td><b>38</b></td><td></td><td><b>219</b></td></tr><tr><td><b>Outras Receitas ou Despesas Operacionais</b></td><td><b>(195)</b></td><td></td><td></td><td><b>(195)</b></td></tr><tr><td><b>Resultado Operacional</b></td><td><b>(14)</b></td><td><b>38</b></td><td></td><td><b>24</b></td></tr><tr><td>Resultado Não Operacional</td><td>36</td><td>(38)</td><td></td><td>(2)</td></tr><tr><td><b>Resultado antes da Tributação</b></td><td><b>23</b></td><td></td><td></td><td><b>23</b></td></tr><tr><td>Imposto de Renda e Contribuição Social</td><td>(17)</td><td></td><td></td><td>(17)</td></tr><tr><td><b>Lucro Líquido</b></td><td><b>5</b></td><td><b>-</b></td><td><b>-</b></td><td><b>5</b></td></tr></table>",
+      "table_id": "tbl-15.html",
+      "top_left_x": 61,
+      "top_left_y": 617,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "22",
+      "top_left_x": 589,
+      "top_left_y": 937,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9878503500689763,
+     "minimum_page_confidence_score": 0.2194870931767931,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 21,
+    "markdown": "# Release de Resultados 4T18\n\nBanco  \n**BMG**\n\n## ANEXO III - Resultado Contábil x Gerencial 1T17\n\n### Veículos: cessão sem retenção de riscos e benefícios\n\nEm janeiro de 2016, a operação de veículos foi descontinuada, tendo em vista a baixa correlação da base de clientes com os demais produtos do banco. Com intuito de mitigar o impacto da margem de contribuição negativa que o produto vinha apresentando, ao longo do primeiro trimestre de 2017, o BMG realizou cessões sem retenção de riscos e benefícios de parte significativa de suas operações de veículos. A venda abrangeu contratos registrados como carteira de crédito e contratos já baixados para prejuízo. Dessa forma, a venda definitiva permite ao BMG uma desalavancagem de capital, maior liquidez e maior potencial de geração de resultados.\n\nTais cessões resultaram em uma despesa extraordinária com cessão de crédito no valor de R$ 101 milhões, compensada pela reversão de provisões e recuperação de crédito no montante de R$ 129 milhões. Para facilitar a comparabilidade, todos os efeitos foram gerencialmente realocados para a linha de despesa com cessão, gerando um impacto positivo de R$ 28 milhões na margem.\n\n### Liquidação do programa de liquidez do Fundo Garantidor de Créditos - FGC\n\nEm junho de 2016, em função da mudança do *mix* de ativos de crédito originados pelo BMG, o Banco e o FGC firmaram uma transação irretratável, nos termos do artigo 840 do Código Civil e reduziram a utilização do programa de liquidez do FGC. Em complemento, em janeiro de 2017, ocorreu a liquidação definitiva do programa, resultando no recebimento de R$ 38 milhões, reconhecidos pelo BMG como resultado não operacional.\n\nGerencialmente, o valor foi realocado para margem na linha de despesas de captações no mercado. Abaixo as reclassificações supracitadas, ressaltando que não há impacto no lucro líquido do período:\n\n[tbl-15.html](tbl-15.html)\n\n22",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th></th><th>Contábil</th><th></th><th></th><th>Gerencial</th></tr><tr><th>(R$ Milhões)</th><th>1T17</th><th>FGC</th><th>Cessão</th><th>1T17</th></tr></thead><tr><td><b>Receitas da Intermediação financeira</b></td><td><b>536</b></td><td></td><td><b>129</b></td><td><b>665</b></td></tr><tr><td>Operações de Crédito e Arrendamento Mercantil</td><td>448</td><td></td><td>129</td><td>577</td></tr><tr><td>Receitas de Operações de Crédito</td><td>664</td><td></td><td></td><td>664</td></tr><tr><td>Despesa com cessão</td><td>(135)</td><td></td><td>129</td><td>(6)</td></tr><tr><td>Despesas de Comissões de Agentes</td><td>(82)</td><td></td><td></td><td>(82)</td></tr><tr><td>Resultado de Operações com TVM</td><td>89</td><td></td><td></td><td>89</td></tr><tr><td><b>Despesas da Intermediação Financeira</b></td><td><b>(396)</b></td><td><b>38</b></td><td></td><td><b>(358)</b></td></tr><tr><td>Captações no Mercado e Resultado com Derivativos</td><td>(376)</td><td>38</td><td></td><td>(338)</td></tr><tr><td>Empréstimos, Cessões e Repasses</td><td>(20)</td><td></td><td></td><td>(20)</td></tr><tr><td><b>Resultado da Int. Financeira antes da PCLD</b></td><td><b>140</b></td><td><b>38</b></td><td><b>129</b></td><td><b>307</b></td></tr><tr><td>Despesa de Provisão Líquida de Recuperação</td><td>41</td><td></td><td>(129)</td><td>(88)</td></tr><tr><td><b>Resultado Bruto da Intermediação Financeira</b></td><td><b>181</b></td><td><b>38</b></td><td></td><td><b>219</b></td></tr><tr><td><b>Outras Receitas ou Despesas Operacionais</b></td><td><b>(195)</b></td><td></td><td></td><td><b>(195)</b></td></tr><tr><td><b>Resultado Operacional</b></td><td><b>(14)</b></td><td><b>38</b></td><td></td><td><b>24</b></td></tr><tr><td>Resultado Não Operacional</td><td>36</td><td>(38)</td><td></td><td>(2)</td></tr><tr><td><b>Resultado antes da Tributação</b></td><td><b>23</b></td><td></td><td></td><td><b>23</b></td></tr><tr><td>Imposto de Renda e Contribuição Social</td><td>(17)</td><td></td><td></td><td>(17)</td></tr><tr><td><b>Lucro Líquido</b></td><td><b>5</b></td><td><b>-</b></td><td><b>-</b></td><td><b>5</b></td></tr></table>",
+      "format": "html",
+      "id": "tbl-15.html",
+      "word_confidence_scores": null
+     }
+    ]
+   }
+  ],
+  "usage_info": {
+   "doc_size_bytes": 1360284,
+   "pages_processed": 22
+  }
+ },
+ "trimestre": "4T2018"
+}

@@ -1,0 +1,3089 @@
+{
+ "documento": "banestes_release_1T2022",
+ "empresa": "BANESTES",
+ "hash_pdf": "e4d8f9784c86c08eab3d80d516b72bc6c1e1662397c67ef359e622536607b448",
+ "modelo": "mistral-ocr-4-0",
+ "ocr": {
+  "document_annotation": null,
+  "model": "mistral-ocr-4-0",
+  "pages": [
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 298,
+      "bottom_right_y": 171,
+      "confidence_scores": null,
+      "content": "# PRESS RELEASE\n1T2022",
+      "top_left_x": 43,
+      "top_left_y": 68,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 638,
+      "bottom_right_y": 803,
+      "confidence_scores": null,
+      "content": "![img-0.jpeg](img-0.jpeg)",
+      "image_id": "img-0.jpeg",
+      "top_left_x": 73,
+      "top_left_y": 205,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 661,
+      "bottom_right_y": 943,
+      "confidence_scores": null,
+      "content": "**BANESTES S/A**\nBANCO DO ESTADO\nDO ESPÍRITO SANTO",
+      "top_left_x": 404,
+      "top_left_y": 847,
+      "type": "text"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9386076084201022,
+     "minimum_page_confidence_score": 0.34618112390692957,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 638,
+      "bottom_right_y": 803,
+      "id": "img-0.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 73,
+      "top_left_y": 205
+     }
+    ],
+    "index": 0,
+    "markdown": "# PRESS RELEASE\n1T2022\n\n![img-0.jpeg](img-0.jpeg)\n\n**BANESTES S/A**\nBANCO DO ESTADO\nDO ESPÍRITO SANTO",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 70,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 582,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 266,
+      "bottom_right_y": 130,
+      "confidence_scores": null,
+      "content": "## Principais Informações",
+      "top_left_x": 48,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 418,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Demonstração do Resultado<br/>(R$ milhões)</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Receitas de Intermediação Financeira</td><td>973</td><td>783</td><td>599</td><td>443</td><td>353</td><td>372</td><td>350</td><td>389</td><td>24,2%</td><td>176,1%</td></tr><tr><td>Despesas de Intermediação Financeira</td><td>(688)</td><td>(511)</td><td>(338)</td><td>(220)</td><td>(142)</td><td>(152)</td><td>(145)</td><td>(180)</td><td>34,7%</td><td>385,8%</td></tr><tr><td>Provisão para Créditos de Liquidação Duvidosa</td><td>(43)</td><td>(15)</td><td>(45)</td><td>(28)</td><td>(18)</td><td>(5)</td><td>(21)</td><td>(45)</td><td>183,5%</td><td>145,1%</td></tr><tr><td>Margem Financeira Líquida<sup>1</sup></td><td>242</td><td>258</td><td>216</td><td>194</td><td>193</td><td>215</td><td>185</td><td>165</td><td>-6,0%</td><td>25,3%</td></tr><tr><td>Receitas de Prestação de Serviços</td><td>88</td><td>90</td><td>89</td><td>86</td><td>85</td><td>90</td><td>86</td><td>87</td><td>-2,9%</td><td>3,2%</td></tr><tr><td>Despesas de Pessoal</td><td>(97)</td><td>(101)</td><td>(98)</td><td>(89)</td><td>(86)</td><td>(93)</td><td>(94)</td><td>(91)</td><td>-4,3%</td><td>13,1%</td></tr><tr><td>Outras Despesas Administrativas</td><td>(77)</td><td>(79)</td><td>(77)</td><td>(76)</td><td>(69)</td><td>(72)</td><td>(66)</td><td>(66)</td><td>-2,2%</td><td>10,9%</td></tr><tr><td>Resultado Operacional</td><td>136</td><td>142</td><td>107</td><td>87</td><td>99</td><td>104</td><td>80</td><td>68</td><td>-4,6%</td><td>37,2%</td></tr><tr><td>Resultado Antes da Tributação</td><td>135</td><td>144</td><td>107</td><td>86</td><td>100</td><td>102</td><td>80</td><td>67</td><td>-6,0%</td><td>35,3%</td></tr><tr><td>Juros Sobre o Capital Próprio<sup>2</sup></td><td>19,5</td><td>87,1</td><td>18,0</td><td>18,0</td><td>18,0</td><td>33,3</td><td>6,0</td><td>6,7</td><td>-77,6%</td><td>8,3%</td></tr><tr><td>Lucro Líquido</td><td>81</td><td>76</td><td>60</td><td>53</td><td>61</td><td>62</td><td>45</td><td>42</td><td>6,4%</td><td>33,6%</td></tr></table>",
+      "table_id": "tbl-0.html",
+      "top_left_x": 48,
+      "top_left_y": 144,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 649,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Balanço Patrimonial<br/>(R$ milhões)</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Ativos Totais</td><td>36.445</td><td>34.007</td><td>33.834</td><td>32.383</td><td>32.169</td><td>30.484</td><td>35.548</td><td>27.186</td><td>7,2%</td><td>13,3%</td></tr><tr><td>Carteira de Crédito Ampliada</td><td>10.130</td><td>9.265</td><td>9.069</td><td>8.740</td><td>8.112</td><td>7.896</td><td>7.738</td><td>7.467</td><td>1,3%</td><td>16,4%</td></tr><tr><td>NPL Creation</td><td>122</td><td>133</td><td>170</td><td>164</td><td>157</td><td>96</td><td>116</td><td>167</td><td>-8,8%</td><td>-22,7%</td></tr><tr><td>Patrimônio Líquido</td><td>1.958</td><td>1.890</td><td>1.838</td><td>1.785</td><td>1.764</td><td>1.714</td><td>1.639</td><td>1.584</td><td>3,6%</td><td>11,0%</td></tr><tr><td>Aplicações Interfinanceiras de Liquidez</td><td>11.848</td><td>12.265</td><td>10.306</td><td>9.174</td><td>10.573</td><td>10.654</td><td>18.070</td><td>8.887</td><td>-3,4%</td><td>12,1%</td></tr><tr><td>Depósitos Totais</td><td>19.336</td><td>18.634</td><td>17.958</td><td>16.783</td><td>16.212</td><td>15.926</td><td>15.611</td><td>14.142</td><td>3,8%</td><td>19,3%</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>16.049</td><td>13.517</td><td>15.381</td><td>15.495</td><td>13.991</td><td>12.886</td><td>10.757</td><td>11.757</td><td>18,7%</td><td>14,7%</td></tr><tr><td>Captação Mercado Aberto</td><td>13.474</td><td>11.936</td><td>12.483</td><td>12.307</td><td>12.785</td><td>11.427</td><td>16.846</td><td>9.991</td><td>12,9%</td><td>5,4%</td></tr><tr><td>Recursos Captados e Administrados</td><td>40.404</td><td>37.370</td><td>36.771</td><td>35.274</td><td>34.753</td><td>32.892</td><td>38.173</td><td>29.483</td><td>8,1%</td><td>16,3%</td></tr></table>",
+      "table_id": "tbl-1.html",
+      "top_left_x": 48,
+      "top_left_y": 424,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 902,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Indicadores de Desempenho</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Lucro Líquido por Ação (R$)</td><td>0,26</td><td>0,24</td><td>0,19</td><td>0,17</td><td>0,19</td><td>0,20</td><td>0,14</td><td>0,13</td><td>6,4%</td><td>33,6%</td></tr><tr><td>Valor Patrimonial por Ação (R$)</td><td>6,20</td><td>5,98</td><td>5,82</td><td>5,65</td><td>5,58</td><td>5,43</td><td>5,19</td><td>5,01</td><td>3,6%</td><td>11,0%</td></tr><tr><td>ROA - Retorno Sobre Ativos Médios<sup>3</sup></td><td>0,8%</td><td>0,8%</td><td>0,7%</td><td>0,7%</td><td>0,7%</td><td>0,9%</td><td>0,7%</td><td>0,8%</td><td>0,0 p.p</td><td>0,1 p.p</td></tr><tr><td>ROE - Retorno sobre Patrimônio Líquido<sup>4</sup></td><td>14,6%</td><td>13,9%</td><td>13,6%</td><td>13,1%</td><td>12,7%</td><td>14,0%</td><td>13,5%</td><td>14,7%</td><td>0,7 p.p</td><td>1,9 p.p</td></tr><tr><td>Eficiência Operacional<sup>5</sup></td><td>46,6%</td><td>49,6%</td><td>49,9%</td><td>53,6%</td><td>52,4%</td><td>53,2%</td><td>55,0%</td><td>53,2%</td><td>-3,0 p.p</td><td>-5,8 p.p</td></tr><tr><td>Eficiência Operacional Ajustado ao Risco<sup>6</sup></td><td>52,7%</td><td>51,7%</td><td>57,3%</td><td>58,9%</td><td>55,7%</td><td>54,0%</td><td>59,2%</td><td>62,6%</td><td>1,0 p.p</td><td>-3,0 p.p</td></tr><tr><td>Valor de Mercado (R$ milhões)</td><td>1.645</td><td>1.609</td><td>1.648</td><td>1.721</td><td>1.652</td><td>1.771</td><td>1.778</td><td>1.924</td><td>2,2%</td><td>-0,4%</td></tr><tr><td>Índice de Inadimplência &gt; 90 Dias<sup>8</sup></td><td>1,2%</td><td>1,4%</td><td>1,9%</td><td>1,9%</td><td>1,9%</td><td>1,2%</td><td>1,5%</td><td>2,2%</td><td>-0,1 p.p</td><td>-0,6 p.p</td></tr><tr><td>Índice de Cobertura Geral<sup>9</sup></td><td>50,4%</td><td>50,1%</td><td>51,0%</td><td>52,2%</td><td>54,8%</td><td>54,7%</td><td>53,8%</td><td>55,0%</td><td>0,3 p.p</td><td>-4,4 p.p</td></tr><tr><td>Índice de Cobertura Imediata<sup>10</sup></td><td>90,5%</td><td>89,2%</td><td>91,0%</td><td>97,0%</td><td>99,2%</td><td>96,8%</td><td>91,9%</td><td>94,9%</td><td>1,3 p.p</td><td>-8,7 p.p</td></tr></table>",
+      "table_id": "tbl-2.html",
+      "top_left_x": 48,
+      "top_left_y": 656,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**2**^{}[] Relatório de Análise Econômica e Financeira",
+      "top_left_x": 92,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9970919587178078,
+     "minimum_page_confidence_score": 0.27104466431647906,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 1,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n## Principais Informações\n\n[tbl-0.html](tbl-0.html)\n\n[tbl-1.html](tbl-1.html)\n\n[tbl-2.html](tbl-2.html)\n\n**2**Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Demonstração do Resultado<br/>(R$ milhões)</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Receitas de Intermediação Financeira</td><td>973</td><td>783</td><td>599</td><td>443</td><td>353</td><td>372</td><td>350</td><td>389</td><td>24,2%</td><td>176,1%</td></tr><tr><td>Despesas de Intermediação Financeira</td><td>(688)</td><td>(511)</td><td>(338)</td><td>(220)</td><td>(142)</td><td>(152)</td><td>(145)</td><td>(180)</td><td>34,7%</td><td>385,8%</td></tr><tr><td>Provisão para Créditos de Liquidação Duvidosa</td><td>(43)</td><td>(15)</td><td>(45)</td><td>(28)</td><td>(18)</td><td>(5)</td><td>(21)</td><td>(45)</td><td>183,5%</td><td>145,1%</td></tr><tr><td>Margem Financeira Líquida<sup>1</sup></td><td>242</td><td>258</td><td>216</td><td>194</td><td>193</td><td>215</td><td>185</td><td>165</td><td>-6,0%</td><td>25,3%</td></tr><tr><td>Receitas de Prestação de Serviços</td><td>88</td><td>90</td><td>89</td><td>86</td><td>85</td><td>90</td><td>86</td><td>87</td><td>-2,9%</td><td>3,2%</td></tr><tr><td>Despesas de Pessoal</td><td>(97)</td><td>(101)</td><td>(98)</td><td>(89)</td><td>(86)</td><td>(93)</td><td>(94)</td><td>(91)</td><td>-4,3%</td><td>13,1%</td></tr><tr><td>Outras Despesas Administrativas</td><td>(77)</td><td>(79)</td><td>(77)</td><td>(76)</td><td>(69)</td><td>(72)</td><td>(66)</td><td>(66)</td><td>-2,2%</td><td>10,9%</td></tr><tr><td>Resultado Operacional</td><td>136</td><td>142</td><td>107</td><td>87</td><td>99</td><td>104</td><td>80</td><td>68</td><td>-4,6%</td><td>37,2%</td></tr><tr><td>Resultado Antes da Tributação</td><td>135</td><td>144</td><td>107</td><td>86</td><td>100</td><td>102</td><td>80</td><td>67</td><td>-6,0%</td><td>35,3%</td></tr><tr><td>Juros Sobre o Capital Próprio<sup>2</sup></td><td>19,5</td><td>87,1</td><td>18,0</td><td>18,0</td><td>18,0</td><td>33,3</td><td>6,0</td><td>6,7</td><td>-77,6%</td><td>8,3%</td></tr><tr><td>Lucro Líquido</td><td>81</td><td>76</td><td>60</td><td>53</td><td>61</td><td>62</td><td>45</td><td>42</td><td>6,4%</td><td>33,6%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-0.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Balanço Patrimonial<br/>(R$ milhões)</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Ativos Totais</td><td>36.445</td><td>34.007</td><td>33.834</td><td>32.383</td><td>32.169</td><td>30.484</td><td>35.548</td><td>27.186</td><td>7,2%</td><td>13,3%</td></tr><tr><td>Carteira de Crédito Ampliada</td><td>10.130</td><td>9.265</td><td>9.069</td><td>8.740</td><td>8.112</td><td>7.896</td><td>7.738</td><td>7.467</td><td>1,3%</td><td>16,4%</td></tr><tr><td>NPL Creation</td><td>122</td><td>133</td><td>170</td><td>164</td><td>157</td><td>96</td><td>116</td><td>167</td><td>-8,8%</td><td>-22,7%</td></tr><tr><td>Patrimônio Líquido</td><td>1.958</td><td>1.890</td><td>1.838</td><td>1.785</td><td>1.764</td><td>1.714</td><td>1.639</td><td>1.584</td><td>3,6%</td><td>11,0%</td></tr><tr><td>Aplicações Interfinanceiras de Liquidez</td><td>11.848</td><td>12.265</td><td>10.306</td><td>9.174</td><td>10.573</td><td>10.654</td><td>18.070</td><td>8.887</td><td>-3,4%</td><td>12,1%</td></tr><tr><td>Depósitos Totais</td><td>19.336</td><td>18.634</td><td>17.958</td><td>16.783</td><td>16.212</td><td>15.926</td><td>15.611</td><td>14.142</td><td>3,8%</td><td>19,3%</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>16.049</td><td>13.517</td><td>15.381</td><td>15.495</td><td>13.991</td><td>12.886</td><td>10.757</td><td>11.757</td><td>18,7%</td><td>14,7%</td></tr><tr><td>Captação Mercado Aberto</td><td>13.474</td><td>11.936</td><td>12.483</td><td>12.307</td><td>12.785</td><td>11.427</td><td>16.846</td><td>9.991</td><td>12,9%</td><td>5,4%</td></tr><tr><td>Recursos Captados e Administrados</td><td>40.404</td><td>37.370</td><td>36.771</td><td>35.274</td><td>34.753</td><td>32.892</td><td>38.173</td><td>29.483</td><td>8,1%</td><td>16,3%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-1.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Indicadores de Desempenho</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Lucro Líquido por Ação (R$)</td><td>0,26</td><td>0,24</td><td>0,19</td><td>0,17</td><td>0,19</td><td>0,20</td><td>0,14</td><td>0,13</td><td>6,4%</td><td>33,6%</td></tr><tr><td>Valor Patrimonial por Ação (R$)</td><td>6,20</td><td>5,98</td><td>5,82</td><td>5,65</td><td>5,58</td><td>5,43</td><td>5,19</td><td>5,01</td><td>3,6%</td><td>11,0%</td></tr><tr><td>ROA - Retorno Sobre Ativos Médios<sup>3</sup></td><td>0,8%</td><td>0,8%</td><td>0,7%</td><td>0,7%</td><td>0,7%</td><td>0,9%</td><td>0,7%</td><td>0,8%</td><td>0,0 p.p</td><td>0,1 p.p</td></tr><tr><td>ROE - Retorno sobre Patrimônio Líquido<sup>4</sup></td><td>14,6%</td><td>13,9%</td><td>13,6%</td><td>13,1%</td><td>12,7%</td><td>14,0%</td><td>13,5%</td><td>14,7%</td><td>0,7 p.p</td><td>1,9 p.p</td></tr><tr><td>Eficiência Operacional<sup>5</sup></td><td>46,6%</td><td>49,6%</td><td>49,9%</td><td>53,6%</td><td>52,4%</td><td>53,2%</td><td>55,0%</td><td>53,2%</td><td>-3,0 p.p</td><td>-5,8 p.p</td></tr><tr><td>Eficiência Operacional Ajustado ao Risco<sup>6</sup></td><td>52,7%</td><td>51,7%</td><td>57,3%</td><td>58,9%</td><td>55,7%</td><td>54,0%</td><td>59,2%</td><td>62,6%</td><td>1,0 p.p</td><td>-3,0 p.p</td></tr><tr><td>Valor de Mercado (R$ milhões)</td><td>1.645</td><td>1.609</td><td>1.648</td><td>1.721</td><td>1.652</td><td>1.771</td><td>1.778</td><td>1.924</td><td>2,2%</td><td>-0,4%</td></tr><tr><td>Índice de Inadimplência &gt; 90 Dias<sup>8</sup></td><td>1,2%</td><td>1,4%</td><td>1,9%</td><td>1,9%</td><td>1,9%</td><td>1,2%</td><td>1,5%</td><td>2,2%</td><td>-0,1 p.p</td><td>-0,6 p.p</td></tr><tr><td>Índice de Cobertura Geral<sup>9</sup></td><td>50,4%</td><td>50,1%</td><td>51,0%</td><td>52,2%</td><td>54,8%</td><td>54,7%</td><td>53,8%</td><td>55,0%</td><td>0,3 p.p</td><td>-4,4 p.p</td></tr><tr><td>Índice de Cobertura Imediata<sup>10</sup></td><td>90,5%</td><td>89,2%</td><td>91,0%</td><td>97,0%</td><td>99,2%</td><td>96,8%</td><td>91,9%</td><td>94,9%</td><td>1,3 p.p</td><td>-8,7 p.p</td></tr></table>",
+      "format": "html",
+      "id": "tbl-2.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 70,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 408,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Limites Operacionais</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Índice de Basileia (%)</td><td>15,8</td><td>15,6</td><td>15,2</td><td>15,5</td><td>15,9</td><td>15,4</td><td>14,4</td><td>14,1</td><td>0,2 p.p</td><td>-0,1 p.p</td></tr><tr><td>Capital Nível I – 100%</td><td>15,8</td><td>15,6</td><td>15,2</td><td>15,5</td><td>15,9</td><td>15,4</td><td>14,4</td><td>14,1</td><td>0,2 p.p</td><td>-0,1 p.p</td></tr><tr><th>Indicadores Estruturais</th><th>1T22</th><th>4T21</th><th>3T21</th><th>2T21</th><th>1T21</th><th>4T20</th><th>3T20</th><th>2T20</th><th></th><th></th></tr><tr><td>Unidades de Atendimento</td><td>151</td><td>152</td><td>154</td><td>154</td><td>154</td><td>153</td><td>153</td><td>152</td><td></td><td></td></tr><tr><td>Postos de Atendimento Eletrônico</td><td>331</td><td>331</td><td>332</td><td>334</td><td>334</td><td>332</td><td>331</td><td>329</td><td></td><td></td></tr><tr><td>Correspondentes</td><td>373</td><td>377</td><td>382</td><td>382</td><td>379</td><td>374</td><td>381</td><td>376</td><td></td><td></td></tr><tr><td>Colaboradores</td><td>2.103</td><td>2.035</td><td>2.090</td><td>2.096</td><td>2.041</td><td>2.045</td><td>2.106</td><td>2.173</td><td></td><td></td></tr><tr><th>Indicadores Econômicos<sup>12</sup></th><th>1T22</th><th>4T21</th><th>3T21</th><th>2T21</th><th>1T21</th><th>4T20</th><th>3T20</th><th>2T20</th><th></th><th></th></tr><tr><td>Selic (%)</td><td>11,75</td><td>9,25</td><td>6,25</td><td>4,25</td><td>2,75</td><td>2,00</td><td>2,25</td><td>2,25</td><td></td><td></td></tr><tr><td>Taxa de Câmbio (R$/US$ - final de período)</td><td>4,74</td><td>5,58</td><td>5,41</td><td>4,97</td><td>5,70</td><td>5,20</td><td>5,63</td><td>5,47</td><td></td><td></td></tr><tr><td>IGP-M (%)</td><td>5,49</td><td>1,53</td><td>0,80</td><td>6,30</td><td>8,26</td><td>7,47</td><td>9,31</td><td>2,64</td><td></td><td></td></tr><tr><td>IPCA<sup>13</sup> (%)</td><td>3,20</td><td>2,93</td><td>2,99</td><td>1,68</td><td>2,05</td><td>3,13</td><td>1,24</td><td>-0,43</td><td></td><td></td></tr></table>",
+      "table_id": "tbl-3.html",
+      "top_left_x": 47,
+      "top_left_y": 105,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 249,
+      "bottom_right_y": 432,
+      "confidence_scores": null,
+      "content": "$^{1}$ Resultado bruto da intermediação financeira.",
+      "top_left_x": 47,
+      "top_left_y": 417,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 352,
+      "bottom_right_y": 442,
+      "confidence_scores": null,
+      "content": "$^{2}$ Juros sobre o capital próprio pagos e/ou provisionados (antes do IR).",
+      "top_left_x": 47,
+      "top_left_y": 429,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 657,
+      "bottom_right_y": 453,
+      "confidence_scores": null,
+      "content": "$^{3}$ Relação entre o lucro líquido dos últimos doze meses e a média dos ativos totais do trimestre vigente e do mesmo trimestre do ano anterior.",
+      "top_left_x": 47,
+      "top_left_y": 440,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 475,
+      "confidence_scores": null,
+      "content": "$^{4}$ Relação entre o lucro líquido dos últimos doze meses e a média dos patrimônios líquidos do trimestre vigente e do mesmo trimestre do ano anterior.",
+      "top_left_x": 47,
+      "top_left_y": 451,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 497,
+      "confidence_scores": null,
+      "content": "$^{5}$ Relação entre o total de despesas administrativas (pessoal e outras) e o total das receitas com serviços, tarifas e o resultado bruto da intermediação financeira (excluído a provisão para créditos de liquidação duvidosa).",
+      "top_left_x": 47,
+      "top_left_y": 473,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 520,
+      "confidence_scores": null,
+      "content": "$^{6}$ Relação entre o total das despesas administrativas (pessoal e outras) e o total das receitas com serviços, tarifas e o resultado bruto da intermediação financeira.",
+      "top_left_x": 47,
+      "top_left_y": 495,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 228,
+      "bottom_right_y": 531,
+      "confidence_scores": null,
+      "content": "$^{7}$ Em 31.03.2022, ON = 5,01 e PN = 5,74.",
+      "top_left_x": 47,
+      "top_left_y": 518,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 338,
+      "bottom_right_y": 542,
+      "confidence_scores": null,
+      "content": "$^{8}$ Índice de Inadimplência > 90 dias da carteira de crédito ampliada.",
+      "top_left_x": 47,
+      "top_left_y": 529,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 547,
+      "bottom_right_y": 553,
+      "confidence_scores": null,
+      "content": "$^{9}$ Relação entre o total das receitas com serviços e tarifas e o total das despesas administrativas (pessoal e outras).",
+      "top_left_x": 47,
+      "top_left_y": 540,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 453,
+      "bottom_right_y": 565,
+      "confidence_scores": null,
+      "content": "$^{10}$ Relação entre o total das receitas com serviços e tarifas e o total das despesas de pessoal.",
+      "top_left_x": 47,
+      "top_left_y": 551,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 210,
+      "bottom_right_y": 575,
+      "confidence_scores": null,
+      "content": "$^{11}$ Agências e postos de atendimento.",
+      "top_left_x": 47,
+      "top_left_y": 562,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 213,
+      "bottom_right_y": 586,
+      "confidence_scores": null,
+      "content": "$^{12}$ Fonte: Banco Central, FGV e IBGE.",
+      "top_left_x": 47,
+      "top_left_y": 573,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 283,
+      "bottom_right_y": 597,
+      "confidence_scores": null,
+      "content": "$^{13}$ Índice de Preços ao Consumidor Amplo – trimestral.",
+      "top_left_x": 47,
+      "top_left_y": 584,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**3**^{}[] Relatório de Análise Econômica e Financeira",
+      "top_left_x": 92,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9918146633312853,
+     "minimum_page_confidence_score": 0.24173782926657814,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 2,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n[tbl-3.html](tbl-3.html)\n\n$^{1}$ Resultado bruto da intermediação financeira.\n\n$^{2}$ Juros sobre o capital próprio pagos e/ou provisionados (antes do IR).\n\n$^{3}$ Relação entre o lucro líquido dos últimos doze meses e a média dos ativos totais do trimestre vigente e do mesmo trimestre do ano anterior.\n\n$^{4}$ Relação entre o lucro líquido dos últimos doze meses e a média dos patrimônios líquidos do trimestre vigente e do mesmo trimestre do ano anterior.\n\n$^{5}$ Relação entre o total de despesas administrativas (pessoal e outras) e o total das receitas com serviços, tarifas e o resultado bruto da intermediação financeira (excluído a provisão para créditos de liquidação duvidosa).\n\n$^{6}$ Relação entre o total das despesas administrativas (pessoal e outras) e o total das receitas com serviços, tarifas e o resultado bruto da intermediação financeira.\n\n$^{7}$ Em 31.03.2022, ON = 5,01 e PN = 5,74.\n\n$^{8}$ Índice de Inadimplência > 90 dias da carteira de crédito ampliada.\n\n$^{9}$ Relação entre o total das receitas com serviços e tarifas e o total das despesas administrativas (pessoal e outras).\n\n$^{10}$ Relação entre o total das receitas com serviços e tarifas e o total das despesas de pessoal.\n\n$^{11}$ Agências e postos de atendimento.\n\n$^{12}$ Fonte: Banco Central, FGV e IBGE.\n\n$^{13}$ Índice de Preços ao Consumidor Amplo – trimestral.\n\n**3**Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Limites Operacionais</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Índice de Basileia (%)</td><td>15,8</td><td>15,6</td><td>15,2</td><td>15,5</td><td>15,9</td><td>15,4</td><td>14,4</td><td>14,1</td><td>0,2 p.p</td><td>-0,1 p.p</td></tr><tr><td>Capital Nível I – 100%</td><td>15,8</td><td>15,6</td><td>15,2</td><td>15,5</td><td>15,9</td><td>15,4</td><td>14,4</td><td>14,1</td><td>0,2 p.p</td><td>-0,1 p.p</td></tr><tr><th>Indicadores Estruturais</th><th>1T22</th><th>4T21</th><th>3T21</th><th>2T21</th><th>1T21</th><th>4T20</th><th>3T20</th><th>2T20</th><th></th><th></th></tr><tr><td>Unidades de Atendimento</td><td>151</td><td>152</td><td>154</td><td>154</td><td>154</td><td>153</td><td>153</td><td>152</td><td></td><td></td></tr><tr><td>Postos de Atendimento Eletrônico</td><td>331</td><td>331</td><td>332</td><td>334</td><td>334</td><td>332</td><td>331</td><td>329</td><td></td><td></td></tr><tr><td>Correspondentes</td><td>373</td><td>377</td><td>382</td><td>382</td><td>379</td><td>374</td><td>381</td><td>376</td><td></td><td></td></tr><tr><td>Colaboradores</td><td>2.103</td><td>2.035</td><td>2.090</td><td>2.096</td><td>2.041</td><td>2.045</td><td>2.106</td><td>2.173</td><td></td><td></td></tr><tr><th>Indicadores Econômicos<sup>12</sup></th><th>1T22</th><th>4T21</th><th>3T21</th><th>2T21</th><th>1T21</th><th>4T20</th><th>3T20</th><th>2T20</th><th></th><th></th></tr><tr><td>Selic (%)</td><td>11,75</td><td>9,25</td><td>6,25</td><td>4,25</td><td>2,75</td><td>2,00</td><td>2,25</td><td>2,25</td><td></td><td></td></tr><tr><td>Taxa de Câmbio (R$/US$ - final de período)</td><td>4,74</td><td>5,58</td><td>5,41</td><td>4,97</td><td>5,70</td><td>5,20</td><td>5,63</td><td>5,47</td><td></td><td></td></tr><tr><td>IGP-M (%)</td><td>5,49</td><td>1,53</td><td>0,80</td><td>6,30</td><td>8,26</td><td>7,47</td><td>9,31</td><td>2,64</td><td></td><td></td></tr><tr><td>IPCA<sup>13</sup> (%)</td><td>3,20</td><td>2,93</td><td>2,99</td><td>1,68</td><td>2,05</td><td>3,13</td><td>1,24</td><td>-0,43</td><td></td><td></td></tr></table>",
+      "format": "html",
+      "id": "tbl-3.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 70,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 157,
+      "bottom_right_y": 129,
+      "confidence_scores": null,
+      "content": "## Resultados",
+      "top_left_x": 48,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 416,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Demonstração do Resultado<br/>(R$ milhões)</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Receitas de Intermediação Financeira</td><td>973</td><td>783</td><td>599</td><td>443</td><td>353</td><td>372</td><td>350</td><td>389</td><td>24,2%</td><td>176,1%</td></tr><tr><td>Despesas de Intermediação Financeira</td><td>(688)</td><td>(511)</td><td>(338)</td><td>(220)</td><td>(142)</td><td>(152)</td><td>(145)</td><td>(180)</td><td>34,7%</td><td>385,8%</td></tr><tr><td>Provisão para Créditos de Liquidação Duvidosa</td><td>(43)</td><td>(15)</td><td>(45)</td><td>(28)</td><td>(18)</td><td>(5)</td><td>(21)</td><td>(45)</td><td>183,5%</td><td>145,1%</td></tr><tr><td>Margem Financeira Líquida</td><td>242</td><td>258</td><td>216</td><td>194</td><td>193</td><td>215</td><td>185</td><td>165</td><td>-6,0%</td><td>25,3%</td></tr><tr><td>Receitas de Prestação de Serviços</td><td>88</td><td>90</td><td>89</td><td>86</td><td>85</td><td>90</td><td>86</td><td>87</td><td>-2,9%</td><td>3,2%</td></tr><tr><td>Despesas de Pessoal</td><td>(97)</td><td>(101)</td><td>(98)</td><td>(89)</td><td>(86)</td><td>(93)</td><td>(94)</td><td>(91)</td><td>-4,3%</td><td>13,1%</td></tr><tr><td>Outras Despesas Administrativas</td><td>(77)</td><td>(79)</td><td>(77)</td><td>(76)</td><td>(69)</td><td>(72)</td><td>(66)</td><td>(66)</td><td>-2,2%</td><td>10,9%</td></tr><tr><td>Resultado Operacional</td><td>136</td><td>142</td><td>107</td><td>87</td><td>99</td><td>104</td><td>80</td><td>68</td><td>-4,6%</td><td>37,2%</td></tr><tr><td>Resultado Antes da Tributação</td><td>135</td><td>144</td><td>107</td><td>86</td><td>100</td><td>102</td><td>80</td><td>67</td><td>-6,0%</td><td>35,3%</td></tr><tr><td>Juros Sobre o Capital Próprio</td><td>19,5</td><td>87,1</td><td>18,0</td><td>18,0</td><td>18,0</td><td>33,3</td><td>6,0</td><td>6,7</td><td>-77,6%</td><td>8,3%</td></tr><tr><td>Lucro Líquido</td><td>81</td><td>76</td><td>60</td><td>53</td><td>61</td><td>62</td><td>45</td><td>42</td><td>6,4%</td><td>33,6%</td></tr></table>",
+      "table_id": "tbl-4.html",
+      "top_left_x": 48,
+      "top_left_y": 141,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 350,
+      "bottom_right_y": 452,
+      "confidence_scores": null,
+      "content": "### lucro líquido e eficiência operacional",
+      "top_left_x": 48,
+      "top_left_y": 432,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 561,
+      "bottom_right_y": 804,
+      "confidence_scores": null,
+      "content": "![img-1.jpeg](img-1.jpeg)",
+      "image_id": "img-1.jpeg",
+      "top_left_x": 169,
+      "top_left_y": 469,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 907,
+      "confidence_scores": null,
+      "content": "O lucro líquido do primeiro trimestre de 2022 foi de R$ 81 milhões, maior 33,6% quando comparado com o mesmo período do ano de 2021 e 6,4% contra o quarto trimestre de 2021. Quando comparado o lucro líquido recorrente do período contra o quarto trimestre de 2021 a expansão aumenta para 10,3% diante fato não recorrente ocorrido em novembro de 2021 de reversão de provisão para contingência fiscal/tributária. O resultado conquistado é decorrente de maiores receitas com operações de tesouraria (+344,3% em 12 meses e +34,6% em 3 meses), com operações de crédito (+38,1% em 12 meses e",
+      "top_left_x": 48,
+      "top_left_y": 813,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "4 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 92,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9913490038031615,
+     "minimum_page_confidence_score": 0.36081286727625117,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 561,
+      "bottom_right_y": 804,
+      "id": "img-1.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 169,
+      "top_left_y": 469
+     }
+    ],
+    "index": 3,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n## Resultados\n\n[tbl-4.html](tbl-4.html)\n\n### lucro líquido e eficiência operacional\n\n![img-1.jpeg](img-1.jpeg)\n\nO lucro líquido do primeiro trimestre de 2022 foi de R$ 81 milhões, maior 33,6% quando comparado com o mesmo período do ano de 2021 e 6,4% contra o quarto trimestre de 2021. Quando comparado o lucro líquido recorrente do período contra o quarto trimestre de 2021 a expansão aumenta para 10,3% diante fato não recorrente ocorrido em novembro de 2021 de reversão de provisão para contingência fiscal/tributária. O resultado conquistado é decorrente de maiores receitas com operações de tesouraria (+344,3% em 12 meses e +34,6% em 3 meses), com operações de crédito (+38,1% em 12 meses e\n\n4 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Demonstração do Resultado<br/>(R$ milhões)</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Receitas de Intermediação Financeira</td><td>973</td><td>783</td><td>599</td><td>443</td><td>353</td><td>372</td><td>350</td><td>389</td><td>24,2%</td><td>176,1%</td></tr><tr><td>Despesas de Intermediação Financeira</td><td>(688)</td><td>(511)</td><td>(338)</td><td>(220)</td><td>(142)</td><td>(152)</td><td>(145)</td><td>(180)</td><td>34,7%</td><td>385,8%</td></tr><tr><td>Provisão para Créditos de Liquidação Duvidosa</td><td>(43)</td><td>(15)</td><td>(45)</td><td>(28)</td><td>(18)</td><td>(5)</td><td>(21)</td><td>(45)</td><td>183,5%</td><td>145,1%</td></tr><tr><td>Margem Financeira Líquida</td><td>242</td><td>258</td><td>216</td><td>194</td><td>193</td><td>215</td><td>185</td><td>165</td><td>-6,0%</td><td>25,3%</td></tr><tr><td>Receitas de Prestação de Serviços</td><td>88</td><td>90</td><td>89</td><td>86</td><td>85</td><td>90</td><td>86</td><td>87</td><td>-2,9%</td><td>3,2%</td></tr><tr><td>Despesas de Pessoal</td><td>(97)</td><td>(101)</td><td>(98)</td><td>(89)</td><td>(86)</td><td>(93)</td><td>(94)</td><td>(91)</td><td>-4,3%</td><td>13,1%</td></tr><tr><td>Outras Despesas Administrativas</td><td>(77)</td><td>(79)</td><td>(77)</td><td>(76)</td><td>(69)</td><td>(72)</td><td>(66)</td><td>(66)</td><td>-2,2%</td><td>10,9%</td></tr><tr><td>Resultado Operacional</td><td>136</td><td>142</td><td>107</td><td>87</td><td>99</td><td>104</td><td>80</td><td>68</td><td>-4,6%</td><td>37,2%</td></tr><tr><td>Resultado Antes da Tributação</td><td>135</td><td>144</td><td>107</td><td>86</td><td>100</td><td>102</td><td>80</td><td>67</td><td>-6,0%</td><td>35,3%</td></tr><tr><td>Juros Sobre o Capital Próprio</td><td>19,5</td><td>87,1</td><td>18,0</td><td>18,0</td><td>18,0</td><td>33,3</td><td>6,0</td><td>6,7</td><td>-77,6%</td><td>8,3%</td></tr><tr><td>Lucro Líquido</td><td>81</td><td>76</td><td>60</td><td>53</td><td>61</td><td>62</td><td>45</td><td>42</td><td>6,4%</td><td>33,6%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-4.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 582,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 677,
+      "bottom_right_y": 155,
+      "confidence_scores": null,
+      "content": "+3,4% em 3 meses), maior resultado com operações de seguros$^{14}$ (+35,7% em 12 meses e +2,2% em 3 meses), recuperação das receitas com serviços (+3,2% em 12 meses) e outras receitas operacionais oriundas da operação de cartões.",
+      "top_left_x": 47,
+      "top_left_y": 107,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 323,
+      "confidence_scores": null,
+      "content": "O faturamento no primeiro trimestre atingiu R$ 1,1 bilhão (+133,9% em 12 meses e +21,2% em 3 meses) sob influência, da posição financeira em tesouraria, especialmente a carteira de títulos e valores mobiliários - títulos públicos e privados (+14,7% em 12 meses e +18,7% em 3 meses) e pela expansão da carteira de crédito (+22,6% em 12 meses e +4,0 em 3 meses), em que pese os fortes efeitos e impactos da flutuação positiva da Selic e da elevação dos índices de preços e de inflação no período. Assim, as receitas com operações de crédito somaram, no primeiro trimestre de 2022, R$ 264 milhões, enquanto, o resultado de operações de títulos e valores mobiliários atingiu R$ 698 milhões. A prestação de serviços e tarifas bancárias somou no trimestre o valor de R$ 88 milhões, esboçando uma pequena recuperação, frente a um cenário ainda de baixa recuperação econômica local, pautado no bom desempenho das operações com fundos de investimentos.",
+      "top_left_x": 47,
+      "top_left_y": 168,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 461,
+      "confidence_scores": null,
+      "content": "Tais variações positivas de receitas compensaram o aumento dos custos com clientes$^{15}$ (+385,8% em 12 meses e +34,7% em 3 meses) e elevação das despesas com provisões para créditos de liquidação duvidosa (+145,1% em 12 meses e 183,5% em 3 meses), diante da necessidade pontual de contingência de operações de crédito corporativas, e o crescimento das despesas administrativas (pessoal e outras) (+12,1% em 12 meses), dado o reajuste inflacionário do período e seus impactos nos contratos administrativos. No trimestre, o resultado operacional atingiu R$ 136 milhões, expandindo 37,2% sobre o mesmo período de 2021. O índice de eficiência operacional fixou-se em 46,6% e o índice de eficiência operacional ajustada ao risco em 52,7%.",
+      "top_left_x": 47,
+      "top_left_y": 334,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 262,
+      "bottom_right_y": 498,
+      "confidence_scores": null,
+      "content": "### margem financeira líquida",
+      "top_left_x": 47,
+      "top_left_y": 479,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 565,
+      "bottom_right_y": 775,
+      "confidence_scores": null,
+      "content": "![img-2.jpeg](img-2.jpeg)",
+      "image_id": "img-2.jpeg",
+      "top_left_x": 159,
+      "top_left_y": 500,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 852,
+      "confidence_scores": null,
+      "content": "A margem financeira líquida registrou R$ 242 milhões no primeiro trimestre de 2022, com expansão de 25,3% ante o mesmo período de 2021 e queda de 6,0% em relação ao quarto trimestre de 2021. As receitas com juros$^{16}$ expandiram sob a ótica operacional e orgânica da produção bancária; onde fatores endógenos como a prática de operações de alienação de títulos aproveitando as oportunidades de",
+      "top_left_x": 47,
+      "top_left_y": 789,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 908,
+      "confidence_scores": null,
+      "content": "$^{14}$ Total dos prêmios retidos, variações das provisões técnicas, dos sinistros retidos, das despesas de comercialização de seguros e do resultado líquido de resseguro.",
+      "top_left_x": 47,
+      "top_left_y": 881,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 285,
+      "bottom_right_y": 919,
+      "confidence_scores": null,
+      "content": "$^{15}$ Refere-se as despesas da intermediação financeira.",
+      "top_left_x": 47,
+      "top_left_y": 906,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 277,
+      "bottom_right_y": 930,
+      "confidence_scores": null,
+      "content": "$^{16}$ Refere-se as receitas da intermediação financeira.",
+      "top_left_x": 47,
+      "top_left_y": 916,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**5** | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 92,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9879498982693762,
+     "minimum_page_confidence_score": 0.37155221507974484,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 565,
+      "bottom_right_y": 775,
+      "id": "img-2.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 159,
+      "top_left_y": 500
+     }
+    ],
+    "index": 4,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n+3,4% em 3 meses), maior resultado com operações de seguros$^{14}$ (+35,7% em 12 meses e +2,2% em 3 meses), recuperação das receitas com serviços (+3,2% em 12 meses) e outras receitas operacionais oriundas da operação de cartões.\n\nO faturamento no primeiro trimestre atingiu R$ 1,1 bilhão (+133,9% em 12 meses e +21,2% em 3 meses) sob influência, da posição financeira em tesouraria, especialmente a carteira de títulos e valores mobiliários - títulos públicos e privados (+14,7% em 12 meses e +18,7% em 3 meses) e pela expansão da carteira de crédito (+22,6% em 12 meses e +4,0 em 3 meses), em que pese os fortes efeitos e impactos da flutuação positiva da Selic e da elevação dos índices de preços e de inflação no período. Assim, as receitas com operações de crédito somaram, no primeiro trimestre de 2022, R$ 264 milhões, enquanto, o resultado de operações de títulos e valores mobiliários atingiu R$ 698 milhões. A prestação de serviços e tarifas bancárias somou no trimestre o valor de R$ 88 milhões, esboçando uma pequena recuperação, frente a um cenário ainda de baixa recuperação econômica local, pautado no bom desempenho das operações com fundos de investimentos.\n\nTais variações positivas de receitas compensaram o aumento dos custos com clientes$^{15}$ (+385,8% em 12 meses e +34,7% em 3 meses) e elevação das despesas com provisões para créditos de liquidação duvidosa (+145,1% em 12 meses e 183,5% em 3 meses), diante da necessidade pontual de contingência de operações de crédito corporativas, e o crescimento das despesas administrativas (pessoal e outras) (+12,1% em 12 meses), dado o reajuste inflacionário do período e seus impactos nos contratos administrativos. No trimestre, o resultado operacional atingiu R$ 136 milhões, expandindo 37,2% sobre o mesmo período de 2021. O índice de eficiência operacional fixou-se em 46,6% e o índice de eficiência operacional ajustada ao risco em 52,7%.\n\n### margem financeira líquida\n\n![img-2.jpeg](img-2.jpeg)\n\nA margem financeira líquida registrou R$ 242 milhões no primeiro trimestre de 2022, com expansão de 25,3% ante o mesmo período de 2021 e queda de 6,0% em relação ao quarto trimestre de 2021. As receitas com juros$^{16}$ expandiram sob a ótica operacional e orgânica da produção bancária; onde fatores endógenos como a prática de operações de alienação de títulos aproveitando as oportunidades de\n\n$^{14}$ Total dos prêmios retidos, variações das provisões técnicas, dos sinistros retidos, das despesas de comercialização de seguros e do resultado líquido de resseguro.\n\n$^{15}$ Refere-se as despesas da intermediação financeira.\n\n$^{16}$ Refere-se as receitas da intermediação financeira.\n\n**5** | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 170,
+      "confidence_scores": null,
+      "content": "mercado e a aplicação de esforço de vendas na expansão das operações de crédito (+23,5% em 12 meses e +4,5% em 3 meses); aliados a fatores exógenos, como o comportamento expansionista do juros/Selic, índices de inflação e a recuperação da atividade econômica local deram a intensidade e tônica desse crescimento.",
+      "top_left_x": 46,
+      "top_left_y": 107,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 247,
+      "confidence_scores": null,
+      "content": "As despesas com juros$^{17}$ seguiram o mesmo comportamento expansionista, onde a prática da reciprocidade com o cliente, ou seja, o estreitamente relacional no atendimento, manteve o avanço das nossas modalidades de captação, principalmente em depósitos que expandiram no período (+19,3% em 12 meses e +3,8% em 3 meses).",
+      "top_left_x": 46,
+      "top_left_y": 183,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 338,
+      "confidence_scores": null,
+      "content": "Por fim, registra-se a elevação do custo com risco de crédito (provisões para créditos de liquidação duvidosa), o qual sofreu impacto diretamente da necessidade pontual de contingência de operações de crédito corporativas e do crescimento e recomposição da carteira de crédito em um período de atividade econômica ainda em baixa escala, recrudescida por conflito entre nações e inflação de efeitos e impactos globais.",
+      "top_left_x": 46,
+      "top_left_y": 260,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 427,
+      "bottom_right_y": 377,
+      "confidence_scores": null,
+      "content": "### provisão para créditos de liquidação duvidosa",
+      "top_left_x": 46,
+      "top_left_y": 357,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 579,
+      "bottom_right_y": 679,
+      "confidence_scores": null,
+      "content": "![img-3.jpeg](img-3.jpeg)",
+      "image_id": "img-3.jpeg",
+      "top_left_x": 174,
+      "top_left_y": 399,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 803,
+      "confidence_scores": null,
+      "content": "No primeiro trimestre do ano, o resultado com provisão para créditos de liquidação duvidosa foi de R$ 43 milhões, aumentos de 145,1% contra o mesmo período de 2021 e de 183,5% contra o trimestre anterior. Desse valor, foram registrados como reversões de provisões R$ 19 milhões (-22,7% em 12 meses e -42,3% em 3 meses), enquanto as despesas de provisões somaram R$ 62 milhões (+47,4% em 12 meses e +29,1% em 3 meses) refletindo pontualmente a necessidade de constituição de provisões para operações de crédito a clientes corporativos.",
+      "top_left_x": 46,
+      "top_left_y": 709,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 880,
+      "confidence_scores": null,
+      "content": "As despesas com provisões de crédito geradas nos últimos doze meses representaram 1,3% do total da carteira de crédito ampliada. O perfil da nossa carteira de crédito exerce influência direta na constituição de provisionamento das concessões, uma vez que o grande montante (R$ 6,1 bilhões, ou seja, 91,8%) do crédito está direcionado a pessoas físicas e MPME's$^{18}$ e em modalidades de crédito como consignado,",
+      "top_left_x": 46,
+      "top_left_y": 817,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 285,
+      "bottom_right_y": 919,
+      "confidence_scores": null,
+      "content": "$^{17}$ Refere-se às despesas da intermediação financeira.",
+      "top_left_x": 46,
+      "top_left_y": 906,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 391,
+      "bottom_right_y": 930,
+      "confidence_scores": null,
+      "content": "$^{18}$ Micro, pequenas e médias empresas conforme Lei Complementar nº 139/11.",
+      "top_left_x": 46,
+      "top_left_y": 915,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**6** | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 92,
+      "top_left_y": 934,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9850016284330407,
+     "minimum_page_confidence_score": 0.38950329463747474,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 579,
+      "bottom_right_y": 679,
+      "id": "img-3.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 174,
+      "top_left_y": 399
+     }
+    ],
+    "index": 5,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\nmercado e a aplicação de esforço de vendas na expansão das operações de crédito (+23,5% em 12 meses e +4,5% em 3 meses); aliados a fatores exógenos, como o comportamento expansionista do juros/Selic, índices de inflação e a recuperação da atividade econômica local deram a intensidade e tônica desse crescimento.\n\nAs despesas com juros$^{17}$ seguiram o mesmo comportamento expansionista, onde a prática da reciprocidade com o cliente, ou seja, o estreitamente relacional no atendimento, manteve o avanço das nossas modalidades de captação, principalmente em depósitos que expandiram no período (+19,3% em 12 meses e +3,8% em 3 meses).\n\nPor fim, registra-se a elevação do custo com risco de crédito (provisões para créditos de liquidação duvidosa), o qual sofreu impacto diretamente da necessidade pontual de contingência de operações de crédito corporativas e do crescimento e recomposição da carteira de crédito em um período de atividade econômica ainda em baixa escala, recrudescida por conflito entre nações e inflação de efeitos e impactos globais.\n\n### provisão para créditos de liquidação duvidosa\n\n![img-3.jpeg](img-3.jpeg)\n\nNo primeiro trimestre do ano, o resultado com provisão para créditos de liquidação duvidosa foi de R$ 43 milhões, aumentos de 145,1% contra o mesmo período de 2021 e de 183,5% contra o trimestre anterior. Desse valor, foram registrados como reversões de provisões R$ 19 milhões (-22,7% em 12 meses e -42,3% em 3 meses), enquanto as despesas de provisões somaram R$ 62 milhões (+47,4% em 12 meses e +29,1% em 3 meses) refletindo pontualmente a necessidade de constituição de provisões para operações de crédito a clientes corporativos.\n\nAs despesas com provisões de crédito geradas nos últimos doze meses representaram 1,3% do total da carteira de crédito ampliada. O perfil da nossa carteira de crédito exerce influência direta na constituição de provisionamento das concessões, uma vez que o grande montante (R$ 6,1 bilhões, ou seja, 91,8%) do crédito está direcionado a pessoas físicas e MPME's$^{18}$ e em modalidades de crédito como consignado,\n\n$^{17}$ Refere-se às despesas da intermediação financeira.\n\n$^{18}$ Micro, pequenas e médias empresas conforme Lei Complementar nº 139/11.\n\n**6** | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 186,
+      "confidence_scores": null,
+      "content": "microcrédito e financiamentos imobiliários (R$ 3,2 bilhões), que possuem garantias reais e representam menores riscos. O BANESTES adota a prática de ações e medidas visando a adequação da política e processos de concessão de crédito. Todas essas ações buscam a maior qualidade das garantias adquiridas nas novas concessões e o aprimoramento dos processos de reestruturação de ativos e de recuperação de crédito.",
+      "top_left_x": 47,
+      "top_left_y": 108,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 324,
+      "bottom_right_y": 227,
+      "confidence_scores": null,
+      "content": "### receitas de prestação de serviços",
+      "top_left_x": 47,
+      "top_left_y": 208,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 568,
+      "bottom_right_y": 545,
+      "confidence_scores": null,
+      "content": "![img-4.jpeg](img-4.jpeg)",
+      "image_id": "img-4.jpeg",
+      "top_left_x": 159,
+      "top_left_y": 248,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 711,
+      "confidence_scores": null,
+      "content": "As receitas com prestação de serviços no trimestre atingiram R$ 88 milhões, aumento de 3,2% contra o mesmo período de 2021 e retração de 2,9% contra o quarto trimestre de 2021, muito por conta do aumento da atividade econômica influenciado pelo período de fim de ano (datas comemorativas, festas e eventos). O destaque no primeiro trimestre de 2022 ficou por conta das receitas advindas da gestão e administração de fundos (+33,3% em 12 meses e +8,5% em 3 meses) e angariação de seguros (+75,7% em 12 meses e +40,7% em 3 meses). No período, o BANESTES manteve relacionamento com a base de 1.322.112 clientes (+11,6% em 12 meses), crescendo sua base com pessoa física em 12,1% em doze meses e com pessoa jurídica em +3,0% na mesma comparação. O número de contas correntes atingiu 948.536, crescimento de 25,1% em doze meses, enquanto as contas de poupança somaram 627.418 com variação positiva em 2,7% em doze meses.",
+      "top_left_x": 47,
+      "top_left_y": 556,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 856,
+      "confidence_scores": null,
+      "content": "O Resultado Operacional de Seguros$^{19}$, no primeiro trimestre, atingiu R$ 22 milhões, maior 35,7% contra o mesmo período de 2021 e +2,2% comparado ao quarto trimestre de 2021; diretamente influenciado pela elevação da carteira de seguros de vida (+13,9% em 12 meses) e dos prêmios emitidos de seguros auto (+18,9% em 12 meses), de seguros residenciais (+4,9% em 12 meses) e de seguros acidentes pessoais (+44,3% em 12 meses). O volume de operações de consórcio no primeiro trimestre do ano atingiu R$ 5 milhões. Importante frisar que os custos com sinistros no período permaneceram em patamar ainda elevado (+21,4% em 12 meses e +29,8% em 3 meses), contudo, há a expectativa da estabilização do custo a patamar operacional normal para os próximos trimestres.",
+      "top_left_x": 47,
+      "top_left_y": 732,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 672,
+      "bottom_right_y": 930,
+      "confidence_scores": null,
+      "content": "$^{19}$ Total dos prêmios retidos, variações das provisões técnicas, dos sinistros retidos, das despesas de comercialização de seguros e do resultado líquido de resseguro.",
+      "top_left_x": 47,
+      "top_left_y": 905,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**7** | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 92,
+      "top_left_y": 934,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.986365921493066,
+     "minimum_page_confidence_score": 0.39290498222012177,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 568,
+      "bottom_right_y": 545,
+      "id": "img-4.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 159,
+      "top_left_y": 248
+     }
+    ],
+    "index": 6,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\nmicrocrédito e financiamentos imobiliários (R$ 3,2 bilhões), que possuem garantias reais e representam menores riscos. O BANESTES adota a prática de ações e medidas visando a adequação da política e processos de concessão de crédito. Todas essas ações buscam a maior qualidade das garantias adquiridas nas novas concessões e o aprimoramento dos processos de reestruturação de ativos e de recuperação de crédito.\n\n### receitas de prestação de serviços\n\n![img-4.jpeg](img-4.jpeg)\n\nAs receitas com prestação de serviços no trimestre atingiram R$ 88 milhões, aumento de 3,2% contra o mesmo período de 2021 e retração de 2,9% contra o quarto trimestre de 2021, muito por conta do aumento da atividade econômica influenciado pelo período de fim de ano (datas comemorativas, festas e eventos). O destaque no primeiro trimestre de 2022 ficou por conta das receitas advindas da gestão e administração de fundos (+33,3% em 12 meses e +8,5% em 3 meses) e angariação de seguros (+75,7% em 12 meses e +40,7% em 3 meses). No período, o BANESTES manteve relacionamento com a base de 1.322.112 clientes (+11,6% em 12 meses), crescendo sua base com pessoa física em 12,1% em doze meses e com pessoa jurídica em +3,0% na mesma comparação. O número de contas correntes atingiu 948.536, crescimento de 25,1% em doze meses, enquanto as contas de poupança somaram 627.418 com variação positiva em 2,7% em doze meses.\n\nO Resultado Operacional de Seguros$^{19}$, no primeiro trimestre, atingiu R$ 22 milhões, maior 35,7% contra o mesmo período de 2021 e +2,2% comparado ao quarto trimestre de 2021; diretamente influenciado pela elevação da carteira de seguros de vida (+13,9% em 12 meses) e dos prêmios emitidos de seguros auto (+18,9% em 12 meses), de seguros residenciais (+4,9% em 12 meses) e de seguros acidentes pessoais (+44,3% em 12 meses). O volume de operações de consórcio no primeiro trimestre do ano atingiu R$ 5 milhões. Importante frisar que os custos com sinistros no período permaneceram em patamar ainda elevado (+21,4% em 12 meses e +29,8% em 3 meses), contudo, há a expectativa da estabilização do custo a patamar operacional normal para os próximos trimestres.\n\n$^{19}$ Total dos prêmios retidos, variações das provisões técnicas, dos sinistros retidos, das despesas de comercialização de seguros e do resultado líquido de resseguro.\n\n**7** | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 355,
+      "bottom_right_y": 127,
+      "confidence_scores": null,
+      "content": "# **despesa de pessoal e administrativas**",
+      "top_left_x": 47,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 160,
+      "bottom_right_y": 163,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 107,
+      "top_left_y": 150,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 568,
+      "bottom_right_y": 451,
+      "confidence_scores": null,
+      "content": "![img-5.jpeg](img-5.jpeg)",
+      "image_id": "img-5.jpeg",
+      "top_left_x": 161,
+      "top_left_y": 167,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 630,
+      "confidence_scores": null,
+      "content": "As despesas administrativas (pessoal e outras) somaram R$ 174 milhões no primeiro trimestre de 2022, elevação de 12,1% sobre o mesmo período de 2021 e queda de 3,4% quando comparado com o trimestre anterior. Os gastos com pessoal atingiram R$ 97 milhões (+13,1% em 12 meses e -4,3% em 3 meses) em que têm-se a expectativa de capturar e equalizar ganhos com os planos de PDVs aplicados nos últimos anos. As outras despesas administrativas somaram R$ 77 milhões (+10,9% em 12 meses e -2,2% em 3 meses), decorrentes de gastos com projetos relacionados à tecnologia da informação (projeto de implantação de ERP), cartões e atendimento a clientes, bem como, custos da atividade bancária como alugéis, manutenção de bens, processamento de dados e transporte de numerários, ora impactados pela pressão inflacionária. Cabe ressaltar, que o crescimento das despesas ora apresentado foi bem menor do que a inflação acumulada no período (11,3%), refletindo a implementação de ações de racionalização e de cortes de custos em processos da operação bancária.",
+      "top_left_x": 47,
+      "top_left_y": 460,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 711,
+      "confidence_scores": null,
+      "content": "Os trabalhos em andamento e as ações aplicadas para redução de despesas têm como diretriz a preservação da qualidade dos serviços prestados, sempre focando na melhor experiência do cliente. O índice de cobertura geral$^{20}$ do primeiro trimestre foi de 50,4% e a cobertura imediata$^{21}$ atingiu o patamar de 90,5%.",
+      "top_left_x": 47,
+      "top_left_y": 649,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 538,
+      "bottom_right_y": 920,
+      "confidence_scores": null,
+      "content": "$^{20}$ Relação entre o total das receitas de serviços e tarifas e o total de despesas administrativas (pessoal e outras).",
+      "top_left_x": 47,
+      "top_left_y": 906,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 446,
+      "bottom_right_y": 930,
+      "confidence_scores": null,
+      "content": "$^{21}$ Relação entre o total das receitas de serviços e tarifas e o total de despesas com pessoal.",
+      "top_left_x": 47,
+      "top_left_y": 917,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**8**^{}[] | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 92,
+      "top_left_y": 934,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9788121867283529,
+     "minimum_page_confidence_score": 0.3827784808031584,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 568,
+      "bottom_right_y": 451,
+      "id": "img-5.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 161,
+      "top_left_y": 167
+     }
+    ],
+    "index": 7,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n# **despesa de pessoal e administrativas**\n\nR$ Milhões\n\n![img-5.jpeg](img-5.jpeg)\n\nAs despesas administrativas (pessoal e outras) somaram R$ 174 milhões no primeiro trimestre de 2022, elevação de 12,1% sobre o mesmo período de 2021 e queda de 3,4% quando comparado com o trimestre anterior. Os gastos com pessoal atingiram R$ 97 milhões (+13,1% em 12 meses e -4,3% em 3 meses) em que têm-se a expectativa de capturar e equalizar ganhos com os planos de PDVs aplicados nos últimos anos. As outras despesas administrativas somaram R$ 77 milhões (+10,9% em 12 meses e -2,2% em 3 meses), decorrentes de gastos com projetos relacionados à tecnologia da informação (projeto de implantação de ERP), cartões e atendimento a clientes, bem como, custos da atividade bancária como alugéis, manutenção de bens, processamento de dados e transporte de numerários, ora impactados pela pressão inflacionária. Cabe ressaltar, que o crescimento das despesas ora apresentado foi bem menor do que a inflação acumulada no período (11,3%), refletindo a implementação de ações de racionalização e de cortes de custos em processos da operação bancária.\n\nOs trabalhos em andamento e as ações aplicadas para redução de despesas têm como diretriz a preservação da qualidade dos serviços prestados, sempre focando na melhor experiência do cliente. O índice de cobertura geral$^{20}$ do primeiro trimestre foi de 50,4% e a cobertura imediata$^{21}$ atingiu o patamar de 90,5%.\n\n$^{20}$ Relação entre o total das receitas de serviços e tarifas e o total de despesas administrativas (pessoal e outras).\n\n$^{21}$ Relação entre o total das receitas de serviços e tarifas e o total de despesas com pessoal.\n\n**8**| Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 70,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 169,
+      "bottom_right_y": 129,
+      "confidence_scores": null,
+      "content": "## Patrimoniais",
+      "top_left_x": 48,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 367,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Balanço Patrimonial<br/>(R$ milhões)</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Ativos Totais</td><td>36.445</td><td>34.007</td><td>33.834</td><td>32.383</td><td>32.169</td><td>30.484</td><td>35.548</td><td>27.186</td><td>7,2%</td><td>13,3%</td></tr><tr><td>Carteira de Crédito Ampliada</td><td>10.130</td><td>9.265</td><td>9.069</td><td>8.740</td><td>8.112</td><td>7.896</td><td>7.738</td><td>7.467</td><td>1,3%</td><td>16,4%</td></tr><tr><td>NPL Creation</td><td>122</td><td>133</td><td>170</td><td>164</td><td>157</td><td>96</td><td>116</td><td>167</td><td>-8,8%</td><td>-22,7%</td></tr><tr><td>Patrimônio Líquido</td><td>1.958</td><td>1.890</td><td>1.838</td><td>1.785</td><td>1.764</td><td>1.714</td><td>1.639</td><td>1.584</td><td>3,6%</td><td>11,0%</td></tr><tr><td>Aplicações Interfinanceiras de Liquidez</td><td>11.848</td><td>12.265</td><td>10.306</td><td>9.174</td><td>10.573</td><td>10.654</td><td>18.070</td><td>8.887</td><td>-3,4%</td><td>12,1%</td></tr><tr><td>Depósitos Totais</td><td>19.336</td><td>18.634</td><td>17.958</td><td>16.783</td><td>16.212</td><td>15.926</td><td>15.611</td><td>14.142</td><td>3,8%</td><td>19,3%</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>16.049</td><td>13.517</td><td>15.381</td><td>15.495</td><td>13.991</td><td>12.886</td><td>10.757</td><td>11.757</td><td>18,7%</td><td>14,7%</td></tr><tr><td>Captação Mercado Aberto</td><td>13.474</td><td>11.936</td><td>12.483</td><td>12.307</td><td>12.785</td><td>11.427</td><td>16.846</td><td>9.991</td><td>12,9%</td><td>5,4%</td></tr><tr><td>Recursos Captados e Administrados</td><td>40.404</td><td>37.370</td><td>36.771</td><td>35.274</td><td>34.753</td><td>32.892</td><td>38.173</td><td>29.483</td><td>8,1%</td><td>16,3%</td></tr></table>",
+      "table_id": "tbl-5.html",
+      "top_left_x": 48,
+      "top_left_y": 141,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 151,
+      "bottom_right_y": 406,
+      "confidence_scores": null,
+      "content": "## ativos totais",
+      "top_left_x": 48,
+      "top_left_y": 385,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 741,
+      "confidence_scores": null,
+      "content": "![img-6.jpeg](img-6.jpeg)",
+      "image_id": "img-6.jpeg",
+      "top_left_x": 106,
+      "top_left_y": 430,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 521,
+      "bottom_right_y": 759,
+      "confidence_scores": null,
+      "content": "$^{1}$ Foi executado uma revisão de método, onde foi extraído as aplicações em depósitos interfinanceiros.",
+      "top_left_x": 135,
+      "top_left_y": 746,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 892,
+      "confidence_scores": null,
+      "content": "Os ativos totais registraram saldo de R$ 36,4 bilhões no primeiro trimestre de 2022, expansão de 13,3% em relação à posição de março de 2021 e de 7,2% contra o trimestre anterior. Os ativos são compostos, principalmente, por R$ 4,7 bilhões em caixa e agregados de caixa$^{22}$, crescente 1,8% em doze meses e com recuo de 16,0% em três meses, em função da migração de recursos para a carteira de TVM – títulos e valores mobiliários que apresentaram oportunidades de mercado; R$ 6,3 bilhões em aplicações interfinanceiras de liquidez – posição financiada, com elevações de 8,4% em doze meses e 11,2% em três meses; R$ 6,3 bilhões em operações de crédito, crescimentos de 23,5% em doze meses e 4,5% em",
+      "top_left_x": 48,
+      "top_left_y": 784,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 495,
+      "bottom_right_y": 930,
+      "confidence_scores": null,
+      "content": "$^{22}$ Refere-se à posição em disponibilidades e aplicações interfinanceiras de liquidez – posição bancada.",
+      "top_left_x": 48,
+      "top_left_y": 915,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "9 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 92,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9903806161098423,
+     "minimum_page_confidence_score": 0.3408146924685155,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 741,
+      "id": "img-6.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 106,
+      "top_left_y": 430
+     }
+    ],
+    "index": 8,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n## Patrimoniais\n\n[tbl-5.html](tbl-5.html)\n\n## ativos totais\n\n![img-6.jpeg](img-6.jpeg)\n\n$^{1}$ Foi executado uma revisão de método, onde foi extraído as aplicações em depósitos interfinanceiros.\n\nOs ativos totais registraram saldo de R$ 36,4 bilhões no primeiro trimestre de 2022, expansão de 13,3% em relação à posição de março de 2021 e de 7,2% contra o trimestre anterior. Os ativos são compostos, principalmente, por R$ 4,7 bilhões em caixa e agregados de caixa$^{22}$, crescente 1,8% em doze meses e com recuo de 16,0% em três meses, em função da migração de recursos para a carteira de TVM – títulos e valores mobiliários que apresentaram oportunidades de mercado; R$ 6,3 bilhões em aplicações interfinanceiras de liquidez – posição financiada, com elevações de 8,4% em doze meses e 11,2% em três meses; R$ 6,3 bilhões em operações de crédito, crescimentos de 23,5% em doze meses e 4,5% em\n\n$^{22}$ Refere-se à posição em disponibilidades e aplicações interfinanceiras de liquidez – posição bancada.\n\n9 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Balanço Patrimonial<br/>(R$ milhões)</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Ativos Totais</td><td>36.445</td><td>34.007</td><td>33.834</td><td>32.383</td><td>32.169</td><td>30.484</td><td>35.548</td><td>27.186</td><td>7,2%</td><td>13,3%</td></tr><tr><td>Carteira de Crédito Ampliada</td><td>10.130</td><td>9.265</td><td>9.069</td><td>8.740</td><td>8.112</td><td>7.896</td><td>7.738</td><td>7.467</td><td>1,3%</td><td>16,4%</td></tr><tr><td>NPL Creation</td><td>122</td><td>133</td><td>170</td><td>164</td><td>157</td><td>96</td><td>116</td><td>167</td><td>-8,8%</td><td>-22,7%</td></tr><tr><td>Patrimônio Líquido</td><td>1.958</td><td>1.890</td><td>1.838</td><td>1.785</td><td>1.764</td><td>1.714</td><td>1.639</td><td>1.584</td><td>3,6%</td><td>11,0%</td></tr><tr><td>Aplicações Interfinanceiras de Liquidez</td><td>11.848</td><td>12.265</td><td>10.306</td><td>9.174</td><td>10.573</td><td>10.654</td><td>18.070</td><td>8.887</td><td>-3,4%</td><td>12,1%</td></tr><tr><td>Depósitos Totais</td><td>19.336</td><td>18.634</td><td>17.958</td><td>16.783</td><td>16.212</td><td>15.926</td><td>15.611</td><td>14.142</td><td>3,8%</td><td>19,3%</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>16.049</td><td>13.517</td><td>15.381</td><td>15.495</td><td>13.991</td><td>12.886</td><td>10.757</td><td>11.757</td><td>18,7%</td><td>14,7%</td></tr><tr><td>Captação Mercado Aberto</td><td>13.474</td><td>11.936</td><td>12.483</td><td>12.307</td><td>12.785</td><td>11.427</td><td>16.846</td><td>9.991</td><td>12,9%</td><td>5,4%</td></tr><tr><td>Recursos Captados e Administrados</td><td>40.404</td><td>37.370</td><td>36.771</td><td>35.274</td><td>34.753</td><td>32.892</td><td>38.173</td><td>29.483</td><td>8,1%</td><td>16,3%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-5.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 70,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 677,
+      "bottom_right_y": 171,
+      "confidence_scores": null,
+      "content": "três meses; e R$ 16,0 bilhões em títulos e valores mobiliários, expansões de 14,7% em doze meses e 18,7% em três meses. Em cumprimento ao disposto no artigo 8º da circular nº 3.068/01 BCB, o BANESTES declara possuir capacidade financeira e intenção de manter até o vencimento os títulos classificados na categoria “Títulos Mantidos até o Vencimento”.",
+      "top_left_x": 47,
+      "top_left_y": 108,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 199,
+      "bottom_right_y": 209,
+      "confidence_scores": null,
+      "content": "### carteira de crédito",
+      "top_left_x": 47,
+      "top_left_y": 190,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 551,
+      "confidence_scores": null,
+      "content": "![img-7.jpeg](img-7.jpeg)",
+      "image_id": "img-7.jpeg",
+      "top_left_x": 116,
+      "top_left_y": 236,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 726,
+      "confidence_scores": null,
+      "content": "A carteira de crédito ampliada registrou saldo de R$ 10,1 bilhões, crescimento de 16,4% em relação à posição de março de 2021 e de 1,3% contra a posição final de dezembro de 2021. A carteira de crédito comercial atingiu R$ 6,6 bilhões, expansões de 22,6% em doze meses e de 4,0% contra dezembro de 2021. Desse montante, R$ 4,2 bilhões (64,0%) são operações com pessoas físicas (+24,8% em 12 meses e +5,4% em 3 meses) e R$ 2,4 bilhões (36,0%) com pessoas jurídicas (+18,8% em 12 meses e +1,6% em 3 meses). Da carteira de pessoa jurídica, 77,1% são concessões à micro, pequenas e médias empresas e 22,9% a grandes empresas. O BANESTES adota critérios rigorosos de segurança e de avaliação dos processos de concessão de crédito, de forma a manter o equilíbrio entre a expansão da carteira e a inadimplência.",
+      "top_left_x": 47,
+      "top_left_y": 586,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 803,
+      "confidence_scores": null,
+      "content": "Ao final de março de 2022, a maior parte da carteira de crédito comercial era composta por empréstimos, com saldo de R$ 4,9 bilhões (+17,2% em 12 meses e +3,6 em 3 meses), com destaque para as linhas de consignado (+19,1% em 12 meses e +5,9% em 3 meses), capital de giro (+21,1% em 12 meses e +1,7% em 3 meses) e crédito pessoal (+14,8% em 12 meses e +5,5% em 3 meses).",
+      "top_left_x": 47,
+      "top_left_y": 740,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 925,
+      "confidence_scores": null,
+      "content": "O saldo restante da carteira de crédito comercial é composto por (i) financiamentos imobiliários, com saldo de R$ 942 milhões, avanços de 67,4% em doze meses e de 9,1% em três meses; (ii) operações com cartão de crédito, com saldo de R$ 367 milhões, elevação de 9,8% em doze meses e retração de 3,7% em três meses; (iii) financiamentos rurais, com saldo de R$ 193 milhões, crescimentos de 41,9% em doze meses e de 12,7% em três meses; (iv) financiamentos, com saldo de R$ 122 milhões, aumentos de 27,7% em doze meses e de 4,1% em três meses; e por (v) títulos descontados, com saldo de R$ 40 milhões, elevações de 1,8% em doze meses e de 3,9% em três meses.",
+      "top_left_x": 47,
+      "top_left_y": 816,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**10**^{}[] | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 82,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9900193496518944,
+     "minimum_page_confidence_score": 0.3765381122457779,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 614,
+      "bottom_right_y": 551,
+      "id": "img-7.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 116,
+      "top_left_y": 236
+     }
+    ],
+    "index": 9,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\ntrês meses; e R$ 16,0 bilhões em títulos e valores mobiliários, expansões de 14,7% em doze meses e 18,7% em três meses. Em cumprimento ao disposto no artigo 8º da circular nº 3.068/01 BCB, o BANESTES declara possuir capacidade financeira e intenção de manter até o vencimento os títulos classificados na categoria “Títulos Mantidos até o Vencimento”.\n\n### carteira de crédito\n\n![img-7.jpeg](img-7.jpeg)\n\nA carteira de crédito ampliada registrou saldo de R$ 10,1 bilhões, crescimento de 16,4% em relação à posição de março de 2021 e de 1,3% contra a posição final de dezembro de 2021. A carteira de crédito comercial atingiu R$ 6,6 bilhões, expansões de 22,6% em doze meses e de 4,0% contra dezembro de 2021. Desse montante, R$ 4,2 bilhões (64,0%) são operações com pessoas físicas (+24,8% em 12 meses e +5,4% em 3 meses) e R$ 2,4 bilhões (36,0%) com pessoas jurídicas (+18,8% em 12 meses e +1,6% em 3 meses). Da carteira de pessoa jurídica, 77,1% são concessões à micro, pequenas e médias empresas e 22,9% a grandes empresas. O BANESTES adota critérios rigorosos de segurança e de avaliação dos processos de concessão de crédito, de forma a manter o equilíbrio entre a expansão da carteira e a inadimplência.\n\nAo final de março de 2022, a maior parte da carteira de crédito comercial era composta por empréstimos, com saldo de R$ 4,9 bilhões (+17,2% em 12 meses e +3,6 em 3 meses), com destaque para as linhas de consignado (+19,1% em 12 meses e +5,9% em 3 meses), capital de giro (+21,1% em 12 meses e +1,7% em 3 meses) e crédito pessoal (+14,8% em 12 meses e +5,5% em 3 meses).\n\nO saldo restante da carteira de crédito comercial é composto por (i) financiamentos imobiliários, com saldo de R$ 942 milhões, avanços de 67,4% em doze meses e de 9,1% em três meses; (ii) operações com cartão de crédito, com saldo de R$ 367 milhões, elevação de 9,8% em doze meses e retração de 3,7% em três meses; (iii) financiamentos rurais, com saldo de R$ 193 milhões, crescimentos de 41,9% em doze meses e de 12,7% em três meses; (iv) financiamentos, com saldo de R$ 122 milhões, aumentos de 27,7% em doze meses e de 4,1% em três meses; e por (v) títulos descontados, com saldo de R$ 40 milhões, elevações de 1,8% em doze meses e de 3,9% em três meses.\n\n**10**| Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**  \ncrescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 33,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 365,
+      "bottom_right_y": 127,
+      "confidence_scores": null,
+      "content": "# **NPL creation e inadimplência > 90 dias**",
+      "top_left_x": 48,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 590,
+      "bottom_right_y": 461,
+      "confidence_scores": null,
+      "content": "![img-8.jpeg](img-8.jpeg)",
+      "image_id": "img-8.jpeg",
+      "top_left_x": 134,
+      "top_left_y": 149,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 554,
+      "confidence_scores": null,
+      "content": "O *NPL creation*, que representa as operações de crédito que passaram a ser devedoras acima de 90 dias, apresentou saldo de R$ 122 milhões no trimestre, montante 22,7% menor que a posição do mesmo trimestre de 2021 e 8,8% menor que o registrado no quarto trimestre de 2021. O Índice de inadimplência (> 90 dias) da carteira de crédito ampliada ficou em 1,2%, enquanto, o Índice de Inadimplência (> 90 dias) da carteira de crédito comercial atingiu 1,8%.",
+      "top_left_x": 48,
+      "top_left_y": 477,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 615,
+      "confidence_scores": null,
+      "content": "Em suma, a inadimplência das operações de crédito comercial retraiu 1,1 p.p em doze meses. A inadimplência para pessoa física apresentou movimento contrário e elevou-se 0,2 p.p, enquanto a inadimplência para pessoa jurídica recuou 3,3 p.p na mesma comparação.",
+      "top_left_x": 48,
+      "top_left_y": 570,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 492,
+      "bottom_right_y": 908,
+      "confidence_scores": null,
+      "content": "![img-9.jpeg](img-9.jpeg)",
+      "image_id": "img-9.jpeg",
+      "top_left_x": 246,
+      "top_left_y": 638,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "11 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 83,
+      "top_left_y": 934,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9782137818051084,
+     "minimum_page_confidence_score": 0.34946065364319395,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 590,
+      "bottom_right_y": 461,
+      "id": "img-8.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 134,
+      "top_left_y": 149
+     },
+     {
+      "bottom_right_x": 492,
+      "bottom_right_y": 908,
+      "id": "img-9.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 246,
+      "top_left_y": 638
+     }
+    ],
+    "index": 10,
+    "markdown": "**BANESTES**  \ncrescemos juntos\n\n**1T2022**\n\n# **NPL creation e inadimplência > 90 dias**\n\n![img-8.jpeg](img-8.jpeg)\n\nO *NPL creation*, que representa as operações de crédito que passaram a ser devedoras acima de 90 dias, apresentou saldo de R$ 122 milhões no trimestre, montante 22,7% menor que a posição do mesmo trimestre de 2021 e 8,8% menor que o registrado no quarto trimestre de 2021. O Índice de inadimplência (> 90 dias) da carteira de crédito ampliada ficou em 1,2%, enquanto, o Índice de Inadimplência (> 90 dias) da carteira de crédito comercial atingiu 1,8%.\n\nEm suma, a inadimplência das operações de crédito comercial retraiu 1,1 p.p em doze meses. A inadimplência para pessoa física apresentou movimento contrário e elevou-se 0,2 p.p, enquanto a inadimplência para pessoa jurídica recuou 3,3 p.p na mesma comparação.\n\n![img-9.jpeg](img-9.jpeg)\n\n11 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 231,
+      "confidence_scores": null,
+      "content": "A classificação por níveis de risco (Resolução nº 2.682/99 do CMN) das operações que compõem a carteira de crédito comercial do BANESTES se posicionou da seguinte forma em março de 2022: 68,8% encontravam-se classificadas nos níveis de risco AA e A, 25,5% entre os níveis de risco B e C, 3,5% entre D e G e 2,2% encontravam-se no nível de risco H. Consoante com sua estratégia e atento ao cenário de baixa atividade econômica, agravado por conflito entre nações e inflação de efeitos e impactos globais, o BANESTES aplica toda sua cautela, método e sistemas no controle e gestão da qualidade das garantias junto às novas concessões e às operações em carteira, que apresentavam potencial de default frente à nova realidade.",
+      "top_left_x": 46,
+      "top_left_y": 107,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 308,
+      "confidence_scores": null,
+      "content": "A recuperação de créditos transferidos para prejuízo alcançou 12 milhões no primeiro trimestre de 2022, resultado das ações massificadas de veiculação de propagandas feitas pelo Banco, que estimulam o interesse dos clientes por meio de política de descontos compatíveis com o mercado. Nessa linha, expandiu as atividades do Feirão Acordo Fácil, já instituído desde meados do ano de 2021.",
+      "top_left_x": 46,
+      "top_left_y": 245,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 368,
+      "confidence_scores": null,
+      "content": "Importante frisar que o BANESTES atua constantemente no aperfeiçoamento da sua política de concessão de crédito, buscando equilíbrio entre a ampliação do crédito e o controle da inadimplência, dentro dos parâmetros aceitáveis de tolerância a risco.",
+      "top_left_x": 46,
+      "top_left_y": 320,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 182,
+      "bottom_right_y": 410,
+      "confidence_scores": null,
+      "content": "### depósitos totais",
+      "top_left_x": 46,
+      "top_left_y": 389,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 590,
+      "bottom_right_y": 757,
+      "confidence_scores": null,
+      "content": "![img-10.jpeg](img-10.jpeg)",
+      "image_id": "img-10.jpeg",
+      "top_left_x": 135,
+      "top_left_y": 432,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 840,
+      "confidence_scores": null,
+      "content": "Em março de 2022, os depósitos de clientes somaram R$ 19,3 bilhões, avançando 19,3% contra o primeiro trimestre de 2021 e 3,8% comparado com a posição do quarto trimestre de 2021, puxado pelas posições crescentes dos depósitos a prazo (+21,0% em 12 meses), da poupança (+7,3% em 12 meses) e dos depósitos à vista (+33,9% em 12 meses).",
+      "top_left_x": 46,
+      "top_left_y": 778,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 917,
+      "confidence_scores": null,
+      "content": "Os recursos de terceiros captados e administrados atingiram o saldo de R$ 40,4 bilhões, crescentes 16,3% contra o mesmo trimestre de 2021 e 8,1% contra o trimestre anterior. Esse montante está distribuído em R$ 13,5 bilhões em captação no mercado aberto, aumentos de 5,4% em doze meses e de 12,9% em três meses, R$ 10,7 bilhões em CDBs – certificado de depósitos bancários, crescimentos de",
+      "top_left_x": 46,
+      "top_left_y": 853,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**12**^{}[] | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 82,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9835233170311954,
+     "minimum_page_confidence_score": 0.2734663719528289,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 590,
+      "bottom_right_y": 757,
+      "id": "img-10.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 135,
+      "top_left_y": 432
+     }
+    ],
+    "index": 11,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\nA classificação por níveis de risco (Resolução nº 2.682/99 do CMN) das operações que compõem a carteira de crédito comercial do BANESTES se posicionou da seguinte forma em março de 2022: 68,8% encontravam-se classificadas nos níveis de risco AA e A, 25,5% entre os níveis de risco B e C, 3,5% entre D e G e 2,2% encontravam-se no nível de risco H. Consoante com sua estratégia e atento ao cenário de baixa atividade econômica, agravado por conflito entre nações e inflação de efeitos e impactos globais, o BANESTES aplica toda sua cautela, método e sistemas no controle e gestão da qualidade das garantias junto às novas concessões e às operações em carteira, que apresentavam potencial de default frente à nova realidade.\n\nA recuperação de créditos transferidos para prejuízo alcançou 12 milhões no primeiro trimestre de 2022, resultado das ações massificadas de veiculação de propagandas feitas pelo Banco, que estimulam o interesse dos clientes por meio de política de descontos compatíveis com o mercado. Nessa linha, expandiu as atividades do Feirão Acordo Fácil, já instituído desde meados do ano de 2021.\n\nImportante frisar que o BANESTES atua constantemente no aperfeiçoamento da sua política de concessão de crédito, buscando equilíbrio entre a ampliação do crédito e o controle da inadimplência, dentro dos parâmetros aceitáveis de tolerância a risco.\n\n### depósitos totais\n\n![img-10.jpeg](img-10.jpeg)\n\nEm março de 2022, os depósitos de clientes somaram R$ 19,3 bilhões, avançando 19,3% contra o primeiro trimestre de 2021 e 3,8% comparado com a posição do quarto trimestre de 2021, puxado pelas posições crescentes dos depósitos a prazo (+21,0% em 12 meses), da poupança (+7,3% em 12 meses) e dos depósitos à vista (+33,9% em 12 meses).\n\nOs recursos de terceiros captados e administrados atingiram o saldo de R$ 40,4 bilhões, crescentes 16,3% contra o mesmo trimestre de 2021 e 8,1% contra o trimestre anterior. Esse montante está distribuído em R$ 13,5 bilhões em captação no mercado aberto, aumentos de 5,4% em doze meses e de 12,9% em três meses, R$ 10,7 bilhões em CDBs – certificado de depósitos bancários, crescimentos de\n\n**12**| Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 33,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 186,
+      "confidence_scores": null,
+      "content": "24,6% em doze meses e de 8,7% três meses, R$ 7,3 bilhões em fundos administrados, crescente 32,7% em doze meses e 11,3% em três meses, R$ 4,2 bilhões em depósitos de poupança, expansão de 7,3% em doze meses e leve recuo de 0,7% três meses, R$ 2,7 bilhões em depósitos judiciais, elevações de 8,6% em doze meses e 2,3% em três meses, e R$ 1,6 bilhão em depósitos à vista, avanços de 33,9% em doze meses e 2,9% em três meses.",
+      "top_left_x": 47,
+      "top_left_y": 108,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 200,
+      "bottom_right_y": 222,
+      "confidence_scores": null,
+      "content": "### patrimônio líquido",
+      "top_left_x": 47,
+      "top_left_y": 203,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 594,
+      "bottom_right_y": 597,
+      "confidence_scores": null,
+      "content": "![img-11.jpeg](img-11.jpeg)",
+      "image_id": "img-11.jpeg",
+      "top_left_x": 134,
+      "top_left_y": 250,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 754,
+      "confidence_scores": null,
+      "content": "O patrimônio líquido atingiu a posição de R$ 2,0 bilhões no primeiro trimestre de 2022, crescendo 11,0% em relação ao mesmo período de 2021 e 3,6% contra a posição de dezembro de 2021. O BANESTES mantém uma sólida estrutura de capital, fator indispensável para suportar o financiamento da atividade produtiva e as necessidades dos clientes de forma eficiente e competitiva. A relação entre o patrimônio líquido e ativo total foi de 5,4%. O comportamento expansionista de nosso patrimônio, bem como a melhoria contínua do retorno financeiro e econômico de nossos negócios, demonstram todo o esforço e a estratégia do Banco em entregar uma rentabilidade adequada aos nossos acionistas, sempre agindo de forma prudencial e respeitando todas as nuances dos cenários econômicos apresentados.",
+      "top_left_x": 47,
+      "top_left_y": 629,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**13**^{}[] Relatório de Análise Econômica e Financeira",
+      "top_left_x": 82,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9866458374913716,
+     "minimum_page_confidence_score": 0.3733959754211232,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 594,
+      "bottom_right_y": 597,
+      "id": "img-11.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 134,
+      "top_left_y": 250
+     }
+    ],
+    "index": 12,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n24,6% em doze meses e de 8,7% três meses, R$ 7,3 bilhões em fundos administrados, crescente 32,7% em doze meses e 11,3% em três meses, R$ 4,2 bilhões em depósitos de poupança, expansão de 7,3% em doze meses e leve recuo de 0,7% três meses, R$ 2,7 bilhões em depósitos judiciais, elevações de 8,6% em doze meses e 2,3% em três meses, e R$ 1,6 bilhão em depósitos à vista, avanços de 33,9% em doze meses e 2,9% em três meses.\n\n### patrimônio líquido\n\n![img-11.jpeg](img-11.jpeg)\n\nO patrimônio líquido atingiu a posição de R$ 2,0 bilhões no primeiro trimestre de 2022, crescendo 11,0% em relação ao mesmo período de 2021 e 3,6% contra a posição de dezembro de 2021. O BANESTES mantém uma sólida estrutura de capital, fator indispensável para suportar o financiamento da atividade produtiva e as necessidades dos clientes de forma eficiente e competitiva. A relação entre o patrimônio líquido e ativo total foi de 5,4%. O comportamento expansionista de nosso patrimônio, bem como a melhoria contínua do retorno financeiro e econômico de nossos negócios, demonstram todo o esforço e a estratégia do Banco em entregar uma rentabilidade adequada aos nossos acionistas, sempre agindo de forma prudencial e respeitando todas as nuances dos cenários econômicos apresentados.\n\n**13**Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 70,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 582,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 316,
+      "bottom_right_y": 130,
+      "confidence_scores": null,
+      "content": "## Indicadores de Desempenho",
+      "top_left_x": 48,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 388,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Indicadores de Desempenho</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Lucro Líquido por Ação (R$)</td><td>0,26</td><td>0,24</td><td>0,19</td><td>0,17</td><td>0,19</td><td>0,20</td><td>0,14</td><td>0,13</td><td>6,4%</td><td>33,6%</td></tr><tr><td>Valor Patrimonial por Ação (R$)</td><td>6,20</td><td>5,98</td><td>5,82</td><td>5,65</td><td>5,58</td><td>5,43</td><td>5,19</td><td>5,01</td><td>3,6%</td><td>11,0%</td></tr><tr><td>ROA - Retorno Sobre Ativos Médios</td><td>0,8%</td><td>0,8%</td><td>0,7%</td><td>0,7%</td><td>0,7%</td><td>0,9%</td><td>0,7%</td><td>0,8%</td><td>0,0 p.p</td><td>0,1 p.p</td></tr><tr><td>ROE - Retorno sobre Patrimônio Líquido</td><td>14,6%</td><td>13,9%</td><td>13,6%</td><td>13,1%</td><td>12,7%</td><td>14,0%</td><td>13,5%</td><td>14,7%</td><td>0,7 p.p</td><td>1,9 p.p</td></tr><tr><td>Eficiência Operacional</td><td>46,6%</td><td>49,6%</td><td>49,9%</td><td>53,6%</td><td>52,4%</td><td>53,2%</td><td>55,0%</td><td>53,2%</td><td>-3,0 p.p</td><td>-5,8 p.p</td></tr><tr><td>Eficiência Operacional Ajustado ao Risco</td><td>52,7%</td><td>51,7%</td><td>57,3%</td><td>58,9%</td><td>55,7%</td><td>54,0%</td><td>59,2%</td><td>62,6%</td><td>1,0 p.p</td><td>-3,0 p.p</td></tr><tr><td>Valor de Mercado (R$ milhões)</td><td>1.645</td><td>1.609</td><td>1.648</td><td>1.721</td><td>1.652</td><td>1.771</td><td>1.778</td><td>1.924</td><td>2,2%</td><td>-0,4%</td></tr><tr><td>Índice de Inadimplência &gt; 90 Dias</td><td>1,2%</td><td>1,4%</td><td>1,9%</td><td>1,9%</td><td>1,9%</td><td>1,2%</td><td>1,5%</td><td>2,2%</td><td>-0,1 p.p</td><td>-0,6 p.p</td></tr><tr><td>Índice de Cobertura Geral</td><td>50,4%</td><td>50,1%</td><td>51,0%</td><td>52,2%</td><td>54,8%</td><td>54,7%</td><td>53,8%</td><td>55,0%</td><td>0,3 p.p</td><td>-4,4 p.p</td></tr><tr><td>Índice de Cobertura Imediata</td><td>90,5%</td><td>89,2%</td><td>91,0%</td><td>97,0%</td><td>99,2%</td><td>96,8%</td><td>91,9%</td><td>94,9%</td><td>1,3 p.p</td><td>-8,7 p.p</td></tr></table>",
+      "table_id": "tbl-6.html",
+      "top_left_x": 48,
+      "top_left_y": 141,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 625,
+      "bottom_right_y": 426,
+      "confidence_scores": null,
+      "content": "### retorno sobre o ativo (ROA) e retorno sobre o patrimônio líquido (ROE)",
+      "top_left_x": 48,
+      "top_left_y": 405,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 527,
+      "confidence_scores": null,
+      "content": "O retorno sobre os ativos totais (ROA) encerrou o primeiro trimestre de 2022 em 0,8%, crescente 0,1 p.p contra a posição do mesmo período de 2021 e estável em relação à posição do trimestre anterior. O retorno sobre o patrimônio líquido (ROE) se posicionou em 14,6%, crescente 1,9 p.p em doze meses e 0,7 p.p na comparação com o trimestre anterior, evidenciando uma melhor performance nos resultados do BANESTES.",
+      "top_left_x": 48,
+      "top_left_y": 448,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 308,
+      "bottom_right_y": 578,
+      "confidence_scores": null,
+      "content": "### índice de eficiência operacional",
+      "top_left_x": 48,
+      "top_left_y": 557,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 771,
+      "confidence_scores": null,
+      "content": "O índice de eficiência operacional atingiu 46,6%, enquanto no conceito ajustado ao risco o índice registrou 52,7%. O comportamento desses índices foi influenciado por elementos positivos como o crescimento substancial dos negócios, especialmente das receitas com operações de tesouraria (+344,3% em 12 meses e +34,6% em 3 meses), com operações de crédito (+38,1% em 12 meses e +3,4% em 3 meses) aliado a um movimento de recuperação das receitas com serviços (+3,2% em 12 meses e -2,9% em 3 meses); os quais suplantaram a expansão orgânica dos custos de captação com clientes (+385,8% em 12 meses e +34,7% em 3 meses), dos custos com risco de crédito (+145,1% em 12 meses e +183,5% em 3 meses) e das despesas administrativas (pessoal e outras) (+12,1% em 12 meses e -3,4 em 3 meses), impactados respectivamente pelo movimento expansionista da selic, pela necessidade pontual de contingência de operações de crédito corporativas, e pelo reajuste inflacionário (11,3%) e seus impactos nos contratos administrativos e processos da produção bancária.",
+      "top_left_x": 48,
+      "top_left_y": 600,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "14 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 82,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9954217807774508,
+     "minimum_page_confidence_score": 0.3443323195664536,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 13,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n## Indicadores de Desempenho\n\n[tbl-6.html](tbl-6.html)\n\n### retorno sobre o ativo (ROA) e retorno sobre o patrimônio líquido (ROE)\n\nO retorno sobre os ativos totais (ROA) encerrou o primeiro trimestre de 2022 em 0,8%, crescente 0,1 p.p contra a posição do mesmo período de 2021 e estável em relação à posição do trimestre anterior. O retorno sobre o patrimônio líquido (ROE) se posicionou em 14,6%, crescente 1,9 p.p em doze meses e 0,7 p.p na comparação com o trimestre anterior, evidenciando uma melhor performance nos resultados do BANESTES.\n\n### índice de eficiência operacional\n\nO índice de eficiência operacional atingiu 46,6%, enquanto no conceito ajustado ao risco o índice registrou 52,7%. O comportamento desses índices foi influenciado por elementos positivos como o crescimento substancial dos negócios, especialmente das receitas com operações de tesouraria (+344,3% em 12 meses e +34,6% em 3 meses), com operações de crédito (+38,1% em 12 meses e +3,4% em 3 meses) aliado a um movimento de recuperação das receitas com serviços (+3,2% em 12 meses e -2,9% em 3 meses); os quais suplantaram a expansão orgânica dos custos de captação com clientes (+385,8% em 12 meses e +34,7% em 3 meses), dos custos com risco de crédito (+145,1% em 12 meses e +183,5% em 3 meses) e das despesas administrativas (pessoal e outras) (+12,1% em 12 meses e -3,4 em 3 meses), impactados respectivamente pelo movimento expansionista da selic, pela necessidade pontual de contingência de operações de crédito corporativas, e pelo reajuste inflacionário (11,3%) e seus impactos nos contratos administrativos e processos da produção bancária.\n\n14 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Indicadores de Desempenho</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Lucro Líquido por Ação (R$)</td><td>0,26</td><td>0,24</td><td>0,19</td><td>0,17</td><td>0,19</td><td>0,20</td><td>0,14</td><td>0,13</td><td>6,4%</td><td>33,6%</td></tr><tr><td>Valor Patrimonial por Ação (R$)</td><td>6,20</td><td>5,98</td><td>5,82</td><td>5,65</td><td>5,58</td><td>5,43</td><td>5,19</td><td>5,01</td><td>3,6%</td><td>11,0%</td></tr><tr><td>ROA - Retorno Sobre Ativos Médios</td><td>0,8%</td><td>0,8%</td><td>0,7%</td><td>0,7%</td><td>0,7%</td><td>0,9%</td><td>0,7%</td><td>0,8%</td><td>0,0 p.p</td><td>0,1 p.p</td></tr><tr><td>ROE - Retorno sobre Patrimônio Líquido</td><td>14,6%</td><td>13,9%</td><td>13,6%</td><td>13,1%</td><td>12,7%</td><td>14,0%</td><td>13,5%</td><td>14,7%</td><td>0,7 p.p</td><td>1,9 p.p</td></tr><tr><td>Eficiência Operacional</td><td>46,6%</td><td>49,6%</td><td>49,9%</td><td>53,6%</td><td>52,4%</td><td>53,2%</td><td>55,0%</td><td>53,2%</td><td>-3,0 p.p</td><td>-5,8 p.p</td></tr><tr><td>Eficiência Operacional Ajustado ao Risco</td><td>52,7%</td><td>51,7%</td><td>57,3%</td><td>58,9%</td><td>55,7%</td><td>54,0%</td><td>59,2%</td><td>62,6%</td><td>1,0 p.p</td><td>-3,0 p.p</td></tr><tr><td>Valor de Mercado (R$ milhões)</td><td>1.645</td><td>1.609</td><td>1.648</td><td>1.721</td><td>1.652</td><td>1.771</td><td>1.778</td><td>1.924</td><td>2,2%</td><td>-0,4%</td></tr><tr><td>Índice de Inadimplência &gt; 90 Dias</td><td>1,2%</td><td>1,4%</td><td>1,9%</td><td>1,9%</td><td>1,9%</td><td>1,2%</td><td>1,5%</td><td>2,2%</td><td>-0,1 p.p</td><td>-0,6 p.p</td></tr><tr><td>Índice de Cobertura Geral</td><td>50,4%</td><td>50,1%</td><td>51,0%</td><td>52,2%</td><td>54,8%</td><td>54,7%</td><td>53,8%</td><td>55,0%</td><td>0,3 p.p</td><td>-4,4 p.p</td></tr><tr><td>Índice de Cobertura Imediata</td><td>90,5%</td><td>89,2%</td><td>91,0%</td><td>97,0%</td><td>99,2%</td><td>96,8%</td><td>91,9%</td><td>94,9%</td><td>1,3 p.p</td><td>-8,7 p.p</td></tr></table>",
+      "format": "html",
+      "id": "tbl-6.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 45,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 110,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## Ações",
+      "top_left_x": 47,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 280,
+      "bottom_right_y": 163,
+      "confidence_scores": null,
+      "content": "### remuneração aos acionistas",
+      "top_left_x": 47,
+      "top_left_y": 145,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 336,
+      "bottom_right_y": 275,
+      "confidence_scores": null,
+      "content": "No primeiro trimestre do ano, foram destinados R$ 20 milhões aos acionistas a título de juros sobre capital próprio (JCP), o equivalente a um *payout* de 24% do lucro líquido registrado no período. O lucro líquido por ação atingiu R$ 0,26 no trimestre.",
+      "top_left_x": 47,
+      "top_left_y": 183,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 128,
+      "bottom_right_y": 331,
+      "confidence_scores": null,
+      "content": "### múltiplos",
+      "top_left_x": 47,
+      "top_left_y": 312,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 446,
+      "confidence_scores": null,
+      "content": "O *dividend yield*, indicador do retorno do investimento ao acionista pela participação no lucro do período, foi de 9,0% para as ações ordinárias (BEES3) e de 8,1% para as preferenciais (BEES4). O valor patrimonial por ação no fechamento do primeiro trimestre cresceu 11,0% em relação ao mesmo período de 2021 e 3,6% em relação ao trimestre anterior, encerrando o período em R$ 6,20. No ano, a relação entre preço e patrimônio líquido das ações ordinárias e preferenciais foi de 0,81 e de 0,93, respectivamente.",
+      "top_left_x": 47,
+      "top_left_y": 354,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 192,
+      "bottom_right_y": 500,
+      "confidence_scores": null,
+      "content": "### valor de mercado",
+      "top_left_x": 47,
+      "top_left_y": 482,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 570,
+      "confidence_scores": null,
+      "content": "Os preços de fechamento das ações ordinárias e preferenciais foram, respectivamente, R$ 5,01 e R$ 5,74 no último dia de negociação do primeiro trimestre do ano. Essas cotações resultaram num valor de mercado de R$ 1,6 bilhão.",
+      "top_left_x": 47,
+      "top_left_y": 523,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 685,
+      "bottom_right_y": 323,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Ações – Trimestral</th><th>BEES3<br/>(ON)</th><th>BEES4<br/>(PN)</th></tr></thead><tr><td>Cotação de Fechamento do Trimestre (R$)</td><td>5,01</td><td>5,74</td></tr><tr><td>Cotação Média do Trimestre (R$)</td><td>4,94</td><td>5,57</td></tr><tr><td>Preço/Lucro (P/E)</td><td>5,84</td><td>6,69</td></tr><tr><td>Preço/Patrimônio Líquido (P/B)</td><td>0,81</td><td>0,93</td></tr><tr><td><i>Dividend Yield</i></td><td>9,0%</td><td>8,1%</td></tr><tr><td><i>Payout Ratio</i></td><td colspan=\"2\">24,0%</td></tr><tr><td>Valor Patrimonial por Ação (R$)</td><td colspan=\"2\">6,20</td></tr><tr><td>Lucro Líquido por Ação (R$)</td><td colspan=\"2\">0,26</td></tr></table>",
+      "table_id": "tbl-7.html",
+      "top_left_x": 356,
+      "top_left_y": 154,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**15**^{}[] | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 82,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.984802340234348,
+     "minimum_page_confidence_score": 0.3966070775660187,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 14,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n## Ações\n\n### remuneração aos acionistas\n\nNo primeiro trimestre do ano, foram destinados R$ 20 milhões aos acionistas a título de juros sobre capital próprio (JCP), o equivalente a um *payout* de 24% do lucro líquido registrado no período. O lucro líquido por ação atingiu R$ 0,26 no trimestre.\n\n### múltiplos\n\nO *dividend yield*, indicador do retorno do investimento ao acionista pela participação no lucro do período, foi de 9,0% para as ações ordinárias (BEES3) e de 8,1% para as preferenciais (BEES4). O valor patrimonial por ação no fechamento do primeiro trimestre cresceu 11,0% em relação ao mesmo período de 2021 e 3,6% em relação ao trimestre anterior, encerrando o período em R$ 6,20. No ano, a relação entre preço e patrimônio líquido das ações ordinárias e preferenciais foi de 0,81 e de 0,93, respectivamente.\n\n### valor de mercado\n\nOs preços de fechamento das ações ordinárias e preferenciais foram, respectivamente, R$ 5,01 e R$ 5,74 no último dia de negociação do primeiro trimestre do ano. Essas cotações resultaram num valor de mercado de R$ 1,6 bilhão.\n\n[tbl-7.html](tbl-7.html)\n\n**15**| Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Ações – Trimestral</th><th>BEES3<br/>(ON)</th><th>BEES4<br/>(PN)</th></tr></thead><tr><td>Cotação de Fechamento do Trimestre (R$)</td><td>5,01</td><td>5,74</td></tr><tr><td>Cotação Média do Trimestre (R$)</td><td>4,94</td><td>5,57</td></tr><tr><td>Preço/Lucro (P/E)</td><td>5,84</td><td>6,69</td></tr><tr><td>Preço/Patrimônio Líquido (P/B)</td><td>0,81</td><td>0,93</td></tr><tr><td><i>Dividend Yield</i></td><td>9,0%</td><td>8,1%</td></tr><tr><td><i>Payout Ratio</i></td><td colspan=\"2\">24,0%</td></tr><tr><td>Valor Patrimonial por Ação (R$)</td><td colspan=\"2\">6,20</td></tr><tr><td>Lucro Líquido por Ação (R$)</td><td colspan=\"2\">0,26</td></tr></table>",
+      "format": "html",
+      "id": "tbl-7.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 45,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 249,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## Limites Operacionais",
+      "top_left_x": 47,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 218,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Limites Operacionais</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Índice de Basileia (%)</td><td>15,8</td><td>15,6</td><td>15,2</td><td>15,5</td><td>15,9</td><td>15,4</td><td>14,4</td><td>14,1</td><td>0,2 p.p</td><td>-0,1 p.p</td></tr><tr><td>Capital Nível I – 100%</td><td>15,8</td><td>15,6</td><td>15,2</td><td>15,5</td><td>15,9</td><td>15,4</td><td>14,4</td><td>14,1</td><td>0,2 p.p</td><td>-0,1 p.p</td></tr></table>",
+      "table_id": "tbl-8.html",
+      "top_left_x": 47,
+      "top_left_y": 141,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 276,
+      "confidence_scores": null,
+      "content": "O Patrimônio de Referência do Conglomerado Prudencial fechou o primeiro trimestre de 2022 em R$ 1,8 bilhão frente aos Ativos Ponderados pelo Risco (RWA) de R$ 11,5 bilhões. O Índice de Basileia ficou em 15,8%, formado integralmente de capital nível I.",
+      "top_left_x": 47,
+      "top_left_y": 229,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 269,
+      "bottom_right_y": 326,
+      "confidence_scores": null,
+      "content": "## Indicadores Estruturais",
+      "top_left_x": 47,
+      "top_left_y": 305,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 695,
+      "bottom_right_y": 444,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Indicadores Estruturais</th><th>1T22</th><th>4T21</th><th>3T21</th><th>2T21</th><th>1T21</th><th>4T20</th><th>3T20</th><th>2T20</th></tr></thead><tr><td>Unidades de Atendimento</td><td>151</td><td>152</td><td>154</td><td>154</td><td>154</td><td>153</td><td>153</td><td>152</td></tr><tr><td>Postos de Atendimento Eletrônico</td><td>331</td><td>331</td><td>332</td><td>334</td><td>334</td><td>332</td><td>331</td><td>329</td></tr><tr><td>Correspondentes</td><td>373</td><td>377</td><td>382</td><td>382</td><td>379</td><td>374</td><td>381</td><td>376</td></tr><tr><td>Colaboradores</td><td>2.103</td><td>2.035</td><td>2.090</td><td>2.096</td><td>2.041</td><td>2.045</td><td>2.106</td><td>2.173</td></tr></table>",
+      "table_id": "tbl-9.html",
+      "top_left_x": 47,
+      "top_left_y": 338,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 218,
+      "bottom_right_y": 483,
+      "confidence_scores": null,
+      "content": "### rede de atendimento",
+      "top_left_x": 47,
+      "top_left_y": 463,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 566,
+      "confidence_scores": null,
+      "content": "O BANESTES manteve à disposição de seus clientes e usuários sua extensa rede de atendimento, presente em todos os municípios do Estado do Espírito Santo. Ao todo, são 855 pontos de atendimento, compostos por 151 unidades de atendimento, 331 postos de atendimento eletrônico e 373 correspondentes Banesfácil.",
+      "top_left_x": 47,
+      "top_left_y": 502,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 688,
+      "confidence_scores": null,
+      "content": "No primeiro trimestre de 2022, investimos R$ 20 milhões em Tecnologia da Informação e Comunicação, proporcionando melhorias nos serviços bancários, como a modernização de sistemas de informação, da infraestrutura de comunicação, da segurança da informação e da rede de autoatendimento. Tais investimentos visam acelerar a transformação digital no BANESTES. Os trabalhos focaram na implementação do *open banking*, no embandeiramento do Cartão Banescard, na evolução do Pix e ampliação de prestação de serviços pelos canais digitais: *internet banking*, BANESTES.Corp (ferramenta voltada para cliente PJ), no Aplicativo BANESTES e Aplicativo Abre Conta BANESTES.",
+      "top_left_x": 47,
+      "top_left_y": 578,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 780,
+      "confidence_scores": null,
+      "content": "O BANESTES implementou uma série de soluções tecnológicas se atentando aos cuidados em relação à pandemia decorrente da Covid-19. Incrementamos a capacidade de trabalho em *home office*, o atendimento digital aos clientes e a continuidade das operações, reduzindo a necessidade do atendimento presencial nas agências, ao mesmo tempo em que mantivemos os serviços bancários essenciais à população.",
+      "top_left_x": 47,
+      "top_left_y": 701,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**16**^{}[] Relatório de Análise Econômica e Financeira",
+      "top_left_x": 82,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9916807801523816,
+     "minimum_page_confidence_score": 0.34972191124965957,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 15,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n## Limites Operacionais\n\n[tbl-8.html](tbl-8.html)\n\nO Patrimônio de Referência do Conglomerado Prudencial fechou o primeiro trimestre de 2022 em R$ 1,8 bilhão frente aos Ativos Ponderados pelo Risco (RWA) de R$ 11,5 bilhões. O Índice de Basileia ficou em 15,8%, formado integralmente de capital nível I.\n\n## Indicadores Estruturais\n\n[tbl-9.html](tbl-9.html)\n\n### rede de atendimento\n\nO BANESTES manteve à disposição de seus clientes e usuários sua extensa rede de atendimento, presente em todos os municípios do Estado do Espírito Santo. Ao todo, são 855 pontos de atendimento, compostos por 151 unidades de atendimento, 331 postos de atendimento eletrônico e 373 correspondentes Banesfácil.\n\nNo primeiro trimestre de 2022, investimos R$ 20 milhões em Tecnologia da Informação e Comunicação, proporcionando melhorias nos serviços bancários, como a modernização de sistemas de informação, da infraestrutura de comunicação, da segurança da informação e da rede de autoatendimento. Tais investimentos visam acelerar a transformação digital no BANESTES. Os trabalhos focaram na implementação do *open banking*, no embandeiramento do Cartão Banescard, na evolução do Pix e ampliação de prestação de serviços pelos canais digitais: *internet banking*, BANESTES.Corp (ferramenta voltada para cliente PJ), no Aplicativo BANESTES e Aplicativo Abre Conta BANESTES.\n\nO BANESTES implementou uma série de soluções tecnológicas se atentando aos cuidados em relação à pandemia decorrente da Covid-19. Incrementamos a capacidade de trabalho em *home office*, o atendimento digital aos clientes e a continuidade das operações, reduzindo a necessidade do atendimento presencial nas agências, ao mesmo tempo em que mantivemos os serviços bancários essenciais à população.\n\n**16**Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Limites Operacionais</th><th rowspan=\"2\">1T22</th><th rowspan=\"2\">4T21</th><th rowspan=\"2\">3T21</th><th rowspan=\"2\">2T21</th><th rowspan=\"2\">1T21</th><th rowspan=\"2\">4T20</th><th rowspan=\"2\">3T20</th><th rowspan=\"2\">2T20</th><th colspan=\"2\">Variação</th></tr><tr><th>1T22x4T21</th><th>1T22x1T21</th></tr></thead><tr><td>Índice de Basileia (%)</td><td>15,8</td><td>15,6</td><td>15,2</td><td>15,5</td><td>15,9</td><td>15,4</td><td>14,4</td><td>14,1</td><td>0,2 p.p</td><td>-0,1 p.p</td></tr><tr><td>Capital Nível I – 100%</td><td>15,8</td><td>15,6</td><td>15,2</td><td>15,5</td><td>15,9</td><td>15,4</td><td>14,4</td><td>14,1</td><td>0,2 p.p</td><td>-0,1 p.p</td></tr></table>",
+      "format": "html",
+      "id": "tbl-8.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>Indicadores Estruturais</th><th>1T22</th><th>4T21</th><th>3T21</th><th>2T21</th><th>1T21</th><th>4T20</th><th>3T20</th><th>2T20</th></tr></thead><tr><td>Unidades de Atendimento</td><td>151</td><td>152</td><td>154</td><td>154</td><td>154</td><td>153</td><td>153</td><td>152</td></tr><tr><td>Postos de Atendimento Eletrônico</td><td>331</td><td>331</td><td>332</td><td>334</td><td>334</td><td>332</td><td>331</td><td>329</td></tr><tr><td>Correspondentes</td><td>373</td><td>377</td><td>382</td><td>382</td><td>379</td><td>374</td><td>381</td><td>376</td></tr><tr><td>Colaboradores</td><td>2.103</td><td>2.035</td><td>2.090</td><td>2.096</td><td>2.041</td><td>2.045</td><td>2.106</td><td>2.173</td></tr></table>",
+      "format": "html",
+      "id": "tbl-9.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 45,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 645,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## ***Compromisso ambiental, social e governança corporativa (ASG)***",
+      "top_left_x": 48,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 257,
+      "confidence_scores": null,
+      "content": "O BANESTES desenvolve em sua cultura organizacional os conceitos de *Environmental, Social and Governance* (Governança Ambiental, Social e Corporativa - ESG, na sigla em inglês), incorporando visões conectadas com os anseios dos *steakholders* e sociedade, buscando o constante desenvolvimento do seu papel nos âmbitos de governança ambiental, corporativa e de responsabilidade social. A sustentabilidade está incorporada na estratégia do BANESTES que tem por premissa a integração e geração de valor à transparência, à governança corporativa e à responsabilidade socioambiental.",
+      "top_left_x": 46,
+      "top_left_y": 149,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 298,
+      "confidence_scores": null,
+      "content": "### ***gestão de pessoas***",
+      "top_left_x": 46,
+      "top_left_y": 277,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 430,
+      "confidence_scores": null,
+      "content": "A Gestão de Recursos Humanos das empresas do Sistema Financeiro BANESTES (SFB) permaneceu focada na atenção à saúde dos colaboradores, ampliando o olhar e a atenção para o bem-estar e a saúde emocional das equipes. Continuamos com as ações estabelecidas em nosso Protocolo Geral para o enfrentamento da Covid-19, visando a prevenção, o controle e a mitigação dos riscos de transmissão nos ambientes de trabalho. O primeiro trimestre de 2022 permitiu a retomada de algumas agendas presenciais, tornando híbrido o formato do *onboarding* de novos colaboradores, buscando uma aproximação com os aspectos culturais e de negócio do SFB e a aderência aos valores da Instituição.",
+      "top_left_x": 46,
+      "top_left_y": 320,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 598,
+      "confidence_scores": null,
+      "content": "No primeiro trimestre de 2022, consolidamos a parceria com a empresa GPTW - Great Place to Work, por meio da qual será possível direcionar soluções para atingir os resultados desejáveis em relação ao cuidado com nossos colaboradores, percorrendo uma jornada para transformar o BANESTES e suas empresas controladas em um *Great Place To Work* (Melhor Lugar para Trabalhar). Dessa forma, alcançaremos as condições para participar do Programa de Certificação (que é o primeiro passo para estar entre as Melhores Empresas para Trabalhar) e o Selo GPTW. Como resultado dessa parceria, o BANESTES poderá fazer parte da carteira do recém-lançado índice IGPTW B3, lançado em parceria pela B3 e pela GPTW, que busca capturar a geração de resultados positivos das empresas que investem no ambiente de trabalho desenvolvem um processo constante de transformação cultural que privilegia as relações entre as pessoas e o desenvolvimento dos funcionários.",
+      "top_left_x": 46,
+      "top_left_y": 444,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 782,
+      "confidence_scores": null,
+      "content": "Para reconhecer o capital humano da Instituição, iniciamos o 5º Ciclo da Gestão de Desempenho por Competências - GDC, mantendo nosso compromisso com a melhoria contínua e com as melhores práticas de mercado. Aliadas à gestão da performance estão as ações de aprendizagem, que no primeiro trimestre 2022 totalizaram 27 turmas de treinamentos ou eventos institucionais, na modalidade online síncrona, sendo registradas 1.551 participações. Em consonância com a estratégia de aprendizagem por meios digitais, o BANESTES segue utilizando o modelo de aprendizagem baseado em trilhas de conhecimento, sendo desenvolvidas e implementadas capacitações para todo o efetivo do SFB, destacando-se as trilhas de teletrabalho, responsabilidade socioambiental, prevenção à lavagem dinheiro e ao financiamento do terrorismo e prevenção à corrupção. Essas iniciativas reforçam o compromisso do Banco com as diretrizes estratégicas e de cultura, sendo fortalecidos os pilares do Crescemos Juntos em cada capacitação.",
+      "top_left_x": 46,
+      "top_left_y": 611,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 890,
+      "confidence_scores": null,
+      "content": "Também foi lançado o novo plano de demissão voluntária, que contemplou 46 profissionais e ofereceu uma série de incentivos e benefícios a colaboradores com 30 anos ou mais de serviços prestados. Atualmente, o BANESTES possui 823 colaboradores certificados, totalizando 537 certificados na CPA-10, 346 na CPA-20, 11 na CFG, 11 na CGA, 11 na CGE e 33 na CEA. Essas certificações da ANBIMA são relevantes para que o BANESTES e a BANESTES DTVM operem na gestão de recursos de terceiros, administração fiduciária e distribuição de produtos de investimento, por meio da rede de agências.",
+      "top_left_x": 46,
+      "top_left_y": 796,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**17**^{}[] | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 82,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9882807599946247,
+     "minimum_page_confidence_score": 0.33534750788622897,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 16,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n## ***Compromisso ambiental, social e governança corporativa (ASG)***\n\nO BANESTES desenvolve em sua cultura organizacional os conceitos de *Environmental, Social and Governance* (Governança Ambiental, Social e Corporativa - ESG, na sigla em inglês), incorporando visões conectadas com os anseios dos *steakholders* e sociedade, buscando o constante desenvolvimento do seu papel nos âmbitos de governança ambiental, corporativa e de responsabilidade social. A sustentabilidade está incorporada na estratégia do BANESTES que tem por premissa a integração e geração de valor à transparência, à governança corporativa e à responsabilidade socioambiental.\n\n### ***gestão de pessoas***\n\nA Gestão de Recursos Humanos das empresas do Sistema Financeiro BANESTES (SFB) permaneceu focada na atenção à saúde dos colaboradores, ampliando o olhar e a atenção para o bem-estar e a saúde emocional das equipes. Continuamos com as ações estabelecidas em nosso Protocolo Geral para o enfrentamento da Covid-19, visando a prevenção, o controle e a mitigação dos riscos de transmissão nos ambientes de trabalho. O primeiro trimestre de 2022 permitiu a retomada de algumas agendas presenciais, tornando híbrido o formato do *onboarding* de novos colaboradores, buscando uma aproximação com os aspectos culturais e de negócio do SFB e a aderência aos valores da Instituição.\n\nNo primeiro trimestre de 2022, consolidamos a parceria com a empresa GPTW - Great Place to Work, por meio da qual será possível direcionar soluções para atingir os resultados desejáveis em relação ao cuidado com nossos colaboradores, percorrendo uma jornada para transformar o BANESTES e suas empresas controladas em um *Great Place To Work* (Melhor Lugar para Trabalhar). Dessa forma, alcançaremos as condições para participar do Programa de Certificação (que é o primeiro passo para estar entre as Melhores Empresas para Trabalhar) e o Selo GPTW. Como resultado dessa parceria, o BANESTES poderá fazer parte da carteira do recém-lançado índice IGPTW B3, lançado em parceria pela B3 e pela GPTW, que busca capturar a geração de resultados positivos das empresas que investem no ambiente de trabalho desenvolvem um processo constante de transformação cultural que privilegia as relações entre as pessoas e o desenvolvimento dos funcionários.\n\nPara reconhecer o capital humano da Instituição, iniciamos o 5º Ciclo da Gestão de Desempenho por Competências - GDC, mantendo nosso compromisso com a melhoria contínua e com as melhores práticas de mercado. Aliadas à gestão da performance estão as ações de aprendizagem, que no primeiro trimestre 2022 totalizaram 27 turmas de treinamentos ou eventos institucionais, na modalidade online síncrona, sendo registradas 1.551 participações. Em consonância com a estratégia de aprendizagem por meios digitais, o BANESTES segue utilizando o modelo de aprendizagem baseado em trilhas de conhecimento, sendo desenvolvidas e implementadas capacitações para todo o efetivo do SFB, destacando-se as trilhas de teletrabalho, responsabilidade socioambiental, prevenção à lavagem dinheiro e ao financiamento do terrorismo e prevenção à corrupção. Essas iniciativas reforçam o compromisso do Banco com as diretrizes estratégicas e de cultura, sendo fortalecidos os pilares do Crescemos Juntos em cada capacitação.\n\nTambém foi lançado o novo plano de demissão voluntária, que contemplou 46 profissionais e ofereceu uma série de incentivos e benefícios a colaboradores com 30 anos ou mais de serviços prestados. Atualmente, o BANESTES possui 823 colaboradores certificados, totalizando 537 certificados na CPA-10, 346 na CPA-20, 11 na CFG, 11 na CGA, 11 na CGE e 33 na CEA. Essas certificações da ANBIMA são relevantes para que o BANESTES e a BANESTES DTVM operem na gestão de recursos de terceiros, administração fiduciária e distribuição de produtos de investimento, por meio da rede de agências.\n\n**17**| Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 290,
+      "bottom_right_y": 128,
+      "confidence_scores": null,
+      "content": "### geração de valor à sociedade",
+      "top_left_x": 47,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 322,
+      "confidence_scores": null,
+      "content": "O BANESTES ampliou no primeiro trimestre de 2022 sua atuação com carteiras de crédito específicas para o apoio às atividades produtivas, como linhas de crédito rural e microcrédito, instrumentos geradores de cidadania financeira. No apoio ao produtor rural capixaba, ampliou em 58,0% o volume de concessões na safra 2021-2022 comparada à safra 2020-2021, atendendo produtores da agricultura familiar e demais portes, promovendo desenvolvimento local com responsabilidade socioambiental. Continuamos apoiando as micro e pequenas empresas capixabas, disponibilizando somente nesse primeiro trimestre mais de R$ 12 milhões em microcrédito. Além disso, concedemos mais de R$ 3 milhões especificamente às mulheres empreendedoras capixabas por meio das linhas “Microcrédito JUNTAS”, totalizando uma carteira ativa de R$ 108 milhões em microcrédito. Após alcançar o recorde histórico em 2021, com o maior volume de saldo de carteira ativa, o BANESTES mantém sua relevância com as concessões de microcrédito em 2022 que já se mostram 19,8% maior que o concedido no primeiro trimestre de 2021.",
+      "top_left_x": 47,
+      "top_left_y": 151,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 415,
+      "confidence_scores": null,
+      "content": "O total de impostos, contribuições e encargos sociais pagos ou provisionados pelo BANESTES nesse trimestre atingiu R$ 107 milhões, dos quais R$ 88 milhões (+75,1% em 12 meses) foram recolhidos aos cofres públicos em forma de impostos e contribuições, refletindo a importância das operações desenvolvidas e executadas pelo Banco, e os demais R$ 19 milhões (+13,9% em 12 meses) referem-se aos encargos sociais sobre a folha de pagamentos.",
+      "top_left_x": 47,
+      "top_left_y": 334,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 489,
+      "confidence_scores": null,
+      "content": "No primeiro trimestre do ano, foi destinada ao acionista controlador a quantia de R$ 18 milhões sob a forma de juros sobre capital próprio. Esse valor pode ser aplicado conforme as prioridades de investimentos definidas no orçamento estadual, podendo ser revertido diretamente em benefício à sociedade capixaba.",
+      "top_left_x": 47,
+      "top_left_y": 426,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 257,
+      "bottom_right_y": 530,
+      "confidence_scores": null,
+      "content": "### ecossistema de inovação",
+      "top_left_x": 47,
+      "top_left_y": 511,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 679,
+      "confidence_scores": null,
+      "content": "No contexto da inovação, destacam-se as iniciativas focadas no ecossistema de inovação capixaba, na inovação aberta e na cultura da inovação com foco no cliente. Nesse sentido, o BANESTES mantém a parceria com a Base 27, *Hub* Corporativo de inovação do Espírito Santo, cujo objetivo é construir uma comunidade forte, capaz de criar um ambiente de conexão para o surgimento de soluções e práticas inovadoras, contribuindo para a evolução do ecossistema de inovação do Espírito Santo. Além disso, mantém parceria com a AMCHAM (Câmara Americana de Comércio para o Brasil), associação que tem forte agenda no campo da inovação e que contribui para ampliar a rede de conexões com empresas e startups de todo o Brasil em busca de inovação soluções.",
+      "top_left_x": 47,
+      "top_left_y": 555,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 801,
+      "confidence_scores": null,
+      "content": "Em inovação aberta, o BANESTES mantém sua participação no Programa de Empreendedorismo Industrial do Findeslab, laboratório de inovação aberta referência no Espírito Santo, trabalhando em conjunto com duas *startups* em desafios levantados pelos próprios colaboradores do Banco. Na cultura da inovação, o BANESTES mantém sua parceria com a WIS, uma escola de capacitação do Espírito Santo, realizando uma trilha de aprendizagem para líderes e multiplicadores de inovação, explorando e desenvolvendo ideias que objetivam melhorar a experiência dos clientes e fazer diferença na vida dos capixabas.",
+      "top_left_x": 47,
+      "top_left_y": 692,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 199,
+      "bottom_right_y": 842,
+      "confidence_scores": null,
+      "content": "### apoio a iniciativas",
+      "top_left_x": 47,
+      "top_left_y": 822,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 927,
+      "confidence_scores": null,
+      "content": "O BANESTES é apoiador e parceiro do movimento de valorização das empresas do Espírito Santo por meio do selo “*Made in ES*”. Com esse selo, o público pode conhecer quais produtos e serviços são produzidos em solo capixaba, além de entender a importância dessas empresas para o desenvolvimento do estado. O BANESTES é um dos principais aliados das empresas e empreendedores capixabas e visa,",
+      "top_left_x": 47,
+      "top_left_y": 864,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**18**^{}[] | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 82,
+      "top_left_y": 934,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9885523541536827,
+     "minimum_page_confidence_score": 0.4466757543172786,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 17,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n### geração de valor à sociedade\n\nO BANESTES ampliou no primeiro trimestre de 2022 sua atuação com carteiras de crédito específicas para o apoio às atividades produtivas, como linhas de crédito rural e microcrédito, instrumentos geradores de cidadania financeira. No apoio ao produtor rural capixaba, ampliou em 58,0% o volume de concessões na safra 2021-2022 comparada à safra 2020-2021, atendendo produtores da agricultura familiar e demais portes, promovendo desenvolvimento local com responsabilidade socioambiental. Continuamos apoiando as micro e pequenas empresas capixabas, disponibilizando somente nesse primeiro trimestre mais de R$ 12 milhões em microcrédito. Além disso, concedemos mais de R$ 3 milhões especificamente às mulheres empreendedoras capixabas por meio das linhas “Microcrédito JUNTAS”, totalizando uma carteira ativa de R$ 108 milhões em microcrédito. Após alcançar o recorde histórico em 2021, com o maior volume de saldo de carteira ativa, o BANESTES mantém sua relevância com as concessões de microcrédito em 2022 que já se mostram 19,8% maior que o concedido no primeiro trimestre de 2021.\n\nO total de impostos, contribuições e encargos sociais pagos ou provisionados pelo BANESTES nesse trimestre atingiu R$ 107 milhões, dos quais R$ 88 milhões (+75,1% em 12 meses) foram recolhidos aos cofres públicos em forma de impostos e contribuições, refletindo a importância das operações desenvolvidas e executadas pelo Banco, e os demais R$ 19 milhões (+13,9% em 12 meses) referem-se aos encargos sociais sobre a folha de pagamentos.\n\nNo primeiro trimestre do ano, foi destinada ao acionista controlador a quantia de R$ 18 milhões sob a forma de juros sobre capital próprio. Esse valor pode ser aplicado conforme as prioridades de investimentos definidas no orçamento estadual, podendo ser revertido diretamente em benefício à sociedade capixaba.\n\n### ecossistema de inovação\n\nNo contexto da inovação, destacam-se as iniciativas focadas no ecossistema de inovação capixaba, na inovação aberta e na cultura da inovação com foco no cliente. Nesse sentido, o BANESTES mantém a parceria com a Base 27, *Hub* Corporativo de inovação do Espírito Santo, cujo objetivo é construir uma comunidade forte, capaz de criar um ambiente de conexão para o surgimento de soluções e práticas inovadoras, contribuindo para a evolução do ecossistema de inovação do Espírito Santo. Além disso, mantém parceria com a AMCHAM (Câmara Americana de Comércio para o Brasil), associação que tem forte agenda no campo da inovação e que contribui para ampliar a rede de conexões com empresas e startups de todo o Brasil em busca de inovação soluções.\n\nEm inovação aberta, o BANESTES mantém sua participação no Programa de Empreendedorismo Industrial do Findeslab, laboratório de inovação aberta referência no Espírito Santo, trabalhando em conjunto com duas *startups* em desafios levantados pelos próprios colaboradores do Banco. Na cultura da inovação, o BANESTES mantém sua parceria com a WIS, uma escola de capacitação do Espírito Santo, realizando uma trilha de aprendizagem para líderes e multiplicadores de inovação, explorando e desenvolvendo ideias que objetivam melhorar a experiência dos clientes e fazer diferença na vida dos capixabas.\n\n### apoio a iniciativas\n\nO BANESTES é apoiador e parceiro do movimento de valorização das empresas do Espírito Santo por meio do selo “*Made in ES*”. Com esse selo, o público pode conhecer quais produtos e serviços são produzidos em solo capixaba, além de entender a importância dessas empresas para o desenvolvimento do estado. O BANESTES é um dos principais aliados das empresas e empreendedores capixabas e visa,\n\n**18**| Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 141,
+      "confidence_scores": null,
+      "content": "por meio do projeto, incentivar o consumo de produtos produzidos no estado, potencializar a economia local e contribuir com o desenvolvimento do Espírito Santo.",
+      "top_left_x": 47,
+      "top_left_y": 108,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 261,
+      "confidence_scores": null,
+      "content": "O Banco participa ativamente do fomento e viabiliza economicamente diversas iniciativas sociais, culturais, ambientais, que atuam em prol de minorias sociais. Por meio do nosso programa de patrocínios, apoiamos festivais culturais de dança, cinema, esportes e diversos outros de relevância para a cultura local com recursos diretos ou por meio de Leis de Incentivo, como Rouanet, Lei do Esporte, e outras. No trimestre, o Banco aprovou o patrocínio ao Futebol Capixaba, como já tradicionalmente faz há alguns anos, bem como ao Carnaval de Vitória, ao programa Conexão Caparaó, de apoio à cafeicultura e pesquisa de cafés especiais, dentre outros.",
+      "top_left_x": 47,
+      "top_left_y": 154,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 292,
+      "bottom_right_y": 302,
+      "confidence_scores": null,
+      "content": "### *compromisso socioambiental*",
+      "top_left_x": 47,
+      "top_left_y": 281,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 419,
+      "confidence_scores": null,
+      "content": "No contexto de governança ambiental, ressaltamos a instituição da Política de Responsabilidade Socioambiental (PRSA), criada com base na Resolução CMN nº 4.327/14, que se aplica às empresas integrantes do Conglomerado Prudencial, abrangendo o BANESTES S.A e a BANESTES DTVM. Essa Política estabelece princípios e diretrizes que norteiam as ações de natureza socioambiental nos negócios, na relação com as partes interessada, e na identificação e controle do risco socioambiental presente nas atividades e nas operações do Banco.",
+      "top_left_x": 47,
+      "top_left_y": 326,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 527,
+      "confidence_scores": null,
+      "content": "Realizamos avaliações trimestrais do risco socioambiental dos clientes PJ que se enquadram nos setores de atuação de maior potencial de causar danos socioambientais, conforme definido na Política Responsabilidade Socioambiental. Nessas avaliações, são feitos monitoramentos da concentração de exposições e da inadimplência dos setores de atuação dos clientes. Essa análise visa mitigar eventuais perdas nos créditos concedidos a partir da identificação de possíveis eventos de natureza socioambiental que possam ocorrer com o cliente.",
+      "top_left_x": 47,
+      "top_left_y": 433,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 618,
+      "confidence_scores": null,
+      "content": "O Sistema Financeiro BANESTES busca se adequar aos novos normativos de Responsabilidade Social, Ambiental e Climático. Um passo importante a ser tomado será a implantação de um sistema de classificação do nível de risco socioambiental e climático dos clientes, permitindo que as operações de crédito ampliem a utilização dessas informações para mitigação de risco, tomada de decisão dos valores de crédito a ser concedido e a preservação do meio ambiente.",
+      "top_left_x": 47,
+      "top_left_y": 540,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 293,
+      "bottom_right_y": 660,
+      "confidence_scores": null,
+      "content": "### *gestão de riscos corporativos*",
+      "top_left_x": 47,
+      "top_left_y": 641,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 808,
+      "confidence_scores": null,
+      "content": "O BANESTES mantém constantemente o aprimoramento de sua gestão de riscos por meio de controles que buscam identificar, mensurar, avaliar, monitorar, controlar e mitigar riscos intrínsecos às atividades bancárias, de modo a otimizar o capital dos acionistas com a melhor relação entre risco e retorno. A diretoria de riscos e controles internos, subordinada diretamente ao diretor presidente, é responsável especificamente pela gestão de riscos, e conta com o apoio de áreas designadas para gestão e avaliação dos riscos de crédito, de mercado, de taxa de juros da carteira bancária, de liquidez, operacionais e socioambientais. Além disso, também é responsável por promover a gestão da continuidade dos negócios, da prevenção à lavagem de dinheiro, da segurança cibernética e da informação.",
+      "top_left_x": 47,
+      "top_left_y": 685,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 900,
+      "confidence_scores": null,
+      "content": "Foi instituído o Comitê de Gestão Integrada de Riscos e de Capital (COGIC) para assessoramento e recomendações ao Conselho de Administração (CONSE) sobre os níveis de apetite por riscos, as políticas e as estratégias para o gerenciamento de riscos individuais e integrados, bem como a prática de três linhas de defesa, com papéis e responsabilidades definidos nos processos de controles internos e riscos operacionais. Como prática institucional, foi adotada a disseminação corporativa da cultura de",
+      "top_left_x": 47,
+      "top_left_y": 821,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**19**^{}[] | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 82,
+      "top_left_y": 934,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9876397841140776,
+     "minimum_page_confidence_score": 0.3722043955471617,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 18,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\npor meio do projeto, incentivar o consumo de produtos produzidos no estado, potencializar a economia local e contribuir com o desenvolvimento do Espírito Santo.\n\nO Banco participa ativamente do fomento e viabiliza economicamente diversas iniciativas sociais, culturais, ambientais, que atuam em prol de minorias sociais. Por meio do nosso programa de patrocínios, apoiamos festivais culturais de dança, cinema, esportes e diversos outros de relevância para a cultura local com recursos diretos ou por meio de Leis de Incentivo, como Rouanet, Lei do Esporte, e outras. No trimestre, o Banco aprovou o patrocínio ao Futebol Capixaba, como já tradicionalmente faz há alguns anos, bem como ao Carnaval de Vitória, ao programa Conexão Caparaó, de apoio à cafeicultura e pesquisa de cafés especiais, dentre outros.\n\n### *compromisso socioambiental*\n\nNo contexto de governança ambiental, ressaltamos a instituição da Política de Responsabilidade Socioambiental (PRSA), criada com base na Resolução CMN nº 4.327/14, que se aplica às empresas integrantes do Conglomerado Prudencial, abrangendo o BANESTES S.A e a BANESTES DTVM. Essa Política estabelece princípios e diretrizes que norteiam as ações de natureza socioambiental nos negócios, na relação com as partes interessada, e na identificação e controle do risco socioambiental presente nas atividades e nas operações do Banco.\n\nRealizamos avaliações trimestrais do risco socioambiental dos clientes PJ que se enquadram nos setores de atuação de maior potencial de causar danos socioambientais, conforme definido na Política Responsabilidade Socioambiental. Nessas avaliações, são feitos monitoramentos da concentração de exposições e da inadimplência dos setores de atuação dos clientes. Essa análise visa mitigar eventuais perdas nos créditos concedidos a partir da identificação de possíveis eventos de natureza socioambiental que possam ocorrer com o cliente.\n\nO Sistema Financeiro BANESTES busca se adequar aos novos normativos de Responsabilidade Social, Ambiental e Climático. Um passo importante a ser tomado será a implantação de um sistema de classificação do nível de risco socioambiental e climático dos clientes, permitindo que as operações de crédito ampliem a utilização dessas informações para mitigação de risco, tomada de decisão dos valores de crédito a ser concedido e a preservação do meio ambiente.\n\n### *gestão de riscos corporativos*\n\nO BANESTES mantém constantemente o aprimoramento de sua gestão de riscos por meio de controles que buscam identificar, mensurar, avaliar, monitorar, controlar e mitigar riscos intrínsecos às atividades bancárias, de modo a otimizar o capital dos acionistas com a melhor relação entre risco e retorno. A diretoria de riscos e controles internos, subordinada diretamente ao diretor presidente, é responsável especificamente pela gestão de riscos, e conta com o apoio de áreas designadas para gestão e avaliação dos riscos de crédito, de mercado, de taxa de juros da carteira bancária, de liquidez, operacionais e socioambientais. Além disso, também é responsável por promover a gestão da continuidade dos negócios, da prevenção à lavagem de dinheiro, da segurança cibernética e da informação.\n\nFoi instituído o Comitê de Gestão Integrada de Riscos e de Capital (COGIC) para assessoramento e recomendações ao Conselho de Administração (CONSE) sobre os níveis de apetite por riscos, as políticas e as estratégias para o gerenciamento de riscos individuais e integrados, bem como a prática de três linhas de defesa, com papéis e responsabilidades definidos nos processos de controles internos e riscos operacionais. Como prática institucional, foi adotada a disseminação corporativa da cultura de\n\n**19**| Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 89,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 54,
+      "top_left_y": 34,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 684,
+      "bottom_right_y": 73,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 48,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 683,
+      "bottom_right_y": 143,
+      "confidence_scores": null,
+      "content": "gerenciamento de riscos e *compliance*, com a realização de treinamentos, trilhas de aprendizagem, palestras e divulgação na rede interna para formação e conscientização dos nossos colaboradores.",
+      "top_left_x": 48,
+      "top_left_y": 110,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 684,
+      "bottom_right_y": 293,
+      "confidence_scores": null,
+      "content": "Também implantamos o Programa de Integridade BANESTES, que adota ações, procedimentos e controles para prevenção à corrupção e combate à prática de atos ilícitos e/ou de improbidade na condução dos processos e negócios no âmbito de atuação do BANESTES. Na estrutura interna, mantemos a Gerência de Monitoramento de Clientes, visando ampliar o foco na gestão do processo de prevenção a lavagem de dinheiro e financiamento ao terrorismo. Essa gerência também desenvolve atividades de monitoramento, análise e comunicação de operações e atua junto às áreas gestoras no atendimento aos demais aspectos das normas que dispõe sobre esses assuntos. A Gerência de Auditoria Interna, subordinada ao Conselho de Administração, é responsável por verificar o nível de aderência das metodologias e dos procedimentos de gerenciamento de riscos.",
+      "top_left_x": 48,
+      "top_left_y": 155,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 344,
+      "bottom_right_y": 340,
+      "confidence_scores": null,
+      "content": "## Outras Informações Relevantes",
+      "top_left_x": 48,
+      "top_left_y": 316,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 100,
+      "bottom_right_y": 381,
+      "confidence_scores": null,
+      "content": "### rating",
+      "top_left_x": 48,
+      "top_left_y": 361,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 684,
+      "bottom_right_y": 510,
+      "confidence_scores": null,
+      "content": "A nota de rating em escala nacional (moeda local) para risco de crédito medida pela Fitch Ratings manteve-se em A+(bra) no período, com perspectiva para estável. Essa perspectiva reflete a expectativa da Fitch de que os impactos da pandemia da Covid-19 no modelo de negócios e no perfil financeiro do BANESTES foram abaixo do esperado, principalmente na qualidade de crédito e nas métricas de lucratividade. Essa manutenção do rating também considerou a manutenção dos bons indicadores de capital do Banco, que, para a Fitch, representam capacidade suficiente para absorver os choques potenciais de um cenário econômico mais adverso e manter as atividades do banco.",
+      "top_left_x": 48,
+      "top_left_y": 400,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 321,
+      "bottom_right_y": 547,
+      "confidence_scores": null,
+      "content": "### meios de pagamento instantâneo",
+      "top_left_x": 48,
+      "top_left_y": 527,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 684,
+      "bottom_right_y": 690,
+      "confidence_scores": null,
+      "content": "Desde o lançamento do Pix, já atingimos cerca de R$ 16 bilhões em volume transacionado e mais de 26 milhões em transações realizadas. Somente no primeiro trimestre de 2022, foram efetuadas 8 milhões de transações. Em dezembro de 2021, atingimos 248.042 contas com uma ou mais chaves Pix cadastradas, sendo 82,2% do total de chaves em conta corrente e 17,8% em conta de poupança. Com forte e gradativa adesão desde que foi lançado, o uso do Pix já supera as modalidades tradicionais de pagamentos e transferências. Os gráficos abaixo evidenciam o comparativo do envio de valores por meio de transações Pix e transações de TED e DOC, sendo possível observar a tendência e a mudança de comportamento.",
+      "top_left_x": 48,
+      "top_left_y": 567,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 456,
+      "bottom_right_y": 870,
+      "confidence_scores": null,
+      "content": "![img-12.jpeg](img-12.jpeg)",
+      "image_id": "img-12.jpeg",
+      "top_left_x": 91,
+      "top_left_y": 706,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 640,
+      "bottom_right_y": 875,
+      "confidence_scores": null,
+      "content": "![img-13.jpeg](img-13.jpeg)",
+      "image_id": "img-13.jpeg",
+      "top_left_x": 489,
+      "top_left_y": 715,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**20** | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 82,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.985149558946714,
+     "minimum_page_confidence_score": 0.3316412085787583,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 456,
+      "bottom_right_y": 870,
+      "id": "img-12.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 91,
+      "top_left_y": 706
+     },
+     {
+      "bottom_right_x": 640,
+      "bottom_right_y": 875,
+      "id": "img-13.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 489,
+      "top_left_y": 715
+     }
+    ],
+    "index": 19,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\ngerenciamento de riscos e *compliance*, com a realização de treinamentos, trilhas de aprendizagem, palestras e divulgação na rede interna para formação e conscientização dos nossos colaboradores.\n\nTambém implantamos o Programa de Integridade BANESTES, que adota ações, procedimentos e controles para prevenção à corrupção e combate à prática de atos ilícitos e/ou de improbidade na condução dos processos e negócios no âmbito de atuação do BANESTES. Na estrutura interna, mantemos a Gerência de Monitoramento de Clientes, visando ampliar o foco na gestão do processo de prevenção a lavagem de dinheiro e financiamento ao terrorismo. Essa gerência também desenvolve atividades de monitoramento, análise e comunicação de operações e atua junto às áreas gestoras no atendimento aos demais aspectos das normas que dispõe sobre esses assuntos. A Gerência de Auditoria Interna, subordinada ao Conselho de Administração, é responsável por verificar o nível de aderência das metodologias e dos procedimentos de gerenciamento de riscos.\n\n## Outras Informações Relevantes\n\n### rating\n\nA nota de rating em escala nacional (moeda local) para risco de crédito medida pela Fitch Ratings manteve-se em A+(bra) no período, com perspectiva para estável. Essa perspectiva reflete a expectativa da Fitch de que os impactos da pandemia da Covid-19 no modelo de negócios e no perfil financeiro do BANESTES foram abaixo do esperado, principalmente na qualidade de crédito e nas métricas de lucratividade. Essa manutenção do rating também considerou a manutenção dos bons indicadores de capital do Banco, que, para a Fitch, representam capacidade suficiente para absorver os choques potenciais de um cenário econômico mais adverso e manter as atividades do banco.\n\n### meios de pagamento instantâneo\n\nDesde o lançamento do Pix, já atingimos cerca de R$ 16 bilhões em volume transacionado e mais de 26 milhões em transações realizadas. Somente no primeiro trimestre de 2022, foram efetuadas 8 milhões de transações. Em dezembro de 2021, atingimos 248.042 contas com uma ou mais chaves Pix cadastradas, sendo 82,2% do total de chaves em conta corrente e 17,8% em conta de poupança. Com forte e gradativa adesão desde que foi lançado, o uso do Pix já supera as modalidades tradicionais de pagamentos e transferências. Os gráficos abaixo evidenciam o comparativo do envio de valores por meio de transações Pix e transações de TED e DOC, sendo possível observar a tendência e a mudança de comportamento.\n\n![img-12.jpeg](img-12.jpeg)\n\n![img-13.jpeg](img-13.jpeg)\n\n**20** | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 54,
+      "top_left_y": 34,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 141,
+      "confidence_scores": null,
+      "content": "O uso do Pix no BANESTES permanece gratuito a todos os nossos clientes, mesmo sendo permitida a cobrança de tarifa para pessoa jurídica.",
+      "top_left_x": 47,
+      "top_left_y": 108,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 113,
+      "bottom_right_y": 173,
+      "confidence_scores": null,
+      "content": "### **cartões**",
+      "top_left_x": 47,
+      "top_left_y": 155,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 272,
+      "confidence_scores": null,
+      "content": "O cartão de bandeira própria Banescard possui mais de 2 milhões de estabelecimentos comerciais credenciados às redes Cielo, Getnet, Bin, Rede e Stone em todo o Brasil. No primeiro trimestre de 2022, foram quase 6 milhões de operações, representando um crescimento de 5,0% contra o mesmo período de 2021. O valor total transacionado em compras e saques com os cartões de débito e crédito atingiu R$ 488 milhões, um crescimento de 4,0% na comparação em doze meses.",
+      "top_left_x": 47,
+      "top_left_y": 195,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 363,
+      "confidence_scores": null,
+      "content": "Os cartões de crédito e débito BANESTES Visa continuam crescendo em ritmo expressivo, tornando-se cada vez mais importantes no portfólio de produtos do BANESTES. No primeiro trimestre de 2022, o número de transações em compras e saques de pessoas físicas expandiu em 11,9% em relação ao mesmo período de 2021, resultando em um aumento do faturamento de 16,3%, alcançando a cifra de R$ 509 milhões no trimestre.",
+      "top_left_x": 47,
+      "top_left_y": 285,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 257,
+      "bottom_right_y": 398,
+      "confidence_scores": null,
+      "content": "### **canais e serviços digitais**",
+      "top_left_x": 47,
+      "top_left_y": 378,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 511,
+      "confidence_scores": null,
+      "content": "Os canais digitais (*Internet Banking* e *Mobile*) foram responsáveis por 10 milhões de transações financeiras no primeiro trimestre de 2022. O aplicativo BANESTES registrou pela primeira vez a marca de quase 3 milhões de transações por mês, com 15,0% de aumento nesse primeiro trimestre. Analisando-se as transações totais, que incluem consultas de informações como extrato, nosso aplicativo manteve-se como o principal canal de transações para os clientes, alcançando mais de 20 milhões de transações no trimestre.",
+      "top_left_x": 47,
+      "top_left_y": 417,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "**21**^{}[] | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 82,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9831334400347247,
+     "minimum_page_confidence_score": 0.3417095654616716,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 20,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\nO uso do Pix no BANESTES permanece gratuito a todos os nossos clientes, mesmo sendo permitida a cobrança de tarifa para pessoa jurídica.\n\n### **cartões**\n\nO cartão de bandeira própria Banescard possui mais de 2 milhões de estabelecimentos comerciais credenciados às redes Cielo, Getnet, Bin, Rede e Stone em todo o Brasil. No primeiro trimestre de 2022, foram quase 6 milhões de operações, representando um crescimento de 5,0% contra o mesmo período de 2021. O valor total transacionado em compras e saques com os cartões de débito e crédito atingiu R$ 488 milhões, um crescimento de 4,0% na comparação em doze meses.\n\nOs cartões de crédito e débito BANESTES Visa continuam crescendo em ritmo expressivo, tornando-se cada vez mais importantes no portfólio de produtos do BANESTES. No primeiro trimestre de 2022, o número de transações em compras e saques de pessoas físicas expandiu em 11,9% em relação ao mesmo período de 2021, resultando em um aumento do faturamento de 16,3%, alcançando a cifra de R$ 509 milhões no trimestre.\n\n### **canais e serviços digitais**\n\nOs canais digitais (*Internet Banking* e *Mobile*) foram responsáveis por 10 milhões de transações financeiras no primeiro trimestre de 2022. O aplicativo BANESTES registrou pela primeira vez a marca de quase 3 milhões de transações por mês, com 15,0% de aumento nesse primeiro trimestre. Analisando-se as transações totais, que incluem consultas de informações como extrato, nosso aplicativo manteve-se como o principal canal de transações para os clientes, alcançando mais de 20 milhões de transações no trimestre.\n\n**21**| Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 583,
+      "top_left_y": 45,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 246,
+      "bottom_right_y": 128,
+      "confidence_scores": null,
+      "content": "## Contexto Econômico",
+      "top_left_x": 48,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 322,
+      "confidence_scores": null,
+      "content": "Apesar de ser um tema já em evidência desde o ano de 2014, ninguém imaginou que a diplomacia global seria incapaz de evitar o conflito bélico entre a Rússia e a Ucrânia. Hoje têm-se a sensação de que houve um trágico desinteresse ou uma irresponsável desatenção na deterioração da relação entre os dois países. No dia 24 de fevereiro ocorreu a invasão territorial, estopim para uma guerra que dizimou cidades, gerou mais de cinco milhões de refugiados e afetou a produção de alimentos e a produção de matérias primas. Para agravar essa situação, os Estados Unidos lideraram uma intensa variedade de sanções, seja no campo da cultura, da ciência, do esporte, da arte, da economia, das finanças internacionais e outros temas contra a Rússia. O que parecia, com essa decisão, estrangular a economia russa, na verdade criou um efeito *boomerang*, atingindo fortemente países subdesenvolvidos, em desenvolvimento e até mesmo os desenvolvidos. Inflação, redução do crescimento econômico, desemprego, falta de insumos e matérias primas essenciais são as resultantes claras dessa atitude.",
+      "top_left_x": 46,
+      "top_left_y": 151,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 446,
+      "confidence_scores": null,
+      "content": "A desorganização da cadeia global de produção, oferta e distribuição de bens e serviços trouxe mais incerteza e com isso mais risco para a economia mundial. Ao que parece, a concepção da globalização desmoronou e a revalorização da produção local ou próxima ganha força e adeptos. O *offshore sourcing* tende a dar lugar ao *near sourcing*. Depender de países muito distantes e instáveis, por falta de habilidade diplomática, mostrou ser algo temeroso. A desglobalização, se realmente acontecer, poderá provocar mais inflação, elevação das taxas de juros e redução do crescimento econômico global. E é exatamente nesse sentido que o Brasil pode ganhar mais importância. Alimentos, minerais e matérias primas, fármacos, unidades fabris e outros investimentos aqui no nosso país tem estado no radar global.",
+      "top_left_x": 46,
+      "top_left_y": 322,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 584,
+      "confidence_scores": null,
+      "content": "A moeda brasileira já ganha perfil de *commodity-currency* com o boom das commodities. Ao se observar janeiro e fevereiro deste ano, por exemplo, o valor total de nossas exportações foi 36,0% maior do que no mesmo bimestre de 2021. Soma-se a isso uma boa condução da política monetária com a subida dos juros bem antes de outros países, demonstrando rapidez e autonomia, e uma boa condução da política fiscal, haja vista que em fevereiro o setor público consolidado apresentou um superávit primário de R$ 3,5 bilhões, enquanto nos doze meses anteriores registrou superávit de R$ 123,4 bilhões. O aquecimento dos preços das commodities elevou a percepção de importância da nossa atividade econômica no agro e na extrativa mineral e com isso dos investimentos em sua cadeia produtiva.",
+      "top_left_x": 46,
+      "top_left_y": 460,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 690,
+      "confidence_scores": null,
+      "content": "A possibilidade de se tornar um expressivo líder regional cresceu nesse primeiro trimestre de 2022. O grande obstáculo a ser superado ainda é a inflação, e a dificuldade em contê-la está na raiz internacional de suas causas. Da mesma forma, recuperar nossa força industrial e gerar empregos é essencial para o crescimento do país. A questão eleitoral evolui e não dá sinais de grande influência nas decisões de investimento dos players de mercado. Em resumo, apesar de toda a turbulência global, o primeiro trimestre desse ano foi mais promissor para a economia brasileira do que se imaginava.",
+      "top_left_x": 46,
+      "top_left_y": 596,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**22**^{}[] | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9887981010100246,
+     "minimum_page_confidence_score": 0.3823639219299655,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 21,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n## Contexto Econômico\n\nApesar de ser um tema já em evidência desde o ano de 2014, ninguém imaginou que a diplomacia global seria incapaz de evitar o conflito bélico entre a Rússia e a Ucrânia. Hoje têm-se a sensação de que houve um trágico desinteresse ou uma irresponsável desatenção na deterioração da relação entre os dois países. No dia 24 de fevereiro ocorreu a invasão territorial, estopim para uma guerra que dizimou cidades, gerou mais de cinco milhões de refugiados e afetou a produção de alimentos e a produção de matérias primas. Para agravar essa situação, os Estados Unidos lideraram uma intensa variedade de sanções, seja no campo da cultura, da ciência, do esporte, da arte, da economia, das finanças internacionais e outros temas contra a Rússia. O que parecia, com essa decisão, estrangular a economia russa, na verdade criou um efeito *boomerang*, atingindo fortemente países subdesenvolvidos, em desenvolvimento e até mesmo os desenvolvidos. Inflação, redução do crescimento econômico, desemprego, falta de insumos e matérias primas essenciais são as resultantes claras dessa atitude.\n\nA desorganização da cadeia global de produção, oferta e distribuição de bens e serviços trouxe mais incerteza e com isso mais risco para a economia mundial. Ao que parece, a concepção da globalização desmoronou e a revalorização da produção local ou próxima ganha força e adeptos. O *offshore sourcing* tende a dar lugar ao *near sourcing*. Depender de países muito distantes e instáveis, por falta de habilidade diplomática, mostrou ser algo temeroso. A desglobalização, se realmente acontecer, poderá provocar mais inflação, elevação das taxas de juros e redução do crescimento econômico global. E é exatamente nesse sentido que o Brasil pode ganhar mais importância. Alimentos, minerais e matérias primas, fármacos, unidades fabris e outros investimentos aqui no nosso país tem estado no radar global.\n\nA moeda brasileira já ganha perfil de *commodity-currency* com o boom das commodities. Ao se observar janeiro e fevereiro deste ano, por exemplo, o valor total de nossas exportações foi 36,0% maior do que no mesmo bimestre de 2021. Soma-se a isso uma boa condução da política monetária com a subida dos juros bem antes de outros países, demonstrando rapidez e autonomia, e uma boa condução da política fiscal, haja vista que em fevereiro o setor público consolidado apresentou um superávit primário de R$ 3,5 bilhões, enquanto nos doze meses anteriores registrou superávit de R$ 123,4 bilhões. O aquecimento dos preços das commodities elevou a percepção de importância da nossa atividade econômica no agro e na extrativa mineral e com isso dos investimentos em sua cadeia produtiva.\n\nA possibilidade de se tornar um expressivo líder regional cresceu nesse primeiro trimestre de 2022. O grande obstáculo a ser superado ainda é a inflação, e a dificuldade em contê-la está na raiz internacional de suas causas. Da mesma forma, recuperar nossa força industrial e gerar empregos é essencial para o crescimento do país. A questão eleitoral evolui e não dá sinais de grande influência nas decisões de investimento dos players de mercado. Em resumo, apesar de toda a turbulência global, o primeiro trimestre desse ano foi mais promissor para a economia brasileira do que se imaginava.\n\n**22**| Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 53,
+      "top_left_y": 34,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 582,
+      "top_left_y": 46,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 190,
+      "bottom_right_y": 129,
+      "confidence_scores": null,
+      "content": "## Guidance 2022",
+      "top_left_x": 48,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 206,
+      "confidence_scores": null,
+      "content": "O BANESTES reitera seu compromisso com a transparência institucional e, assim, retorna com seu acompanhamento de *guidance*. O *guidance* BANESTES contém declarações prospectivas, as quais estão sujeitas a riscos e incertezas, pois foram baseadas em expectativas e premissas da administração e em informações disponíveis no mercado até a presente data.",
+      "top_left_x": 47,
+      "top_left_y": 144,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 649,
+      "bottom_right_y": 386,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\"></th><th colspan=\"2\">2022</th></tr><tr><th>Guidance<br/>Projeção (%)</th><th>1º Trimestre<br/>Real (%)</th></tr></thead><tr><td>Carteira de Crédito Ampliada<sup>1</sup></td><td>14 - 18</td><td>16,4</td></tr><tr><td>Depósito Total<sup>2</sup></td><td>11 - 15</td><td>19,3</td></tr><tr><td>Provisão de Crédito/Carteira de Crédito Ampliada<sup>3</sup></td><td>1,2 - 1,6</td><td>1,3</td></tr><tr><td>Eficiência Operacional<sup>4</sup></td><td>47 - 51</td><td>46,6</td></tr><tr><td>Despesas Operacionais<sup>5</sup></td><td>5 - 9</td><td>12,1</td></tr><tr><td>Rendas de Serviços e Tarifas</td><td>1 - 5</td><td>3,2</td></tr></table>",
+      "table_id": "tbl-10.html",
+      "top_left_x": 78,
+      "top_left_y": 222,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 649,
+      "bottom_right_y": 441,
+      "confidence_scores": null,
+      "content": "$^{1}$ Trata-se do total dos saldos da carteira de crédito (conceito Bacen), de TVM privado (debêntures, notas promissórias, CDBs - certificado de depósitos bancários, letras financeiras, letras de crédito imobiliário, letras de crédito do agronegócio, CRIs - certificado de recebíveis imobiliários e FIDCs - fundo de investimento em direitos creditórios) e garantias prestadas (fianças e avais).",
+      "top_left_x": 81,
+      "top_left_y": 401,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 494,
+      "bottom_right_y": 453,
+      "confidence_scores": null,
+      "content": "$^{2}$ Trata-se do total dos saldos de depósitos à vista, poupança, a prazo, interfinanceiros e outros depósitos.",
+      "top_left_x": 81,
+      "top_left_y": 440,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 649,
+      "bottom_right_y": 482,
+      "confidence_scores": null,
+      "content": "$^{3}$ Trata-se da relação do resultado de provisão para créditos de liquidação duvidosa (Resolução 2.682/99 do CMN) e TVM privado nos últimos 12 meses e o saldo da carteira de crédito ampliada.",
+      "top_left_x": 81,
+      "top_left_y": 454,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 649,
+      "bottom_right_y": 508,
+      "confidence_scores": null,
+      "content": "$^{4}$ Trata-se da relação entre o total da despesa administrativa (pessoal e outros) e o total do resultado bruto da intermediação financeira (excluído provisão para créditos de liquidação duvidosa), receitas com serviços e receitas com tarifas.",
+      "top_left_x": 81,
+      "top_left_y": 482,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 388,
+      "bottom_right_y": 520,
+      "confidence_scores": null,
+      "content": "$^{5}$ Trata-se do total das despesas de pessoal e outras despesas administrativas.",
+      "top_left_x": 81,
+      "top_left_y": 508,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 280,
+      "bottom_right_y": 537,
+      "confidence_scores": null,
+      "content": "Obs: As variações estão baseadas em 12 meses.",
+      "top_left_x": 81,
+      "top_left_y": 525,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "**23** | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9846549406317224,
+     "minimum_page_confidence_score": 0.3259635697380669,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 22,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n## Guidance 2022\n\nO BANESTES reitera seu compromisso com a transparência institucional e, assim, retorna com seu acompanhamento de *guidance*. O *guidance* BANESTES contém declarações prospectivas, as quais estão sujeitas a riscos e incertezas, pois foram baseadas em expectativas e premissas da administração e em informações disponíveis no mercado até a presente data.\n\n[tbl-10.html](tbl-10.html)\n\n$^{1}$ Trata-se do total dos saldos da carteira de crédito (conceito Bacen), de TVM privado (debêntures, notas promissórias, CDBs - certificado de depósitos bancários, letras financeiras, letras de crédito imobiliário, letras de crédito do agronegócio, CRIs - certificado de recebíveis imobiliários e FIDCs - fundo de investimento em direitos creditórios) e garantias prestadas (fianças e avais).\n\n$^{2}$ Trata-se do total dos saldos de depósitos à vista, poupança, a prazo, interfinanceiros e outros depósitos.\n\n$^{3}$ Trata-se da relação do resultado de provisão para créditos de liquidação duvidosa (Resolução 2.682/99 do CMN) e TVM privado nos últimos 12 meses e o saldo da carteira de crédito ampliada.\n\n$^{4}$ Trata-se da relação entre o total da despesa administrativa (pessoal e outros) e o total do resultado bruto da intermediação financeira (excluído provisão para créditos de liquidação duvidosa), receitas com serviços e receitas com tarifas.\n\n$^{5}$ Trata-se do total das despesas de pessoal e outras despesas administrativas.\n\nObs: As variações estão baseadas em 12 meses.\n\n**23** | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\"></th><th colspan=\"2\">2022</th></tr><tr><th>Guidance<br/>Projeção (%)</th><th>1º Trimestre<br/>Real (%)</th></tr></thead><tr><td>Carteira de Crédito Ampliada<sup>1</sup></td><td>14 - 18</td><td>16,4</td></tr><tr><td>Depósito Total<sup>2</sup></td><td>11 - 15</td><td>19,3</td></tr><tr><td>Provisão de Crédito/Carteira de Crédito Ampliada<sup>3</sup></td><td>1,2 - 1,6</td><td>1,3</td></tr><tr><td>Eficiência Operacional<sup>4</sup></td><td>47 - 51</td><td>46,6</td></tr><tr><td>Despesas Operacionais<sup>5</sup></td><td>5 - 9</td><td>12,1</td></tr><tr><td>Rendas de Serviços e Tarifas</td><td>1 - 5</td><td>3,2</td></tr></table>",
+      "format": "html",
+      "id": "tbl-10.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 52,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "**1T2022**",
+      "top_left_x": 584,
+      "top_left_y": 45,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 409,
+      "bottom_right_y": 128,
+      "confidence_scores": null,
+      "content": "## **Diretoria**",
+      "top_left_x": 325,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 409,
+      "bottom_right_y": 163,
+      "confidence_scores": null,
+      "content": "### **Presidente**",
+      "top_left_x": 325,
+      "top_left_y": 146,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 449,
+      "bottom_right_y": 191,
+      "confidence_scores": null,
+      "content": "José Amarildo Casagrande",
+      "top_left_x": 284,
+      "top_left_y": 174,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 564,
+      "bottom_right_y": 229,
+      "confidence_scores": null,
+      "content": "## **Diretor de Relações com Investidores e de Finanças**",
+      "top_left_x": 169,
+      "top_left_y": 209,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 456,
+      "bottom_right_y": 255,
+      "confidence_scores": null,
+      "content": "Silvio Henrique Brunoro Grillo",
+      "top_left_x": 277,
+      "top_left_y": 236,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 403,
+      "bottom_right_y": 291,
+      "confidence_scores": null,
+      "content": "### **Diretores**",
+      "top_left_x": 330,
+      "top_left_y": 274,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 414,
+      "bottom_right_y": 318,
+      "confidence_scores": null,
+      "content": "Alcio de Araújo",
+      "top_left_x": 319,
+      "top_left_y": 302,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 435,
+      "bottom_right_y": 342,
+      "confidence_scores": null,
+      "content": "Carlos Artur Hauschild",
+      "top_left_x": 298,
+      "top_left_y": 325,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 439,
+      "bottom_right_y": 366,
+      "confidence_scores": null,
+      "content": "Fernando Valli Cardoso",
+      "top_left_x": 295,
+      "top_left_y": 350,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 446,
+      "bottom_right_y": 390,
+      "confidence_scores": null,
+      "content": "Hugo Luiz Ribeiro Gaspar",
+      "top_left_x": 288,
+      "top_left_y": 373,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 461,
+      "bottom_right_y": 414,
+      "confidence_scores": null,
+      "content": "Marcos Vinícius Nunes Montes",
+      "top_left_x": 273,
+      "top_left_y": 397,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 442,
+      "bottom_right_y": 438,
+      "confidence_scores": null,
+      "content": "Tasso de Macedo Lugon",
+      "top_left_x": 291,
+      "top_left_y": 421,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 496,
+      "bottom_right_y": 482,
+      "confidence_scores": null,
+      "content": "## **Conselho de Administração**",
+      "top_left_x": 236,
+      "top_left_y": 459,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 409,
+      "bottom_right_y": 511,
+      "confidence_scores": null,
+      "content": "### **Presidente**",
+      "top_left_x": 325,
+      "top_left_y": 492,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 453,
+      "bottom_right_y": 537,
+      "confidence_scores": null,
+      "content": "José Antônio Resende Alves",
+      "top_left_x": 279,
+      "top_left_y": 521,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 419,
+      "bottom_right_y": 575,
+      "confidence_scores": null,
+      "content": "### **Conselheiros**",
+      "top_left_x": 315,
+      "top_left_y": 557,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 409,
+      "bottom_right_y": 601,
+      "confidence_scores": null,
+      "content": "Carla Barreto",
+      "top_left_x": 325,
+      "top_left_y": 585,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 454,
+      "bottom_right_y": 626,
+      "confidence_scores": null,
+      "content": "João Luiz Pereira de Oliveira",
+      "top_left_x": 279,
+      "top_left_y": 609,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 449,
+      "bottom_right_y": 650,
+      "confidence_scores": null,
+      "content": "José Amarildo Casagrande",
+      "top_left_x": 284,
+      "top_left_y": 633,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 442,
+      "bottom_right_y": 674,
+      "confidence_scores": null,
+      "content": "Maelcio Maurício Soares",
+      "top_left_x": 291,
+      "top_left_y": 656,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 462,
+      "bottom_right_y": 699,
+      "confidence_scores": null,
+      "content": "Marinete Andrião Francischetto",
+      "top_left_x": 272,
+      "top_left_y": 682,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 439,
+      "bottom_right_y": 722,
+      "confidence_scores": null,
+      "content": "Sebastião José Balarini",
+      "top_left_x": 295,
+      "top_left_y": 705,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 436,
+      "bottom_right_y": 746,
+      "confidence_scores": null,
+      "content": "Sonia Resende Barros",
+      "top_left_x": 298,
+      "top_left_y": 730,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 447,
+      "bottom_right_y": 770,
+      "confidence_scores": null,
+      "content": "Wander Egídio de Oliveira",
+      "top_left_x": 286,
+      "top_left_y": 753,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 639,
+      "bottom_right_y": 813,
+      "confidence_scores": null,
+      "content": "## **Gerência de Relações com Investidores e de Planejamento**",
+      "top_left_x": 93,
+      "top_left_y": 790,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 421,
+      "bottom_right_y": 843,
+      "confidence_scores": null,
+      "content": "### **Gerente Geral**",
+      "top_left_x": 313,
+      "top_left_y": 825,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 453,
+      "bottom_right_y": 869,
+      "confidence_scores": null,
+      "content": "Cristiano Carvalho de Souza",
+      "top_left_x": 279,
+      "top_left_y": 853,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**24** | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 934,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.964692345598866,
+     "minimum_page_confidence_score": 0.32162787321223135,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 720
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 23,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2022**\n\n## **Diretoria**\n\n### **Presidente**\n\nJosé Amarildo Casagrande\n\n## **Diretor de Relações com Investidores e de Finanças**\n\nSilvio Henrique Brunoro Grillo\n\n### **Diretores**\n\nAlcio de Araújo\n\nCarlos Artur Hauschild\n\nFernando Valli Cardoso\n\nHugo Luiz Ribeiro Gaspar\n\nMarcos Vinícius Nunes Montes\n\nTasso de Macedo Lugon\n\n## **Conselho de Administração**\n\n### **Presidente**\n\nJosé Antônio Resende Alves\n\n### **Conselheiros**\n\nCarla Barreto\n\nJoão Luiz Pereira de Oliveira\n\nJosé Amarildo Casagrande\n\nMaelcio Maurício Soares\n\nMarinete Andrião Francischetto\n\nSebastião José Balarini\n\nSonia Resende Barros\n\nWander Egídio de Oliveira\n\n## **Gerência de Relações com Investidores e de Planejamento**\n\n### **Gerente Geral**\n\nCristiano Carvalho de Souza\n\n**24** | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   }
+  ],
+  "usage_info": {
+   "doc_size_bytes": 1380155,
+   "pages_processed": 24
+  }
+ },
+ "trimestre": "1T2022"
+}

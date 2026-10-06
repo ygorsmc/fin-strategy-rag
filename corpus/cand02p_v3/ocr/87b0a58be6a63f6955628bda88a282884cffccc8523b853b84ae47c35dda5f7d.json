@@ -1,0 +1,2903 @@
+{
+ "documento": "banestes_release_1T2020",
+ "empresa": "BANESTES",
+ "hash_pdf": "87b0a58be6a63f6955628bda88a282884cffccc8523b853b84ae47c35dda5f7d",
+ "modelo": "mistral-ocr-4-0",
+ "ocr": {
+  "document_annotation": null,
+  "model": "mistral-ocr-4-0",
+  "pages": [
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 459,
+      "bottom_right_y": 216,
+      "confidence_scores": null,
+      "content": "# BANESTES S.A.\nBANCO DO ESTADO\nDO ESPÍRITO SANTO",
+      "top_left_x": 26,
+      "top_left_y": 76,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 379,
+      "bottom_right_y": 519,
+      "confidence_scores": null,
+      "content": "PRESS RELEASE\n1º TRIMESTRE 2020",
+      "top_left_x": 26,
+      "top_left_y": 439,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 719,
+      "bottom_right_y": 967,
+      "confidence_scores": null,
+      "content": "![img-0.jpeg](img-0.jpeg)",
+      "image_id": "img-0.jpeg",
+      "top_left_x": 263,
+      "top_left_y": 204,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 79,
+      "bottom_right_y": 963,
+      "confidence_scores": null,
+      "content": "![img-1.jpeg](img-1.jpeg)",
+      "image_id": "img-1.jpeg",
+      "top_left_x": 17,
+      "top_left_y": 885,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 246,
+      "bottom_right_y": 966,
+      "confidence_scores": null,
+      "content": "**BANESTES**\ncrescemos juntos",
+      "top_left_x": 87,
+      "top_left_y": 911,
+      "type": "text"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.947177989802752,
+     "minimum_page_confidence_score": 0.2100526576626145,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 719,
+      "bottom_right_y": 967,
+      "id": "img-0.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 263,
+      "top_left_y": 204
+     },
+     {
+      "bottom_right_x": 79,
+      "bottom_right_y": 963,
+      "id": "img-1.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 17,
+      "top_left_y": 885
+     }
+    ],
+    "index": 0,
+    "markdown": "# BANESTES S.A.\nBANCO DO ESTADO\nDO ESPÍRITO SANTO\n\nPRESS RELEASE\n1º TRIMESTRE 2020\n\n![img-0.jpeg](img-0.jpeg)\n\n![img-1.jpeg](img-1.jpeg)\n\n**BANESTES**\ncrescemos juntos",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "BANESTES\ncrescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 586,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 282,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "# PANDEMIA da COVID-19",
+      "top_left_x": 47,
+      "top_left_y": 109,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 258,
+      "confidence_scores": null,
+      "content": "O cenário global está sendo marcado pelos desdobramentos e impactos da crise sanitária instalada (COVID-19), gerando grandes desafios e incertezas ao mundo. Desde a deflagração da Pandemia da COVID-19, decretada pela Organização Mundial da Saúde (OMS) em 11 de março de 2020, a maioria das economias mundiais tem sofrido de forma intensa seus efeitos, sem sequer ter uma previsão final de quais serão os impactos e quando o cenário irá se normalizar.",
+      "top_left_x": 47,
+      "top_left_y": 147,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 364,
+      "confidence_scores": null,
+      "content": "Diante destes desdobramentos, o BANESTES vem atuando de forma objetiva e extraordinária, tendo assim preservada sua capacidade operacional, tanto as funções administrativas (BackOffice) como as dos nossos times comerciais/rede de agências, adotando os procedimentos e orientações do Ministério da Saúde para servir com segurança nossos clientes e colaboradores.",
+      "top_left_x": 47,
+      "top_left_y": 272,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 510,
+      "confidence_scores": null,
+      "content": "Desde o início da Pandemia foi criado um Comitê de Crise, para avaliação e monitoramento dos cenários e seus reflexos nas operações. Formado pelos Diretores Executivos, Recursos Humanos, Gestão de Riscos Operacionais e outros colaboradores com funções específicas responsáveis pela sustentação da operação bancária diária. Acionamos o Plano de Continuidade de Negócios (PCN) e com o agravamento da Pandemia, estamos intensificando as ações internas e externas, de forma consistente e tempestiva, com objetivo de minimizar os impactos e reflexos aos nossos colaboradores e às nossas operações.",
+      "top_left_x": 47,
+      "top_left_y": 377,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 189,
+      "bottom_right_y": 544,
+      "confidence_scores": null,
+      "content": "1 – AÇÕES EXTERNAS:",
+      "top_left_x": 47,
+      "top_left_y": 528,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 701,
+      "confidence_scores": null,
+      "content": "i. Ações emergenciais com o compromisso de garantir mais segurança no modelo de atendimento ao cliente e usuário (disponibilização de álcool em gel, adoção de pontos de distância mínima entre clientes no ambiente das agências, horários de atendimentos flexíveis, entre outros);\nii. Novas alternativas de pagamento de contas e tributos; e\niii. Linhas emergenciais de crédito, proporcionando opções de reorganização financeira com condições diferenciadas.",
+      "top_left_x": 58,
+      "top_left_y": 546,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 187,
+      "bottom_right_y": 738,
+      "confidence_scores": null,
+      "content": "2 – AÇÕES INTERNAS:",
+      "top_left_x": 47,
+      "top_left_y": 720,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 906,
+      "confidence_scores": null,
+      "content": "i. Guias voltados para cuidados com a saúde, prevenção e bem estar dos colaboradores;\nii. Afastamento dos colaboradores do grupo de risco, estagiários e aprendizes por tempo indeterminado;\niii. Orientações sobre higienização e cuidados pessoais, com distribuição de máscaras, disponibilização de álcool em gel nas áreas e adoção de pontos de distanciamento mínimo entre colaboradores;\niv. Comunicação contínua e transparente aos colaboradores;",
+      "top_left_x": 58,
+      "top_left_y": 740,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "2 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 92,
+      "top_left_y": 934,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9786493742810355,
+     "minimum_page_confidence_score": 0.2322459557248847,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 1,
+    "markdown": "BANESTES\ncrescemos juntos\n\n1T2020\n\n# PANDEMIA da COVID-19\n\nO cenário global está sendo marcado pelos desdobramentos e impactos da crise sanitária instalada (COVID-19), gerando grandes desafios e incertezas ao mundo. Desde a deflagração da Pandemia da COVID-19, decretada pela Organização Mundial da Saúde (OMS) em 11 de março de 2020, a maioria das economias mundiais tem sofrido de forma intensa seus efeitos, sem sequer ter uma previsão final de quais serão os impactos e quando o cenário irá se normalizar.\n\nDiante destes desdobramentos, o BANESTES vem atuando de forma objetiva e extraordinária, tendo assim preservada sua capacidade operacional, tanto as funções administrativas (BackOffice) como as dos nossos times comerciais/rede de agências, adotando os procedimentos e orientações do Ministério da Saúde para servir com segurança nossos clientes e colaboradores.\n\nDesde o início da Pandemia foi criado um Comitê de Crise, para avaliação e monitoramento dos cenários e seus reflexos nas operações. Formado pelos Diretores Executivos, Recursos Humanos, Gestão de Riscos Operacionais e outros colaboradores com funções específicas responsáveis pela sustentação da operação bancária diária. Acionamos o Plano de Continuidade de Negócios (PCN) e com o agravamento da Pandemia, estamos intensificando as ações internas e externas, de forma consistente e tempestiva, com objetivo de minimizar os impactos e reflexos aos nossos colaboradores e às nossas operações.\n\n1 – AÇÕES EXTERNAS:\n\ni. Ações emergenciais com o compromisso de garantir mais segurança no modelo de atendimento ao cliente e usuário (disponibilização de álcool em gel, adoção de pontos de distância mínima entre clientes no ambiente das agências, horários de atendimentos flexíveis, entre outros);\nii. Novas alternativas de pagamento de contas e tributos; e\niii. Linhas emergenciais de crédito, proporcionando opções de reorganização financeira com condições diferenciadas.\n\n2 – AÇÕES INTERNAS:\n\ni. Guias voltados para cuidados com a saúde, prevenção e bem estar dos colaboradores;\nii. Afastamento dos colaboradores do grupo de risco, estagiários e aprendizes por tempo indeterminado;\niii. Orientações sobre higienização e cuidados pessoais, com distribuição de máscaras, disponibilização de álcool em gel nas áreas e adoção de pontos de distanciamento mínimo entre colaboradores;\niv. Comunicação contínua e transparente aos colaboradores;\n\n2 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "BANESTES\ncrescemos juntos",
+      "top_left_x": 52,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 316,
+      "confidence_scores": null,
+      "content": "v. Intensificação do trabalho em home office;\nvi. Revezamento de equipes nas dependências do Banco, adotando conduta de distanciamento e precaução;\nvii. Antecipação da campanha interna de vacinação contra gripe H1N1;\nviii. Higienização profissional das dependências do Banco;\nix. Lives, videoconferências e teleconferências entre a diretoria e os colaboradores;\nx. Protocolo de acompanhamento para os colaboradores que apresentem os sintomas da COVID-19 e outros.",
+      "top_left_x": 50,
+      "top_left_y": 107,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 216,
+      "bottom_right_y": 355,
+      "confidence_scores": null,
+      "content": "3 – AÇÕES em NÚMEROS:",
+      "top_left_x": 46,
+      "top_left_y": 335,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 820,
+      "confidence_scores": null,
+      "content": "![img-2.jpeg](img-2.jpeg)",
+      "image_id": "img-2.jpeg",
+      "top_left_x": 46,
+      "top_left_y": 371,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 207,
+      "bottom_right_y": 840,
+      "confidence_scores": null,
+      "content": "Período: 15/03/2020 a 15/05/2020",
+      "top_left_x": 46,
+      "top_left_y": 825,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "3 Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9640561633584982,
+     "minimum_page_confidence_score": 0.25955888335110205,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 820,
+      "id": "img-2.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 46,
+      "top_left_y": 371
+     }
+    ],
+    "index": 2,
+    "markdown": "BANESTES\ncrescemos juntos\n\n1T2020\n\nv. Intensificação do trabalho em home office;\nvi. Revezamento de equipes nas dependências do Banco, adotando conduta de distanciamento e precaução;\nvii. Antecipação da campanha interna de vacinação contra gripe H1N1;\nviii. Higienização profissional das dependências do Banco;\nix. Lives, videoconferências e teleconferências entre a diretoria e os colaboradores;\nx. Protocolo de acompanhamento para os colaboradores que apresentem os sintomas da COVID-19 e outros.\n\n3 – AÇÕES em NÚMEROS:\n\n![img-2.jpeg](img-2.jpeg)\n\nPeríodo: 15/03/2020 a 15/05/2020\n\n3 Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 52,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "**1T2020**",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 263,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## Principais Informações",
+      "top_left_x": 46,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 692,
+      "bottom_right_y": 916,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Demonstração do Resultado<br/>(R$ milhões)</th><th rowspan=\"2\">1T20</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>1T20X4T19</th><th>1T20X1T19</th></tr></thead><tr><td>Receitas de Intermediação Financeira</td><td>486</td><td>476</td><td>557</td><td>545</td><td>563</td><td>599</td><td>556</td><td>488</td><td>2,2%</td><td>-13,6%</td></tr><tr><td>Despesas de Intermediação Financeira</td><td>(237)</td><td>(283)</td><td>(374)</td><td>(379)</td><td>(363)</td><td>(421)</td><td>(356)</td><td>(289)</td><td>-16,4%</td><td>-34,7%</td></tr><tr><td>Resultado de Provisão para Devedores Duvidosos</td><td>25</td><td>32</td><td>42</td><td>46</td><td>30</td><td>33</td><td>22</td><td>18</td><td>-23,7%</td><td>-18,3%</td></tr><tr><td>Margem Financeira<sup>1</sup></td><td>249</td><td>192</td><td>183</td><td>166</td><td>200</td><td>179</td><td>200</td><td>199</td><td>29,4%</td><td>24,6%</td></tr><tr><td>Receitas de Prestação de Serviços</td><td>90</td><td>95</td><td>94</td><td>92</td><td>85</td><td>89</td><td>86</td><td>82</td><td>-5,4%</td><td>6,1%</td></tr><tr><td>Despesas de Pessoal</td><td>(92)</td><td>(97)</td><td>(90)</td><td>(90)</td><td>(90)</td><td>(94)</td><td>(90)</td><td>(89)</td><td>-4,4%</td><td>2,0%</td></tr><tr><td>Outras Despesas Administrativas</td><td>(74)</td><td>(78)</td><td>(74)</td><td>(70)</td><td>(68)</td><td>(70)</td><td>(66)</td><td>(66)</td><td>-5,8%</td><td>9,3%</td></tr><tr><td>Resultado Operacional</td><td>147</td><td>45</td><td>91</td><td>69</td><td>97</td><td>82</td><td>100</td><td>97</td><td>229,1%</td><td>51,2%</td></tr><tr><td>Resultado Antes da Tributação</td><td>148</td><td>42</td><td>91</td><td>69</td><td>98</td><td>81</td><td>99</td><td>99</td><td>249,7%</td><td>51,3%</td></tr><tr><td>Juros Sobre o Capital Próprio<sup>2</sup></td><td>20,1</td><td>45,0</td><td>19,5</td><td>24,5</td><td>19,5</td><td>31,2</td><td>26,9</td><td>17,1</td><td>-55,1%</td><td>3,1%</td></tr><tr><td>Lucro Líquido</td><td>83</td><td>47</td><td>58</td><td>46</td><td>63</td><td>45</td><td>55</td><td>58</td><td>77,1%</td><td>30,2%</td></tr><tr><th>Balanço Patrimonial (R$ milhões)</th><th>1T20</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th><th colspan=\"2\">Variação %</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>1T20X4T19</th><th>1T20X1T19</th></tr><tr><td>Ativos Totais</td><td>27.129</td><td>23.725</td><td>24.258</td><td>27.965</td><td>25.592</td><td>27.928</td><td>28.830</td><td>23.527</td><td>14,3%</td><td>6,0%</td></tr><tr><td>Carteira de Crédito Ampliada</td><td>7.247</td><td>6.800</td><td>6.259</td><td>6.336</td><td>5.739</td><td>5.873</td><td>5.896</td><td>5.720</td><td>6,6%</td><td>26,3%</td></tr><tr><td>NPL Creation</td><td>157</td><td>113</td><td>155</td><td>161</td><td>158</td><td>158</td><td>140</td><td>148</td><td>38,8%</td><td>-0,7%</td></tr><tr><td>Patrimônio Líquido</td><td>1.556</td><td>1.608</td><td>1.568</td><td>1.531</td><td>1.523</td><td>1.492</td><td>1.441</td><td>1.413</td><td>-3,3%</td><td>2,1%</td></tr><tr><td>Aplicações Interfinanceiras de Liquidez</td><td>10.290</td><td>7.432</td><td>8.844</td><td>12.569</td><td>11.025</td><td>12.780</td><td>13.713</td><td>8.561</td><td>38,5%</td><td>-6,7%</td></tr><tr><td>Depósitos Totais</td><td>13.076</td><td>11.662</td><td>11.669</td><td>12.349</td><td>11.166</td><td>10.717</td><td>10.925</td><td>10.506</td><td>12,1%</td><td>17,1%</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>10.638</td><td>10.458</td><td>9.693</td><td>9.637</td><td>9.085</td><td>9.585</td><td>9.495</td><td>9.193</td><td>1,7%</td><td>17,1%</td></tr><tr><td>Captação Mercado Aberto</td><td>10.999</td><td>8.742</td><td>9.164</td><td>12.286</td><td>11.095</td><td>13.796</td><td>14.449</td><td>9.634</td><td>25,8%</td><td>-0,9%</td></tr><tr><td>Recursos Captados e Administrados</td><td>29.470</td><td>26.485</td><td>26.807</td><td>29.429</td><td>26.610</td><td>28.638</td><td>29.564</td><td>23.993</td><td>11,3%</td><td>10,7%</td></tr><tr><th>Indicadores de Desempenho</th><th>1T20</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th><th colspan=\"2\">Variação % / p.p.</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>1T20X4T19</th><th>1T20X1T19</th></tr><tr><td>Lucro Líquido por Ação</td><td>0,26</td><td>0,15</td><td>0,18</td><td>0,14</td><td>0,20</td><td>0,14</td><td>0,17</td><td>0,18</td><td>77,1%</td><td>30,2%</td></tr><tr><td>Valor Patrimonial por Ação</td><td>4,92</td><td>5,09</td><td>4,96</td><td>4,85</td><td>4,82</td><td>4,72</td><td>4,56</td><td>4,47</td><td>-3,3%</td><td>2,1%</td></tr><tr><td>ROA - Retorno Sobre Ativos Médios<sup>3</sup></td><td>0,9%</td><td>0,8%</td><td>0,8%</td><td>0,8%</td><td>1,0%</td><td>0,7%</td><td>0,7%</td><td>0,8%</td><td>0,1</td><td>-0,1</td></tr><tr><td>ROE - Retorno sobre Patrimônio Líquido<sup>4</sup></td><td>15,1%</td><td>13,8%</td><td>14,1%</td><td>14,2%</td><td>15,2%</td><td>12,5%</td><td>13,3%</td><td>12,4%</td><td>1,3</td><td>-0,1</td></tr><tr><td>Eficiência Operacional<sup>5</sup></td><td>45,7%</td><td>54,7%</td><td>51,7%</td><td>52,6%</td><td>50,2%</td><td>54,4%</td><td>50,6%</td><td>51,8%</td><td>-9,0</td><td>-4,5</td></tr><tr><td>Eficiência Operacional Ajustado ao Risco<sup>6</sup></td><td>49,0%</td><td>60,8%</td><td>59,6%</td><td>62,0%</td><td>55,5%</td><td>61,1%</td><td>54,5%</td><td>55,2%</td><td>-11,8</td><td>-6,5</td></tr><tr><td>Valor de Mercado (R$ milhões)<sup>7</sup></td><td>1.580</td><td>2.030</td><td>1.893</td><td>1.786</td><td>1.565</td><td>1.315</td><td>1.181</td><td>1.090</td><td>-22,2%</td><td>1,0%</td></tr><tr><td>Índice de Inadimplência &gt; 90 Dias<sup>8</sup></td><td>2,2%</td><td>1,7%</td><td>2,5%</td><td>2,5%</td><td>2,8%</td><td>2,7%</td><td>2,4%</td><td>2,6%</td><td>0,5</td><td>-0,6</td></tr><tr><td>Índice de Cobertura Geral<sup>9</sup></td><td>54,2%</td><td>54,5%</td><td>57,0%</td><td>57,3%</td><td>53,7%</td><td>54,5%</td><td>55,4%</td><td>53,0%</td><td>-0,3</td><td>0,5</td></tr><tr><td>Índice de Cobertura Imediata<sup>10</sup></td><td>97,6%</td><td>98,7%</td><td>103,7%</td><td>101,8%</td><td>93,9%</td><td>95,0%</td><td>96,2%</td><td>92,2%</td><td>-1,1</td><td>3,7</td></tr><tr><th>Limites Operacionais</th><th>1T20</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th><th colspan=\"2\">Variação p.p.</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>1T20X4T19</th><th>1T20X1T19</th></tr><tr><td>Índice de Basileia - Total</td><td>12,8%</td><td>14,0%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>-1,2</td><td>-4,9</td></tr><tr><td>Capital Nível I - 100%</td><td>12,8%</td><td>14,0%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>-1,2</td><td>-4,9</td></tr></table>",
+      "table_id": "tbl-0.html",
+      "top_left_x": 46,
+      "top_left_y": 145,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "4 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.996212333379325,
+     "minimum_page_confidence_score": 0.24948777555662627,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 3,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2020**\n\n## Principais Informações\n\n[tbl-0.html](tbl-0.html)\n\n4 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Demonstração do Resultado<br/>(R$ milhões)</th><th rowspan=\"2\">1T20</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>1T20X4T19</th><th>1T20X1T19</th></tr></thead><tr><td>Receitas de Intermediação Financeira</td><td>486</td><td>476</td><td>557</td><td>545</td><td>563</td><td>599</td><td>556</td><td>488</td><td>2,2%</td><td>-13,6%</td></tr><tr><td>Despesas de Intermediação Financeira</td><td>(237)</td><td>(283)</td><td>(374)</td><td>(379)</td><td>(363)</td><td>(421)</td><td>(356)</td><td>(289)</td><td>-16,4%</td><td>-34,7%</td></tr><tr><td>Resultado de Provisão para Devedores Duvidosos</td><td>25</td><td>32</td><td>42</td><td>46</td><td>30</td><td>33</td><td>22</td><td>18</td><td>-23,7%</td><td>-18,3%</td></tr><tr><td>Margem Financeira<sup>1</sup></td><td>249</td><td>192</td><td>183</td><td>166</td><td>200</td><td>179</td><td>200</td><td>199</td><td>29,4%</td><td>24,6%</td></tr><tr><td>Receitas de Prestação de Serviços</td><td>90</td><td>95</td><td>94</td><td>92</td><td>85</td><td>89</td><td>86</td><td>82</td><td>-5,4%</td><td>6,1%</td></tr><tr><td>Despesas de Pessoal</td><td>(92)</td><td>(97)</td><td>(90)</td><td>(90)</td><td>(90)</td><td>(94)</td><td>(90)</td><td>(89)</td><td>-4,4%</td><td>2,0%</td></tr><tr><td>Outras Despesas Administrativas</td><td>(74)</td><td>(78)</td><td>(74)</td><td>(70)</td><td>(68)</td><td>(70)</td><td>(66)</td><td>(66)</td><td>-5,8%</td><td>9,3%</td></tr><tr><td>Resultado Operacional</td><td>147</td><td>45</td><td>91</td><td>69</td><td>97</td><td>82</td><td>100</td><td>97</td><td>229,1%</td><td>51,2%</td></tr><tr><td>Resultado Antes da Tributação</td><td>148</td><td>42</td><td>91</td><td>69</td><td>98</td><td>81</td><td>99</td><td>99</td><td>249,7%</td><td>51,3%</td></tr><tr><td>Juros Sobre o Capital Próprio<sup>2</sup></td><td>20,1</td><td>45,0</td><td>19,5</td><td>24,5</td><td>19,5</td><td>31,2</td><td>26,9</td><td>17,1</td><td>-55,1%</td><td>3,1%</td></tr><tr><td>Lucro Líquido</td><td>83</td><td>47</td><td>58</td><td>46</td><td>63</td><td>45</td><td>55</td><td>58</td><td>77,1%</td><td>30,2%</td></tr><tr><th>Balanço Patrimonial (R$ milhões)</th><th>1T20</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th><th colspan=\"2\">Variação %</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>1T20X4T19</th><th>1T20X1T19</th></tr><tr><td>Ativos Totais</td><td>27.129</td><td>23.725</td><td>24.258</td><td>27.965</td><td>25.592</td><td>27.928</td><td>28.830</td><td>23.527</td><td>14,3%</td><td>6,0%</td></tr><tr><td>Carteira de Crédito Ampliada</td><td>7.247</td><td>6.800</td><td>6.259</td><td>6.336</td><td>5.739</td><td>5.873</td><td>5.896</td><td>5.720</td><td>6,6%</td><td>26,3%</td></tr><tr><td>NPL Creation</td><td>157</td><td>113</td><td>155</td><td>161</td><td>158</td><td>158</td><td>140</td><td>148</td><td>38,8%</td><td>-0,7%</td></tr><tr><td>Patrimônio Líquido</td><td>1.556</td><td>1.608</td><td>1.568</td><td>1.531</td><td>1.523</td><td>1.492</td><td>1.441</td><td>1.413</td><td>-3,3%</td><td>2,1%</td></tr><tr><td>Aplicações Interfinanceiras de Liquidez</td><td>10.290</td><td>7.432</td><td>8.844</td><td>12.569</td><td>11.025</td><td>12.780</td><td>13.713</td><td>8.561</td><td>38,5%</td><td>-6,7%</td></tr><tr><td>Depósitos Totais</td><td>13.076</td><td>11.662</td><td>11.669</td><td>12.349</td><td>11.166</td><td>10.717</td><td>10.925</td><td>10.506</td><td>12,1%</td><td>17,1%</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>10.638</td><td>10.458</td><td>9.693</td><td>9.637</td><td>9.085</td><td>9.585</td><td>9.495</td><td>9.193</td><td>1,7%</td><td>17,1%</td></tr><tr><td>Captação Mercado Aberto</td><td>10.999</td><td>8.742</td><td>9.164</td><td>12.286</td><td>11.095</td><td>13.796</td><td>14.449</td><td>9.634</td><td>25,8%</td><td>-0,9%</td></tr><tr><td>Recursos Captados e Administrados</td><td>29.470</td><td>26.485</td><td>26.807</td><td>29.429</td><td>26.610</td><td>28.638</td><td>29.564</td><td>23.993</td><td>11,3%</td><td>10,7%</td></tr><tr><th>Indicadores de Desempenho</th><th>1T20</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th><th colspan=\"2\">Variação % / p.p.</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>1T20X4T19</th><th>1T20X1T19</th></tr><tr><td>Lucro Líquido por Ação</td><td>0,26</td><td>0,15</td><td>0,18</td><td>0,14</td><td>0,20</td><td>0,14</td><td>0,17</td><td>0,18</td><td>77,1%</td><td>30,2%</td></tr><tr><td>Valor Patrimonial por Ação</td><td>4,92</td><td>5,09</td><td>4,96</td><td>4,85</td><td>4,82</td><td>4,72</td><td>4,56</td><td>4,47</td><td>-3,3%</td><td>2,1%</td></tr><tr><td>ROA - Retorno Sobre Ativos Médios<sup>3</sup></td><td>0,9%</td><td>0,8%</td><td>0,8%</td><td>0,8%</td><td>1,0%</td><td>0,7%</td><td>0,7%</td><td>0,8%</td><td>0,1</td><td>-0,1</td></tr><tr><td>ROE - Retorno sobre Patrimônio Líquido<sup>4</sup></td><td>15,1%</td><td>13,8%</td><td>14,1%</td><td>14,2%</td><td>15,2%</td><td>12,5%</td><td>13,3%</td><td>12,4%</td><td>1,3</td><td>-0,1</td></tr><tr><td>Eficiência Operacional<sup>5</sup></td><td>45,7%</td><td>54,7%</td><td>51,7%</td><td>52,6%</td><td>50,2%</td><td>54,4%</td><td>50,6%</td><td>51,8%</td><td>-9,0</td><td>-4,5</td></tr><tr><td>Eficiência Operacional Ajustado ao Risco<sup>6</sup></td><td>49,0%</td><td>60,8%</td><td>59,6%</td><td>62,0%</td><td>55,5%</td><td>61,1%</td><td>54,5%</td><td>55,2%</td><td>-11,8</td><td>-6,5</td></tr><tr><td>Valor de Mercado (R$ milhões)<sup>7</sup></td><td>1.580</td><td>2.030</td><td>1.893</td><td>1.786</td><td>1.565</td><td>1.315</td><td>1.181</td><td>1.090</td><td>-22,2%</td><td>1,0%</td></tr><tr><td>Índice de Inadimplência &gt; 90 Dias<sup>8</sup></td><td>2,2%</td><td>1,7%</td><td>2,5%</td><td>2,5%</td><td>2,8%</td><td>2,7%</td><td>2,4%</td><td>2,6%</td><td>0,5</td><td>-0,6</td></tr><tr><td>Índice de Cobertura Geral<sup>9</sup></td><td>54,2%</td><td>54,5%</td><td>57,0%</td><td>57,3%</td><td>53,7%</td><td>54,5%</td><td>55,4%</td><td>53,0%</td><td>-0,3</td><td>0,5</td></tr><tr><td>Índice de Cobertura Imediata<sup>10</sup></td><td>97,6%</td><td>98,7%</td><td>103,7%</td><td>101,8%</td><td>93,9%</td><td>95,0%</td><td>96,2%</td><td>92,2%</td><td>-1,1</td><td>3,7</td></tr><tr><th>Limites Operacionais</th><th>1T20</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th><th colspan=\"2\">Variação p.p.</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>1T20X4T19</th><th>1T20X1T19</th></tr><tr><td>Índice de Basileia - Total</td><td>12,8%</td><td>14,0%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>-1,2</td><td>-4,9</td></tr><tr><td>Capital Nível I - 100%</td><td>12,8%</td><td>14,0%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>-1,2</td><td>-4,9</td></tr></table>",
+      "format": "html",
+      "id": "tbl-0.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 52,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "**1T2020**",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 302,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Indicadores Estruturais</th><th>1T20</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th></tr></thead><tr><td>Unidades de Atendimento</td><td>152</td><td>156</td><td>156</td><td>156</td><td>157</td><td>157</td><td>155</td><td>155</td></tr><tr><td>Postos de Atendimento Eletrônico</td><td>328</td><td>328</td><td>328</td><td>328</td><td>328</td><td>326</td><td>318</td><td>313</td></tr><tr><td>Correspondentes</td><td>387</td><td>384</td><td>386</td><td>386</td><td>386</td><td>393</td><td>387</td><td>381</td></tr><tr><td>Colaboradores</td><td>2215</td><td>2.240</td><td>2.238</td><td>2.280</td><td>2.260</td><td>2.311</td><td>2.349</td><td>2.383</td></tr><tr><th>Indicadores Econômicos<sup>12</sup></th><th>1T20</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th></tr><tr><td>Selic</td><td>3,75%</td><td>4,50%</td><td>5,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td></tr><tr><td>Taxa de Câmbio (R$/US$ - final de período)</td><td>5,20</td><td>4,03</td><td>4,16</td><td>3,84</td><td>3,92</td><td>3,87</td><td>4,04</td><td>3,86</td></tr><tr><td>IGP-M</td><td>1,68%</td><td>3,07%</td><td>-0,28%</td><td>2,17%</td><td>2,15%</td><td>-0,68%</td><td>2,73%</td><td>3,82%</td></tr><tr><td>IPCA<sup>13</sup></td><td>0,53%</td><td>1,76%</td><td>0,26%</td><td>0,71%</td><td>1,50%</td><td>0,39%</td><td>0,72%</td><td>1,88%</td></tr></table>",
+      "table_id": "tbl-1.html",
+      "top_left_x": 47,
+      "top_left_y": 104,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 273,
+      "bottom_right_y": 323,
+      "confidence_scores": null,
+      "content": "$^{1}$ Resultado bruto da intermediação financeira.",
+      "top_left_x": 47,
+      "top_left_y": 309,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 380,
+      "bottom_right_y": 335,
+      "confidence_scores": null,
+      "content": "$^{2}$ Juros sobre o Capital Próprio pagos e/ou provisionados (antes do IR).",
+      "top_left_x": 47,
+      "top_left_y": 320,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 359,
+      "confidence_scores": null,
+      "content": "$^{3}$ Relação entre o lucro líquido dos últimos doze meses e a média dos ativos totais do trimestre vigente e do mesmo trimestre do ano anterior.",
+      "top_left_x": 47,
+      "top_left_y": 332,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 382,
+      "confidence_scores": null,
+      "content": "$^{4}$ Relação entre o lucro líquido dos últimos doze meses e a média dos patrimônios líquidos do trimestre vigente e do mesmo trimestre do ano anterior.",
+      "top_left_x": 47,
+      "top_left_y": 358,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 407,
+      "confidence_scores": null,
+      "content": "$^{5}$ Relação entre o total de despesas administrativas (pessoal e outras) e o total das receitas com serviços, tarifas e o resultado bruto da intermediação financeira (excluído o resultado de provisão para operações de créditos e outros créditos).",
+      "top_left_x": 47,
+      "top_left_y": 381,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 430,
+      "confidence_scores": null,
+      "content": "$^{6}$ Relação entre o total das despesas administrativas (pessoal e outras) e o total das receitas com serviços, tarifas e o resultado bruto da intermediação financeira.",
+      "top_left_x": 47,
+      "top_left_y": 404,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 230,
+      "bottom_right_y": 442,
+      "confidence_scores": null,
+      "content": "$^{7}$ Em 31.03.2020, ON = 5,01 e PN = 4,98.",
+      "top_left_x": 47,
+      "top_left_y": 428,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 378,
+      "bottom_right_y": 454,
+      "confidence_scores": null,
+      "content": "$^{8}$ Índice de Inadimplência > 90 Dias da Carteira de Crédito Ampliada.",
+      "top_left_x": 47,
+      "top_left_y": 440,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 589,
+      "bottom_right_y": 466,
+      "confidence_scores": null,
+      "content": "$^{9}$ Relação entre o total das receitas com serviços e tarifas e o total das despesas administrativas (pessoal e outras).",
+      "top_left_x": 47,
+      "top_left_y": 451,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 489,
+      "bottom_right_y": 478,
+      "confidence_scores": null,
+      "content": "$^{10}$ Relação entre o total das receitas com serviços e tarifas e o total das despesas de pessoal.",
+      "top_left_x": 47,
+      "top_left_y": 464,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 227,
+      "bottom_right_y": 489,
+      "confidence_scores": null,
+      "content": "$^{11}$ Agências e Postos de Atendimento.",
+      "top_left_x": 47,
+      "top_left_y": 476,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 223,
+      "bottom_right_y": 501,
+      "confidence_scores": null,
+      "content": "$^{12}$ Fonte: Banco Central, FGV e IBGE.",
+      "top_left_x": 47,
+      "top_left_y": 487,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 302,
+      "bottom_right_y": 514,
+      "confidence_scores": null,
+      "content": "$^{13}$ Índice de Preços ao Consumidor Amplo – trimestral.",
+      "top_left_x": 47,
+      "top_left_y": 499,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**5** | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9858543653727823,
+     "minimum_page_confidence_score": 0.2559423991548371,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 4,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2020**\n\n[tbl-1.html](tbl-1.html)\n\n$^{1}$ Resultado bruto da intermediação financeira.\n\n$^{2}$ Juros sobre o Capital Próprio pagos e/ou provisionados (antes do IR).\n\n$^{3}$ Relação entre o lucro líquido dos últimos doze meses e a média dos ativos totais do trimestre vigente e do mesmo trimestre do ano anterior.\n\n$^{4}$ Relação entre o lucro líquido dos últimos doze meses e a média dos patrimônios líquidos do trimestre vigente e do mesmo trimestre do ano anterior.\n\n$^{5}$ Relação entre o total de despesas administrativas (pessoal e outras) e o total das receitas com serviços, tarifas e o resultado bruto da intermediação financeira (excluído o resultado de provisão para operações de créditos e outros créditos).\n\n$^{6}$ Relação entre o total das despesas administrativas (pessoal e outras) e o total das receitas com serviços, tarifas e o resultado bruto da intermediação financeira.\n\n$^{7}$ Em 31.03.2020, ON = 5,01 e PN = 4,98.\n\n$^{8}$ Índice de Inadimplência > 90 Dias da Carteira de Crédito Ampliada.\n\n$^{9}$ Relação entre o total das receitas com serviços e tarifas e o total das despesas administrativas (pessoal e outras).\n\n$^{10}$ Relação entre o total das receitas com serviços e tarifas e o total das despesas de pessoal.\n\n$^{11}$ Agências e Postos de Atendimento.\n\n$^{12}$ Fonte: Banco Central, FGV e IBGE.\n\n$^{13}$ Índice de Preços ao Consumidor Amplo – trimestral.\n\n**5** | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Indicadores Estruturais</th><th>1T20</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th></tr></thead><tr><td>Unidades de Atendimento</td><td>152</td><td>156</td><td>156</td><td>156</td><td>157</td><td>157</td><td>155</td><td>155</td></tr><tr><td>Postos de Atendimento Eletrônico</td><td>328</td><td>328</td><td>328</td><td>328</td><td>328</td><td>326</td><td>318</td><td>313</td></tr><tr><td>Correspondentes</td><td>387</td><td>384</td><td>386</td><td>386</td><td>386</td><td>393</td><td>387</td><td>381</td></tr><tr><td>Colaboradores</td><td>2215</td><td>2.240</td><td>2.238</td><td>2.280</td><td>2.260</td><td>2.311</td><td>2.349</td><td>2.383</td></tr><tr><th>Indicadores Econômicos<sup>12</sup></th><th>1T20</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th></tr><tr><td>Selic</td><td>3,75%</td><td>4,50%</td><td>5,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td></tr><tr><td>Taxa de Câmbio (R$/US$ - final de período)</td><td>5,20</td><td>4,03</td><td>4,16</td><td>3,84</td><td>3,92</td><td>3,87</td><td>4,04</td><td>3,86</td></tr><tr><td>IGP-M</td><td>1,68%</td><td>3,07%</td><td>-0,28%</td><td>2,17%</td><td>2,15%</td><td>-0,68%</td><td>2,73%</td><td>3,82%</td></tr><tr><td>IPCA<sup>13</sup></td><td>0,53%</td><td>1,76%</td><td>0,26%</td><td>0,71%</td><td>1,50%</td><td>0,39%</td><td>0,72%</td><td>1,88%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-1.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 152,
+      "bottom_right_y": 130,
+      "confidence_scores": null,
+      "content": "## Resultados",
+      "top_left_x": 47,
+      "top_left_y": 109,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 680,
+      "bottom_right_y": 321,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Demonstração do Resultado<br/>(R$ milhões)</th><th rowspan=\"2\">1T20</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>1T20X4T19</th><th>1T20X1T19</th></tr></thead><tr><td>Margem Financeira</td><td>249</td><td>192</td><td>183</td><td>166</td><td>200</td><td>179</td><td>200</td><td>199</td><td>29,4%</td><td>24,6%</td></tr><tr><td>Receitas de Prestação de Serviços</td><td>90</td><td>95</td><td>94</td><td>92</td><td>85</td><td>89</td><td>86</td><td>82</td><td>-5,4%</td><td>6,1%</td></tr><tr><td>Despesas de Pessoal</td><td>(92)</td><td>(97)</td><td>(90)</td><td>(90)</td><td>(90)</td><td>(94)</td><td>(90)</td><td>(89)</td><td>-4,4%</td><td>2,0%</td></tr><tr><td>Outras Despesas Administrativas</td><td>(74)</td><td>(78)</td><td>(74)</td><td>(70)</td><td>(68)</td><td>(70)</td><td>(66)</td><td>(66)</td><td>-5,8%</td><td>9,3%</td></tr><tr><td>Resultado Operacional</td><td>147</td><td>45</td><td>91</td><td>69</td><td>97</td><td>82</td><td>100</td><td>97</td><td>229,1%</td><td>51,2%</td></tr><tr><td>Resultado Antes da Tributação</td><td>148</td><td>42</td><td>91</td><td>69</td><td>98</td><td>81</td><td>99</td><td>99</td><td>249,7%</td><td>51,3%</td></tr><tr><td>Juros Sobre o Capital Próprio</td><td>20,1</td><td>45,0</td><td>19,5</td><td>24,5</td><td>19,5</td><td>31,2</td><td>26,9</td><td>17,1</td><td>-55,1%</td><td>3,1%</td></tr><tr><td>Lucro Líquido</td><td>83</td><td>47</td><td>58</td><td>46</td><td>63</td><td>45</td><td>55</td><td>58</td><td>77,1%</td><td>30,2%</td></tr></table>",
+      "table_id": "tbl-2.html",
+      "top_left_x": 47,
+      "top_left_y": 137,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 243,
+      "bottom_right_y": 364,
+      "confidence_scores": null,
+      "content": "### Lucro Líquido e Rentabilidade",
+      "top_left_x": 47,
+      "top_left_y": 347,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 524,
+      "confidence_scores": null,
+      "content": "O Lucro Líquido do trimestre alcançou o resultado de R$ 83 milhões, 30,2% maior que o resultado do trimestre comparável de 2019 e 77,1% em relação ao trimestre anterior, registrando no acumulado dos últimos 12 meses o valor crescente de R$ 233 milhões. O Resultado Operacional foi de R$ 147 milhões, crescentes 51,2% e 229,1% nas mesmas comparações. Esse resultado foi impactado positivamente por ganhos com a alienação de estoque de título financeiro público, a posição do estoque de crédito atrelado a concessões pré-fixadas, a queda do custo de captação por via da redução da Selic, a mitigação do risco de crédito com a redução do custo de provisão para devedores duvidosos e a expansão das receitas com serviços.",
+      "top_left_x": 47,
+      "top_left_y": 374,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 576,
+      "bottom_right_y": 794,
+      "confidence_scores": null,
+      "content": "![img-3.jpeg](img-3.jpeg)",
+      "image_id": "img-3.jpeg",
+      "top_left_x": 148,
+      "top_left_y": 574,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 893,
+      "confidence_scores": null,
+      "content": "No primeiro trimestre do ano, o Lucro Líquido por ação foi de R$ 0,26, acumulando o valor de R$ 0,74 nos últimos doze meses. Nesse período, o Retorno sobre o Patrimônio Líquido Médio (ROE) foi de 15,1%.",
+      "top_left_x": 47,
+      "top_left_y": 838,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "6 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9882805313174107,
+     "minimum_page_confidence_score": 0.21825479725413488,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 576,
+      "bottom_right_y": 794,
+      "id": "img-3.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 148,
+      "top_left_y": 574
+     }
+    ],
+    "index": 5,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\n## Resultados\n\n[tbl-2.html](tbl-2.html)\n\n### Lucro Líquido e Rentabilidade\n\nO Lucro Líquido do trimestre alcançou o resultado de R$ 83 milhões, 30,2% maior que o resultado do trimestre comparável de 2019 e 77,1% em relação ao trimestre anterior, registrando no acumulado dos últimos 12 meses o valor crescente de R$ 233 milhões. O Resultado Operacional foi de R$ 147 milhões, crescentes 51,2% e 229,1% nas mesmas comparações. Esse resultado foi impactado positivamente por ganhos com a alienação de estoque de título financeiro público, a posição do estoque de crédito atrelado a concessões pré-fixadas, a queda do custo de captação por via da redução da Selic, a mitigação do risco de crédito com a redução do custo de provisão para devedores duvidosos e a expansão das receitas com serviços.\n\n![img-3.jpeg](img-3.jpeg)\n\nNo primeiro trimestre do ano, o Lucro Líquido por ação foi de R$ 0,26, acumulando o valor de R$ 0,74 nos últimos doze meses. Nesse período, o Retorno sobre o Patrimônio Líquido Médio (ROE) foi de 15,1%.\n\n6 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Demonstração do Resultado<br/>(R$ milhões)</th><th rowspan=\"2\">1T20</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>1T20X4T19</th><th>1T20X1T19</th></tr></thead><tr><td>Margem Financeira</td><td>249</td><td>192</td><td>183</td><td>166</td><td>200</td><td>179</td><td>200</td><td>199</td><td>29,4%</td><td>24,6%</td></tr><tr><td>Receitas de Prestação de Serviços</td><td>90</td><td>95</td><td>94</td><td>92</td><td>85</td><td>89</td><td>86</td><td>82</td><td>-5,4%</td><td>6,1%</td></tr><tr><td>Despesas de Pessoal</td><td>(92)</td><td>(97)</td><td>(90)</td><td>(90)</td><td>(90)</td><td>(94)</td><td>(90)</td><td>(89)</td><td>-4,4%</td><td>2,0%</td></tr><tr><td>Outras Despesas Administrativas</td><td>(74)</td><td>(78)</td><td>(74)</td><td>(70)</td><td>(68)</td><td>(70)</td><td>(66)</td><td>(66)</td><td>-5,8%</td><td>9,3%</td></tr><tr><td>Resultado Operacional</td><td>147</td><td>45</td><td>91</td><td>69</td><td>97</td><td>82</td><td>100</td><td>97</td><td>229,1%</td><td>51,2%</td></tr><tr><td>Resultado Antes da Tributação</td><td>148</td><td>42</td><td>91</td><td>69</td><td>98</td><td>81</td><td>99</td><td>99</td><td>249,7%</td><td>51,3%</td></tr><tr><td>Juros Sobre o Capital Próprio</td><td>20,1</td><td>45,0</td><td>19,5</td><td>24,5</td><td>19,5</td><td>31,2</td><td>26,9</td><td>17,1</td><td>-55,1%</td><td>3,1%</td></tr><tr><td>Lucro Líquido</td><td>83</td><td>47</td><td>58</td><td>46</td><td>63</td><td>45</td><td>55</td><td>58</td><td>77,1%</td><td>30,2%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-2.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "BANESTES\ncrescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 586,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 189,
+      "bottom_right_y": 126,
+      "confidence_scores": null,
+      "content": "## Margem Financeira",
+      "top_left_x": 47,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 193,
+      "confidence_scores": null,
+      "content": "A Margem Financeira registrou R$ 249 milhões no primeiro trimestre do ano, expansões de 24,6% contra o mesmo período do ano anterior e 29,4% na comparação com o trimestre anterior. Os itens que impactaram a margem foram:",
+      "top_left_x": 47,
+      "top_left_y": 138,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 385,
+      "confidence_scores": null,
+      "content": "i) nas receitas com juros¹⁴: a alienação de estoque de título financeiro público (+R$ 67 milhões) e as receitas com operações de crédito (-1,5% em 12 meses e -7,3% em 3 meses) que diante a elevação do saldo em carteira (+11,3% em 12 meses e +6,2% em 3 meses) e a sua composição de recursos atrelados a concessões pré-fixadas atenuaram os impactos diretos da Selic na rentabilidade; e\n\nii) nas despesas com juros¹⁵: a redução da despesa com captação (-36,3% em 12 meses e -15,6% em 3 meses) influenciada pelo comportamento da Selic e o resultado de provisão de crédito para devedores duvidosos (-18,3% em 12 meses e -23,7% em 3 meses) diante melhor posição dos níveis de classificação de risco.",
+      "top_left_x": 66,
+      "top_left_y": 205,
+      "type": "list"
+     },
+     {
+      "bottom_right_x": 562,
+      "bottom_right_y": 678,
+      "confidence_scores": null,
+      "content": "![img-4.jpeg](img-4.jpeg)",
+      "image_id": "img-4.jpeg",
+      "top_left_x": 160,
+      "top_left_y": 404,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 295,
+      "bottom_right_y": 728,
+      "confidence_scores": null,
+      "content": "## Receitas de Prestação de Serviços",
+      "top_left_x": 47,
+      "top_left_y": 708,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 868,
+      "confidence_scores": null,
+      "content": "No primeiro trimestre, as Receitas de Prestação de Serviços somaram R$ 90 milhões, com variações de +6,1% contra o mesmo trimestre de 2019 e -5,4 % contra o trimestre anterior. Na comparação contra o primeiro trimestre de 2019, as maiores elevações foram nas receitas com gestão e administração de fundos (+15,8%), com operações de crédito (+36,4%), com seguros (+83,0%) e com cartões (+4,8%). A estratégia focal consiste em maximizar nossa sinergia relacional com a base de clientes (1.163 mil clientes), direcionada a melhorar e criar valor ao nosso atendimento, “a experiência do cliente”.",
+      "top_left_x": 47,
+      "top_left_y": 738,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 218,
+      "bottom_right_y": 919,
+      "confidence_scores": null,
+      "content": "¹⁴ Receitas da intermediação financeira",
+      "top_left_x": 47,
+      "top_left_y": 907,
+      "type": "references"
+     },
+     {
+      "bottom_right_x": 220,
+      "bottom_right_y": 930,
+      "confidence_scores": null,
+      "content": "¹⁵ Despesas da intermediação financeira",
+      "top_left_x": 47,
+      "top_left_y": 917,
+      "type": "references"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "7 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 934,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9748610474884022,
+     "minimum_page_confidence_score": 0.27284003447684346,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 562,
+      "bottom_right_y": 678,
+      "id": "img-4.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 160,
+      "top_left_y": 404
+     }
+    ],
+    "index": 6,
+    "markdown": "BANESTES\ncrescemos juntos\n\n1T2020\n\n## Margem Financeira\n\nA Margem Financeira registrou R$ 249 milhões no primeiro trimestre do ano, expansões de 24,6% contra o mesmo período do ano anterior e 29,4% na comparação com o trimestre anterior. Os itens que impactaram a margem foram:\n\ni) nas receitas com juros¹⁴: a alienação de estoque de título financeiro público (+R$ 67 milhões) e as receitas com operações de crédito (-1,5% em 12 meses e -7,3% em 3 meses) que diante a elevação do saldo em carteira (+11,3% em 12 meses e +6,2% em 3 meses) e a sua composição de recursos atrelados a concessões pré-fixadas atenuaram os impactos diretos da Selic na rentabilidade; e\n\nii) nas despesas com juros¹⁵: a redução da despesa com captação (-36,3% em 12 meses e -15,6% em 3 meses) influenciada pelo comportamento da Selic e o resultado de provisão de crédito para devedores duvidosos (-18,3% em 12 meses e -23,7% em 3 meses) diante melhor posição dos níveis de classificação de risco.\n\n![img-4.jpeg](img-4.jpeg)\n\n## Receitas de Prestação de Serviços\n\nNo primeiro trimestre, as Receitas de Prestação de Serviços somaram R$ 90 milhões, com variações de +6,1% contra o mesmo trimestre de 2019 e -5,4 % contra o trimestre anterior. Na comparação contra o primeiro trimestre de 2019, as maiores elevações foram nas receitas com gestão e administração de fundos (+15,8%), com operações de crédito (+36,4%), com seguros (+83,0%) e com cartões (+4,8%). A estratégia focal consiste em maximizar nossa sinergia relacional com a base de clientes (1.163 mil clientes), direcionada a melhorar e criar valor ao nosso atendimento, “a experiência do cliente”.\n\n¹⁴ Receitas da intermediação financeira\n\n¹⁵ Despesas da intermediação financeira\n\n7 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 566,
+      "bottom_right_y": 394,
+      "confidence_scores": null,
+      "content": "![img-5.jpeg](img-5.jpeg)",
+      "image_id": "img-5.jpeg",
+      "top_left_x": 161,
+      "top_left_y": 108,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 316,
+      "bottom_right_y": 449,
+      "confidence_scores": null,
+      "content": "### **Despesa de Pessoal e Administrativas**",
+      "top_left_x": 46,
+      "top_left_y": 431,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 665,
+      "confidence_scores": null,
+      "content": "No primeiro trimestre de 2020, as Despesas Administrativas (pessoal e outras) somaram R$ 166 milhões, aumento de 5,2% contra o mesmo trimestre de 2019, contudo, queda de 5,0% contra do trimestre anterior. As Despesas de Pessoal atingiram o valor de R$ 92 milhões, com variações de +2,0% ante o mesmo trimestre de 2019 e -4,4% contra o trimestre anterior. As Outras Despesas Administrativas cresceram 9,3% em 12 meses, contudo, reduziram 5,8% contra o trimestre anterior. A elevação em 12 meses, é decorrente do reajuste de custos com a renovação de contratos das atividades de retaguarda, serviços de suporte e atendimento a clientes e usuários, além dos custos com tecnologia indispensáveis a transformação digital. Importante frisar que o Banco mantém a implementação de trabalhos e ações contínuas de avaliação e gestão de custos, buscando a racionalização dos processos e despesas operacionais sem impactos negativos à qualidade dos serviços e atendimentos prestados.",
+      "top_left_x": 46,
+      "top_left_y": 461,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 735,
+      "confidence_scores": null,
+      "content": "O índice de Cobertura Geral atingiu 54,2%, melhora de 0,5 p.p. em relação ao mesmo período de 2019; e o índice de Cobertura imediata foi de 97,6%, ganho de 3,7 p.p. na mesma comparação.",
+      "top_left_x": 46,
+      "top_left_y": 679,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "8 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9763381926466216,
+     "minimum_page_confidence_score": 0.3204055509375357,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 566,
+      "bottom_right_y": 394,
+      "id": "img-5.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 161,
+      "top_left_y": 108
+     }
+    ],
+    "index": 7,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\n![img-5.jpeg](img-5.jpeg)\n\n### **Despesa de Pessoal e Administrativas**\n\nNo primeiro trimestre de 2020, as Despesas Administrativas (pessoal e outras) somaram R$ 166 milhões, aumento de 5,2% contra o mesmo trimestre de 2019, contudo, queda de 5,0% contra do trimestre anterior. As Despesas de Pessoal atingiram o valor de R$ 92 milhões, com variações de +2,0% ante o mesmo trimestre de 2019 e -4,4% contra o trimestre anterior. As Outras Despesas Administrativas cresceram 9,3% em 12 meses, contudo, reduziram 5,8% contra o trimestre anterior. A elevação em 12 meses, é decorrente do reajuste de custos com a renovação de contratos das atividades de retaguarda, serviços de suporte e atendimento a clientes e usuários, além dos custos com tecnologia indispensáveis a transformação digital. Importante frisar que o Banco mantém a implementação de trabalhos e ações contínuas de avaliação e gestão de custos, buscando a racionalização dos processos e despesas operacionais sem impactos negativos à qualidade dos serviços e atendimentos prestados.\n\nO índice de Cobertura Geral atingiu 54,2%, melhora de 0,5 p.p. em relação ao mesmo período de 2019; e o índice de Cobertura imediata foi de 97,6%, ganho de 3,7 p.p. na mesma comparação.\n\n8 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 595,
+      "bottom_right_y": 345,
+      "confidence_scores": null,
+      "content": "![img-6.jpeg](img-6.jpeg)",
+      "image_id": "img-6.jpeg",
+      "top_left_x": 134,
+      "top_left_y": 114,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 186,
+      "bottom_right_y": 365,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 133,
+      "top_left_y": 352,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 400,
+      "bottom_right_y": 429,
+      "confidence_scores": null,
+      "content": "### **Resultado de Provisão para Devedores Duvidosos**",
+      "top_left_x": 46,
+      "top_left_y": 411,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 608,
+      "confidence_scores": null,
+      "content": "O Resultado de Provisão para Devedores Duvidosos somou R$ 25 milhões no trimestre, queda de 18,3% contra o mesmo trimestre de 2019 e 23,7% contra trimestre anterior. De janeiro a março, foram registrados R$ 23 milhões (-7,7% em 12 meses e -36,1% em 3 meses) como reversões, enquanto as despesas de provisões somaram R$ 47 milhões (-13,5% em 12 meses e -30,1% em 3 meses). O Resultado de Provisão para Devedores Duvidosos nos últimos 12 meses registrou R$ 145 milhões com redução de 4% contra o valor registrado no acumulado de 2019 (R$ 151 milhões), dada a melhora dos níveis de classificação de risco da carteira comercial. As despesas com provisões de crédito geradas nos últimos doze meses representaram 2,0% do total da Carteira de Crédito Ampliada.",
+      "top_left_x": 46,
+      "top_left_y": 441,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 677,
+      "confidence_scores": null,
+      "content": "O BANESTES promove ações direcionadas à adequação da política e processos de concessão de crédito, buscando maior qualidade das garantias adquiridas nas novas concessões e o contínuo aprimoramento dos processos de renegociação e recuperação de crédito.",
+      "top_left_x": 46,
+      "top_left_y": 621,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "9 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9738940848800378,
+     "minimum_page_confidence_score": 0.15616741672986187,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 595,
+      "bottom_right_y": 345,
+      "id": "img-6.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 134,
+      "top_left_y": 114
+     }
+    ],
+    "index": 8,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\n![img-6.jpeg](img-6.jpeg)\n\nR$ Milhões\n\n### **Resultado de Provisão para Devedores Duvidosos**\n\nO Resultado de Provisão para Devedores Duvidosos somou R$ 25 milhões no trimestre, queda de 18,3% contra o mesmo trimestre de 2019 e 23,7% contra trimestre anterior. De janeiro a março, foram registrados R$ 23 milhões (-7,7% em 12 meses e -36,1% em 3 meses) como reversões, enquanto as despesas de provisões somaram R$ 47 milhões (-13,5% em 12 meses e -30,1% em 3 meses). O Resultado de Provisão para Devedores Duvidosos nos últimos 12 meses registrou R$ 145 milhões com redução de 4% contra o valor registrado no acumulado de 2019 (R$ 151 milhões), dada a melhora dos níveis de classificação de risco da carteira comercial. As despesas com provisões de crédito geradas nos últimos doze meses representaram 2,0% do total da Carteira de Crédito Ampliada.\n\nO BANESTES promove ações direcionadas à adequação da política e processos de concessão de crédito, buscando maior qualidade das garantias adquiridas nas novas concessões e o contínuo aprimoramento dos processos de renegociação e recuperação de crédito.\n\n9 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 569,
+      "bottom_right_y": 371,
+      "confidence_scores": null,
+      "content": "![img-7.jpeg](img-7.jpeg)",
+      "image_id": "img-7.jpeg",
+      "top_left_x": 163,
+      "top_left_y": 108,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 399,
+      "bottom_right_y": 420,
+      "confidence_scores": null,
+      "content": "### **NPL Creation e Índice de Inadimplência > 90 dias**",
+      "top_left_x": 45,
+      "top_left_y": 400,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 543,
+      "confidence_scores": null,
+      "content": "O Índice de Inadimplência da Carteira de Crédito Ampliada (> 90 dias) encerrou o trimestre em 2,2%, variações de -0,6 p.p. contra o mesmo período de 2019 e +0,5 p.p. na comparação com o trimestre anterior. Na Carteira de Crédito Comercial, a inadimplência (> 90 dias) encerrou o trimestre registrando 3,5%, queda de 0,4 p.p. ante o mesmo período de 2019 e acréscimo de 0,8 p.p. contra o trimestre anterior. As operações com atraso superior a 90 dias no segmento de pessoa física atingiram 2,7%, enquanto no segmento corporativo fechou em 4,9%.",
+      "top_left_x": 45,
+      "top_left_y": 430,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 666,
+      "confidence_scores": null,
+      "content": "O *NPL Creation*, que representa as operações de crédito que passaram a ser devedoras acima de 90 dias, apresentou saldo de R$ 157 milhões no trimestre, mantendo-se praticamente estável quando comparado com o primeiro trimestre de 2019. Contudo, apresentou uma elevação de 38,7% em relação ao trimestre anterior, sob influência do crescimento da carteira de crédito e da deterioração da capacidade financeira das empresas diante os fatos ocorridos no Estado, neste primeiro trimestre (fortes chuvas e deflagração da crise sanitária COVID -19).",
+      "top_left_x": 45,
+      "top_left_y": 554,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 576,
+      "bottom_right_y": 900,
+      "confidence_scores": null,
+      "content": "![img-8.jpeg](img-8.jpeg)",
+      "image_id": "img-8.jpeg",
+      "top_left_x": 157,
+      "top_left_y": 684,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "10 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9718559700168475,
+     "minimum_page_confidence_score": 0.23871256274155572,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 569,
+      "bottom_right_y": 371,
+      "id": "img-7.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 163,
+      "top_left_y": 108
+     },
+     {
+      "bottom_right_x": 576,
+      "bottom_right_y": 900,
+      "id": "img-8.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 157,
+      "top_left_y": 684
+     }
+    ],
+    "index": 9,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\n![img-7.jpeg](img-7.jpeg)\n\n### **NPL Creation e Índice de Inadimplência > 90 dias**\n\nO Índice de Inadimplência da Carteira de Crédito Ampliada (> 90 dias) encerrou o trimestre em 2,2%, variações de -0,6 p.p. contra o mesmo período de 2019 e +0,5 p.p. na comparação com o trimestre anterior. Na Carteira de Crédito Comercial, a inadimplência (> 90 dias) encerrou o trimestre registrando 3,5%, queda de 0,4 p.p. ante o mesmo período de 2019 e acréscimo de 0,8 p.p. contra o trimestre anterior. As operações com atraso superior a 90 dias no segmento de pessoa física atingiram 2,7%, enquanto no segmento corporativo fechou em 4,9%.\n\nO *NPL Creation*, que representa as operações de crédito que passaram a ser devedoras acima de 90 dias, apresentou saldo de R$ 157 milhões no trimestre, mantendo-se praticamente estável quando comparado com o primeiro trimestre de 2019. Contudo, apresentou uma elevação de 38,7% em relação ao trimestre anterior, sob influência do crescimento da carteira de crédito e da deterioração da capacidade financeira das empresas diante os fatos ocorridos no Estado, neste primeiro trimestre (fortes chuvas e deflagração da crise sanitária COVID -19).\n\n![img-8.jpeg](img-8.jpeg)\n\n10 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 72,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 227,
+      "confidence_scores": null,
+      "content": "A classificação por níveis de risco das operações que compõem a carteira de crédito comercial foi de 89,7% nos níveis de risco AA – C, 6,5% nos níveis D – G, e apenas 3,8% encontravam-se no nível de risco H. Importante frisar, que o BANESTES atua constantemente no aperfeiçoamento da sua política de concessão de crédito, buscando o equilíbrio entre a ampliação do crédito e o controle da inadimplência, dentro dos parâmetros aceitáveis de tolerância a risco.",
+      "top_left_x": 45,
+      "top_left_y": 133,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 423,
+      "bottom_right_y": 255,
+      "confidence_scores": null,
+      "content": "**Níveis de Risco de Crédito**",
+      "top_left_x": 267,
+      "top_left_y": 236,
+      "type": "caption"
+     },
+     {
+      "bottom_right_x": 510,
+      "bottom_right_y": 522,
+      "confidence_scores": null,
+      "content": "![img-9.jpeg](img-9.jpeg)",
+      "image_id": "img-9.jpeg",
+      "top_left_x": 229,
+      "top_left_y": 265,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "11 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9606808564443956,
+     "minimum_page_confidence_score": 0.3522806174456423,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 510,
+      "bottom_right_y": 522,
+      "id": "img-9.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 229,
+      "top_left_y": 265
+     }
+    ],
+    "index": 10,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\nA classificação por níveis de risco das operações que compõem a carteira de crédito comercial foi de 89,7% nos níveis de risco AA – C, 6,5% nos níveis D – G, e apenas 3,8% encontravam-se no nível de risco H. Importante frisar, que o BANESTES atua constantemente no aperfeiçoamento da sua política de concessão de crédito, buscando o equilíbrio entre a ampliação do crédito e o controle da inadimplência, dentro dos parâmetros aceitáveis de tolerância a risco.\n\n**Níveis de Risco de Crédito**\n\n![img-9.jpeg](img-9.jpeg)\n\n11 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "**1T2020**",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 164,
+      "bottom_right_y": 130,
+      "confidence_scores": null,
+      "content": "## Patrimoniais",
+      "top_left_x": 46,
+      "top_left_y": 109,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 316,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Balanço Patrimonial (R$ milhões)</th><th rowspan=\"2\">1T20</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>1T20X4T19</th><th>1T20X1T19</th></tr></thead><tr><td>Ativos Totais</td><td>27.129</td><td>23.725</td><td>24.258</td><td>27.965</td><td>25.592</td><td>27.928</td><td>28.830</td><td>23.527</td><td>14,3%</td><td>6,0%</td></tr><tr><td>Carteira de Crédito Ampliada</td><td>7.247</td><td>6.800</td><td>6.259</td><td>6.336</td><td>5.739</td><td>5.873</td><td>5.896</td><td>5.720</td><td>6,6%</td><td>26,3%</td></tr><tr><td>Patrimônio Líquido</td><td>1.556</td><td>1.608</td><td>1.568</td><td>1.531</td><td>1.523</td><td>1.492</td><td>1.441</td><td>1.413</td><td>-3,3%</td><td>2,1%</td></tr><tr><td>Depósitos Totais</td><td>13.076</td><td>11.662</td><td>11.669</td><td>12.349</td><td>11.166</td><td>10.717</td><td>10.925</td><td>10.506</td><td>12,1%</td><td>17,1%</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>10.638</td><td>10.458</td><td>9.693</td><td>9.637</td><td>9.085</td><td>9.585</td><td>9.495</td><td>9.193</td><td>1,7%</td><td>17,1%</td></tr><tr><td>Captação Mercado Aberto</td><td>10.999</td><td>8.742</td><td>9.164</td><td>12.286</td><td>11.095</td><td>13.796</td><td>14.449</td><td>9.634</td><td>25,8%</td><td>-0,9%</td></tr><tr><td>Recursos Captados e Administrados</td><td>29.470</td><td>26.485</td><td>26.807</td><td>29.429</td><td>26.610</td><td>28.638</td><td>29.564</td><td>23.993</td><td>11,3%</td><td>10,7%</td></tr></table>",
+      "table_id": "tbl-3.html",
+      "top_left_x": 46,
+      "top_left_y": 145,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 137,
+      "bottom_right_y": 353,
+      "confidence_scores": null,
+      "content": "### Ativos Totais",
+      "top_left_x": 46,
+      "top_left_y": 333,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 587,
+      "confidence_scores": null,
+      "content": "Ao final do primeiro trimestre de 2020, os Ativos Totais registraram saldo de R$ 27,1 bilhões, expandindo 6,0% contra o mesmo trimestre do ano anterior e 14,3% em comparação ao trimestre anterior. Tal posição foi impactada pelas oscilações: i) do saldo das aplicações interfinanceiras de liquidez (-6,7% em 12 meses e +38,5% em 3 meses), ii) da posição em títulos e valores mobiliários (+17,1% em 12 meses e 1,7% em 3 meses) e dos recursos em operações de crédito (+12,6% em 12 meses e 7,9% em 3 meses). Cabe destacar, que diante as condições de mercado no período, a estratégia adotada foi o direcionamento do fluxo de recursos à aquisição de ativos financeiros, especialmente os títulos privados, aproveitando a abertura das taxas dos papéis e a originação de concessões de crédito. No trimestre, a posição financeira em títulos e valores mobiliários atingiu R$ 10,6 bilhões, enquanto, as operações de crédito registraram o saldo de R$ 4,1 bilhões. Os ativos (excluídas as aplicações interfinanceiras de liquidez) cresceram 15,6% em relação ao mesmo período de 2019 e 3,3% contra o trimestre anterior.",
+      "top_left_x": 46,
+      "top_left_y": 363,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 684,
+      "bottom_right_y": 911,
+      "confidence_scores": null,
+      "content": "![img-10.jpeg](img-10.jpeg)",
+      "image_id": "img-10.jpeg",
+      "top_left_x": 153,
+      "top_left_y": 592,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**12**^{}[] Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.987794028183625,
+     "minimum_page_confidence_score": 0.2833377386234011,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 684,
+      "bottom_right_y": 911,
+      "id": "img-10.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 153,
+      "top_left_y": 592
+     }
+    ],
+    "index": 11,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2020**\n\n## Patrimoniais\n\n[tbl-3.html](tbl-3.html)\n\n### Ativos Totais\n\nAo final do primeiro trimestre de 2020, os Ativos Totais registraram saldo de R$ 27,1 bilhões, expandindo 6,0% contra o mesmo trimestre do ano anterior e 14,3% em comparação ao trimestre anterior. Tal posição foi impactada pelas oscilações: i) do saldo das aplicações interfinanceiras de liquidez (-6,7% em 12 meses e +38,5% em 3 meses), ii) da posição em títulos e valores mobiliários (+17,1% em 12 meses e 1,7% em 3 meses) e dos recursos em operações de crédito (+12,6% em 12 meses e 7,9% em 3 meses). Cabe destacar, que diante as condições de mercado no período, a estratégia adotada foi o direcionamento do fluxo de recursos à aquisição de ativos financeiros, especialmente os títulos privados, aproveitando a abertura das taxas dos papéis e a originação de concessões de crédito. No trimestre, a posição financeira em títulos e valores mobiliários atingiu R$ 10,6 bilhões, enquanto, as operações de crédito registraram o saldo de R$ 4,1 bilhões. Os ativos (excluídas as aplicações interfinanceiras de liquidez) cresceram 15,6% em relação ao mesmo período de 2019 e 3,3% contra o trimestre anterior.\n\n![img-10.jpeg](img-10.jpeg)\n\n**12**Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Balanço Patrimonial (R$ milhões)</th><th rowspan=\"2\">1T20</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>1T20X4T19</th><th>1T20X1T19</th></tr></thead><tr><td>Ativos Totais</td><td>27.129</td><td>23.725</td><td>24.258</td><td>27.965</td><td>25.592</td><td>27.928</td><td>28.830</td><td>23.527</td><td>14,3%</td><td>6,0%</td></tr><tr><td>Carteira de Crédito Ampliada</td><td>7.247</td><td>6.800</td><td>6.259</td><td>6.336</td><td>5.739</td><td>5.873</td><td>5.896</td><td>5.720</td><td>6,6%</td><td>26,3%</td></tr><tr><td>Patrimônio Líquido</td><td>1.556</td><td>1.608</td><td>1.568</td><td>1.531</td><td>1.523</td><td>1.492</td><td>1.441</td><td>1.413</td><td>-3,3%</td><td>2,1%</td></tr><tr><td>Depósitos Totais</td><td>13.076</td><td>11.662</td><td>11.669</td><td>12.349</td><td>11.166</td><td>10.717</td><td>10.925</td><td>10.506</td><td>12,1%</td><td>17,1%</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>10.638</td><td>10.458</td><td>9.693</td><td>9.637</td><td>9.085</td><td>9.585</td><td>9.495</td><td>9.193</td><td>1,7%</td><td>17,1%</td></tr><tr><td>Captação Mercado Aberto</td><td>10.999</td><td>8.742</td><td>9.164</td><td>12.286</td><td>11.095</td><td>13.796</td><td>14.449</td><td>9.634</td><td>25,8%</td><td>-0,9%</td></tr><tr><td>Recursos Captados e Administrados</td><td>29.470</td><td>26.485</td><td>26.807</td><td>29.429</td><td>26.610</td><td>28.638</td><td>29.564</td><td>23.993</td><td>11,3%</td><td>10,7%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-3.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 181,
+      "bottom_right_y": 127,
+      "confidence_scores": null,
+      "content": "## Patrimônio Líquido",
+      "top_left_x": 46,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 230,
+      "confidence_scores": null,
+      "content": "O Patrimônio Líquido atingiu o saldo de R$ 1,6 bilhão no primeiro trimestre de 2020, crescente 2,1% comparado ao mesmo período de 2019, contudo, recuando 3,3% em relação ao trimestre anterior. O BANESTES mantém sólida sua estrutura de capital, fator indispensável para suportar o financiamento da atividade produtiva e as necessidades de clientes de forma eficiente e competitiva. A relação entre o Patrimônio Líquido e Ativo Total foi de 5,7%.",
+      "top_left_x": 46,
+      "top_left_y": 138,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 570,
+      "bottom_right_y": 551,
+      "confidence_scores": null,
+      "content": "![img-11.jpeg](img-11.jpeg)",
+      "image_id": "img-11.jpeg",
+      "top_left_x": 163,
+      "top_left_y": 245,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 189,
+      "bottom_right_y": 624,
+      "confidence_scores": null,
+      "content": "## Carteira de Crédito",
+      "top_left_x": 46,
+      "top_left_y": 605,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 784,
+      "confidence_scores": null,
+      "content": "A Carteira de Crédito Ampliada registrou o saldo de R$ 7,2 bilhões no primeiro trimestre do ano, expansões de 26,3% em relação ao mesmo período de 2019 e 6,6% ante o trimestre anterior. As maiores evoluções no trimestre, foram registradas pelas concessões na modalidade de empréstimos R$ 3,3 bilhões (+16,6% em 12 meses e +10,1% em 3 meses), destaque para o crédito de consumo, em especial o consignado (+18,5% em 12 meses e +13,2% em 3 meses), o imobiliário (+7,5% em 12 meses e +3,9% em 3 meses) e o rotativo de cartões (+6,1% em 12 meses e +11,3% em 3 meses); e o rotativo de empresas, em especial o capital de giro (+29,3% em 12 meses e +13,4% em 3 meses) e a conta garantida (+14,1% em 12 meses e +8,3% em 3 meses).",
+      "top_left_x": 46,
+      "top_left_y": 635,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 909,
+      "confidence_scores": null,
+      "content": "A Carteira de Crédito Comercial (conceito Bacen) registrou o saldo de R$ 4,5 bilhões, maior 11,3% em relação ao mesmo período de 2019 e crescente 6,2% contra o trimestre anterior. Desse montante, R$ 2,9 bilhões (63,9%) são de operações com pessoas físicas e R$ 1,6 bilhão com pessoas jurídicas (36,1%). Da carteira de pessoa jurídica, 81,4% são concessões à micro, pequenas e médias empresas, e 18,6% a grandes empresas. A Instituição adota critérios rigorosos de segurança e avaliação de processos de concessão de crédito.",
+      "top_left_x": 46,
+      "top_left_y": 797,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "13 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9816159610080486,
+     "minimum_page_confidence_score": 0.30836511600012567,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 570,
+      "bottom_right_y": 551,
+      "id": "img-11.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 163,
+      "top_left_y": 245
+     }
+    ],
+    "index": 12,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\n## Patrimônio Líquido\n\nO Patrimônio Líquido atingiu o saldo de R$ 1,6 bilhão no primeiro trimestre de 2020, crescente 2,1% comparado ao mesmo período de 2019, contudo, recuando 3,3% em relação ao trimestre anterior. O BANESTES mantém sólida sua estrutura de capital, fator indispensável para suportar o financiamento da atividade produtiva e as necessidades de clientes de forma eficiente e competitiva. A relação entre o Patrimônio Líquido e Ativo Total foi de 5,7%.\n\n![img-11.jpeg](img-11.jpeg)\n\n## Carteira de Crédito\n\nA Carteira de Crédito Ampliada registrou o saldo de R$ 7,2 bilhões no primeiro trimestre do ano, expansões de 26,3% em relação ao mesmo período de 2019 e 6,6% ante o trimestre anterior. As maiores evoluções no trimestre, foram registradas pelas concessões na modalidade de empréstimos R$ 3,3 bilhões (+16,6% em 12 meses e +10,1% em 3 meses), destaque para o crédito de consumo, em especial o consignado (+18,5% em 12 meses e +13,2% em 3 meses), o imobiliário (+7,5% em 12 meses e +3,9% em 3 meses) e o rotativo de cartões (+6,1% em 12 meses e +11,3% em 3 meses); e o rotativo de empresas, em especial o capital de giro (+29,3% em 12 meses e +13,4% em 3 meses) e a conta garantida (+14,1% em 12 meses e +8,3% em 3 meses).\n\nA Carteira de Crédito Comercial (conceito Bacen) registrou o saldo de R$ 4,5 bilhões, maior 11,3% em relação ao mesmo período de 2019 e crescente 6,2% contra o trimestre anterior. Desse montante, R$ 2,9 bilhões (63,9%) são de operações com pessoas físicas e R$ 1,6 bilhão com pessoas jurídicas (36,1%). Da carteira de pessoa jurídica, 81,4% são concessões à micro, pequenas e médias empresas, e 18,6% a grandes empresas. A Instituição adota critérios rigorosos de segurança e avaliação de processos de concessão de crédito.\n\n13 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 578,
+      "bottom_right_y": 444,
+      "confidence_scores": null,
+      "content": "![img-12.jpeg](img-12.jpeg)",
+      "image_id": "img-12.jpeg",
+      "top_left_x": 151,
+      "top_left_y": 111,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 570,
+      "confidence_scores": null,
+      "content": "O BANESTES possui papel fundamental na economia do Estado do Espírito Santo, participando ativamente no financiamento do consumo, da produção e do investimento local, apoiando de forma segura e rentável o processo de democratização do crédito e inclusão financeira. Para isso, utiliza como estratégia a diversificação da oferta do crédito a condições comerciais competitivas e sustentáveis, com foco na aplicação dos recursos prioritariamente nas carteiras com menor risco e com maiores garantias.",
+      "top_left_x": 46,
+      "top_left_y": 458,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 164,
+      "bottom_right_y": 633,
+      "confidence_scores": null,
+      "content": "### **Depósitos Totais**",
+      "top_left_x": 46,
+      "top_left_y": 613,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 736,
+      "confidence_scores": null,
+      "content": "Os Depósitos Totais atingiram um volume de R$ 13,1 bilhões, superior 17,1% ao mesmo período do ano de 2019 e 12,1% em comparação ao trimestre anterior. Os recursos em depósitos a prazo expandiram 21,1% em 12 meses e 13,8% em 3 meses, enquanto os recursos em poupança avançaram 9,6% em 12 meses e 3,5% em 3 meses. Vale registrar a posição crescente dos recursos em depósitos à vista (+23,9% em 12 meses e +30,1% em 3 meses).",
+      "top_left_x": 46,
+      "top_left_y": 643,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "14 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.975130657528201,
+     "minimum_page_confidence_score": 0.3212142479873615,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 578,
+      "bottom_right_y": 444,
+      "id": "img-12.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 151,
+      "top_left_y": 111
+     }
+    ],
+    "index": 13,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\n![img-12.jpeg](img-12.jpeg)\n\nO BANESTES possui papel fundamental na economia do Estado do Espírito Santo, participando ativamente no financiamento do consumo, da produção e do investimento local, apoiando de forma segura e rentável o processo de democratização do crédito e inclusão financeira. Para isso, utiliza como estratégia a diversificação da oferta do crédito a condições comerciais competitivas e sustentáveis, com foco na aplicação dos recursos prioritariamente nas carteiras com menor risco e com maiores garantias.\n\n### **Depósitos Totais**\n\nOs Depósitos Totais atingiram um volume de R$ 13,1 bilhões, superior 17,1% ao mesmo período do ano de 2019 e 12,1% em comparação ao trimestre anterior. Os recursos em depósitos a prazo expandiram 21,1% em 12 meses e 13,8% em 3 meses, enquanto os recursos em poupança avançaram 9,6% em 12 meses e 3,5% em 3 meses. Vale registrar a posição crescente dos recursos em depósitos à vista (+23,9% em 12 meses e +30,1% em 3 meses).\n\n14 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 598,
+      "bottom_right_y": 478,
+      "confidence_scores": null,
+      "content": "![img-13.jpeg](img-13.jpeg)",
+      "image_id": "img-13.jpeg",
+      "top_left_x": 134,
+      "top_left_y": 108,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 557,
+      "confidence_scores": null,
+      "content": "O BANESTES possui relacionamento com mais de 1.163 mil clientes (+3,7% em 12 meses), sendo 1.095 mil pessoas físicas e 68 mil pessoas jurídicas. Esses clientes movimentaram 737 mil contas correntes (+1,4% em 12 meses) e 589 mil contas poupança (+2,6% em 12 meses).",
+      "top_left_x": 46,
+      "top_left_y": 501,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 696,
+      "confidence_scores": null,
+      "content": "No trimestre, os recursos de terceiros captados e administrados atingiram o volume de R$ 29,5 bilhões, crescentes 10,7% contra o primeiro trimestre de 2019 e 11,3% contra o quarto trimestre de 2019. Essa variação foi decorrente da expansão orgânica dos recursos em depósitos e de fundos (+39,4% em 12 meses). A posição em captações no mercado aberto, diante movimento de mercado, ficou praticamente estável (-0,9%) na comparação com o mesmo trimestre de 2019; contudo, alavancou-se de forma pujante (+25,8%) na comparação com o trimestre anterior.",
+      "top_left_x": 46,
+      "top_left_y": 566,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "15 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9745946800276829,
+     "minimum_page_confidence_score": 0.34509484209672975,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 598,
+      "bottom_right_y": 478,
+      "id": "img-13.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 134,
+      "top_left_y": 108
+     }
+    ],
+    "index": 14,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\n![img-13.jpeg](img-13.jpeg)\n\nO BANESTES possui relacionamento com mais de 1.163 mil clientes (+3,7% em 12 meses), sendo 1.095 mil pessoas físicas e 68 mil pessoas jurídicas. Esses clientes movimentaram 737 mil contas correntes (+1,4% em 12 meses) e 589 mil contas poupança (+2,6% em 12 meses).\n\nNo trimestre, os recursos de terceiros captados e administrados atingiram o volume de R$ 29,5 bilhões, crescentes 10,7% contra o primeiro trimestre de 2019 e 11,3% contra o quarto trimestre de 2019. Essa variação foi decorrente da expansão orgânica dos recursos em depósitos e de fundos (+39,4% em 12 meses). A posição em captações no mercado aberto, diante movimento de mercado, ficou praticamente estável (-0,9%) na comparação com o mesmo trimestre de 2019; contudo, alavancou-se de forma pujante (+25,8%) na comparação com o trimestre anterior.\n\n15 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 52,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "**1T2020**",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 325,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## Indicadores de Desempenho",
+      "top_left_x": 46,
+      "top_left_y": 109,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 684,
+      "bottom_right_y": 321,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Indicadores de Desempenho</th><th rowspan=\"2\">1T20</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th colspan=\"2\">Variação (% /p.p.)</th></tr><tr><th>1T20X4T19</th><th>1T20X1T19</th></tr></thead><tr><td>Lucro Líquido por Ação</td><td>0,26</td><td>0,15</td><td>0,18</td><td>0,14</td><td>0,20</td><td>0,14</td><td>0,17</td><td>0,18</td><td>77,1%</td><td>30,2%</td></tr><tr><td>Valor Patrimonial por Ação</td><td>4,92</td><td>5,09</td><td>4,96</td><td>4,85</td><td>4,82</td><td>4,72</td><td>4,56</td><td>4,47</td><td>-3,3%</td><td>2,1%</td></tr><tr><td>ROA - Retorno Sobre Ativos Médios</td><td>0,9%</td><td>0,8%</td><td>0,8%</td><td>0,8%</td><td>1,0%</td><td>0,7%</td><td>0,7%</td><td>0,8%</td><td>0,1</td><td>-0,1</td></tr><tr><td>Eficiência Operacional</td><td>45,7%</td><td>54,7%</td><td>51,7%</td><td>52,6%</td><td>50,2%</td><td>54,4%</td><td>50,6%</td><td>51,8%</td><td>-9,0</td><td>-4,5</td></tr><tr><td>Eficiência Operacional Ajustado ao Risco</td><td>49,0%</td><td>60,8%</td><td>59,6%</td><td>62,0%</td><td>55,5%</td><td>61,1%</td><td>54,5%</td><td>55,2%</td><td>-11,8</td><td>-6,5</td></tr><tr><td>Valor de Mercado (R$ milhões)</td><td>1.580</td><td>2.030</td><td>1.893</td><td>1.786</td><td>1.565</td><td>1.315</td><td>1.181</td><td>1.090</td><td>-22,2%</td><td>1,0%</td></tr><tr><td>Índice de Inadimplência &gt; 90 Dias</td><td>2,2%</td><td>1,7%</td><td>2,5%</td><td>2,5%</td><td>2,8%</td><td>2,7%</td><td>2,4%</td><td>2,6%</td><td>0,5</td><td>-0,6</td></tr></table>",
+      "table_id": "tbl-4.html",
+      "top_left_x": 46,
+      "top_left_y": 145,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 249,
+      "bottom_right_y": 370,
+      "confidence_scores": null,
+      "content": "### Retorno sobre o Ativo (ROA)",
+      "top_left_x": 46,
+      "top_left_y": 352,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 685,
+      "bottom_right_y": 436,
+      "confidence_scores": null,
+      "content": "O Retorno sobre os Ativos Totais Médios (ROA) anualizado encerrou o primeiro trimestre em 0,9%, superior 0,1 p.p. em relação ao quarto trimestre de 2019 e menor 0,1 p.p. em relação ao mesmo período do ano anterior.",
+      "top_left_x": 46,
+      "top_left_y": 381,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 285,
+      "bottom_right_y": 498,
+      "confidence_scores": null,
+      "content": "### Índice de Eficiência Operacional",
+      "top_left_x": 46,
+      "top_left_y": 479,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 658,
+      "confidence_scores": null,
+      "content": "No primeiro trimestre, o Índice de Eficiência Operacional atingiu 45,7%, refletindo o aumento da margem financeira (+24,6% em 12 meses e +29,4% em 3 meses) dada o menor custo com captação diante a equalização da taxa de juros Selic no período, aliado às receitas geradas via alienação de estoque de título público e a posição em estoque de crédito em concessões pré-fixadas. No conceito ajustado ao risco, a Eficiência Operacional foi de 49,0%, também sob o mesmo efeito acima citado. Os avanços apurados demonstram boa capacidade de retenção de lucratividade na atividade comercial e eficiência gradativa na gestão de custos da operação bancária.",
+      "top_left_x": 46,
+      "top_left_y": 510,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 208,
+      "bottom_right_y": 722,
+      "confidence_scores": null,
+      "content": "### Ações da Companhia",
+      "top_left_x": 46,
+      "top_left_y": 703,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 240,
+      "bottom_right_y": 750,
+      "confidence_scores": null,
+      "content": "#### Remuneração aos Acionistas",
+      "top_left_x": 46,
+      "top_left_y": 733,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 353,
+      "bottom_right_y": 886,
+      "confidence_scores": null,
+      "content": "No primeiro trimestre, foram distribuídos R$ 20 milhões aos acionistas a título de Juros Sobre Capital Próprio (JCP), representando a distribuição de 24,4% do lucro líquido. Destaque positivo para o Lucro Líquido por ação R$ 0,26 no primeiro trimestre de 2020, contra R$ 0,15 do trimestre anterior.",
+      "top_left_x": 46,
+      "top_left_y": 756,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 684,
+      "bottom_right_y": 892,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Ações</th><th>BEES3 (ON)</th><th>BEES4 (PN)</th></tr></thead><tr><td>Cotação de Fechamento do Tri (R$)</td><td>5,01</td><td>4,98</td></tr><tr><td>Cotação Média do Trimestre (R$)</td><td>5,87</td><td>6,00</td></tr><tr><td>Preço/Lucro (P/E)</td><td>6,80</td><td>6,76</td></tr><tr><td>Preço/Patrimônio Líquido (P/B)</td><td>1,02</td><td>1,01</td></tr><tr><td>Dividend Yield</td><td>5,9%</td><td>5,7%</td></tr><tr><td>Payout (acumulado 12 meses)</td><td colspan=\"2\">24,4%</td></tr><tr><td>Valor Patrimonial por Ação (R$)</td><td colspan=\"2\">4,92</td></tr><tr><td>Lucro Líquido por Ação (R$)</td><td colspan=\"2\">0,26</td></tr></table>",
+      "table_id": "tbl-5.html",
+      "top_left_x": 363,
+      "top_left_y": 720,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**16**^{}[] Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9884646329726171,
+     "minimum_page_confidence_score": 0.23488969132817658,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 15,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2020**\n\n## Indicadores de Desempenho\n\n[tbl-4.html](tbl-4.html)\n\n### Retorno sobre o Ativo (ROA)\n\nO Retorno sobre os Ativos Totais Médios (ROA) anualizado encerrou o primeiro trimestre em 0,9%, superior 0,1 p.p. em relação ao quarto trimestre de 2019 e menor 0,1 p.p. em relação ao mesmo período do ano anterior.\n\n### Índice de Eficiência Operacional\n\nNo primeiro trimestre, o Índice de Eficiência Operacional atingiu 45,7%, refletindo o aumento da margem financeira (+24,6% em 12 meses e +29,4% em 3 meses) dada o menor custo com captação diante a equalização da taxa de juros Selic no período, aliado às receitas geradas via alienação de estoque de título público e a posição em estoque de crédito em concessões pré-fixadas. No conceito ajustado ao risco, a Eficiência Operacional foi de 49,0%, também sob o mesmo efeito acima citado. Os avanços apurados demonstram boa capacidade de retenção de lucratividade na atividade comercial e eficiência gradativa na gestão de custos da operação bancária.\n\n### Ações da Companhia\n\n#### Remuneração aos Acionistas\n\nNo primeiro trimestre, foram distribuídos R$ 20 milhões aos acionistas a título de Juros Sobre Capital Próprio (JCP), representando a distribuição de 24,4% do lucro líquido. Destaque positivo para o Lucro Líquido por ação R$ 0,26 no primeiro trimestre de 2020, contra R$ 0,15 do trimestre anterior.\n\n[tbl-5.html](tbl-5.html)\n\n**16**Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Indicadores de Desempenho</th><th rowspan=\"2\">1T20</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th colspan=\"2\">Variação (% /p.p.)</th></tr><tr><th>1T20X4T19</th><th>1T20X1T19</th></tr></thead><tr><td>Lucro Líquido por Ação</td><td>0,26</td><td>0,15</td><td>0,18</td><td>0,14</td><td>0,20</td><td>0,14</td><td>0,17</td><td>0,18</td><td>77,1%</td><td>30,2%</td></tr><tr><td>Valor Patrimonial por Ação</td><td>4,92</td><td>5,09</td><td>4,96</td><td>4,85</td><td>4,82</td><td>4,72</td><td>4,56</td><td>4,47</td><td>-3,3%</td><td>2,1%</td></tr><tr><td>ROA - Retorno Sobre Ativos Médios</td><td>0,9%</td><td>0,8%</td><td>0,8%</td><td>0,8%</td><td>1,0%</td><td>0,7%</td><td>0,7%</td><td>0,8%</td><td>0,1</td><td>-0,1</td></tr><tr><td>Eficiência Operacional</td><td>45,7%</td><td>54,7%</td><td>51,7%</td><td>52,6%</td><td>50,2%</td><td>54,4%</td><td>50,6%</td><td>51,8%</td><td>-9,0</td><td>-4,5</td></tr><tr><td>Eficiência Operacional Ajustado ao Risco</td><td>49,0%</td><td>60,8%</td><td>59,6%</td><td>62,0%</td><td>55,5%</td><td>61,1%</td><td>54,5%</td><td>55,2%</td><td>-11,8</td><td>-6,5</td></tr><tr><td>Valor de Mercado (R$ milhões)</td><td>1.580</td><td>2.030</td><td>1.893</td><td>1.786</td><td>1.565</td><td>1.315</td><td>1.181</td><td>1.090</td><td>-22,2%</td><td>1,0%</td></tr><tr><td>Índice de Inadimplência &gt; 90 Dias</td><td>2,2%</td><td>1,7%</td><td>2,5%</td><td>2,5%</td><td>2,8%</td><td>2,7%</td><td>2,4%</td><td>2,6%</td><td>0,5</td><td>-0,6</td></tr></table>",
+      "format": "html",
+      "id": "tbl-4.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>Ações</th><th>BEES3 (ON)</th><th>BEES4 (PN)</th></tr></thead><tr><td>Cotação de Fechamento do Tri (R$)</td><td>5,01</td><td>4,98</td></tr><tr><td>Cotação Média do Trimestre (R$)</td><td>5,87</td><td>6,00</td></tr><tr><td>Preço/Lucro (P/E)</td><td>6,80</td><td>6,76</td></tr><tr><td>Preço/Patrimônio Líquido (P/B)</td><td>1,02</td><td>1,01</td></tr><tr><td>Dividend Yield</td><td>5,9%</td><td>5,7%</td></tr><tr><td>Payout (acumulado 12 meses)</td><td colspan=\"2\">24,4%</td></tr><tr><td>Valor Patrimonial por Ação (R$)</td><td colspan=\"2\">4,92</td></tr><tr><td>Lucro Líquido por Ação (R$)</td><td colspan=\"2\">0,26</td></tr></table>",
+      "format": "html",
+      "id": "tbl-5.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "**1T2020**",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 109,
+      "bottom_right_y": 125,
+      "confidence_scores": null,
+      "content": "## Múltiplos",
+      "top_left_x": 46,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 243,
+      "confidence_scores": null,
+      "content": "O Dividend Yield, indicador do retorno do investimento ao acionista pela participação no lucro acumulado nos últimos doze meses, foi de 5,9% para as ações ordinárias (BEES3) e de 5,7% para as preferenciais (BEES4). O Valor Patrimonial por Ação, no fechamento do trimestre, registrou acréscimo de 2,1% comparado ao mesmo período de 2019 e redução de 3,3% em relação ao trimestre anterior, fechando em R$ 4,92. No mesmo período, o Preço/Patrimônio Líquido das ações ordinárias e preferenciais foi de 1,02 e de 1,01 respectivamente.",
+      "top_left_x": 46,
+      "top_left_y": 130,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 171,
+      "bottom_right_y": 273,
+      "confidence_scores": null,
+      "content": "## Valor de Mercado",
+      "top_left_x": 46,
+      "top_left_y": 256,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 371,
+      "confidence_scores": null,
+      "content": "Os preços de fechamento das ações ordinárias e preferenciais foram, respectivamente, R$ 5,01 e R$ 4,98 no último dia de negociação do primeiro trimestre, resultando num Valor de Mercado de R$ 1.580 milhões, apresentou evolução de 1,0% contra o mesmo período do ano anterior, e recuo de 22,2% em relação ao trimestre anterior, impactado pelas incertezas ocasionadas pela Pandemia COVID-19.",
+      "top_left_x": 46,
+      "top_left_y": 278,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 247,
+      "bottom_right_y": 434,
+      "confidence_scores": null,
+      "content": "## Limites Operacionais",
+      "top_left_x": 46,
+      "top_left_y": 411,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 517,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Limites Operacionais</th><th rowspan=\"2\">1T20</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th colspan=\"2\">Variação p.p.</th></tr><tr><th>1T20X4T19</th><th>1T20X1T19</th></tr></thead><tr><td>Índice de Basileia - Total</td><td>12,8%</td><td>14,0%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>-1,2</td><td>-4,9</td></tr><tr><td>Capital Nível I - 100%</td><td>12,8%</td><td>14,0%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>-1,2</td><td>-4,9</td></tr></table>",
+      "table_id": "tbl-6.html",
+      "top_left_x": 46,
+      "top_left_y": 446,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 592,
+      "confidence_scores": null,
+      "content": "O Patrimônio de Referência do Conglomerado Prudencial fechou o primeiro trimestre do ano em R$ 1,4 bilhão frente aos ativos ponderados pelo risco (RWA) de R$ 10,8 bilhões. O Índice de Basileia ficou em 12,8%, formado integralmente de Capital Nível I.",
+      "top_left_x": 46,
+      "top_left_y": 536,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 261,
+      "bottom_right_y": 685,
+      "confidence_scores": null,
+      "content": "## Indicadores Estruturais",
+      "top_left_x": 46,
+      "top_left_y": 662,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 795,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Indicadores Estruturais</th><th>1T20</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th></tr></thead><tr><td>Unidades de Atendimento</td><td>152</td><td>156</td><td>156</td><td>156</td><td>157</td><td>157</td><td>155</td><td>155</td></tr><tr><td>Postos de Atendimento Eletrônico</td><td>328</td><td>328</td><td>328</td><td>328</td><td>328</td><td>326</td><td>318</td><td>313</td></tr><tr><td>Correspondentes</td><td>387</td><td>384</td><td>386</td><td>386</td><td>386</td><td>393</td><td>387</td><td>381</td></tr><tr><td>Colaboradores</td><td>2.215</td><td>2.240</td><td>2.238</td><td>2.280</td><td>2.260</td><td>2.311</td><td>2.349</td><td>2.383</td></tr></table>",
+      "table_id": "tbl-7.html",
+      "top_left_x": 46,
+      "top_left_y": 699,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 869,
+      "confidence_scores": null,
+      "content": "O BANESTES conta com 2.215 colaboradores e com a maior rede de atendimento bancário no Espírito Santo, com 867 pontos de atendimento, distribuída em 152 unidades de atendimentos, 328 postos de atendimento eletrônico e 387 correspondentes bancários.",
+      "top_left_x": 46,
+      "top_left_y": 813,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 918,
+      "confidence_scores": null,
+      "content": "A gestão de pessoas no primeiro trimestre de 2020 teve marcos relevantes, culminando no Encontro de Gigantes 2020, que reuniu todo o efetivo da Instituição para um evento de",
+      "top_left_x": 46,
+      "top_left_y": 881,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "**17**^{}[] | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9873072021520432,
+     "minimum_page_confidence_score": 0.287849101403477,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 16,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n**1T2020**\n\n## Múltiplos\n\nO Dividend Yield, indicador do retorno do investimento ao acionista pela participação no lucro acumulado nos últimos doze meses, foi de 5,9% para as ações ordinárias (BEES3) e de 5,7% para as preferenciais (BEES4). O Valor Patrimonial por Ação, no fechamento do trimestre, registrou acréscimo de 2,1% comparado ao mesmo período de 2019 e redução de 3,3% em relação ao trimestre anterior, fechando em R$ 4,92. No mesmo período, o Preço/Patrimônio Líquido das ações ordinárias e preferenciais foi de 1,02 e de 1,01 respectivamente.\n\n## Valor de Mercado\n\nOs preços de fechamento das ações ordinárias e preferenciais foram, respectivamente, R$ 5,01 e R$ 4,98 no último dia de negociação do primeiro trimestre, resultando num Valor de Mercado de R$ 1.580 milhões, apresentou evolução de 1,0% contra o mesmo período do ano anterior, e recuo de 22,2% em relação ao trimestre anterior, impactado pelas incertezas ocasionadas pela Pandemia COVID-19.\n\n## Limites Operacionais\n\n[tbl-6.html](tbl-6.html)\n\nO Patrimônio de Referência do Conglomerado Prudencial fechou o primeiro trimestre do ano em R$ 1,4 bilhão frente aos ativos ponderados pelo risco (RWA) de R$ 10,8 bilhões. O Índice de Basileia ficou em 12,8%, formado integralmente de Capital Nível I.\n\n## Indicadores Estruturais\n\n[tbl-7.html](tbl-7.html)\n\nO BANESTES conta com 2.215 colaboradores e com a maior rede de atendimento bancário no Espírito Santo, com 867 pontos de atendimento, distribuída em 152 unidades de atendimentos, 328 postos de atendimento eletrônico e 387 correspondentes bancários.\n\nA gestão de pessoas no primeiro trimestre de 2020 teve marcos relevantes, culminando no Encontro de Gigantes 2020, que reuniu todo o efetivo da Instituição para um evento de\n\n**17**| Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Limites Operacionais</th><th rowspan=\"2\">1T20</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th colspan=\"2\">Variação p.p.</th></tr><tr><th>1T20X4T19</th><th>1T20X1T19</th></tr></thead><tr><td>Índice de Basileia - Total</td><td>12,8%</td><td>14,0%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>-1,2</td><td>-4,9</td></tr><tr><td>Capital Nível I - 100%</td><td>12,8%</td><td>14,0%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>-1,2</td><td>-4,9</td></tr></table>",
+      "format": "html",
+      "id": "tbl-6.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>Indicadores Estruturais</th><th>1T20</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th></tr></thead><tr><td>Unidades de Atendimento</td><td>152</td><td>156</td><td>156</td><td>156</td><td>157</td><td>157</td><td>155</td><td>155</td></tr><tr><td>Postos de Atendimento Eletrônico</td><td>328</td><td>328</td><td>328</td><td>328</td><td>328</td><td>326</td><td>318</td><td>313</td></tr><tr><td>Correspondentes</td><td>387</td><td>384</td><td>386</td><td>386</td><td>386</td><td>393</td><td>387</td><td>381</td></tr><tr><td>Colaboradores</td><td>2.215</td><td>2.240</td><td>2.238</td><td>2.280</td><td>2.260</td><td>2.311</td><td>2.349</td><td>2.383</td></tr></table>",
+      "format": "html",
+      "id": "tbl-7.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 586,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 219,
+      "confidence_scores": null,
+      "content": "alinhamento estratégico, definição de metas, mensagem de motivação e premiação de Campanhas. Também foi lançado, em fevereiro, um novo Plano de Desligamento Voluntário, com o pagamento de 10 (dez) rendas mensais a título de incentivo para os primeiros 100 (cem) colaboradores inscritos, e desligamentos até o final de agosto desse ano. No trimestre foram feitas contratações de vinte novos analistas de tecnologia da informação e dois analistas econômico-financeiros.",
+      "top_left_x": 46,
+      "top_left_y": 107,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 362,
+      "confidence_scores": null,
+      "content": "O modelo de Gestão de Desempenho, agora aplicado a todas as empresas do SFB, tendo como base o propósito “Crescemos Juntos” e os pilares da Experiência do Cliente, Trabalho em Equipe, Inovação e Alta Performance, foi aprimorado pela contratação de sistema informatizado para todos seus registros e análises, estando em fase final de implantação. Em relação à certificação de profissionais, atualmente a Instituição conta com 789 colaboradores certificados pela ANBIMA, sendo 577 com certificação CPA-10, 320 com CPA-20, 12 com CGA e 12 com CEA, vários deles com certificações múltiplas.",
+      "top_left_x": 46,
+      "top_left_y": 231,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "18 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 82,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9784420084035462,
+     "minimum_page_confidence_score": 0.3495834024811523,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 17,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\nalinhamento estratégico, definição de metas, mensagem de motivação e premiação de Campanhas. Também foi lançado, em fevereiro, um novo Plano de Desligamento Voluntário, com o pagamento de 10 (dez) rendas mensais a título de incentivo para os primeiros 100 (cem) colaboradores inscritos, e desligamentos até o final de agosto desse ano. No trimestre foram feitas contratações de vinte novos analistas de tecnologia da informação e dois analistas econômico-financeiros.\n\nO modelo de Gestão de Desempenho, agora aplicado a todas as empresas do SFB, tendo como base o propósito “Crescemos Juntos” e os pilares da Experiência do Cliente, Trabalho em Equipe, Inovação e Alta Performance, foi aprimorado pela contratação de sistema informatizado para todos seus registros e análises, estando em fase final de implantação. Em relação à certificação de profissionais, atualmente a Instituição conta com 789 colaboradores certificados pela ANBIMA, sendo 577 com certificação CPA-10, 320 com CPA-20, 12 com CGA e 12 com CEA, vários deles com certificações múltiplas.\n\n18 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 586,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 345,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## Outras Informações Relevantes",
+      "top_left_x": 47,
+      "top_left_y": 109,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 96,
+      "bottom_right_y": 165,
+      "confidence_scores": null,
+      "content": "### Rating",
+      "top_left_x": 47,
+      "top_left_y": 148,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 269,
+      "confidence_scores": null,
+      "content": "A nota de rating em escala nacional (moeda local) para risco de crédito medida pela Fitch Ratings manteve-se em A+(bra) no período. Houve revisão na perspectiva de positiva para negativa, refletindo a expectativa da Fitch de que a deterioração do cenário macroeconômico (devido à pandemia de Coronavírus) afetará a qualidade dos ativos e rentabilidade de todo o setor bancário.",
+      "top_left_x": 47,
+      "top_left_y": 177,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 107,
+      "bottom_right_y": 328,
+      "confidence_scores": null,
+      "content": "### Cartões",
+      "top_left_x": 47,
+      "top_left_y": 311,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 432,
+      "confidence_scores": null,
+      "content": "Um dos vetores de crescimento do BANESTES, o cartão de bandeira própria “BANESCARD” possui mais de 2 milhões de estabelecimentos comerciais credenciados às redes Cielo, Getnet, Bin, Rede e Stone em todo o Brasil. De janeiro a março de 2020, foram 6 milhões de operações. O valor transacionado em compras e saques com os cartões de débito e crédito nesse período atingiu R$ 434 milhões, crescimento de 1,4% contra 2019.",
+      "top_left_x": 47,
+      "top_left_y": 340,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 538,
+      "confidence_scores": null,
+      "content": "Os cartões de crédito e débito BANESTES Visa crescem a ritmo expressivo, tornando-se cada vez mais importantes no portfólio de produtos da Instituição. No primeiro trimestre de 2020, o número de transações em compras e saques de pessoas físicas e jurídicas expandiu 26,1%, em relação ao mesmo período de 2019, resultando em aumento de 25,0% no faturamento, alcançando a cifra de R$ 360 milhões no período.",
+      "top_left_x": 47,
+      "top_left_y": 445,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 258,
+      "bottom_right_y": 602,
+      "confidence_scores": null,
+      "content": "### Investimentos em Tecnologia",
+      "top_left_x": 47,
+      "top_left_y": 584,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 761,
+      "confidence_scores": null,
+      "content": "No trimestre, foi investida a quantia de R$ 3 milhões em Tecnologia da Informação e Comunicação, proporcionando melhorias nos serviços bancários, como a modernização de sistemas de informação, da infraestrutura de comunicação, da segurança da informação e da rede de autoatendimento. Os investimentos visam possibilitar ao Banco soluções de negócio aderentes à Transformação Digital com trabalhos focados na ampliação de prestação de serviços pelos canais digitais, principalmente nos canais Internet Banking e BANESTES.Corp (ferramenta voltada para cliente PJ) e nos Aplicativos BANESTES, BANESTES Cartões e Abre Contas BANESTES.",
+      "top_left_x": 47,
+      "top_left_y": 612,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 849,
+      "confidence_scores": null,
+      "content": "Em relação ao sistema de automação bancária, foram implementadas iniciativas para automatização de procedimentos de suporte e de atendimento à rede de agências e correspondentes, com o objetivo de aumentar a eficiência operacional e proporcionar mais agilidade no atendimento dos clientes e usuários.",
+      "top_left_x": 47,
+      "top_left_y": 774,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "19 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9815290513531223,
+     "minimum_page_confidence_score": 0.3218799491938804,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 18,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\n## Outras Informações Relevantes\n\n### Rating\n\nA nota de rating em escala nacional (moeda local) para risco de crédito medida pela Fitch Ratings manteve-se em A+(bra) no período. Houve revisão na perspectiva de positiva para negativa, refletindo a expectativa da Fitch de que a deterioração do cenário macroeconômico (devido à pandemia de Coronavírus) afetará a qualidade dos ativos e rentabilidade de todo o setor bancário.\n\n### Cartões\n\nUm dos vetores de crescimento do BANESTES, o cartão de bandeira própria “BANESCARD” possui mais de 2 milhões de estabelecimentos comerciais credenciados às redes Cielo, Getnet, Bin, Rede e Stone em todo o Brasil. De janeiro a março de 2020, foram 6 milhões de operações. O valor transacionado em compras e saques com os cartões de débito e crédito nesse período atingiu R$ 434 milhões, crescimento de 1,4% contra 2019.\n\nOs cartões de crédito e débito BANESTES Visa crescem a ritmo expressivo, tornando-se cada vez mais importantes no portfólio de produtos da Instituição. No primeiro trimestre de 2020, o número de transações em compras e saques de pessoas físicas e jurídicas expandiu 26,1%, em relação ao mesmo período de 2019, resultando em aumento de 25,0% no faturamento, alcançando a cifra de R$ 360 milhões no período.\n\n### Investimentos em Tecnologia\n\nNo trimestre, foi investida a quantia de R$ 3 milhões em Tecnologia da Informação e Comunicação, proporcionando melhorias nos serviços bancários, como a modernização de sistemas de informação, da infraestrutura de comunicação, da segurança da informação e da rede de autoatendimento. Os investimentos visam possibilitar ao Banco soluções de negócio aderentes à Transformação Digital com trabalhos focados na ampliação de prestação de serviços pelos canais digitais, principalmente nos canais Internet Banking e BANESTES.Corp (ferramenta voltada para cliente PJ) e nos Aplicativos BANESTES, BANESTES Cartões e Abre Contas BANESTES.\n\nEm relação ao sistema de automação bancária, foram implementadas iniciativas para automatização de procedimentos de suporte e de atendimento à rede de agências e correspondentes, com o objetivo de aumentar a eficiência operacional e proporcionar mais agilidade no atendimento dos clientes e usuários.\n\n19 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 586,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 509,
+      "bottom_right_y": 126,
+      "confidence_scores": null,
+      "content": "## Utilização de canais e serviços digitais no enfrentamento da COVID-19",
+      "top_left_x": 46,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 213,
+      "confidence_scores": null,
+      "content": "O canal mobile segue como principal canal de transações para os clientes, com um total de 16 milhões de transações, expansão de 18,0% sobre o mesmo período de 2019. Os canais digitais (Internet Banking e Mobile) foram responsáveis por 5 milhões de transações financeiras, crescendo 33,0% na mesma comparação.",
+      "top_left_x": 46,
+      "top_left_y": 139,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 336,
+      "confidence_scores": null,
+      "content": "Para enfrentar a situação de pandemia do Coronavírus (COVID-19), o Banco implementou uma série de soluções tecnológicas objetivando incrementar a capacidade de trabalho em home office, o atendimento digital aos clientes e a continuidade das operações, reduzindo a necessidade do atendimento presencial nas agências, apoiando assim, o isolamento social recomendado pelas autoridades de saúde pública, ao mesmo tempo que mantém os serviços bancários essenciais à população.",
+      "top_left_x": 46,
+      "top_left_y": 225,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 443,
+      "confidence_scores": null,
+      "content": "Destacam-se o uso de VPN (rede privada virtual) e VDI (infraestrutura de virtualização de estações de trabalho) para o acesso seguro dos colaboradores em teletrabalho, aquisição de novos notebooks e smartphones para o atendimento remoto, publicação de novos serviços na web, implantação de sistema de aprovações digitais para facilitar a contratação de produtos e serviços pelos clientes e ampla adoção de reuniões por meio de videoconferência.",
+      "top_left_x": 46,
+      "top_left_y": 350,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 196,
+      "bottom_right_y": 504,
+      "confidence_scores": null,
+      "content": "## Ações de Marketing",
+      "top_left_x": 46,
+      "top_left_y": 485,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 571,
+      "confidence_scores": null,
+      "content": "No primeiro trimestre de 2020 o BANESTES apoiou o “Carnaval Capixaba” que movimenta aproximadamente R$ 16 milhões na economia local e participação de mais de 60 mil foliões. Esse evento gera inúmeros empregos e renda aos capixabas nas diversas regiões do Estado.",
+      "top_left_x": 46,
+      "top_left_y": 514,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 619,
+      "confidence_scores": null,
+      "content": "Apoiando a cultura no âmbito nacional e regional, lançou 11ª Edição do Circuito de Teatro, que conta com 11 espetáculos.",
+      "top_left_x": 46,
+      "top_left_y": 582,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 706,
+      "confidence_scores": null,
+      "content": "Em parceria com o Instituto Jones dos Santos Neves – agência pública estadual que subsidia políticas públicas por meio da elaboração e implementação de estudos, pesquisas, planos e projetos – o BANESTES realizou o Seminário de Conjuntura, com o objetivo de discutir as perspectivas econômicas e fiscais do Brasil, do Espírito Santo e de Minas Gerais.",
+      "top_left_x": 46,
+      "top_left_y": 631,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 333,
+      "bottom_right_y": 768,
+      "confidence_scores": null,
+      "content": "## Responsabilidade Social e Sustentabilidade",
+      "top_left_x": 46,
+      "top_left_y": 750,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 817,
+      "confidence_scores": null,
+      "content": "Após as fortes chuvas ocorridas no início do ano, o BANESTES lançou e divulgou linhas de crédito e apoio aos atingidos, com o tema “RECONSTRUÇÃO 2020”.",
+      "top_left_x": 46,
+      "top_left_y": 782,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 923,
+      "confidence_scores": null,
+      "content": "Em função da pandemia do novo Coronavírus, o BANESTES vem atuando fortemente na economia, com o objetivo intrínseco de redução dos impactos econômicos nos vários setores da economia capixaba. Em parceria com o BANDES – Banco de Desenvolvimento do Espírito Santo, o Banco disponibilizou o montante de R$ 250 milhões para uma linha de Crédito Emergencial para empresas de todos os portes e setores industriais, com condições diferenciadas de",
+      "top_left_x": 46,
+      "top_left_y": 829,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "20 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9817572555460529,
+     "minimum_page_confidence_score": 0.3352407075865491,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 19,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\n## Utilização de canais e serviços digitais no enfrentamento da COVID-19\n\nO canal mobile segue como principal canal de transações para os clientes, com um total de 16 milhões de transações, expansão de 18,0% sobre o mesmo período de 2019. Os canais digitais (Internet Banking e Mobile) foram responsáveis por 5 milhões de transações financeiras, crescendo 33,0% na mesma comparação.\n\nPara enfrentar a situação de pandemia do Coronavírus (COVID-19), o Banco implementou uma série de soluções tecnológicas objetivando incrementar a capacidade de trabalho em home office, o atendimento digital aos clientes e a continuidade das operações, reduzindo a necessidade do atendimento presencial nas agências, apoiando assim, o isolamento social recomendado pelas autoridades de saúde pública, ao mesmo tempo que mantém os serviços bancários essenciais à população.\n\nDestacam-se o uso de VPN (rede privada virtual) e VDI (infraestrutura de virtualização de estações de trabalho) para o acesso seguro dos colaboradores em teletrabalho, aquisição de novos notebooks e smartphones para o atendimento remoto, publicação de novos serviços na web, implantação de sistema de aprovações digitais para facilitar a contratação de produtos e serviços pelos clientes e ampla adoção de reuniões por meio de videoconferência.\n\n## Ações de Marketing\n\nNo primeiro trimestre de 2020 o BANESTES apoiou o “Carnaval Capixaba” que movimenta aproximadamente R$ 16 milhões na economia local e participação de mais de 60 mil foliões. Esse evento gera inúmeros empregos e renda aos capixabas nas diversas regiões do Estado.\n\nApoiando a cultura no âmbito nacional e regional, lançou 11ª Edição do Circuito de Teatro, que conta com 11 espetáculos.\n\nEm parceria com o Instituto Jones dos Santos Neves – agência pública estadual que subsidia políticas públicas por meio da elaboração e implementação de estudos, pesquisas, planos e projetos – o BANESTES realizou o Seminário de Conjuntura, com o objetivo de discutir as perspectivas econômicas e fiscais do Brasil, do Espírito Santo e de Minas Gerais.\n\n## Responsabilidade Social e Sustentabilidade\n\nApós as fortes chuvas ocorridas no início do ano, o BANESTES lançou e divulgou linhas de crédito e apoio aos atingidos, com o tema “RECONSTRUÇÃO 2020”.\n\nEm função da pandemia do novo Coronavírus, o BANESTES vem atuando fortemente na economia, com o objetivo intrínseco de redução dos impactos econômicos nos vários setores da economia capixaba. Em parceria com o BANDES – Banco de Desenvolvimento do Espírito Santo, o Banco disponibilizou o montante de R$ 250 milhões para uma linha de Crédito Emergencial para empresas de todos os portes e setores industriais, com condições diferenciadas de\n\n20 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 586,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 257,
+      "confidence_scores": null,
+      "content": "parcelamento e taxas, visando contribuir com a manutenção da capacidade financeira do setor produtivo. Além disso, o Banco detém a operação das linhas de crédito com garantia adicional do Fundo de Aval Bandes, anunciadas pelo Governo do Estado do Espírito Santo. As linhas dão suporte a micros e pequenos empreendedores, associações, cooperativas e sindicatos de agricultores familiares. Outras duas linhas são operadas pelo Banco neste cenário de pandemia: Nossocrédito Emergencial, uma atuação emergencial do Programa Nossocrédito, e BNDES Crédito Pequenas Empresas, com a oferta de capital de giro para as empresas que faturam até R$ 300 milhões por ano.",
+      "top_left_x": 45,
+      "top_left_y": 107,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 437,
+      "confidence_scores": null,
+      "content": "Outra facilidade anunciada pelo BANESTES foi a possibilidade de reparcelamento de operações de crédito em até 180 dias, condição única no mercado, tanto para clientes pessoa física (PF) quanto pessoa jurídica (PJ). O Banco expandiu ainda o período de isenção de juros no Cheque Especial PF para 15 dias. Para o pagamento de contas, o BANESTES anunciou a isenção na cobrança de juros para pagamentos de contas de consumo e de tributos realizados com o cartão de crédito BANESCARD em uma parcela. Para pagamentos parcelados em até seis vezes, foram reduzidas as taxas. Além disso, não será cobrado o valor de tarifa do serviço. O Banco baixou ainda os juros do parcelamento da fatura dos cartões de crédito BANESCARD e BANESTES Visa.",
+      "top_left_x": 45,
+      "top_left_y": 270,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "21 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.980909872905719,
+     "minimum_page_confidence_score": 0.3847615791141834,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 20,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\nparcelamento e taxas, visando contribuir com a manutenção da capacidade financeira do setor produtivo. Além disso, o Banco detém a operação das linhas de crédito com garantia adicional do Fundo de Aval Bandes, anunciadas pelo Governo do Estado do Espírito Santo. As linhas dão suporte a micros e pequenos empreendedores, associações, cooperativas e sindicatos de agricultores familiares. Outras duas linhas são operadas pelo Banco neste cenário de pandemia: Nossocrédito Emergencial, uma atuação emergencial do Programa Nossocrédito, e BNDES Crédito Pequenas Empresas, com a oferta de capital de giro para as empresas que faturam até R$ 300 milhões por ano.\n\nOutra facilidade anunciada pelo BANESTES foi a possibilidade de reparcelamento de operações de crédito em até 180 dias, condição única no mercado, tanto para clientes pessoa física (PF) quanto pessoa jurídica (PJ). O Banco expandiu ainda o período de isenção de juros no Cheque Especial PF para 15 dias. Para o pagamento de contas, o BANESTES anunciou a isenção na cobrança de juros para pagamentos de contas de consumo e de tributos realizados com o cartão de crédito BANESCARD em uma parcela. Para pagamentos parcelados em até seis vezes, foram reduzidas as taxas. Além disso, não será cobrado o valor de tarifa do serviço. O Banco baixou ainda os juros do parcelamento da fatura dos cartões de crédito BANESCARD e BANESTES Visa.\n\n21 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 586,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 250,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## Contexto Econômico",
+      "top_left_x": 47,
+      "top_left_y": 109,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 259,
+      "confidence_scores": null,
+      "content": "Com a deflagração da crise sanitária mundial pela pandemia da COVID-19, o Brasil atravessa um momento de grandes desafios. O otimismo em relação à evolução da atividade econômica no início de 2020 já dava lugar à frustração, diante de indicadores econômicos que sugeriam um crescimento abaixo das expectativas mesmo antes da Pandemia do Coronavírus. E, deste então, o quadro econômico e social vem se agravando, com impactos e efeitos em todos os setores da atividade produtiva, com maior intensidade no setor de comércio.",
+      "top_left_x": 47,
+      "top_left_y": 147,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 401,
+      "confidence_scores": null,
+      "content": "As previsões do mercado para o Produto Interno Bruto (PIB) são bastante pessimistas. Segundo o Relatório Focus, publicado pelo BACEN no dia 20 de abril, é prevista uma queda de 2,9% do PIB. Apesar da queda, a estimativa ainda está abaixo da divulgada pelo Ministro da Economia, Paulo Guedes, que acredita em uma retração de 4,0%. Já o Fundo Monetário Internacional (FMI), estima um tombo de 5,3% no ano de 2020. Dentre as causas apontadas para o recuo, está a pressão no preço dos barris de petróleo; a queda na demanda externa, e as medidas sanitárias de isolamento para a prevenção do Coronavírus.",
+      "top_left_x": 47,
+      "top_left_y": 272,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 489,
+      "confidence_scores": null,
+      "content": "Segundo o relatório publicado pelo BACEN, os analistas do mercado financeiro estimam a inflação de 2020 em 2,2%. Em relação à taxa de juros, já era prevista uma queda na taxa Selic, no primeiro trimestre foi 3,75% e atualmente, está em 3,00%. A projeção para a taxa de câmbio passou de R$ 4,60 para 4,80 por dólar, seguindo a tendência de alta.",
+      "top_left_x": 47,
+      "top_left_y": 415,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 595,
+      "confidence_scores": null,
+      "content": "No Espírito Santo, a economia vem enfrentando dificuldades desde o início do ano com as fortes chuvas de janeiro, que castigaram as cidades e algumas regiões do interior do Estado. Em terras capixabas, o primeiro caso da COVID-19 foi registrado no dia 14 de março de 2020 e, desde então, o Governo vem combatendo a pandemia do Coronavírus com todos os recursos disponíveis, mobilizando a sociedade civil e os mais diversos setores da economia.",
+      "top_left_x": 47,
+      "top_left_y": 502,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 683,
+      "confidence_scores": null,
+      "content": "O quadro econômico, social e produtivo vem se agravando, contudo, todos os agentes dos setores econômicos e produtivos locais estão empenhados e trabalhando para atenuar e superar os efeitos e impactos dessa crise sanitária, buscando restabelecer a normalidade e a preservação da vida.",
+      "top_left_x": 47,
+      "top_left_y": 608,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 788,
+      "confidence_scores": null,
+      "content": "Alinhado a este foco que o momento exige, com ações rápidas e extraordinárias, o BANESTES vem cumprindo sua função econômica e social, apoiando os clientes e a sociedade capixaba como um todo, com a oferta de soluções financeiras de diferentes características, crédito a baixo custo, serviços, atendimento e parcerias. Afinal, o BANESTES é o banco dos capixabas. Por isso, Crescemos Juntos.",
+      "top_left_x": 47,
+      "top_left_y": 696,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "22 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9865224237784415,
+     "minimum_page_confidence_score": 0.3582117034765563,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 21,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\n## Contexto Econômico\n\nCom a deflagração da crise sanitária mundial pela pandemia da COVID-19, o Brasil atravessa um momento de grandes desafios. O otimismo em relação à evolução da atividade econômica no início de 2020 já dava lugar à frustração, diante de indicadores econômicos que sugeriam um crescimento abaixo das expectativas mesmo antes da Pandemia do Coronavírus. E, deste então, o quadro econômico e social vem se agravando, com impactos e efeitos em todos os setores da atividade produtiva, com maior intensidade no setor de comércio.\n\nAs previsões do mercado para o Produto Interno Bruto (PIB) são bastante pessimistas. Segundo o Relatório Focus, publicado pelo BACEN no dia 20 de abril, é prevista uma queda de 2,9% do PIB. Apesar da queda, a estimativa ainda está abaixo da divulgada pelo Ministro da Economia, Paulo Guedes, que acredita em uma retração de 4,0%. Já o Fundo Monetário Internacional (FMI), estima um tombo de 5,3% no ano de 2020. Dentre as causas apontadas para o recuo, está a pressão no preço dos barris de petróleo; a queda na demanda externa, e as medidas sanitárias de isolamento para a prevenção do Coronavírus.\n\nSegundo o relatório publicado pelo BACEN, os analistas do mercado financeiro estimam a inflação de 2020 em 2,2%. Em relação à taxa de juros, já era prevista uma queda na taxa Selic, no primeiro trimestre foi 3,75% e atualmente, está em 3,00%. A projeção para a taxa de câmbio passou de R$ 4,60 para 4,80 por dólar, seguindo a tendência de alta.\n\nNo Espírito Santo, a economia vem enfrentando dificuldades desde o início do ano com as fortes chuvas de janeiro, que castigaram as cidades e algumas regiões do interior do Estado. Em terras capixabas, o primeiro caso da COVID-19 foi registrado no dia 14 de março de 2020 e, desde então, o Governo vem combatendo a pandemia do Coronavírus com todos os recursos disponíveis, mobilizando a sociedade civil e os mais diversos setores da economia.\n\nO quadro econômico, social e produtivo vem se agravando, contudo, todos os agentes dos setores econômicos e produtivos locais estão empenhados e trabalhando para atenuar e superar os efeitos e impactos dessa crise sanitária, buscando restabelecer a normalidade e a preservação da vida.\n\nAlinhado a este foco que o momento exige, com ações rápidas e extraordinárias, o BANESTES vem cumprindo sua função econômica e social, apoiando os clientes e a sociedade capixaba como um todo, com a oferta de soluções financeiras de diferentes características, crédito a baixo custo, serviços, atendimento e parcerias. Afinal, o BANESTES é o banco dos capixabas. Por isso, Crescemos Juntos.\n\n22 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 195,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## Guidance 2020",
+      "top_left_x": 46,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 259,
+      "confidence_scores": null,
+      "content": "Dadas as incertezas causadas pela pandemia da COVID-19, que mudaram o cenário e reduziram a previsibilidade do desempenho dos negócios neste momento, a Administração por Fato Relevante publicado no dia 25/05/2020, comunicou aos seus acionistas e ao mercado em geral a suspensão das projeções (“Guidance”) para o ano de 2020. Contudo, o BANESTES apurou tais projeções para o primeiro trimestre do ano, as quais em decorrência do período de apuração sofreram impactos e efeitos iniciais da crise sanitária.",
+      "top_left_x": 46,
+      "top_left_y": 147,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 342,
+      "confidence_scores": null,
+      "content": "O Guidance BANESTES contém declarações prospectivas, as quais estão sujeitas a riscos e incertezas, pois foram baseadas em expectativas e premissas da Administração e em informações disponíveis no mercado até a presente data.",
+      "top_left_x": 46,
+      "top_left_y": 287,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 531,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Indicador</th><th>Projeção (%)</th><th>Realizado (%)</th></tr></thead><tr><td>Carteira de Crédito Ampliada<sup>1</sup></td><td>8 - 11</td><td>26,3</td></tr><tr><td>Depósito Total<sup>2</sup></td><td>7 - 10</td><td>17,1</td></tr><tr><td>Despesa Provisão de Crédito/Carteira de Crédito Ampliada<sup>3</sup></td><td>2,0 - 2,3</td><td>2,0</td></tr><tr><td>Eficiência Operacional<sup>4</sup></td><td>50 - 53</td><td>45,7</td></tr><tr><td>Despesas Operacionais<sup>5</sup></td><td>4 - 7</td><td>5,2</td></tr><tr><td>Rendas de Serviços e Tarifas</td><td>8 - 11</td><td>6,1</td></tr></table>",
+      "table_id": "tbl-8.html",
+      "top_left_x": 54,
+      "top_left_y": 371,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 573,
+      "confidence_scores": null,
+      "content": "$^{1}$ Trata-se do total dos saldos da carteira de crédito (conceito Bacen), de TVM privado (debêntures, notas promissórias, CDBs – certificado depósitos bancários, letras financeiras, letras de crédito imobiliário, letras de crédito do agronegócio e CRIs – certificado de recebíveis imobiliários) e garantias prestadas (fianças e avais).",
+      "top_left_x": 54,
+      "top_left_y": 539,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 489,
+      "bottom_right_y": 584,
+      "confidence_scores": null,
+      "content": "$^{2}$ Trata-se do total dos saldos de depósito à vista, poupança, a prazo, interfinanceiros e outros depósitos.",
+      "top_left_x": 54,
+      "top_left_y": 571,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 604,
+      "confidence_scores": null,
+      "content": "$^{3}$ Trata-se da relação do resultado de provisão para créditos (Resolução 2.682/99 do CMN) e TVM privado nos últimos doze meses e o saldo da carteira de crédito ampliada.",
+      "top_left_x": 54,
+      "top_left_y": 581,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 626,
+      "confidence_scores": null,
+      "content": "$^{4}$ Trata-se da relação entre o total da despesa administrativa (pessoal e outras) e o total do resultado bruto da intermediação financeira (excluído provisão para operações de créditos e outros créditos), receitas com serviços e receitas com tarifas.",
+      "top_left_x": 54,
+      "top_left_y": 602,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 378,
+      "bottom_right_y": 636,
+      "confidence_scores": null,
+      "content": "$^{5}$ Trata-se do total das despesas de pessoal e outras despesas administrativas.",
+      "top_left_x": 54,
+      "top_left_y": 623,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 261,
+      "bottom_right_y": 646,
+      "confidence_scores": null,
+      "content": "OBS.: as variações estão baseadas em 12 meses.",
+      "top_left_x": 54,
+      "top_left_y": 634,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "23 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9818716640089443,
+     "minimum_page_confidence_score": 0.3326203842389624,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 22,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\n## Guidance 2020\n\nDadas as incertezas causadas pela pandemia da COVID-19, que mudaram o cenário e reduziram a previsibilidade do desempenho dos negócios neste momento, a Administração por Fato Relevante publicado no dia 25/05/2020, comunicou aos seus acionistas e ao mercado em geral a suspensão das projeções (“Guidance”) para o ano de 2020. Contudo, o BANESTES apurou tais projeções para o primeiro trimestre do ano, as quais em decorrência do período de apuração sofreram impactos e efeitos iniciais da crise sanitária.\n\nO Guidance BANESTES contém declarações prospectivas, as quais estão sujeitas a riscos e incertezas, pois foram baseadas em expectativas e premissas da Administração e em informações disponíveis no mercado até a presente data.\n\n[tbl-8.html](tbl-8.html)\n\n$^{1}$ Trata-se do total dos saldos da carteira de crédito (conceito Bacen), de TVM privado (debêntures, notas promissórias, CDBs – certificado depósitos bancários, letras financeiras, letras de crédito imobiliário, letras de crédito do agronegócio e CRIs – certificado de recebíveis imobiliários) e garantias prestadas (fianças e avais).\n\n$^{2}$ Trata-se do total dos saldos de depósito à vista, poupança, a prazo, interfinanceiros e outros depósitos.\n\n$^{3}$ Trata-se da relação do resultado de provisão para créditos (Resolução 2.682/99 do CMN) e TVM privado nos últimos doze meses e o saldo da carteira de crédito ampliada.\n\n$^{4}$ Trata-se da relação entre o total da despesa administrativa (pessoal e outras) e o total do resultado bruto da intermediação financeira (excluído provisão para operações de créditos e outros créditos), receitas com serviços e receitas com tarifas.\n\n$^{5}$ Trata-se do total das despesas de pessoal e outras despesas administrativas.\n\nOBS.: as variações estão baseadas em 12 meses.\n\n23 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Indicador</th><th>Projeção (%)</th><th>Realizado (%)</th></tr></thead><tr><td>Carteira de Crédito Ampliada<sup>1</sup></td><td>8 - 11</td><td>26,3</td></tr><tr><td>Depósito Total<sup>2</sup></td><td>7 - 10</td><td>17,1</td></tr><tr><td>Despesa Provisão de Crédito/Carteira de Crédito Ampliada<sup>3</sup></td><td>2,0 - 2,3</td><td>2,0</td></tr><tr><td>Eficiência Operacional<sup>4</sup></td><td>50 - 53</td><td>45,7</td></tr><tr><td>Despesas Operacionais<sup>5</sup></td><td>4 - 7</td><td>5,2</td></tr><tr><td>Rendas de Serviços e Tarifas</td><td>8 - 11</td><td>6,1</td></tr></table>",
+      "format": "html",
+      "id": "tbl-8.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 71,
+      "confidence_scores": null,
+      "content": "1T2020",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 408,
+      "bottom_right_y": 130,
+      "confidence_scores": null,
+      "content": "## **Diretoria**",
+      "top_left_x": 325,
+      "top_left_y": 109,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 408,
+      "bottom_right_y": 166,
+      "confidence_scores": null,
+      "content": "### **Presidente**",
+      "top_left_x": 325,
+      "top_left_y": 148,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 458,
+      "bottom_right_y": 195,
+      "confidence_scores": null,
+      "content": "José Amarildo Casagrande",
+      "top_left_x": 276,
+      "top_left_y": 177,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 567,
+      "bottom_right_y": 235,
+      "confidence_scores": null,
+      "content": "## **Diretor de Relações com Investidores e de Finanças**",
+      "top_left_x": 166,
+      "top_left_y": 216,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 444,
+      "bottom_right_y": 262,
+      "confidence_scores": null,
+      "content": "Fernando Poncio Paiva",
+      "top_left_x": 289,
+      "top_left_y": 245,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 402,
+      "bottom_right_y": 303,
+      "confidence_scores": null,
+      "content": "### **Diretores**",
+      "top_left_x": 331,
+      "top_left_y": 284,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 419,
+      "bottom_right_y": 330,
+      "confidence_scores": null,
+      "content": "Alcio de Araújo",
+      "top_left_x": 314,
+      "top_left_y": 313,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 440,
+      "bottom_right_y": 356,
+      "confidence_scores": null,
+      "content": "Carlos Artur Hauschild",
+      "top_left_x": 294,
+      "top_left_y": 338,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 445,
+      "bottom_right_y": 382,
+      "confidence_scores": null,
+      "content": "Fernando Valli Cardoso",
+      "top_left_x": 289,
+      "top_left_y": 364,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 444,
+      "bottom_right_y": 408,
+      "confidence_scores": null,
+      "content": "Marcos Amaral Vargas",
+      "top_left_x": 289,
+      "top_left_y": 390,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 466,
+      "bottom_right_y": 433,
+      "confidence_scores": null,
+      "content": "Marcos Vinícius Nunes Montes",
+      "top_left_x": 268,
+      "top_left_y": 416,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 460,
+      "bottom_right_y": 460,
+      "confidence_scores": null,
+      "content": "Silvio Henrique Brunoro Grillo",
+      "top_left_x": 273,
+      "top_left_y": 442,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 500,
+      "bottom_right_y": 504,
+      "confidence_scores": null,
+      "content": "## **Conselho de Administração**",
+      "top_left_x": 233,
+      "top_left_y": 481,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 408,
+      "bottom_right_y": 535,
+      "confidence_scores": null,
+      "content": "### **Presidente**",
+      "top_left_x": 325,
+      "top_left_y": 518,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 440,
+      "bottom_right_y": 564,
+      "confidence_scores": null,
+      "content": "Sérgio Pereira Ricardo",
+      "top_left_x": 292,
+      "top_left_y": 545,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 603,
+      "confidence_scores": null,
+      "content": "### **Conselheiros**",
+      "top_left_x": 315,
+      "top_left_y": 585,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 458,
+      "bottom_right_y": 632,
+      "confidence_scores": null,
+      "content": "José Amarildo Casagrande",
+      "top_left_x": 276,
+      "top_left_y": 613,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 451,
+      "bottom_right_y": 657,
+      "confidence_scores": null,
+      "content": "Andreia Pereira Carvalho",
+      "top_left_x": 282,
+      "top_left_y": 640,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 412,
+      "bottom_right_y": 684,
+      "confidence_scores": null,
+      "content": "Carla Barreto",
+      "top_left_x": 321,
+      "top_left_y": 666,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 437,
+      "bottom_right_y": 709,
+      "confidence_scores": null,
+      "content": "João Felício Scárdua",
+      "top_left_x": 297,
+      "top_left_y": 692,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 445,
+      "bottom_right_y": 735,
+      "confidence_scores": null,
+      "content": "Luiz Fernando Schettino",
+      "top_left_x": 287,
+      "top_left_y": 717,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 425,
+      "bottom_right_y": 760,
+      "confidence_scores": null,
+      "content": "Nilson Elias Tristão",
+      "top_left_x": 308,
+      "top_left_y": 743,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 476,
+      "bottom_right_y": 786,
+      "confidence_scores": null,
+      "content": "Pedro Marcelo Cezar Guimarães",
+      "top_left_x": 258,
+      "top_left_y": 768,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 422,
+      "bottom_right_y": 812,
+      "confidence_scores": null,
+      "content": "Rogério Arthmar",
+      "top_left_x": 311,
+      "top_left_y": 794,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 649,
+      "bottom_right_y": 857,
+      "confidence_scores": null,
+      "content": "## **Gerência de Relações com Investidores e de Planejamento**",
+      "top_left_x": 83,
+      "top_left_y": 833,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 424,
+      "bottom_right_y": 888,
+      "confidence_scores": null,
+      "content": "### **Gerente Geral**",
+      "top_left_x": 309,
+      "top_left_y": 869,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 460,
+      "bottom_right_y": 916,
+      "confidence_scores": null,
+      "content": "Cristiano Carvalho de Souza",
+      "top_left_x": 273,
+      "top_left_y": 899,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "24 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.962085770146609,
+     "minimum_page_confidence_score": 0.308455742681317,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 23,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n1T2020\n\n## **Diretoria**\n\n### **Presidente**\n\nJosé Amarildo Casagrande\n\n## **Diretor de Relações com Investidores e de Finanças**\n\nFernando Poncio Paiva\n\n### **Diretores**\n\nAlcio de Araújo\n\nCarlos Artur Hauschild\n\nFernando Valli Cardoso\n\nMarcos Amaral Vargas\n\nMarcos Vinícius Nunes Montes\n\nSilvio Henrique Brunoro Grillo\n\n## **Conselho de Administração**\n\n### **Presidente**\n\nSérgio Pereira Ricardo\n\n### **Conselheiros**\n\nJosé Amarildo Casagrande\n\nAndreia Pereira Carvalho\n\nCarla Barreto\n\nJoão Felício Scárdua\n\nLuiz Fernando Schettino\n\nNilson Elias Tristão\n\nPedro Marcelo Cezar Guimarães\n\nRogério Arthmar\n\n## **Gerência de Relações com Investidores e de Planejamento**\n\n### **Gerente Geral**\n\nCristiano Carvalho de Souza\n\n24 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   }
+  ],
+  "usage_info": {
+   "doc_size_bytes": 820671,
+   "pages_processed": 24
+  }
+ },
+ "trimestre": "1T2020"
+}

@@ -1,0 +1,2925 @@
+{
+ "documento": "banestes_release_4T2019",
+ "empresa": "BANESTES",
+ "hash_pdf": "140e2be9ea27156eed8bafc79e1240b602ed9ad46ab841d841c5462da8eba4fa",
+ "modelo": "mistral-ocr-4-0",
+ "ocr": {
+  "document_annotation": null,
+  "model": "mistral-ocr-4-0",
+  "pages": [
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 460,
+      "bottom_right_y": 229,
+      "confidence_scores": null,
+      "content": "# BANESTES S.A.\nBANCO DO ESTADO\nDO ESPÍRITO SANTO",
+      "top_left_x": 27,
+      "top_left_y": 90,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 368,
+      "bottom_right_y": 530,
+      "confidence_scores": null,
+      "content": "PRESS RELEASE\n4º TRIMESTRE 2019",
+      "top_left_x": 27,
+      "top_left_y": 450,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 719,
+      "bottom_right_y": 979,
+      "confidence_scores": null,
+      "content": "![img-0.jpeg](img-0.jpeg)",
+      "image_id": "img-0.jpeg",
+      "top_left_x": 263,
+      "top_left_y": 216,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 79,
+      "bottom_right_y": 975,
+      "confidence_scores": null,
+      "content": "![img-1.jpeg](img-1.jpeg)",
+      "image_id": "img-1.jpeg",
+      "top_left_x": 18,
+      "top_left_y": 897,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 248,
+      "bottom_right_y": 978,
+      "confidence_scores": null,
+      "content": "**BANESTES**\ncrescemos juntos",
+      "top_left_x": 87,
+      "top_left_y": 924,
+      "type": "text"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9450525023783806,
+     "minimum_page_confidence_score": 0.20101780906446734,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 719,
+      "bottom_right_y": 979,
+      "id": "img-0.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 263,
+      "top_left_y": 216
+     },
+     {
+      "bottom_right_x": 79,
+      "bottom_right_y": 975,
+      "id": "img-1.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 18,
+      "top_left_y": 897
+     }
+    ],
+    "index": 0,
+    "markdown": "# BANESTES S.A.\nBANCO DO ESTADO\nDO ESPÍRITO SANTO\n\nPRESS RELEASE\n4º TRIMESTRE 2019\n\n![img-0.jpeg](img-0.jpeg)\n\n![img-1.jpeg](img-1.jpeg)\n\n**BANESTES**\ncrescemos juntos",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 52,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 263,
+      "bottom_right_y": 132,
+      "confidence_scores": null,
+      "content": "## Principais Informações",
+      "top_left_x": 46,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 692,
+      "bottom_right_y": 389,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Demonstração do Resultado<br/>(R$ milhões)</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>4T19X3T19</th><th>4T19x4T18</th></tr></thead><tr><td>Receitas de Intermediação Financeira</td><td>476</td><td>557</td><td>545</td><td>563</td><td>599</td><td>556</td><td>488</td><td>550</td><td>-14,5%</td><td>-20,6%</td></tr><tr><td>Despesas de Intermediação Financeira</td><td>(283)</td><td>(374)</td><td>(379)</td><td>(363)</td><td>(421)</td><td>(356)</td><td>(289)</td><td>(386)</td><td>-24,3%</td><td>-32,6%</td></tr><tr><td>Resultado de Provisão para Devedores Duvidosos</td><td>32</td><td>42</td><td>46</td><td>30</td><td>33</td><td>22</td><td>18</td><td>51</td><td>-22,8%</td><td>-2,4%</td></tr><tr><td>Margem Financeira<sup>1</sup></td><td>192</td><td>183</td><td>166</td><td>200</td><td>179</td><td>200</td><td>199</td><td>164</td><td>5,5%</td><td>7,6%</td></tr><tr><td>Receitas de Prestação de Serviços</td><td>95</td><td>94</td><td>92</td><td>85</td><td>89</td><td>86</td><td>82</td><td>77</td><td>1,7%</td><td>6,6%</td></tr><tr><td>Despesas de Pessoal</td><td>(97)</td><td>(90)</td><td>(90)</td><td>(90)</td><td>(94)</td><td>(90)</td><td>(89)</td><td>(87)</td><td>6,8%</td><td>2,6%</td></tr><tr><td>Outras Despesas Administrativas</td><td>(78)</td><td>(74)</td><td>(70)</td><td>(68)</td><td>(70)</td><td>(66)</td><td>(66)</td><td>(66)</td><td>5,7%</td><td>12,2%</td></tr><tr><td>Resultado Operacional</td><td>45</td><td>91</td><td>69</td><td>97</td><td>82</td><td>100</td><td>97</td><td>56</td><td>-51,0%</td><td>-45,1%</td></tr><tr><td>Resultado Antes da Tributação</td><td>42</td><td>91</td><td>69</td><td>98</td><td>81</td><td>99</td><td>99</td><td>60</td><td>-53,7%</td><td>-47,7%</td></tr><tr><td>Juros Sobre o Capital Próprio<sup>2</sup></td><td>45,0</td><td>19,5</td><td>24,5</td><td>19,5</td><td>31,2</td><td>26,9</td><td>17,1</td><td>12,9</td><td>129,7%</td><td>43,6%</td></tr><tr><td>Lucro Líquido</td><td>47</td><td>58</td><td>46</td><td>63</td><td>45</td><td>55</td><td>58</td><td>23</td><td>-19,9%</td><td>4,1%</td></tr></table>",
+      "table_id": "tbl-0.html",
+      "top_left_x": 46,
+      "top_left_y": 145,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 692,
+      "bottom_right_y": 611,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Balanço Patrimonial (R$ milhões)</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>4T19X3T19</th><th>4T19x4T18</th></tr></thead><tr><td>Ativos Totais</td><td>23.725</td><td>24.258</td><td>27.965</td><td>25.592</td><td>27.928</td><td>28.830</td><td>23.527</td><td>19.571</td><td>-2,2%</td><td>-15,0%</td></tr><tr><td>Carteira de Crédito Ampliada</td><td>6.800</td><td>6.259</td><td>6.336</td><td>5.739</td><td>5.873</td><td>5.896</td><td>5.720</td><td>5.647</td><td>-8,6%</td><td>15,8%</td></tr><tr><td>NPL Creation</td><td>113</td><td>155</td><td>161</td><td>158</td><td>158</td><td>140</td><td>148</td><td>168</td><td>-27,0%</td><td>-28,5%</td></tr><tr><td>Patrimônio Líquido</td><td>1.608</td><td>1.568</td><td>1.531</td><td>1.523</td><td>1.492</td><td>1.441</td><td>1.413</td><td>1.393</td><td>2,6%</td><td>7,8%</td></tr><tr><td>Aplicações Interfinanceiras de Liquidez</td><td>7.432</td><td>8.844</td><td>12.569</td><td>11.025</td><td>12.780</td><td>13.713</td><td>8.561</td><td>5.711</td><td>-16,0%</td><td>-41,8%</td></tr><tr><td>Depósitos Totais</td><td>11.662</td><td>11.669</td><td>12.349</td><td>11.166</td><td>10.717</td><td>10.925</td><td>10.506</td><td>10.103</td><td>-0,1%</td><td>8,8%</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>10.458</td><td>9.693</td><td>9.637</td><td>9.085</td><td>9.585</td><td>9.495</td><td>9.193</td><td>8.345</td><td>7,9%</td><td>9,1%</td></tr><tr><td>Captação Mercado Aberto</td><td>8.742</td><td>9.164</td><td>12.286</td><td>11.095</td><td>13.796</td><td>14.449</td><td>9.634</td><td>6.084</td><td>-4,6%</td><td>-36,6%</td></tr><tr><td>Recursos Captados e Administrados</td><td>26.485</td><td>26.807</td><td>29.429</td><td>26.610</td><td>28.638</td><td>29.564</td><td>23.993</td><td>20.247</td><td>-1,2%</td><td>-7,5%</td></tr></table>",
+      "table_id": "tbl-1.html",
+      "top_left_x": 46,
+      "top_left_y": 401,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 692,
+      "bottom_right_y": 859,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Indicadores de Desempenho</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação % / p.p.</th></tr><tr><th>4T19X3T19</th><th>4T19x4T18</th></tr></thead><tr><td>Lucro Líquido por Ação</td><td>0,15</td><td>0,18</td><td>0,14</td><td>0,20</td><td>0,14</td><td>0,17</td><td>0,18</td><td>0,07</td><td>-19,9%</td><td>4,1%</td></tr><tr><td>Valor Patrimonial por Ação</td><td>5,09</td><td>4,96</td><td>4,85</td><td>4,82</td><td>4,72</td><td>4,56</td><td>4,47</td><td>4,41</td><td>2,6%</td><td>7,8%</td></tr><tr><td>ROA - Retorno Sobre Ativos Médios<sup>3</sup></td><td>0,8%</td><td>0,8%</td><td>0,8%</td><td>1,0%</td><td>0,7%</td><td>0,7%</td><td>0,8%</td><td>0,8%</td><td>0,0</td><td>0,1</td></tr><tr><td>ROE - Retorno sobre Patrimônio Líquido<sup>4</sup></td><td>13,8%</td><td>14,1%</td><td>14,2%</td><td>15,2%</td><td>12,5%</td><td>13,3%</td><td>12,4%</td><td>11,9%</td><td>-0,3</td><td>1,2</td></tr><tr><td>Eficiência Operacional<sup>5</sup></td><td>54,7%</td><td>51,7%</td><td>52,6%</td><td>50,2%</td><td>54,4%</td><td>50,6%</td><td>51,8%</td><td>52,4%</td><td>2,9</td><td>0,2</td></tr><tr><td>Eficiência Operacional Ajustado ao Risco<sup>6</sup></td><td>60,8%</td><td>59,6%</td><td>62,0%</td><td>55,5%</td><td>61,1%</td><td>54,5%</td><td>55,2%</td><td>63,4%</td><td>1,2</td><td>-0,3</td></tr><tr><td>Valor de Mercado (R$ milhões)<sup>7</sup></td><td>2.030</td><td>1.893</td><td>1.786</td><td>1.565</td><td>1.315</td><td>1.181</td><td>1.090</td><td>1.312</td><td>7,3%</td><td>54,4%</td></tr><tr><td>Índice de Inadimplência &gt; 90 Dias<sup>8</sup></td><td>1,7%</td><td>2,5%</td><td>2,5%</td><td>2,8%</td><td>2,7%</td><td>2,4%</td><td>2,6%</td><td>3,0%</td><td>-0,8</td><td>-1,0</td></tr><tr><td>Índice de Cobertura Geral<sup>9</sup></td><td>54,5%</td><td>57,0%</td><td>57,3%</td><td>53,7%</td><td>54,5%</td><td>55,4%</td><td>53,0%</td><td>50,4%</td><td>-2,5</td><td>0,0</td></tr><tr><td>Índice de Cobertura Imediata<sup>10</sup></td><td>98,7%</td><td>103,7%</td><td>101,8%</td><td>93,9%</td><td>95,0%</td><td>96,2%</td><td>92,2%</td><td>88,7%</td><td>-5,0</td><td>3,8</td></tr></table>",
+      "table_id": "tbl-2.html",
+      "top_left_x": 46,
+      "top_left_y": 625,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "2 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 931,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9960285899757569,
+     "minimum_page_confidence_score": 0.27612951625631077,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 1,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n## Principais Informações\n\n[tbl-0.html](tbl-0.html)\n\n[tbl-1.html](tbl-1.html)\n\n[tbl-2.html](tbl-2.html)\n\n2 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Demonstração do Resultado<br/>(R$ milhões)</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>4T19X3T19</th><th>4T19x4T18</th></tr></thead><tr><td>Receitas de Intermediação Financeira</td><td>476</td><td>557</td><td>545</td><td>563</td><td>599</td><td>556</td><td>488</td><td>550</td><td>-14,5%</td><td>-20,6%</td></tr><tr><td>Despesas de Intermediação Financeira</td><td>(283)</td><td>(374)</td><td>(379)</td><td>(363)</td><td>(421)</td><td>(356)</td><td>(289)</td><td>(386)</td><td>-24,3%</td><td>-32,6%</td></tr><tr><td>Resultado de Provisão para Devedores Duvidosos</td><td>32</td><td>42</td><td>46</td><td>30</td><td>33</td><td>22</td><td>18</td><td>51</td><td>-22,8%</td><td>-2,4%</td></tr><tr><td>Margem Financeira<sup>1</sup></td><td>192</td><td>183</td><td>166</td><td>200</td><td>179</td><td>200</td><td>199</td><td>164</td><td>5,5%</td><td>7,6%</td></tr><tr><td>Receitas de Prestação de Serviços</td><td>95</td><td>94</td><td>92</td><td>85</td><td>89</td><td>86</td><td>82</td><td>77</td><td>1,7%</td><td>6,6%</td></tr><tr><td>Despesas de Pessoal</td><td>(97)</td><td>(90)</td><td>(90)</td><td>(90)</td><td>(94)</td><td>(90)</td><td>(89)</td><td>(87)</td><td>6,8%</td><td>2,6%</td></tr><tr><td>Outras Despesas Administrativas</td><td>(78)</td><td>(74)</td><td>(70)</td><td>(68)</td><td>(70)</td><td>(66)</td><td>(66)</td><td>(66)</td><td>5,7%</td><td>12,2%</td></tr><tr><td>Resultado Operacional</td><td>45</td><td>91</td><td>69</td><td>97</td><td>82</td><td>100</td><td>97</td><td>56</td><td>-51,0%</td><td>-45,1%</td></tr><tr><td>Resultado Antes da Tributação</td><td>42</td><td>91</td><td>69</td><td>98</td><td>81</td><td>99</td><td>99</td><td>60</td><td>-53,7%</td><td>-47,7%</td></tr><tr><td>Juros Sobre o Capital Próprio<sup>2</sup></td><td>45,0</td><td>19,5</td><td>24,5</td><td>19,5</td><td>31,2</td><td>26,9</td><td>17,1</td><td>12,9</td><td>129,7%</td><td>43,6%</td></tr><tr><td>Lucro Líquido</td><td>47</td><td>58</td><td>46</td><td>63</td><td>45</td><td>55</td><td>58</td><td>23</td><td>-19,9%</td><td>4,1%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-0.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Balanço Patrimonial (R$ milhões)</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>4T19X3T19</th><th>4T19x4T18</th></tr></thead><tr><td>Ativos Totais</td><td>23.725</td><td>24.258</td><td>27.965</td><td>25.592</td><td>27.928</td><td>28.830</td><td>23.527</td><td>19.571</td><td>-2,2%</td><td>-15,0%</td></tr><tr><td>Carteira de Crédito Ampliada</td><td>6.800</td><td>6.259</td><td>6.336</td><td>5.739</td><td>5.873</td><td>5.896</td><td>5.720</td><td>5.647</td><td>-8,6%</td><td>15,8%</td></tr><tr><td>NPL Creation</td><td>113</td><td>155</td><td>161</td><td>158</td><td>158</td><td>140</td><td>148</td><td>168</td><td>-27,0%</td><td>-28,5%</td></tr><tr><td>Patrimônio Líquido</td><td>1.608</td><td>1.568</td><td>1.531</td><td>1.523</td><td>1.492</td><td>1.441</td><td>1.413</td><td>1.393</td><td>2,6%</td><td>7,8%</td></tr><tr><td>Aplicações Interfinanceiras de Liquidez</td><td>7.432</td><td>8.844</td><td>12.569</td><td>11.025</td><td>12.780</td><td>13.713</td><td>8.561</td><td>5.711</td><td>-16,0%</td><td>-41,8%</td></tr><tr><td>Depósitos Totais</td><td>11.662</td><td>11.669</td><td>12.349</td><td>11.166</td><td>10.717</td><td>10.925</td><td>10.506</td><td>10.103</td><td>-0,1%</td><td>8,8%</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>10.458</td><td>9.693</td><td>9.637</td><td>9.085</td><td>9.585</td><td>9.495</td><td>9.193</td><td>8.345</td><td>7,9%</td><td>9,1%</td></tr><tr><td>Captação Mercado Aberto</td><td>8.742</td><td>9.164</td><td>12.286</td><td>11.095</td><td>13.796</td><td>14.449</td><td>9.634</td><td>6.084</td><td>-4,6%</td><td>-36,6%</td></tr><tr><td>Recursos Captados e Administrados</td><td>26.485</td><td>26.807</td><td>29.429</td><td>26.610</td><td>28.638</td><td>29.564</td><td>23.993</td><td>20.247</td><td>-1,2%</td><td>-7,5%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-1.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Indicadores de Desempenho</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação % / p.p.</th></tr><tr><th>4T19X3T19</th><th>4T19x4T18</th></tr></thead><tr><td>Lucro Líquido por Ação</td><td>0,15</td><td>0,18</td><td>0,14</td><td>0,20</td><td>0,14</td><td>0,17</td><td>0,18</td><td>0,07</td><td>-19,9%</td><td>4,1%</td></tr><tr><td>Valor Patrimonial por Ação</td><td>5,09</td><td>4,96</td><td>4,85</td><td>4,82</td><td>4,72</td><td>4,56</td><td>4,47</td><td>4,41</td><td>2,6%</td><td>7,8%</td></tr><tr><td>ROA - Retorno Sobre Ativos Médios<sup>3</sup></td><td>0,8%</td><td>0,8%</td><td>0,8%</td><td>1,0%</td><td>0,7%</td><td>0,7%</td><td>0,8%</td><td>0,8%</td><td>0,0</td><td>0,1</td></tr><tr><td>ROE - Retorno sobre Patrimônio Líquido<sup>4</sup></td><td>13,8%</td><td>14,1%</td><td>14,2%</td><td>15,2%</td><td>12,5%</td><td>13,3%</td><td>12,4%</td><td>11,9%</td><td>-0,3</td><td>1,2</td></tr><tr><td>Eficiência Operacional<sup>5</sup></td><td>54,7%</td><td>51,7%</td><td>52,6%</td><td>50,2%</td><td>54,4%</td><td>50,6%</td><td>51,8%</td><td>52,4%</td><td>2,9</td><td>0,2</td></tr><tr><td>Eficiência Operacional Ajustado ao Risco<sup>6</sup></td><td>60,8%</td><td>59,6%</td><td>62,0%</td><td>55,5%</td><td>61,1%</td><td>54,5%</td><td>55,2%</td><td>63,4%</td><td>1,2</td><td>-0,3</td></tr><tr><td>Valor de Mercado (R$ milhões)<sup>7</sup></td><td>2.030</td><td>1.893</td><td>1.786</td><td>1.565</td><td>1.315</td><td>1.181</td><td>1.090</td><td>1.312</td><td>7,3%</td><td>54,4%</td></tr><tr><td>Índice de Inadimplência &gt; 90 Dias<sup>8</sup></td><td>1,7%</td><td>2,5%</td><td>2,5%</td><td>2,8%</td><td>2,7%</td><td>2,4%</td><td>2,6%</td><td>3,0%</td><td>-0,8</td><td>-1,0</td></tr><tr><td>Índice de Cobertura Geral<sup>9</sup></td><td>54,5%</td><td>57,0%</td><td>57,3%</td><td>53,7%</td><td>54,5%</td><td>55,4%</td><td>53,0%</td><td>50,4%</td><td>-2,5</td><td>0,0</td></tr><tr><td>Índice de Cobertura Imediata<sup>10</sup></td><td>98,7%</td><td>103,7%</td><td>101,8%</td><td>93,9%</td><td>95,0%</td><td>96,2%</td><td>92,2%</td><td>88,7%</td><td>-5,0</td><td>3,8</td></tr></table>",
+      "format": "html",
+      "id": "tbl-2.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 52,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 690,
+      "bottom_right_y": 174,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Limites Operacionais</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação p.p.</th></tr><tr><th>4T19X3T19</th><th>4T19x4T18</th></tr></thead><tr><td>Índice de Basileia - Total</td><td>14,0%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>16,6%</td><td>-3,5</td><td>-3,1</td></tr><tr><td>Capital Nível I - 100%</td><td>14,0%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>16,6%</td><td>-3,5</td><td>-3,1</td></tr></table>",
+      "table_id": "tbl-3.html",
+      "top_left_x": 46,
+      "top_left_y": 104,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 682,
+      "bottom_right_y": 284,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Indicadores Estruturais</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th><th>1T18</th></tr></thead><tr><td>Unidades de Atendimento</td><td>156</td><td>156</td><td>156</td><td>157</td><td>157</td><td>155</td><td>155</td><td>155</td></tr><tr><td>Postos de Atendimento Eletrônico</td><td>328</td><td>328</td><td>328</td><td>328</td><td>326</td><td>318</td><td>313</td><td>308</td></tr><tr><td>Correspondentes</td><td>384</td><td>386</td><td>386</td><td>386</td><td>393</td><td>387</td><td>381</td><td>390</td></tr><tr><td>Colaboradores</td><td>2.240</td><td>2.238</td><td>2.280</td><td>2.260</td><td>2.311</td><td>2.349</td><td>2.383</td><td>2.414</td></tr></table>",
+      "table_id": "tbl-4.html",
+      "top_left_x": 46,
+      "top_left_y": 189,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 682,
+      "bottom_right_y": 393,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Indicadores Econômicos<sup>12</sup></th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th><th>1T18</th></tr></thead><tr><td>Selic</td><td>4,5%</td><td>5,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td></tr><tr><td>Taxa de Câmbio (R$/US$ - final de período)</td><td>4,03</td><td>4,16</td><td>3,84</td><td>3,92</td><td>3,87</td><td>4,04</td><td>3,86</td><td>3,30</td></tr><tr><td>IGP-M</td><td>3,07%</td><td>-0,28%</td><td>2,17%</td><td>2,15%</td><td>-0,68%</td><td>2,73%</td><td>3,82%</td><td>1,47%</td></tr><tr><td>IPCA<sup>13</sup></td><td>1,76%</td><td>0,26%</td><td>0,71%</td><td>1,50%</td><td>0,39%</td><td>0,72%</td><td>1,88%</td><td>0,70%</td></tr></table>",
+      "table_id": "tbl-5.html",
+      "top_left_x": 46,
+      "top_left_y": 299,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 246,
+      "bottom_right_y": 415,
+      "confidence_scores": null,
+      "content": "$^{1}$ Resultado bruto da intermediação financeira.",
+      "top_left_x": 46,
+      "top_left_y": 400,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 340,
+      "bottom_right_y": 424,
+      "confidence_scores": null,
+      "content": "$^{2}$ Juros sobre o Capital Próprio pagos e/ou provisionados (antes do IR).",
+      "top_left_x": 46,
+      "top_left_y": 411,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 630,
+      "bottom_right_y": 435,
+      "confidence_scores": null,
+      "content": "$^{3}$ Relação entre o lucro líquido dos últimos doze meses e a média dos ativos totais do trimestre vigente e do mesmo trimestre do ano anterior.",
+      "top_left_x": 46,
+      "top_left_y": 423,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 663,
+      "bottom_right_y": 445,
+      "confidence_scores": null,
+      "content": "$^{4}$ Relação entre o lucro líquido dos últimos doze meses e a média dos patrimônios líquidos do trimestre vigente e do mesmo trimestre do ano anterior.",
+      "top_left_x": 46,
+      "top_left_y": 433,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 467,
+      "confidence_scores": null,
+      "content": "$^{5}$ Relação entre o total de despesas administrativas (pessoal e outras) e o total das receitas com serviços, tarifas e o resultado bruto da intermediação financeira (excluído o resultado de provisão para operações de créditos e outros créditos).",
+      "top_left_x": 46,
+      "top_left_y": 444,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 486,
+      "confidence_scores": null,
+      "content": "$^{6}$ Relação entre o total das despesas administrativas (pessoal e outras) e o total das receitas com serviços, tarifas e o resultado bruto da intermediação financeira.",
+      "top_left_x": 46,
+      "top_left_y": 464,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 208,
+      "bottom_right_y": 497,
+      "confidence_scores": null,
+      "content": "$^{7}$ Em 30.12.2019, ON = 6,30 e PN = 6,77.",
+      "top_left_x": 46,
+      "top_left_y": 485,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 338,
+      "bottom_right_y": 508,
+      "confidence_scores": null,
+      "content": "$^{8}$ Índice de Inadimplência > 90 Dias da Carteira de Crédito Ampliada.",
+      "top_left_x": 46,
+      "top_left_y": 495,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 522,
+      "bottom_right_y": 519,
+      "confidence_scores": null,
+      "content": "$^{9}$ Relação entre o total das receitas com serviços e tarifas e o total das despesas administrativas (pessoal e outras).",
+      "top_left_x": 46,
+      "top_left_y": 506,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 435,
+      "bottom_right_y": 529,
+      "confidence_scores": null,
+      "content": "$^{10}$ Relação entre o total das receitas com serviços e tarifas e o total das despesas de pessoal.",
+      "top_left_x": 46,
+      "top_left_y": 517,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 206,
+      "bottom_right_y": 539,
+      "confidence_scores": null,
+      "content": "$^{11}$ Agências e Postos de Atendimento.",
+      "top_left_x": 46,
+      "top_left_y": 527,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 201,
+      "bottom_right_y": 549,
+      "confidence_scores": null,
+      "content": "$^{12}$ Fonte: Banco Central, FGV e IBGE.",
+      "top_left_x": 46,
+      "top_left_y": 537,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 271,
+      "bottom_right_y": 559,
+      "confidence_scores": null,
+      "content": "$^{13}$ Índice de Preços ao Consumidor Amplo – trimestral.",
+      "top_left_x": 46,
+      "top_left_y": 547,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "3 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.987776550252515,
+     "minimum_page_confidence_score": 0.23678430910070342,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 2,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n[tbl-3.html](tbl-3.html)\n\n[tbl-4.html](tbl-4.html)\n\n[tbl-5.html](tbl-5.html)\n\n$^{1}$ Resultado bruto da intermediação financeira.\n\n$^{2}$ Juros sobre o Capital Próprio pagos e/ou provisionados (antes do IR).\n\n$^{3}$ Relação entre o lucro líquido dos últimos doze meses e a média dos ativos totais do trimestre vigente e do mesmo trimestre do ano anterior.\n\n$^{4}$ Relação entre o lucro líquido dos últimos doze meses e a média dos patrimônios líquidos do trimestre vigente e do mesmo trimestre do ano anterior.\n\n$^{5}$ Relação entre o total de despesas administrativas (pessoal e outras) e o total das receitas com serviços, tarifas e o resultado bruto da intermediação financeira (excluído o resultado de provisão para operações de créditos e outros créditos).\n\n$^{6}$ Relação entre o total das despesas administrativas (pessoal e outras) e o total das receitas com serviços, tarifas e o resultado bruto da intermediação financeira.\n\n$^{7}$ Em 30.12.2019, ON = 6,30 e PN = 6,77.\n\n$^{8}$ Índice de Inadimplência > 90 Dias da Carteira de Crédito Ampliada.\n\n$^{9}$ Relação entre o total das receitas com serviços e tarifas e o total das despesas administrativas (pessoal e outras).\n\n$^{10}$ Relação entre o total das receitas com serviços e tarifas e o total das despesas de pessoal.\n\n$^{11}$ Agências e Postos de Atendimento.\n\n$^{12}$ Fonte: Banco Central, FGV e IBGE.\n\n$^{13}$ Índice de Preços ao Consumidor Amplo – trimestral.\n\n3 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Limites Operacionais</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação p.p.</th></tr><tr><th>4T19X3T19</th><th>4T19x4T18</th></tr></thead><tr><td>Índice de Basileia - Total</td><td>14,0%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>16,6%</td><td>-3,5</td><td>-3,1</td></tr><tr><td>Capital Nível I - 100%</td><td>14,0%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>16,6%</td><td>-3,5</td><td>-3,1</td></tr></table>",
+      "format": "html",
+      "id": "tbl-3.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>Indicadores Estruturais</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th><th>1T18</th></tr></thead><tr><td>Unidades de Atendimento</td><td>156</td><td>156</td><td>156</td><td>157</td><td>157</td><td>155</td><td>155</td><td>155</td></tr><tr><td>Postos de Atendimento Eletrônico</td><td>328</td><td>328</td><td>328</td><td>328</td><td>326</td><td>318</td><td>313</td><td>308</td></tr><tr><td>Correspondentes</td><td>384</td><td>386</td><td>386</td><td>386</td><td>393</td><td>387</td><td>381</td><td>390</td></tr><tr><td>Colaboradores</td><td>2.240</td><td>2.238</td><td>2.280</td><td>2.260</td><td>2.311</td><td>2.349</td><td>2.383</td><td>2.414</td></tr></table>",
+      "format": "html",
+      "id": "tbl-4.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th>Indicadores Econômicos<sup>12</sup></th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th><th>1T18</th></tr></thead><tr><td>Selic</td><td>4,5%</td><td>5,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td><td>6,50%</td></tr><tr><td>Taxa de Câmbio (R$/US$ - final de período)</td><td>4,03</td><td>4,16</td><td>3,84</td><td>3,92</td><td>3,87</td><td>4,04</td><td>3,86</td><td>3,30</td></tr><tr><td>IGP-M</td><td>3,07%</td><td>-0,28%</td><td>2,17%</td><td>2,15%</td><td>-0,68%</td><td>2,73%</td><td>3,82%</td><td>1,47%</td></tr><tr><td>IPCA<sup>13</sup></td><td>1,76%</td><td>0,26%</td><td>0,71%</td><td>1,50%</td><td>0,39%</td><td>0,72%</td><td>1,88%</td><td>0,70%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-5.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 52,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 152,
+      "bottom_right_y": 130,
+      "confidence_scores": null,
+      "content": "## Resultados",
+      "top_left_x": 47,
+      "top_left_y": 109,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 321,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Demonstração do Resultado<br/>(R$ milhões)</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>4T19X3T19</th><th>4T19x4T18</th></tr></thead><tr><td>Margem Financeira</td><td>192</td><td>183</td><td>166</td><td>200</td><td>179</td><td>200</td><td>199</td><td>164</td><td>5,5%</td><td>7,6%</td></tr><tr><td>Receitas de Prestação de Serviços</td><td>95</td><td>94</td><td>92</td><td>85</td><td>89</td><td>86</td><td>82</td><td>77</td><td>1,7%</td><td>6,6%</td></tr><tr><td>Despesas de Pessoal</td><td>(97)</td><td>(90)</td><td>(90)</td><td>(90)</td><td>(94)</td><td>(90)</td><td>(89)</td><td>(87)</td><td>6,8%</td><td>2,6%</td></tr><tr><td>Outras Despesas Administrativas</td><td>(78)</td><td>(74)</td><td>(70)</td><td>(68)</td><td>(70)</td><td>(66)</td><td>(66)</td><td>(66)</td><td>5,7%</td><td>12,2%</td></tr><tr><td>Resultado Operacional</td><td>45</td><td>91</td><td>69</td><td>97</td><td>82</td><td>100</td><td>97</td><td>56</td><td>-51,0%</td><td>-45,1%</td></tr><tr><td>Resultado Antes da Tributação</td><td>42</td><td>91</td><td>69</td><td>98</td><td>81</td><td>99</td><td>99</td><td>60</td><td>-53,7%</td><td>-47,7%</td></tr><tr><td>Juros Sobre o Capital Próprio</td><td>45,0</td><td>19,5</td><td>24,5</td><td>19,5</td><td>31,2</td><td>26,9</td><td>17,1</td><td>12,9</td><td>129,7%</td><td>43,6%</td></tr><tr><td>Lucro Líquido</td><td>47</td><td>58</td><td>46</td><td>63</td><td>45</td><td>55</td><td>58</td><td>23</td><td>-19,9%</td><td>4,1%</td></tr></table>",
+      "table_id": "tbl-6.html",
+      "top_left_x": 47,
+      "top_left_y": 137,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 261,
+      "bottom_right_y": 366,
+      "confidence_scores": null,
+      "content": "### Lucro Líquido e Rentabilidade",
+      "top_left_x": 47,
+      "top_left_y": 347,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 510,
+      "confidence_scores": null,
+      "content": "No acumulado dos doze meses de 2019, o Lucro Líquido alcançou resultado recorde de R$ 214 milhões, evolução de 18,1% contra 2018. Destaque positivo para a expansão das receitas de serviços (+9,2%), as receitas de operações de crédito em (+4,7%) e manutenção do patamar de resultados com títulos e valores mobiliários. O quarto trimestre do ano registrou Lucro Líquido de R$ 47 milhões impactado, diretamente, pela provisão de despesas com participações estatutárias no lucro ficando menor na comparação com trimestre anterior, e aumento de 4,1% em relação ao mesmo trimestre do ano 2018.",
+      "top_left_x": 47,
+      "top_left_y": 376,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 613,
+      "confidence_scores": null,
+      "content": "Contra o mesmo período do ano de 2018 os fatores recorrentes impactantes foram, o crescimento das receitas de crédito (+3,8%) acompanhando o crescimento do saldo das operações de crédito (+4,5%), queda do resultado com tesouraria, compensado pela forte redução de custos com captação, ambos motivados pelos efeitos da taxa de juros/Selic, menores despesas com risco de crédito (-2,4%) e expansão das receitas com serviços (+6,6%).",
+      "top_left_x": 47,
+      "top_left_y": 521,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 700,
+      "confidence_scores": null,
+      "content": "O resultado operacional em 2019 atingiu R$ 302 milhões, impactado por provisão fiscal, enquanto, o resultado operacional recorrente somou R$ 344 milhões, crescente 2,9% contra o mesmo período de 2018. Nas comparações trimestrais, o fato não recorrente supracitado manteve o mesmo efeito no resultado operacional do quarto trimestre.",
+      "top_left_x": 47,
+      "top_left_y": 625,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "4 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9904034057397582,
+     "minimum_page_confidence_score": 0.28876775076710065,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 3,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n## Resultados\n\n[tbl-6.html](tbl-6.html)\n\n### Lucro Líquido e Rentabilidade\n\nNo acumulado dos doze meses de 2019, o Lucro Líquido alcançou resultado recorde de R$ 214 milhões, evolução de 18,1% contra 2018. Destaque positivo para a expansão das receitas de serviços (+9,2%), as receitas de operações de crédito em (+4,7%) e manutenção do patamar de resultados com títulos e valores mobiliários. O quarto trimestre do ano registrou Lucro Líquido de R$ 47 milhões impactado, diretamente, pela provisão de despesas com participações estatutárias no lucro ficando menor na comparação com trimestre anterior, e aumento de 4,1% em relação ao mesmo trimestre do ano 2018.\n\nContra o mesmo período do ano de 2018 os fatores recorrentes impactantes foram, o crescimento das receitas de crédito (+3,8%) acompanhando o crescimento do saldo das operações de crédito (+4,5%), queda do resultado com tesouraria, compensado pela forte redução de custos com captação, ambos motivados pelos efeitos da taxa de juros/Selic, menores despesas com risco de crédito (-2,4%) e expansão das receitas com serviços (+6,6%).\n\nO resultado operacional em 2019 atingiu R$ 302 milhões, impactado por provisão fiscal, enquanto, o resultado operacional recorrente somou R$ 344 milhões, crescente 2,9% contra o mesmo período de 2018. Nas comparações trimestrais, o fato não recorrente supracitado manteve o mesmo efeito no resultado operacional do quarto trimestre.\n\n4 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Demonstração do Resultado<br/>(R$ milhões)</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>4T19X3T19</th><th>4T19x4T18</th></tr></thead><tr><td>Margem Financeira</td><td>192</td><td>183</td><td>166</td><td>200</td><td>179</td><td>200</td><td>199</td><td>164</td><td>5,5%</td><td>7,6%</td></tr><tr><td>Receitas de Prestação de Serviços</td><td>95</td><td>94</td><td>92</td><td>85</td><td>89</td><td>86</td><td>82</td><td>77</td><td>1,7%</td><td>6,6%</td></tr><tr><td>Despesas de Pessoal</td><td>(97)</td><td>(90)</td><td>(90)</td><td>(90)</td><td>(94)</td><td>(90)</td><td>(89)</td><td>(87)</td><td>6,8%</td><td>2,6%</td></tr><tr><td>Outras Despesas Administrativas</td><td>(78)</td><td>(74)</td><td>(70)</td><td>(68)</td><td>(70)</td><td>(66)</td><td>(66)</td><td>(66)</td><td>5,7%</td><td>12,2%</td></tr><tr><td>Resultado Operacional</td><td>45</td><td>91</td><td>69</td><td>97</td><td>82</td><td>100</td><td>97</td><td>56</td><td>-51,0%</td><td>-45,1%</td></tr><tr><td>Resultado Antes da Tributação</td><td>42</td><td>91</td><td>69</td><td>98</td><td>81</td><td>99</td><td>99</td><td>60</td><td>-53,7%</td><td>-47,7%</td></tr><tr><td>Juros Sobre o Capital Próprio</td><td>45,0</td><td>19,5</td><td>24,5</td><td>19,5</td><td>31,2</td><td>26,9</td><td>17,1</td><td>12,9</td><td>129,7%</td><td>43,6%</td></tr><tr><td>Lucro Líquido</td><td>47</td><td>58</td><td>46</td><td>63</td><td>45</td><td>55</td><td>58</td><td>23</td><td>-19,9%</td><td>4,1%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-6.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 602,
+      "bottom_right_y": 428,
+      "confidence_scores": null,
+      "content": "![img-2.jpeg](img-2.jpeg)",
+      "image_id": "img-2.jpeg",
+      "top_left_x": 115,
+      "top_left_y": 110,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 503,
+      "confidence_scores": null,
+      "content": "No quarto trimestre do ano, o Lucro Líquido por ação foi de R$ 0,15, acumulando o valor de R$ 0,68 nos últimos doze meses. Nesse período, o Retorno sobre o Patrimônio Líquido Médio (ROE) foi de 13,8%.",
+      "top_left_x": 46,
+      "top_left_y": 447,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 189,
+      "bottom_right_y": 549,
+      "confidence_scores": null,
+      "content": "### **Margem Financeira**",
+      "top_left_x": 46,
+      "top_left_y": 531,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 766,
+      "confidence_scores": null,
+      "content": "A Margem Financeira registrou R$ 192 milhões no quarto trimestre do ano, aumentos de 5,5% na comparação com o trimestre anterior e 7,6% contra o mesmo período do ano anterior. Os itens que impactaram o resultado foram: i) as receitas com operações de crédito (-3,4% em 3 meses e +3,8% em 12 meses); ii) a despesa com provisões de crédito (-22,8% em 3 meses e -2,4% em 12 meses) e o menor custo com captação no período (-24,5% em 3 meses e -35,2 em 12 meses). No acumulado do ano, a Margem Financeira atingiu R$ 741 milhões, estável contra 2018, influenciado pelos mesmos fatores. As receitas com Juros$^{14}$ retraíram substancialmente durante o ano e no quarto trimestre, motivadas diretamente pela redução gradativa dos juros Selic no decorrer do ano, mesmo, contra efeito da retomada do crescimento das operações de crédito (+4,5%) e da elevação dos recursos aplicados em títulos e valores mobiliários (+9,1%), principalmente em títulos privados (+45,0%).",
+      "top_left_x": 46,
+      "top_left_y": 560,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 218,
+      "bottom_right_y": 929,
+      "confidence_scores": null,
+      "content": "$^{14}$ Receitas da Intermediação Financeira",
+      "top_left_x": 46,
+      "top_left_y": 916,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "5 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9763790498455289,
+     "minimum_page_confidence_score": 0.2884625386615692,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 602,
+      "bottom_right_y": 428,
+      "id": "img-2.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 115,
+      "top_left_y": 110
+     }
+    ],
+    "index": 4,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n![img-2.jpeg](img-2.jpeg)\n\nNo quarto trimestre do ano, o Lucro Líquido por ação foi de R$ 0,15, acumulando o valor de R$ 0,68 nos últimos doze meses. Nesse período, o Retorno sobre o Patrimônio Líquido Médio (ROE) foi de 13,8%.\n\n### **Margem Financeira**\n\nA Margem Financeira registrou R$ 192 milhões no quarto trimestre do ano, aumentos de 5,5% na comparação com o trimestre anterior e 7,6% contra o mesmo período do ano anterior. Os itens que impactaram o resultado foram: i) as receitas com operações de crédito (-3,4% em 3 meses e +3,8% em 12 meses); ii) a despesa com provisões de crédito (-22,8% em 3 meses e -2,4% em 12 meses) e o menor custo com captação no período (-24,5% em 3 meses e -35,2 em 12 meses). No acumulado do ano, a Margem Financeira atingiu R$ 741 milhões, estável contra 2018, influenciado pelos mesmos fatores. As receitas com Juros$^{14}$ retraíram substancialmente durante o ano e no quarto trimestre, motivadas diretamente pela redução gradativa dos juros Selic no decorrer do ano, mesmo, contra efeito da retomada do crescimento das operações de crédito (+4,5%) e da elevação dos recursos aplicados em títulos e valores mobiliários (+9,1%), principalmente em títulos privados (+45,0%).\n\n$^{14}$ Receitas da Intermediação Financeira\n\n5 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 595,
+      "bottom_right_y": 370,
+      "confidence_scores": null,
+      "content": "![img-3.jpeg](img-3.jpeg)",
+      "image_id": "img-3.jpeg",
+      "top_left_x": 124,
+      "top_left_y": 105,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 294,
+      "bottom_right_y": 422,
+      "confidence_scores": null,
+      "content": "### Receitas de Prestação de Serviços",
+      "top_left_x": 46,
+      "top_left_y": 403,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 599,
+      "confidence_scores": null,
+      "content": "No quarto trimestre, as Receitas de Prestação de Serviços somaram R$ 95 milhões, aumento de 1,7% contra o trimestre anterior e de 6,6% contra o mesmo trimestre de 2018, diante da elevação das receitas com gestão e administração de fundos (+6,5% em 3 meses e +35,7% em 12 meses), das receitas com cartões (+6,8% em três meses e +3,7% em 12 meses) e das receitas com operações de crédito (+21,4% em 3 meses e +9,5% em 12 meses). No acumulado do ano, as receitas com serviços registraram R$ 366 milhões, crescendo 9,2% contra o mesmo período de 2018, refletindo a estratégia focal de maximizar nossa sinergia relacional com a base de clientes (1.150 mil clientes) e incorporando como diretriz superior em nosso atendimento “a experiência do cliente”.",
+      "top_left_x": 46,
+      "top_left_y": 431,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 595,
+      "bottom_right_y": 880,
+      "confidence_scores": null,
+      "content": "![img-4.jpeg](img-4.jpeg)",
+      "image_id": "img-4.jpeg",
+      "top_left_x": 127,
+      "top_left_y": 612,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "6 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9674572224225982,
+     "minimum_page_confidence_score": 0.27189422243281647,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 595,
+      "bottom_right_y": 370,
+      "id": "img-3.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 124,
+      "top_left_y": 105
+     },
+     {
+      "bottom_right_x": 595,
+      "bottom_right_y": 880,
+      "id": "img-4.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 127,
+      "top_left_y": 612
+     }
+    ],
+    "index": 5,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n![img-3.jpeg](img-3.jpeg)\n\n### Receitas de Prestação de Serviços\n\nNo quarto trimestre, as Receitas de Prestação de Serviços somaram R$ 95 milhões, aumento de 1,7% contra o trimestre anterior e de 6,6% contra o mesmo trimestre de 2018, diante da elevação das receitas com gestão e administração de fundos (+6,5% em 3 meses e +35,7% em 12 meses), das receitas com cartões (+6,8% em três meses e +3,7% em 12 meses) e das receitas com operações de crédito (+21,4% em 3 meses e +9,5% em 12 meses). No acumulado do ano, as receitas com serviços registraram R$ 366 milhões, crescendo 9,2% contra o mesmo período de 2018, refletindo a estratégia focal de maximizar nossa sinergia relacional com a base de clientes (1.150 mil clientes) e incorporando como diretriz superior em nosso atendimento “a experiência do cliente”.\n\n![img-4.jpeg](img-4.jpeg)\n\n6 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 316,
+      "bottom_right_y": 127,
+      "confidence_scores": null,
+      "content": "## Despesa de Pessoal e Administrativas",
+      "top_left_x": 46,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 342,
+      "confidence_scores": null,
+      "content": "No quarto trimestre de 2019, as Despesas Administrativas (pessoal e outras) somaram R$ 175 milhões, elevação de 6,1% contra o trimestre anterior e de 6,7% contra o mesmo trimestre de 2018. As Despesas de Pessoal atingiram o valor de R$ 97 milhões, elevação de 6,8% em relação ao trimestre anterior e 2,6% ante o mesmo trimestre de 2018 que em suma, estão ligados a impactos de convenção coletiva da categoria e de custos com Plano de Desligamento Voluntário - PDV. As Outras Despesas Administrativas cresceram 5,7% em relação ao trimestre anterior e 12,2% na comparação com o mesmo trimestre de 2018, decorrente do reajuste de custos com a renovação de contratos de atividades de retaguarda, principalmente os serviços de suporte e atendimento a clientes e usuários, além da adição de novos serviços tecnológicos em meio a nossa transformação digital. O BANESTES mantém o trabalho contínuo de avaliação para redução de despesas sem impactos negativos na qualidade dos serviços prestados.",
+      "top_left_x": 46,
+      "top_left_y": 138,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 602,
+      "bottom_right_y": 373,
+      "confidence_scores": null,
+      "content": "O Índice de Cobertura Geral em 2019 atingiu 55,6%, superior 3,3 p.p. ao ano de 2018.",
+      "top_left_x": 46,
+      "top_left_y": 355,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 628,
+      "bottom_right_y": 654,
+      "confidence_scores": null,
+      "content": "![img-5.jpeg](img-5.jpeg)",
+      "image_id": "img-5.jpeg",
+      "top_left_x": 97,
+      "top_left_y": 386,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 400,
+      "bottom_right_y": 708,
+      "confidence_scores": null,
+      "content": "## Resultado de Provisão para Devedores Duvidosos",
+      "top_left_x": 46,
+      "top_left_y": 690,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 868,
+      "confidence_scores": null,
+      "content": "O Resultado de Provisão para Devedores Duvidosos somou R$ 32 milhões no trimestre, queda de 22,8% contra o terceiro trimestre do ano e 2,4% contra o mesmo trimestre de 2018. De outubro a dezembro, foram registrados R$ 35 milhões (+22,9% em 3 meses e +35,4 em 12 meses) como reversões, enquanto as despesas de provisões somaram R$ 67 milhões (-5,6% em 3 meses e +14,2%). O Resultado de Provisão para Devedores Duvidosos em 2019 registrou o valor de R$ 151 milhões, crescente 21,4% sobre 2018, motivados pelo cenário econômico local e por operações voltadas ao segmento corporativo. As despesas com provisões de crédito geradas nos últimos doze meses representaram 2,2% do total da Carteira de Crédito Ampliada.",
+      "top_left_x": 46,
+      "top_left_y": 719,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "7 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9799421877307587,
+     "minimum_page_confidence_score": 0.3528746768278066,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 628,
+      "bottom_right_y": 654,
+      "id": "img-5.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 97,
+      "top_left_y": 386
+     }
+    ],
+    "index": 6,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n## Despesa de Pessoal e Administrativas\n\nNo quarto trimestre de 2019, as Despesas Administrativas (pessoal e outras) somaram R$ 175 milhões, elevação de 6,1% contra o trimestre anterior e de 6,7% contra o mesmo trimestre de 2018. As Despesas de Pessoal atingiram o valor de R$ 97 milhões, elevação de 6,8% em relação ao trimestre anterior e 2,6% ante o mesmo trimestre de 2018 que em suma, estão ligados a impactos de convenção coletiva da categoria e de custos com Plano de Desligamento Voluntário - PDV. As Outras Despesas Administrativas cresceram 5,7% em relação ao trimestre anterior e 12,2% na comparação com o mesmo trimestre de 2018, decorrente do reajuste de custos com a renovação de contratos de atividades de retaguarda, principalmente os serviços de suporte e atendimento a clientes e usuários, além da adição de novos serviços tecnológicos em meio a nossa transformação digital. O BANESTES mantém o trabalho contínuo de avaliação para redução de despesas sem impactos negativos na qualidade dos serviços prestados.\n\nO Índice de Cobertura Geral em 2019 atingiu 55,6%, superior 3,3 p.p. ao ano de 2018.\n\n![img-5.jpeg](img-5.jpeg)\n\n## Resultado de Provisão para Devedores Duvidosos\n\nO Resultado de Provisão para Devedores Duvidosos somou R$ 32 milhões no trimestre, queda de 22,8% contra o terceiro trimestre do ano e 2,4% contra o mesmo trimestre de 2018. De outubro a dezembro, foram registrados R$ 35 milhões (+22,9% em 3 meses e +35,4 em 12 meses) como reversões, enquanto as despesas de provisões somaram R$ 67 milhões (-5,6% em 3 meses e +14,2%). O Resultado de Provisão para Devedores Duvidosos em 2019 registrou o valor de R$ 151 milhões, crescente 21,4% sobre 2018, motivados pelo cenário econômico local e por operações voltadas ao segmento corporativo. As despesas com provisões de crédito geradas nos últimos doze meses representaram 2,2% do total da Carteira de Crédito Ampliada.\n\n7 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 163,
+      "confidence_scores": null,
+      "content": "O BANESTES promove ações direcionadas à adequação da política e processos de concessão de crédito, para a maior qualidade das garantias adquiridas nas novas concessões e ao contínuo aprimoramento dos processos de renegociação e recuperação de crédito.",
+      "top_left_x": 45,
+      "top_left_y": 107,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 444,
+      "confidence_scores": null,
+      "content": "![img-6.jpeg](img-6.jpeg)",
+      "image_id": "img-6.jpeg",
+      "top_left_x": 114,
+      "top_left_y": 172,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 399,
+      "bottom_right_y": 488,
+      "confidence_scores": null,
+      "content": "### **NPL Creation e Índice de Inadimplência > 90 dias**",
+      "top_left_x": 45,
+      "top_left_y": 469,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 610,
+      "confidence_scores": null,
+      "content": "O Índice de Inadimplência da Carteira de Crédito Ampliada (> 90 dias) encerrou o trimestre em 1,7%, queda em relação ao trimestre anterior de 0,8 p.p. e recuo de 1,0 p.p. ao registrado no mesmo período de 2018. Na Carteira de Crédito Comercial, a inadimplência (> 90 dias) encerrou o trimestre registrando 2,7%, queda de 1,0 p.p. contra o trimestre anterior e 1,1 p.p. ante o mesmo período de 2018. As operações com atraso superior a 90 dias no segmento de pessoa física atingiram 2,5%, enquanto no segmento corporativo fechou em 2,9%.",
+      "top_left_x": 45,
+      "top_left_y": 498,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 679,
+      "confidence_scores": null,
+      "content": "O NPL Creation, que representa as operações de crédito que passaram a ser devedoras acima de 90 dias, apresentou saldo de R$ 113 milhões no encerramento do trimestre, redução de 27,0% em relação ao terceiro trimestre e redução de 28,4% sobre o quarto trimestre de 2018.",
+      "top_left_x": 45,
+      "top_left_y": 623,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "8 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9756010690035484,
+     "minimum_page_confidence_score": 0.29322243130508757,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 612,
+      "bottom_right_y": 444,
+      "id": "img-6.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 114,
+      "top_left_y": 172
+     }
+    ],
+    "index": 7,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\nO BANESTES promove ações direcionadas à adequação da política e processos de concessão de crédito, para a maior qualidade das garantias adquiridas nas novas concessões e ao contínuo aprimoramento dos processos de renegociação e recuperação de crédito.\n\n![img-6.jpeg](img-6.jpeg)\n\n### **NPL Creation e Índice de Inadimplência > 90 dias**\n\nO Índice de Inadimplência da Carteira de Crédito Ampliada (> 90 dias) encerrou o trimestre em 1,7%, queda em relação ao trimestre anterior de 0,8 p.p. e recuo de 1,0 p.p. ao registrado no mesmo período de 2018. Na Carteira de Crédito Comercial, a inadimplência (> 90 dias) encerrou o trimestre registrando 2,7%, queda de 1,0 p.p. contra o trimestre anterior e 1,1 p.p. ante o mesmo período de 2018. As operações com atraso superior a 90 dias no segmento de pessoa física atingiram 2,5%, enquanto no segmento corporativo fechou em 2,9%.\n\nO NPL Creation, que representa as operações de crédito que passaram a ser devedoras acima de 90 dias, apresentou saldo de R$ 113 milhões no encerramento do trimestre, redução de 27,0% em relação ao terceiro trimestre e redução de 28,4% sobre o quarto trimestre de 2018.\n\n8 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 587,
+      "bottom_right_y": 379,
+      "confidence_scores": null,
+      "content": "![img-7.jpeg](img-7.jpeg)",
+      "image_id": "img-7.jpeg",
+      "top_left_x": 140,
+      "top_left_y": 113,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 680,
+      "bottom_right_y": 458,
+      "confidence_scores": null,
+      "content": "A classificação por níveis de risco das operações que compõem a carteira de crédito comercial foi de 88,9% nos níveis de risco AA – C, 6,9% nos níveis D – G, e apenas 4,2% encontravam-se no nível de risco H.",
+      "top_left_x": 46,
+      "top_left_y": 404,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 546,
+      "bottom_right_y": 778,
+      "confidence_scores": null,
+      "content": "![img-8.jpeg](img-8.jpeg)",
+      "image_id": "img-8.jpeg",
+      "top_left_x": 239,
+      "top_left_y": 470,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 870,
+      "confidence_scores": null,
+      "content": "Importante frisar, que o BANESTES atua constantemente no aperfeiçoamento da sua política de concessão de crédito, buscando o equilíbrio entre a ampliação do crédito e o controle da inadimplência, dentro dos parâmetros aceitáveis de tolerância a risco.",
+      "top_left_x": 46,
+      "top_left_y": 814,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "9 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 91,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9591773661883686,
+     "minimum_page_confidence_score": 0.20199328948624518,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 587,
+      "bottom_right_y": 379,
+      "id": "img-7.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 140,
+      "top_left_y": 113
+     },
+     {
+      "bottom_right_x": 546,
+      "bottom_right_y": 778,
+      "id": "img-8.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 239,
+      "top_left_y": 470
+     }
+    ],
+    "index": 8,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n![img-7.jpeg](img-7.jpeg)\n\nA classificação por níveis de risco das operações que compõem a carteira de crédito comercial foi de 88,9% nos níveis de risco AA – C, 6,9% nos níveis D – G, e apenas 4,2% encontravam-se no nível de risco H.\n\n![img-8.jpeg](img-8.jpeg)\n\nImportante frisar, que o BANESTES atua constantemente no aperfeiçoamento da sua política de concessão de crédito, buscando o equilíbrio entre a ampliação do crédito e o controle da inadimplência, dentro dos parâmetros aceitáveis de tolerância a risco.\n\n9 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 52,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 165,
+      "bottom_right_y": 130,
+      "confidence_scores": null,
+      "content": "## Patrimoniais",
+      "top_left_x": 46,
+      "top_left_y": 109,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 316,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Balanço Patrimonial (R$ milhões)</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>4T19X3T19</th><th>4T19X4T18</th></tr></thead><tr><td>Ativos Totais</td><td>23.725</td><td>24.258</td><td>27.965</td><td>25.592</td><td>27.928</td><td>28.830</td><td>23.527</td><td>19.571</td><td>-2,2%</td><td>-15,0%</td></tr><tr><td>Carteira de Crédito Ampliada</td><td>6.800</td><td>6.259</td><td>6.336</td><td>5.739</td><td>5.873</td><td>5.896</td><td>5.720</td><td>5.647</td><td>8,6%</td><td>15,8%</td></tr><tr><td>Patrimônio Líquido</td><td>1.608</td><td>1.568</td><td>1.531</td><td>1.523</td><td>1.492</td><td>1.441</td><td>1.413</td><td>1.394</td><td>2,6%</td><td>7,8%</td></tr><tr><td>Depósitos Totais</td><td>11.662</td><td>11.669</td><td>12.349</td><td>11.166</td><td>10.717</td><td>10.925</td><td>10.506</td><td>10.103</td><td>-0,1%</td><td>8,8%</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>10.458</td><td>9.693</td><td>9.637</td><td>9.085</td><td>9.585</td><td>9.495</td><td>9.193</td><td>8.345</td><td>7,9%</td><td>9,1%</td></tr><tr><td>Captação Mercado Aberto</td><td>8.742</td><td>9.164</td><td>12.286</td><td>11.095</td><td>13.796</td><td>14.449</td><td>9.634</td><td>6.084</td><td>-4,6%</td><td>-36,6%</td></tr><tr><td>Recursos Captados e Administrados</td><td>26.485</td><td>26.807</td><td>29.429</td><td>26.610</td><td>28.638</td><td>29.564</td><td>23.993</td><td>20.247</td><td>-1,2%</td><td>-7,5%</td></tr></table>",
+      "table_id": "tbl-7.html",
+      "top_left_x": 46,
+      "top_left_y": 145,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 137,
+      "bottom_right_y": 370,
+      "confidence_scores": null,
+      "content": "### Ativos Totais",
+      "top_left_x": 46,
+      "top_left_y": 352,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 512,
+      "confidence_scores": null,
+      "content": "Ao final de dezembro de 2019, os Ativos Totais registraram saldo de R$ 23,7 bilhões, retração de 2,2 em comparação ao trimestre anterior e 15,0% contra o mesmo trimestre do ano anterior. Tal posição foi impactada pela oscilação do saldo das aplicações interfinanceiras de liquidez que reduziu em 41,8 em 12 meses devido às condições de mercado e a estratégia de direcionamento do fluxo de recursos à aquisição de ativos financeiros especialmente os títulos privados aproveitando a abertura das taxas dos papéis. Os ativos (excluído as aplicações interfinanceiras de liquidez) cresceram 5,7% contra o trimestre anterior e 7,6% em 12 meses.",
+      "top_left_x": 46,
+      "top_left_y": 380,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 639,
+      "bottom_right_y": 848,
+      "confidence_scores": null,
+      "content": "![img-9.jpeg](img-9.jpeg)",
+      "image_id": "img-9.jpeg",
+      "top_left_x": 103,
+      "top_left_y": 527,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 155,
+      "bottom_right_y": 868,
+      "confidence_scores": null,
+      "content": "R$ Milhões",
+      "top_left_x": 103,
+      "top_left_y": 855,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "10 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9864375197365147,
+     "minimum_page_confidence_score": 0.3209749755925352,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 639,
+      "bottom_right_y": 848,
+      "id": "img-9.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 103,
+      "top_left_y": 527
+     }
+    ],
+    "index": 9,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n## Patrimoniais\n\n[tbl-7.html](tbl-7.html)\n\n### Ativos Totais\n\nAo final de dezembro de 2019, os Ativos Totais registraram saldo de R$ 23,7 bilhões, retração de 2,2 em comparação ao trimestre anterior e 15,0% contra o mesmo trimestre do ano anterior. Tal posição foi impactada pela oscilação do saldo das aplicações interfinanceiras de liquidez que reduziu em 41,8 em 12 meses devido às condições de mercado e a estratégia de direcionamento do fluxo de recursos à aquisição de ativos financeiros especialmente os títulos privados aproveitando a abertura das taxas dos papéis. Os ativos (excluído as aplicações interfinanceiras de liquidez) cresceram 5,7% contra o trimestre anterior e 7,6% em 12 meses.\n\n![img-9.jpeg](img-9.jpeg)\n\nR$ Milhões\n\n10 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Balanço Patrimonial (R$ milhões)</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação %</th></tr><tr><th>4T19X3T19</th><th>4T19X4T18</th></tr></thead><tr><td>Ativos Totais</td><td>23.725</td><td>24.258</td><td>27.965</td><td>25.592</td><td>27.928</td><td>28.830</td><td>23.527</td><td>19.571</td><td>-2,2%</td><td>-15,0%</td></tr><tr><td>Carteira de Crédito Ampliada</td><td>6.800</td><td>6.259</td><td>6.336</td><td>5.739</td><td>5.873</td><td>5.896</td><td>5.720</td><td>5.647</td><td>8,6%</td><td>15,8%</td></tr><tr><td>Patrimônio Líquido</td><td>1.608</td><td>1.568</td><td>1.531</td><td>1.523</td><td>1.492</td><td>1.441</td><td>1.413</td><td>1.394</td><td>2,6%</td><td>7,8%</td></tr><tr><td>Depósitos Totais</td><td>11.662</td><td>11.669</td><td>12.349</td><td>11.166</td><td>10.717</td><td>10.925</td><td>10.506</td><td>10.103</td><td>-0,1%</td><td>8,8%</td></tr><tr><td>Títulos e Valores Mobiliários</td><td>10.458</td><td>9.693</td><td>9.637</td><td>9.085</td><td>9.585</td><td>9.495</td><td>9.193</td><td>8.345</td><td>7,9%</td><td>9,1%</td></tr><tr><td>Captação Mercado Aberto</td><td>8.742</td><td>9.164</td><td>12.286</td><td>11.095</td><td>13.796</td><td>14.449</td><td>9.634</td><td>6.084</td><td>-4,6%</td><td>-36,6%</td></tr><tr><td>Recursos Captados e Administrados</td><td>26.485</td><td>26.807</td><td>29.429</td><td>26.610</td><td>28.638</td><td>29.564</td><td>23.993</td><td>20.247</td><td>-1,2%</td><td>-7,5%</td></tr></table>",
+      "format": "html",
+      "id": "tbl-7.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 181,
+      "confidence_scores": null,
+      "content": "Gerenciando os recursos de forma a maximizar o retorno, foram investidos R$ 10,5 bilhões em títulos e valores mobiliários, expansão de 7,9% em relação ao trimestre anterior e de 9,1% contra o mesmo período do ano anterior. As operações de crédito registraram o saldo de R$ 3,84 bilhões, crescente 1,5% em 3 meses e 4,5% em 12 meses.",
+      "top_left_x": 46,
+      "top_left_y": 107,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 181,
+      "bottom_right_y": 222,
+      "confidence_scores": null,
+      "content": "### **Patrimônio Líquido**",
+      "top_left_x": 46,
+      "top_left_y": 204,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 325,
+      "confidence_scores": null,
+      "content": "O Patrimônio Líquido atingiu o saldo de R$ 1,6 bilhão no quarto trimestre de 2019, crescimento de 2,6% em relação ao trimestre anterior e de 7,8% se comparado ao mesmo período de 2018. O BANESTES mantém sólido crescimento do seu capital, fator indispensável para suportar o financiamento da atividade produtiva e as necessidades de clientes de forma eficiente e competitiva. A relação entre o Patrimônio Líquido e Ativo Total foi de 6,8%.",
+      "top_left_x": 46,
+      "top_left_y": 232,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 571,
+      "bottom_right_y": 649,
+      "confidence_scores": null,
+      "content": "![img-10.jpeg](img-10.jpeg)",
+      "image_id": "img-10.jpeg",
+      "top_left_x": 155,
+      "top_left_y": 341,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 188,
+      "bottom_right_y": 695,
+      "confidence_scores": null,
+      "content": "### **Carteira de Crédito**",
+      "top_left_x": 46,
+      "top_left_y": 677,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 836,
+      "confidence_scores": null,
+      "content": "A Carteira de Crédito Ampliada registrou o saldo de R$ 6,8 bilhões no quarto trimestre do ano, expansão de 8,6% ante o trimestre anterior e de 15,8% em relação ao mesmo período de 2018. As maiores evoluções do trimestre, em comparação ao mesmo trimestre de 2018, foram registradas pelas concessões na modalidade de empréstimos (+1,5% em 3 meses e +8,3% em 12 meses), destaque para Consignação em Folha (+9,9% em 12 meses) e Crédito Pessoal (+20,4% em 12 meses); pelos financiamentos imobiliários (+8,6% em 12 meses), e pelas operações de cartão de crédito (+12,7% em 12 meses).",
+      "top_left_x": 46,
+      "top_left_y": 705,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "11 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9786691189331316,
+     "minimum_page_confidence_score": 0.32890215233567394,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 571,
+      "bottom_right_y": 649,
+      "id": "img-10.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 155,
+      "top_left_y": 341
+     }
+    ],
+    "index": 10,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\nGerenciando os recursos de forma a maximizar o retorno, foram investidos R$ 10,5 bilhões em títulos e valores mobiliários, expansão de 7,9% em relação ao trimestre anterior e de 9,1% contra o mesmo período do ano anterior. As operações de crédito registraram o saldo de R$ 3,84 bilhões, crescente 1,5% em 3 meses e 4,5% em 12 meses.\n\n### **Patrimônio Líquido**\n\nO Patrimônio Líquido atingiu o saldo de R$ 1,6 bilhão no quarto trimestre de 2019, crescimento de 2,6% em relação ao trimestre anterior e de 7,8% se comparado ao mesmo período de 2018. O BANESTES mantém sólido crescimento do seu capital, fator indispensável para suportar o financiamento da atividade produtiva e as necessidades de clientes de forma eficiente e competitiva. A relação entre o Patrimônio Líquido e Ativo Total foi de 6,8%.\n\n![img-10.jpeg](img-10.jpeg)\n\n### **Carteira de Crédito**\n\nA Carteira de Crédito Ampliada registrou o saldo de R$ 6,8 bilhões no quarto trimestre do ano, expansão de 8,6% ante o trimestre anterior e de 15,8% em relação ao mesmo período de 2018. As maiores evoluções do trimestre, em comparação ao mesmo trimestre de 2018, foram registradas pelas concessões na modalidade de empréstimos (+1,5% em 3 meses e +8,3% em 12 meses), destaque para Consignação em Folha (+9,9% em 12 meses) e Crédito Pessoal (+20,4% em 12 meses); pelos financiamentos imobiliários (+8,6% em 12 meses), e pelas operações de cartão de crédito (+12,7% em 12 meses).\n\n11 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 617,
+      "bottom_right_y": 486,
+      "confidence_scores": null,
+      "content": "![img-11.jpeg](img-11.jpeg)",
+      "image_id": "img-11.jpeg",
+      "top_left_x": 110,
+      "top_left_y": 108,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 601,
+      "confidence_scores": null,
+      "content": "A Carteira de Crédito Comercial (conceito Bacen) registrou o saldo de R$ 4,2 bilhões, maior 1,9% contra o trimestre anterior e crescente 3,2% em relação ao mesmo período de 2018. Desse montante, R$ 2,7 bilhões (63,5%) são de operações com pessoas físicas e R$ 1,5 bilhão com pessoas jurídicas (36,5%). Da carteira de pessoa jurídica, 81,0% são concessões a micro, pequenas e médias empresas, e 19,0% a grandes empresas.",
+      "top_left_x": 45,
+      "top_left_y": 508,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 725,
+      "confidence_scores": null,
+      "content": "O BANESTES possui papel fundamental na economia do Estado do Espírito Santo, participando ativamente no financiamento do consumo, da produção e do investimento local, apoiando de forma segura e rentável o processo de democratização do crédito e inclusão financeira. Para isso, utiliza como estratégia a diversificação da oferta do crédito a condições comerciais competitivas e sustentáveis, com foco na aplicação dos recursos prioritariamente nas carteiras com menor risco e com maiores garantias.",
+      "top_left_x": 45,
+      "top_left_y": 613,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 164,
+      "bottom_right_y": 788,
+      "confidence_scores": null,
+      "content": "### **Depósitos Totais**",
+      "top_left_x": 45,
+      "top_left_y": 769,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 873,
+      "confidence_scores": null,
+      "content": "Os Depósitos Totais atingiram um volume de R$ 11,7 bilhões, estável (-0,1%) em comparação ao trimestre anterior e 8,8% superior ao mesmo período do ano de 2018. Na comparação em 12 meses, vale ressaltar a evolução dos saldos captados em depósitos a prazo (+12,5%) e em depósitos de poupança (+5,9%).",
+      "top_left_x": 45,
+      "top_left_y": 799,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "12 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9751860976187191,
+     "minimum_page_confidence_score": 0.20631817518712825,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 617,
+      "bottom_right_y": 486,
+      "id": "img-11.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 110,
+      "top_left_y": 108
+     }
+    ],
+    "index": 11,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n![img-11.jpeg](img-11.jpeg)\n\nA Carteira de Crédito Comercial (conceito Bacen) registrou o saldo de R$ 4,2 bilhões, maior 1,9% contra o trimestre anterior e crescente 3,2% em relação ao mesmo período de 2018. Desse montante, R$ 2,7 bilhões (63,5%) são de operações com pessoas físicas e R$ 1,5 bilhão com pessoas jurídicas (36,5%). Da carteira de pessoa jurídica, 81,0% são concessões a micro, pequenas e médias empresas, e 19,0% a grandes empresas.\n\nO BANESTES possui papel fundamental na economia do Estado do Espírito Santo, participando ativamente no financiamento do consumo, da produção e do investimento local, apoiando de forma segura e rentável o processo de democratização do crédito e inclusão financeira. Para isso, utiliza como estratégia a diversificação da oferta do crédito a condições comerciais competitivas e sustentáveis, com foco na aplicação dos recursos prioritariamente nas carteiras com menor risco e com maiores garantias.\n\n### **Depósitos Totais**\n\nOs Depósitos Totais atingiram um volume de R$ 11,7 bilhões, estável (-0,1%) em comparação ao trimestre anterior e 8,8% superior ao mesmo período do ano de 2018. Na comparação em 12 meses, vale ressaltar a evolução dos saldos captados em depósitos a prazo (+12,5%) e em depósitos de poupança (+5,9%).\n\n12 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 616,
+      "bottom_right_y": 500,
+      "confidence_scores": null,
+      "content": "![img-12.jpeg](img-12.jpeg)",
+      "image_id": "img-12.jpeg",
+      "top_left_x": 104,
+      "top_left_y": 109,
+      "type": "image"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 730,
+      "confidence_scores": null,
+      "content": "O BANESTES possui relacionamento com mais de 1.150 mil clientes (+3,3% em 12 meses), sendo 1.082 mil pessoas físicas e 68 mil pessoas jurídicas. Esses clientes movimentaram 736 mil contas correntes (+2,1% em 12 meses) e 586 mil contas poupança (+2,8% em 12 meses), registrando um aumento total de 2,4% em relação ao mesmo período de 2018. No trimestre, os recursos de terceiros captados e administrados atingiram o volume de R$ 26,5 bilhões, reduções de 1,2% em relação ao trimestre anterior e de 7,5% em relação à posição do mesmo período de 2018. Essa variação em 3 meses e 12 meses, foi decorrente da queda dos recursos de captações no mercado aberto (-4,6% em 3 meses e -36,6% em 12 meses) face a condições de mercado e a liquidação de letras financeiras e letras imobiliárias (-19,5% em 3 meses e -29,8% em 12 meses). É importante ressaltar o crescimento dos recursos administrados em fundos no período, crescente 4,3% contra o trimestre anterior e 69,8% em 12 meses.",
+      "top_left_x": 45,
+      "top_left_y": 525,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "13 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9780153393072208,
+     "minimum_page_confidence_score": 0.28071675503561344,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [
+     {
+      "bottom_right_x": 616,
+      "bottom_right_y": 500,
+      "id": "img-12.jpeg",
+      "image_annotation": null,
+      "image_base64": null,
+      "top_left_x": 104,
+      "top_left_y": 109
+     }
+    ],
+    "index": 12,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n![img-12.jpeg](img-12.jpeg)\n\nO BANESTES possui relacionamento com mais de 1.150 mil clientes (+3,3% em 12 meses), sendo 1.082 mil pessoas físicas e 68 mil pessoas jurídicas. Esses clientes movimentaram 736 mil contas correntes (+2,1% em 12 meses) e 586 mil contas poupança (+2,8% em 12 meses), registrando um aumento total de 2,4% em relação ao mesmo período de 2018. No trimestre, os recursos de terceiros captados e administrados atingiram o volume de R$ 26,5 bilhões, reduções de 1,2% em relação ao trimestre anterior e de 7,5% em relação à posição do mesmo período de 2018. Essa variação em 3 meses e 12 meses, foi decorrente da queda dos recursos de captações no mercado aberto (-4,6% em 3 meses e -36,6% em 12 meses) face a condições de mercado e a liquidação de letras financeiras e letras imobiliárias (-19,5% em 3 meses e -29,8% em 12 meses). É importante ressaltar o crescimento dos recursos administrados em fundos no período, crescente 4,3% contra o trimestre anterior e 69,8% em 12 meses.\n\n13 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 325,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## Indicadores de Desempenho",
+      "top_left_x": 45,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 684,
+      "bottom_right_y": 321,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Indicadores de Desempenho</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação % / p.p.</th></tr><tr><th>4T19X3T19</th><th>4T19X3T18</th></tr></thead><tr><td>Lucro Líquido por Ação</td><td>0,15</td><td>0,18</td><td>0,14</td><td>0,20</td><td>0,14</td><td>0,17</td><td>0,18</td><td>0,07</td><td>-19,9%</td><td>4,1%</td></tr><tr><td>Valor Patrimonial por Ação</td><td>5,09</td><td>4,96</td><td>4,85</td><td>4,82</td><td>4,72</td><td>4,56</td><td>4,47</td><td>4,41</td><td>2,6%</td><td>7,8%</td></tr><tr><td>ROA - Retorno Sobre Ativos Médios</td><td>0,8%</td><td>0,8%</td><td>0,8%</td><td>1,0%</td><td>0,7%</td><td>0,7%</td><td>0,8%</td><td>0,8%</td><td>0,0</td><td>0,1</td></tr><tr><td>Eficiência Operacional</td><td>54,7%</td><td>51,7%</td><td>52,6%</td><td>50,2%</td><td>54,4%</td><td>50,6%</td><td>51,8%</td><td>52,4%</td><td>2,9</td><td>0,2</td></tr><tr><td>Eficiência Operacional Ajustado ao Risco</td><td>60,8%</td><td>59,6%</td><td>62,0%</td><td>55,5%</td><td>61,1%</td><td>54,5%</td><td>55,2%</td><td>63,4%</td><td>1,2</td><td>-0,3</td></tr><tr><td>Valor de Mercado (R$ milhões)</td><td>2.030</td><td>1.893</td><td>1.786</td><td>1.565</td><td>1.315</td><td>1.181</td><td>1.090</td><td>1.312</td><td>7,3%</td><td>54,4%</td></tr><tr><td>Índice de Inadimplência &gt; 90 Dias</td><td>1,7%</td><td>2,5%</td><td>2,5%</td><td>2,8%</td><td>2,7%</td><td>2,4%</td><td>2,6%</td><td>3,0%</td><td>-0,8</td><td>-1,0</td></tr></table>",
+      "table_id": "tbl-8.html",
+      "top_left_x": 45,
+      "top_left_y": 145,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 250,
+      "bottom_right_y": 400,
+      "confidence_scores": null,
+      "content": "### Retorno sobre o Ativo (ROA)",
+      "top_left_x": 45,
+      "top_left_y": 381,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 685,
+      "bottom_right_y": 466,
+      "confidence_scores": null,
+      "content": "O Retorno sobre os Ativos Totais Médios (ROA) anualizado encerrou o quarto trimestre em 0,8%, mantendo-se estável em relação ao terceiro trimestre do ano e registrando aumento de 0,1 p.p. em relação ao mesmo período do ano anterior.",
+      "top_left_x": 45,
+      "top_left_y": 410,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 285,
+      "bottom_right_y": 529,
+      "confidence_scores": null,
+      "content": "### Índice de Eficiência Operacional",
+      "top_left_x": 45,
+      "top_left_y": 510,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 707,
+      "confidence_scores": null,
+      "content": "No fim do quarto trimestre, o Índice de Eficiência Operacional atingiu 54,7%, onde a despesa com provisão para participações estatutárias no lucro foi o fator preponderante para a variação negativa contra o terceiro trimestre do ano. No conceito ajustado ao risco, a Eficiência Operacional foi de 60,8%, também sob o mesmo efeito acima citado. Já a Eficiência Operacional no ano ficou em 52,3% (mesmo patamar de 2018) influenciados pelo aumento da margem financeira bruta$^{15}$ (+3,0%) e da receita com serviços (+9,2%) que compensaram a elevação de 4,7% das despesas operacionais (pessoal e outras administrativas); enquanto, a Eficiência Operacional Ajustada ao Risco fixou-se em 59,4% impactada por maiores provisões para crédito (+21,4%).",
+      "top_left_x": 45,
+      "top_left_y": 539,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 666,
+      "bottom_right_y": 930,
+      "confidence_scores": null,
+      "content": "$^{15}$ Trata-se do resultado bruto da intermediação financeira excluído o impacto do resultado da provisão para operações de crédito e outros créditos.",
+      "top_left_x": 45,
+      "top_left_y": 915,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "14 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9880379024399626,
+     "minimum_page_confidence_score": 0.2738228866129974,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 13,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n## Indicadores de Desempenho\n\n[tbl-8.html](tbl-8.html)\n\n### Retorno sobre o Ativo (ROA)\n\nO Retorno sobre os Ativos Totais Médios (ROA) anualizado encerrou o quarto trimestre em 0,8%, mantendo-se estável em relação ao terceiro trimestre do ano e registrando aumento de 0,1 p.p. em relação ao mesmo período do ano anterior.\n\n### Índice de Eficiência Operacional\n\nNo fim do quarto trimestre, o Índice de Eficiência Operacional atingiu 54,7%, onde a despesa com provisão para participações estatutárias no lucro foi o fator preponderante para a variação negativa contra o terceiro trimestre do ano. No conceito ajustado ao risco, a Eficiência Operacional foi de 60,8%, também sob o mesmo efeito acima citado. Já a Eficiência Operacional no ano ficou em 52,3% (mesmo patamar de 2018) influenciados pelo aumento da margem financeira bruta$^{15}$ (+3,0%) e da receita com serviços (+9,2%) que compensaram a elevação de 4,7% das despesas operacionais (pessoal e outras administrativas); enquanto, a Eficiência Operacional Ajustada ao Risco fixou-se em 59,4% impactada por maiores provisões para crédito (+21,4%).\n\n$^{15}$ Trata-se do resultado bruto da intermediação financeira excluído o impacto do resultado da provisão para operações de crédito e outros créditos.\n\n14 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Indicadores de Desempenho</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação % / p.p.</th></tr><tr><th>4T19X3T19</th><th>4T19X3T18</th></tr></thead><tr><td>Lucro Líquido por Ação</td><td>0,15</td><td>0,18</td><td>0,14</td><td>0,20</td><td>0,14</td><td>0,17</td><td>0,18</td><td>0,07</td><td>-19,9%</td><td>4,1%</td></tr><tr><td>Valor Patrimonial por Ação</td><td>5,09</td><td>4,96</td><td>4,85</td><td>4,82</td><td>4,72</td><td>4,56</td><td>4,47</td><td>4,41</td><td>2,6%</td><td>7,8%</td></tr><tr><td>ROA - Retorno Sobre Ativos Médios</td><td>0,8%</td><td>0,8%</td><td>0,8%</td><td>1,0%</td><td>0,7%</td><td>0,7%</td><td>0,8%</td><td>0,8%</td><td>0,0</td><td>0,1</td></tr><tr><td>Eficiência Operacional</td><td>54,7%</td><td>51,7%</td><td>52,6%</td><td>50,2%</td><td>54,4%</td><td>50,6%</td><td>51,8%</td><td>52,4%</td><td>2,9</td><td>0,2</td></tr><tr><td>Eficiência Operacional Ajustado ao Risco</td><td>60,8%</td><td>59,6%</td><td>62,0%</td><td>55,5%</td><td>61,1%</td><td>54,5%</td><td>55,2%</td><td>63,4%</td><td>1,2</td><td>-0,3</td></tr><tr><td>Valor de Mercado (R$ milhões)</td><td>2.030</td><td>1.893</td><td>1.786</td><td>1.565</td><td>1.315</td><td>1.181</td><td>1.090</td><td>1.312</td><td>7,3%</td><td>54,4%</td></tr><tr><td>Índice de Inadimplência &gt; 90 Dias</td><td>1,7%</td><td>2,5%</td><td>2,5%</td><td>2,8%</td><td>2,7%</td><td>2,4%</td><td>2,6%</td><td>3,0%</td><td>-0,8</td><td>-1,0</td></tr></table>",
+      "format": "html",
+      "id": "tbl-8.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 203,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 52,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 208,
+      "bottom_right_y": 127,
+      "confidence_scores": null,
+      "content": "## Ações da Companhia",
+      "top_left_x": 46,
+      "top_left_y": 107,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 240,
+      "bottom_right_y": 155,
+      "confidence_scores": null,
+      "content": "### Remuneração aos Acionistas",
+      "top_left_x": 46,
+      "top_left_y": 138,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 353,
+      "bottom_right_y": 328,
+      "confidence_scores": null,
+      "content": "No quarto trimestre, foram distribuídos R$ 25 milhões aos acionistas a título de Juros Sobre Capital Próprio (JSCP) e R$ 20 milhões de Dividendos, perfazendo um total distribuído de R$ 45 milhões. No acumulado dos últimos doze meses, foi destinado aos acionistas o valor de R$ 108 milhões a título de JSCP e Dividendos, representando a distribuição de 50,6% do lucro líquido.",
+      "top_left_x": 46,
+      "top_left_y": 160,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 684,
+      "bottom_right_y": 297,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Ações</th><th>BEES3 (ON)</th><th>BEES4 (PN)</th></tr></thead><tr><td>Cotação de Fechamento do Tri (R$)</td><td>6,30</td><td>6,77</td></tr><tr><td>Cotação Média do Trimestre (R$)</td><td>5,79</td><td>5,93</td></tr><tr><td>Preço/Lucro (P/E)</td><td>9,31</td><td>10,01</td></tr><tr><td>Preço/Patrimônio Líquido (P/B)</td><td>1,24</td><td>1,33</td></tr><tr><td>Dividend Yield</td><td>6,3%</td><td>6,2%</td></tr><tr><td>Payout (acumulado 12 meses)</td><td colspan=\"2\">50,6%</td></tr><tr><td>Valor Patrimonial por Ação (R$)</td><td colspan=\"2\">5,09</td></tr><tr><td>Lucro Líquido por Ação (R$)</td><td colspan=\"2\">0,15</td></tr></table>",
+      "table_id": "tbl-9.html",
+      "top_left_x": 364,
+      "top_left_y": 126,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 109,
+      "bottom_right_y": 383,
+      "confidence_scores": null,
+      "content": "### Múltiplos",
+      "top_left_x": 46,
+      "top_left_y": 365,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 500,
+      "confidence_scores": null,
+      "content": "O Dividend Yield, indicador do retorno do investimento ao acionista pela participação no lucro acumulado nos últimos doze meses, foi de 6,3% para as ações ordinárias (BEES3) e de 6,2% para as preferenciais (BEES4). O Valor Patrimonial por Ação, no fechamento do trimestre, registrou crescimento de 2,6% em relação ao trimestre anterior e de 7,8% comparado ao mesmo período de 2018, fechando em R$ 5,09. No mesmo período, o Preço/Patrimônio Líquido das ações ordinárias e preferenciais foi de 1,24 e de 1,33 respectivamente.",
+      "top_left_x": 46,
+      "top_left_y": 388,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 169,
+      "bottom_right_y": 560,
+      "confidence_scores": null,
+      "content": "### Valor de Mercado",
+      "top_left_x": 46,
+      "top_left_y": 543,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 623,
+      "confidence_scores": null,
+      "content": "Os preços de fechamento das ações ordinárias e preferenciais foram, respectivamente, R$ 6,30 e R$ 6,77 no último dia de negociação do quarto trimestre, resultando num Valor de Mercado de R$ 2.030 milhões, evolução de 7,3% em relação ao mesmo período do ano anterior.",
+      "top_left_x": 46,
+      "top_left_y": 568,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 247,
+      "bottom_right_y": 686,
+      "confidence_scores": null,
+      "content": "## Limites Operacionais",
+      "top_left_x": 46,
+      "top_left_y": 661,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 680,
+      "bottom_right_y": 767,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th rowspan=\"2\">Limites Operacionais</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação p.p.</th></tr><tr><th>4T19X3T19</th><th>4T19X4T18</th></tr></thead><tr><td>Índice de Basileia - Total</td><td>14%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>16,6%</td><td>-3,5</td><td>-3,1</td></tr><tr><td>Capital Nível I - 100%</td><td>14%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>16,6%</td><td>-3,5</td><td>-3,1</td></tr></table>",
+      "table_id": "tbl-10.html",
+      "top_left_x": 46,
+      "top_left_y": 698,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 862,
+      "confidence_scores": null,
+      "content": "O Patrimônio de Referência do Conglomerado Prudencial fechou o quarto trimestre do ano em R$ 1,5 bilhão frente aos ativos ponderados pelo risco (RWA) de R$ 11,0 bilhões. O Índice de Basileia ficou em 14%, formado integralmente de Capital Nível I. Cabe ressaltar que o BANESTES apresenta um dos mais altos patamares de Capital Nível I do mercado.",
+      "top_left_x": 46,
+      "top_left_y": 787,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "15 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9845351887056913,
+     "minimum_page_confidence_score": 0.26785953176916955,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 14,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n## Ações da Companhia\n\n### Remuneração aos Acionistas\n\nNo quarto trimestre, foram distribuídos R$ 25 milhões aos acionistas a título de Juros Sobre Capital Próprio (JSCP) e R$ 20 milhões de Dividendos, perfazendo um total distribuído de R$ 45 milhões. No acumulado dos últimos doze meses, foi destinado aos acionistas o valor de R$ 108 milhões a título de JSCP e Dividendos, representando a distribuição de 50,6% do lucro líquido.\n\n[tbl-9.html](tbl-9.html)\n\n### Múltiplos\n\nO Dividend Yield, indicador do retorno do investimento ao acionista pela participação no lucro acumulado nos últimos doze meses, foi de 6,3% para as ações ordinárias (BEES3) e de 6,2% para as preferenciais (BEES4). O Valor Patrimonial por Ação, no fechamento do trimestre, registrou crescimento de 2,6% em relação ao trimestre anterior e de 7,8% comparado ao mesmo período de 2018, fechando em R$ 5,09. No mesmo período, o Preço/Patrimônio Líquido das ações ordinárias e preferenciais foi de 1,24 e de 1,33 respectivamente.\n\n### Valor de Mercado\n\nOs preços de fechamento das ações ordinárias e preferenciais foram, respectivamente, R$ 6,30 e R$ 6,77 no último dia de negociação do quarto trimestre, resultando num Valor de Mercado de R$ 2.030 milhões, evolução de 7,3% em relação ao mesmo período do ano anterior.\n\n## Limites Operacionais\n\n[tbl-10.html](tbl-10.html)\n\nO Patrimônio de Referência do Conglomerado Prudencial fechou o quarto trimestre do ano em R$ 1,5 bilhão frente aos ativos ponderados pelo risco (RWA) de R$ 11,0 bilhões. O Índice de Basileia ficou em 14%, formado integralmente de Capital Nível I. Cabe ressaltar que o BANESTES apresenta um dos mais altos patamares de Capital Nível I do mercado.\n\n15 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Ações</th><th>BEES3 (ON)</th><th>BEES4 (PN)</th></tr></thead><tr><td>Cotação de Fechamento do Tri (R$)</td><td>6,30</td><td>6,77</td></tr><tr><td>Cotação Média do Trimestre (R$)</td><td>5,79</td><td>5,93</td></tr><tr><td>Preço/Lucro (P/E)</td><td>9,31</td><td>10,01</td></tr><tr><td>Preço/Patrimônio Líquido (P/B)</td><td>1,24</td><td>1,33</td></tr><tr><td>Dividend Yield</td><td>6,3%</td><td>6,2%</td></tr><tr><td>Payout (acumulado 12 meses)</td><td colspan=\"2\">50,6%</td></tr><tr><td>Valor Patrimonial por Ação (R$)</td><td colspan=\"2\">5,09</td></tr><tr><td>Lucro Líquido por Ação (R$)</td><td colspan=\"2\">0,15</td></tr></table>",
+      "format": "html",
+      "id": "tbl-9.html",
+      "word_confidence_scores": null
+     },
+     {
+      "content": "<table><thead><tr><th rowspan=\"2\">Limites Operacionais</th><th rowspan=\"2\">4T19</th><th rowspan=\"2\">3T19</th><th rowspan=\"2\">2T19</th><th rowspan=\"2\">1T19</th><th rowspan=\"2\">4T18</th><th rowspan=\"2\">3T18</th><th rowspan=\"2\">2T18</th><th rowspan=\"2\">1T18</th><th colspan=\"2\">Variação p.p.</th></tr><tr><th>4T19X3T19</th><th>4T19X4T18</th></tr></thead><tr><td>Índice de Basileia - Total</td><td>14%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>16,6%</td><td>-3,5</td><td>-3,1</td></tr><tr><td>Capital Nível I - 100%</td><td>14%</td><td>17,5%</td><td>16,7%</td><td>17,7%</td><td>17,1%</td><td>16,6%</td><td>16,8%</td><td>16,6%</td><td>-3,5</td><td>-3,1</td></tr></table>",
+      "format": "html",
+      "id": "tbl-10.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 583,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 261,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## Indicadores Estruturais",
+      "top_left_x": 46,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 681,
+      "bottom_right_y": 240,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Indicadores Estruturais</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th><th>1T18</th></tr></thead><tr><td>Unidades de Atendimento</td><td>156</td><td>156</td><td>156</td><td>157</td><td>157</td><td>155</td><td>155</td><td>155</td></tr><tr><td>Postos de Atendimento Eletrônico</td><td>328</td><td>328</td><td>328</td><td>328</td><td>326</td><td>318</td><td>313</td><td>308</td></tr><tr><td>Correspondentes</td><td>384</td><td>386</td><td>386</td><td>386</td><td>393</td><td>387</td><td>381</td><td>390</td></tr><tr><td>Colaboradores</td><td>2.240</td><td>2.238</td><td>2.280</td><td>2.260</td><td>2.311</td><td>2.349</td><td>2.383</td><td>2.414</td></tr></table>",
+      "table_id": "tbl-11.html",
+      "top_left_x": 46,
+      "top_left_y": 145,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 315,
+      "confidence_scores": null,
+      "content": "O BANESTES conta com 2.240 colaboradores e com a maior rede de atendimento bancário no Espírito Santo, com 868 pontos de atendimento, distribuída em 156 unidades de atendimentos, 328 postos de atendimento eletrônico e 384 correspondentes bancários.",
+      "top_left_x": 46,
+      "top_left_y": 259,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 459,
+      "confidence_scores": null,
+      "content": "O cliente tem ainda a opção do atendimento pelo novo *contact center*, que agora conta com empresa especializada neste tipo de serviço, promovendo melhorias de processos e qualidade no atendimento. Além da rede física, as soluções financeiras estão também disponíveis nos meios eletrônicos e nos 578 caixas distribuídos nas salas de autoatendimento e 222 equipamentos instalados em pontos estratégicos. Vale ressaltar a continuidade do trabalho de aperfeiçoamento da rede de correspondentes (Banesfácil) que realizou mais de 32 milhões de transações no ano de 2019.",
+      "top_left_x": 46,
+      "top_left_y": 326,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 527,
+      "confidence_scores": null,
+      "content": "A gestão de pessoas em 2019 teve momento relevante de alinhamento estratégico no Encontro de Líderes, sendo essa ação desdobrada para os demais níveis da instituição, em reuniões regionais, alcançando todo o quadro de pessoal.",
+      "top_left_x": 46,
+      "top_left_y": 471,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 689,
+      "confidence_scores": null,
+      "content": "O propósito “Crescemos Juntos” e os pilares da Experiência do Cliente, Trabalho em Equipe, Inovação e Alta Performance foram reforçados, com sua incorporação ao modelo de Gestão de Desempenho e a revisão das competências a serem consideradas. Na expansão de aplicação do modelo, foram alcançadas as empresas BANESTES Seguros e BANESTES Corretora, passando a um modelo único adotado para todas as empresas do SFB. São pilares para esse trabalho a mudança da cultura interna e a interação do Banco com o ecossistema de inovação. Um espaço colaborativo que busca melhorar a jornada do cliente por intermédio de ações estruturadas e direcionadas à criação de valor.",
+      "top_left_x": 46,
+      "top_left_y": 538,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 832,
+      "confidence_scores": null,
+      "content": "Trabalhamos em diferentes frentes e ações para o contínuo aperfeiçoamento profissional dos colaboradores e administradores do SFB, buscando o desenvolvimento de capacidades de liderança, *compliance*, inovação e tecnologia. Ao todo foram realizadas durante o ano 205 turmas *in company* e em eventos externos, totalizando 1.980 horas de treinamento. O número atual de colaboradores certificados pela ANBIMA é de 789 profissionais, sendo 577 com certificação CPA-10, 320 com CPA-20, 12 com CGA e 12 com CEA, vários deles com certificações múltiplas.",
+      "top_left_x": 46,
+      "top_left_y": 700,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "16 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 931,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9874071430054266,
+     "minimum_page_confidence_score": 0.25588284917465975,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 15,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n## Indicadores Estruturais\n\n[tbl-11.html](tbl-11.html)\n\nO BANESTES conta com 2.240 colaboradores e com a maior rede de atendimento bancário no Espírito Santo, com 868 pontos de atendimento, distribuída em 156 unidades de atendimentos, 328 postos de atendimento eletrônico e 384 correspondentes bancários.\n\nO cliente tem ainda a opção do atendimento pelo novo *contact center*, que agora conta com empresa especializada neste tipo de serviço, promovendo melhorias de processos e qualidade no atendimento. Além da rede física, as soluções financeiras estão também disponíveis nos meios eletrônicos e nos 578 caixas distribuídos nas salas de autoatendimento e 222 equipamentos instalados em pontos estratégicos. Vale ressaltar a continuidade do trabalho de aperfeiçoamento da rede de correspondentes (Banesfácil) que realizou mais de 32 milhões de transações no ano de 2019.\n\nA gestão de pessoas em 2019 teve momento relevante de alinhamento estratégico no Encontro de Líderes, sendo essa ação desdobrada para os demais níveis da instituição, em reuniões regionais, alcançando todo o quadro de pessoal.\n\nO propósito “Crescemos Juntos” e os pilares da Experiência do Cliente, Trabalho em Equipe, Inovação e Alta Performance foram reforçados, com sua incorporação ao modelo de Gestão de Desempenho e a revisão das competências a serem consideradas. Na expansão de aplicação do modelo, foram alcançadas as empresas BANESTES Seguros e BANESTES Corretora, passando a um modelo único adotado para todas as empresas do SFB. São pilares para esse trabalho a mudança da cultura interna e a interação do Banco com o ecossistema de inovação. Um espaço colaborativo que busca melhorar a jornada do cliente por intermédio de ações estruturadas e direcionadas à criação de valor.\n\nTrabalhamos em diferentes frentes e ações para o contínuo aperfeiçoamento profissional dos colaboradores e administradores do SFB, buscando o desenvolvimento de capacidades de liderança, *compliance*, inovação e tecnologia. Ao todo foram realizadas durante o ano 205 turmas *in company* e em eventos externos, totalizando 1.980 horas de treinamento. O número atual de colaboradores certificados pela ANBIMA é de 789 profissionais, sendo 577 com certificação CPA-10, 320 com CPA-20, 12 com CGA e 12 com CEA, vários deles com certificações múltiplas.\n\n16 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Indicadores Estruturais</th><th>4T19</th><th>3T19</th><th>2T19</th><th>1T19</th><th>4T18</th><th>3T18</th><th>2T18</th><th>1T18</th></tr></thead><tr><td>Unidades de Atendimento</td><td>156</td><td>156</td><td>156</td><td>157</td><td>157</td><td>155</td><td>155</td><td>155</td></tr><tr><td>Postos de Atendimento Eletrônico</td><td>328</td><td>328</td><td>328</td><td>328</td><td>326</td><td>318</td><td>313</td><td>308</td></tr><tr><td>Correspondentes</td><td>384</td><td>386</td><td>386</td><td>386</td><td>393</td><td>387</td><td>381</td><td>390</td></tr><tr><td>Colaboradores</td><td>2.240</td><td>2.238</td><td>2.280</td><td>2.260</td><td>2.311</td><td>2.349</td><td>2.383</td><td>2.414</td></tr></table>",
+      "format": "html",
+      "id": "tbl-11.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 344,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## Outras Informações Relevantes",
+      "top_left_x": 47,
+      "top_left_y": 108,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 96,
+      "bottom_right_y": 165,
+      "confidence_scores": null,
+      "content": "### Rating",
+      "top_left_x": 47,
+      "top_left_y": 147,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 250,
+      "confidence_scores": null,
+      "content": "A nota de rating em escala nacional (moeda local) para risco de crédito medida pela Fitch Ratings manteve-se em A+(bra) e classificação BB- (moeda estrangeira), ambas com perspectiva positiva, mantendo forte a imagem da Instituição no setor bancário e financeiro, mesmo diante dos efeitos da conjuntura macroeconômica ainda restritiva.",
+      "top_left_x": 47,
+      "top_left_y": 176,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 107,
+      "bottom_right_y": 310,
+      "confidence_scores": null,
+      "content": "### Cartões",
+      "top_left_x": 47,
+      "top_left_y": 291,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 432,
+      "confidence_scores": null,
+      "content": "Um dos vetores de crescimento do BANESTES, o cartão de bandeira própria “Banescard” continua avançando no mercado de meios de pagamentos. São mais de 2 milhões de estabelecimentos comerciais credenciados às redes Cielo, Getnet, Bin, Rede e Stone em todo o Brasil. No ano de 2019, foram mais de 25 milhões de operações, expansão de 5,0% comparada a 2018, ratificando sua alta aceitação no varejo. O valor transacionado em compras e saques com os cartões de débito e crédito atingiu R$ 1,8 bilhão, crescimento de 4,0% contra o ano de 2018.",
+      "top_left_x": 47,
+      "top_left_y": 320,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 557,
+      "confidence_scores": null,
+      "content": "Os cartões de crédito e débito BANESTES Visa crescem a ritmo expressivo, tornando-se cada vez mais importante no portfólio de produtos da Instituição. Os cartões passaram a contar com a tecnologia *Contactless*, além da possibilidade do parcelamento da fatura. No ano de 2019 expandiu 33,0% em números de transações em compras e saques, de pessoas físicas e jurídicas, contra 2018. Esse fato resultou em aumento de 29,4% no seu faturamento, alcançando a cifra de R$ 1,3 bilhão em 2019.",
+      "top_left_x": 47,
+      "top_left_y": 444,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 257,
+      "bottom_right_y": 614,
+      "confidence_scores": null,
+      "content": "### Investimentos em Tecnologia",
+      "top_left_x": 47,
+      "top_left_y": 596,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 794,
+      "confidence_scores": null,
+      "content": "No que tange, Tecnologia da Informação/Comunicação, de janeiro a dezembro de 2019, foi investida a quantia de R$ 80 milhões. Modernizaram-se os sistemas de informação, a infraestrutura de comunicação, a segurança da informação e a rede de autoatendimento. Os trabalhos estão focados na ampliação de prestação de serviços pelos canais digitais, principalmente nos canais *Internet Banking* e BANESTES.Corp, e nos Aplicativos BANESTES, BANESTES Cartões e Abre Contas BANESTES aderentes a nossa transformação digital. Foram implantadas, no sistema de automação bancária, iniciativas para automatização de procedimentos de suporte e de atendimento à rede de agências/correspondentes, visando a melhoria na eficiência operacional e mais agilidade no atendimento a clientes.",
+      "top_left_x": 47,
+      "top_left_y": 625,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 360,
+      "bottom_right_y": 824,
+      "confidence_scores": null,
+      "content": "### Transformação Digital: canais e serviços digitais",
+      "top_left_x": 47,
+      "top_left_y": 806,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 893,
+      "confidence_scores": null,
+      "content": "Os diversos segmentos do mercado estão trilhando a sua jornada de transformação digital, assim também é o Banco que, em linha com as práticas de mercado, nesse ano criou a GELAB – Gerência de Laboratório BANESTES, cujo, o propósito é a inovação que conecta pessoas e ideias.",
+      "top_left_x": 47,
+      "top_left_y": 836,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "17 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 932,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9822885127859152,
+     "minimum_page_confidence_score": 0.3655882713582159,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 16,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n## Outras Informações Relevantes\n\n### Rating\n\nA nota de rating em escala nacional (moeda local) para risco de crédito medida pela Fitch Ratings manteve-se em A+(bra) e classificação BB- (moeda estrangeira), ambas com perspectiva positiva, mantendo forte a imagem da Instituição no setor bancário e financeiro, mesmo diante dos efeitos da conjuntura macroeconômica ainda restritiva.\n\n### Cartões\n\nUm dos vetores de crescimento do BANESTES, o cartão de bandeira própria “Banescard” continua avançando no mercado de meios de pagamentos. São mais de 2 milhões de estabelecimentos comerciais credenciados às redes Cielo, Getnet, Bin, Rede e Stone em todo o Brasil. No ano de 2019, foram mais de 25 milhões de operações, expansão de 5,0% comparada a 2018, ratificando sua alta aceitação no varejo. O valor transacionado em compras e saques com os cartões de débito e crédito atingiu R$ 1,8 bilhão, crescimento de 4,0% contra o ano de 2018.\n\nOs cartões de crédito e débito BANESTES Visa crescem a ritmo expressivo, tornando-se cada vez mais importante no portfólio de produtos da Instituição. Os cartões passaram a contar com a tecnologia *Contactless*, além da possibilidade do parcelamento da fatura. No ano de 2019 expandiu 33,0% em números de transações em compras e saques, de pessoas físicas e jurídicas, contra 2018. Esse fato resultou em aumento de 29,4% no seu faturamento, alcançando a cifra de R$ 1,3 bilhão em 2019.\n\n### Investimentos em Tecnologia\n\nNo que tange, Tecnologia da Informação/Comunicação, de janeiro a dezembro de 2019, foi investida a quantia de R$ 80 milhões. Modernizaram-se os sistemas de informação, a infraestrutura de comunicação, a segurança da informação e a rede de autoatendimento. Os trabalhos estão focados na ampliação de prestação de serviços pelos canais digitais, principalmente nos canais *Internet Banking* e BANESTES.Corp, e nos Aplicativos BANESTES, BANESTES Cartões e Abre Contas BANESTES aderentes a nossa transformação digital. Foram implantadas, no sistema de automação bancária, iniciativas para automatização de procedimentos de suporte e de atendimento à rede de agências/correspondentes, visando a melhoria na eficiência operacional e mais agilidade no atendimento a clientes.\n\n### Transformação Digital: canais e serviços digitais\n\nOs diversos segmentos do mercado estão trilhando a sua jornada de transformação digital, assim também é o Banco que, em linha com as práticas de mercado, nesse ano criou a GELAB – Gerência de Laboratório BANESTES, cujo, o propósito é a inovação que conecta pessoas e ideias.\n\n17 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 275,
+      "confidence_scores": null,
+      "content": "Dessa forma, atuamos fortemente na melhoria da experiência de nossos clientes, investindo maciçamente na evolução de nossos canais digitais, com a oferta de novos serviços e facilidades de modo a proporcionar mais soluções, exemplos disso é a disponibilização de empréstimo pessoal, capital de giro, informe de rendimentos e remodelagem do extrato de conta corrente por meio do App e Internet Banking. A estas ações soma-se o aplicativo Abre Conta BANESTES - uma plataforma segura e intuitiva de abertura de conta corrente e o aplicativo BANESTES Cartões, que possibilita acompanhar as transações em tempo real, gerar cartão virtual para compras na internet, parcelar suas contas no cartão de crédito e realizar compras via QR Code nas máquinas da Cielo.",
+      "top_left_x": 45,
+      "top_left_y": 107,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 338,
+      "confidence_scores": null,
+      "content": "O canal mobile seguiu como principal canal de transações para os clientes, com um total de 58 milhões de transações acumuladas no ano. Os canais digitais (Internet Banking e Mobile) foram responsáveis por 17 milhões de transações financeiras.",
+      "top_left_x": 45,
+      "top_left_y": 288,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 196,
+      "bottom_right_y": 397,
+      "confidence_scores": null,
+      "content": "## Ações de Marketing",
+      "top_left_x": 45,
+      "top_left_y": 378,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 155,
+      "bottom_right_y": 425,
+      "confidence_scores": null,
+      "content": "### Marca e Slogan",
+      "top_left_x": 45,
+      "top_left_y": 408,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 524,
+      "confidence_scores": null,
+      "content": "Seguindo o reposicionamento de sua marca iniciado em 2018, o BANESTES reforçou o uso dos direcionamentos apontados pelo Branding, a fim de manter a percepção de união sociedade/Banco do Estado do Espírito Santo com o uso de peças publicitárias, nos meios tradicionais de divulgação, e com reforço em mídia digital (Facebook, Instagram, Twitter e Whatsapp).",
+      "top_left_x": 45,
+      "top_left_y": 431,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 630,
+      "confidence_scores": null,
+      "content": "Reforçou em suas divulgações a ideia central, de ser um Banco “Digital quando você quiser” e que está “ao seu lado sempre que você precisar”, dando destaque ao fato de ser atualmente uma das poucas instituições financeiras que detém esse atributo de proximidade, tanto em meios digitais quanto em atendimento presencial, o que facilita o relacionamento com os diversos públicos, de diferentes idades e perfis negociais.",
+      "top_left_x": 45,
+      "top_left_y": 536,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 721,
+      "confidence_scores": null,
+      "content": "Em sua fase final de reposicionamento de marca e planejamento, o BANESTES focou na pesquisa para a melhoria do relacionamento da rede Banesfácil e seus clientes, que somam 52,0% das autenticações eletrônicas do SFB, com 384 representantes credenciados, o que tornam ainda mais próximas as relações BANESTES x Sociedade.",
+      "top_left_x": 45,
+      "top_left_y": 648,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 814,
+      "confidence_scores": null,
+      "content": "Aderente ao plano estratégico de marketing da BANESTES Seguradora, direcionou a campanha com o slogan “Com a BANESTES Seguros por perto, tudo fica bem”, em que situações cotidianas são resguardadas pela eficiência da seguradora, campeã pela 14ª vez do recall de marcas de uma importante rede de comunicação estadual, cuja premiação ocorreu em junho deste ano.",
+      "top_left_x": 45,
+      "top_left_y": 740,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 906,
+      "confidence_scores": null,
+      "content": "Com o lançamento do novo aplicativo “Abre Conta”, por meio das lojas virtuais Google Play e Apple Store, teve início também a campanha publicitária “Abre Conta”, que tem como mote a facilidade de abrir uma conta pelo aplicativo. Televisão, rádio, internet, redes sociais e outras mídias on-line estão sendo contempladas com essa nova campanha.",
+      "top_left_x": 45,
+      "top_left_y": 831,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "18 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9838164042077078,
+     "minimum_page_confidence_score": 0.3265429888833675,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 17,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\nDessa forma, atuamos fortemente na melhoria da experiência de nossos clientes, investindo maciçamente na evolução de nossos canais digitais, com a oferta de novos serviços e facilidades de modo a proporcionar mais soluções, exemplos disso é a disponibilização de empréstimo pessoal, capital de giro, informe de rendimentos e remodelagem do extrato de conta corrente por meio do App e Internet Banking. A estas ações soma-se o aplicativo Abre Conta BANESTES - uma plataforma segura e intuitiva de abertura de conta corrente e o aplicativo BANESTES Cartões, que possibilita acompanhar as transações em tempo real, gerar cartão virtual para compras na internet, parcelar suas contas no cartão de crédito e realizar compras via QR Code nas máquinas da Cielo.\n\nO canal mobile seguiu como principal canal de transações para os clientes, com um total de 58 milhões de transações acumuladas no ano. Os canais digitais (Internet Banking e Mobile) foram responsáveis por 17 milhões de transações financeiras.\n\n## Ações de Marketing\n\n### Marca e Slogan\n\nSeguindo o reposicionamento de sua marca iniciado em 2018, o BANESTES reforçou o uso dos direcionamentos apontados pelo Branding, a fim de manter a percepção de união sociedade/Banco do Estado do Espírito Santo com o uso de peças publicitárias, nos meios tradicionais de divulgação, e com reforço em mídia digital (Facebook, Instagram, Twitter e Whatsapp).\n\nReforçou em suas divulgações a ideia central, de ser um Banco “Digital quando você quiser” e que está “ao seu lado sempre que você precisar”, dando destaque ao fato de ser atualmente uma das poucas instituições financeiras que detém esse atributo de proximidade, tanto em meios digitais quanto em atendimento presencial, o que facilita o relacionamento com os diversos públicos, de diferentes idades e perfis negociais.\n\nEm sua fase final de reposicionamento de marca e planejamento, o BANESTES focou na pesquisa para a melhoria do relacionamento da rede Banesfácil e seus clientes, que somam 52,0% das autenticações eletrônicas do SFB, com 384 representantes credenciados, o que tornam ainda mais próximas as relações BANESTES x Sociedade.\n\nAderente ao plano estratégico de marketing da BANESTES Seguradora, direcionou a campanha com o slogan “Com a BANESTES Seguros por perto, tudo fica bem”, em que situações cotidianas são resguardadas pela eficiência da seguradora, campeã pela 14ª vez do recall de marcas de uma importante rede de comunicação estadual, cuja premiação ocorreu em junho deste ano.\n\nCom o lançamento do novo aplicativo “Abre Conta”, por meio das lojas virtuais Google Play e Apple Store, teve início também a campanha publicitária “Abre Conta”, que tem como mote a facilidade de abrir uma conta pelo aplicativo. Televisão, rádio, internet, redes sociais e outras mídias on-line estão sendo contempladas com essa nova campanha.\n\n18 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 200,
+      "confidence_scores": null,
+      "content": "Por meios digitais divulgou a nova facilidade do aplicativo transacional de contas que disponibiliza crédito de contratação direta pelo celular, pessoa física e jurídica – obtendo excelentes resultados na adesão. Reforçou a sua presença nas redes sociais, a fim de captar o público jovem que participa ativamente da “vida digital”, mas que desconhece as facilidades oferecidas pelo BANESTES nesses ambientes.",
+      "top_left_x": 46,
+      "top_left_y": 107,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 273,
+      "confidence_scores": null,
+      "content": "Ainda em 2019, o banco divulgou a incorporação da recarga de cartões de transporte público ao seu aplicativo transacional e a sua nova agência de investimentos, focada no atendimento aos clientes com potencial para investir em carteiras diversificadas.",
+      "top_left_x": 46,
+      "top_left_y": 218,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 333,
+      "bottom_right_y": 309,
+      "confidence_scores": null,
+      "content": "### **Responsabilidade Social e Sustentabilidade**",
+      "top_left_x": 46,
+      "top_left_y": 291,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 474,
+      "confidence_scores": null,
+      "content": "Em 2019 o BANESTES investiu em diversas ações e projetos com vistas à melhoria da sustentabilidade e responsabilidade social. Aprovou o retorno do “Circuito BANESTES de Teatro”, investimento por meio de renúncia fiscal da Lei Rouanet (incentivo à cultura). O circuito percorreu dez cidades-polo do Espírito Santo, a fim de dinamizar a cena cultural capixaba e gerar oportunidades de negócios, fazendo girar a economia em diferentes regiões do Estado. Ainda por meio de Lei de incentivo, o Banco investiu na reabertura do Museu de Arte do Espírito Santo (MAES), em uma escola de violinos em João Neiva, e em uma ação de educação ambiental aliada à exposição cinematográfica no município de Cachoeiro de Itapemirim.",
+      "top_left_x": 46,
+      "top_left_y": 324,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 658,
+      "confidence_scores": null,
+      "content": "Valorizando a cultura e história locais, o BANESTES também se fez presente por meio de parcerias na Festa da Penha, na Festa de Anchieta, de Domingos Martins, Festa do Boi Pintadinho de Muqui e Festa de São Benedito, na Serra, além de diversas outras festas de emancipação política municipais em que há reciprocidade no relacionamento com o Banco. Também pôde incentivar o esporte local por meio do campeonato Capixaba de Futebol e através da participação de times locais na Série D do campeonato Brasileiro, de visibilidade nacional. Apoiou o Carnaval de Vitória, que movimenta as comunidades e aquece a economia capixaba, fazendo girar mais de R$ 16 milhões entre o setor hoteleiro, trabalhadores informais, restaurantes, incluindo, os barracões das agremiações, onde o trabalho temporário gera renda extra.",
+      "top_left_x": 46,
+      "top_left_y": 491,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 733,
+      "confidence_scores": null,
+      "content": "Em parceria com os Bombeiros, o BANESTES assinou a 6ª. Edição da Corrida de Rua realizada pela Associação da categoria, que foi batizada de “Corrida Bombeiros BANESTES”, sucesso de público e de divulgação.",
+      "top_left_x": 46,
+      "top_left_y": 677,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 843,
+      "confidence_scores": null,
+      "content": "O Banco também realizou o Circuito de Palestras Banestes - gratuito, com a participação de personalidades no cenário nacional e local, abrangendo temas importantes nos diversos setores da economia e das relações humanas. Financiou eventos de entidades como o Instituto Ponte, que seleciona crianças em situação de risco social em escolas públicas e fornece bolsas de estudo em unidades particulares, com atividades de contraturno.",
+      "top_left_x": 46,
+      "top_left_y": 750,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "19 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9857442995611518,
+     "minimum_page_confidence_score": 0.385592464058543,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 18,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\nPor meios digitais divulgou a nova facilidade do aplicativo transacional de contas que disponibiliza crédito de contratação direta pelo celular, pessoa física e jurídica – obtendo excelentes resultados na adesão. Reforçou a sua presença nas redes sociais, a fim de captar o público jovem que participa ativamente da “vida digital”, mas que desconhece as facilidades oferecidas pelo BANESTES nesses ambientes.\n\nAinda em 2019, o banco divulgou a incorporação da recarga de cartões de transporte público ao seu aplicativo transacional e a sua nova agência de investimentos, focada no atendimento aos clientes com potencial para investir em carteiras diversificadas.\n\n### **Responsabilidade Social e Sustentabilidade**\n\nEm 2019 o BANESTES investiu em diversas ações e projetos com vistas à melhoria da sustentabilidade e responsabilidade social. Aprovou o retorno do “Circuito BANESTES de Teatro”, investimento por meio de renúncia fiscal da Lei Rouanet (incentivo à cultura). O circuito percorreu dez cidades-polo do Espírito Santo, a fim de dinamizar a cena cultural capixaba e gerar oportunidades de negócios, fazendo girar a economia em diferentes regiões do Estado. Ainda por meio de Lei de incentivo, o Banco investiu na reabertura do Museu de Arte do Espírito Santo (MAES), em uma escola de violinos em João Neiva, e em uma ação de educação ambiental aliada à exposição cinematográfica no município de Cachoeiro de Itapemirim.\n\nValorizando a cultura e história locais, o BANESTES também se fez presente por meio de parcerias na Festa da Penha, na Festa de Anchieta, de Domingos Martins, Festa do Boi Pintadinho de Muqui e Festa de São Benedito, na Serra, além de diversas outras festas de emancipação política municipais em que há reciprocidade no relacionamento com o Banco. Também pôde incentivar o esporte local por meio do campeonato Capixaba de Futebol e através da participação de times locais na Série D do campeonato Brasileiro, de visibilidade nacional. Apoiou o Carnaval de Vitória, que movimenta as comunidades e aquece a economia capixaba, fazendo girar mais de R$ 16 milhões entre o setor hoteleiro, trabalhadores informais, restaurantes, incluindo, os barracões das agremiações, onde o trabalho temporário gera renda extra.\n\nEm parceria com os Bombeiros, o BANESTES assinou a 6ª. Edição da Corrida de Rua realizada pela Associação da categoria, que foi batizada de “Corrida Bombeiros BANESTES”, sucesso de público e de divulgação.\n\nO Banco também realizou o Circuito de Palestras Banestes - gratuito, com a participação de personalidades no cenário nacional e local, abrangendo temas importantes nos diversos setores da economia e das relações humanas. Financiou eventos de entidades como o Instituto Ponte, que seleciona crianças em situação de risco social em escolas públicas e fornece bolsas de estudo em unidades particulares, com atividades de contraturno.\n\n19 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 250,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## Contexto Econômico",
+      "top_left_x": 47,
+      "top_left_y": 109,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 296,
+      "confidence_scores": null,
+      "content": "No Brasil, o ano se encerrou com grande otimismo do mercado, que comemorou a aprovação da reforma da previdência com recorde na Bolsa e *spreads* de risco Brasil nos menores níveis da história, apesar dos resultados frustrantes com relação ao nível de atividade. De acordo com os dados divulgados pelo BACEN, a atividade econômica brasileira mensurada pelo IBC-BR acumulou alta de 0,90% em doze meses encerrados em novembro de 2019. A boa notícia é que em 2019, o Brasil foi o quarto principal destino de investimentos diretos estrangeiros, segundo dado divulgado pela Conferência das Nações Unidas para o Comércio e Desenvolvimento (Unctad).",
+      "top_left_x": 47,
+      "top_left_y": 147,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 420,
+      "confidence_scores": null,
+      "content": "No Espírito Santo, o IBC-BR caiu 0,85% no acumulado em doze meses. Esses resultados refletem a queda da produção industrial do estado, acumulada em menos 14,9% de janeiro a novembro de 2019 em relação ao mesmo período de 2018. Os aumentos das vendas do comércio e do setor de serviços compensaram em parte essa queda, gerando dados do mercado de trabalho bem mais animadores. O Espírito Santo encerrou 2019 com um saldo líquido de +19,5 mil vagas. Esse foi o melhor resultado do estado desde 2014.",
+      "top_left_x": 47,
+      "top_left_y": 309,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 527,
+      "confidence_scores": null,
+      "content": "A inflação oficial para o país registrou um acumulado de 4,31% em 2019, enquanto na Região Metropolitana da Grande Vitória o IPCA acumulado foi de 3,29%. Os especialistas consultados pela Focus reduziram de 3,56% para 3,47% as expectativas para a inflação de 2020 - a meta é de 4,00% a.a. Os riscos para inflação advêm principalmente do câmbio, que tem se apresentado volátil e com forte tendência à depreciação.",
+      "top_left_x": 47,
+      "top_left_y": 434,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 632,
+      "confidence_scores": null,
+      "content": "A grande novidade do país é o novo cenário do mercado de crédito que se forma a partir de uma estrutura de taxas de juros no seu mínimo histórico, com a redução da SELIC para 4,25% na última reunião do Copom. A oferta de crédito está aumentando, os *spreads* estão caindo, e a dinâmica do mercado tende a mudar radicalmente nos próximos anos, trazendo novas oportunidades e desafios para o setor.",
+      "top_left_x": 47,
+      "top_left_y": 539,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 686,
+      "bottom_right_y": 718,
+      "confidence_scores": null,
+      "content": "Cabe destacar os bons resultados e a situação fiscal diferenciada do Espírito Santo, único estado com nota A do Tesouro Nacional, conquistada e mantida desde 2012. Ressalta-se o vigor dos investimentos do governo do Estado, que atingiram a soma de R$ 1,055 bilhão em 2019, representando um montante de investimentos realizados em relação ao total orçado de 77,2%.",
+      "top_left_x": 47,
+      "top_left_y": 645,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "20 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9857098973941345,
+     "minimum_page_confidence_score": 0.3734704741340912,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 19,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n## Contexto Econômico\n\nNo Brasil, o ano se encerrou com grande otimismo do mercado, que comemorou a aprovação da reforma da previdência com recorde na Bolsa e *spreads* de risco Brasil nos menores níveis da história, apesar dos resultados frustrantes com relação ao nível de atividade. De acordo com os dados divulgados pelo BACEN, a atividade econômica brasileira mensurada pelo IBC-BR acumulou alta de 0,90% em doze meses encerrados em novembro de 2019. A boa notícia é que em 2019, o Brasil foi o quarto principal destino de investimentos diretos estrangeiros, segundo dado divulgado pela Conferência das Nações Unidas para o Comércio e Desenvolvimento (Unctad).\n\nNo Espírito Santo, o IBC-BR caiu 0,85% no acumulado em doze meses. Esses resultados refletem a queda da produção industrial do estado, acumulada em menos 14,9% de janeiro a novembro de 2019 em relação ao mesmo período de 2018. Os aumentos das vendas do comércio e do setor de serviços compensaram em parte essa queda, gerando dados do mercado de trabalho bem mais animadores. O Espírito Santo encerrou 2019 com um saldo líquido de +19,5 mil vagas. Esse foi o melhor resultado do estado desde 2014.\n\nA inflação oficial para o país registrou um acumulado de 4,31% em 2019, enquanto na Região Metropolitana da Grande Vitória o IPCA acumulado foi de 3,29%. Os especialistas consultados pela Focus reduziram de 3,56% para 3,47% as expectativas para a inflação de 2020 - a meta é de 4,00% a.a. Os riscos para inflação advêm principalmente do câmbio, que tem se apresentado volátil e com forte tendência à depreciação.\n\nA grande novidade do país é o novo cenário do mercado de crédito que se forma a partir de uma estrutura de taxas de juros no seu mínimo histórico, com a redução da SELIC para 4,25% na última reunião do Copom. A oferta de crédito está aumentando, os *spreads* estão caindo, e a dinâmica do mercado tende a mudar radicalmente nos próximos anos, trazendo novas oportunidades e desafios para o setor.\n\nCabe destacar os bons resultados e a situação fiscal diferenciada do Espírito Santo, único estado com nota A do Tesouro Nacional, conquistada e mantida desde 2012. Ressalta-se o vigor dos investimentos do governo do Estado, que atingiram a soma de R$ 1,055 bilhão em 2019, representando um montante de investimentos realizados em relação ao total orçado de 77,2%.\n\n20 | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 145,
+      "bottom_right_y": 131,
+      "confidence_scores": null,
+      "content": "## Guidance",
+      "top_left_x": 46,
+      "top_left_y": 109,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 94,
+      "bottom_right_y": 169,
+      "confidence_scores": null,
+      "content": "### 2019",
+      "top_left_x": 46,
+      "top_left_y": 148,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 350,
+      "confidence_scores": null,
+      "content": "Em 2019, iniciou-se uma agenda de reformas estruturais, principalmente pela reforma da previdência. A expectativa é que outros temas poderão emergir nos próximos meses contribuindo assim para consolidar um novo regime fiscal de menor crescimento do gasto público, abrindo margem para investimentos estruturais e com foco produtivo, criando um ambiente econômico no qual o setor privado seja protagonista do ciclo de expansão. A atividade econômica segue em recuperação gradual, sem pressões inflacionárias significativas, além da melhora nas percepções dos agentes em relação aos avanços estruturais. As empresas estão desalavancadas e com acesso ampliado a fontes de financiamento, como o mercado de capitais. O comprometimento de renda das famílias e a inadimplência estão em patamares reduzidos.",
+      "top_left_x": 46,
+      "top_left_y": 186,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 687,
+      "bottom_right_y": 578,
+      "confidence_scores": null,
+      "content": "Sob esse cenário, o BANESTES mantém seu compromisso em ter papel construtivo e relevante na continuidade do crescimento sustentável do ES ao longo dos próximos anos. No quarto trimestre de 2019 continuou resiliente na sua estratégia de superar desafios propostos ao mercado, fechando o ano, com avanços significativos nos negócios e na sua eficiência operacional. Atingiu todos os itens de *guidance*, com destaque para o crescimento da sua carteira de crédito ampliada (+15,8%). Os outros itens de *guidance* foram influenciados pelo aproveitamento eficiente de sua sinergia relacional com a base de clientes, pelo forte controle e racionalização de custos e pela adoção de critérios rigorosos de monitoramento e avaliação dos processos de concessão de crédito visando o equilíbrio da expansão do crédito e inadimplência, resultando assim, na elevação das receitas de serviços (+9,2%), no avanço da captação via depósitos na ordem de 8,8%, no baixo custo do risco de crédito (2,2%), na expansão de custo operacional (+4,7%) aderente ao índice de inflação para o período (4,3%) e por fim, no índice de eficiência operacional a patamar de 52,3%, alinhado com o intervalo proposto junto ao mercado.",
+      "top_left_x": 46,
+      "top_left_y": 363,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 673,
+      "bottom_right_y": 765,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Indicador</th><th>Projeção (%)</th><th>Realizado (%)</th></tr></thead><tr><td>Carteira de Crédito Ampliada<sup>1</sup></td><td>7 - 10</td><td>15,8</td></tr><tr><td>Depósito Total<sup>2</sup></td><td>6 - 9</td><td>8,8</td></tr><tr><td>Despesa Provisão de Crédito/Carteira de Crédito Ampliada<sup>3</sup></td><td>2,1 - 2,4</td><td>2,2</td></tr><tr><td>Eficiência Operacional<sup>4</sup></td><td>52 - 55</td><td>52,3</td></tr><tr><td>Despesas Operacionais<sup>5</sup></td><td>3 - 6</td><td>4,7</td></tr><tr><td>Rendas de Serviços e Tarifas</td><td>9 - 12</td><td>9,2</td></tr></table>",
+      "table_id": "tbl-12.html",
+      "top_left_x": 54,
+      "top_left_y": 606,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 807,
+      "confidence_scores": null,
+      "content": "$^{1}$ Trata-se do total dos saldos da carteira de crédito (conceito Bacen), de TVM privado (debêntures, notas promissórias, CDBs – certificado depósitos bancários, letras financeiras, letras de crédito imobiliário, letras de crédito do agronegócio e CRIs – certificado de recebíveis imobiliários) e garantias prestadas (fianças e avais).",
+      "top_left_x": 54,
+      "top_left_y": 773,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 489,
+      "bottom_right_y": 818,
+      "confidence_scores": null,
+      "content": "$^{2}$ Trata-se do total dos saldos de depósito à vista, poupança, a prazo, interfinanceiros e outros depósitos.",
+      "top_left_x": 54,
+      "top_left_y": 805,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 838,
+      "confidence_scores": null,
+      "content": "$^{3}$ Trata-se da relação do resultado de provisão para créditos (Resolução 2.682/99 do CMN) e TVM privado nos últimos doze meses e o saldo da carteira de crédito ampliada.",
+      "top_left_x": 54,
+      "top_left_y": 816,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 859,
+      "confidence_scores": null,
+      "content": "$^{4}$ Trata-se da relação entre o total da despesa administrativa (pessoal e outras) e o total do resultado bruto da intermediação financeira (excluído provisão para operações de créditos e outros créditos), receitas com serviços e receitas com tarifas.",
+      "top_left_x": 54,
+      "top_left_y": 836,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 378,
+      "bottom_right_y": 869,
+      "confidence_scores": null,
+      "content": "$^{5}$ Trata-se do total das despesas de pessoal e outras despesas administrativas.",
+      "top_left_x": 54,
+      "top_left_y": 857,
+      "type": "footer"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "21 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9833142353623717,
+     "minimum_page_confidence_score": 0.2766661595434594,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 20,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n## Guidance\n\n### 2019\n\nEm 2019, iniciou-se uma agenda de reformas estruturais, principalmente pela reforma da previdência. A expectativa é que outros temas poderão emergir nos próximos meses contribuindo assim para consolidar um novo regime fiscal de menor crescimento do gasto público, abrindo margem para investimentos estruturais e com foco produtivo, criando um ambiente econômico no qual o setor privado seja protagonista do ciclo de expansão. A atividade econômica segue em recuperação gradual, sem pressões inflacionárias significativas, além da melhora nas percepções dos agentes em relação aos avanços estruturais. As empresas estão desalavancadas e com acesso ampliado a fontes de financiamento, como o mercado de capitais. O comprometimento de renda das famílias e a inadimplência estão em patamares reduzidos.\n\nSob esse cenário, o BANESTES mantém seu compromisso em ter papel construtivo e relevante na continuidade do crescimento sustentável do ES ao longo dos próximos anos. No quarto trimestre de 2019 continuou resiliente na sua estratégia de superar desafios propostos ao mercado, fechando o ano, com avanços significativos nos negócios e na sua eficiência operacional. Atingiu todos os itens de *guidance*, com destaque para o crescimento da sua carteira de crédito ampliada (+15,8%). Os outros itens de *guidance* foram influenciados pelo aproveitamento eficiente de sua sinergia relacional com a base de clientes, pelo forte controle e racionalização de custos e pela adoção de critérios rigorosos de monitoramento e avaliação dos processos de concessão de crédito visando o equilíbrio da expansão do crédito e inadimplência, resultando assim, na elevação das receitas de serviços (+9,2%), no avanço da captação via depósitos na ordem de 8,8%, no baixo custo do risco de crédito (2,2%), na expansão de custo operacional (+4,7%) aderente ao índice de inflação para o período (4,3%) e por fim, no índice de eficiência operacional a patamar de 52,3%, alinhado com o intervalo proposto junto ao mercado.\n\n[tbl-12.html](tbl-12.html)\n\n$^{1}$ Trata-se do total dos saldos da carteira de crédito (conceito Bacen), de TVM privado (debêntures, notas promissórias, CDBs – certificado depósitos bancários, letras financeiras, letras de crédito imobiliário, letras de crédito do agronegócio e CRIs – certificado de recebíveis imobiliários) e garantias prestadas (fianças e avais).\n\n$^{2}$ Trata-se do total dos saldos de depósito à vista, poupança, a prazo, interfinanceiros e outros depósitos.\n\n$^{3}$ Trata-se da relação do resultado de provisão para créditos (Resolução 2.682/99 do CMN) e TVM privado nos últimos doze meses e o saldo da carteira de crédito ampliada.\n\n$^{4}$ Trata-se da relação entre o total da despesa administrativa (pessoal e outras) e o total do resultado bruto da intermediação financeira (excluído provisão para operações de créditos e outros créditos), receitas com serviços e receitas com tarifas.\n\n$^{5}$ Trata-se do total das despesas de pessoal e outras despesas administrativas.\n\n21 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Indicador</th><th>Projeção (%)</th><th>Realizado (%)</th></tr></thead><tr><td>Carteira de Crédito Ampliada<sup>1</sup></td><td>7 - 10</td><td>15,8</td></tr><tr><td>Depósito Total<sup>2</sup></td><td>6 - 9</td><td>8,8</td></tr><tr><td>Despesa Provisão de Crédito/Carteira de Crédito Ampliada<sup>3</sup></td><td>2,1 - 2,4</td><td>2,2</td></tr><tr><td>Eficiência Operacional<sup>4</sup></td><td>52 - 55</td><td>52,3</td></tr><tr><td>Despesas Operacionais<sup>5</sup></td><td>3 - 6</td><td>4,7</td></tr><tr><td>Rendas de Serviços e Tarifas</td><td>9 - 12</td><td>9,2</td></tr></table>",
+      "format": "html",
+      "id": "tbl-12.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 95,
+      "bottom_right_y": 140,
+      "confidence_scores": null,
+      "content": "## 2020",
+      "top_left_x": 45,
+      "top_left_y": 118,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 682,
+      "bottom_right_y": 206,
+      "confidence_scores": null,
+      "content": "O *guidance* BANESTES\\* contém declarações prospectivas, as quais estão sujeitas a riscos e incertezas, pois foram baseadas em expectativas e premissas da Administração e em informações disponíveis no mercado até a presente data.",
+      "top_left_x": 45,
+      "top_left_y": 155,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 610,
+      "bottom_right_y": 400,
+      "confidence_scores": null,
+      "content": "<table><thead><tr><th>Indicador</th><th>Projeção (%)</th></tr></thead><tr><td>Carteira de Crédito Ampliada<sup>1</sup></td><td>8 - 11</td></tr><tr><td>Depósito Total<sup>2</sup></td><td>7 - 10</td></tr><tr><td>Despesa Provisão de Crédito/Carteira de Crédito Ampliada<sup>3</sup></td><td>2,0 - 2,3</td></tr><tr><td>Eficiência Operacional<sup>4</sup></td><td>50 - 53</td></tr><tr><td>Despesas Operacionais<sup>5</sup></td><td>4 - 7</td></tr><tr><td>Rendas de Serviços e Tarifas</td><td>8 - 11</td></tr></table>",
+      "table_id": "tbl-13.html",
+      "top_left_x": 117,
+      "top_left_y": 242,
+      "type": "table"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 444,
+      "confidence_scores": null,
+      "content": "$^{1}$ Trata-se do total dos saldos da carteira de crédito (conceito Bacen), de TVM privado (debêntures, notas promissórias, CDBs – certificado depósitos bancários, letras financeiras, letras de crédito imobiliário, letras de crédito do agronegócio e CRIs – certificado de recebíveis imobiliários) e garantias prestadas (fianças e avais).",
+      "top_left_x": 54,
+      "top_left_y": 411,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 489,
+      "bottom_right_y": 456,
+      "confidence_scores": null,
+      "content": "$^{2}$ Trata-se do total dos saldos de depósito à vista, poupança, a prazo, interfinanceiros e outros depósitos.",
+      "top_left_x": 54,
+      "top_left_y": 443,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 476,
+      "confidence_scores": null,
+      "content": "$^{3}$ Trata-se da relação do resultado de provisão para créditos (Resolução 2.682/99 do CMN) e TVM privado nos últimos doze meses e o saldo da carteira de crédito ampliada.",
+      "top_left_x": 54,
+      "top_left_y": 453,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 678,
+      "bottom_right_y": 496,
+      "confidence_scores": null,
+      "content": "$^{4}$ Trata-se da relação entre o total da despesa administrativa (pessoal e outras) e o total do resultado bruto da intermediação financeira (excluído provisão para operações de créditos e outros créditos), receitas com serviços e receitas com tarifas.",
+      "top_left_x": 54,
+      "top_left_y": 474,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 378,
+      "bottom_right_y": 508,
+      "confidence_scores": null,
+      "content": "$^{5}$ Trata-se do total das despesas de pessoal e outras despesas administrativas.",
+      "top_left_x": 54,
+      "top_left_y": 494,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 953,
+      "confidence_scores": null,
+      "content": "22 | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 933,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.9777805962241999,
+     "minimum_page_confidence_score": 0.26426615871959047,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 21,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n## 2020\n\nO *guidance* BANESTES\\* contém declarações prospectivas, as quais estão sujeitas a riscos e incertezas, pois foram baseadas em expectativas e premissas da Administração e em informações disponíveis no mercado até a presente data.\n\n[tbl-13.html](tbl-13.html)\n\n$^{1}$ Trata-se do total dos saldos da carteira de crédito (conceito Bacen), de TVM privado (debêntures, notas promissórias, CDBs – certificado depósitos bancários, letras financeiras, letras de crédito imobiliário, letras de crédito do agronegócio e CRIs – certificado de recebíveis imobiliários) e garantias prestadas (fianças e avais).\n\n$^{2}$ Trata-se do total dos saldos de depósito à vista, poupança, a prazo, interfinanceiros e outros depósitos.\n\n$^{3}$ Trata-se da relação do resultado de provisão para créditos (Resolução 2.682/99 do CMN) e TVM privado nos últimos doze meses e o saldo da carteira de crédito ampliada.\n\n$^{4}$ Trata-se da relação entre o total da despesa administrativa (pessoal e outras) e o total do resultado bruto da intermediação financeira (excluído provisão para operações de créditos e outros créditos), receitas com serviços e receitas com tarifas.\n\n$^{5}$ Trata-se do total das despesas de pessoal e outras despesas administrativas.\n\n22 | Relatório de Análise Econômica e Financeira",
+    "tables": [
+     {
+      "content": "<table><thead><tr><th>Indicador</th><th>Projeção (%)</th></tr></thead><tr><td>Carteira de Crédito Ampliada<sup>1</sup></td><td>8 - 11</td></tr><tr><td>Depósito Total<sup>2</sup></td><td>7 - 10</td></tr><tr><td>Despesa Provisão de Crédito/Carteira de Crédito Ampliada<sup>3</sup></td><td>2,0 - 2,3</td></tr><tr><td>Eficiência Operacional<sup>4</sup></td><td>50 - 53</td></tr><tr><td>Despesas Operacionais<sup>5</sup></td><td>4 - 7</td></tr><tr><td>Rendas de Serviços e Tarifas</td><td>8 - 11</td></tr></table>",
+      "format": "html",
+      "id": "tbl-13.html",
+      "word_confidence_scores": null
+     }
+    ]
+   },
+   {
+    "blocks": [
+     {
+      "bottom_right_x": 204,
+      "bottom_right_y": 87,
+      "confidence_scores": null,
+      "content": "**BANESTES**^{}[] ^{}[] crescemos juntos",
+      "top_left_x": 51,
+      "top_left_y": 32,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 674,
+      "bottom_right_y": 74,
+      "confidence_scores": null,
+      "content": "4T2019",
+      "top_left_x": 585,
+      "top_left_y": 47,
+      "type": "header"
+     },
+     {
+      "bottom_right_x": 408,
+      "bottom_right_y": 130,
+      "confidence_scores": null,
+      "content": "## **Diretoria**",
+      "top_left_x": 325,
+      "top_left_y": 109,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 408,
+      "bottom_right_y": 166,
+      "confidence_scores": null,
+      "content": "### **Presidente**",
+      "top_left_x": 325,
+      "top_left_y": 148,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 458,
+      "bottom_right_y": 195,
+      "confidence_scores": null,
+      "content": "José Amarildo Casagrande",
+      "top_left_x": 276,
+      "top_left_y": 177,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 567,
+      "bottom_right_y": 235,
+      "confidence_scores": null,
+      "content": "## **Diretor de Relações com Investidores e de Finanças**",
+      "top_left_x": 166,
+      "top_left_y": 216,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 444,
+      "bottom_right_y": 262,
+      "confidence_scores": null,
+      "content": "Fernando Poncio Paiva",
+      "top_left_x": 289,
+      "top_left_y": 245,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 402,
+      "bottom_right_y": 303,
+      "confidence_scores": null,
+      "content": "### **Diretores**",
+      "top_left_x": 331,
+      "top_left_y": 284,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 419,
+      "bottom_right_y": 330,
+      "confidence_scores": null,
+      "content": "Alcio de Araújo",
+      "top_left_x": 314,
+      "top_left_y": 314,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 440,
+      "bottom_right_y": 357,
+      "confidence_scores": null,
+      "content": "Carlos Artur Hauschild",
+      "top_left_x": 294,
+      "top_left_y": 339,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 445,
+      "bottom_right_y": 382,
+      "confidence_scores": null,
+      "content": "Fernando Valli Cardoso",
+      "top_left_x": 289,
+      "top_left_y": 365,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 444,
+      "bottom_right_y": 408,
+      "confidence_scores": null,
+      "content": "Marcos Amaral Vargas",
+      "top_left_x": 289,
+      "top_left_y": 391,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 466,
+      "bottom_right_y": 433,
+      "confidence_scores": null,
+      "content": "Marcos Vinícius Nunes Montes",
+      "top_left_x": 268,
+      "top_left_y": 417,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 460,
+      "bottom_right_y": 460,
+      "confidence_scores": null,
+      "content": "Silvio Henrique Brunoro Grillo",
+      "top_left_x": 273,
+      "top_left_y": 443,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 500,
+      "bottom_right_y": 504,
+      "confidence_scores": null,
+      "content": "## **Conselho de Administração**",
+      "top_left_x": 233,
+      "top_left_y": 482,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 408,
+      "bottom_right_y": 535,
+      "confidence_scores": null,
+      "content": "### **Presidente**",
+      "top_left_x": 325,
+      "top_left_y": 519,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 440,
+      "bottom_right_y": 564,
+      "confidence_scores": null,
+      "content": "Sérgio Pereira Ricardo",
+      "top_left_x": 293,
+      "top_left_y": 546,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 418,
+      "bottom_right_y": 604,
+      "confidence_scores": null,
+      "content": "### **Conselheiros**",
+      "top_left_x": 315,
+      "top_left_y": 586,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 458,
+      "bottom_right_y": 632,
+      "confidence_scores": null,
+      "content": "José Amarildo Casagrande",
+      "top_left_x": 276,
+      "top_left_y": 614,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 451,
+      "bottom_right_y": 657,
+      "confidence_scores": null,
+      "content": "Andreia Pereira Carvalho",
+      "top_left_x": 283,
+      "top_left_y": 641,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 440,
+      "bottom_right_y": 684,
+      "confidence_scores": null,
+      "content": "Estanislau Kostka Stein",
+      "top_left_x": 294,
+      "top_left_y": 666,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 437,
+      "bottom_right_y": 709,
+      "confidence_scores": null,
+      "content": "João Felício Scárdua",
+      "top_left_x": 297,
+      "top_left_y": 693,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 425,
+      "bottom_right_y": 735,
+      "confidence_scores": null,
+      "content": "Nilson Elias Tristão",
+      "top_left_x": 308,
+      "top_left_y": 718,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 476,
+      "bottom_right_y": 761,
+      "confidence_scores": null,
+      "content": "Pedro Marcelo Cezar Guimarães",
+      "top_left_x": 258,
+      "top_left_y": 744,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 465,
+      "bottom_right_y": 786,
+      "confidence_scores": null,
+      "content": "Réveles Berlamino dos Santos",
+      "top_left_x": 269,
+      "top_left_y": 769,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 422,
+      "bottom_right_y": 812,
+      "confidence_scores": null,
+      "content": "Rogério Arthmar",
+      "top_left_x": 311,
+      "top_left_y": 795,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 649,
+      "bottom_right_y": 857,
+      "confidence_scores": null,
+      "content": "## **Gerência de Relações com Investidores e de Planejamento**",
+      "top_left_x": 83,
+      "top_left_y": 834,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 424,
+      "bottom_right_y": 888,
+      "confidence_scores": null,
+      "content": "### **Gerente Geral**",
+      "top_left_x": 309,
+      "top_left_y": 870,
+      "type": "title"
+     },
+     {
+      "bottom_right_x": 460,
+      "bottom_right_y": 916,
+      "confidence_scores": null,
+      "content": "Cristiano Carvalho de Souza",
+      "top_left_x": 273,
+      "top_left_y": 900,
+      "type": "text"
+     },
+     {
+      "bottom_right_x": 357,
+      "bottom_right_y": 954,
+      "confidence_scores": null,
+      "content": "**23** | Relatório de Análise Econômica e Financeira",
+      "top_left_x": 81,
+      "top_left_y": 934,
+      "type": "footer"
+     }
+    ],
+    "confidence_scores": {
+     "average_page_confidence_score": 0.96244872336462,
+     "minimum_page_confidence_score": 0.2729110134032494,
+     "word_confidence_scores": []
+    },
+    "dimensions": {
+     "dpi": 87,
+     "height": 1018,
+     "width": 719
+    },
+    "footer": null,
+    "header": null,
+    "hyperlinks": [],
+    "images": [],
+    "index": 22,
+    "markdown": "**BANESTES**^{}[] crescemos juntos\n\n4T2019\n\n## **Diretoria**\n\n### **Presidente**\n\nJosé Amarildo Casagrande\n\n## **Diretor de Relações com Investidores e de Finanças**\n\nFernando Poncio Paiva\n\n### **Diretores**\n\nAlcio de Araújo\n\nCarlos Artur Hauschild\n\nFernando Valli Cardoso\n\nMarcos Amaral Vargas\n\nMarcos Vinícius Nunes Montes\n\nSilvio Henrique Brunoro Grillo\n\n## **Conselho de Administração**\n\n### **Presidente**\n\nSérgio Pereira Ricardo\n\n### **Conselheiros**\n\nJosé Amarildo Casagrande\n\nAndreia Pereira Carvalho\n\nEstanislau Kostka Stein\n\nJoão Felício Scárdua\n\nNilson Elias Tristão\n\nPedro Marcelo Cezar Guimarães\n\nRéveles Berlamino dos Santos\n\nRogério Arthmar\n\n## **Gerência de Relações com Investidores e de Planejamento**\n\n### **Gerente Geral**\n\nCristiano Carvalho de Souza\n\n**23** | Relatório de Análise Econômica e Financeira",
+    "tables": []
+   }
+  ],
+  "usage_info": {
+   "doc_size_bytes": 743869,
+   "pages_processed": 23
+  }
+ },
+ "trimestre": "4T2019"
+}
