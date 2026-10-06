@@ -234,8 +234,12 @@ def test_leitor_unico_usa_a_nota_dele(tmp_path, monkeypatch):
 
 # --- piloto v2 (29/09) ----------------------------------------------------------------
 
+_CONFIGURAVEIS = ("DESTINO", "PROTOCOLO", "FONTES", "PAPEIS", "PARES_ESPERADOS", "HERDADOS",
+                  "JOURNAL", "UNIDADE_VITORIA")
+
+
 def test_v2_troca_diretorio_pares_e_herda_os_rotulos_do_v1(monkeypatch):
-    for nome in ("DESTINO", "PROTOCOLO", "FONTES", "PAPEIS", "PARES_ESPERADOS", "HERDADOS", "JOURNAL"):
+    for nome in _CONFIGURAVEIS:
         monkeypatch.setattr(p, nome, getattr(p, nome))
     p.configurar("v2")
     assert p.DESTINO.name == "cand02p_v2" and p.PARES_ESPERADOS == 14
@@ -243,6 +247,53 @@ def test_v2_troca_diretorio_pares_e_herda_os_rotulos_do_v1(monkeypatch):
     (herdado, papeis), = p.HERDADOS
     assert herdado.name == "cand02p" and papeis == ("treino", "teste")
     assert p.JOURNAL.parent == p.DESTINO
+    assert p.UNIDADE_VITORIA == "par"
+
+
+# --- piloto v3 (06/10) ----------------------------------------------------------------
+
+def test_v3_teste_de_dois_anos_e_herda_v1_e_v2(monkeypatch):
+    for nome in _CONFIGURAVEIS:
+        monkeypatch.setattr(p, nome, getattr(p, nome))
+    p.configurar("v3")
+    assert p.DESTINO.name == "cand02p_v3" and p.PARES_ESPERADOS == 34
+    assert sorted(t for t, papel in p.PAPEIS.items() if papel == "teste") == [
+        ("4T2021", "1T2022"), ("4T2022", "1T2023")]
+    assert [(d.name, papeis) for d, papeis in p.HERDADOS] == [
+        ("cand02p", ("treino", "teste")), ("cand02p_v2", ("treino", "teste"))]
+    assert p.UNIDADE_VITORIA == "emissor"
+
+
+def test_v3_nenhum_documento_do_teste_aparece_no_treino():
+    """Os trimestres do teste do v3 não podem estar em par de treino nenhum,
+    nem nos pilotos herdados (v1: 2T2025–1T2026; v2: 4T2023–1T2025)."""
+    cfg = p.PILOTOS["v3"]
+    teste = {t for par, papel in cfg["PAPEIS"].items() if papel == "teste" for t in par}
+    treino = {t for par, papel in cfg["PAPEIS"].items() if papel == "treino" for t in par}
+    herdados = {("2T2025", "3T2025"), ("4T2025", "1T2026")} | set(p.PILOTOS["v2"]["PAPEIS"])
+    assert not teste & (treino | {t for par in herdados for t in par})
+
+
+def _por_par(valores: dict[str, tuple]) -> dict:
+    return {par: {"m": {"ndcg10": m}, "b1": {"ndcg10": b}} for par, (m, b) in valores.items()}
+
+
+def test_vitoria_por_emissor_usa_a_media_dos_pares_do_emissor():
+    por_par = _por_par({
+        "A_4T2021_1T2022": (0.9, 0.5), "A_4T2022_1T2023": (0.4, 0.5),   # média 0,65 > 0,50
+        "B_4T2021_1T2022": (0.6, 0.5), "B_4T2022_1T2023": (0.1, 0.5),   # média 0,35 < 0,50
+        "C_4T2021_1T2022": (None, None), "C_4T2022_1T2023": (None, None),  # sem medida
+    })
+    assert p.vencidos_por_emissor(por_par) == 1
+
+
+def test_no_v3_a_decisao_conta_emissores_e_nao_pares(monkeypatch):
+    """Contraprova da decisão (AGENTS.md §4.4, regra 7): 16 pares vencidos não
+    salvam 6 emissores; 7 emissores passam mesmo com só 10 pares."""
+    monkeypatch.setattr(p, "UNIDADE_VITORIA", "emissor")
+    veredito, motivo = p.decidir(_metricas(pares_vencidos_m_sobre_b1=16, emissores_vencidos_m_sobre_b1=6))
+    assert veredito == "INVIAVEL" and "6 emissores" in motivo
+    assert p.decidir(_metricas(pares_vencidos_m_sobre_b1=10, emissores_vencidos_m_sobre_b1=7))[0] == "PROMISSOR"
 
 
 def test_v1_continua_o_padrao(monkeypatch):

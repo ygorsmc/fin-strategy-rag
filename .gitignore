@@ -188,3 +188,9 @@ corpus/cand02p_v2/raw/*
 artefatos/cand02p_v2/eventos/
 artefatos/cand02p_v2/docs/
 artefatos/cand02p_v2/modelo/m.pkl
+
+# Piloto v3 do CAND-02-P: idem.
+corpus/cand02p_v3/raw/*
+artefatos/cand02p_v3/eventos/
+artefatos/cand02p_v3/docs/
+artefatos/cand02p_v3/modelo/m.pkl

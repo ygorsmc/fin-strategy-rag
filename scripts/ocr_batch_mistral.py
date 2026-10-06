@@ -122,6 +122,15 @@ FONTES: dict[str, FonteCorpus] = {
         dir_cache=RAIZ_PROJETO / "corpus" / "cand02p_v2" / "ocr",
         coluna_periodo="trimestre",
     ),
+    # Piloto v3 do CAND-02-P (06/10): releases 4T→1T de 2018 a 2023, mesma
+    # origem e mesma regra de escolha do v2. Também material de teste.
+    "cand02p_v3": FonteCorpus(
+        nome="cand02p_v3",
+        manifesto=RAIZ_PROJETO / "corpus" / "cand02p_v3" / "manifesto.csv",
+        dir_raw=RAIZ_PROJETO / "corpus" / "cand02p_v3" / "raw",
+        dir_cache=RAIZ_PROJETO / "corpus" / "cand02p_v3" / "ocr",
+        coluna_periodo="trimestre",
+    ),
     "ifrs": FonteCorpus(
         nome="ifrs",
         manifesto=RAIZ_PROJETO / "corpus" / "ifrs" / "manifesto_ifrs.csv",

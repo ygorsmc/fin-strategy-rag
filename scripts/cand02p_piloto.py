@@ -57,19 +57,42 @@ PILOTOS = {
         "PAPEIS": {("4T2023", "1T2024"): "treino", ("4T2024", "1T2025"): "teste"},
         "PARES_ESPERADOS": 14,
         "HERDADOS": ((RAIZ / "artefatos" / "cand02p", ("treino", "teste")),),
+        "UNIDADE_VITORIA": "par",
+    },
+    #: Piloto v3 (protocolo de 06/10): teste de 16 pares, dois anos × oito
+    #: emissores; treino com os 30 pares rotulados do v1 e do v2 (inclusive os
+    #: dois testes antigos) e 18 pares novos de 2018 a 2021.
+    "v3": {
+        "DESTINO": RAIZ / "artefatos" / "cand02p_v3",
+        "PROTOCOLO": RAIZ / "resultados" / "protocolo_cand02p_v3_2026-10-06.md",
+        "FONTES": ((RAIZ / "corpus" / "cand02p_v3" / "manifesto.csv",
+                    RAIZ / "corpus" / "cand02p_v3" / "ocr", _OITO),),
+        "PAPEIS": {("4T2018", "1T2019"): "treino", ("4T2019", "1T2020"): "treino",
+                   ("4T2020", "1T2021"): "treino",
+                   ("4T2021", "1T2022"): "teste", ("4T2022", "1T2023"): "teste"},
+        "PARES_ESPERADOS": 34,
+        "HERDADOS": ((RAIZ / "artefatos" / "cand02p", ("treino", "teste")),
+                     (RAIZ / "artefatos" / "cand02p_v2", ("treino", "teste"))),
+        "UNIDADE_VITORIA": "emissor",
     },
 }
+
+#: Unidade da condição de vitória da parada 4. No v1 e no v2 o teste tem um par
+#: por emissor e as duas unidades coincidem. No v3 são dois pares por emissor, e
+#: trimestres do mesmo emissor não são réplicas (AGENTS.md §4.4, regra 8).
+UNIDADE_VITORIA = "par"
 
 
 def configurar(piloto: str) -> None:
     """Troca as constantes do módulo para o piloto escolhido. O v1 é o padrão
     e continua reproduzível sem argumento."""
-    global DESTINO, PROTOCOLO, FONTES, PAPEIS, PARES_ESPERADOS, HERDADOS, JOURNAL
+    global DESTINO, PROTOCOLO, FONTES, PAPEIS, PARES_ESPERADOS, HERDADOS, JOURNAL, UNIDADE_VITORIA
     cfg = PILOTOS[piloto]
     if cfg is None:
         return
     DESTINO, PROTOCOLO, FONTES = cfg["DESTINO"], cfg["PROTOCOLO"], cfg["FONTES"]
     PAPEIS, PARES_ESPERADOS, HERDADOS = cfg["PAPEIS"], cfg["PARES_ESPERADOS"], cfg["HERDADOS"]
+    UNIDADE_VITORIA = cfg["UNIDADE_VITORIA"]
     JOURNAL = DESTINO / "journal_gemini.jsonl"
 
 
@@ -630,7 +653,7 @@ MIN_NOTA_2 = 30
 TETO_B1 = 0.95
 DELTA_NDCG10 = 0.10
 DELTA_NDCG20 = 0.05
-MIN_PARES_VENCIDOS = 7
+MIN_PARES_VENCIDOS = 7  # contado na unidade de UNIDADE_VITORIA
 
 
 def decidir(m: dict) -> tuple[str, str]:
@@ -658,8 +681,10 @@ def decidir(m: dict) -> tuple[str, str]:
         falhas.append(f"Δ nDCG@10 {d10:+.3f} < {DELTA_NDCG10}")
     if d20 < DELTA_NDCG20:
         falhas.append(f"Δ nDCG@20 {d20:+.3f} < {DELTA_NDCG20}")
-    if m["pares_vencidos_m_sobre_b1"] < MIN_PARES_VENCIDOS:
-        falhas.append(f"M vence o B1 em {m['pares_vencidos_m_sobre_b1']} pares < {MIN_PARES_VENCIDOS}")
+    unidade = {"par": "pares", "emissor": "emissores"}[UNIDADE_VITORIA]
+    vencidos = m[f"{unidade}_vencidos_m_sobre_b1"]
+    if vencidos < MIN_PARES_VENCIDOS:
+        falhas.append(f"M vence o B1 em {vencidos} {unidade} < {MIN_PARES_VENCIDOS}")
     if m["criticos_top20"]["m"] < m["criticos_top20"]["b1"]:
         falhas.append(f"críticos no top-20: M {m['criticos_top20']['m']} < B1 {m['criticos_top20']['b1']}")
     if falhas:
@@ -702,7 +727,21 @@ def medir(papel: str, bracos: tuple[str, ...]) -> dict:
     return {"papel": papel, "itens": total, "leitores": len(LEITORES), "alfa": None if alfa is None or alfa != alfa else alfa,
             "fracao_nao_julgavel": nao_julgaveis / total if total else 1.0, "eventos_nota_2": nota2,
             "macro": macro, "por_par": por_par, "pares_vencidos_m_sobre_b1": vencidos,
+            "emissores_vencidos_m_sobre_b1": vencidos_por_emissor(por_par) if "m" in bracos else 0,
+            "emissores_no_teste": len({par.split("_", 1)[0] for par in por_par}),
             "criticos_top20": criticos}
+
+
+def vencidos_por_emissor(por_par: dict) -> int:
+    """Emissores em que a média do nDCG@10 do M nos pares do emissor supera a
+    do B1. Par sem nDCG (nenhum ganho positivo) fica fora da média; emissor sem
+    par medido não conta como vencido."""
+    por_emissor: dict[str, list[tuple[float, float]]] = {}
+    for par, v in por_par.items():
+        if v["m"]["ndcg10"] is None or v["b1"]["ndcg10"] is None:
+            continue
+        por_emissor.setdefault(par.split("_", 1)[0], []).append((v["m"]["ndcg10"], v["b1"]["ndcg10"]))
+    return sum(1 for xs in por_emissor.values() if sum(a for a, _ in xs) > sum(b for _, b in xs))
 
 
 def cmd_avaliar(args) -> int:
