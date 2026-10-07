@@ -609,7 +609,7 @@ outra tarefa.
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
 - Suíte atual: **4.567 casos passando, zero falhas/erros/skips**, 28 avisos
-  (06/10, código do CAND-02-P v3, rodada com o Python 3.12 do contorno abaixo).
+  (06/10, código do CAND-02-P v3, pelo próprio `.venv`).
   Antes: 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
   (4.184) tem XML em
   `artefatos/pendencias_geom1_rank03b_2026-09-26/pytest_suite_pos_auditoria.xml`.
@@ -692,13 +692,15 @@ outra tarefa.
   ~9,45; sobravam ~0,98 dos USD 5 do v2. O teto do `.env` continua USD 8; o v3
   o elevou só na própria execução, por variável de ambiente. · LLM USD 2,87 de
   um teto de 25 (RNF03).
-- **`.venv` QUEBRADO desde a atualização do sistema (visto em 06/10).** O
-  `/usr/bin/python3` passou a 3.14 e o 3.12 foi removido. O `.venv` foi criado
-  com o 3.12 e não acha mais os próprios pacotes (`No module named pytest`).
-  Contorno usado no v3, sem tocar no `.venv`: um 3.12 via `uv python install
-  3.12`, num venv à parte com um `.pth` apontando para
-  `.venv/lib/python3.12/site-packages`. Recriar o `.venv` é decisão do
-  responsável, porque esbarra no conflito de pin aberto (seção acima).
+- **`.venv` consertado em 06/10, depois de quebrar com a atualização do
+  sistema.** O `/usr/bin/python3` passou a 3.14 e o 3.12 foi removido; o
+  `.venv` (criado com o 3.12.3 do sistema) deixou de achar os próprios pacotes
+  (`No module named pytest`). Reapontado, sem reinstalar nada, para o 3.12.13 do
+  `uv` (`~/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu`): o symlink
+  `.venv/bin/python3` e o `pyvenv.cfg`. Mesmos pacotes (sklearn 1.8.0, numpy
+  2.5.1), suíte inteira verde pelo `.venv` (4.567). **Se esse diretório do `uv`
+  for apagado, o `.venv` quebra de novo**; refazer com `uv python install 3.12`.
+  O conflito de pin numpy × presidio da seção acima não foi tocado.
 
 ### Branch de trabalho
 
