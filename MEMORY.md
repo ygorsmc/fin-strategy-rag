@@ -1111,10 +1111,21 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    **por emissor**. O treino soma os 30 pares rotulados do v1 e do v2 e 18 pares
    novos (2018–2021). OCR de 68 releases (4.727 pp, ~US$ 9,45) em
    `corpus/cand02p_v3/`; universo, C, pool e pacotes do treino commitados
-   (`9cae2a3`). **Próximo passo:** 18 leitores Claude, um por par de treino,
-   com `artefatos/cand02p_v3/instrucoes_leitor_claude.md`. Depois o passo 6 do
-   protocolo (`--piloto v3 treinar`). A conferência humana do v2 (item −5)
-   continua valendo para os dois: o leitor é o mesmo.
+   (`9cae2a3`). **Em curso (07/10): rótulos dos 18 pares de treino.** Prontos e
+   commitados os 6 de 4T2018→1T2019 (`647b315`), com a declaração da releitura
+   cega (`artefatos/cand02p_v3/reteste/declaracao.md`: SANTANDER e BMG
+   4T2018→1T2019, só descritiva). **Estado real:** contar as linhas de
+   `rotulos/claude/treino/*.jsonl` contra o pool. Arquivo parcial é retomável:
+   o prompt manda manter as linhas válidas e rotular só o que falta.
+   **Procedimento, aprendido no limite de sessão de 06/10:** no máximo 3
+   leitores simultâneos. Leitor interrompido é retomado pelo mesmo agente,
+   para não reler documentos e não misturar duas leituras no par. Agente novo
+   com "retomada" só se o antigo não existir mais. Cada par passa pelo
+   controle de qualidade antes do commit: contrato, distribuição contra os
+   herdados (nota 2 ≈ 11%), auditoria de acesso pelas chamadas de ferramenta
+   e amostra conferida. Depois: releituras, passo 6 (`--piloto v3 treinar`) e
+   os 16 pares de teste. A conferência humana do v2 (item −5) continua valendo
+   para os dois: o leitor é o mesmo.
 −5. **CAND-02-P v2: PROMISSOR em 29/09, AGUARDANDO O RESPONSÁVEL.** Com 22 pares de
    treino (OCR de 28 releases do RAD, US$ 4,02), o M venceu o B1 (nDCG@10 0,508
    × 0,342, 7 de 8 pares). Próximo passo concreto: o responsável rotula às cegas
