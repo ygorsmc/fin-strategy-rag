@@ -194,3 +194,6 @@ corpus/cand02p_v3/raw/*
 artefatos/cand02p_v3/eventos/
 artefatos/cand02p_v3/docs/
 artefatos/cand02p_v3/modelo/m.pkl
+
+# Pasta local da conferência humana do CAND-02-P v3: cópias e links, nada novo.
+conferencia_humana_v3/
