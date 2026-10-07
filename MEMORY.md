@@ -608,8 +608,9 @@ outra tarefa.
   **`auditoria_manual_pendente`**. O README ainda publica a anterior
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
-- Suíte atual: **4.480 casos passando, zero falhas/erros/skips**, 28 avisos
-  (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
+- Suíte atual: **4.567 casos passando, zero falhas/erros/skips**, 28 avisos
+  (06/10, código do CAND-02-P v3, rodada com o Python 3.12 do contorno abaixo).
+  Antes: 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
   (4.184) tem XML em
   `artefatos/pendencias_geom1_rank03b_2026-09-26/pytest_suite_pos_auditoria.xml`.
   Testes dirigidos: 1.179; os dois achados da auditoria independente foram
@@ -686,8 +687,18 @@ outra tarefa.
 - **O holdout é holdout.** O 2T2026 é o único dado que nenhum ajuste deste
   projeto viu. Usá-lo para iterar destrói a única coisa que ele tem. Ele só se
   gasta uma vez, numa medição confirmatória pré-registrada.
-- Orçamento: **OCR ≈ USD 5,14 restantes de setembro** (cota mensal de USD 10 que
-  **expira**, não acumula) · LLM USD 2,87 de um teto de 25 (RNF03).
+- Orçamento: **OCR ≈ USD 1,5 restantes**, por estimativa, não conferido no painel
+  da Mistral. Em 06/10 o responsável liberou USD 10, e o v3 do CAND-02-P gastou
+  ~9,45; sobravam ~0,98 dos USD 5 do v2. O teto do `.env` continua USD 8; o v3
+  o elevou só na própria execução, por variável de ambiente. · LLM USD 2,87 de
+  um teto de 25 (RNF03).
+- **`.venv` QUEBRADO desde a atualização do sistema (visto em 06/10).** O
+  `/usr/bin/python3` passou a 3.14 e o 3.12 foi removido. O `.venv` foi criado
+  com o 3.12 e não acha mais os próprios pacotes (`No module named pytest`).
+  Contorno usado no v3, sem tocar no `.venv`: um 3.12 via `uv python install
+  3.12`, num venv à parte com um `.pth` apontando para
+  `.venv/lib/python3.12/site-packages`. Recriar o `.venv` é decisão do
+  responsável, porque esbarra no conflito de pin aberto (seção acima).
 
 ### Branch de trabalho
 
@@ -1092,6 +1103,16 @@ transformar toda dívida do projeto em pré-requisito. O novo protocolo deverá 
 aprovação por superioridade do modelo. Nenhum painel/CSV/código foi alterado
 por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
 
+−6. **CAND-02-P v3 EM VOO desde 06/10, parado no passo 5 (rótulos do treino).**
+   Protocolo `resultados/protocolo_cand02p_v3_2026-10-06.md`, com teste novo de
+   16 pares (4T2021→1T2022 e 4T2022→1T2023, oito emissores) e vitória contada
+   **por emissor**. O treino soma os 30 pares rotulados do v1 e do v2 e 18 pares
+   novos (2018–2021). OCR de 68 releases (4.727 pp, ~US$ 9,45) em
+   `corpus/cand02p_v3/`; universo, C, pool e pacotes do treino commitados
+   (`9cae2a3`). **Próximo passo:** 18 leitores Claude, um por par de treino,
+   com `artefatos/cand02p_v3/instrucoes_leitor_claude.md`. Depois o passo 6 do
+   protocolo (`--piloto v3 treinar`). A conferência humana do v2 (item −5)
+   continua valendo para os dois: o leitor é o mesmo.
 −5. **CAND-02-P v2: PROMISSOR em 29/09, AGUARDANDO O RESPONSÁVEL.** Com 22 pares de
    treino (OCR de 28 releases do RAD, US$ 4,02), o M venceu o B1 (nDCG@10 0,508
    × 0,342, 7 de 8 pares). Próximo passo concreto: o responsável rotula às cegas
