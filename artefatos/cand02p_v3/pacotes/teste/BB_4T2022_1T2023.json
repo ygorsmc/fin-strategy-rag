@@ -1,0 +1,1207 @@
+{
+ "par": "BB_4T2022_1T2023",
+ "documento_anterior": "bb_release_4T2022",
+ "documento_atual": "bb_release_1T2023",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 347,
+   "pagina_atual": 326,
+   "secao": "d.9) Diferenças de premissas do Plano 1 – Previ – Posição em 31/12/2022",
+   "trecho_anterior": "(1) A Previ, na metodologia de avaliação para o seu investimento na Litel, utiliza como referência o preço médio de negociação da ação da Vale, principal ativo do grupo Litel, do último dia útil de cada mês, ajustado.",
+   "trecho_atual": "1 - A Previ, na metodologia de avaliação para o seu investimento na Litel, utiliza como referência o preço de fechamento da ação da Vale, principal ativo do grupo Litel, do penúltimo dia de cada mês."
+  },
+  {
+   "item": "E002",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "Margem Financeira Bruta (MFB)",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, as Receitas de Operações de Crédito se elevaram em +4,6%, beneficiadas pelo crescimento e reapreçamento da carteira de crédito, enquanto o resultado de tesouraria apresentou redução de 7,8% devido, principalmente, à menores receitas advindas das aplicações interfinanceiras de liquidez."
+  },
+  {
+   "item": "E003",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 360,
+   "pagina_atual": 338,
+   "secao": "31 – Resultado recorrente e não recorrente",
+   "trecho_anterior": "Conforme definido pela Resolução BCB n.º 2/2020, resultados não recorrentes são aqueles que não estão relacionados ou estão relacionados apenas de forma incidental com as atividades típicas da instituição, e não estão previstos para que ocorram com frequência em exercícios futuros.",
+   "trecho_atual": "Conforme definido pela Resolução BCB nº 2/2020, resultados não recorrentes são aqueles que não estão relacionados ou estão relacionados apenas de forma incidental com as atividades típicas da instituição, e não estão previstos para que ocorram com frequência em exercícios futuros."
+  },
+  {
+   "item": "E004",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 333,
+   "secao": "Integração:",
+   "trecho_anterior": "",
+   "trecho_atual": "(ii) a capacidade de a Instituição gerenciar riscos de forma efetiva e prudente;"
+  },
+  {
+   "item": "E005",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 287,
+   "pagina_atual": 260,
+   "secao": "b) Resultado da carteira de crédito",
+   "trecho_anterior": "As referidas cessões geraram impacto positivo de R$ 11.222 mil no 2º Semestre/2022, R$ 17.626 mil no Exercício/2022 e R$ 458.726 mil no Exercício/2021, líquido de provisão para perdas associadas ao risco de crédito.",
+   "trecho_atual": "As referidas cessões geraram impacto positivo de R$ 1.638 mil (R$ 6.206 mil no 1º trimestre/2022), líquido de provisão para perdas associadas ao risco de crédito."
+  },
+  {
+   "item": "E006",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 357,
+   "pagina_atual": 335,
+   "secao": "Integração:",
+   "trecho_anterior": "(2) Em 2022, em cumprimento ao disposto no artigo 31 da Resolução CMN n.º 4.955/2021, os saldos do FCO correspondem à aplicação do limitador de 70% (80% em 2021) ao montante computado no Nível II em 30.06.2018.",
+   "trecho_atual": "1 - Em 2023, em cumprimento ao disposto no artigo 31 da Resolução CMN nº 4.955/2021, os saldos do FCO correspondem à aplicação do limitador de 60% (70% em 2022) ao montante computado no Nível II em 30.06.2018."
+  },
+  {
+   "item": "E007",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "PCLD Ampliada",
+   "trecho_anterior": "",
+   "trecho_atual": "Perdas por Imparidade: crescimento trimestral reflete reperfilamento de dívida de cliente do segmento large corporate, em recuperação judicial desde 2019, com liquidação de operação de crédito bancário, concomitantemente à emissão de debêntures com reconhecimento imediato de Perda Permanente em 100% do valor de face do título emitido."
+  },
+  {
+   "item": "E008",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 110,
+   "secao": "Qualidade do Crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "Perdas por Imparidade: crescimento trimestral reflete reperfilamento de dívida de cliente do segmento *large corporate*, em recuperação judicial desde 2019, com liquidação de operação de crédito bancário, concomitantemente à emissão de debêntures com reconhecimento imediato de Perda Permanente em 100% do valor de face do título emitido."
+  },
+  {
+   "item": "E009",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 259,
+   "pagina_atual": 232,
+   "secao": "s) Resultados não recorrentes",
+   "trecho_anterior": "Conforme definido pela Resolução BCB n.º 2/2020, resultados não recorrentes são aqueles que não estão relacionados ou estão relacionados apenas de forma incidental com as atividades típicas da instituição, e não estão previstos para que ocorram com frequência em exercícios futuros.",
+   "trecho_atual": "Conforme definido pela Resolução BCB nº 2/2020, resultados não recorrentes são aqueles que não estão relacionados ou estão relacionados apenas de forma incidental com as atividades típicas da instituição, e não estão previstos para que ocorram com frequência em exercícios futuros."
+  },
+  {
+   "item": "E010",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "Margem Financeira Bruta (MFB)",
+   "trecho_anterior": "No acumulado de 2022, contribuíram para o resultado os aumentos da Receita de Operações de Crédito (+43,7%) e do Resultado de Tesouraria (+116,0%), impulsionados pelos crescimentos da carteira de crédito e de títulos e valores mobiliários, parcialmente compensados pelo aumento de 158,4% da Despesa de Captação Comercial.",
+   "trecho_atual": "Na comparação com o 1T22, contribuíram para a elevação da MFB os aumentos da Receita de Operações de Crédito (+35,1%) e do Resultado de Tesouraria (+72,1%), impulsionados pelos crescimentos de volumes e taxas da carteira de crédito e de títulos e valores mobiliários, parcialmente compensados pelo aumento de (+52,2%) da Despesa de Captação Comercial."
+  },
+  {
+   "item": "E011",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 251,
+   "pagina_atual": null,
+   "secao": "Normas a serem aplicadas em períodos futuros",
+   "trecho_anterior": "A elaboração do plano considerou as informações disponíveis até o momento de sua confecção, adotando como premissas as expectativas e necessidades de publicações de leis e normas específicas sobre determinados temas, dentre os quais destacamos: o novo plano de contas contábil; a redução de assimetrias entre as normas contábeis e a legislação tributária; o detalhamento da metodologia a ser adotada para classificar os instrumentos financeiros e calcular a taxa de juros efetiva (inclusive por meio de abordagem diferenciada) e o estabelecimento de parâmetros para mensuração da perda esperada associada ao risco de crédito.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E012",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 122,
+   "secao": "Cartão de Crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "A inadimplência acima de 90 dias apresentou recuo na comparação trimestral, atingindo 9,93%, reflexo das medidas tomadas ao longo de 2022 que já permitem perceber uma melhora na qualidade das safras mais recentes."
+  },
+  {
+   "item": "E013",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 363,
+   "pagina_atual": null,
+   "secao": "g) Revisão e redimensionamento da estrutura organizacional e desligamento incentivado",
+   "trecho_anterior": "A implementação plena das medidas ocorreu a partir do 1º Semestre/2021 proporcionando ganhos de eficiência e otimização em 870 pontos de atendimento do país, incluindo: i) desativação de unidades; ii) conversão de agências em PA e PA transformados em agências; iii) transformação de unidades de negócios em Lojas BB, sem a oferta de guichês de caixa, com maior vocação para assessoria e relacionamento; iv) relocalização compartilhada de unidades de negócios; e v) criação de Agências Especializadas Agro e Escritórios Leve Digital (unidades de negócio especializadas no atendimento a clientes com maturidade digital).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E014",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 237,
+   "secao": "c) Constituição da Broto",
+   "trecho_anterior": "",
+   "trecho_atual": "(Brasilseg), sociedade coligada indireta por meio da BB Seguridade Participações S.A., foi aprovada a constituição da Broto S.A."
+  },
+  {
+   "item": "E015",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 151,
+   "pagina_atual": 135,
+   "secao": "Qualidade do Crédito Pessoa Jurídica",
+   "trecho_anterior": "O índice de inadimplência INAD+90d PJ (relação entre as operações vencidas há mais de 90 dias e o saldo da carteira de crédito classificada PJ) aumentou 35 bps na comparação trimestral, atingindo 1,83% em dezembro/22.",
+   "trecho_atual": "O índice de inadimplência INAD+90d PJ (relação entre as operações vencidas há mais de 90 dias e o saldo da carteira de crédito classificada PJ) aumentou 30 bps na comparação trimestral, atingindo 2,13% em março/23."
+  },
+  {
+   "item": "E016",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 208,
+   "pagina_atual": 192,
+   "secao": "Introdução",
+   "trecho_anterior": "As informações contábeis suplementares foram compiladas e apresentadas partindo das demonstrações contábeis individuais e consolidadas elaboradas de acordo com as práticas contábeis adotadas no Brasil aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil - BACEN, referentes (a) ao semestre e exercício findos em 31 de dezembro de 2022, auditadas por nós de acordo com as normas brasileiras e internacionais de auditoria, sobre as quais emitimos relatório de auditoria em 13 de fevereiro de 2023; e (b) aos períodos de três e nove meses findos em 30 de setembro de 2022, revisadas por nós de acordo com as normas brasileiras e internacionais de revisão de informações intermediárias (NBC TR 2410 - Revisão de Informações Intermediárias Executada pelo Auditor da Entidade e ISRE 2410 - “Review of Interim Financial Information Performed by the Independent Auditor of the Entity”, respectivamente), sobre as quais emitimos relatório de revisão em 8 de novembro de 2022.",
+   "trecho_atual": "As informações contábeis suplementares foram compiladas e apresentadas partindo das demonstrações contábeis individuais e consolidadas elaboradas de acordo com as práticas contábeis adotadas no Brasil, aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil - BACEN, referentes ao período de três meses findo em 31 de março de 2023, revisadas por nós de acordo com as normas brasileiras e internacionais de revisão de informações intermediárias (NBC TR 2410 - Revisão de Informações Intermediárias Executada pelo Auditor da Entidade e ISRE 2410 - “Review of Interim Financial Information Performed by the Independent Auditor of the Entity”, respectivamente), sobre as quais emitimos relatório de revisão em 12 de maio de 2023."
+  },
+  {
+   "item": "E017",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 33,
+   "secao": "Ecoeficiência",
+   "trecho_anterior": "",
+   "trecho_atual": "O BB está automatizando a gestão da energia elétrica por meio de IOT para melhorar os índices de eficiência energética, agilizar o atendimento e apoiar a manutenção de equipamentos e a agilidade na obtenção de informações."
+  },
+  {
+   "item": "E018",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 228,
+   "pagina_atual": null,
+   "secao": "Gestão de Riscos",
+   "trecho_anterior": "Dentre as ações, cabe destacar a revisão da Política Específica de Classificação e Reclassificação de Operações nas Carteiras de Negociação e Bancária, a revisão do framework de gestão do risco de mercado, revisão do processo de reclassificação de operações entre as Carteiras de Negociação e Bancária, instituição de processo para avaliação periódica da relevância da atividade intradiária e instituição de processo para mensuração e reporte do risco de base no risco de mercado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E019",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 344,
+   "secao": "*Demonstrações do valor adicionado*",
+   "trecho_anterior": "",
+   "trecho_atual": "As demonstrações individuais e consolidadas do valor adicionado (“DVA”) referentes ao período de três meses findo em 31 de março de 2023, elaboradas sob a responsabilidade da Administração do Banco, cuja apresentação é requerida pela legislação societária brasileira para companhias abertas e apresentadas como informação suplementar pelas práticas contábeis adotadas no Brasil aplicáveis às instituições autorizadas a funcionar pelo BACEN, foram submetidas a procedimentos de revisão executados em conjunto com a revisão das demonstrações contábeis intermediárias individuais e consolidadas do Banco, com o objetivo de concluir se elas estão conciliadas com as demonstrações contábeis intermediárias individuais e consolidadas e os registros contábeis, conforme aplicável, e se a sua forma e o seu conteúdo estão de acordo com os critérios definidos no pronunciamento técnico CPC 09 – Demonstração do Valor Adicionado."
+  },
+  {
+   "item": "E020",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 234,
+   "secao": "c) Perda permanente de títulos e valores mobiliários",
+   "trecho_anterior": "",
+   "trecho_atual": "em decorrência da deterioração da sua qualidade creditícia ou de seus mitigadores (reestruturação de dívida), se o Banco pede a falência ou outra atitude similar em relação ao devedor, ou se o devedor solicita qualquer tipo de medida judicial que limite, atrase ou impeça o cumprimento de suas obrigações nas condições pactuadas."
+  },
+  {
+   "item": "E021",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 179,
+   "pagina_atual": null,
+   "secao": "Base de Cartões e Faturamento",
+   "trecho_anterior": "O crescimento no trimestre foi proporcionado pelos incentivos para a comercialização de cartões e adesão aos canais digitais, pagamento de contas e uso recorrente dos cartões pelos portadores.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E022",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 373,
+   "pagina_atual": null,
+   "secao": "Conclusões",
+   "trecho_anterior": "a) o Sistema de Controles Internos (SCI) é adequado ao porte e à complexidade dos negócios do Conglomerado e é objeto de permanente atenção por parte da Administração; b) a Auditoria Interna é efetiva, dispõe de estrutura e orçamento suficientes ao desempenho de suas funções e atua com independência, objetividade e qualidade; c) a Deloitte atua com efetividade e independência; d) as transações com partes relacionadas encontram-se adequadas à política específica do BB e à legislação vigente; e) os principais parâmetros dos cálculos e os resultados atuariais estão adequadamente refletidos nas demonstrações contábeis; f) as principais exposições de risco vêm sendo gerenciadas adequadamente pela Administração; g) as demonstrações contábeis individuais e consolidadas relativas a 31/12/2022 foram elaboradas em conformidade com as normas legais e com as práticas contábeis adotadas no Brasil, aplicáveis às instituições financeiras autorizadas a funcionar pelo Bacen e refletem, em seus aspectos relevantes, a situação patrimonial e financeira naquela data.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E023",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 110,
+   "pagina_atual": 94,
+   "secao": "Gestão de Capital",
+   "trecho_anterior": "O Índice de Basileia foi de 16,65% em dezembro de 2022.",
+   "trecho_atual": "O Índice de Basileia foi de 16,19% em março de 2023."
+  },
+  {
+   "item": "E024",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "Índice de Tabelas",
+   "trecho_anterior": "Composição da Carteira de Negócios Sustentáveis de Agronegócios – R$ milhões...",
+   "trecho_atual": "Composição da Carteira de Negócios Sustentáveis de Agronegócios – R$ milhões ..."
+  },
+  {
+   "item": "E025",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 321,
+   "secao": "d.3) Valores reconhecidos no Balanço patrimonial",
+   "trecho_anterior": "",
+   "trecho_atual": "1 - Movimentações ocorridas após o relatório de avaliação atuarial de dezembro."
+  },
+  {
+   "item": "E026",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 145,
+   "secao": "Qualidade do Crédito Agro",
+   "trecho_anterior": "",
+   "trecho_atual": "O saldo de provisão de crédito foi de R$ 3,7 bilhões em março/23."
+  },
+  {
+   "item": "E027",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "Receitas de Prestação de Serviços",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas de prestação de serviços somaram R$ 8,1 bilhões no 1T23, redução de 3,6% na comparação com o trimestre anterior, impactadas pela sazonalidade do trimestre."
+  },
+  {
+   "item": "E028",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 343,
+   "secao": "Introdução",
+   "trecho_anterior": "",
+   "trecho_atual": "Revisamos o balanço patrimonial individual e consolidado do Banco do Brasil S.A."
+  },
+  {
+   "item": "E029",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 366,
+   "pagina_atual": null,
+   "secao": "RELATÓRIO DO AUDITOR INDEPENDENTE SOBRE AS",
+   "trecho_anterior": "DEMONSTRAÇÕES CONTÁBEIS INDIVIDUAIS E CONSOLIDADAS",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E030",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 228,
+   "pagina_atual": null,
+   "secao": "Gestão de Riscos",
+   "trecho_anterior": "Dentre essas ações, destacam-se a revisão do framework de gestão dos riscos Legal, de Conduta e de Conformidade, em linha com a definição do Modelo Referencial de Linhas de Defesa (MRLD) e a criação de novos indicadores-chave de risco (ICR) para a gestão dos riscos Legal e de Modelo, e a definição de ICR para projeção de perdas e perda por produto.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E031",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 250,
+   "pagina_atual": null,
+   "secao": "Normas a serem aplicadas em períodos futuros",
+   "trecho_anterior": "O Banco realizou a análise do normativo e mapeou os mais diversos processos impactados e, dada a magnitude dos esforços e abrangência, segmentou o plano em 12 frentes para que os temas possam ser abordados de maneira específica: classificação dos instrumentos financeiros; taxa efetiva de juros; ajustes tributários, contábeis e stop accrual; contabilidade de hedge; estágios e baixa para prejuízo; garantias; base de modelagem e modelagem dos parâmetros; base de operações e cálculo da perda esperada; gestão; validação independente; auditoria; e Project Management Office (PMO).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E032",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 305,
+   "pagina_atual": 280,
+   "secao": "b) Segregação de depósitos por prazo de exigibilidade",
+   "trecho_anterior": "(1) Inclui o valor de R$ 101.050.296 mil (R$ 97.120.134 mil em 31.12.2021), relativo a depósitos a prazo com cláusula de recompra antecipada (compromisso de liquidez), considerados os prazos de vencimento originais.",
+   "trecho_atual": "1 - Inclui o valor de R$ 106.495.654 mil (R$ 101.050.296 mil em 31/12/2022), relativo a depósitos a prazo com cláusula de recompra antecipada (compromisso de liquidez), considerados os prazos de vencimento originais."
+  },
+  {
+   "item": "E033",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 57,
+   "pagina_atual": null,
+   "secao": "Assistentes Virtuais",
+   "trecho_anterior": "Continuando a atuação referente e inovadora em assistentes financeiros, o BB foi o primeiro banco a oferecer empréstimo pessoal para correntista no WhatsApp.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E034",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 26,
+   "secao": "Projeções Corporativas",
+   "trecho_anterior": "No exercício de 2022, os seguintes indicadores apresentaram variação em relação ao projetado para o ano:",
+   "trecho_atual": "No 1T23, os seguintes indicadores apresentaram variação em relação às Projeções Corporativas para o ano:"
+  },
+  {
+   "item": "E035",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 378,
+   "pagina_atual": null,
+   "secao": "DIRETORES",
+   "trecho_anterior": "Adelar Valentim Dias Antonio Carlos Wagner Chiarello Daniel Alves Maria Daniela de Avelar Gonçalves Eduardo Cesar Pasa Guilherme Alexandre Rossi Gustavo Garcia Lellis Jayme Pinto Junior João Leocir Dal Rosso Frescura João Vagnes de Moura Silva Lucinéia Possar Marco Túlio de Oliveira Mendonça Neudson Peres de Freitas Paula Sayão Carvalho Araujo Paulo Augusto Ferreira Bouças Paulo Eduardo da Silva Guimarães Pedro Bramont Rodrigo Felippe Afonso Rodrigo Mulinari Thiago Affonso Borsari Thompson Soares Pereira César",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E036",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 23,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "O ICP apresentou crescimento de 24 bps no trimestre, explicado principalmente pela incorporação ao patrimônio líquido (PL) do lucro líquido contábil, descontado dos dividendos a pagar, referente ao 4T22 (+59 bps), efeito parcialmente compensado pelo incremento de R$ 33,5 bilhões no RWA (-39 bps).",
+   "trecho_atual": "O ICP se manteve estável no trimestre, explicado principalmente pela incorporação ao patrimônio líquido (PL) do lucro líquido contábil, descontado dos dividendos a pagar, referente ao 1T23 (+0,49 p.p.), parcialmente impactado pelo incremento do RWA (-0,38 p.p.), em virtude do crescimento da carteira de crédito."
+  },
+  {
+   "item": "E037",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 366,
+   "pagina_atual": 343,
+   "secao": "Conclusão sobre as demonstrações contábeis intermediárias individuais e consolidadas",
+   "trecho_anterior": "Em nossa opinião, as demonstrações contábeis acima referidas apresentam adequadamente, em todos os aspectos relevantes, a posição patrimonial e financeira, individual e consolidada, do Banco do Brasil S.A. e de suas controladas em 31 de dezembro de 2022, o desempenho individual e consolidado de suas operações e os seus respectivos fluxos de caixa individuais e consolidados para o semestre e exercício findos nessa data, de acordo com as práticas contábeis adotadas no Brasil aplicáveis às instituições financeiras autorizadas a funcionar pelo Banco Central do Brasil – BACEN.",
+   "trecho_atual": "Com base em nossa revisão, não temos conhecimento de nenhum fato que nos leve a acreditar que as demonstrações contábeis intermediárias individuais e consolidadas anteriormente referidas não apresentam adequadamente, em todos os aspectos relevantes, a posição patrimonial e financeira, individual e consolidada, do Banco do Brasil S.A. em 31 de março de 2023, o desempenho individual e consolidado de suas operações e os seus fluxos de caixa individuais e consolidados para o período de três meses findo naquela data, de acordo com as práticas contábeis adotadas no Brasil, aplicáveis às instituições autorizadas a funcionar pelo BACEN."
+  },
+  {
+   "item": "E038",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 337,
+   "secao": "e) Indicadores regulatórios versus indicadores observados",
+   "trecho_anterior": "",
+   "trecho_atual": "1) na modalidade perpétua, há opção de recompra ou resgate, atentando para os seguintes requisitos: a. intervalo mínimo de cinco anos entre a data da emissão e a primeira data de exercício de opção de recompra ou resgate; b. o exercício de opção de recompra ou resgate está condicionado, na data do exercício, à autorização do Banco Central do Brasil; c. inexistência de características que acarretem a expectativa de que a opção de recompra ou resgate será exercida, constituindo-se faculdade da Emitente; e d. o intervalo entre as datas de exercício das opções deve ser de, no mínimo, 180 dias."
+  },
+  {
+   "item": "E039",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "PCLD Ampliada",
+   "trecho_anterior": "",
+   "trecho_atual": "Risco de Crédito: redução trimestral de 49,2% e de 7,5% na comparação com o mesmo período do ano anterior."
+  },
+  {
+   "item": "E040",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 335,
+   "pagina_atual": null,
+   "secao": "d) Sumário das transações com partes relacionadas",
+   "trecho_anterior": "(10) Inclui o contrato de abertura de linha de crédito interbancário rotativo a liberar com o Banco Votorantim.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E041",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 48,
+   "secao": "Plataforma de Câmbio e Comércio Exterior: nova opção de trava da taxa de câmbio",
+   "trecho_anterior": "",
+   "trecho_atual": "O BB foi primeiro e único banco a permitir a opção de trava da taxa de câmbio por API, para proporcionar a contratação pelo valor da taxa consultada."
+  },
+  {
+   "item": "E042",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 227,
+   "pagina_atual": null,
+   "secao": "Gestão de Riscos",
+   "trecho_anterior": "risco e a visão de riscos emergentes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E043",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 372,
+   "pagina_atual": null,
+   "secao": "Apresentação",
+   "trecho_anterior": "O Coaud avalia e monitora as exposições de risco mediante interação e atuação conjunta com o Comitê de Riscos e de Capital (Coris), em consonância com a Resolução CMN nº 4.557/2017.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E044",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 208,
+   "pagina_atual": 192,
+   "secao": "Responsabilidades da Administração do Banco pelo processo de compilação e apresentação das informações contábeis suplementares incluídas no Relatório de Análise",
+   "trecho_anterior": "A Administração do Banco é responsável pela elaboração das demonstrações contábeis individuais e consolidadas do Banco, referentes ao semestre e exercício findos em 31 de dezembro de 2022 e aos períodos de três e nove meses findos em 30 de setembro de 2022, ambas preparadas de acordo com as práticas contábeis adotadas no Brasil aplicáveis às instituições financeiras autorizadas a funcionar pelo BACEN, bem como pelo processo de compilação e apresentação das informações contábeis suplementares, incluídas na seção Informações Financeiras Consolidadas Resumidas do Relatório de Análise do Desempenho do Banco, contendo certas realocações efetuadas pela Administração do Banco para uma análise adicional, as quais estão descritas na seção Informações Financeiras Consolidadas Resumidas, no item Abertura das Realocações do Relatório de Análise do Desempenho, cujos valores são obtidos das demonstrações contábeis individuais e consolidadas do Banco auditadas ou revisadas por nós, ou dos registros contábeis do Banco.",
+   "trecho_atual": "A Administração do Banco é responsável pela elaboração das demonstrações contábeis individuais e consolidadas do Banco, referentes ao período de três meses findo em 31 de março de 2023, preparadas de acordo com as práticas contábeis adotadas no Brasil, aplicáveis às instituições financeiras autorizadas a funcionar pelo BACEN, bem como pelo processo de compilação e apresentação das informações contábeis suplementares, incluídas na seção Informações Financeiras Consolidadas Resumidas do Relatório de Análise do Desempenho do Banco, contendo certas realocações efetuadas pela Administração do Banco para uma análise adicional, as quais estão descritas na seção Informações Financeiras Consolidadas Resumidas, no item Abertura das Realocações do Relatório de Análise do Desempenho, cujos valores são obtidos das demonstrações contábeis individuais e consolidadas do Banco auditadas ou revisadas por nós, ou dos registros contábeis do Banco."
+  },
+  {
+   "item": "E045",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 187,
+   "pagina_atual": 172,
+   "secao": "Consórcios",
+   "trecho_anterior": "apresenta participação de mercado, em quantidade de cotas, de 17,7%, consolidando-se como a maior administradora de consórcios entre as ligadas a instituições financeiras.",
+   "trecho_atual": "Conforme a última informação divulgada pelo Banco Central do Brasil (fevereiro de 2023), a BB Consórcios apresenta participação de mercado, em quantidade de cotas, de 18,53%, consolidando-se como a maior administradora de consórcios entre as ligadas a instituições financeiras."
+  },
+  {
+   "item": "E046",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 175,
+   "pagina_atual": 158,
+   "secao": "Assessoria Humana",
+   "trecho_anterior": "Em outubro de 2022, o modelo de relacionamento do Banco, a partir de um novo aprimoramento, passou a contemplar assessoria profissional dedicada de um dos Especialistas da Geinv a todos os clientes classificados no nicho investidor, potencializando a realização de negócios com nossos investidores.",
+   "trecho_atual": "Em outubro de 2022, o modelo de relacionamento do Banco, a partir de um novo aprimoramento, passou a contemplar assessoria especializada a todos os clientes classificados no nicho investidor, ou seja, que possuem ao menos R$ 150 mil em investimentos potencializando a realização de negócios com os investidores."
+  },
+  {
+   "item": "E047",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 331,
+   "secao": "Escopo, cenários de aplicação do método e implicações no resultado",
+   "trecho_anterior": "",
+   "trecho_atual": "(i) operações classificadas na carteira de negociação, composta basicamente por títulos públicos mensurados a valor justo e instrumentos financeiros derivativos, sendo que os efeitos, positivos ou negativos, decorrentes dos possíveis movimentos nas taxas de juros praticadas no mercado geram impacto direto no resultado do Banco ou no seu patrimônio líquido; e - (ii) operações classificadas na carteira bancária, na qual os efeitos, positivos ou negativos, decorrentes de mudanças nas taxas de juros praticadas no mercado, não afetam diretamente o resultado do Banco, tendo em vista que a referida carteira é composta, majoritariamente, por operações contratadas com a intenção de manutenção até os respectivos vencimentos – empréstimos a clientes, captações no varejo, e títulos públicos mensurados ao custo amortizado – e cujo registro contábil é realizado com base nas taxas contratadas."
+  },
+  {
+   "item": "E048",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 365,
+   "pagina_atual": null,
+   "secao": "a) Agravamento do nível de risco em operações – indício de deterioração da capacidade de pagamento",
+   "trecho_anterior": "Em decorrência de informações divulgadas ao mercado, durante o mês de janeiro/2023, relacionadas a inconsistências em lançamentos contábeis e pedido de recuperação judicial de empresa do segmento Large Corporate, o Banco reavaliou seus níveis de risco em exposições em títulos e valores mobiliários (Nota 10) e operações de crédito (Nota 12) e realizou os ajustes pertinentes nas demonstrações contábeis relativas ao exercício findo em 31.12.2022 para que essas reflitam as condições existentes até aquela data.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E049",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 307,
+   "pagina_atual": 281,
+   "secao": "e) Fundo de Aval para Geração de Emprego e Renda (Funproger)",
+   "trecho_anterior": "O Fundo de Aval para Geração de Emprego e Renda (Funproger) é um fundo especial de natureza contábil, criado em 23.11.1999 pela Lei n.º 9.872/1999, alterada pela Lei n.º 10.360/2001 e pela Lei n.º 11.110/2005, regulamentado pela Resolução Codefat n.º 409/2004 e alterações posteriores, gerido pelo Banco do Brasil com a supervisão do Codefat.",
+   "trecho_atual": "O Fundo de Aval para Geração de Emprego e Renda (Funproger) é um fundo especial de natureza contábil, criado em 23/11/1999 pela Lei nº 9.872/1999, alterada pela Lei nº 10.360/2001 e pela Lei nº 11.110/2005, regulamentado pela Resolução Codefat nº 409/2004 e alterações posteriores, gerido pelo Banco do Brasil com a supervisão do Codefat."
+  },
+  {
+   "item": "E050",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 369,
+   "pagina_atual": null,
+   "secao": "*Demonstrações do valor adicionado*",
+   "trecho_anterior": "As demonstrações individuais e consolidadas do valor adicionado (“DVA”), referentes ao semestre e exercício findos em 31 de dezembro de 2022, elaboradas sob a responsabilidade da Administração do Banco do Brasil, cuja apresentação não é requerida pelas práticas contábeis adotadas no Brasil aplicáveis às instituições autorizadas a funcionar pelo BACEN, foram submetidas a procedimentos de auditoria executados em conjunto com a auditoria das demonstrações contábeis individuais e consolidadas do Banco do Brasil.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E051",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 212,
+   "pagina_atual": null,
+   "secao": "Estratégia Corporativa",
+   "trecho_anterior": "Em 2022, no processo de revisão do planejamento estratégico evoluímos nosso propósito para “Ser próximo e relevante na vida das pessoas em todos os momentos”.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E052",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 203,
+   "secao": "Ecoeficiência",
+   "trecho_anterior": "",
+   "trecho_atual": "O segundo piloto está em contratação e incluirá mais 810 dependências."
+  },
+  {
+   "item": "E053",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "Premissas que escapam à gestão da Administração",
+   "trecho_anterior": "a) Alterações regulatórias que possam impactar os negócios;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E054",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 371,
+   "pagina_atual": null,
+   "secao": "Responsabilidades do auditor pela auditoria das demonstrações contábeis individuais e consolidadas",
+   "trecho_anterior": "Fornecemos também aos responsáveis pela governança declaração de que cumprimos com as exigências éticas relevantes, incluindo os requisitos aplicáveis de independência, e comunicamos todos os eventuais relacionamentos ou assuntos que poderiam afetar, consideravelmente, nossa independência, incluindo, quando aplicável, as respectivas salvaguardas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E055",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 336,
+   "pagina_atual": 313,
+   "secao": "d) Sumário das transações com partes relacionadas",
+   "trecho_anterior": "(5) A carteira de crédito possui R$ 39 mil de provisão para perdas associadas ao risco de crédito.",
+   "trecho_atual": "1 - A carteira de crédito possui R$ 45 mil de provisão para perdas associadas ao risco de crédito."
+  },
+  {
+   "item": "E056",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 85,
+   "secao": "Despesas Administrativas",
+   "trecho_anterior": "",
+   "trecho_atual": "No comparativo com o 1T22, as outras despesas administrativas cresceram 2,3%, justificado por maiores gastos com serviços de vigilância, segurança e transporte e com comunicação e processamento e dados, compensado parcialmente por menores gastos aglutinados na linha Demais."
+  },
+  {
+   "item": "E057",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 244,
+   "pagina_atual": 219,
+   "secao": "d) Alterações nas políticas contábeis",
+   "trecho_anterior": "As políticas e os métodos contábeis utilizados na preparação destas demonstrações contábeis individuais e consolidadas equivalem-se àqueles aplicados às demonstrações contábeis individuais e consolidadas referentes ao exercício encerrado em 31.12.2021, exceto nos casos indicados no item 'g' desta Nota.",
+   "trecho_atual": "As políticas e os métodos contábeis utilizados na preparação destas demonstrações contábeis individuais e consolidadas equivalem-se àqueles aplicados às demonstrações contábeis individuais e consolidadas referentes ao exercício encerrado em 31/12/2022, exceto nos casos indicados no item “g” desta Nota."
+  },
+  {
+   "item": "E058",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 363,
+   "pagina_atual": null,
+   "secao": "g) Revisão e redimensionamento da estrutura organizacional e desligamento incentivado",
+   "trecho_anterior": "A reorganização da rede de atendimento objetiva a sua adequação ao novo perfil e comportamento dos clientes e compreende, além das medidas de otimização de estrutura descritas acima, outros movimentos de revisão e redimensionamento nas diretorias, áreas de apoio e rede, privilegiando a especialização do atendimento e a ampliação da oferta de soluções digitais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E059",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 297,
+   "pagina_atual": 272,
+   "secao": "a) Movimentações nas participações em controladas, coligadas e controladas em conjunto",
+   "trecho_anterior": "(7) O lucro líquido e o resultado de equivalência das subsidiárias no exterior estão evidenciados sem os efeitos da variação cambial.",
+   "trecho_atual": "6 - O lucro líquido e o resultado de equivalência das subsidiárias no exterior estão evidenciados sem os efeitos da variação cambial."
+  },
+  {
+   "item": "E060",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 36,
+   "pagina_atual": null,
+   "secao": "Segmento Middle e Upper Middle",
+   "trecho_anterior": "O segmento *Middle* e *Upper Middle* do BB é responsável pelo relacionamento com empresas de Faturamento Anual Bruto (FAB) entre R$ 30 e R$ 800 milhões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E061",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 364,
+   "pagina_atual": null,
+   "secao": "l) Majoração da alíquota da Contribuição Social sobre o Lucro Líquido (CSLL)",
+   "trecho_anterior": "Em 02.09.2022, a Medida Provisória n.º 1.115/2022 foi convertida na Lei n.º 14.446/2022, que elevou a alíquota da CSLL no período de agosto a dezembro/2022, da seguinte forma: (i) de 20% para 21% para os bancos de qualquer espécie; e (ii) de 15% para 16% para as distribuidoras de valores mobiliários, corretoras de câmbio e de valores mobiliários, sociedades de crédito, financiamento e investimentos, administradora de cartões de crédito, sociedades de arrendamento mercantil, cooperativas de crédito e associações de poupança e empréstimo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E062",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 33,
+   "secao": "Sustentabilidade Empresarial",
+   "trecho_anterior": "",
+   "trecho_atual": "(iii) Compensar 100% das Emissões Diretas de GEE a partir de 2021 e (iv) alcançar 23% de Pretos e pardos em cargos de liderança sênior."
+  },
+  {
+   "item": "E063",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "PCLD Ampliada",
+   "trecho_anterior": "",
+   "trecho_atual": "Houve a liquidação de operação de crédito bancário, concomitante à emissão de debêntures com reconhecimento imediato de perda por imparidade em 100% do valor de face do título emitido, com impacto neutro na PCLD Ampliada."
+  },
+  {
+   "item": "E064",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 17,
+   "secao": "Sumário do Resultado",
+   "trecho_anterior": "O Banco do Brasil registrou lucro líquido ajustado de R$ 9,0 bilhões no 4T22, aumento de 8,1% no trimestre e de 52,4% em relação ao mesmo período do ano anterior.",
+   "trecho_atual": "O Banco do Brasil registrou lucro líquido ajustado de R$ 8,5 bilhões no 1T23, redução de 5,4% no trimestre e aumento de 28,9% em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E065",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 249,
+   "pagina_atual": null,
+   "secao": "Normas aplicáveis a partir de 01.01.2022",
+   "trecho_anterior": "Um dos aspectos diferentes da norma internacional diz respeito à continuidade da amortização dos ágios por expectativa de rentabilidade futura, prevista no Cosif, em contrapartida ao resultado do período, de acordo com o prazo definido no estudo técnico que fundamentou seu reconhecimento.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E066",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 251,
+   "pagina_atual": null,
+   "secao": "Normas a serem aplicadas em períodos futuros",
+   "trecho_anterior": "Implementação: estruturação da informação, homologação, teste e implantação em ambiente corporativo de TI dos critérios para alocação em estágios e baixa do ativo quando sua recuperação for julgada improvável; da taxa de juros efetiva; da cessação do reconhecimento de receitas; dos ajustes tributários; dos modelos de negócios e das características dos fluxos de caixa dos ativos; dos parâmetros de risco e da provisão para perdas esperadas associadas ao risco de crédito e consolidação da informação para contabilização, tributação, reportes e gestão.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E067",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 351,
+   "pagina_atual": null,
+   "secao": "Análise de sensibilidade",
+   "trecho_anterior": "2) Carteira Bancária (Banking Book): formada por operações não classificadas na Carteira de Negociação, tendo como característica principal a intenção de manter tais operações até o seu vencimento.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E068",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 28,
+   "secao": "Um banco para cada cliente",
+   "trecho_anterior": "",
+   "trecho_atual": "As ofertas e abordagens são realizadas com base nas recomendações do CRM do banco, no qual diariamente são analisados mais de 104 milhões de clientes e potenciais clientes, resultando em mais de dois bilhões de possibilidades de ofertas, distribuídas em mais de 36 categorias de sugestões negociais."
+  },
+  {
+   "item": "E069",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 281,
+   "pagina_atual": null,
+   "secao": "a.1) Composição da carteira de derivativos por indexador",
+   "trecho_anterior": "No Exercício/2021, esta operação gerou impacto negativo no Patrimônio de Referência de R$ 305 mil e não ocorreram eventos de crédito previstos no contrato.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E070",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 198,
+   "secao": "Estratégia Corporativa",
+   "trecho_anterior": "",
+   "trecho_atual": "Após a revisão, ela é aprovada pelo Conselho de Administração (CA), o que direciona as decisões da Empresa para os anos seguintes."
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 38,
+   "pagina_atual": null,
+   "secao": "Atuação com cadeias de valor",
+   "trecho_anterior": "A Loja BB, *marketplace* de afiliados que possibilita a oferta de produtos de parceiros através dos canais do Banco.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E072",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 34,
+   "pagina_atual": null,
+   "secao": "Educação financeira",
+   "trecho_anterior": "A websérie faz uso de linguagem de fácil compreensão, descontraída e descomplicada.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E073",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 319,
+   "pagina_atual": 294,
+   "secao": "c) Garantias financeiras prestadas",
+   "trecho_anterior": "As operações de garantias financeiras prestadas são avaliadas através dos modelos de classificação de risco de operações vigentes na instituição, no mesmo formato das operações de crédito, as quais seguem os preceitos das Resoluções CMN n.º 2.682 e n.º 2.697, divulgadas em 21.12.1999 e 24.02.2000, respectivamente, que estabelecem os critérios de classificação das operações de crédito e as regras para constituição de provisões para perdas associadas ao risco de crédito.",
+   "trecho_atual": "As operações de garantias financeiras prestadas são avaliadas através dos modelos de classificação de risco de operações vigentes na instituição, no mesmo formato das operações de crédito, as quais seguem os preceitos das Resoluções CMN nº 2.682 e nº 2.697, divulgadas em 21/12/1999 e 24/02/2000, respectivamente, que estabelecem os critérios de classificação das operações de crédito e as regras para constituição de provisões para perdas associadas ao risco de crédito."
+  },
+  {
+   "item": "E074",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 125,
+   "pagina_atual": 20,
+   "secao": "PCLD Ampliada",
+   "trecho_anterior": "Risco de Crédito: crescimento trimestral de 29,3% e de 55,6% na comparação com o mesmo período do ano anterior.",
+   "trecho_atual": "Recuperação de Crédito: redução trimestral de 17,9% e de 10,5% na comparação com o mesmo período do ano anterior."
+  },
+  {
+   "item": "E075",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 131,
+   "pagina_atual": 116,
+   "secao": "Descontos Concedidos e Recuperação de Créditos",
+   "trecho_anterior": "Os descontos concedidos em renegociações de operações de crédito, ou de outras operações com características de concessão de crédito decorrente de empréstimos, apresentaram crescimento trimestral de 16,2% e queda de 0,3% na comparação com o mesmo período do ano anterior.",
+   "trecho_atual": "Os descontos concedidos em renegociações de operações de crédito, ou de outras operações com características de concessão de crédito decorrente de empréstimos, apresentaram crescimento de 17,0% na comparação com o 4T22 e de 38,6% contra o 1T22."
+  },
+  {
+   "item": "E076",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 213,
+   "pagina_atual": null,
+   "secao": "Cenário Macroeconômico",
+   "trecho_anterior": "Apesar da redução na tributação sobre combustíveis, energia elétrica e telecomunicações que resultaram em deflação nos meses de julho, agosto e setembro, outros fatores, segundo o Banco Central do Brasil, levaram a inflação a atingir 5,8%, a saber: i) inércia da inflação do ano anterior; ii) elevação dos preços de *commodities*; iii) desequilíbrios entre demanda e oferta de insumos e gargalos nas cadeias produtivas globais; iv) choques em preços de alimentação, resultantes de questões climáticas; e v) retomada na demanda de serviços e no emprego, impulsionada pelo acentuado declínio da quantidade de casos de Covid-19 e consequente aumento da mobilidade.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E077",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 298,
+   "pagina_atual": 273,
+   "secao": "Banco do Brasil S.A. – Demonstrações Contábeis – 31 de março de 2023",
+   "trecho_anterior": "(1) Referem-se basicamente a reorganizações societárias, ajustes de harmonização de práticas contábeis e de avaliação patrimonial de títulos e valores mobiliários disponíveis para venda.",
+   "trecho_atual": "1 - Referem-se a ajustes de harmonização de práticas contábeis e de avaliação patrimonial de títulos e valores mobiliários disponíveis para venda."
+  },
+  {
+   "item": "E078",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Onde, como e quando o cliente desejar",
+   "trecho_anterior": "No Banco do Brasil, o cliente conta com atendimento em todo o país, no canal que ele escolher, com estruturas de atendimento mais leves, eficientes e especializadas, o que resulta em uma experiência integral em todos os canais de atendimento, ampliando a capilaridade e garantindo a melhor conveniência para os clientes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E079",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 126,
+   "pagina_atual": 111,
+   "secao": "Risco de Crédito",
+   "trecho_anterior": "As despesas de provisão para o risco de crédito totalizaram R$ 8,2 bilhões no 4T22, representando crescimento trimestral de 29,3% e de 55,6% em relação ao mesmo período do ano anterior, influenciadas pela constituição de provisão para casos específicos do segmento atacado.",
+   "trecho_atual": "As despesas de provisão para o risco de crédito totalizaram R$ 4,1 bilhões no 1T23, representando retração trimestral de 49,2% e de 7,5% em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E080",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": 25,
+   "secao": "Qualidade do Crédito",
+   "trecho_anterior": "Em dezembro/22, o índice de inadimplência INAD+90d (relação entre as operações vencidas há mais de 90 dias e o saldo da carteira de crédito classificada) atingiu 2,51% e o índice de cobertura (relação entre o saldo de provisões e o saldo de operações vencidas há mais de 90 dias) foi de 227,1%, superior à média observada no sistema financeiro nacional.",
+   "trecho_atual": "Em março/23, o índice de inadimplência INAD+90d (relação entre as operações vencidas há mais de 90 dias e o saldo da carteira de crédito classificada) atingiu 2,62% e o índice de cobertura (relação entre o saldo de provisões e o saldo de operações vencidas há mais de 90 dias) foi de 202,7%, impactada pelo reperfilamento de dívida de cliente específico, em recuperação judicial desde 2019."
+  },
+  {
+   "item": "E081",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 225,
+   "pagina_atual": 196,
+   "secao": "Capital",
+   "trecho_anterior": "Atingimos 12,01% no Índice de Capital Principal (ICP) em dezembro de 2022, enquanto o Índice de Basileia (IB) chegou a 16,65%.",
+   "trecho_atual": "Atingimos 12,01% no Índice de Capital Principal (ICP) em março de 2023, enquanto o Índice de Basileia (IB) chegou a 16,19%."
+  },
+  {
+   "item": "E082",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 297,
+   "pagina_atual": 272,
+   "secao": "a) Movimentações nas participações em controladas, coligadas e controladas em conjunto",
+   "trecho_anterior": "(2) Inclui ajustes de harmonização de práticas contábeis.",
+   "trecho_atual": "2 - Inclui ajustes de harmonização de práticas contábeis."
+  },
+  {
+   "item": "E083",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 73,
+   "pagina_atual": 19,
+   "secao": "Margem Financeira Bruta (MFB)",
+   "trecho_anterior": "No 4T22, a Margem Financeira Bruta (MFB) totalizou R$ 21,5 bilhões, crescimento de 9,7% na comparação trimestral (4T22/3T22) e 44,9% na comparação em 12 meses (4T22/4T21).",
+   "trecho_atual": "No 1T23, a Margem Financeira Bruta (MFB) totalizou R$ 21,2 bilhões, queda de 1,4% na comparação trimestral (1T23/4T22) e crescimento de 38,0% na comparação em 12 meses (1T23/1T22)."
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 317,
+   "secao": "Plano Informal (Previ)",
+   "trecho_anterior": "",
+   "trecho_atual": "(b) pagamento da complementação de aposentadoria aos demais participantes que se aposentaram até 14/04/1967 ou que, na mesma data, já reuniam condições de se aposentar por tempo de serviço e contavam com pelo menos 20 anos de serviço efetivo no Banco do Brasil; e - (c) aumento no valor dos proventos de aposentadoria e das pensões além do previsto no plano de benefícios da Previ, decorrente de decisões judiciais e de decisões administrativas em função de reestruturação do plano de cargos e salários e de incentivos criados pelo Banco."
+  },
+  {
+   "item": "E085",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 322,
+   "pagina_atual": 299,
+   "secao": "Expectativa de realização",
+   "trecho_anterior": "No Exercício/2022, observou-se a realização de créditos tributários no Banco Múltiplo no montante de R$ 21.134.163 mil, correspondente a 154,29% da respectiva projeção de utilização para o período de 2022, que constava no estudo técnico elaborado em 31.12.2021.",
+   "trecho_atual": "No 1º trimestre/2023, observou-se a realização de créditos tributários no Banco Múltiplo no montante de R$ 4.898.454 mil, correspondente a 30,97% da respectiva projeção de utilização para o período de 2023, que constava no estudo técnico elaborado em 31/12/2022."
+  },
+  {
+   "item": "E086",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 347,
+   "secao": "DIRETORES",
+   "trecho_anterior": "",
+   "trecho_atual": "Alan Carlos Guedes de Oliveira Antonio Carlos Wagner Chiarello Daniela de Avelar Gonçalves Eduardo Cesar Pasa Euler Antonio Luz Mathias Guilherme Alexandre Rossi Gustavo Garcia Lellis Jayme Pinto Junior João Vagnes de Moura Silva Luciano Matarazzo Regno Lucinéia Possar Mariana Pires Dias Neudson Peres de Freitas Paula Sayão Carvalho Araujo Pedro Bramont Rafael Machado Giovanella Rodrigo Felipe Afonso Rodrigo Mulinari Thiago Affonso Borsari Thompson Soares Pereira César"
+  },
+  {
+   "item": "E087",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 287,
+   "pagina_atual": 260,
+   "secao": "b) Resultado da carteira de crédito",
+   "trecho_anterior": "(2) Inclui despesas no montante de R$ 37.841 mil (R$ 19.845 mil, líquido de tributos) no 2º Semestre/2022, R$ 61.422 mil (R$ 32.211 mil, líquido de tributos) no Exercício/2022 e R$ 475.159 mil (R$ 245.810 mil, líquido de tributos) no Exercício/2021, oriundas de cessões de crédito sem coobrigação a entidades não integrantes do Sistema Financeiro Nacional, conforme Resolução CMN n.º 2.836/2001.",
+   "trecho_atual": "4 - Inclui, despesas no montante de R$ 132.138 mil (R$ 70.337 mil, líquido de tributos) no 1º trimestre/2023 e R$ 23.471 mil (R$ 12.309 mil, líquido de tributos) no 1º trimestre/2022, oriundas de cessões de crédito sem coobrigação a entidades não integrantes do Sistema Financeiro Nacional, conforme Resolução CMN nº 2.836/2001."
+  },
+  {
+   "item": "E088",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 14,
+   "secao": "Destaques",
+   "trecho_anterior": "Índice de Basileia 16,65% em Dez/22",
+   "trecho_atual": "Índice de Basileia 16,19% em Mar/23"
+  },
+  {
+   "item": "E089",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 213,
+   "pagina_atual": null,
+   "secao": "Acionistas e Detentores de instrumentos de dívida",
+   "trecho_anterior": "O Valor Patrimonial por ação encerrou o período em R$ 53,81, variação de 14% em relação a dezembro/21.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 369,
+   "pagina_atual": null,
+   "secao": "*Como o assunto foi conduzido em nossa auditoria?*",
+   "trecho_anterior": "Com o envolvimento de nossos especialistas em auditoria de sistemas, identificamos os sistemas relevantes que suportam as principais atividades de negócio do Banco do Brasil, avaliamos o desenho e a implementação dos controles gerais do ambiente de processamento e testamos a efetividade operacional desses controles, incluindo, quando necessário, os testes de controles compensatórios relacionados à segurança da informação, ao desenvolvimento e à manutenção de sistemas relevantes e à operação do ambiente de tecnologia da informação relacionados com a infraestrutura que suporta os negócios do Banco do Brasil.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 23,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "O Índice de Basileia foi de 16,65% em dezembro de 2022.",
+   "trecho_atual": "O Índice de Basileia foi de 16,19% em março de 2023."
+  },
+  {
+   "item": "E092",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 287,
+   "pagina_atual": 260,
+   "secao": "b) Resultado da carteira de crédito",
+   "trecho_anterior": "(1) Foram recuperadas, por meio de cessões de crédito sem coobrigação a entidades não integrantes do Sistema Financeiro Nacional, conforme Resolução CMN n.º 2.836/2001, operações baixadas em prejuízo no montante de R$ 584.543 mil no 2º Semestre/2022 (com impacto no resultado de R$ 321.498 mil, líquido de tributos), R$ 840.402 mil no Exercício/2022 (com impacto no resultado de R$ 462.220 mil, líquido de tributos) e R$ 614.589 mil no Exercício/2021 (com impacto no resultado de R$ 318.595 mil, líquido de tributos).",
+   "trecho_atual": "1 - Foram recuperadas, por meio de cessões de crédito sem coobrigação a entidades não integrantes do Sistema Financeiro Nacional, conforme Resolução CMN nº 2.836/2001, operações baixadas em prejuízo no montante de R$ 219.044 mil no 1º trimestre/2023 (com impacto no resultado de R$ 120.474 mil, líquido de tributos) e R$ 162.631 mil no 1º trimestre/2022 (com impacto no resultado de R$ 89.447 mil, líquido de tributos)."
+  },
+  {
+   "item": "E093",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 360,
+   "pagina_atual": null,
+   "secao": "31 – RESULTADO RECORRENTE E NÃO RECORRENTE",
+   "trecho_anterior": "Durante o período de divulgação, foram identificados os eventos registrados na tabela abaixo considerados “Itens não recorrentes”, com o respectivo efeito tributário e na participação nos lucros e resultados, a seguir detalhados, quando necessário ao melhor entendimento:",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E094",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 223,
+   "pagina_atual": null,
+   "secao": "Novembro",
+   "trecho_anterior": "Ficamos em primeiro lugar em cinco categorias da premiação *Open Summit Awards*, considerado o maior evento do ecossistema Open Finance no Brasil.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E095",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 109,
+   "secao": "Qualidade do Crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "A PCLD Ampliada totalizou R$ 5,9 bilhões no 1T23, queda de 10,4% na comparação trimestral e alta de 112,3% em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E096",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "Índice de Tabelas",
+   "trecho_anterior": "Participações Societárias no Brasil – R$ mil...",
+   "trecho_atual": "Participações Societárias no Brasil – R$ mil ..."
+  },
+  {
+   "item": "E097",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 228,
+   "pagina_atual": null,
+   "secao": "Gestão de Riscos",
+   "trecho_anterior": "As principais inovações na gestão de riscos relacionam-se aos aprimoramentos nos modelos de análise de risco de clientes; a atualização do modelo interno e revisão dos choques de normalidade e estresse para o IRRBB; a revisão do fluxo de criação de Produtos, abrangendo orientações para melhor identificação e classificação dos Riscos – Social, Ambiental e Climático; a criação de indicadores pelo gestor específico para os riscos de TI e de terceiros; o desenvolvimento de interface para apresentação da vinculação dos eventos de perdas das categorias gerenciais aos eventos de perdas das categorias regulatórias, no âmbito de gestão do risco operacional.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E098",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 224,
+   "pagina_atual": 197,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "A qualidade dessa carteira, medida pelo indicador de inadimplência acima de 90 dias, segue consistentemente abaixo do SFN, refletindo o perfil de nossa concessão.",
+   "trecho_atual": "A qualidade dessa carteira, medida pelo indicador de inadimplência acima de 90 dias, segue consistentemente abaixo do SFN, refletindo a qualidade da concessão."
+  },
+  {
+   "item": "E099",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 228,
+   "pagina_atual": null,
+   "secao": "Gestão de Riscos",
+   "trecho_anterior": "Em atendimento às Resoluções CMN nº 4.943 e nº 4.945/2021, que tratam, respectivamente, do aprimoramento das regras de gerenciamento do RSAC e da Política de Responsabilidade Social, Ambiental e Climática (PRSAC), avaliamos nossa estrutura e definimos plano de ação, no período de 2021-2023, com foco na revisão e adequação da Política e Gestão do RSAC, à luz dos novos normativos e para atendimento ao previsto no Relatório da Força-Tarefa sobre Divulgações Financeiras Relacionadas ao Clima (TCFD).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E100",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "Índice de Tabelas",
+   "trecho_anterior": "Distribuição de Mitigadores no Custeio Agrícola – R$ milhões...",
+   "trecho_atual": "Distribuição de Mitigadores no Custeio Agrícola – R$ milhões ..."
+  },
+  {
+   "item": "E101",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 55,
+   "pagina_atual": 48,
+   "secao": "Pagamentos de Tributos com Criptomoedas",
+   "trecho_anterior": "O BB monitora de forma permanente tendências e tecnologias emergentes, avaliando, testando e adotando as pertinentes, a exemplo dos Criptoativos e Metaverso.",
+   "trecho_atual": "O BB monitora de forma permanente tendências e tecnologias emergentes, avaliando, testando e adotando as pertinentes, a exemplo dos Criptoativos."
+  },
+  {
+   "item": "E102",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "PCLD Ampliada",
+   "trecho_anterior": "",
+   "trecho_atual": "No 1T23, mudanças societárias no controle acionário de cliente específico do segmento Large Corporate – setor agroindustrial, que teve processo de recuperação judicial homologado em 2019, ensejaram em mudança de perfil da dívida da companhia."
+  },
+  {
+   "item": "E103",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Índice",
+   "trecho_anterior": "83 Margem Gerencial de Crédito...",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E104",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 172,
+   "pagina_atual": 156,
+   "secao": "Assessoria em Investimentos",
+   "trecho_anterior": "A forte presença regional e a capilaridade do modelo de atendimento do Banco são diferenciais competitivos.",
+   "trecho_atual": "A presença regional e a capilaridade do modelo de atendimento do Banco são diferenciais competitivos."
+  },
+  {
+   "item": "E105",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 366,
+   "pagina_atual": null,
+   "secao": "Opinião",
+   "trecho_anterior": "Examinamos as demonstrações contábeis individuais e consolidadas do Banco do Brasil S.A. e de suas controladas (“Banco do Brasil”), identificadas como BB Banco Múltiplo e BB Consolidado, respectivamente, que compreendem o balanço patrimonial em 31 de dezembro de 2022 e as respectivas demonstrações do resultado, do resultado abrangente, das mutações do patrimônio líquido e dos fluxos de caixa para o semestre e exercício findos nessa data, bem como as correspondentes notas explicativas, incluindo o resumo das principais políticas contábeis.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E106",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 42,
+   "secao": "Aceleração Digital",
+   "trecho_anterior": "",
+   "trecho_atual": "Para viabilizar a assessoria, que será feita via chatbot do WhatsApp, as jornadas negociais foram revisitadas e aprimoradas, para ofertar a melhor experiência para os clientes, seja de forma ativa ou reativa."
+  },
+  {
+   "item": "E107",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 358,
+   "pagina_atual": 336,
+   "secao": "Ajustes prudenciais deduzidos do Capital Principal:",
+   "trecho_anterior": "(4) A dedução da participação dos acionistas não controladores corresponde à aplicação do §1º, artigo 10 da Resolução CMN n.º 4.955/2021.",
+   "trecho_atual": "2 - A dedução da participação dos acionistas não controladores corresponde à aplicação do §1º, artigo 10 da Resolução CMN nº 4.955/2021."
+  },
+  {
+   "item": "E108",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 75,
+   "pagina_atual": null,
+   "secao": "Receita Financeira de Operações de Crédito",
+   "trecho_anterior": "crescimento da carteira classificada PF quanto pelo movimento de reapreçamento e mix da carteira.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E109",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 318,
+   "pagina_atual": 294,
+   "secao": "Saldos dos passivos contingentes classificados como possíveis",
+   "trecho_anterior": "(1) As principais contingências têm origem em (i) autos de infração lavrados pelo INSS ou pela Receita Federal do Brasil, visando o recolhimento de participação em lucros e resultados, no valor de R$ 2.127.184 mil; e de auxílio-alimentação, no valor de R$ 2.642.506 mil; e (ii) autos de infração lavrados pelas Fazendas Públicas dos Municípios visando à cobrança de ISSQN, no montante de R$ 2.093.747 mil.",
+   "trecho_atual": "1 - As principais contingências têm origem em (i) autos de infração lavrados pelo INSS ou pela Receita Federal do Brasil, visando ao recolhimento de contribuições previdenciárias sobre participação em lucros e resultados, no valor de R$ 2.194.206 mil; e de auxílio-alimentação, no valor de R$ 2.727.017 mil; e (ii) autos de infração lavrados pelas Fazendas Públicas dos Municípios visando à cobrança de ISSQN, no montante de R$ 2.169.552 mil."
+  },
+  {
+   "item": "E110",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 140,
+   "pagina_atual": null,
+   "secao": "Qualidade do Crédito PF",
+   "trecho_anterior": "Houve aumento das operações em inadimplência com mais de 90 dias na comparação trimestral, influenciado pelo cenário macroeconômico e em linha com a estratégia de mudança de mix da carteira para linhas de melhor retorno ajustado ao risco.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E111",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 249,
+   "pagina_atual": null,
+   "secao": "Normas aplicáveis a partir de 01.01.2022",
+   "trecho_anterior": "Dentre as disposições normativas, essa norma recepcionou o CPC 47 – Receita de Contratos com Clientes, norma que especifica como e quando serão reconhecidas as receitas de contratos, assim como requer que as entidades forneçam dados mais relevantes aos usuários das informações contábeis, sendo vedados: (i) o reconhecimento de receita decorrente de quebra em passivo de contrato previsto no item B46 desse pronunciamento antes da efetiva extinção dessa obrigação; e (ii) a aplicação do disposto no item 29, alínea “a” do referido pronunciamento.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E112",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 230,
+   "pagina_atual": 207,
+   "secao": "Auditoria Independente",
+   "trecho_anterior": "Em cumprimento à Instrução CVM 381/2003, informamos que a Deloitte Touche Tohmatsu Auditores Independentes Ltda. não prestou serviços que pudessem afetar sua independência, ratificada por meio da aderência de seus profissionais aos pertinentes padrões éticos e de independência, que cumpram ou excedam os padrões promulgados por International Federation of Accountants (IFAC), Conselho Federal de Contabilidade (CFC), Comissão de Valores Mobiliários (CVM), Banco Central do Brasil (Bacen), Superintendência de Seguros Privados (Susep), Superintendência Nacional de Previdência Complementar (Previc) e pelas demais agências reguladoras.",
+   "trecho_atual": "Informamos que a Deloitte Touche Tohmatsu Auditores Independentes Ltda. não prestou serviços que pudessem afetar sua independência, ratificada por meio da aderência de seus profissionais aos padrões éticos e de independência pertinentes, de forma que cumpram ou excedam os padrões estabelecidos pela International Federation of Accountants (IFAC), pelo Conselho Federal de Contabilidade (CFC), Comissão de Valores Mobiliários (CVM), Banco Central do Brasil (Bacen), Superintendência de Seguros Privados (Susep), Superintendência Nacional de Previdência Complementar (Previc) e pelas demais agências reguladoras."
+  },
+  {
+   "item": "E113",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 279,
+   "pagina_atual": 252,
+   "secao": "11 – Instrumentos financeiros derivativos",
+   "trecho_anterior": "A exposição de crédito em *swap* totalizou R$ 834.639 mil em 31.12.2022 (R$ 587.687 mil em 31.12.2021).",
+   "trecho_atual": "A exposição de crédito em swap totalizou R$ 847.951 mil em 31/03/2023 (R$ 834.639 mil em 31/12/2022)."
+  },
+  {
+   "item": "E114",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 225,
+   "pagina_atual": 197,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "Já no agronegócio, a carteira classificada atingiu a cifra histórica de R$ 286,0 bilhões, com crescimento da carteira de crédito rural em 23,1% em 12 meses.",
+   "trecho_atual": "Já no agronegócio, a carteira classificada atingiu a cifra histórica de R$ 297,1 bilhões, com crescimento da carteira de crédito rural em 23,2% em relação a março/22."
+  },
+  {
+   "item": "E115",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 314,
+   "pagina_atual": 289,
+   "secao": "b) Fundos financeiros e de desenvolvimento",
+   "trecho_anterior": "(1) A Resolução CMN n.º 4.955/2021 passou a limitar a utilização dos recursos do FCO para composição no nível II do Patrimônio de Referência – PR (Nota 30.c).",
+   "trecho_atual": "1 - A Resolução CMN nº 4.192/2013 limita a utilização dos recursos do FCO para composição no nível II do Patrimônio de Referência – PR (Nota 19.c)."
+  },
+  {
+   "item": "E116",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 49,
+   "secao": "Hiperpersonalização PJ e PF",
+   "trecho_anterior": "",
+   "trecho_atual": "Já para linhas de crédito para o público PF, esses percentuais ficaram em 121,4% e 76,4% respectivamente."
+  },
+  {
+   "item": "E117",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Sumário do Resultado",
+   "trecho_anterior": "Desconsiderando o evento subsequente, o lucro líquido ajustado seria de R$ 9,4 bilhões no trimestre, equivalente a um RSPL anualizado de 23,4%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E118",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 57,
+   "pagina_atual": null,
+   "secao": "Assistentes Virtuais",
+   "trecho_anterior": "O cliente, com operações em atraso, consegue efetuar a renegociação de sua dívida diretamente no WhatsApp sem a necessidade de transbordo para atendimento humano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E119",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 44,
+   "secao": "Assistentes Virtuais",
+   "trecho_anterior": "",
+   "trecho_atual": "No entanto, o canal de maior preferência dos clientes é o WhatsApp, que registrou um crescimento de 3,4% em relação ao último trimestre de 2022, alcançando 12,3 milhões de usuários ativos no mês de março."
+  },
+  {
+   "item": "E120",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 143,
+   "pagina_atual": null,
+   "secao": "Crédito Pessoa Jurídica",
+   "trecho_anterior": "Destaque para os desembolsos realizados na linha do Pronampe que, de julho a dezembro, totalizaram R$ 12 bilhões.",
+   "trecho_atual": ""
+  }
+ ]
+}

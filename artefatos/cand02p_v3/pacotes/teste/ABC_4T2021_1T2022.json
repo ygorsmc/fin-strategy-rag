@@ -1,0 +1,1207 @@
+{
+ "par": "ABC_4T2021_1T2022",
+ "documento_anterior": "abc_release_4T2021",
+ "documento_atual": "abc_release_1T2022",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO (cont.)",
+   "trecho_anterior": "",
+   "trecho_atual": "Esta pontuação não só confirmou o forte diferencial do relacionamento do ABC Brasil, mas também identificou os aspectos qualitativos mais valorizados por seus clientes, incluindo a qualidade do atendimento, agilidade, proximidade e conhecimento apresentado por nossos gerentes."
+  },
+  {
+   "item": "E002",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 14,
+   "secao": "Classificação da Carteira de Garantias Prestadas (Resolução Nº 2.682 BACEN)",
+   "trecho_anterior": "O saldo da carteira de garantias prestadas ao final de dezembro de 2021 era de R$11,1 bilhões, com um saldo de provisão de R$72,4 milhões.",
+   "trecho_atual": "O saldo da carteira de garantias prestadas ao final de março de 2022 era de R$11,2 bilhões, com um saldo de provisão de R$70,3 milhões."
+  },
+  {
+   "item": "E003",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "Provisões",
+   "trecho_anterior": "A Despesa de Provisão Ampliada do 4T21 teve uma queda de 7,5% quando comparada com o 3T21, e de 54,3%, quando comparada com o mesmo período de 2020.",
+   "trecho_atual": "A Despesa de Provisão Ampliada do 1T22 teve uma queda de 21,7% quando comparada com o 4T21 e de 30,0%, quando comparada com o mesmo período de 2021."
+  },
+  {
+   "item": "E004",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Telefone: +55 (11) 3170-4655 Email: ri@abcbrasil.com.br Website: ri.abcbrasil.com.br"
+  },
+  {
+   "item": "E005",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 11,
+   "secao": "Spread com Clientes Anualizado (Empréstimos e Títulos Privados)",
+   "trecho_anterior": "O Spread com Clientes Anualizado apresentou uma queda de aproximadamente 20 pontos base vs. o trimestre anterior, resultado da alteração do mix de produtos, parcialmente compensada pelo gradual aumento da representatividade do segmento Middle na carteira.",
+   "trecho_atual": "O Spread com Clientes Anualizado apresentou um crescimento de aproximadamente 30 pontos base vs. o trimestre anterior, resultado do aumento dos spreads intra-segmento e da alteração do mix de produtos."
+  },
+  {
+   "item": "E006",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Resultados",
+   "trecho_anterior": "",
+   "trecho_atual": "O Lucro Líquido recorrente atingiu R$183,2 milhões no primeiro trimestre de 2022, crescimento de 13,1% em relação aos R$162,0 milhões apresentados no trimestre anterior e de 49,6% em relação aos R$122,4 milhões apresentados no mesmo período de 2021."
+  },
+  {
+   "item": "E007",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Guidance 2022",
+   "trecho_anterior": "Em relação às Despesas (Pessoal, Outras Administrativas e PLR), projetamos um crescimento entre 30% e 40% em 2022, sendo influenciados 1/3 pelo aumento da inflação do período, 1/3 por investimentos em expansão comercial e 1/3 referentes a investimentos em tecnologia, dados e inovação.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E008",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "4T21 x 4T20 | Recorrente",
+   "trecho_anterior": "Pelo aumento do Patrimônio Líquido remunerado a CDI; e - Sendo parcialmente compensado pelo aumento do Imposto de Renda e Contribuição Social.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E009",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Adequação do Capital",
+   "trecho_anterior": "",
+   "trecho_atual": "Neste trimestre o Índice de Basileia foi mantido em 15,1%, resultado principalmente da apropriação do resultado do 1T22 e da emissão de instrumentos de capital nível 1 e nível 2 – considerando a distribuição de proventos no período, as operações de tesouraria de curto prazo e o crédito tributário transitório."
+  },
+  {
+   "item": "E010",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "1T22 x 4T21 | Recorrente",
+   "trecho_anterior": "",
+   "trecho_atual": "Pela redução da Despesa de Crédito; e - Pelo aumento do Patrimônio Líquido remunerado a CDI;"
+  },
+  {
+   "item": "E011",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Indicadores da Carteira de Crédito Expandida por Segmento",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, houve uma redução de 49 clientes vs. o trimestre anterior, resultado de ajustes no foco de nossa força comercial para originação de leads mais qualificados, objetivando aumentar os níveis de ativação e engajamento dos clientes."
+  },
+  {
+   "item": "E012",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO (cont.)",
+   "trecho_anterior": "",
+   "trecho_atual": "O ABC Brasil realizou uma pesquisa para a determinação de seu NPS (Net Promoter Score) – metodologia utilizada para mensurar o grau de satisfação de seus clientes – atingindo um número de 69 pontos, sendo 74% dos respondentes Promotores e apenas 5% de Detratores."
+  },
+  {
+   "item": "E013",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 7,
+   "secao": "1T22 x 4T21 | Recorrente",
+   "trecho_anterior": "Pelo aumento do Patrimônio Líquido remunerado a CDI; e - Sendo parcialmente compensado pelo aumento das Despesas de Pessoal e Outras Administrativas, resultado do investimento no segmento Middle e em iniciativas estruturantes.",
+   "trecho_atual": "Sendo parcialmente compensado pelo aumento das Despesas de Pessoal e Outras Administrativas, resultado do investimento no segmento Middle e em iniciativas estruturantes."
+  },
+  {
+   "item": "E014",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Encerramos o primeiro trimestre de 2022 com um crescimento na Margem com Clientes de 9,1% em relação ao trimestre anterior e de 32,8% em relação ao mesmo período de 2021, atingindo um Spread com Clientes de 4,3% no período, motivado pelos seguintes fatores: - Incremento de derivativos, câmbio e cash management no mix de produtos;"
+  },
+  {
+   "item": "E015",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Encerramos 2021 com uma Despesa de Provisão Ampliada no ano de R$193 milhões – queda de 43% em relação ao ano anterior – equivalente a 0,5% da Carteira de Crédito Expandida.",
+   "trecho_atual": "Encerramos o primeiro trimestre de 2022 com uma Despesa de Provisão Ampliada de R$34,6 milhões – queda de 21,7% em relação ao trimestre anterior e de 30,0% em relação ao mesmo período de 2021 – equivalente a 0,4% da Carteira de Crédito Expandida."
+  },
+  {
+   "item": "E016",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Diretor de RI e M&A Proprietário",
+   "trecho_atual": "Ricardo Moura Diretor de RI e M&A Proprietário"
+  },
+  {
+   "item": "E017",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "No período, o ABC Brasil cresceu sua base de Clientes Totais em 74%, expandiu sua Margem com Clientes em 41%, e sua Margem Financeira em 38% – expansão somente vista pela instituição após a capitalização de seu IPO em 2007.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E018",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "Ao mesmo tempo, o ABC Brasil reportou níveis de atraso em linha com seu histórico, manteve um provisionamento de carteira saudável e expandiu seu ROAE em mais de 800 pontos base.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E019",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "1T22 x 1T21 | Recorrente",
+   "trecho_anterior": "",
+   "trecho_atual": "Sendo parcialmente compensado pelo aumento das Despesas de Pessoal e Outras Administrativas e do Imposto de Renda e Contribuição Social."
+  },
+  {
+   "item": "E020",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Abertura Setorial da Carteira Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "Cadeia de Grãos (1,5 p.p.) e Varejo não Alimentar (0,6 p.p.)."
+  },
+  {
+   "item": "E021",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Divulgação dos Resultados 9 de maio de 2022 (antes da abertura do mercado)"
+  },
+  {
+   "item": "E022",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Guidance 2021",
+   "trecho_anterior": "O crescimento de carteira inferior ao Guidance para o ano é resultado da estratégia de balanceamento da expansão da Margem com Clientes juntamente com o crescimento de volumes de carteira.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E023",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021",
+   "trecho_anterior": "Em paralelo, confirmando o bom momento do ciclo de crédito, as Operações com Atraso Acima de 90 Dias como percentual da Carteira de Crédito encerraram o ano em 1,1%, em linha com a média histórica.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E024",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Conferência 10 de maio de 2022"
+  },
+  {
+   "item": "E025",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Guidance 2022",
+   "trecho_anterior": "Projetamos um crescimento entre 12% e 16% para a Carteira de Crédito Expandida em 2022, novamente impulsionados por uma expansão anual entre 40% e 50% no segmento Middle.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E026",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "Ao longo de 18 meses findos em dezembro de 2021, crescemos nossas despesas em 22% e nossa base de colaboradores em 30%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E027",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "ESG",
+   "trecho_anterior": "Por fim, o Banco ABC Brasil também fortaleceu o cuidado com o público interno e a sociedade ao criar programas de assistência aos colaboradores, promover ações de voluntariado e apoiar projetos de ONGs parceiras.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E028",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 13,
+   "secao": "Empréstimos Classificados entre D-H (Resolução Nº 2.682 BACEN)",
+   "trecho_anterior": "O saldo total de créditos renegociados no fim do quarto trimestre de 2021 foi de R$117,3 milhões – equivalente a 0,5% da Carteira de Empréstimos (2.682).",
+   "trecho_atual": "O saldo total de créditos renegociados no fim do primeiro trimestre de 2022 foi de R$113 milhões – equivalente a 0,5% da Carteira de Empréstimos (2.682)."
+  },
+  {
+   "item": "E029",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Eficiência",
+   "trecho_anterior": "[tbl-25.html](tbl-25.html)[tbl-26.html](tbl-26.html)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E030",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Português & Inglês 11h00 Brasília / 10h00 US EDT"
+  },
+  {
+   "item": "E031",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Relatório de Sustentabilidade",
+   "trecho_anterior": "",
+   "trecho_atual": "O Relatório inclui a Matriz de Materialidade construída com a contribuição dos diversos stakeholders do ABC Brasil, além de seguir as diretrizes internacionalmente reconhecidas da *Global Reporting Initiative* (GRI) e incorporar indicadores do *Sustainability Accounting Standards Board* (SASB)."
+  },
+  {
+   "item": "E032",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 17,
+   "secao": "Adequação do Capital",
+   "trecho_anterior": "No 4T21, a exposição média a risco de mercado medido pelo VaR da carteira *trading* foi de R$2,5 milhões (valor em risco estimado através do método de simulação histórica com horizonte de tempo de um dia e intervalo de confiança de 99%).",
+   "trecho_atual": "No 1T22, a exposição média a risco de mercado medido pelo VaR da carteira *trading* foi de R$2,7 milhões (valor em risco estimado através do método de simulação histórica com horizonte de tempo de um dia e intervalo de confiança de 99%)."
+  },
+  {
+   "item": "E033",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "O Lucro Líquido recorrente atingiu R$162,0 milhões no quarto trimestre de 2021, crescimento de 6,9% em relação aos R$151,5 milhões apresentados no trimestre anterior, e de 52,8% em relação aos R$106,0 milhões apresentados no mesmo período de 2020.",
+   "trecho_atual": "O Lucro Líquido atingiu R$183,2 milhões no primeiro trimestre de 2022, crescimento de 13,1% em relação ao trimestre anterior e de 49,6% em relação ao mesmo período de 2021."
+  },
+  {
+   "item": "E034",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "$$ Inclui as carteiras de empréstimos, garantias prestadas e títulos privados.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E035",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "Em paralelo, reforçamos a área de Banco de Investimentos e iniciamos o desenvolvimento de novas linhas de negócios – incluindo a Comercializadora de Energia, a Corretora de Seguros, o ABC Link, o Credit to Enterprise (C2e) e o Crédito Consignado Privado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E036",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "Em 2019 iniciamos um ciclo de investimentos visando diversificar a atuação do ABC Brasil e iniciar seu processo de transformação digital.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E037",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "A Carteira de Crédito Expandida apresentou uma redução de 0,4% no trimestre e um crescimento de 5,9% nos últimos 12 meses, com destaque para o crescimento do segmento Corporate com uma expansão de 1,2% no trimestre e de 10,5% nos últimos 12 meses, correspondente a 54,9% da Carteira de Crédito Expandida."
+  },
+  {
+   "item": "E038",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021 (Cont.)",
+   "trecho_anterior": "A partir de janeiro de 2022, iniciamos a oferta de corretagem de seguros de Ramos Elementares (Empresarial, Riscos Operacionais, D&O, E&O, Equipamentos, Riscos de Engenharia, Riscos Cibernéticos, Responsabilidade Civil e Frota), como parte do processo de ampliação do portfólio de linhas oferecidas a nossos clientes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E039",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 21,
+   "secao": "Presença Geográfica",
+   "trecho_anterior": "Atualmente o Banco ABC Brasil conta com presença comercial em 39 cidades brasileiras:",
+   "trecho_atual": "Atualmente o Banco ABC Brasil conta com presença comercial em 40 cidades brasileiras:"
+  },
+  {
+   "item": "E040",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "Neste momento continuamos a identificar diversas oportunidades atrativas de crescimento, tanto em mercados onde já atuamos, quanto em áreas adjacentes, que apresentam sinergias naturais, sejam com clientes, serviços ou canais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E041",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021 (Cont.)",
+   "trecho_anterior": "O Banco de Investimentos encerrou 2021 com receita recorde de R$107,4 milhões, equivalente a um crescimento de 101,3% em relação a 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E042",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Este foi o 11º trimestre de expansão consecutiva da Margem com Clientes, consistentemente o maior componente da Margem Financeira, com 64% no trimestre."
+  },
+  {
+   "item": "E043",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Relatório de Sustentabilidade",
+   "trecho_anterior": "",
+   "trecho_atual": "Esta publicação, disponível no website de RI, é mais uma importante etapa na trajetória da agenda de sustentabilidade do ABC Brasil, e reafirma o compromisso com a transparência e comunicação com seus stakeholders."
+  },
+  {
+   "item": "E044",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 10,
+   "secao": "Abertura Setorial da Carteira Expandida",
+   "trecho_anterior": "Em dezembro de 2021, o Banco apresentou um portfólio de crédito bem diversificado e defensivo, com um incremento na participação dos subsetores de Agricultura & Pecuária (0,8 p.p.);",
+   "trecho_atual": "Em março de 2022, o Banco apresentou um portfólio de crédito bem diversificado e defensivo, com um incremento na participação dos subsetores de Serviços (2,2 p.p.);"
+  },
+  {
+   "item": "E045",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Indicadores da Carteira de Crédito Expandida por Segmento",
+   "trecho_anterior": "O ABC Brasil atingiu no 4T21 3.490 clientes totais e 2.322 clientes com exposição de crédito, um crescimento de 321 clientes totais e 172 clientes com exposição de crédito vs. o trimestre anterior – equivalente a uma expansão de 74% nos últimos 18 meses.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E046",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021 (Cont.)",
+   "trecho_anterior": "ABC Link, Consignado e Credit to Enterprise (C2e): durante 2021, diversas novas iniciativas com investimentos realizado a partir de 2020 passaram a contribuir com a diversificação e geração de receitas: - ABC Link: distribuição de serviços financeiros através de escritórios parceiros, utilizando a figura do correspondente bancário;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E047",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO (cont.)",
+   "trecho_anterior": "",
+   "trecho_atual": "O Relatório inclui a Matriz de Materialidade construída com a contribuição dos diversos stakeholders do ABC Brasil, além de seguir as diretrizes internacionalmente reconhecidas da Global Reporting Initiative (GRI) e incorporar indicadores do Sustainability Accounting Standards Board (SASB)."
+  },
+  {
+   "item": "E048",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021",
+   "trecho_anterior": "12h00 Brasília / 10h00 US EST +1 (844) 204-8942 +1 (412) 717-9627",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E049",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2021 – Conciliação entre os Resultados Contábeis e Gerenciais",
+   "trecho_anterior": "(1) Reclassificações de 'Despesas de Pessoal' (referente ao INSS da remuneração variável) para 'Participação nos Lucros e Resultados', de 'Outras Despesas Administrativas' (vinculadas ao volume de receitas) para 'Resultado Bruto da Intermediação Financeira' e 'Receita de Serviços', de 'Outras Despesas Administrativas' (referente a despesas de recuperação de encargos e de crédito) para 'Outras Receitas (Despesas) Operacionais', de 'Resultado Bruto da Intermediação Financeira' (referente às recuperações de crédito e Provisão para Desvalorização de Títulos [PDT]) para 'Despesa de Provisão', de 'Receita de Serviços' (referente às receitas de estruturação de crédito) para 'Resultado Bruto da Intermediação Financeira' e de 'Outras Receitas (Despesas) Operacionais' (referente às provisões da Comercializadora de Energia) para 'Despesa de Provisão'.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E050",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Guidance 2022",
+   "trecho_anterior": "*Este Guidance contém declarações perspectivas, as quais estão sujeitas a riscos e incertezas, pois foram baseadas em expectativas e premissas da Administração e em informações disponíveis no mercado até a presente data.*",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E051",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "Provisões",
+   "trecho_anterior": "Este comportamento reflete a atual fase do ciclo de crédito, com despesas de provisão a níveis comportados.",
+   "trecho_atual": "Este comportamento reflete a continuidade da atual fase do ciclo de crédito corporativo, com despesas de provisão a níveis comportados."
+  },
+  {
+   "item": "E052",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Despesas de Pessoal, Administrativas e PLR",
+   "trecho_anterior": "Conforme estas iniciativas são desenvolvidas e ganham relevância, elas aceleram o crescimento das receitas e diluem custos e despesas – contribuindo para a manutenção do Índice de Eficiência relativamente estável.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E053",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021",
+   "trecho_anterior": "Além de contribuir para o crescimento das receitas, esta tendência também reduz o ticket médio de exposição de crédito por cliente, melhorando a diversificação da carteira.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E054",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "A Margem Financeira Gerencial atingiu R$1.464,5 milhões em 2021, um crescimento de 28,6% em relação a 2020, impulsionada principalmente pela Margem com Clientes.",
+   "trecho_atual": "A Margem Financeira Gerencial atingiu R$447,5 milhões no 1T22, um crescimento de 6,0% em relação ao 4T21, impulsionada principalmente pela Margem com Clientes e pelo Patrimônio Líquido Remunerado ao CDI."
+  },
+  {
+   "item": "E055",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "Acreditamos que alguns dos efeitos deste novo ciclo já sejam visíveis em 2022, mas que seu potencial de geração de receita seja atingido mais fortemente nos próximos 18 a 24 meses.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E056",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "Este segundo ciclo de investimento vem sendo suportado pela geração de resultado próprio do ABC Brasil, da mesma forma que realizado no ciclo anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E057",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Eficiência",
+   "trecho_anterior": "Índice de Eficiência (Despesas/Receitas)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E058",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021",
+   "trecho_anterior": "Dando continuidade à sua estratégia, o ABC Brasil encerrou 2021 novamente com uma forte expansão de sua base de clientes (852 clientes totais e 375 clientes com exposição de crédito) – equivalente a uma expansão de 32% nos últimos 12 meses, encerrando o ano de 2021 com 3.490 clientes totais e 2.322 clientes com exposição de crédito.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E059",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "Telefone: +55 (11) 3170-4655",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E060",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 7,
+   "secao": "1T22 x 4T21 | Recorrente",
+   "trecho_anterior": "O crescimento do lucro líquido recorrente, comparando o quarto com o terceiro trimestre de 2021, é explicado principalmente:",
+   "trecho_atual": "O crescimento do lucro líquido recorrente, comparando o primeiro trimestre de 2022 com o quarto trimestre de 2021 é explicado principalmente:"
+  },
+  {
+   "item": "E061",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Divulgação dos Resultados 9 de maio de 2022 (antes da abertura do mercado)"
+  },
+  {
+   "item": "E062",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Relatório de Sustentabilidade",
+   "trecho_anterior": "",
+   "trecho_atual": "Seguindo a pauta de transparência, ética e responsabilidade, publicamos o primeiro Relatório de Sustentabilidade, documento que relata as principais ações e resultados desenvolvidos pelo ABC Brasil ao longo de 2021 nos âmbitos ambiental, social e de governança."
+  },
+  {
+   "item": "E063",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "Desta forma, acreditamos estar construindo um modelo de negócio resiliente, diversificado, e que combina resultados líquidos crescentes com expansão de ROAE.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E064",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021",
+   "trecho_anterior": "Encerramos 2021 com um crescimento de 23% na Margem com Clientes em relação a 2020, atingindo um Spread com Clientes acima de 4% no segundo semestre de 2021.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E065",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "Resultado Operacional",
+   "trecho_anterior": "O Resultado Operacional totalizou R$314,8 milhões no quarto trimestre de 2021, aumento de 8,3% em relação ao trimestre anterior e de 66,6% no comparativo com o mesmo período de 2020.",
+   "trecho_atual": "O Resultado Operacional totalizou R$337,7 milhões no primeiro trimestre de 2022, aumento de 7,3% em relação ao trimestre anterior e de 50,0% no comparativo com o mesmo período de 2021."
+  },
+  {
+   "item": "E066",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2021 – Conciliação entre os Resultados Contábeis e Gerenciais",
+   "trecho_anterior": "(2) Reclassificação do efeito fiscal do hedge de 'Despesas tributárias' e 'Imposto de renda e contribuição social' para 'Resultado Bruto da Intermediação Financeira'.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E067",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Conferência 10 de maio de 2022"
+  },
+  {
+   "item": "E068",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "12h00 Brasília / 10h00 US EST +1 (844) 204-8942 +1 (412) 717-9627",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E069",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "1T22 x 1T21 | Recorrente",
+   "trecho_anterior": "",
+   "trecho_atual": "Pela redução da Despesa de Crédito; e - Pelo aumento do Patrimônio Líquido remunerado a CDI;"
+  },
+  {
+   "item": "E070",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 12,
+   "secao": "Classificação da Carteira de Empréstimos (Resolução Nº 2.682 BACEN)",
+   "trecho_anterior": "O saldo da carteira de empréstimos ao final de dezembro de 2021 era de R$23,3 bilhões, com um saldo de PDD de R$723,7 milhões.",
+   "trecho_atual": "O saldo da carteira de empréstimos ao final de março de 2022 era de R$23,1 bilhões, com um saldo de PDD de R$649,4 milhões."
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "2021 x 2020 | Recorrente",
+   "trecho_anterior": "O gráfico abaixo demonstra as principais variações no resultado acumulado deste ano em relação ao anterior:",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E072",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 7,
+   "secao": "1T22 x 1T21 | Recorrente",
+   "trecho_anterior": "O crescimento do resultado no quarto trimestre de 2021 em comparação com o mesmo período do ano anterior é explicado principalmente:",
+   "trecho_atual": "O crescimento do resultado no primeiro trimestre de 2022 em comparação com o mesmo período do ano anterior é explicado principalmente:"
+  },
+  {
+   "item": "E073",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Sérgio Ricardo Borejo Vice-Presidente Executivo"
+  },
+  {
+   "item": "E074",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "Despesas de Pessoal, Administrativas e PLR",
+   "trecho_anterior": "As Despesas de Pessoal, Outras Despesas Administrativas e PLR atingiram R$166,0 milhões no quarto trimestre de 2021, crescimento de 11,5% em relação ao trimestre anterior e de 28,8% em relação ao mesmo período de 2020.",
+   "trecho_atual": "As Despesas de Pessoal, Outras Despesas Administrativas e PLR atingiram R$190,5 milhões no primeiro trimestre de 2022, crescimento de 14,8% em relação ao trimestre anterior e de 43,4% em relação ao mesmo período de 2021."
+  },
+  {
+   "item": "E075",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "Quando analisado o 4T21 em comparação com o 3T21, a Margem Financeira Gerencial cresceu 10,8%, resultado da expansão das linhas de Margem com Mercado e Patrimônio Líquido Remunerado a CDI.",
+   "trecho_atual": "Quando analisado o 1T22 em comparação com o 1T21, a Margem Financeira Gerencial cresceu 41,7%, resultado da expansão das linhas de Margem com Clientes e Patrimônio Líquido Remunerado a CDI."
+  },
+  {
+   "item": "E076",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021 (Cont.)",
+   "trecho_anterior": "No 4º trimestre de 2021 o Lucro Líquido atingiu R$162,0 milhões, um crescimento de 52,8% em relação ao mesmo período de 2020 – equivalente a um ROAE anualizado no trimestre 14,1% – o sexto trimestre consecutivo de expansão.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E077",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "Este segundo ciclo inclui a expansão de nosso time de colaboradores e investimentos em tecnologia – com foco principal em áreas comerciais e de transformação digital – visando melhorar a experiência dos clientes, ganhar escalabilidade e reduzir custos por transação.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E078",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "Eficiência",
+   "trecho_anterior": "O Índice de Eficiência recorrente foi de 35,2% no quarto trimestre de 2021, um aumento de 1,9 p.p. em relação ao trimestre anterior e de 0,3 p.p. no comparativo com o mesmo período de 2020.",
+   "trecho_atual": "O Índice de Eficiência recorrente foi de 38,5% no primeiro trimestre de 2022, um aumento de 3,3 p.p. em relação ao trimestre anterior e de 2,3 p.p. no comparativo com o mesmo período de 2021, resultado da contratação de novos colaboradores e dos investimentos em iniciativas estruturantes."
+  },
+  {
+   "item": "E079",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "ESG",
+   "trecho_anterior": "O Banco também publicou o seu primeiro inventário de emissões de gases de efeito estufa seguindo a metodologia do Programa Brasileiro GHG Protocol, sendo classificado como Selo Ouro pelo programa e neutralizando 100% das emissões diretas através da aquisição de créditos de carbono.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E080",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": 4,
+   "secao": "SUMÁRIO EXECUTIVO",
+   "trecho_anterior": "Apresentamos, abaixo, informações e indicadores financeiros do Banco ABC Brasil ao final do quarto trimestre de 2021.",
+   "trecho_atual": "Apresentamos, abaixo, informações e indicadores financeiros do Banco ABC Brasil ao final do primeiro trimestre de 2022."
+  },
+  {
+   "item": "E081",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021 (Cont.)",
+   "trecho_anterior": "O Lucro Líquido atingiu R$572,2 milhões em 2021, um crescimento de 77,7% em relação a 2020, enquanto o Retorno Anualizado sobre o Patrimônio Líquido (ROAE) no período foi de 12,8%, um crescimento de 500 pontos base em relação a 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E082",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021",
+   "trecho_anterior": "10h00 Brasília / 08h00 US EST +55 11 4090-1621 +55 11 3181-8565",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E083",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Guidance 2021",
+   "trecho_anterior": "Em relação às Despesas, finalizamos 2021 com um crescimento anual de 20,5% um pouco acima do Guidance do ano, influenciado principalmente por uma maior inflação no período e pelo maior volume de contratações de colaboradores.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Linha de Crédito do IFC para Descarbonização na Agricultura",
+   "trecho_anterior": "",
+   "trecho_atual": "O pacote permitirá que o ABC Brasil foque em dois segmentos: projetos de agricultura inteligente para culturas com certificação qualificada de cana-de-açúcar, café e laranja; geração e transmissão de energia elétrica associados a projetos de biomassa de cana-de-açúcar."
+  },
+  {
+   "item": "E085",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Guidance 2022",
+   "trecho_anterior": "A expectativa é que esse aumento de despesas seja acompanhado de um crescimento proporcional de receitas, de modo que o Índice de Eficiência permaneça na faixa de 36% a 39%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E086",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "Captação Histórica",
+   "trecho_anterior": "Em dezembro de 2021 o saldo da captação totalizava R$38,5 bilhões, queda de 1,9% no trimestre e crescimento de 7,8% em 12 meses.",
+   "trecho_atual": "Em março de 2022 o saldo da captação totalizava R$39,6 bilhões, crescimento de 2,8% no trimestre e de 4,8% em 12 meses."
+  },
+  {
+   "item": "E087",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Sérgio Ricardo Borejo Vice-Presidente Executivo"
+  },
+  {
+   "item": "E088",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Indicadores da Carteira de Crédito Expandida por Segmento",
+   "trecho_anterior": "",
+   "trecho_atual": "O ABC Brasil atingiu no 1T22 3.441 clientes totais, uma expansão de 23% nos últimos 12 meses."
+  },
+  {
+   "item": "E089",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Telefone: +55 (11) 3170-4655 Email: ri@abcbrasil.com.br Website: ri.abcbrasil.com.br"
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "10h00 Brasília / 08h00 US EST +55 11 4090-1621 +55 11 3181-8565",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 11,
+   "secao": "Spread com Clientes Anualizado (Empréstimos e Títulos Privados)",
+   "trecho_anterior": "No caso do Spread com Clientes Anualizado Ajustado pela Provisão, a redução trimestral foi de 30 pontos base, reflexo de um leve aumento das despesas de provisão.",
+   "trecho_atual": "No caso do Spread com Clientes Anualizado Ajustado pela Provisão, o crescimento trimestral foi de 60 pontos base, reflexo da diminuição das despesas de provisão."
+  },
+  {
+   "item": "E092",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021",
+   "trecho_anterior": "Telefone: +55 (11) 3170-4655",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E093",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "Importante notar também o crescimento anual do segmento Middle, com uma expansão de 29,1% nos últimos 12 meses e representando 7,7% da Carteira de Crédito Expandida."
+  },
+  {
+   "item": "E094",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "Destaque para o Banco de Investimentos, que encerrou 2021 com receita recorde.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E095",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021",
+   "trecho_anterior": "Esta tendência foi resultado de dois principais fatores: - Mudanças no Mix de Produtos: incrementamos a oferta de transações estruturadas para nossos clientes, principalmente de derivativos e câmbio – o que contribuiu para a expansão da margem – bem como tivemos uma maior rentabilidade em Cash Management; e - Crescimento do Segmento Middle: continuamos a expansão do segmento Middle, com um crescimento de 64% no número de clientes em 12 meses, atingindo 7,9% da Carteira de Crédito Expandida, um crescimento de 170 pontos base em relação a 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E096",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "O resultado deste investimento foi a criação do segmento Middle, que hoje atende aproximadamente 1.700 clientes e conta com uma carteira de quase R$3 bilhões – ao redor de 8% de nossa Carteira de Crédito Expandida.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E097",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Finalmente, o Índice de Cobertura atingiu 444%, resultado da queda do volume de atrasos e do reforço da Provisão (específica e adicional) do segmento Middle – que atingiu 4,5% como percentual da carteira Middle."
+  },
+  {
+   "item": "E098",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Novo Ciclo de Investimentos",
+   "trecho_anterior": "Desta forma, iniciamos no 4º trimestre de 2021 um novo ciclo de investimentos que visa, como o primeiro, ampliar nosso portfólio de produtos e serviços, diversificar e acelerar nossas fontes de receita, diluir custos fixos e expandir o ROAE estrutural do ABC Brasil.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E099",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021 (Cont.)",
+   "trecho_anterior": "21 em 2020), com um volume total emitido de aproximadamente R$6,2 bilhões no ano (vs.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E100",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Adequação do Capital",
+   "trecho_anterior": "Neste trimestre o Índice de Basileia teve um aumento 50 pontos base, resultado principalmente da apropriação do resultado do 4T21, já deduzidos da distribuição de proventos, e da redução dos ativos ponderados pelo risco.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E101",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Resultados",
+   "trecho_anterior": "No ano de 2021, o Lucro Líquido recorrente totalizou R$572,2 milhões, crescimento de 77,7% em relação a 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E102",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "O Retorno Anualizado sobre o Patrimônio Líquido (ROAE) no período foi de 15,5%, um crescimento de 140 pontos base em relação ao trimestre anterior, e de 420 pontos base em relação ao mesmo período do ano – o sétimo trimestre consecutivo de expansão."
+  },
+  {
+   "item": "E103",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "NIM",
+   "trecho_anterior": "A NIM (taxa anualizada da margem financeira gerencial) foi de 4,1% a.a. no 4T21, apresentando um aumento de 30 pontos base quando comparada com o 3T21 e de 90 pontos base em relação ao mesmo período de 2020, atingindo o maior nível desde 2017.",
+   "trecho_atual": "A NIM (taxa anualizada da margem financeira gerencial) foi de 4,4% a.a. no 1T22, apresentando um aumento de 30 pontos base quando comparada com o 4T21 e de 120 pontos base em relação ao mesmo período de 2021, atingindo o maior nível desde 2017."
+  },
+  {
+   "item": "E104",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Em paralelo, as Operações com Atraso Acima de 90 Dias como percentual da Carteira de Crédito encerraram o trimestre em 0,6%, e os Empréstimos Classificados entre D-H atingiram 3,7%, ambos índices abaixo da média histórica."
+  },
+  {
+   "item": "E105",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Spread com Clientes Anualizado (Empréstimos e Títulos Privados)",
+   "trecho_anterior": "Na comparação anual, houve um aumento de aproximadamente 30 pontos base.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E106",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021 (Cont.)",
+   "trecho_anterior": "Corretora de Seguros: iniciamos a operação da ABC Brasil Corretora no 3º trimestre de 2021, inicialmente ofertando três linhas de seguros: Capital Global, Seguro Prestamista e Seguro Garantia.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E107",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Português & Inglês 11h00 Brasília / 10h00 US EDT"
+  },
+  {
+   "item": "E108",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Guidance 2021",
+   "trecho_anterior": "Atingimos um crescimento anual em 2021 da Carteira de Crédito Expandida de 9,7%, impulsionado principalmente pela expansão do Segmento Middle, com crescimento anual de 40,0%, que atingiu 7,9% da carteira total – uma expansão de 170 pontos base versus dezembro de 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E109",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO (cont.)",
+   "trecho_anterior": "",
+   "trecho_atual": "Este número se manteve estável em relação ao ano passado, uma demonstração da manutenção na qualidade de atendimento mesmo considerando o aumento expressivo do número de clientes no período."
+  },
+  {
+   "item": "E110",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021 (Cont.)",
+   "trecho_anterior": "Destaque para a área de Debt Capital Markets (DCM) – que precificou 47 transações em 2021 (vs.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E111",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DE 2021 (Cont.)",
+   "trecho_anterior": "C2e: solução de crédito nativa-digital para pessoa jurídica embarcada em ecossistemas de parceiros, possibilitando oferecer crédito por canais digitais no conceito de embedded finance; e - Consignado Privado: oferta de crédito consignado privado junto a colaboradores dos clientes corporativos do ABC Brasil.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E112",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Guidance 2021",
+   "trecho_anterior": "Adicionalmente, o ABC Brasil continua a focar na diversificação de seu portfólio e no aumento de participação de produtos e segmentos de clientes que contribuam para o aumento da Margem Financeira.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E113",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "No quarto trimestre de 2021, a Receita de Serviços representou 18,9% da Receita Total.",
+   "trecho_atual": "No primeiro trimestre de 2022, a Receita de Serviços representou 12,6% da Receita Total."
+  },
+  {
+   "item": "E114",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Provisões",
+   "trecho_anterior": "No acumulado do ano de 2021, a Despesa de Provisão Ampliada teve uma queda de 42,9% em relação ao ano anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E115",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO (cont.)",
+   "trecho_anterior": "",
+   "trecho_atual": "Seguindo a pauta de transparência, ética e responsabilidade, publicamos o primeiro Relatório de Sustentabilidade, documento que relata as principais ações e resultados desenvolvidos pelo ABC Brasil ao longo de 2021 nos âmbitos ambiental, social e de governança."
+  },
+  {
+   "item": "E116",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Aumento do Spread intra-segmento de clientes; e - Aumento da relevância do segmento Middle na Carteira de Crédito Expandida, quando comparado com o mesmo trimestre de 2021."
+  },
+  {
+   "item": "E117",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Guidance 2022",
+   "trecho_anterior": "$$ Inclui as carteiras de empréstimos, garantias prestadas e títulos privados.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E118",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Linha de Crédito do IFC para Descarbonização na Agricultura",
+   "trecho_anterior": "",
+   "trecho_atual": "O financiamento ajudará a aumentar o acesso ao financiamento climático no Brasil para iniciativas de descarbonização na agricultura."
+  },
+  {
+   "item": "E119",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "A Receita de Serviços totalizou R$88,9 milhões no quarto trimestre, e R$330,0 milhões para o ano de 2021, um crescimento de 26,3% em relação a 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E120",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "",
+   "trecho_atual": "A Receita de Serviços totalizou R$62,4 milhões no primeiro trimestre, redução de 29,8% em relação ao trimestre anterior e de 12,8% em relação ao mesmo período do ano anterior."
+  }
+ ]
+}

@@ -1,0 +1,507 @@
+{
+ "par": "BTG_4T2022_1T2023",
+ "bracos": [
+  "b0",
+  "b1",
+  "c",
+  "m"
+ ],
+ "itens": {
+  "E001": "1a429bcf8853fa74",
+  "E002": "71db029715ed3e93",
+  "E003": "97a224621d741943",
+  "E004": "a67948cf8c8001cc",
+  "E005": "2100b9e099984dc9",
+  "E006": "6f89d90cb7e00a38",
+  "E007": "520677bec29fd542",
+  "E008": "9b9c9630acdd43e2",
+  "E009": "7cbb6469fe71b940",
+  "E010": "44c05d4af0b8a672",
+  "E011": "0aef55c543082bd0",
+  "E012": "fec44bb2eac9e61c",
+  "E013": "d0d0e19a1f5fe5e0",
+  "E014": "cf66663620724442",
+  "E015": "f3de11822298c33e",
+  "E016": "470fe4a2b2fa5706",
+  "E017": "cebcb93f9abce18f",
+  "E018": "518de25098292067",
+  "E019": "f0b85127eb5bc068",
+  "E020": "3317be55c6d4e739",
+  "E021": "7bba45de2c2d119f",
+  "E022": "8b77e5cc3c4de766",
+  "E023": "e878fef977610212",
+  "E024": "992455f282da5812",
+  "E025": "25be3ca9e3eb48ae",
+  "E026": "fd0d82612445cbb6",
+  "E027": "2309e017b11d02b1",
+  "E028": "43def78893d13497",
+  "E029": "348eb31e3f77df51",
+  "E030": "86a21fefafc144cc",
+  "E031": "d246faca4a913bb4",
+  "E032": "90db221ed32b29f8",
+  "E033": "1e936dc98c7f8e74",
+  "E034": "82fc729999c949d1",
+  "E035": "03437b22b7c3da74",
+  "E036": "a9735ee571b67e0a",
+  "E037": "7cf4c11bb2694ecc",
+  "E038": "5caef1d1dcbe5de2",
+  "E039": "cb00b91147040867",
+  "E040": "6dc69083a0e8e17e",
+  "E041": "f4d3250c3f800305",
+  "E042": "98d93247a1f29d5a",
+  "E043": "a60dced65e23c5d5",
+  "E044": "08990aba3776e16d",
+  "E045": "a759d97937282404",
+  "E046": "8ce762576919bdbe",
+  "E047": "3563bb735510310d",
+  "E048": "14498786cdacfe79",
+  "E049": "cfdec4ab28a81520",
+  "E050": "8533aa1f014ef2b9",
+  "E051": "e54b61fbee2bb71e",
+  "E052": "cb64477cf6291964",
+  "E053": "b1848a833bfe623e",
+  "E054": "63df20f4f1645e76",
+  "E055": "13f5b2305997e2fe",
+  "E056": "337899567fe83487",
+  "E057": "f33d18df2b9aff54",
+  "E058": "406aa8a920b43107",
+  "E059": "dcd52e3ce6d38650",
+  "E060": "45466236e7896778",
+  "E061": "376e35fcc6365c7a",
+  "E062": "18ac634a7c27baf7",
+  "E063": "317c571bc4a71ec0",
+  "E064": "ccce7b4ddb1f1d24",
+  "E065": "83b3d5e300caa036",
+  "E066": "f20fc1497f36cf8f",
+  "E067": "7d58927da3c30077",
+  "E068": "13438d49ea202615",
+  "E069": "5895774828406ca1",
+  "E070": "dc07d5b6c2fb0f68",
+  "E071": "3165d95770a8250a",
+  "E072": "0c08c303856af3b7",
+  "E073": "f74bae011b336f18",
+  "E074": "ad0be79777cdcb42",
+  "E075": "9ed7104e00586f66",
+  "E076": "5885b61aab96d983",
+  "E077": "fef0f69ae4a27099",
+  "E078": "858f451ab9751a88",
+  "E079": "76a03d3b5bba70d7",
+  "E080": "205ce34c5d283eaf",
+  "E081": "4e1cde52f5a05f45",
+  "E082": "e602c735017ffd80",
+  "E083": "dc1bfb0037730c8c",
+  "E084": "7869c47b0bb52d64",
+  "E085": "253c6cf3ccfe2ee3",
+  "E086": "00fbccd8f3cae087",
+  "E087": "ad9e5030d27627b6",
+  "E088": "b49542afee6bfcb4",
+  "E089": "06427cd4198d592e",
+  "E090": "d3f5cce9c34b8fbb",
+  "E091": "73f1ede6c3507a74",
+  "E092": "ea2a8572e2086a37",
+  "E093": "18270646b28b516c",
+  "E094": "1986f03cc0ac4337",
+  "E095": "13c2ec3be6c7def1",
+  "E096": "c97281eab56e6c27",
+  "E097": "dd22231d56b13245",
+  "E098": "01cffa705c543120",
+  "E099": "e69b31ac26c9f5fd",
+  "E100": "50062c2069057f75",
+  "E101": "a65567948e082992",
+  "E102": "6659cfc02dee0d40",
+  "E103": "b95f0a8930711403",
+  "E104": "fa91f780f5294477",
+  "E105": "c942310cd4976c33",
+  "E106": "882126ee40637673",
+  "E107": "2bc4e9060863cc41",
+  "E108": "cf6fc7835af85e2d",
+  "E109": "7c85c2f5acb77901",
+  "E110": "1e43d0dda61cd13e",
+  "E111": "158db4c574bd997c",
+  "E112": "e7ce990deda15341",
+  "E113": "a2181adf6b40da6f",
+  "E114": "dfeecc9b505a5d8c",
+  "E115": "fa1a0b2a3478f63f",
+  "E116": "d9fb21ea83a94483",
+  "E117": "1220153648d3bc2f",
+  "E118": "f266d178978c50a2",
+  "E119": "58fa0f62aaff8340",
+  "E120": "11c7bccbc9c86b8c"
+ },
+ "origem": {
+  "18270646b28b516c": [
+   "top20_b0"
+  ],
+  "f33d18df2b9aff54": [
+   "top20_b0"
+  ],
+  "6f89d90cb7e00a38": [
+   "top20_b0"
+  ],
+  "5895774828406ca1": [
+   "top20_b0"
+  ],
+  "7bba45de2c2d119f": [
+   "top20_b0"
+  ],
+  "a9735ee571b67e0a": [
+   "top20_b0"
+  ],
+  "520677bec29fd542": [
+   "top20_b0",
+   "top20_c"
+  ],
+  "1e43d0dda61cd13e": [
+   "top20_b0"
+  ],
+  "2100b9e099984dc9": [
+   "top20_b0"
+  ],
+  "7d58927da3c30077": [
+   "top20_b0"
+  ],
+  "f266d178978c50a2": [
+   "top20_b0"
+  ],
+  "90db221ed32b29f8": [
+   "top20_b0"
+  ],
+  "fa1a0b2a3478f63f": [
+   "top20_b0"
+  ],
+  "97a224621d741943": [
+   "top20_b0"
+  ],
+  "c97281eab56e6c27": [
+   "top20_b0"
+  ],
+  "3165d95770a8250a": [
+   "top20_b0",
+   "top20_m"
+  ],
+  "253c6cf3ccfe2ee3": [
+   "top20_b0",
+   "top20_m"
+  ],
+  "dcd52e3ce6d38650": [
+   "top20_b0"
+  ],
+  "992455f282da5812": [
+   "top20_b0"
+  ],
+  "8ce762576919bdbe": [
+   "top20_b0",
+   "top20_m"
+  ],
+  "7869c47b0bb52d64": [
+   "top20_b1"
+  ],
+  "82fc729999c949d1": [
+   "top20_b1"
+  ],
+  "7cbb6469fe71b940": [
+   "top20_b1",
+   "top20_m"
+  ],
+  "8533aa1f014ef2b9": [
+   "top20_b1"
+  ],
+  "fa91f780f5294477": [
+   "top20_b1",
+   "top20_m"
+  ],
+  "f74bae011b336f18": [
+   "top20_b1"
+  ],
+  "406aa8a920b43107": [
+   "top20_b1"
+  ],
+  "f20fc1497f36cf8f": [
+   "top20_b1"
+  ],
+  "158db4c574bd997c": [
+   "top20_b1"
+  ],
+  "1e936dc98c7f8e74": [
+   "top20_b1"
+  ],
+  "8b77e5cc3c4de766": [
+   "top20_b1",
+   "top20_m"
+  ],
+  "13438d49ea202615": [
+   "top20_b1"
+  ],
+  "fef0f69ae4a27099": [
+   "top20_b1"
+  ],
+  "1220153648d3bc2f": [
+   "top20_b1"
+  ],
+  "b49542afee6bfcb4": [
+   "top20_b1"
+  ],
+  "6659cfc02dee0d40": [
+   "top20_b1",
+   "top20_m"
+  ],
+  "18ac634a7c27baf7": [
+   "top20_b1"
+  ],
+  "01cffa705c543120": [
+   "top20_b1"
+  ],
+  "dc1bfb0037730c8c": [
+   "top20_b1"
+  ],
+  "9ed7104e00586f66": [
+   "top20_b1"
+  ],
+  "205ce34c5d283eaf": [
+   "top20_c"
+  ],
+  "e69b31ac26c9f5fd": [
+   "top20_c"
+  ],
+  "5885b61aab96d983": [
+   "top20_c"
+  ],
+  "0c08c303856af3b7": [
+   "top20_c"
+  ],
+  "e878fef977610212": [
+   "top20_c"
+  ],
+  "ea2a8572e2086a37": [
+   "top20_c"
+  ],
+  "376e35fcc6365c7a": [
+   "top20_c"
+  ],
+  "cb00b91147040867": [
+   "top20_c"
+  ],
+  "ccce7b4ddb1f1d24": [
+   "top20_c"
+  ],
+  "ad0be79777cdcb42": [
+   "top20_c"
+  ],
+  "348eb31e3f77df51": [
+   "top20_c"
+  ],
+  "d0d0e19a1f5fe5e0": [
+   "top20_c",
+   "top20_m"
+  ],
+  "f4d3250c3f800305": [
+   "top20_c",
+   "top20_m"
+  ],
+  "4e1cde52f5a05f45": [
+   "top20_c",
+   "top20_m"
+  ],
+  "13c2ec3be6c7def1": [
+   "top20_c",
+   "top20_m"
+  ],
+  "e602c735017ffd80": [
+   "top20_c",
+   "top20_m"
+  ],
+  "a60dced65e23c5d5": [
+   "top20_c"
+  ],
+  "317c571bc4a71ec0": [
+   "top20_c"
+  ],
+  "cb64477cf6291964": [
+   "top20_c",
+   "top20_m"
+  ],
+  "86a21fefafc144cc": [
+   "top20_m"
+  ],
+  "45466236e7896778": [
+   "top20_m"
+  ],
+  "f3de11822298c33e": [
+   "top20_m"
+  ],
+  "858f451ab9751a88": [
+   "top20_m"
+  ],
+  "518de25098292067": [
+   "top20_m"
+  ],
+  "7cf4c11bb2694ecc": [
+   "top20_m"
+  ],
+  "ad9e5030d27627b6": [
+   "top20_m"
+  ],
+  "e54b61fbee2bb71e": [
+   "aleatorio"
+  ],
+  "50062c2069057f75": [
+   "aleatorio"
+  ],
+  "83b3d5e300caa036": [
+   "aleatorio"
+  ],
+  "3317be55c6d4e739": [
+   "aleatorio"
+  ],
+  "1a429bcf8853fa74": [
+   "aleatorio"
+  ],
+  "d9fb21ea83a94483": [
+   "aleatorio"
+  ],
+  "882126ee40637673": [
+   "aleatorio"
+  ],
+  "cf6fc7835af85e2d": [
+   "aleatorio"
+  ],
+  "00fbccd8f3cae087": [
+   "aleatorio"
+  ],
+  "03437b22b7c3da74": [
+   "aleatorio"
+  ],
+  "5caef1d1dcbe5de2": [
+   "aleatorio"
+  ],
+  "e7ce990deda15341": [
+   "aleatorio"
+  ],
+  "71db029715ed3e93": [
+   "aleatorio"
+  ],
+  "08990aba3776e16d": [
+   "aleatorio"
+  ],
+  "44c05d4af0b8a672": [
+   "aleatorio"
+  ],
+  "a65567948e082992": [
+   "aleatorio"
+  ],
+  "11c7bccbc9c86b8c": [
+   "aleatorio"
+  ],
+  "3563bb735510310d": [
+   "aleatorio"
+  ],
+  "14498786cdacfe79": [
+   "aleatorio"
+  ],
+  "13f5b2305997e2fe": [
+   "aleatorio"
+  ],
+  "2bc4e9060863cc41": [
+   "aleatorio"
+  ],
+  "06427cd4198d592e": [
+   "aleatorio"
+  ],
+  "fd0d82612445cbb6": [
+   "aleatorio"
+  ],
+  "d246faca4a913bb4": [
+   "aleatorio"
+  ],
+  "2309e017b11d02b1": [
+   "aleatorio"
+  ],
+  "fec44bb2eac9e61c": [
+   "aleatorio"
+  ],
+  "d3f5cce9c34b8fbb": [
+   "aleatorio"
+  ],
+  "43def78893d13497": [
+   "aleatorio"
+  ],
+  "a2181adf6b40da6f": [
+   "aleatorio"
+  ],
+  "6dc69083a0e8e17e": [
+   "aleatorio"
+  ],
+  "cf66663620724442": [
+   "aleatorio"
+  ],
+  "337899567fe83487": [
+   "aleatorio"
+  ],
+  "470fe4a2b2fa5706": [
+   "aleatorio"
+  ],
+  "a759d97937282404": [
+   "aleatorio"
+  ],
+  "9b9c9630acdd43e2": [
+   "aleatorio"
+  ],
+  "b1848a833bfe623e": [
+   "aleatorio"
+  ],
+  "b95f0a8930711403": [
+   "aleatorio"
+  ],
+  "dd22231d56b13245": [
+   "aleatorio"
+  ],
+  "1986f03cc0ac4337": [
+   "aleatorio"
+  ],
+  "0aef55c543082bd0": [
+   "aleatorio"
+  ],
+  "cebcb93f9abce18f": [
+   "aleatorio"
+  ],
+  "25be3ca9e3eb48ae": [
+   "aleatorio"
+  ],
+  "c942310cd4976c33": [
+   "aleatorio"
+  ],
+  "a67948cf8c8001cc": [
+   "aleatorio"
+  ],
+  "63df20f4f1645e76": [
+   "aleatorio"
+  ],
+  "58fa0f62aaff8340": [
+   "aleatorio"
+  ],
+  "dfeecc9b505a5d8c": [
+   "aleatorio"
+  ],
+  "dc07d5b6c2fb0f68": [
+   "aleatorio"
+  ],
+  "f0b85127eb5bc068": [
+   "aleatorio"
+  ],
+  "73f1ede6c3507a74": [
+   "aleatorio"
+  ],
+  "76a03d3b5bba70d7": [
+   "aleatorio"
+  ],
+  "cfdec4ab28a81520": [
+   "aleatorio"
+  ],
+  "7c85c2f5acb77901": [
+   "aleatorio"
+  ],
+  "98d93247a1f29d5a": [
+   "aleatorio"
+  ]
+ }
+}

@@ -1,0 +1,1207 @@
+{
+ "par": "SANTANDER_4T2022_1T2023",
+ "documento_anterior": "santander_release_4T2022",
+ "documento_atual": "santander_release_1T2023",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Estratégia centrada no cliente permite maior rentabilização dos nossos negócios",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, conquistamos 1,9 milhão de clientes e seguimos fortalecendo a nossa estratégia de cross-selling, por meio da qual adicionamos 119 mil clientes pela Financeira (+40% YoY), 75 mil pelo Prospera (+5% YoY) e 235 mil por folhas de pagamentos."
+  },
+  {
+   "item": "E002",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Consórcios: oferta adequada em um cenário de alta de juros e crédito restrito",
+   "trecho_anterior": "Possuimos uma carteira de R$ 32,2 bilhões, incremento de 22% em 12 meses.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E003",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "RECEITAS DE PRESTAÇÃO",
+   "trecho_anterior": "Em três meses, as comissões cresceram 7,2%, por maior transacionalidade e vinculação, com destaque para receitas com seguros, cartões e consórcios.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E004",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Payments | Cartões: focados na transacionalidade",
+   "trecho_anterior": "",
+   "trecho_atual": "Estratégia seletiva focada em clientes com melhor perfil de risco, sendo que 97% das novas aquisições são clientes do Banco (+2 p.p."
+  },
+  {
+   "item": "E005",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "Ambiental:",
+   "trecho_anterior": "",
+   "trecho_atual": "Neste sentido, criamos, juntamente com outras três empresas, uma operação de CRA (Certificado de Recebíveis do Agronegócio) Verde, de R$ 17 milhões, que busca suprir a escassez de crédito voltada a projetos de agricultura sustentável e regeneração de áreas degradadas em cinco biomas do Brasil, com forte presença na Amazônia."
+  },
+  {
+   "item": "E006",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 1,
+   "secao": "Destaques estratégicos",
+   "trecho_anterior": "",
+   "trecho_atual": "O maior entendimento da jornada do cliente e a busca por sua melhor experiência contribuíram para termos maior recorrência na utilização dos nossos serviços, permitindo maior geração de negócios, principalmente nos clientes vinculados, cujas receitas são 6x superiores às dos não vinculados."
+  },
+  {
+   "item": "E007",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "TÍTULOS E VALORES MOBILIÁRIOS",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, aumento de 6,0%, reflexo da alta de 6,0% em títulos públicos."
+  },
+  {
+   "item": "E008",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "ROAE",
+   "trecho_anterior": "$$ Exclui 100% do saldo do ágio (líquido de amortização), que foi de R$ 1.256 milhões em dezembro de 2022, R$ 1.329 milhões em dezembro de 2021",
+   "trecho_atual": "$$ Exclui 100% do saldo do ágio líquido de amortização, que foi de R$ 1.256 milhões em março de 2023, R$ 1.256 milhões em dezembro de 2022 e R$ 1.432 milhões março de 2022."
+  },
+  {
+   "item": "E009",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": 1,
+   "secao": "Comissões",
+   "trecho_anterior": "+22,4% YoY -2,6% QoQ",
+   "trecho_atual": "7,4% QoQ +1,8% YoY"
+  },
+  {
+   "item": "E010",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 27,
+   "secao": "CARTEIRA DE RENEGOCIAÇÃO (R$ milhões)",
+   "trecho_anterior": "No trimestre, o índice de provisionamento da carteira de renegociação aumentou 1,83 p.p. no ano e 0,42 p.p. no trimestre, alcançando 48,9%.",
+   "trecho_atual": "No trimestre, o índice de provisionamento da carteira de renegociação aumentou 5,48 p.p. no trimestre e 8,99 p.p. no ano, alcançando 54,4%."
+  },
+  {
+   "item": "E011",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Santander Auto",
+   "trecho_anterior": "Também seguimos ampliando nosso portfólio, com crescimento de venda de seguros no mercado Open.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E012",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 23,
+   "secao": "ABERTURA GERENCIAL DO CRÉDITO POR SEGMENTO",
+   "trecho_anterior": "O volume de atraso na faixa de 15-90 alcançou 3,3%, queda de 0,1 p.p. em comparação ao 3T22.",
+   "trecho_atual": "O volume de atraso na faixa de 15-90 alcançou 2,9%, queda de 0,4 p.p. em comparação ao 4T22."
+  },
+  {
+   "item": "E013",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "BALANÇO PATRIMONIAL",
+   "trecho_anterior": "Os ativos totais somaram R$ 1.048.518 milhões em dezembro de 2022, aumento de 8,8% no ano, refletindo o crescimento das aplicações interfinanceiras de liquidez, carteira de crédito e carteira de câmbio.",
+   "trecho_atual": "Os ativos totais somaram R$ 1.049 bilhões em março de 2023, aumento de 9,3% no ano, refletindo o crescimento das aplicações interfinanceiras de liquidez, carteira de crédito e carteira de câmbio."
+  },
+  {
+   "item": "E014",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Carteira de crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "Em PMEs, enfatizamos a conquista de novos clientes e o aumento da transacionalidade e no Atacado, seguimos fortalecendo a expansão geográfica e explorando o cross-sell com clientes, produtos e segmentos, além de sermos destaques em diversas frentes, como commodities, infraestrutura e trade finance."
+  },
+  {
+   "item": "E015",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "DESPESAS GERAIS",
+   "trecho_anterior": "",
+   "trecho_atual": "Em três meses, as despesas caíram 2,3%, evidenciando o nosso foco em eficiência e gestão recorrente de custos."
+  },
+  {
+   "item": "E016",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "",
+   "trecho_atual": "GUSTAVO ALEJO, CFO DO SANTANDER BRASIL"
+  },
+  {
+   "item": "E017",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "",
+   "trecho_atual": "O lucro líquido alcançou R$ 2.140 milhões no 1T23, alta de 27% em relação ao 4T22, com níveis de capital e liquidez em patamares confortáveis."
+  },
+  {
+   "item": "E018",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "Social:",
+   "trecho_anterior": "",
+   "trecho_atual": "Desde 2002, o programa Amigo de Valor já beneficiou mais de 1,6 milhão de crianças e adolescentes em situações de vulnerabilidade, e para 2023 ampliamos o programa para apoiarmos hospitais pediátricos e organizações que dão suporte às famílias cujas crianças estão em tratamento de alta complexidade."
+  },
+  {
+   "item": "E019",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 7,
+   "secao": "Santander Auto",
+   "trecho_anterior": "30% dos financiamentos da financeira saem com seguro.",
+   "trecho_atual": "27% dos financiamentos da financeira são contratados com seguro."
+  },
+  {
+   "item": "E020",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "ABERTURA GERENCIAL DO CRÉDITO POR SEGMENTO",
+   "trecho_anterior": "",
+   "trecho_atual": "Desta forma, reclassificamos as informações de 2022, para melhor comparabilidade."
+  },
+  {
+   "item": "E021",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 32,
+   "pagina_atual": null,
+   "secao": "ENTRE O RESULTADO CONTÁBIL E O RESULTADO GERENCIAL",
+   "trecho_anterior": "3T21: Margem Financeira Bruta e Resultado de Créditos de Liquidação Duvidosa: reclassificação referente ao ajustes na valoração de ativos à redução ao seu valor recuperável.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E022",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 17,
+   "secao": "MARGEM FINANCEIRA",
+   "trecho_anterior": "As receitas oriundas das operações com clientes aumentaram 22,4% no ano, apresentando bom desempenho da margem com produtos, em decorrência de maiores volumes e mix de produtos no crédito, e de spreads em captações, que acompanharam o movimento da taxa de juros.",
+   "trecho_atual": "As receitas oriundas das operações com clientes aumentaram 3,3% no ano, com desempenho positivo na margem com produtos, principalmente em captações, com maiores volumes e spreads que acompanharam o movimento de alta de juros, além de maiores volumes em crédito."
+  },
+  {
+   "item": "E023",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 23,
+   "secao": "CARTEIRA DE CRÉDITO",
+   "trecho_anterior": "A carteira de crédito totalizou R$ 489.687 milhões em dezembro de 2022, aumento anual de 5,8% (ou 6,5% desconsiderando o efeito da variação cambial), com todos os segmentos apresentando crescimento no período, sendo 8,4% em pessoa física, 7,5% em pequenas e médias empresas, 2,9% em grandes empresas e 1,8% em financiamento ao consumo.",
+   "trecho_atual": "A carteira de crédito totalizou R$ 500.314 milhões em março de 2023, aumento anual de 9,9% (ou de 9,2% desconsiderando o efeito da variação cambial), com todos os segmentos apresentando crescimento no período – 18,8% em grandes empresas, 8,4% em pessoa física, 6,9% em pequenas e médias empresas e 1,4% em financiamento ao consumo."
+  },
+  {
+   "item": "E024",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "",
+   "trecho_atual": "Os indicadores de crédito das novas safras apresentam qualidade superior às safras antigas, com NPL 90 atingindo 2,8% nas safras novas e 3,6% nas safras antigas e NPL 15-90 totalizando 3,9% nas novas safras comparado a 5,2% nas safras antigas."
+  },
+  {
+   "item": "E025",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 1,
+   "secao": "Destaques estratégicos",
+   "trecho_anterior": "",
+   "trecho_atual": "Crescemos a carteira em negócios estratégicos, principalmente em linhas com garantias e melhor perfil de risco."
+  },
+  {
+   "item": "E026",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 32,
+   "pagina_atual": null,
+   "secao": "ENTRE O RESULTADO CONTÁBIL E O RESULTADO GERENCIAL",
+   "trecho_anterior": "Imposto de Renda e Contribuição Social: baixa do crédito tributário referente ao prejuízo fiscal e base negativa da CSLL em virtude da cisão parcial do Banco Santander.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E027",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": 26,
+   "secao": "ÍNDICE DE INADIMPLÊNCIA",
+   "trecho_anterior": "em 6,3% em dezembro de 2022, alta de 1,31 p.p. no ano e 0,26 p.p. no trimestre.",
+   "trecho_atual": "PESSOA FÍSICA em 6,5% em março de 2023, alta de 0,66 p.p. no ano e 0,20 p.p. no trimestre."
+  },
+  {
+   "item": "E028",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "PMEs",
+   "trecho_anterior": "Expandimos a nossa oferta de produtos que podem ser contratados de forma digital, como consórcio, capitalização e seguros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E029",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Carteira de crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "No consignado, seguimos com destacado ritmo de produção, focados na digitalização e rentabilização de convênios, com a ambição de alcançarmos R$ 75 bilhões de carteira até o final do ano."
+  },
+  {
+   "item": "E030",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "DESPESAS GERAIS",
+   "trecho_anterior": "¹Fonte: IBGE: IPCA de 12 meses acumulado até dezembro de 2022 - http://www.ibge.gov.br ²Exclui 100% da despesa de amortização do ágio de R$ 330 milhões em 2022, R$ 1.252 milhões em 2021, R$ 80 milhões no 4T22 e R$ 83 milhões no 3T22 ³Inclui participação no Lucro.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E031",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": null,
+   "secao": "Destaques estratégicos",
+   "trecho_anterior": "No mesmo período, a Rentabilidade (ROAE) foi de 16,3% e o Lucro Líquido Gerencial de R$ 12.900 milhões, queda de 21,1% com relação a 2021, reflexo da estratégia de antecipação de ciclos de crédito implementada ainda no 4T21, com maior seletividade do crédito que resulta em uma pressão nas receitas combinada à deterioração do custo de crédito, além do impacto do evento subsequente no segmento do Atacado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E032",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "DESPESAS GERAIS",
+   "trecho_anterior": "As despesas de depreciação e amortização, excluindo o efeito do ágio, somaram R$ 2.728 milhões no período, alta de 9,7% em doze meses e de 7,1% em três meses, explicada pelos investimentos realizados em software e hardware.",
+   "trecho_atual": "As despesas de depreciação e amortização, excluindo o efeito do ágio, somaram R$ 722 milhões no período, alta de 10,5% em doze meses, explicada pelos investimentos realizados em software e hardware, e queda de 1,6% em três meses."
+  },
+  {
+   "item": "E033",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "Ampliando o ecossistema",
+   "trecho_anterior": "Em 2017 iniciamos o desenvolvimento de um modelo de negócio de investimentos em carteiras em prejuízo no Brasil.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E034",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Agro: Ambição de carteira total de R$ 50 bilhões em 2023",
+   "trecho_anterior": "",
+   "trecho_atual": "¹ Visão Produtos Agro: considera Crédito Rural (Livre e Obrigatório), Títulos do Agro, Funcafé e BNDES Agro."
+  },
+  {
+   "item": "E035",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 29,
+   "pagina_atual": 29,
+   "secao": "ÍNDICE DE BASILEIA",
+   "trecho_anterior": "O índice de Basileia supera em 2,4 p.p. a soma dos requerimentos mínimos do Patrimônio de Referência e Adicionais de Capital Principal.",
+   "trecho_atual": "O índice de Basileia supera em 2,3 p.p. a soma dos requerimentos mínimos do Patrimônio de Referência e Adicionais de Capital Principal."
+  },
+  {
+   "item": "E036",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "RESULTADO",
+   "trecho_anterior": "As receitas de recuperação de créditos baixados para prejuízo, caíram 12,0% no acumulado do ano e 19,0% no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E037",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Auto Compara",
+   "trecho_anterior": "",
+   "trecho_atual": "Seguimos ampliando nosso portfólio, ofertando novas seguradoras na plataforma."
+  },
+  {
+   "item": "E038",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 29,
+   "secao": "ÍNDICE DE BASILEIA",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de Basileia atingiu 13,8%, o que representa uma redução de 0,1 p.p. no trimestre, principalmente em função do aumento nos ativos ponderados pelo risco (RWA) parcialmente compensado pelo resultado do período."
+  },
+  {
+   "item": "E039",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 32,
+   "secao": "ENTRE O RESULTADO CONTÁBIL E O RESULTADO GERENCIAL",
+   "trecho_anterior": "",
+   "trecho_atual": "Resultado de Créditos de Liquidação Duvidosa, Outras Receitas/Despesas Operacionais e Imposto de Renda e Contribuição Social: evento extraordinário referente à reversão de provisões de riscos fiscais, relacionada à discussão judicial que envolve a Lei nº 9.718/1998, cuja avaliação de risco de perda é classificada como possível, não havendo a necessidade de provisionamento."
+  },
+  {
+   "item": "E040",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 10,
+   "secao": "Home-equity: liderança no mercado²",
+   "trecho_anterior": "No UseCasa, nosso produto de home-equity, possuímos R$ 3,9 bilhões de carteira de crédito, um aumento de 20% YoY.",
+   "trecho_atual": "No UseCasa, nosso produto de home-equity, possuímos R$ 4,0 bilhões de carteira de crédito, aumento de 16% em 12 meses."
+  },
+  {
+   "item": "E041",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": 28,
+   "secao": "EVOLUÇÃO DAS CAPTAÇÕES (R$ bilhões)",
+   "trecho_anterior": "A métrica de liquidez ajustada ao impacto dos compulsórios e ao funding de médio/longo prazo atingiu 83,3% em dezembro de 2022, queda de 1,0 p.p. em doze meses e de 0,6 p.p. em três meses.",
+   "trecho_atual": "A métrica de liquidez ajustada ao impacto dos compulsórios e ao funding de médio/longo prazo atingiu 82,2%, queda de 1,2 p.p. em doze meses e de 1,0 p.p. em três meses."
+  },
+  {
+   "item": "E042",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Ambição de carteira total de",
+   "trecho_anterior": "R$ 37,5 bilhões carteira agro total¹ (+37% YoY)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E043",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": 26,
+   "secao": "ÍNDICE DE INADIMPLÊNCIA",
+   "trecho_anterior": "atingiu 4,3% no trimestre, alta de 0,62 p.p. no ano e queda de 0,04 no trimestre.",
+   "trecho_atual": "PESSOA FÍSICA atingiu 4,5% no trimestre, alta de 0,51 p.p. no ano e de 0,22 p.p. no trimestre."
+  },
+  {
+   "item": "E044",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 27,
+   "secao": "NPL FORMATION",
+   "trecho_anterior": "A relação entre o NPL formation e a carteira de crédito atingiu 1,59% no trimestre, aumento de 0,26 p.p. no ano e queda de 0,27 p.p. no trimestre.",
+   "trecho_atual": "A relação entre o NPL formation e a carteira de crédito atingiu 1,54% no trimestre, queda de 0,30 p.p. no ano e de 0,05 p.p. no trimestre."
+  },
+  {
+   "item": "E045",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Agro: Ambição de carteira total de R$ 50 bilhões em 2023",
+   "trecho_anterior": "",
+   "trecho_atual": "A Return, empresa de gestão e securitização de carteiras em prejuízo, alcançou um Patrimônio Líquido de R$ 2,3 bilhões no trimestre."
+  },
+  {
+   "item": "E046",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 26,
+   "secao": "ACIMA DE 90 DIAS¹",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência superior a 90 dias atingiu 3,2% em março de 2023 (+0,24 p.p."
+  },
+  {
+   "item": "E047",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": null,
+   "secao": "ÍNDICE DE INADIMPLÊNCIA",
+   "trecho_anterior": "O índice de inadimplência de 15 a 90 dias alcançou 4,5% em dezembro de 2022, com aumento de 1,01 p.p. no ano e 0,22 p.p. no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E048",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 29,
+   "pagina_atual": 29,
+   "secao": "ÍNDICE DE BASILEIA",
+   "trecho_anterior": "O índice de Basileia atingiu 13,9%, o que representa uma redução de 1,0 p.p. em comparação com o mesmo período do ano anterior, principalmente devido ao aumento de 6,3% nos ativos ponderados pelo risco, com destaque para o risco de crédito.",
+   "trecho_atual": "Comparado ao mesmo período do ano anterior, o índice de Basileia apresentou redução de 0,9 p.p. principalmente devido ao aumento de 10,0% nos ativos ponderados pelo risco, com destaque para o risco de crédito."
+  },
+  {
+   "item": "E049",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "RESULTADO DE CRÉDITOS DE LIQUIDAÇÃO",
+   "trecho_anterior": "As despesas de provisão cresceram 55,9% no acumulado do ano e 14,0% no trimestre, impactadas por um evento subsequente, conforme já mencionado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E050",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "RESULTADO",
+   "trecho_anterior": "O custo de crédito de 12 meses atingiu 4,4%, aumento de 1,7 p.p. no ano e 0,6 p.p. no trimestre, enquanto o índice em 3 meses alcançou 5,2%, alta de 0,7 p.p. no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E051",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Academia Santander 2030,",
+   "trecho_anterior": "",
+   "trecho_atual": "dos funcionários realizaram treinamentos no ano"
+  },
+  {
+   "item": "E052",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 27,
+   "secao": "ÍNDICE DE COBERTURA",
+   "trecho_anterior": "O índice de cobertura atingiu 230% em dezembro de 2022, crescimento de 10,1 p.p. no ano e 4,5 p.p. no trimestre.",
+   "trecho_atual": "O índice de cobertura atingiu 244% em março de 2023, crescimento de 29,6 p.p. no ano e 13,9 p.p. no trimestre."
+  },
+  {
+   "item": "E053",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Carteira de crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso, tivemos um evento pontual neste trimestre, que gerou receita referente à reversão de provisões fiscais, que permitiu reforçarmos nosso balanço."
+  },
+  {
+   "item": "E054",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Agronegócio",
+   "trecho_anterior": "Maior mesa de hedge de commodities agrícolas do país e líder em escrituração de CBIOs (crédito de descarbonização), com 54% de market share, além da participação em projetos de transição energética, clima e crédito de carbono.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E055",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "A PDD, os indicadores de inadimplência e o custo de crédito se mostram compatíveis ao momento e em linha com o esperado, com safras novas concentradas em melhores ratings, destacando aqui as medidas tomadas em função de maior seletividade.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E056",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Canal",
+   "trecho_anterior": "Continuamos apoiando os nossos clientes, com a orientação financeira personalizada no APP PF, com 50 milhões de recomendações sobre consciência de consumo no ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E057",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 1,
+   "secao": "PDD",
+   "trecho_anterior": "",
+   "trecho_atual": "Inadimplência controlada, com leve deterioração, como previsto"
+  },
+  {
+   "item": "E058",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "RECEITAS DE PRESTAÇÃO",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas de serviços de conta corrente totalizaram R$ 993 milhões no trimestre, aumento de 3,7% em doze meses e 4,8% em três meses, influenciadas pela readequação de tarifas e pela maior transacionalidade."
+  },
+  {
+   "item": "E059",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 1,
+   "secao": "Destaques estratégicos",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, a Rentabilidade (ROAE) foi de 10,6% e o Lucro Líquido Gerencial de R$ 2.140 milhões, alta de 26,7% com relação ao trimestre anterior e queda de 46,6% comparado ao ano anterior."
+  },
+  {
+   "item": "E060",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "RECEITAS DE PRESTAÇÃO",
+   "trecho_anterior": "No trimestre, as receitas cresceram 26,4%, impactadas pelo aumento da produção de consórcios, além da mudança regulatória na contabilização de receitas de consórcios ocorrida no trimestre anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E061",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 27,
+   "secao": "CARTEIRA DE RENEGOCIAÇÃO (R$ milhões)",
+   "trecho_anterior": "As operações de crédito renegociadas somaram R$ 36.922 milhões em dezembro de 2022, com aumento de 56,2% em doze meses e 4,4% em três meses.",
+   "trecho_atual": "As operações de crédito renegociadas somaram R$ 36.844 milhões em março de 2023, com queda de 0,2% em três meses e aumento de 33,7% em doze meses, resultado da nossa gestão proativa de riscos."
+  },
+  {
+   "item": "E062",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 23,
+   "secao": "CARTEIRA DE CRÉDITO",
+   "trecho_anterior": "A carteira de crédito ampliada, que inclui outras operações com risco de crédito e avais e fianças, encerrou o ano em R$ 572.663 milhões, com aumento anual de 6,7% (7,3% desconsiderando o efeito de variação cambial) e crescimento de 1,2% no trimestre (ou 1,5% desconsiderando o efeito da variação cambial).",
+   "trecho_atual": "A carteira de crédito ampliada, que inclui outras operações com risco de crédito e avais e fianças, totalizou R$ 586.353 milhões, com aumento anual de 12,3% (ou de 11,8% desconsiderando o efeito de variação cambial) e crescimento de 2,4% no trimestre (ou de 2,6% desconsiderando o efeito da variação cambial)."
+  },
+  {
+   "item": "E063",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Nossas pessoas são",
+   "trecho_anterior": "",
+   "trecho_atual": "Cultura única baseada em empoderamento, meritocracia, protagonismo e diversidade - inclusive de experiências e formações."
+  },
+  {
+   "item": "E064",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 26,
+   "secao": "ACIMA DE 15 A 90 DIAS²",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência de 15 a 90 dias alcançou 4,5% em março de 2023 (+0,32 p.p."
+  },
+  {
+   "item": "E065",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 27,
+   "secao": "NPL FORMATION",
+   "trecho_anterior": "O NPL formation somou R$ 7.703 milhões em dezembro de 2022, impactado pelo incremento na carteira renegociada de 56,2% no ano e 4,4% no trimestre, e pelo aumento do saldo over 90 de 21,4% no ano e 3,2% no trimestre, principalmente no segmento pessoa física.",
+   "trecho_atual": "O NPL formation somou R$ 7.541 milhões em março de 2023, impactado pelo incremento na carteira renegociada de 33,7% no ano e queda de 0,2% no trimestre, e pelo aumento do saldo over 90 de 19,1% no ano e 5,3% no trimestre, principalmente no segmento pessoa física."
+  },
+  {
+   "item": "E066",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Cultura de inovação",
+   "trecho_anterior": "",
+   "trecho_atual": "permite maior produtividade e eficiência"
+  },
+  {
+   "item": "E067",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Ambição de carteira total de",
+   "trecho_anterior": "Além disso, seguimos fortalecendo a exploração de sinergias com o Gira, especializado em gestão de recebíveis do agronegócio, e a WayCarbon, maior consultoria técnica especializada em mudanças climáticas da América Latina, com foco em originação de projetos de crédito de carbono e atuação em mais de 1.000 projetos de iniciativas sustentáveis desde 2016.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E068",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Agronegócio",
+   "trecho_anterior": "² Comercializadoras de energia que não possuem ativo de geração",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E069",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "Continuaremos crescendo de forma sustentável.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E070",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "Adicionalmente, a margem com mercado continua impactada pela sensibilidade negativa ao aumento de juros, fato que continuará ao longo de 2023.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Santander",
+   "trecho_anterior": "Seguimos na liderança do mercado com 22% de market share¹ em carteira de veículos pessoa física.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E072",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "",
+   "trecho_atual": "Maiores detalhes na Demonstração Financeira em BRGAAP, nota 19."
+  },
+  {
+   "item": "E073",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "Ampliando o ecossistema",
+   "trecho_anterior": "Ao final de 2022 a emDia juntou forças com a Liderança Cobranças, empresa especializada em call center de recuperação de crédito, adquirido pelo Grupo Santander em 2021, tornando-se uma plataforma 'full-service' em cobrança para seus clientes, com soluções tanto digitais quanto via call center.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E074",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Home-equity: liderança no mercado³",
+   "trecho_anterior": "⁴ Fonte: Abecip, data base novembro de 2022",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E075",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 25,
+   "secao": "COMPOSIÇÃO DA CARTEIRA",
+   "trecho_anterior": "",
+   "trecho_atual": "O saldo da carteira de pequenas e médias empresas somou R$ 62.784 milhões, aumento de 6,9% no ano (ou alta de 6,6% desconsiderando o efeito da variação cambial) e em três meses, a carteira cresceu 0,2% (ou alta de 0,3% desconsiderando o efeito da variação cambial)."
+  },
+  {
+   "item": "E076",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 12,
+   "secao": "Agro: Ambição de carteira total de R$ 50 bilhões em 2023",
+   "trecho_anterior": "Em 2022 alcançamos um faturamento de R$ 2,5 bilhões, alta de 58% YoY, e 831 mil cartões ativos, crescimento de 47% YoY.",
+   "trecho_atual": "No trimestre, alcançamos um faturamento de R$ 633 milhões, alta de 16% YoY, e 882 mil cartões ativos, crescimento de 35% YoY."
+  },
+  {
+   "item": "E077",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": 30,
+   "secao": "FREE-FLOAT",
+   "trecho_anterior": "Além disso, no dia 19 de janeiro de 2023 foi aprovada a distribuição de JCP, relativos ao ano fiscal de 2023, no valor de R$ 1.700 milhão, com pagamento a partir de 06 de março de 2023 baseado nos registros de acionistas do dia 26 de janeiro de 2023.",
+   "trecho_atual": "No dia 13 de abril de 2023 foi aprovada a distribuição de JCP, com base no resultado do 1T23, no valor de R$ 1.500 milhões, com pagamento a partir de 15 de maio de 2023 baseado nos registros de acionistas do dia 24 de abril de 2023."
+  },
+  {
+   "item": "E078",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 32,
+   "pagina_atual": null,
+   "secao": "ENTRE O RESULTADO CONTÁBIL E O RESULTADO GERENCIAL",
+   "trecho_anterior": "2T21: Margem Financeira Bruta e Resultado de Créditos de Liquidação Duvidosa: reclassificação referente ao ajustes na valoração de ativos à redução ao seu valor recuperável.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E079",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 11,
+   "secao": "Santander Financiamentos",
+   "trecho_anterior": "Em 2 meses de atuação, já tivemos 6 mil atendimentos relacionados à originação, 5 mil acionamentos de pós vendas e a formalização de mais de 4 mil acordos em contratos inadimplentes.",
+   "trecho_atual": "Desde seu lançamento, em nov/22, já tivemos mais de 6 mil atendimentos relacionados à originação, 5 mil relacionados ao pós vendas e 6 mil sobre acordos em contratos inadimplentes."
+  },
+  {
+   "item": "E080",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "RESULTADO DE CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA",
+   "trecho_anterior": "",
+   "trecho_atual": "Considerando este efeito, o custo de crédito de 3 meses atingiu 7,7% e o custo de crédito de 12 meses alcançou 5,5%. ² Incluindo este efeito, as despesas de provisão aumentaram 48,1% no trimestre e 123,0% no ano."
+  },
+  {
+   "item": "E081",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "DESPESAS GERAIS",
+   "trecho_anterior": "As despesas administrativas, excluindo depreciação e amortização, somaram R$ 9.891 milhões em 2022, aumento de 3,1% no ano, com maiores custos com processamento de dados e serviços técnicos especializados e de terceiros, dado o efeito da inflação no período, além de maiores gastos com transporte e viagens.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E082",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "helpS",
+   "trecho_anterior": "Nosso serviço de assistência 24 horas, lançado em junho de 2022, segue ampliando sua base de clientes, atingindo 40.000, e com forte atuação no segmento de Auto.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E083",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse resultado gerencial de R$ 4,2 bilhões, contabilizado em outras receitas operacionais foi neutralizado por provisões complementares para reforço de balanço, contabilizadas em provisões de crédito de liquidação duvidosa."
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "RECEITAS DE PRESTAÇÃO",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas de administração de fundos e consórcios totalizaram R$ 349 milhões no período, crescimento anual de 8,5%, influenciado pela maior produção em consórcios, que compensou a queda na receita de fundos, impactada pela mudança do mix para fundos de renda fixa, incentivada pelo patamar da taxa de juros."
+  },
+  {
+   "item": "E085",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Estratégia centrada no cliente permite maior rentabilização dos nossos negócios",
+   "trecho_anterior": "",
+   "trecho_atual": "Seguimos focados nos clientes vinculados, cujas receitas são 6x superiores às de não vinculados; e de alta renda, Select, segmento no qual já possuímos 834 mil clientes, com ambição de atingirmos 1 milhão em dez/2023."
+  },
+  {
+   "item": "E086",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "Por conta da busca por clientes com melhor perfil de risco e das mudanças no mix de produtos, assim como o maior foco em operações com garantia (chegando a 65% da carteira de crédito colateralizada na pessoa física), observamos uma maior pressão nas margens com clientes, onde temos observado uma adequação dos spreads a esses perfis.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E087",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Sim",
+   "trecho_anterior": "",
+   "trecho_atual": "Assim, passamos a disponibilizar a oferta de crédito com garantia de veículos nos canais digitais do Santander (APP, Internet Banking e Gent&), já representando 6% da produção total do canal Sim (B2C)."
+  },
+  {
+   "item": "E088",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Uma visão adequada para cada perfil de cliente",
+   "trecho_anterior": "Temos como alavanca para expansão a busca por clientes mais qualificados, focados em (i) vinculados, cujas receitas crescem 41% no ano, e (ii) os de alta renda, Select, que já são 731 mil clientes, com ambição de atingirmos 1 milhão em 2023, e representam 59% dos investimentos PF.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E089",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Carteira de crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "(i) Maior transacionalidade impulsiona o crescimento da franquia."
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "Social:",
+   "trecho_anterior": "Também concedemos 103 mil bolsas de estudo este ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "Outras receitas e despesas operacionais",
+   "trecho_anterior": "As outras receitas e despesas operacionais resultaram em uma despesa líquida de R$ 4.869 milhões em 2022.",
+   "trecho_atual": "As outras receitas e despesas operacionais líquidas totalizaram uma despesa de R$ 2.281 milhões no 1T23."
+  },
+  {
+   "item": "E092",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Além disso...",
+   "trecho_anterior": "Nosso novo portal de investimentos, no qual o cliente pode gerir seu patrimônio de forma contextualizada, agregada e personalizada, foi lançado em agosto de 2022 e já conta com 5 milhões de acessos mensais, gerando 100 mil vendas por mês.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E093",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "RECEITAS DE PRESTAÇÃO",
+   "trecho_anterior": "As receitas de serviços de corretagem e colocação de títulos atingiram R$ 1.481 milhões no período, alta de 12,0% no ano e de 7,4% no trimestre, em função da maior atividade no mercado de colocação de títulos e M&A.",
+   "trecho_atual": "As receitas de serviços de corretagem e colocação de títulos atingiram R$ 358 milhões no período, redução de 3,7% no ano e de 2,7% no trimestre, em função da menor atividade no mercado de colocação de títulos e M&A, que acompanharam a dinâmica do mercado."
+  },
+  {
+   "item": "E094",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "Governança:",
+   "trecho_anterior": "",
+   "trecho_atual": "Seguimos com uma gestão diligente com os principais riscos e oportunidades em relação às questões sociais, ambientais, climáticas e de governança."
+  },
+  {
+   "item": "E095",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "MARGEM FINANCEIRA",
+   "trecho_anterior": "A margem de operações com o mercado totalizou - R$ 4.239 milhões em 2022, redução no ano, impactada pela sensibilidade à curva de juros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E096",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": 30,
+   "secao": "FREE-FLOAT",
+   "trecho_anterior": "Em 2022 realizamos a distribuição de dividendos e JCP no montante de R$ 8.100 milhões.",
+   "trecho_atual": "Assim, no ano, já realizamos a distribuição de JCP no montante de R$ 3.200 milhões."
+  },
+  {
+   "item": "E097",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 24,
+   "secao": "CARTEIRA DE",
+   "trecho_anterior": "Temos focado na maior qualidade na concessão de novos créditos, apoiada no melhor perfil de risco, onde 98% das novas aquisições derivam de clientes do banco.",
+   "trecho_atual": "Temos focado na maior qualidade na concessão de novos créditos, apoiada no melhor perfil de risco."
+  },
+  {
+   "item": "E098",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "",
+   "trecho_atual": "Iniciamos 2023 com melhor qualidade do balanço, com crescimento de carteira de negócios estratégicos."
+  },
+  {
+   "item": "E099",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "RESULTADO DE CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA",
+   "trecho_anterior": "",
+   "trecho_atual": "■ Receita de recuperação de créditos baixados para prejuízo"
+  },
+  {
+   "item": "E100",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "RECEITAS DE PRESTAÇÃO",
+   "trecho_anterior": "Em três meses, crescimento de 3,0% em função de maiores receitas com tarifas de cadastro.",
+   "trecho_atual": "Em três meses, queda de 2,3% em função de menores receitas com tarifas de cadastro."
+  },
+  {
+   "item": "E101",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "MARGEM FINANCEIRA",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, aumento de 5,0% devido a melhores dinâmicas em margem com clientes, por volumes em crédito e resultado de captação."
+  },
+  {
+   "item": "E102",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 1,
+   "secao": "Comissões",
+   "trecho_anterior": "",
+   "trecho_atual": "Em comissões, efeito sazonal no trimestre"
+  },
+  {
+   "item": "E103",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Carteira de crédito",
+   "trecho_anterior": "A partir do 4T21 adotamos novamente medidas de ajuste em nossa operação, buscando nos posicionar de modo adequado frente aos ciclos de crédito.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E104",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "RECEITAS DE PRESTAÇÃO",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, queda de 6,1%, impactada pelo efeito sazonal de maior consumo da população no final de ano."
+  },
+  {
+   "item": "E105",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "RESULTADO",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas de recuperação de créditos baixados para prejuízo aumentaram 35,0% no trimestre e 26,2% no ano, atingindo R$ 934 milhões."
+  },
+  {
+   "item": "E106",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 28,
+   "secao": "CAPTAÇÃO",
+   "trecho_anterior": "",
+   "trecho_atual": "O saldo de captações de clientes totalizou R$ 566.249 milhões em março de 2023, incremento de 3,8% no trimestre e 14,5%, no ano refletindo principalmente o crescimento dos volumes de depósito a prazo e LCI/LCA/LIG, ainda decorrente da maior atratividade das captações de renda fixa dado o atual nível de taxa de juros."
+  },
+  {
+   "item": "E107",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "",
+   "trecho_atual": "Nesse trimestre houve um evento extraordinário referente à reversão de provisões de riscos fiscais, relacionada à discussão judicial que envolve a Lei nº 9.718/1998, cuja avaliação de risco de perda é classificada como possível, não havendo a necessidade de provisionamento."
+  },
+  {
+   "item": "E108",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": 30,
+   "secao": "FREE-FLOAT",
+   "trecho_anterior": "O nosso market cap alcançou R$ 105,8 bilhões em dezembro de 2022, redução de 6,4% em comparação ao mesmo período de 2021 e queda de 7,3% em relação a setembro de 2022.",
+   "trecho_atual": "O nosso market cap alcançou R$ 100,6 bilhões em março de 2023, redução de 26,0% em comparação a março de 2022 e de 4,9% em relação a dezembro de 2022."
+  },
+  {
+   "item": "E109",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "RESULTADO",
+   "trecho_anterior": "",
+   "trecho_atual": "Líquido desse efeito, o resultado de créditos de liquidação duvidosa totalizou R$ 6.765 milhões no 1T23, queda de 8,1% no trimestre e alta de 46,7% no ano, principalmente por conta do segmento pessoa física, dado o crescimento da carteira e mix."
+  },
+  {
+   "item": "E110",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "CAPTAÇÃO",
+   "trecho_anterior": "As captações de clientes totalizaram R$ 545.316 milhões em dezembro de 2022, alta de 10,5% em doze meses, reflexo principalmente de maiores volumes de depósito a prazo, Letras financeiras e LCI/LCA/LIG, em decorrência da maior atratividade das captações de renda fixa, devido ao atual nível de taxa de juros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E111",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Payments | Cartões: focados na transacionalidade",
+   "trecho_anterior": "",
+   "trecho_atual": "Carteira de crédito total atingiu R$ 49,2 bilhões em março de 2023 (+4% YoY)."
+  },
+  {
+   "item": "E112",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": null,
+   "secao": "ÍNDICE DE INADIMPLÊNCIA",
+   "trecho_anterior": "O índice de inadimplência superior a 90 dias atingiu 3,1% no trimestre, com crescimento de 0,39 p.p. em doze meses e 0,06 p.p. no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E113",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "Nesse contexto, iniciamos um processo de ajuste em nossa operação a partir do 4T21.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E114",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Santander Financiamentos",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso, seguimos fortalecendo o atendimento humano no Gent&."
+  },
+  {
+   "item": "E115",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 24,
+   "secao": "CARTEIRA DE",
+   "trecho_anterior": "O crédito à pessoa física totalizou R$ 226.302 milhões em dezembro de 2022, alta de 8,4% na comparação ao mesmo período de 2021, com crescimento em todos os produtos, com destaque para crédito consignado (11,9%), crédito pessoal/outros (11,6%), crédito imobiliário (6,2%) e cartão de crédito (4,5%).",
+   "trecho_atual": "O crédito à pessoa física totalizou R$ 228.735 milhões em março de 2023, alta de 8,4% na comparação ao mesmo período de 2022, apresentando crescimento em todos os produtos, com destaque para crédito consignado (14,4%), crédito pessoal/outros (8,5%) e crédito imobiliário (6,8%)."
+  },
+  {
+   "item": "E116",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 17,
+   "secao": "MARGEM FINANCEIRA",
+   "trecho_anterior": "A margem financeira bruta alcançou R$ 51.827 milhões em 2022, apresentando queda de 6,8% em doze meses, refletindo menores resultados com margem de mercado, dada à sensibilidade negativa ao aumento da taxa de juros.",
+   "trecho_atual": "A margem financeira bruta alcançou R$ 13.145 milhões no 1T23, apresentando queda de 5,7% no ano, impactada pela margem de mercado, dada a sensibilidade negativa à curva de juros."
+  },
+  {
+   "item": "E117",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Auto Compara",
+   "trecho_anterior": "",
+   "trecho_atual": "Alcançamos 348 milhões de acessos mensais e R$ 189 milhões de prêmios brutos emitidos no trimestre."
+  },
+  {
+   "item": "E118",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Carteira de crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "No segmento Empresas, seguimos focados em nos tornar a plataforma referência para PJ do país."
+  },
+  {
+   "item": "E119",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 25,
+   "pagina_atual": 25,
+   "secao": "COMPOSIÇÃO DA CARTEIRA",
+   "trecho_anterior": "Na comparação trimestral, a carteira apresentou queda de 1,6% no trimestre (ou redução de 0,5% desconsiderando o efeito da variação cambial).",
+   "trecho_atual": "Na comparação trimestral, a carteira apresentou aumento de 6,7% (ou de 7,5% desconsiderando o efeito da variação cambial)."
+  },
+  {
+   "item": "E120",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": 1,
+   "secao": "Informe de Resultados",
+   "trecho_anterior": "4º trimestre de 2022 (BR GAAP)",
+   "trecho_atual": "1º trimestre de 2023 (BR GAAP)"
+  }
+ ]
+}

@@ -1,0 +1,1207 @@
+{
+ "par": "ITAU_4T2021_1T2022",
+ "documento_anterior": "itau_release_4T2021",
+ "documento_atual": "itau_release_1T2022",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "Em 2021, a redução do resultado de seguros, previdência e capitalização ocorreu devido ao aumento de sinistros retidos, impactados pela pandemia de COVID-19 que afetou todo o mercado segurador e à maior constituição de provisão com o teste de adequação de passivos em relação à 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E002",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "Carteira de crédito¹ (pessoa física e jurídica) - Brasil",
+   "trecho_anterior": "No quarto trimestre de 2021, a originação³ de crédito para micro, pequenas e médias empresas cresceu 10% quando comparado ao trimestre anterior e cresceu 36% quando comparado ao mesmo período do ano anterior.",
+   "trecho_atual": "No primeiro trimestre de 2022, a originação³ de crédito para micro, pequenas e médias empresas reduziu 18% quando comparado ao trimestre anterior e cresceu 42% quando comparado ao mesmo período do ano anterior, principalmente em veículos para pessoas jurídicas."
+  },
+  {
+   "item": "E003",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Em 12 meses, merece destaque os crescimentos de (i) 44,5% em crédito imobiliário, resultante do patamar histórico de originação de crédito imobiliário no decorrer de 2021; e (ii) 41,4% em cartão de crédito, relacionado a mudança comercial na oferta dos nossos produtos."
+  },
+  {
+   "item": "E004",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "Itaú Argentina",
+   "trecho_anterior": "Maiores despesas por gastos com pessoal e remuneração variável.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E005",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "Carteira de crédito¹ (pessoa física e jurídica) - Brasil",
+   "trecho_anterior": "R$ 149,6 bi em 31/12/21",
+   "trecho_atual": "R$ 31,0 bi em 31/03/22"
+  },
+  {
+   "item": "E006",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Resultado de Seguros, Previdência e Capitalização",
+   "trecho_anterior": "No ano de 2021, o agravamento da pandemia de COVID-19 levou ao aumento de sinistros no período, principalmente nas carteiras de seguros de vida, habitacional, prestamista e proteção familiar, em relação ao mesmo período do ano anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E007",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 21,
+   "secao": "Concentração de crédito por cliente",
+   "trecho_anterior": "Maiores devedores, em 31 de dezembro de 2021",
+   "trecho_atual": "Maiores devedores, em 31 de março de 2022"
+  },
+  {
+   "item": "E008",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 10,
+   "secao": "Principais Efeitos na Variação da Margem Financeira com Clientes",
+   "trecho_anterior": "Capital de giro próprio e outros (+ R$ 0,4 bilhão): efeito positivo da maior taxa média na remuneração do capital de giro próprio, além do maior saldo médio relacionado com o resultado do período.",
+   "trecho_atual": "Capital de giro próprio e outros (+ R$ 0,09 bilhão): efeito positivo da maior taxa média na remuneração do capital de giro próprio, parcialmente compensado pelo menor saldo médio relacionado com o pagamento de dividendos e com a maior alocação de capital para a tesouraria."
+  },
+  {
+   "item": "E009",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 28,
+   "secao": "Itaú Paraguai",
+   "trecho_anterior": "",
+   "trecho_atual": "Maior custo do crédito por aumento no volume da carteira em atraso no varejo."
+  },
+  {
+   "item": "E010",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 32,
+   "secao": "Diferenças entre as Demonstrações Contábeis em IFRS e BRGAAP",
+   "trecho_anterior": "",
+   "trecho_atual": "(f) A composição dos outros ajustes se dá, principalmente, pelo reconhecimento do valor justo de instrumentos financeiros que foram utilizados como instrumentos de hedge de títulos mantidos até o vencimento, cuja estrutura de hedge contábil não é prevista no IFRS e pela reversão das amortizações dos ágios no BRGAAP."
+  },
+  {
+   "item": "E011",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 14,
+   "secao": "Por Faixas de Atraso aferidas no momento da renegociação",
+   "trecho_anterior": "A redução de 2,9% da carteira de crédito renegociado ocorreu nas carteiras de pessoas jurídicas, com destaque para as faixas de atraso acima de 30 dias no momento da renegociação.",
+   "trecho_atual": "A redução de 0,9% da carteira de crédito renegociado ocorreu nas carteiras de pessoas jurídicas, com destaque para as faixas de atraso acima de 90 dias no momento da renegociação e na América Latina."
+  },
+  {
+   "item": "E012",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso tivemos menores receitas com serviços de conta corrente (principalmente pacotes PJ) e com administração de fundos, com menor performance fee em virtude da alteração da forma de reconhecimento contábil e menor quantidade de dias úteis, parcialmente compensado pelo crescimento de 10,4% em seguros."
+  },
+  {
+   "item": "E013",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 24,
+   "secao": "Indicadores de Liquidez",
+   "trecho_anterior": "O NSFR foi de 121,1% no fechamento do trimestre, acima do limite de 100%, o que significa que temos recursos estáveis disponíveis para suportar os recursos estáveis requeridos no longo prazo.",
+   "trecho_atual": "O NSFR foi de 119,8% no fechamento do trimestre, acima do limite de 100%, o que significa que temos recursos estáveis disponíveis para suportar os recursos estáveis requeridos no longo prazo."
+  },
+  {
+   "item": "E014",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Os ativos totais aumentaram 0,8% no trimestre, principalmente devido ao crescimento de 2,6% em títulos e valores mobiliários."
+  },
+  {
+   "item": "E015",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Despesa de PDD por Segmento",
+   "trecho_anterior": "Na América Latina, o aumento da despesa de PDD no trimestre ocorreu principalmente no segmento corporate do Itaú Corpbanca.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E016",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Resultado de Seguros, Previdência e Capitalização",
+   "trecho_anterior": "",
+   "trecho_atual": "Em relação ao primeiro trimestre de 2021, o aumento do resultado está relacionado com as maiores vendas em todas as carteiras de seguros recorrentes, principalmente vida e acidentes pessoais, prestamista, habitacional e cartão protegido, além das maiores receitas de capitalização."
+  },
+  {
+   "item": "E017",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Nos últimos 12 meses houve aumento de 5,0%, representados pelo crescimento de 8,6% em administração fiduciária e custódia e 6,4% em produtos próprios, compensando a redução de 6,7% na plataforma aberta, ocasionada pelo aumento nas taxas de juros e volatilidade do mercado."
+  },
+  {
+   "item": "E018",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 28,
+   "secao": "Itaú Argentina",
+   "trecho_anterior": "",
+   "trecho_atual": "Maior margem com clientes por venda de investimento na Prisma (administradora de cartão) e por maiores spreads de operações de crédito."
+  },
+  {
+   "item": "E019",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "Em relação à 2020, a redução no custo do crédito ocorreu devido ao maior provisionamento feito no primeiro semestre de 2020, devido à alteração do cenário macroeconômico e das perspectivas financeiras das pessoas e das empresas, capturada por nosso modelo de provisionamento por perda esperada.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E020",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Cartões de Crédito e Débito",
+   "trecho_anterior": "Tanto na comparação trimestral quanto na comparação com o mesmo trimestre do ano anterior, o maior faturamento foi parcialmente compensando por menores ganhos com anuidade e por um aumento no volume de pontos concedidos no âmbito do programa de relacionamento.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E021",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "Índices de Capital",
+   "trecho_anterior": "",
+   "trecho_atual": "Patrimônio de Referência: redução de 4,5% em função de eventos extraordinários (principalmente aquisição do Itaú Corbanca Colômbia e Programa de Demissão Voluntária) e redução no saldo das dívidas que compõem o capital de Nível I e II."
+  },
+  {
+   "item": "E022",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "As receitas de serviços apresentaram aumento em função do impacto da (i) maior atividade econômica e consequente maior faturamento nas receitas com cartões (emissor e adquirência), que são sazonalmente maiores nesse período do ano, e (ii) maior receita com pacotes de conta corrente, principalmente para pessoas jurídicas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E023",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Pontos fortes da nossa estrutura",
+   "trecho_anterior": "Controle familiar, assegurando visão de longo prazo",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E024",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "(ii) crescimento de 4,9% nas receitas de serviços de conta corrente, principalmente em pacotes P.I.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E025",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 30,
+   "secao": "Pontos fortes da nossa estrutura",
+   "trecho_anterior": "",
+   "trecho_atual": "Controle familiar, assegurando visão de longo prazo - Gestão profissional - Base de acionistas pulverizada (53,14% das ações em free float) - Forte governança corporativa"
+  },
+  {
+   "item": "E026",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Índice de Inadimplência (%) | Acima de 90 dias",
+   "trecho_anterior": "O índice de inadimplência acima de 90 dias total reduziu em relação ao trimestre anterior, devido à menor inadimplência na América Latina, principalmente na carteira de pessoas jurídicas no Chile.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E027",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Abaixo apresentamos os resultados de 2021 comparados com as projeções divulgadas anteriormente:",
+   "trecho_anterior": "$$ Considera unidades externas ex-América Latina; $$ Inclui garantias financeiras prestadas e títulos privados; $$ Composto pelo Resultado de Créditos de Liquidação Duvidosa, Impairment e Descontos Concedidos; $$ Receitas de Prestação de Serviços (+) Resultado de Operações de Seguros, Previdência e Capitalização (-) Despesas com Sinistros (-) Despesas de Comercialização de Seguros, Previdência e Capitalização.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E028",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "DRE Pro Forma de Seguros (Recorrente)",
+   "trecho_anterior": "",
+   "trecho_atual": "Obs.: A partir do 1T22, passamos a considerar o resultado da equivalência patrimonial do Porto como atividade não recorrente de seguros."
+  },
+  {
+   "item": "E029",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "DRE Pro Forma de Seguros (Recorrente)",
+   "trecho_anterior": "Anteriormente este produto era tratado como Previdência.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E030",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "",
+   "trecho_atual": "No primeiro trimestre de 2022, adquirimos 5,7 milhões de clientes de maneira digital, crescimento de 55% em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E031",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 35,
+   "pagina_atual": 35,
+   "secao": "Introdução",
+   "trecho_anterior": "(Banco) e do Itaú Unibanco Holding S.A. e suas controladas (Consolidado) em 31 de dezembro de 2021, cujo relatório foi emitido, sem ressalvas, datado de 10 de fevereiro de 2022, procedemos à revisão das informações contábeis contidas nas informações suplementares incluídas no Relatório da Análise Gerencial da Operação do Itaú Unibanco Holding S.A. e suas controladas referentes ao exercício findo em 31 de dezembro de 2021.",
+   "trecho_atual": "(Banco) e do Itaú Unibanco Holding S.A. e suas controladas (Consolidado) em 31 de março de 2022, cujo relatório foi emitido, sem ressalvas, datado de 6 de maio de 2022, procedemos à revisão das informações contábeis contidas nas informações suplementares incluídas no Relatório da Análise Gerencial da Operação do Itaú Unibanco Holding S.A. e suas controladas referentes ao trimestre findo em 31 de março de 2022."
+  },
+  {
+   "item": "E032",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "Despesas não decorrentes de juros do Brasil",
+   "trecho_anterior": "Ajustando pela inflação, as despesas apresentam redução real de 10,4% no quarto trimestre de 2021.",
+   "trecho_atual": "Ajustando pela inflação, as despesas apresentam redução real de 6,8% no primeiro trimestre de 2022."
+  },
+  {
+   "item": "E033",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Índice de Inadimplência (%) | 15 a 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "Na América Latina, o aumento do índice ocorreu pela maior inadimplência tanto em pessoas físicas quanto em pessoas jurídicas no Chile."
+  },
+  {
+   "item": "E034",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso, tivemos menores receitas com (i) tarifas de conta corrente, principalmente em pacotes para pessoas jurídicas e (ii) administração de recursos, em função de menores receitas com performance fee e da menor quantidade de dias úteis."
+  },
+  {
+   "item": "E035",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Write-Off das Operações de Crédito",
+   "trecho_anterior": "As reduções na América Latina e no segmento de Varejo no Brasil, mais que compensaram o aumento no Atacado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E036",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "DRE Pro Forma de Seguros (Recorrente)",
+   "trecho_anterior": "",
+   "trecho_atual": "No primeiro trimestre de 2022, os prêmios ganhos cresceram 19,0%, principalmente por maiores vendas nas carteiras de seguros de vida e acidentes pessoais, habitacional, prestamista e cartão protegido."
+  },
+  {
+   "item": "E037",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "O aumento das despesas não decorrentes de juros no trimestre é explicado por: (I) maiores despesas de pessoal, em função do aumento da despesa com participação nos resultados e do maior volume de treinamentos; e (II) maiores despesas administrativas em função do aumento das campanhas de marketing veiculadas na mídia realizadas no período, além de maiores despesas com serviços de terceiros, principalmente assessoria e consultoria, e do crescimento de despesas com instalações, materiais, processamento de dados e telecomunicações.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E038",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Assessoria Econômico-Financeira e Corretagem",
+   "trecho_anterior": "As receitas com assessoria econômico-financeira e corretagem tiveram aumento de R$ 703 milhões em relação ao ano anterior; na comparação com o terceiro trimestre, as receitas apresentaram uma queda de 25,3%, em função da menor atividade no mercado de capitais, principalmente nos negócios de emissão de títulos de renda variável.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E039",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "Na América Latina, o aumento ocorreu devido às maiores despesas de pessoal e despesas administrativas relacionadas à TI.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E040",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Valor Transacionado 4T21",
+   "trecho_anterior": "R$ 188,2 bilhões ▲ + 14,8% (vs.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E041",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Índice de Inadimplência (%) | 15 a 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "Os índices de inadimplência entre 15 e 90 dias total, Brasil e América Latina aumentaram em relação ao trimestre anterior."
+  },
+  {
+   "item": "E042",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "Assessoria Econômico-Financeira e Corretagem",
+   "trecho_anterior": "Renda Fixa: em renda fixa local, participamos de operações de debêntures, notas promissórias e securitização, com um volume distribuído de R$ 47 bilhões em 2021, ocupando o primeiro lugar no ranking da ANBIMA.",
+   "trecho_atual": "Renda Fixa: em renda fixa local, participamos de 32 operações de debêntures, notas promissórias e securitização, com um volume distribuído de R$ 7,5 bilhões até março de 2022, ocupando o primeiro lugar em volume e quantidade de operações no ranking da ANBIMA."
+  },
+  {
+   "item": "E043",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "Carteira de crédito¹ (pessoa física e jurídica) - Brasil",
+   "trecho_anterior": "▲ + 7,8% (vs. set/21) ▲ + 49,9% (vs. dez/20)",
+   "trecho_atual": "▲ + 1,2% (vs. dez/21) ▲ + 14,1% (vs. mar/21)"
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "As despesas operacionais também foram maiores devido ao aumento da despesa com comissões de cartões de crédito, ocorrido pelo maior volume transacionado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Cartões de Crédito e Débito",
+   "trecho_anterior": "A evolução das receitas de adquirência, tanto na comparação com o trimestre anterior quanto na comparação com o mesmo período do ano anterior, ocorreu devido a maiores receitas com volumes antecipados e maior faturamento em crédito e débito, parcialmente compensadas por menores ganhos com aluguel de máquinas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E046",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "As despesas administrativas também foram maiores."
+  },
+  {
+   "item": "E047",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "No Brasil as despesas cresceram 1,9%, mesmo com o efeito integral do acordo coletivo em nossas despesas de pessoal, e esse crescimento está associado com maiores investimentos em nossos negócios e com maiores custos transacionais (sazonalmente maiores no período), parcialmente compensados pela economia gerada por nosso programa de eficiência.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E048",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Soluções oferecidas aos clientes",
+   "trecho_anterior": "",
+   "trecho_atual": "✓ Carência de até 120 dias para pessoas físicas e 180 dias para pequenas e médias empresas - ✓ Alongamento do prazo de até 6 anos para pessoas físicas e 5 anos para micro e pequenas empresas - ✓ Novas condições de taxas de juros"
+  },
+  {
+   "item": "E049",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 14,
+   "secao": "Índice de Cobertura | 90 dias",
+   "trecho_anterior": "O aumento de 7 pontos percentuais no índice de cobertura total foi resultado da redução nominal do atraso acima de 90 dias na América Latina e nos Negócios de Atacado no Brasil.",
+   "trecho_atual": "A redução de 9 pontos percentuais no índice de cobertura total foi resultado do aumento da carteira em atraso acima de 90 dias nos Negócios de Varejo no Brasil."
+  },
+  {
+   "item": "E050",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": 26,
+   "secao": "Destaques",
+   "trecho_anterior": "Esse crescimento ocorreu em função do aumento da margem financeira, devido ao maior volume de crédito, e do menor custo do crédito na América Latina.",
+   "trecho_atual": "Esse crescimento ocorreu em função do aumento da margem financeira, devido ao maior volume médio de crédito nos Negócios de Atacado no Brasil."
+  },
+  {
+   "item": "E051",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "Índice de Eficiência",
+   "trecho_anterior": "Nossas despesas não decorrentes de juros aumentaram 2,0%, enquanto nossas receitas cresceram 9,4%.",
+   "trecho_atual": "Nossas despesas não decorrentes de juros aumentaram 2,0%, enquanto nossas receitas cresceram 11,2%."
+  },
+  {
+   "item": "E052",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 7,
+   "secao": "Flexibilização de pagamentos para pessoas físicas e micro e pequenas empresas",
+   "trecho_anterior": "Saldo em 31 de dezembro de 2021",
+   "trecho_atual": "Saldo em 31 de março de 2022"
+  },
+  {
+   "item": "E053",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse aumento ocorreu em função da maior margem financeira gerencial, do incremento no resultado de equivalência patrimonial e das despesas com provisões de previdência relacionadas com o teste de adequação de passivos realizado no quarto trimestre de 2021."
+  },
+  {
+   "item": "E054",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Mantivemos inalteradas as nossas projeções para 2022",
+   "trecho_anterior": "",
+   "trecho_atual": "(2) Inclui garantias financeiras prestadas e títulos privados;"
+  },
+  {
+   "item": "E055",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 35,
+   "pagina_atual": 35,
+   "secao": "Introdução",
+   "trecho_anterior": "Em conexão com nossa auditoria das demonstrações contábeis do Itaú Unibanco Holding S.A.",
+   "trecho_atual": "Em conexão com nossa revisão das demonstrações contábeis do Itaú Unibanco Holding S.A."
+  },
+  {
+   "item": "E056",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso, tivemos o impacto positivo da Selic em nossa margem de passivos e da taxa de juros pré-fixada em nosso capital de giro próprio."
+  },
+  {
+   "item": "E057",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "DRE Pro Forma de Seguros (Recorrente)",
+   "trecho_anterior": "Obs.: A partir de 4T20, passamos a considerar o produto de Proteção Familiar gerencialmente como Seguros Recorrente.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E058",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 10,
+   "secao": "Destaques",
+   "trecho_anterior": "Margem financeira com clientes cresceu 13,2% no trimestre devido ao maior volume médio de crédito e do melhor mix de produtos.",
+   "trecho_atual": "Margem financeira com clientes cresceu 0,7% no trimestre devido ao maior volume médio de crédito e da mudança de mix com maior crescimento de produtos como cartão financiado, cheque especial e crediário."
+  },
+  {
+   "item": "E059",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Índice de Inadimplência (%) | Acima de 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "Os índices de inadimplência acima de 90 dias total e Brasil aumentaram em relação ao trimestre anterior."
+  },
+  {
+   "item": "E060",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 24,
+   "secao": "Índice de Capital Nível I",
+   "trecho_anterior": "Em 31 de dezembro de 2021, o nosso índice de Capital Nível I atingiu 13,0%, composto por 11,3% de Capital Principal e 1,7% de Capital Complementar Nível I.",
+   "trecho_atual": "Em 31 de março de 2022, o nosso índice de Capital Nível I atingiu 12,5%, composto por 11,1% de Capital Principal e 1,4% de Capital Complementar Nível I."
+  },
+  {
+   "item": "E061",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "Itaú Corpbanca",
+   "trecho_anterior": "Maior custo do crédito principalmente por provisões de clientes Corporate.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E062",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Despesa de PDD por Segmento",
+   "trecho_anterior": "",
+   "trecho_atual": "Na América Latina, a redução da despesa de PDD no trimestre ocorreu principalmente devido ao impacto da variação cambial no período."
+  },
+  {
+   "item": "E063",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Índice de Inadimplência (%) | Acima de 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "O aumento ocorreu devido à maior inadimplência no segmento de pessoas físicas no Brasil, que está se normalizando, nas carteiras de cartão de crédito e financiamento de veículos, devido à rolagem dos créditos que se encontravam na faixa de 15 a 90 dias de atraso no trimestre anterior, porém segue em patamar historicamente baixo."
+  },
+  {
+   "item": "E064",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 10,
+   "secao": "Destaques",
+   "trecho_anterior": "A redução de 32,6% na margem financeira com o mercado no trimestre ocorreu em função dos menores ganhos na administração de ativos e passivos do balanço no Brasil e na estratégia de hedge dos investimentos no exterior, parcialmente compensados por maiores ganhos de tesouraria das unidades da América Latina.",
+   "trecho_atual": "A redução de 22,5% na margem financeira com o mercado no trimestre ocorreu em função dos menores ganhos com a estratégia de hedge dos investimentos no exterior e de capital, parcialmente compensados por maiores ganhos na administração de ativos e passivos do balanço no Brasil."
+  },
+  {
+   "item": "E065",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": 28,
+   "secao": "Itaú Uruguai",
+   "trecho_anterior": "Maior margem com clientes em produtos de câmbio e maior volume de empréstimos.",
+   "trecho_atual": "Maior margem com clientes por produtos de câmbio e maior volume e spread de empréstimos."
+  },
+  {
+   "item": "E066",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 23,
+   "secao": "Carteira de crédito e captações",
+   "trecho_anterior": "A relação entre a carteira de crédito e os recursos captados líquidos de recolhimentos compulsórios e de disponibilidades atingiu 84,7% no quarto trimestre de 2021.",
+   "trecho_atual": "A relação entre a carteira de crédito e os recursos captados líquidos de recolhimentos compulsórios e de disponibilidades atingiu 85,2% no primeiro trimestre de 2022."
+  },
+  {
+   "item": "E067",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 11,
+   "secao": "Despesa de PDD por Segmento",
+   "trecho_anterior": "(*) Saldo médio da carteira de crédito considerando-se os dois últimos trimestres.",
+   "trecho_atual": "(\\*) Saldo médio da carteira de crédito considerando-se os dois últimos trimestres."
+  },
+  {
+   "item": "E068",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "Itaú Uruguai",
+   "trecho_anterior": "Maiores receitas de serviços por receitas com cartões e manutenção de contas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E069",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "(ii) financiamentos a exportação e importação; e (iii) crédito rural, em função do aumento da estrutura comercial."
+  },
+  {
+   "item": "E070",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "O crédito pessoal cresceu 9,6%, com crescimentos importantes em linhas de crédito com melhores spreads, como cheque especial e crediário.",
+   "trecho_atual": "Nesse trimestre o crédito pessoal cresceu 7,5%, com crescimentos importantes em linhas de crédito com melhores spreads, como cheque especial e crediário."
+  },
+  {
+   "item": "E071",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Carteira de crédito¹ (pessoa física e jurídica) - Brasil",
+   "trecho_anterior": "",
+   "trecho_atual": "No primeiro trimestre de 2022, a originação³ de crédito para grandes empresas reduziu 6% quando comparado ao trimestre anterior."
+  },
+  {
+   "item": "E072",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "",
+   "trecho_atual": "R$ 1,0 bi -22,5% 1T22 1T22 x 4T21"
+  },
+  {
+   "item": "E073",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "Colaboradores - em milhares",
+   "trecho_anterior": "Aumentamos a quantidade de assessores de investimento e comprometidos a acelerar nosso processo de transformação digital, fizemos contratações na área de tecnologia, que levou o nosso quadro de colaboradores a aumentar 3,2% em relação ao mesmo período do ano anterior.",
+   "trecho_atual": "Aumentamos a quantidade de assessores de investimento e comprometidos a acelerar nosso processo de transformação digital, fizemos contratações na área de tecnologia, que levou o nosso quadro de colaboradores a aumentar 3,6% em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E074",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 11,
+   "secao": "Destaques",
+   "trecho_anterior": "O custo do crédito aumentou R$ 968 milhões em relação ao trimestre anterior.",
+   "trecho_atual": "O custo do crédito aumentou R$ 768 milhões em relação ao trimestre anterior."
+  },
+  {
+   "item": "E075",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "Assessoria Econômico-Financeira e Corretagem",
+   "trecho_anterior": "Fusões e Aquisições: no acumulado do ano de 2021 assessoramos 52 transações no Brasil, totalizando R$ 190 bilhões, ocupando o primeiro lugar no Ranking da Dealogic.",
+   "trecho_atual": "Fusões e Aquisições: no primeiro trimestre de 2022 assessoramos 12 transações no Brasil, totalizando R$ 11 bilhões, ocupando o segundo lugar em quantidade de operações no Ranking da Dealogic."
+  },
+  {
+   "item": "E076",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 14,
+   "secao": "NPL Creation sobre Carteira$$",
+   "trecho_anterior": "A redução do NPL Creation sobre carteira em relação ao período anterior ocorreu principalmente em função da menor entrada em atraso acima de 90 dias na América Latina e nos Negócios de Atacado no Brasil.",
+   "trecho_atual": "O aumento do NPL Creation sobre carteira em relação ao período anterior ocorreu principalmente nos Negócios de Varejo no Brasil, em função da maior entrada em atraso acima de 90 dias."
+  },
+  {
+   "item": "E077",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "A redução das despesas não decorrentes de juros do Brasil no trimestre é explicada por menores despesas administrativas, que são sazonalmente maiores no quarto trimestre, em função de: (i) menores despesas com serviços de terceiros, relacionadas às operações e com consultoria, (ii) redução nos gastos com processamento de dados e telecomunicações, e (iii) diminuição das campanhas de marketing veiculadas na mídia no período."
+  },
+  {
+   "item": "E078",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 11,
+   "secao": "Destaques",
+   "trecho_anterior": "O aumento do custo do crédito no trimestre ocorreu em função da maior despesa de provisão para créditos de liquidação duvidosa nos Negócios de Varejo no Brasil, devido ao crescimento da carteira de crédito, com maior originação em produtos de crédito ao consumo sem garantias.",
+   "trecho_atual": "O aumento do custo do crédito no trimestre e na comparação com o mesmo período do ano anterior ocorreu principalmente em função da maior despesa de provisão para créditos de liquidação duvidosa nos Negócios de Varejo no Brasil, devido à maior originação em produtos de crédito ao consumo sem garantias."
+  },
+  {
+   "item": "E079",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Esses efeitos positivos foram parcialmente compensados por menores spreads e pela menor quantidade de dias corridos."
+  },
+  {
+   "item": "E080",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "DRE Pro Forma de Seguros (Recorrente)",
+   "trecho_anterior": "No quarto trimestre de 2021, os prêmios ganhos cresceram 20,5%, principalmente por maiores vendas nas carteiras de seguros de vida e acidentes pessoais, habitacional, proteção familiar e prestamista, e os sinistros retidos reduziram, pelos menores efeitos da pandemia de COVID-19, quando comparados ao mesmo período do ano anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E081",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "• Administração de Fundos",
+   "trecho_anterior": "As receitas de administração de fundos foram 12,3% menores do que no terceiro trimestre, principalmente em razão de menores receitas com taxas de performance no período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E082",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Em 12 meses o crescimento foi de 2,6% e está relacionado com o aumento de 11,6% em operações de crédito, líquidas de PDD."
+  },
+  {
+   "item": "E083",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Índice de Inadimplência (%) | 15 a 90 dias",
+   "trecho_anterior": "O índice de inadimplência entre 15 e 90 dias total aumentou em relação ao trimestre anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E084",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "O índice de inadimplência entre 15 e 90 dias (NPL 15-90) aumentou no trimestre, devido ao aumento no índice de pessoas físicas no Brasil.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E085",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 33,
+   "pagina_atual": 33,
+   "secao": "Margem Financeira com Clientes",
+   "trecho_anterior": "A margem de capital de giro próprio é a remuneração do capital de giro próprio pela taxa básica de juros.",
+   "trecho_atual": "A margem de capital de giro próprio é a remuneração do capital de giro próprio por taxa pré-fixada de juros."
+  },
+  {
+   "item": "E086",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "O patrimônio líquido cresceu 3,7% no trimestre devido principalmente ao resultado do período e pelo efeito positivo ocasionado pelo aumento de participação no Itaú Corpbanca.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E087",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 13,
+   "secao": "Carteira em Atraso",
+   "trecho_anterior": "Carteira em atraso acima de 90 dias - Total: crescimento de 2,2% em relação ao trimestre anterior no total da carteira em atraso.",
+   "trecho_atual": "Carteira em atraso acima de 90 dias - Total: crescimento de 5,8% em relação ao trimestre anterior no total da carteira em atraso."
+  },
+  {
+   "item": "E088",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 24,
+   "secao": "Índices de Capital",
+   "trecho_anterior": "Índice de Basileia: o índice de dezembro/21 está 3,7 p.p. acima do mínimo regulatório com os adicionais de capital principal (11,0%).",
+   "trecho_atual": "Índice de Basileia: o índice de março/22 está 2,9 p.p. acima do mínimo regulatório com os adicionais de capital principal (11,0%)."
+  },
+  {
+   "item": "E089",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Os recursos de aceites e emissão de títulos cresceram 20,2% no trimestre (principalmente em captações de letras financeiras e imobiliárias, que cresceram 50,6% e 32,9%, respectivamente) e compensaram em parte a redução de 5,1% dos depósitos."
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Cartões de Crédito e Débito",
+   "trecho_anterior": "As receitas com as atividades de emissão de cartões de crédito e débito avançaram 9,7% em comparação ao trimestre anterior e 18,5% na comparação com o quarto trimestre de 2020, devido ao maior faturamento.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Na América Latina, o aumento do índice ocorreu pela maior inadimplência no Chile."
+  },
+  {
+   "item": "E092",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 23,
+   "secao": "Destaques",
+   "trecho_anterior": "Nos últimos 12 meses o crescimento foi de 5,0%, em função (i) dos depósitos à vista, que cresceram 17,3% (ii) dos depósitos de poupança, que cresceram 6,2%.",
+   "trecho_atual": "Nos últimos 12 meses o crescimento foi de 2,5%, em função (i) dos depósitos à vista, que cresceram 4,3%;"
+  },
+  {
+   "item": "E093",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "Essa variação é explicada pela alteração do cenário macroeconômico e das perspectivas financeiras das pessoas e das empresas ocorrida no primeiro semestre de 2020, capturada por nosso modelo de provisionamento por perda esperada, que levou ao aumento na despesa de provisão para créditos de liquidação duvidosa no período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E094",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "O crescimento em depósitos a prazo foi de 1,2%, onde o substancial crescimento no Brasil por conta da maior demanda por produtos de renda fixa em função da elevação da taxa de juros, foi parcialmente compensado pela redução no Chile por conta da demanda por liquidez de clientes institucionais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E095",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 28,
+   "secao": "Itaú Corbanca",
+   "trecho_anterior": "",
+   "trecho_atual": "Menor custo do crédito por provisões de clientes Corporate no 4T21 e por impacto da variação cambial."
+  },
+  {
+   "item": "E096",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 12,
+   "secao": "Saldo da PDD e da Provisão para Garantias Financeiras Prestadas",
+   "trecho_anterior": "Em relação ao final de setembro de 2021, observamos aumento de 5,2% no saldo da PDD e da Provisão para Garantias Financeiras Prestadas.",
+   "trecho_atual": "Em relação ao final de dezembro de 2021, observamos aumento de 1,9% no saldo da PDD e da Provisão para Garantias Financeiras Prestadas."
+  },
+  {
+   "item": "E097",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 13,
+   "secao": "Destaques",
+   "trecho_anterior": "O índice de inadimplência acima de 90 dias (NPL 90) reduziu 10 pontos base em relação ao trimestre anterior.",
+   "trecho_atual": "O índice de inadimplência acima de 90 dias (NPL 90) aumentou 10 pontos base em relação ao trimestre anterior."
+  },
+  {
+   "item": "E098",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Aumento de 10,4% do resultado de seguros, previdência e capitalização no trimestre."
+  },
+  {
+   "item": "E099",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "Neste trimestre a carteira de crédito imobiliário avançou 8,3% com nível de produção elevado ao longo de todo o ano de 2021 e com excelente nível de satisfação de clientes, tendo em vista que o NPS transacional da operação atingiu 73 pontos em dezembro de 2021, ganho de 2 pontos em relação a setembro de 2021.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E100",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": 3,
+   "secao": "Sumário do Resultado Gerencial",
+   "trecho_anterior": "Os valores de mercado do 3T21 e do 4T20 não levam em consideração o impacto da cisão do investimento na XP Inc. ocorrida em outubro de 2021;",
+   "trecho_atual": "Os valores de mercado do 1T21 não levam em consideração o impacto da cisão do investimento na XP inc. ocorrida em outubro de 2021;"
+  },
+  {
+   "item": "E101",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 24,
+   "secao": "Indicadores de Liquidez",
+   "trecho_anterior": "O LCR na média do trimestre foi de 159,1%, acima do limite de 100%, o que significa que possuímos recursos estáveis disponíveis suficientes para suportar as perdas em cenários de estresse.",
+   "trecho_atual": "O LCR na média do trimestre foi de 149,5%, acima do limite de 100%, o que significa que possuímos recursos estáveis disponíveis suficientes para suportar as perdas em cenários de estresse."
+  },
+  {
+   "item": "E102",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas com prestação de serviços e seguros aumentaram 9,6% na comparação anual."
+  },
+  {
+   "item": "E103",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "Carteira de crédito¹ (pessoa física e jurídica) - Brasil",
+   "trecho_anterior": "A carteira de crédito consignado para o setor público apresentou um crescimento de 26,0% em relação ao final de setembro de 2021, relacionado principalmente com a concessão de crédito para os servidores do estado de Minas Gerais.",
+   "trecho_atual": "A carteira de crédito consignado para o setor público apresentou um crescimento de 16,2% em relação ao final de dezembro de 2021, relacionado principalmente com a concessão de crédito para os servidores do estado de Minas Gerais."
+  },
+  {
+   "item": "E104",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Resultado de Seguros, Previdência e Capitalização",
+   "trecho_anterior": "",
+   "trecho_atual": "(ii) ao aumento da margem financeira gerencial, devido à maior remuneração de nossos ativos; e (iii) com o aumento do resultado de equivalência patrimonial."
+  },
+  {
+   "item": "E105",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "Assessoria Econômico-Financeira e Corretagem",
+   "trecho_anterior": "Renda Variável: no acumulado de 2021 participamos de 63 operações (incluindo Block Trade) com volume de R$ 23 bilhões, ocupando o primeiro lugar no Ranking da Dealogic.",
+   "trecho_atual": "Renda Variável: no primeiro trimestre de 2022 participamos de 7 operações (incluindo Block Trade) com volume de R$ 2,1 bilhões, ocupando o segundo lugar em quantidade de operações no Ranking da Dealogic."
+  },
+  {
+   "item": "E106",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 10,
+   "secao": "Principais Efeitos na Variação da Margem Financeira com Clientes",
+   "trecho_anterior": "Spreads e margem de passivos (+ R$ 0,1 bilhão): impacto positivo da SELIC na margem de passivos compensado parcialmente por menores spreads nos produtos de crédito para pessoas físicas.",
+   "trecho_atual": "Spreads e margem de passivos (- R$ 0,3 bilhão): impacto negativo dos menores spreads nos produtos de crédito para pessoas físicas parcialmente compensado por um impacto positivo da SELIC na margem de passivos."
+  },
+  {
+   "item": "E107",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "Carteira de crédito¹ (pessoa física e jurídica) - Brasil",
+   "trecho_anterior": "▲ + 3,3% (vs. set/21) ▲ + 14,3% (vs. dez/20)",
+   "trecho_atual": "▼ - 1,9% (vs. dez/21) ▲ + 19,9% (vs. mar/21)"
+  },
+  {
+   "item": "E108",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 28,
+   "secao": "Itaú Corbanca",
+   "trecho_anterior": "",
+   "trecho_atual": "As despesas foram menores no primeiro trimestre, visto que no 4T21 as despesas com pessoal foram maiores, principalmente relacionadas a remuneração variável."
+  },
+  {
+   "item": "E109",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "",
+   "trecho_atual": "A margem com mercado recuou no trimestre e ficou em R$ 1,0 bilhão, principalmente em função da estratégia de hedge do índice de capital."
+  },
+  {
+   "item": "E110",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 30,
+   "secao": "Base Acionária e Indicadores",
+   "trecho_anterior": "",
+   "trecho_atual": "Para o cálculo, foi considerado o lucro líquido acumulado dos últimos 12 meses;"
+  },
+  {
+   "item": "E111",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Valor Transacionado 4T21",
+   "trecho_anterior": "R$ 180,1 bilhões ▲ + 11,4% (vs.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E112",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Abaixo apresentamos as projeções para 2022:",
+   "trecho_anterior": "$$ Considera unidades externas ex-América Latina; $$ Inclui garantias financeiras prestadas e títulos privados; $$ Composto pelo Resultado de Créditos de Liquidação Duvidosa, *Impairment* e Descontos Concedidos; $$ Receitas de Prestação de Serviços (+) Resultado de Operações de Seguros, Previdência e Capitalização (-) Despesas com Sinistros (-) Despesas de Comercialização de Seguros, Previdência e Capitalização.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E113",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência entre 15 e 90 dias (NPL 15-90) aumentou 30 pontos base no trimestre."
+  },
+  {
+   "item": "E114",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "O aumento ocorreu devido à rolagem dos créditos que se encontravam na faixa de 15 a 90 dias de atraso no trimestre anterior para faixas de atraso mais longas, especialmente na carteira de pessoas físicas, porém segue em patamar historicamente baixo."
+  },
+  {
+   "item": "E115",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "A redução de 24,2% no ativo permanente, tem como principal responsável o efeito da cisão parcial do investimento detido na XP Inc. para uma nova sociedade, a XPart."
+  },
+  {
+   "item": "E116",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "Comentários da Administração",
+   "trecho_anterior": "O custo do crédito cresceu e chegou a R$ 6,2 bilhões, por conta das maiores despesas nos negócios de varejo no Brasil, relacionado com o crescimento da originação de créditos não garantidos.",
+   "trecho_atual": "O custo do crédito cresceu e chegou a R$ 7,0 bilhões, por conta das maiores despesas nos negócios de varejo no Brasil, relacionado com o crescimento da originação de créditos não garantidos."
+  },
+  {
+   "item": "E117",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 26,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "O crescimento de 7,3% do resultado recorrente gerencial no trimestre ocorreu em função do aumento da margem financeira, devido ao maior volume médio de crédito e da maior taxa na remuneração de capital de giro próprio no Brasil, e das reduções do custo do crédito e das despesas não decorrentes de juros na América Latina."
+  },
+  {
+   "item": "E118",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 35,
+   "pagina_atual": 35,
+   "secao": "Conclusão",
+   "trecho_anterior": "Emerson Laerte da Silva Contador CRC 1SP171089/O-3",
+   "trecho_atual": "Emerson Luerte da Silva Contador CRC 1SP171089/O-3"
+  },
+  {
+   "item": "E119",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Essa performance está diretamente relacionada com nossa gestão estratégica de custos."
+  },
+  {
+   "item": "E120",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "Carteira de crédito¹ (pessoa física e jurídica) - Brasil",
+   "trecho_anterior": "R$ 133,1 bi em 31/12/21",
+   "trecho_atual": "R$ 95,4 bi em 31/03/22"
+  }
+ ]
+}

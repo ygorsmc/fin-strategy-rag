@@ -1,0 +1,1207 @@
+{
+ "par": "BRADESCO_4T2022_1T2023",
+ "documento_anterior": "bradesco_release_4T2022",
+ "documento_atual": "bradesco_release_1T2023",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 200,
+   "pagina_atual": null,
+   "secao": "Relatório dos Auditores Independentes",
+   "trecho_anterior": "As adversidades identificadas têm provocado frequentes revisões nas projeções de atividade e inflação globais, culminando com fatores de incerteza e risco importantes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E002",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "VARIAÇÃO DA MARGEM COM CLIENTES | R$ milhões",
+   "trecho_anterior": "",
+   "trecho_atual": "Em relação ao 4T22, grande parte da redução da margem está relacionada a menor quantidade de dias, além da diminuição no volume de operações devido às ações de revisão das políticas de crédito e o maior rigor nos modelos de concessão, que visam a melhora do perfil de risco da carteira, o que produz impactos no *spread* de originação e no *mix* de produtos."
+  },
+  {
+   "item": "E003",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 56,
+   "secao": "Relatório de Asseguração Limitada Independente para o Banco Bradesco S.A. sobre o processo de compilação e apresentação das informações contábeis consolidadas s",
+   "trecho_anterior": "",
+   "trecho_atual": "(“Bradesco”) para apresentar um relatório sobre o processo de compilação e apresentação das informações contábeis consolidadas suplementares intermediárias do Banco Bradesco S.A. em 31 de março de 2023 e para o período findo de três meses naquela data, na forma de uma conclusão de asseguração limitada independente sobre se afirmação do Bradesco de que o processo de compilação e apresentação das informações contábeis consolidadas incluídas no Relatório de Análise Gerencial dos Resultados não estão apresentadas, em todos os aspectos relevantes, de acordo com as informações referidas no parágrafo “Critérios para elaboração das informações contábeis consolidadas suplementares intermediárias” apresentado neste relatório."
+  },
+  {
+   "item": "E004",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 17,
+   "secao": "Evolução do Saldo da Carteira",
+   "trecho_anterior": "A carteira renegociada apresentou crescimento de 5,5% no trimestre, totalizando R$ 34,4 bilhões em Dez22.",
+   "trecho_atual": "A carteira renegociada apresentou crescimento de 5,8% no trimestre, totalizando R$ 36,4 bilhões em Mar23, com 54,5% das renegociações originadas de atrasos inferiores a 90 dias."
+  },
+  {
+   "item": "E005",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 33,
+   "pagina_atual": null,
+   "secao": "BASILEIA",
+   "trecho_anterior": "O índice de Basileia foi de 14,8% no trimestre, redução de 1,0 p.p., devido a alteração regulatória referente ao tratamento dos créditos tributários de prejuízos fiscais decorrentes de hedge de investimento no exterior (2), maiores ajustes prudenciais e o pagamento de juros sobre o capital próprio.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E006",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 157,
+   "pagina_atual": 134,
+   "secao": "c) Origem dos créditos tributários de imposto de renda e contribuição social diferidos",
+   "trecho_anterior": "Em 31 de dezembro de 2022, não foram constituídos créditos tributários, substancialmente, sobre diferenças temporárias, no montante de R$ 16.550 mil (Em dezembro de 2021 – R$ 12.681 mil), os quais serão registrados quando apresentarem efetivas perspectivas de realização, de acordo com estudo técnico e análises elaboradas pela Administração e pelas normas do Bacen.",
+   "trecho_atual": "Em 31 de março de 2023, não foram constituídos créditos tributários, substancialmente, sobre diferenças temporárias, no montante de R$ 14.105 mil (Em dezembro de 2022 – R$ 16.550 mil), os quais serão registrados quando apresentarem efetivas perspectivas de realização, de acordo com estudo técnico e análises elaboradas pela Administração e pelas normas do Bacen."
+  },
+  {
+   "item": "E007",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 83,
+   "pagina_atual": null,
+   "secao": "RECONHECIMENTOS",
+   "trecho_anterior": "Pela primeira vez, o Bradesco BBI levou o prêmio Investment Bank of the Year for Equity Raising, concedido pela *The Banker*, revista britânica do Grupo *The Financial Times*.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E008",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 174,
+   "pagina_atual": 150,
+   "secao": "I - Balanço patrimonial por moedas",
+   "trecho_anterior": "(4) Os ativos, passivos e resultados dos investimentos e dependências no exterior são convertidos para reais, de acordo com as taxas de câmbio da moeda local, sendo que os efeitos resultantes do processo de conversão, totalizaram no exercício findo em 31 de dezembro de 2022, R$ 1.961.627 mil (2021 - R$ 1.984.398 mil) e foram registrados no resultado.",
+   "trecho_atual": "(4) Os ativos, passivos e resultados dos investimentos e dependências no exterior são convertidos para reais, de acordo com as taxas de câmbio da moeda local, sendo que os efeitos resultantes do processo de conversão, totalizaram no 1º trimestre de 2023, R$ (766.194) mil (2022 - R$ (4.461.289) mil) e foram registrados no resultado."
+  },
+  {
+   "item": "E009",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "PRESS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Atuamos em todos os segmentos de clientes e estamos passando por um processo de transformação, com a reformulação do varejo e aprimoramento de nossa proposta de valor no alta renda, onde temos espaço para avançar e capturar mais oportunidades de negócios, ofertando serviços especializados e ampliando a equipe de assessores de investimentos."
+  },
+  {
+   "item": "E010",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 39,
+   "secao": "DIGITAL EM NÚMEROS",
+   "trecho_anterior": "",
+   "trecho_atual": "Assessoria de especialistas que entendem do assunto;"
+  },
+  {
+   "item": "E011",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 58,
+   "pagina_atual": null,
+   "secao": "Relatório de Asseguração Razoável Independente para o Banco Bradesco sobre o processo de compilação e apresentação das informações contábeis consolidadas suplem",
+   "trecho_anterior": "(“Bradesco”) para a elaboração de um relatório sobre o processo de compilação e apresentação das informações contábeis consolidadas suplementares incluídas no Relatório de Análise Econômica e Financeira do Bradesco para o exercício findo em 31 de dezembro de 2022, na forma de uma conclusão de asseguração razoável independente sobre se a afirmação do Bradesco de que o processo de compilação e apresentação das informações contábeis consolidadas incluídas no Relatório de Análise Econômica e Financeira estão, em todos os aspectos relevantes, com base no parágrafo “Critérios para elaboração das informações contábeis consolidadas suplementares” anexo a este relatório está adequadamente apresentada.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E012",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 202,
+   "pagina_atual": null,
+   "secao": "Relatório do Comitê de Auditoria",
+   "trecho_anterior": "Para obter uma melhor compreensão dos principais aspectos relativos à governança, gestão de riscos e controles internos, e para acompanhar os desafios enfrentados pela Organização Bradesco, o Comitê se reuniu regularmente com os executivos responsáveis pela gestão do Banco Bradesco e do Grupo Bradesco Seguros (GBS), com destaque para interações frequentes com o Departamento de Controle Integrado de Riscos (DCIR), o Departamento de Compliance, Conduta e Ética (DCCE), a Auditoria Interna (AIGL) – acompanhando a execução do seu Plano de Trabalho conforme aprovado pelo COAUD, e os comitês de auditoria da Bradseg e da Bradesco Saúde.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E013",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "RECEITAS DE PRESTAÇÃO DE SERVIÇOS",
+   "trecho_anterior": "+12,6% em 12 meses | +2,4% no trimestre",
+   "trecho_atual": "+1,6% em 12 meses -5,5% no trimestre"
+  },
+  {
+   "item": "E014",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 224,
+   "pagina_atual": null,
+   "secao": "Parecer do Conselho Fiscal",
+   "trecho_anterior": "(iv) nas análises de documentos e, substancialmente, nas informações recebidas; e (v) nas reuniões periódicas com os administradores e gestores de áreas do Bradesco, concluíram que os documentos examinados refletem adequadamente a situação patrimonial, a posição financeira e as atividades desenvolvidas pelo Bradesco durante o exercício social findo em 31 de dezembro de 2022, corroborando com o julgamento do Comitê de Auditoria de que os controles internos são adequados ao porte e à complexidade de seus negócios, esses estruturados com observância das normas internas e externas a que se sujeitam e suportados por sistemas que geram os relatórios financeiros, visando a garantir eficiência operacional.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E015",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "LUCRO LÍQUIDO RECORRENTE",
+   "trecho_anterior": "75,9% em 12 meses (4T22 x 4T21)",
+   "trecho_atual": "37,3% em 12 meses (1T23 x 1T22) +168,3% no trimestre (1T23 x 4T22)"
+  },
+  {
+   "item": "E016",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 75,
+   "pagina_atual": null,
+   "secao": "TECNOLOGIA E INOVAÇÃO",
+   "trecho_anterior": "O Bradesco também foi destaque no *Ranking 100 Open Startups*, conquistando o TOP 1 na categoria bancos, e TOP 10 em *Open Corps* no *ranking* geral.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E017",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 37,
+   "secao": "NPS (NET PROMOTER SYSTEM)",
+   "trecho_anterior": "",
+   "trecho_atual": "O processo de melhoria contínua avança e ganha cada vez mais robustez no dia a dia da rede e das diversas áreas responsáveis por desenhar as melhores soluções para a aprimorar a experiência dos nossos clientes."
+  },
+  {
+   "item": "E018",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 88,
+   "secao": "a) Base de Consolidação",
+   "trecho_anterior": "",
+   "trecho_atual": "(1) Empresa adquirida (participação indireta) em Fevereiro de 2023;"
+  },
+  {
+   "item": "E019",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 102,
+   "pagina_atual": null,
+   "secao": "Notas Explicativas",
+   "trecho_anterior": "Foram constituídas provisões para os demais impostos e contribuições sociais, de acordo com as respectivas legislações vigentes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E020",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 203,
+   "pagina_atual": null,
+   "secao": "Relatório do Comitê de Auditoria",
+   "trecho_anterior": "O Comitê de Auditoria realiza reuniões trimestrais com o Conselho de Administração e semestrais com o Conselho Fiscal, ocasião em que apresenta o resultado dos trabalhos de suas atividades.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E021",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 220,
+   "pagina_atual": null,
+   "secao": "6. CONCLUSÃO",
+   "trecho_anterior": "Resolução CMN nº 4.818, de 29 de maio de 2020, e Pronunciamento Técnico CPC 24, emitido pelo Comitê de Pronunciamentos Contábeis",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E022",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 222,
+   "pagina_atual": null,
+   "secao": "7. PRIORIDADES DO COAUD PARA O EXERCÍCIO DE 2023",
+   "trecho_anterior": "Além dos temas relevantes objeto de acompanhamento (destacados no capítulo 5 deste Relatório), o COAUD continuará a monitorar os impactos das mudanças no ambiente econômico, particularmente nos processos necessários para a observância dos requisitos do IFRS 9 para o cálculo da perda esperada para as Demonstrações Financeiras Consolidadas, a implementação de mudanças regulatórias em grande escala, como as relativas a ESG, e em particular as demandas do Bacen quanto ao risco climático, a adoção integral do IFRS 9 para todos os instrumentos financeiros e o tratamento tributário e de capital regulamentar, os requisitos para a completa implementação do IFRS 17 - Contratos de Seguro e a evolução das alternativas voltadas para o equilíbrio da performance do Grupo Bradesco Seguros (GBS).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E023",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 153,
+   "pagina_atual": 130,
+   "secao": "d) Ações em tesouraria",
+   "trecho_anterior": "Em Assembleia Geral Extraordinária de 10 de março de 2022, foi aprovada o cancelamento da totalidade das ações mantidas em tesouraria de emissão da Companhia, adquiridas por meio de programa de recompra de ações, consistente de 29.545.000 ações nominativas-escriturais, sem valor nominal, sendo 17.493.900 ordinárias e 12.051.100 preferenciais, sem redução no capital social, homologada pelo Bacen em 31 de março de 2022.",
+   "trecho_atual": "Em Assembleia Geral Extraordinária de 10 de março de 2023, foi aprovada o cancelamento da totalidade das ações mantidas em tesouraria de emissão da Companhia, adquiridas por meio de programa de recompra de ações, consistente de 16.317.800 ações nominativas-escriturais, sem valor nominal, sendo 8.089.200 ordinárias e 8.228.600 preferenciais, sem redução no capital social, homologado pelo Bacen em 18 de abril de 2023."
+  },
+  {
+   "item": "E024",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "LUCRO LÍQUIDO RECORRENTE",
+   "trecho_anterior": "Com os recentes eventos envolvendo um cliente Large Corporate específico, ocorridos no início de 2023, a Administração reavaliou os riscos inerentes e, de forma prudencial, provisionou 100% da operação, afetando o lucro do 4T22.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E025",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 223,
+   "pagina_atual": null,
+   "secao": "Relatório do Comitê de Auditoria",
+   "trecho_anterior": "Diante das informações atuais, o COAUD mantém-se atento aos eventuais impactos decorrentes dos temas ESG nas Demonstrações Financeiras e ambiente de riscos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E026",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 98,
+   "pagina_atual": null,
+   "secao": "Notas Explicativas",
+   "trecho_anterior": "As receitas dos planos de capitalização são reconhecidas contabilmente no mês de sua emissão, de acordo com os tipos de arrecadação, podendo ser em pagamentos mensais ou em pagamento único.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E027",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 222,
+   "pagina_atual": null,
+   "secao": "7. PRIORIDADES DO COAUD PARA O EXERCÍCIO DE 2023",
+   "trecho_anterior": "Finalmente, considerando as crescentes expectativas relacionadas a ESG, com claros sinais de aceleração para o estabelecimento de requerimentos padronizados para divulgação, sejam impulsionados pelo mercado (força-tarefa ESG e Clima da SEC e a criação em novembro de 2021 do *International Sustainability Standards Board* - ISSB anunciada durante a COP-26 realizada em Glasgow), impostos pelos reguladores (Resoluções CMN nº 4.943, 4.944, e 4.945, de 2021, que tratam de gerenciamento dos riscos social, ambiental e climático, Resolução CVM nº 59, e Circular SUSEP nº 666, de 2022), os requisitos",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E028",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "PDD Expandida / Operações de Crédito Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "Continuamos atuando nos critérios de concessão de crédito e reduzimos o índice de aprovação do massificado por mais um trimestre consecutivo, demonstrando nosso compromisso em garantir o crescimento contínuo e sustentável do portfólio."
+  },
+  {
+   "item": "E029",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "Índices de Cobertura - %",
+   "trecho_anterior": "",
+   "trecho_atual": "(1) Desconsiderando o impacto de um cliente Large Corporate a Cobertura acima de 90 dias seria de 188%."
+  },
+  {
+   "item": "E030",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 75,
+   "pagina_atual": null,
+   "secao": "TECNOLOGIA E INOVAÇÃO",
+   "trecho_anterior": "Gerenciador Financeiro e ofertas de valor ao cliente usando dados do ecossistema financeiro, Transformação dos Canais de Atendimento da Bradesco Seguros;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E031",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 163,
+   "secao": "Alcance da revisão",
+   "trecho_anterior": "",
+   "trecho_atual": "Uma revisão de informações contábeis intermediárias consiste na realização de indagações, principalmente às pessoas responsáveis pelos assuntos financeiros e contábeis e na aplicação de procedimentos analíticos e de outros procedimentos de revisão."
+  },
+  {
+   "item": "E032",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "LUCRO LÍQUIDO, RETORNOS E EFICIÊNCIA",
+   "trecho_anterior": "",
+   "trecho_atual": "Esses resultados foram refletidos no indicador de eficiência operacional, sendo que o IEO trimestral melhorou 0,6 p.p."
+  },
+  {
+   "item": "E033",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 199,
+   "pagina_atual": null,
+   "secao": "Relatório dos Auditores Independentes",
+   "trecho_anterior": "Descrevemos esses assuntos em nosso relatório de auditoria, a menos que lei ou regulamento tenha proibido divulgação pública do assunto, ou quando, em circunstâncias extremamente raras, determinarmos que o assunto não deve ser comunicado em nosso relatório, porque as consequências adversas de tal comunicação podem, dentro de uma perspectiva razoável, superar os benefícios da comunicação para o interesse público.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E034",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 45,
+   "secao": "PARCERIA ESTRATÉGICA COM O BANCO VOTORANTIM",
+   "trecho_anterior": "",
+   "trecho_atual": "A Sociedade terá autonomia na gestão dos recursos, e será focada em fundos estruturados e líquidos de alto valor agregado."
+  },
+  {
+   "item": "E035",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 40,
+   "secao": "O Bradesco BAC Florida Bank agora é Bradesco Bank.",
+   "trecho_anterior": "",
+   "trecho_atual": "O Bradesco Bank possui uma solução completa com variedade de serviços e produtos bancários e de investimentos adequados as necessidades financeiras dos clientes."
+  },
+  {
+   "item": "E036",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 120,
+   "pagina_atual": 96,
+   "secao": "b) Composição da carteira por tipo e prazo de vencimento",
+   "trecho_anterior": "No exercício de 2021, não houve venda ou reclassificações de títulos classificados na categoria Mantidos até o Vencimento;",
+   "trecho_atual": "No 1º trimestre de 2023 e de 2022, não houve venda ou reclassificações de títulos classificados na categoria Mantidos até o Vencimento;"
+  },
+  {
+   "item": "E037",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 222,
+   "pagina_atual": null,
+   "secao": "7. PRIORIDADES DO COAUD PARA O EXERCÍCIO DE 2023",
+   "trecho_anterior": "Adicionalmente, o COAUD concentrará esforços para compreender os impactos dos novos modelos negócios e concorrentes (Fintechs), da transformação digital no sistema bancário brasileiro e da evolução tecnológica digital (uso de Cloud e novos canais), sobretudo nos aspectos de atendimento às demandas do mercado (alinhadas à estratégia de Clientcentrismo) e do Banco Central do Brasil nas questões de conduta (Atendimento a clientes, Clientes potencialmente vulneráveis, e Prevenção a Lavagem de Dinheiro e Financiamento ao Terrorismo), e foco na capacitação do quadro de funcionários, em especial aqueles envolvidos com as áreas de controle, riscos e auditoria interna, a fim de resguardar essas atividades e garantir a sua efetividade.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E038",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 111,
+   "pagina_atual": null,
+   "secao": "p) Resultado recorrente e não recorrente",
+   "trecho_anterior": "Resultado não recorrente é o resultado que esteja relacionado com as atividades atípicas da instituição e não esteja previsto para ocorrer com frequência nos exercícios futuros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E039",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 83,
+   "pagina_atual": null,
+   "secao": "RECONHECIMENTOS",
+   "trecho_anterior": "A Ágora é a número 1 em plataformas de investimento, segundo pesquisa da Faculdade Getúlio Vargas (FGV).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E040",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 138,
+   "pagina_atual": 114,
+   "secao": "13) IMOBILIZADO DE USO",
+   "trecho_anterior": "O índice de imobilização em relação ao patrimônio de referência do “conglomerado prudencial” foi de 28,1% (Em dezembro de 2021 - 25,9%), sendo o limite máximo de 50,0% conforme Resolução nº 4.957/21.",
+   "trecho_atual": "O índice de imobilização em relação ao patrimônio de referência do “conglomerado prudencial” foi de 23,3% (Em dezembro de 2022 - 28,1%), sendo o limite máximo de 50,0% conforme Resolução nº 4.957/21."
+  },
+  {
+   "item": "E041",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 136,
+   "pagina_atual": 112,
+   "secao": "a) Composição dos investimentos em coligadas e entidades controladas em conjunto (joint venture)",
+   "trecho_anterior": "A Organização recebeu de juros sobre capital próprio, R$ 204.103 mil, no exercício findo em 31 de dezembro de 2022 referente à Empresa Cielo S.A.; e",
+   "trecho_atual": "A Organização recebeu de juros sobre capital próprio, R$ 72.439 mil, no 1º trimestre de 2023 referente à Empresa Cielo S.A.; e"
+  },
+  {
+   "item": "E042",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 152,
+   "pagina_atual": null,
+   "secao": "c) Movimentação do capital social em quantidade de ações",
+   "trecho_anterior": "Em Assembleia Geral Extraordinária de 10 de março de 2022, foi aprovada a proposta do Conselho de Administração para aumentar o capital social em R$ 4.000.000 mil, elevando-o de R$ 83.100.000 mil para R$ 87.100.000 mil, com bonificação de 10% (dez por cento) em ações, mediante a capitalização de parte do saldo da conta “Reservas de Lucros - Reserva Estatutária”, em conformidade com o disposto no Artigo 169 da Lei nº 6.404/76, com a emissão de 968.953.456 novas ações nominativas-escriturais, sem valor nominal, sendo 485.308.534 ordinárias e 483.644.922 preferenciais, que serão atribuídas gratuitamente aos acionistas na proporção de 1 nova ação para cada 10 ações da mesma espécie de que forem titulares na data-base, homologado pelo Bacen em 31 de março de 2022.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E043",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 150,
+   "pagina_atual": 127,
+   "secao": "III - Provisão para riscos fiscais",
+   "trecho_anterior": "Neste contexto, os processos contingentes avaliados como de risco de perda possível não são reconhecidos contabilmente e totalizaram, em 31 de dezembro de 2022, R$ 9.211.004 mil (Em dezembro de 2021 – R$ 7.979.276 mil) para os processos cíveis e R$ 39.703.592 mil (Em dezembro de 2021 – R$ 37.556.235 mil) para os processos fiscais.",
+   "trecho_atual": "Neste contexto, os processos contingentes avaliados como de risco de perda possível não são reconhecidos contabilmente e totalizaram, em 31 de março de 2023, R$ 9.500.855 mil (Em dezembro de 2022 – R$ 9.211.004 mil) para os processos cíveis e R$ 43.967.458 mil (Em dezembro de 2022 – R$ 39.703.592 mil) para os processos fiscais."
+  },
+  {
+   "item": "E044",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 90,
+   "secao": "b) Aquisição de Investimento",
+   "trecho_anterior": "",
+   "trecho_atual": "Apresentamos abaixo, a composição dos valores da aquisição e do ágio na aquisição das ações como determinado:"
+  },
+  {
+   "item": "E045",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 36,
+   "secao": "Customizar para aprimorar e fidelizar",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso, em poucos cliques o cliente passa a consolidar todas as informações em um único documento, finalizando o processo de declaração em poucos minutos."
+  },
+  {
+   "item": "E046",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 115,
+   "secao": "c) Movimentação dos ativos intangíveis por classe",
+   "trecho_anterior": "",
+   "trecho_atual": "(1) Com base em relatório de estudo de alocação de preço de compra ('PPA'), elaborado por empresa contratada, especializada e independente, efetuou a alocação inicial do valor justo dos ativos adquiridos e passivos assumidos do Banco Digió S.A.; e"
+  },
+  {
+   "item": "E047",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "DE 15 A 90 DIAS - %",
+   "trecho_anterior": "",
+   "trecho_atual": "As revisões e ajustes nas políticas de crédito que estão sendo realizados nesse cenário agravado vem trazendo a inadimplência das novas safras para patamares inferiores aos observados atualmente."
+  },
+  {
+   "item": "E048",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 27,
+   "secao": "DINÂMICA DOS NEGÓCIOS DE SEGUROS",
+   "trecho_anterior": "",
+   "trecho_atual": "No ramo Vida, a empresa realizou mudanças para aprimorar a jornada de contratação de seus produtos."
+  },
+  {
+   "item": "E049",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 188,
+   "pagina_atual": null,
+   "secao": "Notas Explicativas",
+   "trecho_anterior": "h) Em 29 de julho de 2020, foi sancionada a Lei nº 14.031, que altera, a partir do exercício financeiro de 2021, o tratamento tributário incidente sobre a variação cambial da parcela com cobertura de risco (hedge) do valor do investimento realizado pelas instituições financeiras e pelas demais instituições autorizadas a funcionar pelo Banco Central do Brasil em sociedade controlada, coligada, filial, sucursal ou agência domiciliada no exterior, registrada em conformidade com o regime de competência, que deverá ser computada na determinação do lucro real e na base da Contribuição Social sobre o Lucro Líquido (CSLL) da pessoa jurídica investidora domiciliada no País, na proporção de 100%, a partir do exercício de 2022.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E050",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 211,
+   "pagina_atual": null,
+   "secao": "4.1. Visão geral",
+   "trecho_anterior": "O COAUD trabalhou em estreita colaboração com o Departamento de Controle Integrado de Riscos (DCIR) e o Departamento de Compliance, Conduta e Ética (DCCE), bem como outros departamentos correlacionados da Organização Bradesco, para monitorar a observância dos procedimentos para gerenciar riscos e a estrutura de controle interno, bem como para garantir que as áreas de responsabilidade comum foram tratadas apropriadamente nas agendas das reuniões com o Comitê ou em discussões com o Coordenador do COAUD, com o objetivo de aprimorar a conectividade, coordenação e fluxo de informações, e dessa forma garantir uma compreensão mais profunda dos principais temas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E051",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 43,
+   "pagina_atual": null,
+   "secao": "BRADESCO CORPORATE",
+   "trecho_anterior": "Esta segmentação segue conceitos de faturamento, aspectos setoriais e geográficos, dentre outros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E052",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "RECEITAS DE PRESTAÇÃO DE SERVIÇOS",
+   "trecho_anterior": "",
+   "trecho_atual": "OPERAÇÕES DE CRÉDITO – A redução das receitas nos períodos está relacionada ao menor volume de originação de operações, reflexo do reposicionamento da nossa política de crédito, em especial as operações com o segmento PJ."
+  },
+  {
+   "item": "E053",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 81,
+   "pagina_atual": null,
+   "secao": "AUDITORIA INDEPENDENTE",
+   "trecho_anterior": "Estes serviços de não auditoria não configuram conflito de interesse e nem perda da independência na execução dos trabalhos de auditoria das demonstrações financeiras de acordo com a políticas de independência do auditor.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E054",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 194,
+   "pagina_atual": null,
+   "secao": "Avaliação da recuperabilidade dos créditos tributários",
+   "trecho_anterior": "Essas projeções são baseadas nos planos de negócios e orçamentos preparados pelo Bradesco, e exigem a adoção de uma série de premissas relacionadas a eventos e condições futuras.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E055",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 16,
+   "secao": "PDD Expandida / Operações de Crédito Expandida",
+   "trecho_anterior": "No 4T22, o estoque de PDD totalizou R$ 57,7 bilhões, representando 8,8% da carteira de crédito, o equivalente a um índice de cobertura para créditos vencidos acima de 90 dias de 204%.",
+   "trecho_atual": "No 1T23, o estoque de PDD totalizou R$ 60,0 bilhões, representando 9,3% da carteira de crédito, o equivalente a um índice de cobertura para créditos vencidos acima de 90 dias de 182%."
+  },
+  {
+   "item": "E056",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 201,
+   "pagina_atual": null,
+   "secao": "Relatório do Comitê de Auditoria",
+   "trecho_anterior": "Quanto à inadimplência, o Bacen destacou que vem aumentando desde o fim de 2021, principalmente cartão de crédito, crédito pessoal não consignado e financiamento de veículos, no caso das famílias, e nas operações com micro, pequenas e médias empresas, refletindo o elevado comprometimento de renda das famílias e a alta das taxas de juros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E057",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 142,
+   "secao": "a) Gerenciamento de Riscos",
+   "trecho_anterior": "",
+   "trecho_atual": "A atividade de gerenciamento de riscos é altamente estratégica em virtude da crescente complexidade dos produtos e serviços e da globalização dos negócios da Organização."
+  },
+  {
+   "item": "E058",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 137,
+   "pagina_atual": 113,
+   "secao": "Demonstrações Financeiras Consolidadas",
+   "trecho_anterior": "Até 31 de dezembro de 2021, a Organização recebeu R$ 592.492 mil de dividendos deste investimento.",
+   "trecho_atual": "Até 31 de março de 2022, a Organização recebeu R$ 71.259 mil de dividendos deste investimento."
+  },
+  {
+   "item": "E059",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 111,
+   "pagina_atual": null,
+   "secao": "Planos de Benefício Definido",
+   "trecho_anterior": "Os juros líquidos e outras despesas relacionadas aos planos de benefícios definidos são reconhecidos no resultado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E060",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "CUSTÓDIA E CORRETAGENS",
+   "trecho_anterior": "",
+   "trecho_atual": "Corretagens – Receitas relacionadas às oportunidades obtidas com a volatilidade do mercado de capitais."
+  },
+  {
+   "item": "E061",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 76,
+   "pagina_atual": 72,
+   "secao": "SUSTENTABILIDADE PARA O BRADESCO",
+   "trecho_anterior": "Pela 18ª vez consecutiva, fomos selecionados na carteira do Índice de Sustentabilidade Empresarial (ISE) da B3, ficando entre as 10 empresas mais sustentáveis do País.",
+   "trecho_atual": "Além disso, pela 18ª vez consecutiva, fomos selecionados na carteira do Índice de Sustentabilidade Empresarial (ISE) da B3, ficando entre as 10 empresas mais sustentáveis do País."
+  },
+  {
+   "item": "E062",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 97,
+   "pagina_atual": null,
+   "secao": "b) Apuração do resultado",
+   "trecho_anterior": "As operações com taxas prefixadas são registradas pelo valor de resgate, e as receitas e despesas correspondentes aos períodos futuros são apresentadas em conta redutora dos respectivos ativos e passivos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E063",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 201,
+   "pagina_atual": null,
+   "secao": "Relatório do Comitê de Auditoria",
+   "trecho_anterior": "Já a inadimplência do crédito total alcançou 3,1% em novembro, sendo de 4,3% no crédito livre e 1,2% no crédito direcionado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E064",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "PRESS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Nossa jornada digital é completa, ágil e eficiente, nos tornando um dos melhores processos *onboarding* entre os bancos tradicionais."
+  },
+  {
+   "item": "E065",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 109,
+   "pagina_atual": null,
+   "secao": "Notas Explicativas",
+   "trecho_anterior": "A provisão de sinistros ocorridos e não avisados (IBNR) é calculada com base em triângulos de *run-off* semestrais, que consideram o desenvolvimento histórico dos sinistros pagos e pendentes nos últimos 16 semestres para estabelecer uma projeção futura por período de ocorrência;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E066",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 187,
+   "pagina_atual": null,
+   "secao": "f) Recolhimento compulsório",
+   "trecho_anterior": "Alterações das regras de recolhimento compulsório conforme quadro a seguir:",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E067",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 202,
+   "pagina_atual": null,
+   "secao": "Relatório do Comitê de Auditoria",
+   "trecho_anterior": "No exercício de 2022, o COAUD dedicou significativa parcela do seu tempo para entender e avaliar os efeitos do avanço inflacionário e da elevação das taxas de juros nos negócios e resultados da Organização Bradesco, com especial atenção às provisões para perdas com operações de crédito, à mensuração dos instrumentos financeiros, aos efeitos de mudanças regulatórias no ambiente de controles internos, às premissas, julgamentos e modelos relacionados a componentes relevantes das Demonstrações Financeiras – como valor recuperável de créditos tributários e ágios, provisões e passivos contingentes – e às divulgações contábeis requeridas relacionadas a tais itens.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E068",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 6,
+   "secao": "PRESS RELEASE",
+   "trecho_anterior": "A margem com clientes apresentou crescimento de 22% no acumulado do período, refletindo o aumento da carteira de crédito em produtos com melhores *spreads* e o desempenho positivo dos juros na margem de captação.",
+   "trecho_atual": "A margem com clientes apresentou crescimento de 7,3% em relação ao 1T22, refletindo o aumento da carteira, a diversificação do *mix* de produtos e o desempenho positivo dos juros na margem de captação."
+  },
+  {
+   "item": "E069",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 55,
+   "pagina_atual": 52,
+   "secao": "COMPOSIÇÃO ANALÍTICA DA DEMONSTRAÇÃO DO RESULTADO GERENCIAL X RECORRENTE – 1T23 X 1T22",
+   "trecho_anterior": "(2) Inclui reclassificações entre as linhas do resultado, que não afetam o Lucro Líquido, mas que permitem uma melhor análise das linhas de negócios, incluindo o ajuste do *hedge fiscal*; e no 12M22 contempla a realocação, no valor de R$ 7.665 milhões (R$ 4.511 milhões no 12M21) nas linhas de Margem Financeira e PDD Expandida, relacionadas, aos efeitos da operação de venda de ativos financeiros (cessão de crédito); e (3) Refere-se à Demonstração do Resultado – Gerencial $$ com as reclassificações entre linhas, que não afetam o Lucro Líquido, e sem os eventos extraordinários do período.",
+   "trecho_atual": "(2) Inclui reclassificações entre as linhas do resultado, que não afetam o Lucro Líquido, mas que permitem uma melhor análise das linhas de negócios, incluindo o ajuste do *hedge fiscal*; e no 1T23 contempla a realocação, no valor de R$ 35 milhões (R$ 122 milhões no 1T22) nas linhas de Margem Financeira e PDD Expandida, relacionadas, aos efeitos da operação de venda de ativos financeiros (cessão de crédito); e (3) Refere-se à Demonstração do Resultado – Gerencial $$ com as reclassificações entre linhas, que não afetam o Lucro Líquido, e sem os eventos extraordinários do período."
+  },
+  {
+   "item": "E070",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "LUCRO LÍQUIDO, RETORNOS E EFICIÊNCIA",
+   "trecho_anterior": "",
+   "trecho_atual": "Em 12 meses, a geração de receitas com a margem de clientes, prestação de serviços e operações de seguros absorveu as maiores despesas com PDD em decorrência da inadimplência no segmento massificado (PF e PJ) e o aumento já esperado das despesas operacionais, principalmente pelo efeito do acordo coletivo."
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 191,
+   "pagina_atual": null,
+   "secao": "Avaliação da mensuração da provisão para créditos de liquidação duvidosa (PCLD)",
+   "trecho_anterior": "Para determinar a provisão para créditos de liquidação duvidosa o Bradesco classifica as operações de crédito em nove níveis de risco (“*ratings*”), levando em consideração fatores e premissas dos clientes e das operações, tais como situação econômico-financeira, grau de endividamento, setor de atividade econômica, características das garantias, dias de atraso e demais fatores e premissas previstos na Resolução CMN nº 2.682/99, sendo “AA” o risco mínimo e “H” o risco máximo, aplicando os respectivos percentuais de perda determinados pela referida Resolução para cada *rating*.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E072",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 197,
+   "pagina_atual": 163,
+   "secao": "Outros assuntos - Informações contábeis consolidadas intermediárias condensadas",
+   "trecho_anterior": "Essas demonstrações contábeis consolidadas para o semestre e exercício findos em 31 de dezembro de 2022, que foram elaboradas de acordo com as práticas contábeis adotadas no Brasil aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil (BACEN), estão sendo apresentadas de maneira adicional, conforme faculdade prevista no Art. nº 77 da Resolução CMN nº 4.966, às informações contábeis consolidadas preparadas de acordo com as Normas Internacionais de Relatório Financeiro (IFRS) emitidas pelo International Accounting Standards Board (IASB) e foram apresentadas separadamente pelo Bradesco nesta data e sobre as quais emitimos relatório de auditoria independente, não contendo qualquer modificação, com data de 09 de fevereiro de 2023.",
+   "trecho_atual": "Essas informações contábeis consolidadas intermediárias condensadas para o trimestre findo em 31 de março de 2023, que foram elaboradas de acordo com as práticas contábeis adotadas no Brasil aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil (BACEN), estão sendo apresentadas de maneira adicional, conforme faculdade prevista no Art. nº 77 da Resolução CMN nº 4.966, às informações financeiras consolidadas intermediárias condensadas preparadas de acordo com as Normas Internacionais de Relatório Financeiro (IFRS) emitidas pelo *International Accounting Standards Board (IASB)* e foram apresentadas separadamente pelo Bradesco nesta data e sobre as quais emitimos relatório de revisão limitada, não contendo qualquer modificação, com data de 04 de maio de 2023."
+  },
+  {
+   "item": "E073",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "DE 15 A 90 DIAS - %",
+   "trecho_anterior": "",
+   "trecho_atual": "No portfólio de Grandes Empresas a inadimplência acima de 90 dias continua nos menores níveis da série histórica, e o aumento no indicador de 15 a 90 dias está relacionado a clientes Large Corporate 100% provisionados."
+  },
+  {
+   "item": "E074",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 77,
+   "pagina_atual": null,
+   "secao": "RECURSOS HUMANOS",
+   "trecho_anterior": "Entre cursos *on-line* e presenciais, são mais de 2.900 soluções de aprendizagem, com temas voltados, por exemplo, à sustentabilidade, cidadania, liderança, tecnologia e saúde.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E075",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 20,
+   "secao": "Baixas",
+   "trecho_anterior": "No 4T22, as despesas de PDD bruta representaram 185% do NPL *Creation*, evidenciando provisionamento em níveis conservadores.",
+   "trecho_atual": "No 1T23, as despesas de PDD bruta representaram 81% do NPL Creation."
+  },
+  {
+   "item": "E076",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 43,
+   "pagina_atual": null,
+   "secao": "BRADESCO VAREJO",
+   "trecho_anterior": "São 2.515 Agências, 897 Unidades de Negócios, 3.524 Postos de Atendimento (PAs), 645 Postos de Atendimento Eletrônicos (PAEs) e 40.456 unidades do Bradesco Expresso (Correspondentes Bancários).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E077",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 150,
+   "pagina_atual": 127,
+   "secao": "III - Provisão para riscos fiscais",
+   "trecho_anterior": "COFINS – Anos bases de 2001 a 2005 – R$ 5.757.539 mil (Em dezembro de 2021 – R$ 5.450.794 mil): autuações e glosas de compensações de créditos de Cofins, lançadas após o trânsito em julgado favorável em processo judicial, onde foi discutida a inconstitucionalidade",
+   "trecho_atual": "COFINS – Anos bases de 1999 a 2014 – R$ 9.055.065 mil (Em dezembro de 2022 – R$ 5.757.539 mil): autuações e glosas de compensações de créditos de Cofins, lançadas após o trânsito em julgado favorável em processo judicial, onde foi discutida a inconstitucionalidade da ampliação da base de cálculo pretendida para outras receitas que não as de faturamento (Lei nº 9.718/98);"
+  },
+  {
+   "item": "E078",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 100,
+   "pagina_atual": null,
+   "secao": "Notas Explicativas",
+   "trecho_anterior": "Essa avaliação, realizada periodicamente, considera a conjuntura econômica, a experiência passada e os riscos específicos e globais em relação às operações, aos devedores e garantidores.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E079",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "MARGEM COM CLIENTES",
+   "trecho_anterior": "R$ 17,5 bi +18,3% em 12 meses -0,3% no trimestre",
+   "trecho_atual": "+7,3% em 12 meses -2,9% no trimestre"
+  },
+  {
+   "item": "E080",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 177,
+   "pagina_atual": null,
+   "secao": "37) BENEFÍCIOS A EMPREGADOS",
+   "trecho_anterior": "Banco Múltiplo, Bradesco Capitalização S.A., Kirton Corretora de Seguros S.A., Bradesco Kirton Corretora de Câmbio S.A. e a Bradesco Seguros S.A. patrocinam um plano de benefício definido, denominado APABA, aos funcionários oriundos do Banco Bamerindus do Brasil S.A., e a Kirton Administração de Serviços para Fundos de Pensão Ltda. patrocinava a seus funcionários um plano de contribuição definida, denominado Plano de Benefícios Kirton Prev, que teve seu processo de retirada de patrocínio aprovado pela Portaria PREVIC nº 780, de 23.08.2022, ambos administrados por meio do MultiBRA – Fundo de Pensão.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E081",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 112,
+   "pagina_atual": null,
+   "secao": "4) USO DE ESTIMATIVAS E JULGAMENTOS CONTÁBEIS SIGNIFICATIVOS",
+   "trecho_anterior": "As estimativas e julgamentos que possuem um risco significativo e podem ter um impacto relevante nos valores de ativos e passivos no próximo ano, com a possibilidade dos resultados efetivos serem diferentes daqueles estabelecidos anteriormente estão divulgadas a seguir e são relacionadas com as seguintes notas:",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E082",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 100,
+   "pagina_atual": null,
+   "secao": "Notas Explicativas",
+   "trecho_anterior": "A parcela não efetiva do respectivo *hedge* é reconhecida diretamente em conta de resultado; e - *Hedge* de investimento líquido em operação no exterior - os instrumentos financeiros classificados nesta categoria têm como objetivo proteger a variação cambial de investimentos no exterior, cuja moeda funcional seja diferente da moeda nacional, sendo contabilizados de acordo com os procedimentos contábeis aplicáveis à categoria de *hedge* de fluxo de caixa, ou seja, com a parcela efetiva reconhecida em patrimônio líquido, líquida dos efeitos tributários, e a parcela não efetiva reconhecida em resultado do período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E083",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 199,
+   "pagina_atual": null,
+   "secao": "Relatório dos Auditores Independentes",
+   "trecho_anterior": "Comunicamo-nos com os responsáveis pela governança a respeito, entre outros aspectos, do alcance planejado, da época da auditoria e das constatações significativas de auditoria, inclusive as eventuais deficiências significativas nos controles internos que identificamos durante nossos trabalhos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E084",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 111,
+   "pagina_atual": null,
+   "secao": "o) Eventos subsequentes",
+   "trecho_anterior": "Correspondem aos eventos ocorridos entre a data-base das demonstrações financeiras e a data de autorização para a sua emissão.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E085",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "VARIAÇÃO DA MARGEM COM CLIENTES | R$ milhões",
+   "trecho_anterior": "",
+   "trecho_atual": "A margem com clientes apresentou evolução de 7,3% frente ao primeiro trimestre de 2022, impulsionada pelo crescimento da carteira de crédito acompanhado de um *mix* de produtos mais rentáveis e o aumento na margem de passivos, impactando a taxa média em 0,2 p.p., que passou de 9,7% para 9,9%."
+  },
+  {
+   "item": "E086",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 213,
+   "pagina_atual": null,
+   "secao": "Relatório do Comitê de Auditoria",
+   "trecho_anterior": "Em particular, discutimos quanto às projeções de probabilidade e suficiência de lucros tributáveis futuros, reversões futuras de diferenças temporárias, estratégias de planejamento tributário em curso, e impactos de mudanças na legislação tributária.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E087",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 32,
+   "secao": "BASILEIA",
+   "trecho_anterior": "",
+   "trecho_atual": "Cabe destacar que, conforme a Resolução nº 4.958/21, desde Abr22 os capitais mínimos são: 9,5% para o capital nível I e 8,0% para o capital principal."
+  },
+  {
+   "item": "E088",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 111,
+   "pagina_atual": null,
+   "secao": "Planos de Benefício Definido",
+   "trecho_anterior": "O detalhamento dos benefícios a empregados, está apresentado na Nota 37.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E089",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 90,
+   "secao": "b) Aquisição de Investimento",
+   "trecho_anterior": "",
+   "trecho_atual": "(1) Não há expectativa de ser dedutível para fins fiscais."
+  },
+  {
+   "item": "E090",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 54,
+   "pagina_atual": 51,
+   "secao": "COMPOSIÇÃO ANALÍTICA DA DEMONSTRAÇÃO DO RESULTADO GERENCIAL X RECORRENTE – 1T23 X 4T22",
+   "trecho_anterior": "(2) Inclui reclassificações entre as linhas do resultado, que não afetam o Lucro Líquido, mas que permitem uma melhor análise das linhas de negócios, incluindo o ajuste do *hedge fiscal*; e no 4T22 contempla a realocação, no valor de R$ 2.788 milhões (R$ 2.788 milhões no 3T22) nas linhas de Margem Financeira e PDD Expandida, relacionadas, aos efeitos da operação de venda de ativos financeiros (cessão de crédito); e (3) Refere-se à Demonstração do Resultado – Gerencial $$ com as reclassificações entre linhas, que não afetam o Lucro Líquido, e sem os eventos extraordinários do período.",
+   "trecho_atual": "(2) Inclui reclassificações entre as linhas do resultado, que não afetam o Lucro Líquido, mas que permitem uma melhor análise das linhas de negócios, incluindo o ajuste do *hedge fiscal*; e no 1T23 contempla a realocação, no valor de R$ 35 milhões (R$ 2.788 milhões no 4T22) nas linhas de Margem Financeira e PDD Expandida, relacionadas, aos efeitos da operação de venda de ativos financeiros (cessão de crédito); e (3) Refere-se à Demonstração do Resultado – Gerencial $$ com as reclassificações entre linhas, que não afetam o Lucro Líquido, e sem os eventos extraordinários do período."
+  },
+  {
+   "item": "E091",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 149,
+   "pagina_atual": 126,
+   "secao": "III - Provisão para riscos fiscais",
+   "trecho_anterior": "INSS - Contribuição ao SAT – R$ 480.085 mil (Em dezembro de 2021 – R$ 450.289 mil): em ação ordinária movida pela Federação Nacional dos Bancos - Febraban, desde abril de 2007, em nome de seus associados, é questionado o enquadramento dos bancos no grau de risco mais elevado, no que tange ao Risco de Acidentes de Trabalho - RAT, o que acabou por elevar a alíquota da respectiva contribuição de 1% para 3%, conforme Decreto nº 6.042/07; e",
+   "trecho_atual": "PIS e Cofins – R$ 677.452 mil (Em dezembro de 2022 – R$ 657.370 mil): pleiteia assegurar as empresas o direito de recolher as contribuições ao PIS e a Cofins pelo regime cumulativo (alíquota 3,65% sobre vendas de mercadorias/prestação de serviços); e - INSS - Contribuição ao SAT – R$ 480.948 mil (Em dezembro de 2022 – R$ 480.085 mil): em ação ordinária movida pela Federação Nacional dos Bancos - Febraban, desde abril de 2007, em nome de seus associados, é questionado o enquadramento dos bancos no grau de risco mais elevado, no que tange ao Risco de Acidentes de Trabalho - RAT, o que acabou por elevar a alíquota da respectiva contribuição de 1% para 3%, conforme Decreto nº 6.042/07."
+  },
+  {
+   "item": "E092",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 149,
+   "pagina_atual": 126,
+   "secao": "III - Provisão para riscos fiscais",
+   "trecho_anterior": "A Organização vem discutindo judicialmente a legalidade e constitucionalidade de alguns tributos e contribuições, os quais estão totalmente provisionados, não obstante as boas chances de êxito, de acordo com a opinião dos assessores jurídicos.",
+   "trecho_atual": "A Organização vem discutindo judicialmente a legalidade e constitucionalidade de alguns tributos e contribuições, os quais estão totalmente provisionados."
+  },
+  {
+   "item": "E093",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "DESPESAS OPERACIONAIS",
+   "trecho_anterior": "+7,9% em 12 meses | +0,9% no trimestre",
+   "trecho_atual": "+9,3% em 12 meses -5,2% no trimestre"
+  },
+  {
+   "item": "E094",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 186,
+   "pagina_atual": 126,
+   "secao": "III - Provisão para riscos fiscais",
+   "trecho_anterior": "Instrução Normativa BCB nº 319 - Em 04 de novembro de 2022 o Bacen emitiu a Instrução Normativa nº 319 que revoga a Carta Circular nº 3.429, de 11 de fevereiro de 2010, que esclarece acerca dos",
+   "trecho_atual": "Em 04 de novembro de 2022, o Bacen emitiu a Instrução Normativa nº 319 que revogou a Carta Circular nº 3.429, de 11 de fevereiro de 2010, qual esclarece acerca dos procedimentos para o registro contábil das obrigações tributárias em discussão judicial."
+  },
+  {
+   "item": "E095",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 18,
+   "secao": "DE 15 A 90 DIAS - %",
+   "trecho_anterior": "Dado este ambiente, a inadimplência total da carteira atingiu 4,1% entre 15 a 90 dias e 4,3% acima de 90 dias.",
+   "trecho_atual": "A inadimplência total da carteira atingiu 4,6% entre 15 a 90 dias e 5,1% acima de 90 dias."
+  },
+  {
+   "item": "E096",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "MARGEM FINANCEIRA COM MERCADO",
+   "trecho_anterior": "",
+   "trecho_atual": "A variação da margem com mercado entre os trimestres ocorreu, principalmente, em razão da melhora do resultado de ALM do banco e maiores ganhos nas operações de tesouraria."
+  },
+  {
+   "item": "E097",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "DE 15 A 90 DIAS - %",
+   "trecho_anterior": "As revisões e ajustes nas políticas de crédito que foram realizadas neste cenário agravado, já trouxeram a inadimplência das novas safras para patamares inferiores ao período pré-pandemia.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E098",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "LUCRO LÍQUIDO RECORRENTE",
+   "trecho_anterior": "R$ 10,2 bi de JCP (bruto)",
+   "trecho_atual": "R$ 2,9 bi de JCP (bruto) PAYOUT DE 71% no trimestre"
+  },
+  {
+   "item": "E099",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 79,
+   "pagina_atual": 74,
+   "secao": "POLÍTICA DE DISTRIBUIÇÃO DE DIVIDENDOS E JUROS SOBRE CAPITAL PRÓPRIO",
+   "trecho_anterior": "No ano de 2022, as Ações Bradesco, com elevado nível de liquidez (BBCD4) representavam 4,0% do Ibovespa.",
+   "trecho_atual": "No primeiro trimestre de 2023, as Ações Bradesco, com elevado nível de liquidez (BBCD4) representavam 3,8% do Ibovespa."
+  },
+  {
+   "item": "E100",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 148,
+   "secao": "f) Risco Climático",
+   "trecho_anterior": "",
+   "trecho_atual": "O processo de gerenciamento do risco climático dispõe de uma estrutura de governança composta por comitês, políticas, normas e procedimentos, que possibilitam a identificação, classificação, e monitoramento, em conformidade com as Resoluções do BCB e em consonância com os princípios de relevância e proporcionalidade, necessária face a complexidade dos produtos financeiros e do perfil de atividades da Organização."
+  },
+  {
+   "item": "E101",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 163,
+   "secao": "Conclusão",
+   "trecho_anterior": "",
+   "trecho_atual": "Com base em nossa revisão, não temos conhecimento de nenhum fato que nos leve a acreditar que as informações contábeis consolidadas intermediárias condensadas, acima referidas, não apresentam adequadamente, em todos os aspectos relevantes, a posição patrimonial e financeira consolidada do Banco Bradesco S.A. em 31 de março de 2023, o desempenho consolidado de suas operações e os seus fluxos de caixa consolidados para o período de três meses findo nessa data, de acordo com as práticas contábeis adotadas no Brasil aplicáveis às instituições autorizadas a funcionar pelo Banco Central do Brasil."
+  },
+  {
+   "item": "E102",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 100,
+   "pagina_atual": null,
+   "secao": "Notas Explicativas",
+   "trecho_anterior": "As operações de crédito, de arrendamento mercantil, adiantamentos sobre contratos de câmbio e outros créditos com características de concessão de crédito são classificados nos respectivos níveis de risco, observando: (i) os parâmetros estabelecidos pela Resolução nº 2.682/99 do CMN, que requerem a sua classificação de riscos em nove níveis, sendo “AA” (risco mínimo) e “H” (risco máximo) considerando, entre outros aspectos, os níveis de atraso (conforme descrito na tabela abaixo); e (ii) a avaliação da Administração quanto ao nível de risco.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E103",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 156,
+   "pagina_atual": null,
+   "secao": "a) Demonstração do cálculo dos encargos com imposto de renda e contribuição social",
+   "trecho_anterior": "(2) Em 28 de julho de 2020, foi sancionada a Lei nº 14.031, que alterou, a partir do exercício financeiro de 2021, o tratamento tributário incidente sobre a variação cambial da parcela com cobertura de risco (hedge) do valor do investimento no exterior, registrada em conformidade com o regime de competência, que deverá ser computada na determinação do lucro real e na base da Contribuição Social sobre o Lucro Líquido (CSLL) da pessoa jurídica investidora domiciliada no País, na proporção de: i) 50%, no exercício de 2021; e ii) 100%, a partir do exercício de 2022.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E104",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 202,
+   "pagina_atual": null,
+   "secao": "Relatório do Comitê de Auditoria",
+   "trecho_anterior": "No âmbito regulatório, o SFN continua experimentando período de significativas demandas que impactam diversas áreas da Organização Bradesco (Banco Bradesco e Empresas Ligadas), tais como tecnologia da informação (PIX, Open Finance e implementação dos controles estabelecidos pela Lei Geral de Proteção de Dados - LGPD), requisitos para a integração mais ampla dos riscos Ambientais, Sociais e de Governança (ASG, ou ESG na sua expressão em inglês) na estrutura de gestão integrada de riscos, conjugado à obrigatoriedade de divulgações específicas em notas explicativas às Demonstrações Financeiras, e avanço na adoção completa das Normas Internacionais de Informação Financeira - NIIF (IFRS, na sua expressão em inglês) para todas as instituições subordinadas à supervisão do Bacen (atualmente a exigência se aplica apenas ao Consolidado).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E105",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 134,
+   "pagina_atual": 110,
+   "secao": "II) Despesa de PDD líquida de recuperações",
+   "trecho_anterior": "(1) No exercício findo em 31 de dezembro de 2022, houve cessão de crédito de operação ativa, no montante de R$ 7.665.314 mil (2021 - R$ 4.511.338 mil), cujo valor de venda foi de R$ 558.819 mil (2021 - R$ 1.021.264 mil) e cessões de crédito de operações já baixadas para prejuízo, sem retenção de riscos e benefícios no montante de R$ 14.272.406 mil (2021 - R$ 10.336.572 mil), cujo valor de venda foi de R$ 658.997 mil (2021 - R$ 761.917 mil).",
+   "trecho_atual": "(1) No 1º trimestre de 2023, houve cessão de crédito de operação ativa, no montante de R$ 30.781 mil (2022 - R$ 121.587 mil), cujo valor de venda foi de R$ 2.001 mil (2022 - R$ 21.355 mil) e cessões de crédito de operações já baixadas para prejuízo, sem retenção de riscos e benefícios no montante de R$ 1.431.941 mil (2022 - R$ 6.232.820 mil), cujo valor de venda foi de R$ 17.584 mil (2022 - R$ 380.000 mil)."
+  },
+  {
+   "item": "E106",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 25,
+   "secao": "OUTRAS DESPESAS OPERACIONAIS LÍQUIDAS DE RECEITAS",
+   "trecho_anterior": "",
+   "trecho_atual": "As variações nos períodos estão influenciadas, principalmente, pelas reversões de processos fiscais realizadas no 1T23, e por menores despesas com comercialização de cartões e sinistros, que foram compensadas pelo reforço de outras provisões operacionais relativas ao negócio."
+  },
+  {
+   "item": "E107",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 107,
+   "pagina_atual": null,
+   "secao": "Notas Explicativas",
+   "trecho_anterior": "Para o tipo de contratação dos planos individuais/familiares a apuração do FIC, contemplará o período de 24 meses antecedentes ao mês de cálculo e para os Tipos de Contratação Coletivo por Adesão e Demais Coletivos serão considerados 36 meses, período necessário para a redução do impacto de tendências de curto prazo e sazonalidades.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E108",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "LUCRO LÍQUIDO RECORRENTE",
+   "trecho_anterior": "2021), com crescimento do faturamento em todas as linhas de negócios e evolução do resultado financeiro.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E109",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 198,
+   "pagina_atual": null,
+   "secao": "Responsabilidades dos auditores pela auditoria das demonstrações contábeis consolidadas",
+   "trecho_anterior": "Se concluirmos que existe uma incerteza relevante, devemos chamar atenção em nosso relatório de auditoria para as respectivas divulgações nas demonstrações contábeis consolidadas ou incluir modificação em nossa opinião, se as divulgações forem inadequadas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E110",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "ÍNDICES DE COBERTURA E PROVISÃO",
+   "trecho_anterior": "",
+   "trecho_atual": "O indicador de cobertura acima de 90 dias atingiu 182%, influenciado, em grande parte, pelo aumento da inadimplência concentrada no portfólio massificado, que naturalmente sofre maiores impactos em cenários adversos."
+  },
+  {
+   "item": "E111",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 169,
+   "pagina_atual": 145,
+   "secao": "Análise de sensibilidade das exposições financeiras",
+   "trecho_anterior": "Por exemplo: para uma cotação Real/Dólar de R$ 5,29 foi utilizado um cenário de R$ 5,34, enquanto para uma taxa de juros prefixada de 1 ano de 13,41% foi aplicado um cenário de 13,42%;",
+   "trecho_atual": "Por exemplo: para uma cotação Real/Dólar de R$ 5,08 foi utilizado um cenário de R$ 5,13, enquanto para uma taxa de juros prefixada de 1 ano de 12,85% foi aplicado um cenário de 12,86%;"
+  },
+  {
+   "item": "E112",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 198,
+   "pagina_atual": null,
+   "secao": "Responsabilidades dos auditores pela auditoria das demonstrações contábeis consolidadas",
+   "trecho_anterior": "Nossos objetivos são obter segurança razoável de que as demonstrações contábeis consolidadas, tomadas em conjunto, estão livres de distorção relevante, independentemente se causada por fraude ou erro, e emitir relatório de auditoria contendo nossa opinião.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E113",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 202,
+   "pagina_atual": null,
+   "secao": "Relatório do Comitê de Auditoria",
+   "trecho_anterior": "Focado na supervisão da integridade das Demonstrações Financeiras e controles internos a elas relacionados, da eficácia da Auditoria Interna (AIGL) e da qualidade e independência da Auditoria Independente (KPMG), o Comitê prioriza a transparência, particularmente em relação às decisões estratégicas e aos seus reflexos na posição econômico-financeira e nos resultados, desenvolvendo seus trabalhos em parceria com a Diretoria Executiva, a Auditoria Independente e a Auditoria Interna.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E114",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 150,
+   "pagina_atual": null,
+   "secao": "III - Provisão para riscos fiscais",
+   "trecho_anterior": "INSS de Autônomos – R$ 256.490 mil (Em dezembro de 2021 – R$ 343.896 mil): discute a incidência da contribuição previdenciária sobre as remunerações pagas aos prestadores de serviços autônomos, instituída pela Lei Complementar nº 84/96, e regulamentações/alterações posteriores à alíquota de 20,0% e adicional de 2,5%, sob o argumento de que os serviços não são prestados às seguradoras, mas aos segurados, estando, dessa forma, fora do campo de incidência da contribuição prevista no inciso I, artigo 22, da Lei nº 8.212/91, com nova redação contida na Lei nº 9.876/99.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E115",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Evolução do Saldo da Carteira",
+   "trecho_anterior": "",
+   "trecho_atual": "A inadimplência acima de 90 dias da carteira renegociada apresentou incremento de 1,5 p.p."
+  },
+  {
+   "item": "E116",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 75,
+   "pagina_atual": null,
+   "secao": "TECNOLOGIA E INOVAÇÃO",
+   "trecho_anterior": "Além do next, reconhecido “Banco do Ano”.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E117",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 204,
+   "pagina_atual": null,
+   "secao": "2.2. Administração da Organização Bradesco",
+   "trecho_anterior": "Pela definição e implementação de processos e procedimentos que visam a coletar dados para a elaboração das Demonstrações Financeiras, com observância da legislação societária, das práticas contábeis adotadas no Brasil, das Normas Internacionais de Relatórios Financeiros (IFRS), emitidas pelo *International Accounting Standards Board* (IASB), dos atos normativos pertinentes do Conselho Monetário Nacional (CMN), da Comissão de Valores Mobiliários (CVM) e do Banco Central do Brasil (Bacen) e, pelo Banco Bradesco ser listado na Bolsa de Valores de Nova York (NYSE), das normas estabelecidas pela SEC e pela Lei *Sarbanes-Oxley* (SOx);",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E118",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 220,
+   "pagina_atual": null,
+   "secao": "6. CONCLUSÃO",
+   "trecho_anterior": "⁴ Em atendimento aos requisitos da Resolução CVM nº 44, de 23 de agosto de 2021.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E119",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 205,
+   "pagina_atual": null,
+   "secao": "3. COMO O COAUD EXERCEU SUAS ATRIBUIÇÕES E RESPONSABILIDADES",
+   "trecho_anterior": "(ii) riscos e incertezas e o impacto nos julgamentos, premissas e estimativas atuais e futuras relativas às informações contábeis, em particular provisões e valorização de ativos financeiros;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E120",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 112,
+   "secao": "a) Composição dos investimentos em coligadas e entidades controladas em conjunto (joint venture)",
+   "trecho_anterior": "",
+   "trecho_atual": "(3) Diluição de participação decorrente da ingressão de novo acionista com emissão de novas ações;"
+  }
+ ]
+}

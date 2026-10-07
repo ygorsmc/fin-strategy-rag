@@ -1,0 +1,1207 @@
+{
+ "par": "BMG_4T2021_1T2022",
+ "documento_anterior": "bmg_release_4T2021",
+ "documento_atual": "bmg_release_1T2022",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Centralidade no cliente",
+   "trecho_anterior": "O nosso conceito de clientes ativos considera apenas aqueles que possuem produtos geradores de receita no Bmg: saldo em carteira, emissão/ utilização do cartão nos últimos doze meses ou saldo de investimentos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E002",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Outras receitas e despesas operacionais",
+   "trecho_anterior": "No 4T21, as despesas ficaram em R$477 milhões, redução de 1,1% em relação ao trimestre imediatamente anterior e estável em relação ao 4T20.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E003",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "SEGUROS",
+   "trecho_anterior": "No quarto trimestre de 2021, foram emitidos R$ 161 milhões em prêmios, aumento de 64,5% em comparação ao 4T20.",
+   "trecho_atual": "No primeiro trimestre de 2022, foram emitidos R$ 179 milhões em prêmios, aumento de 67,9% em comparação ao 1T21."
+  },
+  {
+   "item": "E004",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Gestão de Ativos e Passivos",
+   "trecho_anterior": "Com intuito de manter uma gestão adequada de seus ativos e passivos, o Bmg prioriza uma estrutura de *funding* alongada e assim apresenta um gap positivo de 2 meses, sendo o *duration* de seus ativos de crédito de 19 meses e dos passivos de 21 meses.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E005",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 24,
+   "secao": "Índice de eficiência operacional",
+   "trecho_anterior": "No quarto trimestre, o índice de eficiência atingiu 66,3%, melhora de 1,6 p.p. em relação ao trimestre imediatamente anterior e aumento de 6,0 p.p. em relação ao 4T20, principalmente devido a compressão de margem no período.",
+   "trecho_atual": "No primeiro trimestre de 2022, o índice de eficiência foi de 65,1%, aumento de 6,6 p.p. em relação ao mesmo período de 2021 e melhora de 1,2 p.p. em relação ao 4T21, principalmente devido ao aumento da margem no período."
+  },
+  {
+   "item": "E006",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Despesas administrativas",
+   "trecho_anterior": "No trimestre, as despesas administrativas apresentaram um aumento em especial nas linhas de marketing, processamento de dados e serviços técnicos especializados.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E007",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 31,
+   "pagina_atual": 31,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "O Patrimônio de Referência está sendo substancialmente impactado pela marcação a mercado de títulos públicos, tendo um efeito de cerca de 3,7 pontos percentuais na Basileia.",
+   "trecho_atual": "O Patrimônio de Referência está sendo substancialmente impactado pela marcação a mercado de títulos públicos, tendo um efeito de cerca de 3,4 pontos percentuais na Basileia."
+  },
+  {
+   "item": "E008",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Patrimônio Líquido",
+   "trecho_anterior": "Patrimônio Líquido (R$ Milhões) e Índice de Basileia (%)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E009",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 37,
+   "pagina_atual": null,
+   "secao": "Reclassificações Gerenciais",
+   "trecho_anterior": "A parceria visa maximizar oportunidades para serviços digitais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E010",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": 4,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "A Margem Financeira Líquida atingiu R$ 901 milhões no 4T21;",
+   "trecho_atual": "A Margem Financeira Líquida atingiu R$ 946 milhões no 1T22;"
+  },
+  {
+   "item": "E011",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "Margem financeira",
+   "trecho_anterior": "A receita de intercâmbio atingiu R$ 11,9 milhões no 4T21, crescimento de 15,4% no trimestre e de 40,7% em doze meses.",
+   "trecho_atual": "A receita de intercâmbio atingiu R$ 12,5 milhões no 1T22, crescimento de 4,3% no trimestre e de 51,1% em doze meses."
+  },
+  {
+   "item": "E012",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "Empréstimo Consignado",
+   "trecho_anterior": "No início de 2021 houve uma redução forte na originação devido a volta da margem consignável para 30% e a revisão do *pricing* pelo Bmg visando maior rentabilidade.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E013",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 30,
+   "secao": "Gestão de Ativos e Passivos",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso, tem mantido seu volume de caixa alto, atualmente em R$ 5,4 bilhões, visando o crescimento das suas operações e considerando os vencimentos de suas captações."
+  },
+  {
+   "item": "E014",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 28,
+   "secao": "Distribuição da Carteira de Crédito",
+   "trecho_anterior": "Em linha com a estratégia do Banco, a carteira de varejo apresentou crescimento de 18,1% nos últimos doze meses e representa 89,3% da carteira total.",
+   "trecho_atual": "Em linha com a estratégia do Banco, a carteira de varejo apresentou crescimento de 24,4% nos últimos doze meses e representa 89,9% da carteira total."
+  },
+  {
+   "item": "E015",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 28,
+   "secao": "Distribuição da Carteira de Crédito",
+   "trecho_anterior": "A carteira de crédito total atingiu R$ 15.967 milhões no 4T21, representando um aumento de 6,1% no trimestre e de 14,0% em doze meses.",
+   "trecho_atual": "A carteira de crédito total atingiu R$ 17.082 milhões no 1T22, representando um aumento de 7,0% no trimestre e de 20,1% em doze meses, impulsionada principalmente pela antecipação do FGTS e pelos produtos de consignação."
+  },
+  {
+   "item": "E016",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Em dezembro de 2021 foi aprovado o aumento na taxa máxima de juros para aposentados e pensionistas INSS para 3,06% ao mês no cartão de crédito consignado, que passará a afetar positivamente as receitas a partir de janeiro 2022 com a reprecificação da carteira elegível;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E017",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 9,
+   "secao": "Banco Digital",
+   "trecho_anterior": "Em 31 de dezembro de 2021, o Bmg contava com 6,3 milhões de contas digitais abertas, aumento de 2,4 vezes nos últimos doze meses, tendo aberto a quantidade de 17 mil contas por dia útil no quarto trimestre de 2021, ritmo forte de aberturas.",
+   "trecho_atual": "Em 31 de março de 2022, o Bmg contava com 7,1 milhões de contas digitais abertas, aumento de 83,2% nos últimos doze meses, tendo aberto a quantidade de 13 mil contas por dia útil no primeiro trimestre de 2022, ritmo forte de aberturas."
+  },
+  {
+   "item": "E018",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Evolução da qtde. de lojas",
+   "trecho_anterior": "",
+   "trecho_atual": "Ainda, a help! é o canal exclusivo para um dos principais produtos do Banco, o crédito pessoal emergencial (crédito na conta)."
+  },
+  {
+   "item": "E019",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 38,
+   "pagina_atual": null,
+   "secao": "Reclassificações Gerenciais",
+   "trecho_anterior": "Tal ganho, não foi considerado no resultado recorrente do período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E020",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Avançando na estratégia de parceria com varejistas visando o financiamento ao consumo, até dezembro 2021 tínhamos 13 mil cartões ativos com volume transacionado de R$ 19 milhões com um parceiro.",
+   "trecho_atual": "Avançando na estratégia de parceria com varejistas visando o financiamento ao consumo, até abril de 2022 tínhamos 82 mil cartões emitidos com volume transacionado de R$ 100 milhões."
+  },
+  {
+   "item": "E021",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": 30,
+   "secao": "Patrimônio Líquido",
+   "trecho_anterior": "O Patrimônio Líquido em 31 de dezembro de 2021 atingiu R$ 3.863 milhões, redução de 1,5% em relação ao trimestre anterior e de 6,4% em comparação ao mesmo período do ano anterior.",
+   "trecho_atual": "O Patrimônio Líquido em 31 de março de 2022 atingiu R$ 3.861 milhões, estável em relação ao trimestre anterior e redução de 4,5% em comparação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E022",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "PRINCIPAIS INDICADORES",
+   "trecho_anterior": "7) Metodologia: clientes com saldo em carteira ou emissão de cartão/ compras nos últimos 12 meses",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E023",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Mais uma vez, fomos reconhecidos entre os 10 melhores bancos do Brasil pelo Ranking da Forbes."
+  },
+  {
+   "item": "E024",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "Empréstimo Consignado",
+   "trecho_anterior": "",
+   "trecho_atual": "No final de março de 2022, houve um empuxo de crescimento com o aumento da margem consignável novamente para 35% conforme Instrução Normativa nº 133."
+  },
+  {
+   "item": "E025",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 25,
+   "secao": "Criação de valor",
+   "trecho_anterior": "",
+   "trecho_atual": "A operação com a iCertus está pendente de homologação pelo BACEN."
+  },
+  {
+   "item": "E026",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "Empresas",
+   "trecho_anterior": "A carteira atingiu em 31 de dezembro de 2021 o saldo de R$ 494 milhões, representando uma redução de 3,5% em relação ao mesmo período do ano anterior e de 8,4% em comparação ao 3T21.",
+   "trecho_atual": "A carteira atingiu em 31 de março de 2022 o saldo de R$ 520 milhões, representando uma redução de 2,4% em relação ao mesmo período do ano anterior e aumento de 5,3% em comparação ao 4T21."
+  },
+  {
+   "item": "E027",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 29,
+   "pagina_atual": 29,
+   "secao": "Captação de recursos",
+   "trecho_anterior": "Para o varejo, o Bmg busca pulverizar sua base e conta com cerca de 240 mil investidores diretos e indiretos.",
+   "trecho_atual": "Para o varejo, o Bmg busca pulverizar sua base e conta com cerca de 280 mil investidores diretos e indiretos."
+  },
+  {
+   "item": "E028",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 29,
+   "pagina_atual": null,
+   "secao": "Captação de recursos",
+   "trecho_anterior": "No 4T21, voltamos a captar via Letras Financeiras Garantidas junto ao Banco Central encerrando o período com saldo de R$ 1.114 milhões a uma taxa de Selic + 0,75% a.a.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E029",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": 30,
+   "secao": "Patrimônio Líquido",
+   "trecho_anterior": "No exercício de 2021, o patrimônio líquido variou principalmente em decorrência: (i) do lucro líquido contábil de R$ 242 milhões;",
+   "trecho_atual": "No primeiro trimestre de 2022, o patrimônio líquido variou principalmente em decorrência: (i) do lucro líquido contabil de R$ 48 milhões;"
+  },
+  {
+   "item": "E030",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 7,
+   "secao": "Evolução de clientes - metodologia BACEN (Milhões)",
+   "trecho_anterior": "As nossas lojas help! apresentam um maior nível de engajamento com cross-selling de 2,29 produto por cliente.",
+   "trecho_atual": "As nossas lojas help! apresentam um maior nível de engajamento com *cross-selling* de 2,30 produto por cliente."
+  },
+  {
+   "item": "E031",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Evolução de clientes - metodologia BACEN (Milhões)",
+   "trecho_anterior": "",
+   "trecho_atual": "Estamos crescendo com foco em rentabilidade."
+  },
+  {
+   "item": "E032",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 27,
+   "secao": "Resultado das Investidas",
+   "trecho_anterior": "",
+   "trecho_atual": "AF Controle S.A - holding que detém a participação societária na Araújo Fontes Consultoria e Negócios Imobiliários Ltda. e na AF Invest Administração de Recursos Ltda."
+  },
+  {
+   "item": "E033",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 31,
+   "pagina_atual": 31,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "Considerando o cenário de mercado do fechamento do 4T21, cerca de 36% do accrual dessa marcação ocorre até o final de 2022 e cumulativamente 70% até o final de 2023.",
+   "trecho_atual": "Considerando o cenário de mercado do fechamento do 1T22, cerca de 30% do accrual dessa marcação ocorre até o final de 2022 e cumulativamente 63% até o final de 2023."
+  },
+  {
+   "item": "E034",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 29,
+   "pagina_atual": null,
+   "secao": "Captação de recursos",
+   "trecho_anterior": "1- A CBFácil aplicou os recursos no Banco, em contrapartida ao aumento de capital realizado, sendo R$ 600 milhões em CDB e R$ 400 milhões em Letra Financeira Sênior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E035",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Margem financeira",
+   "trecho_anterior": "As receitas de securitização totalizaram R$ 3 milhões no trimestre e são oriundas, nesse trimestre, do *service fee* referente a administração da carteira cedida sem retenção de riscos e benefícios em períodos anteriores, conforme detalhado na sessão de “Empréstimo Consignado”.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E036",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 13,
+   "secao": "Cartão de Crédito Consignado",
+   "trecho_anterior": "No 4T21, foram originados R$ 713 milhões em valor liberado para o cliente, redução de 9,6% em relação ao trimestre anterior e ligeiramente acima dos níveis do 4T20, com em ênfase para o uso dos cartões como meio de pagamento para realização de compras.",
+   "trecho_atual": "No 1T22, foram originados R$ 690 milhões em valor liberado para o cliente, redução de 3,2% em relação ao trimestre anterior e de 6,2% em relação ao 1T21, com em ênfase para o uso dos cartões como meio de pagamento para realização de compras."
+  },
+  {
+   "item": "E037",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "Crédito na conta, cartão de crédito aberto e antecipação FGTS",
+   "trecho_anterior": "A carteira de crédito pessoal atingiu em 31 de dezembro de 2021 o saldo de R$ 1.646 milhões, representando um aumento de 83,8% em relação ao mesmo período do ano anterior e de 37,6% em comparação ao 3T21.",
+   "trecho_atual": "A carteira de crédito pessoal atingiu em 31 de março de 2022 o saldo de R$ 2.406 milhões, representando um aumento de 141,6% em relação ao mesmo período do ano anterior e de 46,2% em comparação ao 4T21."
+  },
+  {
+   "item": "E038",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Margem financeira",
+   "trecho_anterior": "O aumento da taxa do cartão consignado citado acima passará a afetar positivamente as receitas a partir de janeiro de 2022 com a reprecificação da carteira elegível e para o empréstimo consignado o impacto se dará sobre novas operações e refinanciamentos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E039",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 21,
+   "secao": "Margem financeira",
+   "trecho_anterior": "A margem financeira ajustada ao custo do crédito (despesas de provisão e de comissão), atingiu R$ 2.139 milhões no exercício de 2021, queda de 10,1% em comparação com o mesmo período do ano anterior.",
+   "trecho_atual": "A margem financeira ajustada ao custo do crédito (despesas de provisão e de comissão), atingiu R$ 517 milhões no primeiro trimestre de 2022, queda de 8,5% em comparação com o mesmo período do ano anterior e aumento de 2,7% em relação ao 4T21."
+  },
+  {
+   "item": "E040",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Margem financeira",
+   "trecho_anterior": "A retomada no crescimento nas carteiras de maior *yield*, bem como novos produtos devem aumentar o volume de receitas de crédito e serviços e impactar positivamente a margem.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E041",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 33,
+   "secao": "Projeções 2022",
+   "trecho_anterior": "",
+   "trecho_atual": "Com isso, mantemos inalterados os intervalos de cada indicador da Projeção de 2022:"
+  },
+  {
+   "item": "E042",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 27,
+   "secao": "Resultado das Investidas",
+   "trecho_anterior": "",
+   "trecho_atual": "A aquisição foi concluída em janeiro de 2022 e tem como objetivo trazer competência dedicada para ampliar a oferta de produtos e serviços para acelerar o crescimento dos negócios de atacado."
+  },
+  {
+   "item": "E043",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Evolução Inadimplência (%)",
+   "trecho_anterior": "Ao longo do ano, o Bmg participou da estruturação e distribuição de 4 operações com volume total de R$ 575 milhões, sendo que na última atuou como coordenador líder, ampliando suas competências nesse nicho.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 25,
+   "pagina_atual": null,
+   "secao": "Criação de valor",
+   "trecho_anterior": "A operação com a O2OBOTS foi homologada pelo Banco Central em fevereiro de 2022.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Margem financeira",
+   "trecho_anterior": "Nesse trimestre, tivemos uma redução na despesa devido a fase final do diferimento da comissão do empréstimo consignado referente as primeiras safras de originação do produto.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E046",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Margem financeira",
+   "trecho_anterior": "No 4T21, a margem ajustada foi de R$ 503 milhões, queda de 3,8% em relação ao trimestre imediatamente anterior e de 18,0% em relação ao 4T20.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E047",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "Empréstimo Consignado",
+   "trecho_anterior": "Ao longo de 2021 a originação do produto se manteve em patamares mais baixos devido a decisão estratégica do banco de priorizar outros produtos e pelo fato da margem do produto estar mais comprimida.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E048",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 31,
+   "pagina_atual": 31,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "O Patrimônio de Referência correspondeu a 14,7% dos ativos ponderados pelo risco em 31 de dezembro de 2021.",
+   "trecho_atual": "O Patrimônio de Referência correspondeu a 14,1% dos ativos ponderados pelo risco em 31 de março de 2022."
+  },
+  {
+   "item": "E049",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Atingimos 9,1 milhões de clientes totais em dezembro de 2021, crescimento de 50,5% nos últimos doze meses, considerando o critério do Banco Central.",
+   "trecho_atual": "Atingimos 10,4 milhões de clientes em março de 2022, crescimento de 44% nos últimos doze meses, considerando a metodologia do Banco Central."
+  },
+  {
+   "item": "E050",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 33,
+   "pagina_atual": null,
+   "secao": "Projeções 2021",
+   "trecho_anterior": "Valores com base na DRE Gerencial.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E051",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 14,
+   "secao": "Empréstimo Consignado",
+   "trecho_anterior": "Em 31 de dezembro de 2021, a carteira encerrou um saldo de R$ 2.304 milhões, crescimento de 24,3% em relação ao mesmo período do ano anterior e de 1,6% em comparação ao 3T21.",
+   "trecho_atual": "Em 31 de março de 2022, a carteira encerrou um saldo de R$ 2.480 milhões, crescimento de 28,1% em relação ao mesmo período do ano anterior e de 7,6% em comparação ao 4T21."
+  },
+  {
+   "item": "E052",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Centralidade no cliente",
+   "trecho_anterior": "Atingimos em 31 de dezembro de 2021 a quantidade de 6,3 milhões de clientes com produtos ativos, aumento de 20,5% nos últimos doze meses.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E053",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": 30,
+   "secao": "Patrimônio Líquido",
+   "trecho_anterior": "(ii) das ações em tesouraria e do cancelamento de ações que estavam em tesouraria, reduzindo o capital em R$ 26 milhões;",
+   "trecho_atual": "(ii) das ações em tesouraria, reduzindo o capital em R$ 5 milhões;"
+  },
+  {
+   "item": "E054",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Centralidade no cliente",
+   "trecho_anterior": "6,3 mm de clientes ativos",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E055",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 8,
+   "secao": "ATUAÇÃO FIGITAL NO ECOSISTEMA COMPLETO DE VAREJO",
+   "trecho_anterior": "O Banco vem trabalhando fortemente na modernização e automação de processos, por conta disso implementou meios de venda remota e em todas as suas operações a originação é formalizada digitalmente (salvo em caso de exceções legais).",
+   "trecho_atual": "O Banco vem trabalhando fortemente na modernização e automação de processos, por conta disso, em todas as suas operações, a originação é formalizada digitalmente (salvo em caso de exceções legais)."
+  },
+  {
+   "item": "E056",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 25,
+   "secao": "Criação de valor",
+   "trecho_anterior": "",
+   "trecho_atual": "A operação com a O2OBOTS está pendente de conversão em ações."
+  },
+  {
+   "item": "E057",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": 26,
+   "secao": "Resultado das Investidas",
+   "trecho_anterior": "No quarto trimestre de 2021, a Bmg Corretora gerou R$ 5,8 milhões de resultado de equivalência patrimonial.",
+   "trecho_atual": "No primeiro trimestre de 2022, a Bmg Corretora gerou R$ 6,8 milhões de resultado de equivalência patrimonial."
+  },
+  {
+   "item": "E058",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "Despesas administrativas",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, as despesas administrativas apresentaram uma redução, em especial e pontualmente, nas linhas de marketing e comunicações."
+  },
+  {
+   "item": "E059",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "PRINCIPAIS INDICADORES",
+   "trecho_anterior": "",
+   "trecho_atual": "7) Cálculo interno para 1T22, visto que a informação oficial ainda não foi publicada pelo Bacen."
+  },
+  {
+   "item": "E060",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 38,
+   "pagina_atual": null,
+   "secao": "Reclassificações Gerenciais",
+   "trecho_anterior": "Outros ajustes – relacionados a eventos ocorridos no 3T21 referente a Impostos a Compensar no montante de R$ 108 milhões e de ajustes nos saldos de Depósitos Judiciais no montante líquido de impostos de R$ 98 milhões (R$ 179 milhões brutos), ambos impactando a linha de outras despesas/ receitas operacionais; e outras despesas administrativas no montante líquido de impostos de R$ 4 milhões (R$ 8 milhões brutos).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E061",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "Crédito na conta, cartão de crédito aberto e antecipação FGTS",
+   "trecho_anterior": "Ainda, no 4T21 o volume de originação foi positivamente impactado pelo *ramp-up* do produto recém-lançado de antecipação do FGTS que atingiu R$ 295 milhões de valor liberado.",
+   "trecho_atual": "Ainda, no 1T22 o volume de originação foi positivamente impactado pelo *ramp-up* do produto recém-lançado de antecipação do FGTS que atingiu R$ 569 milhões de valor liberado."
+  },
+  {
+   "item": "E062",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 29,
+   "secao": "Captação de recursos",
+   "trecho_anterior": "",
+   "trecho_atual": "Em abril, concluímos a nossa 2ª Emissão de Letras Financeiras Públicas no montante de superior a R$300 milhões captados de forma pulverizada junto a investidores institucionais pelo prazo de 2 anos com remuneração de CDI + 1,80% a.a.."
+  },
+  {
+   "item": "E063",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 13,
+   "secao": "Originação trimestral formalizada digitalmente (R$ Milhões)",
+   "trecho_anterior": "A carteira de cartão de crédito consignado atingiu em 31 de dezembro de 2021 o saldo de R$ 8.131 milhões, representando uma redução de 0,1% em relação ao mesmo período do ano anterior e aumento de 0,9% em comparação ao 3T21.",
+   "trecho_atual": "A carteira de cartão de crédito consignado atingiu em 31 de março de 2022 o saldo de R$ 8.266 milhões, representando um aumento de 2,1% em relação ao mesmo período do ano anterior e aumento de 1,7% em comparação ao 4T21."
+  },
+  {
+   "item": "E064",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 37,
+   "pagina_atual": 36,
+   "secao": "Reclassificações Gerenciais",
+   "trecho_anterior": "Variação Cambial e Overhedge - O Banco possui operações de crédito sujeitas a variação cambial que são neutralizadas parcialmente por captações em moeda estrangeira.",
+   "trecho_atual": "Variação cambial e hedge – O Banco possui operações de crédito sujeitas a variação cambial que são neutralizadas parcialmente por captações em moeda estrangeira."
+  },
+  {
+   "item": "E065",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Centralidade no cliente",
+   "trecho_anterior": "Estamos crescendo com foco em rentabilidade e como reflexo da nossa estratégia de aumentar o engajamento, o *cross-selling index* atingiu em dezembro de 2021 um consumo médio de 1,92 produto por cliente, estável em comparação ao mesmo período do ano anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E066",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 36,
+   "pagina_atual": 36,
+   "secao": "Reclassificações Gerenciais",
+   "trecho_anterior": "A tabela abaixo demonstra a reconciliação entre a DRE contábil e gerencial do trimestre e do exercício:",
+   "trecho_atual": "A tabela abaixo demonstra a reconciliação entre a DRE contábil e gerencial do trimestre:"
+  },
+  {
+   "item": "E067",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 31,
+   "pagina_atual": 32,
+   "secao": "BMGB4",
+   "trecho_anterior": "Ainda, o Banco conta com: (i) Comitê de Auditoria composto exclusivamente por membros independentes, (ii) com outros 4 comitês subordinados diretamente ao Conselho de Administração, todos com a presença de membros independentes; e (iii) Conselho Fiscal instalado.",
+   "trecho_atual": "Ainda, o Banco conta com: (i) Comitê de Auditoria composto exclusivamente por membros independentes, (ii) com outros 4 comitês subordinados diretamente ao Conselho de Administração, todos com a presença de membros independentes; e (iii) Conselho Fiscal permanente aprovado em Assembleia, estando pendente de homologação pelo Banco Central."
+  },
+  {
+   "item": "E068",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 6,
+   "secao": "Centralidade no cliente",
+   "trecho_anterior": "Público-alvo mar aberto: são aqueles clientes pessoa física que não se encaixam nos perfis específicos acima.",
+   "trecho_atual": "Cliente mar aberto: são aqueles clientes pessoa física que não se encaixam nos perfis específicos acima."
+  },
+  {
+   "item": "E069",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": 4,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "O Patrimônio Líquido encerrou 31 de dezembro de 2021 com saldo de R$ 3.863 milhões e o Índice de Basileia atingiu 14,7%.",
+   "trecho_atual": "O Patrimônio Líquido encerrou 31 de março de 2022 com saldo de R$ 3.861 milhões e o Índice de Basileia atingiu 14,1%."
+  },
+  {
+   "item": "E070",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "Margem financeira",
+   "trecho_anterior": "Ao longo dos últimos anos, o Banco vem melhorando seu prêmio de risco, porém com o aumento recente e acelerado na curva de juros, em especial no 4T21, o custo de captação tem voltado a subir nos últimos trimestres.",
+   "trecho_atual": "Ao longo dos últimos anos, o Banco vem melhorando seu prêmio de risco, porém com o aumento acelerado na curva de juros, o custo de captação vem sendo impactado nos últimos trimestres."
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Reforçando nossos canais de relacionamento, lançamos em parceria com a O2OBots a venda de produtos via WhatsApp, começando pela antecipação do FGTS.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E072",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Em janeiro 2022, após a aprovação do Banco Central, concluímos a aquisição de 50% da AF Controle S.A., *holding* que detém a participação societária na Araújo Fontes Consultoria e Negócios Imobiliários Ltda. e na AF Invest Administração de Recursos Ltda;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E073",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Em abril, concluímos a nossa 2ª Emissão de Letras Financeiras Públicas no montante de superior a R$300 milhões captados de forma pulverizada junto a investidores institucionais pelo prazo de 2 anos com remuneração de CDI + 1,80% a.a.;"
+  },
+  {
+   "item": "E074",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "Margem financeira",
+   "trecho_anterior": "",
+   "trecho_atual": "No 1T22, a margem nominal volta a apresentar crescimento devido ao aumento da carteira de crédito e a reprecificação da carteira de cartão crédito INSS elegível com o aumento da taxa máxima de juros para 3,06% ao mês."
+  },
+  {
+   "item": "E075",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "PJ VAREJO",
+   "trecho_anterior": "No 4T21, a Granito apresentou um TPV (*Total Payment Volume*) de R$ 2.300 milhões, alta de 3,1 vezes em relação ao 4T20.",
+   "trecho_atual": "No 1T22, a Granito apresentou um TPV (*Total Payment Volume*) de R$ 2.678 milhões, aumento de 227,2% em relação ao 1T21."
+  },
+  {
+   "item": "E076",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 14,
+   "secao": "Empréstimo Consignado",
+   "trecho_anterior": "Em relação a carteira, 96,6% estão concentrados em aposentados e pensionistas do INSS e servidores públicos federais.",
+   "trecho_atual": "Em relação a carteira, 95,7% estão concentrados em aposentados e pensionistas do INSS e servidores públicos federais."
+  },
+  {
+   "item": "E077",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Com a estratégia voltada para o financiamento ao consumo, a carteira de varejo atingiu R$14.256 milhões, representando um crescimento de 18,1% nos últimos doze meses;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E078",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "Operações Estruturadas",
+   "trecho_anterior": "No 4T21, o saldo era de R$848 milhões.",
+   "trecho_atual": "No 1T22, o saldo era de R$857 milhões."
+  },
+  {
+   "item": "E079",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": 4,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "No quarto trimestre o Lucro Líquido Recorrente foi de R$ 48 milhões e o Retorno sobre o Patrimônio Líquido Médio Recorrente atingiu 5,0% a.a.;",
+   "trecho_atual": "O Lucro Líquido no primeiro trimestre de 2022 foi de R$ 48 milhões, em linha com o guidance, e o Retorno sobre o Patrimônio Líquido Médio atingiu 5,1% a.a.;"
+  },
+  {
+   "item": "E080",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 24,
+   "secao": "Índice de eficiência operacional",
+   "trecho_anterior": "Metodologia de cálculo: (Despesas de Pessoal + Outras Despesas Administrativas + Outras Despesas Operacionais Líquidas de Receitas) / (Resultado da Intermediação financeira antes da PDD + Receitas de Prestação de Serviços + Despesas Tributárias)",
+   "trecho_atual": "Metodologia de cálculo: (Despesas de Pessoal + Outras Despesas Administrativas + Outras Despesas Operacionais Líquidas de Receitas) / (Resultado da Intermediação financeira antes da PDD + Receitas de Prestação de Serviços + Despesas Tributárias)."
+  },
+  {
+   "item": "E081",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Margem financeira",
+   "trecho_anterior": "A receita de crédito apresentou um crescimento em ritmo menor que a carteira de crédito nos últimos trimestres devido ao *mix* de produtos na carteira total do Banco.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E082",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 32,
+   "secao": "BMGB4",
+   "trecho_anterior": "",
+   "trecho_atual": "Em comunicado ao mercado em 31 de março de 2022, o Banco anunciou encerramento do programa de recompra de ações aprovado pelo Conselho de Administração do Banco em 30 de março de 2021, as ações recompradas no âmbito do Programa serão mantidas em tesouraria para posterior cancelamento ou recolocação no mercado ou, ainda, pagamento de remuneração baseada em ações a executivos e demais beneficiários de planos de incentivos de longo prazo do Banco."
+  },
+  {
+   "item": "E083",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 9,
+   "secao": "Banco Digital",
+   "trecho_anterior": "A quantidade de clientes cadastrados no programa aumentou 12% no 4T21 em comparação ao trimestre anterior, atingindo mais de 778 mil clientes.",
+   "trecho_atual": "A quantidade de clientes cadastrados no programa aumentou 87% no 1T22 em comparação ao mesmo período do ano anterior, atingindo mais de 819 mil clientes."
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Margem financeira",
+   "trecho_anterior": "",
+   "trecho_atual": "A receita de crédito, conforme citado acima, foi o principal propulsor do aumento da margem nesse trimestre com a reprecificação da carteira de cartão consignado INSS elegível e com o aumento da carteira de crédito total."
+  },
+  {
+   "item": "E085",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 31,
+   "pagina_atual": 31,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "Conforme Resolução CMN nº 4.193/13 e regulamentações complementares, as instituições financeiras estão obrigadas a manter um patrimônio líquido compatível com o grau de risco da estrutura de seus ativos ponderados pelos fatores que variam de 0% a 1,250% e um índice mínimo de 8,0% de patrimônio em relação aos ativos ponderados pelo risco mais um adicional de conservação de capital principal (ACP) de 2,5%.",
+   "trecho_atual": "Conforme Resolução CMN nº 4.193/13 e regulamentações complementares, as instituições financeiras estão obrigadas a manter um patrimônio líquido compatível com o grau de risco da estrutura de seus ativos ponderados pelos fatores que variam de 0% a 1.250% e um índice mínimo de 8,0% de patrimônio em relação aos ativos ponderados pelo risco mais um adicional de conservação de capital principal (ACP) de 2,5%."
+  },
+  {
+   "item": "E086",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 7,
+   "secao": "Centralidade no cliente",
+   "trecho_anterior": "Considerando o critério do Banco Central, encerramos o trimestre com 9,1 milhões de clientes totais, crescimento de 50,5% nos últimos doze meses, e dos quais 57% possuem produtos de crédito pela visão do SCR (Sistema de Informações de Crédito).",
+   "trecho_atual": "Atingimos no trimestre a marca de 10,4 milhões de clientes, considerando a metodologia do Banco Central, crescimento de 44,1% nos últimos doze meses, e dos quais 57% possuem produtos de crédito pela visão do SCR (Sistema de Informações de Crédito)."
+  },
+  {
+   "item": "E087",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 23,
+   "secao": "Outras receitas e despesas operacionais",
+   "trecho_anterior": "No exercício de 2021, as outras despesas operacionais, líquidas de outras receitas operacionais, apresentaram um aumento de 8,4% em relação ao mesmo período de 2020 e ligeiramente abaixo da inflação nos últimos doze meses.",
+   "trecho_atual": "No primeiro trimestre de 2022, as outras despesas operacionais, líquidas de outras receitas operacionais, apresentaram um aumento de 10,3% em relação ao mesmo período de 2021 e aumento de 4,5% em relação ao 4T21."
+  },
+  {
+   "item": "E088",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "Originação trimestral formalizada digitalmente (R$ Milhões)",
+   "trecho_anterior": "A inadimplência encerrou o 4T21 em 3,0%, relativamente estável em relação aos últimos trimestres.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E089",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 17,
+   "secao": "Empréstimo Consignado nos Estados Unidos",
+   "trecho_anterior": "Essa carteira encerrou o 4T21 com saldo de R$ 1.464 milhões, aumento de 20,0% no trimestre, devido ao efeito do aumento da carteira em dólar e da variação cambial.",
+   "trecho_atual": "Essa carteira encerrou o 1T22 com saldo de R$ 1.366 milhões, redução de 6,7% no trimestre, devido ao efeito da variação cambial."
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Avançando no nosso foco estratégico de criar um ecossistema de investidas visando a geração de valor, anunciamos junto com a consultoria de inovação Troposlab o programa Bmg Open 2022, que irá selecionar *startups* para possíveis parcerias, investimentos e/ou aquisições pelo Banco;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 38,
+   "pagina_atual": null,
+   "secao": "Reclassificações Gerenciais",
+   "trecho_anterior": "de março de 2021, gerando um ganho de R$ 18 milhões, líquido de impostos no 1T21.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E092",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Margem financeira",
+   "trecho_anterior": "Ainda, em 06 de dezembro de 2021, o Conselho Nacional de Previdência Social (CNPS) aprovou o aumento da taxa máxima de juros para aposentados e pensionistas do INSS para 3,06% ao mês no cartão de crédito consignado e para 2,14% ao mês no empréstimo consignado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E093",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 33,
+   "pagina_atual": null,
+   "secao": "Projeções 2021",
+   "trecho_anterior": "Inclui despesa de pessoal + administrativa + tributária + operacional líquida | 4.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E094",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "Conquistamos o Prêmio Respeito 2021, da revista Consumidor Moderno, importante reconhecimento como reflexo da nossa busca constante em conhecer nossos clientes e oferecer além de serviços e produtos adequados, também um atendimento de excelência;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E095",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 31,
+   "pagina_atual": 32,
+   "secao": "BMGB4",
+   "trecho_anterior": "Além das obrigações estabelecidas no Nível 1 de governança corporativa da B3 S.A – Brasil, Bolsa, Balcão, o Banco adotou por boas práticas algumas das obrigações estabelecidas no Novo Mercado: (i) o direito de *tag along* de 100%, garantindo a todos os acionistas o mesmo preço e condições oferecidas ao acionista controlador em caso de venda de controle;",
+   "trecho_atual": "Além das obrigações estabelecidas no Nível 1 de governança corporativa da B3 S.A – Brasil, Bolsa, Balcão, o Banco adotou por boas práticas algumas das obrigações estabelecidas no Novo Mercado: (i) o direito de tag along de 100%, garantindo a todos os acionistas o mesmo preço e condições oferecidas ao acionista controlador em caso de venda de controle;"
+  },
+  {
+   "item": "E096",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 21,
+   "secao": "Margem financeira",
+   "trecho_anterior": "A margem financeira totalizou R$ 3.678 milhões no exercício de 2021, redução de 2,7% em comparação com o mesmo período do ano anterior.",
+   "trecho_atual": "A margem financeira totalizou R$ 946 milhões no primeiro trimestre de 2022, aumento de 0,2% em comparação com o mesmo período do ano anterior e de 5,0% em relação ao 4T21."
+  },
+  {
+   "item": "E097",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "Crédito na conta, cartão de crédito aberto e antecipação FGTS",
+   "trecho_anterior": "A inadimplência da carteira de crédito pessoal atingiu 26,4% no 4T21.",
+   "trecho_atual": "A inadimplência da carteira de crédito pessoal atingiu 18,9% no 1T22."
+  },
+  {
+   "item": "E098",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 11,
+   "secao": "Rede de Franquias help!",
+   "trecho_anterior": "A help! está entre as 20 maiores franquias do Brasil e possui o selo de excelência pela ABF – Associação Brasileira de Franchising.",
+   "trecho_atual": "A help! está entre as maiores franquias do Brasil e possui o selo de excelência pela ABF – Associação Brasileira de Franchising."
+  },
+  {
+   "item": "E099",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "A help! conquistou pelo terceiro ano consecutivo o selo de Excelência em Franchising pela ABF (Associação Brasileira de Franquias);"
+  },
+  {
+   "item": "E100",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 25,
+   "pagina_atual": null,
+   "secao": "Criação de valor",
+   "trecho_anterior": "Em janeiro de 2022, após aprovação do Banco Central concluímos a aquisição de 50% da Araújo Fontes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E101",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 5,
+   "secao": "PRINCIPAIS INDICADORES",
+   "trecho_anterior": "1) Indicadores recorrentes, excluindo os efeitos do ágio e outros eventos não recorrentes, ver 'Anexo I - DRE Gerencial'",
+   "trecho_atual": "1) Indicadores recorrentes, ver 'Anexo I - DRE Gerencial'"
+  },
+  {
+   "item": "E102",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 9,
+   "secao": "Banco Digital",
+   "trecho_anterior": "O valor de *cashback* pago aos clientes aumentou 53% no 4T21 em comparação ao trimestre anterior.",
+   "trecho_atual": "O valor de *cashback* pago aos clientes aumentou 97% no 1T22 em comparação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E103",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 29,
+   "pagina_atual": 29,
+   "secao": "Captação de recursos",
+   "trecho_anterior": "O Bmg opera via estrutura própria de captação e via cerca de 50 distribuidores.",
+   "trecho_atual": "O Bmg opera via estrutura própria de captação e via mais de 50 distribuidores."
+  },
+  {
+   "item": "E104",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 14,
+   "secao": "Empréstimo Consignado",
+   "trecho_anterior": "O Bmg faz a administração da carteira cedida, pela qual recebe um *fee* de 0,29% ao mês sobre o saldo remanescente, tendo reconhecido no 4T21 uma receita de R$3 milhões.",
+   "trecho_atual": "O Bmg faz a administração da carteira cedida, pela qual recebe um *fee* de 0,29% ao mês sobre o saldo remanescente, tendo reconhecido dentro de receitas de serviços no 1T22 uma receita de R$3 milhões."
+  },
+  {
+   "item": "E105",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "Margem financeira",
+   "trecho_anterior": "Nesse trimestre, a despesa de provisão líquida foi impactada por um menor volume de recuperação de crédito.",
+   "trecho_atual": "Ainda, nesse trimestre, a despesa de provisão líquida foi impactada por um menor volume de recuperação de crédito."
+  },
+  {
+   "item": "E106",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Evolução de clientes - metodologia BACEN (Milhões)",
+   "trecho_anterior": "",
+   "trecho_atual": "Com a maturação do ciclo de vida do cliente dentro do banco, o *cross-selling index* deve voltar a aumentar."
+  },
+  {
+   "item": "E107",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": null,
+   "secao": "Rentabilidade",
+   "trecho_anterior": "No 4T21, o lucro líquido recorrente ficou em R$ 48 milhões, redução de 3,7% no trimestre e de 49,8% em relação ao 4T20.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E108",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 10,
+   "secao": "Evolução das contas digitais (milhões)",
+   "trecho_anterior": "(ii) os clientes tiveram em suas contas digitais um volume de cerca de R$ 10,1 bilhões de *cash in* em 2021; e (iii) o saldo de investimento (depósitos a prazo e letras) pelo banco digital aumentou atingiu cerca de R$ 930 milhões no 4T21.",
+   "trecho_atual": "(ii) os clientes tiveram em suas contas digitais um volume de cerca de R$ 3,8 bilhões de *cash in* no 1T22; e (iii) o saldo de investimento (depósitos a prazo e letras) pelo banco digital aumentou e atingiu cerca de R$ 970 milhões no 1T22."
+  },
+  {
+   "item": "E109",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 33,
+   "pagina_atual": null,
+   "secao": "Projeções 2022",
+   "trecho_anterior": "Buscando melhor alinhamento com o mercado, apresentamos a projeção de resultados para o exercício de 2022 conforme abaixo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E110",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Dando seguimento ao nosso foco estratégico de criar um ecossistema de startups visando a geração de valor, anunciamos em maio nossa intenção de adquirir uma participação societária na iCertus, software inteligente de gestão (ERP), que atua como SaaS e leva crédito a pequenas e médias empresas;"
+  },
+  {
+   "item": "E111",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Patrimônio Líquido",
+   "trecho_anterior": "Com isso, no exercício de 2021, foram declarados R$ 184 milhões de JCP, equivalentes a um payout de 76% sobre o lucro líquido contábil do período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E112",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": 26,
+   "secao": "Resultado das Investidas",
+   "trecho_anterior": "Em adição, devido aos resultados obtidos na Bmg Corretora em 2021, foi reconhecida uma receita de *earn-out* de R$ 26,3 milhões dentro de resultados de operações da CBFácil, sendo R$ 6,6 milhões no 4T21.",
+   "trecho_atual": "Em adição, devido aos resultados obtidos na Bmg Corretora, desde o 3T21 é reconhecida uma receita de earn-out dentro de resultados de operações da CBFácil, tendo sido de R$ 6,6 milhões no 1T22, montante igual ao observado no 4T21."
+  },
+  {
+   "item": "E113",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 37,
+   "pagina_atual": null,
+   "secao": "Reclassificações Gerenciais",
+   "trecho_anterior": "Diluição % Participação Granito - Em novembro de 2020 o Bmg e o Banco Inter divulgaram uma sociedade, na qual passaram a deter, cada um, 45% de participação na Granito, enquanto os sócios fundadores da Granito detêm os 10% restantes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E114",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 32,
+   "pagina_atual": null,
+   "secao": "BMGB4",
+   "trecho_anterior": "Fonte: casas de research independente e sell-side",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E115",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": 30,
+   "secao": "Patrimônio Líquido",
+   "trecho_anterior": "(iii), efeito negativo de marcação a mercado e *hedge* no montante de R$ 304 milhões; e (iv) declaração de JCP conforme abaixo.",
+   "trecho_atual": "(iii), efeito positivo de marcação a mercado e *hedge* no montante de R$ 8 milhões; e (iv) provisionamento de JCP conforme abaixo."
+  },
+  {
+   "item": "E116",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 32,
+   "pagina_atual": null,
+   "secao": "BMGB4",
+   "trecho_anterior": "Em 30 de março de 2021, o Banco anunciou o novo programa de recompra de ações com vigência de 12 meses, autorizando a aquisição de até 9.905.227 de ações preferenciais de emissão própria, correspondentes a até 10,0% das ações em circulação para manutenção em tesouraria, cancelamento, recolocação no mercado ou pagamento de remuneração a executivos no âmbito de planos de incentivo de longo prazo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E117",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "SEGUROS",
+   "trecho_anterior": "O seguro prestamista apresentou uma penetração de 48% na carteira de cartão de crédito consignado mitigando o principal ofensor de perda que é a morte.",
+   "trecho_atual": "O seguro prestamista apresentou uma penetração de 43% na carteira de cartão de crédito consignado mitigando o principal ofensor de perda que é a morte."
+  },
+  {
+   "item": "E118",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 32,
+   "pagina_atual": null,
+   "secao": "BMGB4",
+   "trecho_anterior": "Ainda, o Banco cancelou 8.242.120 ações.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E119",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 33,
+   "pagina_atual": null,
+   "secao": "Projeções 2021",
+   "trecho_anterior": "Abaixo acompanhamento das projeções para o exercício de 2021 com entregas dentro do guidance estabelecido:",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E120",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 27,
+   "secao": "Rentabilidade",
+   "trecho_anterior": "Em decorrência dos resultados apresentados acima, o lucro líquido recorrente atingiu R$ 271 milhões no exercício de 2021, em linha com o guidance, representando uma redução de 28,8% em comparação com o mesmo período do ano anterior.",
+   "trecho_atual": "Em decorrência dos resultados apresentados acima, o lucro líquido recorrente atingiu R$ 48 milhões no primeiro trimestre de 2022, em linha com o guidance, estável em relação ao 4T21 e redução de 45,0% em comparação com o mesmo período do ano anterior."
+  }
+ ]
+}
