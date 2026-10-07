@@ -1105,30 +1105,27 @@ transformar toda dívida do projeto em pré-requisito. O novo protocolo deverá 
 aprovação por superioridade do modelo. Nenhum painel/CSV/código foi alterado
 por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
 
-−6. **CAND-02-P v3 EM VOO, passo 7 (rótulos do teste), 2 de 16 prontos em 07/10.**
-   Protocolo `resultados/protocolo_cand02p_v3_2026-10-06.md`: teste de 16 pares
-   (4T2021→1T2022 e 4T2022→1T2023, oito emissores) e vitória **por emissor**.
-   Prontos: treino de 18 pares rotulados, M treinado em 48 pares e congelado
-   (`b44e12a`), pool e pacotes do teste (`7722adf`), rótulos de ABC e BANESTES
-   4T2021→1T2022 (`3b195e2`). **Estado real:** linhas de
-   `artefatos/cand02p_v3/rotulos/claude/teste/*.jsonl` contra o pool. Depois:
-   `--piloto v3 avaliar --papel teste`.
-   **Controle de qualidade de cada par:**
-   `python -m scripts.cand02p_qc --piloto v3 rotulos teste PAR --transcricao <jsonl do agente>`.
-   Ele confere contrato, distribuição, acesso pelas chamadas de ferramenta e
-   uma amostra.
-   **Procedimento, aprendido no limite de sessão de 06/10:** no máximo 3
-   leitores simultâneos; leitor interrompido é retomado pelo mesmo agente,
-   para não reler e não misturar leituras; agente novo com "retomada" só se o
-   antigo não existir mais.
-   **Releitura cega (só descritiva):** α 0,81 no par sorteado e 0,74 no
-   dirigido (`artefatos/cand02p_v3/reteste/resultado.md`).
-   **ACHADO de 07/10, com errata no relatório do v2:** v2 e v3 têm **zero
-   eventos de tabela**. O OCR posterior a agosto traz as tabelas em
-   `pages[].tables` e o extrator lê só o markdown. O v3 mede redline de
-   **texto**; tabelas exigem um v4
-   (`resultados/achado_tabelas_ocr_cand02p_2026-10-07.md`). A conferência
-   humana do v2 (item −5) vale para os dois: o leitor é o mesmo.
+−6. **CAND-02-P v3: PROMISSOR em 07/10, AGUARDANDO O RESPONSÁVEL.** Teste novo de 16
+   pares (4T2021→1T2022 e 4T2022→1T2023): M 0,583 × B1 0,365 em nDCG@10
+   (Δ +0,219, IC95% por emissor [+0,139; +0,301]), 8 de 8 emissores, críticos
+   no top-20 29 × 17. Relatório: `resultados/piloto_cand02p_v3_2026-10-07.md`.
+   **Próximo passo concreto:** o responsável rotula às cegas
+   `artefatos/cand02p_v3/humana/rotulos.csv` (60 itens; `pacote.md` aponta os
+   PDFs em `corpus/cand02p_v3/raw/`), sem abrir `mapa.json` nem `rotulos/`, e
+   depois roda `python -m scripts.cand02p_piloto --piloto v3 avaliar-humana`
+   (α ≥ 0,67 confirma). A amostra do v2 (item −5) mede o mesmo leitor; a do v3
+   é a que vale para o resultado atual.
+   **Limites que não saem do relatório:**
+   - redline **só de texto**: v2 e v3 têm zero eventos de tabela
+     (`resultados/achado_tabelas_ocr_cand02p_2026-10-07.md`, com errata no
+     relatório do v2). Com tabelas é um v4: o HTML está no cache, sem novo OCR;
+   - leitor único de IA, com releitura cega α 0,81 e 0,74;
+   - uma leitura de teste descartada por contaminação
+     (`artefatos/cand02p_v3/rotulos/descartados/LEIAME.md`).
+   **Ferramenta:** `scripts/cand02p_qc.py` faz o controle de qualidade e a
+   auditoria de acesso dos leitores. Procedimento de leitores: no máximo 3
+   simultâneos, retomada pelo mesmo agente, pasta temporária exclusiva por
+   leitor.
 −5. **CAND-02-P v2: PROMISSOR em 29/09, AGUARDANDO O RESPONSÁVEL.** Com 22 pares de
    treino (OCR de 28 releases do RAD, US$ 4,02), o M venceu o B1 (nDCG@10 0,508
    × 0,342, 7 de 8 pares). Próximo passo concreto: o responsável rotula às cegas
