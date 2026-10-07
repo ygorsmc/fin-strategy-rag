@@ -23,3 +23,8 @@ estava vazia ("total 0").
 **Prevenção:** os leitores lançados depois disso usam uma pasta temporária
 própria (`/tmp/cand02p_v3_<PAR>/`) e são proibidos de abrir qualquer outra
 coisa em `/tmp`.
+
+**Depois da releitura, só como descrição:** a leitura descartada e a do leitor
+novo concordam em α ordinal 0,866 e acordo exato de 0,933 (120 itens). O
+contato com rótulos de outros pares quase não mudou as notas deste par. A
+troca continua valendo, porque foi decidida pela violação, não pelo efeito.
