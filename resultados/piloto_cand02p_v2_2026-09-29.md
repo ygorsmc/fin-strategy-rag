@@ -1,5 +1,13 @@
 # CAND-02-P v2 — PROMISSOR, aguardando a conferência humana
 
+> **Errata de 2026-10-07.** O v2 mediu um redline **só de texto**: o cache de
+> OCR do v2 traz as tabelas fora do texto, e o extrator não as leu (0 eventos
+> de tabela, contra 42% a 63% dos eventos nos emissores grandes do v1). A
+> frase "O que mudou do v1 para o v2 foi só o dado" está errada, porque o
+> universo também mudou. Causa e alcance em
+> [achado_tabelas_ocr_cand02p_2026-10-07.md](achado_tabelas_ocr_cand02p_2026-10-07.md).
+> O texto abaixo fica como foi publicado.
+
 **Data:** 2026-09-29.
 **Protocolo:** `resultados/protocolo_cand02p_v2_2026-09-29.md`.
 **Artefatos:** `artefatos/cand02p_v2/`.
