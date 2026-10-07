@@ -1,61 +1,61 @@
 item,nota,motivo,acao,critico,julgavel,justificativa
-H01,,,,false,true,
-H02,,,,false,true,
-H03,,,,false,true,
-H04,,,,false,true,
-H05,,,,false,true,
-H06,,,,false,true,
-H07,,,,false,true,
-H08,,,,false,true,
-H09,,,,false,true,
-H10,,,,false,true,
-H11,,,,false,true,
-H12,,,,false,true,
-H13,,,,false,true,
-H14,,,,false,true,
-H15,,,,false,true,
-H16,,,,false,true,
-H17,,,,false,true,
-H18,,,,false,true,
-H19,,,,false,true,
-H20,,,,false,true,
-H21,,,,false,true,
-H22,,,,false,true,
-H23,,,,false,true,
-H24,,,,false,true,
-H25,,,,false,true,
-H26,,,,false,true,
-H27,,,,false,true,
-H28,,,,false,true,
-H29,,,,false,true,
-H30,,,,false,true,
-H31,,,,false,true,
-H32,,,,false,true,
-H33,,,,false,true,
-H34,,,,false,true,
-H35,,,,false,true,
-H36,,,,false,true,
-H37,,,,false,true,
-H38,,,,false,true,
-H39,,,,false,true,
-H40,,,,false,true,
-H41,,,,false,true,
-H42,,,,false,true,
-H43,,,,false,true,
-H44,,,,false,true,
-H45,,,,false,true,
-H46,,,,false,true,
-H47,,,,false,true,
-H48,,,,false,true,
-H49,,,,false,true,
-H50,,,,false,true,
-H51,,,,false,true,
-H52,,,,false,true,
-H53,,,,false,true,
-H54,,,,false,true,
-H55,,,,false,true,
-H56,,,,false,true,
-H57,,,,false,true,
-H58,,,,false,true,
-H59,,,,false,true,
-H60,,,,false,true,
+H01,0,,,false,true,"Remoção de nota explicativa de norma de 2022 entre balanço anual e ITR trimestral, sem alteração contábil."
+H02,0,,,false,true,"Apenas alteração do número de página no sumário do documento, sem impacto analítico."
+H03,1,explicacao_causal,,false,true,Destaque de expansão de margem e spread com fatores causais de mix de produtos derivativos e câmbio.
+H04,0,,,false,true,Supressão em ITR de texto regulatório padrão sobre requisitos de capital presente nas DFs anuais.
+H05,0,,,false,true,Atualização periódica do índice de atraso no novo trimestre mantendo a mesma tendência de queda.
+H06,0,,,false,true,"Pequena oscilação percentual na concentração da carteira de consignado, sem mudança no perfil de risco."
+H07,0,,,false,true,"Relatório anual de governança do Comitê de Auditoria ausente no ITR intermediário, sem impacto analítico."
+H08,0,,,false,true,"Apenas ajuste tipográfico na formatação do itálico da sigla BaaS, texto idêntico."
+H09,1,segmento,,false,true,"Melhora de posicionamento no ranking de M&A na América Latina, alcançando a primeira colocação."
+H10,0,,,false,true,"Declaração institucional genérica de relações públicas, sem dados operacionais relevantes."
+H11,0,,,false,true,Atualização rotineira do market share de crédito rural com dados periódicos do Bacen.
+H12,0,,,false,true,"Atualização rotineira de lucro e ROAE do trimestre nos destaques, sem alteração estrutural."
+H13,1,credito,,false,true,"Forte desaceleração no crescimento trimestral da carteira de crédito expandida, de 10,2% para 1,2%."
+H14,2,credito,atualizar_modelo,false,true,Salto expressivo nas despesas de provisão de crédito de liquidação duvidosa no trimestre.
+H15,0,,,false,true,"Comentário sobre captações referente ao 4T21, não repetido no trimestre seguinte."
+H16,0,,,false,true,"Cancelamento pontual de ações realizado no 4T21, não aplicável ao 1T22."
+H17,0,,,false,true,Comentário de evento subsequente extraordinário específico do 4T22 que naturalmente não consta no 1T23.
+H18,0,,,false,true,"Parecer anual obrigatório do Conselho Fiscal referente a 2022, não aplicável ao ITR trimestral."
+H19,0,,,false,true,"Definição conceitual de provisão em nota explicativa das DFs anuais, omitida no relatório trimestral."
+H20,0,,,false,true,Relatório anual de governança e auditoria independente exclusivo do exercício findo em 2021.
+H21,0,,,false,true,Comentário qualitativo genérico na Carta da Administração sobre o resultado do período.
+H22,0,,,false,true,Fragmento textual com corte na abertura de frase institucional sobre apoio à economia local.
+H23,1,explicacao_causal,,false,true,Apresentação de fatores internos e externos que impulsionaram a margem financeira líquida.
+H24,1,credito,,false,true,Divulgação dos índices de inadimplência Over90 e carteira E-H do 1T23.
+H25,1,numero,,false,true,Divulgação de volumes operacionais de acessos e prêmios brutos emitidos da Auto Compara.
+H26,1,numero,,false,true,"Destaque de melhora de 0,6 p.p. no indicador de eficiência operacional trimestral."
+H27,0,,,false,true,"Texto padrão descritivo da Resolução 2.682 do Bacen, sem novos dados ou alteração de política."
+H28,0,,,false,true,Comentário macroeconômico genérico sobre perspectivas globais de crescimento.
+H29,0,,,false,true,Comentário sobre contribuições de linhas de negócio referente especificamente ao 4T22.
+H30,1,credito,,false,true,Volume de cessão de créditos em prejuízo mais que dobrou em relação ao 1T21.
+H31,0,,,false,true,Remoção de frase em texto com saldos de empréstimos e PDD de 2022 já reportados em tabela.
+H32,1,segmento,,false,true,"Destaque de crescimento de 10,4% no resultado de seguros, previdência e capitalização."
+H33,0,,,false,true,Remoção de menção a histórico de constituição de unidade de negócios em 2017.
+H34,0,,,false,true,"Renumeração de nota de rodapé sobre capital principal, com texto normativo idêntico."
+H35,1,risco_incerteza,,false,true,"VaR médio diário reportado em 0,29% do PL, sinalizado como abaixo dos níveis históricos."
+H36,1,definicao_escopo,,false,true,Nova nota explicativa definindo critérios PRI para a métrica de AuM ESG.
+H37,2,definicao_escopo,verificar,false,true,Inclusão de empresa adquirida em fevereiro de 2022 no perímetro de consolidação contábil.
+H38,0,,,false,true,"Data e horário de divulgação de resultados, puramente operacional de calendário."
+H39,0,,,false,true,"Remoção de cabeçalho de seção de destaques, sem impacto em dados."
+H40,0,,,false,true,Comentário sobre receitas de Sales & Trading ex-impacto não recorrente referente ao 4T21.
+H41,0,,,false,true,Comentário sobre receita de crédito como propulsor da margem referente ao 4T22.
+H42,1,explicacao_causal,,false,true,Explicação causal da queda em receitas de crédito e garantias devido a regulação de imóveis.
+H43,0,,,false,true,Identificação e cargo de executivo no release de resultados.
+H44,2,numero,atualizar_modelo,false,true,"ROAE de 21,5% alcança o patamar mais alto em 6 anos com lucro líquido em recorde histórico."
+H45,0,,,false,true,Comentário sobre indicador de cross-selling referente a dezembro de 2021.
+H46,0,,,false,true,Declaração genérica sobre adequação de política de concessão de crédito.
+H47,2,numero,atualizar_modelo,false,true,"Margem financeira líquida inverte sinal, passando de alta de 19,4% para queda de 6,0% QoQ."
+H48,2,numero,atualizar_modelo,false,true,"Margem Financeira Bruta inverte tendência, passando de expansão de 9,7% para contração de 1,4% QoQ."
+H49,0,,,false,true,Pequena oscilação trimestral na penetração de seguros em financiamentos de 30% para 27%.
+H50,1,credito,,false,true,"Carteira de garantias cresceu para R$ 12,3 bi com redução do saldo de provisões associado."
+H51,0,,,false,true,"Nota descritiva de conversão cambial presente nas DFs anuais, suprimida no relatório trimestral."
+H52,0,,,false,true,Comentário causal sobre provisões corporate da Corpbanca específico do 4T21.
+H53,0,,,false,true,"Menção a ganho extraordinário ocorrido no 1T21, não aplicável ao exercício seguinte."
+H54,2,credito,atualizar_modelo,false,true,"Salto expressivo de 72,8% nas despesas de provisão de crédito de liquidação duvidosa."
+H55,0,,,false,true,Nota descritiva do cronograma de implementação da Resolução 4.966 presente no balanço anual.
+H56,1,explicacao_causal,,false,true,Forte redução do ganho com capital de giro próprio na margem com nova explicação causal.
+H57,2,credito,atualizar_modelo,false,true,"Reversão acentuada na originação de crédito para PMEs, caindo 19,5% QoQ concentrada em médias empresas."
+H58,0,,,false,true,Informações operacionais de horário e idioma da teleconferência de resultados.
+H59,0,,,false,true,Nome e cargo do diretor financeiro assinando citação institucional.
+H60,0,,,false,true,Atualização de rotina da participação das ações do banco na composição do Ibovespa.
