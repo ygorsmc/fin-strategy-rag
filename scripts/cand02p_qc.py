@@ -50,6 +50,33 @@ def _abs(caminho: str, cwd: Path = RAIZ) -> str:
     return str(c if c.is_absolute() else cwd / c).replace("/./", "/")
 
 
+_ESCRITA_TMP = re.compile(r"(?:>>?|\btee\s+(?:-a\s+)?)\s*['\"]?(/tmp/[^\s'\";|&)]+)"
+                          r"|open\(\s*['\"](/tmp/[^'\"]+)['\"]\s*,\s*['\"][wax]")
+_CAMINHO_TMP = re.compile(r"/tmp/[^\s'\";|&)<>]+")
+
+
+def expandir_variaveis(cmd: str, env: dict[str, str]) -> str:
+    """Troca `$VAR` e `${VAR}` pelo valor de atribuições simples já vistas na
+    transcrição. O leitor de 07/10 leu `$S/rot1.py`, sem caminho literal."""
+    for nome, valor in re.findall(r"\b([A-Za-z_]\w*)=['\"]?(/[^\s'\";&|]+)", cmd):
+        env[nome] = valor
+    return re.sub(r"\$\{?([A-Za-z_]\w*)\}?", lambda m: env.get(m.group(1), m.group(0)), cmd)
+
+
+def rascunho_alheio(cmd: str, escritos: set[str]) -> list[str]:
+    """Arquivos da pasta temporária citados num comando que o próprio leitor
+    não criou. A pasta é compartilhada pela sessão, e um leitor de 07/10 abriu
+    scripts de outros leitores com rótulos de outros pares."""
+    novos = {a or b for a, b in _ESCRITA_TMP.findall(cmd)}
+    escritos |= novos
+    achados = {f"rascunho alheio: {c}" for c in set(_CAMINHO_TMP.findall(cmd))
+               if "$" not in c and c not in escritos and not c.endswith("/") and Path(c).suffix}
+    # Variável que não se resolve (laço, por exemplo) esconde qual arquivo foi
+    # aberto; fica marcada para conferência à mão.
+    achados |= {f"rascunho indeterminado: {c}" for c in set(_CAMINHO_TMP.findall(cmd)) if "$" in c}
+    return sorted(achados)
+
+
 def estranhos_no_bash(cmd: str, ok: set[str], raiz: Path = RAIZ) -> list[str]:
     """Caminhos citados num comando, resolvidos contra o último `cd`. Marca
     curinga, listagem e qualquer arquivo do repositório fora do permitido."""
@@ -78,7 +105,7 @@ def estranhos_no_bash(cmd: str, ok: set[str], raiz: Path = RAIZ) -> list[str]:
 
 def auditar_acesso(transcricao: Path, papel: str, par: str, leitor: str = "claude") -> dict:
     ok = permitidos(papel, par, leitor)
-    fora, bash, ferramentas = [], [], Counter()
+    fora, bash, ferramentas, escritos, env = [], [], Counter(), set(), {}
     for linha in open(transcricao, encoding="utf-8"):
         try:
             conteudo = (json.loads(linha).get("message") or {}).get("content")
@@ -90,14 +117,20 @@ def auditar_acesso(transcricao: Path, papel: str, par: str, leitor: str = "claud
             nome, ent = b.get("name"), b.get("input", {})
             ferramentas[nome] += 1
             if nome in ("Read", "Write", "Edit"):
-                if _abs(ent.get("file_path", "")) not in ok:
-                    fora.append(f"{nome} {ent.get('file_path')}")
+                caminho = ent.get("file_path", "")
+                if caminho.startswith("/tmp/"):
+                    if nome == "Read" and caminho not in escritos:
+                        fora.append(f"rascunho alheio: Read {caminho}")
+                    escritos.add(caminho)
+                elif _abs(caminho) not in ok:
+                    fora.append(f"{nome} {caminho}")
             elif nome == "Grep":
                 alvo = ent.get("path") or "(raiz do repositório)"
                 if ent.get("glob") or "*" in alvo or _abs(alvo) not in ok:
                     fora.append(f"Grep path={ent.get('path')} glob={ent.get('glob')}")
             elif nome == "Bash":
-                estranhos = estranhos_no_bash(ent.get("command", ""), ok)
+                cmd = expandir_variaveis(ent.get("command", ""), env)
+                estranhos = estranhos_no_bash(cmd, ok) + rascunho_alheio(cmd, escritos)
                 if estranhos:
                     bash.append((ent["command"][:110].replace("\n", " "), estranhos))
             elif nome not in ("TodoWrite", "SubagentHandback"):

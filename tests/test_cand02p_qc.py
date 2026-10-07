@@ -75,3 +75,33 @@ def test_reteste_com_itens_diferentes_levanta(tmp_path, monkeypatch):
     _rotulos(tmp_path / "rotulos" / qc.LEITOR_RETESTE / "treino", [0, 1])
     with pytest.raises(SystemExit, match="mesmos itens"):
         qc.medir_reteste("P")
+
+
+# --- pasta temporária compartilhada (07/10) ------------------------------------------
+
+def test_ler_arquivo_temporario_que_outro_leitor_criou_e_marcado():
+    escritos: set[str] = set()
+    assert qc.rascunho_alheio("cat /tmp/s/rot1.py", escritos) == ["rascunho alheio: /tmp/s/rot1.py"]
+
+
+def test_ler_o_proprio_arquivo_temporario_nao_e_marcado():
+    escritos: set[str] = set()
+    qc.rascunho_alheio("cat > /tmp/s/meu.py <<'EOF'\nx\nEOF", escritos)
+    assert qc.rascunho_alheio("python3 /tmp/s/meu.py", escritos) == []
+
+
+def test_variavel_de_atribuicao_e_expandida():
+    env: dict[str, str] = {}
+    cmd = qc.expandir_variaveis("S=/tmp/s; head $S/rot1.py", env)
+    assert "rascunho alheio: /tmp/s/rot1.py" in qc.rascunho_alheio(cmd, set())
+
+
+def test_variavel_de_laco_que_nao_se_resolve_fica_indeterminada():
+    """O caso real: `for f in rot1.py ...; do head $S/$f`."""
+    env: dict[str, str] = {}
+    cmd = qc.expandir_variaveis("S=/tmp/s; for f in rot1.py rot2.py; do head -c 3000 $S/$f; done", env)
+    assert any(a.startswith("rascunho indeterminado") for a in qc.rascunho_alheio(cmd, set()))
+
+
+def test_listar_a_pasta_temporaria_e_marcado():
+    assert any(a.startswith("listagem") for a in _achados("ls -la /tmp/s/"))
