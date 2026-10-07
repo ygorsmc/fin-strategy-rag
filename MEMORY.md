@@ -1105,27 +1105,30 @@ transformar toda dívida do projeto em pré-requisito. O novo protocolo deverá 
 aprovação por superioridade do modelo. Nenhum painel/CSV/código foi alterado
 por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
 
-−6. **CAND-02-P v3 EM VOO desde 06/10, parado no passo 5 (rótulos do treino).**
-   Protocolo `resultados/protocolo_cand02p_v3_2026-10-06.md`, com teste novo de
-   16 pares (4T2021→1T2022 e 4T2022→1T2023, oito emissores) e vitória contada
-   **por emissor**. O treino soma os 30 pares rotulados do v1 e do v2 e 18 pares
-   novos (2018–2021). OCR de 68 releases (4.727 pp, ~US$ 9,45) em
-   `corpus/cand02p_v3/`; universo, C, pool e pacotes do treino commitados
-   (`9cae2a3`). **Em curso (07/10): rótulos dos 18 pares de treino.** Prontos e
-   commitados os 6 de 4T2018→1T2019 (`647b315`), com a declaração da releitura
-   cega (`artefatos/cand02p_v3/reteste/declaracao.md`: SANTANDER e BMG
-   4T2018→1T2019, só descritiva). **Estado real:** contar as linhas de
-   `rotulos/claude/treino/*.jsonl` contra o pool. Arquivo parcial é retomável:
-   o prompt manda manter as linhas válidas e rotular só o que falta.
+−6. **CAND-02-P v3 EM VOO, passo 7 (rótulos do teste), 2 de 16 prontos em 07/10.**
+   Protocolo `resultados/protocolo_cand02p_v3_2026-10-06.md`: teste de 16 pares
+   (4T2021→1T2022 e 4T2022→1T2023, oito emissores) e vitória **por emissor**.
+   Prontos: treino de 18 pares rotulados, M treinado em 48 pares e congelado
+   (`b44e12a`), pool e pacotes do teste (`7722adf`), rótulos de ABC e BANESTES
+   4T2021→1T2022 (`3b195e2`). **Estado real:** linhas de
+   `artefatos/cand02p_v3/rotulos/claude/teste/*.jsonl` contra o pool. Depois:
+   `--piloto v3 avaliar --papel teste`.
+   **Controle de qualidade de cada par:**
+   `python -m scripts.cand02p_qc --piloto v3 rotulos teste PAR --transcricao <jsonl do agente>`.
+   Ele confere contrato, distribuição, acesso pelas chamadas de ferramenta e
+   uma amostra.
    **Procedimento, aprendido no limite de sessão de 06/10:** no máximo 3
-   leitores simultâneos. Leitor interrompido é retomado pelo mesmo agente,
-   para não reler documentos e não misturar duas leituras no par. Agente novo
-   com "retomada" só se o antigo não existir mais. Cada par passa pelo
-   controle de qualidade antes do commit: contrato, distribuição contra os
-   herdados (nota 2 ≈ 11%), auditoria de acesso pelas chamadas de ferramenta
-   e amostra conferida. Depois: releituras, passo 6 (`--piloto v3 treinar`) e
-   os 16 pares de teste. A conferência humana do v2 (item −5) continua valendo
-   para os dois: o leitor é o mesmo.
+   leitores simultâneos; leitor interrompido é retomado pelo mesmo agente,
+   para não reler e não misturar leituras; agente novo com "retomada" só se o
+   antigo não existir mais.
+   **Releitura cega (só descritiva):** α 0,81 no par sorteado e 0,74 no
+   dirigido (`artefatos/cand02p_v3/reteste/resultado.md`).
+   **ACHADO de 07/10, com errata no relatório do v2:** v2 e v3 têm **zero
+   eventos de tabela**. O OCR posterior a agosto traz as tabelas em
+   `pages[].tables` e o extrator lê só o markdown. O v3 mede redline de
+   **texto**; tabelas exigem um v4
+   (`resultados/achado_tabelas_ocr_cand02p_2026-10-07.md`). A conferência
+   humana do v2 (item −5) vale para os dois: o leitor é o mesmo.
 −5. **CAND-02-P v2: PROMISSOR em 29/09, AGUARDANDO O RESPONSÁVEL.** Com 22 pares de
    treino (OCR de 28 releases do RAD, US$ 4,02), o M venceu o B1 (nDCG@10 0,508
    × 0,342, 7 de 8 pares). Próximo passo concreto: o responsável rotula às cegas
