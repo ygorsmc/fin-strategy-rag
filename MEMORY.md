@@ -1105,16 +1105,19 @@ transformar toda dívida do projeto em pré-requisito. O novo protocolo deverá 
 aprovação por superioridade do modelo. Nenhum painel/CSV/código foi alterado
 por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
 
-−6. **CAND-02-P v3: PROMISSOR em 07/10, AGUARDANDO O RESPONSÁVEL.** Teste novo de 16
-   pares (4T2021→1T2022 e 4T2022→1T2023): M 0,583 × B1 0,365 em nDCG@10
-   (Δ +0,219, IC95% por emissor [+0,139; +0,301]), 8 de 8 emissores, críticos
-   no top-20 29 × 17. Relatório: `resultados/piloto_cand02p_v3_2026-10-07.md`.
-   **Próximo passo concreto:** o responsável rotula às cegas
-   `artefatos/cand02p_v3/humana/rotulos.csv` (60 itens; `pacote.md` aponta os
-   PDFs em `corpus/cand02p_v3/raw/`), sem abrir `mapa.json` nem `rotulos/`, e
-   depois roda `python -m scripts.cand02p_piloto --piloto v3 avaliar-humana`
-   (α ≥ 0,67 confirma). A amostra do v2 (item −5) mede o mesmo leitor; a do v3
-   é a que vale para o resultado atual.
+−6. **CAND-02-P v3: INDECIDÍVEL em 07/10, pela conferência humana.** O teste de 16 pares
+   deu PROMISSOR contra o rótulo de IA: M 0,583 × B1 0,365 em nDCG@10, IC95%
+   por emissor [+0,139; +0,301], 8 de 8 emissores. **Mas o α humano × Claude
+   nos 60 itens cegos foi 0,652 < 0,67** (acordo exato 0,767), congelado em
+   `be8318a`. A discordância está na fronteira entre 0 e 1 (10 de 14 casos),
+   com o humano mais severo; no topo, 5 de 7 notas 2 coincidem. Relatório:
+   `resultados/piloto_cand02p_v3_2026-10-07.md`.
+   **Em curso:** o responsável adjudica os 14 itens em discordância
+   (`conferencia_humana_v3/adjudicacao.md` e `.csv`, pasta fora do Git). O
+   resultado vai para `artefatos/cand02p_v3/humana/adjudicacao.csv` como gold
+   adjudicado, sem mexer no α nem no veredito.
+   **Para reabrir:** rubrica mais precisa na fronteira entre 0 e 1 e mais
+   gold humano, num protocolo novo (v4, que também pode incluir as tabelas).
    **Limites que não saem do relatório:**
    - redline **só de texto**: v2 e v3 têm zero eventos de tabela
      (`resultados/achado_tabelas_ocr_cand02p_2026-10-07.md`, com errata no

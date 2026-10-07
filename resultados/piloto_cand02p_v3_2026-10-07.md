@@ -1,5 +1,22 @@
 # CAND-02-P v3 — PROMISSOR de novo, num teste novo e duas vezes maior
 
+> **Atualização de 2026-10-07, com a conferência humana: INDECIDÍVEL.** O
+> responsável rotulou às cegas os 60 itens da amostra. O α ordinal entre ele e
+> o leitor Claude deu **0,652**, abaixo do limiar de 0,67 fixado no protocolo.
+> Acordo exato de 0,767; em "nota ≥ 1", de 0,817. Pela regra, o ganho do M
+> sobre o B1 continua medido, mas só contra o rótulo de IA, e esse rótulo não
+> passou na conferência humana. Logo, o resultado não pode ser lido como
+> "o M prioriza o que um analista priorizaria".
+>
+> - **Onde está a discordância:** 10 dos 14 casos estão na fronteira entre 0
+>   e 1, e nesses o humano foi mais severo (9 contra 5). No topo há acordo
+>   razoável: cada um deu 7 notas 2, e 5 coincidem. Só 1 caso é 0 contra 2.
+> - **Rótulos e resultado congelados no commit `be8318a`**, antes de qualquer
+>   adjudicação. A adjudicação dos 14 itens que vier depois produz um gold
+>   melhor, mas não altera este α nem este veredito.
+>
+> O texto abaixo fica como foi publicado.
+
 **Data:** 2026-10-07.
 **Protocolo:** `resultados/protocolo_cand02p_v3_2026-10-06.md`, congelado antes
 do OCR.
