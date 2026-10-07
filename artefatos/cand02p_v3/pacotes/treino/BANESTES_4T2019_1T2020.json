@@ -1,0 +1,1207 @@
+{
+ "par": "BANESTES_4T2019_1T2020",
+ "documento_anterior": "banestes_release_4T2019",
+ "documento_atual": "banestes_release_1T2020",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Cartões",
+   "trecho_anterior": "Um dos vetores de crescimento do BANESTES, o cartão de bandeira própria “Banescard” continua avançando no mercado de meios de pagamentos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E002",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": 1,
+   "secao": "BANESTES S.A.",
+   "trecho_anterior": "PRESS RELEASE 4º TRIMESTRE 2019",
+   "trecho_atual": "PRESS RELEASE 1º TRIMESTRE 2020"
+  },
+  {
+   "item": "E003",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Contexto Econômico",
+   "trecho_anterior": "",
+   "trecho_atual": "O otimismo em relação à evolução da atividade econômica no início de 2020 já dava lugar à frustração, diante de indicadores econômicos que sugeriam um crescimento abaixo das expectativas mesmo antes da Pandemia do Coronavírus."
+  },
+  {
+   "item": "E004",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 15,
+   "secao": "Depósitos Totais",
+   "trecho_anterior": "No trimestre, os recursos de terceiros captados e administrados atingiram o volume de R$ 26,5 bilhões, reduções de 1,2% em relação ao trimestre anterior e de 7,5% em relação à posição do mesmo período de 2018.",
+   "trecho_atual": "No trimestre, os recursos de terceiros captados e administrados atingiram o volume de R$ 29,5 bilhões, crescentes 10,7% contra o primeiro trimestre de 2019 e 11,3% contra o quarto trimestre de 2019."
+  },
+  {
+   "item": "E005",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "Responsabilidade Social e Sustentabilidade",
+   "trecho_anterior": "Em parceria com os Bombeiros, o BANESTES assinou a 6ª.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E006",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "Responsabilidade Social e Sustentabilidade",
+   "trecho_anterior": "Valorizando a cultura e história locais, o BANESTES também se fez presente por meio de parcerias na Festa da Penha, na Festa de Anchieta, de Domingos Martins, Festa do Boi Pintadinho de Muqui e Festa de São Benedito, na Serra, além de diversas outras festas de emancipação política municipais em que há reciprocidade no relacionamento com o Banco.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E007",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Transformação Digital: canais e serviços digitais",
+   "trecho_anterior": "A estas ações soma-se o aplicativo Abre Conta BANESTES - uma plataforma segura e intuitiva de abertura de conta corrente e o aplicativo BANESTES Cartões, que possibilita acompanhar as transações em tempo real, gerar cartão virtual para compras na internet, parcelar suas contas no cartão de crédito e realizar compras via QR Code nas máquinas da Cielo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E008",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Depósitos Totais",
+   "trecho_anterior": "Essa variação em 3 meses e 12 meses, foi decorrente da queda dos recursos de captações no mercado aberto (-4,6% em 3 meses e -36,6% em 12 meses) face a condições de mercado e a liquidação de letras financeiras e letras imobiliárias (-19,5% em 3 meses e -29,8% em 12 meses).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E009",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "A Instituição adota critérios rigorosos de segurança e avaliação de processos de concessão de crédito."
+  },
+  {
+   "item": "E010",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 8,
+   "secao": "Despesa de Pessoal e Administrativas",
+   "trecho_anterior": "No quarto trimestre de 2019, as Despesas Administrativas (pessoal e outras) somaram R$ 175 milhões, elevação de 6,1% contra o trimestre anterior e de 6,7% contra o mesmo trimestre de 2018.",
+   "trecho_atual": "No primeiro trimestre de 2020, as Despesas Administrativas (pessoal e outras) somaram R$ 166 milhões, aumento de 5,2% contra o mesmo trimestre de 2019, contudo, queda de 5,0% contra do trimestre anterior."
+  },
+  {
+   "item": "E011",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 17,
+   "secao": "Limites Operacionais",
+   "trecho_anterior": "O Patrimônio de Referência do Conglomerado Prudencial fechou o quarto trimestre do ano em R$ 1,5 bilhão frente aos ativos ponderados pelo risco (RWA) de R$ 11,0 bilhões.",
+   "trecho_atual": "O Patrimônio de Referência do Conglomerado Prudencial fechou o primeiro trimestre do ano em R$ 1,4 bilhão frente aos ativos ponderados pelo risco (RWA) de R$ 10,8 bilhões."
+  },
+  {
+   "item": "E012",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "Índice de Eficiência Operacional",
+   "trecho_anterior": "Já a Eficiência Operacional no ano ficou em 52,3% (mesmo patamar de 2018) influenciados pelo aumento da margem financeira bruta$$ (+3,0%) e da receita com serviços (+9,2%) que compensaram a elevação de 4,7% das despesas operacionais (pessoal e outras administrativas); enquanto, a Eficiência Operacional Ajustada ao Risco fixou-se em 59,4% impactada por maiores provisões para crédito (+21,4%).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E013",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": 5,
+   "secao": "Principais Informações",
+   "trecho_anterior": "$$ Em 30.12.2019, ON = 6,30 e PN = 6,77.",
+   "trecho_atual": "$$ Em 31.03.2020, ON = 5,01 e PN = 4,98."
+  },
+  {
+   "item": "E014",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 13,
+   "secao": "Patrimônio Líquido",
+   "trecho_anterior": "O Patrimônio Líquido atingiu o saldo de R$ 1,6 bilhão no quarto trimestre de 2019, crescimento de 2,6% em relação ao trimestre anterior e de 7,8% se comparado ao mesmo período de 2018.",
+   "trecho_atual": "O Patrimônio Líquido atingiu o saldo de R$ 1,6 bilhão no primeiro trimestre de 2020, crescente 2,1% comparado ao mesmo período de 2019, contudo, recuando 3,3% em relação ao trimestre anterior."
+  },
+  {
+   "item": "E015",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Transformação Digital: canais e serviços digitais",
+   "trecho_anterior": "O canal mobile seguiu como principal canal de transações para os clientes, com um total de 58 milhões de transações acumuladas no ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E016",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Contexto Econômico",
+   "trecho_anterior": "",
+   "trecho_atual": "No Espírito Santo, a economia vem enfrentando dificuldades desde o início do ano com as fortes chuvas de janeiro, que castigaram as cidades e algumas regiões do interior do Estado."
+  },
+  {
+   "item": "E017",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Contexto Econômico",
+   "trecho_anterior": "De acordo com os dados divulgados pelo BACEN, a atividade econômica brasileira mensurada pelo IBC-BR acumulou alta de 0,90% em doze meses encerrados em novembro de 2019.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E018",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Marca e Slogan",
+   "trecho_anterior": "Reforçou em suas divulgações a ideia central, de ser um Banco “Digital quando você quiser” e que está “ao seu lado sempre que você precisar”, dando destaque ao fato de ser atualmente uma das poucas instituições financeiras que detém esse atributo de proximidade, tanto em meios digitais quanto em atendimento presencial, o que facilita o relacionamento com os diversos públicos, de diferentes idades e perfis negociais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E019",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Ativos Totais",
+   "trecho_anterior": "",
+   "trecho_atual": "Cabe destacar, que diante as condições de mercado no período, a estratégia adotada foi o direcionamento do fluxo de recursos à aquisição de ativos financeiros, especialmente os títulos privados, aproveitando a abertura das taxas dos papéis e a originação de concessões de crédito."
+  },
+  {
+   "item": "E020",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Lucro Líquido e Rentabilidade",
+   "trecho_anterior": "Contra o mesmo período do ano de 2018 os fatores recorrentes impactantes foram, o crescimento das receitas de crédito (+3,8%) acompanhando o crescimento do saldo das operações de crédito (+4,5%), queda do resultado com tesouraria, compensado pela forte redução de custos com captação, ambos motivados pelos efeitos da taxa de juros/Selic, menores despesas com risco de crédito (-2,4%) e expansão das receitas com serviços (+6,6%).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E021",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 9,
+   "secao": "Resultado de Provisão para Devedores Duvidosos",
+   "trecho_anterior": "De outubro a dezembro, foram registrados R$ 35 milhões (+22,9% em 3 meses e +35,4 em 12 meses) como reversões, enquanto as despesas de provisões somaram R$ 67 milhões (-5,6% em 3 meses e +14,2%).",
+   "trecho_atual": "De janeiro a março, foram registrados R$ 23 milhões (-7,7% em 12 meses e -36,1% em 3 meses) como reversões, enquanto as despesas de provisões somaram R$ 47 milhões (-13,5% em 12 meses e -30,1% em 3 meses)."
+  },
+  {
+   "item": "E022",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "Responsabilidade Social e Sustentabilidade",
+   "trecho_anterior": "Financiou eventos de entidades como o Instituto Ponte, que seleciona crianças em situação de risco social em escolas públicas e fornece bolsas de estudo em unidades particulares, com atividades de contraturno.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E023",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "PANDEMIA da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "Protocolo de acompanhamento para os colaboradores que apresentem os sintomas da COVID-19 e outros."
+  },
+  {
+   "item": "E024",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Contexto Econômico",
+   "trecho_anterior": "A inflação oficial para o país registrou um acumulado de 4,31% em 2019, enquanto na Região Metropolitana da Grande Vitória o IPCA acumulado foi de 3,29%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E025",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "Investimentos em Tecnologia",
+   "trecho_anterior": "",
+   "trecho_atual": "Em relação ao sistema de automação bancária, foram implementadas iniciativas para automatização de procedimentos de suporte e de atendimento à rede de agências e correspondentes, com o objetivo de aumentar a eficiência operacional e proporcionar mais agilidade no atendimento dos clientes e usuários."
+  },
+  {
+   "item": "E026",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "Depósitos Totais",
+   "trecho_anterior": "Na comparação em 12 meses, vale ressaltar a evolução dos saldos captados em depósitos a prazo (+12,5%) e em depósitos de poupança (+5,9%).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E027",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 14,
+   "secao": "Depósitos Totais",
+   "trecho_anterior": "Os Depósitos Totais atingiram um volume de R$ 11,7 bilhões, estável (-0,1%) em comparação ao trimestre anterior e 8,8% superior ao mesmo período do ano de 2018.",
+   "trecho_atual": "Os Depósitos Totais atingiram um volume de R$ 13,1 bilhões, superior 17,1% ao mesmo período do ano de 2019 e 12,1% em comparação ao trimestre anterior."
+  },
+  {
+   "item": "E028",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Marca e Slogan",
+   "trecho_anterior": "Em sua fase final de reposicionamento de marca e planejamento, o BANESTES focou na pesquisa para a melhoria do relacionamento da rede Banesfácil e seus clientes, que somam 52,0% das autenticações eletrônicas do SFB, com 384 representantes credenciados, o que tornam ainda mais próximas as relações BANESTES x Sociedade.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E029",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 19,
+   "secao": "Cartões",
+   "trecho_anterior": "O valor transacionado em compras e saques com os cartões de débito e crédito atingiu R$ 1,8 bilhão, crescimento de 4,0% contra o ano de 2018.",
+   "trecho_atual": "O valor transacionado em compras e saques com os cartões de débito e crédito nesse período atingiu R$ 434 milhões, crescimento de 1,4% contra 2019."
+  },
+  {
+   "item": "E030",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "PANDEMIA da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "Afastamento dos colaboradores do grupo de risco, estagiários e aprendizes por tempo indeterminado; iii."
+  },
+  {
+   "item": "E031",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Utilização de canais e serviços digitais no enfrentamento da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "Destacam-se o uso de VPN (rede privada virtual) e VDI (infraestrutura de virtualização de estações de trabalho) para o acesso seguro dos colaboradores em teletrabalho, aquisição de novos notebooks e smartphones para o atendimento remoto, publicação de novos serviços na web, implantação de sistema de aprovações digitais para facilitar a contratação de produtos e serviços pelos clientes e ampla adoção de reuniões por meio de videoconferência."
+  },
+  {
+   "item": "E032",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "PANDEMIA da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "Comunicação contínua e transparente aos colaboradores;"
+  },
+  {
+   "item": "E033",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Limites Operacionais",
+   "trecho_anterior": "Cabe ressaltar que o BANESTES apresenta um dos mais altos patamares de Capital Nível I do mercado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E034",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "NPL Creation e Índice de Inadimplência > 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "O *NPL Creation*, que representa as operações de crédito que passaram a ser devedoras acima de 90 dias, apresentou saldo de R$ 157 milhões no trimestre, mantendo-se praticamente estável quando comparado com o primeiro trimestre de 2019."
+  },
+  {
+   "item": "E035",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "2019",
+   "trecho_anterior": "As empresas estão desalavancadas e com acesso ampliado a fontes de financiamento, como o mercado de capitais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E036",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Rating",
+   "trecho_anterior": "A nota de rating em escala nacional (moeda local) para risco de crédito medida pela Fitch Ratings manteve-se em A+(bra) e classificação BB- (moeda estrangeira), ambas com perspectiva positiva, mantendo forte a imagem da Instituição no setor bancário e financeiro, mesmo diante dos efeitos da conjuntura macroeconômica ainda restritiva.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E037",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Contexto Econômico",
+   "trecho_anterior": "A oferta de crédito está aumentando, os *spreads* estão caindo, e a dinâmica do mercado tende a mudar radicalmente nos próximos anos, trazendo novas oportunidades e desafios para o setor.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E038",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 24,
+   "secao": "Gerente Geral",
+   "trecho_anterior": "17 | Relatório de Análise Econômica e Financeira",
+   "trecho_atual": "24 | Relatório de Análise Econômica e Financeira"
+  },
+  {
+   "item": "E039",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "PANDEMIA da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "Ações emergenciais com o compromisso de garantir mais segurança no modelo de atendimento ao cliente e usuário (disponibilização de álcool em gel, adoção de pontos de distância mínima entre clientes no ambiente das agências, horários de atendimentos flexíveis, entre outros); ii."
+  },
+  {
+   "item": "E040",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Receitas de Prestação de Serviços",
+   "trecho_anterior": "",
+   "trecho_atual": "A estratégia focal consiste em maximizar nossa sinergia relacional com a base de clientes (1.163 mil clientes), direcionada a melhorar e criar valor ao nosso atendimento, “a experiência do cliente”."
+  },
+  {
+   "item": "E041",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Indicadores Estruturais",
+   "trecho_anterior": "",
+   "trecho_atual": "Em relação à certificação de profissionais, atualmente a Instituição conta com 789 colaboradores certificados pela ANBIMA, sendo 577 com certificação CPA-10, 320 com CPA-20, 12 com CGA e 12 com CEA, vários deles com certificações múltiplas."
+  },
+  {
+   "item": "E042",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Valor de Mercado",
+   "trecho_anterior": "",
+   "trecho_atual": "Os preços de fechamento das ações ordinárias e preferenciais foram, respectivamente, R$ 5,01 e R$ 4,98 no último dia de negociação do primeiro trimestre, resultando num Valor de Mercado de R$ 1.580 milhões, apresentou evolução de 1,0% contra o mesmo período do ano anterior, e recuo de 22,2% em relação ao trimestre anterior, impactado pelas incertezas ocasionadas pela Pandemia COVID-19."
+  },
+  {
+   "item": "E043",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Indicadores Estruturais",
+   "trecho_anterior": "O número atual de colaboradores certificados pela ANBIMA é de 789 profissionais, sendo 577 com certificação CPA-10, 320 com CPA-20, 12 com CGA e 12 com CEA, vários deles com certificações múltiplas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Ativos Totais",
+   "trecho_anterior": "Gerenciando os recursos de forma a maximizar o retorno, foram investidos R$ 10,5 bilhões em títulos e valores mobiliários, expansão de 7,9% em relação ao trimestre anterior e de 9,1% contra o mesmo período do ano anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 19,
+   "secao": "Cartões",
+   "trecho_anterior": "Os cartões de crédito e débito BANESTES Visa crescem a ritmo expressivo, tornando-se cada vez mais importante no portfólio de produtos da Instituição.",
+   "trecho_atual": "Os cartões de crédito e débito BANESTES Visa crescem a ritmo expressivo, tornando-se cada vez mais importantes no portfólio de produtos da Instituição."
+  },
+  {
+   "item": "E046",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 10,
+   "secao": "NPL Creation e Índice de Inadimplência > 90 dias",
+   "trecho_anterior": "O Índice de Inadimplência da Carteira de Crédito Ampliada (> 90 dias) encerrou o trimestre em 1,7%, queda em relação ao trimestre anterior de 0,8 p.p. e recuo de 1,0 p.p. ao registrado no mesmo período de 2018.",
+   "trecho_atual": "O Índice de Inadimplência da Carteira de Crédito Ampliada (> 90 dias) encerrou o trimestre em 2,2%, variações de -0,6 p.p. contra o mesmo período de 2019 e +0,5 p.p. na comparação com o trimestre anterior."
+  },
+  {
+   "item": "E047",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "Os itens que impactaram o resultado foram: i) as receitas com operações de crédito (-3,4% em 3 meses e +3,8% em 12 meses); ii) a despesa com provisões de crédito (-22,8% em 3 meses e -2,4% em 12 meses) e o menor custo com captação no período (-24,5% em 3 meses e -35,2 em 12 meses).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E048",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 13,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "A Carteira de Crédito Comercial (conceito Bacen) registrou o saldo de R$ 4,2 bilhões, maior 1,9% contra o trimestre anterior e crescente 3,2% em relação ao mesmo período de 2018.",
+   "trecho_atual": "A Carteira de Crédito Comercial (conceito Bacen) registrou o saldo de R$ 4,5 bilhões, maior 11,3% em relação ao mesmo período de 2019 e crescente 6,2% contra o trimestre anterior."
+  },
+  {
+   "item": "E049",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Transformação Digital: canais e serviços digitais",
+   "trecho_anterior": "Dessa forma, atuamos fortemente na melhoria da experiência de nossos clientes, investindo maciçamente na evolução de nossos canais digitais, com a oferta de novos serviços e facilidades de modo a proporcionar mais soluções, exemplos disso é a disponibilização de empréstimo pessoal, capital de giro, informe de rendimentos e remodelagem do extrato de conta corrente por meio do App e Internet Banking.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E050",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Despesa de Pessoal e Administrativas",
+   "trecho_anterior": "O Índice de Cobertura Geral em 2019 atingiu 55,6%, superior 3,3 p.p. ao ano de 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E051",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Contexto Econômico",
+   "trecho_anterior": "",
+   "trecho_atual": "E, deste então, o quadro econômico e social vem se agravando, com impactos e efeitos em todos os setores da atividade produtiva, com maior intensidade no setor de comércio."
+  },
+  {
+   "item": "E052",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "",
+   "trecho_atual": "i) nas receitas com juros¹⁴: a alienação de estoque de título financeiro público (+R$ 67 milhões) e as receitas com operações de crédito (-1,5% em 12 meses e -7,3% em 3 meses) que diante a elevação do saldo em carteira (+11,3% em 12 meses e +6,2% em 3 meses) e a sua composição de recursos atrelados a concessões pré-fixadas atenuaram os impactos diretos da Selic na rentabilidade; e"
+  },
+  {
+   "item": "E053",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Contexto Econômico",
+   "trecho_anterior": "",
+   "trecho_atual": "Com a deflagração da crise sanitária mundial pela pandemia da COVID-19, o Brasil atravessa um momento de grandes desafios."
+  },
+  {
+   "item": "E054",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Despesa de Pessoal e Administrativas",
+   "trecho_anterior": "O BANESTES mantém o trabalho contínuo de avaliação para redução de despesas sem impactos negativos na qualidade dos serviços prestados.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E055",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Depósitos Totais",
+   "trecho_anterior": "É importante ressaltar o crescimento dos recursos administrados em fundos no período, crescente 4,3% contra o trimestre anterior e 69,8% em 12 meses.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E056",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 10,
+   "secao": "NPL Creation e Índice de Inadimplência > 90 dias",
+   "trecho_anterior": "As operações com atraso superior a 90 dias no segmento de pessoa física atingiram 2,5%, enquanto no segmento corporativo fechou em 2,9%.",
+   "trecho_atual": "As operações com atraso superior a 90 dias no segmento de pessoa física atingiram 2,7%, enquanto no segmento corporativo fechou em 4,9%."
+  },
+  {
+   "item": "E057",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Marca e Slogan",
+   "trecho_anterior": "Aderente ao plano estratégico de marketing da BANESTES Seguradora, direcionou a campanha com o slogan “Com a BANESTES Seguros por perto, tudo fica bem”, em que situações cotidianas são resguardadas pela eficiência da seguradora, campeã pela 14ª vez do recall de marcas de uma importante rede de comunicação estadual, cuja premiação ocorreu em junho deste ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E058",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 16,
+   "secao": "Retorno sobre o Ativo (ROA)",
+   "trecho_anterior": "O Retorno sobre os Ativos Totais Médios (ROA) anualizado encerrou o quarto trimestre em 0,8%, mantendo-se estável em relação ao terceiro trimestre do ano e registrando aumento de 0,1 p.p. em relação ao mesmo período do ano anterior.",
+   "trecho_atual": "O Retorno sobre os Ativos Totais Médios (ROA) anualizado encerrou o primeiro trimestre em 0,9%, superior 0,1 p.p. em relação ao quarto trimestre de 2019 e menor 0,1 p.p. em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E059",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "PANDEMIA da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "Novas alternativas de pagamento de contas e tributos; e iii."
+  },
+  {
+   "item": "E060",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 12,
+   "secao": "Ativos Totais",
+   "trecho_anterior": "Ao final de dezembro de 2019, os Ativos Totais registraram saldo de R$ 23,7 bilhões, retração de 2,2 em comparação ao trimestre anterior e 15,0% contra o mesmo trimestre do ano anterior.",
+   "trecho_atual": "Ao final do primeiro trimestre de 2020, os Ativos Totais registraram saldo de R$ 27,1 bilhões, expandindo 6,0% contra o mesmo trimestre do ano anterior e 14,3% em comparação ao trimestre anterior."
+  },
+  {
+   "item": "E061",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "NPL Creation e Índice de Inadimplência > 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "Contudo, apresentou uma elevação de 38,7% em relação ao trimestre anterior, sob influência do crescimento da carteira de crédito e da deterioração da capacidade financeira das empresas diante os fatos ocorridos no Estado, neste primeiro trimestre (fortes chuvas e deflagração da crise sanitária COVID -19)."
+  },
+  {
+   "item": "E062",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Contexto Econômico",
+   "trecho_anterior": "",
+   "trecho_atual": "Dentre as causas apontadas para o recuo, está a pressão no preço dos barris de petróleo; a queda na demanda externa, e as medidas sanitárias de isolamento para a prevenção do Coronavírus."
+  },
+  {
+   "item": "E063",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "As maiores evoluções do trimestre, em comparação ao mesmo trimestre de 2018, foram registradas pelas concessões na modalidade de empréstimos (+1,5% em 3 meses e +8,3% em 12 meses), destaque para Consignação em Folha (+9,9% em 12 meses) e Crédito Pessoal (+20,4% em 12 meses); pelos financiamentos imobiliários (+8,6% em 12 meses), e pelas operações de cartão de crédito (+12,7% em 12 meses).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E064",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Lucro Líquido e Rentabilidade",
+   "trecho_anterior": "Nas comparações trimestrais, o fato não recorrente supracitado manteve o mesmo efeito no resultado operacional do quarto trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E065",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 13,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "A Carteira de Crédito Ampliada registrou o saldo de R$ 6,8 bilhões no quarto trimestre do ano, expansão de 8,6% ante o trimestre anterior e de 15,8% em relação ao mesmo período de 2018.",
+   "trecho_atual": "A Carteira de Crédito Ampliada registrou o saldo de R$ 7,2 bilhões no primeiro trimestre do ano, expansões de 26,3% em relação ao mesmo período de 2019 e 6,6% ante o trimestre anterior."
+  },
+  {
+   "item": "E066",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "",
+   "trecho_atual": "ii) nas despesas com juros¹⁵: a redução da despesa com captação (-36,3% em 12 meses e -15,6% em 3 meses) influenciada pelo comportamento da Selic e o resultado de provisão de crédito para devedores duvidosos (-18,3% em 12 meses e -23,7% em 3 meses) diante melhor posição dos níveis de classificação de risco."
+  },
+  {
+   "item": "E067",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 9,
+   "secao": "Resultado de Provisão para Devedores Duvidosos",
+   "trecho_anterior": "As despesas com provisões de crédito geradas nos últimos doze meses representaram 2,2% do total da Carteira de Crédito Ampliada.",
+   "trecho_atual": "As despesas com provisões de crédito geradas nos últimos doze meses representaram 2,0% do total da Carteira de Crédito Ampliada."
+  },
+  {
+   "item": "E068",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "2020",
+   "trecho_anterior": "$$ Trata-se da relação entre o total da despesa administrativa (pessoal e outras) e o total do resultado bruto da intermediação financeira (excluído provisão para operações de créditos e outros créditos), receitas com serviços e receitas com tarifas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E069",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "2020",
+   "trecho_anterior": "$$ Trata-se da relação do resultado de provisão para créditos (Resolução 2.682/99 do CMN) e TVM privado nos últimos doze meses e o saldo da carteira de crédito ampliada.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E070",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "PANDEMIA da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "Lives, videoconferências e teleconferências entre a diretoria e os colaboradores; x."
+  },
+  {
+   "item": "E071",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "PANDEMIA da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "Desde a deflagração da Pandemia da COVID-19, decretada pela Organização Mundial da Saúde (OMS) em 11 de março de 2020, a maioria das economias mundiais tem sofrido de forma intensa seus efeitos, sem sequer ter uma previsão final de quais serão os impactos e quando o cenário irá se normalizar."
+  },
+  {
+   "item": "E072",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Cartões",
+   "trecho_anterior": "Esse fato resultou em aumento de 29,4% no seu faturamento, alcançando a cifra de R$ 1,3 bilhão em 2019.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E073",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "2019",
+   "trecho_anterior": "Os outros itens de *guidance* foram influenciados pelo aproveitamento eficiente de sua sinergia relacional com a base de clientes, pelo forte controle e racionalização de custos e pela adoção de critérios rigorosos de monitoramento e avaliação dos processos de concessão de crédito visando o equilíbrio da expansão do crédito e inadimplência, resultando assim, na elevação das receitas de serviços (+9,2%), no avanço da captação via depósitos na ordem de 8,8%, no baixo custo do risco de crédito (2,2%), na expansão de custo operacional (+4,7%) aderente ao índice de inflação para o período (4,3%) e por fim, no índice de eficiência operacional a patamar de 52,3%, alinhado com o intervalo proposto junto ao mercado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E074",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "Responsabilidade Social e Sustentabilidade",
+   "trecho_anterior": "Em 2019 o BANESTES investiu em diversas ações e projetos com vistas à melhoria da sustentabilidade e responsabilidade social.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E075",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Indicadores Estruturais",
+   "trecho_anterior": "",
+   "trecho_atual": "alinhamento estratégico, definição de metas, mensagem de motivação e premiação de Campanhas."
+  },
+  {
+   "item": "E076",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Cartões",
+   "trecho_anterior": "No ano de 2019 expandiu 33,0% em números de transações em compras e saques, de pessoas físicas e jurídicas, contra 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E077",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "Depósitos Totais",
+   "trecho_anterior": "",
+   "trecho_atual": "Essa variação foi decorrente da expansão orgânica dos recursos em depósitos e de fundos (+39,4% em 12 meses)."
+  },
+  {
+   "item": "E078",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Ativos Totais",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, a posição financeira em títulos e valores mobiliários atingiu R$ 10,6 bilhões, enquanto, as operações de crédito registraram o saldo de R$ 4,1 bilhões."
+  },
+  {
+   "item": "E079",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 17,
+   "secao": "Múltiplos",
+   "trecho_anterior": "O Dividend Yield, indicador do retorno do investimento ao acionista pela participação no lucro acumulado nos últimos doze meses, foi de 6,3% para as ações ordinárias (BEES3) e de 6,2% para as preferenciais (BEES4).",
+   "trecho_atual": "O Dividend Yield, indicador do retorno do investimento ao acionista pela participação no lucro acumulado nos últimos doze meses, foi de 5,9% para as ações ordinárias (BEES3) e de 5,7% para as preferenciais (BEES4)."
+  },
+  {
+   "item": "E080",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Despesa de Pessoal e Administrativas",
+   "trecho_anterior": "",
+   "trecho_atual": "As Outras Despesas Administrativas cresceram 9,3% em 12 meses, contudo, reduziram 5,8% contra o trimestre anterior."
+  },
+  {
+   "item": "E081",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Receitas de Prestação de Serviços",
+   "trecho_anterior": "No quarto trimestre, as Receitas de Prestação de Serviços somaram R$ 95 milhões, aumento de 1,7% contra o trimestre anterior e de 6,6% contra o mesmo trimestre de 2018, diante da elevação das receitas com gestão e administração de fundos (+6,5% em 3 meses e +35,7% em 12 meses), das receitas com cartões (+6,8% em três meses e +3,7% em 12 meses) e das receitas com operações de crédito (+21,4% em 3 meses e +9,5% em 12 meses).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E082",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Utilização de canais e serviços digitais no enfrentamento da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "O canal mobile segue como principal canal de transações para os clientes, com um total de 16 milhões de transações, expansão de 18,0% sobre o mesmo período de 2019."
+  },
+  {
+   "item": "E083",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "As receitas com Juros$$ retraíram substancialmente durante o ano e no quarto trimestre, motivadas diretamente pela redução gradativa dos juros Selic no decorrer do ano, mesmo, contra efeito da retomada do crescimento das operações de crédito (+4,5%) e da elevação dos recursos aplicados em títulos e valores mobiliários (+9,1%), principalmente em títulos privados (+45,0%).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "Rating",
+   "trecho_anterior": "",
+   "trecho_atual": "A nota de rating em escala nacional (moeda local) para risco de crédito medida pela Fitch Ratings manteve-se em A+(bra) no período."
+  },
+  {
+   "item": "E085",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "Investimentos em Tecnologia",
+   "trecho_anterior": "",
+   "trecho_atual": "Os investimentos visam possibilitar ao Banco soluções de negócio aderentes à Transformação Digital com trabalhos focados na ampliação de prestação de serviços pelos canais digitais, principalmente nos canais Internet Banking e BANESTES.Corp (ferramenta voltada para cliente PJ) e nos Aplicativos BANESTES, BANESTES Cartões e Abre Contas BANESTES."
+  },
+  {
+   "item": "E086",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "PANDEMIA da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "Linhas emergenciais de crédito, proporcionando opções de reorganização financeira com condições diferenciadas."
+  },
+  {
+   "item": "E087",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "Índice de Eficiência Operacional",
+   "trecho_anterior": "",
+   "trecho_atual": "No primeiro trimestre, o Índice de Eficiência Operacional atingiu 45,7%, refletindo o aumento da margem financeira (+24,6% em 12 meses e +29,4% em 3 meses) dada o menor custo com captação diante a equalização da taxa de juros Selic no período, aliado às receitas geradas via alienação de estoque de título público e a posição em estoque de crédito em concessões pré-fixadas."
+  },
+  {
+   "item": "E088",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 6,
+   "secao": "Lucro Líquido e Rentabilidade",
+   "trecho_anterior": "Nesse período, o Retorno sobre o Patrimônio Líquido Médio (ROE) foi de 13,8%.",
+   "trecho_atual": "Nesse período, o Retorno sobre o Patrimônio Líquido Médio (ROE) foi de 15,1%."
+  },
+  {
+   "item": "E089",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Contexto Econômico",
+   "trecho_anterior": "Os especialistas consultados pela Focus reduziram de 3,56% para 3,47% as expectativas para a inflação de 2020 - a meta é de 4,00% a.a.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E090",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 13,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "Desse montante, R$ 2,7 bilhões (63,5%) são de operações com pessoas físicas e R$ 1,5 bilhão com pessoas jurídicas (36,5%).",
+   "trecho_atual": "Desse montante, R$ 2,9 bilhões (63,9%) são de operações com pessoas físicas e R$ 1,6 bilhão com pessoas jurídicas (36,1%)."
+  },
+  {
+   "item": "E091",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Lucro Líquido e Rentabilidade",
+   "trecho_anterior": "",
+   "trecho_atual": "O Lucro Líquido do trimestre alcançou o resultado de R$ 83 milhões, 30,2% maior que o resultado do trimestre comparável de 2019 e 77,1% em relação ao trimestre anterior, registrando no acumulado dos últimos 12 meses o valor crescente de R$ 233 milhões."
+  },
+  {
+   "item": "E092",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Indicadores Estruturais",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre foram feitas contratações de vinte novos analistas de tecnologia da informação e dois analistas econômico-financeiros."
+  },
+  {
+   "item": "E093",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 7,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "A Margem Financeira registrou R$ 192 milhões no quarto trimestre do ano, aumentos de 5,5% na comparação com o trimestre anterior e 7,6% contra o mesmo período do ano anterior.",
+   "trecho_atual": "A Margem Financeira registrou R$ 249 milhões no primeiro trimestre do ano, expansões de 24,6% contra o mesmo período do ano anterior e 29,4% na comparação com o trimestre anterior."
+  },
+  {
+   "item": "E094",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Ações de Marketing",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse evento gera inúmeros empregos e renda aos capixabas nas diversas regiões do Estado."
+  },
+  {
+   "item": "E095",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "Guidance 2020",
+   "trecho_anterior": "",
+   "trecho_atual": "Dadas as incertezas causadas pela pandemia da COVID-19, que mudaram o cenário e reduziram a previsibilidade do desempenho dos negócios neste momento, a Administração por Fato Relevante publicado no dia 25/05/2020, comunicou aos seus acionistas e ao mercado em geral a suspensão das projeções (“Guidance”) para o ano de 2020."
+  },
+  {
+   "item": "E096",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Transformação Digital: canais e serviços digitais",
+   "trecho_anterior": "Os diversos segmentos do mercado estão trilhando a sua jornada de transformação digital, assim também é o Banco que, em linha com as práticas de mercado, nesse ano criou a GELAB – Gerência de Laboratório BANESTES, cujo, o propósito é a inovação que conecta pessoas e ideias.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E097",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "2019",
+   "trecho_anterior": "O comprometimento de renda das famílias e a inadimplência estão em patamares reduzidos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E098",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "PANDEMIA da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "3 Relatório de Análise Econômica e Financeira"
+  },
+  {
+   "item": "E099",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Responsabilidade Social e Sustentabilidade",
+   "trecho_anterior": "",
+   "trecho_atual": "Após as fortes chuvas ocorridas no início do ano, o BANESTES lançou e divulgou linhas de crédito e apoio aos atingidos, com o tema “RECONSTRUÇÃO 2020”."
+  },
+  {
+   "item": "E100",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "PANDEMIA da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "O cenário global está sendo marcado pelos desdobramentos e impactos da crise sanitária instalada (COVID-19), gerando grandes desafios e incertezas ao mundo."
+  },
+  {
+   "item": "E101",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "As maiores evoluções no trimestre, foram registradas pelas concessões na modalidade de empréstimos R$ 3,3 bilhões (+16,6% em 12 meses e +10,1% em 3 meses), destaque para o crédito de consumo, em especial o consignado (+18,5% em 12 meses e +13,2% em 3 meses), o imobiliário (+7,5% em 12 meses e +3,9% em 3 meses) e o rotativo de cartões (+6,1% em 12 meses e +11,3% em 3 meses); e o rotativo de empresas, em especial o capital de giro (+29,3% em 12 meses e +13,4% em 3 meses) e a conta garantida (+14,1% em 12 meses e +8,3% em 3 meses)."
+  },
+  {
+   "item": "E102",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 9,
+   "secao": "Resultado de Provisão para Devedores Duvidosos",
+   "trecho_anterior": "O Resultado de Provisão para Devedores Duvidosos somou R$ 32 milhões no trimestre, queda de 22,8% contra o terceiro trimestre do ano e 2,4% contra o mesmo trimestre de 2018.",
+   "trecho_atual": "O Resultado de Provisão para Devedores Duvidosos somou R$ 25 milhões no trimestre, queda de 18,3% contra o mesmo trimestre de 2019 e 23,7% contra trimestre anterior."
+  },
+  {
+   "item": "E103",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Despesa de Pessoal e Administrativas",
+   "trecho_anterior": "As Outras Despesas Administrativas cresceram 5,7% em relação ao trimestre anterior e 12,2% na comparação com o mesmo trimestre de 2018, decorrente do reajuste de custos com a renovação de contratos de atividades de retaguarda, principalmente os serviços de suporte e atendimento a clientes e usuários, além da adição de novos serviços tecnológicos em meio a nossa transformação digital.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E104",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "Responsabilidade Social e Sustentabilidade",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso, não será cobrado o valor de tarifa do serviço."
+  },
+  {
+   "item": "E105",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Utilização de canais e serviços digitais no enfrentamento da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "Para enfrentar a situação de pandemia do Coronavírus (COVID-19), o Banco implementou uma série de soluções tecnológicas objetivando incrementar a capacidade de trabalho em home office, o atendimento digital aos clientes e a continuidade das operações, reduzindo a necessidade do atendimento presencial nas agências, apoiando assim, o isolamento social recomendado pelas autoridades de saúde pública, ao mesmo tempo que mantém os serviços bancários essenciais à população."
+  },
+  {
+   "item": "E106",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Responsabilidade Social e Sustentabilidade",
+   "trecho_anterior": "",
+   "trecho_atual": "Em função da pandemia do novo Coronavírus, o BANESTES vem atuando fortemente na economia, com o objetivo intrínseco de redução dos impactos econômicos nos vários setores da economia capixaba."
+  },
+  {
+   "item": "E107",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 17,
+   "secao": "Múltiplos",
+   "trecho_anterior": "O Valor Patrimonial por Ação, no fechamento do trimestre, registrou crescimento de 2,6% em relação ao trimestre anterior e de 7,8% comparado ao mesmo período de 2018, fechando em R$ 5,09.",
+   "trecho_atual": "O Valor Patrimonial por Ação, no fechamento do trimestre, registrou acréscimo de 2,1% comparado ao mesmo período de 2019 e redução de 3,3% em relação ao trimestre anterior, fechando em R$ 4,92."
+  },
+  {
+   "item": "E108",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 11,
+   "secao": "NPL Creation e Índice de Inadimplência > 90 dias",
+   "trecho_anterior": "A classificação por níveis de risco das operações que compõem a carteira de crédito comercial foi de 88,9% nos níveis de risco AA – C, 6,9% nos níveis D – G, e apenas 4,2% encontravam-se no nível de risco H.",
+   "trecho_atual": "A classificação por níveis de risco das operações que compõem a carteira de crédito comercial foi de 89,7% nos níveis de risco AA – C, 6,5% nos níveis D – G, e apenas 3,8% encontravam-se no nível de risco H."
+  },
+  {
+   "item": "E109",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Indicadores Estruturais",
+   "trecho_anterior": "O propósito “Crescemos Juntos” e os pilares da Experiência do Cliente, Trabalho em Equipe, Inovação e Alta Performance foram reforçados, com sua incorporação ao modelo de Gestão de Desempenho e a revisão das competências a serem consideradas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E110",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "Guidance 2020",
+   "trecho_anterior": "",
+   "trecho_atual": "Contudo, o BANESTES apurou tais projeções para o primeiro trimestre do ano, as quais em decorrência do período de apuração sofreram impactos e efeitos iniciais da crise sanitária."
+  },
+  {
+   "item": "E111",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Indicadores Estruturais",
+   "trecho_anterior": "Trabalhamos em diferentes frentes e ações para o contínuo aperfeiçoamento profissional dos colaboradores e administradores do SFB, buscando o desenvolvimento de capacidades de liderança, *compliance*, inovação e tecnologia.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E112",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Ativos Totais",
+   "trecho_anterior": "",
+   "trecho_atual": "Tal posição foi impactada pelas oscilações: i) do saldo das aplicações interfinanceiras de liquidez (-6,7% em 12 meses e +38,5% em 3 meses), ii) da posição em títulos e valores mobiliários (+17,1% em 12 meses e 1,7% em 3 meses) e dos recursos em operações de crédito (+12,6% em 12 meses e 7,9% em 3 meses)."
+  },
+  {
+   "item": "E113",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 17,
+   "secao": "Limites Operacionais",
+   "trecho_anterior": "O Índice de Basileia ficou em 14%, formado integralmente de Capital Nível I.",
+   "trecho_atual": "O Índice de Basileia ficou em 12,8%, formado integralmente de Capital Nível I."
+  },
+  {
+   "item": "E114",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 16,
+   "secao": "Índice de Eficiência Operacional",
+   "trecho_anterior": "No conceito ajustado ao risco, a Eficiência Operacional foi de 60,8%, também sob o mesmo efeito acima citado.",
+   "trecho_atual": "No conceito ajustado ao risco, a Eficiência Operacional foi de 49,0%, também sob o mesmo efeito acima citado."
+  },
+  {
+   "item": "E115",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Investimentos em Tecnologia",
+   "trecho_anterior": "Foram implantadas, no sistema de automação bancária, iniciativas para automatização de procedimentos de suporte e de atendimento à rede de agências/correspondentes, visando a melhoria na eficiência operacional e mais agilidade no atendimento a clientes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E116",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "PANDEMIA da COVID-19",
+   "trecho_anterior": "",
+   "trecho_atual": "Higienização profissional das dependências do Banco; ix."
+  },
+  {
+   "item": "E117",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Indicadores Estruturais",
+   "trecho_anterior": "",
+   "trecho_atual": "Também foi lançado, em fevereiro, um novo Plano de Desligamento Voluntário, com o pagamento de 10 (dez) rendas mensais a título de incentivo para os primeiros 100 (cem) colaboradores inscritos, e desligamentos até o final de agosto desse ano."
+  },
+  {
+   "item": "E118",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "Remuneração aos Acionistas",
+   "trecho_anterior": "",
+   "trecho_atual": "Destaque positivo para o Lucro Líquido por ação R$ 0,26 no primeiro trimestre de 2020, contra R$ 0,15 do trimestre anterior."
+  },
+  {
+   "item": "E119",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Responsabilidade Social e Sustentabilidade",
+   "trecho_anterior": "",
+   "trecho_atual": "Em parceria com o BANDES – Banco de Desenvolvimento do Espírito Santo, o Banco disponibilizou o montante de R$ 250 milhões para uma linha de Crédito Emergencial para empresas de todos os portes e setores industriais, com condições diferenciadas de"
+  },
+  {
+   "item": "E120",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 10,
+   "secao": "NPL Creation e Índice de Inadimplência > 90 dias",
+   "trecho_anterior": "Na Carteira de Crédito Comercial, a inadimplência (> 90 dias) encerrou o trimestre registrando 2,7%, queda de 1,0 p.p. contra o trimestre anterior e 1,1 p.p. ante o mesmo período de 2018.",
+   "trecho_atual": "Na Carteira de Crédito Comercial, a inadimplência (> 90 dias) encerrou o trimestre registrando 3,5%, queda de 0,4 p.p. ante o mesmo período de 2019 e acréscimo de 0,8 p.p. contra o trimestre anterior."
+  }
+ ]
+}

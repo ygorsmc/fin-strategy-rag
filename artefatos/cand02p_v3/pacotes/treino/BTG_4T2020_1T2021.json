@@ -1,0 +1,1207 @@
+{
+ "par": "BTG_4T2020_1T2021",
+ "documento_anterior": "btg_release_4T2020",
+ "documento_atual": "btg_release_1T2021",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "AuM e AuA por Tipo de Cliente",
+   "trecho_anterior": "",
+   "trecho_atual": "A diminuição ocorreu principalmente devido às taxas de performance, que geralmente são registradas no final do ano fiscal de cada fundo, a maioria dos quais ocorre em junho e dezembro."
+  },
+  {
+   "item": "E002",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "Wealth Management & Consumer Banking",
+   "trecho_anterior": "",
+   "trecho_atual": "WuM quase dobrou no último ano, à medida que aumentamos nossa participação de mercado, especialmente no segmento de varejo de alta renda, por meio do BTG Pactual Digital."
+  },
+  {
+   "item": "E003",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Lucro Líquido e ROAE Ajustado (não auditado)",
+   "trecho_anterior": "",
+   "trecho_atual": "Os resultados não incluem itens não recorrentes e ágio e fornecem informações mais significativas da lucratividade subjacente dos nossos negócios."
+  },
+  {
+   "item": "E004",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 35,
+   "pagina_atual": 32,
+   "secao": "Declarações Prospectivas",
+   "trecho_anterior": "Em vista dos riscos e incertezas supramencionados, as circunstâncias e eventos futuros discutidos neste documento podem não ocorrer, e nossos resultados futuros podem diferir significativamente daqueles expressos ou sugeridos nessas declarações futuras.",
+   "trecho_atual": "Em vista dos riscos e incertezas supramencionados, as circunstâncias e eventos futuros discutidos neste documento podem não ocorrer, e os resultados futuros podem diferir significativamente daqueles expressos ou sugeridos nessas declarações prospectivas."
+  },
+  {
+   "item": "E005",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 18,
+   "secao": "Salários e benefícios",
+   "trecho_anterior": "As despesas com salários e benefícios totalizaram R$230,1 milhões no 3T 2020 e de R$175,4 milhões no 4T 2019, comparadas a R$248,7 milhões no 4T 2020.",
+   "trecho_atual": "As despesas relacionadas aos salários e benefícios foram de R$248,7 milhões no 4T 2020 e R$205,3 milhões no 1T 2020, ante R$265,8 milhões no 1T 2021."
+  },
+  {
+   "item": "E006",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Embora os impactos econômicos só sejam esperados ao longo dos próximos trimestres, com o avanço da vacinação em larga escala, este evento ancora expectativas muito positivas de reabertura das economias, especialmente dos setores de serviços às famílias e de turismo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E007",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "Análise de *Unsecured Funding*",
+   "trecho_anterior": "Nossa base de captação expandiu 100% no ano, impulsionada por uma preferência notável dos clientes da América Latina em manter depósitos em contrapartes de alto nível e altamente capitalizadas, bem como devido a uma mudança nos portfólios nos quais os ativos mudaram de ações e fundos para títulos e depósitos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E008",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 37,
+   "pagina_atual": 34,
+   "secao": "Divulgação de Resultados - Primeiro Trimestre de 2021",
+   "trecho_anterior": "Webcast: O áudio das teleconferências será transmitido ao vivo por meio de um sistema de webcast disponível em nosso site www.btgpactual.com/ir.",
+   "trecho_atual": "Webcast: O áudio das teleconferências será transmitido ao vivo por meio de um sistema de webcast disponível em nosso site www.btgpactual.com/ri"
+  },
+  {
+   "item": "E009",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Bônus",
+   "trecho_anterior": "",
+   "trecho_atual": "No 1T 2021, as despesas com bônus foram de R$461,5 milhões, um aumento de 27,1% em relação ao 4T 2020, e quatro vezes maior do que no 1T 2020."
+  },
+  {
+   "item": "E010",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "A receita operacional, ou seja, a receita total excluindo Interest and Other, Participations e Principal Investments, atingiu o montante de R$2.459,7 milhões, um aumento de 11,4% no trimestre e de 48,1% em relação ao 4T19.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E011",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "Ambas as unidades de negócios combinadas estão crescendo expressivamente e estabeleceram, pelo segundo trimestre consecutivo, NNM recorde de R$75,9 bilhões."
+  },
+  {
+   "item": "E012",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Embora de termos enfrentado um ambiente desafiador inédito em 2020, com 85% dos nossos funcionários em regime de home office na maior parte do ano, fomos capazes de nos manter muito próximos de nossos clientes, de fornecer crédito e consultoria a várias empresas, além de aproveitarmos as oportunidades que surgiram desse cenário.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E013",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Itens não recorrente e ágio",
+   "trecho_anterior": "Ágio: Principalmente relacionado ao BTG Pactual Advisors e às aquisições realizadas no período",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E014",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 24,
+   "secao": "Gestão de Capital",
+   "trecho_anterior": "O índice de Basileia foi de 16,7% ao final do 4T 2020.",
+   "trecho_atual": "O índice de Basileia ficou em 17,7% ao final do 1T 2021."
+  },
+  {
+   "item": "E015",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "AuM e AuA por Tipo de Cliente",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse aumento deu-se, primordialmente, pelo crescimento de 68,6% no AuM/AuA, que impactou todas as linhas de negócios."
+  },
+  {
+   "item": "E016",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 17,
+   "secao": "1T 2021 vs. 4T 2020",
+   "trecho_anterior": "As receitas de Interest & Others foram de R$43,7 milhões no 4T 2020, comparado com R$46,1 milhões no 3T 2020.",
+   "trecho_atual": "As receitas de Interest & Others foram de R$32,8 milhões no 1T 2021, em comparação a R$43,7 milhões no 4T 2020."
+  },
+  {
+   "item": "E017",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 10,
+   "secao": "Corporate e SME Lending",
+   "trecho_anterior": "No trimestre, nosso portfólio de Corporate e SME Lending cresceu 7,9%, somando R$73,7 bilhões, comparado com R$68,3 bilhões no 3T 2020.",
+   "trecho_atual": "No trimestre, nosso portfólio de Corporate & SME Lending cresceu 9,2%, totalizando R$80,4 bilhões, comparado a R$73,7 bilhões no 4T 2020."
+  },
+  {
+   "item": "E018",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "No Brasil, a inflação registrada pelo IPCA de dezembro ficou em 1,35% m/m, acelerando em relação ao seu resultado de novembro (0,89% m/m), levando a inflação acumulada em 12 meses a fechar 2020 em 4,52% a/a, acima do centro da meta para o ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E019",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Ambas as unidades de negócios estão crescendo de modo expressivo, com cerca de 40% de crescimento ano a ano em AuM/AuA e mais de 50% em WuM, à medida que o *NNM* continua evoluindo, atingindo recorde de captações agregadas no valor de R$127,0 bilhões em 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E020",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Enquanto isso, a pesquisa da PNAD mostra uma taxa de desemprego de 14,6% a.a. no trimestre encerrado em novembro e um quadro pior para o emprego formal do que o Caged.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E021",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "2020 x 2019",
+   "trecho_anterior": "O aumento das receitas ficou em linha com (i) o aumento das taxas de administração devido ao crescimento de AuM/AuA, combinado com (ii) maiores *fees* de performance, principalmente dos *hedge funds* globais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E022",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 19,
+   "secao": "Amortização do ágio",
+   "trecho_anterior": "amortização do ágio aumentou 152,0% em relação ao 3T 2020 e 139,9% em relação ao 4T 2019, principalmente devido ao crescimento inorgânico.",
+   "trecho_atual": "A amortização do ágio aumentou 15,1% em relação ao 4T 2020 e 156,5% em relação ao 1T 2020, principalmente devido ao crescimento inorgânico."
+  },
+  {
+   "item": "E023",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "4T 2020 x 3T 2019",
+   "trecho_anterior": "A receita de Principal Investments teve queda de 61,4%, passando de R$573,5 milhões no 4T 2019 para R$221,4 milhões no 4T 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E024",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Banco Pan",
+   "trecho_anterior": "",
+   "trecho_atual": "Em 5 de abril de 2021, o Banco Sistema (afiliado do BTG) assinou o contrato de compra e venda de 100% das ações ordinárias detidas pela CaixaPar no Banco Pan, que representa 49,2% do capital votante do Banco Pan e 26,8% do capital total do Banco Pan."
+  },
+  {
+   "item": "E025",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "No trimestre findo em 30 de dezembro de 2020, o lucro líquido ajustado por *unit* e o retorno ajustado anualizado sobre o patrimônio líquido médio do BTG Pactual (“ROAE anualizado”) foi de R$1,39 e 19,1%, respectivamente, e de R$4,48 e 16,9%, respectivamente, no ano findo nessa data.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E026",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "No ano de 2020, nosso lucro líquido contábil aumentou 3,9% em relação ao ano anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E027",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "A moeda brasileira desvalorizou 29% em 2020, fechando o ano cotada a R$5,20/US$.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E028",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "4T 2020 x 4T 2019",
+   "trecho_anterior": "Contudo, mantivemos a posição de liderança no mercado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E029",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "(iii) tivemos também uma contribuição sólida de Sales & Trading, apesar da queda de receitas de 15,8% em relação ao trimestre anterior (e aumento de 10,9% em relação ao 4T19), com contribuição crescente das atividades de clientes e da mesa de crédito;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E030",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Divulgação de Resultados",
+   "trecho_anterior": "",
+   "trecho_atual": "1T 21 +182bi LTM"
+  },
+  {
+   "item": "E031",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "No entanto, o índice de eficiência no trimestre foi significativamente menor, atingindo 36,5% no 4T 2020 e 40,9% no ano de 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E032",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas operacionais (receitas totais excluindo *Interest and Other*, Participações e *Principal Investments*) atingiu R$ 2.408,7 milhões, também estável quando comparadas ao trimestre anterior, mas com aumento de 86,1% em relação ao 1T20."
+  },
+  {
+   "item": "E033",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 25,
+   "pagina_atual": 23,
+   "secao": "Portfólio de Crédito Expandido do BTG Pactual",
+   "trecho_anterior": "O saldo do nosso portfólio de crédito expandido aumentou 7,9% quando comparado ao trimestre anterior, de R$78,8 bilhões para R$85,1 bilhões, e 55,8% quando comparado ao 4T 2019.",
+   "trecho_atual": "O saldo do nosso portfólio de crédito expandido aumentou 9,5% em relação ao trimestre anterior, passando de R$85,1 bilhões para R$93,1 bilhões e 64,8% em relação ao 1T 2020."
+  },
+  {
+   "item": "E034",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "(ii) Corporate e SME Lending também apresentou seu melhor trimestre desde o nosso IPO, totalizando R$596,5 milhões em receitas, um aumento de 40,3% em relação ao trimestre anterior (e de 160,2% em relação ao 4T19), com um portfólio de R$73,7 bilhões, um crescimento de 7,9% no período, com a manutenção da boa qualidade dos ativos em créditos para empresa de primeira linha e da rápida expansão do nosso negócio de PMEs;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E035",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 17,
+   "secao": "1T 2021 vs. 4T 2020",
+   "trecho_anterior": "As receitas de Principal Investments tiveram aumento de 68,9% em relação ao 3T 2020, passando de R$131,0 milhões para R$221,4 milhões.",
+   "trecho_atual": "As receitas de Principal Investments tiveram acréscimo de 7,7% quando comparadas ao 4T 2020, passando de R$221,4 milhões para R$238,4 milhões."
+  },
+  {
+   "item": "E036",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Itens não recorrentes e Ágio",
+   "trecho_anterior": "",
+   "trecho_atual": "Earnings Release Primeiro Trimestre 2021"
+  },
+  {
+   "item": "E037",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "Wealth Management & Consumer Banking",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso, as receitas de corretagem mais do que dobraram no período."
+  },
+  {
+   "item": "E038",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Ao olharmos para o resultado do ano de 2020, nossa receita total foi de R$9.303,5 milhões, um aumento de 11,6% em relação ao ano anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E039",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 24,
+   "secao": "Gestão de Capital",
+   "trecho_anterior": "Índice de Basileia (não auditado)",
+   "trecho_atual": "Índice de Basileia (não auditado) (%)"
+  },
+  {
+   "item": "E040",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Tal aumento é resultado de uma combinação bem-sucedida entre: (i) crescimento sólido em ativos, volumes e número de clientes;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E041",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 20,
+   "secao": "Balanço Patrimonial",
+   "trecho_anterior": "O ativo total reduziu 3,3%, passando de R$253,2 bilhões no fim do 3T 2020 para R$244,9 bilhões no fim do 4T 2020, principalmente devido a uma redução de 29,6% no portfólio de títulos e valores mobiliários, de R$77,1 bilhões no 3T 2020 para R$54,3 bilhões no 4T 2020, parcialmente compensado por: (i) um aumento de 13,7% em nossos ativos financiados por meio de acordos de recompra (REPO), de R$48,0 bilhões para R$54,6 bilhões e, (ii) um aumento e 16,5% em caixa e equivalentes de caixa, de R$35,5 bilhões para R$41,3 bilhões.",
+   "trecho_atual": "Nosso ativo total cresceu 14,2%, de R$ 244,9 bilhões no final do 4T 2020 para R$279,8 bilhões no final do 1T 2021, principalmente devido ao aumento de 47,1% em nosso portfólio de negociação, que foi de R$54,3 bilhões para R$79,9 bilhões, e um aumento de 13,3% em nosso caixa e equivalentes de caixa, de R$41,3 bilhões para R$46,8 bilhões ao final do 1T 2021, parcialmente compensado por uma redução de 10,4% em ativos financiados por meio de acordos de recompra (REPO), que passaram de R$54,6 bilhões para R$48,9 bilhões."
+  },
+  {
+   "item": "E042",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Banco Pan",
+   "trecho_anterior": "",
+   "trecho_atual": "A conclusão e o fechamento da transação estão sujeitos à verificação de determinadas condições precedentes, incluindo a obtenção de todas as aprovações regulatórias necessárias."
+  },
+  {
+   "item": "E043",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 32,
+   "secao": "Diferenças de Apresentação Selecionadas",
+   "trecho_anterior": "",
+   "trecho_atual": "Earnings Release Primeiro Trimestre 2021"
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "O portfólio de crédito cresceu R$29,9 bilhões (uma expansão consistente de 68,3%) no ano em contrapartes de primeira linha, spreads mais elevados e manutenção de níveis adequados de provisões para o ciclo macroeconômico atual.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 35,
+   "pagina_atual": null,
+   "secao": "Diferenças de apresentação selecionadas",
+   "trecho_anterior": "GAAP ou em qualquer outra prática contábil geralmente aceita.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E046",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "As vendas no varejo ampliado de novembro aumentaram 0,6% m/m a.s. apesar da queda nas vendas restritas de 0,1% m/m a.s., o volume de serviços aumentou 2,6% m/m a.s. e a produção industrial avançou 1,2% m/m a.s. no mesmo mês.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E047",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 19,
+   "secao": "Despesas tributárias, exceto imposto de renda",
+   "trecho_anterior": "As despesas tributárias, exceto o imposto de renda, foram de R$84,0 milhões ou 3,0% da receita total, frente a R$151,8 milhões no 3T 2020, ou 6,1% da receita total.",
+   "trecho_atual": "As despesas tributárias, exceto o imposto de renda, foram de R$153,1 milhões ou 5,5% da receita total, em comparação a R$84,0 milhões no 4T 2020 ou 3,0% da receita total e R$71,8 milhões no 1T 2020 ou 4,7%."
+  },
+  {
+   "item": "E048",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Bônus",
+   "trecho_anterior": "No 4T 2020, as despesas com bônus foram de R$363,0 milhões, uma redução de 18,2% em relação ao 3T 2020, e estáveis em relação ao 4T 2019, ao passo que, no ano de 2020, as despesas com bônus somaram R$1.333,0 milhões em comparação com R$1.127,7 milhões em 2019.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E049",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "4T 2020 x 4T 2019",
+   "trecho_anterior": "O aumento foi impulsionado por um melhor desempenho tanto em DCM quanto em ECM, apesar da redução nas receitas de Financial Advisory, devido principalmente à menor atividade de mercado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E050",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 11,
+   "secao": "Corporate e SME Lending (em milhões de R$)",
+   "trecho_anterior": "As receitas de Corporate e SME Lending de 2020 quase que dobraram em relação a 2019.",
+   "trecho_atual": "As receitas de Corporate e SME Lending mais do que dobraram nos últimos 12 meses, de R$266,6 milhões no 1T 2020 para R$554,8 milhões no 1T 2021."
+  },
+  {
+   "item": "E051",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Asset Management",
+   "trecho_anterior": "",
+   "trecho_atual": "Nos últimos 12 meses, o NNM atingiu o patamar recorde de R$97,3 bilhões."
+  },
+  {
+   "item": "E052",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Divulgação de Resultados",
+   "trecho_anterior": "",
+   "trecho_atual": "Portfólio de Corporate & PME (R$)"
+  },
+  {
+   "item": "E053",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Corporate e SME Lending",
+   "trecho_anterior": "Tivemos um crescimento de 68,3% no ano, uma vez que conseguimos aproveitar as oportunidades de mercado durante a pandemia do COVID-19 e ainda, com maior qualidade de crédito na margem.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E054",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "Wealth Management & Consumer Banking",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, nosso Wealth under Management (WuM) registrou expansão de 22,8%, de R$258,4 bilhões no 4T 2020 para R$317,4 bilhões no 1T 2021."
+  },
+  {
+   "item": "E055",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Corporate e SME Lending (em milhões de R$)",
+   "trecho_anterior": "",
+   "trecho_atual": "O aumento foi devido ao crescimento de 68,6% do portfólio no período e a maior contribuição do nosso portfólio de NPL quando comparado ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E056",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "(ii) Corporate & SME Lending reportou R$554,8 milhões de receita, forte resultado à medida que continuamos expandindo nosso portfólio para R$80,4 bilhões em créditos de primeira linha e com expansão acelerada do nosso negócio de PME, este que ultrapassou a marca de R$10 bilhões;"
+  },
+  {
+   "item": "E057",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "Wealth Management & Consumer Banking",
+   "trecho_anterior": "",
+   "trecho_atual": "Nos últimos 12 meses, alcançamos o expressivo NNM de R$84,3 bilhões."
+  },
+  {
+   "item": "E058",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "Com isso, encerramos o trimestre com índice de Basileia de 17,7% e níveis de liquidez bastante confortáveis."
+  },
+  {
+   "item": "E059",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "Continuamos adotando todas as medidas necessárias para garantir a saúde e a segurança dos nossos colaboradores e da nossa sociedade, enquanto o Brasil vive sua pior fase da pandemia da COVID-19."
+  },
+  {
+   "item": "E060",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": 5,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Nosso lucro líquido contábil totalizou R$1.229,2 milhões no 4T 2020, um acréscimo de 22,7% em relação ao 3T 2020 e de 4,2% em relação ao 4T 2019.",
+   "trecho_atual": "Nosso lucro líquido contábil totalizou R$1.176,5 milhões no 1T 2021, 4,3% abaixo do 4T 2020, mas 53,2% acima do 1T 2020."
+  },
+  {
+   "item": "E061",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Isso reflete o aumento das atividades de market making e corretagem e de novos canais de distribuição.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E062",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "Wealth Management & Consumer Banking",
+   "trecho_anterior": "",
+   "trecho_atual": "Receitas (em milhões de R$)"
+  },
+  {
+   "item": "E063",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Desdobramento de Ações",
+   "trecho_anterior": "",
+   "trecho_atual": "Em 9 de abril de 2021, foi deliberado o desdobramento de ações que compõe o capital social do Banco, sem alteração no valor do capital social atual, de modo que cada ação será desdobrada em 4 ações da mesma espécie daquelas atualmente existentes, sendo aplicado a todos os acionistas do Banco, indistintamente, na mesma proporção, tanto para ações ordinárias quanto para ações preferenciais, não acarretando qualquer alteração na proporção entre número de ações ordinárias e preferenciais, bem como qualquer tipo de diluição nas respectivas participações acionárias."
+  },
+  {
+   "item": "E064",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Balanço patrimonial",
+   "trecho_anterior": "Do lado do passivo, o financiamento através de títulos e valores mobiliários teve redução em linha com a redução nos ativos, mencionado acima.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E065",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 37,
+   "pagina_atual": 34,
+   "secao": "Divulgação de Resultados - Primeiro Trimestre de 2021",
+   "trecho_anterior": "9 de fevereiro de 2021 (terça-feira)",
+   "trecho_atual": "11 de maio de 2021 (terça-feira)"
+  },
+  {
+   "item": "E066",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": 25,
+   "secao": "Principais Indicadores de Desempenho (“KPIs”) e Índices",
+   "trecho_anterior": "Consequentemente, os principais indicadores calculados com base nos resultados anuais durante todos os períodos financeiros podem ser mais significativos do que os resultados trimestrais e os resultados obtidos em qualquer data específica.",
+   "trecho_atual": "Consequentemente, os principais indicadores calculados com base nos resultados anuais durante todos os exercícios podem ser mais significativos do que os resultados trimestrais e os resultados obtidos em qualquer data específica."
+  },
+  {
+   "item": "E067",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "4T 2020 x 3T 2020",
+   "trecho_anterior": "As receitas da Wealth Management aumentaram 5,7% em relação ao 3T 2020, estabelecendo, mais uma vez, receita recorde de R$247,2 milhões no trimestre, principalmente devido ao crescimento WuM médio.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E068",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "Wealth Management & Consumer Banking",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas de Wealth Management & Consumer Banking cresceram 19,2% quando comparadas ao 4T 2020, atingindo R$294,7 milhões e estabelecendo novo recorde."
+  },
+  {
+   "item": "E069",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 17,
+   "secao": "1T 2021 vs. 4T 2020",
+   "trecho_anterior": "As receitas no 4T 2020 consistiram principalmente em (i) ganhos de R$76,7 milhões de equivalência patrimonial do Banco Pan, que continua a melhorar sua performance, e (ii) ganhos de R$24,4 milhões da Too Seguros e da Pan Corretora.",
+   "trecho_atual": "As receitas no 1T 2021 consistiram em (i) ganhos de R$85,3 milhões em equivalência patrimonial do Banco Pan, (ii) ganhos de R$17,4 milhões da Too Seguros e Pan Corretora, e (iii) ganhos de R$13,2 milhões de nossa participação remanescente de 5% na EFG."
+  },
+  {
+   "item": "E070",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 25,
+   "pagina_atual": 23,
+   "secao": "Portfólio de Crédito Expandido do BTG Pactual",
+   "trecho_anterior": "Nosso portfólio de crédito expandido é composto por empréstimos, recebíveis, adiantamentos em contratos de câmbio, cartas de crédito e títulos e valores mobiliários sujeitos a exposições de crédito (incluindo debêntures, notas promissórias, títulos imobiliários e fundos de direitos creditórios– FIDCs).",
+   "trecho_atual": "Nosso portfólio de crédito expandido é composto por empréstimos, recebíveis, adiantamentos sobre contratos de câmbio, cartas de crédito e títulos e valores mobiliários sujeitos a exposições de crédito (incluindo debêntures, notas promissórias, títulos imobiliários e investimentos em fundos de direitos creditórios - FIDCs)."
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Isso é especialmente importante dada a forte ressurgência da pandemia nas principais economias ocidentais a partir de outubro, que levou ao endurecimento das medidas de distanciamento social, pesando sobre o crescimento de curto prazo especialmente na Europa Ocidental.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E072",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "4T 2020 x 3T 2020",
+   "trecho_anterior": "O forte desempenho foi impulsionado principalmente por DCM, que teve o melhor trimestre de sua história, e por ECM, devido à sua sólida atividade principalmente no mercado local.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E073",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 17,
+   "secao": "1T 2021 vs. 1T 2020",
+   "trecho_anterior": "As receitas de Interest & Others diminuíram 72,6%, principalmente devido a menores taxas de juros no período, parcialmente compensadas pelo aumento do nosso patrimônio líquido.",
+   "trecho_atual": "As receitas de Interest & Others diminuíram 77,2%, principalmente devido às menores taxas de juros, que foram de 3,75% para 2,75%, parcialmente compensadas pelo aumento do patrimônio líquido."
+  },
+  {
+   "item": "E074",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Encerramos o trimestre com índice de Basileia de 16,7% e índice de cobertura de liquidez (“LCR”) de 273%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E075",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Asset Management",
+   "trecho_anterior": "",
+   "trecho_atual": "O AuM foi beneficiado pelo nível de captação elevado e pela valorização dos ativos."
+  },
+  {
+   "item": "E076",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "O Comitê de Política Monetária (Copom) manteve a taxa básica de juros inalterada nas reuniões de outubro e dezembro, conforme esperávamos, levando a Selic a encerrar 2020 em 2,0% a.a., sua mínima histórica.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E077",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Conforme mencionado acima, o desempenho do 4T 2020 foi muito bom em todas as nossas linhas de negócios: (i) Investment Banking apresentou uma receita 28,0% acima do 3T 2020 (e 68,1% acima do 4T19), estabelecendo nosso recorde de receitas em um único trimestre;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E078",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Eventos relevantes",
+   "trecho_anterior": "Em 6 de janeiro de 2021, o Banco, por meio de sua filial nas Ilhas Cayman, emitiu *Global Medium term Notes* no valor total de US$500 milhões, a uma taxa fixa de cupom de 2,75% a.a., com vencimento em 11 de janeiro de 2026 e pagamentos de cupons semestrais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E079",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "AuM e AuA por Tipo de Cliente",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas de Asset Management reduziram 24,3% no período em relação ao 4T 2020."
+  },
+  {
+   "item": "E080",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Kinvo Tecnologia da Informação Ltda.",
+   "trecho_anterior": "",
+   "trecho_atual": "Essa aquisição visa ampliar o ecossistema digital do BTG e complementar nossa gama de produtos."
+  },
+  {
+   "item": "E081",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 32,
+   "secao": "Diferenças de Apresentação Selecionadas",
+   "trecho_anterior": "",
+   "trecho_atual": "GAAP ou em qualquer outro princípio contábil geralmente aceito."
+  },
+  {
+   "item": "E082",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Apesar de serem de natureza transitória, as pressões atuais que afetam os componentes mais cíclicos da inflação podem não se dissipar tão rapidamente.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E083",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Despesas Administrativas e de Outra Natureza",
+   "trecho_anterior": "",
+   "trecho_atual": "Quando comparado ao 1T 2020, as despesas aumentaram 5,5%, principalmente relacionado à expansão de nossa plataforma de varejo digital."
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "1T 2021 vs. 1T 2020",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas de Principal Investments tiveram ganhos de R$238,4 milhões no 1T 2021, comparado a perdas de R$ 17,8 milhões no 1T 2020, quando tivemos contribuição negativa de investimentos em *Global Markets* e *Real Estate* devido à desvalorização de ativos observada no início da crise da COVID-19."
+  },
+  {
+   "item": "E085",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Assim, revisamos nossa projeção para o IPCA de 2021 para 3,5% a/a.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E086",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Despesas administrativas e de outra natureza",
+   "trecho_anterior": "Quando comparado ao 4T 2019, as despesas permaneceram estáveis.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E087",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "O déficit em conta corrente totalizou US$12,5 bilhões (0,9% do PIB) em 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E088",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Receita Consolidada Ajustada",
+   "trecho_anterior": "",
+   "trecho_atual": "Em comparação com um 4T20 muito sólido, as receitas diminuíram 1,0%, o que é esperado, dada a sazonalidade de final de ano dos nossos negócios."
+  },
+  {
+   "item": "E089",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "Nosso patrimônio líquido totalizou R$30,4 bilhões, um acréscimo de 14,0% quando comparado com o trimestre anterior, considerando R$2,57 bilhões dos recursos da nossa oferta primária."
+  },
+  {
+   "item": "E090",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 9,
+   "secao": "Investment Banking",
+   "trecho_anterior": "As receitas da área de Investment Banking tiveram aumento de 68,1% em relação ao 4T 2019.",
+   "trecho_atual": "As receitas da área de Investment Banking apresentaram aumento de 156,5% comparado ao 1T 2020."
+  },
+  {
+   "item": "E091",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 37,
+   "pagina_atual": 34,
+   "secao": "Divulgação de Resultados - Primeiro Trimestre de 2021",
+   "trecho_anterior": "Telefone: +55 (11) 2188-0155",
+   "trecho_atual": "Telefone: +55 (11) 3193-8000"
+  },
+  {
+   "item": "E092",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Sales & Trading também teve um ano bastante sólido atingindo R$3.117,2 milhões, com aumento de receita de 11,3% em comparação a um forte 2019.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E093",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 22,
+   "secao": "Análise de Unsecured Funding",
+   "trecho_anterior": "O Unsecured Funding aumentou de R$100,4 bilhões no final do 3T 2020 para R$107,2 bilhões no final do 4T 2020, devido a um aumento expressivo de depósitos a prazo e títulos emitidos.",
+   "trecho_atual": "Nosso total de Unsecured Funding (incluindo o perpétuo) aumentou de R$107,2 bilhões no final do 4T 2020 para R$121,1 bilhões no final do 1T 2021, principalmente devido a um aumento em depósitos a prazo, depósitos à vista e títulos emitidos."
+  },
+  {
+   "item": "E094",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Despesas Administrativas e de Outra Natureza",
+   "trecho_anterior": "",
+   "trecho_atual": "O total de despesas administrativas e de outra natureza reduziu 6,9%, passando de R$309,1 milhões no 4T 2020 para R$287,6 milhões no 1T 2021, principalmente em função de uma redução nos honorários jurídicos e de consultoria, que foram excepcionalmente altos no último trimestre de 2020."
+  },
+  {
+   "item": "E095",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Investment Banking",
+   "trecho_anterior": "",
+   "trecho_atual": "Em Financial Advisory, mesmo com atividade de mercado abaixo do esperado, vislumbramos sólido pipeline para o ano."
+  },
+  {
+   "item": "E096",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 9,
+   "secao": "Investment Banking",
+   "trecho_anterior": "M&A: 2º em número de operações no Brasil e na América Latina e 1º em volume de operações na América Latina e 2º no Brasil",
+   "trecho_atual": "M&A: 1º em volume de operações no Brasil e na América Latina."
+  },
+  {
+   "item": "E097",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "4T 2020 x 3T 2020",
+   "trecho_anterior": "Continuamos a ver uma contribuição forte nas atividades de clientes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E098",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "2020 x 2019",
+   "trecho_anterior": "O aumento foi resultado, principalmente, de um desempenho sólido de maneira geral em 2020, à medida que continuamos a desenvolver novas oportunidades, aumentamos nossa participação de mercado em corretagem e aprimoramos nossos canais de distribuição, ao passo que diminuímos o componente de risco de mercado em ativos ponderados pelo risco (RWA) no período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E099",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "*Os resultados, excluindo itens não recorrentes e ágio, fornecem informações mais significativas da lucratividade subjacente dos nossos negócios.*",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E100",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Asset Management",
+   "trecho_anterior": "",
+   "trecho_atual": "O Net New Money (NNM) foi de R$42,9 bilhões no trimestre, principalmente em Administração Fiduciária e nos Fundos de Renda Fixa e Ações no Brasil."
+  },
+  {
+   "item": "E101",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Esses fatores resultaram em uma redução substancial nas despesas líquidas com serviços (por exemplo, viagens e transporte) e receita (por exemplo, lucros e dividendos) e importações.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E102",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": 5,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "O nosso índice de cobertura de liquidez (LCR) terminou o trimestre em 273%.",
+   "trecho_atual": "Nosso índice de cobertura de liquidez (“LCR”) foi de 238%."
+  },
+  {
+   "item": "E103",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "4T 2020 x 4T 2019",
+   "trecho_anterior": "As receitas de Corporate e SME Lending cresceram 160,2% quando comparadas ao ano anterior, passando de R$229,2 milhões no 4T 2019 para R$596,5 milhões no 4T 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E104",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Corporate e SME Lending (em milhões de R$)",
+   "trecho_anterior": "",
+   "trecho_atual": "A área de Corporate & SME Lending registrou receitas robustas de R$554,8 milhões."
+  },
+  {
+   "item": "E105",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "No ano de 2020, a receita total foi de R$9.303,5 milhões, e o lucro líquido ajustado foi de R$4.049,9 milhões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E106",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "(iv) Asset Management continua entregando resultados sólidos: AuM/AuA e receitas cresceram 14,5% e 37,4%, respectivamente (e 38,1% e 23,1% comparado com o 4T19, respectivamente), com *Net New Money* recorde no trimestre de R$26,0 bi; e (v) as receitas de Wealth Management aumentaram 5,7% (e 51,5% em relação ao 4T19), estabelecendo receita recorde de R$247,2 milhões em um único trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E107",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas totalizaram R$264,7 milhões, 24,3% abaixo do trimestre anterior devido à sazonalidade das taxas de performance contabilizadas no 4T 2020, e (v) as receitas de Wealth Management & Consumer Banking expandiram 19,2% no trimestre (e 73,5% em relação ao 1T20), estabelecendo recorde de receita de R$294,7 milhões e crescimento de 22,8% no WuM, também com recorde de captações."
+  },
+  {
+   "item": "E108",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 18,
+   "secao": "Salários e benefícios",
+   "trecho_anterior": "Os custos com pessoal aumentaram 8,1% no trimestre e 41,8% na comparação com o 4T 2019, principalmente devido ao aumento de colaboradores (342 profissionais) no trimestre, especialmente na unidade de varejo digital do BTG Pactual.",
+   "trecho_atual": "Os custos com pessoal aumentaram 6,9% no trimestre e 29,5% na comparação com o 4T 2020, principalmente devido ao aumento de 309 colaboradores no quadro durante o trimestre, especialmente na Unidade de Varejo Digital e nas áreas de tecnologia."
+  },
+  {
+   "item": "E109",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "4T 2020 x 4T 2019",
+   "trecho_anterior": "O aumento se deve principalmente à melhor contribuição das nossas mesas de crédito, ações e juros, parcialmente compensadas pelo desempenho mais baixo da mesa de energia, como mencionado anteriormente.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E110",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "4T 2020 x 4T 2019",
+   "trecho_anterior": "As receitas de Asset Management tiveram um aumento de 23,1%, passando de R$284,1 milhões no 4T 2019 para R$349,7 milhões no 4T 2020, principalmente devido ao crescimento de 38,1% em AuM/AuA e a maiores *fees* de performance na comparação com o mesmo período do ano anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E111",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 3,
+   "secao": "Destaques",
+   "trecho_anterior": "Nosso índice de Basileia foi de 16,7%.",
+   "trecho_atual": "Nosso índice de Basileia foi de 17,7%."
+  },
+  {
+   "item": "E112",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Acreditamos que a taxa de câmbio terá uma leve valorização para R$4,90/US$ no final do ano, explicada principalmente por um cenário externo mais favorável, assumindo a continuidade de fortes estímulos fiscais e monetários no exterior e a recuperação da atividade global à medida que a vacinação contra a Covid-19 ganha tração.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E113",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "O desempenho do 1T 2021 foi muito forte em todas as nossas linhas de negócio: (i) Investment Banking registrou receita de R$483,6 milhões, 6,0% abaixo do 4T 2020 (o melhor trimestre desde nosso *IPO*) e mais de duas vezes maior do que no 1T 2020, mantendo nossa posição de liderança nos rankings da indústria;"
+  },
+  {
+   "item": "E114",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 19,
+   "secao": "Impostos de renda ajustados",
+   "trecho_anterior": "O aumento no ano deveu-se principalmente a um mix de receitas menos favorável, com um volume maior de receitas sujeitas a impostos no período.",
+   "trecho_atual": "A redução no trimestre deveu-se principalmente a um mix de receitas mais favorável, com um volume menor de receitas sujeitas a impostos no período."
+  },
+  {
+   "item": "E115",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "1T 2021 vs. 1T 2020",
+   "trecho_anterior": "",
+   "trecho_atual": "O aumento está relacionado, principalmente, ao melhor desempenho do Banco Pan."
+  },
+  {
+   "item": "E116",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Necton Investimentos | Conclusão",
+   "trecho_anterior": "",
+   "trecho_atual": "Concluímos a aquisição de 100% das ações da Necton Investimentos S.A. após obtermos a aprovação tanto do Banco Central do Brasil quanto do Conselho Administrativo de Defesa Econômica (CADE), bem como todas as condições precedentes."
+  },
+  {
+   "item": "E117",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 19,
+   "secao": "Impostos de renda ajustados",
+   "trecho_anterior": "Nossa alíquota efetiva de imposto de renda no trimestre foi de 31,5% (representando uma despesa de imposto de renda de R$564,8 milhões), comparado à alíquota de 28,1% no 3T 2020 e de 21,6% no 4T 2019.",
+   "trecho_atual": "Nossa alíquota efetiva de imposto de renda no trimestre foi de 26,3% (representando uma despesa de imposto de renda de R$420,7 milhões), comparada a uma alíquota de 31,5% no 4T 2020 e 11,4% no 1T 2020."
+  },
+  {
+   "item": "E118",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Kinvo Tecnologia da Informação Ltda.",
+   "trecho_anterior": "",
+   "trecho_atual": "A conclusão e o fechamento da transação estão sujeitos à verificação de determinadas condições precedentes, bem como a obtenção de todas as aprovações regulatórias necessárias."
+  },
+  {
+   "item": "E119",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Em nosso *non-core business*, tanto Principal Investments quanto Participations, apresentaram bom desempenho em 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E120",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 35,
+   "pagina_atual": 32,
+   "secao": "Diferenças de Apresentação Selecionadas",
+   "trecho_anterior": "Dessa forma, as Demonstrações do Resultado Ajustado contêm informações sobre os negócios e sobre os resultados operacionais e financeiros que não são diretamente comparáveis às Demonstrações do Resultado ou às Demonstrações Financeiras, não devendo ser consideradas isoladamente ou como uma alternativa às Demonstrações do Resultado ou às Demonstrações Financeiras.",
+   "trecho_atual": "Dessa forma, a Demonstração do Resultado Ajustado contém informações sobre os negócios e sobre os resultados operacionais e financeiros que não são diretamente comparáveis à Demonstração do Resultado ou às Demonstrações Financeiras, não devendo ser considerada isoladamente ou como uma alternativa à Demonstração do Resultado ou às Demonstrações Financeiras."
+  }
+ ]
+}

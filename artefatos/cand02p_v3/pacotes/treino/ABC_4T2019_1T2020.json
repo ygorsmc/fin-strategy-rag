@@ -1,0 +1,1207 @@
+{
+ "par": "ABC_4T2019_1T2020",
+ "documento_anterior": "abc_release_4T2019",
+ "documento_atual": "abc_release_1T2020",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2019 x 2018 | Recorrente",
+   "trecho_anterior": "O aumento do resultado em 2019 em relação a 2018 é explicado:",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E002",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Guidance 2020-2021",
+   "trecho_anterior": "Já no segmento Middle, projetamos atingir um volume de portfólio de crédito entre R$1,4 e R$1,6 bilhão em 2020 e entre R$2,2 bilhões e R$2,5 bilhões em 2021, resultando num CAGR de 67% a 78%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E003",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 16,
+   "secao": "Captação",
+   "trecho_anterior": "Em dezembro de 2019 o saldo da captação totalizava R$30,1 bilhões, aumento de 2,3% no trimestre e 8,1% em 12 meses.",
+   "trecho_atual": "Em março de 2020 o saldo da captação totalizava R$34,1 bilhões, aumento de 13,3% no trimestre e 22,3% em 12 meses."
+  },
+  {
+   "item": "E004",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "Captação",
+   "trecho_anterior": "",
+   "trecho_atual": "$$Eurobonus Subordinado venceu em 8 de abril de 2020, totalizando US$126,3 milhões."
+  },
+  {
+   "item": "E005",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES FINANCEIROS DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "A Carteira de Empréstimos (Resolução Nº 2.682 BACEN) continua apresentando uma qualidade elevada, com 95,9% da carteira classificada entre AA-C."
+  },
+  {
+   "item": "E006",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Adequação do Capital",
+   "trecho_anterior": "",
+   "trecho_atual": "O fator mais relevante na redução de nosso Índice de Basileia no trimestre foi resultado da política de hedge e overhedge de investimentos no exterior, que resulta em uma diferença temporária em momentos de maior depreciação cambial."
+  },
+  {
+   "item": "E007",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "A carteira de empréstimos apresentou um crescimento de 3,8% no trimestre e 36,7% no ano."
+  },
+  {
+   "item": "E008",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "PRINCIPAIS DESTAQUES DO QUARTO",
+   "trecho_anterior": "Volume da carteira expandida Middle entre R$1,4 e R$1,6 bi em 2020 e entre R$2,2 e R$2,5 em 2021.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E009",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Resultados",
+   "trecho_anterior": "",
+   "trecho_atual": "Pela redução da Receita de Serviços, tanto na linha de Banco de Investimentos, quanto na de Garantias Prestadas;"
+  },
+  {
+   "item": "E010",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 20,
+   "secao": "Resultado Operacional",
+   "trecho_anterior": "O Resultado Operacional totalizou R$208,4 milhões no quarto trimestre de 2019, queda de 2,6% em relação ao trimestre anterior e 4,1% no comparativo com o mesmo período de 2018.",
+   "trecho_atual": "O Resultado Operacional totalizou R$145,4 milhões no primeiro trimestre de 2020, queda de 30,2% em relação ao trimestre anterior e de 27,5% no comparativo com o mesmo período de 2019."
+  },
+  {
+   "item": "E011",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Abertura Setorial da Carteira Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "Em março de 2020, o Banco apresentou um portfólio de crédito bem diversificado e defensivo, considerando a recessão econômica atual provocada pela COVID-19."
+  },
+  {
+   "item": "E012",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 12,
+   "secao": "Classificação da Carteira de Empréstimos (Resolução Nº 2.682 BACEN)",
+   "trecho_anterior": "As operações de crédito são classificadas de acordo com seu nível de risco e seguindo critérios que levam em consideração: a conjuntura econômica, a experiência passada e os riscos específicos em relação às operações, aos devedores e garantidores, de acordo com a Resolução 2.682 do Banco Central do Brasil – BACEN.",
+   "trecho_atual": "As operações de crédito são classificadas de acordo com seu nível de risco e seguindo critérios que levam em consideração: a conjuntura econômica, a experiência passada e os riscos específicos em relação às operações, aos devedores e garantidores, de acordo com a Resolução Nº 2.682 do Banco Central do Brasil – BACEN."
+  },
+  {
+   "item": "E013",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "Segmento Corporate engloba empresas com faturamento anual entre R$250 milhões e R$2 bilhões"
+  },
+  {
+   "item": "E014",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2019 x 2018 | Recorrente",
+   "trecho_anterior": "Pelo crescimento da Margem Financeira, nas linhas Patrimônio Líquido Remunerado a CDI e Margem Financeira com Clientes;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E015",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES FINANCEIROS DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Aquisição de uma Comercializadora de Energia e obtenção de autorização pelo Banco Central para início das atividades: - Comercialização de energia elétrica, envolvendo a compra e a venda no Mercado Livre de Energia;"
+  },
+  {
+   "item": "E016",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Resultados",
+   "trecho_anterior": "",
+   "trecho_atual": "1T20 x 4T19 | Recorrente"
+  },
+  {
+   "item": "E017",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "PRINCIPAIS DESTAQUES DO QUARTO",
+   "trecho_anterior": "Na comparação anual, houve crescimento de 6,8%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E018",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES FINANCEIROS DO PERÍODO",
+   "trecho_anterior": "O Retorno Anualizado sobre o Patrimônio Líquido (ROAE) foi de 14,6% no trimestre e 13,7% no ano de 2019.",
+   "trecho_atual": "O Retorno Anualizado sobre o Patrimônio Líquido (ROAE) foi de 8,0% no trimestre."
+  },
+  {
+   "item": "E019",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "NIM",
+   "trecho_anterior": "",
+   "trecho_atual": "Margem Financeira Gerencial (R$ milhões)"
+  },
+  {
+   "item": "E020",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES FINANCEIROS DO PERÍODO",
+   "trecho_anterior": "A Carteira de Crédito Expandida¹ encerrou dezembro de 2019 com saldo de R$30,1 bilhões, crescimento de 6,8% em relação ao trimestre anterior e de 14,9% em 12 meses.",
+   "trecho_atual": "A Carteira de Crédito Expandida¹ encerrou março de 2020 com saldo de R$31,1 bilhões, crescimento de 3,2% em relação ao trimestre anterior e de 17,3% em 12 meses."
+  },
+  {
+   "item": "E021",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "2019 - CONCILIAÇÃO ENTRE OS RESULTADOS CONTÁBEIS E GERENCIAIS",
+   "trecho_anterior": "(1) Estorno da provisão adicional de R$ 50 milhões constituída em Set/15 e seu respectivo impacto no 'Imposto de Renda e CSLL'; parcela do crédito tributário gerado pela volta da alíquota CSLL para 20%; e ajustes nas despesas de pessoal e outras despesas administrativas referentes à reestruturação organizacional ocorrida no Banco em 2019.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E022",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Resultados",
+   "trecho_anterior": "",
+   "trecho_atual": "1T20 x 1T19 | Recorrente"
+  },
+  {
+   "item": "E023",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "Segmento Large Corporate engloba empresas com faturamento anual acima de R$2 bilhões"
+  },
+  {
+   "item": "E024",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "No segmento Corporate (empresas com faturamento anual entre R$250 milhões e R$2 bilhões), a carteira de crédito expandida atingiu saldo de R$13,9 bilhões, crescimento de 10,0% no trimestre e de 30,8% em 12 meses, representando 46,2% da carteira total.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E025",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Guidance 2019",
+   "trecho_anterior": "Em relação às despesas, finalizamos 2019 com um crescimento anual de 7,4% um pouco acima do guidance, visto que antecipamos uma parte relevante da contratação de pessoal, das despesas de marketing e tecnologia esperadas para 2020 já no 4T19, além de termos investido em novos produtos e serviços ao longo de 2019.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E026",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES FINANCEIROS DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Devido às grandes incertezas econômicas pelas quais a economia brasileira e mundial vem passando, o Banco ABC Brasil decidiu suspender o Guidance de Carteira de Crédito Expandida, Carteira de Crédito do segmento Middle e Despesas, publicado na divulgação de resultados do 4T19, referente aos anos de 2020 e 2021."
+  },
+  {
+   "item": "E027",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "PRINCIPAIS DESTAQUES DO QUARTO",
+   "trecho_anterior": "ABCB4 NÍVEL 2 BOLETIM BRASIL",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E028",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "Vinicius Carmona Cardoso Gerente de RI",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E029",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Resultado Operacional",
+   "trecho_anterior": "No ano de 2019, o Resultado Operacional se manteve praticamente estável em relação a 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E030",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "CAPTAÇÃO",
+   "trecho_anterior": "$$ Inclui R$21,9 milhões aguardando homologação pelo Banco Central do Brasil para contabilização como capital adicional.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E031",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 19,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "A Receita de Serviços totalizou R$96,3 milhões no quarto trimestre de 2019, aumento de 22,1% em relação ao trimestre anterior e 5,1% em relação ao mesmo período do ano anterior.",
+   "trecho_atual": "A Receita de Serviços totalizou R$50,7 milhões no primeiro trimestre de 2020, redução de 47,3% em relação ao trimestre anterior e de 32,0% em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E032",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Guidance 2019",
+   "trecho_anterior": "Atingimos 14,9% de crescimento anual da Carteira de Crédito Expandida em 2019, superando o guidance revisado no meio do ano, de 6% a 10%, e ficando no topo do guidance inicial de 2019, entre 11% e 15%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E033",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "12h00 Brasília / 10h00 US EST +1 (412) 717-9627 +1 (844) 204-8942",
+   "trecho_atual": "13h00 Brasília / 12h00 US EDT +1 (412) 717-9627 +1 (844) 204-8942"
+  },
+  {
+   "item": "E034",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "Devido às grandes incertezas econômicas provocadas pela crise da COVID-19, o Banco suspendeu o *guidance* para a Carteira de Crédito Expandida e para o segmento Middle."
+  },
+  {
+   "item": "E035",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2019 x 2018 | Contábil",
+   "trecho_anterior": "Pelo efeito líquido positivo de R$25,9 milhões de impactos não recorrentes, considerando uma parcela do crédito tributário ocasionado pelo aumento da alíquota CSLL de 15% para 20%, bem como a reversão da PDD adicional constituída em setembro de 2015.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E036",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 16,
+   "secao": "Captação",
+   "trecho_anterior": "O gráfico ao lado apresenta a abertura da Captação por perfil de investidor.",
+   "trecho_atual": "O gráfico abaixo apresenta a abertura da Captação por perfil de investidor."
+  },
+  {
+   "item": "E037",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Variação Trimestral da Carteira de Empréstimos Corporativos (%)",
+   "trecho_anterior": "",
+   "trecho_atual": "$$Os critérios para classificação de Grandes Empresas são: Receita bruta anual acima de R$300 milhões ou ativo total superior a R$240 milhões"
+  },
+  {
+   "item": "E038",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 16,
+   "secao": "Captação",
+   "trecho_anterior": "A diversificação das linhas de captação e o amplo acesso aos mercados local e externo, em condições competitivas, são alguns dos pilares de sustentabilidade do nosso negócio.",
+   "trecho_atual": "A diversificação das linhas de captação e o amplo acesso aos mercados local e externo, em condições competitivas, continuam a ser pilares de sustentabilidade do nosso negócio."
+  },
+  {
+   "item": "E039",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 20,
+   "secao": "Eficiência",
+   "trecho_anterior": "O Índice de Eficiência recorrente foi de 36,6% no quarto trimestre de 2019, estável em relação ao trimestre anterior e aumento de 1,0 p.p. no comparativo com o mesmo período de 2018.",
+   "trecho_atual": "O Índice de Eficiência recorrente foi de 43,8% no primeiro trimestre de 2020, um aumento de 7,1 p.p em relação ao trimestre anterior e de 6,8 p.p. no comparativo com o mesmo período de 2019."
+  },
+  {
+   "item": "E040",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Resultado Operacional",
+   "trecho_anterior": "",
+   "trecho_atual": "Abaixo, a abertura do Resultado Operacional:"
+  },
+  {
+   "item": "E041",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Comparativo Banco ABC Brasil e Sistema Financeiro Nacional",
+   "trecho_anterior": "",
+   "trecho_atual": "No 1T20, com a crise ocasionada pela COVID-19, o Banco passou a adotar uma postura mais conservadora, resultando em uma desaceleração do crescimento quando comparado ao SFN."
+  },
+  {
+   "item": "E042",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Eficiência",
+   "trecho_anterior": "Índice de Eficiência (Despesas/Receitas)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E043",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 7,
+   "secao": "Resultados",
+   "trecho_anterior": "A redução do resultado no quarto trimestre de 2019 em comparação com o mesmo período do ano anterior é explicada:",
+   "trecho_atual": "A redução do resultado no primeiro trimestre de 2020 em comparação com o mesmo período do ano anterior é explicada:"
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2019 x 2018 | Contábil",
+   "trecho_anterior": "Em 2019, o Lucro Líquido Contábil apresentou crescimento de 26,4% em relação a 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Composição Acionária",
+   "trecho_anterior": "",
+   "trecho_atual": "$$ Administradores inclui executivos, membros do Conselho de Administração e pessoas vinculadas"
+  },
+  {
+   "item": "E046",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Guidance 2020-2021",
+   "trecho_anterior": "Em relação às despesas (Pessoal, Outras Administrativas e PLR), projetamos um crescimento de 14% a 18% em 2020, com o objetivo de sustentar nossa estratégia de crescimento no segmento Middle e despesas de tecnologia e sistemas, visando aprimorar nossos processos internos, produtos e serviços ofertados a todos nossos clientes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E047",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Medidas Implementadas para Superar a Crise",
+   "trecho_anterior": "",
+   "trecho_atual": "Substituição do relacionamento presencial pelo relacionamento remoto, gerando aprendizados relevantes para o futuro da organização;"
+  },
+  {
+   "item": "E048",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 7,
+   "secao": "Resultados",
+   "trecho_anterior": "A redução do lucro líquido recorrente, comparando o quarto trimestre de 2019 com o terceiro trimestre, é explicada:",
+   "trecho_atual": "A redução do lucro líquido recorrente, comparando o primeiro trimestre de 2020 com o quarto trimestre de 2019, é explicada:"
+  },
+  {
+   "item": "E049",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 9,
+   "secao": "Comparativo Banco ABC Brasil e Sistema Financeiro Nacional",
+   "trecho_anterior": "No gráfico abaixo, a comparação da variação trimestral da carteira de empréstimos corporativos (2.682) entre o Banco ABC Brasil e o Sistema Financeiro Nacional (SFN).",
+   "trecho_atual": "No gráfico abaixo, a comparação da variação trimestral da carteira de empréstimos corporativos (Resolução Nº 2.682 BACEN) entre o Banco ABC Brasil e o Sistema Financeiro Nacional (SFN)."
+  },
+  {
+   "item": "E050",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "PRINCIPAIS DESTAQUES DO QUARTO",
+   "trecho_anterior": "A Carteira de Empréstimos (2.682) mais uma vez apresentou uma performance sólida no trimestre, crescendo 13,2% em relação ao trimestre anterior e 32,5% em relação a dezembro de 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E051",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "A carteira de crédito expandida atingiu um crescimento de 6,8% no trimestre e 14,9% no ano, mesmo considerando a redução na carteira de garantias prestadas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E052",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES FINANCEIROS DO PERÍODO",
+   "trecho_anterior": "O Lucro Líquido Contábil totalizou R$145,6 milhões no trimestre, aumento de 11,6% em relação ao trimestre anterior e 78,1% em relação ao mesmo período do ano anterior.",
+   "trecho_atual": "O Lucro Líquido totalizou R$ 81,0 milhões no trimestre, queda de 32,3% em relação ao trimestre anterior e 33,2% em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E053",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Comparativo Banco ABC Brasil e Sistema Financeiro Nacional",
+   "trecho_anterior": "Variação Trimestral da Carteira de Empréstimos Corporativos (%)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E054",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": 4,
+   "secao": "SUMÁRIO EXECUTIVO",
+   "trecho_anterior": "Apresentamos, abaixo, informações e indicadores financeiros do Banco ABC Brasil ao final do quarto trimestre e ano de 2019.",
+   "trecho_atual": "Apresentamos, abaixo, informações e indicadores financeiros do Banco ABC Brasil ao final do primeiro trimestre de 2020."
+  },
+  {
+   "item": "E055",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "4T19 x 4T18 | Recorrente",
+   "trecho_anterior": "A redução do lucro foi parcialmente compensada pelo resultado da Margem Financeira, nas componentes Margem Financeira com Clientes e com o Mercado, bem como pelo resultado do Banco de Investimentos (Receita de Serviços).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E056",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "Teleconferências 7 de fevereiro de 2020",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E057",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "PRINCIPAIS DESTAQUES DO QUARTO",
+   "trecho_anterior": "O ROAE recorrente foi de 12,0% no trimestre e 12,6% em 2019.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E058",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Guidance 2020-2021",
+   "trecho_anterior": "Este guidance contém declarações perspectivas, as quais estão sujeitas a riscos e incertezas, pois foram baseadas em expectativas e premissas da Administração e em informações disponíveis no mercado até a presente data.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E059",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "PRINCIPAIS DESTAQUES DO QUARTO",
+   "trecho_anterior": "O Lucro Líquido Recorrente atingiu R$119,7 milhões no quarto trimestre de 2019, queda de 2,7% em relação ao trimestre anterior e de 1,5% em relação ao mesmo período de 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E060",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Telefone: +55 (11) 3170-4655"
+  },
+  {
+   "item": "E061",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Guidance 2020-2021",
+   "trecho_anterior": "Já em 2021, o ritmo de crescimento das despesas deve desacelerar, variando entre 6% a 9%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E062",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "2019 - CONCILIAÇÃO ENTRE OS RESULTADOS CONTÁBEIS E GERENCIAIS",
+   "trecho_anterior": "(3) Reclassificação do efeito fiscal do hedge de 'Despesas tributárias' e 'Imposto de renda e contribuição social' para 'Resultado Bruto da Intermediação Financeira'.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E063",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "CAPTAÇÃO",
+   "trecho_anterior": "No período, foram emitidos R$502 milhões no mercado local, sendo 100% com colocação privada.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E064",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES FINANCEIROS DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Adiantamento de contratos de energia em projetos de geração;"
+  },
+  {
+   "item": "E065",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Medidas Implementadas para Superar a Crise",
+   "trecho_anterior": "",
+   "trecho_atual": "Revisão da Carteira de Crédito Expandida procurando identificar os impactos gerados pela Pandemia."
+  },
+  {
+   "item": "E066",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "PRINCIPAIS DESTAQUES DO QUARTO",
+   "trecho_anterior": "A Carteira de Crédito Expandida apresentou crescimento de 6,8% no trimestre e 14,9% no ano, atingindo R$30,1 bilhões em dezembro de 2019",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E067",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Abertura Setorial da Carteira Expandida",
+   "trecho_anterior": "Em dezembro de 2019, o Banco apresentou um portfólio de crédito bem diversificado e sem grandes concentrações setoriais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E068",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "BANCO DE INVESTIMENTOS",
+   "trecho_anterior": "No ano de 2019, houve um crescimento de 83,6% no volume originado em relação a 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E069",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "A carteira de empréstimos apresentou um aumento robusto em dezembro de 2019, crescendo 13,2% no trimestre e 32,5% no ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E070",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES FINANCEIROS DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "No segmento Large Corporate, houve crescimento de 1,9% no trimestre e 7,0% em 12 meses."
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "No ano de 2019, o Lucro Líquido recorrente totalizou R$489,1 milhões, um aumento de 6,8% em relação a 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E072",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "Telefone: +55 (11) 3170-4655/2354",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E073",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2019 x 2018 | Contábil",
+   "trecho_anterior": "O resultado foi parcialmente compensado por um impacto negativo de R$39,3 milhões no lucro contábil, referente ao ônus fiscal provocado pela queda da alíquota CSLL em 2019, de 20% para 15%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E074",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "ADEQUAÇÃO DO CAPITAL",
+   "trecho_anterior": "A tabela a seguir apresenta as posições de capital do Banco ABC Brasil em relação ao total de ativos ponderados pelo risco, bem como as exigências de capital mínimo previstas pelas normas do Banco Central:",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E075",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Resultados",
+   "trecho_anterior": "",
+   "trecho_atual": "Pela queda do Patrimônio Líquido remunerado a CDI, que foi mais que compensado pelo aumento da Margem Financeira com Clientes;"
+  },
+  {
+   "item": "E076",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "2019 - CONCILIAÇÃO ENTRE OS RESULTADOS CONTÁBEIS E GERENCIAIS",
+   "trecho_anterior": "(2) Reclassificações de 'Despesas de Pessoal' (referente ao INSS da remuneração variável) para 'Participação nos Lucros e Resultados', de 'Despesas Administrativas' (vinculadas ao volume de receitas) para 'Resultado Bruto da Intermediação Financeira' e 'Receita de Serviços' e de 'Despesas Administrativas' (referente a despesas de recuperação de encargos e de crédito) para 'Outras Receitas (Despesas) Operacionais';",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E077",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Medidas Implementadas para Superar a Crise",
+   "trecho_anterior": "",
+   "trecho_atual": "94% dos respondentes disseram estar adaptados ao Home-office."
+  },
+  {
+   "item": "E078",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "10h00 Brasília / 08h00 US EST +55 (11) 3181-8565 +55 (11) 4210-1803",
+   "trecho_atual": "11h00 Brasília / 10h00 US EDT +55 11 3181-8565 +55 11 4210-1803"
+  },
+  {
+   "item": "E079",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "Divulgação dos Resultados 6 de fevereiro de 2020 (antes da abertura do mercado)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E080",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 19,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "No quarto trimestre de 2019, a Receita de Serviços representou 28,7% da Receita Total.",
+   "trecho_atual": "No primeiro trimestre de 2020, a Receita de Serviços representou 17,3% da Receita Total."
+  },
+  {
+   "item": "E081",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 18,
+   "secao": "NIM",
+   "trecho_anterior": "A NIM (taxa anualizada da margem financeira gerencial) foi de 3,4% a.a. no quarto trimestre de 2019, redução de 0,2 p.p. em relação ao trimestre anterior e estável em relação ao mesmo período de 2018.",
+   "trecho_atual": "A NIM (taxa anualizada da margem financeira gerencial) foi de 3,0% a.a. no primeiro trimestre de 2020, redução de 0,4 p.p. em relação ao trimestre anterior e de 0,3 p.p. em relação ao mesmo período de 2019, provocado principalmente pelo impacto da redução da taxa Selic no Patrimônio Líquido remunerado a CDI."
+  },
+  {
+   "item": "E082",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Resultados",
+   "trecho_anterior": "",
+   "trecho_atual": "Pela redução da Receita de Serviços, principalmente na linha de Banco de Investimentos, que sofreu impacto direto da crise provocada pela COVID-19;"
+  },
+  {
+   "item": "E083",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "Com saldo de R$30,1 bilhões ao final de dezembro de 2019, a carteira cresceu 6,8% no trimestre e 14,9% em 12 meses.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E084",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Segmento Middle",
+   "trecho_anterior": "Atualmente, a operação Middle já está presente nas regiões Sul e Sudeste do Brasil.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E085",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "A carteira de crédito expandida atingiu um crescimento de 3,2% no trimestre e 17,3% no ano."
+  },
+  {
+   "item": "E086",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Guidance 2019",
+   "trecho_anterior": "A partir de setembro de 2019, sentimos uma melhora relevante na demanda por crédito e conseguimos retomar um crescimento mais sólido de carteira, principalmente na linha de Empréstimos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E087",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2019 x 2018 | Recorrente",
+   "trecho_anterior": "O crescimento de lucro foi impactado por uma menor receita com Garantias Prestadas (Receita de Serviços), maiores despesas com Provisão para Devedores Duvidosos (PDD) e aumento nas Despesas de Pessoal & Outras Administrativas acima do guidance anual (4% a 6%), decorrente da antecipação de uma parte relevante da contratação de pessoal, das despesas de marketing e tecnologia esperadas para 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E088",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 7,
+   "secao": "Resultados",
+   "trecho_anterior": "O Lucro Líquido recorrente atingiu R$119,7 milhões no quarto trimestre de 2019, redução de 2,7% em relação aos R$123,0 milhões apresentados no trimestre anterior e de 1,5% em relação aos R$121,4 milhões apresentados no mesmo período de 2018.",
+   "trecho_atual": "O Lucro Líquido recorrente atingiu R$ 81,0 milhões no primeiro trimestre de 2020, redução de 32,3% em relação aos R$ 119,7 milhões apresentados no trimestre anterior e de 33,2% em relação aos R$ 121,2 milhões apresentados no mesmo período de 2019."
+  },
+  {
+   "item": "E089",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Despesas de Pessoal, Administrativas e PLR",
+   "trecho_anterior": "",
+   "trecho_atual": "O *guidance* de Despesas para 2020 e 2021 foi suspenso, devido às incertezas econômicas provocadas pela crise da COVID-19."
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2019 x 2018 | Recorrente",
+   "trecho_anterior": "Pelo aumento da receita do Banco de Investimentos (Receita de Serviços);",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "DESPESAS DE PESSOAL, ADMINISTRATIVAS E PLR",
+   "trecho_anterior": "O Banco encerrou 2019 com 656 colaboradores (610 no trimestre passado e 598 no ano anterior).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E092",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "BANCO DE INVESTIMENTOS",
+   "trecho_anterior": "A tabela abaixo contempla a evolução do volume e quantidade de operações originadas pela área de Mercado de Capitais (DCM).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E093",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Carteira de Crédito por Prazo de Vencimento",
+   "trecho_anterior": "Ao final de dezembro de 2019, o prazo médio da carteira de crédito (empréstimos e garantias prestadas) foi de 409 dias (392 dias ao final de setembro de 2019 e 356 dias ao final de dezembro de 2018).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E094",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 18,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "No quarto trimestre de 2019, o VaR consolidado médio diário foi de R$5,1 milhões (média do Valor em Risco estimado através do método de simulação histórica com horizonte de tempo de um dia e intervalo de confiança de 99%).",
+   "trecho_atual": "No primeiro trimestre de 2020, o VaR consolidado médio diário foi de R$5,2 milhões (média do Valor em Risco estimado através do método de simulação histórica com horizonte de tempo de um dia e intervalo de confiança de 99%)."
+  },
+  {
+   "item": "E095",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Eficiência",
+   "trecho_anterior": "No ano de 2019, o índice ficou em 37%, 1,2 p.p. acima do observado em 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E096",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "CAPTAÇÃO",
+   "trecho_anterior": "No ano de 2019, o Banco emitiu Letras Financeiras Subordinadas Perpétuas, com o intuito de fortalecer sua estrutura de capital.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E097",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "Ricardo Moura Head de RI",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E098",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Segmento Middle",
+   "trecho_anterior": "Durante o quarto trimestre de 2019, expandimos nossa operação do Middle para outras cidades brasileiras, lembrando que até o terceiro trimestre, 100% da operação estava concentrada na região metropolitana de São Paulo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E099",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "No segmento Large Corporate, (empresas com faturamento anual acima de R$2 bilhões), a carteira de crédito expandida atingiu saldo de R$15,4 bilhões, aumento de 3,7% no trimestre e de 3,4% em 12 meses, representando 51,2% da carteira total.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E100",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES FINANCEIROS DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "O Custo do Crédito anualizado do trimestre foi 1,4%, refletindo uma mudança de tendência de provisionamento, quando comparado ao ano de 2019, por conta da pandemia."
+  },
+  {
+   "item": "E101",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES FINANCEIROS DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "No segmento Corporate, o crescimento foi de 4,0% no trimestre e 30,3% em 12 meses."
+  },
+  {
+   "item": "E102",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "No segmento Middle (empresas com faturamento anual entre R$30 milhões e R$250 milhões), a carteira de crédito expandida atingiu saldo de R$785 milhões, crescimento de 12,2% no trimestre e de 17,1% em 12 meses, representando 2,6% da carteira total.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E103",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "PRINCIPAIS DESTAQUES DO QUARTO",
+   "trecho_anterior": "No ano, o lucro líquido contábil cresceu 26,4%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E104",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "DESTAQUES FINANCEIROS DO PERÍODO",
+   "trecho_anterior": "",
+   "trecho_atual": "Acesso a grandes consumidores de energia através de sua capilaridade comercial."
+  },
+  {
+   "item": "E105",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Adequação do Capital",
+   "trecho_anterior": "",
+   "trecho_atual": "O gráfico e a tabela abaixo mostram as variações na composição do Índice de Basileia ocorridas ao longo do trimestre:"
+  },
+  {
+   "item": "E106",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Guidance 2020-2021",
+   "trecho_anterior": "$$Cagr: Taxa de Crescimento Composto Médio do período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E107",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "Carteira de Crédito Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "Segmento Middle engloba empresas com faturamento anual entre R$30 milhões e R$250 milhões"
+  },
+  {
+   "item": "E108",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "Principais Indicadores",
+   "trecho_anterior": "[tbl-0.html](tbl-0.html)[tbl-1.html](tbl-1.html)[tbl-2.html](tbl-2.html)[tbl-3.html](tbl-3.html)[tbl-4.html](tbl-4.html)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E109",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "Despesa de PDD (Carteira 2.682)",
+   "trecho_anterior": "Continuamos confortáveis com o custo do crédito, que continuou em torno de 1% no ano de 2019, em linha com a performance a partir de 2018 e refletindo uma boa qualidade da carteira de empréstimos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E110",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 7,
+   "secao": "Resultados",
+   "trecho_anterior": "Pelo aumento das Despesas de Pessoal & Outras Administrativas;",
+   "trecho_atual": "Pelo aumento das Despesas de Pessoal & Outras Administrativas."
+  },
+  {
+   "item": "E111",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Abertura Setorial da Carteira Expandida",
+   "trecho_anterior": "",
+   "trecho_atual": "O Banco tem uma exposição relevante em setores menos impactados pela recessão econômica atual."
+  },
+  {
+   "item": "E112",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 7,
+   "secao": "Resultados",
+   "trecho_anterior": "Pelo aumento das Despesas de Pessoal & Outras Administrativas;",
+   "trecho_atual": "Pelo aumento das Despesas de Pessoal & Outras Administrativas."
+  },
+  {
+   "item": "E113",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 14,
+   "secao": "Classificação da Carteira de Garantias Prestadas (Resolução Nº 2.682 BACEN)",
+   "trecho_anterior": "O saldo da carteira de garantias prestadas ao final de dezembro de 2019 era de R$9.256 milhões, com um saldo de provisão de R$53 milhões.",
+   "trecho_atual": "O saldo da carteira de garantias prestadas ao final de março de 2020 era de R$9,6 bilhões, com um saldo de provisão de R$51,2 milhões."
+  },
+  {
+   "item": "E114",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "NIM",
+   "trecho_anterior": "No ano de 2019, houve redução de 0,2 p.p. em relação a 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E115",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Comparativo Banco ABC Brasil e Sistema Financeiro Nacional",
+   "trecho_anterior": "Em 2019, o Banco apresentou um crescimento da carteira de empréstimos consistentemente acima do SFN.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E116",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 12,
+   "secao": "Classificação da Carteira de Empréstimos (Resolução Nº 2.682 BACEN)",
+   "trecho_anterior": "O saldo da carteira de empréstimos ao final de dezembro de 2019 era de R$17.199 milhões, com um saldo de PDD de R$428 milhões.",
+   "trecho_atual": "O saldo da carteira de empréstimos ao final de março de 2020 era de R$17,9 bilhões, com um saldo de PDD de R$472,4 milhões."
+  },
+  {
+   "item": "E117",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "PRINCIPAIS DESTAQUES DO QUARTO",
+   "trecho_anterior": "Novo Guidance: - Portfólio de Crédito: crescimento da carteira expandida entre 11% e 15% em 2020 e 2021.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E118",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "PRINCIPAIS DESTAQUES DO QUARTO",
+   "trecho_anterior": "Despesas (Pessoal, Outras Administrativas e PLR): crescimento de 14 a 18% em 2020 e de 6% a 9% em 2021.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E119",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "RENTABILIDADE",
+   "trecho_anterior": "Lucro Líquido Recorrente (R$ milhões)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E120",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Segmento Middle",
+   "trecho_anterior": "No quarto trimestre de 2019, um volume de carteira de aproximadamente R$290 milhões foi tombado do segmento Corporate para o Middle, que atingiu um saldo expandido de crédito de R$785 milhões ao final de dezembro de 2019.",
+   "trecho_atual": ""
+  }
+ ]
+}

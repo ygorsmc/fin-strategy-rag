@@ -1,0 +1,1207 @@
+{
+ "par": "SANTANDER_4T2020_1T2021",
+ "documento_anterior": "santander_release_4T2020",
+ "documento_atual": "santander_release_1T2021",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "AGRONEGÓCIO",
+   "trecho_anterior": "¹ Fonte: Banco Central data base dezembro de 2020 / Carteira de crédito para o mercado ranking Febraban",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E002",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "SANTANDER SX",
+   "trecho_anterior": "Em relação ao volume financeiro de PIX enviados, conquistamos 15% de participação de mercado no trimestre, acima da nossa participação de mercado natural de crédito.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E003",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "ÍNDICE DE INADIMPLÊNCIA ACIMA DE 15 A 90 DIAS²",
+   "trecho_anterior": "RECONCILIAÇÃO DOS RESULTADOS CONTÁBIL E GERENCIAL",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E004",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "RECEITAS DE PRESTAÇÃO DE SERVIÇOS E TARIFAS BANCÁRIAS",
+   "trecho_anterior": "",
+   "trecho_atual": "Vale mencionar que no quarto trimestre do ano temos uma maior concentração de renovação de apólices no período, o que afeta a base de comparação trimestral."
+  },
+  {
+   "item": "E005",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "DIGITAL",
+   "trecho_anterior": "",
+   "trecho_atual": "No âmbito de atendimento lançamos em maio/20 a GENTE, nosso canal de inteligência artificial, que teve mais de 8,2 milhões de interações no mês e mais de 1,2 milhão de clientes atendidos, o que resultou em um decréscimo de 46% de ligações em nossas centrais (fevereiro/21 vs. maio/20)."
+  },
+  {
+   "item": "E006",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "ATACADO (SC&IB)",
+   "trecho_anterior": "",
+   "trecho_atual": "liderando a frente de novos mercados"
+  },
+  {
+   "item": "E007",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "CARTEIRA DE CRÉDITO",
+   "trecho_anterior": "",
+   "trecho_atual": "Seguimos com o acompanhamento rigoroso dos indicadores de qualidade, que permanecem em patamares satisfatórios, a inadimplência 15 a 90 atingiu 5,8%."
+  },
+  {
+   "item": "E008",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 13,
+   "secao": "OUTRAS RECEITAS E DESPESAS OPERACIONAIS",
+   "trecho_anterior": "As outras receitas e despesas operacionais resultaram em uma despesa líquida de R$ 7.538 milhões no acumulado do ano, redução de 4,2% em relação ao 12M19 e aumento de 40,3% na comparação trimestral.",
+   "trecho_atual": "As outras receitas e despesas operacionais resultaram em uma despesa líquida de R$ 2.246 milhões no trimestre, aumento de 21,7% no ano e 11,1% no trimestre."
+  },
+  {
+   "item": "E009",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "ÍNDICE DE INADIMPLÊNCIA ACIMA DE 15 A 90 DIAS²",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência de 15 a 90 dias atingiu 3,6% em março de 2021, redução de 0,5 p.p. no ano, influenciado pela queda no segmento pessoa física."
+  },
+  {
+   "item": "E010",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "ATACADO (SC&IB)",
+   "trecho_anterior": "",
+   "trecho_atual": "¹ A efetivação da operação está sujeita às aprovações regulatórias aplicáveis que estimamos ocorrer até maio/2021"
+  },
+  {
+   "item": "E011",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "ÍNDICE DE INADIMPLÊNCIA ACIMA DE 90 DIAS¹",
+   "trecho_anterior": "",
+   "trecho_atual": "A redução foi registrada em ambos segmentos, sendo o indicador ainda beneficiado pelas medidas adotadas ao longo de 2020, como prorrogações de pagamentos, principalmente em pessoa física, além do aumento de participação dos produtos de menor risco no saldo total da carteira."
+  },
+  {
+   "item": "E012",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 15,
+   "secao": "TÍTULOS E VALORES MOBILIÁRIOS",
+   "trecho_anterior": "A carteira de títulos e valores mobiliários encerrou o ano em R$ 266.088 milhões, alta de 37,5% em doze meses, atribuído ao aumento do saldo em títulos públicos.",
+   "trecho_atual": "A carteira de títulos e valores mobiliários alcançou R$ 264.385 milhões em março de 2021, alta de 10,7% em doze meses, atribuído ao crescimento do saldo em títulos públicos."
+  },
+  {
+   "item": "E013",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 1,
+   "secao": "SANTANDER ANUNCIA OS RESULTADOS DO PRIMEIRO TRIMESTRE DE 2021",
+   "trecho_anterior": "",
+   "trecho_atual": "São Paulo, 28 de abril de 2021 – Santander Brasil S.A., companhia de capital aberto cujas ações estão listadas na Bolsa de Valores de São Paulo sob os símbolos SANB3 (ordinárias), SANB4 (preferenciais) e SANB11 (units), anuncia hoje seus resultados para o primeiro trimestre de 2021 (1T21)."
+  },
+  {
+   "item": "E014",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "ÍNDICE DE COBERTURA (acima 90 dias)",
+   "trecho_anterior": "O índice de cobertura atingiu 297% em dezembro de 2020, aumento de 88,4 p.p. em doze meses, resultado da menor parcela da carteira de crédito com atraso acima de 90 dias e também do maior saldo de provisões no período.",
+   "trecho_atual": "O índice de cobertura atingiu 283% em março de 2021, aumento de 88,9 p.p. em doze meses, decorrente da menor parcela da carteira de crédito com atraso acima de 90 dias e também do maior saldo de provisões no período."
+  },
+  {
+   "item": "E015",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": null,
+   "secao": "SANTANDER ANUNCIA OS RESULTADOS DO QUARTO TRIMESTRE DE 2020",
+   "trecho_anterior": "“Estávamos prontos para um ano mais duro e desafiador, por nossa capacidade de adaptação de tendência, e o COVID-19 acelerou a transformação da indústria.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E016",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "CRÉDITO PESSOA JURÍDICA",
+   "trecho_anterior": "O saldo da carteira de pequenas e médias empresas totalizou R$ 55.915 milhões que é um notório crescimento de 38,2% no ano e 4,8% no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E017",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "ATACADO (SC&IB)",
+   "trecho_anterior": "",
+   "trecho_atual": "Encerramos o 1T21 com 4,4 milhões de clientes e 243 mil propostas de renegociação emitidas no trimestre."
+  },
+  {
+   "item": "E018",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "ATACADO (SC&IB)",
+   "trecho_anterior": "Atingimos de forma veloz 16% de penetração na Santander Financiamentos, possibilitando a emissão de 110 mil apólices.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E019",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "RE",
+   "trecho_anterior": "",
+   "trecho_atual": "Os indicadores de crédito refletem bom desempenho das safras e evidenciam a robustez dos modelos de riscos, com indicadores de inadimplência abaixo dos registrados há um ano."
+  },
+  {
+   "item": "E020",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "CLIENTES",
+   "trecho_anterior": "",
+   "trecho_atual": "Nosso indicador NPS, que mede a satisfação dos clientes, atingiu 61 pontos no 1T21, com elevado patamar."
+  },
+  {
+   "item": "E021",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "MARGEM FINANCEIRA",
+   "trecho_anterior": "As receitas oriundas das operações com clientes ficaram estáveis no ano com maior resultado da margem de produtos, atribuído aos maiores volumes mesmo com o impacto da pressão nos spreads e do efeito mix, que foi compensado pela queda no resultado de capital de giro próprio, devido a redução da taxa básica de juros e aos menores volumes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E022",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "DISTRIBUIÇÃO DE PROVENTOS",
+   "trecho_anterior": "Destacamos que a distribuição de proventos foi impactada pela Resolução nº4.820 de 29 de maio de 2020 do Banco Central do Brasil que limitou, entre outros, o pagamento de juros sobre o capital próprio e dividendos ao mínimo obrigatório estabelecido no Estatuto Social da Companhia (25% do lucro líquido).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E023",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": null,
+   "secao": "SANTANDER ANUNCIA OS RESULTADOS DO QUARTO TRIMESTRE DE 2020",
+   "trecho_anterior": "Nossa rentabilidade (ROE) alcançou 19,1% no ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E024",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "CARTEIRA DE CRÉDITO",
+   "trecho_anterior": "A carteira de crédito ampliada, que inclui as outras operações com risco de crédito, ativos de adquirência e avais e fianças, atingiu R$ 512.485 milhões, crescimento de 18,5% no ano (ou 16,9% desconsiderando o efeito da variação cambial).",
+   "trecho_atual": "A carteira de crédito ampliada, que inclui as outras operações com risco de crédito e avais e fianças, atingiu R$ 497.566 milhões, incremento de 7,4% no ano (ou 6,7% desconsiderando o efeito da variação cambial)."
+  },
+  {
+   "item": "E025",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "CARTEIRA DE CRÉDITO",
+   "trecho_anterior": "Já os segmentos de pessoa jurídica foram os ganhadores de participação, Grandes Empresas subiram 1,6 p.p. para 29,4% e Pequenas e Médias Empresas subiram 2,1 p.p. para 13,6%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E026",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "SX",
+   "trecho_anterior": "",
+   "trecho_atual": "Seguimos com uma estratégia diferenciada por meio do SX, o PIX especial do Santander, que atingiu nesse trimestre uma quantidade de 74,3 milhões de PIX enviados somando R$ 75,1 bilhões, o que representa uma participação de mercado¹ de 14% no 1T21."
+  },
+  {
+   "item": "E027",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "SATISFAÇÃO DO CLIENTE",
+   "trecho_anterior": "Vale destacar a expansão anual de duplo dígito dos clientes vinculados e digitais, refletindo a nossa estratégia.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E028",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "NEGÓCIOS SOCIAIS",
+   "trecho_anterior": "Em 2020 intensificamos as ações para apoiar a sociedade diante da situação de pandemia.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E029",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "DESPESAS GERAIS (ADMINISTRATIVAS + PESSOAL)",
+   "trecho_anterior": "",
+   "trecho_atual": "Em três meses, as despesas de depreciação e amortização reduziram 1,8%."
+  },
+  {
+   "item": "E030",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "CARTEIRA DE CRÉDITO",
+   "trecho_anterior": "",
+   "trecho_atual": "As maiores contribuições foram os segmentos Grandes Empresas que cresceram 6,1%, parte explicado pela variação cambial, e pessoa física que subiu 2,3%."
+  },
+  {
+   "item": "E031",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "ATACADO (SC&IB)",
+   "trecho_anterior": "Em Project Finance, assessoramos e financiamos mais de 270 projetos de infraestrutura nos últimos doze meses e fomos reconhecidos como “Infrastructure Bank of the Year - Brazil” pela LATINFINANCE.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E032",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "CARTEIRA DE PESSOA FÍSICA",
+   "trecho_anterior": "Além disso, após nossa redução estratégica de exposição ao risco nesse produto, nosso direcionamento é crescer com maior qualidade de crédito, por exemplo, ampliando a participação de clientes correntistas na base ativa.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E033",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "CARTÕES",
+   "trecho_anterior": "Atuamos para expandir a participação dos clientes correntistas na base ativa total de cartões de crédito que atingiu 70%, por serem 2,4 vezes mais rentáveis em relação aos clientes monoprodutistas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E034",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "MARGEM FINANCEIRA",
+   "trecho_anterior": "",
+   "trecho_atual": "A margem com mercado atingiu R$ 2.125 milhões no primeiro trimestre, crescimento de 16,6% em doze meses e 21,4% em três meses, resultado de maiores receitas com operações de mercado."
+  },
+  {
+   "item": "E035",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "NPL FORMATION",
+   "trecho_anterior": "",
+   "trecho_atual": "A relação entre o NPL formation e a carteira de crédito alcançou 0,8% no 1T21, abaixo do 1,4% registrado há um ano e estável no trimestre, evidenciando a assertividade na gestão de risco e medidas adotadas ao longo de 2020 diante do cenário."
+  },
+  {
+   "item": "E036",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "NPL FORMATION",
+   "trecho_anterior": "O NPL formation somou R$ 3.274 milhões no 4T20, queda de 17,7% no ano e 19,8% no trimestre.",
+   "trecho_atual": "O NPL formation somou R$ 3.268 milhões no 1T21, queda de 35,1% no ano e 0,2% no trimestre."
+  },
+  {
+   "item": "E037",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 1,
+   "secao": "SANTANDER ANUNCIA OS RESULTADOS DO PRIMEIRO TRIMESTRE DE 2021",
+   "trecho_anterior": "",
+   "trecho_atual": "“No Santander, dizemos que o ano se inicia em dezembro, e foi com esse sentimento que trabalhamos no 1T21, mostrando consciência dos nossos resultados, com seis anos de crescimento rentável."
+  },
+  {
+   "item": "E038",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 23,
+   "secao": "EVOLUÇÃO DA COTAÇÃO¹ | BASE 100",
+   "trecho_anterior": "O gráfico acima mostra que R$100 investidos nas ações units do Santander Brasil no dia 30 de dezembro de 2016 teriam valorizado para R$ 251,0 no dia 30 de dezembro de 2020, com os pagamentos de dividendos e JCP sendo reinvestidos.",
+   "trecho_atual": "O gráfico acima mostra que R$100 investidos nas ações units do Santander Brasil no dia 30 de dezembro de 2016 teriam valorizado para R$ 222,6 no dia 31 de março de 2021, com os pagamentos de dividendos e JCP sendo reinvestidos."
+  },
+  {
+   "item": "E039",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "DESPESAS GERAIS (ADMINISTRATIVAS + PESSOAL)",
+   "trecho_anterior": "As despesas administrativas, excluindo depreciação e amortização, atingiram R$ 9.706 milhões no ano, alta de 4,0% comparado ao 12M19, com destaque para o incremento de gastos com processamento de dados em função do desenvolvimento de projetos e manutenção de licenças de softwares ao longo de 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E040",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "ATACADO (SC&IB)",
+   "trecho_anterior": "",
+   "trecho_atual": "Nossa liderança no setor nos consolida como um dos melhores bancos de empresas, sendo um dos nossos diferenciais sermos o único banco internacional com operação completa no Brasil e com mais de 315 lojas dedicadas a empresas, sendo os primeiros em câmbio há oito anos."
+  },
+  {
+   "item": "E041",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "CRÉDITO PESSOA JURÍDICA",
+   "trecho_anterior": "",
+   "trecho_atual": "O produto destaque foi capital de giro/outros que cresceu 30,4% no ano, decorrente da busca por liquidez pelo cenário de pandemia."
+  },
+  {
+   "item": "E042",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "FINANCIAMENTO AO CONSUMO",
+   "trecho_anterior": "A carteira total de veículos para pessoa física, que inclui as operações realizadas tanto pela financeira (correspondentes bancários) como pela rede de agências, atingiu R$ 55.385 milhões, alta de 8,3% em doze meses e 4,5% em três meses.",
+   "trecho_atual": "A carteira total de veículos para pessoa física, que inclui as operações realizadas tanto pela financeira (correspondentes bancários) como pela rede de agências, atingiu R$ 55.764 milhões, alta de 5,5% em doze meses e 0,7% em três meses."
+  },
+  {
+   "item": "E043",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 25,
+   "pagina_atual": null,
+   "secao": "RECONCILIAÇÃO ENTRE O RESULTADO CONTÁBIL E O RESULTADO GERENCIAL",
+   "trecho_anterior": "3T20: Margem Financeira Bruta e Resultado de Créditos de Liquidação Duvidosa: reclassificação referentes aos ajustes na valoração de ativos à redução ao seu valor recuperável",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E044",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "DISTRIBUIÇÃO DE PROVENTOS",
+   "trecho_anterior": "",
+   "trecho_atual": "A Resolução CMN Nº 4.885, de 23 de dezembro de 2020, veda que as instituições autorizadas a funcionar pelo Banco Central do Brasil remunerem o capital próprio acima do maior entre: i) 30% do lucro líquido ajustado nos termos do inciso I do artigo 20 da Lei nº 6.404/76; ou ii) dividendos mínimos obrigatórios estabelecidos pelo artigo 202 da Lei nº 6.404/76, inclusive sob forma de Juros sobre o Capital Próprio, até 31 de dezembro de 2020."
+  },
+  {
+   "item": "E045",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "RESULTADO DE CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA E CUSTO DE CRÉDITO",
+   "trecho_anterior": "Vale destacar que estamos confortáveis com os níveis dos nossos indicadores de crédito.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E046",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 1,
+   "secao": "DESTAQUES FINANCEIROS",
+   "trecho_anterior": "",
+   "trecho_atual": "▪ O índice de inadimplência acima de 90 dias alcançou 2,1%, abaixo dos 3,0% registrados há um ano."
+  },
+  {
+   "item": "E047",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 21,
+   "secao": "CAPTAÇÃO",
+   "trecho_anterior": "Em 2020 as captações de clientes totalizaram R$ 455.751 milhões, alta de 28,9% em comparação com 2019, explicada pelos maiores saldos de depósitos à prazo, depósitos à vista e da poupança, tendo em vista o movimento observado ao longo do ano, concentrado no 1S20, de migração de recursos dos investidores para instrumentos mais estáveis.",
+   "trecho_atual": "As captações de clientes totalizaram R$ 446.707 milhões em março de 2021, alta de 15,9% em comparação ao mesmo período de 2020, explicada pelo aumento nos saldos de depósitos à prazo, poupança e depósitos à vista, refletindo o movimento observado ao longo do período de migração de recursos dos investidores para instrumentos mais estáveis."
+  },
+  {
+   "item": "E048",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "RECEITAS DE PRESTAÇÃO DE SERVIÇOS E TARIFAS BANCÁRIAS",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas de prestação de serviços e tarifas bancárias atingiram R$ 4.852 milhões, crescimento de 8,2% no ano atribuído, em grande parte, à maior atividade do mercado de capitais, sobretudo em colocação de títulos, e às receitas com cartões, devido ao maior consumo da população."
+  },
+  {
+   "item": "E049",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 25,
+   "pagina_atual": 25,
+   "secao": "RECONCILIAÇÃO ENTRE O RESULTADO CONTÁBIL E O RESULTADO GERENCIAL",
+   "trecho_anterior": "4T19: Margem Financeira Bruta e Resultado de Créditos de Liquidação Duvidosa: reclassificação referentes aos ajustes na valoração de ativos à redução ao seu valor recuperável",
+   "trecho_atual": "1T21: Margem Financeira Bruta e Resultado de Créditos de Liquidação Duvidosa: reclassificação referente ao ajustes na valoração de ativos à redução ao seu valor recuperável"
+  },
+  {
+   "item": "E050",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "ÍNDICE DE INADIMPLÊNCIA ACIMA DE 90 DIAS¹",
+   "trecho_anterior": "Em três meses, o indicador ficou estável.",
+   "trecho_atual": "Em três meses, o índice de inadimplência ficou estável."
+  },
+  {
+   "item": "E051",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "RECEITAS DE PRESTAÇÃO DE SERVIÇOS E TARIFAS BANCÁRIAS",
+   "trecho_anterior": "",
+   "trecho_atual": "Outras comissões alcançaram R$ 170 milhões nesse trimestre, incremento de 22,5% em relação ao mesmo período do ano passado em função do crescimento na linha de avaliação de bens, sobretudo em veículos e imóveis."
+  },
+  {
+   "item": "E052",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "SUSTENTABILIDADE",
+   "trecho_anterior": "¹ Consultoria Amigo de Valor, Parceria do Idoso, Vencilamento, Doação das Amigas e Estocolmo, Instituições apoiadas pela edição especial Amigo de Valor, Comunitária, Instituições de Criança, Santa Maria, Hospital das Clínicas e Imagens, Gerência, Amigo de Valor e Parceria do Brasil, 2ºzedinte do 1ºº de 2021, 3º de 2021, Amigo de Valor, R$ 35,7MM e Amigo de Valor, CO₂, C$ 8,7MM. ² Inclui direções do Tempo, Logicamente e Intentes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E053",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "SANTANDER SX",
+   "trecho_anterior": "No 4T20 lançamos o SX, que nos diferencia da solução de pagamentos instantâneos do Banco Central, PIX, com vantagens exclusivas para os clientes, incluindo 10 dias sem juros no limite da conta corrente para o segmento pessoa física e 5 dias para o segmento pessoa jurídica.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E054",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "ATACADO (SC&IB)",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso, totalizou mais de R$ 42 milhões em prêmios emitidos no trimestre."
+  },
+  {
+   "item": "E055",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "CARTEIRA DE RENEGOCIAÇÃO (R$ milhões)",
+   "trecho_anterior": "As operações de crédito renegociadas somaram R$ 22.988 milhões em dezembro de 2020, aumento de 41,1% em doze meses e 0,3% em três meses.",
+   "trecho_atual": "As operações de crédito renegociadas somaram R$ 22.881 milhões em março de 2021, aumento de 33,8% em doze meses."
+  },
+  {
+   "item": "E056",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 12,
+   "secao": "DESPESAS GERAIS (ADMINISTRATIVAS + PESSOAL)",
+   "trecho_anterior": "As despesas administrativas e de pessoal, excluindo depreciação e amortização, totalizaram R$ 18.741 milhões no 12M20, queda de 0,5% em relação ao 12M19, em decorrência das menores despesas com pessoal.",
+   "trecho_atual": "As despesas administrativas e de pessoal, excluindo depreciação e amortização, totalizaram R$ 4.569 milhões no trimestre, queda de 2,1% no ano em razão principalmente da redução em despesas com pessoal."
+  },
+  {
+   "item": "E057",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "DESPESAS GERAIS (ADMINISTRATIVAS + PESSOAL)",
+   "trecho_anterior": "",
+   "trecho_atual": "Ambas variações se devem aos serviços técnicos especializados e de terceiros."
+  },
+  {
+   "item": "E058",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "ÍNDICE DE COBERTURA (acima 90 dias)",
+   "trecho_anterior": "Em três meses, o índice de cobertura caiu 9,7 p.p. impactado pela originação da carteira de crédito em ratings mais elevados, o que reduz a necessidade de provisionamento.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E059",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 12,
+   "secao": "DESPESAS GERAIS (ADMINISTRATIVAS + PESSOAL)",
+   "trecho_anterior": "As despesas de depreciação e amortização, excluindo o efeito do ágio, somaram R$ 2.669 milhões no 12M20, alta de 10,7% em relação ao mesmo período do ano anterior.",
+   "trecho_atual": "As despesas de depreciação e amortização, excluindo o efeito do ágio, somaram R$ 697 milhões no trimestre, alta de 11,3% no ano."
+  },
+  {
+   "item": "E060",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "PEQUENAS E MÉDIAS EMPRESAS",
+   "trecho_anterior": "",
+   "trecho_atual": "Nos canais digitais, ampliamos a oferta de produtos como capitalização e Copiloto Santander, que é o nosso sistema de gestão e vendas online para suportar os clientes."
+  },
+  {
+   "item": "E061",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": null,
+   "secao": "SANTANDER ANUNCIA OS RESULTADOS DO QUARTO TRIMESTRE DE 2020",
+   "trecho_anterior": "São Paulo, 03 de fevereiro de 2021 – O Santander Brasil (código de negociação: SANB3 (ações ordinárias), SANB4 (ações preferenciais) e SANB11 (units)) divulga hoje os resultados do quarto trimestre de 2020 (4T20).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E062",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "DESPESAS GERAIS (ADMINISTRATIVAS + PESSOAL)",
+   "trecho_anterior": "Em três meses, essas despesas apresentaram queda de 2,8%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E063",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": null,
+   "secao": "DESTAQUES FINANCEIROS",
+   "trecho_anterior": "▪ O índice de inadimplência acima de 90 dias alcançou 2,1%, menor patamar histórico.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E064",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 21,
+   "secao": "RELAÇÃO ENTRE CRÉDITO E CAPTAÇÃO",
+   "trecho_anterior": "A métrica de liquidez ajustada ao impacto dos compulsórios e ao *funding* de médio / longo prazo atingiu 84,4% em dezembro de 2020, redução de 14,0 p.p. em doze meses e incremento de 2,8 p.p. em três meses.",
+   "trecho_atual": "A métrica de liquidez ajustada ao impacto dos compulsórios e ao *funding* de médio / longo prazo atingiu 85,1% em março de 2021, redução de 3,2 p.p. em doze meses e incremento de 0,7 p.p. em três meses."
+  },
+  {
+   "item": "E065",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 9,
+   "secao": "ROE",
+   "trecho_anterior": "A despesa de amortização do ágio foi de R$ 425 milhões no 12M20, de R$ 368 milhões no 12M19, R$ 99 milhões no 4T20 e de R$ 91 milhões no 3T20.",
+   "trecho_atual": "A despesa de amortização do ágio foi de R$ 1.032 milhões no 1T21, R$ 99 milhões no 4T20 e R$ 125 milhões no 1T20"
+  },
+  {
+   "item": "E066",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "NEGÓCIOS SUSTENTÁVEIS",
+   "trecho_anterior": "",
+   "trecho_atual": "O Grupo Santander anunciou a ambição de alcançar emissão líquida zero de carbono até 2050."
+  },
+  {
+   "item": "E067",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "CARTEIRA DE RENEGOCIAÇÃO (R$ milhões)",
+   "trecho_anterior": "Em dezembro de 2020, o índice de cobertura da carteira de renegociação alcançou 45,3%.",
+   "trecho_atual": "Em março de 2021, o índice de cobertura da carteira de renegociação alcançou 48,3%."
+  },
+  {
+   "item": "E068",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": null,
+   "secao": "DESTAQUES FINANCEIROS",
+   "trecho_anterior": "▪ O resultado de provisão para créditos de liquidação duvidosa alcançou R$ 15.757 milhões em 2020, crescimento de 30,2% no ano, principalmente explicado pela constituição de provisão extraordinária de perdas de crédito no 2T20 no valor de R$ 3,2 bilhões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E069",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "ROE",
+   "trecho_anterior": "",
+   "trecho_atual": "$$ Recorrência: Receitas de Prestação de Serviços e Tarifas Bancárias / Despesas gerais"
+  },
+  {
+   "item": "E070",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "ROE 2020",
+   "trecho_anterior": "$$ Inclui outras operações com risco de crédito (debêntures, PGC, CR, notas promissórias, notas promissórias de cotação no exterior, ativos relacionados a atividades de adquisência e avais e fianças).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E071",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "ÍNDICE DE INADIMPLÊNCIA ACIMA DE 90 DIAS¹",
+   "trecho_anterior": "O índice de inadimplência superior a 90 dias reduziu 0,8 p.p. no ano e atingiu 2,1% em dezembro de 2020, menor patamar já registrado.",
+   "trecho_atual": "O índice de inadimplência superior a 90 dias reduziu 0,9 p.p. no ano e atingiu 2,1% em março de 2021."
+  },
+  {
+   "item": "E072",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "liderando a frente de novos mercados",
+   "trecho_anterior": "¹A efetivação da operação está sujeita às aprovações regulatórias aplicáveis",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E073",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "NEGÓCIOS SOCIAIS",
+   "trecho_anterior": "Foram arrecadados aproximadamente R$ 23 milhões⁵,⁶, considerando ambas edições, com adesão de 60% dos funcionários.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E074",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "ROE 2020",
+   "trecho_anterior": "CONSIDERA PDD EXTRAORDINÁRIA DE R$ 3,2BI",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E075",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "CARTEIRA DE CRÉDITO",
+   "trecho_anterior": "O saldo do crédito prorrogado atingiu R$ 40,6 bilhões em dezembro de 2020, após a amortização de R$ 9,2 bilhões ocorrida entre o 2T20 e o 4T20.",
+   "trecho_atual": "O saldo do crédito prorrogado alcançou R$ 36,4 bilhões em março de 2021, decorrente da amortização de R$ 13,4 bilhões ocorrida desde o 2T20."
+  },
+  {
+   "item": "E076",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 21,
+   "secao": "RELAÇÃO ENTRE CRÉDITO E CAPTAÇÃO",
+   "trecho_anterior": "A relação entre a carteira de empréstimos e a captação de clientes alcançou 90,3% em dezembro de 2020, queda de 9,2 p.p. sobre dezembro de 2019 e incremento de 2,2 p.p. em relação a setembro de 2020.",
+   "trecho_atual": "A relação entre a carteira de empréstimos e a captação de clientes alcançou 95,1% em março de 2021, queda de 3,1 p.p. sobre março de 2020 e incremento de 4,8 p.p. em relação a dezembro de 2020."
+  },
+  {
+   "item": "E077",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "RESULTADO DE CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA E CUSTO DE CRÉDITO",
+   "trecho_anterior": "As despesas de provisão cresceram 29,6% no ano, ou 7,2% quando desconsideramos a provisão extraordinária realizada no 2T20, sendo esta constituição necessária diante da mudança do cenário macroeconômico.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E078",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "ÍNDICE DE INADIMPLÊNCIA ACIMA DE 90 DIAS¹",
+   "trecho_anterior": "Além disso, o mix de produtos também contribui positivamente para o bom desempenho do índice de inadimplência.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E079",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "GETNET",
+   "trecho_anterior": "Destacamos nosso protagonismo na participação de mercado no e-commerce que atingiu 25% em 2020, sendo líderes na *black-friday*.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E080",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "MELHOR ÍNDICE DE EFICIÊNCIA DA HISTÓRIA: 35,2%",
+   "trecho_anterior": "",
+   "trecho_atual": "NO TRIMESTRE, COM QUEDA DE 1,9 P.P."
+  },
+  {
+   "item": "E081",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "RESULTADO DE CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA",
+   "trecho_anterior": "O resultado de créditos de liquidação duvidosa totalizou R$ 15.757 milhões em 2020, crescimento de 30,2% em relação ao ano anterior, sendo parte desse aumento explicado pela constituição de provisão extraordinária no 2T20 no valor de R$ 3,2 bilhões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E082",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "RECEITAS DE PRESTAÇÃO DE SERVIÇOS E TARIFAS BANCÁRIAS",
+   "trecho_anterior": "",
+   "trecho_atual": "Em relação ao trimestre anterior, as receitas subiram 19,9%, explicada pela maior volatilidade do mercado."
+  },
+  {
+   "item": "E083",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "PEQUENAS E MÉDIAS EMPRESAS",
+   "trecho_anterior": "",
+   "trecho_atual": "Lançamos nesse trimestre a GENTE, nossa inteligência artificial, para o segmento PJ."
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "NEGÓCIOS SOCIAIS",
+   "trecho_anterior": "",
+   "trecho_atual": "Intensificamos nossas ações em apoio à sociedade como forma de apoio no combate ao COVID-19 e seguimos com nossa estratégia de investimento social privado com nossos programas de apoio a crianças, adolescentes, idosos e empreendedores."
+  },
+  {
+   "item": "E085",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 14,
+   "secao": "RESULTADO DE CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA E CUSTO DE CRÉDITO",
+   "trecho_anterior": "As receitas de recuperação de créditos baixados a prejuízo cresceram 26,2% no ano.",
+   "trecho_atual": "As receitas de recuperação de créditos baixados a prejuízo cresceram 46,9% no ano e 3,6% no trimestre."
+  },
+  {
+   "item": "E086",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "OUTRAS RECEITAS E DESPESAS OPERACIONAIS",
+   "trecho_anterior": "",
+   "trecho_atual": "$$ Inclui provisões de R$ 2.246 e totalidade"
+  },
+  {
+   "item": "E087",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 12,
+   "secao": "DESPESAS GERAIS (ADMINISTRATIVAS + PESSOAL)",
+   "trecho_anterior": "As despesas com pessoal, incluindo PLR, somaram R$ 9.035 milhões no acumulado do ano, queda de 4,9% sobre o mesmo período do ano anterior, como resultado, principalmente, dos menores gastos com remuneração, encargos e benefícios.",
+   "trecho_atual": "As despesas com pessoal, incluindo PLR, alcançaram R$ 2.249 milhões no período, queda de 4,4% no ano pelos menores gastos com remuneração, encargos e benefícios."
+  },
+  {
+   "item": "E088",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 25,
+   "secao": "RECONCILIAÇÃO ENTRE O RESULTADO CONTÁBIL E O RESULTADO GERENCIAL",
+   "trecho_anterior": "",
+   "trecho_atual": "Imposto de Renda e Contribuição Social: baixa do crédito tributário referente ao prejuízo fiscal e base negativa da CSLL em virtude da cisão parcial do Banco Santander."
+  },
+  {
+   "item": "E089",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "EFICIÊNCIA",
+   "trecho_anterior": "",
+   "trecho_atual": "1T21 35,2% MELHOR ÍNDICE DO SETOR"
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "PEQUENAS E MÉDIAS EMPRESAS",
+   "trecho_anterior": "Em 2020 avançamos na robustez dos canais, como por exemplo: lançamento da formalização digital para empresas de sócios únicos e abertura de conta digital que, após cinco meses desde o lançamento, já atingiu 25,0% de participação no total de contas abertas em dezembro.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "SATISFAÇÃO DO CLIENTE",
+   "trecho_anterior": "CLIENTES ATIVOS TOTAIS milhões",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E092",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": null,
+   "secao": "BALANÇO PATRIMONIAL",
+   "trecho_anterior": "RECONCILIAÇÃO DOS RESULTADOS CONTÁBIL E GERENCIAL",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E093",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "SATISFAÇÃO DO CLIENTE",
+   "trecho_anterior": "RECONCILIAÇÃO DOS RESULTADOS CONTÁBIL E GERENCIAL",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E094",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "DISTRIBUIÇÃO DE PROVENTOS",
+   "trecho_anterior": "Sendo assim, o Santander Brasil destacou R$ 3.837 milhões de proventos referentes ao ano de 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E095",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": null,
+   "secao": "SANTANDER ANUNCIA OS RESULTADOS DO QUARTO TRIMESTRE DE 2020",
+   "trecho_anterior": "Alcançamos nosso melhor desempenho no NPS, diminuímos burocracia, inovamos e mostramos que aqui GENTE vem antes de tudo, diante disso, construímos o mais amplo atendimento digital do mercado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E096",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "SATISFAÇÃO DO CLIENTE",
+   "trecho_anterior": "Também alcançamos o recorde de NPS, que alcançou 63 pontos em 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E097",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 25,
+   "pagina_atual": null,
+   "secao": "RECONCILIAÇÃO ENTRE O RESULTADO CONTÁBIL E O RESULTADO GERENCIAL",
+   "trecho_anterior": "Margem Financeira Bruta e Outras Receitas e Despesas Operacionais: reclassificação entre linhas aos instrumentos derivativos (R$ 136MM)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E098",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "CARTEIRA DE CRÉDITO",
+   "trecho_anterior": "A carteira de crédito alcançou R$ 411.655 milhões em 2020 o que representa um aumento de 16,9% em relação ao ano anterior (ou 14,9% desconsiderando o efeito da variação cambial).",
+   "trecho_atual": "A carteira de crédito alcançou R$ 424.784 milhões em março de 2021, crescimento de 12,2% no ano (ou 11,4% desconsiderando o efeito da variação cambial)."
+  },
+  {
+   "item": "E099",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "GENTE",
+   "trecho_anterior": "Está disponível para os clientes pelo Whatsapp, portal web institucional, mobile e Santander Way e é capaz de realizar atendimentos consultivos e direcionar para transações.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E100",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "ÍNDICE DE BASILEIA",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de Basileia atingiu 15,2% em março de 2021, aumento de 1,4 p.p. no ano, explicado principalmente pelo crescimento de 14,3% do patrimônio de referência, impulsionado por maiores lucros acumulados no exercício e por menores deduções de capital."
+  },
+  {
+   "item": "E101",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "CARTÕES",
+   "trecho_anterior": "",
+   "trecho_atual": "Destacamos que a nossa melhora continua na experiência dos clientes, com o desenvolvimento do app WAY e parcerias, por exemplo, proporcionou sermos o único banco, dentre os cinco maiores do país, a expandir a participação de mercado² nos últimos quatro anos (2016-2020), diante de um setor mais competitivo."
+  },
+  {
+   "item": "E102",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "ROE",
+   "trecho_anterior": "",
+   "trecho_atual": "$$ Exclui outras operações com risco de crédito (debêntures, PDC, CR), notas promissórias, notas promissórias de colocação no exterior e avais e fianças"
+  },
+  {
+   "item": "E103",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 18,
+   "secao": "CRÉDITO PESSOA JURÍDICA",
+   "trecho_anterior": "A carteira de crédito de grandes empresas atingiu R$ 121.184 milhões, alta de 23,7% no ano (ou alta de 17,1% desconsiderando o efeito da variação cambial), atribuída ao cenário derivado da pandemia, em que as empresas buscaram maior liquidez.",
+   "trecho_atual": "A carteira de crédito de grandes empresas totalizou R$ 129.932 milhões, alta de 9,2% no ano (ou alta de 6,8% desconsiderando o efeito da variação cambial)."
+  },
+  {
+   "item": "E104",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "ATACADO (SC&IB)",
+   "trecho_anterior": "",
+   "trecho_atual": "Nos últimos anos temos investido para ser o banco do agronegócio e hoje temos a maior mesa de commodities do país, vale destacar nossos 78% de participação em CBIOS negociados (Renovabio)."
+  },
+  {
+   "item": "E105",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 17,
+   "secao": "CARTEIRA DE PESSOA FÍSICA",
+   "trecho_anterior": "Em dezembro de 2020, 76% do total da carteira de crédito pessoa física (incluindo Santander Financiamentos) estava atrelada a colaterais$$.",
+   "trecho_atual": "Em março de 2021, 76% do total da carteira de crédito pessoa física (inclui Santander Financiamentos) estava atrelada a colaterais."
+  },
+  {
+   "item": "E106",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "GENTE",
+   "trecho_anterior": "RECONCILIAÇÃO DOS RESULTADOS CONTÁBIL E GERENCIAL",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E107",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 15,
+   "secao": "TÍTULOS E VALORES MOBILIÁRIOS",
+   "trecho_anterior": "Em relação a setembro de 2020, os títulos e valores mobiliários expandiram 6,7%.",
+   "trecho_atual": "Em relação a dezembro de 2020, os títulos e valores mobiliários reduziram 0,6%."
+  },
+  {
+   "item": "E108",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "MARGEM FINANCEIRA",
+   "trecho_anterior": "",
+   "trecho_atual": "A margem financeira bruta atingiu R$ 13.422 milhões no trimestre, crescimento de 6,1% em doze meses e 8,3% em três meses, em função do boa performance da margem de clientes, principalmente por maiores volumes, e margem com mercado, por maiores resultados com operações de mercado, incluindo trading e gestão de ativos e passivos."
+  },
+  {
+   "item": "E109",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "ATACADO (SC&IB)",
+   "trecho_anterior": "Seguimos com o compromisso de aumentar a transacionalidade dos clientes e, para isso, expandimos nossa atuação em novos mercados, como a comercializadora de energia em que estamos presentes no ranking das cinco maiores, enquanto somos a maior mesa de commodities agrícolas do país.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E110",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "ÍNDICE DE INADIMPLÊNCIA ACIMA DE 15 A 90 DIAS²",
+   "trecho_anterior": "O índice de inadimplência de 15 a 90 dias atingiu 2,8% em dezembro de 2020, redução de 1,1 p.p. no ano, em ambos segmentos, e 0,3 p.p. no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E111",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "O ÍNDICE DE INADIMPLÊNCIA PESSOA FÍSICA",
+   "trecho_anterior": "O ÍNDICE DE INADIMPLÊNCIA PESSOA FÍSICA atingiu 4,3% queda de 0,9 p.p. no ano e 0,3 p.p. no trimestre.",
+   "trecho_atual": "atingiu 5,2% queda de 0,8 p.p. no ano e alta de 0,9 p.p. no trimestre."
+  },
+  {
+   "item": "E112",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "CARTEIRA DE CRÉDITO",
+   "trecho_anterior": "",
+   "trecho_atual": "Desconsiderando o efeito da variação cambial, a carteira de Grandes Empresas registrou alta de 3,7%."
+  },
+  {
+   "item": "E113",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "ÍNDICE DE BASILEIA",
+   "trecho_anterior": "Ressaltamos que o índice supera em 5,0 p.p. a soma dos requerimentos mínimos do Patrimônio de Referência e Adicionais de Capital Principal.",
+   "trecho_atual": "O índice supera em 5,0 p.p. a soma dos requerimentos mínimos do Patrimônio de Referência e Adicionais de Capital Principal."
+  },
+  {
+   "item": "E114",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 12,
+   "secao": "DESPESAS GERAIS (ADMINISTRATIVAS + PESSOAL)",
+   "trecho_anterior": "IPCA de 12 meses acumulado - http://www.ibge.gov.br. ² Exclui 100% da despesa de amortização do ágio de R$ 425 milhões no 12M20, de R$ 368 milhões no 12M19, de R$ 99 milhões no 4T20 e R$ 91 milhões no 3T20. ³ Inclui perfuração no Lucro.",
+   "trecho_atual": "¹ Fonte: IBGE, IPCA de 12 meses acumulado até março de 2021 - http://www.ibge.gov.br ² Exclui 100% da despesa de amortização do ágio de R$ 1.032 milhões no 1T21, R$ 99 milhões no 4T20 e R$ 125 milhões no 1T20 ³ Inclui participação no Lucro"
+  },
+  {
+   "item": "E115",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "RESULTADO DE CRÉDITOS DE LIQUIDAÇÃO DUVIDOSA",
+   "trecho_anterior": "",
+   "trecho_atual": "O resultado de créditos de liquidação duvidosa totalizou R$ 3.161 milhões no trimestre, queda de 7,7% no ano que pode ser atribuída às medidas adotadas ao longo de 2020 e pelo *mix* de produtos no período."
+  },
+  {
+   "item": "E116",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "CARTEIRA DE CRÉDITO",
+   "trecho_anterior": "O saldo atual é composto 75% pelo segmento pessoa física.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E117",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 20,
+   "secao": "CARTEIRA DE RENEGOCIAÇÃO (R$ milhões)",
+   "trecho_anterior": "Em três meses, essa receita caiu 7,8%.",
+   "trecho_atual": "Em três meses, o saldo caiu 0,5%."
+  },
+  {
+   "item": "E118",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": null,
+   "secao": "CARTÕES",
+   "trecho_anterior": "Encerramos o 4T20 com um faturamento total de R$ 75,5 bilhões, crescimento de 13,3% no ano e 22,3% no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E119",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "NEGÓCIOS SUSTENTÁVEIS",
+   "trecho_anterior": "Relançamos o fundo Ethical, com gestão da Santander Asset Management, e o fundo Santander GO, em parceria com a Gestora Robeco, que seguem critérios sustentáveis.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E120",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "CARTEIRA DE CRÉDITO",
+   "trecho_anterior": "",
+   "trecho_atual": "Todos os segmentos apresentaram expansão do saldo na comparação anual, com destaque para a retomada do segmento pessoa física que contribuiu para 46% da variação anual da carteira de crédito total."
+  }
+ ]
+}

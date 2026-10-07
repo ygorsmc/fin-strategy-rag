@@ -1,0 +1,1207 @@
+{
+ "par": "ITAU_4T2019_1T2020",
+ "documento_anterior": "itau_release_4T2019",
+ "documento_atual": "itau_release_1T2020",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 12,
+   "secao": "Saldo da PDD e da Provisão para Garantias Financeiras Prestadas",
+   "trecho_anterior": "Em relação ao final de setembro de 2019, observamos aumento de 15,3% no saldo da PDD e da Provisão para Garantias Financeiras Prestadas.",
+   "trecho_atual": "Em relação ao final de dezembro de 2019, observamos aumento de 18,5% no saldo da PDD e da Provisão para Garantias Financeiras Prestadas."
+  },
+  {
+   "item": "E002",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Valor Transacionado 4T19",
+   "trecho_anterior": "R$ 150,5 bilhões ▲ + 12,9% (vs.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E003",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Índice de inadimplência (%)",
+   "trecho_anterior": "Em pessoas jurídicas, houve aumento nos indicadores tanto de micro, pequenas e médias quanto no de grandes empresas, sem concentração em cliente ou setor específico.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E004",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "Cartões de Crédito e Débito",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas com as atividades de emissão de cartões de crédito e débito reduziram 7,1% no trimestre em função das menores receitas com taxas de intercâmbio, relacionadas à sazonalidade do período e ao impacto das medidas de distanciamento social a partir da segunda quinzena de março de 2020."
+  },
+  {
+   "item": "E005",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 3,
+   "secao": "Sumário do Resultado Gerencial",
+   "trecho_anterior": "(14) Inclui PAEs, pontos em estabelecimentos de terceiros e Banco24horas.",
+   "trecho_atual": "(13) Inclui PAEs, pontos em estabelecimentos de terceiros e Banco24horas."
+  },
+  {
+   "item": "E006",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 16,
+   "secao": "Serviços de Conta Corrente",
+   "trecho_anterior": "O aumento na base de correntistas, embora em grande parte compensado pelo maior número de isenções em pacotes de conta corrente e o maior volume de transações de pagamento, levaram a um incremento de 3,0% nas receitas de serviços de conta corrente quando comparado a 2018.",
+   "trecho_atual": "O aumento na base de correntistas, embora parcialmente compensado pelo maior número de isenções em pacotes de conta corrente, e o maior volume de transações de pagamento, levaram a um incremento de 6,2% nas receitas de serviços de conta corrente quando comparado ao primeiro trimestre de 2019."
+  },
+  {
+   "item": "E007",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 33,
+   "pagina_atual": 30,
+   "secao": "Ações Itaú Unibanco",
+   "trecho_anterior": "Controle familiar, assegurando visão de longo prazo - Gestão profissional - Base de acionistas pulverizada (52,90% das ações em free float) - Forte governança corporativa",
+   "trecho_atual": "Controle familiar, assegurando visão de longo prazo - Gestão profissional - Base de acionistas pulverizada (52,95% das ações em free float) - Forte governança corporativa"
+  },
+  {
+   "item": "E008",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Principais Efeitos na Variação da Margem Financeira com Clientes",
+   "trecho_anterior": "",
+   "trecho_atual": "Mix de produtos (- R$ 109 milhões): maior participação do segmento de grandes empresas."
+  },
+  {
+   "item": "E009",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "Esse aumento é explicado pela maior despesa de provisão para créditos de liquidação duvidosa de operações no Chile e na Colômbia e no Banco de Atacado no Brasil, devido à redução da quantidade de *upgrades* de *ratings*, além do aumento de R$ 161 milhões do *impairment* de títulos privados.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E010",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Balanço Patrimonial",
+   "trecho_anterior": "",
+   "trecho_atual": "Na comparação trimestral, merecem destaque os crescimentos de 9,7% em operações de crédito e de 11,1% em títulos mobiliários e derivativos, parcialmente compensados pelo aumento de 18,9% em provisões para créditos de liquidação duvidosa em função da alteração das perspectivas macroeconômicas a partir da segunda quinzena de março de 2020."
+  },
+  {
+   "item": "E011",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Por Faixas de Atraso aferida no momento da renegociação",
+   "trecho_anterior": "Algumas exposições de Grandes Empresas no Brasil ocasionaram a redução da carteira de crédito renegociado no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E012",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 36,
+   "pagina_atual": 33,
+   "secao": "Conclusão",
+   "trecho_anterior": "São Paulo, 10 de fevereiro de 2020",
+   "trecho_atual": "São Paulo, 4 de maio de 2020"
+  },
+  {
+   "item": "E013",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Índice de Inadimplência - Brasil¹ (%) | 15 a 90 dias",
+   "trecho_anterior": "Pessoas físicas: redução em relação ao trimestre anterior devido à menor inadimplência nas carteiras de cartão de crédito, veículos e crédito imobiliário.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E014",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": null,
+   "secao": "Índices de Capital",
+   "trecho_anterior": "RWA: Crescimento dos ativos ponderados pelo risco de crédito (RWA$_{CPAD}$) devido ao aumento da carteira de crédito, parcialmente compensado pela redução dos ativos ponderados pelo risco de mercado (RWA$_{MINT}$), gerando um aumento de R$ 3.787 milhões nos ativos ponderados pelo risco.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E015",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Índice de Inadimplência (%)",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência total entre 15 e 90 dias aumentou em relação ao trimestre anterior devido à maior inadimplência observada na América Latina, tanto para pessoas físicas quanto jurídicas."
+  },
+  {
+   "item": "E016",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "Operações de Crédito e Garantias Financeiras Prestadas",
+   "trecho_anterior": "",
+   "trecho_atual": "Em relação ao primeiro trimestre de 2019, o crescimento de 4,0% está relacionado às maiores receitas com operações de crédito, como adiantamento à depositante, financiamento de veículos e operações de crédito para pessoas jurídicas."
+  },
+  {
+   "item": "E017",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 36,
+   "pagina_atual": 33,
+   "secao": "Conclusão",
+   "trecho_anterior": "Emerson Luerte da Silva Contador CRC 1SP171089/O-3",
+   "trecho_atual": "Emerson Laerte da Silva Contador CRC 1SP171089/O-3"
+  },
+  {
+   "item": "E018",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Sumário do Resultado Gerencial",
+   "trecho_anterior": "(12) Para os períodos anteriores a 2019, considera a aplicação imediata e integral das regras de Basileia III;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E019",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 36,
+   "pagina_atual": 33,
+   "secao": "Introdução",
+   "trecho_anterior": "(Banco) e do Itaú Unibanco Holding S.A. e suas controladas (Consolidado) em 31 de dezembro de 2019, cujo relatório foi emitido, sem ressalvas, datado de 10 de fevereiro de 2020, procedemos à revisão das informações contábeis contidas nas informações suplementares incluídas no relatório da Análise Gerencial da Operação do Itaú Unibanco Holding S.A. e suas controladas referentes ao exercício findo em 31 de dezembro de 2019.",
+   "trecho_atual": "(Banco) e do Itaú Unibanco Holding S.A. e suas controladas (Consolidado) em 31 de março de 2020, cujo relatório foi emitido, sem ressalvas, datado de 4 de maio de 2020, procedemos à revisão das informações contábeis contidas nas informações suplementares incluídas no Relatório da Análise Gerencial da Operação do Itaú Unibanco Holding S.A. e suas controladas referentes ao trimestre findo em 31 de março de 2020."
+  },
+  {
+   "item": "E020",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "O contínuo investimento em tecnologia permitiu ações com foco em eficiência de custos, como o encerramento de agências e o programa de desligamento voluntário, que levaram ao aumento de apenas 2,5% nas despesas não decorrentes de juros em relação ao ano anterior, abaixo da inflação acumulada (4,3% - IPCA) e do acordo coletivo de trabalho no período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E021",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 31,
+   "pagina_atual": null,
+   "secao": "Banco Itaú Uruguai",
+   "trecho_anterior": "Aumento da despesa operacional em função dos gastos com o programa de desligamento voluntário e do menor reajuste devido à inflação.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E022",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 11,
+   "secao": "Custo do Crédito",
+   "trecho_anterior": "O custo do crédito aumentou R$ 1.316 milhões em relação ao trimestre anterior.",
+   "trecho_atual": "O custo do crédito aumentou R$ 4.276 milhões em relação ao trimestre anterior."
+  },
+  {
+   "item": "E023",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Índice de Inadimplência (%) | 15 a 90 dias",
+   "trecho_anterior": "América Latina²: redução em relação ao trimestre anterior devido às operações de pessoas físicas no Chile e de pessoas jurídicas no Chile, Colômbia e Uruguai.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E024",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 16,
+   "secao": "Assessoria Econômico-Financeira e Corretagem",
+   "trecho_anterior": "Fusões e Aquisições: em 2019, prestamos assessoria financeira a 50 operações na América do Sul, totalizando US$ 15,7 bilhões no *ranking* da Dealogic.",
+   "trecho_atual": "Fusões e Aquisições: no primeiro trimestre de 2020, prestamos assessoria financeira a 13 operações na América do Sul, totalizando US$ 724 milhões e mantendo a liderança no *ranking* da Dealogic."
+  },
+  {
+   "item": "E025",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Receitas de Prestação de Serviços e Resultado com Seguros¹",
+   "trecho_anterior": "",
+   "trecho_atual": "As operações de *investment banking*, corretagem e administração de fundos foram responsáveis pelo crescimento em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E026",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Despesas não Decorrentes de Juros",
+   "trecho_anterior": "",
+   "trecho_atual": "A combinação desses efeitos levou as despesas não decorrentes de juros à redução de 0,8% no período."
+  },
+  {
+   "item": "E027",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "Este aumento ocorreu devido às maiores despesas com desligamentos e processos trabalhistas, despesas administrativas e despesas na América Latina.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E028",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Cartões de Crédito e Débito",
+   "trecho_anterior": "O fim da taxa de antecipação nas operações de cartão de crédito à vista e a evolução da Pop Credicard contribuíram para o aumento na base de equipamentos de 19,2% em relação ao mesmo período do ano anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E029",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 22,
+   "secao": "Carteira de crédito¹ (pessoa física e jurídica) - Brasil",
+   "trecho_anterior": "Relação entre o valor do financiamento e a garantia subjacente",
+   "trecho_atual": "Relação entre o valor do financiamento e a garantia subjacente."
+  },
+  {
+   "item": "E030",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 19,
+   "secao": "Agências e Postos de Atendimento (PAs) | Brasil e Exterior",
+   "trecho_anterior": "Na América Latina, tivemos a inauguração de 6 agências digitais no ano: duas na Argentina, duas no Chile, uma no Paraguai e outra no Uruguai.",
+   "trecho_atual": "Na América Latina, temos 6 agências digitais: duas na Argentina, duas no Chile, uma no Paraguai e outra no Uruguai."
+  },
+  {
+   "item": "E031",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Carteira de crédito¹ (pessoa física e jurídica) - Brasil",
+   "trecho_anterior": "",
+   "trecho_atual": "Micro, peq. e médias empresas"
+  },
+  {
+   "item": "E032",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Contexto e desempenho financeiro:",
+   "trecho_anterior": "",
+   "trecho_atual": "Com destaque, o nosso investimento contínuo no desenvolvimento das pessoas e em tecnologia, tanto na operação do banco quanto no atendimento aos nossos clientes, nos permitiu manter a disponibilidade dos canais digitais no maior patamar histórico, mesmo com o aumento na demanda desde que tiveram início as medidas de isolamento para conter a propagação da doença no País."
+  },
+  {
+   "item": "E033",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 19,
+   "secao": "Índice de Eficiência:",
+   "trecho_anterior": "Acumulado de 12 meses: redução de 2,2 pontos percentuais em relação ao mesmo período do ano anterior.",
+   "trecho_atual": "Acumulado de 12 meses: redução de 0,3 ponto percentual em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E034",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Projeções 2020",
+   "trecho_anterior": "Embora os planos de crescimento e projeções de resultados apresentados acima sejam baseados em premissas da administração e em informações disponíveis no mercado até o momento, tais expectativas envolvem imprecisões e riscos difíceis de serem previstos, podendo, dessa forma, haver resultados ou consequências que diferem daqueles aqui antecipados.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E035",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "Resultado de Seguros, Previdência e Capitalização",
+   "trecho_anterior": "O aumento do resultado de seguros, previdência e capitalização no trimestre está relacionado com (I) o aumento de prêmios ganhos, principalmente por maiores vendas de seguros de vida e acidentes pessoais e (II) o crescimento da margem financeira gerencial em função de maior remuneração dos ativos de previdência.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E036",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 29,
+   "pagina_atual": 27,
+   "secao": "Demonstração de Resultados por localidade",
+   "trecho_anterior": "Nossas operações no Brasil$$ representam 96,2% do Lucro líquido recorrente no trimestre e 95,1% nos últimos 12 meses.",
+   "trecho_atual": "As operações no Brasil$$ representam 92,7% do Lucro líquido recorrente no trimestre."
+  },
+  {
+   "item": "E037",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "DRE Pro Forma de Seguros (Recorrente)",
+   "trecho_anterior": "$$ Inclui REP, ONDU, Despesas Tributárias de ISS, PIS e COFINS, IR, CSLL e Part.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E038",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 19,
+   "secao": "Índice de Eficiência:",
+   "trecho_anterior": "Adicionalmente, nossas receitas aumentaram 7,1%.",
+   "trecho_atual": "Adicionalmente, nossas receitas aumentaram 7,3%."
+  },
+  {
+   "item": "E039",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "Em relação à 2018, o aumento de 29,1% no custo do crédito está relacionado ao crescimento das carteiras de crédito de pessoas físicas no Brasil e ao aumento das provisões na América Latina.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E040",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "No Brasil o índice ficou estável, pois o aumento em pessoas físicas foi compensado pela redução em grandes empresas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E041",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Itaú CorpBanca",
+   "trecho_anterior": "O Itaú CorpBanca é um banco universal com sede no Chile e operações na Colômbia e Panamá.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E042",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Índice de Inadimplência (%) | Acima de 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência acima de 90 dias total aumentou em relação ao trimestre anterior devido às operações na América Latina, em clientes específicos do segmento corporate no Chile e na Argentina."
+  },
+  {
+   "item": "E043",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": null,
+   "secao": "Saldo da PDD e da Provisão para Garantias Financeiras Prestadas",
+   "trecho_anterior": "Esse aumento ocorreu principalmente devido a constituição de provisão em função do aprimoramento dos modelos de provisão para perda esperada.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Venda de Ativos Financeiros",
+   "trecho_anterior": "Essa operação trouxe impacto positivo de R$ 44 milhões no lucro líquido, negativo de R$ 64 milhões na margem financeira com clientes e positivo de R$ 138 milhões no custo do crédito, com impacto de 0,2 ponto percentual no índice de inadimplência acima de 90 dias de grandes empresas do Brasil, porém sem impacto material no índice consolidado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 18,
+   "secao": "Colaboradores - em milhares",
+   "trecho_anterior": "▼ - 1,9% (4T19/3T19) - ▼ - 5,4% (4T19/4T18)",
+   "trecho_atual": "▲ + 0,4% (1T20/4T19) ▼ - 4,4% (1T20/1T19)"
+  },
+  {
+   "item": "E046",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "Esses aumentos foram parcialmente compensados pela maior recuperação de créditos baixados como prejuízo no Banco de Atacado no Brasil.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E047",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Despesas não Decorrentes de Juros",
+   "trecho_anterior": "",
+   "trecho_atual": "(iii) menores despesas com comercialização de cartões de crédito, relacionadas a credenciamento da REDE e às despesas com bandeiras, devido à menor atividade econômica."
+  },
+  {
+   "item": "E048",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "Desempenho:",
+   "trecho_anterior": "O custo de crédito aumentou 29,1%, compensando parcialmente esses avanços, principalmente em função do crescimento da carteira de crédito de pessoas físicas e das maiores provisões na América Latina.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E049",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Projeções 2020",
+   "trecho_anterior": "$$ Considera unidades externas ex-América Latina, $$ Inclui garantias financeiras prestadas e títulos privados, $$ Composto pelo Resultado de Créditos de Liquidação Duvidosa, *Impairment* e Descontos Concedidos; $$ Receitas de Prestação de Serviços (+) Receitas de Operações de Seguros, Previdência e Capitalização (-) Despesas com Sinistros (-) Despesas de Comercialização de Seguros, Previdência e Capitalização.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E050",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 16,
+   "secao": "Assessoria Econômico-Financeira e Corretagem",
+   "trecho_anterior": "Renda Variável: em 2019, realizamos 32 transações na América do Sul com volume de US$ 3,5 bilhões, atingindo a posição de liderança no *ranking* da Dealogic.",
+   "trecho_atual": "Renda Variável: no primeiro trimestre de 2020, realizamos 6 transações na América do Sul com volume de US$ 403 milhões, ocupando o segundo lugar no *ranking* da Dealogic."
+  },
+  {
+   "item": "E051",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 7,
+   "secao": "Índice de Cobertura",
+   "trecho_anterior": "229% • 21,0 p.p. vs. terceiro trimestre de 2019 • 8,0 p.p. vs. quarto trimestre de 2018",
+   "trecho_atual": "239% + 10,0 p.p. vs. quarto trimestre de 2019 + 29,0 p.p. vs. primeiro trimestre de 2019"
+  },
+  {
+   "item": "E052",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Foco na América Latina",
+   "trecho_anterior": "Nos últimos anos, consolidamos nossa presença na Argentina, Chile, Paraguai e Uruguai e intensificamos nosso processo de internacionalização na América Latina.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E053",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Projeções 2020",
+   "trecho_anterior": "",
+   "trecho_atual": "A Administração entende ser prudente não divulgar novas projeções neste momento, até ser possível ter uma maior precisão sobre os impactos e extensão da situação atual em nossas operações."
+  },
+  {
+   "item": "E054",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 16,
+   "secao": "Assessoria Econômico-Financeira e Corretagem",
+   "trecho_anterior": "Renda Fixa: em renda fixa local, participamos de operações de debêntures, notas promissórias e securitização, com um volume distribuído de R$ 39,1 bilhões em 2019, mantendo a liderança no *ranking* da ANBIMA.",
+   "trecho_atual": "Renda Fixa: em renda fixa local, participamos de operações de debêntures, notas promissórias e securitização, com um volume distribuído de R$ 1.877 milhões até março de 2020, ocupando o segundo lugar no *ranking* da ANBIMA."
+  },
+  {
+   "item": "E055",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência entre 15 e 90 dias (NPL 15-90) aumentou em relação ao trimestre anterior devido à maior inadimplência observada em todos os países da América Latina."
+  },
+  {
+   "item": "E056",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Resultado de Seguros, Previdência e Capitalização",
+   "trecho_anterior": "",
+   "trecho_atual": "A redução do resultado de seguros, previdência e capitalização no trimestre está relacionado com a redução da margem financeira gerencial em função de menor remuneração dos ativos de previdência e a redução de prêmios ganhos, principalmente pela venda da seguradora no Chile e por menores vendas de seguros relacionados à crédito."
+  },
+  {
+   "item": "E057",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Geração de Capital",
+   "trecho_anterior": "Gestão eficiente da alocação de capital por meio do custo adequado de capital.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E058",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Projeções 2020",
+   "trecho_anterior": "",
+   "trecho_atual": "Em função da baixa visibilidade sobre a extensão e profundidade dos efeitos da crise atual trazida pela pandemia de COVID-19 na atividade econômica e social, as projeções para o ano de 2020 anteriormente divulgadas estão suspensas."
+  },
+  {
+   "item": "E059",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Custo do Crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "O crescimento do custo de crédito se deu por essa alteração, que capturada pelo nosso modelo de provisionamento por perda esperada, gerou maiores despesas de provisão no banco de varejo e no banco de atacado no Brasil, tanto na comparação trimestral quanto na comparação com o mesmo período do ano anterior."
+  },
+  {
+   "item": "E060",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 7,
+   "secao": "Índice de Inadimplência (%)",
+   "trecho_anterior": "3,0% • 0,1 p.p. vs. terceiro trimestre de 2019 • 0,1 p.p. vs. quarto trimestre de 2018",
+   "trecho_atual": "3,1% + 0,1 p.p. vs. quarto trimestre de 2019 + 0,1 p.p. vs. primeiro trimestre de 2019"
+  },
+  {
+   "item": "E061",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "Índices de Capital",
+   "trecho_anterior": "",
+   "trecho_atual": "Índice de Basileia: Redução de 2,5 pontos percentuais em função do pagamento de dividendos e juros sobre o capital próprio, da variação cambial do período e do crescimento dos ativos ponderados pelo risco (RWA)."
+  },
+  {
+   "item": "E062",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Por Faixas de Atraso aferida no momento da renegociação",
+   "trecho_anterior": "Parte destas exposições estavam em atraso acima de 90 dias.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E063",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 15,
+   "secao": "Cartões de Crédito e Débito",
+   "trecho_anterior": "Em 2019, as menores receitas com taxa de desconto líquida (*MDR-Merchant Discount Rate*), antecipação de recebíveis e aluguel de máquinas reduziram as receitas de adquirência em 20,8%.",
+   "trecho_atual": "Em relação ao primeiro trimestre de 2019, as menores receitas com taxa de desconto líquida (MDR-Merchant Discount Rate), antecipação de recebíveis e aluguel de máquinas reduziram as receitas de adquirência em 33,4%."
+  },
+  {
+   "item": "E064",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Índice de Inadimplência (%) | 15 a 90 dias",
+   "trecho_anterior": "Brasil¹: aumento em relação ao trimestre anterior com maior inadimplência nos segmentos de grandes e micro, pequenas e médias empresas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E065",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Despesas não Decorrentes de Juros",
+   "trecho_anterior": "",
+   "trecho_atual": "decorrentes de juros, principalmente relacionada à remuneração variável, na Argentina e no Itaú CorpBanca."
+  },
+  {
+   "item": "E066",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Custo do Crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "Também houve redução de R$ 278 milhões em recuperação de créditos baixados como prejuízo e redução de R$ 142 milhões do *impairment* de títulos privados, concentrados no Banco de Atacado no Brasil."
+  },
+  {
+   "item": "E067",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Carteira de Crédito com Garantias Financeiras Prestadas e Títulos Privados",
+   "trecho_anterior": "",
+   "trecho_atual": "Para fins de comparabilidade, as informações dos períodos anteriores foram reclassificadas."
+  },
+  {
+   "item": "E068",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 30,
+   "secao": "Ações Itaú Unibanco",
+   "trecho_anterior": "",
+   "trecho_atual": "Pontos fortes da nossa estrutura"
+  },
+  {
+   "item": "E069",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 22,
+   "secao": "Carteira de crédito¹ (pessoa física e jurídica) - Brasil",
+   "trecho_anterior": "",
+   "trecho_atual": "89,3% das contratações feitas por mutuários."
+  },
+  {
+   "item": "E070",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Índice de Inadimplência (%) | Acima de 90 dias",
+   "trecho_anterior": "Brasil¹: ficou estável no trimestre, com aumento da inadimplência no segmento de pessoas físicas sendo compensado pela redução em grandes empresas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Projeções 2020",
+   "trecho_anterior": "A utilização dessas expectativas deve considerar os riscos e as incertezas que envolvem quaisquer atividades e que estão fora de nosso controle, e que incluem, mas não são limitados a nossa habilidade de perceber a dimensão das sinergias projetadas e seus cronogramas, mudanças políticas e econômicas, volatilidade nas taxas de juros e câmbio, mudanças tecnológicas, inflação, desintermediação financeira, pressões competitivas sobre produtos, preços, mudanças na legislação tributária, entre outras.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E072",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Custo do Crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "A alteração do cenário macroeconômico e das perspectivas financeiras das pessoas e das empresas a partir da segunda quinzena de março de 2020, capturada por nosso modelo de provisionamento por perda esperada, levou ao crescimento de R$ 4.253 milhões da despesa de provisão para créditos de liquidação duvidosa no trimestre."
+  },
+  {
+   "item": "E073",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "DRE Pro Forma de Seguros (Recorrente)",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse crescimento é resultado do aumento de prêmios ganhos de seguros prestamista, cartão protegido, de vida e de acidentes pessoais, e de receitas de seguros de terceiros."
+  },
+  {
+   "item": "E074",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 27,
+   "pagina_atual": null,
+   "secao": "Black Friday 2019",
+   "trecho_anterior": "Na última sexta-feira de novembro, dia 29, atingimos o recorde diário de volume financeiro passando pelo Itaú Unibanco em transações com cartões, TEDs, DOCs, boleto e processamento da credenciadora Rede.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E075",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "Principais Efeitos na Variação da Margem Financeira com Clientes",
+   "trecho_anterior": "5 Margem de passivos (- R$ 120 milhões): efeito da redução da taxa de juros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E076",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 31,
+   "pagina_atual": null,
+   "secao": "América Latina",
+   "trecho_anterior": "Apresentamos os resultados dos principais negócios da América Latina em moeda constante, eliminando assim o efeito da variação cambial, e utilizando o conceito gerencial, que considera os critérios contábeis brasileiros, além da alocação de custos da estrutura no Brasil, a inclusão do impacto do imposto de renda brasileiro e a alocação do benefício fiscal de juros sobre capital próprio.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E077",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Margem Financeira com Clientes",
+   "trecho_anterior": "Esse aumento foi parcialmente compensado por spreads menores em produtos de crédito e pelo impacto da queda da taxa de juros no capital de giro próprio e na margem de passivos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E078",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Custo do Crédito",
+   "trecho_anterior": "",
+   "trecho_atual": "Do mesmo modo, a alteração do cenário macroeconômico a partir da segunda quinzena de março também ocasionou aumento do custo do crédito, de R$ 6.283 milhões, em relação ao mesmo período do ano anterior, principalmente em decorrência do aumento de R$ 5.873 milhões na despesa de provisão para créditos de liquidação duvidosa no Brasil, tanto no Banco de Varejo, R$ 3.127 milhões, quanto no Banco de Atacado, R$ 2.746 milhões."
+  },
+  {
+   "item": "E079",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 14,
+   "secao": "Write-Off das Operações de Crédito",
+   "trecho_anterior": "A baixa de créditos da carteira (*write-off*) apresentou redução de 6,9% em relação ao trimestre anterior principalmente na América Latina.",
+   "trecho_atual": "A baixa de créditos da carteira (write-off) apresentou aumento de 14,3% em relação ao trimestre anterior principalmente na América Latina e no segmento de Varejo no Brasil."
+  },
+  {
+   "item": "E080",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 36,
+   "pagina_atual": 33,
+   "secao": "Alcance da Revisão",
+   "trecho_anterior": "As informações suplementares incluídas no relatório da Análise Gerencial da Operação são apresentadas para possibilitar uma análise adicional, sem, contudo fazerem parte das demonstrações contábeis.",
+   "trecho_atual": "As informações suplementares incluídas no Relatório da Análise Gerencial da Operação são apresentadas para possibilitar uma análise adicional, sem contudo fazerem parte das demonstrações contábeis."
+  },
+  {
+   "item": "E081",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 11,
+   "secao": "Recuperação de Crédito",
+   "trecho_anterior": "No trimestre, a venda de carteiras que se encontravam em prejuízo no montante de R$ 840 milhões gerou um impacto positivo de R$ 97 milhões na recuperação de crédito e de R$ 58 milhões no lucro líquido recorrente.",
+   "trecho_atual": "No primeiro trimestre de 2020, houve venda de carteiras que se encontravam em prejuízo no montante de R$ 297 milhões com impacto positivo de R$ 37 milhões na recuperação de crédito e de R$ 22 milhões no lucro líquido recorrente."
+  },
+  {
+   "item": "E082",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Contexto e desempenho financeiro:",
+   "trecho_anterior": "",
+   "trecho_atual": "Houve redução porque o menor resultado antes de impostos tornou mais relevante economicamente o benefício fiscal dos juros sobre o capital próprio, com impacto de 13 pontos percentuais na alíquota teórica."
+  },
+  {
+   "item": "E083",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Despesas não Decorrentes de Juros",
+   "trecho_anterior": "",
+   "trecho_atual": "A redução das despesas não decorrentes de juros no trimestre é explicada por (i) menores despesas de pessoal, em função da redução de despesas com desligamentos e processos trabalhistas decorrente da reprecificação de ações trabalhistas, e menores despesas com participação nos resultados, dado o cenário macroeconômico desafiador;"
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 24,
+   "secao": "Indicadores de Liquidez",
+   "trecho_anterior": "",
+   "trecho_atual": "Indicador de Liquidez de Longo Prazo (NSFR - *Net Stable Funding Ratio*)"
+  },
+  {
+   "item": "E085",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "Na comparação anual merecem destaque os crescimentos de 9,5% em operações de crédito e de 19,2% em títulos mobiliários e derivativos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E086",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Receitas de Prestação de Serviços e Resultado com Seguros ¹",
+   "trecho_anterior": "(ii) com administração de fundos devido ao aumento do saldo dos ativos sob administração e taxa de performance; e (iii) com as operações de emissão de cartões de crédito.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E087",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Carteira de Crédito com Garantias Financeiras Prestadas e Títulos Privados",
+   "trecho_anterior": "",
+   "trecho_atual": "Em função de nova orientação comercial, alteramos a segmentação de clientes pessoas jurídicas."
+  },
+  {
+   "item": "E088",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 25,
+   "pagina_atual": 23,
+   "secao": "Captações",
+   "trecho_anterior": "O *funding* de clientes cresceu 10,4% nos últimos 12 meses e 4,8% no trimestre, principalmente em função (i) dos depósitos a prazo, que cresceram 10,3% nos últimos 12 meses e 3,8% no trimestre, (ii) dos depósitos à vista, que evoluíram 13,4% nos últimos 12 meses e 0,1% no trimestre e (iii) dos recursos de letras, que cresceram 43,4% no ano e 16,7% no trimestre.",
+   "trecho_atual": "O *funding* de clientes cresceu 28,2% nos últimos 12 meses e 15,1% no trimestre, principalmente em função (i) dos depósitos a prazo, que cresceram 41,4% nos últimos 12 meses e 26,5% no trimestre, (ii) dos depósitos à vista, que cresceram 36,1% nos últimos 12 meses e 23,6% no trimestre e (iii) dos depósitos de poupança, que cresceram 9,5% no ano e 3,5% no trimestre."
+  },
+  {
+   "item": "E089",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Demonstração de Resultado do 1º trimestre de 2020",
+   "trecho_anterior": "",
+   "trecho_atual": "(1) Receitas de Seguros inclui as Receitas de Seguros, Previdência e Capitalização, antes das Despesas com Sinistros e Comercialização."
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": null,
+   "secao": "Índices de Capital",
+   "trecho_anterior": "Índice de Basileia: Aumento de 0,4 ponto percentual em função do resultado do período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 26,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "O lucro líquido do atacado reduziu 63,6% em relação ao último trimestre devido à maior despesa de provisão para créditos de liquidação duvidosa, relacionado à alteração do cenário macroeconômico e das perspectivas financeiras das empresas, e às menores receitas de serviços com administração de fundos e assessoria econômico-financeira."
+  },
+  {
+   "item": "E092",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "O aumento do índice nos segmentos de grandes e micro, pequenas e médias empresas no Brasil foi compensado pela redução na América Latina.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E093",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "Essas reduções absorveram boa parte dos aumentos das despesas com participação nos resultados, desligamentos e processos trabalhistas e com comercialização de cartões de crédito, relacionadas a credenciamento da REDE e de correspondentes bancários e às despesas com bandeiras e parcerias.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E094",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 14,
+   "secao": "Por Faixas de Atraso aferidas no momento da renegociação",
+   "trecho_anterior": "",
+   "trecho_atual": "O aumento da inadimplência está relacionado ao segmento de Grandes Empresas, sem alteração relevante no patamar do índice de cobertura da carteira, pois os créditos já possuíam nível adequado de provisionamento."
+  },
+  {
+   "item": "E095",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Receitas de Prestação de Serviços e Resultado com Seguros¹",
+   "trecho_anterior": "",
+   "trecho_atual": "A redução em relação ao quarto trimestre de 2019 ocorreu em função das menores receitas com: (i) cartões de crédito e débito, relacionadas à sazonalidade do período e ao impacto das medidas de distanciamento social a partir da segunda quinzena de março de 2020, (ii) serviços de assessoria econômico-financeira e corretagem, em função da menor atividade do mercado de capitais e (iii) administração de fundos, devido às menores receitas com taxa de performance."
+  },
+  {
+   "item": "E096",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Projeções 2019",
+   "trecho_anterior": "$$ Considera unidades externas ex-América Latina, $$ Inclui garantias financeiras prestadas e títulos privados, $$ Composto pelo Resultado de Créditos de Liquidação Duvidosa, *Impairment* e Descontos Concedidos; $$ Receitas de Prestação de Serviços (+) Receitas de Operações de Seguros, Previdência e Capitalização (-) Despesas com Sinistros (-) Despesas de Comercialização de Seguros, Previdência e Capitalização.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E097",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "Destaques",
+   "trecho_anterior": "",
+   "trecho_atual": "Redução de 8,2% em relação ao quarto trimestre de 2019 devido às menores receitas com: (i) cartões de crédito e débito, relacionadas à sazonalidade do período e ao impacto das medidas de distanciamento social a partir da segunda quinzena de março de 2020, (ii) serviços de assessoria econômico-financeira e corretagem, em função da menor atividade do mercado de capitais e (iii) administração de fundos, devido às menores receitas com taxa de performance."
+  },
+  {
+   "item": "E098",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 16,
+   "secao": "• Administração de Fundos",
+   "trecho_anterior": "Em comparação a 2018, o crescimento de 23,1% dos ativos sob administração e as maiores receitas com taxa de performance geraram um aumento de 29,0% na receita de administração de fundos.",
+   "trecho_atual": "Em comparação ao primeiro trimestre de 2019, o crescimento de 12,4% dos ativos sob administração e as maiores receitas com taxa de performance geraram um aumento de 48,6% na receita de administração de fundos."
+  },
+  {
+   "item": "E099",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Alteração na carteira de Crédito com Garantias Financeiras Prestadas e Títulos Privados",
+   "trecho_anterior": "",
+   "trecho_atual": "(1) Inclui as operações originadas pela instituição e adquiridas."
+  },
+  {
+   "item": "E100",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 20,
+   "secao": "Balanço Patrimonial",
+   "trecho_anterior": "O total do ativo cresceu 5,4% nos últimos 12 meses e permaneceu estável no trimestre.",
+   "trecho_atual": "O total do ativo cresceu 20,0% nos últimos 12 meses e 14,0% no trimestre."
+  },
+  {
+   "item": "E101",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": null,
+   "secao": "Índice de Inadimplência (%) | 15 a 90 dias",
+   "trecho_anterior": "Consolidado: ficou estável em relação ao trimestre anterior devido à menor inadimplência na América Latina, compensado pelo aumento no Brasil.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E102",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "Assessoria Econômico-Financeira e Corretagem",
+   "trecho_anterior": "",
+   "trecho_atual": "Na comparação com o mesmo período do ano anterior, essas receitas aumentaram em R$ 553 milhões, devido à maior atividade do mercado de capitais no início de 2020."
+  },
+  {
+   "item": "E103",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": 24,
+   "secao": "Índice de Capital Nível I",
+   "trecho_anterior": "Em 31 de dezembro de 2019, o nosso índice de Capital Nível I atingiu 14,4%, composto por 13,2% de Capital Principal e 1,3% de Capital Complementar Nível I.",
+   "trecho_atual": "Em 31 de março de 2020, o nosso índice de Capital Nível I atingiu 12,0%, composto por 10,3% de Capital Principal e 1,7% de Capital Complementar Nível I."
+  },
+  {
+   "item": "E104",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 36,
+   "pagina_atual": 33,
+   "secao": "Conclusão",
+   "trecho_anterior": "Francisco Matarazzo 1400, Torre Torino, São Paulo, SP, Brasil, 05001-903, Caixa Postal 61005 T: (11) 3674-2000, www.pwc.com/br",
+   "trecho_atual": "Francisco Matarazzo 1400, Torre Torino, São Paulo, SP, Brasil, 05001-903, Caixa Postal 60054, T: +55 (11) 3674 2000, www.pwc.com.br"
+  },
+  {
+   "item": "E105",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Balanço Patrimonial",
+   "trecho_anterior": "",
+   "trecho_atual": "As captações no mercado aberto cresceram 16,2% no trimestre, ante uma queda de 4,4% nos últimos 12 meses."
+  },
+  {
+   "item": "E106",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Itaú CorpBanca",
+   "trecho_anterior": "Acesse o site de Relações com Investidores do Itaú CorpBanca.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E107",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Índice de Inadimplência (%) | 15 a 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência total entre 15 e 90 dias aumentou em relação ao trimestre anterior devido à maior inadimplência observada em todos os países da América Latina, tanto para pessoas físicas quanto jurídicas, com aumento principalmente no Chile e na Colômbia."
+  },
+  {
+   "item": "E108",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 13,
+   "secao": "Destaques",
+   "trecho_anterior": "O índice de inadimplência acima de 90 dias (NPL 90) aumentou em relação ao trimestre anterior devido às operações na América Latina.",
+   "trecho_atual": "O índice de inadimplência acima de 90 dias (NPL 90) aumentou em relação ao trimestre anterior devido às operações no Brasil, nos segmentos de pessoas físicas e grandes empresas, e na América Latina."
+  },
+  {
+   "item": "E109",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 13,
+   "secao": "Carteira em Atraso",
+   "trecho_anterior": "Carteira em atraso acima de 90 dias - Total: o aumento de 4,4% em relação ao trimestre anterior se deve aos aumentos do atraso de pessoas físicas no Brasil e de pessoas jurídicas na América Latina.",
+   "trecho_atual": "Carteira em atraso acima de 90 dias - Total: o aumento de 13,6% em relação ao trimestre anterior se deve aos aumentos do atraso de pessoas físicas e grandes empresas no Brasil e de pessoas jurídicas na América Latina."
+  },
+  {
+   "item": "E110",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 10,
+   "secao": "Principais Efeitos na Variação da Margem Financeira com Clientes",
+   "trecho_anterior": "1 Capital de giro próprio e outros (+ R$ 24 milhões): crescimento do saldo médio superou o efeito negativo da redução da taxa de juros na remuneração do capital de giro próprio.",
+   "trecho_atual": "Capital de giro próprio e outros (- R$ 288 milhões): efeito negativo da redução da taxa de juros na remuneração do capital de giro próprio e do menor saldo médio devido ao pagamento de dividendos."
+  },
+  {
+   "item": "E111",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 15,
+   "secao": "Cartões de Crédito e Débito",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas com adquirência tiveram uma redução de 18,9% no trimestre devido às menores receitas com taxa de desconto líquida (MDR-Merchant Discount Rate) e de antecipação de recebíveis, relacionadas à sazonalidade do período e ao impacto das medidas de distanciamento social a partir da segunda quinzena de março de 2020."
+  },
+  {
+   "item": "E112",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "(3) Não considera a alocação gerencial de custos indiretos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E113",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "Serviços de Recebimento",
+   "trecho_anterior": "",
+   "trecho_atual": "Em relação ao primeiro trimestre de 2019, essas receitas reduziram 1,0% pois a redução da tarifa média foi parcialmente compensada pelo maior volume de cobrança e arrecadação."
+  },
+  {
+   "item": "E114",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 25,
+   "secao": "Reparcelamento de contratos de crédito em dia",
+   "trecho_anterior": "",
+   "trecho_atual": "Já as empresas que tenham contratos de capital de giro ou financiamento de veículos e máquinas com parcelas em dia, podem postergar o próximo pagamento para até 180 dias."
+  },
+  {
+   "item": "E115",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 21,
+   "secao": "Concentração de crédito por cliente",
+   "trecho_anterior": "Somente 15,1% do risco de crédito está concentrado nos 100 maiores devedores.",
+   "trecho_atual": "Somente 16,0% do risco de crédito está concentrado nos 100 maiores devedores."
+  },
+  {
+   "item": "E116",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": null,
+   "secao": "Contratações 4T19",
+   "trecho_anterior": "67,3% da contratação total de crédito imobiliário foi feita por mutuários.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E117",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "Esses efeitos foram parcialmente compensados por menores despesas com remuneração, encargos e benefícios, mesmo com o acordo coletivo de trabalho, devido ao impacto do programa de desligamento voluntário na quantidade de funcionários no quarto trimestre e com despesas operacionais, levando ao aumento de apenas 1,7% no total das despesas no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E118",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 16,
+   "secao": "• Administração de Consórcios",
+   "trecho_anterior": "O saldo de parcelas a receber atingiu R$ 12,6 bilhões ao final de dezembro de 2019, um aumento de 6,9% em relação a dezembro de 2018.",
+   "trecho_atual": "O saldo de parcelas a receber atingiu R$ 12,9 bilhões ao final de março de 2020, um aumento de 8,8% em relação a março de 2019."
+  },
+  {
+   "item": "E119",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Índice de Inadimplência - Brasil¹ (%) | 15 a 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "No Brasil, o índice de inadimplência entre 15 e 90 dias aumentou no segmento de pessoas físicas em relação ao trimestre anterior principalmente devido à sazonalidade típica do primeiro trimestre."
+  },
+  {
+   "item": "E120",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "(1) Considera remuneração variável, planos de opções e ações.",
+   "trecho_atual": ""
+  }
+ ]
+}

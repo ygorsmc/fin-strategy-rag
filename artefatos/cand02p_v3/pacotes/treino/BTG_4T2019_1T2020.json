@@ -1,0 +1,1207 @@
+{
+ "par": "BTG_4T2019_1T2020",
+ "documento_anterior": "btg_release_4T2019",
+ "documento_atual": "btg_release_1T2020",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "Como resultado, encerramos o trimestre com um índice de Basiléia de 19,4% e um nível de caixa equivalente a 80% do nosso patrimônio, ambos entre os níveis mais altos registrados em nossa história mais recente, sendo esse o nível de capitalização mais alto entre os bancos que atualmente fazem parte Segmento 1 de Supervisão Bancária no Brasil."
+  },
+  {
+   "item": "E002",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Primeiramente, após forte deterioração nos meses de agosto e setembro, Estados Unidos e China retomaram as negociações comerciais e em dezembro chegaram a um acordo preliminar ou de primeira fase.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E003",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Por sua vez, o aumento na balança comercial de março ocorreu em um contexto de queda no ano contra ano das exportações, explicada principalmente pela redução significativa nas vendas de produtos manufaturados no exterior, e queda no total de importações, especialmente nas compras de bens de consumo e combustíveis e lubrificantes."
+  },
+  {
+   "item": "E004",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Os indicadores já divulgados nos levaram a revisar nossa expectativa de queda do PIB em 2020 para -4%, mas a duração das medidas ainda é incerta, o que significa que não podemos descartar uma queda ainda maior na atividade este ano (-5 ou 6%)."
+  },
+  {
+   "item": "E005",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Acreditamos que o Copom deve optar por reduzir a taxa Selic em 25bps em sua próxima reunião, trazendo a taxa básica de juros para 4,25% a.a. em fevereiro.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E006",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": 1,
+   "secao": "Destaques",
+   "trecho_anterior": "Nosso índice de Basileia foi de 14,9%.",
+   "trecho_atual": "Nosso índice de Basileia foi de 19,4%."
+  },
+  {
+   "item": "E007",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 19,
+   "secao": "Despesas tributárias, exceto imposto de renda",
+   "trecho_anterior": "As despesas tributárias, exceto o imposto de renda, foram de R$ 138,0 milhões ou 5,6% da receita total, frente a R$ 126,0 milhões no 3T 2019 ou 5,8% da receita total.",
+   "trecho_atual": "As despesas tributárias, exceto o imposto de renda, foram de R$71,8 milhões ou 4,7% da receita total, frente a R$138,0 milhões no 4T 2019 ou 5,6% da receita total."
+  },
+  {
+   "item": "E008",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Números recentes já mostram algum impacto das medidas de distanciamento social."
+  },
+  {
+   "item": "E009",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 11,
+   "secao": "1T 2020 x 4T 2019",
+   "trecho_anterior": "As receitas de *Corporate Lending* aumentaram 10,9%, de R$ 206,7 milhões no 3T 2019 para R$ 229,2 milhões no 4T 2019.",
+   "trecho_atual": "As receitas de *Corporate Lending* aumentaram 16,3%, de R$229,2 milhões no 4T 2019 para R$266,6 milhões no 1T 2020."
+  },
+  {
+   "item": "E010",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "A demanda por liquidez encontrou um cenário adverso de retração da disponibilidade de crédito, com bancos e investidores adotando uma postura de aversão ao risco para preservação de capital."
+  },
+  {
+   "item": "E011",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "Ambas as franquias tiveram *net new money* significativos durante o trimestre, atingindo R$21,2 bilhões no total, um sinal importante da qualidade da nossa gestão e da confiança dos clientes."
+  },
+  {
+   "item": "E012",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 35,
+   "pagina_atual": null,
+   "secao": "Divulgação de Resultados do 4º Trimestre de 2019",
+   "trecho_anterior": "*14 de fevereiro de 2020 (antes da abertura do mercado)*",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E013",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Bônus",
+   "trecho_anterior": "",
+   "trecho_atual": "No 1T 2020, as despesas com bônus foram de R$88,8 milhões, uma queda de 75,1% em relação ao 4T 2019 e uma redução de 47,7% em relação ao 1T 2019."
+  },
+  {
+   "item": "E014",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Por outro lado, a dívida líquida caiu para 53,8% do PIB, de 54,2% em janeiro e 55,7% em dezembro, influenciada principalmente pela desvalorização cambial, que ampliou o valor das reservas internacionais em reais e contribuiu para a redução da dívida pública."
+  },
+  {
+   "item": "E015",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Pacotes fiscais gigantescos (superando os 11% do PIB nos EUA, por exemplo) foram aprovados em prazos exíguos, provendo subsídios à manutenção de emprego, aumento de seguro desemprego, diferimento ou corte de impostos, etc."
+  },
+  {
+   "item": "E016",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 13,
+   "secao": "Asset Management",
+   "trecho_anterior": "No 4T 2019, o total de *Assets under Management* (AuM e AuA) chegou ao valor total de R$ 273,0 bilhões, um aumento de 7,5% em relação ao trimestre anterior e de 31,5% em relação ao 4T 2018.",
+   "trecho_atual": "No 1T 2020, o total de Assets under Management (AuM e AuA) foi de R$268,8 bilhões, uma queda de 1,5% em relação ao trimestre anterior e um aumento de 25,6% em relação ao 1T 2019."
+  },
+  {
+   "item": "E017",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 3,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Nosso lucro líquido contábil foi de R$ 1.179,2 milhões no 4T 2019, um aumento de 17,6% em relação ao 3T 2019 e de 113,4% quando comparado ao 4T 2018.",
+   "trecho_atual": "Nosso lucro líquido contábil foi de R$767,9 milhões no 1T 2020, uma queda de 34,9% em relação ao 4T 2019 e um aumento de 13,8% quando comparado ao 1T 2019."
+  },
+  {
+   "item": "E018",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "A melhoria no resultado da conta corrente deve-se, em grande parte, à redução significativa nas despesas líquidas com (principalmente) remessas de lucros e dividendos e serviços (especialmente viagens internacionais)."
+  },
+  {
+   "item": "E019",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Este papel cabe à política fiscal e quasi-fiscal (em que o banco central e instituições financeiras atuam como agentes do Tesouro)."
+  },
+  {
+   "item": "E020",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 9,
+   "secao": "Destaques da Participação de Mercado da Área de Investment Banking no 1T 2020",
+   "trecho_anterior": "M&A: 2º em número de operações no Brasil e na América Latina.",
+   "trecho_atual": "M&A: 1º em volume de operações na América Latina e no Brasil, 1º em número de operações na América Latina e 2º no Brasil"
+  },
+  {
+   "item": "E021",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Corporate Lending",
+   "trecho_anterior": "",
+   "trecho_atual": "Nesse momento, o prejuízo esperado está refletido de forma adequada nas provisões de crédito, que incorporam nosso pleno conhecimento do fluxo de caixa e dos impactos operacionais suportados por nossas contrapartes."
+  },
+  {
+   "item": "E022",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Nosso patrimônio líquido foi de R$ 21,4 bilhões, um aumento de 2,7% em relação ao 3T 2019 e um aumento de 13,5% em relação ao ano de 2018, considerando a distribuição de R$ 541,0 milhões em JCP no 4T 2019, totalizando R$ 1.165,0 milhões em 2019.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E023",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Por fim, mas não menos importante, a percepção de risco de uma recessão global – visivelmente aumentada no 3Tri de 2019 – veio em trajetória de queda ao longo do último trimestre do ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E024",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "As curvas de juros nas principais economias apresentaram tendência de abertura e aumento de inclinação no trimestre, na contramão da tendência observada no ano como um todo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E025",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 19,
+   "secao": "Amortização de ágio",
+   "trecho_anterior": "A amortização do ágio diminuiu 71,9% em relação ao 3T 2019 e 72,1% em relação ao 4T 2018, principalmente devido a *Equity Linked Note* emitida para transferir 25% do capital social do *EFG International* do BTG Pactual para a *Holding*.",
+   "trecho_atual": "A amortização do ágio aumentou 7,7% em relação ao 4T 2019 e diminuiu 67,7% em relação ao 1T 2019, principalmente devido ao *Equity Linked Note* emitido para transferir 25% do capital social da EFG International do BTG Pactual para a Holding."
+  },
+  {
+   "item": "E026",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": null,
+   "secao": "Destaques da Participação de Mercado da Área de Investment Banking em 2019",
+   "trecho_anterior": "ECM: 1º em número de operações no Brasil e na América Latina.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E027",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": 25,
+   "secao": "Gestão de Capital",
+   "trecho_anterior": "Nosso índice de cobertura de liquidez (LCR) terminou o trimestre em 154%.",
+   "trecho_atual": "Nosso índice de cobertura de liquidez (LCR) terminou o trimestre em 140%."
+  },
+  {
+   "item": "E028",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "A inversão da curva de juros, indicador antecedente de recessão que esteve tão presente no radar de investidores no 3Tri de 2019, mostrou-se transitória.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E029",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Apesar da piora das contas externas, os dados ainda sugerem baixa vulnerabilidade externa do País, uma vez que o investimento direto no país (IDP) continua financiando com folga o déficit em transações correntes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E030",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "No 4T 2019, a receita total aumentou 13,8% em relação ao 3T 2019, atingindo R$ 2.486,2 milhões, com uma melhor contribuição da maioria das unidades de negócios: (i) *Investment Banking* registrou um aumento de receita de 8,8% em relação ao trimestre anterior, estabelecendo receitas recordes para um único trimestre, (ii) *Corporate Lending* apresentou um aumento de receita de 10,9% e um crescimento de R$ 4,5 bilhões (ou 11,5%) no portfólio, mantendo a boa qualidade dos ativos e com níveis adequados de provisões;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E031",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Pandemia de Covid-19 | Contexto, Iniciativas e Impactos",
+   "trecho_anterior": "",
+   "trecho_atual": "Nós, no BTG Pactual, tivemos o orgulho de anunciar a doação de R$50 milhões (50% do Banco e 50% dos sócios) para projetos de combate à Covid-19 em duas principais frentes: apoio social e apoio ao sistema de saúde."
+  },
+  {
+   "item": "E032",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "No entanto, a próxima rodada de dados de atividades provavelmente trará más notícias, em vista do avanço do coronavírus em todo o mundo."
+  },
+  {
+   "item": "E033",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "As vendas no varejo ampliado também caíram (-0,5% m/m s.a.), mas também após oito meses de expansão consecutiva e com as fracas vendas de novembro se concentrando nas vendas de veículos, enquanto as vendas principais aumentaram 0,6% m/m (com ajuste sazonal).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E034",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "O lucro líquido ajustado por *unit* e o retorno ajustado anualizado sobre o patrimônio líquido médio (“ROAE Anualizado”) do BTG Pactual foi de R$ 1,16 e 19,1%, respectivamente, para o trimestre encerrado em 30 de dezembro e foi de R$ 4,40 e 19,1%, respectivamente, para o ano encerrado nessa data.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E035",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Corporate Lending",
+   "trecho_anterior": "",
+   "trecho_atual": "Portfólio de Corporate Lending (em R$ milhões)"
+  },
+  {
+   "item": "E036",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 11,
+   "secao": "1T 2020 x 4T 2019",
+   "trecho_anterior": "O aumento das receitas se deve principalmente ao crescimento do portfólio e à maior contribuição de nossa estratégia de *NPL*, parcialmente compensados por maiores provisões no trimestre, enquanto mantemos a boa qualidade dos ativos e níveis confortáveis de provisionamento.",
+   "trecho_atual": "O aumento das receitas se deve principalmente ao crescimento do portfólio e à maior contribuição de nosso portfólio de *NPL*, parcialmente compensados pelas provisões maiores no trimestre, mantendo a boa qualidade dos ativos e níveis confortáveis de provisionamento."
+  },
+  {
+   "item": "E037",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse movimento provavelmente foi explicado pelas necessidades de caixa das empresas brasileiras nesse período de crise, juntamente com a forte depreciação do real."
+  },
+  {
+   "item": "E038",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "Registramos uma receita de R$1.517,6 milhões, um crescimento de 2,4% em relação ao ano anterior, com uma contribuição sólida de todos os nossos principais negócios: (i) *Investment Banking* encerrou o 1T 2020 com posição de liderança nos *rankings* da indústria, apesar da queda na receita, (ii) *Corporate Lending* apresentou um aumento de receita de 16,3% e um crescimento de R$3,9 bilhões (ou 9,0%) no portfólio na comparação com o trimestre anterior, atingindo níveis históricos e mantendo a boa qualidade dos ativos e níveis muito adequados de provisões, (iii) *Sales & Trading* teve queda nas receitas de 32,9% em relação ao trimestre anterior, em linha com a redução da nossa alocação de risco - *VaR*, no entanto, registramos níveis históricos de *fees* de corretagem durante o trimestre, (iv) *Asset Management* continua apresentando bons resultados e captações significativas durante o trimestre."
+  },
+  {
+   "item": "E039",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 18,
+   "secao": "Salários e benefícios",
+   "trecho_anterior": "Os custos com pessoal aumentaram 3,9% no trimestre e 19,4% na comparação com o 4T 2018, principalmente devido ao aumento de pessoal na unidade de varejo do BTG Pactual, bem como ao impacto cambial em nossos negócios fora do Brasil, como consequência da desvalorização do real.",
+   "trecho_atual": "Os custos com pessoal aumentaram 17,0% no trimestre e 24,1% na comparação com o 1T 2019, principalmente devido ao aumento de pessoal na unidade de varejo do BTG Pactual, bem como ao impacto cambial em nossos negócios fora do Brasil, como consequência da desvalorização do real."
+  },
+  {
+   "item": "E040",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "Em nossas unidades de negócios *non-core*, *Principal Investments* e *Participations* tiveram um bom desempenho de forma geral no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E041",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "As intervenções acima contribuíram de forma decisiva para devolver um mínimo de funcionalidade para os mercados de funding."
+  },
+  {
+   "item": "E042",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Porém os dados apontam que esse crescimento ficou concentrado no segmento de empresas."
+  },
+  {
+   "item": "E043",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Pandemia de Covid-19 | Contexto, Iniciativas e Impactos",
+   "trecho_anterior": "",
+   "trecho_atual": "(iii) Nas primeiras semanas da crise, nossos times de clientes e operações foram capazes de liquidar um volume sem precedentes de transações em mercados secundários - nos últimos dois meses executamos 2x o volume quando comparado ao mesmo período do ano passado - mantendo nossa plataforma operacional e disponível em tempo integral e trabalhando intensamente em conjunto com as nossas contrapartes;"
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Apesar da frustração frente aos dados de novembro, o 4T ainda demonstra capacidade de aceleração.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 26,
+   "pagina_atual": 25,
+   "secao": "Gestão de Capital",
+   "trecho_anterior": "O índice de Basileia foi de 14,9% ao final do 4T 2019.",
+   "trecho_atual": "O índice de Basileia foi de 19,4% ao final do 1T 2020."
+  },
+  {
+   "item": "E046",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 20,
+   "secao": "Balanço Patrimonial",
+   "trecho_anterior": "",
+   "trecho_atual": "Nossos ativos totais subiram 21,9%, passando de R$164,4 bilhões ao final do 4T 2019 para R$200,4 bilhões ao final do 1T 2020, principalmente devido a um aumento em nossos ativos financiados por meio de acordos de recompra e no portfólio de títulos e valores mobiliários."
+  },
+  {
+   "item": "E047",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 35,
+   "pagina_atual": null,
+   "secao": "Divulgação de Resultados do 4º Trimestre de 2019",
+   "trecho_anterior": "14 de fevereiro de 2020 (sexta-feira)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E048",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "O comitê de política monetária (Copom) entregou uma redução de 25bps em sua reunião de fevereiro e um corte de 50bps em março, como esperávamos, levando a taxa Selic a fechar o 1T20 em 3,75% a.a."
+  },
+  {
+   "item": "E049",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "(iii) forte contribuição também em *Sales & Trading*, apesar da queda de 15,4% na receita em comparação com o trimestre anterior (que foi em linha com nossa diminuição na alocação de risco - VaR), (iv) *Asset Management* continua apresentando fortes resultados, AuM/AuA cresceu 7,5% e as receitas cresceram 50,0%, devido aos *fees* de performance recolhidos no período, e (v) a receita de *Wealth Management* aumentou 1,6%, com um crescimento de 6,1% em WuM no trimestre.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E050",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "4T 2019 x 3T 2019",
+   "trecho_anterior": "No 3T 2019, tivemos um lucro de R$ 205,5 milhões, principalmente devido aos resultados do Banco Pan e da diluição da nossa participação devido a oferta de ações no período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E051",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Essa decisão seria compatível com o fluxo de dados e com a comunicação desde a reunião de dezembro.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E052",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": 1,
+   "secao": "Destaques",
+   "trecho_anterior": "(“Banco” e, junto com suas subsidiárias, “BTG Pactual”) (B3: BPAC11) anunciou hoje receitas totais de R$ 2.486,2 milhões e um lucro líquido ajustado de R$ 1.009,6 milhões no trimestre encerrado em dezembro de 2019.",
+   "trecho_atual": "(“Banco” e, junto com suas subsidiárias, “BTG Pactual”) (B3: BPAC11) anunciou hoje receitas totais de R$1.517,6 milhões e um lucro líquido ajustado de R$789,4 milhões no trimestre encerrado em março de 2020."
+  },
+  {
+   "item": "E053",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Receitas Consolidadas e Ajustadas",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse é um resultado positivo para um trimestre marcado por forte turbulência nos mercados, interrupção completa das emissões de dívidas e ações primárias e impacto significativo nos serviços de consultoria, conforme explicaremos mais adiante."
+  },
+  {
+   "item": "E054",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "1T 2020 x 4T 2019",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas de *Principal Investments* tiveram queda em relação ao 4T 2019, de um ganho de R$573,5 milhões para um prejuízo de R$17,8 milhões."
+  },
+  {
+   "item": "E055",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "1T 2020 x 1T 2019",
+   "trecho_anterior": "",
+   "trecho_atual": "*Principal Investments* registrou um prejuízo de R$17,8 milhões no 1T 2020, comparados a um ganho de R$180,4 milhões no 1T 2019."
+  },
+  {
+   "item": "E056",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "As eleições gerais de 12 de dezembro também foram favoráveis ao produzir uma sólida maioria para o partido conservador, favorecendo a estratégia de Johnson.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E057",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 3,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "AuM e AuA encerraram o 4T 2019 em R$ 273,0 bilhões, um aumento de 7,5% em relação ao 3T 2019.",
+   "trecho_atual": "O patrimônio líquido foi de R$ 22,1 bilhões, um aumento de 3,1% em relação ao 4T 2019 e um aumento de 13,4% em relação ao 1T 2019."
+  },
+  {
+   "item": "E058",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "No 1T 2020, ROAE anualizado ajustado e lucro líquido ajustado foram de 14,5% e R$789,4 milhões, respectivamente."
+  },
+  {
+   "item": "E059",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": 1,
+   "secao": "Destaques",
+   "trecho_anterior": "Rio de Janeiro, Brasil, 14 de fevereiro de 2020 - O Banco BTG Pactual S.A.",
+   "trecho_atual": "Rio de Janeiro, Brasil, 12 de maio de 2020 - O Banco BTG Pactual S.A."
+  },
+  {
+   "item": "E060",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Ainda de forma tímida e heterogênea, índices de confiança de empresários da manufatura começaram a sugerir uma inflexão no processo de desaceleração que começou no ano passado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E061",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "1T 2020 x 1T 2019",
+   "trecho_anterior": "",
+   "trecho_atual": "A queda ocorreu devido prejuízos maiores em estratégias de *Global Markets* e *Real Estate*, parcialmente compensados por uma equivalência patrimonial positiva de um investimento, conforme explicado acima."
+  },
+  {
+   "item": "E062",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Despesas tributárias, exceto imposto de renda",
+   "trecho_anterior": "Não tivemos alterações relevantes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E063",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "O BTG Pactual Digital atingiu todos os objetivos previstos para 2019, atendendo plenamente nossa expectativa de diversificação de produtos, ganhos de escala, melhorias em UX e melhorias que previamos no atendimento aos clientes, e continua a aumentar seu ritmo de crescimento e a expandir sua penetração no mercado, sua capacidade de atrair Agentes Autônomos de Investimento mais sofisticados, além de manter a excelência nos serviços prestados a sua crescente base de clientes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E064",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Ficaram fora do acordo os pontos mais contenciosos da disputa entre os dois países, particularmente o pleito americano de que a China abandone práticas de política industrial baseadas em acesso privilegiado a mercados domésticos, a novas tecnologias e a crédito subsidiado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E065",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Balanço Patrimonial",
+   "trecho_anterior": "O patrimônio líquido aumentou, passando de R$ 20,4 bilhões ao final do 3T 2019 para R$ 21,4 bilhões ao término do 4T 2019, principalmente devido ao lucro líquido de R$ 1.179,2 milhões no trimestre, parcialmente compensado pela distribuição de JCP de R$ 541,0 milhões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E066",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "O banco central americano entrou em campo com um grande conjunto de instrumentos, visando oferecer liquidez ampla e barata a um grande conjunto de atores financeiros, tanto domésticos quanto de outras economias (por meio de bilionárias linhas de swaps cambiais com outros bancos centrais de países desenvolvidos e emergentes, inclusive o Brasil)."
+  },
+  {
+   "item": "E067",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Destaques da Participação de Mercado da Área de Investment Banking em 2019",
+   "trecho_anterior": "Receita (em R$ milhões)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E068",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 16,
+   "secao": "Composição de WuM",
+   "trecho_anterior": "As receitas de *Wealth Management* aumentaram 36,2%, de R$ 119,8 milhões para R$ 163,1 milhões, principalmente devido ao aumento de 40,9% no *WuM* em relação ao mesmo período do ano anterior.",
+   "trecho_atual": "As receitas de Wealth Management aumentaram 29,5%, de R$131,2 milhões para R$169,8 milhões, principalmente devido ao aumento de 20,2% no WuM em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E069",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse foi um trimestre extremamente atípico, com quase 2 meses de operação normal e desempenho das áreas de negócios acima da média, e mais de um mês de operação em um ambiente de crise."
+  },
+  {
+   "item": "E070",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 19,
+   "secao": "Despesas Administrativas e Outras",
+   "trecho_anterior": "Quando comparado ao 4T 2018, as despesas aumentaram 31,3%, também devido aos processos judiciais do BSI, ao impacto da variação cambial sobre as despesas denominadas em dólares e aos investimentos em nossa plataforma digital.",
+   "trecho_atual": "Quando comparado ao 1T 2019, as despesas aumentaram 34,4%, devido aos processos judiciais do BSI, ao impacto da variação cambial sobre as despesas denominadas em dólares e aos investimentos em nossa plataforma digital."
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "(20,8% a/a) e novos empréstimos ao segmento de famílias avançando 5,7% m/m s.a.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E072",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 3,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "",
+   "trecho_atual": "Em nossas unidades de negócios *non-core*, *Principal Investments* teve contribuição negativa e *Participations* teve bom desempenho, com resultados positivos em todas as linhas de negócios."
+  },
+  {
+   "item": "E073",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "De acordo com dados da PNAD (IBGE), os empregos formais (pessoas que trabalham no setor privado e no setor público) representam apenas 48% de todos os postos de trabalho."
+  },
+  {
+   "item": "E074",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 11,
+   "secao": "1T 2020 x 1T 2019",
+   "trecho_anterior": "As receitas de *Corporate Lending* aumentaram 71,8%, de R$ 133,4 milhões no 4T 2018 para R$ 229,2 milhões no 4T 2019.",
+   "trecho_atual": "As receitas de *Corporate Lending* aumentaram 43,5%, de R$185,8 milhões no 1T 2019 para R$266,6 milhões no 1T 2020."
+  },
+  {
+   "item": "E075",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "O índice de Basileia foi de 14,9% no trimestre encerrado em dezembro de 2019, e nosso índice de cobertura de liquidez (“LCR”) foi de 154%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E076",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Tal resultado superou as expectativas do mercado, com números piores para as métricas de inflação subjacentes.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E077",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "No Reino Unido, o cenário de hard Brexit foi afastado, ao menos por um ano, depois que Boris Johnson relaxou sua postura quanto ao status da fronteira entre Irlanda e Irlanda do Norte imediatamente pós-Brexit, conseguindo a anuência da Comunidade Europeia e a aprovação em princípio desta versão do soft Brexit pelo Parlamento Britânico.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E078",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 8,
+   "secao": "Receitas Consolidadas e Ajustadas",
+   "trecho_anterior": "As receitas no 4T 2019 aumentaram 13,8% quando comparadas ao trimestre anterior, no valor total de R$ 2.486 milhões, sendo um aumento de 60,5% em relação ao 4T 2018.",
+   "trecho_atual": "As receitas no 1T 2020 diminuíram 39,0% quando comparadas ao trimestre anterior, totalizando R$1.518 milhões, um aumento de 2,4% em relação ao 1T2019."
+  },
+  {
+   "item": "E079",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "1T 2020 x 4T 2019",
+   "trecho_anterior": "",
+   "trecho_atual": "No 4T 2019, tivemos um lucro de R$92,9 milhões, principalmente dos resultados do Banco Pan, Too Seguros e Pan Corretora."
+  },
+  {
+   "item": "E080",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "1T 2020 x 4T 2019",
+   "trecho_anterior": "",
+   "trecho_atual": "Por outro lado, registramos resultados sólidos nas mesas de energia, câmbio e juros e atingimos níveis históricos de fees de corretagem no trimestre."
+  },
+  {
+   "item": "E081",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "4T 2019 x 3T 2019",
+   "trecho_anterior": "As receitas de *Sales & Trading* foram de R$ 677,8 milhões no 4T 2019, ante R$ 801,2 milhões no 3T 2019, uma redução de 15,4%, mas ainda assim um bom desempenho no período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E082",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Bônus",
+   "trecho_anterior": "",
+   "trecho_atual": "A redução foi atribuída principalmente à menor receita no trimestre."
+  },
+  {
+   "item": "E083",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "WuM encerrou o período em R$ 168,0 bilhões, um aumento de 6,1% em comparação ao 3T 2019.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Hotéis e itens relacionados ao turismo tem caído profundamente em terreno deflacionário, conforme o esperado."
+  },
+  {
+   "item": "E085",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Os demais sinais foram mistos: as taxas de juros continuaram recuando, em especial no segmento livre e não rotativo para PF, porém houve um aumento da inadimplência PF, que subiu para 3,9% com ajuste sazonal (vindo de 3,6%), embora permaneça em patamar baixo na comparação histórica."
+  },
+  {
+   "item": "E086",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "O portfólio de *Corporate Lending* cresceu R$ 14,1 bilhões (ou 47,4%) na comparação com o mesmo período do ano anterior, acima das nossas expectativas e de forma mais diversificada entre (i) empresas *high grade* no Brasil e na América Latina, (ii) PMEs e (iii) *special situations*. *Sales & Trading* teve um ano sólido, com crescimento de 82,0% na receita comparado ao ano anterior. *Asset Management* e *Wealth Management* encerraram o ano de 2019 com uma performance significativa em relação ao ano passado, (i) receita com aumento de 21,1% e 29,1%, respectivamente, e (ii) NNM significativo de R$ 36,5 e R$ 24,5 bilhões, respectivamente.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E087",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": null,
+   "secao": "Destaques",
+   "trecho_anterior": "Para o exercício de 2019, as receitas totais foram de R$ 8.333,4 milhões e o lucro líquido ajustado foi de R$ 3.833,3 milhões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E088",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 23,
+   "secao": "Portfólio de Crédito Expandido do BTG Pactual",
+   "trecho_anterior": "O saldo do nosso portfólio de crédito expandido aumentou 10,5% quando comparado ao trimestre anterior, de R$ 49,4 bilhões para R$ 54,6 bilhões, e 43,6% quando comparado ao 4T 2018.",
+   "trecho_atual": "O saldo do nosso portfólio de crédito expandido aumentou 3,5% quando comparado ao trimestre anterior, de R$54,6 bilhões para R$56,5 bilhões, e 40,7% quando comparado ao 1T 2019."
+  },
+  {
+   "item": "E089",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "4T 2019 x 4T 2018",
+   "trecho_anterior": "O aumento se deve aos melhores resultados obtidos nas três linhas de negócios.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Bônus",
+   "trecho_anterior": "No 4T 2019, as despesas com bônus foram de R$ 356,1 milhões, um aumento de 39,7% em relação ao 3T 2019.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Pandemia de Covid-19 | Contexto, Iniciativas e Impactos",
+   "trecho_anterior": "",
+   "trecho_atual": "(i) Utilizando a tecnologia, nos mantemos próximos e disponíveis para os clientes em todos os segmentos, fornecendo diariamente informações de qualidade e aconselhamento especializado, para apoiá-los em diversas necessidades em seus negócios ou na gestão de seus portfólios;"
+  },
+  {
+   "item": "E092",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "1T 2020 x 4T 2019",
+   "trecho_anterior": "",
+   "trecho_atual": "Essa redução se deve principalmente às receitas mais fracas principalmente da nossa mesa de ações."
+  },
+  {
+   "item": "E093",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 9,
+   "secao": "1T 2020 x 4T 2019",
+   "trecho_anterior": "",
+   "trecho_atual": "Mesmo assim, mantivemos nossa liderança em market share."
+  },
+  {
+   "item": "E094",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "No segmento PJ, o crescimento das concessões foi concentrado no segmento de crédito livre (27,8% m/m com ajuste sazonal e deflacionado) e na categoria de capital de giro (86,6% m/m)."
+  },
+  {
+   "item": "E095",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Do lado chinês, o acordo prevê um aumento substancial das compras de bens americanos, contribuindo para reduzir o superávit comercial chinês no comércio com os EUA, a flexibilização do acesso de empresas estrangeiras ao setor de serviços financeiros na China e medidas para melhorar a proteção à propriedade intelectual.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E096",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Março registrou um superávit em conta corrente de US$0,9 bilhão, levando o déficit em conta corrente (DCC) em 12 meses para US$49,7 bilhões (2,8% do PIB) no final do 1T20."
+  },
+  {
+   "item": "E097",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Das medidas temporárias que deteriorarão as contas primárias este ano, a maior parte está relacionada a um aumento de gastos, R$333,5 bilhões (4,7% do PIB), e apenas R$13,6 bilhões (0,2% do PIB) a perdas de receita."
+  },
+  {
+   "item": "E098",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 14,
+   "secao": "1T 2020 x 1T 2019",
+   "trecho_anterior": "As receitas de *Asset Management* aumentaram 1,9%, de R$ 278,8 milhões no 4T 2018 para R$ 284,1 milhões no 4T 2019.",
+   "trecho_atual": "As receitas de *Asset Management* aumentaram 27,8%, de R$167,4 milhões no 1T 2019 para R$214,0 milhões no 1T 2020."
+  },
+  {
+   "item": "E099",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Wealth Management",
+   "trecho_anterior": "Durante o trimestre, o nosso *Wealth under Management* (WuM) aumentou 6,1%, passando de R$ 158,3 bilhões no 3T 2019 para R$ 168,0 bilhões no 4T 2019 e registramos R$ 4,8 bilhões de *Net New Money*, com um desempenho mais fraco na área de *UHNW*, compensado por um forte desempenho de outros segmentos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E100",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 18,
+   "secao": "Salários e benefícios",
+   "trecho_anterior": "As despesas com salários e benefícios totalizaram R$ 168,9 milhões no 3T 2019 e R$ 156,1 milhões no 4T 2018, comparadas a R$ 175,4 milhões no 4T 2019.",
+   "trecho_atual": "As despesas com salários e benefícios totalizaram R$175,4 milhões no 4T 2019 e R$165,4 milhões no 1T 2019, comparadas a R$205,3 milhões no 1T 2020."
+  },
+  {
+   "item": "E101",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "Desempenho do BTG Pactual",
+   "trecho_anterior": "O desempenho no trimestre e no ano de 2019 foi muito forte na maioria das franquias, e nossos *core businesses* apresentaram resultados sólidos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E102",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "1T 2020 x 4T 2019",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas no 1T 2020 consistiram em (i) ganhos de R$67,4 milhões de equivalência patrimonial do Banco Pan, (ii) ganhos de R$11,5 milhões da Too Seguros e Pan Corretora e (iii) ganhos de R$18,8 da nossa participação remanescente de 5% no EFG."
+  },
+  {
+   "item": "E103",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "(ii) desaceleração da atividade econômica global; e (iii) febre suína na China.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E104",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 6,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "O desemprego ajustado sazonalmente caiu para 11,7%, de 12,0%, marcando o nível mais baixo desde novembro de 2016.",
+   "trecho_atual": "O desemprego ajustado sazonalmente caiu para 11,3%, ante 11,4% no trimestre anterior, marcando o nível mais baixo desde julho de 2016."
+  },
+  {
+   "item": "E105",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": null,
+   "secao": "Balanço Patrimonial",
+   "trecho_anterior": "O ativo total diminuiu 2,1%, passando de R$ 168,0 bilhões no final do 3T 2019 para R$ 164,4 bilhões no final do 4T 2019, principalmente devido à queda no portfólio de câmbio, registrados a valor bruto, parcialmente compensada por um aumento de 13,9% no portfólio de crédito total.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E106",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Atualmente, esperamos que a taxa de desemprego termine 2020 em 13,5%."
+  },
+  {
+   "item": "E107",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": null,
+   "secao": "4T 2019 x 4T 2018",
+   "trecho_anterior": "O aumento ocorreu principalmente devido aos prejuízos no 4T 2018 da ECTP e ao melhor desempenho do Banco Pan, Too Seguros e Pan Corretora no 4T 2019.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E108",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 1,
+   "pagina_atual": 1,
+   "secao": "Destaques",
+   "trecho_anterior": "Em 30 de dezembro de 2019, ativos totais do BTG Pactual somaram R$ 164,4 bilhões, um decréscimo de 2,1% em comparação ao trimestre encerrado em 30 de setembro de 2019.",
+   "trecho_atual": "Em 31 de março de 2020, ativos totais do BTG Pactual somaram R$200,4 bilhões, um acréscimo de 21,9% quando comparado ao trimestre encerrado em 31 de dezembro de 2019."
+  },
+  {
+   "item": "E109",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "O resultado fiscal consolidado divulgado pelo Banco Central sinalizou um déficit primário de R$20,9 bilhões e o déficit nominal de R$49,4 bilhões em fevereiro."
+  },
+  {
+   "item": "E110",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Confortável com a evolução do cenário, no final de outubro o Fed entregou um corte adicional de 25 pontos-base da taxa de Fed funds, totalizando corte de 75 pontos-base desde julho, e sinalizou estabilidade da taxa de juros à frente caso a economia evolua de acordo com seu cenário central.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E111",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "De fato, as projeções condicionais de inflação, já abaixo da meta em 2020 e 2021, provavelmente cairão à medida que a previsão de crescimento para 2020 do BCB (atualmente 0%) diminuir significativamente."
+  },
+  {
+   "item": "E112",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "2019 x 2018",
+   "trecho_anterior": "Em 2019, as atividades dos clientes e de nossas franquias tiveram crescimentos significativos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E113",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "É importante ressaltar que, embora as simulações do BCB apresentadas na reunião mostrassem que seria necessário um corte superior a 50bps para compensar o impacto da pandemia de coronavírus na demanda doméstica, o comitê considerou o novo nível da Selic adequado."
+  },
+  {
+   "item": "E114",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "Contudo o efeito colateral, restava o desafio principal de reduzir danos permanentes da queda abrupta de geração de caixa, danos que podem advir da falência de empresas e da alta do desemprego."
+  },
+  {
+   "item": "E115",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "Visando minimizar o risco de altas abruptas dos juros no mercado interbancário, o Fed anunciou ainda a retomada da expansão do seu balanço por meio da compra de US$ 60 bilhões em Treasury bills por mês até pelo menos o 2T 2020.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E116",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "Mercado Global e Análise Econômica",
+   "trecho_anterior": "",
+   "trecho_atual": "O aumento do investimento direto país em 12 meses para US$79,5 bilhões no final do 1T20 foi concentrado em empréstimos intercompanhias, em especial remessas de subsidiárias no exterior para empresas controladoras no Brasil."
+  },
+  {
+   "item": "E117",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "2019 x 2018",
+   "trecho_anterior": "As receitas de *Financial Advisory* também cresceram em comparação ao ano de 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E118",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "4T 2019 x 3T 2019",
+   "trecho_anterior": "Durante o trimestre, vale ressaltar que (i) os resultados de *Global Markets* representaram um lucro de R$ 99,9 milhões, principalmente devido à estratégia de ações na América Latina, (ii) *Merchant Banking* registrou lucro significativo, impulsionado principalmente pela contribuição positiva da marcação a mercado de investimentos, principalmente de Eneva e (iii) *Real Estate* contabilizou uma contribuição positiva, principalmente devido ao bom desempenho de investimento específico, parcialmente compensado pela alocação de custo de captação.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E119",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "Pandemia de Covid-19 | Contexto, Iniciativas e Impactos",
+   "trecho_anterior": "",
+   "trecho_atual": "Para empresas como o BTG Pactual, isso resultou na necessidade de ajustar nosso modelo operacional para garantir a saúde e a segurança de nossos funcionários sem sacrificar o atendimento ao cliente, que sempre foi a base de nossas operações, e com a necessidade de focar em nossa responsabilidade mais abrangente como membros das comunidades nas quais atuamos."
+  },
+  {
+   "item": "E120",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "2019 x 2018",
+   "trecho_anterior": "O *WuM* cresceu 40,9% e a receita cresceu 29,1% em comparação ao ano de 2018, devido ao aumento do *WuM* médio no período, com um desempenho melhor na maioria das linhas de negócios.",
+   "trecho_atual": ""
+  }
+ ]
+}

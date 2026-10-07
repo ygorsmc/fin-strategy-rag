@@ -1,0 +1,957 @@
+{
+ "par": "ABC_4T2018_1T2019",
+ "documento_anterior": "abc_release_4T2018",
+ "documento_atual": "abc_release_1T2019",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2017 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "Reclassificação de R$ 17,0 milhões da porção das despesas de INSS referente à remuneração variável, da linha 'Despesa de Pessoal' para 'Participação nos lucros (PLR)';",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E002",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "1T19 x 1T18",
+   "trecho_anterior": "",
+   "trecho_atual": "Pelo crescimento da Receita de Serviços, com destaque para o aumento nas receitas provenientes de Fees de Mercado de Capitais e M&A e também de Tarifas, parcialmente anulados por uma queda na receita com garantias prestadas;"
+  },
+  {
+   "item": "E003",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "1T18 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "",
+   "trecho_atual": "(2) Reclassificação de R$ 0,4 milhões e R$ -28,8 milhões do efeito fiscal do hedge das linhas de “Despesas tributárias” e “Imposto de renda e contribuição social” (linhas onde esse efeito é contabilizado) para a linha de “Resultado bruto da intermediação financeira” (onde o hedge desse efeito é contabilizado)."
+  },
+  {
+   "item": "E004",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Corporate: passa a ser composto por empresas com faturamento anual entre R$ 250 milhões e R$ 2 bilhões;"
+  },
+  {
+   "item": "E005",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Eficiência",
+   "trecho_anterior": "\\*Exclui a constituição ou reversão de despesas com PDD para a carteira de garantias prestadas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E006",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 6,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "O Lucro Líquido Recorrente atingiu R$ 457,8 milhões em 2018, crescimento de 5,7% em relação a 2017.",
+   "trecho_atual": "O Lucro Líquido recorrente atingiu R$ 121,2 milhões no primeiro trimestre de 2019, redução de 0,2% em relação aos R$ 121,4 milhões apresentados no trimestre anterior e aumento de 11,6% em relação aos R$ 108,5 milhões apresentados no mesmo período de 2018."
+  },
+  {
+   "item": "E007",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Índice Organização Internacional IFNC"
+  },
+  {
+   "item": "E008",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "VOLUME E DESEMPENHO ABCB4",
+   "trecho_anterior": "",
+   "trecho_atual": "Performance ABCB4 x Ibovespa (100 basis)"
+  },
+  {
+   "item": "E009",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "O Banco ABC Brasil registrou Lucro Líquido Recorrente de R$ 457,8 milhões em 2018 e de R$ 121,4 milhões no quarto trimestre de 2018",
+   "trecho_atual": "O Banco ABC Brasil registrou Lucro Líquido Recorrente de R$ 121,2 milhões no primeiro trimestre de 2019"
+  },
+  {
+   "item": "E010",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "11h00 Brasília / 08h00 US EST +55 (11) 3193-1001 +55 (11) 2820-4001",
+   "trecho_atual": "11h00 Brasília / 10h00 US EDT +55 (11) 3193-1001 +55 (11) 2820-4001"
+  },
+  {
+   "item": "E011",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "Divulgação dos Resultados 06 de fevereiro de 2019 (antes da abertura do mercado)",
+   "trecho_atual": "Divulgação dos Resultados 06 de maio de 2019 (antes da abertura do mercado)"
+  },
+  {
+   "item": "E012",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "Pelo crescimento de todas as linhas de Receitas de Serviços, com destaque para o desempenho da linha de Fees de Mercado de Capitais e M&A;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E013",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "Teleconferências 07 de fevereiro de 2019",
+   "trecho_atual": "Teleconferências 07 de maio de 2019"
+  },
+  {
+   "item": "E014",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "4T17 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "(1) Reclassificação de R$ 56,1 milhões referente à Provisão para Desvalorização de Títulos (PDT) de um cliente específico, cuja operação foi originada como um empréstimo e posteriormente convertida em título privado;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E015",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Índice de Atividade para o Desenvolvimento Internacional ITAG"
+  },
+  {
+   "item": "E016",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "NOVA SEGMENTAÇÃO DE CLIENTES",
+   "trecho_anterior": "",
+   "trecho_atual": "Segue abaixo a abertura da Carteira de Crédito Expandida e dos principais indicadores, já considerando essa nova segmentação:"
+  },
+  {
+   "item": "E017",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 19,
+   "secao": "Eficiência",
+   "trecho_anterior": "",
+   "trecho_atual": "Índice de Eficiência (Despesas/Receitas)"
+  },
+  {
+   "item": "E018",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2017 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "(3) Reclassificação de R$ 2,0 milhões e R$ 165,0 milhões do efeito fiscal do hedge das linhas de 'Despesas tributárias' e 'Imposto de renda e contribuição social' (linhas onde esse efeito é contabilizado) para a linha de 'Resultado bruto da intermediação financeira' (onde o hedge desse efeito é contabilizado).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E019",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2018 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "(2) Reclassificação de R$ 15,4 milhões da porção das despesas de INSS referente à remuneração variável, da linha 'Despesa de Pessoal' para 'Participação nos lucros (PLR)';",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E020",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "1T19 x 4T18",
+   "trecho_anterior": "",
+   "trecho_atual": "Pela redução da Margem Financeira, devido a queda da Margem Financeira com Clientes, que foi parcialmente compensada por um melhor desempenho da Margem Financeira com o Mercado;"
+  },
+  {
+   "item": "E021",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 20,
+   "secao": "2019",
+   "trecho_anterior": "*Inclui as carteiras de empréstimos, garantias prestadas e títulos privados.",
+   "trecho_atual": "\\*Inclui as carteiras de empréstimos, garantias prestadas e títulos privados."
+  },
+  {
+   "item": "E022",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "Pela queda das Despesas com Provisão para Devedores Duvidosos;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E023",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "No quarto trimestre de 2018, o ROAE atingiu 13,3%, estável em relação ao trimestre anterior e apresentando redução de 0,3 p.p. em relação ao mesmo período de 2017.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E024",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "No ano de 2018 a Receita de Serviços atingiu R$ 361,1 milhões, aumento de 17,6% em relação a 2017.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E025",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 19,
+   "secao": "Eficiência",
+   "trecho_anterior": "O Índice de Eficiência recorrente foi de 35,1% no quarto trimestre de 2018, estável em relação ao trimestre anterior e variando 1,7 p.p. no comparativo com o mesmo período de 2017.",
+   "trecho_atual": "O Índice de Eficiência recorrente foi de 36,6% no primeiro trimestre de 2019, variação de 1,5 p.p. em relação ao trimestre anterior e 0,2 p.p. no comparativo com o mesmo período de 2018."
+  },
+  {
+   "item": "E026",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "Pela queda das despesas com Provisão para Devedores Duvidosos;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E027",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "1T19 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "",
+   "trecho_atual": "(3) Reclassificação de R$ 1,3 milhão e de R$ 40,5 milhões do efeito fiscal do hedge das linhas de \"Despesas tributárias\" e \"Imposto de renda e contribuição social\", respectivamente, para a linha de \"Resultado bruto da intermediação financeira\"."
+  },
+  {
+   "item": "E028",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 18,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "No quarto trimestre de 2018, a Receita de Serviços representou 29,7% da Receita Total.",
+   "trecho_atual": "No primeiro trimestre de 2019, a Receita de Serviços representou 25,6% da Receita Total."
+  },
+  {
+   "item": "E029",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "O Lucro Líquido recorrente atingiu R$ 121,4 milhões no quarto trimestre de 2018, crescimento de 4,6% em relação aos R$ 116,1 milhões apresentados no trimestre anterior e de 9,8% em relação aos R$ 110,6 milhões apresentados no mesmo período de 2017.",
+   "trecho_atual": "O Lucro Líquido Recorrente atingiu R$ 121,2 milhões no primeiro trimestre de 2019, redução de 0,2% em relação ao trimestre anterior e crescimento de 11,6% em relação ao mesmo período de 2018."
+  },
+  {
+   "item": "E030",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "1T19 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "",
+   "trecho_atual": "(1) Efeito de R$ 12,5 milhões referente ao estorno parcial da provisão adicional de R$ 50 milhões constituída em set/15, e de R$ 12,0 milhões nas despesas de pessoal, de R$ 3,2 milhões nas outras despesas administrativas e de R$ 1,1 milhão no IR & CSLL referentes à reestruturação organizacional atualmente em andamento no Banco;"
+  },
+  {
+   "item": "E031",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 6,
+   "secao": "1T19 x 1T18",
+   "trecho_anterior": "Pelo crescimento da Margem Financeira, nas linhas Margem Financeira com Clientes e Patrimônio Líquido Remunerado a CDI;",
+   "trecho_atual": "Pelo crescimento da Margem Financeira, devido ao aumento das linhas de Patrimônio Líquido Remunerado a CDI e da Margem Financeira com Clientes;"
+  },
+  {
+   "item": "E032",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Eficiência",
+   "trecho_anterior": "Em 2018 o Índice de Eficiência recorrente foi de 35,6%, apresentando variação de +4,3 p.p. em relação a 2017.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E033",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 15,
+   "secao": "CAPTAÇÃO",
+   "trecho_anterior": "Em dezembro de 2018 o saldo da captação totalizava R$ 27,8 bilhões, crescimento de 4,2% no trimestre e de 11,7% em 12 meses.",
+   "trecho_atual": "Em março de 2019 o saldo da captação totalizava R$ 28,0 bilhões, crescimento de 0,8% no trimestre e de 12,9% em 12 meses."
+  },
+  {
+   "item": "E034",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 10,
+   "secao": "Classificação da Carteira de Garantias Prestadas",
+   "trecho_anterior": "O saldo da carteira de garantias prestadas ao final de dezembro de 2018 era de R$ 10.651 milhões, com um saldo de provisão de R$ 53 milhões.",
+   "trecho_atual": "O saldo da carteira de garantias prestadas ao final de março de 2019 era de R$ 10.541 milhões, com um saldo de provisão de R$ 52 milhões."
+  },
+  {
+   "item": "E035",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Classificação da Carteira de Empréstimos",
+   "trecho_anterior": "(Resolução 2.682 do Banco Central)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E036",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "O resultado foi parcialmente impactado pela menor contribuição da Margem Financeira proveniente do Patrimônio Líquido remunerado a CDI e da Margem Financeira com o Mercado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E037",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "3T18 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "Reclassificação de R$ 1,0 milhão referente a recuperação de encargos da linha 'Outras Administrativas' para a linha 'Outras receitas (despesas) operacionais';",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E038",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "1T19 x 1T18",
+   "trecho_anterior": "",
+   "trecho_atual": "Pelo aumento das Despesas de Pessoal & Outras Administrativas."
+  },
+  {
+   "item": "E039",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "A partir de maio de 2019, entrou em vigor a nova segmentação de clientes do Banco ABC Brasil, com o objetivo de aumentar a eficiência no atendimento aos clientes em cada segmento: - Large Corporate: passa a ser composto por empresas com faturamento anual acima de R$ 2 bilhões;"
+  },
+  {
+   "item": "E040",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2018 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "Reclassificação de R$ 0,1 milhão da porção das despesas com incentivos fiscais (Lei Rouanet, Lei do Incentivo ao Esporte e FUMCAD) da linha 'Despesas Administrativas' para 'Imposto de Renda e Contribuição Social';",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E041",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "No trimestre, a despesa de PDD foi de R$ 29,5 milhões, queda de 11,0% em relação ao trimestre anterior e de 41,9% em relação ao mesmo período do ano anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E042",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "Pela redução das Despesas com Provisão para Devedores Duvidosos;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E043",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Middle: composto por empresas com faturamento anual entre R$ 100 milhões e R$ 250 milhões."
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2017 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "(1) Reclassificação do efeito de R$ 26,0 milhões da recompra das Notas Subordinadas, ocorrido no 1T17, e o respectivo impacto fiscal de R$ -11,7 milhões, resultando num efeito líquido de impostos de R$ 14,3 milhões no Lucro Líquido Gerencial;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2017 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "(2) Reclassificação de R$ 56,1 milhões referente à Provisão para Desvalorização de Títulos (PDT) de um cliente específico, cuja operação foi originada como um empréstimo e posteriormente convertida em título privado;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E046",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "3T18 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "(2) Reclassificação de R$ 3,9 milhões e de R$ 92,6 milhões do efeito fiscal do hedge das linhas de 'Despesas tributárias' e 'Imposto de renda e contribuição social' (linhas onde esses efeitos são contabilizados), respectivamente, para a linha de 'Resultado bruto da intermediação financeira' (onde o hedge desse efeito é contabilizado).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E047",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "No segmento Corporate, houve expansão de 6,6% no trimestre e de 29,6% em 12 meses, e no segmento Large Corporate, a carteira apresentou crescimento de 2,9% no trimestre e de 2,4% em 12 meses.",
+   "trecho_atual": "No segmento Corporate, houve expansão de 3,7% no trimestre e de 23,6% em 12 meses, e no segmento Large Corporate, a carteira apresentou crescimento de 0,3% no trimestre e de 2,9% em 12 meses."
+  },
+  {
+   "item": "E048",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 17,
+   "secao": "NIM",
+   "trecho_anterior": "A NIM (taxa anualizada da margem financeira gerencial) foi de 3,5% a.a. no quarto trimestre de 2018, redução de 0,1 p.p. em relação ao trimestre anterior e de 0,9 p.p. em relação ao mesmo período de 2017.",
+   "trecho_atual": "A NIM (taxa anualizada da margem financeira gerencial) foi de 3,4% a.a. no primeiro trimestre de 2019, redução de 0,1 p.p. em relação ao trimestre anterior e de 0,3 p.p. em relação ao mesmo período de 2018."
+  },
+  {
+   "item": "E049",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "ABCB4 NÍVEL 2 BOVESPA BRASIL"
+  },
+  {
+   "item": "E050",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 5,
+   "secao": "1T18 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "(1) Reclassificação de R$ 2,6 milhões da porção das despesas de INSS referente à remuneração variável da linha 'Despesa de pessoal' para 'Participação nos lucros (PLR)' (onde a remuneração variável é contabilizada);",
+   "trecho_atual": "(1) Reclassificação de R$ 5,7 milhões da porção das despesas de INSS referente à remuneração variável da linha “Despesa de Pessoal” para “Participação nos lucros (PLR)” (onde a remuneração variável é contabilizada)."
+  },
+  {
+   "item": "E051",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "Pelo crescimento de todas as linhas de Receitas de Serviços, com destaque para o desempenho da linha de Fees de Mercado de Capitais e M&A;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E052",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2018 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "Reclassificação de R$ 2,9 milhões referente a despesas de recuperação de encargos e de crédito, da linha 'Outras despesas administrativas' para a linha 'Outras Receitas (Despesas) Operacionais';",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E053",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "A Carteira de Crédito Expandida* encerrou dezembro de 2018 com saldo de R$ 26,2 bilhões, crescimento de 3,6% em relação ao trimestre anterior e de 7,0% em 12 meses.",
+   "trecho_atual": "A Carteira de Crédito Expandida* encerrou março de 2019 com saldo de R$ 26,5 bilhões, crescimento de 1,0% em relação ao trimestre anterior e de 6,6% em 12 meses."
+  },
+  {
+   "item": "E054",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": 19,
+   "secao": "Resultado Operacional",
+   "trecho_anterior": "O Resultado Operacional totalizou R$ 217,4 milhões no quarto trimestre de 2018, aumento de 6,5% em relação ao trimestre anterior e 4,8% no comparativo com o mesmo período de 2017.",
+   "trecho_atual": "O Resultado Operacional totalizou R$ 200,6 milhões no primeiro trimestre de 2019, redução de 7,7% em relação ao trimestre anterior e estável no comparativo com o mesmo período de 2018."
+  },
+  {
+   "item": "E055",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "1T19 x 1T18",
+   "trecho_anterior": "",
+   "trecho_atual": "A variação do resultado no primeiro trimestre de 2019 em comparação com o mesmo período do ano anterior é explicada:"
+  },
+  {
+   "item": "E056",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "VOLUME E DESEMPENHO ABCB4",
+   "trecho_anterior": "Performance ABCB4 x Ibovespa (base 100)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E057",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 16,
+   "secao": "ADEQUAÇÃO DO CAPITAL",
+   "trecho_anterior": "As normas do Banco Central do Brasil exigem que os bancos mantenham um capital total igual ou superior a 8,625% dos ativos ponderados pelo risco (a partir de 1º de janeiro de 2018).",
+   "trecho_atual": "As normas do Banco Central do Brasil exigem que os bancos mantenham um capital total igual ou superior a 8,0% dos ativos ponderados pelo risco (a partir de 1º de janeiro de 2019)."
+  },
+  {
+   "item": "E058",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "4T17 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "Reclassificação de R$ 4,0 milhões da porção das despesas de INSS referente à remuneração variável da linha 'Despesa de pessoal' para 'Participação nos lucros (PLR)' (onde a remuneração variável é contabilizada);",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E059",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "No trimestre, a receita atingiu R$ 27,8 milhões, representando um crescimento de 1,2% em relação ao trimestre anterior e de 34,1% em relação ao mesmo período de 2017.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E060",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "NIM",
+   "trecho_anterior": "Em 2018 a NIM foi de 3,7%, apresentando variação de -0,5 p.p. em relação a 2017.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E061",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": 3,
+   "secao": "Primeiro Trimestre de 2019",
+   "trecho_anterior": "Apresentamos, abaixo, informações e indicadores financeiros do Banco ABC Brasil ao final do quarto trimestre de 2018.",
+   "trecho_atual": "Apresentamos, abaixo, informações e indicadores financeiros do Banco ABC Brasil ao final do primeiro trimestre de 2019."
+  },
+  {
+   "item": "E062",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2018 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "(1) Efeito de R$ 39,7 milhões referente à redução da alíquota de CSLL de 20% para 15% sobre o estoque de crédito fiscal do Banco;",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E063",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "1T19 x 4T18",
+   "trecho_anterior": "",
+   "trecho_atual": "Pelo arrefecimento da Receita de Serviços, resultado de um menor desempenho das receitas geradas pelo Banco de Investimento, que apresentou um forte resultado no quarto trimestre de 2018, além de uma menor contribuição da receita com Garantias Prestadas."
+  },
+  {
+   "item": "E064",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 18,
+   "pagina_atual": null,
+   "secao": "Resultado Operacional",
+   "trecho_anterior": "No ano de 2018 o Resultado Operacional atingiu R$ 830,8 milhões, apresentando crescimento de 2,7% em relação a 2017.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E065",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "O Banco de Investimento foi um dos destaques do ano, com a receita de Mercado de Capitais e M&A totalizando R$ 90,2 milhões em 2018, aumento de 58,7% em relação a 2017.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E066",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 17,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "O VaR consolidado médio diário foi de R$ 2,8 milhões no quarto trimestre de 2018 e de R$ 3,5 milhões no ano de 2018 (média do Valor em Risco estimado através do método de simulação histórica com horizonte de tempo de um dia e intervalo de confiança de 99%).",
+   "trecho_atual": "O VaR consolidado médio diário foi de R$ 3,9 milhões no primeiro trimestre de 2019 (média do Valor em Risco estimado através do método de simulação histórica com horizonte de tempo de um dia e intervalo de confiança de 99%)."
+  },
+  {
+   "item": "E067",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": 5,
+   "secao": "4T18 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "Reclassificação de R$ 1,9 milhão referente a despesas de recuperação de encargos e de crédito, da linha 'Outras despesas administrativas' para a linha 'Outras Receitas (Despesas) Operacionais';",
+   "trecho_atual": "Reclassificação de R$ 1,9 milhão referente a despesas de recuperação de encargos e de crédito, da linha “Outras despesas administrativas” para a linha “Outras Receitas (Despesas) Operacionais”;"
+  },
+  {
+   "item": "E068",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 8,
+   "secao": "CARTEIRA DE CRÉDITO EXPANDIDA",
+   "trecho_anterior": "No segmento Corporate (empresas com faturamento anual entre R$ 100 milhões e R$ 800 milhões), a carteira de crédito expandida atingiu saldo de R$ 5,4 bilhões, crescimento de 6,6% no trimestre e de 29,6% em 12 meses, representando 20% da carteira.",
+   "trecho_atual": "No segmento Corporate (empresas com faturamento anual entre R$ 100 milhões e R$ 800 milhões), a carteira de crédito expandida atingiu saldo de R$ 5,6 bilhões, crescimento de 3,7% no trimestre e de 23,6% em 12 meses, representando 21% da carteira."
+  },
+  {
+   "item": "E069",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "NOVA SEGMENTAÇÃO DE CLIENTES",
+   "trecho_anterior": "",
+   "trecho_atual": "A partir de maio de 2019, o Banco passou a operar com uma nova segmentação de clientes, visando atender melhor a base de clientes já existente, e incrementar o seu crescimento, principalmente nos segmentos Corporate e Middle."
+  },
+  {
+   "item": "E070",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 9,
+   "secao": "Operações de Crédito por Prazo de Vencimento",
+   "trecho_anterior": "O prazo médio da carteira de crédito (empréstimos e garantias prestadas) foi de 356 dias ao final de dezembro de 2018 (361 dias ao final de setembro de 2018 e 358 dias ao final de dezembro de 2017).",
+   "trecho_atual": "O prazo médio da carteira de crédito (empréstimos e garantias prestadas) foi de 348 dias ao final de março de 2019 (356 dias ao final de dezembro de 2018 e 365 dias ao final de março de 2018)."
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Indicadores das Operações de Crédito por Segmento",
+   "trecho_anterior": "(Carteira de Empréstimos e Garantias Prestadas)",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E072",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "12h00 Brasília / 09h00 US EST +1 (646) 828-8246 +55 (11) 3193-1001 +55 (11) 2820-4001",
+   "trecho_atual": "12h00 Brasília / 11h00 US EDT +1 (646) 828-8246 +55 (11) 3193-1001 +55 (11) 2820-4001"
+  },
+  {
+   "item": "E073",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "ABCB4 NÍVEL 2 PORTUGAL BRASIL",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E074",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "1T19 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "",
+   "trecho_atual": "(2) Reclassificação de R$ 7,1 milhões da porção das despesas de INSS referente à remuneração variável, da linha \"Despesa de pessoal\" para \"Participação nos lucros (PLR)\", e de R$ 1,8 milhão referente a despesas de recuperação de encargos e de crédito, da linha \"Outras despesas administrativas\" para a linha \"Outras Receitas (Despesas) Operacionais\";"
+  },
+  {
+   "item": "E075",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "O resultado foi parcialmente impactado pela redução na Margem Financeira com o Mercado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E076",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 18,
+   "secao": "Receita de Serviços",
+   "trecho_anterior": "A Receita de Serviços totalizou R$ 94,4 milhões no quarto trimestre de 2018, queda de 2,5% em relação ao trimestre anterior e crescimento de 12,8% em relação ao mesmo período do ano anterior.",
+   "trecho_atual": "A Receita de Serviços totalizou R$ 77,7 milhões no primeiro trimestre de 2019, queda de 17,6% em relação ao trimestre anterior e estável em relação ao mesmo período do ano anterior."
+  },
+  {
+   "item": "E077",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 16,
+   "secao": "ADEQUAÇÃO DO CAPITAL",
+   "trecho_anterior": "",
+   "trecho_atual": "*Esperamos um incremento no capital Nível 1 por volta de 100 bps no 2T19, sendo aproximadamente 75 bps referente a emissão de R$ 200 milhões de Letras Financeiras Subordinadas Perpétuas e 25 bps referente a recapitalização do JCP do segundo semestre de 2018."
+  },
+  {
+   "item": "E078",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "O resultado foi parcialmente impactado pela redução na Margem Financeira com o Mercado e pela receita de Garantias Prestadas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E079",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2018 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "(3) Reclassificação de R$ 13,6 milhões e de R$ 330,9 milhões do efeito fiscal do hedge das linhas de 'Despesas tributárias' e 'Imposto de renda e contribuição social', respectivamente, para a linha de 'Resultado bruto da intermediação financeira'.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E080",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "4T18 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "",
+   "trecho_atual": "(3) Reclassificação de R$ 6,9 milhões e de R$ 2,2 milhões do efeito fiscal do hedge das linhas de “Despesas tributárias” e “Imposto de renda e contribuição social”, respectivamente, para a linha de “Resultado bruto da intermediação financeira”."
+  },
+  {
+   "item": "E081",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 8,
+   "secao": "CARTEIRA DE CRÉDITO EXPANDIDA",
+   "trecho_anterior": "Com saldo de R$ 26,2 bilhões ao final de dezembro de 2018, a carteira cresceu 3,6% no trimestre e 7,0% em 12 meses.",
+   "trecho_atual": "Com saldo de R$ 26,5 bilhões ao final de março de 2019, a carteira cresceu 1,0% no trimestre e 6,6% em 12 meses."
+  },
+  {
+   "item": "E082",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 8,
+   "secao": "CARTEIRA DE CRÉDITO EXPANDIDA",
+   "trecho_anterior": "No segmento Large Corporate, (empresas com faturamento anual acima de R$ 800 milhões), a carteira de crédito expandida atingiu saldo de R$ 21,0 bilhões, aumento de 2,9% no trimestre e de 2,4% em 12 meses, representando 80% da carteira.",
+   "trecho_atual": "No segmento Large Corporate, (empresas com faturamento anual acima de R$ 800 milhões), a carteira de crédito expandida atingiu saldo de R$ 20,9 bilhões, aumento de 0,3% no trimestre e de 2,9% em 12 meses, representando 79% da carteira."
+  },
+  {
+   "item": "E083",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "O Retorno Anualizado Sobre o Patrimônio Líquido (ROAE) recorrente foi de 13,2% a.a. em 2018, redução de 0,8 p.p. em relação a 2017.",
+   "trecho_atual": "O Retorno Anualizado Sobre o Patrimônio Líquido (ROAE) recorrente foi de 13,0% a.a. no trimestre, redução de 0,3 p.p. em relação ao trimestre anterior e estável em relação ao mesmo período de 2018."
+  },
+  {
+   "item": "E084",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": 5,
+   "secao": "4T18 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "(2) Reclassificação de R$ 4,4 milhões da porção das despesas de INSS referente à remuneração variável, da linha 'Despesa de pessoal' para 'Participação nos lucros (PLR)';",
+   "trecho_atual": "(2) Reclassificação de R$ 4,4 milhões da porção das despesas de INSS referente à remuneração variável, da linha “Despesa de pessoal” para “Participação nos lucros (PLR)”;"
+  },
+  {
+   "item": "E085",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "2017 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "Reclassificação de R$ 0,8 milhão da porção das despesas com incentivos fiscais (Lei Rouanet, Lei do Incentivo ao Esporte e FUMCAD) da linha 'Despesas Administrativas' para 'Imposto de Renda e Contribuição Social';",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E086",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 18,
+   "secao": "Despesas de Pessoal, Administrativas e Participação nos Lucros",
+   "trecho_anterior": "O Banco encerrou Dez/18 com 598 colaboradores (593 em Set/18 e 578 em Dez/17).",
+   "trecho_atual": "O Banco encerrou Mar/19 com 590 colaboradores (598 em Dez/18 e 571 em Mar/18)."
+  },
+  {
+   "item": "E087",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 9,
+   "secao": "Classificação da Carteira de Empréstimos (Resolução 2.682 do Banco Central)",
+   "trecho_anterior": "O saldo da carteira de empréstimos ao final de dezembro de 2018 era de R$ 12.979 milhões, com um saldo de PDD de R$ 379,4 milhões.",
+   "trecho_atual": "O saldo da carteira de empréstimos ao final de março de 2019 era de R$ 13.065 milhões, com um saldo de PDD de R$ 391 milhões."
+  },
+  {
+   "item": "E088",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "4T17 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "(2) Reclassificação de R$ 3,7 milhões e R$ 79,5 milhões do efeito fiscal do hedge das linhas de 'Despesas tributárias' e 'Imposto de renda e contribuição social' (linhas onde esse efeito é contabilizado) para a linha de 'Resultado bruto da intermediação financeira' (onde o hedge desse efeito é contabilizado).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E089",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "4T18 - RECLASSIFICAÇÃO ENTRE O RESULTADO CONTÁBIL E GERENCIAL",
+   "trecho_anterior": "(3) Reclassificação de R$ 6,9 milhões e de R$ 2,2 milhões do efeito fiscal do hedge das linhas de 'Despesas tributárias' e 'Imposto de renda e contribuição social', respectivamente, para a linha de 'Resultado bruto da intermediação financeira'.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Despesas de Pessoal, Administrativas e Participação nos Lucros",
+   "trecho_anterior": "A partir de 2018 as despesas gerenciais estão sendo apresentadas com as seguintes reclassificações: (i) a porção das despesas de INSS referente à remuneração variável passou da linha 'Despesa de Pessoal' para a linha 'Participação nos Lucros (PLR)', onde a remuneração variável é contabilizada; e (ii) a porção das despesas que geram incentivos fiscais (Lei Rouanet, Lei do Incentivo ao Esporte e FUMCAD) passou da linha 'Despesas Administrativas' para a linha 'Imposto de Renda e Contribuição Social'.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "No ano de 2018, o Lucro Líquido Recorrente atingiu R$ 457,8 milhões, representando um aumento de 5,7% em relação aos R$ 433,0 milhões do ano anterior.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E092",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "1T19 x 4T18",
+   "trecho_anterior": "",
+   "trecho_atual": "A variação do resultado no primeiro trimestre de 2019 em comparação com o trimestre anterior é explicada:"
+  },
+  {
+   "item": "E093",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 2,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "",
+   "trecho_atual": "Índice de Atividade para o Desenvolvimento Internacional IGC"
+  },
+  {
+   "item": "E094",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "Outro destaque do ano foi a redução das Despesas com Provisão para Devedores Duvidosos, que totalizaram R$ 118,2 milhões de reais em 2018, queda de 46,3% em relação a 2017.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E095",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 2,
+   "pagina_atual": null,
+   "secao": "EARNINGS RELEASE",
+   "trecho_anterior": "No trimestre, o lucro líquido recorrente foi de R$ 121,4 milhões, crescimento de 4,6% em relação ao trimestre anterior e de 9,8% em relação ao mesmo período de 2017.",
+   "trecho_atual": ""
+  }
+ ]
+}

@@ -1,0 +1,1207 @@
+{
+ "par": "SANTANDER_4T2018_1T2019",
+ "documento_anterior": "santander_release_4T2018",
+ "documento_atual": "santander_release_1T2019",
+ "itens": [
+  {
+   "item": "E001",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "As captações com clientes",
+   "trecho_anterior": "Em três meses, as captações reduziram 1,4%, em função de debêntures e depósitos a prazo.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E002",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": null,
+   "secao": "Captação",
+   "trecho_anterior": "Em três meses, o total de captações reduziu 1,4% impactado principalmente por debêntures.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E003",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 31,
+   "secao": "Participação de Mercado",
+   "trecho_anterior": "",
+   "trecho_atual": "Inclui depósitos a vista, a prazo, poupança, LCI, LCA e LIG. ⁴ ABECS – Monitor Bandeiras (novo critério)."
+  },
+  {
+   "item": "E004",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Fortalecimento dos negócios líderes",
+   "trecho_anterior": "",
+   "trecho_atual": "A partir desse trimestre, analisamos a documentação para o financiamento também aos finais de semana, com a possibilidade de liberação do veículo no mesmo dia proporcionando agilidade no pagamento para o lojista."
+  },
+  {
+   "item": "E005",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Getnet",
+   "trecho_anterior": "Todos esses fatores colaboraram para a expansão de 32% no faturamento total em 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E006",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 12,
+   "secao": "Despesas R$ milhões",
+   "trecho_anterior": "O índice de cobertura atingiu 201% no final de dezembro de 2018, redução de 1,5 p.p. em doze meses e 6,1 p.p. em três meses.",
+   "trecho_atual": "O índice de eficiência atingiu 39,8% no primeiro trimestre de 2019, redução de 0,2 p.p. em doze meses e 2,8 p.p. em três meses."
+  },
+  {
+   "item": "E007",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Fortalecimento dos negócios líderes",
+   "trecho_anterior": "¹ Fonte Banco Central, data-base novembro/18 ² Fonte Banco Central, acumulado entre janeiro e novembro de 2018 ³ Fonte ABECS - Credenciadoras, data-base setembro de 2018. ⁴ Fonte Banco Central, data-base setembro de 2018. ⁵ Fonte Banco Central, data-base novembro de 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E008",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "DEMONSTRAÇÃO DE RESULTADO GERENCIAL",
+   "trecho_anterior": "$$ Variação cambial: inclui, além do efeito da variação cambial, reclassificações entre linhas de resultados (Outras receitas/despesas operacionais, Resultados de crédito de liquidação duvidosa e Resultado não operacional) para melhor comparabilidade com trimestres anteriores.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E009",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 19,
+   "secao": "Índice de Cobertura",
+   "trecho_anterior": "O índice de inadimplência de 15 a 90 dias atingiu 4,2% no final de dezembro de 2018, estável em doze meses e com aumento de 0,2 p.p. em três meses.",
+   "trecho_atual": "O índice de cobertura atingiu 195% no final de março de 2019, redução de 20,7 p.p. em doze meses e 5,6 p.p. em três meses."
+  },
+  {
+   "item": "E010",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "Nesse trimestre realizamos a emissão de novos instrumentos na forma de Notas (Notes), para composição do Patrimônio de Referência no valor de US$ 2,5 bilhões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E011",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "No trimestre, o crescimento da carteira de crédito foi influenciado principalmente pelas carteiras de pessoa física e financiamento ao consumo, como mencionado.",
+   "trecho_atual": "Na comparação trimestral, o crescimento da carteira de crédito foi influenciado principalmente pelas carteiras de pessoa física e financiamento ao consumo, como mencionado."
+  },
+  {
+   "item": "E012",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "Pessoas",
+   "trecho_anterior": "",
+   "trecho_atual": "Além disso, 96% dos funcionários sentem orgulho de trabalhar no Santander."
+  },
+  {
+   "item": "E013",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 14,
+   "pagina_atual": 14,
+   "secao": "Balanço Patrimonial",
+   "trecho_anterior": "O patrimônio líquido atingiu R$ 65.234 milhões no mesmo período, desconsiderando o saldo do ágio o patrimônio líquido foi de R$ 64.572 milhões.",
+   "trecho_atual": "O patrimônio líquido atingiu R$ 68.199 milhões no mesmo período, desconsiderando o saldo do ágio, o patrimônio líquido foi de R$ 67.605 milhões."
+  },
+  {
+   "item": "E014",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "Relação entre crédito e captação",
+   "trecho_anterior": "A métrica de liquidez ajustada ao impacto dos compulsórios e ao *funding* de médio / longo prazo atingiu 91,9% em dezembro de 2018, crescimento de 2,8 p.p. em doze meses e 5,8 p.p. em três meses.",
+   "trecho_atual": "A métrica de liquidez ajustada ao impacto dos compulsórios e ao funding de médio / longo prazo atingiu 92,4% em março de 2019, crescimento de 3,7 p.p. em doze meses e 0,6 p.p. em três meses."
+  },
+  {
+   "item": "E015",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 30,
+   "pagina_atual": null,
+   "secao": "Participação de Mercado",
+   "trecho_anterior": "Inclui depósitos a vista, a prazo, poupança, LCI e LCA. ⁴ ABECS - Credenciadora.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E016",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Indicadores de qualidade",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência acima de 90 dias atingiu 3,1%, alta de 0,2 p.p. em doze meses, influenciado pelo aumento de participação do varejo no saldo da carteira de crédito."
+  },
+  {
+   "item": "E017",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "",
+   "trecho_atual": "Na comparação trimestral, o índice de Basileia subiu 0,37 p.p. também explicado pelo patrimônio de referência que apresentou alta de 5,9% no mesmo período."
+  },
+  {
+   "item": "E018",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "NPL Formation",
+   "trecho_anterior": "A relação entre o NPL formation e a carteira de crédito atingiu 1,3%, redução de 0,1 p.p. em doze meses e estabilidade no trimestre.",
+   "trecho_atual": "A relação entre o NPL formation e a carteira de crédito atingiu 1,2%, alta de 0,2 p.p. em doze meses e redução de 0,1 p.p. no trimestre."
+  },
+  {
+   "item": "E019",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "Sustentabilidade",
+   "trecho_anterior": "Participação de mercado total de veículos (PF e PJ). ⁶ Dealogic, data-base 2018 e Assessoria Financeira – líder desde 2008, ANBIMA 2017. ⁷ Acumulado entre janeiro a novembro de 2018. ⁸ Considera o desempenho de janeiro a dezembro de 2018.",
+   "trecho_atual": "Total de veículos (PF e PJ). ⁴ Dealogic, data-base 2018 e Assessoria Financeira – líder desde 2008, ANBIMA 2017. ⁵ Acumulado entre janeiro e março de 2019."
+  },
+  {
+   "item": "E020",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 17,
+   "secao": "Variação da Carteira de Crédito",
+   "trecho_anterior": "Ao final de dezembro de 2018, a carteira de pessoa física representava 43,4% da carteira total, com incremento de 3,7 p.p. em doze meses.",
+   "trecho_atual": "Ao final de março de 2019, a carteira de pessoa física representou 43,95% da carteira total, com incremento de 3,40 p.p. em doze meses."
+  },
+  {
+   "item": "E021",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Sustentabilidade",
+   "trecho_anterior": "",
+   "trecho_atual": "Voluntariado orientação financeira: promoveremos palestras e atendimento individual para clientes e não clientes, aos sábados, em nossas agências, pois acreditamos que podemos apoiar a prosperidade das pessoas."
+  },
+  {
+   "item": "E022",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "Além disso, comunicamos o resgate dos Notes emitidos em 29 de janeiro de 2014.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E023",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": 6,
+   "secao": "Sustentabilidade",
+   "trecho_anterior": "Dentre os resultados relacionados à Sustentabilidade, destacamos a liderança no microcrédito, por meio do programa Prospera, cuja carteira de crédito cresceu 51% YoY ao final de dezembro 2018 atingindo R$ 642 milhões.",
+   "trecho_atual": "Seguimos líderes no microcrédito, por meio do programa Prospera, cuja carteira de crédito cresceu 63% YoY em março de 2019 e alcançou R$ 730 milhões."
+  },
+  {
+   "item": "E024",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Vinculação dos clientes:",
+   "trecho_anterior": "",
+   "trecho_atual": "Essa opção de compra parcelada visa estimular o faturamento e a vinculação dos clientes."
+  },
+  {
+   "item": "E025",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de Basileia atingiu 15,4% em março de 2019, crescimento de 0,16 p.p em doze meses influenciado pela expansão de todas as parcelas que compõem o patrimônio de referência: (i) o capital complementar e o patrimônio de referência nível II apresentaram alta em função da variação cambial, uma vez que os títulos subordinados são indexados ao dólar e;"
+  },
+  {
+   "item": "E026",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 4,
+   "pagina_atual": null,
+   "secao": "Estratégia",
+   "trecho_anterior": "Melhorar a rentabilidade, recorrência e sustentabilidade, crescendo nos negócios, com maior diversificação de receitas, considerando um equilíbrio entre crédito, captações e serviços.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E027",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 12,
+   "secao": "Despesas R$ milhões",
+   "trecho_anterior": "",
+   "trecho_atual": "Esse desempenho pode ser atribuído ao crescimento das receitas que segue com ritmo superior ao das despesas."
+  },
+  {
+   "item": "E028",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Fortalecimento dos negócios líderes",
+   "trecho_anterior": "",
+   "trecho_atual": "Atribuímos esse desempenho às nossas inovações, parcerias e atendimento comercial."
+  },
+  {
+   "item": "E029",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Indicadores de qualidade",
+   "trecho_anterior": "Nesse trimestre, o indicador foi impactado pelo efeito da valoração de ativos ocorrido no período, como mencionado.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E030",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 11,
+   "secao": "Despesas gerais (administrativas + pessoal)",
+   "trecho_anterior": "As despesas administrativas, excluindo depreciação e amortização, alcançaram R$ 8.605 milhões no ano, crescimento de 7,5% em doze meses e 18,4% em três meses devido às: (i) despesas com processamento de dados, associadas a maior transacionalidade e ao crescimento da base de clientes, e (ii) despesas com serviços técnicos especializados e de terceiros, principalmente pela contratação de serviços de tecnologia.",
+   "trecho_atual": "As despesas administrativas, excluindo depreciação e amortização, alcançaram R$ 2.203 milhões no trimestre, alta de 13,1% em doze meses devido às: (i) despesas com serviços técnicos especializados e de terceiros, associadas principalmente a contratação de serviços de tecnologia para projetos corporativos e (ii) despesas com processamento de dados para suportar o elevado patamar de transacionalidade dos clientes."
+  },
+  {
+   "item": "E031",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Fortalecimento dos negócios líderes",
+   "trecho_anterior": "Em assessoria financeira de financiamento e leilão de concessão e em estruturação de financiamento pela Anbima⁶, assessoria financeira nas Américas e líder Latam em Project Finance (MLA) pela Dealogic⁶.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E032",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "Índice de inadimplência de 15 a 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência pessoa física alcançou 5,7% no período, queda de 0,3 p.p. em doze meses."
+  },
+  {
+   "item": "E033",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Agro",
+   "trecho_anterior": "Alinhado com nosso processo de interiorização e objetivo de sermos o melhor banco de agronegócio do país, inauguramos nesse trimestre mais 4 lojas vocacionadas totalizando 21 espaços.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E034",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Novos negócios",
+   "trecho_anterior": "A Ben utilizará a marca Visa Vale que é reconhecida neste setor e suportará o nosso crescimento.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E035",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 5,
+   "secao": "Vinculação dos clientes:",
+   "trecho_anterior": "",
+   "trecho_atual": "Lançamos a conta MEI para os microempreendedores individuais, uma oferta de valor que abrange abertura de conta corrente pessoa jurídica, acesso à crédito, incluindo a possibilidade de microcrédito Prospera, e aquisição da SuperGet com preços competitivos."
+  },
+  {
+   "item": "E036",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 8,
+   "secao": "Indicadores de qualidade",
+   "trecho_anterior": "O índice de Basileia alcançou 15,1% em dezembro de 2018, redução de 0,8 p.p. em doze meses e 0,2 p.p. em três meses.",
+   "trecho_atual": "O custo de crédito alcançou 3,0% no primeiro trimestre de 2019, redução de 0,4 p.p. em doze meses e 0,5 p.p. em três meses."
+  },
+  {
+   "item": "E037",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Resultado de créditos de liquidação duvidosa",
+   "trecho_anterior": "Excluindo esse efeito, o resultado de créditos de liquidação duvidosa teria crescido 1,8%, inferior ao crescimento da carteira de crédito no mesmo período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E038",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Varejo",
+   "trecho_anterior": "Além disso, a industrialização de nossos processos internos já mostra resultados trazendo maior",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E039",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": 8,
+   "secao": "Indicadores de qualidade",
+   "trecho_anterior": "O índice de cobertura alcançou 201% em dezembro de 2018, queda de 1,5 p.p. em doze meses e 6,1 p.p. em três meses.",
+   "trecho_atual": "O índice de cobertura alcançou 195% em março de 2019, queda de 20,7 p.p. em doze meses e 5,6 p.p. em três meses."
+  },
+  {
+   "item": "E040",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Getnet",
+   "trecho_anterior": "Nosso modelo de negócios especializados, integrado com o banco, qualidade no atendimento e inovações têm se mostrado nossos maiores diferenciais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E041",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": 23,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "Cabe mencionar que o índice supera em 4,1 p.p. a soma dos requerimentos mínimos de Patrimônio de Referência e Adicionais de Capital Principal.",
+   "trecho_atual": "Cabe mencionar que o índice de Basileia supera em 3,9 p.p. a soma dos requerimentos mínimos do patrimônio de referência e adicionais de capital principal."
+  },
+  {
+   "item": "E042",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Sustentabilidade",
+   "trecho_anterior": "¹ Fonte Banco Central, data-base novembro/18 ² Fonte Banco Central, acumulado entre janeiro a novembro de 2018 ³ Fonte ABECS – Credenciadoras, data-base setembro de 2018. ⁴ Fonte Banco Central, data-base setembro de 2018. ⁵ Fonte Banco Central, data-base novembro de 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E043",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": null,
+   "secao": "Carteira de renegociação",
+   "trecho_anterior": "As operações de crédito renegociadas totalizaram R$ 15.021 milhões ao final de dezembro de 2018, expansão de 10,0% em doze meses, inferior ao crescimento da carteira de crédito no mesmo período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E044",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": null,
+   "secao": "Índice de Eficiência",
+   "trecho_anterior": "$$ A partir do 1T18, as Despesas Gerais passam a refletir as despesas das empresas Isban Brasil S.A. e Produban Serviços de Informática S.A. nos grupos de Despesas de Pessoal e Administrativa, antes consolidadas integralmente na linha de Processamento de dados.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E045",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Comissões - Receitas de Prestação de Serviços e Tarifas Bancárias",
+   "trecho_anterior": "As comissões de serviços de colocação de títulos, custódia e corretagem atingiram R$ 709 milhões em 2018, crescimento de 1,3% em doze meses.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E046",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": 13,
+   "secao": "Outras receitas e despesas operacionais",
+   "trecho_anterior": "As outras receitas e despesas operacionais líquidas resultaram em 2018 em uma despesa de R$ 5.433 milhões, queda de 6,6% em doze meses.",
+   "trecho_atual": "As outras receitas e despesas operacionais líquidas nesse primeiro trimestre de 2019 resultaram em uma despesa de R$ 1.447 milhões, crescimento de 8,5% em doze meses e redução de 6,9% em três meses."
+  },
+  {
+   "item": "E047",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 10,
+   "secao": "Comissões - Receitas de Prestação de Serviços e Tarifas Bancárias",
+   "trecho_anterior": "As comissões de cobrança e arrecadações somaram R$ 1.519 milhões em 2018, alta de 9,4% em doze meses.",
+   "trecho_atual": "As comissões de cobrança e arrecadações somaram R$ 375 milhões no primeiro trimestre de 2019, incremento de 0,5% em doze meses e queda de 5,9% em três meses."
+  },
+  {
+   "item": "E048",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Indicadores de capital",
+   "trecho_anterior": "O Capital principal (Fully Loaded) atingiu 12,5% no mesmo período, redução de 0,2 p.p. em doze meses e de 0,1 p.p. em três meses.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E049",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Resultado de créditos de liquidação duvidosa",
+   "trecho_anterior": "No trimestre, essas despesas subiram 13,8% impactadas pelo efeito já mencionado acima.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E050",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Carteira de pessoa física",
+   "trecho_anterior": "",
+   "trecho_atual": "Em três meses, o crédito à pessoa física apresentou alta de 3,0%."
+  },
+  {
+   "item": "E051",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 3,
+   "pagina_atual": 3,
+   "secao": "Resumo dos dados do período",
+   "trecho_anterior": "$$ Exclui 100% do saldo do ágio (líquido de amortização), que foi de R$ 662 milhões no 4T18, R$ 727 milhões no 3T18 e R$ 930 milhões no 4T17.",
+   "trecho_atual": "$$ Exclui 100% do saldo do ágio (líquido de amortização), que foi de R$ 595 milhões no 1T19, R$ 662 milhões no 4T18 e R$ 863 milhões no 1T18."
+  },
+  {
+   "item": "E052",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Despesas gerais (administrativas + pessoal)",
+   "trecho_anterior": "",
+   "trecho_atual": "Em três meses, essas despesas reduziram 2,9%, explicadas, em grande parte, pelas maiores despesas com remuneração variável que se concentram no quarto trimestre do ano."
+  },
+  {
+   "item": "E053",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Comissões - Receitas de Prestação de Serviços e Tarifas Bancárias",
+   "trecho_anterior": "As receitas de prestação de serviços e tarifas bancárias somaram R$ 17.269 milhões em 2018, o que representa um aumento de 10,6% em doze meses (ou R$ 1.658 milhões), sendo impulsionadas principalmente por cartões de crédito e serviços adquirente, conta corrente e seguros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E054",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Resultado de créditos de liquidação duvidosa",
+   "trecho_anterior": "O resultado de créditos de liquidação duvidosa alcançou R$ 10.860 milhões no ano, crescimento de 11,9% em doze meses (ou R$ 1.152 milhões), impactado por maiores despesas de provisões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E055",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": 6,
+   "secao": "Vinculação dos clientes:",
+   "trecho_anterior": "Todas essas ações colaboraram para o incremento na participação de mercado em carteira de crédito que atingiu 13,1%¹ (+1,1p.p.",
+   "trecho_atual": "A participação de mercado em carteira de crédito atingiu 8,1%¹ (+0,3 p.p."
+  },
+  {
+   "item": "E056",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "Indicadores de qualidade",
+   "trecho_anterior": "O índice de inadimplência acima de 90 dias alcançou 3,1% no final de dezembro de 2018, redução de 0,1 p.p. em doze meses e aumento de 0,2 p.p. em três meses, em linha com a maior participação do segmento de pessoa física na carteira de crédito.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E057",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Fortalecimento dos negócios líderes",
+   "trecho_anterior": "Santander Corretora foi eleita⁸ em 1º lugar em recomendação de ações em 2018 pelo Valor Econômico.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E058",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "DEMONSTRAÇÃO DE RESULTADO GERENCIAL",
+   "trecho_anterior": "Despesas Administrativas e Outras Receitas e Despesas Operacionais: Adesão ao programa de pagamento incentivado dos municípios de São Paulo e Rio de Janeiro (R$ 9 milhões de despesas administrativas, R$ 27 milhões de outras despesas operacionais e R$ 179 milhões de reversão em outras receitas operacionais) e baixa de intangíveis por redução do valor recuperável no valor de R$ 306 milhões.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E059",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "O Capital Principal (Fully Loaded) alcançou 12,5% em dezembro de 2018, queda de 0,2 p.p. em doze meses e de 0,1 p.p. no trimestre, impactados, principalmente, pela variação das parcelas de crédito e mercado, de forma similar ao observado no critério phase-in.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E060",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "As receitas totais",
+   "trecho_anterior": "Em três meses, a margem financeira apresentou alta de 1,1%, com expansão em todas as linhas: crédito, captação e outras margens.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E061",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Inovações",
+   "trecho_anterior": "A campanha está aderente ao reposicionamento de nossa marca e trouxe resultados notórios.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E062",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Comissões - Receitas de Prestação de Serviços e Tarifas Bancárias",
+   "trecho_anterior": "Esse desempenho é atribuído ao maior volume do faturamento no período, tanto de cartões quanto de adquirência.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E063",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 10,
+   "secao": "Comissões - Receitas de Prestação de Serviços e Tarifas Bancárias",
+   "trecho_anterior": "",
+   "trecho_atual": "As receitas de prestação de serviços e tarifas bancárias totalizaram R$ 4.529 milhões no primeiro trimestre de 2019, o que representa um incremento de 9,5% em doze meses (ou R$ 395 milhões), resultado do aumento da base de clientes e vinculação."
+  },
+  {
+   "item": "E064",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 17,
+   "secao": "Carteira de pessoa física",
+   "trecho_anterior": "",
+   "trecho_atual": "O crédito à pessoa física totalizou R$ 136.556 milhões no final de março de 2019, crescimento de 20,1% em doze meses (ou R$ 22.855 milhões), sendo crédito consignado, cartão de crédito e crédito imobiliário as maiores contribuições para o período."
+  },
+  {
+   "item": "E065",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 6,
+   "secao": "Inovações",
+   "trecho_anterior": "",
+   "trecho_atual": "Essa iniciativa corrobora com o aumento da base de clientes de forma inovadora."
+  },
+  {
+   "item": "E066",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 21,
+   "secao": "Índice de inadimplência acima de 90 dias",
+   "trecho_anterior": "O índice de inadimplência pessoa física atingiu 3,9% no período, aumento de 0,2 p.p. em doze meses e 0,1 p.p. em três meses, influenciado pelo mix de produtos.",
+   "trecho_atual": "O índice de inadimplência pessoa física atingiu 3,9% no período, aumento de 0,2 p.p. em doze meses, influenciado pelo mix de produtos, e com estabilidade em três meses."
+  },
+  {
+   "item": "E067",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Agro",
+   "trecho_anterior": "Além disso, melhoramos nosso posicionamento em LCA cuja participação de mercado atingiu 7,8%¹ (+2,4p.p.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E068",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "As receitas totais",
+   "trecho_anterior": "",
+   "trecho_atual": "A margem financeira atingiu R$ 10.758 milhões no trimestre, alta de 5,9% em doze meses, influenciada pelo crescimento das margens de crédito e de captação em função de maiores volumes médios."
+  },
+  {
+   "item": "E069",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Carteira de pessoa física",
+   "trecho_anterior": "Em três meses, o saldo da carteira expandiu 15,4%.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E070",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "As despesas gerais",
+   "trecho_anterior": "",
+   "trecho_atual": "Em três meses, as despesas reduziram 7,0% devido aos menores gastos com processamento de dados e pela sazonalidade na despesa de marketing no quarto trimestre do ano."
+  },
+  {
+   "item": "E071",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Inovações",
+   "trecho_anterior": "Black Week Santander: em novembro realizamos a 2ª edição da campanha com mais de 45 tipos de produtos e serviços ofertados para os segmentos pessoa física e jurídica.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E072",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 8,
+   "secao": "Indicadores de capital",
+   "trecho_anterior": "O índice de inadimplência pessoa física alcançou 5,5% em dezembro de 2018, queda de 0,2 p.p. em doze meses e 0,1 p.p. em três meses.",
+   "trecho_atual": "O índice de Basileia alcançou 15,4% em março de 2019, aumento de 0,2 p.p. em doze meses e 0,4 p.p. em três meses."
+  },
+  {
+   "item": "E073",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Inovações",
+   "trecho_anterior": "Esse espaço proporciona uma experiência inovadora de interação com os serviços bancários dispondo de Wi-Fi gratuito, cafeteria e coworking, ATM reciclador dentre outros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E074",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "Pessoas",
+   "trecho_anterior": "",
+   "trecho_atual": "potencial de salvar mais de 33 mil vidas."
+  },
+  {
+   "item": "E075",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 25,
+   "secao": "Distribuição de proventos",
+   "trecho_anterior": "",
+   "trecho_atual": "No trimestre, o Santander Brasil destacou o montante de R$ 1,0 bilhão de reais na forma de juros sobre capital próprio (JCP) com pagamento a partir de 29 de abril de 2019."
+  },
+  {
+   "item": "E076",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 6,
+   "pagina_atual": null,
+   "secao": "Sustentabilidade",
+   "trecho_anterior": "No âmbito de financiamentos socioambientais, fomos o primeiro banco a lançar uma linha de financiamento exclusiva para bicicletas elétricas, o CDC Mobilidade, que pode financiar até 100% do valor do bem, com prazo máximo de 48 meses, para clientes pessoas físicas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E077",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Varejo",
+   "trecho_anterior": "Em 2018, fortalecemos nossa oferta agregada: Santander Way se mantém como uma das melhores avaliações do mercado de aplicativos (4,8 estrelas na Apple Store e 4,6 no Google play), lançamos o Santander Pass com tecnologia NFC, para pagamentos por aproximação, e o Supercrédito para a contratação de crédito pessoal pelos clientes não correntistas.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E078",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 21,
+   "pagina_atual": 21,
+   "secao": "Índice de inadimplência acima de 90 dias",
+   "trecho_anterior": "O índice de inadimplência superior a 90 dias atingiu 3,1% em dezembro de 2018, queda de 0,1 p.p. em doze meses e aumento de 0,2 p.p. em três meses, em linha com a maior participação do segmento de pessoa física na carteira de crédito.",
+   "trecho_atual": "O índice de inadimplência superior a 90 dias atingiu 3,1% em março de 2019, aumento de 0,2 p.p. em doze meses, em linha com a maior participação do segmento de pessoa física na carteira de crédito, e estável em três meses."
+  },
+  {
+   "item": "E079",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": 17,
+   "secao": "Carteira de pessoa física",
+   "trecho_anterior": "O saldo da carteira de cartões somou R$ 30.892 milhões, crescimento de 26,5% em doze meses (ou R$ 6.471 milhões) explicado em grande parte pelo aumento da base de clientes e ampliação de soluções inovadoras.",
+   "trecho_atual": "O saldo da carteira de cartões somou R$ 30.631 milhões, crescimento de 25,4% em doze meses (ou R$ 6.209 milhões) em função da expansão da base de clientes e da ampliação de soluções inovadoras e parcerias."
+  },
+  {
+   "item": "E080",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 9,
+   "pagina_atual": 9,
+   "secao": "Margem Financeira",
+   "trecho_anterior": "A margem financeira bruta atingiu R$ 42.000 milhões em 2018, crescimento de 12,5% em doze meses (ou R$ 4.673 milhões) e 1,1% em três meses.",
+   "trecho_atual": "A margem financeira bruta atingiu R$ 10.758 milhões no primeiro trimestre de 2019, crescimento de 5,9% em doze meses (ou R$ 595 milhões) e 0,1% em três meses."
+  },
+  {
+   "item": "E081",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "Índice de inadimplência de 15 a 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência de 15 a 90 dias atingiu 4,1% no final de março de 2019, redução de 0,2 p.p. em doze meses e de 0,1 p.p. em três meses."
+  },
+  {
+   "item": "E082",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 13,
+   "pagina_atual": null,
+   "secao": "Resultado de Créditos de Liquidação Duvidosa¹",
+   "trecho_anterior": "■ Receita de recuperação de créditos baixados como prejuízo ■ Despesa de provisão para créditos de liquidação duvidosa",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E083",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": null,
+   "secao": "Despesas gerais (administrativas + pessoal)",
+   "trecho_anterior": "Em três meses, essas despesas aumentaram 9,3% influenciadas principalmente pelas despesas de serviços técnicos especializados e de terceiros, processamento de dados e marketing, dada a sazonalidade do período.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E084",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 8,
+   "secao": "Indicadores de qualidade",
+   "trecho_anterior": "",
+   "trecho_atual": "Vale mencionar que na comparação trimestral, o indicador foi impactado pelo efeito da valoração de ativos, como mencionado."
+  },
+  {
+   "item": "E085",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Comissões - Receitas de Prestação de Serviços e Tarifas Bancárias",
+   "trecho_anterior": "No trimestre, essas receitas apresentaram alta de 13,0% decorrentes do aumento do faturamento, ocasionado pelas vendas de final de ano.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E086",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "Dessa forma, otimizamos nossa estrutura de capital por meio da redução do custo financeiro do endividamento.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E087",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "A carteira de crédito ampliada, que inclui as outras operações com risco de crédito, ativos de adquirência e avais e fianças, totalizou R$ 386.736 milhões ao final de dezembro de 2018, alta de 11,2% em doze meses (ou aumento de 9,8% desconsiderando o efeito da variação cambial) e 1,6% em três meses.",
+   "trecho_atual": "A carteira de crédito ampliada, que inclui as outras operações com risco de crédito, ativos de adquirência e avais e fianças, totalizou R$ 386.904 milhões ao final de março de 2019, alta de 9,3% em doze meses (ou aumento de 8,0% desconsiderando o efeito da variação cambial)."
+  },
+  {
+   "item": "E088",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "DEMONSTRAÇÃO DE RESULTADO GERENCIAL",
+   "trecho_anterior": "3T18: Margem financeira bruta, Resultado de Créditos de Liquidação Duvidosa e Outras Receitas e Despesas Operacionais: Reclassificações entre as linhas referente a ajustes na valoração de ativos relativo à redução ao valor recuperável de títulos, valores mobiliários (R$ 173MM) e instrumentos derivativos (R$ 127MM).",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E089",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 19,
+   "pagina_atual": 19,
+   "secao": "Índice de Cobertura",
+   "trecho_anterior": "Em três meses, essas provisões apresentaram alta de 3,1%.",
+   "trecho_atual": "Em três meses, essas provisões recuaram 0,5%."
+  },
+  {
+   "item": "E090",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Getnet",
+   "trecho_anterior": "Nesse ano, desenvolvemos uma plataforma digital especializada para o comércio eletrônico com o conceito \"one stop shop\".",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E091",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 4,
+   "secao": "Pessoas",
+   "trecho_anterior": "",
+   "trecho_atual": "Seguimos atuando em nossas frentes estratégicas como a promoção da colaboração, o incentivo ao protagonismo e a gestão horizontal."
+  },
+  {
+   "item": "E092",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": 28,
+   "secao": "Reconciliação entre o resultado contábil e o resultado gerencial",
+   "trecho_anterior": "Margem financeira bruta e Resultado de Créditos de Liquidação Duvidosa: Reclassificação entre as linhas referente ao ajuste na valoração de ativos relativo à redução ao valor recuperável de títulos e valores mobiliários.",
+   "trecho_atual": "1T19: Margem financeira bruta e Resultado de Créditos de Liquidação Duvidosa: Reclassificação entre as linhas referente ao ajuste na valoração de ativos relativo à redução ao valor recuperável de títulos e valores mobiliários"
+  },
+  {
+   "item": "E093",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 22,
+   "pagina_atual": 22,
+   "secao": "Captação",
+   "trecho_anterior": "O total de captações de clientes totalizou R$ 332.254 milhões no final de dezembro de 2018, crescimento de 8,0% em doze meses (ou R$ 24.635 milhões) influenciado pela expansão de depósitos a prazo que registrou alta de 29,2% em relação a dezembro de 2017, seguido de depósitos de poupança e depósitos à vista que apresentaram crescimento anual de 13,5% e 9,6%, respectivamente.",
+   "trecho_atual": "As captações de clientes totalizaram R$ 336.119 milhões no final de março de 2019, crescimento de 6,1% em doze meses (ou R$ 19.300 milhões), principalmente atribuído à expansão de 16,1% de depósitos a prazo no mesmo período, seguido de depósitos de poupança e depósitos à vista que apresentaram crescimento anual de 11,6% e 6,8%, respectivamente."
+  },
+  {
+   "item": "E094",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 13,
+   "secao": "Resultado de créditos de liquidação duvidosa",
+   "trecho_anterior": "",
+   "trecho_atual": "Desconsiderando esses efeitos, as despesas de provisão teriam caído 6,8% em três meses, desempenho notório comparado ao crescimento da carteira de crédito no mesmo período."
+  },
+  {
+   "item": "E095",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 7,
+   "secao": "As receitas totais",
+   "trecho_anterior": "somaram R$ 59.268 milhões em 2018, expansão de 12,0% em doze meses (ou R$ 6.330 milhões) e 4,8% em três meses.",
+   "trecho_atual": "somaram R$ 15.287 milhões no primeiro trimestre de 2019, crescimento de 6,9% em doze meses (ou R$ 990 milhões) e redução de 1,2% em três meses."
+  },
+  {
+   "item": "E096",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 11,
+   "pagina_atual": 11,
+   "secao": "Despesas gerais (administrativas + pessoal)",
+   "trecho_anterior": "As despesas de depreciação e amortização somaram R$ 2.261 milhões no ano, expansão de 9,3% em doze meses e 3,6% em três meses.",
+   "trecho_atual": "As despesas de depreciação e amortização somaram R$ 580 milhões no trimestre, crescimento de 5,8% em doze meses e queda de 1,6% em três meses."
+  },
+  {
+   "item": "E097",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 7,
+   "secao": "RESULTADOS",
+   "trecho_anterior": "",
+   "trecho_atual": "Apesar da recuperação gradual da atividade econômica e do ambiente mais competitivo, iniciamos o ano de 2019 mantendo o crescimento anual de dois dígitos da carteira de crédito, acima do desempenho do sistema financeiro, o que nos possibilitou expandir de forma rentável a participação de mercado."
+  },
+  {
+   "item": "E098",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 17,
+   "pagina_atual": null,
+   "secao": "Carteira de pessoa física",
+   "trecho_anterior": "Os produtos que mais contribuíram para essa evolução em ambos períodos foram consignado, cartão de crédito e imobiliário.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E099",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 12,
+   "pagina_atual": 12,
+   "secao": "Índice de Eficiência",
+   "trecho_anterior": "$$ Exclui 100% da despesa de amortização do ágio de R$ 70 milhões no 4T18, R$ 70 milhões no 3T18, R$ 166 milhões no 4T17.",
+   "trecho_atual": "$$ Exclui 100% da despesa de amortização do ágio de R$ 70 milhões no 1T19, R$ 70 milhões no 4T18, R$ 69 milhões no 1T18."
+  },
+  {
+   "item": "E100",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "No mesmo período, a carteira de grandes empresas apresentou uma redução em comparação a setembro de 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E101",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 18,
+   "secao": "Financiamento ao consumo",
+   "trecho_anterior": "",
+   "trecho_atual": "O crescimento da carteira, com ganho rentável de participação de mercado, reflete nossa estratégia de oferecer soluções inovadoras e atendimento diferenciado."
+  },
+  {
+   "item": "E102",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 23,
+   "secao": "Índice de Basileia¹",
+   "trecho_anterior": "",
+   "trecho_atual": "Portanto, as visões Phase-In e Fully Loaded não existem mais. ² Importante mencionar que o CET1-Fully Loaded foi 13,0% em março/18 e 12,5% em dezembro/18."
+  },
+  {
+   "item": "E103",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 5,
+   "pagina_atual": null,
+   "secao": "Agro",
+   "trecho_anterior": "Em paralelo, aprimoramos o atendimento com gerentes exclusivos e aumentamos a eficiência, reduzimos nosso lead time (tempo de contratação do crédito rural) em 46%, ao longo de 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E104",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 15,
+   "pagina_atual": 15,
+   "secao": "Títulos e valores mobiliários",
+   "trecho_anterior": "Em três meses, o saldo de títulos e valores mobiliários expandiu 8,2%.",
+   "trecho_atual": "Em três meses, o saldo de títulos e valores mobiliários subiu 0,5%."
+  },
+  {
+   "item": "E105",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "O índice de Basileia alcançou 15,1% em dezembro de 2018, queda de 0,76 p.p. nos últimos 12 meses, essa variação é explicada, principalmente, pelo impacto sobre as deduções de capital do cronograma de Basileia III que passaram de 80% em 2017 para 100% em 2018.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E106",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": null,
+   "secao": "Comissões - Receitas de Prestação de Serviços e Tarifas Bancárias",
+   "trecho_anterior": "As receitas com serviços de conta corrente atingiram R$ 3.360 milhões em 2018, crescimento de 15,5% em doze meses e 4,0% em três meses, explicado em grande parte pela maior transacionalidade e aumento da base de clientes correntistas ativos.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E107",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 10,
+   "pagina_atual": 10,
+   "secao": "Comissões - Receitas de Prestação de Serviços e Tarifas Bancárias",
+   "trecho_anterior": "As comissões com operações de créditos e garantias prestadas alcançaram R$ 1.408 milhões no ano, redução de 5,6% em doze meses em razão de revisão de tarifas de acordo com diretrizes de mercado.",
+   "trecho_atual": "As comissões com operações de créditos e garantias prestadas totalizaram R$ 324 milhões no trimestre, queda de 15,9% em doze meses, em razão de revisão de tarifas de acordo com diretrizes de mercado."
+  },
+  {
+   "item": "E108",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Despesas gerais (administrativas + pessoal)",
+   "trecho_anterior": "",
+   "trecho_atual": "publicidade, devido a concentração de ações comerciais promovidas no trimestre anterior."
+  },
+  {
+   "item": "E109",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 11,
+   "secao": "Despesas gerais (administrativas + pessoal)",
+   "trecho_anterior": "",
+   "trecho_atual": "As despesas gerais, incluindo depreciação e amortização, totalizaram R$ 5.102 milhões no trimestre, crescimento de 6,2% em doze meses (ou R$ 297 milhões), influenciadas pelas maiores despesas com serviços técnicos especializados e de terceiros e com processamento de dados."
+  },
+  {
+   "item": "E110",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": 16,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "O saldo da carteira em moeda estrangeira, incluindo as operações indexadas ao Dólar, totalizou R$ 31.779 milhões no final de dezembro de 2018, crescimento de 9,9% em relação ao saldo de R$ 28.904 milhões em dezembro de 2017 e redução de 18,4% em relação ao saldo de R$ 38.961 milhões em setembro de 2018.",
+   "trecho_atual": "O saldo da carteira em moeda estrangeira, incluindo as operações indexadas ao Dólar, totalizou R$ 32.507 milhões no final de março de 2019, crescimento de 0,7% em relação ao saldo de R$ 32.271 milhões em março de 2018 e 2,3% em relação ao saldo de R$ 31.779 milhões em dezembro de 2018."
+  },
+  {
+   "item": "E111",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 20,
+   "pagina_atual": 20,
+   "secao": "NPL Formation",
+   "trecho_anterior": "O NPL formation alcançou R$ 4.050 milhões em dezembro de 2018, aumento de 6,4% em doze meses e 8,0% em três meses.",
+   "trecho_atual": "O NPL formation alcançou R$ 3.664 milhões em março de 2019, aumento de 35,2% em doze meses e queda de 9,5% em três meses."
+  },
+  {
+   "item": "E112",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 23,
+   "pagina_atual": null,
+   "secao": "Índice de Basileia",
+   "trecho_anterior": "Além disso, apresentamos um aumento no risco de crédito, resultado da expansão da carteira de crédito, e do risco de mercado, devido o crescimento das posições de juros.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E113",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 8,
+   "pagina_atual": null,
+   "secao": "As captações com clientes",
+   "trecho_anterior": "alcançaram R$ 332.254 milhões no final de dezembro de 2018, crescimento de 8,0% em doze meses, principalmente pelo incremento em depósitos a prazo e poupança, que aumentaram 29,2% e 13,5% em relação a 2017, respectivamente.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E114",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 16,
+   "pagina_atual": null,
+   "secao": "Carteira de Crédito",
+   "trecho_anterior": "Os destaques continuam sendo os segmentos de pessoa física e financiamento ao consumo, que crescem na comparação anual, respectivamente, há treze e nove trimestres consecutivos acima do desempenho da carteira total o que tem nos permitido ampliar a nossa participação de mercado ao longo dos últimos trimestres.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E115",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": 7,
+   "secao": "O lucro líquido gerencial",
+   "trecho_anterior": "alcançou R$ 12.398 milhões no ano, expansão de 24,6% em doze meses e 9,5% em três meses.",
+   "trecho_atual": "alcançou R$ 3.485 milhões no trimestre, expansão de 21,9% em doze meses e 2,3% em três meses."
+  },
+  {
+   "item": "E116",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 7,
+   "pagina_atual": null,
+   "secao": "As receitas totais",
+   "trecho_anterior": "Em três meses, as comissões subiram 14,3%, com maiores receitas de cartões e serviços adquirentes decorrente da sazonalidade de compras de final de ano, aumento das comissões com seguros em função da concentração de renovações de apólices no 4T18 e serviços de colocação de títulos, custódia e corretagem, devido à maior atividade do mercado de capitais.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E117",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 25,
+   "pagina_atual": null,
+   "secao": "Distribuição de proventos",
+   "trecho_anterior": "Em 2018, o Santander Brasil destacou o montante de R$ 4.080 milhões na forma de juros sobre capital próprio (JCP) e R$ 2.520 milhões na forma de dividendos, totalizando R$ 6.600 milhões, expansão de 4,8% em relação a 2017.",
+   "trecho_atual": ""
+  },
+  {
+   "item": "E118",
+   "operacao": "adicao",
+   "tipo": "texto",
+   "pagina_anterior": null,
+   "pagina_atual": 21,
+   "secao": "Índice de inadimplência acima de 90 dias",
+   "trecho_anterior": "",
+   "trecho_atual": "O índice de inadimplência pessoa jurídica atingiu 1,9% no final de março de 2019, redução de 0,1 p.p. em doze meses e estável em três meses."
+  },
+  {
+   "item": "E119",
+   "operacao": "alteracao",
+   "tipo": "texto",
+   "pagina_anterior": 24,
+   "pagina_atual": 24,
+   "secao": "Evolução da Cotação¹",
+   "trecho_anterior": "O gráfico também mostra que o mesmo investimento feito no principal índice de ações da B3 (IBOV), no mesmo período, teria valorizado para R$ 175,7.",
+   "trecho_atual": "O gráfico também mostra que o mesmo investimento feito no principal índice de ações da B3 (IBOV), no mesmo período, teria valorizado para R$ 186,4."
+  },
+  {
+   "item": "E120",
+   "operacao": "remocao",
+   "tipo": "texto",
+   "pagina_anterior": 28,
+   "pagina_atual": null,
+   "secao": "DEMONSTRAÇÃO DE RESULTADO GERENCIAL",
+   "trecho_anterior": "2T18: Inclui ganho de R$ 816MM com atualização de benefícios pós emprego, provisões adicionais para contingências no valor de R$ 358MM, redução ao valor recuperável de ativos intangíveis (aquisição e desenvolvimento de sistemas) no valor de R$ 306 MM e baixa de créditos tributários no valor de R$ 74 MM.",
+   "trecho_atual": ""
+  }
+ ]
+}
