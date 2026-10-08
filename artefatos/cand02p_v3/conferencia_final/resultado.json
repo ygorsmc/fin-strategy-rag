@@ -1,0 +1,34 @@
+{
+  "itens": 90,
+  "portoes": {
+    "G1_alfa_humano_x_claude_v2": 0.6472,
+    "G2_prioridade_reconhecida": 0.8333
+  },
+  "limiares": {
+    "G1": 0.67,
+    "G2": 0.7
+  },
+  "descritivos": {
+    "matriz_humano_linha_x_claude_v2_coluna": [
+      [
+        26,
+        8,
+        5
+      ],
+      [
+        4,
+        14,
+        5
+      ],
+      [
+        0,
+        8,
+        20
+      ]
+    ],
+    "acordo_exato": 0.6667,
+    "humano_2_onde_claude_0": 0,
+    "alfa_humano_x_claude_v1": 0.7073
+  },
+  "decisao": "RUBRICA_V2_REPROVADA"
+}

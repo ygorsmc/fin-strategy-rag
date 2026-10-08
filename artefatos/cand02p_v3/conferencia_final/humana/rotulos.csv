@@ -1,0 +1,91 @@
+item,nota,motivo,acao,critico,julgavel,justificativa
+F01,1,explicacao_causal,,false,true,Explicação causal da redução do custo do crédito na Corpbanca pelo efeito-base do 4T21 e variação cambial.
+F02,2,capital_liquidez,verificar,false,true,Elevação mandatória dos requisitos mínimos regulatórios de capital Nível I e Principal a partir de abril de 2022.
+F03,0,,,false,true,"Paráfrase redacional equivalente sobre processo seletivo virtual de RH, sem qualquer alteração de fato ou impacto analítico."
+F04,1,explicacao_causal,,false,true,Explicação causal apontando migração de atrasos curtos de pessoa física para faixas mais longas de inadimplência.
+F05,0,,,false,true,"Ajuste meramente gramatical e de pontuação na apresentação da Demonstração do Resultado Recorrente, sem alteração de conteúdo."
+F06,2,credito,atualizar_modelo,false,true,"Custo do crédito sobe de forma material para R$ 7,0 bilhões puxado pela originação de crédito não garantido."
+F07,2,credito,atualizar_modelo,false,true,"Elevação material na taxa anualizada de despesas com provisões de crédito sobre a carteira, subindo de 1,1% para 1,3%."
+F08,0,,,false,true,Remoção de comentário do trimestre anterior sobre redução de inadimplência longa que não se aplica ao novo trimestre.
+F09,0,,,false,true,Alteração de sinal decorrente apenas da troca da base de comparação do exercício anual de 2021 para o 1T22.
+F10,1,explicacao_causal,,false,true,"Explicação causal do recuo da margem com mercado para R$ 1,0 bilhão devido à estratégia de hedge do índice de capital."
+F11,0,,,false,true,"Divulgação nova de receitas de serviços com sazonalidade rotineira de fim de ano, sem alteração estrutural da leitura."
+F12,1,definicao_escopo,,false,true,Sinalização qualitativa prospectiva sobre recuperação futura do cross-selling index com a maturação do ciclo de clientes.
+F13,1,capital_liquidez,,false,true,Emissão inaugural relevante de Sustainable Bond no mercado internacional no montante de US$ 500 milhões para financiar projetos ESG.
+F14,1,numero,,false,true,"Forte crescimento de 55% em doze meses na aquisição digital de clientes, alcançando 5,7 milhões no trimestre."
+F15,2,credito,atualizar_modelo,false,true,"Inversão de tendência na margem financeira nominal, que volta a crescer impulsionada pelo novo teto de juros do INSS."
+F16,0,,,false,true,"Oscilação periódica de rotina no volume de RWA de R$ 11,2 bi para R$ 11,5 bi mantendo o PR estável."
+F17,1,explicacao_causal,,false,true,Detalhamento causal da maior inadimplência em cartão de crédito e veículos no Brasil decorrente da rolagem de atrasos curtos.
+F18,2,numero,atualizar_modelo,false,true,"Melhora expressiva de 3,4 p.p. no Índice de Eficiência Operacional trimestral decorrente do corte de despesas abaixo da inflação."
+F19,1,contabilidade,,false,true,Nota explicativa de conciliação contábil entre IFRS e BRGAAP detalhando marcação a mercado de hedge e amortização de ágio.
+F20,2,credito,atualizar_modelo,false,true,Inversão real de sinal: índices de inadimplência acima de 90 dias total e Brasil passam de redução para aumento trimestral.
+F21,2,credito,atualizar_modelo,false,true,"Reversões de provisão de crédito desabam 42,3% no trimestre e despesas disparam, refletindo deterioração na recuperação de crédito."
+F22,0,,,false,true,Remoção de parágrafo descritivo de conjuntura macroeconômica e política monetária do exercício de 2021.
+F23,0,,,false,true,"Atualização rotineira do valor da Margem Financeira Líquida nos destaques do período, sem alteração de tendência."
+F24,0,,,false,true,Remoção de menção a ganho não recorrente do exercício anterior já encerrado.
+F25,0,,,false,true,Alteração puramente visual do número de página no rodapé do documento de 11 para 10.
+F26,0,,,false,true,Atualização periódica de originação de cartão consignado mantendo o padrão de leve contração sem alteração estrutural.
+F27,1,credito,,false,true,Remoção de qualificador analítico que apontava crescimento da receita de crédito em ritmo inferior ao da carteira total.
+F28,0,,,false,true,Atualização periódica do saldo de NPL Creation mantendo trajetória favorável de redução trimestral e anual.
+F29,1,explicacao_causal,,false,true,Explicação causal apontando que a deterioração da inadimplência na América Latina esteve concentrada no Chile.
+F30,2,credito,atualizar_modelo,false,true,"Detalhamento do IEO revelando salto de 183,5% nos custos com risco de crédito por necessidade de contingência corporativa."
+F31,0,,,false,true,Remoção de comentário sobre captação pontual via Letras Financeiras Garantidas ocorrida no 4T21.
+F32,2,numero,atualizar_modelo,false,true,"Despesas de atualização e juros de provisões técnicas de seguros saltam quase cinco vezes para R$ 8,4 bilhões no trimestre."
+F33,0,,,false,true,Remoção de menção institucional a ranking Top Companies de 2021 do LinkedIn na seção de reconhecimentos.
+F34,2,numero,atualizar_modelo,false,true,"Inversão real de sinal no efeito de spreads e margem de passivos, passando de +R$ 0,1 bi para -R$ 0,3 bi."
+F35,0,,,false,true,Remoção de parágrafo institucional sobre apoio comunitário à cafeicultura capixaba e crédito rural.
+F36,2,credito,atualizar_modelo,false,true,"Comportamento fortemente divergente de risco: inadimplência PJ recua expressivos 3,3 p.p. enquanto PF apresenta movimento contrário."
+F37,0,,,false,true,"Atualização periódica de estatísticas de turmas de treinamento de pessoal de RH, sem relevância analítica."
+F38,1,definicao_escopo,,false,true,"Alteração do critério de remuneração do capital de giro próprio, que passa da taxa básica para taxa pré-fixada."
+F39,2,contabilidade,atualizar_modelo,false,true,Alteração na forma de reconhecimento contábil de taxa de performance reduzindo receitas de administração de fundos.
+F40,0,,,false,true,Remoção de nota explicativa sobre impairment de R$ 20 milhões no imobilizado ocorrido no exercício de 2021.
+F41,2,capital_liquidez,atualizar_modelo,false,true,"Queda acentuada na taxa de payout trimestral aos acionistas, desabando de 56,3% para 24,0% do lucro líquido."
+F42,0,,,false,true,Remoção de comentário comparativo sobre receitas de assessoria financeira e corretagem do 4T21.
+F43,2,credito,atualizar_modelo,false,true,"Forte aceleração no crescimento da carteira em atraso acima de 90 dias, subindo de 2,2% para 5,8% no trimestre."
+F44,1,explicacao_causal,,false,true,"Mudança na causalidade do crescimento da margem financeira, concentrando o ganho no volume médio de atacado no Brasil."
+F45,0,,,false,true,Atualização de volume distribuído mantendo a liderança no ranking ANBIMA de renda fixa em volume e quantidade.
+F46,2,credito,atualizar_modelo,false,true,"Inversão real de sinal no crédito consignado EUA, passando de alta trimestral de 20,0% para queda de 6,7%."
+F47,0,,,false,true,Remoção de retrospectiva macroeconômica e indicadores fiscais do ano de 2021 na seção de contexto econômico.
+F48,2,capital_liquidez,atualizar_modelo,false,true,"Redução de 4,5% no Patrimônio de Referência por aquisição da Corpbanca Colômbia, custos de PDV e amortização de dívidas."
+F49,0,,,false,true,Comentário macroeconômico genérico e opinativo sobre possíveis impactos de desglobalização na inflação e juros globais.
+F50,0,,,false,true,"Estabilidade absoluta nos resultados trimestrais, com lucro rigorosamente igual em R$ 48 milhões e ROAE em 5,1%."
+F51,1,capital_liquidez,,false,true,"Queda de 60 pontos base no Índice de Basileia no trimestre, recuando de 14,7% para 14,1% nos destaques."
+F52,2,numero,atualizar_modelo,false,true,"Melhora de 3,0 p.p. no índice de eficiência operacional contrastada com piora de 1,0 p.p. no conceito ajustado ao risco."
+F53,2,contabilidade,atualizar_modelo,false,true,"Inversão severa de resultado cambial em dependências no exterior, passando de ganho para expressiva perda de R$ 4,46 bilhões."
+F54,0,,,false,true,"Remoção de cabeçalho e numeração de página no rodapé do documento, sem impacto de conteúdo."
+F55,2,capital_liquidez,atualizar_modelo,false,true,"Reestruturação relevante de funding: captação em títulos salta 20,2% (LFs +50,6%, LCIs +32,9%) compensando retração de 5,1% nos depósitos."
+F56,1,definicao_escopo,,false,true,Divulgação de status societário de transação com a fintech O2OBOTS pendente de conversão em ações.
+F57,0,,,false,true,Remoção de parágrafo descritivo padrão sobre continuidade operacional presente no parecer anual dos auditores independentes.
+F58,1,capital_liquidez,,false,true,"Conclusão de emissão relevante de mais de R$ 300 milhões em Letras Financeiras com prazo de 2 anos a CDI + 1,80%."
+F59,0,,,false,true,Remoção de comentário sobre recuperação de créditos transferidos para prejuízo referente especificamente ao 4T21.
+F60,0,,,false,true,Ajuste cosmético de pontuação com adição de ponto e vírgula e conjunção aditiva em nota explicativa.
+F61,2,credito,atualizar_modelo,false,true,"Deterioração generalizada do risco de curto prazo: índices de inadimplência entre 15 e 90 dias aumentam no Total, Brasil e LatAm."
+F62,0,,,false,true,"Oscilação rotineira de 84,7% para 85,2% na relação entre carteira de crédito e captações líquidas."
+F63,2,capital_liquidez,atualizar_modelo,false,true,Aumento do capital social em R$ 4 bilhões com bonificação de 10% em ações e emissão de quase 1 bilhão de novos papéis.
+F64,0,,,false,true,Fragmento textual truncado e incompleto em parágrafo institucional sobre disseminação corporativa de gestão de riscos.
+F65,1,explicacao_causal,,false,true,Sinalização explicativa de expectativa de capturar ganhos futuros de eficiência decorrentes de planos de PDVs em gastos de pessoal.
+F66,0,,,false,true,Remoção de detalhamento de conciliações e reclassificações gerenciais de eventos tributários ocorridos no 3T21.
+F67,1,explicacao_causal,,false,true,Detalhamento causal apontando avanço da inadimplência de 15 a 90 dias na América Latina concentrado em PF e PJ no Chile.
+F68,1,explicacao_causal,,false,true,"Conciliação do avanço de 10,3% no lucro líquido recorrente QoQ isolando efeito não recorrente de reversão fiscal de 2021."
+F69,1,numero,,false,true,"Aceleração do lucro líquido trimestral para R$ 81 milhões, com expansão anual acelerando para 33,6% contra 22,7% no trimestre anterior."
+F70,0,,,false,true,Remoção de comentário do 4T21 sobre impacto positivo no patrimônio líquido por aumento de participação no Corpbanca.
+F71,2,credito,atualizar_modelo,false,true,"Redução de 5 p.p. na cobertura de seguro prestamista no cartão consignado (48% para 43%), elevando o risco residual da carteira."
+F72,0,,,false,true,Remoção de dado quantitativo retrospectivo sobre base de clientes ativos ao término do exercício de 2021.
+F73,2,credito,atualizar_modelo,false,true,Inversão real de sinal nos destaques executivos: índice de inadimplência acima de 90 dias inverte de -10 bps para +10 bps.
+F74,0,,,false,true,Comentário puramente institucional sobre retomada de modelo híbrido de onboarding presencial de novos colaboradores no RH.
+F75,2,credito,atualizar_modelo,false,true,"Queda acentuada de 25 p.p. no índice de cobertura de crédito acima de 90 dias, desabando de mais de 260% para 235%."
+F76,0,,,false,true,Remoção de comentário retrospectivo sobre receitas de serviços e recuperação de tarifas pós-isolamento social no 4T21.
+F77,1,capital_liquidez,,false,true,Anúncio societário de encerramento de programa de recompra de ações com destinação à tesouraria e remuneração em ações.
+F78,2,credito,atualizar_modelo,false,true,"Forte aceleração no crescimento da carteira de crédito total, saltando de 14,0% para 20,1% em doze meses impulsionada por FGTS."
+F79,1,explicacao_causal,,false,true,Causa nova atribuindo a redução trimestral na despesa com provisões de crédito na América Latina ao impacto cambial.
+F80,0,,,false,true,"Atualização rotineira do índice de Basileia na seção específica de 14,7% para 14,1%, mantendo folga prudencial adequada."
+F81,0,,,false,true,Remoção de explicação sobre sazonalidade de faturamento em cartões e pacotes de tarifas referente ao 4T21.
+F82,1,explicacao_causal,,false,true,"Explicação causal detalhando recuo nas receitas de serviços por tarifas de conta corrente PJ, performance fee e menor número de dias úteis."
+F83,2,capital_liquidez,atualizar_modelo,false,true,"Redução material de 50 pontos base no índice de Capital Nível I (de 13,0% para 12,5%), com recuo no Capital Principal e Complementar."
+F84,2,credito,atualizar_modelo,false,true,"Inversão real de sinal: NPL Creation sobre carteira inverte de redução para aumento, impulsionado por entradas de atraso no Varejo Brasil."
+F85,1,definicao_escopo,,false,true,Remoção da nota de rodapé contendo os critérios metodológicos de definição de clientes ativos do banco.
+F86,0,,,false,true,"Destaque de estabilidade na representatividade da carteira no saldo total Bacen nos últimos três trimestres, sem alteração de leitura."
+F87,0,,,false,true,Troca da base de comparação de ano fechado de 2021 para trimestral na margem financeira ajustada ao custo do crédito.
+F88,2,credito,atualizar_modelo,false,true,"Resultado com provisão de crédito sobe de forma material, disparando 183,5% no trimestre e 145,1% em doze meses para R$ 43 milhões."
+F89,0,,,false,true,Divulgação em texto dos índices de eficiência operacional já apresentados detalhadamente na respectiva seção do release.
+F90,0,,,false,true,Remoção de parágrafo padrão e genérico sobre incertezas globais decorrentes da pandemia de Covid-19.
