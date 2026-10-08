@@ -197,3 +197,6 @@ artefatos/cand02p_v3/modelo/m.pkl
 
 # Pasta local da conferência humana do CAND-02-P v3: cópias e links, nada novo.
 conferencia_humana_v3/
+
+# Pasta local da calibração da rubrica v2: cópias e links.
+conferencia_calibracao_v3/
