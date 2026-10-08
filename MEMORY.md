@@ -1117,8 +1117,13 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    ele, só como descrição, o M separa a nota 2 melhor que o B1 (AUC 0,786 ×
    0,656), com IC95% do Δ [−0,10; +0,35]. O α 0,935 entre gold e Claude é
    inflado pela ancoragem.
-   **Para reabrir:** rubrica mais precisa na fronteira entre 0 e 1 e mais
-   gold humano, num protocolo novo (v4, que também pode incluir as tabelas).
+   **Calibração da rubrica v2 (07/10):** α humano × Claude v2 0,666 < 0,67 →
+   RUBRICA_V2_NAO_BASTA por 0,004 (`resultados/calibracao_rubrica_v2_cand02p_2026-10-07.md`).
+   Teste sem poder: IC95% [0,39; 0,87], só 1 a 2 notas 2 na amostra. A
+   rubrica v2 melhora o α em +0,17 sobre a v1 nos mesmos itens (P(Δ ≤ 0) =
+   0,03). **Lição:** conferência futura com amostra garantida por nota e poder
+   calculado antes. Os rótulos v2 dos 4 pares (480 itens) já existem, então
+   uma nova amostra custa só tempo humano.
    **Limites que não saem do relatório:**
    - redline **só de texto**: v2 e v3 têm zero eventos de tabela
      (`resultados/achado_tabelas_ocr_cand02p_2026-10-07.md`, com errata no
