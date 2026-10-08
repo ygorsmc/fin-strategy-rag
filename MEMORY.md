@@ -1105,36 +1105,26 @@ transformar toda dívida do projeto em pré-requisito. O novo protocolo deverá 
 aprovação por superioridade do modelo. Nenhum painel/CSV/código foi alterado
 por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
 
-−6. **CAND-02-P v3: INDECIDÍVEL em 07/10, pela conferência humana.** O teste de 16 pares
-   deu PROMISSOR contra o rótulo de IA: M 0,583 × B1 0,365 em nDCG@10, IC95%
-   por emissor [+0,139; +0,301], 8 de 8 emissores. **Mas o α humano × Claude
-   nos 60 itens cegos foi 0,652 < 0,67** (acordo exato 0,767), congelado em
-   `be8318a`. A discordância está na fronteira entre 0 e 1 (10 de 14 casos),
-   com o humano mais severo; no topo, 5 de 7 notas 2 coincidem. Relatório:
-   `resultados/piloto_cand02p_v3_2026-10-07.md`.
-   **Adjudicação feita em 07/10:** gold de 60 itens em
-   `artefatos/cand02p_v3/humana/gold.csv` (`scripts/cand02p_gold.py`). Contra
-   ele, só como descrição, o M separa a nota 2 melhor que o B1 (AUC 0,786 ×
-   0,656), com IC95% do Δ [−0,10; +0,35]. O α 0,935 entre gold e Claude é
-   inflado pela ancoragem.
-   **Calibração da rubrica v2 (07/10):** α humano × Claude v2 0,666 < 0,67 →
-   RUBRICA_V2_NAO_BASTA por 0,004 (`resultados/calibracao_rubrica_v2_cand02p_2026-10-07.md`).
-   Teste sem poder: IC95% [0,39; 0,87], só 1 a 2 notas 2 na amostra. A
-   rubrica v2 melhora o α em +0,17 sobre a v1 nos mesmos itens (P(Δ ≤ 0) =
-   0,03). **Lição:** conferência futura com amostra garantida por nota e poder
-   calculado antes. Os rótulos v2 dos 4 pares (480 itens) já existem, então
-   uma nova amostra custa só tempo humano.
-   **Limites que não saem do relatório:**
-   - redline **só de texto**: v2 e v3 têm zero eventos de tabela
-     (`resultados/achado_tabelas_ocr_cand02p_2026-10-07.md`, com errata no
-     relatório do v2). Com tabelas é um v4: o HTML está no cache, sem novo OCR;
-   - leitor único de IA, com releitura cega α 0,81 e 0,74;
-   - uma leitura de teste descartada por contaminação
-     (`artefatos/cand02p_v3/rotulos/descartados/LEIAME.md`).
-   **Ferramenta:** `scripts/cand02p_qc.py` faz o controle de qualidade e a
-   auditoria de acesso dos leitores. Procedimento de leitores: no máximo 3
-   simultâneos, retomada pelo mesmo agente, pasta temporária exclusiva por
-   leitor.
+−6. **CAND-02-P FECHADO EM 07/10: INDECIDÍVEL (vinculante).** Contra o rótulo do Claude, o
+   M vence o B1 (v3: nDCG@10 0,583 × 0,365, 8 de 8 emissores). O rótulo, porém,
+   não passou na conferência humana em três medições: α 0,652 (v3), 0,666
+   (calibração da rubrica v2) e 0,647 (conferência final estratificada, última
+   tentativa). G2 passou: 83% das prioridades do Claude reconhecidas e nenhum
+   item obrigatório do humano com nota 0 do Claude. Relatórios:
+   `resultados/piloto_cand02p_v3_2026-10-07.md`,
+   `calibracao_rubrica_v2_cand02p_2026-10-07.md` e
+   `conferencia_final_rubrica_v2_cand02p_2026-10-07.md`; becos §F atualizado.
+   **Não reabrir com nova rubrica sobre estes dados.** Reabre com gold de mais de
+   um humano, usando o α humano × humano como referência do limiar.
+   **Ativos que ficam:**
+   - gold adjudicado de 60 itens (`artefatos/cand02p_v3/humana/gold.csv`);
+   - 150 itens humanos cegos (calibração e final);
+   - rubrica v2;
+   - OCR do v3, com as tabelas recuperáveis no cache;
+   - `scripts/cand02p_qc.py`, a auditoria de leitores.
+   **Procedimento de leitores** (vale para qualquer rotulagem por agente): no
+   máximo 3 simultâneos, retomada pelo mesmo agente, pasta temporária exclusiva
+   por leitor e auditoria das transcrições.
 −5. **CAND-02-P v2: PROMISSOR em 29/09, AGUARDANDO O RESPONSÁVEL.** Com 22 pares de
    treino (OCR de 28 releases do RAD, US$ 4,02), o M venceu o B1 (nDCG@10 0,508
    × 0,342, 7 de 8 pares). Próximo passo concreto: o responsável rotula às cegas
