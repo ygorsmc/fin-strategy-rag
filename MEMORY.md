@@ -1112,10 +1112,11 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    `be8318a`. A discordância está na fronteira entre 0 e 1 (10 de 14 casos),
    com o humano mais severo; no topo, 5 de 7 notas 2 coincidem. Relatório:
    `resultados/piloto_cand02p_v3_2026-10-07.md`.
-   **Em curso:** o responsável adjudica os 14 itens em discordância
-   (`conferencia_humana_v3/adjudicacao.md` e `.csv`, pasta fora do Git). O
-   resultado vai para `artefatos/cand02p_v3/humana/adjudicacao.csv` como gold
-   adjudicado, sem mexer no α nem no veredito.
+   **Adjudicação feita em 07/10:** gold de 60 itens em
+   `artefatos/cand02p_v3/humana/gold.csv` (`scripts/cand02p_gold.py`). Contra
+   ele, só como descrição, o M separa a nota 2 melhor que o B1 (AUC 0,786 ×
+   0,656), com IC95% do Δ [−0,10; +0,35]. O α 0,935 entre gold e Claude é
+   inflado pela ancoragem.
    **Para reabrir:** rubrica mais precisa na fronteira entre 0 e 1 e mais
    gold humano, num protocolo novo (v4, que também pode incluir as tabelas).
    **Limites que não saem do relatório:**

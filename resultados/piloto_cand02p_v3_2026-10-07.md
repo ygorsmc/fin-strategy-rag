@@ -15,6 +15,29 @@
 >   adjudicação. A adjudicação dos 14 itens que vier depois produz um gold
 >   melhor, mas não altera este α nem este veredito.
 >
+> **Adjudicação e gold (07/10, depois do α congelado).** O responsável revisou
+> os 14 itens em discordância, vendo a nota e a justificativa do leitor
+> Claude:
+> - adotou a nota do Claude em 9;
+> - manteve a própria em 4 (H03, H09, H37 e H57);
+> - deu uma terceira nota em 1 (H51: mudança de política contábil pela Res.
+>   4.817 → 2).
+>
+> O gold resultante tem 60 itens (40 notas 0, 10 notas 1 e 10 notas 2) e está
+> em `artefatos/cand02p_v3/humana/gold.csv` (`python -m scripts.cand02p_gold`).
+> A concordância dele com o Claude (α 0,935) é inflada pela ancoragem e não
+> vale como evidência de que o Claude acertou.
+>
+> **Descritivo e post hoc, contra o gold:** o M continua o melhor braço para
+> separar nota 2 (AUC 0,786, contra 0,656 do B1, 0,604 do B0 e 0,556 do C),
+> mas o IC95% do ΔAUC M − B1 por bootstrap de itens é **[−0,10; +0,35]**: a
+> direção se mantém, mas com 60 itens não há prova.
+>
+> **Para a rubrica (v4):** a discordância cega teve duas fontes opostas. O
+> humano deu 1 a divulgações novas que não mudavam a leitura, e o Claude deu 1
+> a inversões de sinal e mudanças de perímetro que a rubrica manda tratar como
+> 2.
+>
 > O texto abaixo fica como foi publicado.
 
 **Data:** 2026-10-07.
