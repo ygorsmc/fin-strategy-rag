@@ -1122,6 +1122,14 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    - rubrica v2;
    - OCR do v3, com as tabelas recuperáveis no cache;
    - `scripts/cand02p_qc.py`, a auditoria de leitores.
+   **Uso acadêmico, por decisão do responsável (07/10):** modelo treinado só com o
+   rótulo do Claude, enquadrado como **destilação do anotador LLM**.
+   - Relatório: `resultados/relatorio_academico_cand02p_destilacao_2026-10-07.md`.
+   - Modelo final nos 64 pares (7.600 observações):
+     `artefatos/cand02p_final/modelo/congelado.json`. O pickle fica fora do Git.
+   - Desempenho de referência: o teste do v3.
+   - Importância por grupo de atributos: `artefatos/cand02p_final/importancia.json`.
+   - **Frase proibida em qualquer texto:** "o modelo prioriza como um analista".
    **Procedimento de leitores** (vale para qualquer rotulagem por agente): no
    máximo 3 simultâneos, retomada pelo mesmo agente, pasta temporária exclusiva
    por leitor e auditoria das transcrições.
