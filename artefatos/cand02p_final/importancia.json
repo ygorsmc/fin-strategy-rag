@@ -1,0 +1,42 @@
+{
+  "aviso": "descritivo; M congelado do v3 no teste do v3, contra o rótulo do Claude",
+  "ndcg10_base": 0.5834,
+  "grupos": {
+    "similaridade_semantica_c": {
+      "queda_media_ndcg10": 0.3097,
+      "min": 0.2682,
+      "max": 0.3588,
+      "atributos": 11
+    },
+    "operacao_e_tipo": {
+      "queda_media_ndcg10": 0.2067,
+      "min": 0.1562,
+      "max": 0.2646,
+      "atributos": 4
+    },
+    "tamanho_e_posicao": {
+      "queda_media_ndcg10": 0.1525,
+      "min": 0.1289,
+      "max": 0.185,
+      "atributos": 5
+    },
+    "regras_do_b1": {
+      "queda_media_ndcg10": 0.076,
+      "min": 0.0614,
+      "max": 0.1068,
+      "atributos": 3
+    },
+    "mudanca_numerica": {
+      "queda_media_ndcg10": 0.0418,
+      "min": 0.0098,
+      "max": 0.0716,
+      "atributos": 5
+    },
+    "categorias_lexicais": {
+      "queda_media_ndcg10": 0.0109,
+      "min": 0.0037,
+      "max": 0.0213,
+      "atributos": 10
+    }
+  }
+}

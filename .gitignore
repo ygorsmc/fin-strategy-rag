@@ -203,3 +203,6 @@ conferencia_calibracao_v3/
 
 # Pasta local da conferência final da rubrica v2: cópias e links.
 conferencia_final_v3/
+
+# Modelo final do CAND-02-P: o pickle fica fora, como os outros; o hash está em congelado.json.
+artefatos/cand02p_final/modelo/m.pkl
