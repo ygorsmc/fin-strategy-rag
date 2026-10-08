@@ -1,0 +1,23 @@
+{
+  "portao": {
+    "humano_x_claude_v2": {
+      "itens": 60,
+      "alfa": 0.6663,
+      "acordo_exato": 0.8667
+    }
+  },
+  "controles": {
+    "humano_x_claude_v1": {
+      "itens": 60,
+      "alfa": 0.4982,
+      "acordo_exato": 0.8167
+    },
+    "claude_v1_x_claude_v2": {
+      "itens": 60,
+      "alfa": 0.7217,
+      "acordo_exato": 0.8833
+    }
+  },
+  "limiar": 0.67,
+  "decisao": "RUBRICA_V2_NAO_BASTA"
+}
