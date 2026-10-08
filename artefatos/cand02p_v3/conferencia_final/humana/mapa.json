@@ -1,0 +1,362 @@
+{
+ "F01": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E095"
+ },
+ "F02": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E088"
+ },
+ "F03": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E107"
+ },
+ "F04": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E114"
+ },
+ "F05": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E090"
+ },
+ "F06": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E116"
+ },
+ "F07": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E021"
+ },
+ "F08": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E026"
+ },
+ "F09": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E096"
+ },
+ "F10": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E109"
+ },
+ "F11": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E119"
+ },
+ "F12": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E106"
+ },
+ "F13": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E035"
+ },
+ "F14": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E030"
+ },
+ "F15": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E074"
+ },
+ "F16": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E076"
+ },
+ "F17": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E063"
+ },
+ "F18": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E041"
+ },
+ "F19": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E010"
+ },
+ "F20": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E059"
+ },
+ "F21": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E068"
+ },
+ "F22": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E101"
+ },
+ "F23": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E010"
+ },
+ "F24": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E019"
+ },
+ "F25": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E028"
+ },
+ "F26": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E036"
+ },
+ "F27": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E081"
+ },
+ "F28": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E094"
+ },
+ "F29": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E091"
+ },
+ "F30": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E074"
+ },
+ "F31": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E028"
+ },
+ "F32": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E047"
+ },
+ "F33": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E094"
+ },
+ "F34": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E106"
+ },
+ "F35": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E085"
+ },
+ "F36": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E019"
+ },
+ "F37": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E090"
+ },
+ "F38": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E085"
+ },
+ "F39": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E012"
+ },
+ "F40": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E058"
+ },
+ "F41": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E107"
+ },
+ "F42": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E038"
+ },
+ "F43": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E087"
+ },
+ "F44": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E050"
+ },
+ "F45": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E042"
+ },
+ "F46": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E089"
+ },
+ "F47": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E097"
+ },
+ "F48": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E021"
+ },
+ "F49": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E040"
+ },
+ "F50": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E079"
+ },
+ "F51": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E069"
+ },
+ "F52": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E089"
+ },
+ "F53": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E092"
+ },
+ "F54": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E055"
+ },
+ "F55": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E089"
+ },
+ "F56": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E056"
+ },
+ "F57": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E012"
+ },
+ "F58": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E062"
+ },
+ "F59": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E013"
+ },
+ "F60": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E082"
+ },
+ "F61": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E041"
+ },
+ "F62": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E066"
+ },
+ "F63": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E105"
+ },
+ "F64": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E048"
+ },
+ "F65": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E011"
+ },
+ "F66": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E060"
+ },
+ "F67": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E033"
+ },
+ "F68": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E111"
+ },
+ "F69": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E006"
+ },
+ "F70": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E086"
+ },
+ "F71": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E117"
+ },
+ "F72": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E052"
+ },
+ "F73": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E097"
+ },
+ "F74": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E067"
+ },
+ "F75": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E039"
+ },
+ "F76": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E029"
+ },
+ "F77": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E082"
+ },
+ "F78": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E015"
+ },
+ "F79": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E062"
+ },
+ "F80": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E048"
+ },
+ "F81": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E022"
+ },
+ "F82": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E034"
+ },
+ "F83": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E060"
+ },
+ "F84": {
+  "par": "ITAU_4T2021_1T2022",
+  "item": "E076"
+ },
+ "F85": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E001"
+ },
+ "F86": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E072"
+ },
+ "F87": {
+  "par": "BMG_4T2021_1T2022",
+  "item": "E039"
+ },
+ "F88": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E062"
+ },
+ "F89": {
+  "par": "BANESTES_4T2021_1T2022",
+  "item": "E022"
+ },
+ "F90": {
+  "par": "BRADESCO_4T2021_1T2022",
+  "item": "E018"
+ }
+}
