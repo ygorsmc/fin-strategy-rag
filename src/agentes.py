@@ -123,12 +123,18 @@ def configurar_ambiente_crewai() -> None:
     é chamada externa não declarada, e chamada externa neste projeto é sempre
     opt-in; (3) o exportador OTLP do CrewAI compete com o Langfuse (5.12).
 
+    **`OTEL_SDK_DISABLED` saiu da lista em 2026-10-19.** Ele desligava o
+    OpenTelemetry do processo inteiro, e o Langfuse é OpenTelemetry: importar
+    este módulo apagava os traces do chat sem erro nenhum. A telemetria do
+    CrewAI já fica desligada só com `CREWAI_DISABLE_TELEMETRY`
+    (`Telemetry._is_telemetry_disabled` no 0.193.2), e
+    `tests/test_observabilidade.py` trava as duas coisas.
+
     Só define o que ainda não estiver definido: a decisão continua sendo do
     ambiente, não deste módulo.
     """
     for chave, valor in (
         ("CREWAI_DISABLE_TELEMETRY", "true"),
-        ("OTEL_SDK_DISABLED", "true"),
         ("CREWAI_TRACING_ENABLED", "false"),
         # Chave que o próprio framework usa para não abrir o prompt de traces.
         ("CREWAI_TESTING", "true"),

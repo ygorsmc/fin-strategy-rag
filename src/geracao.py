@@ -34,6 +34,7 @@ from src.normalizacao import (
     remover_acentos,
     valores_equivalentes,
 )
+from src.observabilidade import observar_geracao
 
 # Prompt fixo (seção 5.7). Alterações aqui invalidam comparações anteriores —
 # a versão do prompt entra no log JSONL de cada execução (RNF08).
@@ -239,6 +240,16 @@ class ProvedorLLM(ABC):
 
     nome: str
     custo_auditavel: bool = True
+
+    def __init_subclass__(cls, **kwargs) -> None:
+        super().__init_subclass__(**kwargs)
+        # Trace de geração (5.12) em todo provedor plugável, sem envelope: o
+        # tipo do provedor entra na identidade da avaliação, e um envelope o
+        # mudaria. Fora de uma consulta interativa aberta, é no-op.
+        for nome in ("gerar", "gerar_texto"):
+            metodo = cls.__dict__.get(nome)
+            if callable(metodo) and not getattr(metodo, "__isabstractmethod__", False):
+                setattr(cls, nome, observar_geracao(metodo))
 
     def estimar_custo_maximo(
         self, prompt_sistema: str, prompt_usuario: str

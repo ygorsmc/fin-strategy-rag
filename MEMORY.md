@@ -608,9 +608,9 @@ outra tarefa.
   **`auditoria_manual_pendente`**. O README ainda publica a anterior
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
-- Suíte atual: **4.567 casos passando, zero falhas/erros/skips**, 28 avisos
-  (06/10, código do CAND-02-P v3, pelo próprio `.venv`).
-  Antes: 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
+- Suíte atual: **4.627 casos passando, zero falhas/erros/skips**, 28 avisos
+  (19/10, Langfuse instrumentado, pelo próprio `.venv`).
+  Antes: 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
   (4.184) tem XML em
   `artefatos/pendencias_geom1_rank03b_2026-09-26/pytest_suite_pos_auditoria.xml`.
   Testes dirigidos: 1.179; os dois achados da auditoria independente foram
@@ -1104,6 +1104,24 @@ separado — **decidido em 16/09: painel separado** (ver item −1 abaixo) —, 
 transformar toda dívida do projeto em pré-requisito. O novo protocolo deverá separar autorização de treino de
 aprovação por superioridade do modelo. Nenhum painel/CSV/código foi alterado
 por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
+
+−7. **ETAPA 2 DA DISCIPLINA (AI Factory), EM CURSO DESDE 19/10.** Ordem combinada
+   com o responsável: (1) Langfuse, (2) agentes CrewAI no chat, com ferramenta
+   que toque o modelo de ML sem violar a RN07, (3) DeepEval nas 45 congeladas,
+   (4) relatório técnico de 700–1.500 palavras. **(1) instrumentado em 19/10:**
+   `src/observabilidade.py`, um trace por consulta do chat
+   (`app_streamlit.py::responder_no_chat`), geração com tokens e custo por
+   `ProvedorLLM.__init_subclass__` (o tipo do provedor não muda, e ele entra na
+   identidade da avaliação), RN06 na máscara do SDK, exceção só pelo tipo,
+   benchmark fora do trace. Dois achados: `configurar_ambiente_crewai`
+   setava `OTEL_SDK_DISABLED`, o que apagava o Langfuse junto (removido, com
+   teste), e o resumo de trace rodava com o rastreamento desligado e derrubou
+   um teste de hardening (passou a ser preguiçoso). **Falta:** o responsável
+   criar o projeto no Langfuse Cloud e pôr `LANGFUSE_PUBLIC_KEY`/`SECRET_KEY`
+   no `.env`. Depois, `python -m scripts.gerar_traces_langfuse
+   --permitir-api-paga` (centavos) gera 9 traces e grava o resumo em
+   `artefatos/observabilidade/`. A suíte nunca envia trace: `conftest.py`
+   esvazia as chaves.
 
 −6. **CAND-02-P FECHADO EM 07/10: INDECIDÍVEL (vinculante).** Contra o rótulo do Claude, o
    M vence o B1 (v3: nDCG@10 0,583 × 0,365, 8 de 8 emissores). O rótulo, porém,

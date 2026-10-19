@@ -16,10 +16,12 @@ import json
 import logging
 import math
 import re
+import uuid
 from pathlib import Path
 
 import streamlit as st
 
+from src import observabilidade
 from src.avaliacao import (
     _carregar_checkpoint,
     _construir_cache_demo,
@@ -64,6 +66,15 @@ _PADROES_PII_FALLBACK = (
 
 st.set_page_config(page_title="Assistente de Research Financeiro", page_icon="📊")
 config = carregar_config()
+
+
+@st.cache_resource(show_spinner=False)
+def _ligar_observabilidade() -> observabilidade.Estado:
+    """Um cliente Langfuse por processo (5.12). Sem chave, fica desligado."""
+    return observabilidade.configurar(config)
+
+
+estado_observabilidade = _ligar_observabilidade()
 
 
 INTERVALO_STREAMING_S = 0.012
@@ -475,19 +486,62 @@ class PerguntaBloqueada(ValueError):
         self.resultado = resultado
 
 
+def _resumo_guardrail(resultado: ResultadoGuardrail) -> dict:
+    """O que o trace guarda de um veredito: decisão e scanners, nunca o detalhe."""
+    return {
+        "bloqueado": resultado.bloqueado,
+        "achados": [f"{a.scanner}/{a.subtipo}" for a in resultado.achados],
+        "entidades_pii_anonimizadas": len(resultado.entidades_pii),
+    }
+
+
 def guardar_entrada(pergunta: str) -> ResultadoGuardrail:
-    """Varredura de entrada com os scanners configurados (RN05/RN06)."""
-    return avaliar_entrada(
-        pergunta,
-        tuple(config.guardrails_ativos),
-        presidio_habilitado=config.presidio_habilitado,
-        presidio_idioma=config.presidio_idioma,
-        presidio_modelo_spacy=config.presidio_modelo_spacy,
-        prompt_guard_habilitado=config.prompt_guard_habilitado,
-        prompt_guard_modelo=config.prompt_guard_modelo,
-        prompt_guard_revisao=config.guardrails_modelo_injecao_revision,
-        prompt_guard_limiar=config.guardrails_limiar_injection,
-    )
+    """Varredura de entrada com os scanners configurados (RN05/RN06).
+
+    A etapa do trace não recebe a pergunta: ela é crua aqui, e só o
+    `texto_seguro` que sai da varredura pode ir para fora (RN06)."""
+    with observabilidade.etapa("guardrail.entrada", tipo="guardrail") as etapa:
+        resultado = avaliar_entrada(
+            pergunta,
+            tuple(config.guardrails_ativos),
+            presidio_habilitado=config.presidio_habilitado,
+            presidio_idioma=config.presidio_idioma,
+            presidio_modelo_spacy=config.presidio_modelo_spacy,
+            prompt_guard_habilitado=config.prompt_guard_habilitado,
+            prompt_guard_modelo=config.prompt_guard_modelo,
+            prompt_guard_revisao=config.guardrails_modelo_injecao_revision,
+            prompt_guard_limiar=config.guardrails_limiar_injection,
+        )
+        etapa.atualizar(
+            saida=lambda: {
+                **_resumo_guardrail(resultado),
+                "texto_seguro": resultado.texto_seguro,
+            }
+        )
+    return resultado
+
+
+def _tentar_rota(nome: str, rota, pergunta: str, **argumentos) -> dict | None:
+    """Chama uma rota opcional dentro de uma etapa do trace.
+
+    Falha da rota vira aviso no log e `None`, como sempre foi: um extra nunca
+    derruba o app."""
+    item = None
+    with observabilidade.etapa(f"rota.{nome.replace(' ', '_')}") as etapa:
+        try:
+            item = rota(pergunta, **argumentos)
+        except Exception as exc:  # nunca derruba o app por um extra
+            LOGGER.warning("rota %s falhou: %s", nome, exc)
+            etapa.atualizar(metadados={"falha": type(exc).__name__})
+        etapa.atualizar(
+            saida=lambda: {
+                "atendeu": item is not None,
+                "modo": (item or {}).get("modo"),
+                "encaminhar": bool((item or {}).get("encaminhar")),
+                "custo_usd": (item or {}).get("custo_usd", 0.0),
+            }
+        )
+    return item
 
 
 @st.cache_resource(show_spinner=False)
@@ -1142,16 +1196,9 @@ def responder_sem_llm(pergunta: str) -> tuple[str, dict | None]:
         }
     segura = guarda.texto_seguro
 
-    item = None
-    try:
-        item = responder_prospectiva_se_couber(segura)
-    except Exception as exc:  # nunca derruba o app por um extra
-        LOGGER.warning("rota prospectiva falhou: %s", exc)
+    item = _tentar_rota("prospectiva", responder_prospectiva_se_couber, segura)
     if item is None:
-        try:
-            item = responder_estruturada_se_couber(segura)
-        except Exception as exc:
-            LOGGER.warning("rota estruturada falhou: %s", exc)
+        item = _tentar_rota("estruturada", responder_estruturada_se_couber, segura)
     if item is None:
         return segura, None
     return segura, _mensagem_do_painel(item)
@@ -1275,14 +1322,34 @@ def responder_pergunta_livre(
     from src.indexacao import calcular_identidade_extracao
 
     identidade_extracao = calcular_identidade_extracao(config)
-    recuperador, provedor_llm, estrategia = _pipeline_ao_vivo(
-        identidade_extracao
-    )
+    # Etapa própria porque o pipeline é cacheado: a primeira consulta do
+    # processo paga a carga do índice, e o trace precisa mostrar isso à parte.
+    with observabilidade.etapa("pipeline.carregar"):
+        recuperador, provedor_llm, estrategia = _pipeline_ao_vivo(
+            identidade_extracao
+        )
     if not getattr(provedor_llm, "custo_auditavel", True):
         raise RuntimeError(
             "O provedor não oferece estimativa auditável antes da chamada."
         )
-    recuperados = recuperador.recuperar(pergunta, estrategia)
+    with observabilidade.etapa(
+        "recuperacao",
+        tipo="retriever",
+        entrada=lambda: {"pergunta": pergunta, "estrategia": str(estrategia.value)},
+    ) as etapa_recuperacao:
+        recuperados = recuperador.recuperar(pergunta, estrategia)
+        etapa_recuperacao.atualizar(
+            saida=lambda: [
+                {
+                    "chunk": r.chunk.id,
+                    "fonte": f"{r.chunk.empresa} · {r.chunk.documento} · "
+                    f"{r.chunk.trimestre} · pág. {r.chunk.pagina_inicio}",
+                    "tipo_bloco": r.chunk.tipo_bloco,
+                    "score": round(float(r.score), 4),
+                }
+                for r in recuperados
+            ]
+        )
     chunks = [resultado.chunk for resultado in recuperados]
     modo_closed_book = estrategia == Estrategia.CLOSED_BOOK
     prompt_sistema = (
@@ -1323,13 +1390,27 @@ def responder_pergunta_livre(
 
     custo_a_debitar_em_falha = float(estimativa)
     try:
-        resposta, uso = gerar_resposta(
-            pergunta,
-            chunks,
-            provedor_llm,
-            config,
-            modo_closed_book=modo_closed_book,
-        )
+        # A chamada ao provedor abre a própria observação `generation`, com
+        # tokens e custo (`ProvedorLLM.__init_subclass__`); esta etapa
+        # envolve também o parse e as guardas RN01/RN02 que vêm depois dela.
+        with observabilidade.etapa(
+            "geracao", metadados={"estimativa_maxima_usd": float(estimativa)}
+        ) as etapa_geracao:
+            resposta, uso = gerar_resposta(
+                pergunta,
+                chunks,
+                provedor_llm,
+                config,
+                modo_closed_book=modo_closed_book,
+            )
+            etapa_geracao.atualizar(
+                saida=lambda: {
+                    "recusa": resposta.recusa,
+                    "motivo_recusa": resposta.motivo_recusa,
+                    "citacoes": len(resposta.citacoes),
+                    "custo_usd": uso.custo_usd,
+                }
+            )
         if (
             uso.custo_usd is None
             or not isinstance(uso.custo_usd, (int, float))
@@ -1362,13 +1443,15 @@ def responder_pergunta_livre(
         # Guarda de saída (RN05 nos dois sentidos): entrada limpa não garante
         # resposta limpa. Bloquear aqui NÃO desfaz o débito — a chamada já foi
         # paga, e o custo continua sendo contabilizado abaixo.
-        saida = avaliar_saida(
-            conteudo,
-            tuple(config.guardrails_ativos),
-            presidio_habilitado=config.presidio_habilitado,
-            presidio_idioma=config.presidio_idioma,
-            presidio_modelo_spacy=config.presidio_modelo_spacy,
-        )
+        with observabilidade.etapa("guardrail.saida", tipo="guardrail") as etapa_saida:
+            saida = avaliar_saida(
+                conteudo,
+                tuple(config.guardrails_ativos),
+                presidio_habilitado=config.presidio_habilitado,
+                presidio_idioma=config.presidio_idioma,
+                presidio_modelo_spacy=config.presidio_modelo_spacy,
+            )
+            etapa_saida.atualizar(saida=lambda: _resumo_guardrail(saida))
         conteudo = (
             texto_de_recusa(saida) if saida.bloqueado else saida.texto_seguro
         )
@@ -1389,6 +1472,10 @@ if "perguntas_livres_usadas" not in st.session_state:
     st.session_state.perguntas_livres_usadas = 0
 if "custo_usd_acumulado" not in st.session_state:
     st.session_state.custo_usd_acumulado = 0.0
+if "id_sessao_rastro" not in st.session_state:
+    # Agrupa os traces de uma sessão no Langfuse. Aleatório, sem nada do
+    # usuário: a instância pública não tem login, e nem deve inventar um.
+    st.session_state.id_sessao_rastro = uuid.uuid4().hex
 
 # --- Barra lateral: modo e transparência ------------------------------------
 st.sidebar.title("Assistente de Research Financeiro")
@@ -1443,6 +1530,14 @@ st.sidebar.caption(
     + ". Pedido de recomendação, preço-alvo ou aconselhamento pessoal é "
     "recusado antes de qualquer chamada externa (Res. CVM 20/2021 e 19/2021); "
     "identificadores pessoais são anonimizados e não entram em log."
+)
+st.sidebar.caption(
+    "**Observabilidade:** "
+    + (
+        "traces no Langfuse, com dados pessoais redigidos antes do envio."
+        if estado_observabilidade.ativo
+        else f"desligada ({estado_observabilidade.motivo})."
+    )
 )
 if not config.habilitar_perguntas_livres:
     st.sidebar.warning(
@@ -1499,6 +1594,201 @@ for msg in st.session_state.historico:
             st.info(f"Gabarito verificado: {msg['gabarito']}")
         if msg.get("modo"):
             st.caption(f"modo: {msg['modo']} · provedor: {msg.get('provedor', '—')}")
+
+# --- Uma consulta do chat ----------------------------------------------------
+# Corpo do chat em função, para que o trace da consulta (5.12) feche ANTES do
+# `st.rerun()`, que interrompe o script por exceção. A ordem das rotas é a de
+# sempre, e `TestOrdemDasRotas` a confere aqui, depois do marcador do corpo.
+
+
+def responder_no_chat(pergunta: str, rastro: observabilidade.Observacao) -> bool:
+    """Atende uma pergunta do modo livre e diz se a tela deve recarregar."""
+    try:
+        guarda_entrada = guardar_entrada(validar_pergunta_livre(pergunta))
+    except ValueError as exc:
+        st.error(str(exc))
+        return False
+    # O trace recebe a pergunta só depois da varredura, já anonimizada (RN06).
+    rastro.atualizar(entrada=guarda_entrada.texto_seguro)
+    if guarda_entrada.bloqueado:
+        # A pergunta original NUNCA entra no histórico: o que aparece na
+        # tela e no estado de sessão é a forma anonimizada (RN06).
+        st.session_state.historico.append(
+            {"papel": "user", "conteudo": guarda_entrada.texto_seguro}
+        )
+        st.session_state.historico.append(
+            {
+                "papel": "assistant",
+                "conteudo": texto_de_recusa(guarda_entrada),
+                "fontes": [],
+                "modo": "recusa por guardrail (nenhuma chamada externa)",
+                "provedor": "—",
+                "streamar": True,
+            }
+        )
+        # Sem débito de cota nem de orçamento: a cota existe para conter
+        # gasto, e recusar aqui não gastou nada. Debitá-la faria um falso
+        # bloqueio custar ao usuário duas vezes.
+        return True
+    pergunta = guarda_entrada.texto_seguro
+    # Rota prospectiva ANTES de qualquer chamada paga: ela responde de
+    # artefato local, custa zero e não debita cota — pelo mesmo motivo da
+    # recusa por guardrail acima.
+    item_projecao = _tentar_rota(
+        "prospectiva", responder_prospectiva_se_couber, pergunta
+    )
+    if item_projecao is not None:
+        st.session_state.historico.append({"papel": "user", "conteudo": pergunta})
+        st.session_state.historico.append(
+            # `conteudo` é a chave que o laço de renderização lê; anexar só
+            # `resposta` estourava KeyError no rerun e derrubava a página
+            # inteira — a recusa da RN07 nunca chegava à tela.
+            {
+                "papel": "assistant",
+                "conteudo": item_projecao["resposta"],
+                "fontes": item_projecao.get("fontes", []),
+                "modo": item_projecao["modo"],
+                "provedor": item_projecao["provedor"],
+                "streamar": True,
+            }
+        )
+        return True
+    # Painel contábil DEPOIS da guarda prospectiva e ANTES do provedor:
+    # responde de SQL local, custo zero, sem debitar cota.
+    item_painel = _tentar_rota(
+        "estruturada", responder_estruturada_se_couber, pergunta
+    )
+    if item_painel is not None:
+        st.session_state.historico.append({"papel": "user", "conteudo": pergunta})
+        st.session_state.historico.append(_mensagem_do_painel(item_painel))
+        return True
+    # Painel com LLM-intérprete: DEPOIS do casador fixo (que é de graça) e
+    # ANTES do corpus. Custa uma chamada, então debita cota e orçamento como
+    # qualquer outra — inclusive quando encaminha, porque a chamada já foi paga.
+    item_plano = _tentar_rota(
+        "plano",
+        responder_plano_se_couber,
+        pergunta,
+        orcamento_restante_usd=max(
+            0.0, config.orcamento_teto_usd - st.session_state.custo_usd_acumulado
+        ),
+    )
+    if item_plano is not None and item_plano.get("encaminhar"):
+        # Não era desta rota; o corpus segue. O custo pago fica.
+        st.session_state.custo_usd_acumulado += item_plano["custo_usd"]
+        st.session_state.perguntas_livres_usadas += 1
+        item_plano = None
+    elif item_plano is not None:
+        st.session_state.custo_usd_acumulado += item_plano["custo_usd"]
+        if item_plano.get("consumiu_chamada", True):
+            st.session_state.perguntas_livres_usadas += 1
+        st.session_state.historico.append({"papel": "user", "conteudo": pergunta})
+        st.session_state.historico.append(_mensagem_do_painel(item_plano))
+        return True
+    st.session_state.historico.append({"papel": "user", "conteudo": pergunta})
+    try:
+        item = responder_pergunta_livre(
+            pergunta,
+            orcamento_restante_usd=max(
+                0.0,
+                config.orcamento_teto_usd - st.session_state.custo_usd_acumulado,
+            ),
+        )
+        st.session_state.custo_usd_acumulado += item["custo_usd"]
+        # A cota da RN03 conta CHAMADA, não tentativa de digitar: o segundo
+        # portão da RN07 recusa sem gastar e devolve `consumiu_chamada=False`.
+        # Debitar ali cobraria da sessão uma pergunta que nunca chegou ao
+        # provedor.
+        if item.get("consumiu_chamada", True):
+            st.session_state.perguntas_livres_usadas += 1
+        st.session_state.historico.append(
+            {
+                "papel": "assistant",
+                "conteudo": item["resposta"],
+                "fontes": item.get("fontes", []),
+                # Vinha escrito à mão como "inferência ao vivo" e `gemini/—`,
+                # o que passou a MENTIR quando a recusa da RN07 sai daqui com
+                # custo zero (spec 5.17 exige que a tela diga o modo e o
+                # provedor reais).
+                "modo": item.get("modo", "pergunta livre (inferência ao vivo)"),
+                "provedor": item.get(
+                    "provedor",
+                    f"{config.llm_provider}/{item.get('modelo', '—')}",
+                ),
+                "streamar": True,
+            }
+        )
+    except FalhaConsultaAoVivo as exc:
+        # Falhou depois de reservar: a chamada foi tentada e paga, então a
+        # cota conta.
+        st.session_state.perguntas_livres_usadas += 1
+        st.session_state.custo_usd_acumulado = _contabilizar_reserva_falha(
+            st.session_state.custo_usd_acumulado,
+            exc,
+            config.orcamento_teto_usd,
+        )
+        LOGGER.warning(
+            "Geração ao vivo falhou após reserva; custo conservador "
+            "contabilizado (tipo=%s).",
+            type(exc.__cause__).__name__,
+        )
+        st.session_state.historico.append(
+            {
+                "papel": "assistant",
+                "conteudo": (
+                    "A consulta ao vivo falhou de forma segura. "
+                    "Nenhuma resposta financeira foi apresentada; "
+                    "a reserva conservadora de custo foi debitada. "
+                    "Tente novamente mais tarde ou use o modo cacheado."
+                ),
+                "fontes": [],
+                "modo": "pergunta livre (falha segura)",
+                "provedor": config.llm_provider,
+                "streamar": True,
+            }
+        )
+    except Exception as exc:
+        LOGGER.warning(
+            "Falha segura antes da geração ao vivo (tipo=%s).",
+            type(exc).__name__,
+        )
+        st.session_state.historico.append(
+            {
+                "papel": "assistant",
+                "conteudo": (
+                    "A consulta ao vivo falhou de forma segura. "
+                    "Nenhuma resposta financeira foi apresentada; "
+                    "tente novamente mais tarde ou use o modo cacheado."
+                ),
+                "fontes": [],
+                "modo": "pergunta livre (falha segura)",
+                "provedor": config.llm_provider,
+                "streamar": True,
+            }
+        )
+    return True
+
+
+def registrar_desfecho(rastro: observabilidade.Observacao, tamanho_antes: int) -> None:
+    """Saída do trace: a resposta que a consulta pôs no histórico."""
+    novas = st.session_state.historico[tamanho_antes:]
+    resposta = next(
+        (m for m in reversed(novas) if m.get("papel") == "assistant"), None
+    )
+    if resposta is None:
+        return
+    rastro.atualizar(
+        saida=resposta.get("conteudo"),
+        metadados=lambda: {
+            "modo": resposta.get("modo"),
+            "provedor": resposta.get("provedor"),
+            "fontes": len(resposta.get("fontes") or []),
+            "custo_acumulado_sessao_usd": round(
+                float(st.session_state.custo_usd_acumulado), 6
+            ),
+        },
+    )
+
 
 if modo == "Demonstração (cacheado)":
     if cache_aguarda_auditoria:
@@ -1583,29 +1873,37 @@ if modo == "Demonstração (cacheado)":
                 st.error(str(exc))
                 texto = None
             if texto is not None:
-                exibida, mensagem = responder_sem_llm(texto)
-                st.session_state.historico.append(
-                    {"papel": "user", "conteudo": exibida}
-                )
-                st.session_state.historico.append(
-                    mensagem
-                    if mensagem is not None
-                    else {
-                        "papel": "assistant",
-                        "conteudo": (
-                            "Esta pergunta depende da leitura dos releases, "
-                            "que exige o modo **pergunta livre**. O painel "
-                            "contábil responde valor por companhia e "
-                            "trimestre: lucro líquido, patrimônio líquido, "
-                            "ativo total e receita de intermediação "
-                            "financeira."
-                        ),
-                        "fontes": [],
-                        "modo": "painel CVM · fora do vocabulário contábil",
-                        "provedor": "—",
-                        "streamar": True,
-                    }
-                )
+                tamanho_antes = len(st.session_state.historico)
+                with observabilidade.consulta(
+                    "painel_cvm",
+                    sessao=st.session_state.id_sessao_rastro,
+                    tags=("painel_cvm",),
+                ) as rastro:
+                    exibida, mensagem = responder_sem_llm(texto)
+                    rastro.atualizar(entrada=exibida)
+                    st.session_state.historico.append(
+                        {"papel": "user", "conteudo": exibida}
+                    )
+                    st.session_state.historico.append(
+                        mensagem
+                        if mensagem is not None
+                        else {
+                            "papel": "assistant",
+                            "conteudo": (
+                                "Esta pergunta depende da leitura dos releases, "
+                                "que exige o modo **pergunta livre**. O painel "
+                                "contábil responde valor por companhia e "
+                                "trimestre: lucro líquido, patrimônio líquido, "
+                                "ativo total e receita de intermediação "
+                                "financeira."
+                            ),
+                            "fontes": [],
+                            "modo": "painel CVM · fora do vocabulário contábil",
+                            "provedor": "—",
+                            "streamar": True,
+                        }
+                    )
+                    registrar_desfecho(rastro, tamanho_antes)
                 st.rerun()
 else:
     pergunta = st.chat_input(
@@ -1618,195 +1916,13 @@ else:
                 "atingido. O modo demonstração continua disponível."
             )
         else:
-            try:
-                guarda_entrada = guardar_entrada(
-                    validar_pergunta_livre(pergunta)
-                )
-            except ValueError as exc:
-                st.error(str(exc))
-                guarda_entrada = None
-            if guarda_entrada is not None and guarda_entrada.bloqueado:
-                # A pergunta original NUNCA entra no histórico: o que aparece na
-                # tela e no estado de sessão é a forma anonimizada (RN06).
-                st.session_state.historico.append(
-                    {"papel": "user", "conteudo": guarda_entrada.texto_seguro}
-                )
-                st.session_state.historico.append(
-                    {
-                        "papel": "assistant",
-                        "conteudo": texto_de_recusa(guarda_entrada),
-                        "fontes": [],
-                        "modo": "recusa por guardrail (nenhuma chamada externa)",
-                        "provedor": "—",
-                        "streamar": True,
-                    }
-                )
-                # Sem débito de cota nem de orçamento: a cota existe para conter
-                # gasto, e recusar aqui não gastou nada. Debitá-la faria um falso
-                # bloqueio custar ao usuário duas vezes.
-                st.rerun()
-            elif guarda_entrada is not None:
-                pergunta = guarda_entrada.texto_seguro
-                # Rota prospectiva ANTES de qualquer chamada paga: ela responde
-                # de artefato local, custa zero e não debita cota — pelo mesmo
-                # motivo da recusa por guardrail acima.
-                item_projecao = None
-                try:
-                    item_projecao = responder_prospectiva_se_couber(pergunta)
-                except Exception as exc:  # nunca derruba o app por um extra
-                    LOGGER.warning("rota prospectiva falhou: %s", exc)
-                if item_projecao is not None:
-                    st.session_state.historico.append(
-                        {"papel": "user", "conteudo": pergunta}
-                    )
-                    st.session_state.historico.append(
-                        # `conteudo` é a chave que o laço de renderização lê;
-                        # anexar só `resposta` estourava KeyError no rerun e
-                        # derrubava a página inteira — a recusa da RN07 nunca
-                        # chegava à tela.
-                        {
-                            "papel": "assistant",
-                            "conteudo": item_projecao["resposta"],
-                            "fontes": item_projecao.get("fontes", []),
-                            "modo": item_projecao["modo"],
-                            "provedor": item_projecao["provedor"],
-                            "streamar": True,
-                        }
-                    )
-                    st.rerun()
-                # Painel contábil DEPOIS da guarda prospectiva e ANTES do
-                # provedor: responde de SQL local, custo zero, sem debitar cota.
-                item_painel = None
-                try:
-                    item_painel = responder_estruturada_se_couber(pergunta)
-                except Exception as exc:  # nunca derruba o app por um extra
-                    LOGGER.warning("rota estruturada falhou: %s", exc)
-                if item_painel is not None:
-                    st.session_state.historico.append(
-                        {"papel": "user", "conteudo": pergunta}
-                    )
-                    st.session_state.historico.append(
-                        _mensagem_do_painel(item_painel)
-                    )
-                    st.rerun()
-                # Painel com LLM-intérprete: DEPOIS do casador fixo (que é de
-                # graça) e ANTES do corpus. Custa uma chamada, então debita cota
-                # e orçamento como qualquer outra — inclusive quando encaminha,
-                # porque a chamada já foi paga.
-                item_plano = None
-                try:
-                    item_plano = responder_plano_se_couber(
-                        pergunta,
-                        orcamento_restante_usd=max(
-                            0.0,
-                            config.orcamento_teto_usd
-                            - st.session_state.custo_usd_acumulado,
-                        ),
-                    )
-                except Exception as exc:  # nunca derruba o app por um extra
-                    LOGGER.warning("rota de plano falhou: %s", exc)
-                if item_plano is not None and item_plano.get("encaminhar"):
-                    # Não era desta rota; o corpus segue. O custo pago fica.
-                    st.session_state.custo_usd_acumulado += item_plano["custo_usd"]
-                    st.session_state.perguntas_livres_usadas += 1
-                    item_plano = None
-                elif item_plano is not None:
-                    st.session_state.custo_usd_acumulado += item_plano["custo_usd"]
-                    if item_plano.get("consumiu_chamada", True):
-                        st.session_state.perguntas_livres_usadas += 1
-                    st.session_state.historico.append(
-                        {"papel": "user", "conteudo": pergunta}
-                    )
-                    st.session_state.historico.append(
-                        _mensagem_do_painel(item_plano)
-                    )
-                    st.rerun()
-                st.session_state.historico.append(
-                    {"papel": "user", "conteudo": pergunta}
-                )
-                try:
-                    item = responder_pergunta_livre(
-                        pergunta,
-                        orcamento_restante_usd=max(
-                            0.0,
-                            config.orcamento_teto_usd
-                            - st.session_state.custo_usd_acumulado,
-                        ),
-                    )
-                    st.session_state.custo_usd_acumulado += item["custo_usd"]
-                    # A cota da RN03 conta CHAMADA, não tentativa de digitar:
-                    # o segundo portão da RN07 recusa sem gastar e devolve
-                    # `consumiu_chamada=False`. Debitar ali cobraria da sessão
-                    # uma pergunta que nunca chegou ao provedor.
-                    if item.get("consumiu_chamada", True):
-                        st.session_state.perguntas_livres_usadas += 1
-                    st.session_state.historico.append(
-                        {
-                            "papel": "assistant",
-                            "conteudo": item["resposta"],
-                            "fontes": item.get("fontes", []),
-                            # Vinha escrito à mão como "inferência ao vivo" e
-                            # `gemini/—`, o que passou a MENTIR quando a recusa
-                            # da RN07 sai daqui com custo zero (spec 5.17 exige
-                            # que a tela diga o modo e o provedor reais).
-                            "modo": item.get(
-                                "modo", "pergunta livre (inferência ao vivo)"
-                            ),
-                            "provedor": item.get(
-                                "provedor",
-                                f"{config.llm_provider}/{item.get('modelo', '—')}",
-                            ),
-                            "streamar": True,
-                        }
-                    )
-                except FalhaConsultaAoVivo as exc:
-                    # Falhou depois de reservar: a chamada foi tentada e paga,
-                    # então a cota conta.
-                    st.session_state.perguntas_livres_usadas += 1
-                    st.session_state.custo_usd_acumulado = (
-                        _contabilizar_reserva_falha(
-                            st.session_state.custo_usd_acumulado,
-                            exc,
-                            config.orcamento_teto_usd,
-                        )
-                    )
-                    LOGGER.warning(
-                        "Geração ao vivo falhou após reserva; custo conservador "
-                        "contabilizado (tipo=%s).",
-                        type(exc.__cause__).__name__,
-                    )
-                    st.session_state.historico.append(
-                        {
-                            "papel": "assistant",
-                            "conteudo": (
-                                "A consulta ao vivo falhou de forma segura. "
-                                "Nenhuma resposta financeira foi apresentada; "
-                                "a reserva conservadora de custo foi debitada. "
-                                "Tente novamente mais tarde ou use o modo cacheado."
-                            ),
-                            "fontes": [],
-                            "modo": "pergunta livre (falha segura)",
-                            "provedor": config.llm_provider,
-                            "streamar": True,
-                        }
-                    )
-                except Exception as exc:
-                    LOGGER.warning(
-                        "Falha segura antes da geração ao vivo (tipo=%s).",
-                        type(exc).__name__,
-                    )
-                    st.session_state.historico.append(
-                        {
-                            "papel": "assistant",
-                            "conteudo": (
-                                "A consulta ao vivo falhou de forma segura. "
-                                "Nenhuma resposta financeira foi apresentada; "
-                                "tente novamente mais tarde ou use o modo cacheado."
-                            ),
-                            "fontes": [],
-                            "modo": "pergunta livre (falha segura)",
-                            "provedor": config.llm_provider,
-                            "streamar": True,
-                        }
-                    )
+            tamanho_antes = len(st.session_state.historico)
+            with observabilidade.consulta(
+                "pergunta_livre",
+                sessao=st.session_state.id_sessao_rastro,
+                tags=("pergunta_livre", config.llm_provider),
+            ) as rastro:
+                recarregar = responder_no_chat(pergunta, rastro)
+                registrar_desfecho(rastro, tamanho_antes)
+            if recarregar:
                 st.rerun()

@@ -30,6 +30,12 @@ duckdb==1.4.4
 # `pip check` em 2026-08-12). Mesma disciplina já aplicada ao `mistralai`.
 crewai==0.193.2
 
+# Observabilidade (seção 5.12) — traces do caminho interativo. Sem chave no
+# ambiente o pacote nem é importado (RNF12). O SDK 5.x é OpenTelemetry e sobe
+# opentelemetry-* de 1.44 para 1.45.1; o CrewAI aceita >=1.30 e o exportador
+# gRPC do ChromaDB acompanha (verificado com `pip check` em 2026-10-19).
+langfuse==5.0.2
+
 # Modelos, Integração de LLMs e Segredos
 openai==2.45.0
 python-dotenv==1.2.2

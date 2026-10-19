@@ -286,9 +286,15 @@ class TestCustoZero:
         assert item["consumiu_chamada"] is False
 
     def test_o_ramo_do_streamlit_nao_debita_cota(self):
+        """Âncoras trocadas em 2026-10-19, asserções iguais: o corpo do chat
+        virou `responder_no_chat` para o trace fechar antes do `st.rerun()`,
+        a rota passou a ser chamada por `_tentar_rota` e o ramo termina em
+        `return True`. O trecho conferido é o mesmo ramo do painel."""
         fonte = (RAIZ / "app_streamlit.py").read_text(encoding="utf-8")
-        trecho = fonte.split("item_painel = responder_estruturada_se_couber", 1)[1]
-        trecho = trecho.split("st.rerun()", 1)[0]
+        assert fonte.count("item_painel = _tentar_rota(") == 1
+        trecho = fonte.split("item_painel = _tentar_rota(", 1)[1]
+        trecho = trecho.split("return True", 1)[0]
+        assert "_mensagem_do_painel(item_painel)" in trecho
         assert "perguntas_livres_usadas" not in trecho
         assert "custo_usd_acumulado" not in trecho
 

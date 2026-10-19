@@ -2,9 +2,18 @@
 
 from __future__ import annotations
 
+import os
+
 import pytest
 
-from src import geracao
+# Teste nunca envia trace ao Langfuse (5.12). O app carrega o `.env` ao ser
+# importado, e `load_dotenv` não sobrescreve variável já definida: vazias aqui,
+# a chave local não chega à suíte. Quem testa o rastreamento passa um
+# exportador em memória (`tests/test_observabilidade.py`).
+os.environ["LANGFUSE_PUBLIC_KEY"] = ""
+os.environ["LANGFUSE_SECRET_KEY"] = ""
+
+from src import geracao  # noqa: E402
 from src.config import Config
 from src.geracao import Citacao
 from src.ingestao import Chunk, DocumentoCorpus
