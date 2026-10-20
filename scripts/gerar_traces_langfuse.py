@@ -13,6 +13,9 @@ traces são do produto, não de uma cópia dele.
     # Com o texto de pergunta e resposta no trace, anonimizado pelo Presidio
     python -m scripts.gerar_traces_langfuse --permitir-api-paga --capturar-texto
 
+    # Só as perguntas do modo agentes (Investigador + Auditor, com o modelo)
+    python -m scripts.gerar_traces_langfuse --permitir-api-paga --conjunto agentes
+
 Sem `--permitir-api-paga`, as chaves de todos os provedores pagos são
 esvaziadas para esta execução: uma pergunta que escape das rotas gratuitas
 falha fechada, sem gastar, qualquer que seja o `LLM_PROVIDER`.
@@ -69,6 +72,33 @@ PERGUNTAS: tuple[tuple[str, str, bool], ...] = (
     ("DEV004", "Segundo a análise gerencial do Itaú Unibanco por que o NPL total de 15 a 90 dias aumentou no 1T2026 ante o 4T2025?", True),
     ("DEV008", "Segundo o Santander quais fatores explicaram a queda trimestral e o crescimento anual da carteira de crédito ampliada no 1T2026?", True),
     ("DEV009", "No 1T2026 qual banco teve o maior indicador anualizado de rentabilidade gerencial sobre o patrimônio como divulgado em cada release?", True),
+)
+
+MODO_LIVRE = "Pergunta livre"
+MODO_AGENTES = "Agentes (Investigador + Auditor)"
+
+# As três perguntas de exemplo do modo agentes (`app_streamlit.EXEMPLOS_AGENTES`).
+# Repetidas aqui porque importar o app fora do AppTest ligaria o Langfuse por
+# fora dele. Cada uma exige mais de uma ferramenta, em ordem.
+PERGUNTAS_AGENTES: tuple[tuple[str, str, bool], ...] = (
+    (
+        "agentes_painel_e_modelo",
+        "Qual foi o lucro líquido do Banco Inter no 3T2025 e em que faixa de porte "
+        "de ativo ele se encaixa no modelo preditivo de prejuízo?",
+        True,
+    ),
+    (
+        "agentes_release_e_painel",
+        "O que o release do Itaú diz sobre a margem financeira gerencial no 3T2025, "
+        "e quanto o painel da CVM registra de lucro líquido no mesmo trimestre?",
+        True,
+    ),
+    (
+        "agentes_modelo",
+        "Quantas companhias o modelo preditivo sinaliza no trimestre corrente, e com "
+        "que AUC ele foi validado?",
+        True,
+    ),
 )
 
 
@@ -210,6 +240,7 @@ def principal(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--permitir-api-paga", action="store_true")
     ap.add_argument("--capturar-texto", action="store_true")
+    ap.add_argument("--conjunto", choices=("chat", "agentes", "todos"), default="chat")
     ap.add_argument("--prazo-conferencia-s", type=float, default=180.0)
     ap.add_argument("--reconferir", type=Path, help="resumo já gravado: só confere no servidor, sem perguntar de novo")
     args = ap.parse_args(argv)
@@ -230,7 +261,15 @@ def principal(argv=None) -> int:
 
     from src import observabilidade
 
-    perguntas = [p for p in PERGUNTAS if args.permitir_api_paga or not p[2]]
+    selecionadas = []
+    if args.conjunto in ("chat", "todos"):
+        selecionadas += [(*p, MODO_LIVRE) for p in PERGUNTAS]
+    if args.conjunto in ("agentes", "todos"):
+        selecionadas += [(*p, MODO_AGENTES) for p in PERGUNTAS_AGENTES]
+    perguntas = [p for p in selecionadas if args.permitir_api_paga or not p[2]]
+    if not perguntas:
+        print("Nenhuma pergunta sem custo neste conjunto; use --permitir-api-paga.")
+        return 1
     app = AppTest.from_file(str(RAIZ / "app_streamlit.py"), default_timeout=300).run()
     estado = observabilidade.estado()
     if not estado.ativo:
@@ -240,14 +279,17 @@ def principal(argv=None) -> int:
         print("--capturar-texto pedido, mas o Presidio não ficou ligado. Nada a gerar.")
         return 1
     print(f"Langfuse ativo em {estado.host}. {len(perguntas)} perguntas; texto no trace: {estado.captura_texto}.")
-    app.sidebar.radio[0].set_value("Pergunta livre").run()
+    modo_atual = None
 
     SAIDA.mkdir(parents=True, exist_ok=True)
     carimbo = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H%M%SZ")
     journal = SAIDA / f"journal_{carimbo}.jsonl"
     linhas = []
-    for rotulo, pergunta, paga in perguntas:
-        _journal(journal, {"evento": "inicio", "rotulo": rotulo, "paga": paga})
+    for rotulo, pergunta, paga, modo in perguntas:
+        if modo != modo_atual:
+            app.sidebar.radio[0].set_value(modo).run()
+            modo_atual = modo
+        _journal(journal, {"evento": "inicio", "rotulo": rotulo, "paga": paga, "modo": modo})
         antes = len(observabilidade.traces_recentes())
         custo_antes = app.session_state["custo_usd_acumulado"]
         inicio = time.perf_counter()
@@ -266,6 +308,7 @@ def principal(argv=None) -> int:
             "duracao_no_app_s": round(duracao, 2),
             "traces": [id_trace for _, id_trace in novos],
             "resposta_inicio": (resposta.get("conteudo") or "")[:300],
+            "rastro_agentes": resposta.get("rastro_agentes"),
         }
         linhas.append(linha)
         _journal(journal, {"evento": "fim", "rotulo": rotulo, "custo_usd": linha["custo_usd"], "traces": linha["traces"]})
