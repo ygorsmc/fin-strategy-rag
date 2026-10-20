@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Assistente de Research Financeiro — Documentação da Etapa 1</title>
+<title>Assistente de Research Financeiro — Documentação</title>
 <style>
 :root {
     --color-primary: #1b3a4b;
@@ -198,8 +198,8 @@ footer {
 
 <header class="site-header">
     <img src="logo.png" alt="Logo do projeto" class="header-logo">
-    <h1>Assistente de Research Financeiro — Documentação da Etapa 1</h1>
-    <p>AI Factory: Building Intelligent Systems · Etapa 1 (CBL — Engajar)</p>
+    <h1>Assistente de Research Financeiro — Documentação</h1>
+    <p>AI Factory: Building Intelligent Systems · Etapa 1 (Engajar) e Etapa 2 (Investigar)</p>
 </header>
 
 <nav class="sticky-nav" id="mainNav">
@@ -243,6 +243,19 @@ footer {
 <a href="#a-interface" class="dropdown-link" data-page="arquitetura">A interface</a>
 </div>
     </div>
+
+    <div class="tab-wrapper" data-page="etapa2">
+        <button class="tab-btn" data-page="etapa2">🧠 Etapa 2: ML, agentes e testes</button>
+        <div class="tab-dropdown">
+<a href="#relat-rio-t-cnico-da-etapa-2" class="dropdown-link" data-page="etapa2">Relatório técnico da Etapa 2</a>
+<a href="#o-dataset" class="dropdown-link" data-page="etapa2">O dataset</a>
+<a href="#as-m-tricas-e-a-escolha-do-modelo" class="dropdown-link" data-page="etapa2">As métricas e a escolha do modelo</a>
+<a href="#os-agentes" class="dropdown-link" data-page="etapa2">Os agentes</a>
+<a href="#observabilidade" class="dropdown-link" data-page="etapa2">Observabilidade</a>
+<a href="#testes-com-o-golden-dataset-e-o-deepeval" class="dropdown-link" data-page="etapa2">Testes com o golden dataset e o DeepEval</a>
+<a href="#pontos-fracos-e-ajustes" class="dropdown-link" data-page="etapa2">Pontos fracos e ajustes</a>
+</div>
+    </div>
 </nav>
 
 <main class="container">
@@ -263,11 +276,13 @@ footer {
 
 <h2 id="as-camadas-do-sistema">🧩 As camadas do sistema</h2>
 
-<p>A conversa acontece em uma interface de chat feita em Streamlit, que mantém o histórico da sessão, transmite a resposta aos poucos enquanto ela aparece na tela e indica sempre em que modo está operando e qual provedor gerou cada resposta. Há dois modos: um de demonstração, que abre sem nenhuma chave configurada e consulta o painel contábil sem custo, e um de pergunta livre, que precisa ser habilitado explicitamente e aciona o modelo de linguagem sobre os releases.</p>
+<p>A conversa acontece em uma interface de chat feita em Streamlit, que mantém o histórico da sessão, transmite a resposta aos poucos enquanto ela aparece na tela e indica sempre em que modo está operando e qual provedor gerou cada resposta. Há três modos. O de demonstração abre sem nenhuma chave configurada e consulta o painel contábil sem custo. O de pergunta livre precisa ser habilitado explicitamente e aciona o modelo de linguagem sobre os releases. O modo Agentes, acrescentado na Etapa 2, fica atrás da mesma habilitação e põe dois agentes para resolver perguntas que exigem mais de uma fonte.</p>
 
 <p>Por trás dela, os vinte releases do corpus foram extraídos, divididos em blocos e indexados em duas frentes complementares: um índice vetorial no ChromaDB, que encontra trechos por significado, e um índice BM25, que encontra por coincidência de palavras. O painel contábil, por sua vez, vive em DuckDB e reúne o cadastro das companhias, as linhas contábeis dos formulários e o mapa que traduz código de conta em conceito de negócio, todos relacionados entre si.</p>
 
 <p>A conversa com o modelo é governada por um prompt escrito para este domínio, que proíbe responder de memória, obriga a citação e manda copiar cada número exatamente como impresso, sem converter escala nem arredondar. Antes que qualquer texto saia da máquina, uma camada de segurança bloqueia tentativas de injeção de instruções, recusa pedidos de recomendação de investimento e anonimiza dados pessoais que o usuário porventura tenha digitado na própria pergunta, como CPF, e-mail ou telefone.</p>
+
+<p>A Etapa 2 acrescentou as camadas de inteligência e de controle. Um modelo de classificação, treinado com quinze anos de formulários da CVM, ordena as companhias abertas pelo risco de prejuízo. Dois agentes CrewAI, o Investigador e o Auditor, consultam o painel, os releases e esse modelo, e o segundo confere o trabalho do primeiro sem ver como ele chegou à resposta. Cada pergunta deixa um rastro no Langfuse, com latência, tokens e custo, e uma suíte DeepEval mede as respostas contra o golden dataset. Os detalhes e os números estão na aba da Etapa 2.</p>
 
 <hr>
 
@@ -283,6 +298,10 @@ footer {
 <tr><td>Geração</td><td>Gemini 3.5 Flash Lite</td><td>Venceu o comparativo de acerto, custo e latência; Ollama, DeepSeek, OpenAI e Azure ficam atrás da mesma interface plugável</td></tr>
 <tr><td>Extração de PDF</td><td>Mistral OCR</td><td>Reconstrói a estrutura da tabela, que é onde os números moram</td></tr>
 <tr><td>Segurança</td><td>Presidio, Llama Prompt Guard 2 e detector próprio</td><td>Camada determinística sempre ativa; as duas de aprendizado de máquina são opcionais</td></tr>
+<tr><td>Modelo de ML</td><td>scikit-learn 1.8 (gradient boosting)</td><td>Lida com dados ausentes sem imputação e empatou com a regressão logística no ROC-AUC</td></tr>
+<tr><td>Agentes</td><td>CrewAI 0.193</td><td>Cada agente com a própria caixa de ferramentas, o que permite isolar o Auditor do Investigador</td></tr>
+<tr><td>Observabilidade</td><td>Langfuse 5.0</td><td>Um trace por pergunta, com spans por etapa, agente e ferramenta</td></tr>
+<tr><td>Testes de LLM</td><td>DeepEval 4.2</td><td>Faithfulness e answer relevancy, com juiz de outra família de modelo</td></tr>
 </table></div>
 
 <hr>
@@ -311,6 +330,8 @@ streamlit run app_streamlit.py
 HABILITAR_PERGUNTAS_LIVRES=true streamlit run app_streamlit.py
 </code></pre>
 
+<p>Com esse modo ligado, a barra lateral passa a oferecer também o modo Agentes. Se as chaves do Langfuse estiverem no <code>.env</code>, cada pergunta vira um trace.</p>
+
 <p>Nos dois casos a interface abre em <code>http://localhost:8501</code>. Nenhuma chave está no código: elas vivem apenas no <code>.env</code> local, que o Git ignora, e o repositório versiona somente o <code>.env.example</code>, com todas as variáveis documentadas e os valores em branco.</p>
 
 <hr>
@@ -320,12 +341,15 @@ HABILITAR_PERGUNTAS_LIVRES=true streamlit run app_streamlit.py
 <pre><code class="lang-text">
 ├── app_streamlit.py          interface de chat
 ├── src/                      ingestão, indexação, recuperação, geração,
-│                             dados estruturados, cobertura, segurança
+│                             dados estruturados, cobertura, segurança,
+│                             modelo de ML, agentes, observabilidade
+├── scripts/                  download, treino, medições e avaliações
 ├── conjunto_padrao/          45 perguntas congeladas + 10 de dev + 20 ataques
+│                             + 15 do conjunto dos agentes
 ├── corpus/                   manifesto com SHA-256 e cache de OCR versionado
-├── artefatos/                índices, painel DuckDB, logs por execução
-├── resultados/               evidência datada de cada medição
-├── tests/                    suíte automatizada, sem skips
+├── artefatos/                métricas do modelo, rodada avaliada, traces
+├── resultados/               relatórios datados de cada medição
+├── tests/                    suíte automatizada
 └── docs/                     esta documentação
 </code></pre>
 
@@ -391,7 +415,7 @@ HABILITAR_PERGUNTAS_LIVRES=true streamlit run app_streamlit.py
 <div class="page-content" id="page-arquitetura">
 <div class="content-wrapper"><h1 id="como-o-sistema-est-montado">🏛️ Como o sistema está montado</h1>
 
-<p>O caminho de uma pergunta até a resposta atravessa quatro camadas. Duas delas preparam material antes de qualquer usuário aparecer: a ingestão dos releases em PDF, que termina em dois índices de busca, e a carga dos formulários da CVM, que termina em um banco analítico. As outras duas funcionam durante a conversa: as ferramentas que consultam esse material e os agentes que decidem o que perguntar a elas.</p>
+<p>O caminho de uma pergunta até a resposta atravessa quatro camadas. Duas delas preparam material antes de qualquer usuário aparecer: a ingestão dos releases em PDF, que termina em dois índices de busca, e a carga dos formulários da CVM, que termina em um banco analítico. As outras duas funcionam durante a conversa: as ferramentas que consultam esse material e os agentes que decidem o que perguntar a elas. Na Etapa 2 entraram mais duas peças: um modelo de classificação treinado offline sobre o painel, que as ferramentas leem na forma de um resumo agregado, e o Langfuse, que registra o percurso de cada pergunta.</p>
 
 <pre><code class="lang-text">
 corpus público (PDF)                   dados abertos CVM (ITR/DFP)
@@ -401,20 +425,24 @@ extração + chunking (600/100 tokens)   painel contábil em DuckDB
 validação estrutural + sentinelas      companhias ⋈ fatos_contabeis
   │                                       │ mapa_contas ⇒ fatos_semanticos
   │                                       │ (4º trimestre derivado e marcado)
-  ├──► índice BM25 (palavra-chave)        │
-  └──► embeddings ──► índice vetorial     │
+  ├──► índice BM25 (palavra-chave)        ├──► modelo de prejuízo (offline)
+  └──► embeddings ──► índice vetorial     │      └──► panorama agregado
                         │                 │
                         ▼                 ▼
         ┌──────────────────────────────────────────┐
         │ FERRAMENTAS: verificar_cobertura ·       │
         │ buscar_trechos · consultar_cvm ·         │
-        │ calcular_indicadores                     │
+        │ calcular_indicadores ·                   │
+        │ consultar_modelo_prejuizo                │
         └──────────────────────────────────────────┘
                         ▲
 pergunta → guardrails → Investigador → [filtro de contexto]
                                         │ só a afirmação + citações
                                         ▼
                                      Auditor → guardrails → resposta
+
+Langfuse: um trace por pergunta, com spans de recuperação, geração,
+agentes e ferramentas
 </code></pre>
 
 <p>Há um detalhe de projeto que vale explicar, porque não é óbvio olhando o diagrama. O sistema tem dois caminhos de execução separados de propósito. O caminho interativo, que é o produto, passa pelos guardrails e pelos agentes. Já o caminho de avaliação, usado para comparar as estratégias de busca, roda o pipeline determinístico de recuperação e geração sem a camada de agentes, porque a orquestração multiagente introduz variabilidade no plano de execução e isso destruiria a comparabilidade entre as estratégias, mesmo com a temperatura zerada. Os dois caminhos compartilham as mesmas ferramentas e o mesmo prompt; apenas a orquestração difere.</p>
@@ -526,11 +554,107 @@ pergunta → guardrails → Investigador → [filtro de contexto]
 
 <h1 id="a-interface">🖥️ A interface</h1>
 
-<p>O chat foi feito em Streamlit e abre em um de dois modos, escolhidos na barra lateral. O modo de demonstração consulta o painel contábil e as respostas pré-computadas, funciona sem nenhum segredo configurado e não gera custo. O modo de pergunta livre aciona a inferência ao vivo sobre os releases, precisa ser habilitado explicitamente e está sujeito a uma cota de perguntas por sessão e a um teto de orçamento.</p>
+<p>O chat foi feito em Streamlit e abre em um de três modos, escolhidos na barra lateral. O modo de demonstração consulta o painel contábil e as respostas pré-computadas, funciona sem nenhum segredo configurado e não gera custo. O modo de pergunta livre aciona a inferência ao vivo sobre os releases, precisa ser habilitado explicitamente e está sujeito a uma cota de perguntas por sessão e a um teto de orçamento. O modo Agentes, da Etapa 2, segue as mesmas regras e mostra na tela cada ferramenta que os agentes chamam enquanto trabalham.</p>
 
 <p>A resposta aparece na tela aos poucos, palavra por palavra. Essa escolha tem uma consequência que vale registrar: o que é transmitido é a resposta já validada, não o texto cru que o provedor devolve. Como a guarda de fundamentação só consegue decidir depois de ver o texto inteiro, transmitir o rascunho colocaria na tela, ainda que por um segundo, exatamente o número que a guarda vai derrubar em seguida.</p>
 
 <p>Abaixo de cada resposta, a interface mostra os trechos recuperados, com os que foram efetivamente citados aparecendo primeiro e destacados. Nas consultas ao painel contábil ela exibe também a tabela de fatos, um aviso quando algum valor é derivado e a procedência de cada linha. Em toda resposta, por fim, ficam indicados o modo de operação e o provedor que a gerou, para que ninguém confunda uma resposta pré-computada com uma inferência feita na hora.</p>
+</div>
+</div>
+<div class="page-content" id="page-etapa2">
+<div class="content-wrapper"><h1 id="relat-rio-t-cnico-da-etapa-2">Relatório técnico da Etapa 2</h1>
+
+<p>Nesta etapa, o assistente ganhou um classificador de prejuízo treinado com dados da CVM, dois agentes CrewAI, traces no Langfuse e uma suíte DeepEval. O que mais me ensinou foi a avaliação: o DeepEval concordou com a minha auditoria manual em apenas 4 de 10 casos, e entender por quê guiou as correções do final.</p>
+
+<h2 id="o-dataset">O dataset</h2>
+
+<p>O modelo usa o painel de demonstrações contábeis das companhias abertas, montado com os formulários ITR e DFP do <a href="https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC">Portal de Dados Abertos da CVM</a>. São 21.903 pares de companhia e trimestre, de 741 companhias, entre 2011 e 2025, descritos por 15 variáveis calculadas só com o que se sabia até o trimestre T, como ROE, alavancagem, porte e histórico de prejuízos. A variável-alvo é o prejuízo líquido no trimestre seguinte, presente em 33,3% dos casos; o produto usa uma versão mais exigente, com prejuízo em dois trimestres seguidos.</p>
+
+<p>A ligação com o domínio é direta: o assistente ajuda um analista a ler os releases de cinco bancos e a conferi-los contra a CVM, e o modelo estende esse trabalho a uma triagem do mercado inteiro. Como os cinco bancos tiveram um único prejuízo em 173 trimestres, o modelo diz pouco sobre eles, e o chat o apresenta de forma agregada.</p>
+
+<h2 id="as-m-tricas-e-a-escolha-do-modelo">As métricas e a escolha do modelo</h2>
+
+<p>A divisão respeitou o tempo: treino até o 2T2025, limiar escolhido no 3T2025 e teste no 4T2025, com 413 companhias. Os baselines vieram antes dos modelos.</p>
+
+<div class="table-wrap"><table>
+<tr><th>Modelo (teste 4T2025, alvo T+1)</th><th>Limiar</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th><th>ROC-AUC</th></tr>
+<tr><td>Sempre lucro</td><td>—</td><td>0,680</td><td>0,000</td><td>0,000</td><td>0,000</td><td>—</td></tr>
+<tr><td>Sempre prejuízo</td><td>—</td><td>0,320</td><td>0,320</td><td>1,000</td><td>0,484</td><td>—</td></tr>
+<tr><td>Persistência (prejuízo em T prevê T+1)</td><td>—</td><td>0,777</td><td>0,647</td><td>0,667</td><td>0,657</td><td>0,748</td></tr>
+<tr><td>Regressão logística</td><td>0,131 (F2)</td><td>0,758</td><td>0,573</td><td>0,955</td><td>0,716</td><td>0,928</td></tr>
+<tr><td>Gradient boosting</td><td>0,049 (F2)</td><td>0,584</td><td>0,434</td><td>0,992</td><td>0,604</td><td>0,925</td></tr>
+</table></div>
+
+<p>Para um gerente, eu começaria dizendo que a accuracy engana: prever lucro para todas as companhias acerta 68% sem achar um único prejuízo. O recall também engana, porque marcar todas como risco dá recall 1,0. Comecei priorizando o recall, com o limiar escolhido pelo F2, e o teste mostrou o problema: o boosting passou a marcar 302 das 413 companhias, o que já não é triagem.</p>
+
+<p>A métrica que decide, então, é o ROC-AUC. No chat, o modelo não responde sim ou não; ele ordena companhias por risco, e o analista lê a lista de cima para baixo até onde o tempo permitir. Em walk-forward sobre 47 trimestres, o boosting marca 0,865, contra 0,846 do melhor baseline, a fração de prejuízos nos últimos quatro trimestres, e 0,879 no alvo do produto. A regressão logística empatou e teve F2 melhor no teste; mantive o boosting por lidar com dados ausentes sem imputação.</p>
+
+<p>A ressalva que eu faria antes de o gerente perguntar é que, dentro de uma mesma companhia, o AUC cai para 0,663, e 97% das companhias no decil de maior escore já estão em prejuízo. O modelo sabe quais companhias costumam dar prejuízo, mas não em que trimestre uma lucrativa vai virar.</p>
+
+<h2 id="os-agentes">Os agentes</h2>
+
+<p>O chat ganhou um modo com dois agentes CrewAI isolados, que reproduzem uma divisão comum em research: quem produz a análise e quem a confere. O Investigador descobre em que camada de dados a companhia existe e responde citando a fonte, com cinco ferramentas: <code>verificar_cobertura</code> (painel, releases ou ambos), <code>buscar_trechos</code> (releases no ChromaDB), <code>consultar_cvm</code> e <code>calcular_indicadores</code> (painel no DuckDB) e <code>consultar_modelo_prejuizo</code> (modelo de ML). O Auditor tem as mesmas ferramentas numa caixa própria, recebe só a afirmação e as citações e reconsulta cada fonte para confirmar, contestar ou declarar que não reproduz. Antes dele, o código recusa a resposta se algum número não aparecer na evidência sob a mesma métrica.</p>
+
+<p>Por precaução com a Resolução CVM 20/2021, que regula a análise de valores mobiliários divulgada a terceiros, a instância pública não publica previsão sobre companhia nomeada; em execução local, uma variável de ambiente libera o escore de cada companhia. Na pública, o modelo entrega o panorama agregado e, dado um ativo, a faixa de porte com sua taxa histórica de prejuízo. Perguntado sobre o lucro e a faixa do Banco Inter no 3T2025, o Investigador buscou lucro e ativo no DuckDB e passou o ativo ao modelo, que devolveu a faixa de R$ 10 a 100 bilhões e a taxa de 21,8%, apresentada como taxa da faixa, não como chance do Inter. O Auditor refez as consultas e confirmou.</p>
+
+<pre><code class="lang-text">
+pergunta no chat (Streamlit)
+  │
+  ▼
+guardrails de entrada ─────────────────────► recusa sem LLM,
+(PII, injeção, tópico proibido, RN07)          ou rota prospectiva agregada
+  │
+  ▼
+Investigador ◄──────► ferramentas (uma caixa por agente)
+  │                     DuckDB: painel CVM · ChromaDB: releases
+  │                     modelo de ML: artefato agregado
+  ▼
+verificação em código ─────────────────────► recusa registrada
+(o número está na fonte, na mesma métrica?)    (o Auditor nem é chamado)
+  │
+  ▼
+filtro de contexto: passa só a afirmação e as citações
+  │
+  ▼
+Auditor ◄───────────► ferramentas (caixa própria)
+(reconsulta cada fonte; confirma, contesta ou não reproduz)
+  │
+  ▼
+guardrails de saída → resposta com o veredito do Auditor
+</code></pre>
+
+<p>Medi o modo Agentes em 7 perguntas do conjunto próprio dos agentes, separado das 45. Quatro respostas cobriram tudo o que o gabarito pede, entre elas a recusa sobre o Nubank, ausente das duas camadas, e a pergunta de desambiguação para "BTG", nome de duas companhias no painel. As outras três trouxeram números certos, mas explicaram mal por que o release e a CVM diferem. Nenhuma trouxe número errado, e o Auditor confirmou as seis que chegaram a ele: ele confere a fidelidade, não a completude.</p>
+
+<h2 id="observabilidade">Observabilidade</h2>
+
+<p>Cada pergunta gera um trace no Langfuse, com spans de recuperação, geração, agentes e ferramentas, e cada geração registra tokens e custo. Em 20/10, rodei 19 perguntas pelo aplicativo e conferi pela API que o custo no servidor batia com o do app.</p>
+
+<p><div style="text-align:center; margin:20px 0;"><img src="img/langfuse_traces.png" alt="Lista de traces no Langfuse, com latência, tokens e custo" style="max-width:100%; border-radius:8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></div></p>
+
+<p>As perguntas livres levaram de 1,7 a 8,1 segundos e custaram até US$ 0,0021; as dos agentes, de 8 a 44 segundos e até US$ 0,035. Os traces também mostraram o que a tela escondia: em 19/10, carregar o índice e o modelo de embeddings consumia 11,7 dos 13 segundos da primeira pergunta, e os dois passaram a carregar na inicialização; em 20/10, dois traces de agentes trouxeram uma chamada ao LLM sem uso registrado, ainda não investigada.</p>
+
+<h2 id="testes-com-o-golden-dataset-e-o-deepeval">Testes com o golden dataset e o DeepEval</h2>
+
+<p>O golden dataset tem 45 perguntas congeladas em 29/07, com resposta e página-fonte conferidas à mão: 15 factuais, 10 comparativas, 10 qualitativas e 10 adversariais, com premissas falsas e dados fora do corpus. Pedidos fora do escopo, como recomendação de compra, ficam num conjunto de 20 ataques, todos bloqueados. Na rodada de 15/09, a estratégia do chat publicou 10 respostas e recusou 35, entre elas as 10 adversariais.</p>
+
+<p>O DeepEval mediu faithfulness e answer relevancy dessas respostas, com um juiz de outra família, o DeepSeek V4 Flash, em 196 chamadas que custaram US$ 0,40. Decidi antes de rodar que afirmação sem sustentação contaria como infiel, porque o faithfulness padrão só penaliza contradição e daria 1,0 a todas.</p>
+
+<div class="table-wrap"><table>
+<tr><th>Desfecho</th><th>Perguntas</th><th>Faithfulness (média)</th><th>Faithfulness = 1</th><th>Answer relevancy (média)</th></tr>
+<tr><td>Resposta publicada</td><td>10</td><td>0,947</td><td>8</td><td>1,000</td></tr>
+<tr><td>Rascunho descartado pela guarda</td><td>18</td><td>0,821</td><td>9</td><td>0,988</td></tr>
+<tr><td>Recusa do próprio modelo</td><td>17</td><td>não pontuada</td><td>—</td><td>não pontuada</td></tr>
+</table></div>
+
+<p>Contra a minha auditoria humana, feita às cegas, o DeepEval concordou em 4 de 10 itens, e o juiz próprio do projeto, em 8. Numa discordância, o faithfulness aprovou o número da coluna errada de uma tabela. Criei então um critério de período em G-Eval, com passos e limiar fixados antes, que reprovou esse caso e levou a concordância a 5 de 10, diferença que dez itens não distinguem do acaso. O DeepEval serve como triagem, e a referência continua sendo a auditoria humana.</p>
+
+<h2 id="pontos-fracos-e-ajustes">Pontos fracos e ajustes</h2>
+
+<p>O ponto fraco mais caro era a guarda de evidência descartar respostas corretas: 9 dos 18 rascunhos descartados eram fiéis aos trechos. Suspeitei de arredondamento, mas o release imprime valores como "R$ 6,1 bi" em infográficos que o OCR quebra em linhas soltas, e a guarda separava o número da métrica. Com a leitura corrigida, as mesmas respostas gravadas renderam 14 publicações em vez de 10, sem nenhuma errada a mais. O ganho, porém, foi medido nas perguntas que revelaram o defeito, e seguem descartadas três respostas que a auditoria humana julgou certas.</p>
+
+<p>Na primeira rodada real dos agentes, em 19/10, o Investigador chamou de "margem financeira" R$ 17,2 bilhões de despesas do Itaú, e o Auditor confirmou a resposta do Inter sem consultar o modelo citado. O código passou a exigir o número sob a mesma métrica e a reconsulta de cada fonte, e em 20/10 a mesma pergunta trouxe a margem correta, R$ 31.382 milhões.</p>
+
+<p>Por fim, nas companhias hoje lucrativas, o modelo supera o baseline trivial (AUC de 0,831 contra 0,787), mas dentro de cada companhia os dois empatam (0,624 contra 0,613), e o painel de treino herda defeitos da CVM, como valores declarados em milhares num formulário e em reais noutro, de efeito não medido. O modelo serve, portanto, para indicar quais companhias ler primeiro, e não para prever quando cada uma entrará em prejuízo.</p>
 </div>
 </div>
 </main>

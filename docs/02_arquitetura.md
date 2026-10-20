@@ -1,6 +1,6 @@
 # 🏛️ Como o sistema está montado
 
-O caminho de uma pergunta até a resposta atravessa quatro camadas. Duas delas preparam material antes de qualquer usuário aparecer: a ingestão dos releases em PDF, que termina em dois índices de busca, e a carga dos formulários da CVM, que termina em um banco analítico. As outras duas funcionam durante a conversa: as ferramentas que consultam esse material e os agentes que decidem o que perguntar a elas.
+O caminho de uma pergunta até a resposta atravessa quatro camadas. Duas delas preparam material antes de qualquer usuário aparecer: a ingestão dos releases em PDF, que termina em dois índices de busca, e a carga dos formulários da CVM, que termina em um banco analítico. As outras duas funcionam durante a conversa: as ferramentas que consultam esse material e os agentes que decidem o que perguntar a elas. Na Etapa 2 entraram mais duas peças: um modelo de classificação treinado offline sobre o painel, que as ferramentas leem na forma de um resumo agregado, e o Langfuse, que registra o percurso de cada pergunta.
 
 ```text
 corpus público (PDF)                   dados abertos CVM (ITR/DFP)
@@ -10,20 +10,24 @@ extração + chunking (600/100 tokens)   painel contábil em DuckDB
 validação estrutural + sentinelas      companhias ⋈ fatos_contabeis
   │                                       │ mapa_contas ⇒ fatos_semanticos
   │                                       │ (4º trimestre derivado e marcado)
-  ├──► índice BM25 (palavra-chave)        │
-  └──► embeddings ──► índice vetorial     │
+  ├──► índice BM25 (palavra-chave)        ├──► modelo de prejuízo (offline)
+  └──► embeddings ──► índice vetorial     │      └──► panorama agregado
                         │                 │
                         ▼                 ▼
         ┌──────────────────────────────────────────┐
         │ FERRAMENTAS: verificar_cobertura ·       │
         │ buscar_trechos · consultar_cvm ·         │
-        │ calcular_indicadores                     │
+        │ calcular_indicadores ·                   │
+        │ consultar_modelo_prejuizo                │
         └──────────────────────────────────────────┘
                         ▲
 pergunta → guardrails → Investigador → [filtro de contexto]
                                         │ só a afirmação + citações
                                         ▼
                                      Auditor → guardrails → resposta
+
+Langfuse: um trace por pergunta, com spans de recuperação, geração,
+agentes e ferramentas
 ```
 
 Há um detalhe de projeto que vale explicar, porque não é óbvio olhando o diagrama. O sistema tem dois caminhos de execução separados de propósito. O caminho interativo, que é o produto, passa pelos guardrails e pelos agentes. Já o caminho de avaliação, usado para comparar as estratégias de busca, roda o pipeline determinístico de recuperação e geração sem a camada de agentes, porque a orquestração multiagente introduz variabilidade no plano de execução e isso destruiria a comparabilidade entre as estratégias, mesmo com a temperatura zerada. Os dois caminhos compartilham as mesmas ferramentas e o mesmo prompt; apenas a orquestração difere.
@@ -130,7 +134,7 @@ E a verificação de fato acontece. Depois da geração, uma guarda confere se t
 
 # 🖥️ A interface
 
-O chat foi feito em Streamlit e abre em um de dois modos, escolhidos na barra lateral. O modo de demonstração consulta o painel contábil e as respostas pré-computadas, funciona sem nenhum segredo configurado e não gera custo. O modo de pergunta livre aciona a inferência ao vivo sobre os releases, precisa ser habilitado explicitamente e está sujeito a uma cota de perguntas por sessão e a um teto de orçamento.
+O chat foi feito em Streamlit e abre em um de três modos, escolhidos na barra lateral. O modo de demonstração consulta o painel contábil e as respostas pré-computadas, funciona sem nenhum segredo configurado e não gera custo. O modo de pergunta livre aciona a inferência ao vivo sobre os releases, precisa ser habilitado explicitamente e está sujeito a uma cota de perguntas por sessão e a um teto de orçamento. O modo Agentes, da Etapa 2, segue as mesmas regras e mostra na tela cada ferramenta que os agentes chamam enquanto trabalham.
 
 A resposta aparece na tela aos poucos, palavra por palavra. Essa escolha tem uma consequência que vale registrar: o que é transmitido é a resposta já validada, não o texto cru que o provedor devolve. Como a guarda de fundamentação só consegue decidir depois de ver o texto inteiro, transmitir o rascunho colocaria na tela, ainda que por um segundo, exatamente o número que a guarda vai derrubar em seguida.
 

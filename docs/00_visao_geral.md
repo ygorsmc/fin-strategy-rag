@@ -12,11 +12,13 @@ O que diferencia o projeto de um chatbot sobre PDFs é a disciplina de recusa. U
 
 ## 🧩 As camadas do sistema
 
-A conversa acontece em uma interface de chat feita em Streamlit, que mantém o histórico da sessão, transmite a resposta aos poucos enquanto ela aparece na tela e indica sempre em que modo está operando e qual provedor gerou cada resposta. Há dois modos: um de demonstração, que abre sem nenhuma chave configurada e consulta o painel contábil sem custo, e um de pergunta livre, que precisa ser habilitado explicitamente e aciona o modelo de linguagem sobre os releases.
+A conversa acontece em uma interface de chat feita em Streamlit, que mantém o histórico da sessão, transmite a resposta aos poucos enquanto ela aparece na tela e indica sempre em que modo está operando e qual provedor gerou cada resposta. Há três modos. O de demonstração abre sem nenhuma chave configurada e consulta o painel contábil sem custo. O de pergunta livre precisa ser habilitado explicitamente e aciona o modelo de linguagem sobre os releases. O modo Agentes, acrescentado na Etapa 2, fica atrás da mesma habilitação e põe dois agentes para resolver perguntas que exigem mais de uma fonte.
 
 Por trás dela, os vinte releases do corpus foram extraídos, divididos em blocos e indexados em duas frentes complementares: um índice vetorial no ChromaDB, que encontra trechos por significado, e um índice BM25, que encontra por coincidência de palavras. O painel contábil, por sua vez, vive em DuckDB e reúne o cadastro das companhias, as linhas contábeis dos formulários e o mapa que traduz código de conta em conceito de negócio, todos relacionados entre si.
 
 A conversa com o modelo é governada por um prompt escrito para este domínio, que proíbe responder de memória, obriga a citação e manda copiar cada número exatamente como impresso, sem converter escala nem arredondar. Antes que qualquer texto saia da máquina, uma camada de segurança bloqueia tentativas de injeção de instruções, recusa pedidos de recomendação de investimento e anonimiza dados pessoais que o usuário porventura tenha digitado na própria pergunta, como CPF, e-mail ou telefone.
+
+A Etapa 2 acrescentou as camadas de inteligência e de controle. Um modelo de classificação, treinado com quinze anos de formulários da CVM, ordena as companhias abertas pelo risco de prejuízo. Dois agentes CrewAI, o Investigador e o Auditor, consultam o painel, os releases e esse modelo, e o segundo confere o trabalho do primeiro sem ver como ele chegou à resposta. Cada pergunta deixa um rastro no Langfuse, com latência, tokens e custo, e uma suíte DeepEval mede as respostas contra o golden dataset. Os detalhes e os números estão na aba da Etapa 2.
 
 ---
 
@@ -32,6 +34,10 @@ A conversa com o modelo é governada por um prompt escrito para este domínio, q
 | Geração | Gemini 3.5 Flash Lite | Venceu o comparativo de acerto, custo e latência; Ollama, DeepSeek, OpenAI e Azure ficam atrás da mesma interface plugável |
 | Extração de PDF | Mistral OCR | Reconstrói a estrutura da tabela, que é onde os números moram |
 | Segurança | Presidio, Llama Prompt Guard 2 e detector próprio | Camada determinística sempre ativa; as duas de aprendizado de máquina são opcionais |
+| Modelo de ML | scikit-learn 1.8 (gradient boosting) | Lida com dados ausentes sem imputação e empatou com a regressão logística no ROC-AUC |
+| Agentes | CrewAI 0.193 | Cada agente com a própria caixa de ferramentas, o que permite isolar o Auditor do Investigador |
+| Observabilidade | Langfuse 5.0 | Um trace por pergunta, com spans por etapa, agente e ferramenta |
+| Testes de LLM | DeepEval 4.2 | Faithfulness e answer relevancy, com juiz de outra família de modelo |
 
 ---
 
@@ -59,6 +65,8 @@ Para habilitar também as perguntas livres, que acionam o modelo de linguagem so
 HABILITAR_PERGUNTAS_LIVRES=true streamlit run app_streamlit.py
 ```
 
+Com esse modo ligado, a barra lateral passa a oferecer também o modo Agentes. Se as chaves do Langfuse estiverem no `.env`, cada pergunta vira um trace.
+
 Nos dois casos a interface abre em `http://localhost:8501`. Nenhuma chave está no código: elas vivem apenas no `.env` local, que o Git ignora, e o repositório versiona somente o `.env.example`, com todas as variáveis documentadas e os valores em branco.
 
 ---
@@ -68,12 +76,15 @@ Nos dois casos a interface abre em `http://localhost:8501`. Nenhuma chave está 
 ```text
 ├── app_streamlit.py          interface de chat
 ├── src/                      ingestão, indexação, recuperação, geração,
-│                             dados estruturados, cobertura, segurança
+│                             dados estruturados, cobertura, segurança,
+│                             modelo de ML, agentes, observabilidade
+├── scripts/                  download, treino, medições e avaliações
 ├── conjunto_padrao/          45 perguntas congeladas + 10 de dev + 20 ataques
+│                             + 15 do conjunto dos agentes
 ├── corpus/                   manifesto com SHA-256 e cache de OCR versionado
-├── artefatos/                índices, painel DuckDB, logs por execução
-├── resultados/               evidência datada de cada medição
-├── tests/                    suíte automatizada, sem skips
+├── artefatos/                métricas do modelo, rodada avaliada, traces
+├── resultados/               relatórios datados de cada medição
+├── tests/                    suíte automatizada
 └── docs/                     esta documentação
 ```
 

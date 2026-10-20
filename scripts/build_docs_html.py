@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Gera `docs/etapa1/documentacao.html` — a entrega escrita da Etapa 1.
+"""Gera `docs/documentacao.html` — a documentação escrita do projeto.
+
+A página cresce a cada etapa da disciplina: a Etapa 1 entregou as três
+primeiras abas, e a Etapa 2 acrescentou a do relatório técnico.
 
 Mesmo padrão do documento do projeto anterior: páginas em Markdown dentro de
-`docs/etapa1/`, convertidas para um HTML único e autocontido, com abas fixas e índice
+`docs/`, convertidas para um HTML único e autocontido, com abas fixas e índice
 suspenso por aba. O HTML é artefato gerado — **edite o Markdown, nunca ele**.
 
 Uso:
@@ -15,21 +18,21 @@ import os
 import re
 
 PROJECT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOCS = os.path.join(PROJECT, "docs", "etapa1")
+DOCS = os.path.join(PROJECT, "docs")
 
 # Ordem das abas: (id, rótulo, arquivo Markdown)
 PAGES = [
     ("inicio", "🎯 Visão Geral", "00_visao_geral.md"),
     ("desafio", "💡 Desafio CBL", "01_desafio_cbl.md"),
     ("arquitetura", "⚙️ Arquitetura", "02_arquitetura.md"),
+    ("etapa2", "🧠 Etapa 2: ML, agentes e testes", "03_relatorio_tecnico_etapa2.md"),
 ]
-# Fora da entrega da Etapa 1, de propósito: `docs/etapa1/nao_entregue/` guarda
-# evidências medidas e limitações. A Etapa 1 pede a declaração do desafio e o
-# sistema funcional; material além disso confunde a correção. Ver o LEIA-ME de
-# lá — as duas páginas voltam a esta lista na Etapa 3.
+# Fora da página, de propósito: `docs/nao_entregue_etapa1/` guarda evidências
+# medidas e limitações que a Etapa 1 não pedia. Ver o LEIA-ME de lá — as duas
+# páginas voltam a esta lista na Etapa 3.
 
-TITULO = "Assistente de Research Financeiro — Documentação da Etapa 1"
-SUBTITULO = "AI Factory: Building Intelligent Systems · Etapa 1 (CBL — Engajar)"
+TITULO = "Assistente de Research Financeiro — Documentação"
+SUBTITULO = "AI Factory: Building Intelligent Systems · Etapa 1 (Engajar) e Etapa 2 (Investigar)"
 LOGO = "logo.png"  # mesmo logo do projeto anterior do Ygor (ai_factory_ii_project)
 
 

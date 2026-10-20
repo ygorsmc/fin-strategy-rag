@@ -17,11 +17,15 @@ cita página e documento em toda resposta e prefere recusar a arriscar.
 
 ## Entregas da disciplina
 
+A documentação do projeto é uma página só, [docs/documentacao.html](docs/documentacao.html),
+que cresce a cada etapa. Ela é gerada por `scripts/build_docs_html.py` a partir
+dos Markdown de `docs/`.
+
 | Etapa | Onde está |
 | --- | --- |
-| Desafio CBL | [DESAFIO_CBL.md](DESAFIO_CBL.md) |
-| Etapa 1: interface, dados e RAG | [docs/etapa1/](docs/etapa1/), com a documentação em [documentacao.html](docs/etapa1/documentacao.html) |
-| Etapa 2: modelo de ML, agentes, observabilidade e testes | [relatório técnico](docs/etapa2/relatorio_tecnico.md) e [roteiro do vídeo](docs/etapa2/roteiro_video.md) |
+| Desafio CBL | [DESAFIO_CBL.md](DESAFIO_CBL.md) e a aba "Desafio CBL" da página |
+| Etapa 1: interface, dados e RAG | abas "Visão Geral" e "Arquitetura"; [slides](docs/apresentacao_etapa1.pptx) e [roteiro do vídeo](docs/roteiro_apresentacao_etapa1.md) |
+| Etapa 2: modelo de ML, agentes, observabilidade e testes | aba "Etapa 2", com o [relatório técnico](docs/03_relatorio_tecnico_etapa2.md); [roteiro do vídeo](docs/roteiro_apresentacao_etapa2.md) |
 
 ## Como o sistema funciona
 
@@ -233,7 +237,7 @@ python -m scripts.gerar_traces_langfuse --permitir-api-paga                     
 │   ├── observabilidade/      traces do Langfuse conferidos pela API
 │   └── indice_vetorial/      descritor do índice (o índice é regenerado)
 ├── resultados/               relatórios dos números citados aqui
-└── docs/                     entregas das etapas 1 e 2
+└── docs/                     página de documentação e as fontes em Markdown
 ```
 
 ## Limitações
