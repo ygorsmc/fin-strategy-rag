@@ -1,29 +1,16 @@
-# 📝 Relatório técnico — Etapa 2
+# Relatório técnico da Etapa 2
 
-Na Etapa 2, o Assistente de Research Financeiro ganhou um classificador de prejuízo treinado no painel aberto da CVM (ROC-AUC 0,88 em walk-forward), dois agentes CrewAI ligados ao DuckDB, ao ChromaDB e ao modelo, traces no Langfuse e uma suíte DeepEval sobre as 45 perguntas do golden dataset. O achado mais útil do DeepEval foi negativo: ele concordou com a auditoria humana em só 4 de 10 casos.
+Nesta etapa, o Assistente de Research Financeiro ganhou um classificador de prejuízo treinado com dados abertos da CVM, dois agentes CrewAI que consultam o painel contábil, os releases e o próprio modelo, traces no Langfuse e uma suíte DeepEval sobre as 45 perguntas do golden dataset. O que mais me ensinou veio da avaliação: o DeepEval concordou com a minha auditoria manual em apenas 4 de 10 casos, e entender essa diferença guiou as correções descritas no final.
 
----
+## O dataset
 
-# 📊 Dataset de ML
+O modelo usa o painel de demonstrações contábeis das companhias abertas, montado com os formulários ITR e DFP do [Portal de Dados Abertos da CVM](https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC). São 741 companhias e 21.903 pares de companhia e trimestre entre o 1T2011 e o 4T2025, cada um descrito por 15 variáveis calculadas só com o que se sabia até o trimestre T, como ROE, ROA, alavancagem, porte e histórico de prejuízos. A variável-alvo é o prejuízo líquido consolidado no trimestre seguinte, presente em 33,3% dos casos. O produto usa uma versão mais exigente, com prejuízo em dois trimestres seguidos, que deixa 21.119 observações e 22,3% de positivos.
 
-O dataset é o painel de demonstrações contábeis das companhias abertas brasileiras, dos dados abertos da CVM: 741 companhias, do 1T2011 ao 4T2025. É o mesmo tipo de dado que o assistente consulta, então não precisou de analogia.
+A escolha vem do próprio domínio: o assistente ajuda um analista a ler os releases de cinco bancos e a conferi-los contra a CVM, e o modelo amplia esse trabalho com uma triagem do mercado inteiro. Como os cinco bancos tiveram um único prejuízo em 173 trimestres, o modelo diz pouco sobre eles, e por isso o chat o apresenta de forma agregada.
 
-| Item | Valor |
-| --- | --- |
-| Nome | Painel ITR/DFP de companhias abertas |
-| Fonte | [Portal de Dados Abertos da CVM](https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC), formulários ITR (trimestral) e DFP (anual) |
-| Registros | 21.903 pares companhia × trimestre (21.119 no alvo do produto) |
-| Variável-alvo | Prejuízo líquido consolidado em T+1; no produto, em T+1 **e** T+2 |
-| Positivos | 33,3% (T+1) e 22,3% (T+1 e T+2) |
-| Features | 15, calculadas até T: ROE, ROA, alavancagem, porte, histórico de prejuízos e variações |
+## As métricas e a escolha do modelo
 
-**Ligação com o domínio.** O assistente ajuda um analista a ler releases de cinco bancos e a conferi-los contra a CVM. O modelo acrescenta uma triagem do mercado inteiro. Para os cinco bancos ele informa pouco (um prejuízo em 173 trimestres), e por isso o chat o usa de forma agregada.
-
----
-
-# 📈 Métricas do modelo
-
-A métrica prioritária é o recall, com limiar escolhido por F2 na validação. Numa triagem, deixar passar uma companhia que vai ter prejuízo custa mais do que um alarme falso, que o analista descarta lendo o balanço. A divisão é temporal: treino até 2T2025, limiar na validação (3T2025) e teste no 4T2025 (413 companhias, 32% com prejuízo). Os modelos do scikit-learn foram comparados com baselines construídos antes deles.
+Priorizei o recall, com o limiar escolhido pelo F2 na validação, porque numa triagem deixar passar uma companhia que terá prejuízo custa mais do que um alarme falso, que o analista descarta lendo o balanço. A divisão respeitou o tempo: treino até o 2T2025, limiar no 3T2025 e teste no 4T2025, com 413 companhias, 32% delas com prejuízo. Os baselines foram construídos antes dos modelos.
 
 | Modelo (teste 4T2025, alvo T+1) | Limiar | Accuracy | Precision | Recall | F1 | ROC-AUC |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -33,31 +20,19 @@ A métrica prioritária é o recall, com limiar escolhido por F2 na validação.
 | Gradient boosting | 0,049 (F2) | 0,584 | 0,434 | 0,992 | 0,604 | 0,925 |
 | Gradient boosting | 0,500 | 0,864 | 0,828 | 0,727 | 0,774 | 0,925 |
 
-- **Accuracy engana:** dizer "lucro" para todas dá 0,680 sem achar nenhum prejuízo.
-- **No limiar F2, o boosting acha 131 dos 132 prejuízos**, com 171 alarmes falsos. É a troca que o F2 escolhe de propósito.
-- **ROC-AUC é o que o chat usa**, porque ele ordena companhias. O 0,925 é de um só trimestre; a média de 47 trimestres em walk-forward é 0,865, contra 0,846 do melhor baseline trivial (taxa de prejuízos nos últimos quatro trimestres).
-- **Ressalva para o gerente:** dentro de cada companhia, o AUC cai para 0,663. O modelo separa quais companhias vivem em prejuízo, não o trimestre em que uma lucrativa vira.
+Para um gerente, eu explicaria primeiro que a accuracy engana, já que prever lucro para todas as companhias acerta 68% sem achar nenhum prejuízo. No limiar do F2, o gradient boosting encontra 131 dos 132 prejuízos ao custo de 171 alarmes falsos, que é a troca desejada. No chat, porém, o modelo ordena companhias por risco, e então o que vale é o ROC-AUC: na média de 47 trimestres em walk-forward, ele marca 0,865, contra 0,846 do melhor baseline, que é a fração de prejuízos nos últimos quatro trimestres. Há ainda uma ressalva: dentro de uma mesma companhia, o AUC cai para 0,663. Em outras palavras, o modelo sabe quais companhias costumam dar prejuízo, mas não em que trimestre uma empresa lucrativa vai virar.
 
-O produto usa o alvo de dois trimestres seguidos, que tira o ruído do prejuízo isolado: ROC-AUC 0,879 em walk-forward e, nos 10% mais bem ranqueados, 3,4 vezes a taxa-base de prejuízo. Boosting e logística empatam; o boosting ficou porque trata dado ausente sem imputação.
+O produto usa o alvo de dois trimestres, que elimina o ruído do prejuízo isolado e eleva o AUC em walk-forward para 0,879. Nesse alvo, os 10% de companhias com maior escore têm 3,4 vezes a taxa média de prejuízo. A regressão logística e o boosting empataram, e mantive o boosting por lidar com dados ausentes sem imputação.
 
----
+## Os agentes
 
-# 🤖 Agentes implementados
+O chat ganhou um modo com dois agentes CrewAI isolados um do outro. O Investigador descobre em que camada de dados a companhia existe, busca a informação e responde citando a fonte. Ele usa `verificar_cobertura`, que diz se a companhia está no painel, nos releases ou nos dois, `buscar_trechos`, que pesquisa os releases no ChromaDB, `consultar_cvm` e `calcular_indicadores`, que leem o painel no DuckDB, e `consultar_modelo_prejuizo`, que acessa o modelo de ML. O Auditor usa as mesmas ferramentas numa caixa própria e refaz as consultas para confirmar, contestar ou declarar que não reproduz a resposta. Ele recebe apenas a afirmação e as citações, nunca o raciocínio do Investigador.
 
-São dois agentes CrewAI no mesmo chat, isolados por contexto: o Auditor recebe só a afirmação e as citações do Investigador, nunca o raciocínio dele.
+Entre os dois, o código confere se cada citação veio de uma ferramenta e se cada valor em reais aparece na evidência sob a mesma métrica. Quando algo falha, a resposta é recusada antes de o Auditor ser chamado.
 
-| Agente | Papel | Ferramentas |
-| --- | --- | --- |
-| Investigador | Descobre em que camada a companhia existe, busca o dado e responde com citação de fonte | `verificar_cobertura` (CVM + corpus), `buscar_trechos` (ChromaDB), `consultar_cvm` e `calcular_indicadores` (DuckDB), `consultar_modelo_prejuizo` (modelo de ML) |
-| Auditor | Reexecuta as consultas e devolve confirma, contesta ou não reproduz | As mesmas cinco, com caixa e teto de chamadas próprios |
+Como a Resolução CVM 20/2021 regula a análise de valores mobiliários, o modelo não faz previsão sobre companhia nomeada. Por isso, a ferramenta do modelo recebe apenas um valor de ativo e devolve a faixa de porte com sua taxa histórica de prejuízo. Na pergunta "qual foi o lucro do Banco Inter no 3T2025 e em que faixa de porte ele se encaixa no modelo?", o Investigador consultou lucro e ativo no DuckDB e passou o ativo de R$ 91,8 bilhões ao modelo. A resposta trouxe a faixa de R$ 10 a 100 bilhões e a taxa de 21,8%, apresentada como taxa da faixa e não como chance do Inter, e o Auditor a confirmou.
 
-Entre os dois, o código confere que toda citação veio de uma ferramenta e que todo valor em reais está na evidência, sob a mesma métrica. O que falha vira recusa registrada antes de gastar a chamada do Auditor.
-
-**Como o modelo entra no chat**, sem previsão sobre companhia nomeada, que a Resolução CVM 20/2021 regula. A pergunta prospectiva vai para uma rota que entrega o histórico e o panorama agregado. No modo Agentes, `consultar_modelo_prejuizo` recebe um valor de ativo e devolve a faixa de porte e a taxa histórica dela.
-
-Exemplo de tarefa composta: "qual foi o lucro do Banco Inter no 3T2025 e em que faixa de porte ele se encaixa no modelo?". O Investigador verificou a cobertura, consultou lucro e ativo no DuckDB e passou o ativo (R$ 91,8 bi) ao modelo. Respondeu com a faixa R$ 10–100 bi e a taxa histórica de 21,8%, dita como taxa da faixa e não como chance do Inter. O Auditor confirmou.
-
-## Orquestração
+O diagrama abaixo resume esse fluxo.
 
 ```text
 pergunta no chat (Streamlit)
@@ -90,56 +65,34 @@ guardrails de saída → resposta com o veredito do Auditor
 Langfuse: um trace por pergunta, com um span por etapa, agente e ferramenta
 ```
 
-A pergunta só chega ao Investigador depois dos guardrails, e a resposta dele só chega ao Auditor depois da verificação em código. O Auditor nunca vê o raciocínio do Investigador, só o que o filtro deixa passar.
+## Observabilidade
 
----
-
-# 🔭 Observabilidade
-
-Cada pergunta do chat vira um trace no Langfuse, com um span por etapa (guardrails, recuperação no ChromaDB, geração com tokens e custo) e, no modo Agentes, um span por agente e por ferramenta. Em 19/10 gerei 12 traces reais pelo chat e conferi pela API que o custo registrado no servidor bate com o do app.
+Cada pergunta do chat gera um trace no Langfuse, com um span por etapa e, no modo Agentes, um span por agente e por ferramenta; a etapa de geração registra tokens e custo. Em 19/10 gerei 12 traces reais e conferi pela API que o custo registrado no servidor era o mesmo calculado pelo aplicativo.
 
 ![Lista de traces no Langfuse, com latência, tokens e custo](img/langfuse_traces.png)
 
-| Trace | Modo | Latência (s) | Tokens | Custo (US$) |
-| --- | --- | --- | --- | --- |
-| DEV003 | pergunta livre (RAG) | 13,0 | 3.814 | 0,0014 |
-| DEV004 | pergunta livre (RAG) | 3,9 | 3.782 | 0,0016 |
-| DEV008 | pergunta livre (RAG) | 8,1 | 4.717 | 0,0023 |
-| Inter: painel + modelo | agentes | 34,0 | 25.244 | 0,0131 |
-| Itaú: release + painel | agentes | 49,5 | 44.848 | 0,0238 |
-| Modelo: panorama e AUC | agentes | 13,2 | 13.067 | 0,0055 |
+Nos seis traces da figura, as perguntas livres levaram de 3,9 a 13 segundos e custaram até US$ 0,0023, enquanto as perguntas aos agentes levaram de 13 a 50 segundos e custaram de 2 a 17 vezes mais. Os traces mostraram também onde o tempo se perdia: na pergunta livre mais lenta, o LLM respondeu em 1,2 segundo e a recuperação, somada à carga do pipeline, levou 11,7.
 
-Os traces mostraram onde vai o tempo: na DEV003, o LLM levou 1,2 s, e a recuperação com a carga do pipeline, 11,7 s. Uma pergunta aos agentes custa de 2 a 17 vezes uma pergunta livre. O texto da pergunta e da resposta só entra no trace com o anonimizador de dados pessoais (Presidio) ligado.
+## Testes com o golden dataset e o DeepEval
 
----
-
-# 🧪 Testes: golden dataset e DeepEval
-
-O golden dataset tem 45 perguntas congeladas em 29/07 (mais 10 de desenvolvimento), com resposta e página-fonte conferidas à mão. São 15 factuais, 10 comparativas, 10 qualitativas e 10 adversariais: banco fora do corpus, período ausente, métrica não divulgada, premissa falsa e conhecimento geral.
-
-O DeepEval mediu faithfulness e answer relevancy nas respostas já gravadas das 45. O juiz é de outra família que o gerador (DeepSeek V4 Flash julgando o Gemini 3.5 Flash-Lite), para que nenhum modelo avalie a própria resposta. Foram 196 chamadas, por US$ 0,40.
+O golden dataset tem 45 perguntas congeladas em 29/07, com resposta e página-fonte conferidas à mão. São 15 factuais, 10 comparativas, 10 qualitativas e 10 adversariais, que testam premissas falsas e dados ausentes do corpus. O DeepEval mediu faithfulness e answer relevancy nas respostas gravadas dessas perguntas, com um juiz de outra família, o DeepSeek V4 Flash, julgando o Gemini 3.5 Flash-Lite. Foram 196 chamadas, que custaram US$ 0,40.
 
 | Desfecho | Perguntas | Faithfulness (média) | Faithfulness = 1 | Answer relevancy (média) |
 | --- | --- | --- | --- | --- |
 | Resposta publicada | 10 | 0,947 | 8 | 1,000 |
-| Rascunho descartado pela guarda de evidência | 18 | 0,821 | 9 | 0,988 |
+| Rascunho descartado pela guarda | 18 | 0,821 | 9 | 0,988 |
 | Recusa do próprio modelo | 17 | não pontuada | — | não pontuada |
 
-Fixei antes de rodar que afirmação sem sustentação conta como infiel. O faithfulness padrão só penaliza contradição, o juiz não achou nenhuma em 196 veredictos, e o padrão daria 1,0 às 28 respostas. Recusas não são pontuadas, porque não afirmam nada.
+Decidi antes de rodar que uma afirmação sem sustentação contaria como infiel, porque o faithfulness padrão só penaliza contradição e, como o juiz não encontrou nenhuma, daria nota 1,0 a todas as respostas. As recusas não foram pontuadas, já que não afirmam nada.
 
-Contra a auditoria humana, feita às cegas antes de existir qualquer juiz, o DeepEval concordou em **4 de 10** itens. O juiz próprio do projeto concorda em 8 de 10 nos mesmos itens. Um critério de período em G-Eval, fixado antes de rodar, pegou a coluna errada que o faithfulness aprovava: 5 de 10.
+Comparado à minha auditoria humana, feita às cegas, o DeepEval concordou em apenas 4 de 10 itens, enquanto o juiz próprio do projeto concordava em 8. Numa das discordâncias, o faithfulness aprovou o número da coluna errada de uma tabela. Criei então um critério de período em G-Eval, com passos e limiar definidos antes da execução, que reprovou esse caso e elevou a concordância para 5 de 10. O DeepEval funciona, portanto, como triagem, e a referência continua sendo a auditoria humana.
 
----
+## Pontos fracos e ajustes
 
-# 🔧 Pontos fracos e ajustes propostos
+O ponto fraco mais caro era a guarda de evidência descartar respostas corretas: 9 dos 18 rascunhos descartados eram fiéis aos trechos, e a auditoria humana tinha encontrado 5 descartes indevidos em 15. Suspeitei de arredondamento, mas a causa era outra. O release imprime valores como "R$ 6,1 bi" em infográficos que o OCR quebra em linhas soltas, e a guarda lia uma linha por vez, separando o número da métrica. Com a leitura corrigida e reaplicada às 45 respostas gravadas, o sistema passou a publicar 14 respostas em vez de 10, sem nenhuma errada a mais. Ainda faltam as frases que reúnem várias métricas.
 
-O ponto fraco mais caro era a guarda de evidência descartar resposta boa. Todos os itens foram tratados e medidos; o que continua aberto está na última coluna.
+Os agentes também apresentaram dois problemas na primeira rodada real. O Investigador chamou de "margem financeira" os R$ 17,2 bilhões que o Itaú reportava como "despesas não decorrentes de juros", e agora o código exige o número sob a mesma métrica; reexecutada em 201 respostas gravadas, a regra não rejeitou nenhuma das 16 sabidamente corretas. Além disso, o Auditor confirmou uma resposta consultando só o DuckDB, e o "confirma" passou a exigir nova consulta a cada fonte citada.
 
-| Problema | Evidência | Ajuste |
-| --- | --- | --- |
-| Agente trocou o rótulo de um número | Chamou de "margem financeira" os R$ 17,2 bi que, no release do Itaú, eram "despesas não decorrentes de juros" | **Feito:** o código exige o número sob a mesma métrica. Reexecutei 201 respostas gravadas: nenhuma das 16 sabidamente certas foi rejeitada |
-| Auditor confirmou sem reconsultar | Confirmou a faixa do modelo consultando só o DuckDB | **Feito:** "confirma" exige reconsultar cada fonte citada |
-| Guarda de evidência descarta resposta boa | 9 de 18 rascunhos descartados são fiéis; a auditoria humana achou 5 descartes indevidos em 15 | **Feito:** não era arredondamento; o release imprime "R$ 6,1 bi" num infográfico que a guarda lia linha a linha. Reaplicada às 45, publica 14 em vez de 10, nenhuma errada. Segue aberta a frase com várias métricas |
-| Faithfulness não enxerga período | Deu 1,0 a R$ 12.144 milhões, coluna do 4T25, numa pergunta sobre o 1T26 | **Feito:** o G-Eval de período deu 0,4 a esse caso. Não vê erro de segmento |
-| Latência | 11,7 de 13 s em recuperação e carga do pipeline; os agentes levam até 50 s | **Feito:** índice carregado na subida do app e cada ferramenta na tela. Os 50 s dos agentes são chamadas ao LLM e continuam |
-| Modelo ordena companhias, não o momento | AUC dentro da companhia de 0,663 | **Medido:** entre as hoje lucrativas, vence o trivial (0,831 contra 0,787), mas dentro da companhia empata (0,624 contra 0,613). É triagem de quais companhias, não de quando |
+Contra a latência, o índice agora carrega na inicialização do aplicativo, e o modo Agentes mostra cada ferramenta enquanto ela roda, embora as chamadas ao LLM, que levam até 50 segundos, continuem as mesmas.
+
+Por fim, medi o modelo apenas nas companhias que hoje dão lucro. Entre elas, ele supera o baseline trivial, com AUC de 0,831 contra 0,787, mas dentro de cada companhia os dois empatam, com 0,624 contra 0,613. Assim, o modelo serve para indicar quais companhias ler primeiro, e não para prever quando cada uma entrará em prejuízo.

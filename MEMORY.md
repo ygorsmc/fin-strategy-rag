@@ -1237,7 +1237,8 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    Langfuse em `docs/img/langfuse_traces.png`**, caminho para o qual o
    relatório já aponta. A retenção do plano gratuito é de 30 dias, e os traces
    de 19/10 somem por volta de 18/11. Um rascunho do Claude Docs ficou
-   desatualizado depois dos ajustes; a fonte é o `.md` (agora ~1.470 palavras).
+   desatualizado depois dos ajustes; a fonte é o `.md`, reescrito em prosa corrida
+   a pedido do responsável (~1.480 palavras contando as tabelas).
    **Ajustes dos pontos fracos, 20/10** (`resultados/ajustes_etapa2_2026-10-20.md`):
    - **Guarda da RN02:** a causa dos descartes era o infográfico do release
      lido linha a linha, não arredondamento. Corrigido com a leitura de painel
