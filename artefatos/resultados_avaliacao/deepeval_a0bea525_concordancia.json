@@ -1,0 +1,588 @@
+{
+  "_meta": {
+    "run_id": "20261020T090251Z-deepeval",
+    "data_utc": "2026-10-20T09:09:26.311513+00:00",
+    "fingerprint": "a0bea525c898e47fe44ea4c3ec3d332689fc135518875e50c3275f842fd6cdbf",
+    "status_da_rodada": "auditoria_humana",
+    "estrategia": "semantica",
+    "juiz": {
+      "provedor": "deepseek",
+      "modelo": "deepseek-flash",
+      "preco_entrada_usd_milhao": 0.44,
+      "preco_saida_usd_milhao": 1.32
+    },
+    "modelo_gerador": "gemini-3.5-flash-lite",
+    "juiz_igual_ao_gerador": false,
+    "deepeval": "4.2.8",
+    "temperatura": 0.0,
+    "limiar_fundamentada": 1.0,
+    "teto_usd": 0.3,
+    "custo_total_usd": 0.13372,
+    "chamadas_juiz": 70,
+    "tokens_entrada": 70948,
+    "tokens_saida": 85048,
+    "falhas_transitorias": 0,
+    "interrompido_no_teto": null,
+    "aviso": "Instrumento, não gabarito: a groundedness reportada continua sendo a auditoria humana (spec 5.15). Recusa do modelo não é pontuada; rascunho descartado pela RN02 é."
+  },
+  "agregado": {
+    "n_casos": 15,
+    "por_desfecho": {
+      "publicada": {
+        "n": 3,
+        "faithfulness": {
+          "n_pontuados": 3,
+          "media": 0.8333,
+          "n_score_1": 2
+        },
+        "answer_relevancy": {
+          "n_pontuados": 3,
+          "media": 1.0,
+          "n_score_1": 3
+        }
+      },
+      "descartada_rn02": {
+        "n": 7,
+        "faithfulness": {
+          "n_pontuados": 7,
+          "media": 0.9127,
+          "n_score_1": 4
+        },
+        "answer_relevancy": {
+          "n_pontuados": 7,
+          "media": 1.0,
+          "n_score_1": 7
+        }
+      },
+      "recusa_modelo": {
+        "n": 5,
+        "faithfulness": {
+          "n_pontuados": 0,
+          "media": null,
+          "n_score_1": 0
+        },
+        "answer_relevancy": {
+          "n_pontuados": 0,
+          "media": null,
+          "n_score_1": 0
+        }
+      }
+    },
+    "n_erros": 0
+  },
+  "casos": [
+    {
+      "pergunta_id": "TSTF006",
+      "categoria": "factual",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Segundo o comparativo BRGAAP e IFRS do release do Itaú Unibanco qual foi o resultado líquido IFRS total atribuível a controladores e não controladores no 1T2026?",
+      "texto": "No 1T2026, o valor atribuível aos acionistas controladores e não controladores segundo o IFRS foi R$ 12.144 milhões no Itaú Unibanco (ITAU, itau_release_1T2026, 1T2026, págs. 30–31).",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "faithfulness": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because there are no contradictions; the actual output aligns perfectly with the retrieval context.",
+          "n_veredictos": 1,
+          "n_sim": 1,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": 1.0
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because the actual output has no irrelevant statements and directly addresses the input; since 1.00 is the maximum possible score, it cannot be higher. Excellent relevancy!",
+          "n_veredictos": 2,
+          "n_sim": 1,
+          "n_nao": 0,
+          "n_incerto": 1,
+          "score_incerto_aprovado": 1.0
+        }
+      },
+      "custo_usd": 0.008042232,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTF010",
+      "categoria": "factual",
+      "estrategia": "semantica",
+      "desfecho": "publicada",
+      "pergunta": "Segundo a demonstração gerencial do Santander qual foi o lucro líquido gerencial no 2T2025?",
+      "texto": "Segundo a demonstração gerencial do Santander, o lucro líquido gerencial no 2T25 foi de R$ 3.659 milhões (SANTANDER, santander_release_2T2025, 2T2025, p. 11).",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "faithfulness": {
+          "score": 0.5,
+          "sucesso": false,
+          "razao": "A pontuação é 0.50 porque o output atribui a informação à fonte documental e página (santander_release_2T2025, 2T2025, p. 11), mas o contexto não informa essa fonte nem a página, portanto a atribuição não é confirmada pelo contexto.",
+          "n_veredictos": 2,
+          "n_sim": 1,
+          "n_nao": 0,
+          "n_incerto": 1,
+          "score_incerto_aprovado": 1.0
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because the response is fully relevant to the question about Santander's managerial net profit in 2Q2025, with no irrelevant statements. Great job!",
+          "n_veredictos": 1,
+          "n_sim": 1,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": 1.0
+        }
+      },
+      "custo_usd": 0.008791552000000001,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTF012",
+      "categoria": "factual",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Segundo a demonstração gerencial do Santander qual foi a carteira de crédito ampliada incluindo títulos privados, avais e fianças no 4T2025?",
+      "texto": "Segundo a demonstração gerencial do Santander, a carteira de crédito ampliada no 4T25 foi de R$ 708,2 bilhões.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "faithfulness": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because there are no contradictions; the actual output aligns perfectly with the retrieval context.",
+          "n_veredictos": 1,
+          "n_sim": 1,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": 1.0
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because the output is fully relevant and directly addresses the requested Santander expanded credit portfolio figure for 4T2025, with no irrelevant statements.",
+          "n_veredictos": 1,
+          "n_sim": 1,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": 1.0
+        }
+      },
+      "custo_usd": 0.015646408000000004,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTF001",
+      "categoria": "factual",
+      "estrategia": "semantica",
+      "desfecho": "publicada",
+      "pergunta": "Segundo a divulgação gerencial do BTG Pactual qual foi o ROAE ajustado anualizado no 1T2026?",
+      "texto": "No 1T2026, o ROAE ajustado anualizado do BTG Pactual foi de 26,6%.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "faithfulness": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because there are no contradictions; the actual output is fully faithful to the retrieval context.",
+          "n_veredictos": 1,
+          "n_sim": 1,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": 1.0
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because the output contains no irrelevant statements and directly addresses the question about BTG Pactual's adjusted annualized ROAE in 1T2026.",
+          "n_veredictos": 1,
+          "n_sim": 1,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": 1.0
+        }
+      },
+      "custo_usd": 0.011271928,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTC008",
+      "categoria": "comparativa",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Entre BTG Pactual e Itaú Unibanco qual teve o maior indicador anualizado de rentabilidade gerencial sobre o patrimônio no 1T2026 como divulgado em cada release e por quanto?",
+      "texto": "No 1T2026, o retorno ajustado anualizado sobre o patrimônio líquido médio do BTG Pactual (\"ROAE anualizado\") foi de 26,6% [BTG | btg_release_1T2026 | 1T2026 | págs. 1–3]. No 1T2026, o Retorno Recorrente Gerencial sobre o Patrimônio Líquido Médio anualizado - Consolidado do Itaú foi de 24,8% [ITAU | itau_release_1T2026 | 1T2026 | pág. 5]. Cálculo: 26,6% - 24,8% = 1,8%",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "faithfulness": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because there are no contradictions; the actual output aligns perfectly with the retrieval context.",
+          "n_veredictos": 3,
+          "n_sim": 3,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": 1.0
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because the output is fully relevant, with no irrelevant statements, directly addressing the requested comparison of BTG Pactual and Itaú Unibanco's annualized managerial return on equity for 1Q2026.",
+          "n_veredictos": 3,
+          "n_sim": 3,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": 1.0
+        }
+      },
+      "custo_usd": 0.013482183999999994,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTC009",
+      "categoria": "comparativa",
+      "estrategia": "semantica",
+      "desfecho": "recusa_modelo",
+      "pergunta": "Segundo os deltas trimestrais reportados nos releases, na passagem do 3T2025 para o 4T2025 qual banco teve a maior alta no indicador anualizado de rentabilidade gerencial sobre o patrimônio: Banco do Brasil ou Santander?",
+      "texto": "Não há evidência suficiente nos trechos recuperados.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {},
+      "custo_usd": 0.0,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTC006",
+      "categoria": "comparativa",
+      "estrategia": "semantica",
+      "desfecho": "publicada",
+      "pergunta": "Entre Santander e Bradesco qual teve o maior indicador trimestral anualizado de rentabilidade gerencial ou recorrente sobre o patrimônio no 3T2025 como divulgado nos destaques de cada release e por quanto?",
+      "texto": "No Santander, o ROAE gerencial excluindo ágio - anualizado foi de 17,5% no 3T25 [SANTANDER | santander_release_3T2025 | 3T2025 | pág. 11]. No Bradesco, o ROAE foi de 14,7% no trimestre [BRADESCO | bradesco_release_3T2025 | 3T2025 | pág. 6]. Cálculo: 17,5% - 14,7% = 2,8 p.p.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "faithfulness": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because the actual output is fully faithful to the retrieval context, with no contradictions detected. Excellent work!",
+          "n_veredictos": 3,
+          "n_sim": 3,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": 1.0
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because there are no irrelevant statements; the output directly addresses the comparison requested and stays fully on topic. Excellent work!",
+          "n_veredictos": 3,
+          "n_sim": 3,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": 1.0
+        }
+      },
+      "custo_usd": 0.010227808000000005,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTC002",
+      "categoria": "comparativa",
+      "estrategia": "semantica",
+      "desfecho": "recusa_modelo",
+      "pergunta": "Qual foi a ordem decrescente dos cinco bancos pelo indicador trimestral anualizado de rentabilidade gerencial ou recorrente sobre o patrimônio no 3T2025 como divulgado nos destaques de cada release?",
+      "texto": "Não há evidência suficiente nos trechos recuperados.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {},
+      "custo_usd": 0.0,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTQ005",
+      "categoria": "qualitativa",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Segundo a análise gerencial do Bradesco como evoluiu a qualidade do crédito no 3T2025 e quais sinais sustentaram essa leitura?",
+      "texto": "No 3T25, observou-se um avanço na qualidade da carteira de crédito do Bradesco, onde houve cura de 4% no período da carteira em estágio 3 e 12% das operações no estágio 2 melhoraram, migrando para o estágio 1 [BRADESCO, bradesco_release_3T2025, 3T2025, p. 16]. Os sinais que sustentaram essa leitura incluem: a inadimplência acima de 90 dias manteve-se estável no trimestre, com redução de 0,1 p.p. em 12 meses [BRADESCO, bradesco_release_3T2025, 3T2025, p. 16]; o segmento MPME apresentou melhora significativa, com queda de 0,6 p.p. no trimestre e 1,5 p.p. em relação a Set24 [BRADESCO, bradesco_release_3T2025, 3T2025, p. 16]; o segmento de Grandes Empresas segue com níveis de inadimplência sob controle [BRADESCO, bradesco_release_3T2025, 3T2025, p. 16]; houve redução no portfólio de créditos mais estressados, sendo -22% em relação a Set24 com queda de 1,6 p.p. na participação da carteira de crédito [BRADESCO, bradesco_release_3T2025, 3T2025, p. 17]; e foram destacados a redução de R$ 2,7 bi (-11%) de operações classificadas como ativos problemáticos, além do aumento de operações curadas em R$ 0,9 bi ou 20% no trimestre [BRADESCO, bradesco_release_3T2025, 3T2025, p. 17].",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "faithfulness": {
+          "score": 0.8888888888888888,
+          "sucesso": false,
+          "razao": "The score is 0.89 because the actual output attributes the 0.1 p.p. 12-month decline specifically to above-90-day delinquency, while the retrieval context only states that total 90-day delinquency fell 0.1 p.p. over 12 months and that above-90-day delinquency remained stable in the quarter, without making that specific attribution.",
+          "n_veredictos": 9,
+          "n_sim": 8,
+          "n_nao": 0,
+          "n_incerto": 1,
+          "score_incerto_aprovado": 1.0
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because the output is fully relevant to the input, with no irrelevant statements, and it directly addresses how credit quality evolved in 3T2025 and the signs supporting that reading.",
+          "n_veredictos": 14,
+          "n_sim": 14,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": 1.0
+        }
+      },
+      "custo_usd": 0.014372983999999991,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTQ010",
+      "categoria": "qualitativa",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Segundo o Banco do Brasil quais fatores levaram ao crescimento de 14,8% da margem financeira bruta no 1T2026?",
+      "texto": "Segundo o Banco do Brasil, o crescimento da Margem Financeira Bruta (+14,8%) no 1T2026 em relação ao mesmo período do ano anterior está relacionado ao crescimento das receitas de crédito, com destaque para as operações de pessoas físicas (+19,1%), e das receitas de tesouraria, com destaque para o desempenho do resultado de TVM (27,2%). Adicionalmente, o crescimento da MFB foi impulsionado pela evolução das receitas financeiras (+12,3%), refletindo o avanço das operações de crédito (especialmente de pessoas físicas, +19,1%) e pelo crescimento do resultado de tesouraria (com destaque para o resultado de TVM, +27,2%), em virtude do maior excesso de liquidez e da elevação da TMS no período.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "faithfulness": {
+          "score": 0.6666666666666666,
+          "sucesso": false,
+          "razao": "The score is 0.67 because the actual output suggests that treasury growth drove MFB growth, but the retrieval context only states that treasury results grew, highlighted by TVM (+27.2%) due to greater excess liquidity and higher TMS, without explicitly saying this growth drove MFB growth.",
+          "n_veredictos": 3,
+          "n_sim": 2,
+          "n_nao": 0,
+          "n_incerto": 1,
+          "score_incerto_aprovado": 1.0
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because the actual output is fully relevant to the input, with no irrelevant statements identified. Excellent focus and clarity!",
+          "n_veredictos": 12,
+          "n_sim": 8,
+          "n_nao": 0,
+          "n_incerto": 4,
+          "score_incerto_aprovado": 1.0
+        }
+      },
+      "custo_usd": 0.018600103999999992,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTQ001",
+      "categoria": "qualitativa",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Segundo os comentários gerenciais do BTG Pactual quais fatores explicaram o desempenho recorde de Corporate Lending no 4T2025?",
+      "texto": "No 4T25, Corporate Lending & Business Banking entregou um trimestre recorde, cujo desempenho foi sustentado pela expansão de 6,2% da carteira de crédito, com spreads estáveis, refletindo a resiliência da qualidade dos ativos.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "faithfulness": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because there are no contradictions; the actual output is fully faithful to the retrieval context.",
+          "n_veredictos": 5,
+          "n_sim": 5,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": 1.0
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because the output fully addresses the question with no irrelevant statements; excellent job staying focused and relevant.",
+          "n_veredictos": 4,
+          "n_sim": 1,
+          "n_nao": 0,
+          "n_incerto": 3,
+          "score_incerto_aprovado": 1.0
+        }
+      },
+      "custo_usd": 0.013966800000000015,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTQ003",
+      "categoria": "qualitativa",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Segundo a análise gerencial do Itaú Unibanco quais fatores explicaram o crescimento de 1,5% da margem financeira com clientes no 4T2025?",
+      "texto": "Segundo a análise gerencial do Itaú Unibanco, o crescimento de 1,5% da margem financeira com clientes no trimestre (4T2025) foi explicado pelos seguintes principais movimentos na comparação com o trimestre anterior: Capital de giro próprio e outros (+ R$ 0,1 bilhão), principalmente em função da maior taxa média de remuneração; Volume médio (+ R$ 0,5 bilhão), com impacto positivo em função do aumento da carteira rentável média, destacando-se os crescimentos das carteiras de crédito imobiliário, consignado privado e de programas governamentais para pequenas empresas; Mix de produtos (- R$ 0,3 bilhão), devido à redução pela menor representatividade de produtos mais rentáveis, como crédito rotativo, cartão de crédito financiado e composição de dívida; e Spreads e margem de passivos (+ R$ 0,3 bilhão), principalmente por conta do maior volume médio de passivos [ITAU, itau_release_4T2025, 4T2025, pág. 12].",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "faithfulness": {
+          "score": 0.8333333333333334,
+          "sucesso": false,
+          "razao": "The score is 0.83 because the actual output cites [ITAU, itau_release_4T2025, 4T2025, pág. 12] for management analysis of these movements, but the retrieval context does not confirm that specific bibliographic citation; page 12 is mentioned only in relation to the quarterly variation of the margin with the market.",
+          "n_veredictos": 6,
+          "n_sim": 5,
+          "n_nao": 0,
+          "n_incerto": 1,
+          "score_incerto_aprovado": 1.0
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "The score is 1.00 because the actual output is fully relevant to the input and contains no irrelevant statements—great job staying on topic and addressing the question directly.",
+          "n_veredictos": 9,
+          "n_sim": 5,
+          "n_nao": 0,
+          "n_incerto": 4,
+          "score_incerto_aprovado": 1.0
+        }
+      },
+      "custo_usd": 0.01931796800000002,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTA008",
+      "categoria": "adversarial",
+      "estrategia": "semantica",
+      "desfecho": "recusa_modelo",
+      "pergunta": "Por que o lucro líquido ajustado do Banco do Brasil caiu do 3T2025 para o 4T2025?",
+      "texto": "Não há evidência suficiente nos trechos recuperados.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {},
+      "custo_usd": 0.0,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTA002",
+      "categoria": "adversarial",
+      "estrategia": "semantica",
+      "desfecho": "recusa_modelo",
+      "pergunta": "Segundo o release do Nubank qual foi o saldo da carteira de crédito no 3T2025?",
+      "texto": "Não há evidência suficiente nos trechos recuperados.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 0,
+      "metricas": {},
+      "custo_usd": 0.0,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTA003",
+      "categoria": "adversarial",
+      "estrategia": "semantica",
+      "desfecho": "recusa_modelo",
+      "pergunta": "Segundo a administração do Nubank quais fatores explicaram a inadimplência no 2T2025?",
+      "texto": "Não há evidência suficiente nos trechos recuperados.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 0,
+      "metricas": {},
+      "custo_usd": 0.0,
+      "erro": null
+    }
+  ],
+  "concordancia": {
+    "n": 10,
+    "matriz": {
+      "ambos_acertou": 2,
+      "ambos_errou": 2,
+      "juiz_acertou_humano_errou": 3,
+      "juiz_errou_humano_acertou": 3
+    },
+    "taxa_concordancia": 0.4,
+    "itens": [
+      {
+        "pergunta_id": "TSTF006",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 1.0,
+        "juiz_sistema_acertou": false,
+        "humano_grounded": true,
+        "concorda": false
+      },
+      {
+        "pergunta_id": "TSTF010",
+        "desfecho": "publicada",
+        "faithfulness": 0.5,
+        "juiz_sistema_acertou": false,
+        "humano_grounded": true,
+        "concorda": false
+      },
+      {
+        "pergunta_id": "TSTF012",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 1.0,
+        "juiz_sistema_acertou": false,
+        "humano_grounded": false,
+        "concorda": true
+      },
+      {
+        "pergunta_id": "TSTF001",
+        "desfecho": "publicada",
+        "faithfulness": 1.0,
+        "juiz_sistema_acertou": true,
+        "humano_grounded": true,
+        "concorda": true
+      },
+      {
+        "pergunta_id": "TSTC008",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 1.0,
+        "juiz_sistema_acertou": false,
+        "humano_grounded": false,
+        "concorda": true
+      },
+      {
+        "pergunta_id": "TSTC006",
+        "desfecho": "publicada",
+        "faithfulness": 1.0,
+        "juiz_sistema_acertou": true,
+        "humano_grounded": true,
+        "concorda": true
+      },
+      {
+        "pergunta_id": "TSTQ005",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 0.8888888888888888,
+        "juiz_sistema_acertou": true,
+        "humano_grounded": false,
+        "concorda": false
+      },
+      {
+        "pergunta_id": "TSTQ010",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 0.6666666666666666,
+        "juiz_sistema_acertou": true,
+        "humano_grounded": false,
+        "concorda": false
+      },
+      {
+        "pergunta_id": "TSTQ001",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 1.0,
+        "juiz_sistema_acertou": false,
+        "humano_grounded": true,
+        "concorda": false
+      },
+      {
+        "pergunta_id": "TSTQ003",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 0.8333333333333334,
+        "juiz_sistema_acertou": true,
+        "humano_grounded": false,
+        "concorda": false
+      }
+    ],
+    "fora_da_matriz": "recusas do próprio modelo (sem afirmação a julgar)"
+  }
+}

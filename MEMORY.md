@@ -608,9 +608,9 @@ outra tarefa.
   **`auditoria_manual_pendente`**. O README ainda publica a anterior
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
-- Suíte atual: **4.688 casos passando, zero falhas/erros/skips**, 28 avisos
-  (20/10, RN02 com rótulo e Auditor por fonte, pelo próprio `.venv`).
-  Antes: 4.661 (19/10, agentes no chat); 4.644 (19/10, traces reais); 4.642 (19/10, correções da auditoria); 4.627 (19/10, Langfuse antes da auditoria); 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
+- Suíte atual: **4.737 casos passando, zero falhas/erros/skips**, 28 avisos
+  (20/10, DeepEval e correções da auditoria, pelo próprio `.venv`).
+  Antes: 4.715 (20/10, DeepEval); 4.688 (20/10, RN02 com rótulo); 4.661 (19/10, agentes no chat); 4.644 (19/10, traces reais); 4.642 (19/10, correções da auditoria); 4.627 (19/10, Langfuse antes da auditoria); 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
   (4.184) tem XML em
   `artefatos/pendencias_geom1_rank03b_2026-09-26/pytest_suite_pos_auditoria.xml`.
   Testes dirigidos: 1.179; os dois achados da auditoria independente foram
@@ -1190,6 +1190,46 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
      extra de linha de tabela; o caminho livre tem o mesmo defeito, e não foi
      mexido porque a mudança alteraria a medição das 45.
    - A rodada real dos agentes não foi repetida com `a4`.
+   - **Auditoria de conformidade de 20/10 (`4ed7bfb`).** Um achado alto: a
+     guarda de rótulo aprovava o próprio caso do Itaú quando o rótulo estava
+     na mesma linha, porque o regex "modal" do parser inclui "não". Corrigido
+     lendo prosa e título só para rótulo, com falha fechada para lastro sem
+     rótulo (`rn02_rotulo_nao_verificavel`). Médios corrigidos:
+     - citação fora do formato isentava o Auditor;
+     - o eco `ativo_total_reais` do modelo lastreava ativo inventado;
+     - o juiz do DeepEval não debitava chamada falha.
+     Remedido depois: o mesmo resultado (2 acusações do BB e nenhuma certa).
+   **(3) DeepEval, 20/10 (`3d1a368`, `4ed7bfb`).** `src/avaliacao_deepeval.py`
+   e `scripts/avaliar_deepeval.py`: faithfulness e answer relevancy sobre as
+   respostas já gravadas da rodada `c3a03ff7`, estratégia `semantica`, sem
+   gerar nada e sem agentes. Juiz escolhido pelo responsável: DeepSeek V4
+   Flash, de outra família que o gerador. O `gemini-3.7-flash` configurado tem
+   cota de 20 req/dia. Preço de pico 0,44/1,32, passado por variável de
+   ambiente na linha de comando. O `.env` não foi mudado, porque
+   `medir_juiz_groundedness.py` ainda usa o Gemini.
+   - **45 congeladas:** US$ 0,40, 196 chamadas, nenhuma falha. Publicadas
+     (10): faithfulness 0,947, 8/10 integrais, relevância 1,0. Rascunhos que a
+     RN02 descartou (18): faithfulness 0,821, 9/18 integrais. Recusas do
+     modelo (17): não pontuadas.
+   - **O faithfulness padrão do DeepEval daria 1,0 em todas as 28.** Ele mede
+     contradição, e o juiz não achou nenhuma; só afirmações não sustentadas.
+     Por isso `penalize_ambiguous_claims=True`, decidido antes da rodada.
+   - **Contra a auditoria humana (n = 10 da `a0bea525`; as 5 recusas do
+     modelo ficam fora): 4/10 no limiar 1,0 pré-registrado.** O juiz próprio
+     de agosto acerta 8/10 nos mesmos itens. As discordâncias vêm de duas
+     fontes:
+     - o limiar estrito contra rascunho qualitativo bom;
+     - a coluna errada (TSTF006), que faithfulness não enxerga.
+     Na sensibilidade pós-hoc, 0,8 dá 6/10 e 0,5 ou o padrão dão 8/10, que
+     não substituem o número primário. Relatório:
+     `resultados/deepeval_2026-10-20.md`. Custo total do DeepEval: US$ 0,550.
+   - **Leitura:** é instrumento de triagem, não groundedness. Os 9 rascunhos
+     fiéis que a RN02 descartou são a fila de leitura. Para escolher limiar
+     com pré-registro, falta a auditoria humana dos 28 pontuados da `c3a03ff7`.
+   - O DeepEval foi instalado com `--no-deps` (`requirements-deepeval.txt`),
+     porque todo deepeval fixa `click<8.4` e o huggingface-hub exige
+     `>=8.4.2`. Para não vazar nada: telemetria, autoload de `.env` e keyfile
+     legado desligados; plugin de pytest fora da suíte.
    **Pendências para o passo (2), agentes no chat:**
    - Se algum agente receber `max_execution_time`, o CrewAI roda a tarefa
      numa thread. A contextvar da consulta não chega lá, e as gerações e
