@@ -21,7 +21,7 @@ cita página e documento em toda resposta e prefere recusar a arriscar.
 | --- | --- |
 | Desafio CBL | [DESAFIO_CBL.md](DESAFIO_CBL.md) |
 | Etapa 1: interface, dados e RAG | [docs/etapa1/](docs/etapa1/), com a documentação em [documentacao.html](docs/etapa1/documentacao.html) |
-| Etapa 2: modelo de ML, agentes, observabilidade e testes | [docs/etapa2/relatorio_tecnico.md](docs/etapa2/relatorio_tecnico.md) |
+| Etapa 2: modelo de ML, agentes, observabilidade e testes | [relatório técnico](docs/etapa2/relatorio_tecnico.md) e [roteiro do vídeo](docs/etapa2/roteiro_video.md) |
 
 ## Como o sistema funciona
 
@@ -168,7 +168,7 @@ Extras opcionais: `requirements-modelo.txt` (treino do modelo),
 `requirements-deepeval.txt` (instale com `pip install --no-deps -r`; o arquivo
 explica por quê).
 
-**Testes.** `pytest -q` roda 2.186 casos sem nenhuma chamada externa. Num clone
+**Testes.** `pytest -q` roda 2.189 casos sem nenhuma chamada externa. Num clone
 recém-feito, 4 deles ficam pulados até o índice e o painel de treino existirem.
 
 **Dados.** Os PDFs e os ZIPs da CVM não vão para o Git; os manifestos guardam
