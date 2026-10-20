@@ -1,3 +1,0 @@
-fbae30cce2bde9b3ece5ccf254e300ce99ba11946568720441193b0a3ac644cc  resultados/pre_registro_rank03b_consumo_operacional_2026-09-11.md
-c1a604453a9a2fa7df24b0b2dbc53df6fb5ef0d39fd06f492407028030bc069b  artefatos/cvm_treino.duckdb
-congelado_em=2026-09-11T23:20:10Z

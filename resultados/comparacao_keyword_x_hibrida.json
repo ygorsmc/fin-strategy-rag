@@ -1,7 +1,7 @@
 {
-  "run_id": "20260821T232541Z-e09a8840be",
-  "fonte": "/home/ygor/Antigravity_Projects/fin-strategy-rag/artefatos/resultados_avaliacao/checkpoint_teste.jsonl",
-  "fingerprint": "59634fb6491330130d7ced51147b87c814e1f6ad25204e0a5e38b38b529d5ac7",
+  "run_id": "20261020T183322Z-35255624ea",
+  "fonte": "artefatos/resultados_avaliacao/checkpoint_teste.jsonl",
+  "fingerprint": "c3a03ff7ccd55dc50e4fae9e8b71fa4043408c45dd82887e04fcda8ecbdbb033",
   "estrategia_a": "keyword",
   "estrategia_b": "hibrida",
   "custo_usd": 0.0,
@@ -29,14 +29,14 @@
       "n_pares": 15,
       "ignorados_por_none": 0,
       "acertos_keyword": 6,
-      "acertos_hibrida": 7,
-      "concordam_acerto": 5,
-      "concordam_erro": 7,
+      "acertos_hibrida": 5,
+      "concordam_acerto": 4,
+      "concordam_erro": 8,
       "so_keyword": [
-        "TSTF005"
+        "TSTF005",
+        "TSTF010"
       ],
       "so_hibrida": [
-        "TSTF001",
         "TSTF009"
       ],
       "discordancias": 3,
@@ -54,7 +54,7 @@
       "concordam_erro": 9,
       "so_keyword": [],
       "so_hibrida": [
-        "TSTC006"
+        "TSTC005"
       ],
       "discordancias": 1,
       "maior_direcao": 1,

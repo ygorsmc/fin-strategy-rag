@@ -1,9 +1,0 @@
-23dd96791c034b065921ea3cda862f470cb47d30b9006cfa10efee26ffa360b1  artefatos/b_dfc_01j/snapshots/2026-09-11-pre-rc5-rc6/auditar_prontidao_b_dfc_01j.py
-99550e31901b96b6152b8d407386d3ce4f7e79650975d39a823468d3b7489e2a  artefatos/b_dfc_01j/snapshots/2026-09-11-pre-rc5-rc6/gates.json
-2353ba5593a902306edb70ec73dbc70d20d71601d30a2bb33219f6cd2d4f076d  artefatos/b_dfc_01j/snapshots/2026-09-11-pre-rc5-rc6/piloto_bancos_dfc.py
-7a63447b6c836b7857567430d7511220e64612c3dfb5635dedab6f746cad261f  artefatos/b_dfc_01j/snapshots/2026-09-11-pre-rc5-rc6/resumo_extensao.json
-185d4c83d9bf4a21ddd2f2702a681ad1258889880739750786163dd5a7369572  artefatos/b_dfc_01j/snapshots/2026-09-11-pre-rc5-rc6/sensibilidade.json
-f38516be03973acc35b71300e1efc6bfdedef0442abc50c8cb84b41f6df59e2a  artefatos/b_dfc_01j/snapshots/2026-09-11-pre-rc5-rc6/sensibilidade_rubricas_suspeitas_b_dfc_01j.py
-9aa68cbd25719afccecedfaab0feacbd91c21fbdf214e9c779963d16329cfd17  artefatos/b_dfc_01j/snapshots/2026-09-11-pre-rc5-rc6/test_piloto_bancos_dfc.py
-0dfe80111b61ca09988cc5f0996b6023243dea2ee9f11d06016aa8d1da7a1445  artefatos/b_dfc_01j/snapshots/2026-09-11-pre-rc5-rc6/test_prontidao_b_dfc_01j.py
-5b4193b0607555d645b4f6a872fb682611ca956ab5c630955ca72d63b67141c7  artefatos/b_dfc_01j/snapshots/2026-09-11-pre-rc5-rc6/test_sensibilidade_b_dfc_01j.py

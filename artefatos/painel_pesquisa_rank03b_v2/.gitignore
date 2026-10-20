@@ -1,5 +1,0 @@
-# Painel v2 do Rank 3-B (executor v2, 2026-09-27).
-# O binário é regenerável pelo executor e identificado pelo digest de conteúdo
-# em manifesto_painel.json e em artefatos/executor_v2_rank03b/estrutural.json.
-*.duckdb
-*.duckdb.wal

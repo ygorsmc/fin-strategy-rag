@@ -1,4 +1,0 @@
-040495f7415c813e212141493d3ddf2a8fd02632b3d3169c87aa7d5295887926  artefatos/rank03b/snapshots/2026-09-12-pre-r1-r5/auditar_rank03b_consumo_operacional.py
-7b59cf0b1d15f448a13ebe1a4ff3a7bf9c47f8d0f03cceb2ce52c9674129da24  artefatos/rank03b/snapshots/2026-09-12-pre-r1-r5/auditoria.json
-fbae30cce2bde9b3ece5ccf254e300ce99ba11946568720441193b0a3ac644cc  artefatos/rank03b/snapshots/2026-09-12-pre-r1-r5/pre_registro_rank03b_consumo_operacional_2026-09-11.md
-004150630471bdf3e0576fd4ed9feb224b58b9e97710cac4f6c591fe49a87397  artefatos/rank03b/snapshots/2026-09-12-pre-r1-r5/test_rank03b_consumo_operacional.py

@@ -1,0 +1,83 @@
+{
+  "run_id": "20261020T183322Z-8a53406f2c",
+  "fonte": "artefatos/resultados_avaliacao/checkpoint_teste.jsonl",
+  "fingerprint": "c3a03ff7ccd55dc50e4fae9e8b71fa4043408c45dd82887e04fcda8ecbdbb033",
+  "estrategia_a": "keyword",
+  "estrategia_b": "semantica",
+  "custo_usd": 0.0,
+  "chamadas_llm": 0,
+  "limiar_declarado": 6,
+  "comparacoes": {
+    "recall_ok": {
+      "n_pares": 25,
+      "ignorados_por_none": 20,
+      "acertos_keyword": 23,
+      "acertos_semantica": 20,
+      "concordam_acerto": 20,
+      "concordam_erro": 2,
+      "so_keyword": [
+        "TSTF006",
+        "TSTF007",
+        "TSTF009"
+      ],
+      "so_semantica": [],
+      "discordancias": 3,
+      "maior_direcao": 3,
+      "limiar": 6,
+      "p_mcnemar_exato": 0.25,
+      "veredito": "indistinguível neste tamanho de amostra"
+    },
+    "exatidao_ok[factual]": {
+      "n_pares": 15,
+      "ignorados_por_none": 0,
+      "acertos_keyword": 6,
+      "acertos_semantica": 5,
+      "concordam_acerto": 4,
+      "concordam_erro": 8,
+      "so_keyword": [
+        "TSTF006",
+        "TSTF010"
+      ],
+      "so_semantica": [
+        "TSTF014"
+      ],
+      "discordancias": 3,
+      "maior_direcao": 2,
+      "limiar": 6,
+      "p_mcnemar_exato": 1.0,
+      "veredito": "indistinguível neste tamanho de amostra"
+    },
+    "exatidao_ok[comparativa]": {
+      "n_pares": 10,
+      "ignorados_por_none": 0,
+      "acertos_keyword": 0,
+      "acertos_semantica": 1,
+      "concordam_acerto": 0,
+      "concordam_erro": 9,
+      "so_keyword": [],
+      "so_semantica": [
+        "TSTC005"
+      ],
+      "discordancias": 1,
+      "maior_direcao": 1,
+      "limiar": 6,
+      "p_mcnemar_exato": 1.0,
+      "veredito": "indistinguível neste tamanho de amostra"
+    },
+    "recusa_correta[adversarial]": {
+      "n_pares": 10,
+      "ignorados_por_none": 0,
+      "acertos_keyword": 10,
+      "acertos_semantica": 10,
+      "concordam_acerto": 10,
+      "concordam_erro": 0,
+      "so_keyword": [],
+      "so_semantica": [],
+      "discordancias": 0,
+      "maior_direcao": 0,
+      "limiar": 6,
+      "p_mcnemar_exato": 1.0,
+      "veredito": "indistinguível neste tamanho de amostra"
+    }
+  }
+}

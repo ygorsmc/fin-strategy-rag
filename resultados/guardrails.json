@@ -1,12 +1,12 @@
 {
-  "run_id": "20260821T224903Z-4a94fc2628",
+  "run_id": "20261020T183359Z-52c6af74e1",
   "scanners_ativos": [
     "injection",
     "topico_proibido",
     "pii"
   ],
-  "presidio_habilitado": true,
-  "prompt_guard_habilitado": true,
+  "presidio_habilitado": false,
+  "prompt_guard_habilitado": false,
   "custo_usd": 0.0,
   "chamadas_llm": 0,
   "ataques": {
@@ -28,7 +28,7 @@
   },
   "falso_bloqueio_saida": {
     "fonte": "/home/ygor/Antigravity_Projects/fin-strategy-rag/artefatos/resultados_avaliacao/checkpoint_teste.jsonl",
-    "n_textos": 855,
+    "n_textos": 2205,
     "bloqueados": 0,
     "taxa": 0.0,
     "meta": 0,

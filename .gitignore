@@ -1,4 +1,11 @@
-# Arquivos Python e Compilados
+# O repositório publicado leva só o que é preciso para reproduzir o produto e
+# a avaliação dele: código, testes, dependências, conjunto-padrão, manifestos
+# com URL e SHA-256, o cache de OCR e os artefatos que o app lê. O resto se
+# regenera por script ou é material local de trabalho.
+
+# ----------------------------------------------------------------------------
+# Python, ambientes e editores
+# ----------------------------------------------------------------------------
 __pycache__/
 *.py[cod]
 *$py.class
@@ -7,26 +14,28 @@ __pycache__/
 *.egg-info/
 build/
 dist/
-
-# Ambientes Virtuais e Dependências
 .venv/
 venv/
 env/
 ENV/
 .uv_cache/
-
-# IDEs e Editores
+.pytest_cache/
+.coverage
+htmlcov/
+.deepeval/
+.deepeval-cache.json
 .vscode/
 .idea/
-# Definições de subagente do Claude Code: configuração de ferramenta local, não
-# produto. Atenção: o AGENTS.md §7 nomeia esses donos por etapa (`dados-cvm`,
-# `indice-recuperacao`, ...) e eles não existirão no repositório publicado.
-.claude/
 *.swp
 *.swo
 .DS_Store
+*.bak
+*.backup
+*.orig
 
-# Segredos e credenciais locais
+# ----------------------------------------------------------------------------
+# Segredos (RNF04)
+# ----------------------------------------------------------------------------
 .env*
 !.env.example
 .envrc
@@ -42,167 +51,158 @@ ENV/
 credentials/
 secrets/
 
-# ====================================================
-# Regras Específicas do Assistente de Research Financeiro
-# ====================================================
+# ----------------------------------------------------------------------------
+# Documentos de trabalho e configuração de agentes de código
+# ----------------------------------------------------------------------------
+# .docs/ nunca é publicado (menciona a vaga de origem). DESAFIO_CBL.md, na
+# raiz, é a cópia publicável do desafio.
+.docs/
+.claude/
+AGENTS.md
+CLAUDE.md
+MEMORY.md
+docs/etapa1/nao_entregue/
+conferencia_*_v3/
 
-# Regra geral (spec 5.21): são VERSIONADOS o cache de OCR, corpus/metadados.csv,
-# o índice de deploy, os logs JSONL de execução (RNF08) e as respostas cacheadas
-# do demo. Ficam FORA os PDFs brutos, os ZIPs da CVM, o banco DuckDB, o índice
-# de desenvolvimento, pesos de modelo e qualquer segredo.
-
-# 1. Corpus Bruto (RNF02 e Privacidade/Limites do Git)
-# Nunca versionar os PDFs brutos. Eles são gerados pelo script de download.
-# (O corpus/metadados.csv é a fonte de verdade e DEVE ser versionado).
-corpus/raw/*
-!corpus/raw/.gitkeep
-# corpus/ocr/ NÃO é ignorado de propósito: a RNF10 exige cache de OCR versionado
-# (markdown + metadados de bloco, poucos MB). Ainda não existe — o subsistema OCR
-# atual grava em artefatos/ocr_mistral/ e a migração é onda adiada (AGENTS.md §3.2).
-
-# Demonstrações em IFRS publicadas em separado — evidência do gate G4, NÃO corpus.
-# Mesma regra dos PDFs brutos: o binário fica fora, o manifesto com URL, data e
-# SHA-256 é versionado e é o que torna o gate refazível. Estes documentos nunca
-# entram em corpus/metadados.csv: isso mudaria a identidade do índice (RNF09).
-corpus/ifrs/raw/*
-!corpus/ifrs/raw/.gitkeep
-
-# Sete emissores acrescentados em 2026-08-27 (BMG, ABC Brasil, Banestes, Pine,
-# Mercantil, Banco do Nordeste, Banrisul) para destravar o `≥10 emissores` que
-# Rank 5, CAND-02 e CAND-03 exigem. Vale a MESMA regra do IFRS logo acima, e por
-# experiência própria: eles entraram primeiro em corpus/metadados.csv e
-# quebraram na hora o `hash_cache_ocr` do índice publicável (RNF09), a igualdade
-# `empresas(manifesto) == Config.bancos` e a auditoria congelada do Rank 5.
-# Material de teste não entra no contrato do produto sem decisão explícita.
-# Binário fora; manifesto e cache de OCR versionados (o OCR foi pago — RNF10
-# existe para ninguém pagar duas vezes).
-corpus/expansao/raw/*
-!corpus/expansao/raw/.gitkeep
-
-# 2T2026 dos 12 emissores (2026-09-08) — trimestre FORA DA AMOSTRA. Mesma regra:
-# binário fora, manifesto e cache de OCR versionados. Este corpus nunca entra em
-# corpus/metadados.csv nem no conjunto congelado: iterar contra holdout destrói o
-# que ele tem de único, que é não ter sido visto por nenhum ajuste.
-corpus/holdout_2T2026/raw/*
-!corpus/holdout_2T2026/raw/.gitkeep
-
-# 2. Dados abertos da CVM (seção 5.5)
-# Os ZIPs de ITR/DFP e o banco analítico são regeneráveis por scripts/baixar_cvm.py.
-artefatos/cvm.duckdb
-artefatos/cvm.duckdb.wal
-artefatos/*.duckdb
-artefatos/*.duckdb.wal
-artefatos/cvm/
-dados_cvm/
-*.zip
-
-# 3. Artefatos Dinâmicos / Pesados
-# Ignoramos binários pesados e índices locais não otimizados para deploy.
-# Mantemos apenas os descritores/metadados estáticos ou os índices
-# menores estritamente necessários se versionados explicitamente.
-artefatos/amostra/
-artefatos/ocr_mistral/*
-!artefatos/ocr_mistral/.gitkeep
-!artefatos/ocr_mistral/README.md
-# Journals write-ahead: são mecanismo de recuperação de falha (eventos
-# "intencao"/"conclusao"/"inicio" por chamada), NÃO a evidência RNF08. O log de
-# evidência é o `execucao_*.jsonl`/`agentes_*.jsonl` por execução, que continua
-# versionado. Mesma regra que já valia para o journal do OCR.
-artefatos/logs_execucoes/journal_ocr_mistral.jsonl
-artefatos/logs_execucoes/journal_ocr_batch.json
-artefatos/logs_execucoes/journal_agentes/
-artefatos/logs_execucoes/journal_chamadas/
-# Índice de desenvolvimento (Chroma: chroma.sqlite3 + subdiretórios por UUID;
-# FAISS/pickle no formato anterior). Só o descritor RNF09 é versionado.
-artefatos/indice_vetorial/*
-!artefatos/indice_vetorial/.gitkeep
-!artefatos/indice_vetorial/metadados_construcao.json
-# Modelo preditivo: o binário serializado fica fora; o relatório de métricas fica.
-artefatos/modelo/*
-!artefatos/modelo/.gitkeep
-!artefatos/modelo/*.json
-!artefatos/modelo/*.md
-# EXCEÇÃO à linha acima, e ela é a RN07 em disco: o escore por companhia é
-# exatamente o dado que a instância pública não pode expor. O agregado
-# (panorama.json) é publicável e continua versionado; este não entra no Git,
-# para que o deploy público não tenha o dado em vez de tê-lo e prometer não
-# usar. Gerado localmente por `scripts/gerar_panorama_modelo.py --com-escores`.
-artefatos/modelo/escores_por_companhia.json
-artefatos/**/*.lock
-artefatos/**/.*.staging-*
-artefatos/**/.*.backup-*
-artefatos/**/.*.tmp-*
-resultados/gate_*_execucoes.jsonl
-
-# Sobras recuperáveis de editores e operações manuais
-*.bak
-*.backup
-*.orig
-
-# 4. Pesos de modelo local
-# Guardrails (Prompt Guard 2 em ONNX) são embutidos na imagem no build, nunca
-# versionados; LoRA opcional (5.22) idem.
+# ----------------------------------------------------------------------------
+# Pesos de modelo (embutidos no build ou regeneráveis)
+# ----------------------------------------------------------------------------
 modelos_lora/
 modelos_guardrails/
 *.onnx
 *.safetensors
 *.pt
 *.ckpt
+*.pkl
+*.zip
 
-# Testes e avaliação automatizada
-.pytest_cache/
-.coverage
-htmlcov/
-.deepeval/
-.deepeval-cache.json
+# ----------------------------------------------------------------------------
+# corpus/ — manifestos e cache de OCR; os PDFs vêm de scripts/baixar_corpus.py
+# ----------------------------------------------------------------------------
+corpus/*
+!corpus/metadados.csv
+!corpus/ancoras_sentinela.csv
+# Cache de OCR versionado (RNF10): o OCR é pago e não é determinístico, e o
+# hash dele faz parte da identidade do índice (RNF09).
+!corpus/ocr/
+!corpus/raw/
+corpus/raw/*
+!corpus/raw/.gitkeep
+# Painel da CVM: manifesto pinado por hash e correções com procedência (RN09).
+!corpus/cvm/
+corpus/cvm/*
+!corpus/cvm/manifesto_cvm.csv
+!corpus/cvm/correcoes_contabeis.csv
+# Demonstrações em IFRS: âncora do gate G4 (manifesto e o recorte de OCR).
+!corpus/ifrs/
+corpus/ifrs/*
+!corpus/ifrs/manifesto_ifrs.csv
+!corpus/ifrs/ocr/
+!corpus/ifrs/raw/
+corpus/ifrs/raw/*
+!corpus/ifrs/raw/.gitkeep
 
-# Documentos de governo internos e a especificação.
-# .docs NUNCA é publicado — menciona a vaga de origem (AGENTS.md §0).
-# A exceção é DESAFIO_CBL.md, cuja cópia na raiz é versionada por exigência da RF18.
-# AGENTS.md/MEMORY.md/CLAUDE.md já estão rastreados; as linhas abaixo apenas
-# impedem que cópias novas entrem sem intenção.
-AGENTS.md
-MEMORY.md
-CLAUDE.md
-.docs
+# ----------------------------------------------------------------------------
+# artefatos/ — só o que o app e os testes leem
+# ----------------------------------------------------------------------------
+# O painel DuckDB, o índice Chroma e os logs de execução se regeneram por
+# scripts/baixar_cvm.py, construir_painel_cvm.py e executar_pipeline.py.
+artefatos/*
+!artefatos/indice_vetorial/
+artefatos/indice_vetorial/*
+!artefatos/indice_vetorial/.gitkeep
+!artefatos/indice_vetorial/metadados_construcao.json
+!artefatos/logs_execucoes/
+artefatos/logs_execucoes/*
+!artefatos/logs_execucoes/.gitkeep
+!artefatos/ocr_mistral/
+artefatos/ocr_mistral/*
+!artefatos/ocr_mistral/.gitkeep
+# Modelo: métricas e o panorama agregado que o chat lê. O binário fica fora.
+!artefatos/modelo/
+artefatos/modelo/*
+!artefatos/modelo/*.json
+artefatos/modelo/auditoria_alvo_c1.json
+# RN07 em disco: o escore por companhia não pode existir no deploy público.
+artefatos/modelo/escores_por_companhia.json
+# Rodada congelada (o modo demonstração lê as respostas cacheadas) e DeepEval.
+!artefatos/resultados_avaliacao/
+# Respostas gravadas dos agentes (lidas por medir_guarda_rotulo_agentes.py).
+!artefatos/resultados_agentes/
+# Traces reais do Langfuse conferidos pela API (Etapa 2).
+!artefatos/observabilidade/
+# Conjunto adversarial das rotas do painel e a comparação entre elas.
+!artefatos/roteamento_adversarial/
+!artefatos/comparacao_rotas_painel.json
+artefatos/**/*.lock
+artefatos/**/.*.staging-*
+artefatos/**/.*.backup-*
+artefatos/**/.*.tmp-*
 
-# Piloto documental B-DFC-01J (2026-09-09): binários novos baixados pelo piloto.
-# Só os artefatos leves (manifestos, JSONL, CSV, README) entram no Git — os PDFs/
-# ZIPs/XLSX recuperados ficam fora, pela mesma razão de corpus/ifrs/raw.
-artefatos/b_dfc_01j/raw/*
-!artefatos/b_dfc_01j/raw/.gitkeep
+# ----------------------------------------------------------------------------
+# resultados/ — relatórios dos números publicados no README e no relatório
+# ----------------------------------------------------------------------------
+resultados/*
+!resultados/ajustes_etapa2_2026-10-20.md
+!resultados/deepeval_2026-10-20.md
+!resultados/auditoria_groundedness_2026-08-22.md
+!resultados/concordancia_juiz_humano_2026-08-23.md
+!resultados/comparacao_llm_2026-08.md
+!resultados/comparacao_*_x_*.json
+!resultados/teto_comparativas_2026-08-23.md
+!resultados/guardrails.json
+!resultados/gate.md
+!resultados/gate_local.md
+!resultados/gate_gemini.md
+!resultados/gate_deepseek.md
+!resultados/gate_g3.md
+!resultados/gate_g4.md
+!resultados/ancora_btg_4T2025.md
+!resultados/modelo_preditivo_2026-08-23.md
+!resultados/revisoes_modelo_2026-08-23.md
+!resultados/robustez_modelo_2026-08-24.md
+!resultados/debate_modelo_2026-08-25.md
+!resultados/pre_registro_roteamento_adversarial_2026-09-15.md
 
-# Cookie de sessão do rad.cvm.gov.br usado na coleta. É credencial de sessão e
-# não entra no Git (RNF04); os artefatos leves da extensão, sim.
-artefatos/b_dfc_01j/extensao/.cookies_cvm
-
-# Piloto CAND-02-P (protocolo de 28/09): o universo de eventos e os documentos
-# exportados se regeneram do cache de OCR versionado (`cand02p_piloto eventos`).
-# O pickle do M fica fora como qualquer peso; o hash está em modelo/congelado.json.
-artefatos/cand02p/eventos/
-artefatos/cand02p/docs/
-artefatos/cand02p/modelo/m.pkl
-
-# Piloto v2 do CAND-02-P: PDFs regeneráveis pelo manifesto (URLs do RAD).
-corpus/cand02p_v2/raw/*
-artefatos/cand02p_v2/eventos/
-artefatos/cand02p_v2/docs/
-artefatos/cand02p_v2/modelo/m.pkl
-
-# Piloto v3 do CAND-02-P: idem.
-corpus/cand02p_v3/raw/*
-artefatos/cand02p_v3/eventos/
-artefatos/cand02p_v3/docs/
-artefatos/cand02p_v3/modelo/m.pkl
-
-# Pasta local da conferência humana do CAND-02-P v3: cópias e links, nada novo.
-conferencia_humana_v3/
-
-# Pasta local da calibração da rubrica v2: cópias e links.
-conferencia_calibracao_v3/
-
-# Pasta local da conferência final da rubrica v2: cópias e links.
-conferencia_final_v3/
-
-# Modelo final do CAND-02-P: o pickle fica fora, como os outros; o hash está em congelado.json.
-artefatos/cand02p_final/modelo/m.pkl
+# ----------------------------------------------------------------------------
+# Pesquisa de alvos de ML descartados (C1, CAND-02/03/04, Rank 3/3-B/5,
+# B-DFC-01J, etapa 19). Não faz parte do produto; fica só na máquina local e
+# no histórico do Git.
+# ----------------------------------------------------------------------------
+scripts/*rank03b*.py
+scripts/auditar_rank03_conversao_caixa.py
+scripts/auditar_rank05_divergencia_gerencial_contabil.py
+scripts/auditar_alvo_c1.py
+scripts/auditar_cand02_redline.py
+scripts/auditar_cand03_anomalias.py
+scripts/auditar_cand04_previsao_fundamentos.py
+scripts/auditar_prontidao_dfc.py
+scripts/auditar_prontidao_b_dfc_01j.py
+scripts/sensibilidade_rubricas_suspeitas_b_dfc_01j.py
+scripts/piloto_bancos_dfc.py
+scripts/cand02p_*.py
+scripts/esqueleto_plano_padrao.py
+scripts/fonte_rad_cvm.py
+scripts/fonte_zip_cvm.py
+scripts/inventariar_escala_cvm.py
+src/precos.py
+src/redline.py
+tests/fixtures_rank03b_crf.py
+tests/test_*rank03b*.py
+tests/test_auditar_alvo_c1.py
+tests/test_auditar_cand02_redline.py
+tests/test_auditar_cand03_anomalias.py
+tests/test_auditar_cand04_previsao_fundamentos.py
+tests/test_auditar_prontidao_dfc.py
+tests/test_auditar_rank05_divergencia.py
+tests/test_cand02p_*.py
+tests/test_esqueleto_plano_padrao.py
+tests/test_fonte_rad_cvm.py
+tests/test_fonte_zip_cvm.py
+tests/test_inventario_escala_cvm.py
+tests/test_anotacao_classes_monetarias.py
+tests/test_piloto_bancos_dfc.py
+tests/test_precos.py
+tests/test_prontidao_b_dfc_01j.py
+tests/test_redline.py
+tests/test_sensibilidade_b_dfc_01j.py

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gera `docs/apresentacao_etapa1.pptx` — 6 slides do vídeo da Etapa 1.
+"""Gera `docs/etapa1/apresentacao_etapa1.pptx` — 6 slides do vídeo da Etapa 1.
 
 Fora do pipeline e fora do `requirements.txt` de propósito: `python-pptx` só
 serve para emitir este arquivo e não tem por que entrar no deploy enxuto
@@ -9,9 +9,9 @@ serve para emitir este arquivo e não tem por que entrar no deploy enxuto
     /tmp/venv-pptx/bin/python scripts/gerar_slides_apresentacao.py
 
 O `.pptx` é ARTEFATO GERADO: editar aqui e reemitir, nunca no PowerPoint, pela
-mesma razão que vale para `docs/documentacao.html`.
+mesma razão que vale para `docs/etapa1/documentacao.html`.
 
-O roteiro falado, com os tempos, está em `docs/roteiro_apresentacao_etapa1.md`.
+O roteiro falado, com os tempos, está em `docs/etapa1/roteiro_apresentacao_etapa1.md`.
 Os slides são o fundo dele — quem lê os dois junto vê que nenhum slide repete a
 fala, porque slide que se lê em voz alta compete com quem apresenta.
 """
@@ -26,8 +26,8 @@ from pptx.enum.text import PP_ALIGN
 from pptx.util import Emu, Inches, Pt
 
 RAIZ = Path(__file__).resolve().parents[1]
-SAIDA = RAIZ / "docs" / "apresentacao_etapa1.pptx"
-LOGO = RAIZ / "docs" / "logo.png"
+SAIDA = RAIZ / "docs" / "etapa1" / "apresentacao_etapa1.pptx"
+LOGO = RAIZ / "docs" / "etapa1" / "logo.png"
 
 NAVY = RGBColor(0x0B, 0x25, 0x45)
 AZUL = RGBColor(0x13, 0x40, 0x74)
@@ -136,7 +136,7 @@ def _slide_vazio(apresentacao):
 def _notas(slide, texto: str) -> None:
     """Preenche as notas do apresentador — texto puro, sem markdown.
 
-    Fonte única: `docs/roteiro_apresentacao_etapa1.md`. Mudou a fala lá, muda
+    Fonte única: `docs/etapa1/roteiro_apresentacao_etapa1.md`. Mudou a fala lá, muda
     aqui — os dois arquivos descrevem o mesmo roteiro, e divergirem seria pior
     do que não ter notas.
     """
