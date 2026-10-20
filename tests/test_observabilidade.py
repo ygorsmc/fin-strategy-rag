@@ -317,6 +317,33 @@ class _CaixaFalsa:
         return ["t1", "t2"]
 
 
+class TestConferenciaDoScript:
+    """`scripts/gerar_traces_langfuse.py` só dá trace por conferido quando ele
+    chegou inteiro. A primeira versão aceitava a primeira observação e marcou
+    como conferidos dois traces ainda sem raiz nem geração."""
+
+    @staticmethod
+    def _raiz():
+        return {"type": "CHAIN", "isRootObservation": True, "endTime": "t", "latency": 1.0}
+
+    @staticmethod
+    def _geracao(custo):
+        return {"type": "GENERATION", "model": "m", "costDetails": {"total": custo}, "usageDetails": {}, "latency": 0.5}
+
+    def test_trace_inteiro_e_completo(self):
+        from scripts.gerar_traces_langfuse import _resumir
+
+        assert _resumir([self._raiz(), self._geracao(0.0014148)], 0.001415)["completo"]
+        assert _resumir([self._raiz()], 0.0)["completo"]
+
+    def test_trace_parcial_nao_e_completo(self):
+        from scripts.gerar_traces_langfuse import _resumir
+
+        assert _resumir([{"type": "GUARDRAIL"}], 0.0)["faltas"] == ["sem raiz fechada"]
+        assert "chamada paga sem geração" in _resumir([self._raiz()], 0.002)["faltas"]
+        assert "custo do servidor difere do app" in _resumir([self._raiz(), self._geracao(0.001)], 0.002)["faltas"]
+
+
 class TestFerramentasDeAgente:
     def test_chamada_de_ferramenta_vira_span_tool_sem_texto_livre(self, exportador):
         from src.agentes import PAPEL_INVESTIGADOR, FerramentasDoAgente

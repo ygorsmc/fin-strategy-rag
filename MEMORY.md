@@ -608,9 +608,9 @@ outra tarefa.
   **`auditoria_manual_pendente`**. O README ainda publica a anterior
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
-- Suíte atual: **4.642 casos passando, zero falhas/erros/skips**, 28 avisos
-  (19/10, Langfuse com as correções da auditoria, pelo próprio `.venv`).
-  Antes: 4.627 (19/10, Langfuse antes da auditoria); 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
+- Suíte atual: **4.644 casos passando, zero falhas/erros/skips**, 28 avisos
+  (19/10, traces reais e conferência estrita do script, pelo próprio `.venv`).
+  Antes: 4.642 (19/10, correções da auditoria); 4.627 (19/10, Langfuse antes da auditoria); 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
   (4.184) tem XML em
   `artefatos/pendencias_geom1_rank03b_2026-09-26/pytest_suite_pos_auditoria.xml`.
   Testes dirigidos: 1.179; os dois achados da auditoria independente foram
@@ -1116,12 +1116,18 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    benchmark fora do trace. Dois achados: `configurar_ambiente_crewai`
    setava `OTEL_SDK_DISABLED`, o que apagava o Langfuse junto (removido, com
    teste), e o resumo de trace rodava com o rastreamento desligado e derrubou
-   um teste de hardening (passou a ser preguiçoso). **Falta:** o responsável
-   criar o projeto no Langfuse Cloud e pôr `LANGFUSE_PUBLIC_KEY`/`SECRET_KEY`
-   no `.env`. Depois, `python -m scripts.gerar_traces_langfuse
-   --permitir-api-paga` (centavos) gera 9 traces e grava o resumo em
-   `artefatos/observabilidade/`. A suíte nunca envia trace: `conftest.py`
-   esvazia as chaves.
+   um teste de hardening (passou a ser preguiçoso). **Traces reais gerados em
+   19/10** no Langfuse Cloud (região EUA, projeto "My Project"), com
+   `python -m scripts.gerar_traces_langfuse --permitir-api-paga
+   --capturar-texto`: 9 perguntas pelo chat real, 9/9 completas na API, custo
+   do servidor igual ao do app, US$ 0,0085 no total. Resumo e journal em
+   `artefatos/observabilidade/` (sobrevivem à retenção de 30 dias). Para o
+   relatório: na DEV003, a recuperação levou 7,3 s, a carga do pipeline 4,4 s
+   e o LLM 1,2 s. Na 1ª pergunta, o guardrail levou 6,8 s (partida a frio do
+   Presidio). Das 5 perguntas `dev` que chegaram ao Gemini, 4 foram
+   rebaixadas pela guarda da RN02. As chaves do `.env` estavam trocadas
+   (pública ↔ secreta) e foram destrocadas. A suíte nunca envia trace:
+   `conftest.py` esvazia as chaves.
    **Auditoria de conformidade em 19/10, sem achado alto.** Corrigidos:
    - M1 (RN06): sem o Presidio, nome de pessoa ia para o trace. Agora
      pergunta, prompt, saída do LLM, resposta e argumentos de ferramenta só

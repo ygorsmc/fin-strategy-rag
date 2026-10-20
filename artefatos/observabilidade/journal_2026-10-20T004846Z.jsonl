@@ -1,0 +1,18 @@
+{"em": "2026-10-20T00:48:46.388065+00:00", "evento": "inicio", "rotulo": "guardrail_rn05", "paga": false}
+{"em": "2026-10-20T00:48:53.953502+00:00", "evento": "fim", "rotulo": "guardrail_rn05", "custo_usd": 0.0, "traces": ["1242e5de34e4934d4ddbbccc6e5ade9b"]}
+{"em": "2026-10-20T00:48:53.953625+00:00", "evento": "inicio", "rotulo": "prospectiva_rn07", "paga": false}
+{"em": "2026-10-20T00:48:57.188428+00:00", "evento": "fim", "rotulo": "prospectiva_rn07", "custo_usd": 0.0, "traces": ["2975d339615a7c9b01faaaad375e0f5d"]}
+{"em": "2026-10-20T00:48:57.188516+00:00", "evento": "inicio", "rotulo": "painel_cvm", "paga": false}
+{"em": "2026-10-20T00:48:57.841555+00:00", "evento": "fim", "rotulo": "painel_cvm", "custo_usd": 0.0, "traces": ["9ec66940cbc434247d0349db3a3bbd88"]}
+{"em": "2026-10-20T00:48:57.841620+00:00", "evento": "inicio", "rotulo": "anonimizacao_rn06", "paga": false}
+{"em": "2026-10-20T00:48:58.453538+00:00", "evento": "fim", "rotulo": "anonimizacao_rn06", "custo_usd": 0.0, "traces": ["1b93c42cc3dea6cf2db904ed5144715c"]}
+{"em": "2026-10-20T00:48:58.453647+00:00", "evento": "inicio", "rotulo": "DEV003", "paga": true}
+{"em": "2026-10-20T00:49:11.782473+00:00", "evento": "fim", "rotulo": "DEV003", "custo_usd": 0.001415, "traces": ["fad8f1a902ec0fcadb65fcbc06b03d18"]}
+{"em": "2026-10-20T00:49:11.782606+00:00", "evento": "inicio", "rotulo": "DEV005", "paga": true}
+{"em": "2026-10-20T00:49:15.487164+00:00", "evento": "fim", "rotulo": "DEV005", "custo_usd": 0.001352, "traces": ["2c32eb66912e9be0c0c106acc0c79f0a"]}
+{"em": "2026-10-20T00:49:15.487249+00:00", "evento": "inicio", "rotulo": "DEV004", "paga": true}
+{"em": "2026-10-20T00:49:19.627103+00:00", "evento": "fim", "rotulo": "DEV004", "custo_usd": 0.001603, "traces": ["8e93cf0a78262b3c12e2b42ec61165cc"]}
+{"em": "2026-10-20T00:49:19.627196+00:00", "evento": "inicio", "rotulo": "DEV008", "paga": true}
+{"em": "2026-10-20T00:49:28.064102+00:00", "evento": "fim", "rotulo": "DEV008", "custo_usd": 0.002291, "traces": ["f54854e1d99ebee4f9f8be2480045793"]}
+{"em": "2026-10-20T00:49:28.064182+00:00", "evento": "inicio", "rotulo": "DEV009", "paga": true}
+{"em": "2026-10-20T00:49:31.740257+00:00", "evento": "fim", "rotulo": "DEV009", "custo_usd": 0.001797, "traces": ["6f6aedf2eefe36a2dc790554f46cdb77"]}

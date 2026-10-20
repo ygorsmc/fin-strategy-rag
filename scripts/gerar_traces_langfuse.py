@@ -77,50 +77,144 @@ def _journal(caminho: Path, evento: dict) -> None:
         f.write(json.dumps({"em": datetime.now(timezone.utc).isoformat(), **evento}, ensure_ascii=False) + "\n")
 
 
-def _conferir_no_servidor(cliente, ids: list[str], prazo_s: float) -> dict[str, dict]:
-    """Espera cada trace aparecer na API e resume suas observações.
+CAMPOS_API = "core,basic,usage,model,metrics"
+
+
+def _resumir(dados: list[dict], custo_local_usd: float) -> dict:
+    """O que o servidor registrou de um trace, e se fecha com o app."""
+    raiz = [o for o in dados if o.get("isRootObservation")]
+    geracoes = [o for o in dados if o.get("type") == "GENERATION"]
+    custo_servidor = sum(float((g.get("costDetails") or {}).get("total", 0.0)) for g in geracoes)
+    resumo = {
+        "observacoes": len(dados),
+        "tipos": sorted({str(o.get("type")) for o in dados}),
+        "latencia_raiz_s": raiz[0].get("latency") if raiz else None,
+        "geracoes": [
+            {
+                "modelo": g.get("model"),
+                "tokens": g.get("usageDetails"),
+                "custo_usd": (g.get("costDetails") or {}).get("total"),
+                "latencia_s": g.get("latency"),
+            }
+            for g in geracoes
+        ],
+        "custo_servidor_usd": round(custo_servidor, 7),
+        # O custo do app vem arredondado a 6 casas no resumo.
+        "custo_confere_com_o_app": abs(custo_servidor - custo_local_usd) <= 1e-6,
+    }
+    faltas = []
+    if not raiz or raiz[0].get("endTime") is None:
+        faltas.append("sem raiz fechada")
+    if custo_local_usd > 0 and not geracoes:
+        faltas.append("chamada paga sem geração")
+    if custo_local_usd > 0 and any((g.get("costDetails") or {}).get("total") is None for g in geracoes):
+        faltas.append("geração sem custo")
+    if not resumo["custo_confere_com_o_app"]:
+        faltas.append("custo do servidor difere do app")
+    resumo["completo"] = not faltas
+    resumo["faltas"] = faltas
+    return resumo
+
+
+def _conferir_no_servidor(cliente, esperados: dict[str, float], prazo_s: float) -> dict[str, dict]:
+    """Espera cada trace chegar inteiro na API e confere contra o app.
 
     A ingestão do Langfuse é assíncrona: `flush` garante a entrega, não a
-    leitura. Por isso há prazo e nova tentativa, em vez de uma espera fixa.
+    leitura, e as observações de um trace aparecem aos poucos. A primeira
+    versão deste script aceitava o trace ao ver a primeira observação, e
+    registrou como conferidos dois traces que ainda não tinham a raiz nem a
+    geração. Agora um trace só conta quando tem a raiz fechada, a geração com
+    custo se a pergunta foi paga, o custo igual ao do app, e a mesma contagem
+    de observações em duas leituras seguidas.
     """
     conferidos: dict[str, dict] = {}
+    contagem_anterior: dict[str, int] = {}
     limite = time.monotonic() + prazo_s
-    pendentes = list(ids)
+    pendentes = list(esperados)
     while pendentes and time.monotonic() < limite:
         for id_trace in list(pendentes):
             try:
-                resposta = cliente.api.observations.get_many(trace_id=id_trace)
+                resposta = cliente.api.observations.get_many(trace_id=id_trace, fields=CAMPOS_API)
             except Exception as exc:
-                conferidos[id_trace] = {"erro": type(exc).__name__}
+                conferidos[id_trace] = {"completo": False, "faltas": [f"erro na API ({type(exc).__name__})"]}
                 continue
-            dados = [
-                # Sem prompt nem resposta: o versionado guarda identidade,
-                # tempo, tokens e custo. O conteúdo fica no Langfuse.
-                {k: v for k, v in (o.dict() if hasattr(o, "dict") else dict(o)).items() if k not in ("input", "output")}
-                for o in getattr(resposta, "data", [])
-            ]
-            if not dados:
-                continue
-            conferidos[id_trace] = {
-                "observacoes": len(dados),
-                "tipos": sorted({str(o.get("type")) for o in dados}),
-                "amostra_campos": sorted(dados[0])[:40],
-                "observacoes_brutas": dados,
-            }
-            pendentes.remove(id_trace)
+            dados = [o.dict() if hasattr(o, "dict") else dict(o) for o in getattr(resposta, "data", [])]
+            resumo = _resumir(dados, esperados[id_trace])
+            resumo["observacoes_brutas"] = dados
+            conferidos[id_trace] = resumo
+            estavel = contagem_anterior.get(id_trace) == len(dados)
+            contagem_anterior[id_trace] = len(dados)
+            if resumo["completo"] and estavel:
+                pendentes.remove(id_trace)
         if pendentes:
             time.sleep(5)
     for id_trace in pendentes:
-        conferidos.setdefault(id_trace, {"erro": "não apareceu na API dentro do prazo"})
+        conferidos.setdefault(id_trace, {"completo": False, "faltas": []})
+        conferidos[id_trace]["faltas"] = conferidos[id_trace].get("faltas", []) + ["prazo esgotado"]
+        conferidos[id_trace]["completo"] = False
     return conferidos
+
+
+def _gravar(resumo: dict, conferidos: dict[str, dict], cliente, carimbo: str) -> int:
+    for linha in resumo["perguntas"]:
+        linha["no_servidor"] = {
+            t: {k: v for k, v in conferidos.get(t, {}).items() if k != "observacoes_brutas"}
+            for t in linha["traces"]
+        }
+        if not linha.get("urls") or any(str(u).startswith("indisponível") for u in linha["urls"]):
+            try:
+                linha["urls"] = [cliente.get_trace_url(trace_id=t) for t in linha["traces"]]
+            except Exception as exc:
+                linha["urls"] = [f"indisponível ({type(exc).__name__})"]
+    ids = [t for linha in resumo["perguntas"] for t in linha["traces"]]
+    resumo["traces_completos"] = sum(1 for t in ids if conferidos.get(t, {}).get("completo"))
+    resumo["traces_total"] = len(ids)
+    destino = SAIDA / f"traces_{carimbo}.json"
+    destino.write_text(json.dumps(resumo, ensure_ascii=False, indent=1), encoding="utf-8")
+    brutas = SAIDA / f"observacoes_{carimbo}.json"
+    brutas.write_text(
+        # Só identidade, tempo, modelo, tokens e custo: sem `io` na consulta,
+        # prompt e resposta ficam no Langfuse e fora do versionado.
+        json.dumps({t: c.get("observacoes_brutas") for t, c in conferidos.items()}, ensure_ascii=False, indent=1, default=str),
+        encoding="utf-8",
+    )
+    print(f"\n{resumo['traces_completos']}/{len(ids)} traces completos na API. Custo total US$ {resumo['custo_total_usd']:.6f}.")
+    for linha in resumo["perguntas"]:
+        for t in linha["traces"]:
+            c = conferidos.get(t, {})
+            print(f"- {linha['rotulo']}: {'completo' if c.get('completo') else 'INCOMPLETO ' + str(c.get('faltas'))}"
+                  f" · {c.get('observacoes')} observações · raiz {c.get('latencia_raiz_s')} s")
+    print(f"Resumo: {destino.relative_to(RAIZ)}")
+    return 0 if resumo["traces_completos"] == len(ids) else 2
+
+
+def _reconferir(caminho: Path, prazo_s: float) -> int:
+    """Confere de novo, no servidor, os traces de um resumo já gravado. Sem custo."""
+    from src import observabilidade
+    from src.config import carregar_config
+
+    resumo = json.loads(caminho.read_text(encoding="utf-8"))
+    estado = observabilidade.configurar(carregar_config())
+    if not estado.ativo:
+        print(f"Langfuse desligado: {estado.motivo}.")
+        return 1
+    esperados = {t: float(linha["custo_usd"]) for linha in resumo["perguntas"] for t in linha["traces"]}
+    conferidos = _conferir_no_servidor(observabilidade._cliente, esperados, prazo_s)
+    resumo["reconferido_em"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H%M%SZ")
+    codigo = _gravar(resumo, conferidos, observabilidade._cliente, resumo["gerado_em"])
+    observabilidade.desligar()
+    return codigo
 
 
 def principal(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--permitir-api-paga", action="store_true")
     ap.add_argument("--capturar-texto", action="store_true")
-    ap.add_argument("--prazo-conferencia-s", type=float, default=120.0)
+    ap.add_argument("--prazo-conferencia-s", type=float, default=180.0)
+    ap.add_argument("--reconferir", type=Path, help="resumo já gravado: só confere no servidor, sem perguntar de novo")
     args = ap.parse_args(argv)
+    if args.reconferir:
+        return _reconferir(args.reconferir, args.prazo_conferencia_s)
 
     # Antes de o app carregar o `.env`: `load_dotenv` não sobrescreve o que
     # já está no ambiente.
@@ -178,15 +272,8 @@ def principal(argv=None) -> int:
         print(f"- {rotulo}: {linha['modo']} · US$ {linha['custo_usd']:.6f} · {duracao:.1f} s · trace {linha['traces']}")
 
     observabilidade.descarregar()
-    cliente = observabilidade._cliente
-    ids = [t for linha in linhas for t in linha["traces"]]
-    conferidos = _conferir_no_servidor(cliente, ids, args.prazo_conferencia_s)
-    for linha in linhas:
-        linha["no_servidor"] = {t: {k: v for k, v in conferidos.get(t, {}).items() if k != "observacoes_brutas"} for t in linha["traces"]}
-        try:
-            linha["urls"] = [cliente.get_trace_url(trace_id=t) for t in linha["traces"]]
-        except Exception as exc:
-            linha["urls"] = [f"indisponível ({type(exc).__name__})"]
+    esperados = {t: linha["custo_usd"] for linha in linhas for t in linha["traces"]}
+    conferidos = _conferir_no_servidor(observabilidade._cliente, esperados, args.prazo_conferencia_s)
     resumo = {
         "gerado_em": carimbo,
         "host": estado.host,
@@ -196,18 +283,9 @@ def principal(argv=None) -> int:
         "custo_total_usd": round(sum(linha["custo_usd"] for linha in linhas), 6),
         "perguntas": linhas,
     }
-    destino = SAIDA / f"traces_{carimbo}.json"
-    destino.write_text(json.dumps(resumo, ensure_ascii=False, indent=1), encoding="utf-8")
-    brutas = SAIDA / f"observacoes_{carimbo}.json"
-    brutas.write_text(
-        json.dumps({t: c.get("observacoes_brutas") for t, c in conferidos.items()}, ensure_ascii=False, indent=1, default=str),
-        encoding="utf-8",
-    )
-    chegaram = sum(1 for t in ids if "observacoes" in conferidos.get(t, {}))
-    print(f"\n{chegaram}/{len(ids)} traces conferidos na API. Custo total US$ {resumo['custo_total_usd']:.6f}.")
-    print(f"Resumo: {destino.relative_to(RAIZ)}")
+    codigo = _gravar(resumo, conferidos, observabilidade._cliente, carimbo)
     observabilidade.desligar()
-    return 0 if chegaram == len(ids) else 2
+    return codigo
 
 
 if __name__ == "__main__":
