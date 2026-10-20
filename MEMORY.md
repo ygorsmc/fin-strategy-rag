@@ -1230,6 +1230,14 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
      porque todo deepeval fixa `click<8.4` e o huggingface-hub exige
      `>=8.4.2`. Para não vazar nada: telemetria, autoload de `.env` e keyfile
      legado desligados; plugin de pytest fora da suíte.
+   **(4) Relatório técnico, 20/10.** Redigido num doc do Claude Docs,
+   "Relatório Técnico — Etapa 2"
+   (https://claude.ai/code/artifact/7eb07d56-f372-4416-b21e-f870f2954042),
+   com 1.384 palavras, dentro do limite de 700–1.500 da disciplina. Tem
+   dataset, métricas, agentes, um diagrama da orquestração, Langfuse, DeepEval
+   e pontos fracos. **Falta o responsável inserir a captura de tela do
+   Langfuse** no lugar marcado. A retenção do plano gratuito é de 30 dias, e
+   os traces de 19/10 somem por volta de 18/11.
    **Pendências para o passo (2), agentes no chat:**
    - Se algum agente receber `max_execution_time`, o CrewAI roda a tarefa
      numa thread. A contextvar da consulta não chega lá, e as gerações e
