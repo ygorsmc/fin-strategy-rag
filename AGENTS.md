@@ -687,6 +687,44 @@ estão no `corpus/metadados.csv`, não foram chunkados e não estão no índice.
 Indexá-los muda o `hash_corpus`, o que invalida a rodada congelada e os números
 publicados — é decisão explícita, nunca efeito lateral.
 
+### 3.16 O modelo entra na caixa dos agentes do produto, pelo artefato agregado (2026-10-19)
+
+O §9 dizia "modelo preditivo [...] fora da caixa de ferramentas do agente", e
+`src/ferramentas.py` registra por que `prever_risco` saiu em 07/08. **Isso
+mudou para o produto, e só para ele.** Os agentes do chat ganharam
+`consultar_modelo_prejuizo`; os braços A/B/C do experimento continuam com as
+quatro ferramentas e o prompt `a3`.
+
+**Motivo.** A disciplina AI Factory (Etapa 2) pede agentes com ferramentas
+que alcancem as camadas reais do sistema, o modelo de ML entre elas, e o
+responsável aprovou o desenho em 19/10: o modelo entra, a RN07 não afrouxa.
+
+**Por que não é `prever_risco` renomeado.** As três razões da remoção foram
+respondidas, não contornadas:
+
+1. **Juízo prospectivo sobre companhia nomeada.** Na instância pública a
+   ferramenta não recebe companhia e não devolve escore: devolve o modelo
+   (AUC, treino), o panorama agregado e o regime histórico por porte, os
+   mesmos blocos que o chat público já mostra pela rota prospectiva (§3.6).
+   Dado um **valor** de ativo, diz a faixa dele, sem saber de quem é; o agente
+   obtém o ativo no painel antes, e é isso que torna a tarefa composta. O
+   escore por companhia só existe no modo local, como na rota, e na instância
+   pública os escores nem são carregados (`TestModeloNoProduto`).
+2. **Fora de domínio para os cinco bancos.** A ferramenta não é sobre eles: é
+   sobre o painel inteiro.
+3. **Saída constante.** Panorama e regime por porte variam e informam.
+
+**O que continua valendo.** Nada importa `src.modelo` em tempo de resposta
+(`TestRN07`); o portão da RN07 em `responder_com_guardrails` recusa a pergunta
+prospectiva antes de qualquer agente; o agregado passa pelas mesmas guardas de
+vazamento por eliminação (`_agregado_seguro`, `BANDA_PUBLICAVEL`).
+
+**O que esta decisão NÃO fecha.** O texto do agente não é verificado contra a
+leitura errada da taxa por porte ("a chance de prejuízo do banco X é 21,9%").
+O prompt do produto proíbe essa frase (`INSTRUCAO_MODELO`) e a ferramenta
+devolve o aviso junto, mas é instrução, não código. Fechar exige um detector de
+saída para projeção sobre emissor nomeado, que não existe.
+
 ## 4. Contratos e regras invioláveis
 
 ### 4.1 Regras de negócio RN01–RN12
@@ -699,7 +737,7 @@ publicados — é decisão explícita, nunca efeito lateral.
 | RN04 | SQL do painel roda somente-leitura, sobre lista branca, com DDL/DML bloqueado por análise sintática, `LIMIT` e timeout — falha de guarda devolve erro, nunca executa | `src/dados_estruturados.py` · `tests/test_dados_estruturados.py` |
 | RN05 | Sem recomendação de investimento, preço-alvo ou aconselhamento pessoal. Âncora legal: **Res. CVM 20/2021** (análise) e **19/2021** (consultoria); cada subtipo de recusa mapeia à sua | `src/seguranca.py` · `tests/test_seguranca.py` |
 | RN06 | PII do usuário é anonimizada antes de qualquer chamada externa e nunca entra em log, trace ou cache | `src/seguranca.py` · `src/reconhecedores_br.py` |
-| RN07 | Previsão sobre companhia nomeada é **condicional ao modo** (§3.6): instância pública recusa e entrega agregados; modo local/autenticado expõe o escore etiquetado. Em nenhum dos dois o caminho interativo importa `src.modelo` | `src/projecao.py` · `src/modelo/` · `tests/test_projecao.py` · `TestRN07` |
+| RN07 | Previsão sobre companhia nomeada é **condicional ao modo** (§3.6): instância pública recusa e entrega agregados; modo local/autenticado expõe o escore etiquetado. Em nenhum dos dois o caminho interativo importa `src.modelo`. Os agentes do produto leem o mesmo artefato agregado, com a mesma fronteira (§3.16) | `src/projecao.py` · `src/modelo/` · `tests/test_projecao.py` · `TestRN07` |
 | RN08 | Verbete de glossário de métrica gerencial é sempre atribuído a instituição e release de origem | `src/ingestao.py` (glossário, RF19) |
 | RN09 | `cd_conta` nunca é chave de significado sozinho: todo conceito passa pelo mapa semântico validado; consulta que referencie `cd_conta` direto é rejeitada pela lista branca | `src/mapa_contas.py` · gate G4 |
 | RN10 | Valor derivado por aritmética entre períodos — notadamente o 4T, que não existe como ITR — sai marcado como **derivado**, com a conta explicitada | `src/dados_estruturados.py` · `app_streamlit.py` |
@@ -903,7 +941,7 @@ Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisã
 | 8 | **Conjunto-padrão** — 45 congeladas + ~10 dev, conferidas pela classe de verificação | `conjunto-padrao` | ✅ congelado 2026-07-29 · ⬜ colunas novas da revisão 2 (`cobertura_esperada`, `motivo_recusa_esperado`, `base_esperada`, `rota_esperada`) |
 | 9 | **Comparação de estratégias E0–E4** — só `dev` na iteração; o congelado roda ao final, com log por execução | `observabilidade-avaliacao` | ✅ rodada em 2026-08-21 no congelado (45 × 5 = 225 chamadas, v6) — factual E1 0,400 · E2 0,333 · E3 **0,467** · E4 0,400; comparativa (métrica nova) E1 0,000 · E2/E3 0,100 · E4 **0,200**; E4 × E3 **indistinguível** (2×3 discordâncias, limiar 6) pela 3ª rodada seguida. Ver `MEMORY.md` |
 | 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ✅ **2026-08-23**, e o único modelo treinado do projeto. Painel de treino próprio (2011–2026, §3.5), walk-forward de 47 folds. **Passou por quatro rodadas de revisão que retrataram três achados da primeira**, entre eles um recorte setorial contaminado (`is_banco`: 42 de 49 eventos não eram banco) e vazamento no trimestre de validação. **Números, manchete corrigida e retratações:** `MEMORY.md` e `resultados/` (`modelo_preditivo_2026-08-23.md`, `revisoes_modelo_2026-08-23.md`, `robustez_modelo_2026-08-24.md`, `debate_modelo_2026-08-25.md`). O que foi medido e **descartado** — SMOTE, ajuste de hiperparâmetros, recalibração, controle setorial — está em `becos_sem_saida.md` §A.2–A.4 |
-| 11 | **Ferramentas + agentes** — `verificar_cobertura`, Investigador e Auditor com filtro de contexto **em código**, teste que falha se o rastro vazar, braços A/B/C, triagem de cobertura; projeções depois | `agentes-investigacao` | ⬜ |
+| 11 | **Ferramentas + agentes** — `verificar_cobertura`, Investigador e Auditor com filtro de contexto **em código**, teste que falha se o rastro vazar, braços A/B/C, triagem de cobertura; projeções depois | `agentes-investigacao` | ✅ camada implementada e testada · ✅ **ligada ao chat em 2026-10-19** (modo "Agentes" do Streamlit, com o modelo pelo artefato agregado, §3.16, e trace no Langfuse) (a comparação dos braços é a etapa 12) |
 | 12 | **Injeção de falha (RF25) e comparação dos três braços (RF26)** — registrar o veredito, inclusive se for "o determinístico basta" | `agentes-investigacao` + `observabilidade-avaliacao` | ⬜ |
 | 13 | **Langfuse + DeepEval** — traces por etapa e matriz de concordância com a auditoria manual | `observabilidade-avaliacao` | 🔄 matriz de concordância **medida** em 2026-08-23 (0,867, `scripts/medir_juiz_groundedness.py`) · ✅ Langfuse **instrumentado** em 2026-10-19 (`src/observabilidade.py`: trace por consulta do chat e span por ferramenta de agente, RN06 na máscara do SDK, texto livre só com o Presidio ligado, benchmark fora do trace; auditado no mesmo dia, sem achado alto) · ✅ 9 traces reais no Langfuse Cloud em 2026-10-19, 9/9 conferidos na API com custo igual ao do app (`artefatos/observabilidade/`) · ⬜ suíte DeepEval formal |
 | 14 | **Guardrails** — ataques bloqueados × falso bloqueio medido nas 45 legítimas (meta 0) | `seguranca-guardrails` | ✅ **completa** em 2026-08-21 — base determinística, ligada ao caminho interativo, **Presidio e Llama Prompt Guard 2 (86M) integrados** — **20/20 ataques · 0/45 falso bloqueio de entrada · 0/855 de saída** (`resultados/guardrails.json`, com as duas camadas ML ligadas na contraprova); `src/seguranca.py`, `src/reconhecedores_br.py`, `src/reconhecedor_presidio.py`, `src/prompt_guard.py`, `conjunto_padrao/ataques.csv`, `responder_com_guardrails` em `src/agentes.py`, portão em `app_streamlit.py`, `requirements-guardrails.txt`, 87 testes · `presidio_habilitado`/`prompt_guard_habilitado` desligados por padrão (RNF12) — pesos do Prompt Guard 2 já baixados e pinados (`guardrails_modelo_injecao_revision`), `HF_TOKEN` só foi necessário no download, runtime usa `local_files_only` |
@@ -1017,7 +1055,8 @@ respostas cacheadas do demo. Fora do Git: PDFs brutos, ZIPs da CVM,
 congeladas no caminho determinístico, com log JSONL; camada de agentes medida
 em conjunto próprio, com o veredito dos três braços publicado **mesmo se for
 negativo**; guardrails com ataques bloqueados e falso bloqueio medidos; modelo
-preditivo contra baselines, fora da caixa de ferramentas do agente; números
+preditivo contra baselines, fora da caixa de ferramentas do agente no
+experimento e, no produto, só pelo artefato agregado (§3.16); números
 reais no README (metas × resultados) e resumo executivo (spec 5.18).
 
 Critério de "pronto" completo: `.docs/especificacao.md` §7. O repositório final

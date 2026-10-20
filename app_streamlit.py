@@ -1468,6 +1468,107 @@ def responder_pergunta_livre(
     }
 
 
+MODO_AGENTES = "Agentes (Investigador + Auditor)"
+
+# Perguntas de exemplo do modo agentes. Cada uma exige mais de uma ferramenta,
+# em ordem: é o que mostra a orquestração, e não um agente que responde a uma
+# consulta só.
+EXEMPLOS_AGENTES = (
+    "Qual foi o lucro líquido do Banco Inter no 3T2025 e em que faixa de porte "
+    "de ativo ele se encaixa no modelo preditivo de prejuízo?",
+    "O que o release do Itaú diz sobre a margem financeira gerencial no 3T2025, "
+    "e quanto o painel da CVM registra de lucro líquido no mesmo trimestre?",
+    "Quantas companhias o modelo preditivo sinaliza no trimestre corrente, e com "
+    "que AUC ele foi validado?",
+)
+
+
+def _papel_legivel(papel: str) -> str:
+    return {"investigador": "Investigador", "auditor": "Auditor"}.get(papel, papel)
+
+
+def responder_com_agentes(
+    pergunta: str, orcamento_restante_usd: float | None = None
+) -> dict:
+    """Pergunta pelos agentes do produto: Investigador + Auditor (spec 5.9, §3.16).
+
+    O Investigador responde com cinco ferramentas (cobertura, trechos do
+    corpus no ChromaDB, painel da CVM no DuckDB, indicadores e o modelo
+    preditivo lido do artefato agregado). O Auditor recebe só a afirmação e as
+    citações e tenta derrubá-las com caixa própria. Guardrails, RN07 e RN01/RN02
+    são os de `responder_com_guardrails`, verificados por código.
+
+    Cada chamada de LLM passa por `ControleOrcamento` com o saldo da sessão como
+    teto. O custo a debitar é o que esse controle confirmou, também quando a
+    execução falha no meio: a chamada feita foi paga.
+    """
+    from src.agentes import (
+        ControleOrcamento,
+        fabrica_ferramentas_padrao,
+        fabrica_llm_padrao,
+        responder_com_guardrails,
+    )
+    from src.ferramentas import FERRAMENTAS_DO_PRODUTO
+
+    pergunta = validar_pergunta_livre(pergunta)
+    saldo = min(
+        config.orcamento_teto_usd,
+        config.orcamento_teto_usd
+        if orcamento_restante_usd is None
+        else float(orcamento_restante_usd),
+    )
+    if not math.isfinite(saldo) or saldo <= 0:
+        raise RuntimeError("Sem saldo de orçamento na sessão.")
+    # Índice, painel e recuperador vêm dos caches do app: sem isso cada agente
+    # abriria o Chroma de novo, e a pergunta pagaria a carga duas vezes.
+    rota = carregar_rota_estruturada() or {}
+    recuperador = None
+    try:
+        from src.indexacao import calcular_identidade_extracao
+
+        with observabilidade.etapa("pipeline.carregar"):
+            recuperador, _, _ = _pipeline_ao_vivo(calcular_identidade_extracao(config))
+    except Exception as exc:  # buscar_trechos devolve o erro ao agente
+        LOGGER.warning("agentes sem recuperador pronto (tipo=%s).", type(exc).__name__)
+    orcamento = ControleOrcamento(saldo)
+    try:
+        resposta = responder_com_guardrails(
+            pergunta,
+            config,
+            fabrica_llm=fabrica_llm_padrao(config, orcamento),
+            fabrica_ferramentas=fabrica_ferramentas_padrao(
+                config,
+                indice_cobertura=rota.get("indice"),
+                recuperador=recuperador,
+                leitor=rota.get("leitor"),
+                nomes=FERRAMENTAS_DO_PRODUTO,
+            ),
+        )
+    except Exception as exc:
+        raise FalhaConsultaAoVivo(orcamento.acumulado_usd) from exc
+
+    conteudo = resposta.resposta or "—"
+    if resposta.citacoes and not resposta.recusa:
+        conteudo += "\n\n" + "\n".join(f"> 📄 {c}" for c in resposta.citacoes)
+    if resposta.veredito_auditor:
+        conteudo += f"\n\n**Auditor:** {resposta.veredito_auditor.replace('_', ' ')}."
+    rastro = [
+        f"{_papel_legivel(c.papel)} · `{c.ferramenta}` · "
+        + (f"falhou ({c.erro})" if c.erro else (c.resumo or "ok"))
+        for c in resposta.chamadas
+    ]
+    return {
+        "pergunta_exibida": resposta.pergunta,
+        "resposta": _redigir_para_exibicao(conteudo),
+        "rastro_agentes": rastro,
+        "veredito_auditor": resposta.veredito_auditor,
+        "custo_usd": float(orcamento.acumulado_usd),
+        "consumiu_chamada": orcamento.chamadas > 0,
+        "modo": "agentes · Investigador + Auditor",
+        "provedor": f"{config.llm_provider}/{resposta.uso.modelo or '—'}",
+    }
+
+
 # --- Estado de sessão -------------------------------------------------------
 if "historico" not in st.session_state:
     st.session_state.historico = []  # [{papel, conteudo, fontes, provedor, modo}]
@@ -1508,7 +1609,8 @@ modo_livre_disponivel = (
 )
 opcoes_modo = ["Demonstração (cacheado)"]
 if config.habilitar_perguntas_livres:
-    opcoes_modo.append("Pergunta livre")
+    # Os agentes custam chamadas pagas, então ficam atrás do mesmo opt-in.
+    opcoes_modo.extend(["Pergunta livre", MODO_AGENTES])
 modo = st.sidebar.radio(
     "Modo",
     opcoes_modo,
@@ -1599,6 +1701,10 @@ for msg in st.session_state.historico:
             with st.expander("Procedência no painel da CVM (RN01)"):
                 for citacao in msg["citacoes"]:
                     st.markdown(f"- {_escapar_cifrao(citacao)}")
+        if msg.get("rastro_agentes"):
+            with st.expander("Como os agentes chegaram aqui (ferramentas chamadas)"):
+                for linha in msg["rastro_agentes"]:
+                    st.markdown(f"- {_escapar_cifrao(linha)}")
         if msg.get("gabarito"):
             st.info(f"Gabarito verificado: {msg['gabarito']}")
         if msg.get("modo"):
@@ -1800,6 +1906,78 @@ def registrar_desfecho(rastro: observabilidade.Observacao, tamanho_antes: int) -
     )
 
 
+def responder_no_chat_com_agentes(
+    pergunta: str, rastro: observabilidade.Observacao
+) -> bool:
+    """Atende uma pergunta do modo agentes e diz se a tela deve recarregar.
+
+    Cota e orçamento seguem a regra do modo livre: debita o que foi pago,
+    inclusive numa falha depois de ter chamado o modelo, e não debita a cota
+    quando nada chegou ao provedor (guardrail ou RN07 barraram antes).
+    """
+    try:
+        texto = validar_pergunta_livre(pergunta)
+    except ValueError as exc:
+        st.error(str(exc))
+        return False
+    try:
+        item = responder_com_agentes(
+            texto,
+            orcamento_restante_usd=max(
+                0.0, config.orcamento_teto_usd - st.session_state.custo_usd_acumulado
+            ),
+        )
+    except FalhaConsultaAoVivo as exc:
+        st.session_state.custo_usd_acumulado = _contabilizar_reserva_falha(
+            st.session_state.custo_usd_acumulado, exc, config.orcamento_teto_usd
+        )
+        if exc.custo_reservado_usd > 0:
+            st.session_state.perguntas_livres_usadas += 1
+        LOGGER.warning(
+            "Agentes falharam de forma segura (tipo=%s).", type(exc.__cause__).__name__
+        )
+        # A pergunta crua não vai para o histórico: sem a resposta dos agentes
+        # não há o texto anonimizado, e a RN06 vale para a tela também.
+        st.session_state.historico.append(
+            {
+                "papel": "assistant",
+                "conteudo": (
+                    "A consulta aos agentes falhou de forma segura. Nenhuma "
+                    "resposta financeira foi apresentada; o custo já incorrido "
+                    "foi debitado. Tente de novo ou use o modo pergunta livre."
+                ),
+                "fontes": [],
+                "modo": "agentes (falha segura)",
+                "provedor": config.llm_provider,
+                "streamar": True,
+            }
+        )
+        return True
+    except Exception as exc:
+        LOGGER.warning("Agentes indisponíveis (tipo=%s).", type(exc).__name__)
+        st.error("Os agentes não estão disponíveis nesta instância.")
+        return False
+    rastro.atualizar(entrada=observabilidade.texto_livre(item["pergunta_exibida"]))
+    st.session_state.custo_usd_acumulado += item["custo_usd"]
+    if item["consumiu_chamada"]:
+        st.session_state.perguntas_livres_usadas += 1
+    st.session_state.historico.append(
+        {"papel": "user", "conteudo": item["pergunta_exibida"]}
+    )
+    st.session_state.historico.append(
+        {
+            "papel": "assistant",
+            "conteudo": item["resposta"],
+            "rastro_agentes": item["rastro_agentes"],
+            "fontes": [],
+            "modo": item["modo"],
+            "provedor": item["provedor"],
+            "streamar": True,
+        }
+    )
+    return True
+
+
 if modo == "Demonstração (cacheado)":
     if cache_aguarda_auditoria:
         st.warning(
@@ -1914,6 +2092,42 @@ if modo == "Demonstração (cacheado)":
                         }
                     )
                     registrar_desfecho(rastro, tamanho_antes)
+                st.rerun()
+elif modo == MODO_AGENTES:
+    with st.expander("Como funcionam os agentes, e o que perguntar"):
+        st.markdown(
+            "Dois agentes trabalham em sequência. O **Investigador** responde "
+            "com ferramentas: os releases indexados (ChromaDB), o painel "
+            "contábil da CVM (DuckDB), os indicadores e o **modelo preditivo "
+            "de prejuízo**, lido do artefato agregado. O **Auditor** recebe só "
+            "a afirmação e as citações, sem o raciocínio do Investigador, e "
+            "refaz as consultas para confirmar, contestar ou dizer que não "
+            "reproduz. Cada resposta custa algumas chamadas ao modelo de "
+            "linguagem.\n\nPerguntas que exigem mais de uma ferramenta:\n\n"
+            + "\n".join(f"- `{exemplo}`" for exemplo in EXEMPLOS_AGENTES)
+        )
+    pergunta = st.chat_input(
+        "Pergunte aos agentes (ex.: lucro do Banco Inter no 3T2025 e a faixa "
+        "de porte no modelo preditivo)",
+        key="entrada_agentes",
+    )
+    if pergunta:
+        if not modo_livre_disponivel:
+            st.error(
+                "Perguntas livres estão desabilitadas ou o limite da sessão foi "
+                "atingido. O modo demonstração continua disponível."
+            )
+        else:
+            tamanho_antes = len(st.session_state.historico)
+            with observabilidade.consulta(
+                "agentes",
+                sessao=st.session_state.id_sessao_rastro,
+                tags=("agentes", config.llm_provider),
+            ) as rastro:
+                with st.spinner("Investigador e Auditor trabalhando…"):
+                    recarregar = responder_no_chat_com_agentes(pergunta, rastro)
+                registrar_desfecho(rastro, tamanho_antes)
+            if recarregar:
                 st.rerun()
 else:
     pergunta = st.chat_input(

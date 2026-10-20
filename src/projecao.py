@@ -732,6 +732,144 @@ def responder_projecao(
     )
 
 
+#: Texto que acompanha toda consulta do agente ao modelo. A taxa por porte é a
+#: leitura mais fácil de distorcer: ela vira "a chance de prejuízo do banco X"
+#: numa frase descuidada, e aí é juízo prospectivo sobre emissor nomeado.
+AVISO_CONSULTA_MODELO = (
+    "A taxa por porte é a frequência HISTÓRICA de prejuízo de todas as "
+    "companhias daquela faixa de ativo, não a probabilidade de prejuízo de uma "
+    "companhia. Não a apresente como previsão para companhia nomeada (RN07, "
+    "Res. CVM 20/2021)."
+)
+
+
+def consulta_do_modelo(
+    panorama: Panorama,
+    *,
+    ativo_total_reais: float | None = None,
+    cd_cvm: str | None = None,
+    previsao_por_emissor_habilitada: bool = False,
+    escores: Mapping[str, float] | None = None,
+) -> dict[str, object]:
+    """O que a ferramenta de agente `consultar_modelo_prejuizo` devolve.
+
+    Mesma fronteira da rota prospectiva, montada para um agente em vez de um
+    leitor:
+
+    * **sempre:** o modelo (alvo, AUC do walk-forward, tamanho e composição do
+      treino), o regime histórico por porte e os agregados do painel que
+      passam nas guardas de vazamento por eliminação;
+    * **com `ativo_total_reais`:** a faixa de porte de um VALOR de ativo. A
+      ferramenta não sabe de quem é o ativo, então não há o que vazar sobre
+      companhia nenhuma; quem o obtém é o agente, pelo painel da CVM;
+    * **com `cd_cvm`:** o escore da companhia só no modo local
+      (`previsao_por_emissor_habilitada`). Na instância pública a resposta diz
+      que o escore não é exposto, e não carrega número nenhum dele.
+
+    Nada aqui importa `src.modelo`: o panorama e os escores são artefatos
+    calculados offline, como na rota prospectiva.
+    """
+    limites = sorted({faixa.limite_inferior_reais for faixa in panorama.faixas_de_porte})
+
+    def superior(faixa: FaixaDePorte) -> float | None:
+        acima = [limite for limite in limites if limite > faixa.limite_inferior_reais]
+        return acima[0] if acima else None
+
+    resultado: dict[str, object] = {
+        "documento": "panorama do modelo preditivo de prejuízo",
+        "trimestre": panorama.trimestre_referencia,
+        "modelo": {
+            "alvo": panorama.alvo,
+            "natureza": (
+                "classificador supervisionado treinado offline no painel "
+                "contábil da CVM; esta consulta lê o artefato agregado e não "
+                "roda inferência"
+            ),
+            "auc_walk_forward": (
+                round(panorama.auc_walk_forward, 3)
+                if panorama.auc_walk_forward is not None
+                else None
+            ),
+            "n_observacoes_treino": panorama.n_observacoes_treino,
+            "fracao_nao_financeira_treino_pct": round(
+                100 * panorama.fracao_nao_financeira_treino, 1
+            ),
+        },
+        # Os limites em reais vão como número, além do rótulo: o agente escreve
+        # a faixa ("R$ 10–100 bi"), e a verificação da RN02 só aceita valor em
+        # dinheiro que alguma ferramenta tenha devolvido como número. Os dois
+        # limites, para não depender de a tabela trazer a faixa vizinha.
+        "regime_por_porte": [
+            {
+                "faixa": faixa.rotulo,
+                "limite_inferior_reais": faixa.limite_inferior_reais,
+                "limite_superior_reais": superior(faixa),
+                "taxa_historica_prejuizo_pct": round(100 * faixa.taxa_prejuizo, 1),
+                "n_observacoes": faixa.n_observacoes,
+            }
+            for faixa in panorama.faixas_de_porte
+        ],
+        "aviso": AVISO_CONSULTA_MODELO,
+    }
+    if _agregado_seguro(panorama, panorama.n_companhias_avaliadas):
+        resultado["panorama_mercado"] = {
+            "n_companhias_avaliadas": panorama.n_companhias_avaliadas,
+            "n_acima_do_dobro_da_base": panorama.n_acima_do_dobro_da_base,
+            "limiar_pct": round(100 * panorama.limiar_dobro_da_base, 1),
+            "taxa_base_painel_pct": round(100 * panorama.taxa_base_painel, 1),
+        }
+    if _bloco_trimestre_corrente(panorama):
+        corrente = panorama.trimestre_corrente
+        resultado["trimestre_corrente"] = {
+            "trimestre": corrente.trimestre,
+            "n_hoje_lucrativas": corrente.n_hoje_lucrativas,
+            "n_acima_do_limiar": corrente.n_acima_do_limiar,
+            "n_ja_em_prejuizo": corrente.n_ja_em_prejuizo,
+            "limiar_pct": round(100 * corrente.limiar, 1),
+        }
+    if ativo_total_reais is not None:
+        valor = float(ativo_total_reais)
+        if not valor >= 0 or valor == float("inf"):
+            raise ValueError("ativo_total_reais deve ser um valor em reais, não negativo")
+        faixa = _faixa_da_companhia(panorama, valor)
+        resultado["faixa_do_ativo_informado"] = {
+            "ativo_total_reais": valor,
+            "faixa": faixa.rotulo if faixa else None,
+            "limite_inferior_reais": faixa.limite_inferior_reais if faixa else None,
+            "limite_superior_reais": superior(faixa) if faixa else None,
+            "taxa_historica_prejuizo_pct": (
+                round(100 * faixa.taxa_prejuizo, 1) if faixa else None
+            ),
+        }
+    if cd_cvm:
+        if not previsao_por_emissor_habilitada:
+            resultado["escore_por_emissor"] = {
+                "exposto": False,
+                "motivo": (
+                    "instância pública: o escore de companhia nomeada não é "
+                    "exposto (RN07, Res. CVM 20/2021)"
+                ),
+            }
+        else:
+            if escores is None:
+                raise PrevisaoPorEmissorDesabilitadaError(
+                    "previsão por emissor habilitada mas nenhum escore foi carregado"
+                )
+            escore = escores.get(cd_cvm)
+            resultado["escore_por_emissor"] = {
+                "exposto": escore is not None,
+                "cd_cvm": cd_cvm,
+                "trimestre": panorama.trimestre_dos_escores,
+                "escore_pct": round(100 * escore, 1) if escore is not None else None,
+                "etiqueta": (
+                    "USO INTERNO, NÃO PUBLICÁVEL: modo local/autenticado. Fora "
+                    "de domínio para banco (o treino é quase todo de companhias "
+                    "não financeiras). Não é recomendação de investimento."
+                ),
+            }
+    return resultado
+
+
 def _faixa_da_companhia(
     panorama: Panorama, ativo_total: float | None = None
 ) -> FaixaDePorte | None:

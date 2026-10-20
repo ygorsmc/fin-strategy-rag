@@ -608,9 +608,9 @@ outra tarefa.
   **`auditoria_manual_pendente`**. O README ainda publica a anterior
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
-- Suíte atual: **4.644 casos passando, zero falhas/erros/skips**, 28 avisos
-  (19/10, traces reais e conferência estrita do script, pelo próprio `.venv`).
-  Antes: 4.642 (19/10, correções da auditoria); 4.627 (19/10, Langfuse antes da auditoria); 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
+- Suíte atual: **4.661 casos passando, zero falhas/erros/skips**, 28 avisos
+  (19/10, agentes no chat com o modelo, pelo próprio `.venv`).
+  Antes: 4.644 (19/10, traces reais); 4.642 (19/10, correções da auditoria); 4.627 (19/10, Langfuse antes da auditoria); 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
   (4.184) tem XML em
   `artefatos/pendencias_geom1_rank03b_2026-09-26/pytest_suite_pos_auditoria.xml`.
   Testes dirigidos: 1.179; os dois achados da auditoria independente foram
@@ -1140,6 +1140,19 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    - O1 e O4: `tests/test_responder_no_chat.py` trava cota e orçamento
      ramo a ramo; `CREWAI_DISABLE_TRACKING` é a segunda trava da telemetria
      do CrewAI.
+   **(2) agentes no chat, código pronto em 19/10:** modo "Agentes
+   (Investigador + Auditor)" no Streamlit (`responder_com_agentes` e
+   `responder_no_chat_com_agentes`), atrás do mesmo opt-in das perguntas
+   livres. O Investigador tem cinco ferramentas: ChromaDB, DuckDB,
+   indicadores, cobertura e `consultar_modelo_prejuizo`, o modelo pelo
+   artefato agregado (AGENTS §3.16, decisão aprovada pelo responsável). O
+   experimento A/B/C segue com quatro e prompt `a3`. Testes provam a tarefa
+   composta (ativo no painel → faixa no modelo → Auditor confirma) e que as
+   chamadas do CrewAI caem dentro do span de cada agente (mesma thread).
+   Achado ao testar: o agente escreve a faixa "R$ 10–100 bi", e a RN02 só
+   aceitava dinheiro devolvido como número; a ferramenta passou a devolver
+   os limites da faixa em reais. **Falta:** rodar perguntas reais pelos
+   agentes (custo de centavos, pedir OK) e gerar os traces dos agentes.
    **Pendências para o passo (2), agentes no chat:**
    - Se algum agente receber `max_execution_time`, o CrewAI roda a tarefa
      numa thread. A contextvar da consulta não chega lá, e as gerações e

@@ -1,6 +1,7 @@
 """Caixa de ferramentas da camada de agentes (spec 5.9 · RN04 · RN07 · RN09).
 
-Quatro ferramentas, e só quatro:
+Quatro ferramentas no experimento dos braços A/B/C, e uma quinta só no
+produto (o chat):
 
 | Ferramenta | O que faz |
 |---|---|
@@ -8,10 +9,16 @@ Quatro ferramentas, e só quatro:
 | `buscar_trechos` | recuperação documental com filtro de metadados (camada de `src.recuperacao`) |
 | `consultar_cvm` | SQL somente-leitura sobre `fatos_semanticos`, **nunca** sobre `fatos_contabeis` cru (RN09) |
 | `calcular_indicadores` | indicadores já materializados, por `CD_CVM` e trimestre |
+| `consultar_modelo_prejuizo` | **só no produto** — o modelo preditivo lido do artefato agregado (AGENTS §3.16) |
 
-**`prever_risco` não existe** e não entra aqui sob nenhum nome (RN07). O modelo
-preditivo permanece como módulo analítico; expor juízo prospectivo sobre
-companhia nomeada é a fronteira que a RN05 defende.
+**`prever_risco` não existe** e não entra aqui sob nenhum nome (RN07): uma
+ferramenta que devolve escore de companhia nomeada na instância pública é a
+fronteira que a RN05 defende. `consultar_modelo_prejuizo` não é esse
+`prever_risco` renomeado. Na instância pública ela nem recebe companhia: devolve
+o panorama agregado e o regime histórico por porte, os mesmos blocos que o chat
+público já mostra pela rota prospectiva. O escore por companhia só existe no
+modo local, como na rota (§3.6). O experimento continua com as quatro
+ferramentas, para não mudar o que já foi medido.
 
 Este módulo **não reimplementa** guarda nenhuma: as da RN04 (somente-leitura,
 lista branca, DDL/DML bloqueado por análise sintática, `LIMIT`, timeout) vivem
@@ -49,6 +56,14 @@ from src.dados_estruturados import (
     executar_sql,
 )
 from src.mapa_contas import CONCEITOS, normalizar_cd_cvm
+from src.projecao import (
+    CAMINHO_ESCORES,
+    CAMINHO_PANORAMA,
+    Panorama,
+    carregar_escores,
+    carregar_panorama,
+    consulta_do_modelo,
+)
 from src.recuperacao import Estrategia, Recuperador
 
 registrador = logging.getLogger(__name__)
@@ -65,12 +80,23 @@ FERRAMENTAS_DISPONIVEIS: tuple[str, ...] = (
     "calcular_indicadores",
 )
 
+# O produto (agentes no chat) acrescenta o modelo preditivo, lido do artefato
+# agregado. Fica fora de `FERRAMENTAS_DISPONIVEIS` de propósito: os braços A/B/C
+# já foram medidos com quatro ferramentas, e mudar a caixa mudaria o experimento.
+FERRAMENTA_MODELO = "consultar_modelo_prejuizo"
+FERRAMENTAS_DO_PRODUTO: tuple[str, ...] = FERRAMENTAS_DISPONIVEIS + (FERRAMENTA_MODELO,)
+
 # Nomes que a caixa NUNCA pode expor. `prever_risco` foi removido em 07/08/2026
 # por três razões convergentes (spec 5.9.5): emitir juízo prospectivo sobre
 # companhia listada nominada é a fronteira da RN05; a regra de fora-de-domínio
 # do modelo já recusaria 100% das perguntas sobre os cinco bancos do corpus; e
 # nenhum dos 26 trimestres-banco observados teve prejuízo, então a saída seria
 # constante. Reintroduzi-lo sob outro nome é a mesma violação.
+#
+# `consultar_modelo_prejuizo` (2026-10-19) responde às três razões em vez de
+# contorná-las: na instância pública não recebe companhia e não devolve escore;
+# não é sobre os cinco bancos, e sim sobre o painel inteiro; e o que devolve
+# (panorama, regime por porte) não é constante. Ver AGENTS §3.16.
 FERRAMENTAS_PROIBIDAS: frozenset[str] = frozenset({"prever_risco"})
 
 
@@ -196,12 +222,16 @@ class CaixaDeFerramentas:
         leitor: LeitorDeFatos | None = None,
         caminho_painel: Path | None = None,
         max_chamadas: int | None = None,
+        panorama: Panorama | None = None,
+        escores: Mapping[str, float] | None = None,
     ) -> None:
         self.config = config
         self.caminho_painel = caminho_painel
         self._indice = indice_cobertura
         self._recuperador = recuperador
         self._leitor = leitor
+        self._panorama = panorama
+        self._escores = escores
         teto = (
             config.agentes_max_chamadas_ferramenta
             if max_chamadas is None
@@ -273,6 +303,23 @@ class CaixaDeFerramentas:
         if self._recuperador is None:
             self._recuperador = Recuperador(self.config)
         return self._recuperador
+
+    def panorama(self) -> Panorama:
+        if self._panorama is None:
+            from src.config import RAIZ_PROJETO
+
+            self._panorama = carregar_panorama(RAIZ_PROJETO / CAMINHO_PANORAMA)
+        return self._panorama
+
+    def escores(self) -> Mapping[str, float]:
+        """Escores por companhia — só no modo local, e nunca carregados antes."""
+        if not self.config.previsao_por_emissor_habilitada:
+            raise ErroFerramenta("escore por companhia não existe na instância pública (RN07)")
+        if self._escores is None:
+            from src.config import RAIZ_PROJETO
+
+            self._escores = carregar_escores(RAIZ_PROJETO / CAMINHO_ESCORES)
+        return self._escores
 
     # -- ferramentas -------------------------------------------------------- #
 
@@ -446,9 +493,47 @@ class CaixaDeFerramentas:
             "ausentes_declarados": ["liquidez"],
         }
 
+    def consultar_modelo_prejuizo(
+        self, ativo_total_reais: float | None = None, cd_cvm: str | None = None
+    ) -> dict:
+        """Modelo preditivo de prejuízo, lido do artefato agregado (RN07, §3.16).
+
+        Devolve o modelo (alvo, AUC, treino), o regime histórico por porte e os
+        agregados do painel que passam nas guardas de vazamento. Com
+        `ativo_total_reais`, a faixa de porte desse VALOR, sem saber de quem é.
+        Com `cd_cvm`, o escore da companhia só no modo local; na instância
+        pública, a recusa sem número. A lógica mora em
+        `src.projecao.consulta_do_modelo`, ao lado da rota prospectiva.
+        """
+        self._reservar(
+            FERRAMENTA_MODELO,
+            {"ativo_total_reais": ativo_total_reais, "cd_cvm": cd_cvm},
+        )
+        try:
+            codigo = normalizar_cd_cvm(cd_cvm) if cd_cvm else None
+            local = self.config.previsao_por_emissor_habilitada
+            resultado = consulta_do_modelo(
+                self.panorama(),
+                ativo_total_reais=ativo_total_reais,
+                cd_cvm=codigo,
+                previsao_por_emissor_habilitada=local,
+                escores=self.escores() if (codigo and local) else None,
+            )
+        except Exception as erro:
+            self._concluir("", erro=f"{type(erro).__name__}: {erro}")
+            raise
+        partes = ["panorama " + str(resultado["trimestre"])]
+        if "faixa_do_ativo_informado" in resultado:
+            partes.append("faixa de porte")
+        if codigo:
+            exposto = resultado["escore_por_emissor"]["exposto"]
+            partes.append("escore exposto (modo local)" if exposto else "escore não exposto")
+        self._concluir(", ".join(partes))
+        return resultado
+
     # -- descrição para o agente -------------------------------------------- #
 
-    def descrever(self) -> tuple[dict, ...]:
+    def descrever(self, nomes: Sequence[str] = FERRAMENTAS_DISPONIVEIS) -> tuple[dict, ...]:
         """Esquema das ferramentas, para montar o prompt do agente.
 
         Gerado a partir de `FERRAMENTAS_DISPONIVEIS`, não escrito à mão: uma
@@ -475,6 +560,12 @@ class CaixaDeFerramentas:
                 "Devolve ROE, margem líquida e alavancagem já materializados "
                 "para um CD_CVM (e trimestre opcional)."
             ),
+            FERRAMENTA_MODELO: (
+                "Lê o modelo preditivo de prejuízo (artefato agregado): AUC, "
+                "regime histórico por porte, panorama do painel e, dado um "
+                "ativo total em reais, a faixa de porte dele. Escore de "
+                "companhia só no modo local (RN07)."
+            ),
         }
         return tuple(
             {
@@ -482,7 +573,7 @@ class CaixaDeFerramentas:
                 "descricao": descricoes[nome],
                 "assinatura": getattr(self, nome).__doc__.strip().splitlines()[0],
             }
-            for nome in FERRAMENTAS_DISPONIVEIS
+            for nome in nomes
         )
 
     # -- braço C ------------------------------------------------------------ #
@@ -556,6 +647,8 @@ __all__ = [
     "CaixaDeFerramentas",
     "ErroFerramenta",
     "FERRAMENTAS_DISPONIVEIS",
+    "FERRAMENTAS_DO_PRODUTO",
+    "FERRAMENTA_MODELO",
     "FERRAMENTAS_PROIBIDAS",
     "LeitorPainelDuckDB",
     "RegistroChamada",

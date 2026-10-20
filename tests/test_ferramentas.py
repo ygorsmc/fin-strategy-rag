@@ -32,7 +32,9 @@ from src.dados_estruturados import (
     validar_sql,
 )
 from src.ferramentas import (
+    FERRAMENTA_MODELO,
     FERRAMENTAS_DISPONIVEIS,
+    FERRAMENTAS_DO_PRODUTO,
     FERRAMENTAS_PROIBIDAS,
     CaixaDeFerramentas,
     ErroFerramenta,
@@ -45,6 +47,7 @@ from src.mapa_contas import (
     CONCEITO_LUCRO_CONSOLIDADO,
     CONCEITO_LUCRO_CONTROLADORES,
 )
+from src.projecao import FaixaDePorte, Panorama, TrimestreCorrente
 from src.recuperacao import Estrategia, ResultadoRecuperacao
 
 DIR_FIXTURES = Path(__file__).parent / "fixtures" / "cvm"
@@ -143,9 +146,15 @@ class TestFerramentaProibida:
         assert "prever_risco" in FERRAMENTAS_PROIBIDAS
 
     def test_nenhuma_ferramenta_faz_previsao_sob_outro_nome(self, caixa):
-        """RN07 proíbe a funcionalidade, não apenas o nome."""
-        expostas = {n for n in FERRAMENTAS_DISPONIVEIS}
-        expostas |= {d["nome"] for d in caixa.descrever()}
+        """RN07 proíbe a funcionalidade, não apenas o nome.
+
+        Desde 2026-10-19 o produto tem `consultar_modelo_prejuizo` (AGENTS
+        §3.16), e o nome sozinho não prova nada sobre ela: a funcionalidade
+        proibida, escore de companhia nomeada na instância pública, é
+        verificada por comportamento em `TestModeloNoProduto`. Aqui o conjunto
+        do produto passou a entrar também na varredura de nomes."""
+        expostas = {n for n in FERRAMENTAS_DISPONIVEIS} | set(FERRAMENTAS_DO_PRODUTO)
+        expostas |= {d["nome"] for d in caixa.descrever(FERRAMENTAS_DO_PRODUTO)}
         proibidos = ("risco", "prever", "previsao", "projec", "recomend")
         assert not [n for n in expostas if any(p in n.lower() for p in proibidos)]
 
@@ -156,6 +165,82 @@ class TestFerramentaProibida:
         for linha in caminho.read_text(encoding="utf-8").splitlines():
             if linha.lstrip().startswith(("def ", "async def ", "class ")):
                 assert "prever_risco" not in linha
+
+
+# --------------------------------------------------------------------------- #
+# O modelo no produto (AGENTS §3.16) — RN07 por comportamento
+# --------------------------------------------------------------------------- #
+
+
+def _panorama(n_acima: int = 79) -> Panorama:
+    """Panorama sintético, com a forma do artefato real e sem depender dele."""
+    return Panorama(
+        trimestre_referencia="3T2025",
+        n_companhias_avaliadas=413,
+        n_acima_do_dobro_da_base=n_acima,
+        limiar_dobro_da_base=0.426,
+        taxa_base_painel=0.213,
+        faixas_de_porte=(
+            FaixaDePorte("≥ R$ 500 bi", 5e11, 231, 0.0606),
+            FaixaDePorte("< R$ 500 bi", 0.0, 22000, 0.30),
+        ),
+        n_observacoes_treino=21119,
+        fracao_nao_financeira_treino=0.969,
+        auc_walk_forward=0.8786,
+        trimestre_corrente=TrimestreCorrente("1T2026", 286, 136, 25, 0.161, 0.0807),
+    )
+
+
+class TestModeloNoProduto:
+    """O que a RN07 proíbe é escore de companhia nomeada na instância pública.
+    Estes casos verificam isso pela saída, não pelo nome da ferramenta."""
+
+    def test_publico_nao_devolve_escore_nem_recebendo_cd_cvm(self, config_padrao, monkeypatch):
+        import json
+
+        import src.ferramentas as ferramentas
+
+        def nao_pode_carregar(*_, **__):
+            raise AssertionError("a instância pública carregou os escores por companhia")
+
+        monkeypatch.setattr(ferramentas, "carregar_escores", nao_pode_carregar)
+        caixa = CaixaDeFerramentas(config_padrao, panorama=_panorama())
+        resultado = caixa.consultar_modelo_prejuizo(cd_cvm="906")
+        assert resultado["escore_por_emissor"]["exposto"] is False
+        assert "escore_pct" not in json.dumps(resultado)
+
+    def test_modo_local_devolve_escore_etiquetado(self, config_padrao):
+        from dataclasses import replace
+
+        local = replace(config_padrao, previsao_por_emissor_habilitada=True)
+        caixa = CaixaDeFerramentas(local, panorama=_panorama(), escores={"000906": 0.0058})
+        escore = caixa.consultar_modelo_prejuizo(cd_cvm="906")["escore_por_emissor"]
+        assert escore["exposto"] is True and escore["escore_pct"] == 0.6
+        assert escore["trimestre"] == "1T2026" and "USO INTERNO" in escore["etiqueta"]
+
+    def test_ativo_informado_vira_faixa_sem_saber_de_quem_e(self, config_padrao):
+        caixa = CaixaDeFerramentas(config_padrao, panorama=_panorama())
+        faixa = caixa.consultar_modelo_prejuizo(ativo_total_reais=2.9e12)["faixa_do_ativo_informado"]
+        assert faixa == {
+            "ativo_total_reais": 2.9e12, "faixa": "≥ R$ 500 bi", "limite_inferior_reais": 5e11,
+            "limite_superior_reais": None, "taxa_historica_prejuizo_pct": 6.1,
+        }
+        assert caixa.registro[-1].argumentos == {"ativo_total_reais": 2.9e12, "cd_cvm": None}
+
+    def test_agregado_extremo_nao_e_publicado(self, config_padrao):
+        """Contagem 0 permite dedução por eliminação (`_agregado_seguro`)."""
+        caixa = CaixaDeFerramentas(config_padrao, panorama=_panorama(n_acima=0))
+        assert "panorama_mercado" not in caixa.consultar_modelo_prejuizo()
+
+    def test_ativo_invalido_e_erro_registrado(self, config_padrao):
+        caixa = CaixaDeFerramentas(config_padrao, panorama=_panorama())
+        with pytest.raises(ValueError):
+            caixa.consultar_modelo_prejuizo(ativo_total_reais=-1)
+        assert caixa.registro[-1].erro
+
+    def test_o_experimento_continua_com_quatro_e_o_produto_tem_cinco(self):
+        assert len(FERRAMENTAS_DISPONIVEIS) == 4
+        assert FERRAMENTAS_DO_PRODUTO == FERRAMENTAS_DISPONIVEIS + (FERRAMENTA_MODELO,)
 
 
 # --------------------------------------------------------------------------- #

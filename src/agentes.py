@@ -29,7 +29,11 @@ concordar, e a segunda chamada de modelo viraria repetição paga (risco 12a).
    falsa, mas também não é publicável (5.9.1).
 5. **`prever_risco` não existe** (RN07). A caixa de ferramentas é a de
    `src.ferramentas`, e a fábrica recusa qualquer nome de
-   `FERRAMENTAS_PROIBIDAS`.
+   `FERRAMENTAS_PROIBIDAS`. No produto, e só nele, entra
+   `consultar_modelo_prejuizo`: o modelo lido do artefato agregado, que na
+   instância pública não recebe companhia nem devolve escore (AGENTS §3.16).
+   O conjunto de ferramentas viaja em `FerramentasDoAgente.nomes`; o padrão
+   continua sendo as quatro do experimento.
 6. **Gate de dado com uma rodada corretiva** (`precisa_correcao_de_dado`).
    Publicar valor, base ou citação sem ter chamado `buscar_trechos`,
    `consultar_cvm` ou `calcular_indicadores` é responder de memória, mesmo que o
@@ -97,7 +101,9 @@ from src.avaliacao import (
 )
 from src.config import DIR_LOGS_EXECUCOES, Config
 from src.ferramentas import (
+    FERRAMENTA_MODELO,
     FERRAMENTAS_DISPONIVEIS,
+    FERRAMENTAS_DO_PRODUTO,
     FERRAMENTAS_PROIBIDAS,
     CaixaDeFerramentas,
     ErroFerramenta,
@@ -765,11 +771,25 @@ class FerramentasDoAgente:
     que é justamente o que a 5.9.5 proíbe.
     """
 
-    def __init__(self, caixa: CaixaDeFerramentas, papel: str) -> None:
+    def __init__(
+        self,
+        caixa: CaixaDeFerramentas,
+        papel: str,
+        nomes: Sequence[str] = FERRAMENTAS_DISPONIVEIS,
+    ) -> None:
         if papel not in PAPEIS:
             raise ValueError(f"papel desconhecido: {papel!r}")
+        proibidas = sorted(set(nomes) & set(FERRAMENTAS_PROIBIDAS))
+        if proibidas:
+            raise ValueError(f"ferramenta proibida na caixa do agente (RN07): {proibidas}")
+        desconhecidas = sorted(set(nomes) - set(FERRAMENTAS_DO_PRODUTO))
+        if desconhecidas:
+            raise ValueError(f"ferramenta sem implementação: {desconhecidas}")
         self.caixa = caixa
         self.papel = papel
+        # Quais ferramentas este agente pode chamar. O padrão são as quatro do
+        # experimento; o produto passa `FERRAMENTAS_DO_PRODUTO` (§3.16).
+        self.nomes: tuple[str, ...] = tuple(nomes)
         self.chamadas: list[ChamadaFerramenta] = []
         self.teto_atingido = False
 
@@ -782,7 +802,7 @@ class FerramentasDoAgente:
                 f"{nome} não é ferramenta desta camada (RN07): o modelo "
                 "preditivo não é exposto como resposta sobre companhia nomeada"
             )
-        if nome not in FERRAMENTAS_DISPONIVEIS:
+        if nome not in self.nomes:
             raise ErroFerramenta(f"ferramenta desconhecida: {nome!r}")
         metodo = getattr(self.caixa, nome)
         # Span de ferramenta (5.12). Os argumentos vêm do LLM e podem trazer o
@@ -888,6 +908,23 @@ CHAVES_SEM_VALOR: frozenset[str] = frozenset(
         "score",
         "top_k",
         "total_linhas",
+        # Saída de `consultar_modelo_prejuizo`: contagens, percentuais e AUC.
+        # Nenhuma é dinheiro, e sem isto "21.119 observações" lastrearia um
+        # "R$ 21,1 mil" inventado. `ativo_total_reais` fica de fora da lista:
+        # é valor em reais, vindo do painel pelo agente.
+        "auc_walk_forward",
+        "escore_pct",
+        "fracao_nao_financeira_treino_pct",
+        "limiar_pct",
+        "n_acima_do_dobro_da_base",
+        "n_acima_do_limiar",
+        "n_companhias_avaliadas",
+        "n_hoje_lucrativas",
+        "n_ja_em_prejuizo",
+        "n_observacoes",
+        "n_observacoes_treino",
+        "taxa_base_painel_pct",
+        "taxa_historica_prejuizo_pct",
     }
 )
 
@@ -1088,24 +1125,62 @@ class FerramentaCalcularIndicadores(_FerramentaBase):
         )
 
 
+class _ArgsConsultarModelo(BaseModel):
+    ativo_total_reais: float | None = Field(
+        default=None,
+        description="ativo total em reais, obtido antes com consultar_cvm (opcional)",
+    )
+    cd_cvm: str | None = Field(
+        default=None,
+        description="código CVM; o escore da companhia só existe no modo local (opcional)",
+    )
+
+
+class FerramentaConsultarModelo(_FerramentaBase):
+    """O modelo preditivo de prejuízo, lido do artefato agregado (§3.16)."""
+
+    args_schema: type[BaseModel] = _ArgsConsultarModelo
+    name: str = FERRAMENTA_MODELO
+    description: str = (
+        "Consulta o modelo preditivo de prejuízo do projeto (classificador "
+        "treinado offline no painel da CVM). Devolve o AUC de validação, o "
+        "panorama agregado do mercado e a taxa HISTÓRICA de prejuízo por porte "
+        "de ativo. Se receber ativo_total_reais (obtenha antes com "
+        "consultar_cvm, conceito 'ativo_total'), diz em que faixa de porte esse "
+        "valor cai. Escore de companhia nomeada só no modo local; na instância "
+        "pública ele não é exposto (RN07). Argumentos: ativo_total_reais "
+        "(número, opcional), cd_cvm (texto, opcional)."
+    )
+
+    def _run(
+        self, ativo_total_reais: float | None = None, cd_cvm: str | None = None
+    ) -> str:
+        return self._chamar(
+            FERRAMENTA_MODELO, ativo_total_reais=ativo_total_reais, cd_cvm=cd_cvm
+        )
+
+
 CLASSES_DE_FERRAMENTA: Mapping[str, type[_FerramentaBase]] = {
     "verificar_cobertura": FerramentaVerificarCobertura,
     "buscar_trechos": FerramentaBuscarTrechos,
     "consultar_cvm": FerramentaConsultarCVM,
     "calcular_indicadores": FerramentaCalcularIndicadores,
+    FERRAMENTA_MODELO: FerramentaConsultarModelo,
 }
 
 
 def construir_ferramentas(
     ferramentas: FerramentasDoAgente,
-    nomes: Sequence[str] = FERRAMENTAS_DISPONIVEIS,
+    nomes: Sequence[str] | None = None,
 ) -> list[BaseTool]:
     """Instancia as ferramentas do CrewAI a partir da caixa do projeto.
 
-    A fábrica é a porta única, e ela recusa `FERRAMENTAS_PROIBIDAS` por nome
-    (RN07). Reintroduzir o modelo preditivo "com outro nome" também não passa:
-    só existem classes para os quatro nomes de `FERRAMENTAS_DISPONIVEIS`.
+    Sem `nomes`, usa o conjunto do próprio envelope (`ferramentas.nomes`): as
+    quatro do experimento, ou as cinco do produto. A fábrica é a porta única, e
+    ela recusa `FERRAMENTAS_PROIBIDAS` por nome (RN07). Um nome sem classe
+    também não passa: só existem classes para `FERRAMENTAS_DO_PRODUTO`.
     """
+    nomes = ferramentas.nomes if nomes is None else tuple(nomes)
     proibidas = sorted(set(nomes) & set(FERRAMENTAS_PROIBIDAS))
     if proibidas:
         raise ValueError(
@@ -1276,14 +1351,40 @@ INSTRUCAO_INVESTIGADOR_ESTAVEL = (
 )
 
 
-def instrucao_investigador(pergunta: str) -> str:
+# Parágrafo só do produto, quando a caixa tem o modelo (§3.16). Fica DEPOIS do
+# bloco estável, para não mexer no prefixo cacheável nem no prompt do
+# experimento, que segue byte a byte igual.
+INSTRUCAO_MODELO = (
+    "FERRAMENTA DO MODELO PREDITIVO — 'consultar_modelo_prejuizo':\n"
+    "- Use-a quando a pergunta pedir o que o modelo de prejuízo do projeto diz: "
+    "o panorama do mercado, o desempenho do modelo ou o regime histórico de "
+    "prejuízo por porte de ativo.\n"
+    "- Para situar uma companhia num porte, PRIMEIRO obtenha o ativo total "
+    "dela com consultar_cvm (conceito 'ativo_total'), DEPOIS passe esse valor "
+    "em reais como 'ativo_total_reais'. São duas ações, nessa ordem.\n"
+    "- A taxa por porte é a frequência histórica de prejuízo de TODAS as "
+    "companhias da faixa. Nunca a escreva como chance, risco ou previsão de "
+    "prejuízo de uma companhia nomeada (RN07). Escreva, por exemplo: "
+    "'companhias com ativo nessa faixa tiveram prejuízo em X% dos trimestres "
+    "do painel'.\n"
+    "- Cite como: 'Modelo preditivo · panorama <trimestre> · regime por "
+    "porte'. Os percentuais vêm da ferramenta; não os arredonde para outro "
+    "valor."
+)
+
+
+def instrucao_investigador(pergunta: str, *, com_modelo: bool = False) -> str:
     """A tarefa do Investigador (e do agente único do braço A).
 
     A pergunta vem no FIM, depois do bloco estável — ver
     `INSTRUCAO_INVESTIGADOR_ESTAVEL` para o porquê (cache por prefixo).
+    `com_modelo` acrescenta `INSTRUCAO_MODELO`, só quando a caixa do agente
+    tem a ferramenta do modelo (o produto, nunca o experimento).
     """
+    extra = f"{INSTRUCAO_MODELO}\n\n" if com_modelo else ""
     return (
         f"{INSTRUCAO_INVESTIGADOR_ESTAVEL}\n\n"
+        f"{extra}"
         "=== A PERGUNTA A RESPONDER ===\n"
         f"PERGUNTA DO USUÁRIO: {pergunta}"
     )
@@ -1341,7 +1442,10 @@ def instrucao_auditor(contexto: "ContextoAuditor") -> str:
 # número. Foi essa confusão que produziu o achado do braço A — o agente lia a
 # cobertura, concluía que "sabia" e escrevia o valor de memória.
 FERRAMENTAS_DE_DADO: frozenset[str] = frozenset(
-    {"buscar_trechos", "consultar_cvm", "calcular_indicadores"}
+    # O modelo devolve valores (taxas, contagens, AUC) e é dado no mesmo
+    # sentido: uma resposta só sobre o panorama do modelo não respondeu de
+    # memória. No experimento ele nunca é chamado, então nada muda lá.
+    {"buscar_trechos", "consultar_cvm", "calcular_indicadores", FERRAMENTA_MODELO}
 )
 
 # Desfechos da rodada corretiva, registrados na saída para a RNF08.
@@ -1428,13 +1532,13 @@ PREAMBULO_CORRETIVO = (
 )
 
 
-def instrucao_corretiva_investigador(pergunta: str) -> str:
+def instrucao_corretiva_investigador(pergunta: str, *, com_modelo: bool = False) -> str:
     """A mesma tarefa, precedida da correção — **um** segundo tiro, nunca laço.
 
     O texto corretivo é montado por código e não repete o rastro anterior: o que
     se reinjeta é a *regra violada*, não o raciocínio da tentativa fracassada.
     """
-    return PREAMBULO_CORRETIVO + instrucao_investigador(pergunta)
+    return PREAMBULO_CORRETIVO + instrucao_investigador(pergunta, com_modelo=com_modelo)
 
 
 def instrucao_corretiva_auditor(contexto: "ContextoAuditor") -> str:
@@ -2096,7 +2200,7 @@ def executar_investigador(
         contido,
         llm,
         teto,
-        instrucao_investigador(pergunta),
+        instrucao_investigador(pergunta, com_modelo=FERRAMENTA_MODELO in ferramentas.nomes),
     )
     if cortada or not permitir_correcao:
         return saida
@@ -2114,7 +2218,9 @@ def executar_investigador(
         contido,
         llm,
         teto,
-        instrucao_corretiva_investigador(pergunta),
+        instrucao_corretiva_investigador(
+            pergunta, com_modelo=FERRAMENTA_MODELO in ferramentas.nomes
+        ),
     )
     return _consolidar_correcao(saida, corrigida, cortada_corretiva, ferramentas, llm)
 
@@ -2599,8 +2705,14 @@ def fabrica_ferramentas_padrao(
     recuperador: Any = None,
     leitor: Any = None,
     caminho_painel: Path | None = None,
+    nomes: Sequence[str] = FERRAMENTAS_DISPONIVEIS,
 ) -> FabricaFerramentas:
-    """Uma caixa por papel: o Auditor reexecuta com orçamento próprio (5.9.1)."""
+    """Uma caixa por papel: o Auditor reexecuta com orçamento próprio (5.9.1).
+
+    `nomes` escolhe o conjunto de ferramentas: as quatro do experimento por
+    padrão, `FERRAMENTAS_DO_PRODUTO` no chat (§3.16). Índice, recuperador e
+    leitor podem vir prontos do app, para a pergunta não carregar o Chroma
+    duas vezes, uma por agente."""
 
     def fabricar(papel: str) -> FerramentasDoAgente:
         caixa = CaixaDeFerramentas(
@@ -2610,7 +2722,7 @@ def fabrica_ferramentas_padrao(
             leitor=leitor,
             caminho_painel=caminho_painel,
         )
-        return FerramentasDoAgente(caixa, papel)
+        return FerramentasDoAgente(caixa, papel, nomes)
 
     return fabricar
 
@@ -2669,10 +2781,20 @@ def responder_braco_b(
     """
     ferramentas_investigador = fabrica_ferramentas(PAPEL_INVESTIGADOR)
     llm_investigador = fabrica_llm(PAPEL_INVESTIGADOR)
-    saida = executar_investigador(
-        pergunta, config, ferramentas_investigador, llm_investigador
-    )
-    violacoes = verificar_regras_agente(saida, ferramentas_investigador)
+    # Spans do trace (5.12): no-op fora de uma consulta do chat, então o
+    # experimento roda exatamente como antes.
+    with observabilidade.etapa(
+        "agente.investigador",
+        tipo="agent",
+        entrada=lambda: observabilidade.texto_livre(pergunta),
+    ) as etapa:
+        saida = executar_investigador(
+            pergunta, config, ferramentas_investigador, llm_investigador
+        )
+        etapa.atualizar(saida=lambda: _resumo_para_trace(saida))
+    with observabilidade.etapa("verificacao.rn01_rn02") as etapa:
+        violacoes = verificar_regras_agente(saida, ferramentas_investigador)
+        etapa.atualizar(saida={"violacoes": list(violacoes)})
     if violacoes:
         saida = converter_em_recusa_agente(saida, violacoes)
         return consolidar(saida, violacoes=violacoes, convertida=True)
@@ -2686,8 +2808,40 @@ def responder_braco_b(
     contexto = montar_contexto_auditor(saida)
     ferramentas_auditor = fabrica_ferramentas(PAPEL_AUDITOR)
     llm_auditor = fabrica_llm(PAPEL_AUDITOR)
-    veredito = executar_auditor(contexto, config, ferramentas_auditor, llm_auditor)
+    with observabilidade.etapa(
+        "agente.auditor",
+        tipo="agent",
+        entrada=lambda: {
+            "afirmacao": observabilidade.texto_livre(contexto.afirmacao),
+            "citacoes": list(contexto.citacoes),
+        },
+    ) as etapa:
+        veredito = executar_auditor(contexto, config, ferramentas_auditor, llm_auditor)
+        etapa.atualizar(
+            saida=lambda: {
+                "veredito": veredito.veredito,
+                "justificativa": observabilidade.texto_livre(veredito.justificativa),
+                "ferramentas": [c.ferramenta for c in veredito.chamadas],
+                "chamadas_llm": veredito.uso.chamadas_llm,
+                "custo_usd": round(veredito.uso.custo_usd, 6),
+            }
+        )
     return consolidar(saida, veredito=veredito, contexto=contexto)
+
+
+def _resumo_para_trace(saida: SaidaInvestigador) -> dict:
+    """O que o trace guarda do Investigador: decisão, fontes, uso — e o texto
+    da afirmação só pela regra de texto livre (RN06)."""
+    return {
+        "comportamento": saida.comportamento,
+        "cobertura": saida.cobertura,
+        "afirmacao": observabilidade.texto_livre(saida.afirmacao),
+        "citacoes": list(saida.citacoes),
+        "ferramentas": [c.ferramenta for c in saida.chamadas],
+        "chamadas_llm": saida.uso.chamadas_llm,
+        "custo_usd": round(saida.uso.custo_usd, 6),
+        "correcao": saida.correcao_resultado,
+    }
 
 
 # --------------------------------------------------------------------------- #
@@ -2742,7 +2896,9 @@ def responder_com_guardrails(
         prompt_guard_limiar=config.guardrails_limiar_injection,
     )
 
-    entrada = avaliar_entrada(pergunta, scanners, **entrada_kwargs)
+    with observabilidade.etapa("guardrail.entrada", tipo="guardrail") as etapa:
+        entrada = avaliar_entrada(pergunta, scanners, **entrada_kwargs)
+        etapa.atualizar(saida=lambda: _resumo_guardrail_trace(entrada))
     if entrada.bloqueado:
         return RespostaAgente(
             pergunta=entrada.texto_seguro,
@@ -2793,7 +2949,9 @@ def responder_com_guardrails(
         fabrica_ferramentas=fabrica_ferramentas,
     )
 
-    saida = avaliar_saida(resposta.resposta, scanners, **presidio)
+    with observabilidade.etapa("guardrail.saida", tipo="guardrail") as etapa:
+        saida = avaliar_saida(resposta.resposta, scanners, **presidio)
+        etapa.atualizar(saida=lambda: _resumo_guardrail_trace(saida))
     if not saida.bloqueado:
         # Ainda assim substitui pelo texto anonimizado: a RN06 vale para o que
         # sai, e a anonimização é idempotente quando não há o que anonimizar.
@@ -2811,6 +2969,15 @@ def responder_com_guardrails(
             for achado in saida.achados
         ),
     )
+
+
+def _resumo_guardrail_trace(resultado: Any) -> dict:
+    """Decisão e scanners do veredito, sem o detalhe (que pode citar o texto)."""
+    return {
+        "bloqueado": resultado.bloqueado,
+        "achados": [f"{a.scanner}/{a.subtipo}" for a in resultado.achados],
+        "entidades_pii_anonimizadas": len(resultado.entidades_pii),
+    }
 
 
 def registrar_evento_agentes(

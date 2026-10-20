@@ -640,12 +640,15 @@ class TestGateDeCorrecaoDeDado:
         assert agentes.precisa_correcao_de_dado(saida, ferramentas) is True
 
     def test_verificar_cobertura_sozinho_nunca_conta_como_consulta_de_dado(self):
+        """Conjunto esperado acrescido de `consultar_modelo_prejuizo` em
+        2026-10-19 (AGENTS §3.16): ele devolve valores e só existe no produto.
+        A asserção que importa aqui, cobertura não é dado, não mudou."""
         ferramentas = FerramentasDoAgente(CaixaFalsa(), PAPEL_AGENTE_UNICO)
         ferramentas.executar("verificar_cobertura", entidade="Inter")
         assert agentes.consultou_ferramenta_de_dado(ferramentas) is False
         assert "verificar_cobertura" not in agentes.FERRAMENTAS_DE_DADO
         assert agentes.FERRAMENTAS_DE_DADO == frozenset(
-            {"buscar_trechos", "consultar_cvm", "calcular_indicadores"}
+            {"buscar_trechos", "consultar_cvm", "calcular_indicadores", "consultar_modelo_prejuizo"}
         )
 
     def test_o_prompt_traz_a_regra_mecanica_e_um_exemplo_do_protocolo(self):
