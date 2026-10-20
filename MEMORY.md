@@ -1151,8 +1151,27 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    chamadas do CrewAI caem dentro do span de cada agente (mesma thread).
    Achado ao testar: o agente escreve a faixa "R$ 10–100 bi", e a RN02 só
    aceitava dinheiro devolvido como número; a ferramenta passou a devolver
-   os limites da faixa em reais. **Falta:** rodar perguntas reais pelos
-   agentes (custo de centavos, pedir OK) e gerar os traces dos agentes.
+   os limites da faixa em reais. **Rodada real em 19/10** (OK do responsável,
+   `--conjunto agentes`): 3 perguntas, US$ 0,042, 3/3 traces completos.
+   Resumo em `artefatos/observabilidade/traces_2026-10-20T011854Z.json`.
+   - Inter (painel + modelo): correta. Ativo de R$ 91,8 bi, faixa
+     R$ 10–100 bi, taxa histórica de 21,8% dita como taxa da faixa. O
+     Auditor confirmou.
+   - Modelo (25 sinalizadas no 1T2026, AUC 0,879): correta. O Auditor
+     confirmou depois de consultar o modelo de novo.
+   - Itaú (release + painel): **erro de rótulo**. O Investigador chamou de
+     "margem financeira gerencial" os R$ 17,2 bi que, na p. 8 do release,
+     são "despesas não decorrentes de juros"; a margem é R$ 31.382 mi. A RN02
+     dos agentes passou, porque só confere se o número está no trecho, não
+     se pertence ao rótulo. O Auditor marcou "não reproduz", e a resposta
+     saiu como parcial não confirmada, mas não contestada.
+   - Também: o Auditor da pergunta do Inter disse ter confirmado a faixa no
+     modelo sem chamar a ferramenta do modelo. O gate dele exige alguma
+     ferramenta de dado, não uma por fonte citada.
+   **Propostas, não implementadas (mudam o braço B do experimento):** gate do
+   Auditor por fonte citada (CVM, release, modelo), e a RN02 dos agentes com
+   a conferência de rótulo que o caminho livre já tem
+   (`numeros_da_resposta_estao_fundamentados`).
    **Pendências para o passo (2), agentes no chat:**
    - Se algum agente receber `max_execution_time`, o CrewAI roda a tarefa
      numa thread. A contextvar da consulta não chega lá, e as gerações e

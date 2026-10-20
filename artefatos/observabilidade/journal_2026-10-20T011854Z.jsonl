@@ -1,0 +1,6 @@
+{"em": "2026-10-20T01:18:54.532051+00:00", "evento": "inicio", "rotulo": "agentes_painel_e_modelo", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T01:19:29.991861+00:00", "evento": "fim", "rotulo": "agentes_painel_e_modelo", "custo_usd": 0.013144, "traces": ["de6554b30f70378ee0d95479521bce57"]}
+{"em": "2026-10-20T01:19:29.991960+00:00", "evento": "inicio", "rotulo": "agentes_release_e_painel", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T01:20:21.374075+00:00", "evento": "fim", "rotulo": "agentes_release_e_painel", "custo_usd": 0.023801, "traces": ["e87bda786f10c0b743446917f9494a8f"]}
+{"em": "2026-10-20T01:20:21.374169+00:00", "evento": "inicio", "rotulo": "agentes_modelo", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T01:20:35.052921+00:00", "evento": "fim", "rotulo": "agentes_modelo", "custo_usd": 0.005467, "traces": ["34daaad2d2c5ec14a49cd3e7815180dd"]}
