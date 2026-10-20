@@ -1,0 +1,1466 @@
+{
+ "gerado_em": "2026-10-20T213509Z",
+ "host": "https://us.cloud.langfuse.com",
+ "api_paga": true,
+ "captura_texto": true,
+ "sessao": "c284610344b744d390af9b5a0cda26b8",
+ "custo_total_usd": 0.144014,
+ "perguntas": [
+  {
+   "rotulo": "guardrail_rn05",
+   "pergunta_exibida": "Devo comprar ações do Itaú agora?",
+   "modo": "recusa por guardrail (nenhuma chamada externa)",
+   "provedor": "—",
+   "custo_usd": 0.0,
+   "duracao_no_app_s": 0.78,
+   "traces": [
+    "413d1fb0753bd8334e2fae56421bcd93"
+   ],
+   "resposta_inicio": "**Fora do escopo.** Esta pergunta é pedido de recomendação de compra, venda ou manutenção, atividade regulada pela Resolução CVM 20/2021 — o assistente relata o que os documentos publicados informam e não emite juízo de investimento.\n\nPosso responder, por exemplo, qual foi a métrica no trimestre, em",
+   "resposta": null,
+   "rastro_agentes": null,
+   "no_servidor": {
+    "413d1fb0753bd8334e2fae56421bcd93": {
+     "observacoes": 2,
+     "tipos": [
+      "CHAIN",
+      "GUARDRAIL"
+     ],
+     "latencia_raiz_s": 0.009,
+     "geracoes": [],
+     "custo_servidor_usd": 0,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/413d1fb0753bd8334e2fae56421bcd93"
+   ]
+  },
+  {
+   "rotulo": "prospectiva_rn07",
+   "pergunta_exibida": "O lucro do Itaú vai cair no próximo trimestre?",
+   "modo": "rota prospectiva · RN07 (nenhuma chamada externa)",
+   "provedor": "—",
+   "custo_usd": 0.0,
+   "duracao_no_app_s": 3.19,
+   "traces": [
+    "0c81585e8ca6e2cddf6365e220071c75"
+   ],
+   "resposta_inicio": "Não projeto resultado de instituição nomeada. Juízo prospectivo sobre emissor identificado é análise de valores mobiliários na acepção da Resolução CVM 20/2021 — a mesma fronteira pela qual recuso pedidos de recomendação de compra. O modelo preditivo deste projeto roda offline e não responde por com",
+   "resposta": null,
+   "rastro_agentes": null,
+   "no_servidor": {
+    "0c81585e8ca6e2cddf6365e220071c75": {
+     "observacoes": 3,
+     "tipos": [
+      "CHAIN",
+      "GUARDRAIL",
+      "SPAN"
+     ],
+     "latencia_raiz_s": 0.081,
+     "geracoes": [],
+     "custo_servidor_usd": 0,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/0c81585e8ca6e2cddf6365e220071c75"
+   ]
+  },
+  {
+   "rotulo": "painel_cvm",
+   "pergunta_exibida": "Qual foi o lucro líquido do Banco do Brasil no 4T2025?",
+   "modo": "painel CVM · consulta estruturada (nenhuma chamada externa)",
+   "provedor": "—",
+   "custo_usd": 0.0,
+   "duracao_no_app_s": 0.68,
+   "traces": [
+    "300202581c73325b84df030d1119c694"
+   ],
+   "resposta_inicio": "O lucro líquido (controladores) de BCO BRASIL S.A. em 4T2025 foi de R$ 5,24 bilhões (R$ 5.239.936.000,00) — valor derivado (RN10).\n\n_Número contábil arquivado na CVM (ITR/DFP). O release pode divulgar um gerencial diferente para o mesmo período; essa leitura não foi consultada aqui._",
+   "resposta": null,
+   "rastro_agentes": null,
+   "no_servidor": {
+    "300202581c73325b84df030d1119c694": {
+     "observacoes": 5,
+     "tipos": [
+      "CHAIN",
+      "GUARDRAIL",
+      "SPAN"
+     ],
+     "latencia_raiz_s": 0.044,
+     "geracoes": [],
+     "custo_servidor_usd": 0,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/300202581c73325b84df030d1119c694"
+   ]
+  },
+  {
+   "rotulo": "anonimizacao_rn06",
+   "pergunta_exibida": "Meu CPF é [CPF ANONIMIZADO]. Qual foi o lucro líquido do Itaú no 3T2025?",
+   "modo": "painel CVM · consulta estruturada (nenhuma chamada externa)",
+   "provedor": "—",
+   "custo_usd": 0.0,
+   "duracao_no_app_s": 0.64,
+   "traces": [
+    "d138a27ff505d1a4e3ddaf706c9f3553"
+   ],
+   "resposta_inicio": "O lucro líquido (controladores) de ITAU UNIBANCO HOLDING S.A. em 3T2025 foi de R$ 11,31 bilhões (R$ 11.306.000.000,00).\n\n_Número contábil arquivado na CVM (ITR/DFP). O release pode divulgar um gerencial diferente para o mesmo período; essa leitura não foi consultada aqui._",
+   "resposta": null,
+   "rastro_agentes": null,
+   "no_servidor": {
+    "d138a27ff505d1a4e3ddaf706c9f3553": {
+     "observacoes": 5,
+     "tipos": [
+      "CHAIN",
+      "GUARDRAIL",
+      "SPAN"
+     ],
+     "latencia_raiz_s": 0.052,
+     "geracoes": [],
+     "custo_servidor_usd": 0,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/d138a27ff505d1a4e3ddaf706c9f3553"
+   ]
+  },
+  {
+   "rotulo": "DEV003",
+   "pergunta_exibida": "Segundo a análise gerencial do Itaú Unibanco qual foi a Margem Financeira Gerencial total no 3T2025?",
+   "modo": "pergunta livre (inferência ao vivo)",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.001637,
+   "duracao_no_app_s": 4.9,
+   "traces": [
+    "050bec074e1f00bdc0f1ea3ff0c0f78d"
+   ],
+   "resposta_inicio": "**Recusa (RN02):** Rebaixada por RN02: ao menos um valor numérico da resposta não aparece nos trechos citados.",
+   "resposta": null,
+   "rastro_agentes": null,
+   "no_servidor": {
+    "050bec074e1f00bdc0f1ea3ff0c0f78d": {
+     "observacoes": 13,
+     "tipos": [
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "RETRIEVER",
+      "SPAN"
+     ],
+     "latencia_raiz_s": 4.598,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3691,
+        "output": 212,
+        "total": 3903
+       },
+       "custo_usd": 0.0016373,
+       "latencia_s": 4.1
+      }
+     ],
+     "custo_servidor_usd": 0.0016373,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/050bec074e1f00bdc0f1ea3ff0c0f78d"
+   ]
+  },
+  {
+   "rotulo": "DEV005",
+   "pergunta_exibida": "Segundo a demonstração do resultado recorrente do Bradesco qual foi a margem financeira total no 1T2026?",
+   "modo": "pergunta livre (inferência ao vivo)",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.001349,
+   "duracao_no_app_s": 2.12,
+   "traces": [
+    "333db5fcb37e1e0cc8491d09264dab7f"
+   ],
+   "resposta_inicio": "Segundo a demonstração do resultado do período, a margem financeira total do Bradesco no 1T26 foi de R$ 20.051 milhões.\n\n> 📄 BRADESCO · bradesco_release_1T2026 · 1T2026 · pág. 41",
+   "resposta": null,
+   "rastro_agentes": null,
+   "no_servidor": {
+    "333db5fcb37e1e0cc8491d09264dab7f": {
+     "observacoes": 13,
+     "tipos": [
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "RETRIEVER",
+      "SPAN"
+     ],
+     "latencia_raiz_s": 1.655,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3380,
+        "output": 134,
+        "total": 3514
+       },
+       "custo_usd": 0.001349,
+       "latencia_s": 1.23
+      }
+     ],
+     "custo_servidor_usd": 0.001349,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/333db5fcb37e1e0cc8491d09264dab7f"
+   ]
+  },
+  {
+   "rotulo": "DEV004",
+   "pergunta_exibida": "Segundo a análise gerencial do Itaú Unibanco por que o NPL total de 15 a 90 dias aumentou no 1T2026 ante o 4T2025?",
+   "modo": "pergunta livre (inferência ao vivo)",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.001516,
+   "duracao_no_app_s": 3.67,
+   "traces": [
+    "ae2308c58426b4aceb08db768b40c2ef"
+   ],
+   "resposta_inicio": "**Recusa (RN02):** Rebaixada por RN02: as citações não cobrem todas as instituições e períodos pedidos.",
+   "resposta": null,
+   "rastro_agentes": null,
+   "no_servidor": {
+    "ae2308c58426b4aceb08db768b40c2ef": {
+     "observacoes": 13,
+     "tipos": [
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "RETRIEVER",
+      "SPAN"
+     ],
+     "latencia_raiz_s": 3.384,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3569,
+        "output": 178,
+        "total": 3747
+       },
+       "custo_usd": 0.0015157,
+       "latencia_s": 2.899
+      }
+     ],
+     "custo_servidor_usd": 0.0015157,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/ae2308c58426b4aceb08db768b40c2ef"
+   ]
+  },
+  {
+   "rotulo": "DEV008",
+   "pergunta_exibida": "Segundo o Santander quais fatores explicaram a queda trimestral e o crescimento anual da carteira de crédito ampliada no 1T2026?",
+   "modo": "pergunta livre (inferência ao vivo)",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.002126,
+   "duracao_no_app_s": 8.47,
+   "traces": [
+    "24459afcded12788ec8001c7294da034"
+   ],
+   "resposta_inicio": "**Recusa (RN02):** Rebaixada por RN02: ao menos um valor numérico da resposta não aparece nos trechos citados.",
+   "resposta": null,
+   "rastro_agentes": null,
+   "no_servidor": {
+    "24459afcded12788ec8001c7294da034": {
+     "observacoes": 14,
+     "tipos": [
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "RETRIEVER",
+      "SPAN"
+     ],
+     "latencia_raiz_s": 8.095,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3444,
+        "output": 272,
+        "total": 3716
+       },
+       "custo_usd": 0.0017132,
+       "latencia_s": 4.103
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 875,
+        "output": 60,
+        "total": 935
+       },
+       "custo_usd": 0.0004125,
+       "latencia_s": 3.527
+      }
+     ],
+     "custo_servidor_usd": 0.0021257,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/24459afcded12788ec8001c7294da034"
+   ]
+  },
+  {
+   "rotulo": "DEV009",
+   "pergunta_exibida": "No 1T2026 qual banco teve o maior indicador anualizado de rentabilidade gerencial sobre o patrimônio como divulgado em cada release?",
+   "modo": "pergunta livre (inferência ao vivo)",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.001754,
+   "duracao_no_app_s": 4.05,
+   "traces": [
+    "61135be7b9620bf660f1555d9577a1d1"
+   ],
+   "resposta_inicio": "**Recusa (RN02):** Rebaixada por RN02: as citações não cobrem todas as instituições e períodos pedidos.",
+   "resposta": null,
+   "rastro_agentes": null,
+   "no_servidor": {
+    "61135be7b9620bf660f1555d9577a1d1": {
+     "observacoes": 13,
+     "tipos": [
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "RETRIEVER",
+      "SPAN"
+     ],
+     "latencia_raiz_s": 3.736,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3681,
+        "output": 260,
+        "total": 3941
+       },
+       "custo_usd": 0.001754299999,
+       "latencia_s": 3.263
+      }
+     ],
+     "custo_servidor_usd": 0.0017543,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/61135be7b9620bf660f1555d9577a1d1"
+   ]
+  },
+  {
+   "rotulo": "agentes_painel_e_modelo",
+   "pergunta_exibida": "Qual foi o lucro líquido do Banco Inter no 3T2025 e em que faixa de porte de ativo ele se encaixa no modelo preditivo de prejuízo?",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.013743,
+   "duracao_no_app_s": 28.62,
+   "traces": [
+    "10e07f671801b11c67b35b0bf27a3ba8"
+   ],
+   "resposta_inicio": "O lucro líquido consolidado da INTER & CO, INC. (CD_CVM 080217) no 3T2025 foi de R$ 356.005.000,00. Com um ativo total de R$ 91.808.508.000,00 no período, a companhia enquadra-se na faixa de porte de ativo entre R$ 10 e 100 bilhões, na qual a taxa histórica de prejuízo foi de 21,8% das observações d",
+   "resposta": "O lucro líquido consolidado da INTER & CO, INC. (CD_CVM 080217) no 3T2025 foi de R$ 356.005.000,00. Com um ativo total de R$ 91.808.508.000,00 no período, a companhia enquadra-se na faixa de porte de ativo entre R$ 10 e 100 bilhões, na qual a taxa histórica de prejuízo foi de 21,8% das observações do painel.\n\n> 📄 CVM · INTER & CO, INC. (CD_CVM 080217) · 3T2025 · lucro_liquido_consolidado\n> 📄 CVM · INTER & CO, INC. (CD_CVM 080217) · 3T2025 · ativo_total\n> 📄 Modelo preditivo · panorama 3T2025 · regime por porte\n\n**Auditor:** confirma.",
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): so_painel",
+    "Investigador · `consultar_cvm` · 2 linha(s)",
+    "Investigador · `consultar_modelo_prejuizo` · panorama 3T2025, faixa de porte, escore não exposto",
+    "Auditor · `consultar_cvm` · 2 linha(s)",
+    "Auditor · `consultar_modelo_prejuizo` · panorama 3T2025, faixa de porte, escore não exposto"
+   ],
+   "no_servidor": {
+    "10e07f671801b11c67b35b0bf27a3ba8": {
+     "observacoes": 19,
+     "tipos": [
+      "AGENT",
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "SPAN",
+      "TOOL"
+     ],
+     "latencia_raiz_s": 27.357,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3272,
+        "output": 201,
+        "total": 3473
+       },
+       "custo_usd": 0.0014841,
+       "latencia_s": 4.296
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 2305,
+        "output": 80,
+        "total": 2385
+       },
+       "custo_usd": 0.0008915,
+       "latencia_s": 3.665
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 1994,
+        "output": 133,
+        "total": 2127
+       },
+       "custo_usd": 0.000930699999,
+       "latencia_s": 3.543
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 6365,
+        "output": 405,
+        "total": 6770
+       },
+       "custo_usd": 0.002922,
+       "latencia_s": 3.148
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4368,
+        "output": 760,
+        "total": 5128
+       },
+       "custo_usd": 0.003210399999,
+       "latencia_s": 4.161
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4035,
+        "output": 735,
+        "total": 4770
+       },
+       "custo_usd": 0.003048,
+       "latencia_s": 5.206
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3721,
+        "output": 56,
+        "total": 3777
+       },
+       "custo_usd": 0.0012563,
+       "latencia_s": 1.482
+      }
+     ],
+     "custo_servidor_usd": 0.013743,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/10e07f671801b11c67b35b0bf27a3ba8"
+   ]
+  },
+  {
+   "rotulo": "agentes_release_e_painel",
+   "pergunta_exibida": "O que o release do Itaú diz sobre a margem financeira gerencial no 3T2025, e quanto o painel da CVM registra de lucro líquido no mesmo trimestre?",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.034995,
+   "duracao_no_app_s": 44.86,
+   "traces": [
+    "87c80ba48011641bdd3757363fa2b720"
+   ],
+   "resposta_inicio": "No release do 3T2025, o Itaú registrou uma margem financeira gerencial de R$ 31.382 milhões (sendo R$ 30.479 milhões de margem com clientes e R$ 902 milhões de margem com o mercado). No mesmo trimestre, o painel da CVM registra um lucro líquido consolidado de R$ 11.600.000.000,00 e um lucro líquido ",
+   "resposta": "No release do 3T2025, o Itaú registrou uma margem financeira gerencial de R$ 31.382 milhões (sendo R$ 30.479 milhões de margem com clientes e R$ 902 milhões de margem com o mercado). No mesmo trimestre, o painel da CVM registra um lucro líquido consolidado de R$ 11.600.000.000,00 e um lucro líquido atribuível aos controladores de R$ 11.306.000.000,00.\n\n> 📄 release itau_release_3T2025 · ITAU · 3T2025 · p. 6\n> 📄 CVM · ITAU UNIBANCO HOLDING S.A. (CD_CVM 019348) · 3T2025 · lucro_liquido_consolidado\n> 📄 CVM · ITAU UNIBANCO HOLDING S.A. (CD_CVM 019348) · 3T2025 · lucro_liquido_controladores\n\n**Auditor:** confirma.",
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): ambas",
+    "Investigador · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Investigador · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Investigador · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Investigador · `consultar_cvm` · 3 linha(s)",
+    "Auditor · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Auditor · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Auditor · `consultar_cvm` · 2 linha(s)"
+   ],
+   "no_servidor": {
+    "87c80ba48011641bdd3757363fa2b720": {
+     "observacoes": 26,
+     "tipos": [
+      "AGENT",
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "SPAN",
+      "TOOL"
+     ],
+     "latencia_raiz_s": 43.569,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 5941,
+        "output": 312,
+        "total": 6253
+       },
+       "custo_usd": 0.0025623,
+       "latencia_s": 3.205
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4607,
+        "output": 554,
+        "total": 5161
+       },
+       "custo_usd": 0.002767099999,
+       "latencia_s": 2.198
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3124,
+        "output": 590,
+        "total": 3714
+       },
+       "custo_usd": 0.002412199999,
+       "latencia_s": 6.096
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 2029,
+        "output": 97,
+        "total": 2126
+       },
+       "custo_usd": 0.0008512,
+       "latencia_s": 3.077
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 10292,
+        "output": 456,
+        "total": 10748
+       },
+       "custo_usd": 0.0042276,
+       "latencia_s": 3.049
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 9957,
+        "output": 724,
+        "total": 10681
+       },
+       "custo_usd": 0.0047971,
+       "latencia_s": 2.712
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 8272,
+        "output": 1464,
+        "total": 9736
+       },
+       "custo_usd": 0.0061416,
+       "latencia_s": 5.345
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 5802,
+        "output": 1080,
+        "total": 6882
+       },
+       "custo_usd": 0.0044406,
+       "latencia_s": 4.093
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4077,
+        "output": 836,
+        "total": 4913
+       },
+       "custo_usd": 0.0033131,
+       "latencia_s": 5.247
+      },
+      {
+       "modelo": "",
+       "tokens": {},
+       "custo_usd": null,
+       "latencia_s": 1.681
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3725,
+        "output": 946,
+        "total": 4671
+       },
+       "custo_usd": 0.0034825,
+       "latencia_s": 3.864
+      }
+     ],
+     "custo_servidor_usd": 0.0349953,
+     "custo_confere_com_o_app": true,
+     "completo": false,
+     "faltas": [
+      "geração sem custo",
+      "prazo esgotado"
+     ]
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/87c80ba48011641bdd3757363fa2b720"
+   ]
+  },
+  {
+   "rotulo": "agentes_modelo",
+   "pergunta_exibida": "Quantas companhias o modelo preditivo sinaliza no trimestre corrente, e com que AUC ele foi validado?",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.006049,
+   "duracao_no_app_s": 15.28,
+   "traces": [
+    "1ebb973b225d3d6e99d4cdd4092f9812"
+   ],
+   "resposta_inicio": "O modelo preditivo de prejuízo foi validado com um AUC (walk-forward) de 0,879. No trimestre corrente (1T2026), o modelo sinaliza 25 companhias lucrativas com escore acima do limiar, além de 136 companhias que já se encontram em prejuízo (totalizando companhias sinalizadas conforme o panorama da fer",
+   "resposta": "O modelo preditivo de prejuízo foi validado com um AUC (walk-forward) de 0,879. No trimestre corrente (1T2026), o modelo sinaliza 25 companhias lucrativas com escore acima do limiar, além de 136 companhias que já se encontram em prejuízo (totalizando companhias sinalizadas conforme o panorama da ferramenta).\n\n> 📄 Modelo preditivo · panorama 1T2026 · regime por porte\n\n**Auditor:** confirma.",
+   "rastro_agentes": [
+    "Investigador · `consultar_modelo_prejuizo` · panorama 3T2025",
+    "Auditor · `consultar_modelo_prejuizo` · panorama 3T2025"
+   ],
+   "no_servidor": {
+    "1ebb973b225d3d6e99d4cdd4092f9812": {
+     "observacoes": 13,
+     "tipos": [
+      "AGENT",
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "SPAN",
+      "TOOL"
+     ],
+     "latencia_raiz_s": 14.434,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 2664,
+        "output": 128,
+        "total": 2792
+       },
+       "custo_usd": 0.001119199999,
+       "latencia_s": 3.971
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 1864,
+        "output": 85,
+        "total": 1949
+       },
+       "custo_usd": 0.0007717,
+       "latencia_s": 3.506
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4535,
+        "output": 240,
+        "total": 4775
+       },
+       "custo_usd": 0.0019605,
+       "latencia_s": 3.404
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3709,
+        "output": 434,
+        "total": 4143
+       },
+       "custo_usd": 0.0021977,
+       "latencia_s": 3.324
+      }
+     ],
+     "custo_servidor_usd": 0.0060491,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/1ebb973b225d3d6e99d4cdd4092f9812"
+   ]
+  },
+  {
+   "rotulo": "AGTC001",
+   "pergunta_exibida": "E o Inter? Quanto ele lucrou no primeiro trimestre de 2026?",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.007347,
+   "duracao_no_app_s": 30.85,
+   "traces": [
+    "2d23db0db5137fdf1b39dfc45f73006e"
+   ],
+   "resposta_inicio": "No primeiro trimestre de 2026 (1T2026), o Inter & Co, Inc. (CD_CVM 080217) registrou lucro líquido consolidado de R$ 417.547.000,00 e lucro líquido atribuível aos controladores de R$ 394.788.000,00, conforme os dados arquivados na CVM. O corpus de releases não possui cobertura para esta instituição,",
+   "resposta": "No primeiro trimestre de 2026 (1T2026), o Inter & Co, Inc. (CD_CVM 080217) registrou lucro líquido consolidado de R$ 417.547.000,00 e lucro líquido atribuível aos controladores de R$ 394.788.000,00, conforme os dados arquivados na CVM. O corpus de releases não possui cobertura para esta instituição, logo não há dados gerenciais disponíveis.\n\n> 📄 CVM · INTER & CO, INC. (CD_CVM 080217) · 1T2026 · lucro_liquido_consolidado\n> 📄 CVM · INTER & CO, INC. (CD_CVM 080217) · 1T2026 · lucro_liquido_controladores\n\n**Auditor:** confirma.",
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): so_painel",
+    "Investigador · `consultar_cvm` · 3 linha(s)",
+    "Auditor · `consultar_cvm` · 10 linha(s)"
+   ],
+   "no_servidor": {
+    "2d23db0db5137fdf1b39dfc45f73006e": {
+     "observacoes": 15,
+     "tipos": [
+      "AGENT",
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "SPAN",
+      "TOOL"
+     ],
+     "latencia_raiz_s": 29.739,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 2468,
+        "output": 204,
+        "total": 2672
+       },
+       "custo_usd": 0.0012504,
+       "latencia_s": 14.386
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 1948,
+        "output": 168,
+        "total": 2116
+       },
+       "custo_usd": 0.0010044,
+       "latencia_s": 3.112
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4375,
+        "output": 399,
+        "total": 4774
+       },
+       "custo_usd": 0.00231,
+       "latencia_s": 4.866
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4013,
+        "output": 134,
+        "total": 4147
+       },
+       "custo_usd": 0.0015389,
+       "latencia_s": 3.992
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3703,
+        "output": 53,
+        "total": 3756
+       },
+       "custo_usd": 0.001243399999,
+       "latencia_s": 3.056
+      }
+     ],
+     "custo_servidor_usd": 0.0073471,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/2d23db0db5137fdf1b39dfc45f73006e"
+   ]
+  },
+  {
+   "rotulo": "AGTC002",
+   "pergunta_exibida": "E o Nubank? Quanto ele lucrou no primeiro trimestre de 2026?",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.007104,
+   "duracao_no_app_s": 31.58,
+   "traces": [
+    "2c2b5b3e88a6378f8e9b84043f6a5a01"
+   ],
+   "resposta_inicio": "Não foi possível encontrar informações sobre o Nubank, pois a entidade não é listada na CVM e não consta no corpus de releases dos cinco bancos cobertos.\n\n**Auditor:** confirma.",
+   "resposta": "Não foi possível encontrar informações sobre o Nubank, pois a entidade não é listada na CVM e não consta no corpus de releases dos cinco bancos cobertos.\n\n**Auditor:** confirma.",
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): nenhuma",
+    "Auditor · `verificar_cobertura` · 1 entidade(s): nenhuma",
+    "Auditor · `verificar_cobertura` · 1 entidade(s): nenhuma",
+    "Auditor · `buscar_trechos` · 0 trecho(s) por semantica"
+   ],
+   "no_servidor": {
+    "2c2b5b3e88a6378f8e9b84043f6a5a01": {
+     "observacoes": 18,
+     "tipos": [
+      "AGENT",
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "SPAN",
+      "TOOL"
+     ],
+     "latencia_raiz_s": 31.088,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 2346,
+        "output": 114,
+        "total": 2460
+       },
+       "custo_usd": 0.0009888,
+       "latencia_s": 3.54
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 2233,
+        "output": 108,
+        "total": 2341
+       },
+       "custo_usd": 0.0009399,
+       "latencia_s": 4.285
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 1950,
+        "output": 68,
+        "total": 2018
+       },
+       "custo_usd": 0.000755,
+       "latencia_s": 2.211
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 2064,
+        "output": 109,
+        "total": 2173
+       },
+       "custo_usd": 0.000891699999,
+       "latencia_s": 5.511
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 1793,
+        "output": 56,
+        "total": 1849
+       },
+       "custo_usd": 0.000677899999,
+       "latencia_s": 3.882
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3974,
+        "output": 164,
+        "total": 4138
+       },
+       "custo_usd": 0.0016022,
+       "latencia_s": 1.159
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3704,
+        "output": 55,
+        "total": 3759
+       },
+       "custo_usd": 0.0012487,
+       "latencia_s": 9.911
+      }
+     ],
+     "custo_servidor_usd": 0.0071042,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/2c2b5b3e88a6378f8e9b84043f6a5a01"
+   ]
+  },
+  {
+   "rotulo": "AGTC003",
+   "pergunta_exibida": "Quanto o BTG lucrou no primeiro trimestre de 2026?",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.003353,
+   "duracao_no_app_s": 8.67,
+   "traces": [
+    "4ef4ed0629ccc21995a98aadb49e89f5"
+   ],
+   "resposta_inicio": "'btg' identifica 2 companhias no painel da CVM: BCO BTG PACTUAL S.A. (CD_CVM 022616); BTG PACTUAL COMMODITIES SERTRADING S.A. (CD_CVM 027774). Qual delas? Responda com o CD_CVM — a seleção é sempre por código, nunca por nome.",
+   "resposta": "'btg' identifica 2 companhias no painel da CVM: BCO BTG PACTUAL S.A. (CD_CVM 022616); BTG PACTUAL COMMODITIES SERTRADING S.A. (CD_CVM 027774). Qual delas? Responda com o CD_CVM — a seleção é sempre por código, nunca por nome.",
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): desambiguacao"
+   ],
+   "no_servidor": {
+    "4ef4ed0629ccc21995a98aadb49e89f5": {
+     "observacoes": 9,
+     "tipos": [
+      "AGENT",
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "SPAN",
+      "TOOL"
+     ],
+     "latencia_raiz_s": 8.081,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4126,
+        "output": 348,
+        "total": 4474
+       },
+       "custo_usd": 0.0021078,
+       "latencia_s": 4.431
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3701,
+        "output": 54,
+        "total": 3755
+       },
+       "custo_usd": 0.0012453,
+       "latencia_s": 3.231
+      }
+     ],
+     "custo_servidor_usd": 0.0033531,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/4ef4ed0629ccc21995a98aadb49e89f5"
+   ]
+  },
+  {
+   "rotulo": "AGTC006",
+   "pergunta_exibida": "E o Santander? Quanto ele lucrou no primeiro trimestre de 2026?",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.013717,
+   "duracao_no_app_s": 29.46,
+   "traces": [
+    "c12de97e0311f4c4b875b02428590d78"
+   ],
+   "resposta_inicio": "No primeiro trimestre de 2026, o BCO SANTANDER (BRASIL) S.A. (CD_CVM 020532) registrou lucro líquido gerencial de R$ 3,788 bilhões (conforme o release de resultados da administração), lucro líquido consolidado de R$ 3.281.550.000,00 e lucro líquido atribuído aos controladores de R$ 3.217.994.000,00 ",
+   "resposta": "No primeiro trimestre de 2026, o BCO SANTANDER (BRASIL) S.A. (CD_CVM 020532) registrou lucro líquido gerencial de R$ 3,788 bilhões (conforme o release de resultados da administração), lucro líquido consolidado de R$ 3.281.550.000,00 e lucro líquido atribuído aos controladores de R$ 3.217.994.000,00 (conforme os dados arquivados na CVM).\n\n> 📄 CVM · BCO SANTANDER (BRASIL) S.A. (CD_CVM 020532) · 1T2026 · lucro_liquido_consolidado\n> 📄 CVM · BCO SANTANDER (BRASIL) S.A. (CD_CVM 020532) · 1T2026 · lucro_liquido_controladores\n> 📄 release santander_release_1T2026 · SANTANDER · 1T2026 · p. 5\n\n**Auditor:** confirma.",
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): ambas",
+    "Investigador · `consultar_cvm` · 2 linha(s)",
+    "Investigador · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Auditor · `consultar_cvm` · 10 linha(s)",
+    "Auditor · `buscar_trechos` · 3 trecho(s) por semantica"
+   ],
+   "no_servidor": {
+    "c12de97e0311f4c4b875b02428590d78": {
+     "observacoes": 19,
+     "tipos": [
+      "AGENT",
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "SPAN",
+      "TOOL"
+     ],
+     "latencia_raiz_s": 28.289,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 5148,
+        "output": 179,
+        "total": 5327
+       },
+       "custo_usd": 0.0019919,
+       "latencia_s": 3.344
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3485,
+        "output": 401,
+        "total": 3886
+       },
+       "custo_usd": 0.002048,
+       "latencia_s": 4.646
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 1999,
+        "output": 85,
+        "total": 2084
+       },
+       "custo_usd": 0.000812199999,
+       "latencia_s": 1.443
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 7366,
+        "output": 439,
+        "total": 7805
+       },
+       "custo_usd": 0.003307299999,
+       "latencia_s": 5.272
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4427,
+        "output": 545,
+        "total": 4972
+       },
+       "custo_usd": 0.0026906,
+       "latencia_s": 4.513
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4055,
+        "output": 162,
+        "total": 4217
+       },
+       "custo_usd": 0.0016215,
+       "latencia_s": 1.388
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3703,
+        "output": 54,
+        "total": 3757
+       },
+       "custo_usd": 0.001245899999,
+       "latencia_s": 6.693
+      }
+     ],
+     "custo_servidor_usd": 0.0137174,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/c12de97e0311f4c4b875b02428590d78"
+   ]
+  },
+  {
+   "rotulo": "AGTR002",
+   "pergunta_exibida": "O resultado recorrente gerencial que o Itaú Unibanco divulgou no release do 2T2025 é o mesmo número que ele arquivou na CVM? Apresente os dois.",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.01495,
+   "duracao_no_app_s": 27.79,
+   "traces": [
+    "e8607790de7b7e268bcf93bcf99b42f7"
+   ],
+   "resposta_inicio": "O resultado recorrente gerencial divulgado pelo Itaú Unibanco no release do 2T2025 foi de R$ 11.508 milhões. Já os números contábeis arquivados na CVM para o mesmo trimestre foram de R$ 11.398 milhões para o lucro líquido consolidado e R$ 11.137 milhões para o lucro líquido atribuído aos controlador",
+   "resposta": "O resultado recorrente gerencial divulgado pelo Itaú Unibanco no release do 2T2025 foi de R$ 11.508 milhões. Já os números contábeis arquivados na CVM para o mesmo trimestre foram de R$ 11.398 milhões para o lucro líquido consolidado e R$ 11.137 milhões para o lucro líquido atribuído aos controladores.\n\n> 📄 CVM · ITAU UNIBANCO HOLDING S.A. (CD_CVM 019348) · 2T2025 · lucro_liquido_consolidado\n> 📄 CVM · ITAU UNIBANCO HOLDING S.A. (CD_CVM 019348) · 2T2025 · lucro_liquido_controladores\n> 📄 release itau_release_2T2025 · ITAU · 2T2025 · p. 5\n\n**Auditor:** confirma.",
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): ambas",
+    "Investigador · `consultar_cvm` · 2 linha(s)",
+    "Investigador · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Auditor · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Auditor · `consultar_cvm` · 10 linha(s)"
+   ],
+   "no_servidor": {
+    "e8607790de7b7e268bcf93bcf99b42f7": {
+     "observacoes": 19,
+     "tipos": [
+      "AGENT",
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "SPAN",
+      "TOOL"
+     ],
+     "latencia_raiz_s": 26.579,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4248,
+        "output": 204,
+        "total": 4452
+       },
+       "custo_usd": 0.001784399999,
+       "latencia_s": 2.547
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3797,
+        "output": 262,
+        "total": 4059
+       },
+       "custo_usd": 0.001794099999,
+       "latencia_s": 5.133
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 1991,
+        "output": 76,
+        "total": 2067
+       },
+       "custo_usd": 0.0007873,
+       "latencia_s": 3.423
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 6957,
+        "output": 389,
+        "total": 7346
+       },
+       "custo_usd": 0.0030596,
+       "latencia_s": 3.197
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4455,
+        "output": 599,
+        "total": 5054
+       },
+       "custo_usd": 0.002834,
+       "latencia_s": 3.05
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4091,
+        "output": 878,
+        "total": 4969
+       },
+       "custo_usd": 0.0034223,
+       "latencia_s": 5.007
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3729,
+        "output": 60,
+        "total": 3789
+       },
+       "custo_usd": 0.0012687,
+       "latencia_s": 3.314
+      }
+     ],
+     "custo_servidor_usd": 0.0149504,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/e8607790de7b7e268bcf93bcf99b42f7"
+   ]
+  },
+  {
+   "rotulo": "AGTR003",
+   "pergunta_exibida": "O lucro do Bradesco no terceiro trimestre de 2025 que aparece no relatório é o mesmo que ele registrou na CVM? Por que a diferença?",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.012072,
+   "duracao_no_app_s": 28.48,
+   "traces": [
+    "31f4493e63a108db21448c0b599e32d3"
+   ],
+   "resposta_inicio": "No terceiro trimestre de 2025, o Bradesco registrou no relatório gerencial um Lucro Líquido Recorrente de R$ 6.205 milhões e um Lucro Líquido Contábil gerencial de R$ 6.205 milhões (bradesco_release_3T2025, p. 45). Na CVM, o lucro líquido consolidado arquivado foi de R$ 5.568.016.000,00 e o lucro lí",
+   "resposta": "No terceiro trimestre de 2025, o Bradesco registrou no relatório gerencial um Lucro Líquido Recorrente de R$ 6.205 milhões e um Lucro Líquido Contábil gerencial de R$ 6.205 milhões (bradesco_release_3T2025, p. 45). Na CVM, o lucro líquido consolidado arquivado foi de R$ 5.568.016.000,00 e o lucro líquido atribuído aos controladores foi de R$ 5.500.665.000,00. A diferença entre os valores do relatório gerencial (geralmente em bases recorrentes ou com ajustes gerenciais) e os demonstrativos contábeis oficiais da CVM decorre de ajustes e critérios de reconhecimento adotados pela administração na visão gerencial.\n\n> 📄 CVM · BCO BRADESCO S.A. (CD_CVM 000906) · 3T2025 · lucro_liquido_consolidado\n> 📄 CVM · BCO BRADESCO S.A. (CD_CVM 000906) · 3T2025 · lucro_liquido_controladores\n> 📄 release bradesco_release_3T2025 · BRADESCO · 3T2025 · p. 45\n\n**Auditor:** confirma.",
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): ambas",
+    "Investigador · `consultar_cvm` · 3 linha(s)",
+    "Investigador · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Auditor · `consultar_cvm` · 10 linha(s)",
+    "Auditor · `buscar_trechos` · 3 trecho(s) por semantica"
+   ],
+   "no_servidor": {
+    "31f4493e63a108db21448c0b599e32d3": {
+     "observacoes": 19,
+     "tipos": [
+      "AGENT",
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "SPAN",
+      "TOOL"
+     ],
+     "latencia_raiz_s": 26.802,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4003,
+        "output": 205,
+        "total": 4208
+       },
+       "custo_usd": 0.0017134,
+       "latencia_s": 3.853
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 2527,
+        "output": 70,
+        "total": 2597
+       },
+       "custo_usd": 0.0009331,
+       "latencia_s": 3.307
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 2079,
+        "output": 384,
+        "total": 2463
+       },
+       "custo_usd": 0.001583699999,
+       "latencia_s": 3.749
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 7090,
+        "output": 471,
+        "total": 7561
+       },
+       "custo_usd": 0.0033045,
+       "latencia_s": 4.199
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4452,
+        "output": 81,
+        "total": 4533
+       },
+       "custo_usd": 0.0015381,
+       "latencia_s": 4.176
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4070,
+        "output": 152,
+        "total": 4222
+       },
+       "custo_usd": 0.001601,
+       "latencia_s": 3.965
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3720,
+        "output": 113,
+        "total": 3833
+       },
+       "custo_usd": 0.0013985,
+       "latencia_s": 2.728
+      }
+     ],
+     "custo_servidor_usd": 0.0120723,
+     "custo_confere_com_o_app": true,
+     "completo": true,
+     "faltas": []
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/31f4493e63a108db21448c0b599e32d3"
+   ]
+  },
+  {
+   "rotulo": "AGTP004",
+   "pergunta_exibida": "Quanto o Banco do Brasil lucrou em 2025, e dá para comparar esse número com a faixa que ele tinha projetado?",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "custo_usd": 0.022302,
+   "duracao_no_app_s": 37.26,
+   "traces": [
+    "580b2f57f2987639730fcfcf57ce984e"
+   ],
+   "resposta_inicio": "O Banco do Brasil apresentou lucro líquido consolidado de R$ 4.177.854.000,00 no 1T2025, R$ 3.582.262.000,00 no 2T2025, R$ 3.006.743.000,00 no 3T2025 e R$ 6.015.079.000,00 no 4T2025 (sendo este último derivado). O lucro líquido atribuível aos controladores foi de R$ 3.438.804.000,00 no 1T2025, R$ 2.",
+   "resposta": "O Banco do Brasil apresentou lucro líquido consolidado de R$ 4.177.854.000,00 no 1T2025, R$ 3.582.262.000,00 no 2T2025, R$ 3.006.743.000,00 no 3T2025 e R$ 6.015.079.000,00 no 4T2025 (sendo este último derivado). O lucro líquido atribuível aos controladores foi de R$ 3.438.804.000,00 no 1T2025, R$ 2.782.083.000,00 no 2T2025, R$ 2.237.301.000,00 no 3T2025 e R$ 5.239.936.000,00 no 4T2025. O corpus de releases contém menções às projeções corporativas (guidance), mas os valores específicos da faixa projetada não foram detalhados nos trechos recuperados para comparação direta.\n\n> 📄 CVM · BCO BRASIL S.A. (CD_CVM 001023) · 1T2025 · lucro_liquido_consolidado\n> 📄 CVM · BCO BRASIL S.A. (CD_CVM 001023) · 2T2025 · lucro_liquido_consolidado\n> 📄 CVM · BCO BRASIL S.A. (CD_CVM 001023) · 3T2025 · lucro_liquido_consolidado\n> 📄 CVM · BCO BRASIL S.A. (CD_CVM 001023) · 4T2025 · lucro_liquido_consolidado\n> 📄 CVM · BCO BRASIL S.A. (CD_CVM 001023) · 1T2025 · lucro_liquido_controladores\n> 📄 CVM · BCO BRASIL S.A. (CD_CVM 001023) · 2T2025 · lucro_liquido_controladores\n> 📄 CVM · BCO BRASIL S.A. (CD_CVM 001023) · 3T2025 · lucro_liquido_controladores\n> 📄 CVM · BCO BRASIL S.A. (CD_CVM 001023) · 4T2025 · lucro_liquido_controladores\n> 📄 release bb_release_4T2025 · BB · 4T2025 · p. 14\n\n**Auditor:** confirma.",
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): ambas",
+    "Investigador · `consultar_cvm` · 8 linha(s)",
+    "Investigador · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Investigador · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Auditor · `consultar_cvm` · 8 linha(s)",
+    "Auditor · `buscar_trechos` · 3 trecho(s) por semantica"
+   ],
+   "no_servidor": {
+    "580b2f57f2987639730fcfcf57ce984e": {
+     "observacoes": 22,
+     "tipos": [
+      "AGENT",
+      "CHAIN",
+      "GENERATION",
+      "GUARDRAIL",
+      "SPAN",
+      "TOOL"
+     ],
+     "latencia_raiz_s": 34.803,
+     "geracoes": [
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4578,
+        "output": 437,
+        "total": 5015
+       },
+       "custo_usd": 0.002465899999,
+       "latencia_s": 4.308
+      },
+      {
+       "modelo": "",
+       "tokens": {},
+       "custo_usd": null,
+       "latencia_s": 2.64
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3022,
+        "output": 64,
+        "total": 3086
+       },
+       "custo_usd": 0.0010666,
+       "latencia_s": 4.076
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 2424,
+        "output": 171,
+        "total": 2595
+       },
+       "custo_usd": 0.001154699999,
+       "latencia_s": 2.721
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 8439,
+        "output": 870,
+        "total": 9309
+       },
+       "custo_usd": 0.004706699999,
+       "latencia_s": 3.792
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 7213,
+        "output": 736,
+        "total": 7949
+       },
+       "custo_usd": 0.0040039,
+       "latencia_s": 3.683
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4704,
+        "output": 781,
+        "total": 5485
+       },
+       "custo_usd": 0.0033637,
+       "latencia_s": 2.638
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 4047,
+        "output": 1241,
+        "total": 5288
+       },
+       "custo_usd": 0.0043166,
+       "latencia_s": 6.904
+      },
+      {
+       "modelo": "gemini-3.5-flash-lite",
+       "tokens": {
+        "input": 3714,
+        "output": 44,
+        "total": 3758
+       },
+       "custo_usd": 0.0012242,
+       "latencia_s": 1.928
+      }
+     ],
+     "custo_servidor_usd": 0.0223023,
+     "custo_confere_com_o_app": true,
+     "completo": false,
+     "faltas": [
+      "geração sem custo",
+      "prazo esgotado"
+     ]
+    }
+   },
+   "urls": [
+    "https://us.cloud.langfuse.com/project/cmvfyo5dn02owad0jpqyk2yf5/traces/580b2f57f2987639730fcfcf57ce984e"
+   ]
+  }
+ ],
+ "traces_completos": 17,
+ "traces_total": 19,
+ "reconferido_em": "2026-10-20T214627Z"
+}

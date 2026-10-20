@@ -144,6 +144,7 @@ artefatos/**/.*.tmp-*
 # ----------------------------------------------------------------------------
 resultados/*
 !resultados/ajustes_etapa2_2026-10-20.md
+!resultados/agentes_produto_2026-10-20.md
 !resultados/deepeval_2026-10-20.md
 !resultados/auditoria_groundedness_2026-08-22.md
 !resultados/concordancia_juiz_humano_2026-08-23.md

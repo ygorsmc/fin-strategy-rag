@@ -16,6 +16,10 @@ traces são do produto, não de uma cópia dele.
     # Só as perguntas do modo agentes (Investigador + Auditor, com o modelo)
     python -m scripts.gerar_traces_langfuse --permitir-api-paga --conjunto agentes
 
+    # Acrescenta ao modo agentes perguntas do conjunto próprio, pelo id
+    python -m scripts.gerar_traces_langfuse --permitir-api-paga --conjunto agentes \
+        --ids-agentes AGTC001,AGTR002
+
 Sem `--permitir-api-paga`, as chaves de todos os provedores pagos são
 esvaziadas para esta execução: uma pergunta que escape das rotas gratuitas
 falha fechada, sem gastar, qualquer que seja o `LLM_PROVIDER`.
@@ -100,6 +104,25 @@ PERGUNTAS_AGENTES: tuple[tuple[str, str, bool], ...] = (
         True,
     ),
 )
+
+
+CONJUNTO_AGENTES = RAIZ / "conjunto_padrao" / "conjunto_agentes.csv"
+
+
+def perguntas_do_conjunto_agentes(ids: list[str], caminho: Path = CONJUNTO_AGENTES) -> list[tuple[str, str, bool]]:
+    """Perguntas do conjunto próprio dos agentes, na ordem pedida.
+
+    Id desconhecido levanta erro: rodar menos perguntas do que se pediu, sem
+    aviso, mudaria o denominador da medição.
+    """
+    import csv
+
+    with caminho.open(encoding="utf-8", newline="") as arquivo:
+        por_id = {linha["id"]: linha["pergunta"] for linha in csv.DictReader(arquivo)}
+    faltam = [i for i in ids if i not in por_id]
+    if faltam:
+        raise ValueError(f"ids fora de {caminho.name}: {', '.join(faltam)}")
+    return [(i, por_id[i], True) for i in ids]
 
 
 def _journal(caminho: Path, evento: dict) -> None:
@@ -243,13 +266,18 @@ def principal(argv=None) -> int:
     ap.add_argument("--conjunto", choices=("chat", "agentes", "todos"), default="chat")
     ap.add_argument("--prazo-conferencia-s", type=float, default=180.0)
     ap.add_argument("--reconferir", type=Path, help="resumo já gravado: só confere no servidor, sem perguntar de novo")
+    ap.add_argument(
+        "--ids-agentes",
+        default="",
+        help="ids de conjunto_padrao/conjunto_agentes.csv, separados por vírgula, rodados no modo agentes",
+    )
     args = ap.parse_args(argv)
     if args.reconferir:
         return _reconferir(args.reconferir, args.prazo_conferencia_s)
 
     # Antes de o app carregar o `.env`: `load_dotenv` não sobrescreve o que
     # já está no ambiente.
-    os.environ["LIMITE_PERGUNTAS_LIVRES_POR_SESSAO"] = str(4 * len(PERGUNTAS))
+    os.environ["LIMITE_PERGUNTAS_LIVRES_POR_SESSAO"] = str(4 * len(PERGUNTAS) + len(args.ids_agentes.split(",")))
     os.environ["HABILITAR_PERGUNTAS_LIVRES"] = "true"
     if not args.permitir_api_paga:
         for chave in CHAVES_PAGAS:
@@ -266,6 +294,8 @@ def principal(argv=None) -> int:
         selecionadas += [(*p, MODO_LIVRE) for p in PERGUNTAS]
     if args.conjunto in ("agentes", "todos"):
         selecionadas += [(*p, MODO_AGENTES) for p in PERGUNTAS_AGENTES]
+    ids_agentes = [i.strip() for i in args.ids_agentes.split(",") if i.strip()]
+    selecionadas += [(*p, MODO_AGENTES) for p in perguntas_do_conjunto_agentes(ids_agentes)]
     perguntas = [p for p in selecionadas if args.permitir_api_paga or not p[2]]
     if not perguntas:
         print("Nenhuma pergunta sem custo neste conjunto; use --permitir-api-paga.")
@@ -308,6 +338,8 @@ def principal(argv=None) -> int:
             "duracao_no_app_s": round(duracao, 2),
             "traces": [id_trace for _, id_trace in novos],
             "resposta_inicio": (resposta.get("conteudo") or "")[:300],
+            # Inteira no modo agentes: é ela que se confere contra o gabarito.
+            "resposta": (resposta.get("conteudo") or "") if modo == MODO_AGENTES else None,
             "rastro_agentes": resposta.get("rastro_agentes"),
         }
         linhas.append(linha)

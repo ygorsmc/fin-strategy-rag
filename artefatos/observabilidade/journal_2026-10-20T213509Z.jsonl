@@ -1,0 +1,38 @@
+{"em": "2026-10-20T21:35:09.635739+00:00", "evento": "inicio", "rotulo": "guardrail_rn05", "paga": false, "modo": "Pergunta livre"}
+{"em": "2026-10-20T21:35:10.416179+00:00", "evento": "fim", "rotulo": "guardrail_rn05", "custo_usd": 0.0, "traces": ["413d1fb0753bd8334e2fae56421bcd93"]}
+{"em": "2026-10-20T21:35:10.416277+00:00", "evento": "inicio", "rotulo": "prospectiva_rn07", "paga": false, "modo": "Pergunta livre"}
+{"em": "2026-10-20T21:35:13.607440+00:00", "evento": "fim", "rotulo": "prospectiva_rn07", "custo_usd": 0.0, "traces": ["0c81585e8ca6e2cddf6365e220071c75"]}
+{"em": "2026-10-20T21:35:13.607515+00:00", "evento": "inicio", "rotulo": "painel_cvm", "paga": false, "modo": "Pergunta livre"}
+{"em": "2026-10-20T21:35:14.289164+00:00", "evento": "fim", "rotulo": "painel_cvm", "custo_usd": 0.0, "traces": ["300202581c73325b84df030d1119c694"]}
+{"em": "2026-10-20T21:35:14.289231+00:00", "evento": "inicio", "rotulo": "anonimizacao_rn06", "paga": false, "modo": "Pergunta livre"}
+{"em": "2026-10-20T21:35:14.926842+00:00", "evento": "fim", "rotulo": "anonimizacao_rn06", "custo_usd": 0.0, "traces": ["d138a27ff505d1a4e3ddaf706c9f3553"]}
+{"em": "2026-10-20T21:35:14.926963+00:00", "evento": "inicio", "rotulo": "DEV003", "paga": true, "modo": "Pergunta livre"}
+{"em": "2026-10-20T21:35:19.828391+00:00", "evento": "fim", "rotulo": "DEV003", "custo_usd": 0.001637, "traces": ["050bec074e1f00bdc0f1ea3ff0c0f78d"]}
+{"em": "2026-10-20T21:35:19.828464+00:00", "evento": "inicio", "rotulo": "DEV005", "paga": true, "modo": "Pergunta livre"}
+{"em": "2026-10-20T21:35:21.943766+00:00", "evento": "fim", "rotulo": "DEV005", "custo_usd": 0.001349, "traces": ["333db5fcb37e1e0cc8491d09264dab7f"]}
+{"em": "2026-10-20T21:35:21.943838+00:00", "evento": "inicio", "rotulo": "DEV004", "paga": true, "modo": "Pergunta livre"}
+{"em": "2026-10-20T21:35:25.618840+00:00", "evento": "fim", "rotulo": "DEV004", "custo_usd": 0.001516, "traces": ["ae2308c58426b4aceb08db768b40c2ef"]}
+{"em": "2026-10-20T21:35:25.618964+00:00", "evento": "inicio", "rotulo": "DEV008", "paga": true, "modo": "Pergunta livre"}
+{"em": "2026-10-20T21:35:34.092153+00:00", "evento": "fim", "rotulo": "DEV008", "custo_usd": 0.002126, "traces": ["24459afcded12788ec8001c7294da034"]}
+{"em": "2026-10-20T21:35:34.092287+00:00", "evento": "inicio", "rotulo": "DEV009", "paga": true, "modo": "Pergunta livre"}
+{"em": "2026-10-20T21:35:38.140152+00:00", "evento": "fim", "rotulo": "DEV009", "custo_usd": 0.001754, "traces": ["61135be7b9620bf660f1555d9577a1d1"]}
+{"em": "2026-10-20T21:35:38.228146+00:00", "evento": "inicio", "rotulo": "agentes_painel_e_modelo", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T21:36:06.849300+00:00", "evento": "fim", "rotulo": "agentes_painel_e_modelo", "custo_usd": 0.013743, "traces": ["10e07f671801b11c67b35b0bf27a3ba8"]}
+{"em": "2026-10-20T21:36:06.849397+00:00", "evento": "inicio", "rotulo": "agentes_release_e_painel", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T21:36:51.709070+00:00", "evento": "fim", "rotulo": "agentes_release_e_painel", "custo_usd": 0.034995, "traces": ["87c80ba48011641bdd3757363fa2b720"]}
+{"em": "2026-10-20T21:36:51.709154+00:00", "evento": "inicio", "rotulo": "agentes_modelo", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T21:37:06.985175+00:00", "evento": "fim", "rotulo": "agentes_modelo", "custo_usd": 0.006049, "traces": ["1ebb973b225d3d6e99d4cdd4092f9812"]}
+{"em": "2026-10-20T21:37:06.985251+00:00", "evento": "inicio", "rotulo": "AGTC001", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T21:37:37.838123+00:00", "evento": "fim", "rotulo": "AGTC001", "custo_usd": 0.007347, "traces": ["2d23db0db5137fdf1b39dfc45f73006e"]}
+{"em": "2026-10-20T21:37:37.838205+00:00", "evento": "inicio", "rotulo": "AGTC002", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T21:38:09.419638+00:00", "evento": "fim", "rotulo": "AGTC002", "custo_usd": 0.007104, "traces": ["2c2b5b3e88a6378f8e9b84043f6a5a01"]}
+{"em": "2026-10-20T21:38:09.419748+00:00", "evento": "inicio", "rotulo": "AGTC003", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T21:38:18.094150+00:00", "evento": "fim", "rotulo": "AGTC003", "custo_usd": 0.003353, "traces": ["4ef4ed0629ccc21995a98aadb49e89f5"]}
+{"em": "2026-10-20T21:38:18.094235+00:00", "evento": "inicio", "rotulo": "AGTC006", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T21:38:47.554492+00:00", "evento": "fim", "rotulo": "AGTC006", "custo_usd": 0.013717, "traces": ["c12de97e0311f4c4b875b02428590d78"]}
+{"em": "2026-10-20T21:38:47.554580+00:00", "evento": "inicio", "rotulo": "AGTR002", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T21:39:15.344753+00:00", "evento": "fim", "rotulo": "AGTR002", "custo_usd": 0.01495, "traces": ["e8607790de7b7e268bcf93bcf99b42f7"]}
+{"em": "2026-10-20T21:39:15.344834+00:00", "evento": "inicio", "rotulo": "AGTR003", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T21:39:43.825263+00:00", "evento": "fim", "rotulo": "AGTR003", "custo_usd": 0.012072, "traces": ["31f4493e63a108db21448c0b599e32d3"]}
+{"em": "2026-10-20T21:39:43.825378+00:00", "evento": "inicio", "rotulo": "AGTP004", "paga": true, "modo": "Agentes (Investigador + Auditor)"}
+{"em": "2026-10-20T21:40:21.087740+00:00", "evento": "fim", "rotulo": "AGTP004", "custo_usd": 0.022302, "traces": ["580b2f57f2987639730fcfcf57ce984e"]}

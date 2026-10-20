@@ -136,10 +136,13 @@ for o caso.
 
 ### Agentes, observabilidade e DeepEval
 
-Em 19/10/2026, 12 perguntas reais no chat geraram 12 traces no Langfuse, e o
-custo registrado no servidor bateu com o do app em todas
-([traces](artefatos/observabilidade/)). As perguntas livres levaram de 3 a 13
-segundos; as dos agentes, de 13 a 50.
+Em 20/10/2026, 19 perguntas feitas pelo próprio app geraram 19 traces no
+Langfuse, e o custo registrado no servidor bateu com o do app em todos
+([traces](artefatos/observabilidade/)). As perguntas livres levaram de 1,7 a
+8,1 segundos; as dos agentes, de 8 a 44. Em 7 perguntas do conjunto próprio
+dos agentes, 4 respostas cobriram tudo o que o gabarito pede e 3 trouxeram os
+números certos com explicação incompleta; nenhuma trouxe número errado
+([medição](resultados/agentes_produto_2026-10-20.md)).
 
 O DeepEval mediu faithfulness e answer relevancy nas 45 respostas gravadas, com
 o DeepSeek V4 Flash como juiz. Contra a auditoria humana feita às cegas em 10

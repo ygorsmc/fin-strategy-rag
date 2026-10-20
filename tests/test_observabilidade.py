@@ -317,6 +317,31 @@ class _CaixaFalsa:
         return ["t1", "t2"]
 
 
+class TestPerguntasDoConjuntoAgentes:
+    """`--ids-agentes` lê as perguntas do conjunto próprio dos agentes. Id
+    desconhecido para a execução: rodar menos perguntas do que se pediu muda o
+    denominador da medição sem ninguém ver."""
+
+    def test_le_a_pergunta_pelo_id_e_mantem_a_ordem(self):
+        from scripts.gerar_traces_langfuse import perguntas_do_conjunto_agentes
+
+        perguntas = perguntas_do_conjunto_agentes(["AGTC002", "AGTC001"])
+        assert [p[0] for p in perguntas] == ["AGTC002", "AGTC001"]
+        assert "Nubank" in perguntas[0][1]
+        assert all(p[2] for p in perguntas)
+
+    def test_id_desconhecido_levanta_erro(self):
+        from scripts.gerar_traces_langfuse import perguntas_do_conjunto_agentes
+
+        with pytest.raises(ValueError, match="AGTX999"):
+            perguntas_do_conjunto_agentes(["AGTC001", "AGTX999"])
+
+    def test_sem_ids_nao_acrescenta_nada(self):
+        from scripts.gerar_traces_langfuse import perguntas_do_conjunto_agentes
+
+        assert perguntas_do_conjunto_agentes([]) == []
+
+
 class TestConferenciaDoScript:
     """`scripts/gerar_traces_langfuse.py` só dá trace por conferido quando ele
     chegou inteiro. A primeira versão aceitava a primeira observação e marcou
