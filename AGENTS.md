@@ -725,6 +725,27 @@ O prompt do produto proíbe essa frase (`INSTRUCAO_MODELO`) e a ferramenta
 devolve o aviso junto, mas é instrução, não código. Fechar exige um detector de
 saída para projeção sobre emissor nomeado, que não existe.
 
+**Duas guardas que a primeira rodada real cobrou (20/10, prompt `a4`).** Valem
+para o produto e para o experimento:
+
+- **A RN02 dos agentes confere o rótulo, não só o número**
+  (`valores_com_rotulo_trocado`). O valor tem de existir na evidência sob
+  métrica compatível, com o tokenizador e o parser de trecho do caminho livre.
+  Quem mexer no rótulo das saídas de ferramenta precisa saber que o nome da
+  chave e o da coluna viram rótulo; foi por isso que `limite_inferior_reais`
+  passou a se chamar `ativo_minimo_reais`. Antes de afrouxar ou endurecer a
+  guarda, rode `scripts/medir_guarda_rotulo_agentes.py`, que mede a acusação
+  sobre as respostas gravadas.
+- **`confirma` exige reconsultar cada fonte citada**
+  (`fontes_sem_reconsulta`). O tipo de fonte sai do formato da citação, que o
+  prompt fixa. Mudar o formato de citação em `ESQUEMA_INVESTIGADOR` ou em
+  `INSTRUCAO_MODELO` exige mudar `fonte_da_citacao` junto.
+
+**O que elas não fecham:** oração que não nomeia métrica não é julgada; número
+devolvido sem rótulo (literal de SQL, linha modal) continua lastreando pela
+RN02 antiga; e reconsultar a fonte não prova que o Auditor leu a página citada,
+só que consultou o mesmo tipo de fonte.
+
 ## 4. Contratos e regras invioláveis
 
 ### 4.1 Regras de negócio RN01–RN12
@@ -732,7 +753,7 @@ saída para projeção sobre emissor nomeado, que não existe.
 | ID | Regra (resumo — texto normativo na spec §4) | Onde é verificada |
 |---|---|---|
 | RN01 | Toda resposta cita empresa, documento, trimestre e página dos trechos usados | `src/geracao.py` · `tests/test_regras.py` |
-| RN02 | Sem evidência suficiente no trecho recuperado, o sistema declara isso — nunca responde de memória paramétrica | `src/geracao.py` · `tests/test_regras.py` |
+| RN02 | Sem evidência suficiente no trecho recuperado, o sistema declara isso — nunca responde de memória paramétrica | `src/geracao.py` · `tests/test_regras.py` · nos agentes, `src/agentes.py` (número e rótulo, §3.16) |
 | RN03 | Instância pública limita perguntas livres por sessão **e** mantém teto no provedor; o controle real é o do provedor | `app_streamlit.py` · `src/config.py` |
 | RN04 | SQL do painel roda somente-leitura, sobre lista branca, com DDL/DML bloqueado por análise sintática, `LIMIT` e timeout — falha de guarda devolve erro, nunca executa | `src/dados_estruturados.py` · `tests/test_dados_estruturados.py` |
 | RN05 | Sem recomendação de investimento, preço-alvo ou aconselhamento pessoal. Âncora legal: **Res. CVM 20/2021** (análise) e **19/2021** (consultoria); cada subtipo de recusa mapeia à sua | `src/seguranca.py` · `tests/test_seguranca.py` |

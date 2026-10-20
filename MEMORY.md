@@ -608,9 +608,9 @@ outra tarefa.
   **`auditoria_manual_pendente`**. O README ainda publica a anterior
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
-- Suíte atual: **4.661 casos passando, zero falhas/erros/skips**, 28 avisos
-  (19/10, agentes no chat com o modelo, pelo próprio `.venv`).
-  Antes: 4.644 (19/10, traces reais); 4.642 (19/10, correções da auditoria); 4.627 (19/10, Langfuse antes da auditoria); 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
+- Suíte atual: **4.688 casos passando, zero falhas/erros/skips**, 28 avisos
+  (20/10, RN02 com rótulo e Auditor por fonte, pelo próprio `.venv`).
+  Antes: 4.661 (19/10, agentes no chat); 4.644 (19/10, traces reais); 4.642 (19/10, correções da auditoria); 4.627 (19/10, Langfuse antes da auditoria); 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
   (4.184) tem XML em
   `artefatos/pendencias_geom1_rank03b_2026-09-26/pytest_suite_pos_auditoria.xml`.
   Testes dirigidos: 1.179; os dois achados da auditoria independente foram
@@ -1168,10 +1168,28 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    - Também: o Auditor da pergunta do Inter disse ter confirmado a faixa no
      modelo sem chamar a ferramenta do modelo. O gate dele exige alguma
      ferramenta de dado, não uma por fonte citada.
-   **Propostas, não implementadas (mudam o braço B do experimento):** gate do
-   Auditor por fonte citada (CVM, release, modelo), e a RN02 dos agentes com
-   a conferência de rótulo que o caminho livre já tem
-   (`numeros_da_resposta_estao_fundamentados`).
+   **As duas correções foram implementadas em 20/10, por decisão do
+   responsável. Prompt `a3` → `a4`:** as rodadas `a3` em
+   `artefatos/resultados_agentes/` ficam históricas, e a etapa 12 roda em `a4`.
+   - RN02 com rótulo (`valores_com_rotulo_trocado`): mesmo tokenizador e mesmo
+     parser de trecho do caminho livre. Reexecutando as 3 respostas reais,
+     acusa só a do Itaú.
+   - `confirma` exige reconsultar cada fonte citada (`fontes_sem_reconsulta`):
+     painel, release ou modelo, pelo formato da citação. A fonte faltante ganha
+     um segundo tiro, e se continuar faltando o veredito cai para
+     `nao_reproduz`.
+   - Falso positivo medido em `scripts/medir_guarda_rotulo_agentes.py`
+     (custo zero): 201 respostas gravadas, reexecutadas. 2 acusações, as duas
+     da mesma resposta do BB (AGTP002), por deriva do índice. A RN02 antiga
+     passava por coincidência ("4.966/21" vale R$ 21 bi), e a resposta, de
+     todo modo, traz a faixa anterior à revisão do 3T2025. Nenhuma das 16
+     certas foi acusada.
+   - Achado ao medir: o parser compartilhado elege como rótulo a primeira
+     célula com letra, e "| A4 | Resultado Recorrente Gerencial | 12.317 |"
+     deixava o número sem rótulo. Contornado só nos agentes, por uma leitura
+     extra de linha de tabela; o caminho livre tem o mesmo defeito, e não foi
+     mexido porque a mudança alteraria a medição das 45.
+   - A rodada real dos agentes não foi repetida com `a4`.
    **Pendências para o passo (2), agentes no chat:**
    - Se algum agente receber `max_execution_time`, o CrewAI roda a tarefa
      numa thread. A contextvar da consulta não chega lá, e as gerações e

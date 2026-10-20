@@ -219,11 +219,14 @@ class TestModeloNoProduto:
         assert escore["trimestre"] == "1T2026" and "USO INTERNO" in escore["etiqueta"]
 
     def test_ativo_informado_vira_faixa_sem_saber_de_quem_e(self, config_padrao):
+        """Chaves dos limites renomeadas em 19/10 (`limite_inferior_reais` →
+        `ativo_minimo_reais`, idem o superior), mesmos valores: a RN02 dos
+        agentes passou a ler a métrica do número pelo nome da chave."""
         caixa = CaixaDeFerramentas(config_padrao, panorama=_panorama())
         faixa = caixa.consultar_modelo_prejuizo(ativo_total_reais=2.9e12)["faixa_do_ativo_informado"]
         assert faixa == {
-            "ativo_total_reais": 2.9e12, "faixa": "≥ R$ 500 bi", "limite_inferior_reais": 5e11,
-            "limite_superior_reais": None, "taxa_historica_prejuizo_pct": 6.1,
+            "ativo_total_reais": 2.9e12, "faixa": "≥ R$ 500 bi", "ativo_minimo_reais": 5e11,
+            "ativo_maximo_reais": None, "taxa_historica_prejuizo_pct": 6.1,
         }
         assert caixa.registro[-1].argumentos == {"ativo_total_reais": 2.9e12, "cd_cvm": None}
 

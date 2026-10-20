@@ -90,7 +90,8 @@ import unicodedata
 from dataclasses import dataclass, field, replace
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Callable, Mapping, Sequence
+from types import SimpleNamespace
+from typing import Any, Callable, Iterator, Mapping, Sequence
 
 from pydantic import BaseModel, Field
 
@@ -110,7 +111,14 @@ from src.ferramentas import (
     TetoChamadasExcedidoError,
 )
 from src import observabilidade
-from src.geracao import ProvedorLLM, fabricar_provedor_llm
+from src.geracao import (
+    _GRUPOS_METRICAS,
+    ProvedorLLM,
+    _tokens_metrica_grounding,
+    dividir_em_clausulas,
+    fabricar_provedor_llm,
+    fatos_numericos_do_chunk,
+)
 from src.normalizacao import extrair_numeros_ptbr_tipados
 
 registrador = logging.getLogger(__name__)
@@ -213,6 +221,7 @@ VIOLACAO_RN01_SEM_CITACAO = "rn01_valor_sem_citacao"
 VIOLACAO_RN01_CITACAO_SEM_LASTRO = "rn01_citacao_sem_lastro_em_ferramenta"
 VIOLACAO_RN02_SEM_LASTRO = "rn02_valor_sem_lastro"
 VIOLACAO_RN02_RECUSA_COM_VALOR = "rn02_recusa_apresenta_valor"
+VIOLACAO_RN02_ROTULO_TROCADO = "rn02_valor_sob_outro_rotulo"
 VIOLACAO_SAIDA_ILEGIVEL = "saida_fora_do_contrato_json"
 
 VEREDITO_CONFIRMA = "confirma"
@@ -877,6 +886,20 @@ class FerramentasDoAgente:
             _coletar_evidencias(chamada.resultado, set(), valores)
         return tuple(valores)
 
+    def fatos_rotulados(self) -> tuple["FatoRotulado", ...]:
+        """Os mesmos números, cada um com a métrica que o governa na fonte.
+
+        É o que a RN02 por rótulo compara (`valores_com_rotulo_trocado`):
+        saber que 17,2 bilhões existe no trecho não diz se é margem ou
+        despesa.
+        """
+        return tuple(
+            FatoRotulado(valor, tokens, chamada.ferramenta)
+            for chamada in self.chamadas
+            if chamada.erro is None
+            for valor, tokens in _fatos_rotulados(chamada.resultado)
+        )
+
 
 # Chaves cujo valor textual identifica uma fonte citável.
 CHAVES_DE_ROTULO: frozenset[str] = frozenset(
@@ -973,6 +996,140 @@ def _coletar_evidencias(
         for item in objeto:
             _coletar_evidencias(item, rotulos, valores, chave)
         return
+
+
+# --------------------------------------------------------------------------- #
+# Números com rótulo: a métrica que governa cada valor devolvido
+# --------------------------------------------------------------------------- #
+
+_NOMES_GRUPOS: frozenset[str] = frozenset(_GRUPOS_METRICAS)
+
+# Unidades que o tokenizador do caminho livre mantém e que aqui casariam rótulo
+# por acaso. Medido na rodada real de 19/10: o trecho do Itaú abre em
+# "juros\nR$ 17,2 bi", o rótulo "Despesas não decorrentes de" ficou no chunk
+# anterior, e o único token do número era "bi". Uma resposta que escrevesse
+# "17,2 bi" o casaria pela unidade.
+_TOKENS_DE_UNIDADE: frozenset[str] = frozenset(
+    {"bi", "bn", "brl", "mi", "mil", "mm", "reais", "tri"}
+)
+
+
+@dataclass(frozen=True)
+class FatoRotulado:
+    """Um número devolvido por ferramenta e os tokens da métrica dele."""
+
+    valor: float
+    tokens: frozenset[str]
+    ferramenta: str = ""
+
+
+def _tokens_do_rotulo(texto: str) -> frozenset[str]:
+    """Tokens de métrica do caminho livre, lendo `lucro_liquido` como duas palavras."""
+    return frozenset(
+        _tokens_metrica_grounding(str(texto or "").replace("_", " "))
+        - _TOKENS_DE_UNIDADE
+    )
+
+
+def _fatos_rotulados(
+    objeto: Any, caminho: tuple[str, ...] = ()
+) -> Iterator[tuple[float, frozenset[str]]]:
+    """Percorre o resultado de uma ferramenta pareando número e rótulo.
+
+    Três formas, cada uma com o rótulo onde ele mora:
+
+    * **texto de trecho** (`buscar_trechos`): o parser de fatos do caminho
+      livre (`fatos_numericos_do_chunk`), que já pareia célula e rótulo de
+      linha, título de seção e legenda de unidade. Um segundo interpretador
+      divergiria da guarda do caminho livre;
+    * **resultado de SQL** (`consultar_cvm`): as células de texto da linha e o
+      nome da coluna do número; quando a linha não nomeia métrica nenhuma
+      (`SELECT valor_reais ... WHERE conceito = 'lucro_liquido'`), os literais
+      do próprio SQL;
+    * **dicionário** (`calcular_indicadores`, o modelo): o caminho de chaves
+      até o número, como `regime_por_porte ativo_minimo_reais`.
+
+    Contagens e percentuais de `CHAVES_SEM_VALOR` ficam de fora, como em
+    `_coletar_evidencias`.
+    """
+    chave = caminho[-1] if caminho else None
+    if objeto is None or isinstance(objeto, bool):
+        return
+    if isinstance(objeto, (int, float)):
+        if chave not in CHAVES_SEM_VALOR:
+            yield float(objeto), _tokens_do_rotulo(" ".join(caminho))
+        return
+    if isinstance(objeto, str):
+        if chave == "texto":
+            for numero, tokens, _ in fatos_numericos_do_chunk(
+                SimpleNamespace(texto=objeto)
+            ):
+                yield numero.valor, frozenset(set(tokens) - _TOKENS_DE_UNIDADE)
+            yield from _fatos_de_linha_de_tabela(objeto)
+        return
+    if isinstance(objeto, Mapping):
+        if "colunas" in objeto and "linhas" in objeto:
+            yield from _fatos_rotulados_de_sql(objeto)
+            return
+        for nome, valor in objeto.items():
+            yield from _fatos_rotulados(valor, caminho + (str(nome),))
+        return
+    if isinstance(objeto, (list, tuple)):
+        for item in objeto:
+            yield from _fatos_rotulados(item, caminho)
+
+
+def _fatos_de_linha_de_tabela(texto: str) -> Iterator[tuple[float, frozenset[str]]]:
+    """Segunda leitura das linhas de tabela: todas as células de texto rotulam.
+
+    O parser do caminho livre elege como rótulo a PRIMEIRA célula com letra, e
+    o OCR às vezes põe ali um marcador de nota. Medido na reexecução das
+    rodadas gravadas: `| A4 | Resultado Recorrente Gerencial | 12.317 |` dava
+    ao 12.317 o rótulo "A4", sem métrica, e a resposta certa era acusada.
+    Mexer no parser mudaria o caminho livre, medido nas 45 congeladas; por isso
+    a leitura extra fica aqui e só ACRESCENTA candidatos. Prosa não entra: lá
+    o rótulo por oração do parser é mais fino que a linha inteira.
+    """
+    for linha in texto.splitlines():
+        # Linha de tabela markdown, não o cabeçalho contextual do chunk
+        # ("[ITAU | itau_release_3T2025 | 3T2025 | págs. 8–10]").
+        if not linha.lstrip().startswith("|"):
+            continue
+        celulas = linha.split("|")
+        if len(celulas) < 3:
+            continue
+        rotulo = " ".join(
+            c for c in celulas if c.strip() and not extrair_numeros_ptbr_tipados(c)
+        )
+        tokens = _tokens_do_rotulo(rotulo)
+        if not tokens:
+            continue
+        for celula in celulas:
+            for numero in extrair_numeros_ptbr_tipados(celula):
+                yield numero.valor, tokens
+
+
+def _fatos_rotulados_de_sql(
+    resultado: Mapping[str, Any],
+) -> Iterator[tuple[float, frozenset[str]]]:
+    colunas = [str(c) for c in resultado.get("colunas") or ()]
+    literais = " ".join(re.findall(r"'([^']*)'", str(resultado.get("sql") or "")))
+    for linha in resultado.get("linhas") or ():
+        celulas = linha if isinstance(linha, (list, tuple)) else [linha]
+        texto_da_linha = " ".join(c for c in celulas if isinstance(c, str))
+        for indice, celula in enumerate(celulas):
+            if isinstance(celula, bool) or not isinstance(celula, (int, float)):
+                continue
+            coluna = colunas[indice] if indice < len(colunas) else ""
+            if coluna in CHAVES_SEM_VALOR:
+                continue
+            tokens = _tokens_do_rotulo(f"{texto_da_linha} {coluna}")
+            if not tokens & _NOMES_GRUPOS:
+                # O rótulo está no filtro, não na linha. Só neste caso: com
+                # `conceito IN ('lucro…', 'ativo_total')` e o conceito na linha,
+                # somar os literais daria à linha do lucro o rótulo do ativo.
+                tokens = tokens | _tokens_do_rotulo(literais)
+            yield float(celula), tokens
 
 
 def _normalizar(texto: str) -> str:
@@ -1200,7 +1357,15 @@ def construir_ferramentas(
 # ganhou um exemplo completo do protocolo ReAct. Motivo medido no braço A: em 14
 # das 15 perguntas o agente chamou só `verificar_cobertura` — que não devolve
 # valor nenhum — e pulou para `Final Answer` com número e citação inventados.
-VERSAO_PROMPT_AGENTES = "a3"
+#
+# a3 → a4 (2026-10-19): o prompt do Auditor ganhou a regra "confirmar é
+# conferir cada fonte citada", verificada em código (`fontes_sem_reconsulta`),
+# e a RN02 dos agentes passou a conferir o rótulo do número
+# (`valores_com_rotulo_trocado`). Dois achados da rodada real do chat: um
+# `confirma` do modelo sem consultar o modelo, e uma "margem financeira" que
+# era despesa. O prompt do Investigador não mudou. Muda o braço B (e a RN02 do
+# A): as rodadas `a3` em `artefatos/resultados_agentes/` ficam históricas.
+VERSAO_PROMPT_AGENTES = "a4"
 
 ESQUEMA_INVESTIGADOR = """{
   "cobertura": "ambas | so_painel | nenhuma | ambigua",
@@ -1390,15 +1555,29 @@ def instrucao_investigador(pergunta: str, *, com_modelo: bool = False) -> str:
     )
 
 
-def instrucao_auditor(contexto: "ContextoAuditor") -> str:
+def instrucao_auditor(contexto: "ContextoAuditor", *, com_modelo: bool = False) -> str:
     """A tarefa do Auditor — montada **por código** a partir do contexto filtrado.
 
     Nada de "ignore o raciocínio anterior": o raciocínio simplesmente não está
     aqui. O texto abaixo é construído campo a campo a partir de
     `CAMPOS_CONTEXTO_AUDITOR`, e é o único caminho pelo qual algo do
     Investigador chega ao Auditor.
+
+    `com_modelo` nomeia a ferramenta do modelo entre as de dado, só quando a
+    caixa do Auditor a tem (o produto, nunca o experimento).
     """
     citacoes = "\n".join(f"- {c}" for c in contexto.citacoes) or "- (nenhuma)"
+    de_dado = (
+        "consultar_cvm, buscar_trechos, calcular_indicadores ou "
+        "consultar_modelo_prejuizo"
+        if com_modelo
+        else "consultar_cvm, buscar_trechos ou calcular_indicadores"
+    )
+    regra_modelo = (
+        "; citação do modelo preditivo → consultar_modelo_prejuizo"
+        if com_modelo
+        else ""
+    )
     return (
         "Uma afirmação foi produzida por outro analista, a partir das MESMAS "
         "ferramentas que você tem. Você recebe a afirmação e as citações — e "
@@ -1423,10 +1602,15 @@ def instrucao_auditor(contexto: "ContextoAuditor") -> str:
         "REGRA MECÂNICA DA CONFERÊNCIA: verificar_cobertura não devolve valor "
         "nenhum — ela só diz em que camada a companhia existe. Para emitir "
         "'confirma' ou 'contesta' você PRECISA ter executado pelo menos uma "
-        "consulta de dado (consultar_cvm, buscar_trechos ou "
-        "calcular_indicadores) e ter lido o que ela devolveu. Sem nenhuma "
-        "consulta de dado, o único veredito honesto é 'nao_reproduz' — e é ele "
-        "que o código registrará no seu lugar.\n\n"
+        f"consulta de dado ({de_dado}) e ter lido o que ela devolveu. Sem "
+        "nenhuma consulta de dado, o único veredito honesto é 'nao_reproduz' — "
+        "e é ele que o código registrará no seu lugar.\n\n"
+        "CONFIRMAR É CONFERIR CADA FONTE CITADA: para emitir 'confirma', "
+        "reconsulte cada tipo de fonte que aparece nas citações — citação de "
+        "release (com página) → buscar_trechos; citação da CVM (com CD_CVM) → "
+        f"consultar_cvm ou calcular_indicadores{regra_modelo}. Confirmar uma "
+        "parte da afirmação sem reconsultar a fonte dela é carimbar, e o código "
+        "registrará 'nao_reproduz' no seu lugar.\n\n"
         "Não reescreva a resposta e não recomende nada (RN05).\n\n"
         "Responda com UM objeto JSON, e nada fora dele:\n"
         f"{ESQUEMA_AUDITOR}"
@@ -1541,24 +1725,129 @@ def instrucao_corretiva_investigador(pergunta: str, *, com_modelo: bool = False)
     return PREAMBULO_CORRETIVO + instrucao_investigador(pergunta, com_modelo=com_modelo)
 
 
-def instrucao_corretiva_auditor(contexto: "ContextoAuditor") -> str:
+# --------------------------------------------------------------------------- #
+# Confirmar é conferir cada fonte citada (achado da rodada real de 19/10)
+# --------------------------------------------------------------------------- #
+
+FONTE_PAINEL = "painel"
+FONTE_RELEASE = "release"
+FONTE_MODELO = "modelo"
+
+# Que ferramenta reconsulta cada tipo de fonte citável.
+FERRAMENTAS_POR_FONTE: dict[str, frozenset[str]] = {
+    FONTE_PAINEL: frozenset({"consultar_cvm", "calcular_indicadores"}),
+    FONTE_RELEASE: frozenset({"buscar_trechos"}),
+    FONTE_MODELO: frozenset({FERRAMENTA_MODELO}),
+}
+
+DESCRICAO_FONTE: dict[str, str] = {
+    FONTE_PAINEL: "painel da CVM (consultar_cvm ou calcular_indicadores)",
+    FONTE_RELEASE: "release (buscar_trechos)",
+    FONTE_MODELO: "modelo preditivo (consultar_modelo_prejuizo)",
+}
+
+# A ordem decide a citação que casaria com dois padrões: o modelo antes do
+# painel, porque o panorama fala "do painel da CVM" e não é o painel.
+_PADROES_FONTE: tuple[tuple[str, re.Pattern[str]], ...] = (
+    (FONTE_MODELO, re.compile(r"\bmodelo preditivo\b|\bpanorama\b")),
+    (FONTE_RELEASE, re.compile(r"\brelease\b|\bp\.\s*\d")),
+    (FONTE_PAINEL, re.compile(r"\bcvm\b|\bcd_cvm\b|\bfatos_semanticos\b|\bitr\b|\bdfp\b")),
+)
+
+
+def fonte_da_citacao(citacao: str) -> str | None:
+    """O tipo de fonte de uma citação, pelos formatos que o prompt fixa.
+
+    `ESQUEMA_INVESTIGADOR` e `INSTRUCAO_MODELO` ditam três formas: "CVM ·
+    RAZÃO SOCIAL (CD_CVM …) · trimestre · conceito", "release <documento> ·
+    EMPRESA · trimestre · p. N" e "Modelo preditivo · panorama <trimestre> ·
+    regime por porte". Citação fora das três devolve `None` e não exige
+    reconsulta própria — a regra de ao menos uma consulta de dado continua.
+    """
+    normalizada = _normalizar(citacao)
+    for fonte, padrao in _PADROES_FONTE:
+        if padrao.search(normalizada):
+            return fonte
+    return None
+
+
+def fontes_citadas(citacoes: Sequence[str]) -> frozenset[str]:
+    return frozenset(f for f in map(fonte_da_citacao, citacoes) if f)
+
+
+def fontes_reconsultadas(ferramentas: "FerramentasDoAgente") -> frozenset[str]:
+    """Os tipos de fonte que esta caixa consultou com sucesso."""
+    feitas = {c.ferramenta for c in ferramentas.chamadas if c.erro is None}
+    return frozenset(
+        fonte for fonte, nomes in FERRAMENTAS_POR_FONTE.items() if feitas & nomes
+    )
+
+
+def fontes_sem_reconsulta(
+    contexto: "ContextoAuditor", ferramentas: "FerramentasDoAgente"
+) -> frozenset[str]:
+    """Fontes citadas na afirmação que o Auditor não reconsultou.
+
+    Lê só o que o Auditor tem: as citações do `ContextoAuditor` e as chamadas
+    da caixa dele. Nada do rastro do Investigador entra na decisão.
+    """
+    return fontes_citadas(contexto.citacoes) - fontes_reconsultadas(ferramentas)
+
+
+def _fontes_que_ele_pode_reconsultar(
+    fontes: frozenset[str], ferramentas: "FerramentasDoAgente"
+) -> frozenset[str]:
+    """Das fontes faltantes, as que a caixa do Auditor alcança.
+
+    No experimento a caixa não tem o modelo: uma citação do modelo ali é
+    citação que nenhuma ferramenta reconsulta, e pedir a rodada corretiva
+    seria pagar por um tiro impossível.
+    """
+    disponiveis = set(ferramentas.nomes)
+    return frozenset(f for f in fontes if FERRAMENTAS_POR_FONTE[f] & disponiveis)
+
+
+def instrucao_corretiva_auditor(
+    contexto: "ContextoAuditor",
+    *,
+    faltantes: frozenset[str] = frozenset(),
+    com_modelo: bool = False,
+) -> str:
     """Idem para o Auditor — que também não pode confirmar sem reexecutar.
+
+    Dois motivos de correção, cada um com o próprio texto: veredito sem
+    nenhuma consulta de dado, ou `confirma` sem reconsultar alguma fonte
+    citada (`faltantes`). Os dois textos nomeiam só o que o próprio Auditor
+    vê: as citações do contexto e as ferramentas dele.
 
     Vale aqui a mesma restrição de `instrucao_auditor`: nenhum literal de
     `MARCADORES_RASTRO` no texto, porque a mensagem inteira ainda é uma mensagem
     destinada ao Auditor e passa pela mesma guarda de isolamento.
     """
+    if faltantes:
+        lista = "; ".join(DESCRICAO_FONTE[f] for f in sorted(faltantes))
+        motivo = (
+            "Na sua tentativa anterior você confirmou a afirmação sem "
+            "reconsultar todas as fontes que ela cita. Faltou reconsultar: "
+            f"{lista}.\n\n"
+            "Nesta tentativa, reconsulte cada fonte que falta antes de emitir o "
+            "veredito. "
+        )
+    else:
+        motivo = (
+            "Na sua tentativa anterior você emitiu um veredito sem ter executado "
+            "nenhuma consulta de dado. Conferência sem reexecução não é "
+            "conferência: verificar_cobertura não devolve valor nenhum.\n\n"
+            "Nesta tentativa, execute pelo menos uma consulta com consultar_cvm, "
+            "buscar_trechos ou calcular_indicadores antes de emitir o veredito. "
+        )
     return (
         "CORREÇÃO OBRIGATÓRIA — LEIA ANTES DE QUALQUER COISA.\n\n"
-        "Na sua tentativa anterior você emitiu um veredito sem ter executado "
-        "nenhuma consulta de dado. Conferência sem reexecução não é conferência: "
-        "verificar_cobertura não devolve valor nenhum.\n\n"
-        "Nesta tentativa, execute pelo menos uma consulta com consultar_cvm, "
-        "buscar_trechos ou calcular_indicadores antes de emitir o veredito. "
+        f"{motivo}"
         "Se você não conseguir reproduzir a evidência citada, o veredito correto "
         "é 'nao_reproduz' — e ele é um resultado legítimo, não uma falha.\n\n"
         "Esta é a sua ÚLTIMA tentativa: não haverá uma terceira.\n\n"
-    ) + instrucao_auditor(contexto)
+    ) + instrucao_auditor(contexto, com_modelo=com_modelo)
 
 
 # --------------------------------------------------------------------------- #
@@ -1955,12 +2244,74 @@ def _meia_casa(valor: float) -> float:
     return 0.5 * (10**zeros)
 
 
+def _rotulos_compativeis(
+    tokens_resposta: frozenset[str], tokens_evidencia: frozenset[str]
+) -> bool:
+    """A mesma regra de `metricas_compativeis` do caminho livre.
+
+    Quando os dois lados nomeiam grupo de métrica, eles precisam ser o mesmo:
+    é o que impede margem casar com despesa. Quando um dos lados não nomeia
+    grupo, basta compartilhar um token de rótulo.
+    """
+    grupos_resposta = tokens_resposta & _NOMES_GRUPOS
+    grupos_evidencia = tokens_evidencia & _NOMES_GRUPOS
+    if grupos_resposta and grupos_evidencia:
+        return bool(grupos_resposta & grupos_evidencia)
+    return bool(tokens_resposta & tokens_evidencia)
+
+
+def valores_com_rotulo_trocado(
+    saida: SaidaInvestigador, ferramentas: FerramentasDoAgente
+) -> tuple[str, ...]:
+    """Valores da resposta que só existem na evidência sob OUTRA métrica.
+
+    Achado da rodada real de 19/10 no chat: o Investigador escreveu "margem
+    financeira gerencial de R$ 17,2 bilhões" para o Itaú no 3T2025. O número
+    estava no trecho recuperado, e era "Despesas não decorrentes de juros"; a
+    margem é R$ 31.382 milhões. A RN02 dos agentes só perguntava se o número
+    existia, e aprovou. O caminho livre já pergunta também de que métrica ele
+    é, e esta função leva a mesma pergunta aos agentes, com o mesmo
+    tokenizador e o mesmo parser de trecho.
+
+    Conservadora de propósito, porque a saída do agente é texto livre que
+    mistura painel, release e modelo:
+
+    * só julga a oração que nomeia métrica (grupo de `_GRUPOS_METRICAS`);
+      oração sem métrica não tem rótulo para trocar;
+    * só acusa quando há número igual na evidência e **todos** estão sob
+      métrica incompatível. Valor sem número igual nenhum é o caso de
+      `VIOLACAO_RN02_SEM_LASTRO`, não deste;
+    * número devolvido sem rótulo (literal do SQL, linha modal que o parser
+      pula) não entra aqui: continua lastreando pela RN02 sem rótulo.
+
+    Devolve as orações acusadas, para o registro.
+    """
+    fatos = ferramentas.fatos_rotulados()
+    if not fatos:
+        return ()
+    acusadas: list[str] = []
+    for clausula in dividir_em_clausulas(saida.afirmacao or ""):
+        tokens_resposta = _tokens_do_rotulo(clausula)
+        if not tokens_resposta & _NOMES_GRUPOS:
+            continue
+        for numero in extrair_numeros_ptbr_tipados(clausula):
+            if numero.dimensao not in ("monetario", "escala"):
+                continue
+            iguais = [f for f in fatos if _tem_lastro(numero.valor, (f.valor,))]
+            if iguais and not any(
+                _rotulos_compativeis(tokens_resposta, f.tokens) for f in iguais
+            ):
+                acusadas.append(clausula.strip())
+                break
+    return tuple(acusadas)
+
+
 def verificar_regras_agente(
     saida: SaidaInvestigador, ferramentas: FerramentasDoAgente
 ) -> tuple[str, ...]:
     """RN01 e RN02 sobre o JSON de saída — mecânicas, sem julgar texto livre.
 
-    Cinco checagens:
+    Seis checagens:
 
     1. saída que não é o objeto JSON do contrato (o agente ignorou o formato);
     2. valor apresentado sem nenhuma citação (RN01);
@@ -1968,7 +2319,9 @@ def verificar_regras_agente(
        inventada (RN01);
     4. valor monetário no texto sem correspondência em nenhum número devolvido
        pelas ferramentas — é a definição operacional de alucinação aqui (RN02);
-    5. recusa que ainda assim apresenta valor (RN02).
+    5. valor que existe na evidência só sob outra métrica — o número certo com
+       o nome errado (RN02, `valores_com_rotulo_trocado`);
+    6. recusa que ainda assim apresenta valor (RN02).
 
     Nenhuma delas confia no julgamento do modelo, e é essa a diferença entre
     verificar a regra e pedir ao agente que a respeite.
@@ -1992,6 +2345,9 @@ def verificar_regras_agente(
     evidencias = ferramentas.valores_de_evidencia()
     if any(not _tem_lastro(valor, evidencias) for valor in valores):
         violacoes.append(VIOLACAO_RN02_SEM_LASTRO)
+
+    if valores and not recusa and valores_com_rotulo_trocado(saida, ferramentas):
+        violacoes.append(VIOLACAO_RN02_ROTULO_TROCADO)
 
     if recusa and valores:
         violacoes.append(VIOLACAO_RN02_RECUSA_COM_VALOR)
@@ -2367,21 +2723,51 @@ def executar_auditor(
     assim não consultar, o veredito é **rebaixado para `nao_reproduz`**, com
     justificativa escrita por código: ausência de reexecução é exatamente o
     terceiro veredito de 5.9.1, e é o mais valioso de não perder.
+
+    ## `confirma` responde por cada fonte citada (19/10)
+
+    Na rodada real do chat, o Auditor confirmou "a faixa de porte e a taxa
+    histórica no modelo preditivo" tendo reexecutado só o painel. Uma consulta
+    de dado qualquer bastava para o gate acima. Agora, para `confirma`, cada
+    tipo de fonte das citações (`fonte_da_citacao`: painel, release, modelo)
+    precisa de reconsulta própria. A fonte que falta e a caixa alcança ganha o
+    mesmo segundo tiro; a que segue faltando, ou que a caixa não alcança,
+    rebaixa a `nao_reproduz` com justificativa escrita por código.
     """
     teto = max_iteracoes or config.agentes_max_iteracoes
+    com_modelo = FERRAMENTA_MODELO in ferramentas.nomes
     contido = LLMComTetoRigido(llm, teto + MARGEM_PEDIDO_RESPOSTA_FINAL)
     veredito, cortada = _passagem_auditor(
-        contexto, ferramentas, contido, llm, teto, instrucao_auditor(contexto)
+        contexto,
+        ferramentas,
+        contido,
+        llm,
+        teto,
+        instrucao_auditor(contexto, com_modelo=com_modelo),
     )
     if cortada or not permitir_correcao:
         return veredito
-    if not _precisa_correcao_auditor(veredito, ferramentas):
+    from dataclasses import replace
+
+    if not _precisa_correcao_auditor(veredito, ferramentas, contexto):
+        # Sem rodada corretiva: a fonte que ainda falte é a que a caixa dele
+        # não alcança (`_fontes_que_ele_pode_reconsultar`) ou a que o teto
+        # impediu. Nos dois casos o `confirma` não se sustenta, e rebaixa.
+        faltantes = _faltantes_para_confirmar(veredito, contexto, ferramentas)
+        if faltantes:
+            return replace(
+                veredito,
+                **_rebaixamento_por_fonte(faltantes),
+                chamadas=tuple(ferramentas.chamadas),
+            )
         return veredito
+    faltantes_antes = _faltantes_para_confirmar(veredito, contexto, ferramentas)
     registrador.info(
         "gate_de_dado: rodada corretiva do Auditor | pergunta=%r | veredito "
-        "sem reexecução=%s",
+        "%s | fontes sem reconsulta=%s",
         contexto.pergunta[:80],
         veredito.veredito,
+        sorted(faltantes_antes) or ["(nenhuma consulta de dado)"],
     )
     corrigido, cortada_corretiva = _passagem_auditor(
         contexto,
@@ -2389,11 +2775,15 @@ def executar_auditor(
         contido,
         llm,
         teto,
-        instrucao_corretiva_auditor(contexto),
+        instrucao_corretiva_auditor(
+            contexto,
+            faltantes=faltantes_antes if consultou_ferramenta_de_dado(ferramentas) else frozenset(),
+            com_modelo=com_modelo,
+        ),
     )
-    from dataclasses import replace
 
     escolhido = veredito if cortada_corretiva else corrigido
+    desfecho_falho = CORRECAO_CORTADA_POR_TETO if cortada_corretiva else CORRECAO_FALHOU
     # Mesma precaução de `_consolidar_correcao`: a conferência é direta, e não
     # por `_precisa_correcao_auditor`, que também devolve `False` quando o teto
     # foi atingido — um `confirma` sem nenhuma consulta não pode escapar do
@@ -2412,9 +2802,19 @@ def executar_auditor(
             ),
             contraevidencia=(),
             correcao_aplicada=True,
-            correcao_resultado=(
-                CORRECAO_CORTADA_POR_TETO if cortada_corretiva else CORRECAO_FALHOU
-            ),
+            correcao_resultado=desfecho_falho,
+            chamadas=tuple(ferramentas.chamadas),
+            uso=getattr(llm, "uso", UsoAgente()),
+        )
+    # Idem para a fonte citada que segue sem reconsulta depois do segundo
+    # tiro: `confirma` de uma parte não confirma o todo.
+    faltantes = _faltantes_para_confirmar(escolhido, contexto, ferramentas)
+    if faltantes:
+        return replace(
+            escolhido,
+            **_rebaixamento_por_fonte(faltantes),
+            correcao_aplicada=True,
+            correcao_resultado=desfecho_falho,
             chamadas=tuple(ferramentas.chamadas),
             uso=getattr(llm, "uso", UsoAgente()),
         )
@@ -2425,10 +2825,43 @@ def executar_auditor(
     )
 
 
+def _faltantes_para_confirmar(
+    veredito: VereditoAuditor,
+    contexto: ContextoAuditor,
+    ferramentas: FerramentasDoAgente,
+) -> frozenset[str]:
+    """Fontes citadas que um `confirma` deixou sem reconsulta.
+
+    Só `confirma` responde por todas as fontes: `contesta` precisa de uma
+    contraevidência, e `nao_reproduz` é a própria declaração de que a
+    reprodução não aconteceu.
+    """
+    if veredito.veredito != VEREDITO_CONFIRMA:
+        return frozenset()
+    return fontes_sem_reconsulta(contexto, ferramentas)
+
+
+def _rebaixamento_por_fonte(faltantes: frozenset[str]) -> dict[str, Any]:
+    lista = "; ".join(DESCRICAO_FONTE[f] for f in sorted(faltantes))
+    return {
+        "veredito": VEREDITO_NAO_REPRODUZ,
+        "justificativa": (
+            "a conferência independente confirmou a afirmação sem reconsultar "
+            f"todas as fontes que ela cita (faltou: {lista}); a parte dessas "
+            "fontes não foi reproduzida, e o veredito registrado é o de não "
+            "reprodução"
+        ),
+        "contraevidencia": (),
+    }
+
+
 def _precisa_correcao_auditor(
-    veredito: VereditoAuditor, ferramentas: FerramentasDoAgente
+    veredito: VereditoAuditor,
+    ferramentas: FerramentasDoAgente,
+    contexto: ContextoAuditor,
 ) -> bool:
-    """Veredito afirmativo sem nenhuma consulta de dado?
+    """Veredito afirmativo sem consulta de dado, ou `confirma` com fonte citada
+    sem reconsulta que a caixa do Auditor alcança?
 
     `nao_reproduz` fica de fora: ele **é** a declaração de que a reexecução não
     aconteceu, e cobrar uma consulta para poder dizer que não conseguiu
@@ -2438,7 +2871,10 @@ def _precisa_correcao_auditor(
         return False
     if veredito.teto_iteracoes or veredito.teto_ferramenta:
         return False
-    return not consultou_ferramenta_de_dado(ferramentas)
+    if not consultou_ferramenta_de_dado(ferramentas):
+        return True
+    faltantes = _faltantes_para_confirmar(veredito, contexto, ferramentas)
+    return bool(_fontes_que_ele_pode_reconsultar(faltantes, ferramentas))
 
 
 def _passagem_auditor(

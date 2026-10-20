@@ -1,0 +1,36 @@
+{
+  "gerado_em": "2026-10-20T043117Z",
+  "regra": "valores_com_rotulo_trocado (RN02 com rótulo, agentes)",
+  "custo_usd": 0.0,
+  "contagem": {
+    "acusadas": 2,
+    "acusadas_pendente_conferencia_humana": 2,
+    "avaliadas": 201,
+    "avaliadas_acerto": 16,
+    "avaliadas_erro": 48,
+    "avaliadas_pendente_conferencia_humana": 137,
+    "deriva_de_evidencia": 32,
+    "duplicada": 65
+  },
+  "acusadas": [
+    {
+      "arquivo": "artefatos/resultados_agentes/braco_a_gemini31_prompt_a2.json",
+      "id_pergunta": "AGTP002",
+      "apuracao": "pendente_conferencia_humana",
+      "pergunta": "Que faixa de lucro do Banco do Brasil para 2025 estava valendo quando saiu o relatório do 3T2025?",
+      "oracoes_acusadas": [
+        "No relatório do 3T2025 do Banco do Brasil, a projeção (guidance) para o Lucro Líquido Ajustado de 2025 estava fixada na faixa de R$ 21,0 bilhões a R$ 25,0 bilhões."
+      ]
+    },
+    {
+      "arquivo": "artefatos/resultados_agentes/braco_b_prompt_a2_sem_fix_desambiguacao.json",
+      "id_pergunta": "AGTP002",
+      "apuracao": "pendente_conferencia_humana",
+      "pergunta": "Que faixa de lucro do Banco do Brasil para 2025 estava valendo quando saiu o relatório do 3T2025?",
+      "oracoes_acusadas": [
+        "No relatório do 3T2025 do Banco do Brasil, a projeção (guidance) para o Lucro Líquido Ajustado de 2025 estava fixada na faixa de R$ 21,0 bilhões a R$ 25,0 bilhões."
+      ]
+    }
+  ],
+  "nota": "Respostas sem violação na RN02 antiga e com valor em dinheiro, deduplicadas por (pergunta, resposta). 'deriva_de_evidencia' = a reexecução local não devolveu o número que a resposta usou; fica fora da conta. Cada acusação precisa de leitura humana: acusar é virar recusa registrada."
+}

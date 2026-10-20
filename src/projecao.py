@@ -798,12 +798,15 @@ def consulta_do_modelo(
         # Os limites em reais vão como número, além do rótulo: o agente escreve
         # a faixa ("R$ 10–100 bi"), e a verificação da RN02 só aceita valor em
         # dinheiro que alguma ferramenta tenha devolvido como número. Os dois
-        # limites, para não depender de a tabela trazer a faixa vizinha.
+        # limites, para não depender de a tabela trazer a faixa vizinha. A
+        # chave diz que o limite é de ATIVO: a RN02 dos agentes também confere
+        # a métrica do número pelo nome da chave (`valores_com_rotulo_trocado`),
+        # e "limite_inferior" sozinho não diz de quê.
         "regime_por_porte": [
             {
                 "faixa": faixa.rotulo,
-                "limite_inferior_reais": faixa.limite_inferior_reais,
-                "limite_superior_reais": superior(faixa),
+                "ativo_minimo_reais": faixa.limite_inferior_reais,
+                "ativo_maximo_reais": superior(faixa),
                 "taxa_historica_prejuizo_pct": round(100 * faixa.taxa_prejuizo, 1),
                 "n_observacoes": faixa.n_observacoes,
             }
@@ -835,8 +838,8 @@ def consulta_do_modelo(
         resultado["faixa_do_ativo_informado"] = {
             "ativo_total_reais": valor,
             "faixa": faixa.rotulo if faixa else None,
-            "limite_inferior_reais": faixa.limite_inferior_reais if faixa else None,
-            "limite_superior_reais": superior(faixa) if faixa else None,
+            "ativo_minimo_reais": faixa.limite_inferior_reais if faixa else None,
+            "ativo_maximo_reais": superior(faixa) if faixa else None,
             "taxa_historica_prejuizo_pct": (
                 round(100 * faixa.taxa_prejuizo, 1) if faixa else None
             ),

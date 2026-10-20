@@ -204,13 +204,19 @@ class TestExperimentoIntacto:
 
     def test_prompt_do_experimento_nao_muda(self):
         """O parágrafo do modelo só entra com a ferramenta, depois do bloco
-        estável: o prefixo cacheável e a versão `a3` ficam como estavam."""
+        estável: o prefixo cacheável fica como estava.
+
+        A versão passou de `a3` para `a4` em 19/10 por outra razão, decidida
+        pelo responsável: o Auditor ganhou a regra de reconsultar cada fonte
+        citada e a RN02 passou a conferir o rótulo (ver o comentário de
+        `VERSAO_PROMPT_AGENTES`). Este caso continua travando que o parágrafo
+        do modelo NÃO mude a versão nem o prefixo do experimento."""
         experimento = instrucao_investigador("pergunta")
         produto = instrucao_investigador("pergunta", com_modelo=True)
         assert INSTRUCAO_MODELO not in experimento and INSTRUCAO_MODELO in produto
         assert experimento.startswith(INSTRUCAO_INVESTIGADOR_ESTAVEL)
         assert produto.startswith(INSTRUCAO_INVESTIGADOR_ESTAVEL)
-        assert VERSAO_PROMPT_AGENTES == "a3"
+        assert VERSAO_PROMPT_AGENTES == "a4"
 
 
 # --------------------------------------------------------------------------- #
