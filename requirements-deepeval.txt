@@ -1,0 +1,24 @@
+# Suíte DeepEval (spec 5.15) — avaliação offline, fora do deploy (RNF12).
+#
+# Instalar SEM dependências:
+#     pip install --no-deps -r requirements-deepeval.txt
+#
+# Por quê: todo deepeval publicado fixa `click<8.4` (o huggingface-hub do
+# Prompt Guard exige `>=8.4.2`), e a linha 4.x fixa `posthog>=7` (o
+# `chromadb==1.4.0` do índice exige `<6`). Instalado com dependências, ele
+# rebaixa o click e sobe o posthog, e quebra os dois (medido com `pip check` em
+# 2026-10-20). O que este projeto usa da biblioteca — as métricas e o modelo
+# customizado de `src/avaliacao_deepeval.py` — não passa pelo click (CLI), nem
+# pelo posthog (telemetria desligada antes do import), nem pelos plugins de
+# pytest que ela declara (fora da suíte por `-p no:deepeval` no pytest.ini).
+# Depois de instalar, `pip check` acusa esses pinos do deepeval, e só eles.
+#
+# 4.2.8 é a versão mais nova com mais de duas semanas em 2026-10-20.
+deepeval==4.2.8
+
+# Dependências do deepeval que o requirements.txt não traz.
+nest-asyncio==1.6.0
+pydantic-settings==2.16.0
+pyfiglet==1.0.4
+questionary==2.1.1
+tabulate==0.9.0

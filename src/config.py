@@ -219,6 +219,15 @@ class Config:
     # `exigir_modelo_juiz_deepeval` — não no carregamento, para não quebrar a
     # RNF12 (o modo demonstração abre sem nenhum segredo configurado).
     deepeval_modelo_juiz: str = ""
+    # Provedor do juiz (RNF06); vazio = o mesmo do gerador. Juiz de outra
+    # família evita a preferência do modelo pela própria resposta (spec 5.23).
+    deepeval_provedor_juiz: str = ""
+    # Preço do juiz por 1M de tokens; -1 = não informado. Obrigatório quando o
+    # modelo do juiz não é o modelo já configurado no provedor dele: sem isso o
+    # custo sairia com o preço do gerador e o teto deixaria de ser auditável
+    # (§3.1). Cobrado no ponto de uso (`src.avaliacao_deepeval.config_do_juiz`).
+    deepeval_preco_entrada_usd_milhao: float = -1.0
+    deepeval_preco_saida_usd_milhao: float = -1.0
     orcamento_teto_usd: float = 25.0
 
     # Exposição pública (Fase 3, seção 5.13)
@@ -512,6 +521,18 @@ def _validar_config(config: Config) -> Config:
         "gemini", "ollama", "azure_openai", "openai", "deepseek"
     }:
         erros.append(f"LLM_PROVIDER desconhecido: {config.llm_provider!r}")
+    if config.deepeval_provedor_juiz not in {
+        "", "gemini", "ollama", "azure_openai", "openai", "deepseek"
+    }:
+        erros.append(
+            f"DEEPEVAL_PROVEDOR_JUIZ desconhecido: {config.deepeval_provedor_juiz!r}"
+        )
+    for nome, valor in (
+        ("DEEPEVAL_PRECO_ENTRADA_USD_MILHAO", config.deepeval_preco_entrada_usd_milhao),
+        ("DEEPEVAL_PRECO_SAIDA_USD_MILHAO", config.deepeval_preco_saida_usd_milhao),
+    ):
+        if not math.isfinite(valor) or (valor < 0 and valor != -1.0):
+            erros.append(f"{nome} deve ser não negativo (ou vazio)")
 
     for nome, valor in (
         ("TEMPERATURA", config.temperatura),
@@ -808,6 +829,13 @@ def carregar_config(env_file: Path | None = None) -> Config:
         langfuse_secret_key=_env("LANGFUSE_SECRET_KEY", ""),
         langfuse_host=_env("LANGFUSE_HOST", padrao.langfuse_host),
         deepeval_modelo_juiz=_env("DEEPEVAL_MODELO_JUIZ", ""),
+        deepeval_provedor_juiz=_env("DEEPEVAL_PROVEDOR_JUIZ", ""),
+        deepeval_preco_entrada_usd_milhao=float(
+            _env("DEEPEVAL_PRECO_ENTRADA_USD_MILHAO", "") or -1.0
+        ),
+        deepeval_preco_saida_usd_milhao=float(
+            _env("DEEPEVAL_PRECO_SAIDA_USD_MILHAO", "") or -1.0
+        ),
         conjunto_padrao_path=RAIZ_PROJETO
         / _env("CONJUNTO_PADRAO_PATH", "conjunto_padrao/perguntas.csv"),
         tolerancia_numerica_pct=float(

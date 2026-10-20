@@ -12,6 +12,10 @@ import pytest
 # exportador em memória (`tests/test_observabilidade.py`).
 os.environ["LANGFUSE_PUBLIC_KEY"] = ""
 os.environ["LANGFUSE_SECRET_KEY"] = ""
+# Nem telemetria do DeepEval, nem o autoload de `.env` dele, que jogaria as
+# chaves do projeto no ambiente da suíte (`src/avaliacao_deepeval.py`).
+os.environ["DEEPEVAL_TELEMETRY_OPT_OUT"] = "YES"
+os.environ["DEEPEVAL_DISABLE_DOTENV"] = "1"
 
 from src import geracao  # noqa: E402
 from src.config import Config

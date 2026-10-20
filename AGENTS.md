@@ -800,10 +800,11 @@ outra tarefa. Nenhum número de `dev` vira resultado final.
 `candidatas_teste.csv` permanece só como origem auditável da curadoria e **não é
 carregado pelo pipeline**.
 
-**Os quatro `requirements-*.txt` extras ficam fora do deploy enxuto por padrão**
+**Os cinco `requirements-*.txt` extras ficam fora do deploy enxuto por padrão**
 (RNF12): `-local` (sentence-transformers), `-lora` (PyTorch/PEFT), `-modelo`
-(scikit-learn da etapa 10, offline, fora do caminho interativo por RN07) e
-`-guardrails` (Presidio + spaCy pt).
+(scikit-learn da etapa 10, offline, fora do caminho interativo por RN07),
+`-guardrails` (Presidio + spaCy pt) e `-deepeval` (suíte da etapa 13, instalada
+com `--no-deps`; o arquivo diz por quê).
 
 ### 4.4 Regras de método — saíram de medição, valem para qualquer candidato novo
 
@@ -1004,7 +1005,8 @@ Alvo da spec 5.21, com o que já existe marcado:
 ├── AGENTS.md · CLAUDE.md · MEMORY.md · README.md · DESAFIO_CBL.md · LICENSE (MIT)
 ├── .docs/                       (local — NUNCA publicado; exceto a cópia do desafio)
 ├── requirements.txt · requirements-local.txt · requirements-lora.txt ·
-│   requirements-guardrails.txt · requirements-modelo.txt (sklearn + imblearn)
+│   requirements-guardrails.txt · requirements-modelo.txt (sklearn + imblearn) ·
+│   requirements-deepeval.txt (`--no-deps`)
 ├── .env.example · .gitignore · pytest.ini
 ├── executar_pipeline.py         (orquestrador; --amostra, --etapa)
 ├── scripts/
@@ -1036,6 +1038,7 @@ Alvo da spec 5.21, com o que já existe marcado:
 │   ├── braco_agente.py ✅ · braco_determinista.py ✅ · injecao_falha.py ✅
 │   ├── seguranca.py ✅ · reconhecedores_br.py ✅ · reconhecedor_presidio.py ✅
 │   ├── prompt_guard.py ✅ · projecao.py ✅ · observabilidade.py ✅
+│   ├── avaliacao_deepeval.py ✅ (faithfulness e relevância, juiz da RNF06)
 │   └── modelo/ construir_painel.py ✅ · treinar.py ✅ · prever.py ✅
 ├── conjunto_padrao/
 │   ├── perguntas.csv            ✅ 10 dev + 45 teste congeladas
@@ -1053,7 +1056,7 @@ Alvo da spec 5.21, com o que já existe marcado:
 ├── app_streamlit.py             ✅
 └── tests/  conftest · test_ingestao ✅ · test_normalizacao ✅ · test_regras ✅
          · test_dados_estruturados ✅ · test_seguranca ✅ · test_isolamento ✅
-         · test_cobertura ✅ · test_guardrails_integracao ✅ · test_deepeval ⬜
+         · test_cobertura ✅ · test_guardrails_integracao ✅ · test_deepeval ✅
          · test_observabilidade ✅ (Langfuse: estrutura, RN06, isolamento do OTel)
          · test_chunking_tabela_orfa ✅ · test_guarda_rn02_auditoria ✅
          · test_projecao ✅ (rota RN07 condicional ao modo, 40 casos)
