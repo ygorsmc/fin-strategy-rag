@@ -741,10 +741,17 @@ para o produto e para o experimento:
   prompt fixa. Mudar o formato de citação em `ESQUEMA_INVESTIGADOR` ou em
   `INSTRUCAO_MODELO` exige mudar `fonte_da_citacao` junto.
 
-**O que elas não fecham:** oração que não nomeia métrica não é julgada; número
-devolvido sem rótulo (literal de SQL, linha modal) continua lastreando pela
-RN02 antiga; e reconsultar a fonte não prova que o Auditor leu a página citada,
-só que consultou o mesmo tipo de fonte.
+Duas regras de falha fechada, da auditoria de 20/10, que quem mexer aqui não
+pode desfazer: valor com lastro mas sem rótulo conferível vira
+`rn02_rotulo_nao_verificavel`, e citação fora dos três formatos rebaixa o
+`confirma`. A guarda de rótulo lê também as linhas que o parser do caminho
+livre pula (oração "modal", título), porque o regex modal inclui "não", e
+"Despesas não decorrentes de juros" é justamente a métrica do caso que a criou.
+
+**O que elas não fecham:** oração que não nomeia métrica não é julgada; oração
+de evidência com duas métricas rotula os números com as duas; e reconsultar a
+fonte não prova que o Auditor leu a página citada, só que consultou o mesmo
+tipo de fonte.
 
 ## 4. Contratos e regras invioláveis
 

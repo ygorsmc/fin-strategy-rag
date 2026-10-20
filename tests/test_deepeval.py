@@ -142,6 +142,18 @@ class TestConfigDoJuiz:
         assert juiz.llm_provider == "deepseek" and juiz.deepseek_modelo == "deepseek-flash"
         assert juiz.deepseek_preco_saida_usd_milhao == 1.32
 
+    def test_cache_hit_do_juiz_deepseek_nao_subestima(self):
+        """Achado B1: o custo da DeepSeek cobra o cache hit por campo próprio,
+        que ficava com o preço do gerador."""
+        config = Config(
+            llm_provider="gemini",
+            deepeval_provedor_juiz="deepseek",
+            deepeval_modelo_juiz="deepseek-flash",
+            deepeval_preco_entrada_usd_milhao=0.44,
+            deepeval_preco_saida_usd_milhao=1.32,
+        )
+        assert de.config_do_juiz(config).deepseek_preco_entrada_cache_hit_usd_milhao == 0.44
+
     def test_juiz_igual_ao_modelo_do_provedor_herda_o_preco(self):
         config = Config(llm_provider="gemini", deepeval_modelo_juiz=Config().gemini_modelo_llm)
         juiz = de.config_do_juiz(config)
@@ -175,22 +187,40 @@ class TestJuizDeepEval:
             juiz.generate("x")
         assert provedor.prompts == []
 
-    def test_registra_antes_e_depois_e_o_antes_sobrevive_a_falha(self):
+    def test_registra_antes_e_depois_e_a_falha_e_debitada(self):
+        """Contrato mudado em 20/10 (achado M3 da auditoria): antes, a
+        tentativa que falhava deixava só o `inicio` no registro e não entrava
+        no custo. Agora ela fecha com `fim` marcado com o erro e debita a
+        estimativa conservadora, porque o provedor pode ter cobrado."""
         eventos: list[dict] = []
-        provedor = ProvedorRoteirizado(falhas=[ValueError("prompt inválido")])
+        provedor = ProvedorRoteirizado(falhas=[ValueError("prompt inválido")], estimativa=0.002)
         juiz = _juiz(provedor, eventos=eventos)
         with pytest.raises(ValueError):
             juiz.generate("x")
-        assert [e["evento"] for e in eventos] == ["deepeval_juiz_inicio"]
+        assert [e["evento"] for e in eventos] == ["deepeval_juiz_inicio", "deepeval_juiz_fim"]
+        assert eventos[-1]["erro"] == "ValueError" and eventos[-1]["debito_conservador_usd"] == 0.002
+        assert juiz.uso.custo_usd == pytest.approx(0.002)
+        assert juiz.uso.debito_conservador_usd == pytest.approx(0.002)
         juiz.generate("x")
         assert [e["evento"] for e in eventos][-2:] == ["deepeval_juiz_inicio", "deepeval_juiz_fim"]
+        assert "erro" not in eventos[-1]
 
     def test_transitorio_e_repetido_com_espera_crescente(self):
         dormidas: list[float] = []
         provedor = ProvedorRoteirizado(falhas=[RuntimeError("503 UNAVAILABLE"), RuntimeError("429")])
         juiz = _juiz(provedor, dormidas=dormidas)
         assert juiz.generate("x") == "{}"
-        assert dormidas == [10.0, 20.0] and juiz.uso.falhas == 2
+        assert dormidas == [10.0, 20.0]
+        assert (juiz.uso.falhas, juiz.uso.falhas_transitorias) == (2, 2)
+        # Duas tentativas debitadas pela estimativa e a terceira pelo custo medido.
+        assert juiz.uso.custo_usd == pytest.approx(2 * provedor.estimativa + provedor.custo)
+
+    def test_a_reespera_tambem_passa_pelo_teto(self):
+        provedor = ProvedorRoteirizado(falhas=[RuntimeError("503")], estimativa=0.6)
+        juiz = _juiz(provedor, teto=1.0)
+        with pytest.raises(de.OrcamentoJuizExcedidoError):
+            juiz.generate("x")
+        assert len(provedor.prompts) == 1
 
     def test_erro_nao_transitorio_sobe_na_hora(self):
         dormidas: list[float] = []
@@ -322,6 +352,16 @@ class TestMedicao:
         resultado = de.medir_caso(caso, _juiz(provedor))
         assert resultado.metricas == {} and provedor.prompts == []
 
+    def test_modo_de_avaliacao_herdado_nao_desvia_o_juiz(self, monkeypatch):
+        """`eval_mode="llm"` fixo: um DEEPEVAL_EVAL_MODE do ambiente não manda
+        a decisão a outro modelo."""
+        monkeypatch.setenv("DEEPEVAL_EVAL_MODE", "hybrid")
+        provedor = ProvedorRoteirizado(ROTEIRO_FIDELIDADE_METADE)
+        caso = de.caso_do_registro(dict(_registro(), pergunta="Qual o lucro?"))
+        resultado = de.medir_caso(caso, _juiz(provedor))
+        assert resultado.erro is None, resultado.erro
+        assert len(provedor.prompts) == 7
+
     def test_teto_atravessa_a_metrica_e_para_a_rodada(self):
         """O DeepEval engole exceção de métrica? O teto não pode ser engolido."""
         caso = de.caso_do_registro(dict(_registro(), pergunta="p"))
@@ -357,6 +397,7 @@ class TestIsolamento:
     def test_telemetria_e_autoload_desligados(self):
         assert os.environ["DEEPEVAL_TELEMETRY_OPT_OUT"] == "YES"
         assert os.environ["DEEPEVAL_DISABLE_DOTENV"] == "1"
+        assert os.environ["DEEPEVAL_DISABLE_LEGACY_KEYFILE"] == "1"
         from deepeval.telemetry.client import telemetry_opt_out
 
         assert telemetry_opt_out() is True
@@ -392,6 +433,25 @@ class TestIsolamento:
         assert script.principal([]) == 0
         saida = capsys.readouterr().out
         assert "Ensaio" in saida and "196 chamadas" in saida
+
+    def test_teto_acima_do_orcamento_do_projeto_barra(self, monkeypatch):
+        from scripts import avaliar_deepeval as script
+
+        config = Config(llm_provider="gemini", deepeval_modelo_juiz=Config().gemini_modelo_llm)
+        monkeypatch.setattr(script, "carregar_config", lambda: config)
+        with pytest.raises(SystemExit, match="ORCAMENTO_TETO_USD"):
+            script.principal(["--teto-usd", str(config.orcamento_teto_usd + 1)])
+
+    def test_relatorio_existente_nao_e_sobrescrito_antes_de_gastar(self, monkeypatch, tmp_path):
+        from scripts import avaliar_deepeval as script
+
+        config = Config(llm_provider="gemini", deepeval_modelo_juiz=Config().gemini_modelo_llm)
+        monkeypatch.setattr(script, "carregar_config", lambda: config)
+        monkeypatch.setattr(script.de, "fabricar_juiz", lambda *a, **k: pytest.fail("gastou"))
+        existente = tmp_path / "anterior.json"
+        existente.write_text("{}", encoding="utf-8")
+        with pytest.raises(SystemExit, match="já existe"):
+            script.principal(["--permitir-api-paga", "--saida", str(existente)])
 
     def test_rodada_paga_sem_preco_barra_antes_de_chamar(self, monkeypatch):
         from scripts import avaliar_deepeval as script

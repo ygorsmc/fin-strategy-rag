@@ -36,9 +36,9 @@ from src.agentes import (  # noqa: E402
     ChamadaFerramenta,
     FerramentasDoAgente,
     SaidaInvestigador,
+    _julgar_rotulos,
     _tem_lastro,
     fabrica_ferramentas_padrao,
-    valores_com_rotulo_trocado,
     valores_monetarios_do_texto,
 )
 from src.config import carregar_config  # noqa: E402
@@ -119,25 +119,28 @@ def main() -> int:
             citacoes=tuple(registro.get("citacoes") or ()),
             comportamento=registro.get("comportamento_observado", ""),
         )
-        oracoes = valores_com_rotulo_trocado(saida, ferramentas)
+        trocadas, sem_rotulo = _julgar_rotulos(saida, ferramentas)
         apuracao = registro.get("apuracao") or "sem_apuracao"
         contagem[f"avaliadas_{apuracao}"] += 1
-        if oracoes:
+        if trocadas or sem_rotulo:
             contagem["acusadas"] += 1
             contagem[f"acusadas_{apuracao}"] += 1
+            contagem["acusadas_rotulo_trocado"] += bool(trocadas)
+            contagem["acusadas_rotulo_nao_verificavel"] += bool(sem_rotulo)
             acusadas.append(
                 {
                     "arquivo": arquivo,
                     "id_pergunta": registro.get("id_pergunta"),
                     "apuracao": apuracao,
                     "pergunta": registro.get("pergunta"),
-                    "oracoes_acusadas": list(oracoes),
+                    "oracoes_acusadas": list(trocadas + sem_rotulo),
+                    "motivo": "rotulo_trocado" if trocadas else "rotulo_nao_verificavel",
                 }
             )
 
     relatorio = {
         "gerado_em": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H%M%SZ"),
-        "regra": "valores_com_rotulo_trocado (RN02 com rótulo, agentes)",
+        "regra": "_julgar_rotulos (RN02 com rótulo, agentes): trocado e não verificável",
         "custo_usd": 0.0,
         "contagem": dict(sorted(contagem.items())),
         "acusadas": acusadas,
@@ -154,7 +157,7 @@ def main() -> int:
         args.saida.write_text(texto + "\n", encoding="utf-8")
     print(json.dumps(relatorio["contagem"], ensure_ascii=False))
     for item in acusadas:
-        print(f"- {item['id_pergunta']} [{item['apuracao']}] {item['arquivo']}")
+        print(f"- {item['id_pergunta']} [{item['apuracao']}] {item['motivo']} {item['arquivo']}")
         for oracao in item["oracoes_acusadas"]:
             print(f"    {oracao[:220]}")
     return 0

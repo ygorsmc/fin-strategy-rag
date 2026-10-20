@@ -39,6 +39,9 @@ from typing import Any, Callable, Iterable, Mapping, Sequence
 # no ambiente do processo (inclusive no da suíte de testes).
 os.environ["DEEPEVAL_TELEMETRY_OPT_OUT"] = "YES"
 os.environ["DEEPEVAL_DISABLE_DOTENV"] = "1"
+# E nem o arquivo de chaves legado `.deepeval/.deepeval`, que o DeepEval
+# também funde no ambiente.
+os.environ["DEEPEVAL_DISABLE_LEGACY_KEYFILE"] = "1"
 
 
 @contextmanager
@@ -156,10 +159,17 @@ def config_do_juiz(config: Config) -> Config:
             )
         entrada = getattr(config, campo_entrada)
         saida = getattr(config, campo_saida)
+    extras: dict[str, Any] = {}
+    if provedor == "deepseek":
+        # O custo da DeepSeek cobra o cache hit pelo próprio campo. Sem preço
+        # de cache do juiz na configuração, usa-se o de entrada cheio: nunca
+        # subestima (achado B1 da auditoria de 20/10).
+        extras["deepseek_preco_entrada_cache_hit_usd_milhao"] = entrada
     return replace(
         config,
         llm_provider=provedor,
         **{campo_modelo: modelo, campo_entrada: entrada, campo_saida: saida},
+        **extras,
     )
 
 
@@ -170,6 +180,10 @@ class UsoJuiz:
     tokens_saida: int = 0
     custo_usd: float = 0.0
     falhas: int = 0
+    falhas_transitorias: int = 0
+    # Parte de `custo_usd` que é estimativa de tentativa falha, não cobrança
+    # medida. Sai separada no relatório.
+    debito_conservador_usd: float = 0.0
 
 
 class JuizDeepEval(DeepEvalBaseLLM):
@@ -210,42 +224,7 @@ class JuizDeepEval(DeepEvalBaseLLM):
         return f"{getattr(self.provedor, 'nome', 'provedor')}/{self.nome_modelo}"
 
     def generate(self, prompt: str, schema: type[BaseModel] | None = None) -> Any:
-        estimativa = self.provedor.estimar_custo_maximo(PROMPT_SISTEMA_JUIZ, prompt)
-        if self.uso.custo_usd + float(estimativa or 0.0) > self.teto_usd:
-            raise OrcamentoJuizExcedidoError(
-                f"teto de US$ {self.teto_usd:.2f} do juiz: acumulado "
-                f"US$ {self.uso.custo_usd:.6f}, próxima chamada até "
-                f"US$ {float(estimativa or 0.0):.6f}"
-            )
-        id_chamada = uuid.uuid4().hex
-        self._registrar(
-            {
-                "evento": "deepeval_juiz_inicio",
-                "run_id": self.run_id,
-                "id_chamada": id_chamada,
-                "modelo_juiz": self.nome_modelo,
-                "etapa": schema.__name__ if schema else "texto",
-                "estimativa_max_usd": estimativa,
-                **self.contexto,
-            }
-        )
-        bruta = self._gerar_com_reespera(prompt)
-        custo = float(bruta.uso.custo_usd or 0.0)
-        self.uso.chamadas += 1
-        self.uso.tokens_entrada += int(bruta.uso.tokens_entrada or 0)
-        self.uso.tokens_saida += int(bruta.uso.tokens_saida or 0)
-        self.uso.custo_usd += custo
-        self._registrar(
-            {
-                "evento": "deepeval_juiz_fim",
-                "run_id": self.run_id,
-                "id_chamada": id_chamada,
-                "custo_usd": custo,
-                "tokens_entrada": bruta.uso.tokens_entrada,
-                "tokens_saida": bruta.uso.tokens_saida,
-                **self.contexto,
-            }
-        )
+        bruta = self._gerar_com_reespera(prompt, schema.__name__ if schema else "texto")
         if schema is None:
             return bruta.texto
         try:
@@ -258,21 +237,83 @@ class JuizDeepEval(DeepEvalBaseLLM):
     async def a_generate(self, prompt: str, schema: type[BaseModel] | None = None) -> Any:
         return self.generate(prompt, schema)
 
-    def _gerar_com_reespera(self, prompt: str):
+    def _gerar_com_reespera(self, prompt: str, etapa: str):
+        """Uma chamada, com teto e registro a CADA tentativa.
+
+        Tentativa que falha depois de sair é debitada pela estimativa
+        conservadora, como em `src.avaliacao`: o provedor pode ter cobrado (o
+        DeepSeek que esgota `max_tokens` raciocinando levanta erro depois da
+        resposta paga), e sem o débito o teto e o custo do relatório sairiam
+        menores que o gasto (achado M3 da auditoria de 20/10).
+        """
         espera = self.ESPERA_INICIAL_S
         for tentativa in range(1, self.TENTATIVAS + 1):
+            estimativa = float(
+                self.provedor.estimar_custo_maximo(PROMPT_SISTEMA_JUIZ, prompt) or 0.0
+            )
+            if self.uso.custo_usd + estimativa > self.teto_usd:
+                raise OrcamentoJuizExcedidoError(
+                    f"teto de US$ {self.teto_usd:.2f} do juiz: acumulado "
+                    f"US$ {self.uso.custo_usd:.6f}, próxima chamada até "
+                    f"US$ {estimativa:.6f}"
+                )
+            id_chamada = uuid.uuid4().hex
+            self._registrar(
+                {
+                    "evento": "deepeval_juiz_inicio",
+                    "run_id": self.run_id,
+                    "id_chamada": id_chamada,
+                    "modelo_juiz": self.nome_modelo,
+                    "etapa": etapa,
+                    "tentativa": tentativa,
+                    "estimativa_max_usd": estimativa,
+                    **self.contexto,
+                }
+            )
             try:
-                return self.provedor.gerar(PROMPT_SISTEMA_JUIZ, prompt, temperatura=0.0)
+                bruta = self.provedor.gerar(PROMPT_SISTEMA_JUIZ, prompt, temperatura=0.0)
             except Exception as erro:  # noqa: BLE001 - reclassificado abaixo
                 transitorio = any(
                     marca in str(erro)
                     for marca in ("503", "429", "UNAVAILABLE", "RESOURCE_EXHAUSTED")
                 )
                 self.uso.falhas += 1
+                self.uso.falhas_transitorias += int(transitorio)
+                self.uso.custo_usd += estimativa
+                self.uso.debito_conservador_usd += estimativa
+                self._registrar(
+                    {
+                        "evento": "deepeval_juiz_fim",
+                        "run_id": self.run_id,
+                        "id_chamada": id_chamada,
+                        "erro": type(erro).__name__,
+                        "transitorio": transitorio,
+                        "debito_conservador_usd": estimativa,
+                        **self.contexto,
+                    }
+                )
                 if not transitorio or tentativa == self.TENTATIVAS:
                     raise
                 self._dormir(espera)
                 espera *= 2
+                continue
+            custo = float(bruta.uso.custo_usd or 0.0)
+            self.uso.chamadas += 1
+            self.uso.tokens_entrada += int(bruta.uso.tokens_entrada or 0)
+            self.uso.tokens_saida += int(bruta.uso.tokens_saida or 0)
+            self.uso.custo_usd += custo
+            self._registrar(
+                {
+                    "evento": "deepeval_juiz_fim",
+                    "run_id": self.run_id,
+                    "id_chamada": id_chamada,
+                    "custo_usd": custo,
+                    "tokens_entrada": bruta.uso.tokens_entrada,
+                    "tokens_saida": bruta.uso.tokens_saida,
+                    **self.contexto,
+                }
+            )
+            return bruta
         raise RuntimeError("inalcançável")
 
 
@@ -412,15 +453,18 @@ def medir_caso(
     if caso.desfecho not in DESFECHOS_PONTUADOS:
         return resultado
     fabricas = fabricas or {
+        # `eval_mode="llm"` fixo: um DEEPEVAL_EVAL_MODE herdado do ambiente
+        # ("hybrid") mandaria a decisão a outro modelo, fora deste juiz.
         METRICA_FIDELIDADE: lambda j: FaithfulnessMetric(
             model=j,
             threshold=LIMIAR_FUNDAMENTADA,
             include_reason=True,
             async_mode=False,
             penalize_ambiguous_claims=PENALIZAR_AMBIGUAS,
+            eval_mode="llm",
         ),
         METRICA_RELEVANCIA: lambda j: AnswerRelevancyMetric(
-            model=j, include_reason=True, async_mode=False
+            model=j, include_reason=True, async_mode=False, eval_mode="llm"
         ),
     }
     teste = LLMTestCase(

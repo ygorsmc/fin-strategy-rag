@@ -22,6 +22,7 @@ import pytest
 
 from src import agentes
 from src.agentes import (
+    FONTE_FORA_DO_FORMATO,
     FONTE_MODELO,
     FONTE_PAINEL,
     FONTE_RELEASE,
@@ -31,12 +32,15 @@ from src.agentes import (
     VEREDITO_CONFIRMA,
     VEREDITO_CONTESTA,
     VEREDITO_NAO_REPRODUZ,
+    VIOLACAO_RN02_ROTULO_NAO_VERIFICAVEL,
     VIOLACAO_RN02_ROTULO_TROCADO,
+    VIOLACAO_RN02_SEM_LASTRO,
     ContextoAuditor,
     FerramentasDoAgente,
     SaidaInvestigador,
     conferir_isolamento,
     fonte_da_citacao,
+    fontes_da_citacao,
     instrucao_auditor,
     instrucao_corretiva_auditor,
     responder_braco_b,
@@ -259,6 +263,91 @@ class TestRotuloDoValor:
         )
         assert valores_com_rotulo_trocado(saida, ferramentas) == ()
 
+    @pytest.mark.parametrize(
+        "texto",
+        [
+            "Despesas não decorrentes de juros: R$ 17,2 bi\n",
+            "As despesas não decorrentes de juros somaram R$ 17,2 bi no trimestre.\n",
+            "### Despesa de pessoal: R$ 17,2 bi\n",
+            "A meta de despesa ficou em R$ 17,2 bi.\n",
+            "| Despesas não decorrentes de juros | R$ 17,2 bi |\n",
+        ],
+    )
+    def test_o_rotulo_na_mesma_linha_tambem_acusa(self, texto):
+        """Achado A1 da auditoria de 20/10: o parser do caminho livre pula
+        oração "modal" (o regex inclui "não", que está no nome da métrica) e
+        título markdown. Nesses layouts o número ficava sem fato rotulado e a
+        guarda aprovava a troca que a motivou. A cobertura original era só o
+        layout de rótulo cortado (`TRECHO_CORTADO`)."""
+        ferramentas = _ferramentas(CaixaItau(texto), ("buscar_trechos", {"pergunta": "x"}))
+        saida = _saida(
+            "No release do 3T2025, o Itaú reportou margem financeira gerencial de "
+            "R$ 17,2 bilhões.",
+            citacoes=(CITACAO_RELEASE_ITAU,),
+        )
+        assert VIOLACAO_RN02_ROTULO_TROCADO in verificar_regras_agente(saida, ferramentas)
+
+    @pytest.mark.parametrize(
+        "texto",
+        [
+            "A margem financeira gerencial não ficou abaixo de R$ 17,2 bi.\n",
+            "### Margem financeira gerencial: R$ 17,2 bi\n",
+        ],
+    )
+    def test_contraprova_o_rotulo_certo_nesses_layouts_passa(self, texto):
+        ferramentas = _ferramentas(CaixaItau(texto), ("buscar_trechos", {"pergunta": "x"}))
+        saida = _saida(
+            "No release do 3T2025, o Itaú reportou margem financeira gerencial de "
+            "R$ 17,2 bilhões.",
+            citacoes=(CITACAO_RELEASE_ITAU,),
+        )
+        assert verificar_regras_agente(saida, ferramentas) == ()
+
+    def test_lastro_sem_rotulo_falha_fechado(self):
+        """O valor só existe como literal do SQL: há lastro na RN02 antiga,
+        mas nenhum rótulo para conferir. Regra 4 da §4.4: não aprova."""
+
+        class CaixaVazia(CaixaFalsa):
+            def consultar_cvm(self, sql):
+                self._reservar("consultar_cvm", "0 linha(s)")
+                return {"sql": sql, "colunas": ["conceito"], "linhas": [], "total_linhas": 0}
+
+        sql = "SELECT conceito FROM fatos_semanticos WHERE valor_reais > 17200000000"
+        ferramentas = _ferramentas(CaixaVazia(), ("consultar_cvm", {"sql": sql}))
+        saida = _saida("A margem financeira do Itaú foi de R$ 17,2 bilhões.")
+        assert VIOLACAO_RN02_ROTULO_NAO_VERIFICAVEL in verificar_regras_agente(saida, ferramentas)
+
+    def test_o_eco_do_argumento_do_modelo_nao_lastreia(self):
+        """Achado M2: o agente passava ao modelo um ativo inventado e o
+        escrevia de volta, lastreado pelo eco `ativo_total_reais`."""
+        ferramentas = _ferramentas(
+            CaixaComModelo(),
+            (FERRAMENTA_MODELO, {"ativo_total_reais": 73.4e9}),
+            nomes=FERRAMENTAS_DO_PRODUTO,
+        )
+        saida = _saida(
+            "O ativo total do INTER & CO, INC. (CD_CVM 080217) no 3T2025 foi de "
+            "R$ 73,4 bilhões.",
+            citacoes=("CVM · INTER & CO, INC. (CD_CVM 080217) · 3T2025 · ativo_total",),
+        )
+        assert VIOLACAO_RN02_SEM_LASTRO in verificar_regras_agente(saida, ferramentas)
+
+    def test_margem_com_clientes_casa_com_margem_financeira_com_clientes(self):
+        """Achado B3: o grupo "margem financeira" substituía o de margem, e a
+        resposta certa virava recusa. Só nos agentes; o caminho livre não muda."""
+        texto = (
+            "[ITAU | itau_release_3T2025 | 3T2025 | pág. 5]\n"
+            "| Em R$ bilhões | 3T25 | 2T25 |\n"
+            "| --- | --- | --- |\n"
+            "| Margem financeira com clientes | 27,7 | 27,1 |\n"
+        )
+        ferramentas = _ferramentas(CaixaItau(texto), ("buscar_trechos", {"pergunta": "x"}))
+        saida = _saida(
+            "A margem com clientes do Itaú foi de R$ 27,7 bilhões no 3T2025.",
+            citacoes=("release itau_release_3T2025 · ITAU · 3T2025 · p. 5",),
+        )
+        assert valores_com_rotulo_trocado(saida, ferramentas) == ()
+
     def test_oracao_sem_metrica_nao_e_julgada(self):
         """Sem métrica nomeada não há rótulo para trocar; o valor segue
         julgado só pela RN02 sem rótulo."""
@@ -399,6 +488,21 @@ class TestFonteDaCitacao:
     def test_os_tres_formatos_do_prompt(self, citacao, fonte):
         assert fonte_da_citacao(citacao) == fonte
 
+    @pytest.mark.parametrize(
+        ("citacao", "fontes"),
+        [
+            ("INTER · 1T2026 · pág. 3", {FONTE_RELEASE}),
+            ("Itaú · resultado 3T2025 · página 8", {FONTE_RELEASE}),
+            ("release itau_release_3T2025 p. 8 e CVM · CD_CVM 019348", {FONTE_RELEASE, FONTE_PAINEL}),
+            ("Modelo preditivo · panorama do painel da CVM", {FONTE_MODELO}),
+            ("nota explicativa sem formato", {FONTE_FORA_DO_FORMATO}),
+        ],
+    )
+    def test_todas_as_fontes_e_o_formato_desconhecido(self, citacao, fontes):
+        """Achado M1: citação mista exigia só a primeira fonte, e citação fora
+        do formato não exigia nenhuma."""
+        assert fontes_da_citacao(citacao) == frozenset(fontes)
+
 
 class TestConfirmarCadaFonte:
     def test_confirma_sem_reconsultar_o_release_ganha_um_segundo_tiro_e_cai(self, config):
@@ -512,6 +616,39 @@ class TestConfirmarCadaFonte:
         assert llm.chamadas == 2
         assert veredito.veredito == VEREDITO_NAO_REPRODUZ
         assert "modelo preditivo" in veredito.justificativa
+        assert veredito.correcao_aplicada is False
+
+
+class TestRebaixamentoSemSegundoTiro:
+    def test_citacao_fora_do_formato_rebaixa_o_confirma(self):
+        contexto = ContextoAuditor(
+            pergunta=PERGUNTA,
+            afirmacao=saida_valida()["afirmacao"],
+            citacoes=(CITACAO, "anotação livre do analista"),
+        )
+        fabrica_llm, _, _ = montar_fabricas(
+            [], respostas_auditor=[ACAO_SQL, final({"veredito": "confirma"})]
+        )
+        llm = fabrica_llm(PAPEL_AUDITOR)
+        veredito = agentes.executar_auditor(
+            contexto, Config(), FerramentasDoAgente(CaixaFalsa(), PAPEL_AUDITOR), llm
+        )
+        assert llm.chamadas == 2  # nenhuma ferramenta alcança: sem segundo tiro
+        assert veredito.veredito == VEREDITO_NAO_REPRODUZ
+        assert "fora dos formatos" in veredito.justificativa
+
+    def test_sem_correcao_a_verificacao_continua(self):
+        """`permitir_correcao=False` desliga o segundo tiro, não o rebaixamento
+        (observação da auditoria de 20/10)."""
+        contexto = ContextoAuditor(pergunta=PERGUNTA, afirmacao="x", citacoes=(CITACAO,))
+        fabrica_llm, _, _ = montar_fabricas([], respostas_auditor=[final({"veredito": "confirma"})])
+        llm = fabrica_llm(PAPEL_AUDITOR)
+        veredito = agentes.executar_auditor(
+            contexto, Config(), FerramentasDoAgente(CaixaFalsa(), PAPEL_AUDITOR), llm,
+            permitir_correcao=False,
+        )
+        assert llm.chamadas == 1
+        assert veredito.veredito == VEREDITO_NAO_REPRODUZ
         assert veredito.correcao_aplicada is False
 
 

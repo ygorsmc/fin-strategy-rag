@@ -1,10 +1,12 @@
 {
-  "gerado_em": "2026-10-20T043117Z",
-  "regra": "valores_com_rotulo_trocado (RN02 com rótulo, agentes)",
+  "gerado_em": "2026-10-20T090312Z",
+  "regra": "_julgar_rotulos (RN02 com rótulo, agentes): trocado e não verificável",
   "custo_usd": 0.0,
   "contagem": {
     "acusadas": 2,
     "acusadas_pendente_conferencia_humana": 2,
+    "acusadas_rotulo_nao_verificavel": 0,
+    "acusadas_rotulo_trocado": 2,
     "avaliadas": 201,
     "avaliadas_acerto": 16,
     "avaliadas_erro": 48,
@@ -20,7 +22,8 @@
       "pergunta": "Que faixa de lucro do Banco do Brasil para 2025 estava valendo quando saiu o relatório do 3T2025?",
       "oracoes_acusadas": [
         "No relatório do 3T2025 do Banco do Brasil, a projeção (guidance) para o Lucro Líquido Ajustado de 2025 estava fixada na faixa de R$ 21,0 bilhões a R$ 25,0 bilhões."
-      ]
+      ],
+      "motivo": "rotulo_trocado"
     },
     {
       "arquivo": "artefatos/resultados_agentes/braco_b_prompt_a2_sem_fix_desambiguacao.json",
@@ -29,7 +32,8 @@
       "pergunta": "Que faixa de lucro do Banco do Brasil para 2025 estava valendo quando saiu o relatório do 3T2025?",
       "oracoes_acusadas": [
         "No relatório do 3T2025 do Banco do Brasil, a projeção (guidance) para o Lucro Líquido Ajustado de 2025 estava fixada na faixa de R$ 21,0 bilhões a R$ 25,0 bilhões."
-      ]
+      ],
+      "motivo": "rotulo_trocado"
     }
   ],
   "nota": "Respostas sem violação na RN02 antiga e com valor em dinheiro, deduplicadas por (pergunta, resposta). 'deriva_de_evidencia' = a reexecução local não devolveu o número que a resposta usou; fica fora da conta. Cada acusação precisa de leitura humana: acusar é virar recusa registrada."

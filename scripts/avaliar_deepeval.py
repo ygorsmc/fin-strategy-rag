@@ -94,10 +94,15 @@ def principal(argv: list[str] | None = None) -> int:
     parser.add_argument("--limite", type=int, default=None, help="só os N primeiros casos pontuados")
     parser.add_argument("--teto-usd", type=float, default=1.0)
     parser.add_argument("--saida", type=Path, default=None)
+    parser.add_argument("--sobrescrever", action="store_true", help="permite substituir relatório existente")
     parser.add_argument("--permitir-api-paga", action="store_true")
     args = parser.parse_args(argv)
 
     config = carregar_config()
+    if not 0 < args.teto_usd <= config.orcamento_teto_usd:
+        raise SystemExit(
+            f"FALHOU: --teto-usd {args.teto_usd} fora de (0, ORCAMENTO_TETO_USD={config.orcamento_teto_usd}]."
+        )
     try:
         juiz_config = de.config_do_juiz(config)
     except ValueError as erro:
@@ -110,12 +115,20 @@ def principal(argv: list[str] | None = None) -> int:
     descricao_juiz = {}
     if juiz_config is not None:
         campo_modelo, campo_entrada, campo_saida = de._CAMPOS_DO_PROVEDOR[juiz_config.llm_provider]
+        prefixo = campo_modelo.split("_")[0]
         descricao_juiz = {
             "provedor": juiz_config.llm_provider,
             "modelo": getattr(juiz_config, campo_modelo),
             "preco_entrada_usd_milhao": getattr(juiz_config, campo_entrada),
             "preco_saida_usd_milhao": getattr(juiz_config, campo_saida),
+            # Parâmetros da chamada (RNF08): mudam o veredito e o custo.
+            "reasoning_effort": getattr(juiz_config, f"{prefixo}_reasoning_effort", None),
+            "max_tokens": getattr(juiz_config, f"{prefixo}_max_tokens", None),
         }
+        if juiz_config.llm_provider == "deepseek":
+            descricao_juiz["preco_entrada_cache_hit_usd_milhao"] = (
+                juiz_config.deepseek_preco_entrada_cache_hit_usd_milhao
+            )
     gerador = config.gemini_modelo_llm if config.llm_provider == "gemini" else config.llm_provider
 
     humano: dict = {}
@@ -142,6 +155,12 @@ def principal(argv: list[str] | None = None) -> int:
     if not args.permitir_api_paga:
         print("Ensaio: nenhuma chamada feita. Use --permitir-api-paga para executar.")
         return 0
+
+    sufixo = "concordancia" if args.concordancia else estrategia
+    saida = args.saida or DIR_RESULTADOS_AVALIACAO / f"deepeval_{fingerprint[:8]}_{sufixo}.json"
+    if saida.exists() and not args.sobrescrever:
+        # Antes de gastar: o relatório anterior é evidência de outra rodada.
+        raise SystemExit(f"FALHOU: {saida} já existe; use --sobrescrever ou --saida.")
 
     run_id = f"{datetime.now(timezone.utc):%Y%m%dT%H%M%SZ}-deepeval"
     juiz = de.fabricar_juiz(config, teto_usd=args.teto_usd, run_id=run_id)
@@ -182,7 +201,9 @@ def principal(argv: list[str] | None = None) -> int:
             "chamadas_juiz": juiz.uso.chamadas,
             "tokens_entrada": juiz.uso.tokens_entrada,
             "tokens_saida": juiz.uso.tokens_saida,
-            "falhas_transitorias": juiz.uso.falhas,
+            "falhas": juiz.uso.falhas,
+            "falhas_transitorias": juiz.uso.falhas_transitorias,
+            "debito_conservador_usd": round(juiz.uso.debito_conservador_usd, 6),
             "interrompido_no_teto": interrompido,
             "aviso": (
                 "Instrumento, não gabarito: a groundedness reportada continua "
@@ -215,13 +236,12 @@ def principal(argv: list[str] | None = None) -> int:
         print(f"concordância DeepEval × humano: {relatorio['concordancia']['taxa_concordancia']} "
               f"{relatorio['concordancia']['matriz']}")
 
-    sufixo = "concordancia" if args.concordancia else estrategia
-    saida = args.saida or DIR_RESULTADOS_AVALIACAO / f"deepeval_{fingerprint[:8]}_{sufixo}.json"
     saida.write_text(json.dumps(relatorio, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    exibida = saida.resolve().relative_to(RAIZ) if saida.resolve().is_relative_to(RAIZ) else saida
     registrar_execucao({"evento": "deepeval_fim", "run_id": run_id, "custo_total_usd": juiz.uso.custo_usd,
-                        "chamadas": juiz.uso.chamadas, "saida": str(saida.relative_to(RAIZ))})
+                        "chamadas": juiz.uso.chamadas, "saida": str(exibida)})
     print(json.dumps(relatorio["agregado"], ensure_ascii=False))
-    print(f"custo: US$ {juiz.uso.custo_usd:.6f} em {juiz.uso.chamadas} chamadas · {saida.relative_to(RAIZ)}")
+    print(f"custo: US$ {juiz.uso.custo_usd:.6f} em {juiz.uso.chamadas} chamadas · {exibida}")
     return 1 if interrompido else 0
 
 
