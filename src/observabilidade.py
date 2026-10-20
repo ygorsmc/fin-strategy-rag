@@ -2,12 +2,14 @@
 
 Uma consulta do chat vira um trace, e cada etapa vira uma observação filha:
 guardrail de entrada, roteamento, recuperação, chamada ao LLM (com tokens e
-custo), ferramentas de agente e guardrail de saída. O Langfuse mede a
-latência de cada uma pela duração do span.
+custo), ferramentas de agente (`FerramentasDoAgente.executar`) e guardrail de
+saída. O Langfuse mede a latência de cada uma pela duração do span. Os
+agentes ainda não respondem no chat; quando responderem, as ferramentas e as
+gerações deles entram no mesmo trace.
 
 **Papel, e o que ele não é.** O Langfuse serve para o diagnóstico ao vivo:
-qual etapa domina a latência, qual chamada custou mais, qual ferramenta o
-agente chamou. Ele **não** é o registro do benchmark. A camada gratuita
+qual etapa domina a latência, qual chamada custou mais, qual ferramenta foi
+chamada. Ele **não** é o registro do benchmark. A camada gratuita
 retém 30 dias, e o registro reprodutível das avaliações continua sendo o
 JSONL versionado (RNF08).
 
@@ -24,6 +26,12 @@ Contratos, cada um travado em `tests/test_observabilidade.py`:
    SDK. Exceção é registrada **só pelo tipo**. O OpenTelemetry grava a
    mensagem e a pilha num evento que a máscara não alcança (medido no SDK
    5.0.2), e a mensagem pode carregar o texto do usuário.
+   **Texto livre só com o Presidio ligado.** Sem ele, o guardrail detecta
+   CPF, e-mail e telefone, mas não nome de pessoa. Por isso a pergunta, o
+   prompt, a saída do LLM, a resposta e os argumentos de ferramenta passam
+   por `texto_livre`, que no lugar do texto põe só o tamanho dele. Achado da
+   auditoria de conformidade de 2026-10-19: um nome na pergunta ia para o
+   trace.
 4. **Só os spans deste módulo saem.** O provider do OpenTelemetry é próprio,
    nunca o global, e o filtro de export aceita só spans do SDK do Langfuse.
    ChromaDB e CrewAI não pegam carona no envio.
@@ -73,10 +81,13 @@ class Estado:
     ativo: bool
     motivo: str
     host: str = ""
+    # Se pergunta, prompt e resposta entram no trace (só com o Presidio).
+    captura_texto: bool = False
 
 
 _cliente: Any = None
 _chave_publica: str = ""
+_captura_texto = False
 _estado = Estado(False, "não configurado")
 # Ids dos últimos traces fechados, para um script conferir no servidor que
 # eles chegaram. Sobrevive a reconfigurar o cliente.
@@ -123,6 +134,19 @@ def _mascara(*, data: Any, **_: Any) -> Any:
     return redigir(data)
 
 
+def texto_livre(valor: Any) -> Any:
+    """O texto, se o trace pode levá-lo; senão, só o tamanho (contrato 3).
+
+    Vale para tudo que o usuário escreveu ou que deriva disso: a pergunta, o
+    prompt que a contém, a saída do LLM, a resposta e os argumentos que o
+    agente passa a uma ferramenta.
+    """
+    if _captura_texto or valor is None:
+        return valor
+    tamanho = len(valor) if isinstance(valor, str) else len(str(valor))
+    return f"[texto omitido: {tamanho} caracteres; sem o Presidio, nome de pessoa não seria anonimizado (RN06)]"
+
+
 # --------------------------------------------------------------------------- #
 # Ciclo de vida do cliente
 # --------------------------------------------------------------------------- #
@@ -135,7 +159,7 @@ def configurar(config: Any, *, exportador: Any = None) -> Estado:
     OpenTelemetry. Os testes passam um exportador em memória e inspecionam
     exatamente o que sairia para o Langfuse.
     """
-    global _cliente, _chave_publica, _estado
+    global _cliente, _chave_publica, _estado, _captura_texto
 
     desligar()
     publica = getattr(config, "langfuse_public_key", "") or ""
@@ -179,7 +203,8 @@ def configurar(config: Any, *, exportador: Any = None) -> Estado:
         _estado = Estado(False, f"falha ao iniciar o cliente ({type(exc).__name__})", host)
         return _estado
     _chave_publica = publica
-    _estado = Estado(True, "ativo", host)
+    _captura_texto = bool(getattr(config, "presidio_habilitado", False))
+    _estado = Estado(True, "ativo", host, _captura_texto)
     return _estado
 
 
@@ -195,7 +220,7 @@ def descarregar() -> None:
 
 def desligar() -> None:
     """Descarrega, encerra o cliente e volta ao estado não configurado."""
-    global _cliente, _chave_publica, _estado
+    global _cliente, _chave_publica, _estado, _captura_texto
 
     if _cliente is not None:
         try:
@@ -213,6 +238,7 @@ def desligar() -> None:
             pass
     _cliente = None
     _chave_publica = ""
+    _captura_texto = False
     _estado = Estado(False, "não configurado")
 
 
@@ -257,30 +283,34 @@ class Observacao:
             LOGGER.warning("Langfuse: update falhou (%s).", type(exc).__name__)
 
     def concluir_geracao(self, bruta: Any) -> None:
-        """Registra modelo, saída, tokens e custo de uma `RespostaBrutaLLM`."""
-        uso = getattr(bruta, "uso", None)
-        campos: dict[str, Any] = {"output": getattr(bruta, "texto", None)}
-        modelo = getattr(bruta, "modelo", "") or getattr(uso, "modelo", "")
-        if modelo:
-            campos["model"] = str(modelo)
-        if uso is not None:
-            entrada = int(uso.tokens_entrada)
-            saida = int(uso.tokens_saida)
-            # `total` explícito: sem ele o Langfuse soma todas as chaves, e
-            # raciocínio e cache já estão dentro de saída e entrada.
-            campos["usage_details"] = {"input": entrada, "output": saida, "total": entrada + saida}
-            if uso.custo_usd is not None:
-                campos["cost_details"] = {"total": float(uso.custo_usd)}
-            campos["metadata"] = {
-                "tokens_raciocinio": int(uso.tokens_raciocinio),
-                "tokens_entrada_cache_hit": int(uso.tokens_entrada_cache_hit),
-                "latencia_provedor_s": round(float(uso.latencia_s), 3),
-                "custo_auditavel": uso.custo_usd is not None,
-            }
+        """Registra modelo, saída, tokens e custo de uma `RespostaBrutaLLM`.
+
+        Tudo sob `try`, inclusive as conversões: um `UsoLLM` incompleto de um
+        provedor plugável não pode transformar uma geração bem-sucedida em
+        falha (contrato 5, achado da auditoria de 2026-10-19)."""
         try:
+            uso = getattr(bruta, "uso", None)
+            campos: dict[str, Any] = {"output": texto_livre(getattr(bruta, "texto", None))}
+            modelo = getattr(bruta, "modelo", "") or getattr(uso, "modelo", "")
+            if modelo:
+                campos["model"] = str(modelo)
+            if uso is not None:
+                entrada = int(uso.tokens_entrada)
+                saida = int(uso.tokens_saida)
+                # `total` explícito: sem ele o Langfuse soma todas as chaves, e
+                # raciocínio e cache já estão dentro de saída e entrada.
+                campos["usage_details"] = {"input": entrada, "output": saida, "total": entrada + saida}
+                if uso.custo_usd is not None:
+                    campos["cost_details"] = {"total": float(uso.custo_usd)}
+                campos["metadata"] = {
+                    "tokens_raciocinio": int(uso.tokens_raciocinio),
+                    "tokens_entrada_cache_hit": int(uso.tokens_entrada_cache_hit),
+                    "latencia_provedor_s": round(float(uso.latencia_s), 3),
+                    "custo_auditavel": uso.custo_usd is not None,
+                }
             self._sdk.update(**campos)
         except Exception as exc:
-            LOGGER.warning("Langfuse: update da geração falhou (%s).", type(exc).__name__)
+            LOGGER.warning("Langfuse: registro da geração falhou (%s).", type(exc).__name__)
 
     def _marcar_erro(self, exc: BaseException) -> None:
         try:
@@ -433,7 +463,8 @@ def observar_geracao(metodo: Callable[..., Any]) -> Callable[..., Any]:
             with _observacao(
                 f"llm.{getattr(self, 'nome', type(self).__name__)}",
                 "generation",
-                [{"role": "system", "content": sistema}, {"role": "user", "content": usuario}],
+                # O prompt de sistema é fixo; o do usuário contém a pergunta.
+                [{"role": "system", "content": sistema}, {"role": "user", "content": texto_livre(usuario)}],
                 {"metodo": metodo.__name__, "temperatura": temperatura},
             ) as observacao:
                 bruta = metodo(self, *args, **kwargs)

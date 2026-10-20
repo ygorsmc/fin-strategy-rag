@@ -24,13 +24,14 @@ from src.geracao import ProvedorLLM, RespostaBrutaLLM, UsoLLM
 
 RAIZ = Path(__file__).resolve().parents[1]
 CPF = "123.456.789-09"
+NOME = "Joaquim Pereira da Silva"
 RECUSA_JSON = json.dumps(
     {"resposta": None, "recusa": True, "motivo_recusa": "sem evidência", "citacoes": []}
 )
 
 
-def _config_com_chave() -> Config:
-    return Config(langfuse_public_key="pk-lf-teste", langfuse_secret_key="sk-lf-teste")
+def _config_com_chave(**campos) -> Config:
+    return Config(langfuse_public_key="pk-lf-teste", langfuse_secret_key="sk-lf-teste", **campos)
 
 
 @pytest.fixture
@@ -217,6 +218,35 @@ class TestRN06:
         assert atributos["langfuse.observation.status_message"] == "ValueError"
         assert CPF not in _tudo_que_sai(exportador)
 
+    def test_sem_presidio_nome_de_pessoa_nao_vai_para_o_trace(self, exportador, monkeypatch):
+        """Achado M1 da auditoria de 2026-10-19: sem o Presidio o guardrail não
+        detecta nome, e a pergunta ia inteira para o trace."""
+        monkeypatch.setattr(app, "responder_prospectiva_se_couber", lambda p: None)
+        monkeypatch.setattr(app, "responder_estruturada_se_couber", lambda p: None)
+        pergunta = f"Sou {NOME}, cliente do banco. Qual o lucro líquido do Itaú no 3T2025?"
+        assert not observabilidade.estado().captura_texto
+        with observabilidade.consulta("painel_cvm") as rastro:
+            exibida, _ = app.responder_sem_llm(pergunta)
+            rastro.atualizar(entrada=observabilidade.texto_livre(exibida))
+            ProvedorFalso(texto=f"Olá, {NOME}.").gerar("sistema", f"Pergunta: {pergunta}")
+        exportado = _tudo_que_sai(exportador)
+        assert "Joaquim" not in exportado
+        assert "texto omitido" in exportado  # o tamanho fica, o texto não
+
+    def test_com_presidio_o_texto_entra_redigido(self):
+        exp = InMemorySpanExporter()
+        estado = observabilidade.configurar(_config_com_chave(presidio_habilitado=True), exportador=exp)
+        try:
+            assert estado.captura_texto
+            with observabilidade.consulta("pergunta_livre") as rastro:
+                rastro.atualizar(entrada=observabilidade.texto_livre("lucro do Itaú no 3T2025"))
+                rastro.atualizar(saida=observabilidade.texto_livre(f"cpf {CPF}"))
+            atributos = _spans(exp)["pergunta_livre"].attributes
+            assert atributos["langfuse.observation.input"] == "lucro do Itaú no 3T2025"
+            assert CPF not in atributos["langfuse.observation.output"]  # a máscara segue valendo
+        finally:
+            observabilidade.desligar()
+
     def test_cadeia_do_app_nao_vaza_cpf(self, exportador, monkeypatch):
         """Contraprova no código do app, não só no módulo: guardrail e rotas."""
         monkeypatch.setattr(app, "responder_prospectiva_se_couber", lambda p: None)
@@ -271,6 +301,35 @@ class TestFluxoInterativo:
         }
 
 
+class _CaixaFalsa:
+    """O mínimo de `CaixaDeFerramentas` que `FerramentasDoAgente` usa."""
+
+    def __init__(self):
+        from src.ferramentas import RegistroChamada
+
+        self._RegistroChamada = RegistroChamada
+        self.registro: list = []
+
+    def buscar_trechos(self, pergunta, top_k=None):
+        self.registro.append(
+            self._RegistroChamada("buscar_trechos", {"pergunta": pergunta}, resumo=f"2 trechos para {pergunta}")
+        )
+        return ["t1", "t2"]
+
+
+class TestFerramentasDeAgente:
+    def test_chamada_de_ferramenta_vira_span_tool_sem_texto_livre(self, exportador):
+        from src.agentes import PAPEL_INVESTIGADOR, FerramentasDoAgente
+
+        ferramentas = FerramentasDoAgente(_CaixaFalsa(), PAPEL_INVESTIGADOR)
+        with observabilidade.consulta("pergunta_livre"):
+            assert ferramentas.executar("buscar_trechos", pergunta=f"lucro do {NOME}") == ["t1", "t2"]
+        span = _spans(exportador)["ferramenta.buscar_trechos"]
+        assert span.attributes["langfuse.observation.type"] == "tool"
+        assert json.loads(span.attributes["langfuse.observation.output"])["falhou"] is False
+        assert "Joaquim" not in _tudo_que_sai(exportador)
+
+
 # --------------------------------------------------------------------------- #
 # Contrato 4 — isolamento do OpenTelemetry
 # --------------------------------------------------------------------------- #
@@ -288,12 +347,20 @@ class TestIsolamento:
             observabilidade.desligar()
 
     def test_span_de_outra_biblioteca_nao_sai(self, exportador):
-        """Filtro de export: só o escopo do SDK do Langfuse vai para fora."""
+        """Filtro de export: só o escopo do SDK do Langfuse vai para fora.
+
+        O span imita um instrumentador de LLM (escopo `litellm`, atributo
+        `gen_ai.*`), que o filtro padrão do SDK exportaria: sem o filtro
+        explícito este teste falha (achado B2 da auditoria de 2026-10-19)."""
         provider = observabilidade._cliente._resources.tracer_provider
         with observabilidade.consulta("pergunta_livre"):
-            with provider.get_tracer("chromadb").start_as_current_span("consulta_vetorial"):
+            with provider.get_tracer("litellm").start_as_current_span(
+                "chamada_litellm", attributes={"gen_ai.system": "openai"}
+            ):
                 pass
-        assert "consulta_vetorial" not in _spans(exportador)
+        spans = _spans(exportador)
+        assert "pergunta_livre" in spans  # controle positivo: o export funciona
+        assert "chamada_litellm" not in spans
 
     def test_otel_sdk_disabled_desliga_com_motivo_visivel(self, monkeypatch):
         monkeypatch.setenv("OTEL_SDK_DISABLED", "true")
@@ -309,13 +376,14 @@ class TestIsolamento:
         codigo = (
             "import os; import src.agentes;"
             "from crewai.telemetry.telemetry import Telemetry;"
-            "print(os.environ.get('OTEL_SDK_DISABLED'), Telemetry._is_telemetry_disabled())"
+            "print(os.environ.get('OTEL_SDK_DISABLED'), Telemetry._is_telemetry_disabled(),"
+            " os.environ.get('CREWAI_DISABLE_TRACKING'))"
         )
         saida = subprocess.run(
             [sys.executable, "-c", codigo], cwd=RAIZ, env=ambiente,
             capture_output=True, text=True, check=True,
         )
-        assert saida.stdout.strip().splitlines()[-1] == "None True"
+        assert saida.stdout.strip().splitlines()[-1] == "None True true"
 
 
 # --------------------------------------------------------------------------- #
@@ -353,6 +421,22 @@ class TestRobustez:
                 etapa.atualizar(saida=lambda: object().score)
         spans = _spans(exportador)
         assert "langfuse.observation.output" not in spans["recuperacao"].attributes
+
+    def test_uso_incompleto_nao_derruba_a_geracao(self, exportador):
+        """Achado B1: as conversões de `concluir_geracao` ficavam fora do `try`."""
+
+        class ProvedorSemLatencia(ProvedorFalso):
+            def gerar(self, prompt_sistema, prompt_usuario, temperatura=0.0):
+                bruta = super().gerar(prompt_sistema, prompt_usuario, temperatura)
+                return RespostaBrutaLLM(
+                    texto=bruta.texto,
+                    uso=UsoLLM(tokens_entrada=1, tokens_saida=1, custo_usd=0.0, latencia_s=None),
+                    modelo="m",
+                )
+
+        with observabilidade.consulta("pergunta_livre"):
+            assert ProvedorSemLatencia().gerar("s", "u").texto == RECUSA_JSON
+        assert "llm.falso" in _spans(exportador)
 
     def test_rerun_do_streamlit_nao_marca_erro(self, exportador):
         class RerunException(Exception):

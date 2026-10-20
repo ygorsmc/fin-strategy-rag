@@ -608,9 +608,9 @@ outra tarefa.
   **`auditoria_manual_pendente`**. O README ainda publica a anterior
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
-- Suíte atual: **4.627 casos passando, zero falhas/erros/skips**, 28 avisos
-  (19/10, Langfuse instrumentado, pelo próprio `.venv`).
-  Antes: 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
+- Suíte atual: **4.642 casos passando, zero falhas/erros/skips**, 28 avisos
+  (19/10, Langfuse com as correções da auditoria, pelo próprio `.venv`).
+  Antes: 4.627 (19/10, Langfuse antes da auditoria); 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
   (4.184) tem XML em
   `artefatos/pendencias_geom1_rank03b_2026-09-26/pytest_suite_pos_auditoria.xml`.
   Testes dirigidos: 1.179; os dois achados da auditoria independente foram
@@ -1122,6 +1122,25 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    --permitir-api-paga` (centavos) gera 9 traces e grava o resumo em
    `artefatos/observabilidade/`. A suíte nunca envia trace: `conftest.py`
    esvazia as chaves.
+   **Auditoria de conformidade em 19/10, sem achado alto.** Corrigidos:
+   - M1 (RN06): sem o Presidio, nome de pessoa ia para o trace. Agora
+     pergunta, prompt, saída do LLM, resposta e argumentos de ferramenta só
+     entram com o Presidio ligado (`observabilidade.texto_livre`); sem ele,
+     só o tamanho. O script ganhou `--capturar-texto`, que liga o Presidio.
+   - B1–B4: `concluir_geracao` inteira sob `try`; teste do filtro com
+     mutação real; span por ferramenta em `FerramentasDoAgente.executar`;
+     o script sem `--permitir-api-paga` esvazia a chave de todos os
+     provedores pagos.
+   - O1 e O4: `tests/test_responder_no_chat.py` trava cota e orçamento
+     ramo a ramo; `CREWAI_DISABLE_TRACKING` é a segunda trava da telemetria
+     do CrewAI.
+   **Pendências para o passo (2), agentes no chat:**
+   - Se algum agente receber `max_execution_time`, o CrewAI roda a tarefa
+     numa thread. A contextvar da consulta não chega lá, e as gerações e
+     ferramentas sumiriam do trace sem aviso. Usar `contextvars.copy_context()`.
+   - Com o Presidio desligado, a pergunta com nome de pessoa continua indo ao
+     Gemini. É lacuna anterior a esta onda (RN06 pede anonimizar antes de
+     qualquer chamada externa).
 
 −6. **CAND-02-P FECHADO EM 07/10: INDECIDÍVEL (vinculante).** Contra o rótulo do Claude, o
    M vence o B1 (v3: nDCG@10 0,583 × 0,365, 8 de 8 emissores). O rótulo, porém,

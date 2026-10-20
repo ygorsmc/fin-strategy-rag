@@ -103,6 +103,7 @@ from src.ferramentas import (
     ErroFerramenta,
     TetoChamadasExcedidoError,
 )
+from src import observabilidade
 from src.geracao import ProvedorLLM, fabricar_provedor_llm
 from src.normalizacao import extrair_numeros_ptbr_tipados
 
@@ -128,13 +129,16 @@ def configurar_ambiente_crewai() -> None:
     este módulo apagava os traces do chat sem erro nenhum. A telemetria do
     CrewAI já fica desligada só com `CREWAI_DISABLE_TELEMETRY`
     (`Telemetry._is_telemetry_disabled` no 0.193.2), e
-    `tests/test_observabilidade.py` trava as duas coisas.
+    `tests/test_observabilidade.py` trava as duas coisas. `CREWAI_DISABLE_TRACKING`
+    é a segunda trava, no lugar da que saiu: o próprio CrewAI a lê, e ela não
+    desliga o OpenTelemetry dos outros.
 
     Só define o que ainda não estiver definido: a decisão continua sendo do
     ambiente, não deste módulo.
     """
     for chave, valor in (
         ("CREWAI_DISABLE_TELEMETRY", "true"),
+        ("CREWAI_DISABLE_TRACKING", "true"),
         ("CREWAI_TRACING_ENABLED", "false"),
         # Chave que o próprio framework usa para não abrir o prompt de traces.
         ("CREWAI_TESTING", "true"),
@@ -781,12 +785,28 @@ class FerramentasDoAgente:
         if nome not in FERRAMENTAS_DISPONIVEIS:
             raise ErroFerramenta(f"ferramenta desconhecida: {nome!r}")
         metodo = getattr(self.caixa, nome)
-        try:
-            resultado = metodo(**argumentos)
-        except TetoChamadasExcedidoError:
-            self.teto_atingido = True
-            raise
-        registro = self.caixa.registro[-1] if self.caixa.registro else None
+        # Span de ferramenta (5.12). Os argumentos vêm do LLM e podem trazer o
+        # texto da pergunta: passam pela regra de texto livre (RN06).
+        with observabilidade.etapa(
+            f"ferramenta.{nome}",
+            tipo="tool",
+            entrada=lambda: {
+                "papel": self.papel,
+                "argumentos": observabilidade.texto_livre(_serializar(dict(argumentos))),
+            },
+        ) as etapa:
+            try:
+                resultado = metodo(**argumentos)
+            except TetoChamadasExcedidoError:
+                self.teto_atingido = True
+                raise
+            registro = self.caixa.registro[-1] if self.caixa.registro else None
+            etapa.atualizar(
+                saida=lambda: {
+                    "resumo": observabilidade.texto_livre(registro.resumo if registro else ""),
+                    "falhou": bool(registro and registro.erro),
+                }
+            )
         self.chamadas.append(
             ChamadaFerramenta(
                 papel=self.papel,

@@ -515,7 +515,7 @@ def guardar_entrada(pergunta: str) -> ResultadoGuardrail:
         etapa.atualizar(
             saida=lambda: {
                 **_resumo_guardrail(resultado),
-                "texto_seguro": resultado.texto_seguro,
+                "texto_seguro": observabilidade.texto_livre(resultado.texto_seguro),
             }
         )
     return resultado
@@ -1335,7 +1335,10 @@ def responder_pergunta_livre(
     with observabilidade.etapa(
         "recuperacao",
         tipo="retriever",
-        entrada=lambda: {"pergunta": pergunta, "estrategia": str(estrategia.value)},
+        entrada=lambda: {
+            "pergunta": observabilidade.texto_livre(pergunta),
+            "estrategia": str(estrategia.value),
+        },
     ) as etapa_recuperacao:
         recuperados = recuperador.recuperar(pergunta, estrategia)
         etapa_recuperacao.atualizar(
@@ -1531,14 +1534,20 @@ st.sidebar.caption(
     "recusado antes de qualquer chamada externa (Res. CVM 20/2021 e 19/2021); "
     "identificadores pessoais são anonimizados e não entram em log."
 )
-st.sidebar.caption(
-    "**Observabilidade:** "
-    + (
-        "traces no Langfuse, com dados pessoais redigidos antes do envio."
-        if estado_observabilidade.ativo
-        else f"desligada ({estado_observabilidade.motivo})."
+if not estado_observabilidade.ativo:
+    _texto_observabilidade = f"desligada ({estado_observabilidade.motivo})."
+elif estado_observabilidade.captura_texto:
+    _texto_observabilidade = (
+        "traces no Langfuse com latência, tokens e custo. Pergunta e resposta "
+        "entram depois de anonimizadas pelo Presidio."
     )
-)
+else:
+    _texto_observabilidade = (
+        "traces no Langfuse com latência, tokens e custo. O texto da pergunta "
+        "e da resposta fica fora: sem o Presidio, nome de pessoa não seria "
+        "anonimizado."
+    )
+st.sidebar.caption("**Observabilidade:** " + _texto_observabilidade)
 if not config.habilitar_perguntas_livres:
     st.sidebar.warning(
         "Perguntas livres estão desabilitadas por segurança. "
@@ -1608,8 +1617,9 @@ def responder_no_chat(pergunta: str, rastro: observabilidade.Observacao) -> bool
     except ValueError as exc:
         st.error(str(exc))
         return False
-    # O trace recebe a pergunta só depois da varredura, já anonimizada (RN06).
-    rastro.atualizar(entrada=guarda_entrada.texto_seguro)
+    # O trace recebe a pergunta só depois da varredura, já anonimizada, e só
+    # se o Presidio estiver ligado; sem ele, só o tamanho (RN06).
+    rastro.atualizar(entrada=observabilidade.texto_livre(guarda_entrada.texto_seguro))
     if guarda_entrada.bloqueado:
         # A pergunta original NUNCA entra no histórico: o que aparece na
         # tela e no estado de sessão é a forma anonimizada (RN06).
@@ -1778,7 +1788,7 @@ def registrar_desfecho(rastro: observabilidade.Observacao, tamanho_antes: int) -
     if resposta is None:
         return
     rastro.atualizar(
-        saida=resposta.get("conteudo"),
+        saida=observabilidade.texto_livre(resposta.get("conteudo")),
         metadados=lambda: {
             "modo": resposta.get("modo"),
             "provedor": resposta.get("provedor"),
@@ -1880,7 +1890,7 @@ if modo == "Demonstração (cacheado)":
                     tags=("painel_cvm",),
                 ) as rastro:
                     exibida, mensagem = responder_sem_llm(texto)
-                    rastro.atualizar(entrada=exibida)
+                    rastro.atualizar(entrada=observabilidade.texto_livre(exibida))
                     st.session_state.historico.append(
                         {"papel": "user", "conteudo": exibida}
                     )

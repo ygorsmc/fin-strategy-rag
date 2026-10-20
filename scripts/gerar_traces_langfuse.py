@@ -10,8 +10,16 @@ traces são do produto, não de uma cópia dele.
     # Inclui as perguntas que chegam ao corpus e chamam o Gemini (centavos)
     python -m scripts.gerar_traces_langfuse --permitir-api-paga
 
-Sem `--permitir-api-paga`, a chave do Gemini é esvaziada para esta execução:
-uma pergunta que escape das rotas gratuitas falha fechada, sem gastar.
+    # Com o texto de pergunta e resposta no trace, anonimizado pelo Presidio
+    python -m scripts.gerar_traces_langfuse --permitir-api-paga --capturar-texto
+
+Sem `--permitir-api-paga`, as chaves de todos os provedores pagos são
+esvaziadas para esta execução: uma pergunta que escape das rotas gratuitas
+falha fechada, sem gastar, qualquer que seja o `LLM_PROVIDER`.
+
+Sem `--capturar-texto`, o trace leva estrutura, latência, tokens e custo, e
+no lugar de cada texto só o tamanho (`observabilidade.texto_livre`). A flag
+liga o Presidio nesta execução, que é a condição para o texto sair (RN06).
 
 O resumo vai para `artefatos/observabilidade/`, versionado. O Langfuse retém
 30 dias, e o resumo é o registro que sobrevive a isso (RNF08). O journal é
@@ -33,6 +41,16 @@ if str(RAIZ) not in sys.path:
     sys.path.insert(0, str(RAIZ))
 
 SAIDA = RAIZ / "artefatos" / "observabilidade"
+
+# Chaves esvaziadas sem `--permitir-api-paga`. O Ollama é local e fica.
+CHAVES_PAGAS = (
+    "GEMINI_API_KEY",
+    "GOOGLE_API_KEY",
+    "DEEPSEEK_API_KEY",
+    "OPENAI_API_KEY",
+    "AZURE_OPENAI_API_KEY",
+    "MISTRAL_API_KEY",
+)
 
 # (rótulo, pergunta, chama o provedor?). As de custo zero exercitam o
 # guardrail, a anonimização (RN06), a recusa prospectiva (RN07) e o painel.
@@ -100,6 +118,7 @@ def _conferir_no_servidor(cliente, ids: list[str], prazo_s: float) -> dict[str, 
 def principal(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--permitir-api-paga", action="store_true")
+    ap.add_argument("--capturar-texto", action="store_true")
     ap.add_argument("--prazo-conferencia-s", type=float, default=120.0)
     args = ap.parse_args(argv)
 
@@ -108,8 +127,10 @@ def principal(argv=None) -> int:
     os.environ["LIMITE_PERGUNTAS_LIVRES_POR_SESSAO"] = str(4 * len(PERGUNTAS))
     os.environ["HABILITAR_PERGUNTAS_LIVRES"] = "true"
     if not args.permitir_api_paga:
-        os.environ["GEMINI_API_KEY"] = ""
-        os.environ["GOOGLE_API_KEY"] = ""
+        for chave in CHAVES_PAGAS:
+            os.environ[chave] = ""
+    if args.capturar_texto:
+        os.environ["PRESIDIO_HABILITADO"] = "true"
 
     from streamlit.testing.v1 import AppTest
 
@@ -121,7 +142,10 @@ def principal(argv=None) -> int:
     if not estado.ativo:
         print(f"Langfuse desligado: {estado.motivo}. Nada a gerar.")
         return 1
-    print(f"Langfuse ativo em {estado.host}. {len(perguntas)} perguntas.")
+    if args.capturar_texto and not estado.captura_texto:
+        print("--capturar-texto pedido, mas o Presidio não ficou ligado. Nada a gerar.")
+        return 1
+    print(f"Langfuse ativo em {estado.host}. {len(perguntas)} perguntas; texto no trace: {estado.captura_texto}.")
     app.sidebar.radio[0].set_value("Pergunta livre").run()
 
     SAIDA.mkdir(parents=True, exist_ok=True)
@@ -167,6 +191,7 @@ def principal(argv=None) -> int:
         "gerado_em": carimbo,
         "host": estado.host,
         "api_paga": args.permitir_api_paga,
+        "captura_texto": estado.captura_texto,
         "sessao": app.session_state["id_sessao_rastro"],
         "custo_total_usd": round(sum(linha["custo_usd"] for linha in linhas), 6),
         "perguntas": linhas,
