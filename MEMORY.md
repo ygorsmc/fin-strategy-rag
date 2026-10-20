@@ -608,9 +608,9 @@ outra tarefa.
   **`auditoria_manual_pendente`**. O README ainda publica a anterior
   (`5b9b142d`, 08-23) e os dois conjuntos de números divergem — ver a
   pendência de publicação na seção "Interface" acima.
-- Suíte atual: **4.737 casos passando, zero falhas/erros/skips**, 28 avisos
-  (20/10, DeepEval e correções da auditoria, pelo próprio `.venv`).
-  Antes: 4.715 (20/10, DeepEval); 4.688 (20/10, RN02 com rótulo); 4.661 (19/10, agentes no chat); 4.644 (19/10, traces reais); 4.642 (19/10, correções da auditoria); 4.627 (19/10, Langfuse antes da auditoria); 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
+- Suíte atual: **4.786 casos passando, zero falhas/erros/skips**, 28 avisos
+  (20/10, ajustes dos pontos fracos da Etapa 2, pelo próprio `.venv`).
+  Antes: 4.737 (20/10, DeepEval e correções da auditoria); 4.715 (20/10, DeepEval); 4.688 (20/10, RN02 com rótulo); 4.661 (19/10, agentes no chat); 4.644 (19/10, traces reais); 4.642 (19/10, correções da auditoria); 4.627 (19/10, Langfuse antes da auditoria); 4.567 (06/10, CAND-02-P v3); 4.480 (28/09, depois das emendas AF1–AF3 do Rank 3-B). A contagem de 26/09
   (4.184) tem XML em
   `artefatos/pendencias_geom1_rank03b_2026-09-26/pytest_suite_pos_auditoria.xml`.
   Testes dirigidos: 1.179; os dois achados da auditoria independente foram
@@ -1236,8 +1236,27 @@ por este levantamento; não houve T1/T2, baselines ou nova auditoria externa.
    Langfuse, DeepEval e pontos fracos. **Falta salvar a captura de tela do
    Langfuse em `docs/img/langfuse_traces.png`**, caminho para o qual o
    relatório já aponta. A retenção do plano gratuito é de 30 dias, e os traces
-   de 19/10 somem por volta de 18/11. Um rascunho idêntico ficou no Claude
-   Docs; a fonte é o `.md`.
+   de 19/10 somem por volta de 18/11. Um rascunho do Claude Docs ficou
+   desatualizado depois dos ajustes; a fonte é o `.md` (agora ~1.470 palavras).
+   **Ajustes dos pontos fracos, 20/10** (`resultados/ajustes_etapa2_2026-10-20.md`):
+   - **Guarda da RN02:** a causa dos descartes era o infográfico do release
+     lido linha a linha, não arredondamento. Corrigido com a leitura de painel
+     (§3.18). Na reaplicação à `c3a03ff7`, a semântica publica 14 em vez de
+     10 e nenhuma resposta errada passa a publicar. Arredondamento e
+     diferença em `%` foram medidos e recusados.
+   - **Período:** G-Eval pré-registrado; concordância 5/10 (era 4/10).
+     Custou US$ 0,099 em 38 chamadas.
+   - **Latência:** índice aquecido na subida, cache sem `ttl`, e progresso
+     das ferramentas no modo Agentes.
+   - **Modelo:** nas hoje lucrativas, vence o trivial entre companhias
+     (0,831 × 0,787) e empata dentro da companhia (0,624 × 0,613).
+   - **Ainda aberto:**
+     - frase qualitativa com várias métricas (TSTQ005, TSTQ010) e a checagem
+       qualitativa da RN02;
+     - `OLLAMA_KEEP_ALIVE` do servidor.
+   - **Cuidado com o progresso dos agentes:** ele escreve no `st.status` pela
+     thread do script. Se um agente ganhar `max_execution_time`, a escrita
+     some em silêncio (mesma causa da contextvar abaixo), sem afetar o agente.
    **Pendências para o passo (2), agentes no chat:**
    - Se algum agente receber `max_execution_time`, o CrewAI roda a tarefa
      numa thread. A contextvar da consulta não chega lá, e as gerações e

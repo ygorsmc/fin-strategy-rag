@@ -68,9 +68,9 @@ def _sem_variaveis_vazias():
 with _sem_variaveis_vazias():
     from deepeval.config.settings import Settings as _ConfiguracoesDeepEval  # noqa: E402
     from deepeval.config.settings import reset_settings as _recarregar_deepeval  # noqa: E402
-    from deepeval.metrics import AnswerRelevancyMetric, FaithfulnessMetric  # noqa: E402
+    from deepeval.metrics import AnswerRelevancyMetric, FaithfulnessMetric, GEval  # noqa: E402
     from deepeval.models import DeepEvalBaseLLM  # noqa: E402
-    from deepeval.test_case import LLMTestCase  # noqa: E402
+    from deepeval.test_case import LLMTestCase, SingleTurnParams  # noqa: E402
 
 # O DeepEval reconstrói as configurações sempre que o ambiente muda, inclusive
 # na thread de telemetria e na saída do processo, fora de qualquer `with` daqui.
@@ -91,6 +91,43 @@ DESFECHOS_PONTUADOS = (DESFECHO_PUBLICADA, DESFECHO_DESCARTADA_RN02)
 
 METRICA_FIDELIDADE = "faithfulness"
 METRICA_RELEVANCIA = "answer_relevancy"
+METRICA_PERIODO = "periodo_geval"
+
+#: Chamadas ao juiz por caso, por métrica: faithfulness extrai verdades,
+#: afirmações, veredictos e razão; relevância, três; o G-Eval de período, uma,
+#: porque os passos vêm prontos e o juiz não tem logprobs (cai no esquema).
+CHAMADAS_POR_METRICA = {METRICA_FIDELIDADE: 4, METRICA_RELEVANCIA: 3, METRICA_PERIODO: 1}
+
+# --- Critério de período (G-Eval), fixado antes de qualquer rodada ----------
+#
+# O faithfulness não enxerga período nem coluna: deu 1,0 a "R$ 12.144 milhões"
+# numa pergunta sobre o 1T2026, porque o número está no trecho, só que na
+# coluna do 4T25 (TSTF006). É a armadilha que o projeto existe para pegar, e o
+# relatório da Etapa 2 propôs uma métrica que a olhe. Os passos vão prontos ao
+# G-Eval: o juiz não gera os próprios critérios, e o que se mede é o que está
+# escrito aqui. A nota sai de 0 a 10 e o DeepEval a leva a 0–1.
+PASSOS_PERIODO = (
+    "Identifique na pergunta o período pedido (trimestre, como 1T2026, ou "
+    "acumulado, como 1S25) e a métrica pedida.",
+    "Para cada número da resposta, localize-o no contexto recuperado e "
+    "determine a que período ele pertence ali: a coluna do cabeçalho da "
+    "tabela em que ele está, ou o período que o texto ao redor declara.",
+    "Penalize fortemente o número que, no contexto, pertence a outro período "
+    "ou coluna (trimestre anterior, mesmo trimestre do ano anterior, acumulado "
+    "do semestre ou do ano) ou a outra métrica, mesmo que o valor exista no "
+    "contexto.",
+    "Se o número não está no contexto, ou se o contexto não permite saber de "
+    "que período ele é (por exemplo, uma tabela sem a linha de cabeçalho), "
+    "trate-o como não verificado e não dê nota alta.",
+    "Se a resposta não traz número, avalie do mesmo modo se o que ela afirma "
+    "se refere ao período pedido.",
+    "Dê nota máxima só quando tudo o que a resposta afirma pertence, no "
+    "contexto, ao período e à métrica pedidos.",
+)
+
+#: Limiar do critério de período, também fixado antes da rodada: é o padrão do
+#: G-Eval, e com n = 10 não há como escolher outro sem olhar o resultado.
+LIMIAR_PERIODO = 0.5
 
 # Fundamentada = TODAS as afirmações sustentadas pelos trechos. Fixado antes da
 # rodada: em dado financeiro, um número sem lastro torna a resposta errada, e
@@ -436,6 +473,43 @@ class ResultadoCaso:
         return {**dados, "metricas": self.metricas, "custo_usd": self.custo_usd, "erro": self.erro}
 
 
+def fabricas_de_metricas(
+    nomes: Sequence[str] = (METRICA_FIDELIDADE, METRICA_RELEVANCIA),
+) -> dict[str, Callable[[JuizDeepEval], Any]]:
+    """As métricas pedidas, na ordem pedida, com os parâmetros fixados aqui."""
+    disponiveis: dict[str, Callable[[JuizDeepEval], Any]] = {
+        # `eval_mode="llm"` fixo: um DEEPEVAL_EVAL_MODE herdado do ambiente
+        # ("hybrid") mandaria a decisão a outro modelo, fora deste juiz.
+        METRICA_FIDELIDADE: lambda j: FaithfulnessMetric(
+            model=j,
+            threshold=LIMIAR_FUNDAMENTADA,
+            include_reason=True,
+            async_mode=False,
+            penalize_ambiguous_claims=PENALIZAR_AMBIGUAS,
+            eval_mode="llm",
+        ),
+        METRICA_RELEVANCIA: lambda j: AnswerRelevancyMetric(
+            model=j, include_reason=True, async_mode=False, eval_mode="llm"
+        ),
+        METRICA_PERIODO: lambda j: GEval(
+            name="Período e coluna",
+            evaluation_params=[
+                SingleTurnParams.INPUT,
+                SingleTurnParams.ACTUAL_OUTPUT,
+                SingleTurnParams.RETRIEVAL_CONTEXT,
+            ],
+            evaluation_steps=list(PASSOS_PERIODO),
+            model=j,
+            threshold=LIMIAR_PERIODO,
+            async_mode=False,
+        ),
+    }
+    desconhecidas = sorted(set(nomes) - set(disponiveis))
+    if desconhecidas:
+        raise ValueError(f"métrica desconhecida: {desconhecidas}")
+    return {nome: disponiveis[nome] for nome in nomes}
+
+
 def medir_caso(
     caso: CasoDeepEval,
     juiz: JuizDeepEval,
@@ -452,21 +526,7 @@ def medir_caso(
     resultado = ResultadoCaso(caso)
     if caso.desfecho not in DESFECHOS_PONTUADOS:
         return resultado
-    fabricas = fabricas or {
-        # `eval_mode="llm"` fixo: um DEEPEVAL_EVAL_MODE herdado do ambiente
-        # ("hybrid") mandaria a decisão a outro modelo, fora deste juiz.
-        METRICA_FIDELIDADE: lambda j: FaithfulnessMetric(
-            model=j,
-            threshold=LIMIAR_FUNDAMENTADA,
-            include_reason=True,
-            async_mode=False,
-            penalize_ambiguous_claims=PENALIZAR_AMBIGUAS,
-            eval_mode="llm",
-        ),
-        METRICA_RELEVANCIA: lambda j: AnswerRelevancyMetric(
-            model=j, include_reason=True, async_mode=False, eval_mode="llm"
-        ),
-    }
+    fabricas = fabricas or fabricas_de_metricas()
     teste = LLMTestCase(
         input=caso.pergunta,
         actual_output=caso.texto,
@@ -523,10 +583,17 @@ def agregar(resultados: Sequence[ResultadoCaso]) -> dict:
     """Médias por desfecho e por métrica, com n explícito ao lado de cada média."""
     saida: dict[str, Any] = {"n_casos": len(resultados)}
     por_desfecho: dict[str, Any] = {}
+    # Só as métricas que a rodada mediu: uma rodada só de período não ganha
+    # blocos vazios de faithfulness, e as rodadas antigas não mudam de forma.
+    medidas = [
+        metrica
+        for metrica in (METRICA_FIDELIDADE, METRICA_RELEVANCIA, METRICA_PERIODO)
+        if any(metrica in r.metricas for r in resultados)
+    ] or [METRICA_FIDELIDADE, METRICA_RELEVANCIA]
     for desfecho in (DESFECHO_PUBLICADA, DESFECHO_DESCARTADA_RN02, DESFECHO_RECUSA_MODELO):
         grupo = [r for r in resultados if r.caso.desfecho == desfecho]
         bloco: dict[str, Any] = {"n": len(grupo)}
-        for metrica in (METRICA_FIDELIDADE, METRICA_RELEVANCIA):
+        for metrica in medidas:
             notas = [
                 r.metricas[metrica]["score"]
                 for r in grupo
@@ -537,6 +604,10 @@ def agregar(resultados: Sequence[ResultadoCaso]) -> dict:
                 "media": round(sum(notas) / len(notas), 4) if notas else None,
                 "n_score_1": sum(1 for n in notas if n >= LIMIAR_FUNDAMENTADA),
             }
+            if metrica == METRICA_PERIODO:
+                bloco[metrica]["n_no_limiar"] = sum(
+                    1 for n in notas if n >= LIMIAR_PERIODO
+                )
         por_desfecho[desfecho] = bloco
     saida["por_desfecho"] = por_desfecho
     saida["n_erros"] = sum(1 for r in resultados if r.erro)

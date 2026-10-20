@@ -1,0 +1,100 @@
+{
+  "recorte": "prejuizo_em_t == 0 (hoje lucrativas), alvo T+1 e T+2",
+  "n_observacoes": 11337,
+  "n_eventos": 917,
+  "taxa_base": 0.08088559583664108,
+  "agregado_empilhado": {
+    "modelo": {
+      "roc_auc": 0.8305833300192357,
+      "lift_topo_10pct": 4.317287220231604
+    },
+    "taxa_prejuizos_4t": {
+      "roc_auc": 0.7870796241603994,
+      "lift_topo_10pct": 4.15375361340465
+    },
+    "identidade_implementavel": {
+      "roc_auc": 0.7390184759197667,
+      "lift_topo_10pct": 3.6631527929237855
+    }
+  },
+  "por_fold": {
+    "n_folds_com_eventos_suficientes": 46,
+    "minimo_por_classe": 5,
+    "modelo_menos_taxa_prejuizos_4t": {
+      "n_folds": 46,
+      "diferenca_media": 0.04998157804444627,
+      "ic95_inferior": 0.03618925200133238,
+      "ic95_superior": 0.06377390408756016,
+      "quantil_usado": 2.014103388880846,
+      "folds_vencidos": 39,
+      "identicos": false,
+      "p_wilcoxon": 3.2279672268487047e-09
+    },
+    "modelo_menos_identidade": {
+      "n_folds": 46,
+      "diferenca_media": 0.08825349655084136,
+      "ic95_inferior": 0.06932243546963947,
+      "ic95_superior": 0.10718455763204325,
+      "quantil_usado": 2.014103388880846,
+      "folds_vencidos": 44,
+      "identicos": false,
+      "p_wilcoxon": 5.400124791776761e-13
+    }
+  },
+  "intra_companhia": {
+    "modelo": {
+      "auc": 0.6242246163891609,
+      "ic95": [
+        0.595524846786064,
+        0.6508666238641722
+      ],
+      "n_companhias": 336,
+      "n_pares": 12252
+    },
+    "taxa_prejuizos_4t": {
+      "auc": 0.6132060071825008,
+      "ic95": [
+        0.5869455771743081,
+        0.6377853014227883
+      ],
+      "n_companhias": 336,
+      "n_pares": 12252
+    },
+    "identidade_implementavel": {
+      "auc": 0.4120959843290891,
+      "ic95": [
+        0.38004415801385805,
+        0.4446817216475973
+      ],
+      "n_companhias": 336,
+      "n_pares": 12252
+    }
+  },
+  "sem_prejuizo_no_ultimo_ano": {
+    "n_observacoes": 7793,
+    "n_eventos": 212,
+    "taxa_base": 0.0272039009367381,
+    "agregado_modelo": {
+      "roc_auc": 0.7535074030657579,
+      "lift_topo_10pct": 3.8222261244459514
+    },
+    "intra_companhia_modelo": {
+      "auc": 0.6120964074579355,
+      "ic95": [
+        0.5477397850813083,
+        0.6740448803527618
+      ],
+      "n_companhias": 163,
+      "n_pares": 2199
+    }
+  },
+  "regra_de_leitura": "antecipa o momento só se o IC95% do AUC intra-companhia do modelo ficar inteiro acima de 0,5 e acima do AUC intra-companhia pontual de taxa_prejuizos_4t",
+  "veredito": "ordena companhias, não o momento, também no recorte",
+  "_meta": {
+    "gerado_em": "2026-10-20T17:25:53+00:00",
+    "painel": "cvm_treino.duckdb",
+    "n_bootstrap": 2000,
+    "semente": 20260823,
+    "custo_usd": 0.0
+  }
+}

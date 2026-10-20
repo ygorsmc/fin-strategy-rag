@@ -753,6 +753,41 @@ de evidência com duas métricas rotula os números com as duas; e reconsultar a
 fonte não prova que o Auditor leu a página citada, só que consultou o mesmo
 tipo de fonte.
 
+### 3.18 A guarda da RN02 lê o painel de destaques (2026-10-20)
+
+A guarda descartava resposta que repetia o release ao pé da letra, porque o
+OCR devolve o infográfico de destaques linha a linha: o rótulo numa linha e o
+valor na seguinte, às vezes como título markdown (`## R$ 6,1 bi`) ou com o
+número em negrito no meio da moeda. `fatos_numericos_do_chunk` passou a ler
+esse painel. Na rodada congelada, a semântica publica 14 respostas em vez de
+10, e nenhuma resposta errada passa a publicar
+(`resultados/ajustes_etapa2_2026-10-20.md`).
+
+**Regras que quem mexer no parser não pode desfazer:**
+
+- **O rótulo do painel só preenche lacuna,** como o título de seção: entra em
+  valor sem métrica própria e só nas linhas de valor logo abaixo dele.
+- **Segmento fecha o painel.** Depois de uma linha curta que não nomeia
+  métrica nem é cabeçalho genérico ("Grupo Segurador", "Pessoas Físicas"),
+  nada é herdado até o painel acabar. Sem isso, o ROAE do segmento de seguros
+  (21,6%) fundamentava "o ROAE do Bradesco", que é 15,8%.
+- **Legenda de unidade não é cabeçalho de painel.** Classificada como
+  segmento, ela some antes de dar escala à tabela.
+
+**Como medir antes de mudar:** `scripts/reaplicar_guarda_rn02.py` reaplica a
+guarda às respostas gravadas, sem LLM, pela mesma `aplicar_guardas_pos_llm`
+da geração. A coluna que importa é "passaram a publicar e o gabarito
+reprova". O mesmo parser alimenta o E4 e a guarda de rótulo dos agentes, então
+rode também `scripts/medir_recuperacao_e4.py` e
+`scripts/medir_guarda_rotulo_agentes.py`.
+
+**Duas propostas medidas e recusadas, para não voltarem como novidade:**
+
+- **Aceitar arredondamento.** O único caso real contraria a regra 5 do prompt
+  de geração ("não arredonde além do que está escrito").
+- **Aceitar diferença de taxas escrita em `%`.** `TestDeltaPercentualSegueExigido`
+  trava essa recusa.
+
 ## 4. Contratos e regras invioláveis
 
 ### 4.1 Regras de negócio RN01–RN12
@@ -969,12 +1004,12 @@ Legenda: ✅ concluída · 🔄 em execução agora · ⏸️ adiada por decisã
 | 7 | **Geração** — contrato JSON, citação obrigatória, recusa (RN01–RN02) | sessão principal | ✅ · ⬜ marcações de RN10/RN12 na resposta |
 | 8 | **Conjunto-padrão** — 45 congeladas + ~10 dev, conferidas pela classe de verificação | `conjunto-padrao` | ✅ congelado 2026-07-29 · ⬜ colunas novas da revisão 2 (`cobertura_esperada`, `motivo_recusa_esperado`, `base_esperada`, `rota_esperada`) |
 | 9 | **Comparação de estratégias E0–E4** — só `dev` na iteração; o congelado roda ao final, com log por execução | `observabilidade-avaliacao` | ✅ rodada em 2026-08-21 no congelado (45 × 5 = 225 chamadas, v6) — factual E1 0,400 · E2 0,333 · E3 **0,467** · E4 0,400; comparativa (métrica nova) E1 0,000 · E2/E3 0,100 · E4 **0,200**; E4 × E3 **indistinguível** (2×3 discordâncias, limiar 6) pela 3ª rodada seguida. Ver `MEMORY.md` |
-| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ✅ **2026-08-23**, e o único modelo treinado do projeto. Painel de treino próprio (2011–2026, §3.5), walk-forward de 47 folds. **Passou por quatro rodadas de revisão que retrataram três achados da primeira**, entre eles um recorte setorial contaminado (`is_banco`: 42 de 49 eventos não eram banco) e vazamento no trimestre de validação. **Números, manchete corrigida e retratações:** `MEMORY.md` e `resultados/` (`modelo_preditivo_2026-08-23.md`, `revisoes_modelo_2026-08-23.md`, `robustez_modelo_2026-08-24.md`, `debate_modelo_2026-08-25.md`). O que foi medido e **descartado** — SMOTE, ajuste de hiperparâmetros, recalibração, controle setorial — está em `becos_sem_saida.md` §A.2–A.4 |
+| 10 | **Modelo preditivo** — split temporal, baselines, métricas completas | `modelo-preditivo` | ✅ **2026-08-23**, e o único modelo treinado do projeto. Painel de treino próprio (2011–2026, §3.5), walk-forward de 47 folds. **Passou por quatro rodadas de revisão que retrataram três achados da primeira**, entre eles um recorte setorial contaminado (`is_banco`: 42 de 49 eventos não eram banco) e vazamento no trimestre de validação. **Números, manchete corrigida e retratações:** `MEMORY.md` e `resultados/` (`modelo_preditivo_2026-08-23.md`, `revisoes_modelo_2026-08-23.md`, `robustez_modelo_2026-08-24.md`, `debate_modelo_2026-08-25.md`, e o AUC intra-companhia das hoje lucrativas em `ajustes_etapa2_2026-10-20.md`). O que foi medido e **descartado** — SMOTE, ajuste de hiperparâmetros, recalibração, controle setorial — está em `becos_sem_saida.md` §A.2–A.4 |
 | 11 | **Ferramentas + agentes** — `verificar_cobertura`, Investigador e Auditor com filtro de contexto **em código**, teste que falha se o rastro vazar, braços A/B/C, triagem de cobertura; projeções depois | `agentes-investigacao` | ✅ camada implementada e testada · ✅ **ligada ao chat em 2026-10-19** (modo "Agentes" do Streamlit, com o modelo pelo artefato agregado, §3.16, e trace no Langfuse) (a comparação dos braços é a etapa 12) |
 | 12 | **Injeção de falha (RF25) e comparação dos três braços (RF26)** — registrar o veredito, inclusive se for "o determinístico basta" | `agentes-investigacao` + `observabilidade-avaliacao` | ⬜ |
-| 13 | **Langfuse + DeepEval** — traces por etapa e matriz de concordância com a auditoria manual | `observabilidade-avaliacao` | 🔄 matriz de concordância **medida** em 2026-08-23 (0,867, `scripts/medir_juiz_groundedness.py`) · ✅ Langfuse **instrumentado** em 2026-10-19 (`src/observabilidade.py`: trace por consulta do chat e span por ferramenta de agente, RN06 na máscara do SDK, texto livre só com o Presidio ligado, benchmark fora do trace; auditado no mesmo dia, sem achado alto) · ✅ 9 traces reais no Langfuse Cloud em 2026-10-19, 9/9 conferidos na API com custo igual ao do app (`artefatos/observabilidade/`) · ✅ suíte DeepEval **medida** em 2026-10-20 nas 45 congeladas (`resultados/deepeval_2026-10-20.md`; juiz DeepSeek, faithfulness com afirmação não sustentada penalizada); contra a auditoria humana concordou em 4/10 no limiar pré-registrado: instrumento de triagem, não métrica de groundedness |
+| 13 | **Langfuse + DeepEval** — traces por etapa e matriz de concordância com a auditoria manual | `observabilidade-avaliacao` | 🔄 matriz de concordância **medida** em 2026-08-23 (0,867, `scripts/medir_juiz_groundedness.py`) · ✅ Langfuse **instrumentado** em 2026-10-19 (`src/observabilidade.py`: trace por consulta do chat e span por ferramenta de agente, RN06 na máscara do SDK, texto livre só com o Presidio ligado, benchmark fora do trace; auditado no mesmo dia, sem achado alto) · ✅ 9 traces reais no Langfuse Cloud em 2026-10-19, 9/9 conferidos na API com custo igual ao do app (`artefatos/observabilidade/`) · ✅ suíte DeepEval **medida** em 2026-10-20 nas 45 congeladas (`resultados/deepeval_2026-10-20.md`; juiz DeepSeek, faithfulness com afirmação não sustentada penalizada); contra a auditoria humana concordou em 4/10 no limiar pré-registrado: instrumento de triagem, não métrica de groundedness · critério de **período** (G-Eval, passos e limiar fixados antes) medido em 2026-10-20: pega a coluna errada do TSTF006 e leva a concordância a 5/10; nas 45, aprova os 28 pontuados (`resultados/ajustes_etapa2_2026-10-20.md`) |
 | 14 | **Guardrails** — ataques bloqueados × falso bloqueio medido nas 45 legítimas (meta 0) | `seguranca-guardrails` | ✅ **completa** em 2026-08-21 — base determinística, ligada ao caminho interativo, **Presidio e Llama Prompt Guard 2 (86M) integrados** — **20/20 ataques · 0/45 falso bloqueio de entrada · 0/855 de saída** (`resultados/guardrails.json`, com as duas camadas ML ligadas na contraprova); `src/seguranca.py`, `src/reconhecedores_br.py`, `src/reconhecedor_presidio.py`, `src/prompt_guard.py`, `conjunto_padrao/ataques.csv`, `responder_com_guardrails` em `src/agentes.py`, portão em `app_streamlit.py`, `requirements-guardrails.txt`, 87 testes · `presidio_habilitado`/`prompt_guard_habilitado` desligados por padrão (RNF12) — pesos do Prompt Guard 2 já baixados e pinados (`guardrails_modelo_injecao_revision`), `HF_TOKEN` só foi necessário no download, runtime usa `local_files_only` |
-| 15 | **Interface Streamlit** — streaming, estado de sessão, painéis de evidência, etiqueta de derivado, estado de cobertura, veredito do Auditor | `interface-produto` | ✅ base cacheada + pergunta livre · ⬜ camadas novas |
+| 15 | **Interface Streamlit** — streaming, estado de sessão, painéis de evidência, etiqueta de derivado, estado de cobertura, veredito do Auditor | `interface-produto` | ✅ base cacheada + pergunta livre · ✅ índice aquecido na subida e progresso das ferramentas no modo Agentes (2026-10-20) · ⬜ camadas novas |
 | 16 | **Publicação** — Container Apps primário, teto/alerta no provedor, dois modos validados | `interface-produto` | ⬜ |
 | 17 | **`DESAFIO_CBL.md`, README e resumo executivo** (metas × resultados) | `documentacao-projeto` | ✅ desafio e README · ⬜ resumo executivo |
 | 18 | **(Opcional) LoRA** — roteador de entrada, com split por pergunta-base | — | ⬜ opcional |
@@ -1026,6 +1061,9 @@ Alvo da spec 5.21, com o que já existe marcado:
 │   ├── experimentos_robustez.py ✅ (purga, setor, calibração, LightGBM)
 │   ├── gerar_panorama_modelo.py ✅ (artefato agregado da rota prospectiva)
 │   ├── medir_juiz_groundedness.py ✅ (etapa 13 — juiz × auditoria humana)
+│   ├── reaplicar_guarda_rn02.py ✅ (RN02 sobre respostas gravadas, sem LLM — §3.18)
+│   ├── medir_recuperacao_e4.py ✅ (recall@5 e valor no top-5 do E4)
+│   ├── medir_virada_lucrativas.py ✅ (AUC intra-companhia nas hoje lucrativas)
 │   ├── auditar_recorte_is_banco.py ✅ (torna a retratação de is_banco
 │   │                                   reproduzível — veredito CALCULADO)
 │   ├── preprocessar_ocr_mistral.py ✅ · reconciliar_chamada_orfa.py ✅

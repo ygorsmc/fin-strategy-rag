@@ -771,6 +771,11 @@ class ChamadaFerramenta:
         }
 
 
+#: Quem acompanha as ferramentas enquanto o agente trabalha (a interface).
+#: Recebe papel, ferramenta e estado: "inicio", "ok" ou "falhou".
+ObservadorDeFerramenta = Callable[[str, str, str], None]
+
+
 class FerramentasDoAgente:
     """Envelope da `CaixaDeFerramentas` que guarda o **resultado** de cada chamada.
 
@@ -786,6 +791,7 @@ class FerramentasDoAgente:
         caixa: CaixaDeFerramentas,
         papel: str,
         nomes: Sequence[str] = FERRAMENTAS_DISPONIVEIS,
+        ao_chamar: ObservadorDeFerramenta | None = None,
     ) -> None:
         if papel not in PAPEIS:
             raise ValueError(f"papel desconhecido: {papel!r}")
@@ -802,6 +808,21 @@ class FerramentasDoAgente:
         self.nomes: tuple[str, ...] = tuple(nomes)
         self.chamadas: list[ChamadaFerramenta] = []
         self.teto_atingido = False
+        # A interface mostra cada ferramenta enquanto o agente trabalha: uma
+        # pergunta aos agentes leva até 50 s, e um spinner mudo pelo tempo
+        # todo parecia travamento (traces de 19/10).
+        self._ao_chamar = ao_chamar
+
+    def _avisar(self, nome: str, estado: str) -> None:
+        """Avisa o observador; falha dele nunca chega ao agente."""
+        if self._ao_chamar is None:
+            return
+        try:
+            self._ao_chamar(self.papel, nome, estado)
+        except Exception as exc:  # noqa: BLE001 - exibição não decide nada
+            registrador.warning(
+                "observador de ferramenta falhou (tipo=%s).", type(exc).__name__
+            )
 
     # -- execução ----------------------------------------------------------- #
 
@@ -815,6 +836,7 @@ class FerramentasDoAgente:
         if nome not in self.nomes:
             raise ErroFerramenta(f"ferramenta desconhecida: {nome!r}")
         metodo = getattr(self.caixa, nome)
+        self._avisar(nome, "inicio")
         # Span de ferramenta (5.12). Os argumentos vêm do LLM e podem trazer o
         # texto da pergunta: passam pela regra de texto livre (RN06).
         with observabilidade.etapa(
@@ -829,6 +851,10 @@ class FerramentasDoAgente:
                 resultado = metodo(**argumentos)
             except TetoChamadasExcedidoError:
                 self.teto_atingido = True
+                self._avisar(nome, "falhou")
+                raise
+            except Exception:
+                self._avisar(nome, "falhou")
                 raise
             registro = self.caixa.registro[-1] if self.caixa.registro else None
             etapa.atualizar(
@@ -847,6 +873,7 @@ class FerramentasDoAgente:
                 resultado=resultado,
             )
         )
+        self._avisar(nome, "falhou" if registro and registro.erro else "ok")
         return resultado
 
     def registrar_falha(self, nome: str, argumentos: Mapping[str, Any], erro: str) -> None:
@@ -3241,6 +3268,7 @@ def fabrica_ferramentas_padrao(
     leitor: Any = None,
     caminho_painel: Path | None = None,
     nomes: Sequence[str] = FERRAMENTAS_DISPONIVEIS,
+    ao_chamar: ObservadorDeFerramenta | None = None,
 ) -> FabricaFerramentas:
     """Uma caixa por papel: o Auditor reexecuta com orçamento próprio (5.9.1).
 
@@ -3257,7 +3285,7 @@ def fabrica_ferramentas_padrao(
             leitor=leitor,
             caminho_painel=caminho_painel,
         )
-        return FerramentasDoAgente(caixa, papel, nomes)
+        return FerramentasDoAgente(caixa, papel, nomes, ao_chamar=ao_chamar)
 
     return fabricar
 

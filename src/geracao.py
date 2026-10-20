@@ -1507,8 +1507,25 @@ _PADRAO_MARCADOR_CITACAO = re.compile(
 )
 
 
+# O modelo também cita sem colchete nem parêntese, copiando o identificador do
+# documento para dentro da frase: "no documento bb_release_2T2025, o Lucro
+# Líquido Ajustado foi de R$ 3,8 bilhões" ou "no Bradesco |
+# bradesco_release_2T2025 | 2T2025 | pág. 6, revisamos...". O identificador é
+# metadado do trecho, não afirmação, mas `bb_release_2t2025` e `documento`
+# entravam como conteúdo que a evidência não tem, e a resposta caía inteira
+# (TSTF013 e TSTQ006 na rodada c3a03ff7, reaplicação de 2026-10-20). Só sai o
+# identificador no formato do corpus e a marca de página presa a ele por `|`.
+_PADRAO_ID_DOCUMENTO_CITADO = re.compile(
+    r"(?:\bno\s+documento\s+)?\b[a-z]+_release_[1-4]T20\d{2}\b"
+    rf"(?:\s*\|\s*[1-4]T20\d{{2}})?(?:\s*\|\s*{_MARCA_DE_PAGINA})?",
+    re.IGNORECASE,
+)
+
+
 def _sem_marcador_de_citacao(texto: str) -> str:
-    return _PADRAO_MARCADOR_CITACAO.sub(" ", texto)
+    return _PADRAO_ID_DOCUMENTO_CITADO.sub(
+        " ", _PADRAO_MARCADOR_CITACAO.sub(" ", texto)
+    )
 
 
 # --- Período por coluna da tabela ------------------------------------------
@@ -1704,12 +1721,178 @@ def _rotulo_de_destaque(linha: str) -> str:
     return rotulo
 
 
+# --- Painel de destaques sem negrito -----------------------------------------
+#
+# O OCR devolve o infográfico de destaques do release como linhas soltas: o
+# nome da métrica numa, o valor na seguinte, às vezes como título markdown e
+# às vezes com o número em negrito no meio da moeda::
+#
+#     lucro líquido recorrente consolidado
+#     ## R$ 6,1 bi
+#     Δ 3,5% t/t Δ 28,6% a/a
+#     ROAE 2T25
+#     14,6%
+#
+#     ## Lucro Líquido Ajustado
+#     R$ **3,8** bilhões - 2T25
+#
+# Lido linha a linha, nenhum desses valores fundamentava nada: `## R$ 6,1 bi`
+# virava TÍTULO de seção (e o número sumia), `14,6%` chegava sem métrica, e
+# `R$ **3,8** bilhões` nem era lido como valor em reais. Na rodada congelada
+# c3a03ff7 isso descartava respostas que repetiam o release ao pé da letra
+# (TSTF007, TSTF008, TSTF013, TSTC001, TSTF001; reaplicação de 2026-10-20).
+#
+# A leitura abaixo só PREENCHE LACUNA, como o título de seção: o rótulo da
+# linha de cima entra em valor que não tem métrica própria, e só nas linhas de
+# valor que o seguem imediatamente. Qualquer outra linha encerra o painel.
+#
+# **Segmento fecha o painel.** O mesmo infográfico do Bradesco emenda, sem
+# quebra nenhuma, o painel consolidado e o do Grupo Segurador:
+#
+#     Inadimplência acima de 90 dias
+#     4,2%
+#     Grupo Segurador
+#     Lucro Líquido Recorrente
+#     R$ 2,8 bi
+#     ROAE
+#     21,6%
+#
+# Herdar `ROAE` ali fundamentava "o ROAE do Bradesco foi de 21,6%", e o
+# consolidado é 15,8% (TSTC004, estratégia híbrida, na primeira versão desta
+# leitura). A guarda não sabe a que segmento a pergunta se refere, então falha
+# fechada: depois de uma linha curta que não nomeia métrica nem é cabeçalho
+# genérico de painel ("Grupo Segurador", "Pessoas Físicas"), nenhum rótulo é
+# herdado até o painel acabar. O valor do segmento volta a ser o que era antes
+# desta leitura: número sem rótulo, que não fundamenta resposta.
+_PADRAO_ENFASE = re.compile(r"\*\*|__")
+_PALAVRAS_DE_UNIDADE = {
+    "r", "bi", "bilhao", "bilhoes", "mi", "milhao", "milhoes", "mil", "tri",
+    "trilhao", "trilhoes", "bn", "mm", "p", "pp",
+}
+_COMPARADORES_DE_PERIODO = {"x", "vs", "versus", "t", "a"}
+# Cabeçalho que abre o painel consolidado, não um segmento dele.
+_CABECALHOS_GENERICOS_DE_PAINEL = {
+    "destaque", "destaques", "highlights", "informacoes", "selecionadas",
+    "principais", "indicadores", "sumario", "resumo", "visao", "geral",
+    "numeros", "em", "do", "da", "de", "consolidado", "consolidada",
+}
+_MAXIMO_PALAVRAS_ROTULO_PAINEL = 12
+_MAXIMO_PALAVRAS_VALOR_PAINEL = 6
+
+
+def _sem_enfase(texto: str) -> str:
+    """`R$ **3,8** bilhões` → `R$ 3,8 bilhões`, que o parser lê como reais."""
+    return _PADRAO_ENFASE.sub("", texto)
+
+
+def _sem_marcas_de_periodo(texto: str) -> str:
+    return _PADRAO_COLUNA_ACUMULADO.sub(
+        " ", _PADRAO_COLUNA_TRIMESTRE.sub(" ", texto)
+    )
+
+
+def _palavras(texto: str) -> list[str]:
+    return re.findall(r"[a-z]+", remover_acentos(texto).casefold())
+
+
+def _residuo_sem_numeros(texto: str) -> str:
+    """O texto da linha sem os números que o parser reconhece nela."""
+    normalizado = remover_acentos(texto)
+    partes, posicao = [], 0
+    for numero in extrair_numeros_ptbr_tipados(texto):
+        partes.append(normalizado[posicao : numero.inicio])
+        posicao = numero.fim
+    partes.append(normalizado[posicao:])
+    return " ".join(partes)
+
+
+def _rotulo_de_painel(linha: str) -> str:
+    """Linha curta que nomeia uma métrica e não traz valor (`ROAE 2T25`).
+
+    Número sem dimensão pode estar no nome ("Inadimplência acima de 90
+    dias"); valor em reais, % ou p.p. não, porque aí a linha é valor.
+    """
+    texto = _sem_enfase(linha).strip()
+    if not texto or "|" in texto or _e_legenda_de_unidade(texto):
+        return ""
+    sem_periodo = _sem_marcas_de_periodo(texto)
+    if any(
+        numero.dimensao != "escalar"
+        for numero in extrair_numeros_ptbr_tipados(sem_periodo)
+    ):
+        return ""
+    if not 1 <= len(_palavras(sem_periodo)) <= _MAXIMO_PALAVRAS_ROTULO_PAINEL:
+        return ""
+    if _e_modal(texto):
+        return ""
+    if not _tokens_metrica_grounding(texto) & set(_GRUPOS_METRICAS):
+        return ""
+    return texto
+
+
+def _e_valor_de_painel(texto: str) -> bool:
+    """Linha que é só valor: `R$ 6,1 bi`, `23,3%`, `Δ 3,5% t/t Δ 28,6% a/a`.
+
+    Exige um número com dimensão (reais, %, p.p., escala): número nu
+    (paginação, "3. Resultados") não é valor de painel.
+    """
+    texto = _sem_enfase(texto)
+    if "|" in texto:
+        return False
+    numeros = extrair_numeros_ptbr_tipados(texto)
+    if not any(numero.dimensao != "escalar" for numero in numeros):
+        return False
+    residuo = _sem_marcas_de_periodo(_residuo_sem_numeros(texto))
+    if _tokens_metrica_grounding(residuo) & set(_GRUPOS_METRICAS):
+        return False
+    palavras = [p for p in _palavras(residuo) if p not in _PALAVRAS_DE_UNIDADE]
+    return len(palavras) <= _MAXIMO_PALAVRAS_VALOR_PAINEL
+
+
+def _tipo_de_cabecalho_de_painel(linha: str) -> str:
+    """"generico" (`destaques 2T25`), "segmento" (`Grupo Segurador`) ou ""."""
+    texto = _sem_enfase(linha).strip()
+    # A legenda de unidade ("R$ milhões") precisa chegar ao laço que a
+    # registra: classificada aqui, ela sumia e a tabela inteira perdia a
+    # escala (TSTF006 e TSTF012 caíam na reaplicação).
+    if not texto or "|" in texto or _e_legenda_de_unidade(texto):
+        return ""
+    sem_periodo = _sem_marcas_de_periodo(texto)
+    if any(caractere.isdigit() for caractere in sem_periodo):
+        return ""
+    palavras = [
+        palavra
+        for palavra in _palavras(sem_periodo)
+        if palavra not in _COMPARADORES_DE_PERIODO
+    ]
+    if not palavras or len(palavras) > _MAXIMO_PALAVRAS_VALOR_PAINEL:
+        return ""
+    if _tokens_metrica_grounding(texto) & set(_GRUPOS_METRICAS):
+        return ""
+    if all(
+        palavra in _CABECALHOS_GENERICOS_DE_PAINEL
+        or palavra in _TOKENS_BANCOS_GROUNDING
+        for palavra in palavras
+    ):
+        return "generico"
+    return "segmento"
+
+
+def _so_marca_de_periodo(linha: str) -> bool:
+    """`2T25`, `2T25 x 1T25`: separa valor do rótulo sem encerrar o painel."""
+    sem_periodo = _sem_marcas_de_periodo(_sem_enfase(linha))
+    if sem_periodo == _sem_enfase(linha) or any(c.isdigit() for c in sem_periodo):
+        return False
+    return all(p in _COMPARADORES_DE_PERIODO for p in _palavras(sem_periodo))
+
+
 def _fatos_numericos_da_linha(
     linha: str,
     legenda_unidade: str = "",
     periodos_colunas: dict[int, tuple[str, str]] | None = None,
     trimestre_alvo: str | None = None,
     titulo_secao: str = "",
+    rotulo_painel: str = "",
 ) -> list[tuple[NumeroPtBR, set[str], set[str]]]:
     """Pareia cada número da linha ao rótulo de métrica que o governa.
 
@@ -1748,7 +1931,15 @@ def _fatos_numericos_da_linha(
     preenche lacuna, nunca sobrescreve, para que trocar a métrica continue
     sendo recusa (medido em 2026-08-19: derrubava TSTF006, TSTF009 e TSTF014,
     todas com número certo e página certa).
+
+    ``rotulo_painel`` é a linha de cima num painel de destaques (`ROAE 2T25`
+    sobre `14,6%`). Entra antes do título, porque é mais específico que ele, e
+    pela mesma regra: só onde a linha não tem grupo próprio.
     """
+    linha = _sem_enfase(linha)
+    tokens_painel = (
+        _tokens_metrica_grounding(rotulo_painel) if rotulo_painel else set()
+    )
     grupos_titulo = (
         _tokens_metrica_grounding(titulo_secao) & set(_GRUPOS_METRICAS)
         if titulo_secao
@@ -1756,6 +1947,8 @@ def _fatos_numericos_da_linha(
     )
 
     def com_titulo(tokens: set[str]) -> set[str]:
+        if tokens_painel and not (tokens & set(_GRUPOS_METRICAS)):
+            tokens = tokens | tokens_painel
         if grupos_titulo and not (tokens & set(_GRUPOS_METRICAS)):
             return tokens | grupos_titulo
         return tokens
@@ -1763,22 +1956,34 @@ def _fatos_numericos_da_linha(
     fatos: list[tuple[NumeroPtBR, set[str], set[str]]] = []
     celulas = linha.split("|")
     if len(celulas) >= 3:
+        candidatas = [
+            celula
+            for celula in celulas
+            if celula.strip()
+            and not extrair_numeros_ptbr_tipados(_sem_marcador_de_nota(celula))
+            # Rótulo de métrica tem palavra. Sem esta condição, a primeira
+            # coluna mesclada do sumário do Itaú — que o OCR devolve como
+            # um ano solto ("| 2025 | Resultado Recorrente Gerencial |
+            # 11.508 |") — era eleita rótulo, o ano não produz token de
+            # métrica nenhum e a linha inteira ficava SEM grupo. Efeito:
+            # a RN02 rebaixava resposta com valor certo e página certa,
+            # porque a evidência chegava anônima à comparação.
+            and _CARACTERE_DE_PALAVRA.search(celula)
+        ]
+        # A coluna mesclada também vem com PALAVRA: `| Desempenho | Retorno
+        # Recorrente Gerencial sobre o Patrimônio Líquido Médio anualizado -
+        # Consolidado | 24,8% |`. "Desempenho" agrupa as linhas e não nomeia
+        # métrica; eleito rótulo, deixava o ROE do Itaú sem grupo (TSTC008,
+        # reaplicação de 2026-10-20). Vale a primeira célula que nomeia
+        # métrica; sem nenhuma, a primeira célula de texto, como antes.
         rotulo = next(
             (
                 celula
-                for celula in celulas
-                if celula.strip()
-                and not extrair_numeros_ptbr_tipados(_sem_marcador_de_nota(celula))
-                # Rótulo de métrica tem palavra. Sem esta condição, a primeira
-                # coluna mesclada do sumário do Itaú — que o OCR devolve como
-                # um ano solto ("| 2025 | Resultado Recorrente Gerencial |
-                # 11.508 |") — era eleita rótulo, o ano não produz token de
-                # métrica nenhum e a linha inteira ficava SEM grupo. Efeito:
-                # a RN02 rebaixava resposta com valor certo e página certa,
-                # porque a evidência chegava anônima à comparação.
-                and _CARACTERE_DE_PALAVRA.search(celula)
+                for celula in candidatas
+                if _tokens_metrica_grounding(_sem_marcador_de_nota(celula))
+                & set(_GRUPOS_METRICAS)
             ),
-            "",
+            candidatas[0] if candidatas else "",
         )
         if _e_modal(rotulo):
             return fatos
@@ -1851,6 +2056,8 @@ def fatos_numericos_do_chunk(
     periodos_colunas: dict[int, tuple[str, str]] = {}
     celulas_cabecalho = 0
     viu_cabecalho_de_tabela = False
+    rotulo_painel = ""
+    em_segmento = False
     linhas_do_chunk = chunk.texto.splitlines()
     for indice_linha, linha in enumerate(linhas_do_chunk):
         if (
@@ -1867,9 +2074,35 @@ def fatos_numericos_do_chunk(
             # a afirmação de trimestre único não se fundamenta aqui.
             continue
         titulo_da_linha = _titulo_de_secao(linha) or _rotulo_de_destaque(linha)
-        if titulo_da_linha:
+        if titulo_da_linha and _e_valor_de_painel(titulo_da_linha):
+            # `## R$ 6,1 bi`: o OCR marcou o VALOR do destaque como título.
+            linha = titulo_da_linha
+        elif titulo_da_linha:
             titulo_vigente = titulo_da_linha
+            rotulo_painel = ""
+            em_segmento = False
             continue
+        rotulo_da_linha = _rotulo_de_painel(linha)
+        if rotulo_da_linha:
+            rotulo_painel = "" if em_segmento else rotulo_da_linha
+            # O número sem dimensão do próprio rótulo continua sendo lido como
+            # era antes desta leitura.
+            fatos.extend(
+                _fatos_numericos_da_linha(
+                    linha, legenda_vigente, None, trimestre_alvo, titulo_vigente
+                )
+            )
+            continue
+        if not linha.strip() or _so_marca_de_periodo(linha):
+            continue
+        cabecalho_de_painel = _tipo_de_cabecalho_de_painel(linha)
+        if cabecalho_de_painel:
+            em_segmento = cabecalho_de_painel == "segmento"
+            rotulo_painel = ""
+            continue
+        valor_de_painel = _e_valor_de_painel(linha)
+        if not valor_de_painel:
+            em_segmento = False
         if _e_legenda_de_unidade(linha):
             legenda_vigente = linha
         # O cabeçalho é a linha imediatamente acima do separador `| --- |`.
@@ -1892,8 +2125,11 @@ def fatos_numericos_do_chunk(
                 periodos_colunas if alinhada else None,
                 trimestre_alvo,
                 titulo_vigente,
+                rotulo_painel if valor_de_painel else "",
             )
         )
+        if not valor_de_painel:
+            rotulo_painel = ""
     return fatos
 
 
@@ -2503,8 +2739,30 @@ def gerar_resposta(
         temperatura=temperatura_efetiva,
     )
     uso = replace(bruta.uso, modelo=bruta.modelo)
-    resposta = parsear_resposta_llm(bruta.texto)
+    resposta = aplicar_guardas_pos_llm(
+        parsear_resposta_llm(bruta.texto),
+        pergunta,
+        chunks,
+        config,
+        modo_closed_book=modo_closed_book,
+    )
+    return resposta, uso
 
+
+def aplicar_guardas_pos_llm(
+    resposta: RespostaGerada,
+    pergunta: str,
+    chunks: list[Chunk],
+    config: Config,
+    *,
+    modo_closed_book: bool = False,
+) -> RespostaGerada:
+    """RN01, RN02 e o contrato de recusa sobre a saída já parseada do LLM.
+
+    Separado de `gerar_resposta` para que a reaplicação sobre respostas
+    gravadas (`scripts/reaplicar_guarda_rn02.py`) rode exatamente estas
+    regras, sem uma cópia que pudesse divergir delas, e sem chamar o LLM.
+    """
     # O motivo livre produzido pelo modelo não é evidência e pode conter uma
     # afirmação ou número inventado. Recusas estruturalmente válidas recebem
     # sempre texto local determinístico; diagnósticos de JSON/RN01/RN02 são
@@ -2530,7 +2788,7 @@ def gerar_resposta(
                 json_reparado=resposta.json_reparado,
                 json_invalido=True,
             )
-        return resposta, uso
+        return resposta
 
     if not resposta.recusa:
         if not resposta.citacoes:
@@ -2593,4 +2851,4 @@ def gerar_resposta(
                 json_reparado=resposta.json_reparado,
                 json_invalido=resposta.json_invalido,
             )
-    return resposta, uso
+    return resposta

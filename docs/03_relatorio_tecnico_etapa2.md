@@ -127,19 +127,19 @@ O DeepEval mediu faithfulness e answer relevancy nas respostas já gravadas das 
 
 Fixei antes de rodar que afirmação sem sustentação conta como infiel. O faithfulness padrão só penaliza contradição, o juiz não achou nenhuma em 196 veredictos, e o padrão daria 1,0 às 28 respostas. Recusas não são pontuadas, porque não afirmam nada.
 
-Contra a auditoria humana, feita às cegas antes de existir qualquer juiz, o DeepEval concordou em **4 de 10** itens. O juiz próprio do projeto concorda em 8 de 10 nos mesmos itens.
+Contra a auditoria humana, feita às cegas antes de existir qualquer juiz, o DeepEval concordou em **4 de 10** itens. O juiz próprio do projeto concorda em 8 de 10 nos mesmos itens. Um critério de período em G-Eval, fixado antes de rodar, pegou a coluna errada que o faithfulness aprovava: 5 de 10.
 
 ---
 
 # 🔧 Pontos fracos e ajustes propostos
 
-O ponto fraco mais caro é a guarda de evidência descartar resposta boa. Os dois primeiros itens já foram corrigidos; os outros são propostas.
+O ponto fraco mais caro era a guarda de evidência descartar resposta boa. Todos os itens foram tratados e medidos; o que continua aberto está na última coluna.
 
 | Problema | Evidência | Ajuste |
 | --- | --- | --- |
 | Agente trocou o rótulo de um número | Chamou de "margem financeira" os R$ 17,2 bi que, no release do Itaú, eram "despesas não decorrentes de juros" | **Feito:** o código exige o número sob a mesma métrica. Reexecutei 201 respostas gravadas: nenhuma das 16 sabidamente certas foi rejeitada |
 | Auditor confirmou sem reconsultar | Confirmou a faixa do modelo consultando só o DuckDB | **Feito:** "confirma" exige reconsultar cada fonte citada |
-| Guarda de evidência descarta resposta boa | 9 de 18 rascunhos descartados são fiéis; a auditoria humana achou 5 descartes indevidos em 15 | Aceitar arredondamento ("R$ 6,1 bi" para 6.067 milhões) e diferença entre números citados; remedir nas 45 |
-| Faithfulness não enxerga período | Deu 1,0 a R$ 12.144 milhões, coluna do 4T25, numa pergunta sobre o 1T26 | Métrica G-Eval com critério de período, calibrada contra a auditoria humana |
-| Latência | 11,7 de 13 s em recuperação e carga do pipeline; os agentes levam até 50 s | Carregar o índice na subida do app e mostrar cada ferramenta enquanto o agente trabalha |
-| Modelo ordena companhias, não o momento | AUC dentro da companhia de 0,663 | Avaliar à parte as companhias hoje lucrativas, onde a virada acontece |
+| Guarda de evidência descarta resposta boa | 9 de 18 rascunhos descartados são fiéis; a auditoria humana achou 5 descartes indevidos em 15 | **Feito:** não era arredondamento; o release imprime "R$ 6,1 bi" num infográfico que a guarda lia linha a linha. Reaplicada às 45, publica 14 em vez de 10, nenhuma errada. Segue aberta a frase com várias métricas |
+| Faithfulness não enxerga período | Deu 1,0 a R$ 12.144 milhões, coluna do 4T25, numa pergunta sobre o 1T26 | **Feito:** o G-Eval de período deu 0,4 a esse caso. Não vê erro de segmento |
+| Latência | 11,7 de 13 s em recuperação e carga do pipeline; os agentes levam até 50 s | **Feito:** índice carregado na subida do app e cada ferramenta na tela. Os 50 s dos agentes são chamadas ao LLM e continuam |
+| Modelo ordena companhias, não o momento | AUC dentro da companhia de 0,663 | **Medido:** entre as hoje lucrativas, vence o trivial (0,831 contra 0,787), mas dentro da companhia empata (0,624 contra 0,613). É triagem de quais companhias, não de quando |

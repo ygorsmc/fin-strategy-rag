@@ -421,9 +421,13 @@ def extrair_numeros_ptbr_tipados(texto: str) -> list[NumeroPtBR]:
         if sinal_antes and sinal_depois:
             continue
         sinal = sinal_antes or sinal_depois
+        # ``(+14,8%)`` é variação positiva entre parênteses, não negativo
+        # contábil: o sinal explícito vence a convenção. Lido como negativo, o
+        # valor não casava com a evidência e a RN02 descartava a resposta
+        # (TSTQ010, auditoria de 2026-08-22).
         negativo_parenteses = bool(
             match.group("parentese") and match.group("fecha_parentese")
-        )
+        ) and sinal != "+"
         # Em ``26,6% - 24,8%`` o hífen é operador binário, não sinal do
         # segundo operando. Ele só é unário quando não sucede outra grandeza.
         anterior = normalizado[: match.start()].rstrip()[-1:]

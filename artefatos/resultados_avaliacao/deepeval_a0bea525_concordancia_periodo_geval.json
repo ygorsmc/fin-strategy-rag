@@ -1,0 +1,547 @@
+{
+  "_meta": {
+    "run_id": "20261020T173543Z-deepeval",
+    "data_utc": "2026-10-20T17:36:34.984373+00:00",
+    "fingerprint": "a0bea525c898e47fe44ea4c3ec3d332689fc135518875e50c3275f842fd6cdbf",
+    "status_da_rodada": "auditoria_humana",
+    "estrategia": "semantica",
+    "juiz": {
+      "provedor": "deepseek",
+      "modelo": "deepseek-flash",
+      "preco_entrada_usd_milhao": 0.44,
+      "preco_saida_usd_milhao": 1.32,
+      "reasoning_effort": "low",
+      "max_tokens": 20000,
+      "preco_entrada_cache_hit_usd_milhao": 0.44
+    },
+    "modelo_gerador": "gemini-3.5-flash-lite",
+    "juiz_igual_ao_gerador": false,
+    "deepeval": "4.2.8",
+    "temperatura": 0.0,
+    "limiar_fundamentada": 1.0,
+    "metricas": [
+      "periodo_geval"
+    ],
+    "passos_periodo": [
+      "Identifique na pergunta o período pedido (trimestre, como 1T2026, ou acumulado, como 1S25) e a métrica pedida.",
+      "Para cada número da resposta, localize-o no contexto recuperado e determine a que período ele pertence ali: a coluna do cabeçalho da tabela em que ele está, ou o período que o texto ao redor declara.",
+      "Penalize fortemente o número que, no contexto, pertence a outro período ou coluna (trimestre anterior, mesmo trimestre do ano anterior, acumulado do semestre ou do ano) ou a outra métrica, mesmo que o valor exista no contexto.",
+      "Se o número não está no contexto, ou se o contexto não permite saber de que período ele é (por exemplo, uma tabela sem a linha de cabeçalho), trate-o como não verificado e não dê nota alta.",
+      "Se a resposta não traz número, avalie do mesmo modo se o que ela afirma se refere ao período pedido.",
+      "Dê nota máxima só quando tudo o que a resposta afirma pertence, no contexto, ao período e à métrica pedidos."
+    ],
+    "limiar_periodo": 0.5,
+    "teto_usd": 0.2,
+    "custo_total_usd": 0.026835,
+    "chamadas_juiz": 10,
+    "tokens_entrada": 32654,
+    "tokens_saida": 9445,
+    "falhas": 0,
+    "falhas_transitorias": 0,
+    "debito_conservador_usd": 0.0,
+    "interrompido_no_teto": null,
+    "aviso": "Instrumento, não gabarito: a groundedness reportada continua sendo a auditoria humana (spec 5.15). Recusa do modelo não é pontuada; rascunho descartado pela RN02 é."
+  },
+  "agregado": {
+    "n_casos": 15,
+    "por_desfecho": {
+      "publicada": {
+        "n": 3,
+        "periodo_geval": {
+          "n_pontuados": 3,
+          "media": 1.0,
+          "n_score_1": 3,
+          "n_no_limiar": 3
+        }
+      },
+      "descartada_rn02": {
+        "n": 7,
+        "periodo_geval": {
+          "n_pontuados": 7,
+          "media": 0.9143,
+          "n_score_1": 6,
+          "n_no_limiar": 6
+        }
+      },
+      "recusa_modelo": {
+        "n": 5,
+        "periodo_geval": {
+          "n_pontuados": 0,
+          "media": null,
+          "n_score_1": 0,
+          "n_no_limiar": 0
+        }
+      }
+    },
+    "n_erros": 0
+  },
+  "casos": [
+    {
+      "pergunta_id": "TSTF006",
+      "categoria": "factual",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Segundo o comparativo BRGAAP e IFRS do release do Itaú Unibanco qual foi o resultado líquido IFRS total atribuível a controladores e não controladores no 1T2026?",
+      "texto": "No 1T2026, o valor atribuível aos acionistas controladores e não controladores segundo o IFRS foi R$ 12.144 milhões no Itaú Unibanco (ITAU, itau_release_1T2026, 1T2026, págs. 30–31).",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "periodo_geval": {
+          "score": 0.4,
+          "sucesso": false,
+          "razao": "A resposta identifica a métrica e a linha correta no contexto ('IFRS - valores atribuíveis aos acionistas controladores e não controladores'), mas não comprova que R$ 12.144 milhões pertence ao 1T2026. O trecho recuperado mostra vários valores na mesma linha (220.017, 11.875, 12.144 e 10.707) sem o cabeçalho das colunas, impedindo verificar o período de cada número. Assim, o valor pode pertencer a outra coluna/período, e pela regra de contexto sem cabeçalho ele deve ser tratado como não verificado, não merecendo nota alta.",
+          "n_veredictos": 0,
+          "n_sim": 0,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": null
+        }
+      },
+      "custo_usd": 0.00589776,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTF010",
+      "categoria": "factual",
+      "estrategia": "semantica",
+      "desfecho": "publicada",
+      "pergunta": "Segundo a demonstração gerencial do Santander qual foi o lucro líquido gerencial no 2T2025?",
+      "texto": "Segundo a demonstração gerencial do Santander, o lucro líquido gerencial no 2T25 foi de R$ 3.659 milhões (SANTANDER, santander_release_2T2025, 2T2025, p. 11).",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "periodo_geval": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "A resposta identifica corretamente a métrica pedida (lucro líquido gerencial) e o período solicitado (2T2025/2T25). O valor de R$ 3.659 milhões aparece no contexto recuperado na tabela do Sumário Executivo, especificamente na coluna 2T25 da linha 'Lucro líquido gerencial', não em colunas de outros períodos como 1T25 ou 2T24. A citação ao release e à página também está alinhada ao contexto.",
+          "n_veredictos": 0,
+          "n_sim": 0,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": null
+        }
+      },
+      "custo_usd": 0.0018224799999999996,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTF012",
+      "categoria": "factual",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Segundo a demonstração gerencial do Santander qual foi a carteira de crédito ampliada incluindo títulos privados, avais e fianças no 4T2025?",
+      "texto": "Segundo a demonstração gerencial do Santander, a carteira de crédito ampliada no 4T25 foi de R$ 708,2 bilhões.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "periodo_geval": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "A resposta informa R$ 708,2 bilhões para a carteira de crédito ampliada no 4T25, valor que aparece no contexto recuperado sob os destaques financeiros do 4T25 com a métrica 'Carteira de crédito ampliada'. Assim, o número está associado ao período e à métrica solicitados.",
+          "n_veredictos": 0,
+          "n_sim": 0,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": null
+        }
+      },
+      "custo_usd": 0.0030456800000000003,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTF001",
+      "categoria": "factual",
+      "estrategia": "semantica",
+      "desfecho": "publicada",
+      "pergunta": "Segundo a divulgação gerencial do BTG Pactual qual foi o ROAE ajustado anualizado no 1T2026?",
+      "texto": "No 1T2026, o ROAE ajustado anualizado do BTG Pactual foi de 26,6%.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "periodo_geval": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "A resposta identifica corretamente o período 1T2026 e a métrica ROAE ajustado anualizado. O valor de 26,6% está explicitamente no contexto como ROAE ajustado anualizado do 1T2026, inclusive na tabela de destaques e no texto de divulgação, sem confusão com períodos anteriores ou métricas contábeis.",
+          "n_veredictos": 0,
+          "n_sim": 0,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": null
+        }
+      },
+      "custo_usd": 0.0017881600000000004,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTC008",
+      "categoria": "comparativa",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Entre BTG Pactual e Itaú Unibanco qual teve o maior indicador anualizado de rentabilidade gerencial sobre o patrimônio no 1T2026 como divulgado em cada release e por quanto?",
+      "texto": "No 1T2026, o retorno ajustado anualizado sobre o patrimônio líquido médio do BTG Pactual (\"ROAE anualizado\") foi de 26,6% [BTG | btg_release_1T2026 | 1T2026 | págs. 1–3]. No 1T2026, o Retorno Recorrente Gerencial sobre o Patrimônio Líquido Médio anualizado - Consolidado do Itaú foi de 24,8% [ITAU | itau_release_1T2026 | 1T2026 | pág. 5]. Cálculo: 26,6% - 24,8% = 1,8%",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "periodo_geval": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "A resposta identifica corretamente o período 1T2026 e as métricas de rentabilidade anualizada sobre patrimônio de cada banco. O valor de 26,6% do BTG Pactual aparece no contexto como ROAE ajustado de 1T26, e o valor de 24,8% do Itaú aparece na tabela como Retorno Recorrente Gerencial sobre o Patrimônio Líquido Médio anualizado - Consolidado na coluna 1T26. A diferença calculada de 1,8% está coerente com os números, embora o ideal fosse indicar pontos percentuais.",
+          "n_veredictos": 0,
+          "n_sim": 0,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": null
+        }
+      },
+      "custo_usd": 0.002140600000000001,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTC009",
+      "categoria": "comparativa",
+      "estrategia": "semantica",
+      "desfecho": "recusa_modelo",
+      "pergunta": "Segundo os deltas trimestrais reportados nos releases, na passagem do 3T2025 para o 4T2025 qual banco teve a maior alta no indicador anualizado de rentabilidade gerencial sobre o patrimônio: Banco do Brasil ou Santander?",
+      "texto": "Não há evidência suficiente nos trechos recuperados.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {},
+      "custo_usd": 0.0,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTC006",
+      "categoria": "comparativa",
+      "estrategia": "semantica",
+      "desfecho": "publicada",
+      "pergunta": "Entre Santander e Bradesco qual teve o maior indicador trimestral anualizado de rentabilidade gerencial ou recorrente sobre o patrimônio no 3T2025 como divulgado nos destaques de cada release e por quanto?",
+      "texto": "No Santander, o ROAE gerencial excluindo ágio - anualizado foi de 17,5% no 3T25 [SANTANDER | santander_release_3T2025 | 3T2025 | pág. 11]. No Bradesco, o ROAE foi de 14,7% no trimestre [BRADESCO | bradesco_release_3T2025 | 3T2025 | pág. 6]. Cálculo: 17,5% - 14,7% = 2,8 p.p.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "periodo_geval": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "A resposta identifica corretamente o período 3T2025 e compara o indicador de rentabilidade sobre patrimônio. O valor de 17,5% do Santander está no contexto como 'ROAE gerencial excluindo ágio - anualizado' no 3T25, e o valor de 14,7% do Bradesco aparece como 'ROAE chegou a 14,7% no trimestre' no release do 3T25. A diferença de 2,8 p.p. está aritmeticamente correta. A única ressalva é que o trecho do Bradesco não explicita a palavra 'anualizado', mas o uso de ROAE no contexto trimestral é compatível. No geral, todos os números e afirmações centrais estão alinhados ao período e à métrica pedidos.",
+          "n_veredictos": 0,
+          "n_sim": 0,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": null
+        }
+      },
+      "custo_usd": 0.002537919999999999,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTC002",
+      "categoria": "comparativa",
+      "estrategia": "semantica",
+      "desfecho": "recusa_modelo",
+      "pergunta": "Qual foi a ordem decrescente dos cinco bancos pelo indicador trimestral anualizado de rentabilidade gerencial ou recorrente sobre o patrimônio no 3T2025 como divulgado nos destaques de cada release?",
+      "texto": "Não há evidência suficiente nos trechos recuperados.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {},
+      "custo_usd": 0.0,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTQ005",
+      "categoria": "qualitativa",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Segundo a análise gerencial do Bradesco como evoluiu a qualidade do crédito no 3T2025 e quais sinais sustentaram essa leitura?",
+      "texto": "No 3T25, observou-se um avanço na qualidade da carteira de crédito do Bradesco, onde houve cura de 4% no período da carteira em estágio 3 e 12% das operações no estágio 2 melhoraram, migrando para o estágio 1 [BRADESCO, bradesco_release_3T2025, 3T2025, p. 16]. Os sinais que sustentaram essa leitura incluem: a inadimplência acima de 90 dias manteve-se estável no trimestre, com redução de 0,1 p.p. em 12 meses [BRADESCO, bradesco_release_3T2025, 3T2025, p. 16]; o segmento MPME apresentou melhora significativa, com queda de 0,6 p.p. no trimestre e 1,5 p.p. em relação a Set24 [BRADESCO, bradesco_release_3T2025, 3T2025, p. 16]; o segmento de Grandes Empresas segue com níveis de inadimplência sob controle [BRADESCO, bradesco_release_3T2025, 3T2025, p. 16]; houve redução no portfólio de créditos mais estressados, sendo -22% em relação a Set24 com queda de 1,6 p.p. na participação da carteira de crédito [BRADESCO, bradesco_release_3T2025, 3T2025, p. 17]; e foram destacados a redução de R$ 2,7 bi (-11%) de operações classificadas como ativos problemáticos, além do aumento de operações curadas em R$ 0,9 bi ou 20% no trimestre [BRADESCO, bradesco_release_3T2025, 3T2025, p. 17].",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "periodo_geval": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "A resposta identifica corretamente o 3T25 e todos os números citados aparecem no contexto como pertencentes ao 3T2025 (págs. 16–17) ou estão explicitamente marcados como comparações com Set24/12 meses, sem atribuição indevida a outro período ou métrica. Os sinais de qualidade de crédito — cura de 4% no estágio 3, migração de 12% do estágio 2, estabilidade da inadimplência acima de 90 dias, melhora em MPME, controle em Grandes Empresas, redução da carteira reestruturada e de ativos problemáticos — correspondem ao contexto recuperado.",
+          "n_veredictos": 0,
+          "n_sim": 0,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": null
+        }
+      },
+      "custo_usd": 0.0029963999999999998,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTQ010",
+      "categoria": "qualitativa",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Segundo o Banco do Brasil quais fatores levaram ao crescimento de 14,8% da margem financeira bruta no 1T2026?",
+      "texto": "Segundo o Banco do Brasil, o crescimento da Margem Financeira Bruta (+14,8%) no 1T2026 em relação ao mesmo período do ano anterior está relacionado ao crescimento das receitas de crédito, com destaque para as operações de pessoas físicas (+19,1%), e das receitas de tesouraria, com destaque para o desempenho do resultado de TVM (27,2%). Adicionalmente, o crescimento da MFB foi impulsionado pela evolução das receitas financeiras (+12,3%), refletindo o avanço das operações de crédito (especialmente de pessoas físicas, +19,1%) e pelo crescimento do resultado de tesouraria (com destaque para o resultado de TVM, +27,2%), em virtude do maior excesso de liquidez e da elevação da TMS no período.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "periodo_geval": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "A resposta identifica corretamente o período 1T2026 e a métrica de crescimento da Margem Financeira Bruta em 14,8% na comparação anual. Todos os números citados — +19,1% para pessoas físicas, 27,2% para resultado de TVM e +12,3% para receitas financeiras — aparecem no contexto recuperado associados ao 1T2026 e à mesma base comparativa do ano anterior. Também menciona fatores qualitativos presentes no contexto, como maior excesso de liquidez e elevação da TMS, sem introduzir números de outros períodos ou métricas.",
+          "n_veredictos": 0,
+          "n_sim": 0,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": null
+        }
+      },
+      "custo_usd": 0.002592480000000001,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTQ001",
+      "categoria": "qualitativa",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Segundo os comentários gerenciais do BTG Pactual quais fatores explicaram o desempenho recorde de Corporate Lending no 4T2025?",
+      "texto": "No 4T25, Corporate Lending & Business Banking entregou um trimestre recorde, cujo desempenho foi sustentado pela expansão de 6,2% da carteira de crédito, com spreads estáveis, refletindo a resiliência da qualidade dos ativos.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "periodo_geval": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "A resposta identifica corretamente o período 4T25 e a linha Corporate Lending & Business Banking. Todos os fatores citados — expansão de 6,2% da carteira de crédito, spreads estáveis e resiliência da qualidade dos ativos — aparecem no contexto exatamente na seção 4T25 vs. 3T25, referente ao desempenho recorde do trimestre. Não há uso de números ou afirmações de outro período ou métrica.",
+          "n_veredictos": 0,
+          "n_sim": 0,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": null
+        }
+      },
+      "custo_usd": 0.0020050799999999994,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTQ003",
+      "categoria": "qualitativa",
+      "estrategia": "semantica",
+      "desfecho": "descartada_rn02",
+      "pergunta": "Segundo a análise gerencial do Itaú Unibanco quais fatores explicaram o crescimento de 1,5% da margem financeira com clientes no 4T2025?",
+      "texto": "Segundo a análise gerencial do Itaú Unibanco, o crescimento de 1,5% da margem financeira com clientes no trimestre (4T2025) foi explicado pelos seguintes principais movimentos na comparação com o trimestre anterior: Capital de giro próprio e outros (+ R$ 0,1 bilhão), principalmente em função da maior taxa média de remuneração; Volume médio (+ R$ 0,5 bilhão), com impacto positivo em função do aumento da carteira rentável média, destacando-se os crescimentos das carteiras de crédito imobiliário, consignado privado e de programas governamentais para pequenas empresas; Mix de produtos (- R$ 0,3 bilhão), devido à redução pela menor representatividade de produtos mais rentáveis, como crédito rotativo, cartão de crédito financiado e composição de dívida; e Spreads e margem de passivos (+ R$ 0,3 bilhão), principalmente por conta do maior volume médio de passivos [ITAU, itau_release_4T2025, 4T2025, pág. 12].",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {
+        "periodo_geval": {
+          "score": 1.0,
+          "sucesso": true,
+          "razao": "A resposta identifica corretamente o período (4T2025) e a métrica (margem financeira com clientes, crescimento de 1,5% no trimestre). Todos os fatores e valores citados — Capital de giro próprio e outros (+R$ 0,1 bi), Volume médio (+R$ 0,5 bi), Mix de produtos (-R$ 0,3 bi) e Spreads e margem de passivos (+R$ 0,3 bi) — estão no contexto recuperado e pertencem à comparação 4T25 x 3T25, conforme a análise gerencial. Não há números atribuídos a períodos ou métricas incorretos.",
+          "n_veredictos": 0,
+          "n_sim": 0,
+          "n_nao": 0,
+          "n_incerto": 0,
+          "score_incerto_aprovado": null
+        }
+      },
+      "custo_usd": 0.0020085999999999993,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTA008",
+      "categoria": "adversarial",
+      "estrategia": "semantica",
+      "desfecho": "recusa_modelo",
+      "pergunta": "Por que o lucro líquido ajustado do Banco do Brasil caiu do 3T2025 para o 4T2025?",
+      "texto": "Não há evidência suficiente nos trechos recuperados.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 5,
+      "metricas": {},
+      "custo_usd": 0.0,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTA002",
+      "categoria": "adversarial",
+      "estrategia": "semantica",
+      "desfecho": "recusa_modelo",
+      "pergunta": "Segundo o release do Nubank qual foi o saldo da carteira de crédito no 3T2025?",
+      "texto": "Não há evidência suficiente nos trechos recuperados.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 0,
+      "metricas": {},
+      "custo_usd": 0.0,
+      "erro": null
+    },
+    {
+      "pergunta_id": "TSTA003",
+      "categoria": "adversarial",
+      "estrategia": "semantica",
+      "desfecho": "recusa_modelo",
+      "pergunta": "Segundo a administração do Nubank quais fatores explicaram a inadimplência no 2T2025?",
+      "texto": "Não há evidência suficiente nos trechos recuperados.",
+      "recusa_correta": null,
+      "exatidao_ok": null,
+      "n_trechos": 0,
+      "metricas": {},
+      "custo_usd": 0.0,
+      "erro": null
+    }
+  ],
+  "concordancia": {
+    "n": 10,
+    "matriz": {
+      "ambos_acertou": 3,
+      "ambos_errou": 2,
+      "juiz_acertou_humano_errou": 3,
+      "juiz_errou_humano_acertou": 2
+    },
+    "taxa_concordancia": 0.5,
+    "regra_primaria": "faithfulness_e_periodo",
+    "por_regra": {
+      "faithfulness": {
+        "n": 10,
+        "matriz": {
+          "ambos_acertou": 2,
+          "ambos_errou": 2,
+          "juiz_acertou_humano_errou": 3,
+          "juiz_errou_humano_acertou": 3
+        },
+        "taxa_concordancia": 0.4
+      },
+      "periodo": {
+        "n": 10,
+        "matriz": {
+          "ambos_acertou": 4,
+          "ambos_errou": 5,
+          "juiz_acertou_humano_errou": 0,
+          "juiz_errou_humano_acertou": 1
+        },
+        "taxa_concordancia": 0.9
+      },
+      "faithfulness_e_periodo": {
+        "n": 10,
+        "matriz": {
+          "ambos_acertou": 3,
+          "ambos_errou": 2,
+          "juiz_acertou_humano_errou": 3,
+          "juiz_errou_humano_acertou": 2
+        },
+        "taxa_concordancia": 0.5
+      }
+    },
+    "fidelidade_lida_de": "artefatos/resultados_avaliacao/deepeval_a0bea525_concordancia.json",
+    "itens": [
+      {
+        "pergunta_id": "TSTF006",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 1.0,
+        "periodo_geval": 0.4,
+        "humano_grounded": true,
+        "juiz_sistema_acertou[faithfulness]": false,
+        "juiz_sistema_acertou[periodo]": true,
+        "juiz_sistema_acertou[faithfulness_e_periodo]": true
+      },
+      {
+        "pergunta_id": "TSTF010",
+        "desfecho": "publicada",
+        "faithfulness": 0.5,
+        "periodo_geval": 1.0,
+        "humano_grounded": true,
+        "juiz_sistema_acertou[faithfulness]": false,
+        "juiz_sistema_acertou[periodo]": true,
+        "juiz_sistema_acertou[faithfulness_e_periodo]": false
+      },
+      {
+        "pergunta_id": "TSTF012",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 1.0,
+        "periodo_geval": 1.0,
+        "humano_grounded": false,
+        "juiz_sistema_acertou[faithfulness]": false,
+        "juiz_sistema_acertou[periodo]": false,
+        "juiz_sistema_acertou[faithfulness_e_periodo]": false
+      },
+      {
+        "pergunta_id": "TSTF001",
+        "desfecho": "publicada",
+        "faithfulness": 1.0,
+        "periodo_geval": 1.0,
+        "humano_grounded": true,
+        "juiz_sistema_acertou[faithfulness]": true,
+        "juiz_sistema_acertou[periodo]": true,
+        "juiz_sistema_acertou[faithfulness_e_periodo]": true
+      },
+      {
+        "pergunta_id": "TSTC008",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 1.0,
+        "periodo_geval": 1.0,
+        "humano_grounded": false,
+        "juiz_sistema_acertou[faithfulness]": false,
+        "juiz_sistema_acertou[periodo]": false,
+        "juiz_sistema_acertou[faithfulness_e_periodo]": false
+      },
+      {
+        "pergunta_id": "TSTC006",
+        "desfecho": "publicada",
+        "faithfulness": 1.0,
+        "periodo_geval": 1.0,
+        "humano_grounded": true,
+        "juiz_sistema_acertou[faithfulness]": true,
+        "juiz_sistema_acertou[periodo]": true,
+        "juiz_sistema_acertou[faithfulness_e_periodo]": true
+      },
+      {
+        "pergunta_id": "TSTQ005",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 0.8888888888888888,
+        "periodo_geval": 1.0,
+        "humano_grounded": false,
+        "juiz_sistema_acertou[faithfulness]": true,
+        "juiz_sistema_acertou[periodo]": false,
+        "juiz_sistema_acertou[faithfulness_e_periodo]": true
+      },
+      {
+        "pergunta_id": "TSTQ010",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 0.6666666666666666,
+        "periodo_geval": 1.0,
+        "humano_grounded": false,
+        "juiz_sistema_acertou[faithfulness]": true,
+        "juiz_sistema_acertou[periodo]": false,
+        "juiz_sistema_acertou[faithfulness_e_periodo]": true
+      },
+      {
+        "pergunta_id": "TSTQ001",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 1.0,
+        "periodo_geval": 1.0,
+        "humano_grounded": true,
+        "juiz_sistema_acertou[faithfulness]": false,
+        "juiz_sistema_acertou[periodo]": false,
+        "juiz_sistema_acertou[faithfulness_e_periodo]": false
+      },
+      {
+        "pergunta_id": "TSTQ003",
+        "desfecho": "descartada_rn02",
+        "faithfulness": 0.8333333333333334,
+        "periodo_geval": 1.0,
+        "humano_grounded": false,
+        "juiz_sistema_acertou[faithfulness]": true,
+        "juiz_sistema_acertou[periodo]": false,
+        "juiz_sistema_acertou[faithfulness_e_periodo]": true
+      }
+    ],
+    "fora_da_matriz": "recusas do próprio modelo (sem afirmação a julgar)"
+  }
+}

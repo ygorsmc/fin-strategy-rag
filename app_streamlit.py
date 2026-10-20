@@ -18,6 +18,7 @@ import math
 import re
 import uuid
 from pathlib import Path
+from time import perf_counter
 
 import streamlit as st
 
@@ -450,10 +451,76 @@ def _construir_pipeline_ao_vivo(identidade_extracao_esperada=None):
     )
 
 
-@st.cache_resource(ttl=300)
+def _assinatura_do_indice() -> tuple:
+    """Tamanho e mtime dos arquivos que identificam o índice em disco.
+
+    Reconstruir o índice reescreve os dois; a assinatura muda e o pipeline em
+    cache é descartado, com a guarda RNF09 rodando de novo na carga.
+    """
+    from src.config import DIR_INDICE_VETORIAL
+
+    assinatura = []
+    for nome in ("metadados_construcao.json", "chunks.json"):
+        try:
+            estado = (DIR_INDICE_VETORIAL / nome).stat()
+            assinatura.append((nome, estado.st_size, estado.st_mtime_ns))
+        except OSError:
+            assinatura.append((nome, None, None))
+    return tuple(assinatura)
+
+
 def _pipeline_ao_vivo(identidade_extracao):
-    """Cacheia somente enquanto manifesto/código OCR mantêm a identidade."""
+    """Cacheia enquanto manifesto/código OCR e o índice em disco não mudam."""
+    return _pipeline_em_cache(identidade_extracao, _assinatura_do_indice())
+
+
+# Sem `ttl`: com `ttl=300` o índice expirava depois de 5 minutos sem pergunta,
+# e a seguinte pagava a carga inteira de novo (4,4 s de carga + 7,3 s da
+# primeira recuperação no trace DEV003 de 19/10). Quem invalida agora é a
+# chave: identidade de OCR e assinatura do índice. Uma entrada só, para que um
+# índice reconstruído não deixe o anterior preso na memória.
+# O nome do parâmetro não pode começar com "_": o Streamlit deixa esses
+# parâmetros fora da chave do cache, e a assinatura não invalidaria nada.
+@st.cache_resource(max_entries=1, show_spinner=False)
+def _pipeline_em_cache(identidade_extracao, assinatura_indice):
     return _construir_pipeline_ao_vivo(identidade_extracao)
+
+
+@st.cache_resource(show_spinner="Preparando o índice para perguntas ao vivo…")
+def aquecer_caminho_ao_vivo() -> dict:
+    """Paga na subida do app a carga que a primeira pergunta pagava.
+
+    Medido nos traces de 19/10: a primeira pergunta do processo levou 13 s,
+    dos quais 1,2 s eram do LLM. O resto era carregar o índice, carregar o
+    modelo de embeddings no Ollama na primeira recuperação e, com o Presidio
+    ligado, carregar os guardrails (6,7 s). Roda uma vez por processo, só com
+    pergunta livre habilitada, sem LLM e sem custo. Falha aqui não derruba a
+    página: a pergunta seguinte cai no caminho de sempre e mostra o erro.
+    """
+    tempos: dict[str, object] = {}
+
+    def medir(nome: str, acao) -> None:
+        inicio = perf_counter()
+        try:
+            acao()
+            tempos[nome] = round(perf_counter() - inicio, 2)
+        except Exception as exc:  # noqa: BLE001 - aquecimento é opcional
+            tempos[nome] = f"falhou ({type(exc).__name__})"
+            LOGGER.warning("aquecimento de %s falhou (tipo=%s).", nome, type(exc).__name__)
+
+    medir("guardrails", lambda: guardar_entrada("Qual foi o lucro líquido no trimestre?"))
+    if config.embedding_provider in {"ollama", "local"}:
+        from src.indexacao import calcular_identidade_extracao
+
+        def recuperar_uma_vez() -> None:
+            recuperador, _llm, estrategia = _pipeline_ao_vivo(
+                calcular_identidade_extracao(config)
+            )
+            recuperador.recuperar("lucro líquido do trimestre", estrategia)
+
+        medir("indice_e_embeddings", recuperar_uma_vez)
+    LOGGER.info("aquecimento do caminho ao vivo: %s", tempos)
+    return tempos
 
 
 class FalhaConsultaAoVivo(RuntimeError):
@@ -1483,12 +1550,35 @@ EXEMPLOS_AGENTES = (
 )
 
 
+_ICONE_DO_ESTADO = {"inicio": "⏳", "ok": "✅", "falhou": "⚠️"}
+
+
+def observador_de_progresso(progresso):
+    """Escreve cada ferramenta no `st.status` enquanto o agente trabalha.
+
+    Mostra papel, ferramenta e desfecho, o mesmo que o rastro da resposta já
+    mostra no fim; argumentos e resultados não aparecem. O início vira o
+    rótulo do quadro e o fim vira uma linha.
+    """
+
+    def avisar(papel: str, ferramenta: str, estado: str) -> None:
+        texto = f"{_papel_legivel(papel)} · `{ferramenta}`"
+        if estado == "inicio":
+            progresso.update(label=f"{texto} em andamento…")
+        else:
+            progresso.write(f"{_ICONE_DO_ESTADO.get(estado, '•')} {texto}")
+
+    return avisar
+
+
 def _papel_legivel(papel: str) -> str:
     return {"investigador": "Investigador", "auditor": "Auditor"}.get(papel, papel)
 
 
 def responder_com_agentes(
-    pergunta: str, orcamento_restante_usd: float | None = None
+    pergunta: str,
+    orcamento_restante_usd: float | None = None,
+    ao_chamar=None,
 ) -> dict:
     """Pergunta pelos agentes do produto: Investigador + Auditor (spec 5.9, §3.16).
 
@@ -1542,6 +1632,7 @@ def responder_com_agentes(
                 recuperador=recuperador,
                 leitor=rota.get("leitor"),
                 nomes=FERRAMENTAS_DO_PRODUTO,
+                ao_chamar=ao_chamar,
             ),
         )
     except Exception as exc:
@@ -1600,6 +1691,9 @@ except (OSError, RuntimeError, ValueError, json.JSONDecodeError) as exc:
 cache_aguarda_auditoria = erro_cache is not None and _cache_aguarda_auditoria(
     erro_cache
 )
+
+if config.habilitar_perguntas_livres:
+    aquecer_caminho_ao_vivo()
 
 modo_livre_disponivel = (
     config.habilitar_perguntas_livres
@@ -1907,7 +2001,7 @@ def registrar_desfecho(rastro: observabilidade.Observacao, tamanho_antes: int) -
 
 
 def responder_no_chat_com_agentes(
-    pergunta: str, rastro: observabilidade.Observacao
+    pergunta: str, rastro: observabilidade.Observacao, ao_chamar=None
 ) -> bool:
     """Atende uma pergunta do modo agentes e diz se a tela deve recarregar.
 
@@ -1926,6 +2020,7 @@ def responder_no_chat_com_agentes(
             orcamento_restante_usd=max(
                 0.0, config.orcamento_teto_usd - st.session_state.custo_usd_acumulado
             ),
+            ao_chamar=ao_chamar,
         )
     except FalhaConsultaAoVivo as exc:
         st.session_state.custo_usd_acumulado = _contabilizar_reserva_falha(
@@ -2124,8 +2219,17 @@ elif modo == MODO_AGENTES:
                 sessao=st.session_state.id_sessao_rastro,
                 tags=("agentes", config.llm_provider),
             ) as rastro:
-                with st.spinner("Investigador e Auditor trabalhando…"):
-                    recarregar = responder_no_chat_com_agentes(pergunta, rastro)
+                with st.status(
+                    "Investigador e Auditor trabalhando…", expanded=True
+                ) as progresso:
+                    recarregar = responder_no_chat_com_agentes(
+                        pergunta, rastro, ao_chamar=observador_de_progresso(progresso)
+                    )
+                    progresso.update(
+                        label="Investigador e Auditor terminaram.",
+                        state="complete",
+                        expanded=False,
+                    )
                 registrar_desfecho(rastro, tamanho_antes)
             if recarregar:
                 st.rerun()

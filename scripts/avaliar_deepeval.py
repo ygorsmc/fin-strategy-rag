@@ -11,6 +11,13 @@ Dois modos:
   humano, com a régua de `scripts/medir_juiz_groundedness.py`. É o que a spec
   5.15 chama de medir o DeepEval contra a auditoria humana.
 
+`--metricas` escolhe o que medir (padrão: faithfulness e answer relevancy).
+`periodo_geval` é o critério de período e coluna, com passos e limiar fixados
+em `src/avaliacao_deepeval.py` antes da rodada. Na concordância, a regra
+pré-registrada com ele é "faithfulness no limiar E período no limiar"; o
+faithfulness pode vir de um relatório anterior (`--fidelidade-de`), para não
+pagar duas vezes pelo mesmo veredito.
+
 Sem `--permitir-api-paga` é ensaio: conta casos e chamadas, mostra o juiz e o
 preço que seriam usados, e não chama nada. Com ela, cada chamada do juiz passa
 pelo teto (`--teto-usd`) e é registrada antes e depois em
@@ -39,7 +46,7 @@ from src import avaliacao_deepeval as de  # noqa: E402
 from src.avaliacao import carregar_conjunto_padrao, registrar_execucao  # noqa: E402
 from src.config import DIR_RESULTADOS_AVALIACAO, carregar_config  # noqa: E402
 
-CHAMADAS_POR_CASO = 7  # faithfulness: verdades, afirmações, veredictos, razão; relevância: 3
+METRICAS_PADRAO = (de.METRICA_FIDELIDADE, de.METRICA_RELEVANCIA)
 
 
 def _versao_deepeval() -> str:
@@ -87,6 +94,42 @@ def _casos_da_auditoria(caminho: Path):
     return casos, humano, auditoria["_meta"]["fingerprint"]
 
 
+#: Regra de "fundamentada" da concordância, da mais completa para a menos. A
+#: primeira que a rodada consegue calcular é a pré-registrada: com o período
+#: medido, faithfulness E período; sem ele, só faithfulness, como em 20/10.
+REGRA_FIDELIDADE = "faithfulness"
+REGRA_PERIODO = "periodo"
+REGRA_COMBINADA = "faithfulness_e_periodo"
+REGRAS_PRIMARIAS = (REGRA_COMBINADA, REGRA_FIDELIDADE, REGRA_PERIODO)
+
+
+def _nota(resultado, metrica: str) -> float | None:
+    bloco = resultado.metricas.get(metrica)
+    return None if not bloco else bloco.get("score")
+
+
+def _regras(notas: dict) -> dict[str, bool]:
+    fidelidade, periodo = notas[de.METRICA_FIDELIDADE], notas[de.METRICA_PERIODO]
+    regras = {}
+    if fidelidade is not None:
+        regras[REGRA_FIDELIDADE] = fidelidade >= de.LIMIAR_FUNDAMENTADA
+    if periodo is not None:
+        regras[REGRA_PERIODO] = periodo >= de.LIMIAR_PERIODO
+    if fidelidade is not None and periodo is not None:
+        regras[REGRA_COMBINADA] = regras[REGRA_FIDELIDADE] and regras[REGRA_PERIODO]
+    return regras
+
+
+def _fidelidade_de(caminho: Path) -> dict[str, float]:
+    """Faithfulness por pergunta de um relatório DeepEval já gravado."""
+    dados = json.loads(caminho.read_text(encoding="utf-8"))
+    return {
+        caso["pergunta_id"]: caso["metricas"][de.METRICA_FIDELIDADE]["score"]
+        for caso in dados.get("casos") or ()
+        if (caso.get("metricas") or {}).get(de.METRICA_FIDELIDADE, {}).get("score") is not None
+    }
+
+
 def principal(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--estrategia", default=None)
@@ -96,8 +139,22 @@ def principal(argv: list[str] | None = None) -> int:
     parser.add_argument("--saida", type=Path, default=None)
     parser.add_argument("--sobrescrever", action="store_true", help="permite substituir relatório existente")
     parser.add_argument("--permitir-api-paga", action="store_true")
+    parser.add_argument(
+        "--metricas", default=",".join(METRICAS_PADRAO),
+        help=f"separadas por vírgula, entre {sorted(de.CHAMADAS_POR_METRICA)}",
+    )
+    parser.add_argument(
+        "--fidelidade-de", type=Path, default=None,
+        help="relatório DeepEval anterior de onde ler o faithfulness da concordância",
+    )
     args = parser.parse_args(argv)
 
+    metricas = tuple(m for m in args.metricas.split(",") if m)
+    try:
+        fabricas = de.fabricas_de_metricas(metricas)
+    except ValueError as erro:
+        raise SystemExit(f"FALHOU: {erro}")
+    chamadas_por_caso = sum(de.CHAMADAS_POR_METRICA[m] for m in metricas)
     config = carregar_config()
     if not 0 < args.teto_usd <= config.orcamento_teto_usd:
         raise SystemExit(
@@ -149,14 +206,16 @@ def principal(argv: list[str] | None = None) -> int:
     print(f"Rodada {fingerprint[:8]} · estratégia {estrategia!r} · {len(casos)} casos {contagem}")
     print(f"Juiz: {descricao_juiz} · gerador: {gerador}")
     print(
-        f"{len(pontuados)} pontuados × {CHAMADAS_POR_CASO} chamadas = "
-        f"{len(pontuados) * CHAMADAS_POR_CASO} chamadas; {caracteres_contexto:,} caracteres de trecho"
+        f"{len(pontuados)} pontuados × {chamadas_por_caso} chamadas ({', '.join(metricas)}) = "
+        f"{len(pontuados) * chamadas_por_caso} chamadas; {caracteres_contexto:,} caracteres de trecho"
     )
     if not args.permitir_api_paga:
         print("Ensaio: nenhuma chamada feita. Use --permitir-api-paga para executar.")
         return 0
 
     sufixo = "concordancia" if args.concordancia else estrategia
+    if metricas != METRICAS_PADRAO:
+        sufixo += "_" + "_".join(metricas)
     saida = args.saida or DIR_RESULTADOS_AVALIACAO / f"deepeval_{fingerprint[:8]}_{sufixo}.json"
     if saida.exists() and not args.sobrescrever:
         # Antes de gastar: o relatório anterior é evidência de outra rodada.
@@ -171,7 +230,7 @@ def principal(argv: list[str] | None = None) -> int:
     interrompido = None
     for indice, caso in enumerate(casos, start=1):
         try:
-            resultado = de.medir_caso(caso, juiz)
+            resultado = de.medir_caso(caso, juiz, fabricas=fabricas)
         except de.OrcamentoJuizExcedidoError as erro:
             interrompido = str(erro)
             print(f"PAROU no teto: {erro}")
@@ -196,6 +255,12 @@ def principal(argv: list[str] | None = None) -> int:
             "deepeval": _versao_deepeval(),
             "temperatura": 0.0,
             "limiar_fundamentada": de.LIMIAR_FUNDAMENTADA,
+            "metricas": list(metricas),
+            **(
+                {"passos_periodo": list(de.PASSOS_PERIODO), "limiar_periodo": de.LIMIAR_PERIODO}
+                if de.METRICA_PERIODO in metricas
+                else {}
+            ),
             "teto_usd": args.teto_usd,
             "custo_total_usd": round(juiz.uso.custo_usd, 6),
             "chamadas_juiz": juiz.uso.chamadas,
@@ -217,24 +282,43 @@ def principal(argv: list[str] | None = None) -> int:
     if args.concordancia:
         from scripts.medir_juiz_groundedness import _sistema_acertou
 
-        pares, por_item = [], []
+        fidelidade_previa = _fidelidade_de(args.fidelidade_de) if args.fidelidade_de else {}
+        pares: dict[str, list] = {}
+        por_item = []
         for resultado in resultados:
-            fidelidade = resultado.metricas.get(de.METRICA_FIDELIDADE)
             item = humano[resultado.caso.pergunta_id]
             if resultado.caso.desfecho == de.DESFECHO_RECUSA_MODELO:
                 continue  # sem afirmação: o juiz do DeepEval não tem o que dizer
-            if not fidelidade or fidelidade["score"] is None:
+            notas = {
+                de.METRICA_FIDELIDADE: _nota(resultado, de.METRICA_FIDELIDADE)
+                if de.METRICA_FIDELIDADE in metricas
+                else fidelidade_previa.get(resultado.caso.pergunta_id),
+                de.METRICA_PERIODO: _nota(resultado, de.METRICA_PERIODO),
+            }
+            regras = _regras(notas)
+            if not regras:
                 continue
-            fundamentada = fidelidade["score"] >= de.LIMIAR_FUNDAMENTADA
-            juiz_acertou = _sistema_acertou(item, fundamentada)
-            pares.append((juiz_acertou, bool(item["grounded"])))
-            por_item.append({"pergunta_id": item["pergunta_id"], "desfecho": resultado.caso.desfecho,
-                             "faithfulness": fidelidade["score"], "juiz_sistema_acertou": juiz_acertou,
-                             "humano_grounded": item["grounded"], "concorda": juiz_acertou == item["grounded"]})
-        relatorio["concordancia"] = {**de.concordancia_com_humano(pares), "itens": por_item,
-                                     "fora_da_matriz": "recusas do próprio modelo (sem afirmação a julgar)"}
-        print(f"concordância DeepEval × humano: {relatorio['concordancia']['taxa_concordancia']} "
-              f"{relatorio['concordancia']['matriz']}")
+            linha = {"pergunta_id": item["pergunta_id"], "desfecho": resultado.caso.desfecho,
+                     **{nome: nota for nome, nota in notas.items() if nota is not None},
+                     "humano_grounded": item["grounded"]}
+            for regra, fundamentada in regras.items():
+                juiz_acertou = _sistema_acertou(item, fundamentada)
+                pares.setdefault(regra, []).append((juiz_acertou, bool(item["grounded"])))
+                linha[f"juiz_sistema_acertou[{regra}]"] = juiz_acertou
+            por_item.append(linha)
+        primaria = next((r for r in REGRAS_PRIMARIAS if r in pares), None)
+        relatorio["concordancia"] = {
+            **(de.concordancia_com_humano(pares[primaria]) if primaria else {"n": 0}),
+            "regra_primaria": primaria,
+            "por_regra": {regra: de.concordancia_com_humano(lista) for regra, lista in pares.items()},
+            "fidelidade_lida_de": str(args.fidelidade_de) if args.fidelidade_de else None,
+            "itens": por_item,
+            "fora_da_matriz": "recusas do próprio modelo (sem afirmação a julgar)",
+        }
+        for regra, bloco in relatorio["concordancia"]["por_regra"].items():
+            marca = " (pré-registrada)" if regra == primaria else ""
+            print(f"concordância DeepEval × humano, {regra}{marca}: "
+                  f"{bloco['taxa_concordancia']} {bloco['matriz']}")
 
     saida.write_text(json.dumps(relatorio, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     exibida = saida.resolve().relative_to(RAIZ) if saida.resolve().is_relative_to(RAIZ) else saida

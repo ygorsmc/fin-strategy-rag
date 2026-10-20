@@ -301,6 +301,21 @@ class TestRegressoesNumerosFinanceiros:
     @pytest.mark.parametrize(
         "texto,esperado",
         [
+            ("crescimento da margem (+14,8%) no trimestre", [0.148]),
+            ("Volume médio (+ R$ 0,5 bilhão), com impacto", [500_000_000.0]),
+            ("Mix de produtos (- R$ 0,3 bilhão), devido", [-300_000_000.0]),
+            ("a perda foi (R$ 1,5 milhão).", [-1_500_000.0]),
+        ],
+    )
+    def test_sinal_explicito_entre_parenteses_vence_negativo_contabil(
+        self, texto, esperado
+    ):
+        """`(+14,8%)` é variação positiva; sem sinal, o parêntese segue negativo."""
+        assert norm.extrair_numeros_ptbr(texto) == pytest.approx(esperado)
+
+    @pytest.mark.parametrize(
+        "texto,esperado",
+        [
             ("R$ -6,3 milhão", -6_300_000.0),
             ("(R$ 1.090,4 bilhão)", -1_090_400_000_000.0),
         ],

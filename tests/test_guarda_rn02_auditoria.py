@@ -293,3 +293,243 @@ class TestRotuloDeLinhaComColunaMesclada:
         )
         tokens = [t for _n, t, _m in fatos_numericos_do_chunk(chunk)]
         assert any("metrica_lucro" in t for t in tokens)
+
+
+# --- Reaplicação de 2026-10-20 sobre a rodada congelada c3a03ff7 -------------
+#
+# `scripts/reaplicar_guarda_rn02.py` reaplicou a guarda às 4 × 45 respostas
+# gravadas. Os descartes que o DeepEval julgou fiéis vinham, na maioria, de
+# evidência que chegava sem rótulo à comparação, e não de arredondamento: o
+# infográfico de destaques do release, que o OCR devolve linha a linha.
+
+
+def _bradesco(texto: str, trimestre: str = "2T2025", pagina: int = 7) -> Chunk:
+    return _chunk(
+        texto,
+        empresa="BRADESCO",
+        trimestre=trimestre,
+        documento=f"bradesco_release_{trimestre}",
+        pagina_inicio=pagina,
+        pagina_fim=pagina,
+    )
+
+
+def _fundamenta_em(chunk: Chunk, resposta: str, pergunta: str = "") -> bool:
+    return numeros_da_resposta_estao_fundamentados(
+        resposta,
+        (Citacao(chunk.empresa, chunk.documento, chunk.trimestre, chunk.pagina_inicio),),
+        [chunk],
+        Config().tolerancia_numerica_pct,
+        pergunta,
+    )
+
+
+class TestPainelDeDestaques:
+    """Rótulo numa linha, valor na seguinte, sem negrito (TSTF007, TSTF008)."""
+
+    PAINEL = (
+        "destaques 2T25\n"
+        "lucro líquido recorrente consolidado\n"
+        "## R$ 6,1 bi\n"
+        "Δ 3,5% t/t Δ 28,6% a/a\n"
+        "ROAE 2T25\n"
+        "14,6%\n"
+        "Δ 0,2 p.p. t/t Δ 3,2 p.p. a/a\n"
+    )
+
+    def test_valor_em_titulo_markdown_e_valor_e_nao_titulo(self):
+        """`## R$ 6,1 bi` virava título de seção e o número sumia."""
+        fatos = fatos_numericos_do_chunk(_bradesco(self.PAINEL))
+        do_lucro = [t for n, t, _m in fatos if n.valor == 6_100_000_000.0]
+        assert do_lucro and "metrica_lucro" in do_lucro[0]
+
+    def test_valor_solto_herda_o_rotulo_da_linha_de_cima(self):
+        fatos = fatos_numericos_do_chunk(_bradesco(self.PAINEL))
+        do_roae = [t for n, t, _m in fatos if abs(n.valor - 0.146) < 1e-9]
+        assert do_roae and "metrica_rentabilidade" in do_roae[0]
+        variacao = [t for n, t, _m in fatos if abs(n.valor - 0.035) < 1e-9]
+        assert variacao and "metrica_lucro" in variacao[0]
+
+    def test_resposta_que_repete_o_release_e_aceita(self):
+        assert _fundamenta_em(
+            _bradesco(self.PAINEL),
+            "O lucro líquido recorrente consolidado no 2T2025 foi de R$ 6,1 bi.",
+        )
+
+    @pytest.mark.parametrize(
+        "resposta",
+        [
+            # 6,1 bi é lucro, não carteira; 14,6% é ROAE, não inadimplência.
+            "A carteira de crédito no 2T2025 foi de R$ 6,1 bi.",
+            "A inadimplência acima de 90 dias no 2T2025 foi de 14,6%.",
+            "O lucro líquido recorrente consolidado no 2T2025 foi de R$ 6,2 bi.",
+        ],
+    )
+    def test_contraprova_rotulo_herdado_ainda_recusa_troca(self, resposta: str):
+        assert not _fundamenta_em(_bradesco(self.PAINEL), resposta)
+
+    def test_linha_de_prosa_encerra_o_painel(self):
+        """O rótulo vale para o valor logo abaixo, não para a página toda."""
+        chunk = _bradesco(
+            "ROAE 2T25\n"
+            "Os resultados do trimestre refletem a estratégia de longo prazo.\n"
+            "14,6%\n"
+        )
+        fatos = fatos_numericos_do_chunk(chunk)
+        assert all("metrica_rentabilidade" not in t for _n, t, _m in fatos)
+
+    def test_rotulo_nao_sobrescreve_metrica_propria_do_valor(self):
+        chunk = _bradesco("ROAE 2T25\nlucro de R$ 6,1 bi\n")
+        for _numero, tokens, _mod in fatos_numericos_do_chunk(chunk):
+            assert "metrica_rentabilidade" not in tokens
+
+    def test_valor_em_negrito_no_meio_da_moeda(self):
+        """`R$ **3,8** bilhões` não era lido como reais (TSTF013)."""
+        chunk = _chunk(
+            "## Lucro Líquido Ajustado\nR$ **3,8** bilhões - 2T25\n",
+            empresa="BB",
+            trimestre="2T2025",
+            documento="bb_release_2T2025",
+            pagina_inicio=10,
+            pagina_fim=10,
+        )
+        assert _fundamenta_em(
+            chunk, "O Lucro Líquido Ajustado no 2T25 foi de R$ 3,8 bilhões."
+        )
+        assert not _fundamenta_em(
+            chunk, "O Lucro Líquido Ajustado no 2T25 foi de R$ 3,9 bilhões."
+        )
+
+
+class TestSegmentoFechaOPainel:
+    """O ROAE do Grupo Segurador não fundamenta o ROAE do Bradesco (TSTC004).
+
+    A primeira versão da leitura de painel publicava, na estratégia híbrida,
+    "o Bradesco apresentou ROAE de 21,6%": o 21,6% é do segmento de seguros e
+    o consolidado é 15,8%. O infográfico emenda os dois painéis sem quebra.
+    """
+
+    PAINEL = (
+        "Inadimplência acima de 90 dias\n"
+        "4,2%\n"
+        "Grupo Segurador\n"
+        "Lucro Líquido Recorrente\n"
+        "R$ 2,8 bi\n"
+        "∇ 1,5% t/t Δ 13,0% a/a\n"
+        "ROAE\n"
+        "21,6%\n"
+    )
+
+    def test_valor_do_segmento_nao_herda_rotulo(self):
+        fatos = fatos_numericos_do_chunk(_bradesco(self.PAINEL, "1T2026", 6))
+        for numero, tokens, _mod in fatos:
+            if abs(numero.valor - 0.216) < 1e-9 or numero.valor == 2_800_000_000.0:
+                assert not tokens & {"metrica_rentabilidade", "metrica_lucro"}
+
+    def test_rentabilidade_do_segmento_nao_vira_a_do_banco(self):
+        assert not _fundamenta_em(
+            _bradesco(self.PAINEL, "1T2026", 6),
+            "No 1T2026, o Bradesco apresentou ROAE de 21,6%.",
+        )
+
+    def test_painel_consolidado_antes_do_segmento_continua_valendo(self):
+        assert _fundamenta_em(
+            _bradesco(self.PAINEL, "1T2026", 6),
+            "No 1T2026, a inadimplência acima de 90 dias do Bradesco foi de 4,2%.",
+        )
+
+    def test_cabecalho_generico_reabre_o_painel(self):
+        chunk = _bradesco(self.PAINEL + "destaques 1T26\nROAE 1T26\n15,8%\n", "1T2026", 6)
+        assert _fundamenta_em(chunk, "No 1T2026, o ROAE do Bradesco foi de 15,8%.")
+
+    def test_legenda_de_unidade_nao_e_cabecalho_de_painel(self):
+        """`R$ milhões` classificada como segmento apagava a escala da tabela
+        (TSTF006 e TSTF012 caíam na reaplicação)."""
+        chunk = _chunk(
+            "R$ milhões\n"
+            "|  | 4T25 |\n"
+            "| --- | --- |\n"
+            "| Lucro líquido gerencial | 3.882 |\n"
+        )
+        assert _fundamenta_em(
+            chunk, "O lucro líquido gerencial no 4T25 foi de R$ 3.882 milhões."
+        )
+
+
+class TestCelulaQueNomeiaAMetrica:
+    """Coluna mesclada com PALAVRA (`| Desempenho | Retorno ... |`), TSTC008."""
+
+    TABELA = (
+        "Em R$ milhões (exceto onde indicado)\n"
+        "|   |  | 1T26 | 4T25 | 1T25  |\n"
+        "| --- | --- | --- | --- | --- |\n"
+        "|  BRF | Resultado Recorrente Gerencial | 12.282 | 12.317 | 11.128  |\n"
+        "|  Desempenho | Retorno Recorrente Gerencial sobre o Patrimônio Líquido "
+        "Médio anualizado - Consolidado ^{(3)} | 24,8% | 24,4% | 22,5%  |\n"
+    )
+
+    def _itau(self) -> Chunk:
+        return _chunk(
+            self.TABELA,
+            empresa="ITAU",
+            trimestre="1T2026",
+            documento="itau_release_1T2026",
+            pagina_inicio=5,
+            pagina_fim=5,
+        )
+
+    def test_retorno_sobre_patrimonio_ganha_a_metrica(self):
+        assert _fundamenta_em(
+            self._itau(),
+            "No 1T2026, o retorno recorrente gerencial sobre o patrimônio "
+            "líquido médio anualizado consolidado do Itaú foi de 24,8%.",
+        )
+
+    def test_contraprova_coluna_e_metrica_continuam_conferidas(self):
+        # 24,4% é a coluna do 4T25; 24,8% não é margem.
+        assert not _fundamenta_em(
+            self._itau(),
+            "No 1T2026, o retorno recorrente gerencial sobre o patrimônio "
+            "líquido do Itaú foi de 24,4%.",
+        )
+        assert not _fundamenta_em(
+            self._itau(), "No 1T2026, a margem financeira do Itaú foi de 24,8%."
+        )
+
+
+class TestIdentificadorDeDocumentoNaFrase:
+    """`no documento bb_release_2T2025` é metadado, não conteúdo (TSTF013)."""
+
+    CHUNK = (
+        "## Lucro Líquido Ajustado\n"
+        "R$ **3,8** bilhões - 2T25\n"
+    )
+
+    def _bb(self) -> Chunk:
+        return _chunk(
+            self.CHUNK,
+            empresa="BB",
+            trimestre="2T2025",
+            documento="bb_release_2T2025",
+            pagina_inicio=10,
+            pagina_fim=10,
+        )
+
+    @pytest.mark.parametrize(
+        "resposta",
+        [
+            "Segundo o Banco do Brasil, no documento bb_release_2T2025 (pág. 10), "
+            "o Lucro Líquido Ajustado foi de R$ 3,8 bilhões no 2T25.",
+            "Segundo o Banco do Brasil | bb_release_2T2025 | 2T2025 | pág. 10, "
+            "o Lucro Líquido Ajustado foi de R$ 3,8 bilhões no 2T25.",
+        ],
+    )
+    def test_identificador_copiado_nao_derruba_a_resposta(self, resposta: str):
+        assert _fundamenta_em(self._bb(), resposta)
+
+    def test_contraprova_numero_da_pagina_nao_vira_valor_nem_some_o_resto(self):
+        assert not _fundamenta_em(
+            self._bb(),
+            "Segundo o documento bb_release_2T2025, o Lucro Líquido Ajustado "
+            "foi de R$ 4,1 bilhões no 2T25.",
+        )

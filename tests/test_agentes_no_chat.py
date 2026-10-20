@@ -319,19 +319,23 @@ def _responder():
 
 
 class TestCotaDosAgentes:
+    """Os dublês aceitam `**_` desde 2026-10-20: o chat passa também
+    `ao_chamar`, o observador que mostra cada ferramenta na tela. Nenhuma
+    asserção mudou."""
+
     def test_resposta_debita_custo_e_uma_pergunta(self, st, monkeypatch):
-        monkeypatch.setattr(app, "responder_com_agentes", lambda p, orcamento_restante_usd: _item(0.012))
+        monkeypatch.setattr(app, "responder_com_agentes", lambda p, orcamento_restante_usd, **_: _item(0.012))
         assert _responder() is True
         assert (st.session_state.perguntas_livres_usadas, st.session_state.custo_usd_acumulado) == (1, 0.012)
         assert st.session_state.historico[-1]["rastro_agentes"] == ["Investigador · x"]
 
     def test_recusa_antes_do_provedor_nao_debita_cota(self, st, monkeypatch):
-        monkeypatch.setattr(app, "responder_com_agentes", lambda p, orcamento_restante_usd: _item(0.0, False))
+        monkeypatch.setattr(app, "responder_com_agentes", lambda p, orcamento_restante_usd, **_: _item(0.0, False))
         _responder()
         assert (st.session_state.perguntas_livres_usadas, st.session_state.custo_usd_acumulado) == (0, 0.0)
 
     def test_falha_depois_de_pagar_debita_o_que_foi_pago(self, st, monkeypatch):
-        def falha(p, orcamento_restante_usd):
+        def falha(p, orcamento_restante_usd, **_):
             raise app.FalhaConsultaAoVivo(0.004)
 
         monkeypatch.setattr(app, "responder_com_agentes", falha)
@@ -342,7 +346,7 @@ class TestCotaDosAgentes:
         assert all(m["papel"] != "user" for m in st.session_state.historico)
 
     def test_falha_sem_gasto_nao_debita_cota(self, st, monkeypatch):
-        def falha(p, orcamento_restante_usd):
+        def falha(p, orcamento_restante_usd, **_):
             raise app.FalhaConsultaAoVivo(0.0)
 
         monkeypatch.setattr(app, "responder_com_agentes", falha)
@@ -390,3 +394,147 @@ class TestCustoDosAgentes:
         )
         app.responder_com_agentes("Qual o ativo do Inter?", orcamento_restante_usd=0.37)
         assert tetos == [0.37]
+
+
+class TestProgressoDasFerramentas:
+    """A tela mostra cada ferramenta enquanto o agente trabalha (2026-10-20).
+
+    Os traces de 19/10 mostraram perguntas de 13 a 50 s atrás de um spinner
+    mudo. O observador recebe papel, ferramenta e desfecho, e nada dele pode
+    alterar o que o agente faz.
+    """
+
+    def test_avisa_inicio_e_fim_de_cada_chamada(self):
+        eventos = []
+        ferramentas = FerramentasDoAgente(
+            CaixaComModelo(), PAPEL_INVESTIGADOR, FERRAMENTAS_DO_PRODUTO,
+            ao_chamar=lambda *evento: eventos.append(evento),
+        )
+        ferramentas.executar("verificar_cobertura", entidade="Inter")
+        ferramentas.executar("consultar_cvm", sql="SELECT 1")
+        assert eventos == [
+            (PAPEL_INVESTIGADOR, "verificar_cobertura", "inicio"),
+            (PAPEL_INVESTIGADOR, "verificar_cobertura", "ok"),
+            (PAPEL_INVESTIGADOR, "consultar_cvm", "inicio"),
+            (PAPEL_INVESTIGADOR, "consultar_cvm", "ok"),
+        ]
+
+    def test_excecao_da_ferramenta_avisa_falha_e_continua_subindo(self):
+        class CaixaQueQuebra(CaixaComModelo):
+            def consultar_cvm(self, sql):
+                raise RuntimeError("painel indisponível")
+
+        eventos = []
+        ferramentas = FerramentasDoAgente(
+            CaixaQueQuebra(), PAPEL_AUDITOR, FERRAMENTAS_DO_PRODUTO,
+            ao_chamar=lambda *evento: eventos.append(evento),
+        )
+        with pytest.raises(RuntimeError):
+            ferramentas.executar("consultar_cvm", sql="SELECT 1")
+        assert eventos[-1] == (PAPEL_AUDITOR, "consultar_cvm", "falhou")
+
+    def test_observador_que_quebra_nao_muda_o_resultado(self):
+        def quebra(*_):
+            raise RuntimeError("tela fechada")
+
+        com = FerramentasDoAgente(
+            CaixaComModelo(), PAPEL_INVESTIGADOR, FERRAMENTAS_DO_PRODUTO, ao_chamar=quebra
+        )
+        sem = FerramentasDoAgente(CaixaComModelo(), PAPEL_INVESTIGADOR, FERRAMENTAS_DO_PRODUTO)
+        assert com.executar("verificar_cobertura", entidade="Inter") == sem.executar(
+            "verificar_cobertura", entidade="Inter"
+        )
+        assert len(com.chamadas) == len(sem.chamadas) == 1
+
+    def test_fabrica_do_produto_repassa_o_observador(self):
+        eventos = []
+        fabricar = agentes.fabrica_ferramentas_padrao(
+            Config(), nomes=FERRAMENTAS_DO_PRODUTO,
+            ao_chamar=lambda *evento: eventos.append(evento),
+        )
+        assert fabricar(PAPEL_AUDITOR)._ao_chamar is not None
+
+    def test_a_tela_mostra_papel_e_ferramenta_sem_argumentos(self):
+        class Quadro:
+            def __init__(self):
+                self.rotulos, self.linhas = [], []
+
+            def update(self, label=None, **_):
+                self.rotulos.append(label)
+
+            def write(self, texto):
+                self.linhas.append(texto)
+
+        quadro = Quadro()
+        avisar = app.observador_de_progresso(quadro)
+        avisar(PAPEL_INVESTIGADOR, "buscar_trechos", "inicio")
+        avisar(PAPEL_INVESTIGADOR, "buscar_trechos", "ok")
+        avisar(PAPEL_AUDITOR, "consultar_cvm", "falhou")
+        assert quadro.rotulos == ["Investigador · `buscar_trechos` em andamento…"]
+        assert quadro.linhas == [
+            "✅ Investigador · `buscar_trechos`",
+            "⚠️ Auditor · `consultar_cvm`",
+        ]
+
+
+class TestCaminhoAoVivoAquecido:
+    """O índice carrega na subida e não expira por tempo (2026-10-20)."""
+
+    def test_pipeline_so_recarrega_quando_o_indice_muda(self, monkeypatch):
+        construcoes = []
+        monkeypatch.setattr(
+            app, "_construir_pipeline_ao_vivo",
+            lambda identidade=None: construcoes.append(identidade) or ("r", "l", "e"),
+        )
+        assinatura = [(("metadados_construcao.json", 1, 1),)]
+        monkeypatch.setattr(app, "_assinatura_do_indice", lambda: assinatura[0])
+        app._pipeline_em_cache.clear()
+        app._pipeline_ao_vivo("ocr-1")
+        app._pipeline_ao_vivo("ocr-1")
+        assert construcoes == ["ocr-1"]
+        assinatura[0] = (("metadados_construcao.json", 1, 2),)
+        app._pipeline_ao_vivo("ocr-1")
+        assert construcoes == ["ocr-1", "ocr-1"]
+        app._pipeline_em_cache.clear()
+
+    def test_aquecimento_que_falha_nao_derruba_a_pagina(self, monkeypatch):
+        monkeypatch.setattr(app, "config", Config(embedding_provider="ollama"))
+
+        def explode(*_):
+            raise OSError("índice ausente")
+
+        monkeypatch.setattr(app, "_pipeline_ao_vivo", explode)
+        monkeypatch.setattr(
+            "src.indexacao.calcular_identidade_extracao", lambda config: "ocr"
+        )
+        app.aquecer_caminho_ao_vivo.clear()
+        tempos = app.aquecer_caminho_ao_vivo()
+        app.aquecer_caminho_ao_vivo.clear()
+        assert tempos["indice_e_embeddings"] == "falhou (OSError)"
+        assert isinstance(tempos["guardrails"], float)
+
+    def test_aquecimento_faz_uma_recuperacao_sem_llm(self, monkeypatch):
+        monkeypatch.setattr(app, "config", Config(embedding_provider="ollama"))
+        consultas = []
+
+        class Recuperador:
+            def recuperar(self, pergunta, estrategia):
+                consultas.append((pergunta, estrategia))
+                return []
+
+        class LLMQueNaoPodeSerChamado:
+            def gerar(self, *_args, **_kwargs):
+                raise AssertionError("aquecimento chamou o LLM")
+
+        monkeypatch.setattr(
+            app, "_pipeline_ao_vivo",
+            lambda identidade: (Recuperador(), LLMQueNaoPodeSerChamado(), "semantica"),
+        )
+        monkeypatch.setattr(
+            "src.indexacao.calcular_identidade_extracao", lambda config: "ocr"
+        )
+        app.aquecer_caminho_ao_vivo.clear()
+        tempos = app.aquecer_caminho_ao_vivo()
+        app.aquecer_caminho_ao_vivo.clear()
+        assert consultas == [("lucro líquido do trimestre", "semantica")]
+        assert isinstance(tempos["indice_e_embeddings"], float)

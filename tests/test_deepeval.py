@@ -388,6 +388,85 @@ class TestMedicao:
         assert r["taxa_concordancia"] == 0.5
 
 
+class TestCriterioDePeriodo:
+    """G-Eval de período e coluna (2026-10-20), fixado antes de qualquer rodada.
+
+    O faithfulness deu 1,0 ao número da coluna errada (TSTF006). O critério
+    novo só vale se o que ele mede for o que está escrito no código: passos
+    prontos, limiar fixo, uma chamada por caso.
+    """
+
+    MARCA = "Evaluation Steps:"
+
+    def test_padrao_continua_sendo_faithfulness_e_relevancia(self):
+        assert list(de.fabricas_de_metricas()) == [de.METRICA_FIDELIDADE, de.METRICA_RELEVANCIA]
+
+    def test_metrica_desconhecida_falha(self):
+        with pytest.raises(ValueError, match="desconhecida"):
+            de.fabricas_de_metricas(["coerencia"])
+
+    def test_uma_chamada_com_os_passos_escritos_no_codigo(self):
+        provedor = ProvedorRoteirizado({self.MARCA: {"score": 2, "reason": "coluna do 4T25"}})
+        caso = de.caso_do_registro(dict(_registro(), pergunta="Qual o lucro no 1T2026?"))
+        resultado = de.medir_caso(
+            caso, _juiz(provedor), fabricas=de.fabricas_de_metricas([de.METRICA_PERIODO])
+        )
+        assert resultado.erro is None, resultado.erro
+        assert len(provedor.prompts) == 1
+        assert all(passo in provedor.prompts[0] for passo in de.PASSOS_PERIODO)
+        periodo = resultado.metricas[de.METRICA_PERIODO]
+        # Nota 2 de 10 vira 0,2, abaixo do limiar pré-registrado.
+        assert periodo["score"] == pytest.approx(0.2) and periodo["sucesso"] is False
+        assert de.CHAMADAS_POR_METRICA[de.METRICA_PERIODO] == 1
+
+    def test_limiar_e_o_padrao_do_g_eval(self):
+        assert de.LIMIAR_PERIODO == 0.5
+
+    def test_agregado_so_traz_as_metricas_medidas(self):
+        caso = de.caso_do_registro(dict(_registro(), pergunta="p"))
+        bloco = de.agregar([de.ResultadoCaso(caso, {de.METRICA_PERIODO: {"score": 0.8}})])[
+            "por_desfecho"
+        ][de.DESFECHO_PUBLICADA]
+        assert de.METRICA_FIDELIDADE not in bloco
+        assert bloco[de.METRICA_PERIODO]["n_no_limiar"] == 1
+
+
+class TestRegraDaConcordancia:
+    """Com o período medido, a regra pré-registrada é faithfulness E período."""
+
+    def test_regras_calculaveis(self):
+        from scripts import avaliar_deepeval as script
+
+        so_fidelidade = script._regras({de.METRICA_FIDELIDADE: 1.0, de.METRICA_PERIODO: None})
+        assert so_fidelidade == {script.REGRA_FIDELIDADE: True}
+        ambas = script._regras({de.METRICA_FIDELIDADE: 1.0, de.METRICA_PERIODO: 0.2})
+        assert ambas == {
+            script.REGRA_FIDELIDADE: True,
+            script.REGRA_PERIODO: False,
+            script.REGRA_COMBINADA: False,
+        }
+        assert script.REGRAS_PRIMARIAS[0] == script.REGRA_COMBINADA
+
+    def test_fidelidade_lida_de_relatorio_anterior(self, tmp_path):
+        from scripts import avaliar_deepeval as script
+
+        anterior = tmp_path / "anterior.json"
+        anterior.write_text(json.dumps({"casos": [
+            {"pergunta_id": "TSTF006", "metricas": {de.METRICA_FIDELIDADE: {"score": 1.0}}},
+            {"pergunta_id": "TSTA002", "metricas": {}},
+        ]}), encoding="utf-8")
+        assert script._fidelidade_de(anterior) == {"TSTF006": 1.0}
+
+    def test_ensaio_do_periodo_conta_uma_chamada_por_caso(self, monkeypatch, capsys):
+        from scripts import avaliar_deepeval as script
+
+        config = Config(llm_provider="gemini", deepeval_modelo_juiz=Config().gemini_modelo_llm)
+        monkeypatch.setattr(script, "carregar_config", lambda: config)
+        monkeypatch.setattr(script.de, "fabricar_juiz", lambda *a, **k: pytest.fail("chamou"))
+        assert script.principal(["--metricas", de.METRICA_PERIODO]) == 0
+        assert "28 pontuados × 1 chamadas" in capsys.readouterr().out
+
+
 # --------------------------------------------------------------------------- #
 # 6. Nada sai pela biblioteca, e o script sem opt-in não chama ninguém
 # --------------------------------------------------------------------------- #
