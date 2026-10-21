@@ -67,6 +67,9 @@ números certos e algum ponto-chave faltando.
     recusadas pela RN02.
   - A DEV003, publicada em 19/10, foi recusada agora: o gerador não é
     determinístico mesmo a temperatura 0.
+  - Das 4 recusas, só a do DEV009 estava certa. As do DEV004 e do DEV008
+    foram corrigidas na guarda no mesmo dia, e a do DEV003 segue por outro
+    motivo (`resultados/recusas_dev_2026-10-20.md`).
 - **Langfuse.**
   - 17 dos 19 traces chegaram completos, e o custo no servidor bateu com o do
     app em todos.

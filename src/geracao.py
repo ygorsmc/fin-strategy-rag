@@ -22,7 +22,7 @@ from src.config import (
     endpoint_azure_openai_e_oficial,
     endpoint_gemini_e_oficial,
 )
-from src.ingestao import Chunk, _e_legenda_de_unidade
+from src.ingestao import _PADRAO_LEGENDA_UNIDADE, Chunk, _e_legenda_de_unidade
 from src.normalizacao import (
     APELIDOS_BANCOS,
     NumeroPtBR,
@@ -1255,18 +1255,83 @@ def _clausula_numerica_sem_conteudo_inventado(
     )
 
 
+# Palavras que afirmam direção. A frase pode tomar a palavra da pergunta, mas
+# a direção dela precisa estar na oração da evidência: "por que caiu?" sobre
+# um número que subiu é premissa falsa, não resposta.
+_DIRECAO_QUEDA = frozenset({
+    "queda", "quedas", "caiu", "cairam", "recuo", "recuou", "recuaram",
+    "reducao", "reducoes", "reduziu", "reduziram", "diminuicao", "diminuiu",
+    "diminuiram", "retracao", "retraiu", "piora", "piorou", "declinio",
+    "contracao", "baixa", "baixou", "encolheu", "encolhimento",
+})
+_DIRECAO_ALTA = frozenset({
+    "alta", "altas", "aumento", "aumentos", "aumentou", "aumentaram",
+    "crescimento", "cresceu", "cresceram", "avanco", "avancou", "avancaram",
+    "expansao", "expandiu", "elevacao", "elevou", "elevaram", "melhora",
+    "melhorou", "subiu", "subiram", "incremento",
+})
+
+
+def _direcoes(tokens: set[str]) -> set[str]:
+    direcoes = set()
+    if tokens & _DIRECAO_QUEDA:
+        direcoes.add("queda")
+    if tokens & _DIRECAO_ALTA:
+        direcoes.add("alta")
+    return direcoes
+
+
+def _escopo_da_oracao_compativel(clausula: str, oracao: str, chunk: Chunk) -> bool:
+    """Banco e trimestre da frase contra os da oração da evidência.
+
+    Quando a oração nomeia banco ou trimestre, os da frase têm de ser os mesmos.
+    Quando não nomeia, valem os do documento de onde ela saiu: a frase do
+    release do Santander do 1T2026 que diz "no trimestre" fala do Santander no
+    1T2026, e a resposta pode dizê-lo.
+    """
+    bancos_frase = set(extrair_bancos_citados(clausula))
+    bancos_oracao = set(extrair_bancos_citados(oracao))
+    if bancos_oracao:
+        if bancos_frase != bancos_oracao:
+            return False
+    elif not all(_mesma_empresa(banco, chunk.empresa) for banco in bancos_frase):
+        return False
+    periodos_frase = set(extrair_trimestres_citados(clausula))
+    periodos_oracao = set(extrair_trimestres_citados(oracao))
+    if periodos_oracao:
+        return periodos_frase == periodos_oracao
+    return periodos_frase <= {chunk.trimestre}
+
+
 def _texto_qualitativo_esta_fundamentado(
     resposta: str,
     chunks_citados: list[Chunk],
     *,
+    tokens_pergunta: set[str] | frozenset[str] = frozenset(),
     comparar_escopo: bool = True,
 ) -> bool:
-    linhas_evidencia = [
-        linha
+    """Frase sem número só passa se sair de UMA oração da evidência citada.
+
+    Toda palavra de conteúdo da frase que não vem da pergunta precisa estar na
+    mesma oração da evidência, com a mesma polaridade e a mesma direção (queda
+    × alta), e no escopo de banco e trimestre dela. A regra anterior exigia a
+    mesma sequência de palavras de uma linha inteira, com banco e trimestre
+    escritos nela, e só a cópia literal passava: a paráfrase fiel do DEV008
+    ("a queda trimestral da carteira... se deve especialmente à sazonalidade
+    em cartões e à variação cambial") era recusada (2026-10-20).
+
+    Exigir a MESMA oração, e não o vocabulário do trecho inteiro, é o que
+    impede montar uma afirmação nova com palavras de frases diferentes.
+    """
+    oracoes_evidencia = [
+        (oracao, chunk)
         for chunk in chunks_citados
         for linha in chunk.texto.splitlines()
         if linha.strip()
+        for oracao in dividir_em_clausulas(linha)
+        if oracao.strip()
     ]
+    radicais_pergunta = {_radical_flexional(token) for token in tokens_pergunta}
     encontrou_clausula = False
     for clausula in dividir_em_clausulas(resposta):
         sequencia = _sequencia_qualitativa(clausula)
@@ -1275,21 +1340,28 @@ def _texto_qualitativo_esta_fundamentado(
         encontrou_clausula = True
         if len(sequencia) < 2:
             return False
+        tokens = set(sequencia)
+        radicais = {_radical_flexional(token) for token in tokens}
+        proprios = radicais - radicais_pergunta
         negada = _tem_negacao(clausula)
-        if not any(
-            sequencia == _sequencia_qualitativa(linha)
-            and (
-                not comparar_escopo
-                or (
-                    extrair_bancos_citados(clausula)
-                    == extrair_bancos_citados(linha)
-                    and extrair_trimestres_citados(clausula)
-                    == extrair_trimestres_citados(linha)
-                )
+        direcoes = _direcoes(tokens)
+
+        def sustenta(oracao: str, chunk: Chunk) -> bool:
+            if _tem_negacao(oracao) != negada:
+                return False
+            if comparar_escopo and not _escopo_da_oracao_compativel(
+                clausula, oracao, chunk
+            ):
+                return False
+            tokens_oracao = _tokens_qualitativos(oracao)
+            radicais_oracao = {_radical_flexional(t) for t in tokens_oracao}
+            return (
+                proprios <= radicais_oracao
+                and len(radicais & radicais_oracao) >= 2
+                and direcoes <= _direcoes(tokens_oracao)
             )
-            and negada == _tem_negacao(linha)
-            for linha in linhas_evidencia
-        ):
+
+        if not any(sustenta(oracao, chunk) for oracao, chunk in oracoes_evidencia):
             return False
     return encontrou_clausula
 
@@ -1335,6 +1407,49 @@ class _FatoNumerico:
     periodo: str | None
 
 
+_PADRAO_BASE_DE_COMPARACAO = re.compile(
+    r"\b(?:ante|frente\s+(?:a|ao|aos|as)|em\s+relacao\s+(?:a|ao|aos|as)|"
+    r"na\s+comparacao\s+com|comparad[oa]s?\s+(?:a|ao|aos|as|com))"
+    r"\s+(?:(?:o|a|os|as)\s+)?"
+)
+_PADRAO_FIM_DA_BASE = re.compile(r"[,;?!]|\s+(?:e|no|na|em)\s+")
+
+
+def _ordem_do_trimestre(periodo: str) -> tuple[int, int]:
+    achado = re.fullmatch(r"([1-4])T(\d{4})", periodo)
+    return (int(achado.group(2)), int(achado.group(1))) if achado else (0, 0)
+
+
+def _periodos_base_de_comparacao(
+    pergunta: str, periodos: tuple[str, ...]
+) -> set[str]:
+    """Períodos que a pergunta só usa como base de uma variação.
+
+    Em "por que o NPL aumentou no 1T2026 ante o 4T2025?", o 4T2025 é a base da
+    comparação, e o release do 1T2026 já a traz. Exigir citação de um documento
+    do 4T2025 recusava a resposta certa (DEV004, 2026-10-20). Só conta como
+    base o período escrito logo depois da preposição de comparação e anterior
+    a outro período que a pergunta pede; "no 1T2026 e no 4T2025" pede os dois.
+    """
+    normalizada = remover_acentos(pergunta).casefold()
+    candidatos: set[str] = set()
+    for achado in _PADRAO_BASE_DE_COMPARACAO.finditer(normalizada):
+        trecho = _PADRAO_FIM_DA_BASE.split(normalizada[achado.end() :], maxsplit=1)[0]
+        lidos = extrair_trimestres_citados(trecho[:40])
+        if len(lidos) == 1:
+            candidatos.add(lidos[0])
+    pedidos = [periodo for periodo in periodos if periodo not in candidatos]
+    return {
+        base
+        for base in candidatos
+        if base in periodos
+        and any(
+            _ordem_do_trimestre(pedido) > _ordem_do_trimestre(base)
+            for pedido in pedidos
+        )
+    }
+
+
 def _escopo_solicitado_esta_coberto(
     pergunta: str,
     citacoes: tuple[Citacao, ...],
@@ -1347,7 +1462,11 @@ def _escopo_solicitado_esta_coberto(
 
     filtro = extrair_filtro_metadados(pergunta, config.bancos)
     bancos = filtro.empresas
-    periodos = filtro.trimestres
+    # A base de uma variação ("ante o 4T2025") pode aparecer na resposta, mas
+    # não precisa de citação nem de afirmação própria.
+    periodos_mencionados = filtro.trimestres
+    bases = _periodos_base_de_comparacao(pergunta, periodos_mencionados)
+    periodos = tuple(p for p in periodos_mencionados if p not in bases)
     pares_citados = {(citacao.empresa, citacao.trimestre) for citacao in citacoes}
     if bancos and periodos:
         citacoes_cobrem = all(
@@ -1368,7 +1487,8 @@ def _escopo_solicitado_esta_coberto(
     bancos_resposta = set(extrair_bancos_citados(resposta_texto))
     periodos_resposta = set(extrair_trimestres_citados(resposta_texto))
     if (bancos and not bancos_resposta <= set(bancos)) or (
-        periodos and not periodos_resposta <= set(periodos)
+        periodos_mencionados
+        and not periodos_resposta <= set(periodos_mencionados)
     ):
         return False
     # A recusa em bloco de todo período abreviado ("2T25") saiu em 2026-08-20.
@@ -1380,7 +1500,9 @@ def _escopo_solicitado_esta_coberto(
     # A mesma correção já tinha sido feita na guarda da RN02 e ficou faltando
     # aqui.
     anos_pergunta = {
-        ano for periodo in periodos for ano in re.findall(r"20\d{2}", periodo)
+        ano
+        for periodo in periodos_mencionados
+        for ano in re.findall(r"20\d{2}", periodo)
     }
     anos_resposta = set(re.findall(r"\b20\d{2}\b", resposta_texto))
     if anos_pergunta and anos_resposta and not anos_resposta <= anos_pergunta:
@@ -2035,6 +2157,21 @@ def _fatos_numericos_da_linha(
     return fatos
 
 
+def _unidade_da_legenda(linha: str) -> str:
+    """Só a unidade da legenda ("Em r$ milhoes"), sem o resto da linha.
+
+    A unidade é colada à célula da tabela para tipar o número. A linha inteira
+    levava junto o que mais houvesse nela, e "Brasil¹ (em R$ milhões, ao final
+    do período)" carrega a marca de nota de rodapé que faz o parser recusar o
+    texto todo: a tabela do segmento saía sem escala (DEV003, 2026-10-20).
+
+    Fica aqui, e não em `src/ingestao.py`, porque o código da ingestão entra na
+    identidade do índice (RNF09): mudar lá invalidaria o índice construído.
+    """
+    achado = _PADRAO_LEGENDA_UNIDADE.search(remover_acentos(linha).casefold())
+    return f"Em {achado.group(0)}" if achado else linha
+
+
 def fatos_numericos_do_chunk(
     chunk: Chunk, trimestre_alvo: str | None = None
 ) -> list[tuple[NumeroPtBR, set[str], set[str]]]:
@@ -2104,7 +2241,7 @@ def fatos_numericos_do_chunk(
         if not valor_de_painel:
             em_segmento = False
         if _e_legenda_de_unidade(linha):
-            legenda_vigente = linha
+            legenda_vigente = _unidade_da_legenda(linha)
         # O cabeçalho é a linha imediatamente acima do separador `| --- |`.
         if _e_separador_de_tabela(linha) and indice_linha > 0:
             cabecalho = linhas_do_chunk[indice_linha - 1]
@@ -2306,8 +2443,13 @@ def numeros_da_resposta_estao_fundamentados(
     chunks_recuperados: list[Chunk],
     tolerancia_pct: float,
     pergunta: str = "",
+    *,
+    diagnostico: list[str] | None = None,
 ) -> bool:
     """Garante que cada valor financeiro respondido aparece na evidência citada.
+
+    ``diagnostico``, quando passado, recebe ``"afirmacao"`` se a recusa vier de
+    uma frase sem número, para que o motivo mostrado diga o que falhou.
 
     A guarda de subconjunto prova apenas que a página foi recuperada; sozinha,
     ela permitiria citar uma página válida e inventar ``R$ 999 bilhões``. Esta
@@ -2448,9 +2590,13 @@ def numeros_da_resposta_estao_fundamentados(
                     clausula, fatos_anteriores, tolerancia_pct
                 )
                 or _texto_qualitativo_esta_fundamentado(
-                    clausula, chunks_citados
+                    clausula,
+                    chunks_citados,
+                    tokens_pergunta=vocabulario_pergunta,
                 )
             ):
+                if diagnostico is not None:
+                    diagnostico.append("afirmacao")
                 return False
             continue
         normalizada_formula = remover_acentos(clausula).casefold().strip()
@@ -2791,6 +2937,8 @@ def aplicar_guardas_pos_llm(
         return resposta
 
     if not resposta.recusa:
+        # A guarda numérica diz aqui se recusou por frase sem número.
+        diagnostico: list[str] = []
         if not resposta.citacoes:
             resposta = RespostaGerada(
                 resposta=None,
@@ -2820,12 +2968,16 @@ def aplicar_guardas_pos_llm(
             chunks,
             config.tolerancia_numerica_pct,
             pergunta,
+            diagnostico=diagnostico,
         ):
             resposta = RespostaGerada(
                 resposta=None,
                 recusa=True,
                 motivo_recusa=(
-                    "Rebaixada por RN02: ao menos um valor numérico da resposta "
+                    "Rebaixada por RN02: ao menos uma afirmação da resposta "
+                    "não aparece nos trechos citados."
+                    if "afirmacao" in diagnostico
+                    else "Rebaixada por RN02: ao menos um valor numérico da resposta "
                     "não aparece nos trechos citados."
                 ),
                 citacoes=(),

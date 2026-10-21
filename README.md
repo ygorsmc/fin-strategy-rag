@@ -105,9 +105,10 @@ entre duas estratégias foi 4 ([comparações](resultados/)). A exatidão é bai
 porque o sistema recusa quando não consegue fundamentar o número: na estratégia
 semântica, que é a do chat, 10 respostas foram publicadas, 17 foram recusas do
 próprio modelo e 18 rascunhos foram descartados pela verificação numérica.
-Depois da correção de 20/10, reaplicada às mesmas respostas gravadas, a
-semântica publica 14, sem nenhuma errada a mais
-([ajustes](resultados/ajustes_etapa2_2026-10-20.md)).
+Depois das correções de 20/10, reaplicadas às mesmas respostas gravadas, a
+semântica publica 15, sem nenhuma errada a mais
+([ajustes](resultados/ajustes_etapa2_2026-10-20.md),
+[recusas das perguntas de desenvolvimento](resultados/recusas_dev_2026-10-20.md)).
 
 ### Segurança
 
@@ -172,7 +173,7 @@ Extras opcionais: `requirements-modelo.txt` (treino do modelo),
 `requirements-deepeval.txt` (instale com `pip install --no-deps -r`; o arquivo
 explica por quê).
 
-**Testes.** `pytest -q` roda 2.189 casos sem nenhuma chamada externa. Num clone
+**Testes.** `pytest -q` roda 2.212 casos sem nenhuma chamada externa. Num clone
 recém-feito, 4 deles ficam pulados até o índice e o painel de treino existirem.
 
 **Dados.** Os PDFs e os ZIPs da CVM não vão para o Git; os manifestos guardam

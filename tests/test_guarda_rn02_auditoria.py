@@ -14,12 +14,15 @@ import pytest
 from src.config import Config
 from src.geracao import (
     Citacao,
+    RespostaGerada,
     _clausula_numerica_sem_conteudo_inventado,
+    _escopo_solicitado_esta_coberto,
     _GRUPOS_PERCENTUAIS,
     _numero_tem_dimensao_de_metrica,
     _radical_flexional,
     _rotulo_de_destaque,
     _tokens_qualitativos,
+    aplicar_guardas_pos_llm,
     dividir_em_clausulas,
     fatos_numericos_do_chunk,
     numeros_da_resposta_estao_fundamentados,
@@ -532,4 +535,274 @@ class TestIdentificadorDeDocumentoNaFrase:
             self._bb(),
             "Segundo o documento bb_release_2T2025, o Lucro Líquido Ajustado "
             "foi de R$ 4,1 bilhões no 2T25.",
+        )
+
+
+# Três correções de 2026-10-20, das perguntas livres `dev` recusadas na rodada
+# real pelo app (`resultados/recusas_dev_2026-10-20.md`). As perguntas são de
+# desenvolvimento: corrigir a partir delas não toca as 45 congeladas.
+
+
+class TestPeriodoBaseDaComparacao:
+    """`ante o 4T2025` é a base da variação, não um período pedido (DEV004).
+
+    O release do 1T2026 já compara com o trimestre anterior. Exigir citação de
+    um documento do 4T2025 recusava a resposta certa, que citava a página do
+    1T2026 onde a comparação está. Os números continuam conferidos contra o
+    trecho citado pela guarda numérica; só a exigência de citação muda.
+    """
+
+    PERGUNTA = (
+        "Segundo a análise gerencial do Itaú Unibanco por que o NPL total de "
+        "15 a 90 dias aumentou no 1T2026 ante o 4T2025?"
+    )
+    RESPOSTA = (
+        "No Itaú Unibanco, o índice de inadimplência entre 15 e 90 dias "
+        "(NPL 15-90) total aumentou em relação ao trimestre anterior devido ao "
+        "crescimento de 0,23 p.p. no índice da carteira de pessoas físicas no "
+        "Brasil, por conta da sazonalidade típica do período."
+    )
+
+    @staticmethod
+    def _citacao(trimestre: str = "1T2026") -> tuple[Citacao, ...]:
+        return (Citacao("ITAU", f"itau_release_{trimestre}", trimestre, 14),)
+
+    def test_base_da_comparacao_nao_exige_citacao_propria(self):
+        assert _escopo_solicitado_esta_coberto(
+            self.PERGUNTA, self._citacao(), Config(), self.RESPOSTA
+        )
+
+    @pytest.mark.parametrize(
+        "base",
+        [
+            "em relação ao 4T2025",
+            "frente ao 4T25",
+            "na comparação com o 4T2025",
+            "comparado ao quarto trimestre de 2025",
+        ],
+    )
+    def test_outras_formas_de_escrever_a_base(self, base: str):
+        pergunta = f"Por que o NPL do Itaú aumentou no 1T2026 {base}?"
+        assert _escopo_solicitado_esta_coberto(
+            pergunta, self._citacao(), Config(), self.RESPOSTA
+        )
+
+    def test_contraprova_dois_periodos_pedidos_continuam_exigidos(self):
+        assert not _escopo_solicitado_esta_coberto(
+            "Qual foi o NPL de 15 a 90 dias do Itaú no 1T2026 e no 4T2025?",
+            self._citacao(),
+            Config(),
+        )
+
+    def test_contraprova_base_posterior_nao_e_base(self):
+        # O release do 4T2025 não traz o 1T2026: só é base o período anterior
+        # a outro que a pergunta pede.
+        assert not _escopo_solicitado_esta_coberto(
+            "Por que o NPL do Itaú mudou no 4T2025 ante o 1T2026?",
+            self._citacao("4T2025"),
+            Config(),
+        )
+
+    def test_contraprova_periodo_pedido_segue_exigido(self):
+        assert not _escopo_solicitado_esta_coberto(
+            self.PERGUNTA, self._citacao("4T2025"), Config(), self.RESPOSTA
+        )
+
+    def test_contraprova_resposta_nao_pode_trocar_de_trimestre(self):
+        assert not _escopo_solicitado_esta_coberto(
+            self.PERGUNTA,
+            self._citacao(),
+            Config(),
+            "No 3T2025, o NPL de 15 a 90 dias do Itaú subiu 0,23 p.p.",
+        )
+
+    def test_mencao_a_trimestre_anterior_nao_vira_base(self):
+        # "em relação ao trimestre anterior, no 1T2026" não nomeia período
+        # depois da preposição: o 1T2026 continua sendo o pedido.
+        assert not _escopo_solicitado_esta_coberto(
+            "Quanto o NPL do Itaú subiu em relação ao trimestre anterior, "
+            "no 1T2026?",
+            self._citacao("4T2025"),
+            Config(),
+        )
+
+
+class TestParafraseQualitativaFiel:
+    """Frase sem número que reescreve uma oração da evidência (DEV008).
+
+    A regra anterior exigia a mesma sequência de palavras de uma LINHA inteira
+    do trecho, com o mesmo banco e o mesmo trimestre escritos nela. O release
+    diz "A redução no trimestre se deve especialmente à sazonalidade em cartões
+    e à variação cambial", e a resposta certa, "a queda trimestral da carteira
+    ... no 1T2026 se deve especialmente à sazonalidade em cartões e à variação
+    cambial", era recusada. A regra nova: toda palavra de conteúdo que não vem
+    da pergunta sai da MESMA oração da evidência; banco e trimestre não escritos
+    na oração vêm do documento citado; negação e direção (queda × alta) batem.
+    """
+
+    EVIDENCIA = (
+        "A carteira de crédito ampliada recuou 0,4% no trimestre, porém com "
+        "avanço de 3,4% no ano, encerrando o período em R$ 705.582 milhões. "
+        "A redução no trimestre se deve especialmente à sazonalidade em cartões "
+        "e à variação cambial. As despesas seguem sob rigoroso controle, "
+        "estáveis no trimestre e com incremento de 0,9% no ano."
+    )
+    PERGUNTA = (
+        "Segundo o Santander quais fatores explicaram a queda trimestral e o "
+        "crescimento anual da carteira de crédito ampliada no 1T2026?"
+    )
+
+    def _santander(self) -> Chunk:
+        return _chunk(
+            self.EVIDENCIA,
+            trimestre="1T2026",
+            documento="santander_release_1T2026",
+        )
+
+    def test_parafrase_fiel_com_moldura_da_pergunta(self):
+        assert _fundamenta_em(
+            self._santander(),
+            "Segundo o Santander, a queda trimestral da carteira de crédito "
+            "ampliada no 1T2026 se deve especialmente à sazonalidade em cartões "
+            "e à variação cambial.",
+            self.PERGUNTA,
+        )
+
+    def test_contraprova_direcao_trocada_com_palavra_da_pergunta(self):
+        # "crescimento" é palavra da pergunta, mas a oração da evidência fala
+        # em redução: premissa falsa não vira resposta.
+        assert not _fundamenta_em(
+            self._santander(),
+            "O crescimento trimestral da carteira se deve especialmente à "
+            "sazonalidade em cartões e à variação cambial.",
+            self.PERGUNTA,
+        )
+
+    def test_contraprova_juntar_duas_oracoes_da_evidencia(self):
+        assert not _fundamenta_em(
+            self._santander(),
+            "A redução no trimestre se deve especialmente ao rigoroso controle "
+            "das despesas.",
+            self.PERGUNTA,
+        )
+
+    def test_contraprova_atribuir_a_outro_banco(self):
+        assert not _fundamenta_em(
+            self._santander(),
+            "Segundo o Itaú, a queda trimestral da carteira se deve "
+            "especialmente à sazonalidade em cartões e à variação cambial.",
+            self.PERGUNTA,
+        )
+
+    def test_contraprova_atribuir_a_outro_trimestre(self):
+        assert not _fundamenta_em(
+            self._santander(),
+            "No 4T2025, a queda trimestral da carteira se deve especialmente à "
+            "sazonalidade em cartões e à variação cambial.",
+            self.PERGUNTA,
+        )
+
+    def test_contraprova_negacao(self):
+        assert not _fundamenta_em(
+            self._santander(),
+            "A redução no trimestre não se deve à sazonalidade em cartões nem "
+            "à variação cambial.",
+            self.PERGUNTA,
+        )
+
+    def test_contraprova_palavra_inventada(self):
+        assert not _fundamenta_em(
+            self._santander(),
+            "A queda trimestral se deve especialmente à sazonalidade em cartões "
+            "e à alta da inadimplência.",
+            self.PERGUNTA,
+        )
+
+
+class TestMotivoDaRecusaQualitativa:
+    """A recusa de frase sem número dizia que "um valor numérico" não aparecia
+    no trecho (DEV008). O motivo agora nomeia o que falhou; a decisão não muda."""
+
+    CHUNK = _chunk(
+        "A redução no trimestre se deve especialmente à sazonalidade em "
+        "cartões. O lucro foi de R$ 3.788 milhões.",
+        trimestre="1T2026",
+        documento="santander_release_1T2026",
+    )
+
+    def _aplicar(self, texto: str) -> RespostaGerada:
+        citacao = Citacao("SANTANDER", "santander_release_1T2026", "1T2026", 3)
+        return aplicar_guardas_pos_llm(
+            RespostaGerada(
+                resposta=texto, recusa=False, motivo_recusa=None, citacoes=(citacao,)
+            ),
+            "O que explicou a queda da carteira do Santander no 1T2026?",
+            [self.CHUNK],
+            Config(),
+        )
+
+    def test_afirmacao_sem_numero_tem_motivo_proprio(self):
+        final = self._aplicar("A queda se deve à fraude contábil descoberta.")
+        assert final.recusa
+        assert "afirmação" in final.motivo_recusa
+        assert "valor numérico" not in final.motivo_recusa
+
+    def test_numero_sem_lastro_mantem_o_motivo_numerico(self):
+        final = self._aplicar("O lucro foi de R$ 9.999 milhões.")
+        assert final.recusa
+        assert "valor numérico" in final.motivo_recusa
+
+
+class TestLegendaComNotaDeRodape:
+    """`Brasil¹ (em R$ milhões, ao final do período)` dá a escala à tabela (DEV003).
+
+    A legenda era colada inteira ao número para dar unidade à célula, e o
+    sobrescrito da nota de rodapé ("¹") faz o parser recusar o texto todo:
+    a margem do segmento Brasil, R$ 28.550 milhões, saía sem unidade e não
+    fundamentava a resposta. A legenda vigente agora guarda só a unidade.
+    """
+
+    TABELA = (
+        "Brasil¹ (em R$ milhões, ao final do período)\n"
+        "|   | 3T25 | 2T25 | Δ |\n"
+        "| --- | --- | --- | --- |\n"
+        "|  Margem Financeira Gerencial | 28.550 | 28.327 | 0,8% |\n"
+    )
+
+    def _itau(self) -> Chunk:
+        return _chunk(
+            self.TABELA,
+            empresa="ITAU",
+            trimestre="3T2025",
+            documento="itau_release_3T2025",
+            pagina_inicio=26,
+            pagina_fim=26,
+        )
+
+    def test_valor_da_tabela_ganha_a_escala_da_legenda(self):
+        valores = {
+            (numero.valor, numero.dimensao)
+            for numero, _, _ in fatos_numericos_do_chunk(self._itau(), "3T2025")
+        }
+        assert (28_550_000_000.0, "monetario") in valores
+
+    def test_resposta_com_o_valor_da_tabela_se_fundamenta(self):
+        assert _fundamenta_em(
+            self._itau(),
+            "A Margem Financeira Gerencial no Brasil no 3T2025 foi de "
+            "R$ 28.550 milhões.",
+        )
+
+    def test_contraprova_coluna_de_outro_trimestre(self):
+        assert not _fundamenta_em(
+            self._itau(),
+            "A Margem Financeira Gerencial no Brasil no 3T2025 foi de "
+            "R$ 28.327 milhões.",
+        )
+
+    def test_contraprova_escala_errada(self):
+        assert not _fundamenta_em(
+            self._itau(),
+            "A Margem Financeira Gerencial no Brasil no 3T2025 foi de "
+            "R$ 28.550 mil.",
         )

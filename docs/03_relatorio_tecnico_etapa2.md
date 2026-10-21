@@ -84,7 +84,7 @@ Contra a minha auditoria humana, feita às cegas, o DeepEval concordou em 4 de 1
 
 ## Pontos fracos e ajustes
 
-O ponto fraco mais caro era a guarda de evidência descartar respostas corretas: 9 dos 18 rascunhos descartados eram fiéis aos trechos. Suspeitei de arredondamento, mas o release imprime valores como "R$ 6,1 bi" em infográficos que o OCR quebra em linhas soltas, e a guarda separava o número da métrica. Com a leitura corrigida, as mesmas respostas gravadas renderam 14 publicações em vez de 10, sem nenhuma errada a mais. O ganho, porém, foi medido nas perguntas que revelaram o defeito, e seguem descartadas três respostas que a auditoria humana julgou certas.
+O ponto fraco mais caro era a guarda de evidência descartar respostas corretas: 9 dos 18 rascunhos descartados eram fiéis aos trechos. Suspeitei de arredondamento, mas o release imprime valores como "R$ 6,1 bi" em infográficos que o OCR quebra em linhas soltas, e a guarda separava o número da métrica. Com a leitura corrigida e outros três ajustes, achados nas perguntas de desenvolvimento, as mesmas respostas gravadas renderam 15 publicações em vez de 10, sem nenhuma errada a mais. O ganho, porém, foi medido nas perguntas que revelaram o defeito, e seguem descartadas três respostas que a auditoria humana julgou certas.
 
 Na primeira rodada real dos agentes, em 19/10, o Investigador chamou de "margem financeira" R$ 17,2 bilhões de despesas do Itaú, e o Auditor confirmou a resposta do Inter sem consultar o modelo citado. O código passou a exigir o número sob a mesma métrica e a reconsulta de cada fonte, e em 20/10 a mesma pergunta trouxe a margem correta, R$ 31.382 milhões.
 
