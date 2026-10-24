@@ -735,6 +735,7 @@ def responder_prospectiva_se_couber(pergunta: str) -> dict | None:
             "modo": "desambiguação (RN11, nenhuma chamada externa)",
             "provedor": "—",
             "custo_usd": 0.0,
+            "opcoes_desambiguacao": _opcoes(resolucao.candidatas),
         }
     companhia = resolucao.resolvida
     if companhia is None:
@@ -960,8 +961,19 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
             "consumiu_chamada": False,
         }
 
+    opcoes_desambiguacao = []
     if resposta.precisa_desambiguacao:
         modo = "painel CVM · desambiguação (RN11, nenhuma chamada externa)"
+        # Uma pergunta por vez: com dois nomes ambíguos, a escolha do primeiro
+        # volta com o segundo ainda por escolher.
+        opcoes_desambiguacao = next(
+            (
+                _opcoes(triagem.resolucao.candidatas)
+                for triagem in resposta.triagens
+                if triagem.precisa_desambiguacao
+            ),
+            [],
+        )
     elif resposta.recusa:
         modo = "painel CVM · recusa classificada (RN12, nenhuma chamada externa)"
     else:
@@ -1007,6 +1019,7 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
         "provedor": "—",
         "custo_usd": 0.0,
         "consumiu_chamada": False,
+        "opcoes_desambiguacao": opcoes_desambiguacao,
     }
 
 
@@ -1241,6 +1254,7 @@ def _mensagem_do_painel(item: dict) -> dict:
         "citacoes": item.get("citacoes", []),
         "modo": item["modo"],
         "provedor": item["provedor"],
+        "opcoes_desambiguacao": item.get("opcoes_desambiguacao", []),
         "streamar": True,
     }
 
@@ -1769,10 +1783,12 @@ def _escolher_exemplo(chave: str, exemplos: dict[str, str], modo: str) -> None:
         st.session_state.exemplo_pendente = (modo, exemplos[rotulo])
 
 
-def _exemplos_clicaveis(exemplos, modo: str, chave: str) -> None:
+def _exemplos_clicaveis(
+    exemplos, modo: str, chave: str, rotulo: str = "Exemplos"
+) -> None:
     mapa = dict(exemplos)
     st.pills(
-        "Exemplos",
+        rotulo,
         list(mapa),
         key=chave,
         on_change=_escolher_exemplo,
@@ -1781,8 +1797,79 @@ def _exemplos_clicaveis(exemplos, modo: str, chave: str) -> None:
     )
 
 
+_PADRAO_OPCAO_DE_DESAMBIGUACAO = re.compile(r"([^:;]+?)\s*\(CD_CVM (\d{6})\)")
+_PADRAO_SO_CODIGO = re.compile(r"(?:cd[_\s]?cvm\s*:?\s*)?(\d{1,6})", re.IGNORECASE)
+
+
+def _opcoes(candidatas) -> list[dict]:
+    return [{"cd_cvm": c.cd_cvm, "nome": c.denom_social} for c in candidatas]
+
+
+def opcoes_no_texto(texto: str) -> list[dict]:
+    """Candidatas escritas como `NOME (CD_CVM 000000)`, na ordem do texto.
+
+    É o formato de `Companhia.rotulo`, que a pergunta de desambiguação usa. Só
+    serve aos agentes, cujo texto vem do modelo; as rotas do painel entregam
+    as candidatas prontas.
+    """
+    opcoes: list[dict] = []
+    for casado in _PADRAO_OPCAO_DE_DESAMBIGUACAO.finditer(texto or ""):
+        opcao = {"cd_cvm": casado.group(2), "nome": casado.group(1).strip()}
+        if opcao["cd_cvm"] not in {o["cd_cvm"] for o in opcoes}:
+            opcoes.append(opcao)
+    return opcoes if len(opcoes) > 1 else []
+
+
+def escolhas_de_desambiguacao(historico) -> dict[str, str]:
+    """Rótulo de cada candidata → a pergunta original com o código escolhido.
+
+    A pergunta de desambiguação pedia "responda com o CD_CVM", e a resposta
+    chegava sozinha: cada mensagem era tratada isolada, e "022616" virava
+    "nenhuma companhia identificada". A escolha agora refaz a pergunta anterior
+    com o código, que a extração de menções aceita no lugar do nome ambíguo.
+    Só a última mensagem vale: escolha antiga não reabre conversa encerrada.
+    """
+    if not historico or historico[-1].get("papel") != "assistant":
+        return {}
+    opcoes = historico[-1].get("opcoes_desambiguacao") or []
+    anteriores = [m for m in historico[:-1] if m.get("papel") == "user"]
+    if not opcoes or not anteriores:
+        return {}
+    original = anteriores[-1]["conteudo"]
+    return {
+        f"{opcao['nome']} (CD_CVM {opcao['cd_cvm']})": (
+            f"{original} (CD_CVM {opcao['cd_cvm']})"
+        )
+        for opcao in opcoes
+    }
+
+
+def completar_escolha(pergunta: str, historico) -> str:
+    """Resposta digitada à desambiguação: o código sozinho vira a escolha.
+
+    Qualquer outro texto é pergunta nova e segue como está, inclusive código
+    que não está entre as candidatas.
+    """
+    casado = _PADRAO_SO_CODIGO.fullmatch(pergunta.strip().rstrip("."))
+    escolhas = escolhas_de_desambiguacao(historico)
+    if casado is None or not escolhas:
+        return pergunta
+    codigo = casado.group(1).zfill(6)
+    return next(
+        (
+            combinada
+            for rotulo, combinada in escolhas.items()
+            if rotulo.endswith(f"(CD_CVM {codigo})")
+        ),
+        pergunta,
+    )
+
+
 def pergunta_do_turno(
-    digitada: str | None, modo: str, pendente: tuple[str, str] | None
+    digitada: str | None,
+    modo: str,
+    pendente: tuple[str, str] | None,
+    historico=(),
 ) -> str | None:
     """O que o usuário pediu neste turno: o texto digitado ou o exemplo clicado.
 
@@ -1791,10 +1878,11 @@ def pergunta_do_turno(
     descartado, para que trocar de modo não dispare a pergunta do anterior. O
     pendente é retirado da sessão uma vez por execução, antes dos ramos de
     modo: um ramo que não chega ao campo de pergunta (painel ausente) não pode
-    deixá-lo guardado para disparar depois.
+    deixá-lo guardado para disparar depois. A escolha numa desambiguação chega
+    como pendente, e o código digitado passa por `completar_escolha`.
     """
     if digitada:
-        return digitada
+        return completar_escolha(digitada, historico)
     if pendente and pendente[0] == modo:
         return pendente[1]
     return None
@@ -2058,6 +2146,13 @@ def responder_com_agentes(
         "consumiu_chamada": orcamento.chamadas > 0,
         "modo": "agentes · Investigador + Auditor",
         "provedor": f"{config.llm_provider}/{resposta.uso.modelo or '—'}",
+        # O texto dos agentes vem do modelo; as candidatas saem dele só quando
+        # ele repete o formato `NOME (CD_CVM 000000)` da ferramenta de cobertura.
+        "opcoes_desambiguacao": (
+            opcoes_no_texto(resposta.resposta or "")
+            if resposta.precisa_desambiguacao
+            else []
+        ),
     }
 
 
@@ -2165,7 +2260,8 @@ apresentar_modo(
     cache_aguarda_auditoria=cache_aguarda_auditoria,
 )
 
-for msg in st.session_state.historico:
+escolhas_pendentes = escolhas_de_desambiguacao(st.session_state.historico)
+for posicao, msg in enumerate(st.session_state.historico, start=1):
     with st.chat_message(msg["papel"]):
         # `pop`: a mensagem transmite uma vez, na primeira renderização depois
         # de ter sido produzida. Sem isso, todo rerun (clique, troca de modo)
@@ -2174,6 +2270,13 @@ for msg in st.session_state.historico:
             st.write_stream(_fluxo_de_texto(_escapar_cifrao(msg["conteudo"])))
         else:
             st.markdown(_escapar_cifrao(msg["conteudo"]))
+        if escolhas_pendentes and posicao == len(st.session_state.historico):
+            _exemplos_clicaveis(
+                tuple(escolhas_pendentes.items()),
+                modo,
+                f"escolha_{posicao}",
+                rotulo="Companhias candidatas",
+            )
         if msg.get("fontes"):
             with st.expander(
                 "Trechos recuperados — os marcados com ✅ foram citados na resposta"
@@ -2270,6 +2373,9 @@ def responder_no_chat(pergunta: str, rastro: observabilidade.Observacao) -> bool
                 "fontes": item_projecao.get("fontes", []),
                 "modo": item_projecao["modo"],
                 "provedor": item_projecao["provedor"],
+                "opcoes_desambiguacao": item_projecao.get(
+                    "opcoes_desambiguacao", []
+                ),
                 "streamar": True,
             }
         )
@@ -2479,6 +2585,7 @@ def responder_no_chat_com_agentes(
             "fontes": [],
             "modo": item["modo"],
             "provedor": item["provedor"],
+            "opcoes_desambiguacao": item.get("opcoes_desambiguacao", []),
             "streamar": True,
         }
     )
@@ -2499,7 +2606,9 @@ if modo == MODO_DEMONSTRACAO:
             "do Brasil no 4T2025)",
             key="entrada_painel",
         )
-        pergunta_painel = pergunta_do_turno(pergunta_painel, modo, exemplo_pendente)
+        pergunta_painel = pergunta_do_turno(
+            pergunta_painel, modo, exemplo_pendente, st.session_state.historico
+        )
         if pergunta_painel:
             try:
                 texto = validar_pergunta_livre(pergunta_painel)
@@ -2545,7 +2654,9 @@ elif modo == MODO_AGENTES:
         "de porte no modelo preditivo)",
         key="entrada_agentes",
     )
-    pergunta = pergunta_do_turno(pergunta, modo, exemplo_pendente)
+    pergunta = pergunta_do_turno(
+        pergunta, modo, exemplo_pendente, st.session_state.historico
+    )
     if pergunta:
         if not modo_livre_disponivel:
             st.error(
@@ -2578,7 +2689,9 @@ else:
         "Pergunte sobre os releases (ex.: o que o release do Santander diz sobre "
         "a carteira de crédito no 1T2026?)"
     )
-    pergunta = pergunta_do_turno(pergunta, modo, exemplo_pendente)
+    pergunta = pergunta_do_turno(
+        pergunta, modo, exemplo_pendente, st.session_state.historico
+    )
     if pergunta:
         if not modo_livre_disponivel:
             st.error(

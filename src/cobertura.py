@@ -159,6 +159,8 @@ TOKENS_GENERICOS: frozenset[str] = frozenset(
 )
 
 _PADRAO_NAO_ALFANUMERICO = re.compile(r"[^0-9a-zA-Z]+")
+# Sobre o texto já sem acento e minúsculo: "CD_CVM 022616", "cd cvm: 22616".
+_PADRAO_CD_CVM_EXPLICITO = re.compile(r"\bcd[_\s]?cvm\s*:?\s*(\d{1,6})\b")
 
 
 def tokenizar_nome(texto: str | None) -> tuple[str, ...]:
@@ -561,9 +563,20 @@ def extrair_mencoes(pergunta: str, indice: IndiceCobertura) -> tuple[str, ...]:
     incluem `NUBANK` justamente para a pergunta adversarial) e os tokens
     distintivos das razões sociais do painel — que é o que faz "e o Inter?"
     virar uma menção sem transformar "no Brasil" em outra.
+
+    Código explícito ("CD_CVM 022616") é a resposta do usuário a uma pergunta
+    de desambiguação (RN11): vira menção própria e tira de cena o nome que ele
+    resolve, senão "o BTG (CD_CVM 022616)" voltaria a perguntar qual BTG. Só
+    com o prefixo: número solto na pergunta é valor ou ano, nunca companhia.
     """
     texto = remover_acentos(pergunta or "").lower()
     achados: list[tuple[int, str]] = []
+    explicitos: set[str] = set()
+    for casado in _PADRAO_CD_CVM_EXPLICITO.finditer(texto):
+        codigo = normalizar_cd_cvm(casado.group(1))
+        achados.append((casado.start(), codigo))
+        explicitos.add(codigo)
+    escolhidos = {c for c in explicitos if indice.companhia(c) is not None}
     for slug in extrair_bancos_citados(pergunta or ""):
         ocorrencias = [
             (texto.find(apelido), apelido)
@@ -601,6 +614,8 @@ def extrair_mencoes(pergunta: str, indice: IndiceCobertura) -> tuple[str, ...]:
     assinaturas: list[frozenset[str]] = []
     for _, termo in achados:
         assinatura = frozenset(c.cd_cvm for c in _candidatos(termo, indice))
+        if termo not in explicitos and assinatura & escolhidos:
+            continue  # nome que o código explícito já desambiguou
         if assinatura and assinatura in assinaturas:
             continue
         if not assinatura and termo in mencoes:
@@ -1174,9 +1189,52 @@ def redigir_conversacional(
     for fato in resposta.fatos:
         grupos.setdefault((fato.cd_cvm, fato.conceito), []).append(fato)
 
-    return " ".join(
+    texto = " ".join(
         _frase_do_grupo(tuple(fatos), intervalo) for fatos in grupos.values()
     )
+    ausencias = _ausencias_de_release(resposta)
+    return f"{texto}\n\n{ausencias}" if ausencias else texto
+
+
+def _ausencias_de_release(resposta: RespostaDeterministica) -> str:
+    """O que falta no corpus para os fatos respondidos (RN12).
+
+    A prosa do braço C abre declarando a cobertura, e a redação conversacional
+    cortava esse parágrafo inteiro: o lucro do Inter chegava à tela sem dizer
+    que não há release dele, e a RN12 manda declarar o que falta. Aqui a
+    ausência volta em uma frase por companhia, lida dos trimestres com release
+    que a triagem já trouxe. Fato de companhia sem triagem não ganha frase: o
+    texto não afirma ausência que não foi verificada.
+    """
+    com_release = {
+        triagem.cobertura.companhia.cd_cvm: set(triagem.cobertura.trimestres_corpus)
+        for triagem in resposta.triagens
+        if triagem.cobertura is not None and triagem.cobertura.companhia is not None
+    }
+    faltando: dict[str, tuple[str, list[str]]] = {}
+    for fato in resposta.fatos:
+        trimestres = com_release.get(fato.cd_cvm)
+        if trimestres is None or fato.trimestre in trimestres:
+            continue
+        _, lista = faltando.setdefault(fato.cd_cvm, (fato.denom_social, []))
+        if fato.trimestre not in lista:
+            lista.append(fato.trimestre)
+    frases = []
+    for codigo, (empresa, trimestres) in faltando.items():
+        if not com_release[codigo]:
+            frases.append(
+                f"Não há release de {empresa} no corpus documental: o número é "
+                "o arquivado na CVM, e nada se pode dizer sobre o que a "
+                "administração comentou."
+            )
+        else:
+            frases.append(
+                f"Não há release de {empresa} para {_enumerar(trimestres)} no "
+                "corpus documental: "
+                + ("nesse período" if len(trimestres) == 1 else "nesses períodos")
+                + ", o número é só o arquivado na CVM."
+            )
+    return " ".join(frases)
 
 
 def companhias_do_corpus(indice: IndiceCobertura) -> tuple[Companhia, ...]:

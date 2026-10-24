@@ -1034,3 +1034,102 @@ class TestFormatarReaisLegivel:
 
     def test_abaixo_de_um_milhao_cai_no_formato_exato(self):
         assert formatar_reais_legivel(1_234.5) == formatar_reais(1_234.5)
+
+
+class TestCodigoExplicitoNaPergunta:
+    """A escolha numa desambiguação chega como "CD_CVM 022616" (24/10).
+
+    Antes, `extrair_mencoes` só achava companhia por apelido ou por token da
+    razão social: a resposta do usuário ("022616") virava "nenhuma companhia",
+    e a pergunta com o código voltava a perguntar qual BTG.
+    """
+
+    @pytest.mark.parametrize(
+        "pergunta,esperado",
+        [
+            ("Qual foi o lucro do BTG no 3T2025? (CD_CVM 022616)", (CD_BTG,)),
+            ("Qual foi o lucro do BTG no 3T2025? (CD_CVM 027774)", (CD_SERTRADING,)),
+            ("lucro do btg no 3T2025, cd cvm 22616", (CD_BTG,)),
+            ("lucro do BTG no 3T2025 (CD_CVM: 027774)", (CD_SERTRADING,)),
+            ("Qual foi o lucro do Itaú (CD_CVM 019348) no 3T2025?", (CD_ITAU,)),
+        ],
+    )
+    def test_codigo_explicito_substitui_o_nome_que_ele_resolve(
+        self, pergunta, esperado, indice
+    ):
+        assert extrair_mencoes(pergunta, indice) == esperado
+
+    def test_responder_nao_pergunta_de_novo(self, indice, leitor):
+        resposta = responder_por_gabarito(
+            "qual o lucro do BTG no 3T2025? (CD_CVM 022616)", indice, leitor
+        )
+        assert resposta.precisa_desambiguacao is False
+        assert [t.resolucao.resolvida.cd_cvm for t in resposta.triagens] == [CD_BTG]
+
+    def test_contraprova_numero_solto_nao_vira_companhia(self, indice):
+        """Sem o prefixo, o número é valor ou ano: o BTG continua ambíguo."""
+        mencoes = extrair_mencoes("Qual foi o lucro do BTG no 3T2025? 022616", indice)
+        assert len(mencoes) == 1
+        assert resolver_entidade(mencoes[0], indice).ambigua
+
+    def test_contraprova_codigo_fora_do_painel_nao_apaga_o_nome(self, indice):
+        mencoes = extrair_mencoes(
+            "Qual foi o lucro do BTG no 3T2025? (CD_CVM 999999)", indice
+        )
+        assert any(resolver_entidade(m, indice).ambigua for m in mencoes)
+
+    def test_contraprova_codigo_de_outra_companhia_nao_apaga_o_nome(self, indice):
+        mencoes = extrair_mencoes(
+            "Compare o lucro do Itaú com o da CD_CVM 080217 no 3T2025", indice
+        )
+        codigos = {
+            resolver_entidade(m, indice).resolvida.cd_cvm for m in mencoes
+        }
+        assert codigos == {CD_ITAU, CD_INTER}
+
+
+class TestAusenciaDeReleaseNaRedacao:
+    """RN12 na tela: a redação conversacional cortava a declaração (24/10).
+
+    O braço C abre dizendo que o Inter não tem release; a versão para a tela
+    descartava esse parágrafo, e o lucro do Inter chegava sem dizer o que falta.
+    """
+
+    def test_so_painel_declara_que_nao_ha_release(self, indice, leitor):
+        pergunta = "qual o lucro líquido do Inter no 3T2025?"
+        texto = redigir_conversacional(
+            responder_por_gabarito(pergunta, indice, leitor), pergunta
+        )
+        assert "R$ 336,35 milhões" in texto
+        assert "Não há release de INTER & CO, INC. no corpus documental" in texto
+
+    def test_trimestre_fora_da_janela_do_corpus_e_nomeado(self, indice):
+        triagem = triar_entidade("Itaú", indice, "2T2026")
+        texto = redigir_conversacional(
+            _resposta(
+                _fato(trimestre="2T2026", valor=11_980_000_000.0),
+                triagens=(triagem,),
+            ),
+            "lucro do Itaú no 2T2026",
+        )
+        assert (
+            "Não há release de ITAU UNIBANCO HOLDING S.A. para 2T2026 no corpus "
+            "documental" in texto
+        )
+
+    def test_contraprova_companhia_com_release_no_trimestre_nao_declara(
+        self, indice, leitor
+    ):
+        pergunta = "qual o lucro líquido do Itaú no 3T2025?"
+        texto = redigir_conversacional(
+            responder_por_gabarito(pergunta, indice, leitor), pergunta
+        )
+        assert "Não há release" not in texto
+
+    def test_contraprova_sem_triagem_nao_afirma_ausencia(self):
+        """Ausência só se declara verificada: fato sem triagem fica sem frase."""
+        texto = redigir_conversacional(
+            _resposta(_fato(cd_cvm=CD_INTER, denom="INTER & CO, INC.")),
+            "lucro do Inter no 3T2025",
+        )
+        assert "Não há release" not in texto
