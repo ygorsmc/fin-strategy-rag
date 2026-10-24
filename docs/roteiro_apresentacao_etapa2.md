@@ -60,7 +60,8 @@ demonstração ocupa a maior parte do tempo porque é ela que a rubrica confere.
 
 ## 1:10 – 2:30 · Os agentes
 
-*(Troque para o modo "Agentes". Cole a pergunta. Os agentes levam de 30 a 45
+*(Troque para o modo "Agentes" e clique no exemplo "Itaú: margem no release e
+lucro na CVM", que envia a pergunta abaixo. Os agentes levam de 30 a 45
 segundos, e a fala abaixo cobre a espera.)*
 
 `O que o release do Itaú diz sobre a margem financeira gerencial no 3T2025, e quanto o painel da CVM registra de lucro líquido no mesmo trimestre?`

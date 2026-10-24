@@ -51,15 +51,37 @@ class TestDesfechoDaReaplicacao:
         assert reaplicar.desfecho(objeto) == esperado
 
     def test_motivos_do_codigo_sao_os_que_a_reaplicacao_conhece(self):
-        """Se a geração mudar a frase, este teste cai antes da contagem."""
+        """Se a geração mudar a frase, este teste cai antes da contagem.
+
+        **Substituição declarada (24/10):** os motivos saíram do corpo de
+        `aplicar_guardas_pos_llm` para constantes de `src/geracao.py`, que a
+        interface também lê, com o mesmo texto. A busca pelo literal no
+        código-fonte deixou de achar a frase. O teste agora confere que a guarda
+        usa as constantes e que cada uma cai no desfecho certo da reaplicação,
+        o que prova mais do que a presença do literal provava.
+        """
         import inspect
 
         from src import geracao
 
         fonte = inspect.getsource(geracao.aplicar_guardas_pos_llm)
-        assert '"Rebaixada por RN01' in fonte
-        assert '"Rebaixada por RN02: ao menos um valor numérico' in fonte
-        assert '"Rebaixada por RN02: as citações não cobrem' in fonte
+        for nome in (
+            "MOTIVO_RN01_SEM_CITACAO",
+            "MOTIVO_RN01_CITACAO_ORFA",
+            "MOTIVO_RN02_NUMERO",
+            "MOTIVO_RN02_COBERTURA",
+            "MOTIVO_RECUSA_SEGURO",
+        ):
+            assert nome in fonte
+
+        def gravada(motivo):
+            return {"recusa": True, "motivo_recusa": motivo, "json_invalido": False}
+
+        assert reaplicar.desfecho(gravada(geracao.MOTIVO_RN01_SEM_CITACAO)) == reaplicar.RN01
+        assert reaplicar.desfecho(gravada(geracao.MOTIVO_RN01_CITACAO_ORFA)) == reaplicar.RN01
+        assert reaplicar.desfecho(gravada(geracao.MOTIVO_RN02_NUMERO)) == reaplicar.RN02_NUMERO
+        assert reaplicar.desfecho(gravada(geracao.MOTIVO_RN02_COBERTURA)) == reaplicar.RN02_ESCOPO
+        assert reaplicar.desfecho(gravada(geracao.MOTIVO_RECUSA_SEGURO)) == reaplicar.RECUSA_MODELO
 
 
 class TestAucIntraCompanhia:

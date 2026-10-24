@@ -99,6 +99,26 @@ motivo_recusa=null e citacoes=[].
 
 VERSAO_PROMPT = "v10"
 MOTIVO_RECUSA_SEGURO = "Não há evidência suficiente nos trechos recuperados."
+# Motivos das guardas pós-LLM. São constantes para que a interface traduza cada
+# um em linguagem de quem pergunta sem casar trecho de frase; o texto é o mesmo
+# que as rodadas gravadas já carregam.
+MOTIVO_RN01_SEM_CITACAO = "Rebaixada por RN01: afirmação sem citação."
+MOTIVO_RN01_CITACAO_ORFA = (
+    "Rebaixada por RN01: citação órfã (não corresponde a "
+    "nenhum chunk recuperado nesta consulta)."
+)
+MOTIVO_RN02_AFIRMACAO = (
+    "Rebaixada por RN02: ao menos uma afirmação da resposta "
+    "não aparece nos trechos citados."
+)
+MOTIVO_RN02_NUMERO = (
+    "Rebaixada por RN02: ao menos um valor numérico da resposta "
+    "não aparece nos trechos citados."
+)
+MOTIVO_RN02_COBERTURA = (
+    "Rebaixada por RN02: as citações não cobrem todas as "
+    "instituições e períodos pedidos."
+)
 
 
 @dataclass(frozen=True)
@@ -2943,7 +2963,7 @@ def aplicar_guardas_pos_llm(
             resposta = RespostaGerada(
                 resposta=None,
                 recusa=True,
-                motivo_recusa="Rebaixada por RN01: afirmação sem citação.",
+                motivo_recusa=MOTIVO_RN01_SEM_CITACAO,
                 citacoes=(),
                 bruto=resposta.bruto,
                 json_reparado=resposta.json_reparado,
@@ -2953,10 +2973,7 @@ def aplicar_guardas_pos_llm(
             resposta = RespostaGerada(
                 resposta=None,
                 recusa=True,
-                motivo_recusa=(
-                    "Rebaixada por RN01: citação órfã (não corresponde a "
-                    "nenhum chunk recuperado nesta consulta)."
-                ),
+                motivo_recusa=MOTIVO_RN01_CITACAO_ORFA,
                 citacoes=(),
                 bruto=resposta.bruto,
                 json_reparado=resposta.json_reparado,
@@ -2974,11 +2991,9 @@ def aplicar_guardas_pos_llm(
                 resposta=None,
                 recusa=True,
                 motivo_recusa=(
-                    "Rebaixada por RN02: ao menos uma afirmação da resposta "
-                    "não aparece nos trechos citados."
+                    MOTIVO_RN02_AFIRMACAO
                     if "afirmacao" in diagnostico
-                    else "Rebaixada por RN02: ao menos um valor numérico da resposta "
-                    "não aparece nos trechos citados."
+                    else MOTIVO_RN02_NUMERO
                 ),
                 citacoes=(),
                 bruto=resposta.bruto,
@@ -2994,10 +3009,7 @@ def aplicar_guardas_pos_llm(
             resposta = RespostaGerada(
                 resposta=None,
                 recusa=True,
-                motivo_recusa=(
-                    "Rebaixada por RN02: as citações não cobrem todas as "
-                    "instituições e períodos pedidos."
-                ),
+                motivo_recusa=MOTIVO_RN02_COBERTURA,
                 citacoes=(),
                 bruto=resposta.bruto,
                 json_reparado=resposta.json_reparado,

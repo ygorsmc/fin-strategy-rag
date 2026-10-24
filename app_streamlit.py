@@ -12,6 +12,7 @@ sobrevive a um encerramento abrupto e não substitui um teto externo do provedor
 
 from __future__ import annotations
 
+import csv
 import json
 import logging
 import math
@@ -33,6 +34,7 @@ from src.avaliacao import (
 )
 from src.bloqueio import bloqueio_compartilhado
 from src.config import (
+    CAMINHO_METADADOS_CORPUS,
     DIR_INDICE_VETORIAL,
     DIR_RESULTADOS_AVALIACAO,
     carregar_config,
@@ -1498,9 +1500,7 @@ def responder_pergunta_livre(
                 "Custo observado excedeu a estimativa ou o saldo reservado."
             )
         if resposta.recusa:
-            conteudo = "**Recusa (RN02):** " + (
-                resposta.motivo_recusa or "sem evidência suficiente no corpus."
-            )
+            conteudo = _texto_da_recusa(resposta, recuperados)
         else:
             conteudo = resposta.resposta or "—"
             if resposta.citacoes:
@@ -1525,6 +1525,13 @@ def responder_pergunta_livre(
         conteudo = (
             texto_de_recusa(saida) if saida.bloqueado else saida.texto_seguro
         )
+        # O diagnóstico da guarda sai do texto da resposta e vai para a
+        # legenda: quem audita ainda vê qual regra recusou.
+        motivo_tecnico = (
+            _redigir_para_exibicao(resposta.motivo_recusa)
+            if resposta.recusa and resposta.motivo_recusa and not saida.bloqueado
+            else None
+        )
     except Exception as exc:
         raise FalhaConsultaAoVivo(custo_a_debitar_em_falha) from exc
     return {
@@ -1532,7 +1539,163 @@ def responder_pergunta_livre(
         "fontes": _fontes_para_exibicao(recuperados, resposta),
         "custo_usd": float(uso.custo_usd),
         "modelo": uso.modelo,
+        "motivo_tecnico": motivo_tecnico,
     }
+
+
+NOMES_DOS_BANCOS = {
+    "BB": "Banco do Brasil",
+    "BRADESCO": "Bradesco",
+    "BTG": "BTG Pactual",
+    "ITAU": "Itaú Unibanco",
+    "SANTANDER": "Santander",
+}
+_PADRAO_TRIMESTRE = re.compile(r"([1-4])T(\d{4})")
+
+
+def _nome_do_banco(codigo: str) -> str:
+    return NOMES_DOS_BANCOS.get(codigo, codigo)
+
+
+def _lista_em_portugues(itens) -> str:
+    itens = list(itens)
+    if len(itens) <= 1:
+        return "".join(itens)
+    return ", ".join(itens[:-1]) + " e " + itens[-1]
+
+
+def escopo_do_corpus(caminho: Path | None = None) -> dict | None:
+    """Bancos e trimestres do corpus, lidos do manifesto, nunca escritos à mão.
+
+    A tela dizia "os cinco bancos do corpus" sem nomeá-los, e quem perguntava
+    tinha de adivinhar o que cabia na pergunta. Manifesto ilegível ou sem linha
+    válida devolve None, e a tela volta à frase genérica em vez de inventar
+    escopo. Os trimestres saem em ordem cronológica: em ordem de texto, 1T2026
+    viria antes de 2T2025.
+    """
+    try:
+        with Path(caminho or CAMINHO_METADADOS_CORPUS).open(
+            encoding="utf-8", newline=""
+        ) as arquivo:
+            linhas = list(csv.DictReader(arquivo))
+    except (OSError, csv.Error, UnicodeDecodeError):
+        return None
+    bancos = {(linha.get("empresa") or "").strip() for linha in linhas} - {""}
+    trimestres = sorted(
+        {
+            achado
+            for linha in linhas
+            if (achado := (linha.get("trimestre") or "").strip())
+            and _PADRAO_TRIMESTRE.fullmatch(achado)
+        },
+        key=lambda trimestre: (trimestre[2:], trimestre[0]),
+    )
+    if not bancos or not trimestres:
+        return None
+    return {
+        "bancos": tuple(
+            sorted((_nome_do_banco(banco) for banco in bancos), key=str.casefold)
+        ),
+        "primeiro": trimestres[0],
+        "ultimo": trimestres[-1],
+    }
+
+
+def descrever_escopo(escopo: dict) -> str:
+    """"Banco do Brasil, ... e Santander, do 2T2025 ao 1T2026"."""
+    return (
+        f"{_lista_em_portugues(escopo['bancos'])}, "
+        f"do {escopo['primeiro']} ao {escopo['ultimo']}"
+    )
+
+
+def _texto_da_recusa(resposta, recuperados) -> str:
+    """Recusa da pergunta livre dita para quem perguntou.
+
+    O motivo de `aplicar_guardas_pos_llm` é diagnóstico do código ("Rebaixada
+    por RN02: ...") e era o que aparecia na tela: jargão, repetindo o código da
+    regra e sem dizer o que tentar. Aqui ele vira o que aconteceu e o que fazer,
+    e o motivo original segue na legenda da mensagem. O rascunho recusado nunca
+    entra no texto: número sem lastro não aparece nem como exemplo.
+    """
+    from src.geracao import (
+        MOTIVO_RECUSA_SEGURO,
+        MOTIVO_RN01_CITACAO_ORFA,
+        MOTIVO_RN01_SEM_CITACAO,
+        MOTIVO_RN02_AFIRMACAO,
+        MOTIVO_RN02_COBERTURA,
+        MOTIVO_RN02_NUMERO,
+    )
+
+    motivo = getattr(resposta, "motivo_recusa", None)
+    if motivo == MOTIVO_RN02_COBERTURA:
+        origens: list[str] = []
+        for recuperado in recuperados:
+            origem = (
+                f"{_nome_do_banco(recuperado.chunk.empresa)} "
+                f"{recuperado.chunk.trimestre}"
+            )
+            if origem not in origens:
+                origens.append(origem)
+        quantidade = len(recuperados)
+        texto = (
+            "**Os trechos encontrados não cobrem tudo o que a pergunta pede.** "
+            "Faltou evidência de pelo menos um dos bancos ou trimestres "
+            "mencionados, e o sistema não completa a resposta de memória.\n\n"
+            + (
+                f"A busca trouxe {quantidade} "
+                f"{'trecho' if quantidade == 1 else 'trechos'}, de "
+                f"{_lista_em_portugues(origens)}. "
+                if origens
+                else ""
+            )
+            + "Pergunte um banco e um trimestre por vez."
+        )
+    elif motivo == MOTIVO_RN02_NUMERO:
+        texto = (
+            "**Não consegui conferir nos trechos citados um dos números da "
+            "resposta**, e o sistema não mostra número que não esteja no "
+            "documento.\n\n"
+            "Costuma ajudar escrever a métrica como o release a chama (por "
+            "exemplo, “margem financeira gerencial”) e dizer o banco e o "
+            "trimestre."
+        )
+    elif motivo == MOTIVO_RN02_AFIRMACAO:
+        texto = (
+            "**Uma parte da resposta dizia algo que não está escrito nos "
+            "trechos citados**, e o sistema não mostra afirmação que não esteja "
+            "no documento.\n\n"
+            "Costuma ajudar perguntar sobre um assunto de cada vez, com o banco "
+            "e o trimestre (por exemplo, “o que o release do Santander diz "
+            "sobre a carteira de crédito no 1T2026”)."
+        )
+    elif motivo in (MOTIVO_RN01_SEM_CITACAO, MOTIVO_RN01_CITACAO_ORFA):
+        texto = (
+            "**A resposta não indicou de que página do release tirou a "
+            "informação**, e o sistema só mostra resposta com a fonte "
+            "conferida.\n\n"
+            "Tente de novo, de preferência com o banco e o trimestre na pergunta."
+        )
+    elif motivo == MOTIVO_RECUSA_SEGURO:
+        escopo = escopo_do_corpus()
+        texto = "**Não encontrei nos trechos recuperados a informação pedida.**" + (
+            f"\n\nO corpus tem os releases de {descrever_escopo(escopo)}. Se a "
+            "pergunta cabe nisso, tente usar o nome da métrica como ele aparece "
+            "no release."
+            if escopo
+            else ""
+        )
+    else:
+        texto = (
+            "**A resposta do modelo não pôde ser conferida e foi descartada.** "
+            "Tente de novo."
+        )
+    if recuperados:
+        texto += (
+            "\n\nOs trechos que a busca encontrou estão logo abaixo, em "
+            "*Trechos recuperados*."
+        )
+    return texto + "\n\n_Esta tentativa usou uma das perguntas livres da sessão._"
 
 
 MODO_AGENTES = "Agentes (Investigador + Auditor)"
@@ -1548,6 +1711,244 @@ EXEMPLOS_AGENTES = (
     "Quantas companhias o modelo preditivo sinaliza no trimestre corrente, e com "
     "que AUC ele foi validado?",
 )
+MODO_DEMONSTRACAO = "Demonstração (cacheado)"
+MODO_LIVRE = "Pergunta livre"
+
+# Exemplos clicáveis da abertura de cada modo, como (rótulo curto, pergunta).
+# Os do painel respondem sem LLM. Os da pergunta livre são perguntas `dev` que
+# publicaram em 20/10, ao vivo (DEV005) ou na reaplicação da guarda (DEV004 e
+# DEV008); nunca uma das 45 congeladas (`TestExemplosDaAbertura`).
+EXEMPLOS_PAINEL = (
+    ("Lucro líquido do Itaú no 3T2025", "Qual foi o lucro líquido do Itaú no 3T2025?"),
+    (
+        "Lucro consolidado do BB no 4T2025, valor derivado",
+        "Qual o lucro líquido consolidado do Banco do Brasil no 4T2025?",
+    ),
+    ("Banco Inter: só no painel da CVM", "Qual foi o lucro do Banco Inter no 3T2025?"),
+    ("Nubank: fora das duas fontes", "Qual foi o lucro do Nubank no 3T2025?"),
+)
+EXEMPLOS_LIVRE = (
+    (
+        "Margem financeira do Bradesco no 1T2026",
+        "Segundo a demonstração do resultado recorrente do Bradesco qual foi a "
+        "margem financeira total no 1T2026?",
+    ),
+    (
+        "Por que o NPL de 15 a 90 dias do Itaú subiu",
+        "Segundo a análise gerencial do Itaú Unibanco por que o NPL total de 15 a "
+        "90 dias aumentou no 1T2026 ante o 4T2025?",
+    ),
+    (
+        "Carteira de crédito do Santander no 1T2026",
+        "Segundo o Santander quais fatores explicaram a queda trimestral e o "
+        "crescimento anual da carteira de crédito ampliada no 1T2026?",
+    ),
+)
+EXEMPLOS_AGENTES_ROTULADOS = tuple(
+    zip(
+        (
+            "Inter: lucro e faixa de porte no modelo",
+            "Itaú: margem no release e lucro na CVM",
+            "Modelo: companhias sinalizadas e AUC",
+        ),
+        EXEMPLOS_AGENTES,
+    )
+)
+_NOME_CURTO_DO_MODO = {
+    MODO_DEMONSTRACAO: "Demonstração",
+    MODO_LIVRE: "Pergunta livre",
+    MODO_AGENTES: "Agentes",
+}
+
+
+def _escolher_exemplo(chave: str, exemplos: dict[str, str], modo: str) -> None:
+    """Callback dos exemplos: guarda a pergunta para o turno e limpa a seleção."""
+    rotulo = st.session_state.get(chave)
+    st.session_state[chave] = None
+    if rotulo in exemplos:
+        st.session_state.exemplo_pendente = (modo, exemplos[rotulo])
+
+
+def _exemplos_clicaveis(exemplos, modo: str, chave: str) -> None:
+    mapa = dict(exemplos)
+    st.pills(
+        "Exemplos",
+        list(mapa),
+        key=chave,
+        on_change=_escolher_exemplo,
+        args=(chave, mapa, modo),
+        label_visibility="collapsed",
+    )
+
+
+def pergunta_do_turno(
+    digitada: str | None, modo: str, pendente: tuple[str, str] | None
+) -> str | None:
+    """O que o usuário pediu neste turno: o texto digitado ou o exemplo clicado.
+
+    O exemplo segue o mesmo caminho do texto digitado, com cota, orçamento e
+    guardrails; clicar não é atalho para nada. Exemplo de outro modo é
+    descartado, para que trocar de modo não dispare a pergunta do anterior. O
+    pendente é retirado da sessão uma vez por execução, antes dos ramos de
+    modo: um ramo que não chega ao campo de pergunta (painel ausente) não pode
+    deixá-lo guardado para disparar depois.
+    """
+    if digitada:
+        return digitada
+    if pendente and pendente[0] == modo:
+        return pendente[1]
+    return None
+
+
+def _seletor_de_respostas_cacheadas(cache_demo: dict) -> None:
+    escolha = st.selectbox(
+        "Escolha uma pergunta do conjunto-padrão (resposta pré-computada "
+        "lado a lado com o gabarito):",
+        sorted(cache_demo),
+    )
+    if st.button("Ver resposta cacheada"):
+        item = cache_demo[escolha]
+        st.session_state.historico.append({"papel": "user", "conteudo": escolha})
+        st.session_state.historico.append(
+            {
+                "papel": "assistant",
+                "conteudo": item.get("resposta", "—"),
+                "fontes": item.get("fontes", []),
+                "gabarito": item.get("gabarito"),
+                "modo": "demonstração cacheada",
+                "provedor": item.get("provedor", "—"),
+                "streamar": True,
+            }
+        )
+        st.rerun()
+
+
+def _abertura_demonstracao(
+    cache_demo: dict,
+    erro_cache: str | None,
+    cache_aguarda_auditoria: bool,
+    painel_disponivel: bool,
+) -> None:
+    """O painel vem primeiro quando é o que funciona; a trava vira nota curta.
+
+    A tela abria com um aviso amarelo de quatro linhas e mais nada visível: o
+    painel, que responde sem custo, ficava atrás de um expansor fechado.
+    """
+    if painel_disponivel:
+        st.markdown(
+            "**Painel contábil da CVM.** Responde na hora, sem custo e sem "
+            "modelo de linguagem: lucro líquido (consolidado ou dos "
+            "controladores), patrimônio líquido, ativo total e receita de "
+            "intermediação financeira, por companhia e trimestre, lidos dos "
+            "formulários ITR/DFP arquivados na CVM. Escreva no campo abaixo ou "
+            "escolha um exemplo:"
+        )
+        _exemplos_clicaveis(EXEMPLOS_PAINEL, MODO_DEMONSTRACAO, "exemplos_painel")
+        st.caption(
+            "*Por que* um número variou e o que o release comenta estão nos "
+            "releases, "
+            + (
+                "no modo Pergunta livre."
+                if config.habilitar_perguntas_livres
+                else "que esta instância não consulta ao vivo."
+            )
+        )
+    else:
+        st.info(
+            "O painel contábil da CVM não está disponível nesta instância, "
+            "então a consulta a dados estruturados está desligada."
+        )
+    if cache_aguarda_auditoria:
+        st.warning(
+            "**Respostas pré-computadas aguardando auditoria humana.** O cache "
+            "final validado só aparece aqui depois da conferência manual de "
+            "uma rodada avaliada com o código atual."
+        )
+    elif erro_cache:
+        st.error(f"Cache de demonstração inválido: {erro_cache}")
+    elif not cache_demo:
+        st.warning(
+            "Ainda não há cache final validado do conjunto de teste congelado. "
+            "O modo será habilitado somente após a segunda leitura, o congelamento "
+            "e uma avaliação completa com fingerprint."
+        )
+
+
+def _abertura_livre(escopo: dict | None) -> None:
+    st.markdown(
+        "**Pergunta livre.** Busca nos releases de resultado e responde com o "
+        "modelo de linguagem, sempre citando a página"
+        + (f". Cobre {descrever_escopo(escopo)}" if escopo else "")
+        + ". Funciona melhor com um banco, um trimestre e a métrica escrita "
+        "como no release. Quando a resposta não pode ser conferida nos trechos "
+        "encontrados, o sistema recusa em vez de arriscar."
+    )
+    _exemplos_clicaveis(EXEMPLOS_LIVRE, MODO_LIVRE, "exemplos_livre")
+    st.caption(
+        f"Cada pergunta que chega ao modelo usa uma das "
+        f"{config.limite_perguntas_livres_por_sessao} da sessão. As que o painel "
+        "da CVM reconhece direto, como o lucro líquido de um banco num "
+        "trimestre, respondem sem custo e sem usar a cota."
+    )
+
+
+def _abertura_agentes() -> None:
+    st.markdown(
+        "**Agentes.** Dois agentes trabalham em sequência. O **Investigador** "
+        "responde com ferramentas: os releases, o painel contábil da CVM, os "
+        "indicadores e o modelo preditivo de prejuízo, pelo panorama agregado. "
+        "O **Auditor** recebe só a resposta e as citações, sem o raciocínio do "
+        "Investigador, e refaz as consultas para confirmar, contestar ou dizer "
+        "que não reproduz. Serve para perguntas que precisam de mais de uma "
+        "fonte:"
+    )
+    _exemplos_clicaveis(EXEMPLOS_AGENTES_ROTULADOS, MODO_AGENTES, "exemplos_agentes")
+    st.caption(
+        "Cada resposta leva até uns 45 segundos e usa uma das perguntas livres "
+        "da sessão."
+    )
+
+
+def apresentar_modo(
+    modo: str,
+    *,
+    cache_demo: dict,
+    erro_cache: str | None,
+    cache_aguarda_auditoria: bool,
+) -> None:
+    """Abertura do modo, desenhada ANTES do histórico.
+
+    Desenhada depois, como era, a ajuda descia para baixo da conversa a cada
+    pergunta, e a do modo novo aparecia embaixo das respostas do anterior. Com
+    conversa em andamento a abertura recolhe num expansor, aberto só no turno
+    em que o modo acabou de mudar. O seletor de respostas cacheadas fica fora
+    do expansor: no modo demonstração ele é a própria entrada.
+    """
+    conversa_iniciada = bool(st.session_state.historico)
+    modo_mudou = st.session_state.get("modo_anterior") not in (None, modo)
+    st.session_state.modo_anterior = modo
+    if modo == MODO_DEMONSTRACAO and cache_demo and not erro_cache:
+        _seletor_de_respostas_cacheadas(cache_demo)
+    corpo = (
+        st.expander(
+            f"Como usar o modo {_NOME_CURTO_DO_MODO.get(modo, modo)}",
+            expanded=modo_mudou,
+        )
+        if conversa_iniciada
+        else st.container()
+    )
+    with corpo:
+        if modo == MODO_DEMONSTRACAO:
+            _abertura_demonstracao(
+                cache_demo,
+                erro_cache,
+                cache_aguarda_auditoria,
+                carregar_rota_estruturada() is not None,
+            )
+        elif modo == MODO_AGENTES:
+            _abertura_agentes()
+        else:
+            _abertura_livre(escopo_do_corpus())
 
 
 _ICONE_DO_ESTADO = {"inicio": "⏳", "ok": "✅", "falhou": "⚠️"}
@@ -1674,9 +2075,11 @@ if "id_sessao_rastro" not in st.session_state:
 
 # --- Barra lateral: modo e transparência ------------------------------------
 st.sidebar.title("Assistente de Research Financeiro")
+escopo_corpus = escopo_do_corpus()
 st.sidebar.caption(
-    "RAG sobre releases de resultado públicos dos cinco bancos do corpus. "
-    "Toda resposta cita a fonte; sem evidência no corpus, o sistema recusa."
+    "RAG sobre releases de resultado públicos dos cinco bancos do corpus"
+    + (f": {descrever_escopo(escopo_corpus)}" if escopo_corpus else "")
+    + ". Toda resposta cita a fonte; sem evidência no corpus, o sistema recusa."
 )
 st.sidebar.caption(
     "Uso educacional e demonstrativo. Não constitui recomendação de investimento."
@@ -1701,10 +2104,10 @@ modo_livre_disponivel = (
     < config.limite_perguntas_livres_por_sessao
     and st.session_state.custo_usd_acumulado < config.orcamento_teto_usd
 )
-opcoes_modo = ["Demonstração (cacheado)"]
+opcoes_modo = [MODO_DEMONSTRACAO]
 if config.habilitar_perguntas_livres:
     # Os agentes custam chamadas pagas, então ficam atrás do mesmo opt-in.
-    opcoes_modo.extend(["Pergunta livre", MODO_AGENTES])
+    opcoes_modo.extend([MODO_LIVRE, MODO_AGENTES])
 modo = st.sidebar.radio(
     "Modo",
     opcoes_modo,
@@ -1755,6 +2158,12 @@ st.title("📊 Consulta ao corpus de releases")
 st.caption(
     "Demonstração técnica sobre documentos públicos; não é aconselhamento financeiro."
 )
+apresentar_modo(
+    modo,
+    cache_demo=cache_demo,
+    erro_cache=erro_cache,
+    cache_aguarda_auditoria=cache_aguarda_auditoria,
+)
 
 for msg in st.session_state.historico:
     with st.chat_message(msg["papel"]):
@@ -1803,6 +2212,8 @@ for msg in st.session_state.historico:
             st.info(f"Gabarito verificado: {msg['gabarito']}")
         if msg.get("modo"):
             st.caption(f"modo: {msg['modo']} · provedor: {msg.get('provedor', '—')}")
+        if msg.get("motivo_tecnico"):
+            st.caption(f"motivo técnico: {_escapar_cifrao(msg['motivo_tecnico'])}")
 
 # --- Uma consulta do chat ----------------------------------------------------
 # Corpo do chat em função, para que o trace da consulta (5.12) feche ANTES do
@@ -1925,6 +2336,7 @@ def responder_no_chat(pergunta: str, rastro: observabilidade.Observacao) -> bool
                     "provedor",
                     f"{config.llm_provider}/{item.get('modelo', '—')}",
                 ),
+                "motivo_tecnico": item.get("motivo_tecnico"),
                 "streamar": True,
             }
         )
@@ -2073,82 +2485,21 @@ def responder_no_chat_com_agentes(
     return True
 
 
-if modo == "Demonstração (cacheado)":
-    if cache_aguarda_auditoria:
-        st.warning(
-            "**Respostas pré-computadas: aguardando auditoria humana.** Ainda "
-            "não há cache final validado: o conjunto de teste congelado já foi "
-            "avaliado, mas as respostas só aparecem aqui depois da conferência "
-            "manual de fundamentação — é a trava que impede publicar resposta "
-            "não auditada. Enquanto isso, consulte o painel contábil abaixo ou "
-            "use o modo **Pergunta livre**."
-        )
-    elif erro_cache:
-        st.error(f"Cache de demonstração inválido: {erro_cache}")
-    elif not cache_demo:
-        st.warning(
-            "Ainda não há cache final validado do conjunto de teste congelado. "
-            "O modo será habilitado somente após a segunda leitura, o congelamento "
-            "e uma avaliação completa com fingerprint."
-        )
-    else:
-        escolha = st.selectbox(
-            "Escolha uma pergunta do conjunto-padrão (resposta pré-computada "
-            "lado a lado com o gabarito):",
-            sorted(cache_demo),
-        )
-        if st.button("Ver resposta cacheada"):
-            item = cache_demo[escolha]
-            st.session_state.historico.append(
-                {"papel": "user", "conteudo": escolha}
-            )
-            st.session_state.historico.append(
-                {
-                    "papel": "assistant",
-                    "conteudo": item.get("resposta", "—"),
-                    "fontes": item.get("fontes", []),
-                    "gabarito": item.get("gabarito"),
-                    "modo": "demonstração cacheada",
-                    "provedor": item.get("provedor", "—"),
-                    "streamar": True,
-                }
-            )
-            st.rerun()
-
+exemplo_pendente = st.session_state.pop("exemplo_pendente", None)
+if modo == MODO_DEMONSTRACAO:
     # Consulta ao painel contábil da CVM: sem LLM, sem segredo e sem custo, o
     # que a torna elegível ao modo demonstração (RNF12). O cache de respostas
     # pode estar travado pela auditoria pendente e esta consulta segue de pé —
     # ela não depende da rodada congelada.
-    if carregar_rota_estruturada() is None:
-        st.info(
-            "O painel contábil da CVM não está disponível nesta instância, "
-            "então a consulta a dados estruturados está desligada."
-        )
-    else:
-        with st.expander("O que dá para perguntar ao painel contábil"):
-            st.markdown(
-                "Este canal lê os formulários **ITR/DFP arquivados na CVM** — "
-                "não os releases. Ele responde valor por companhia e "
-                "trimestre, sem chamar modelo de linguagem e sem custo:\n\n"
-                "- `Qual foi o lucro líquido do Itaú no 3T2025?`\n"
-                "- `Qual o lucro líquido consolidado do Banco do Brasil no "
-                "4T2025?` — vem **marcado como derivado**, porque o 4º "
-                "trimestre não existe como ITR\n"
-                "- `Qual foi o lucro do Banco Inter no 3T2025?` — está no "
-                "painel do regulador e **fora** do corpus de releases; o "
-                "sistema entrega o número e declara o que falta\n"
-                "- `Qual foi o lucro do Nubank no 3T2025?` — **recusa**, "
-                "dizendo por quê\n\n"
-                "Conceitos reconhecidos: lucro líquido (controladores ou "
-                "consolidado), patrimônio líquido, ativo total e receita de "
-                "intermediação financeira. Narrativa de release — *por que* "
-                "algo variou — exige o modo pergunta livre."
-            )
+    # A abertura (`apresentar_modo`) já avisou quando o painel falta; aqui só
+    # não há campo para perguntar.
+    if carregar_rota_estruturada() is not None:
         pergunta_painel = st.chat_input(
             "Consulte o painel contábil da CVM (ex.: lucro líquido do Banco "
             "do Brasil no 4T2025)",
             key="entrada_painel",
         )
+        pergunta_painel = pergunta_do_turno(pergunta_painel, modo, exemplo_pendente)
         if pergunta_painel:
             try:
                 texto = validar_pergunta_livre(pergunta_painel)
@@ -2189,23 +2540,12 @@ if modo == "Demonstração (cacheado)":
                     registrar_desfecho(rastro, tamanho_antes)
                 st.rerun()
 elif modo == MODO_AGENTES:
-    with st.expander("Como funcionam os agentes, e o que perguntar"):
-        st.markdown(
-            "Dois agentes trabalham em sequência. O **Investigador** responde "
-            "com ferramentas: os releases indexados (ChromaDB), o painel "
-            "contábil da CVM (DuckDB), os indicadores e o **modelo preditivo "
-            "de prejuízo**, lido do artefato agregado. O **Auditor** recebe só "
-            "a afirmação e as citações, sem o raciocínio do Investigador, e "
-            "refaz as consultas para confirmar, contestar ou dizer que não "
-            "reproduz. Cada resposta custa algumas chamadas ao modelo de "
-            "linguagem.\n\nPerguntas que exigem mais de uma ferramenta:\n\n"
-            + "\n".join(f"- `{exemplo}`" for exemplo in EXEMPLOS_AGENTES)
-        )
     pergunta = st.chat_input(
         "Pergunte aos agentes (ex.: lucro do Banco Inter no 3T2025 e a faixa "
         "de porte no modelo preditivo)",
         key="entrada_agentes",
     )
+    pergunta = pergunta_do_turno(pergunta, modo, exemplo_pendente)
     if pergunta:
         if not modo_livre_disponivel:
             st.error(
@@ -2235,8 +2575,10 @@ elif modo == MODO_AGENTES:
                 st.rerun()
 else:
     pergunta = st.chat_input(
-        "Pergunte sobre os releases (ex.: lucro líquido do banco X no 4T2025)"
+        "Pergunte sobre os releases (ex.: o que o release do Santander diz sobre "
+        "a carteira de crédito no 1T2026?)"
     )
+    pergunta = pergunta_do_turno(pergunta, modo, exemplo_pendente)
     if pergunta:
         if not modo_livre_disponivel:
             st.error(

@@ -51,8 +51,9 @@ Langfuse: um trace por pergunta, com spans de recuperação, geração,
 agentes e ferramentas
 ```
 
-O chat tem três modos. O de demonstração responde com a rodada já avaliada e
-com consultas ao painel da CVM, sem chave nenhuma e sem custo. A pergunta livre
+O chat tem três modos. O de demonstração responde pelo painel da CVM, sem chave
+nenhuma e sem custo; as respostas pré-computadas da rodada avaliada só aparecem
+nele depois da auditoria humana, ainda não feita. A pergunta livre
 faz recuperação e geração ao vivo sobre os releases. O modo Agentes põe dois
 agentes CrewAI para trabalhar: o Investigador descobre em que camada de dados a
 companhia existe, consulta o que precisa e responde com citações; o Auditor
@@ -173,8 +174,8 @@ Extras opcionais: `requirements-modelo.txt` (treino do modelo),
 `requirements-deepeval.txt` (instale com `pip install --no-deps -r`; o arquivo
 explica por quê).
 
-**Testes.** `pytest -q` roda 2.212 casos sem nenhuma chamada externa. Num clone
-recém-feito, 4 deles ficam pulados até o índice e o painel de treino existirem.
+**Testes.** `pytest -q` roda 2.252 casos sem nenhuma chamada externa. Num clone
+recém-feito, 7 deles ficam pulados até o índice e os painéis da CVM existirem.
 
 **Dados.** Os PDFs e os ZIPs da CVM não vão para o Git; os manifestos guardam
 URL e SHA-256, e os scripts conferem o hash ao baixar. O OCR dos releases já
@@ -258,6 +259,10 @@ python -m scripts.gerar_traces_langfuse --permitir-api-paga                     
   estratégia E0 existe para medir isso.
 - O quarto trimestre não é arquivado como trimestre na CVM. O sistema o deriva
   por subtração e marca o valor como derivado.
+- O modo de demonstração ainda não mostra as 15 respostas pré-computadas. A
+  rodada congelada aguarda a auditoria humana de fundamentação, e o código
+  mudou depois dela (`geracao.py`, `normalizacao.py`, `config.py` e a
+  interface); para exibi-las é preciso rodar de novo e auditar.
 
 ## Licença e créditos
 
