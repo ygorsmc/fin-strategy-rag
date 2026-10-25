@@ -138,6 +138,9 @@ class TestOpcoesNoTextoDosAgentes:
             ),
         )
         assert item["opcoes_desambiguacao"] == OPCOES_BTG
+        # Visto ao vivo em 24/10: o agente copia a frase da ferramenta.
+        assert "nunca por nome" not in item["resposta"]
+        assert item["resposta"].startswith("“btg” corresponde a 2 companhias")
 
     def test_contraprova_resposta_comum_nao_vira_escolha(self, monkeypatch):
         """Resposta que cita duas companhias com código não é pergunta."""

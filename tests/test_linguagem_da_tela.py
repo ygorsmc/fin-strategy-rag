@@ -81,14 +81,15 @@ class TestCitacaoLegivel:
 
 class TestTextosDoPainel:
     def test_desambiguacao_nomeia_as_candidatas_sem_regra_interna(self):
+        resolucao = ResolucaoEntidade(
+            termo="btg",
+            candidatas=(
+                Companhia("022616", "BCO BTG PACTUAL S.A.", True),
+                Companhia("027774", "BTG PACTUAL COMMODITIES SERTRADING S.A.", False),
+            ),
+        )
         texto = app.texto_da_desambiguacao(
-            ResolucaoEntidade(
-                termo="btg",
-                candidatas=(
-                    Companhia("022616", "BCO BTG PACTUAL S.A.", True),
-                    Companhia("027774", "BTG PACTUAL COMMODITIES SERTRADING S.A.", False),
-                ),
-            )
+            app._opcoes(resolucao.candidatas), resolucao.termo
         )
         assert "BCO BTG PACTUAL S.A. (código CVM 022616)" in texto
         assert "BTG PACTUAL COMMODITIES SERTRADING S.A. (código CVM 027774)" in texto
@@ -201,3 +202,43 @@ class TestTela:
         assert [e.label for e in teste.expander if e.label.startswith("Procedência")] == [
             "Procedência no painel da CVM"
         ]
+
+
+# Textos reais da rodada ao vivo de 24/10 (Gemini, pelo caminho da tela).
+DEV008_AO_VIVO = (
+    "Segundo o Santander, a queda trimestral da carteira de crédito ampliada no "
+    "1T2026 se deve especialmente à sazonalidade em cartões e à variação cambial "
+    "[SANTANDER | santander_release_1T2026 | 1T2026 | pág. 3]. O crescimento anual "
+    "da carteira de crédito ampliada no 1T2026 foi de 3,4% "
+    "[SANTANDER | santander_release_1T2026 | 1T2026 | pág. 3], sendo os destaques "
+    "a financeira com avanço de 14,2% [SANTANDER | santander_release_1T2026 | "
+    "1T2026 | pág. 15]."
+)
+
+
+class TestAchadosDaRodadaAoVivo:
+    def test_marcador_de_trecho_vira_banco_e_pagina(self):
+        texto = app.sem_marcadores_de_trecho(DEV008_AO_VIVO)
+        assert "[SANTANDER |" not in texto
+        assert "variação cambial (Santander, pág. 3)." in texto
+        assert "14,2% (Santander, pág. 15)." in texto
+
+    def test_contraprova_nenhum_numero_some(self):
+        antes = re.findall(r"\d+,\d+%", DEV008_AO_VIVO)
+        assert re.findall(r"\d+,\d+%", app.sem_marcadores_de_trecho(DEV008_AO_VIVO)) == antes
+
+    def test_contraprova_texto_sem_marcador_fica_igual(self):
+        texto = "A margem foi de R$ 20.051 milhões [nota do autor]."
+        assert app.sem_marcadores_de_trecho(texto) == texto
+
+    def test_recusa_de_cobertura_diz_que_a_resposta_nao_citou(self):
+        from src.geracao import MOTIVO_RN02_COBERTURA
+        from types import SimpleNamespace
+
+        texto = app._texto_da_recusa(
+            SimpleNamespace(recusa=True, motivo_recusa=MOTIVO_RN02_COBERTURA, resposta=None),
+            [SimpleNamespace(chunk=SimpleNamespace(empresa=b, trimestre="1T2026"))
+             for b in ("BTG", "ITAU", "BRADESCO", "SANTANDER", "BB")],
+        )
+        assert "não citou" in texto
+        assert "Faltou evidência" not in texto

@@ -730,7 +730,9 @@ def responder_prospectiva_se_couber(pergunta: str) -> dict | None:
         # RN11: nome que resolve para mais de uma companhia gera pergunta de
         # desambiguação, nunca escolha automática — inclusive aqui.
         return {
-            "resposta": texto_da_desambiguacao(resolucao),
+            "resposta": texto_da_desambiguacao(
+                _opcoes(resolucao.candidatas), resolucao.termo
+            ),
             "fontes": [],
             "modo": "desambiguação (RN11, nenhuma chamada externa)",
             "provedor": "—",
@@ -1001,7 +1003,9 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
     # sempre por código". A tela diz o mesmo para quem pergunta.
     if resposta.precisa_desambiguacao:
         ambigua = next(t for t in resposta.triagens if t.precisa_desambiguacao)
-        texto = texto_da_desambiguacao(ambigua.resolucao)
+        texto = texto_da_desambiguacao(
+            _opcoes(ambigua.resolucao.candidatas), ambigua.resolucao.termo
+        )
     elif resposta.recusa and not resposta.triagens:
         texto = TEXTO_SEM_COMPANHIA
     # Mitigação da lacuna da deferência (auditoria de 2026-09-15): paráfrase
@@ -1539,7 +1543,7 @@ def responder_pergunta_livre(
         if resposta.recusa:
             conteudo = _texto_da_recusa(resposta, recuperados)
         else:
-            conteudo = resposta.resposta or "—"
+            conteudo = sem_marcadores_de_trecho(resposta.resposta or "—")
             if resposta.citacoes:
                 conteudo += "\n\n" + "\n".join(
                     f"> 📄 {_nome_do_banco(c.empresa)} · release do "
@@ -1578,6 +1582,26 @@ def responder_pergunta_livre(
         "modelo": uso.modelo,
         "motivo_tecnico": motivo_tecnico,
     }
+
+
+# Cabeçalho que cada trecho leva no prompt: "[SANTANDER | doc | 1T2026 | pág. 3]".
+_PADRAO_MARCADOR_DE_TRECHO = re.compile(
+    r"\s*\[(?P<empresa>[A-Z]+) \| [\w.-]+ \| [1-4]T\d{4} \| pág\. (?P<pagina>\d+)\]"
+)
+
+
+def sem_marcadores_de_trecho(texto: str) -> str:
+    """O cabeçalho de trecho que o modelo copia para o corpo vira "(Banco, pág. N)".
+
+    Visto ao vivo em 24/10 (DEV008): o texto trazia
+    "[SANTANDER | santander_release_1T2026 | 1T2026 | pág. 3]" no meio da
+    frase. A citação completa continua na lista abaixo da resposta; só a
+    exibição muda, depois das guardas.
+    """
+    return _PADRAO_MARCADOR_DE_TRECHO.sub(
+        lambda casado: f" ({_nome_do_banco(casado['empresa'])}, pág. {casado['pagina']})",
+        texto,
+    )
 
 
 NOMES_DOS_BANCOS = {
@@ -1729,8 +1753,8 @@ def _texto_da_recusa(resposta, recuperados) -> str:
                 origens.append(origem)
         quantidade = len(recuperados)
         texto = (
-            "**Os trechos encontrados não cobrem tudo o que a pergunta pede.** "
-            "Faltou evidência de pelo menos um dos bancos ou trimestres "
+            "**A resposta não cobriu tudo o que a pergunta pede.** Ela não "
+            "citou trecho de pelo menos um dos bancos ou trimestres "
             "mencionados, e o sistema não completa a resposta de memória.\n\n"
             + (
                 f"A busca trouxe {quantidade} "
@@ -1966,19 +1990,21 @@ TEXTO_SEM_COMPANHIA = (
 )
 
 
-def texto_da_desambiguacao(resolucao) -> str:
+def texto_da_desambiguacao(opcoes: list[dict], termo: str | None = None) -> str:
     """Pergunta de volta quando um nome designa mais de uma companhia (RN11).
 
     Nomeia as candidatas com o código, que é como a escolha se faz, sem a
-    frase de regra interna que a versão do benchmark carrega.
+    frase de regra interna que a versão do benchmark carrega. Vale também para
+    os agentes, que copiavam essa frase da ferramenta de cobertura (visto ao
+    vivo em 24/10).
     """
-    opcoes = _lista_em_portugues(
-        f"{c.denom_social} (código CVM {c.cd_cvm})" for c in resolucao.candidatas
+    lista = _lista_em_portugues(
+        f"{opcao['nome']} (código CVM {opcao['cd_cvm']})" for opcao in opcoes
     )
+    sujeito = f"“{termo}”" if termo else "O nome pedido"
     return (
-        f"“{resolucao.termo}” corresponde a {len(resolucao.candidatas)} "
-        f"companhias no painel da CVM: {opcoes}. Qual delas? Escolha abaixo ou "
-        "responda com o código."
+        f"{sujeito} corresponde a {len(opcoes)} companhias no painel da CVM: "
+        f"{lista}. Qual delas? Escolha abaixo ou responda com o código."
     )
 
 
@@ -2305,6 +2331,12 @@ def responder_com_agentes(
         raise FalhaConsultaAoVivo(orcamento.acumulado_usd) from exc
 
     conteudo = valores_legiveis(resposta.resposta or "—")
+    opcoes = (
+        opcoes_no_texto(resposta.resposta or "") if resposta.precisa_desambiguacao else []
+    )
+    if opcoes:
+        termo = re.match(r"'([^']+)'", resposta.resposta or "")
+        conteudo = texto_da_desambiguacao(opcoes, termo.group(1) if termo else None)
     if resposta.citacoes and not resposta.recusa:
         conteudo += "\n\n" + "\n".join(
             f"> 📄 {citacao_legivel(c)}" for c in resposta.citacoes
@@ -2333,11 +2365,7 @@ def responder_com_agentes(
         "provedor": f"{config.llm_provider}/{resposta.uso.modelo or '—'}",
         # O texto dos agentes vem do modelo; as candidatas saem dele só quando
         # ele repete o formato `NOME (CD_CVM 000000)` da ferramenta de cobertura.
-        "opcoes_desambiguacao": (
-            opcoes_no_texto(resposta.resposta or "")
-            if resposta.precisa_desambiguacao
-            else []
-        ),
+        "opcoes_desambiguacao": opcoes,
     }
 
 

@@ -1,0 +1,335 @@
+{
+ "_meta": {
+  "data": "2026-10-24",
+  "proposito": "teste ao vivo da revisão de UX (itens 1–12), pelo caminho da tela (AppTest), duas sessões de 5 perguntas",
+  "modelo": "gemini-3.5-flash-lite",
+  "teto_por_sessao_usd": 0.3,
+  "langfuse": "desligado",
+  "custo_total_usd": 0.063273,
+  "observacao": "textos gravados antes das três correções de exibição feitas em seguida (marcadores de trecho, recusa de cobertura, desambiguação dos agentes)"
+ },
+ "resultados": [
+  {
+   "sessao": "livre",
+   "rotulo": "Margem financeira do Bradesco no 1T2026",
+   "pergunta": "Segundo a demonstração do resultado recorrente do Bradesco qual foi a margem financeira total no 1T2026?",
+   "resposta": "Segundo a demonstração do resultado do período do Bradesco, a Margem Financeira Total no 1T26 foi de R$ 20.051 milhões.\n\n> 📄 Bradesco · release do 1T2026 · pág. 41",
+   "modo": "pergunta livre (inferência ao vivo)",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "motivo_tecnico": null,
+   "opcoes_desambiguacao": null,
+   "complemento": false,
+   "rastro_agentes": null,
+   "n_fontes": 5,
+   "custo_usd": 0.001352,
+   "duracao_s": 2.5,
+   "erros": [],
+   "excecao": []
+  },
+  {
+   "sessao": "livre",
+   "rotulo": "Por que o NPL de 15 a 90 dias do Itaú subiu",
+   "pergunta": "Segundo a análise gerencial do Itaú Unibanco por que o NPL total de 15 a 90 dias aumentou no 1T2026 ante o 4T2025?",
+   "resposta": "No Itaú Unibanco, o índice de inadimplência entre 15 e 90 dias (NPL 15-90) total aumentou em função do crescimento de 0,23 p.p. no índice da carteira de pessoas físicas no Brasil, por conta da sazonalidade típica do período, quando há a concentração de gastos das famílias.\n\n> 📄 Itaú Unibanco · release do 1T2026 · pág. 14",
+   "modo": "pergunta livre (inferência ao vivo)",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "motivo_tecnico": null,
+   "opcoes_desambiguacao": null,
+   "complemento": false,
+   "rastro_agentes": null,
+   "n_fontes": 5,
+   "custo_usd": 0.001506,
+   "duracao_s": 4.1,
+   "erros": [],
+   "excecao": []
+  },
+  {
+   "sessao": "livre",
+   "rotulo": "Carteira de crédito do Santander no 1T2026",
+   "pergunta": "Segundo o Santander quais fatores explicaram a queda trimestral e o crescimento anual da carteira de crédito ampliada no 1T2026?",
+   "resposta": "Segundo o Santander, a queda trimestral da carteira de crédito ampliada no 1T2026 se deve especialmente à sazonalidade em cartões e à variação cambial [SANTANDER | santander_release_1T2026 | 1T2026 | pág. 3]. O crescimento anual da carteira de crédito ampliada no 1T2026 foi de 3,4% [SANTANDER | santander_release_1T2026 | 1T2026 | pág. 3], sendo os destaques dentro de pessoa física os produtos de cartões e crédito imobiliário com incremento de 9,1% e 10,6% respectivamente, e a financeira com avanço de 14,2% seguida por PMEs crescendo 9,9% [SANTANDER | santander_release_1T2026 | 1T2026 | pág. 15].\n\n> 📄 Santander · release do 1T2026 · pág. 3\n> 📄 Santander · release do 1T2026 · pág. 15",
+   "modo": "pergunta livre (inferência ao vivo)",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "motivo_tecnico": null,
+   "opcoes_desambiguacao": null,
+   "complemento": false,
+   "rastro_agentes": null,
+   "n_fontes": 5,
+   "custo_usd": 0.002383,
+   "duracao_s": 8.9,
+   "erros": [],
+   "excecao": []
+  },
+  {
+   "sessao": "livre",
+   "rotulo": "DEV009 (recusa esperada)",
+   "pergunta": "No 1T2026 qual banco teve o maior indicador anualizado de rentabilidade gerencial sobre o patrimônio como divulgado em cada release?",
+   "resposta": "**Os trechos encontrados não cobrem tudo o que a pergunta pede.** Faltou evidência de pelo menos um dos bancos ou trimestres mencionados, e o sistema não completa a resposta de memória.\n\nA busca trouxe 5 trechos, de BTG Pactual 1T2026, Itaú Unibanco 1T2026, Bradesco 1T2026, Santander 1T2026 e Banco do Brasil 1T2026. Pergunte um banco e um trimestre por vez.\n\nOs trechos que a busca encontrou estão logo abaixo, em *Trechos recuperados*.\n\n_Esta tentativa usou uma das perguntas livres da sessão._",
+   "modo": "pergunta livre (inferência ao vivo)",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "motivo_tecnico": "Rebaixada por RN02: as citações não cobrem todas as instituições e períodos pedidos.",
+   "opcoes_desambiguacao": null,
+   "complemento": false,
+   "rastro_agentes": null,
+   "n_fontes": 5,
+   "custo_usd": 0.001802,
+   "duracao_s": 3.4,
+   "erros": [],
+   "excecao": []
+  },
+  {
+   "sessao": "agentes",
+   "rotulo": "Inter: lucro e faixa de porte no modelo",
+   "pergunta": "Qual foi o lucro líquido do Banco Inter no 3T2025 e em que faixa de porte de ativo ele se encaixa no modelo preditivo de prejuízo?",
+   "resposta": "No 3T2025, o lucro líquido consolidado do INTER & CO, INC. (CD_CVM 080217) foi de R$ 356,00 milhões (R$ 356.005.000,00) e o lucro líquido atribuível aos controladores foi de R$ 336,35 milhões (R$ 336.345.000,00), conforme dados arquivados na CVM. Não há release indexado para esta instituição. Com um ativo total de R$ 91,81 bilhões (R$ 91.808.508.000,00) no período, a companhia enquadra-se na faixa de porte de ativo de R$ 10–100 bi, cuja taxa histórica de prejuízo no modelo preditivo é de 21,8%.\n\n> 📄 Painel da CVM · INTER & CO, INC. (código CVM 080217) · 3T2025 · lucro líquido consolidado\n> 📄 Painel da CVM · INTER & CO, INC. (código CVM 080217) · 3T2025 · lucro líquido (controladores)\n> 📄 Painel da CVM · INTER & CO, INC. (código CVM 080217) · 3T2025 · ativo total\n> 📄 Modelo preditivo · panorama 3T2025 · regime por porte\n\n**Auditor:** confirmou.",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "motivo_tecnico": null,
+   "opcoes_desambiguacao": [],
+   "complemento": false,
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): so_painel",
+    "Investigador · `consultar_cvm` · 3 linha(s)",
+    "Investigador · `consultar_modelo_prejuizo` · panorama 3T2025, faixa de porte, escore não exposto",
+    "Auditor · `consultar_cvm` · 10 linha(s)",
+    "Auditor · `consultar_modelo_prejuizo` · panorama 3T2025, faixa de porte, escore não exposto"
+   ],
+   "n_fontes": 0,
+   "custo_usd": 0.012188,
+   "duracao_s": 28.8,
+   "erros": [],
+   "excecao": []
+  },
+  {
+   "sessao": "agentes",
+   "rotulo": "Itaú: margem no release e lucro na CVM",
+   "pergunta": "O que o release do Itaú diz sobre a margem financeira gerencial no 3T2025, e quanto o painel da CVM registra de lucro líquido no mesmo trimestre?",
+   "resposta": "De acordo com o release do Itaú Unibanco no 3T2025 (pág. 6), a margem financeira gerencial foi de R$ 31.382 milhões (composta por R$ 30.479 milhões de margem financeira com clientes e R$ 902 milhões de margem com o mercado). No painel da CVM para o mesmo trimestre, o lucro líquido consolidado foi de R$ 11,60 bilhões (R$ 11.600.000.000,00) e o lucro líquido atribuível aos controladores foi de R$ 11,31 bilhões (R$ 11.306.000.000,00).\n\n> 📄 Itaú Unibanco · release do 3T2025 · pág. 6\n> 📄 Painel da CVM · ITAU UNIBANCO HOLDING S.A. (código CVM 019348) · 3T2025 · lucro líquido consolidado\n> 📄 Painel da CVM · ITAU UNIBANCO HOLDING S.A. (código CVM 019348) · 3T2025 · lucro líquido (controladores)\n\n**Auditor:** confirmou.",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "motivo_tecnico": null,
+   "opcoes_desambiguacao": [],
+   "complemento": false,
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): ambas",
+    "Investigador · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Investigador · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Investigador · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Investigador · `consultar_cvm` · 3 linha(s)",
+    "Auditor · `buscar_trechos` · 3 trecho(s) por semantica",
+    "Auditor · `consultar_cvm` · 2 linha(s)"
+   ],
+   "n_fontes": 0,
+   "custo_usd": 0.026594,
+   "duracao_s": 37.4,
+   "erros": [],
+   "excecao": []
+  },
+  {
+   "sessao": "agentes",
+   "rotulo": "Modelo: companhias sinalizadas e AUC",
+   "pergunta": "Quantas companhias o modelo preditivo sinaliza no trimestre corrente, e com que AUC ele foi validado?",
+   "resposta": "O modelo preditivo de prejuízo foi validado com um AUC (walk-forward) de 0,879. No trimestre corrente (1T2026), o modelo sinaliza 25 companhias acima do limiar de risco de prejuízo (além de 136 companhias que já se encontram em prejuízo, de um total de 413 companhias avaliadas).\n\n> 📄 Modelo preditivo · panorama 1T2026 · regime por porte\n\n**Auditor:** confirmou.",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "motivo_tecnico": null,
+   "opcoes_desambiguacao": [],
+   "complemento": false,
+   "rastro_agentes": [
+    "Investigador · `consultar_modelo_prejuizo` · panorama 3T2025",
+    "Auditor · `consultar_modelo_prejuizo` · panorama 3T2025"
+   ],
+   "n_fontes": 0,
+   "custo_usd": 0.005648,
+   "duracao_s": 14.2,
+   "erros": [],
+   "excecao": []
+  },
+  {
+   "sessao": "agentes",
+   "rotulo": "BTG ambíguo",
+   "pergunta": "Quanto o BTG lucrou no primeiro trimestre de 2026?",
+   "resposta": "'btg' identifica 2 companhias no painel da CVM: BCO BTG PACTUAL S.A. (CD_CVM 022616); BTG PACTUAL COMMODITIES SERTRADING S.A. (CD_CVM 027774). Qual delas? Responda com o CD_CVM — a seleção é sempre por código, nunca por nome.",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "motivo_tecnico": null,
+   "opcoes_desambiguacao": [
+    {
+     "cd_cvm": "022616",
+     "nome": "BCO BTG PACTUAL S.A."
+    },
+    {
+     "cd_cvm": "027774",
+     "nome": "BTG PACTUAL COMMODITIES SERTRADING S.A."
+    }
+   ],
+   "complemento": false,
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): desambiguacao"
+   ],
+   "n_fontes": 0,
+   "custo_usd": 0.003174,
+   "duracao_s": 8.2,
+   "erros": [],
+   "excecao": []
+  },
+  {
+   "sessao": "agentes",
+   "rotulo": "BTG: clique na candidata 022616",
+   "pergunta": "Quanto o BTG lucrou no primeiro trimestre de 2026? (CD_CVM 022616)",
+   "resposta": "No primeiro trimestre de 2026 (1T2026), o BCO BTG PACTUAL S.A. (CD_CVM 022616) registrou lucro líquido consolidado de R$ 4,94 bilhões (R$ 4.935.166.000,00) e lucro líquido atribuído aos controladores de R$ 4,76 bilhões (R$ 4.760.641.000,00), conforme os dados contábeis arquivados na CVM.\n\n> 📄 Painel da CVM · BCO BTG PACTUAL S.A. (código CVM 022616) · 1T2026 · lucro líquido consolidado\n> 📄 Painel da CVM · BCO BTG PACTUAL S.A. (código CVM 022616) · 1T2026 · lucro líquido (controladores)\n\n**Auditor:** confirmou.",
+   "modo": "agentes · Investigador + Auditor",
+   "provedor": "gemini/gemini-3.5-flash-lite",
+   "motivo_tecnico": null,
+   "opcoes_desambiguacao": [],
+   "complemento": false,
+   "rastro_agentes": [
+    "Investigador · `verificar_cobertura` · 1 entidade(s): ambas",
+    "Investigador · `consultar_cvm` · 3 linha(s)",
+    "Auditor · `consultar_cvm` · 2 linha(s)"
+   ],
+   "n_fontes": 0,
+   "custo_usd": 0.008626,
+   "duracao_s": 20.3,
+   "erros": [],
+   "excecao": []
+  }
+ ],
+ "journal": [
+  {
+   "evento": "inicio",
+   "sessao": "livre",
+   "rotulo": "Margem financeira do Bradesco no 1T2026",
+   "em": "2026-10-25T01:38:10+00:00"
+  },
+  {
+   "evento": "fim",
+   "sessao": "livre",
+   "rotulo": "Margem financeira do Bradesco no 1T2026",
+   "custo_usd": 0.001352,
+   "duracao_s": 2.5,
+   "modo": "pergunta livre (inferência ao vivo)",
+   "em": "2026-10-25T01:38:12+00:00"
+  },
+  {
+   "evento": "inicio",
+   "sessao": "livre",
+   "rotulo": "Por que o NPL de 15 a 90 dias do Itaú subiu",
+   "em": "2026-10-25T01:38:12+00:00"
+  },
+  {
+   "evento": "fim",
+   "sessao": "livre",
+   "rotulo": "Por que o NPL de 15 a 90 dias do Itaú subiu",
+   "custo_usd": 0.001506,
+   "duracao_s": 4.1,
+   "modo": "pergunta livre (inferência ao vivo)",
+   "em": "2026-10-25T01:38:17+00:00"
+  },
+  {
+   "evento": "inicio",
+   "sessao": "livre",
+   "rotulo": "Carteira de crédito do Santander no 1T2026",
+   "em": "2026-10-25T01:38:17+00:00"
+  },
+  {
+   "evento": "fim",
+   "sessao": "livre",
+   "rotulo": "Carteira de crédito do Santander no 1T2026",
+   "custo_usd": 0.002383,
+   "duracao_s": 8.9,
+   "modo": "pergunta livre (inferência ao vivo)",
+   "em": "2026-10-25T01:38:25+00:00"
+  },
+  {
+   "evento": "inicio",
+   "sessao": "livre",
+   "rotulo": "DEV009 (recusa esperada)",
+   "em": "2026-10-25T01:38:25+00:00"
+  },
+  {
+   "evento": "fim",
+   "sessao": "livre",
+   "rotulo": "DEV009 (recusa esperada)",
+   "custo_usd": 0.001802,
+   "duracao_s": 3.4,
+   "modo": "pergunta livre (inferência ao vivo)",
+   "em": "2026-10-25T01:38:29+00:00"
+  },
+  {
+   "evento": "inicio",
+   "sessao": "agentes",
+   "rotulo": "Inter: lucro e faixa de porte no modelo",
+   "em": "2026-10-25T01:38:29+00:00"
+  },
+  {
+   "evento": "fim",
+   "sessao": "agentes",
+   "rotulo": "Inter: lucro e faixa de porte no modelo",
+   "custo_usd": 0.012188,
+   "duracao_s": 28.8,
+   "modo": "agentes · Investigador + Auditor",
+   "em": "2026-10-25T01:38:58+00:00"
+  },
+  {
+   "evento": "inicio",
+   "sessao": "agentes",
+   "rotulo": "Itaú: margem no release e lucro na CVM",
+   "em": "2026-10-25T01:38:58+00:00"
+  },
+  {
+   "evento": "fim",
+   "sessao": "agentes",
+   "rotulo": "Itaú: margem no release e lucro na CVM",
+   "custo_usd": 0.026594,
+   "duracao_s": 37.4,
+   "modo": "agentes · Investigador + Auditor",
+   "em": "2026-10-25T01:39:36+00:00"
+  },
+  {
+   "evento": "inicio",
+   "sessao": "agentes",
+   "rotulo": "Modelo: companhias sinalizadas e AUC",
+   "em": "2026-10-25T01:39:36+00:00"
+  },
+  {
+   "evento": "fim",
+   "sessao": "agentes",
+   "rotulo": "Modelo: companhias sinalizadas e AUC",
+   "custo_usd": 0.005648,
+   "duracao_s": 14.2,
+   "modo": "agentes · Investigador + Auditor",
+   "em": "2026-10-25T01:39:50+00:00"
+  },
+  {
+   "evento": "inicio",
+   "sessao": "agentes",
+   "rotulo": "BTG ambíguo",
+   "em": "2026-10-25T01:39:50+00:00"
+  },
+  {
+   "evento": "fim",
+   "sessao": "agentes",
+   "rotulo": "BTG ambíguo",
+   "custo_usd": 0.003174,
+   "duracao_s": 8.2,
+   "modo": "agentes · Investigador + Auditor",
+   "em": "2026-10-25T01:39:58+00:00"
+  },
+  {
+   "evento": "inicio",
+   "sessao": "agentes",
+   "rotulo": "BTG: clique na candidata 022616",
+   "em": "2026-10-25T01:39:58+00:00"
+  },
+  {
+   "evento": "fim",
+   "sessao": "agentes",
+   "rotulo": "BTG: clique na candidata 022616",
+   "custo_usd": 0.008626,
+   "duracao_s": 20.3,
+   "modo": "agentes · Investigador + Auditor",
+   "em": "2026-10-25T01:40:18+00:00"
+  }
+ ]
+}

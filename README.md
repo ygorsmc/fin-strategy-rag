@@ -174,7 +174,7 @@ Extras opcionais: `requirements-modelo.txt` (treino do modelo),
 `requirements-deepeval.txt` (instale com `pip install --no-deps -r`; o arquivo
 explica por quê).
 
-**Testes.** `pytest -q` roda 2.325 casos sem nenhuma chamada externa. Num clone
+**Testes.** `pytest -q` roda 2.329 casos sem nenhuma chamada externa. Num clone
 recém-feito, 19 deles ficam pulados até o índice e os painéis da CVM existirem.
 
 **Dados.** Os PDFs e os ZIPs da CVM não vão para o Git; os manifestos guardam
