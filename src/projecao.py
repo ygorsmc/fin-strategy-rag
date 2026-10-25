@@ -370,6 +370,9 @@ class RespostaProjecao:
     expos_escore_por_emissor: bool
     blocos: tuple[str, ...] = ()
     escore: float | None = None
+    # (nome, texto) de cada bloco publicado, na ordem de `texto`. A tela mostra
+    # a recusa e o histórico e recolhe o contexto agregado num expansor.
+    secoes: tuple[tuple[str, str], ...] = ()
     metadados: dict[str, object] = field(default_factory=dict)
 
     def como_dicionario(self) -> dict[str, object]:
@@ -389,7 +392,7 @@ _CABECALHO_RECUSA = (
     "emissor identificado é análise de valores mobiliários na acepção da "
     "{ancora} — a mesma fronteira pela qual recuso pedidos de recomendação de "
     "compra. O modelo preditivo deste projeto roda offline e não responde por "
-    "companhia (RN07)."
+    "companhia."
 )
 
 
@@ -469,11 +472,11 @@ def _bloco_historico(
     """
     if not trimestres:
         return (
-            f"**Histórico arquivado — {denom_social} (CD_CVM {cd_cvm})**\n"
+            f"**Histórico arquivado — {denom_social} (código CVM {cd_cvm})**\n"
             "A companhia não tem trimestres no painel CVM carregado."
         )
     linha = (
-        f"**Histórico arquivado — {denom_social} (CD_CVM {cd_cvm})**\n"
+        f"**Histórico arquivado — {denom_social} (código CVM {cd_cvm})**\n"
         f"{len(trimestres)} trimestres no painel CVM "
         f"({trimestres[0]}–{trimestres[-1]})"
     )
@@ -486,8 +489,8 @@ def _bloco_historico(
     if n_prejuizos_derivados:
         linha += (
             f", mais {n_prejuizos_derivados} em trimestre **derivado** "
-            "(RN10: o 4T não existe como ITR e sai de DFP anual − ITR "
-            "acumulado do 3T)"
+            "(o 4T não existe como ITR e sai de DFP anual − ITR acumulado "
+            "do 3T)"
         )
     return linha + "."
 
@@ -518,7 +521,8 @@ def _bloco_panorama(panorama: Panorama) -> str:
     trimestre. A contagem acima do dobro da taxa-base varia e informa.
     """
     linha = (
-        f"**Panorama do mercado — {panorama.trimestre_referencia}**\n"
+        f"**Panorama do mercado — {panorama.trimestre_referencia}** (último "
+        "trimestre com resultado conhecido)\n"
         f"De {panorama.n_companhias_avaliadas} companhias avaliadas, "
         f"**{panorama.n_acima_do_dobro_da_base}** "
         f"({_pct(panorama.fracao_acima_do_dobro)}) receberam escore acima do "
@@ -568,7 +572,7 @@ def _bloco_trimestre_corrente(panorama: Panorama) -> str:
     if not piso <= corrente.fracao_sinalizada <= teto:
         return ""
     return (
-        f"**Trimestre corrente — {corrente.trimestre}** (escorado, ainda sem "
+        f"**Último trimestre escorado — {corrente.trimestre}** (ainda sem "
         "resultado conhecido)\n"
         f"Entre as **{corrente.n_hoje_lucrativas}** companhias que fecharam "
         f"{corrente.trimestre} **com lucro**, "
@@ -705,7 +709,7 @@ def responder_projecao(
             # parágrafo de recusa ao lado do número seria contraditório.
             blocos[0] = (
                 "**Modo local/autenticado.** A instância pública recusaria esta "
-                f"pergunta pela {achado.ancora_legal} e pela RN07; aqui o "
+                f"pergunta pela {achado.ancora_legal}; aqui o "
                 "escore é exibido para conferência interna do analista."
             )
             nomes[0] = "aviso_modo_local"
@@ -718,6 +722,7 @@ def responder_projecao(
         expos_escore_por_emissor=escore is not None,
         blocos=tuple(nomes),
         escore=escore,
+        secoes=tuple((nome, bloco) for nome, bloco in zip(nomes, blocos) if bloco),
         metadados={
             "cd_cvm": cd_cvm,
             "trimestre_referencia": panorama.trimestre_referencia,

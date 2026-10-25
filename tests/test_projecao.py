@@ -128,6 +128,10 @@ class TestModoPublico:
         assert "escore_por_emissor" not in resposta.blocos
 
     def test_recusa_cita_a_norma_e_a_rn07(self):
+        """**Substituição declarada (24/10, revisão de UX):** exigia "RN07" no
+        texto da recusa. O código da regra saiu da prosa que o usuário lê e
+        ficou na legenda da mensagem ("rota prospectiva · RN07", conferida em
+        `TestPortaoRN07`); a norma que a fundamenta continua citada."""
         resposta = responder_projecao(
             "O BB terá prejuízo nos próximos trimestres?",
             denom_social="BCO BRASIL S.A.",
@@ -135,7 +139,8 @@ class TestModoPublico:
             panorama=_panorama(),
         )
         assert RESOLUCAO_ANALISE in resposta.texto
-        assert "RN07" in resposta.texto
+        assert "não responde por companhia" in resposta.texto
+        assert "RN07" not in resposta.texto
         assert resposta.blocos[0] == "recusa"
 
     def test_entrega_historico_e_panorama(self):
@@ -617,7 +622,11 @@ class TestAchadosDaAuditoria:
         assert "(1T2025–2T2026)" in resposta.texto
 
     def test_prejuizo_derivado_sai_marcado_rn10(self):
-        """4T é derivado (420 de 435 linhas no painel) e não pode virar arquivado."""
+        """4T é derivado (420 de 435 linhas no painel) e não pode virar arquivado.
+
+        **Substituição declarada (24/10, revisão de UX):** exigia "RN10" no
+        texto; agora exige a conta que a RN10 manda explicitar, sem o código
+        da regra, que saiu da prosa que o usuário lê."""
         resposta = responder_projecao(
             "A companhia terá prejuízo nos próximos trimestres?",
             denom_social="COMPANHIA X",
@@ -628,7 +637,8 @@ class TestAchadosDaAuditoria:
             panorama=_panorama(),
         )
         assert "derivado" in resposta.texto
-        assert "RN10" in resposta.texto
+        assert "DFP anual − ITR acumulado do 3T" in resposta.texto
+        assert "RN10" not in resposta.texto
         assert "arquivado" in resposta.texto
 
     def test_sem_derivados_o_texto_nao_polui(self):

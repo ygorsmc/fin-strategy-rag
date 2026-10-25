@@ -943,6 +943,9 @@ class TestRedacaoConversacional:
         assert "355" not in texto
 
     def test_valor_derivado_sai_marcado_na_parcela_e_no_total(self):
+        """**Substituição declarada (24/10, revisão de UX):** exigia "RN10" no
+        texto; agora exige a frase que marca o total. O código da regra saiu
+        da resposta e o aviso de derivado da interface explica a conta."""
         texto = redigir_conversacional(
             _resposta(
                 _fato(trimestre="3T2025", valor=11_306_000_000.0),
@@ -951,14 +954,20 @@ class TestRedacaoConversacional:
             "lucro do Itaú no segundo semestre de 2025",
         )
         assert "(derivado) em 4T2025" in texto
-        assert "RN10" in texto
+        assert "Inclui valor derivado." in texto
+        assert "RN10" not in texto
 
     def test_fato_unico_derivado_diz_a_regra(self):
+        """**Substituição declarada (24/10, revisão de UX):** exigia "valor
+        derivado (RN10)"; agora exige "valor derivado" colado ao número e
+        nenhum código de regra na resposta. A conta (DFP anual − ITR acumulado
+        do 3T) é dita pelo aviso da interface, logo abaixo."""
         texto = redigir_conversacional(
             _resposta(_fato(trimestre="4T2025", valor=11_907_000_000.0, derivado=True)),
             "lucro do Itaú no 4T2025",
         )
-        assert "valor derivado (RN10)" in texto
+        assert "(R$ 11.907.000.000,00) — valor derivado." in texto
+        assert "RN10" not in texto
 
     def test_periodos_soltos_nao_somam_mesmo_sendo_fluxo(self):
         """Dois trimestres citados avulsos são duas perguntas, não um intervalo."""

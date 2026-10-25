@@ -262,11 +262,15 @@ class TestPeriodoPorExtenso:
 
 class TestRN10:
     def test_valor_derivado_sai_marcado(self, rota):
+        """**Substituição declarada (24/10, revisão de UX):** a coluna "origem"
+        dizia "derivado (RN10)" e passou a dizer "derivado". O código da regra
+        saiu da tela; a marca, a citação "DERIVADO" e o aviso da interface
+        (`test_a_interface_avisa_quando_ha_derivado`) continuam."""
         item = app.responder_estruturada_se_couber(
             "Qual o lucro líquido consolidado do Banco do Brasil no 4T2025?"
         )
         assert item is not None
-        assert item["fatos"][0]["origem"] == "derivado (RN10)"
+        assert item["fatos"][0]["origem"] == "derivado"
         assert "DERIVADO" in item["citacoes"][0]
 
     def test_a_interface_avisa_quando_ha_derivado(self):

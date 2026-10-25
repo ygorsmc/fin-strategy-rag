@@ -1,0 +1,3 @@
+[client]
+# Quem usa o app não vê o botão "Deploy" nem o menu de desenvolvedor.
+toolbarMode = "viewer"

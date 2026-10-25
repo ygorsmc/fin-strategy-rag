@@ -60,6 +60,7 @@ from src.normalizacao import (
     extrair_bancos_citados,
     extrair_periodos_citados,
     extrair_trimestres_citados,
+    ordinal_trimestre,
     remover_acentos,
 )
 
@@ -1126,7 +1127,7 @@ def _frase_do_grupo(
     if len(fatos) == 1:
         fato = fatos[0]
         exato = formatar_reais(fato.valor_reais)
-        marca = " — valor derivado (RN10)" if fato.derivado else ""
+        marca = " — valor derivado" if fato.derivado else ""
         return (
             f"O {rotulo} de {empresa} em {fato.trimestre} foi de "
             f"{formatar_reais_legivel(fato.valor_reais)} ({exato}){marca}."
@@ -1145,7 +1146,7 @@ def _frase_do_grupo(
     if cobre_o_intervalo and conceito in CONCEITOS_DE_FLUXO:
         total = sum(f.valor_reais for f in fatos)
         houve_derivado = any(f.derivado for f in fatos)
-        nota = " Inclui valor derivado (RN10)." if houve_derivado else ""
+        nota = " Inclui valor derivado." if houve_derivado else ""
         return (
             f"O {rotulo} de {empresa} no {intervalo.rotulo} foi de "
             f"{formatar_reais_legivel(total)} ({formatar_reais(total)}), "
@@ -1189,8 +1190,14 @@ def redigir_conversacional(
     for fato in resposta.fatos:
         grupos.setdefault((fato.cd_cvm, fato.conceito), []).append(fato)
 
+    # Em ordem de calendário: a série saía na ordem do painel, que é a de
+    # texto ("1T2025, 1T2026, 2T2025..."), e o leitor tinha de reordenar.
     texto = " ".join(
-        _frase_do_grupo(tuple(fatos), intervalo) for fatos in grupos.values()
+        _frase_do_grupo(
+            tuple(sorted(fatos, key=lambda f: ordinal_trimestre(f.trimestre))),
+            intervalo,
+        )
+        for fatos in grupos.values()
     )
     ausencias = _ausencias_de_release(resposta)
     return f"{texto}\n\n{ausencias}" if ausencias else texto

@@ -730,7 +730,7 @@ def responder_prospectiva_se_couber(pergunta: str) -> dict | None:
         # RN11: nome que resolve para mais de uma companhia gera pergunta de
         # desambiguação, nunca escolha automática — inclusive aqui.
         return {
-            "resposta": resolucao.pergunta_desambiguacao(),
+            "resposta": texto_da_desambiguacao(resolucao),
             "fontes": [],
             "modo": "desambiguação (RN11, nenhuma chamada externa)",
             "provedor": "—",
@@ -769,14 +769,23 @@ def responder_prospectiva_se_couber(pergunta: str) -> dict | None:
         if saida.expos_escore_por_emissor
         else "rota prospectiva · RN07 (nenhuma chamada externa)"
     )
+    # A recusa vinha seguida de quatro blocos densos. Na mensagem fica o que
+    # responde à pergunta (recusa, histórico e, no modo local, o escore); o
+    # contexto agregado do modelo vai para um expansor logo abaixo.
+    principal = [t for nome, t in saida.secoes if nome not in CONTEXTO_DA_PROJECAO]
+    contexto = [t for nome, t in saida.secoes if nome in CONTEXTO_DA_PROJECAO]
     return {
-        "resposta": saida.texto,
+        "resposta": "\n\n".join(principal) if principal else saida.texto,
+        "complemento": "\n\n".join(contexto),
         "fontes": [],
         "modo": modo,
         "provedor": "—",
         "custo_usd": 0.0,
         "rastro_projecao": saida.como_dicionario(),
     }
+
+
+CONTEXTO_DA_PROJECAO = frozenset({"regime_por_porte", "panorama", "trimestre_corrente"})
 
 
 @st.cache_resource(show_spinner=False)
@@ -869,13 +878,13 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
     2026-09-15. Lacuna do detector, registrada no §3.6, não resolvida aqui.
     """
     from src.cobertura import (
-        ROTULO_CONCEITO,
+        rotulo_curto,
         EstadoCobertura,
         formatar_reais,
         redigir_conversacional,
         responder_por_gabarito,
     )
-    from src.normalizacao import extrair_periodos_citados
+    from src.normalizacao import extrair_periodos_citados, ordinal_trimestre
     from src.projecao import (
         detectar_pergunta_prospectiva,
         recusa_de_ultimo_recurso,
@@ -948,7 +957,9 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
         return {
             "resposta": (
                 "De qual período? O painel tem "
-                + ", ".join(sorted({f.trimestre for f in resposta.fatos}))
+                + ", ".join(
+                    sorted({f.trimestre for f in resposta.fatos}, key=ordinal_trimestre)
+                )
                 + " para essa consulta — diga o trimestre (ex.: 3T2025) ou o "
                 "semestre (ex.: 2º semestre de 2025)."
             ),
@@ -961,6 +972,7 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
             "consumiu_chamada": False,
         }
 
+    resposta = _lucro_nas_duas_bases(resposta, pergunta, recursos["leitor"])
     opcoes_desambiguacao = []
     if resposta.precisa_desambiguacao:
         modo = "painel CVM · desambiguação (RN11, nenhuma chamada externa)"
@@ -984,6 +996,14 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
     # mesma evidência uma vez; a procedência da RN01 segue na tabela de fatos e
     # no expansor de citações, logo abaixo.
     texto = redigir_conversacional(resposta, pergunta)
+    # A prosa do braço C é formato do benchmark, e duas frases dela chegavam à
+    # tela com vocabulário do projeto: "o braço determinístico" e "a seleção é
+    # sempre por código". A tela diz o mesmo para quem pergunta.
+    if resposta.precisa_desambiguacao:
+        ambigua = next(t for t in resposta.triagens if t.precisa_desambiguacao)
+        texto = texto_da_desambiguacao(ambigua.resolucao)
+    elif resposta.recusa and not resposta.triagens:
+        texto = TEXTO_SEM_COMPANHIA
     # Mitigação da lacuna da deferência (auditoria de 2026-09-15): paráfrase
     # que aponta o release sem casar radical ainda chega aqui. Quando a
     # companhia TEM release no corpus, a resposta declara que é o contábil e
@@ -1007,10 +1027,12 @@ def responder_estruturada_se_couber(pergunta: str) -> dict | None:
                 "companhia": fato.denom_social,
                 "cd_cvm": fato.cd_cvm,
                 "trimestre": fato.trimestre,
-                "conceito": ROTULO_CONCEITO.get(fato.conceito, fato.conceito),
+                # Rótulo curto: o longo ("lucro líquido atribuído aos sócios da
+                # empresa controladora") empurrava o valor para fora da tabela.
+                "conceito": rotulo_curto(fato.conceito),
                 "valor_resumido": formatar_reais_legivel(fato.valor_reais),
                 "valor": formatar_reais(fato.valor_reais),
-                "origem": "derivado (RN10)" if fato.derivado else "arquivado",
+                "origem": "derivado" if fato.derivado else "arquivado",
             }
             for fato in resposta.fatos
         ],
@@ -1224,14 +1246,14 @@ def _item_do_plano(
 
 def _fatos_do_plano(respondidas) -> list[dict]:
     """Tabela de evidência: uma linha por número, com procedência (RN10)."""
-    from src.cobertura import ROTULO_CONCEITO, formatar_reais
+    from src.cobertura import formatar_reais, rotulo_curto
 
     return [
         {
             "companhia": linha.denom_social,
             "cd_cvm": linha.cd_cvm,
             "trimestre": linha.trimestre,
-            "conceito": ROTULO_CONCEITO.get(linha.conceito, linha.conceito),
+            "conceito": rotulo_curto(linha.conceito),
             "valor_resumido": formatar_reais_legivel(linha.valor_reais),
             "valor": formatar_reais(linha.valor_reais),
             "origem": (
@@ -1255,6 +1277,7 @@ def _mensagem_do_painel(item: dict) -> dict:
         "modo": item["modo"],
         "provedor": item["provedor"],
         "opcoes_desambiguacao": item.get("opcoes_desambiguacao", []),
+        "complemento": item.get("complemento", ""),
         "streamar": True,
     }
 
@@ -1519,7 +1542,7 @@ def responder_pergunta_livre(
             conteudo = resposta.resposta or "—"
             if resposta.citacoes:
                 conteudo += "\n\n" + "\n".join(
-                    f"> 📄 {c.empresa} · {c.documento} · "
+                    f"> 📄 {_nome_do_banco(c.empresa)} · release do "
                     f"{c.trimestre} · pág. {c.pagina}"
                     for c in resposta.citacoes
                 )
@@ -1569,6 +1592,59 @@ _PADRAO_TRIMESTRE = re.compile(r"([1-4])T(\d{4})")
 
 def _nome_do_banco(codigo: str) -> str:
     return NOMES_DOS_BANCOS.get(codigo, codigo)
+
+
+# Tabela de fatos do painel: as chaves do dicionário são contrato (testes,
+# trace); só a exibição troca o nome. O CD_CVM sai da tabela e fica na
+# procedência, logo abaixo, que é onde a RN01 o exige.
+COLUNAS_DOS_FATOS = ["companhia", "trimestre", "conceito", "valor_resumido", "valor", "origem"]
+ROTULOS_DOS_FATOS = {
+    "companhia": "Companhia",
+    "trimestre": "Trimestre",
+    "conceito": "Conceito",
+    "valor_resumido": "Valor",
+    "valor": "Valor exato",
+    "origem": "Origem",
+}
+VEREDITO_LEGIVEL = {
+    "confirma": "confirmou",
+    "contesta": "contestou",
+    "nao_reproduz": "não reproduziu",
+}
+_PADRAO_CITACAO_CVM = re.compile(
+    r"CVM · (?P<empresa>.+?) \(CD_CVM (?P<cd>\d{6})\) · "
+    r"(?P<trimestre>[1-4]T\d{4}) · (?P<conceito>[a-z_]+)"
+)
+_PADRAO_CITACAO_RELEASE = re.compile(
+    r"release (?P<documento>\S+) · (?P<banco>[A-Z]+) · "
+    r"(?P<trimestre>[1-4]T\d{4}) · p\. (?P<pagina>\d+)"
+)
+
+
+def citacao_legivel(citacao: str) -> str:
+    """Citação dos agentes para leitura: conceito pelo nome, release pelo banco.
+
+    O formato bruto é contrato com `fonte_da_citacao` e com o Auditor (§3.16)
+    e não muda; muda só o que a tela mostra. Formato desconhecido passa como
+    veio, para que nenhuma citação suma da resposta.
+    """
+    from src.cobertura import rotulo_curto
+
+    texto = citacao.strip()
+    casado = _PADRAO_CITACAO_CVM.fullmatch(texto)
+    if casado:
+        conceito = rotulo_curto(casado["conceito"]).replace("_", " ")
+        return (
+            f"Painel da CVM · {casado['empresa']} (código CVM {casado['cd']}) · "
+            f"{casado['trimestre']} · {conceito}"
+        )
+    casado = _PADRAO_CITACAO_RELEASE.fullmatch(texto)
+    if casado:
+        return (
+            f"{_nome_do_banco(casado['banco'])} · release do "
+            f"{casado['trimestre']} · pág. {casado['pagina']}"
+        )
+    return citacao
 
 
 def _lista_em_portugues(itens) -> str:
@@ -1768,6 +1844,23 @@ EXEMPLOS_AGENTES_ROTULADOS = tuple(
         EXEMPLOS_AGENTES,
     )
 )
+LEGENDA_DO_MODO = {
+    MODO_DEMONSTRACAO: "painel da CVM, sem custo",
+    MODO_LIVRE: "releases, com modelo de linguagem",
+    MODO_AGENTES: "várias fontes, com auditoria",
+}
+NOMES_DOS_GUARDRAILS = {
+    "injection": "bloqueio de injeção de instruções",
+    "topico_proibido": "recusa de recomendação de investimento",
+    "pii": "anonimização de dados pessoais",
+}
+
+
+def _reais_de_dolar(valor: float) -> str:
+    """US$ com vírgula decimal, como o resto da tela."""
+    return f"US$ {valor:.2f}".replace(".", ",")
+
+
 _NOME_CURTO_DO_MODO = {
     MODO_DEMONSTRACAO: "Demonstração",
     MODO_LIVRE: "Pergunta livre",
@@ -1798,11 +1891,95 @@ def _exemplos_clicaveis(
 
 
 _PADRAO_OPCAO_DE_DESAMBIGUACAO = re.compile(r"([^:;]+?)\s*\(CD_CVM (\d{6})\)")
-_PADRAO_SO_CODIGO = re.compile(r"(?:cd[_\s]?cvm\s*:?\s*)?(\d{1,6})", re.IGNORECASE)
+_PADRAO_SO_CODIGO = re.compile(
+    r"(?:(?:cd[_\s]?cvm|c[oó]digo(?:\s+cvm)?)\s*:?\s*)?(\d{1,6})", re.IGNORECASE
+)
 
 
 def _opcoes(candidatas) -> list[dict]:
     return [{"cd_cvm": c.cd_cvm, "nome": c.denom_social} for c in candidatas]
+
+
+_QUALIFICADORES_DE_LUCRO = ("consolidad", "controlador", "minorit", "atribu", "socios")
+
+
+def _lucro_nas_duas_bases(resposta, pergunta: str, leitor):
+    """Lucro sem qualificador sai consolidado e dos controladores, cada um citado.
+
+    O painel lia "lucro" como o dos controladores, e os agentes respondiam com
+    os dois: a mesma pergunta dava R$ 336,35 milhões num modo e R$ 356,01 no
+    outro. O gabarito do conjunto dos agentes (AGTC001) pede os dois, e é o
+    que esta rota passa a dar. Pergunta que qualifica ("consolidado",
+    "controladores") recebe só o que pediu.
+    """
+    from dataclasses import replace
+
+    from src.mapa_contas import CONCEITO_LUCRO_CONSOLIDADO, CONCEITO_LUCRO_CONTROLADORES
+    from src.normalizacao import remover_acentos
+
+    texto = remover_acentos(pergunta or "").lower()
+    if (
+        not resposta.fatos
+        or any(q in texto for q in _QUALIFICADORES_DE_LUCRO)
+        or any(f.conceito != CONCEITO_LUCRO_CONTROLADORES for f in resposta.fatos)
+    ):
+        return resposta
+    # As citações derivam dos fatos (`RespostaDeterministica.citacoes`): o
+    # consolidado entra já com a procedência da RN01.
+    consolidados = [
+        consolidado
+        for fato in resposta.fatos
+        if (
+            consolidado := leitor.ler(
+                fato.cd_cvm, CONCEITO_LUCRO_CONSOLIDADO, fato.trimestre
+            )
+        )
+        is not None
+    ]
+    return replace(resposta, fatos=resposta.fatos + tuple(consolidados))
+
+
+_PADRAO_REAIS_EXATOS = re.compile(r"(?<!\()R\$ ?(-?\d{1,3}(?:\.\d{3}){2,},\d{2})")
+
+
+def valores_legiveis(texto: str) -> str:
+    """Valor em reais escrito com todos os dígitos ganha a escala ao lado.
+
+    Os agentes copiam o valor da ferramenta ("R$ 11.600.000.000,00") e o
+    release em milhões ("R$ 31.382 milhões"), e a mesma frase misturava as
+    duas escalas justo na pergunta que compara. O valor exato fica, entre
+    parênteses, como no painel; só a exibição muda, depois das guardas.
+    """
+    from src.cobertura import formatar_reais_legivel
+
+    def trocar(casado: re.Match) -> str:
+        exato = casado.group(1)
+        valor = float(exato.replace(".", "").replace(",", "."))
+        return f"{formatar_reais_legivel(valor)} (R$ {exato})"
+
+    return _PADRAO_REAIS_EXATOS.sub(trocar, texto)
+
+
+TEXTO_SEM_COMPANHIA = (
+    "Não identifiquei a companhia na pergunta. O painel responde por companhia "
+    "e trimestre: diga o nome (por exemplo, Itaú ou Banco Inter) ou o código CVM."
+)
+
+
+def texto_da_desambiguacao(resolucao) -> str:
+    """Pergunta de volta quando um nome designa mais de uma companhia (RN11).
+
+    Nomeia as candidatas com o código, que é como a escolha se faz, sem a
+    frase de regra interna que a versão do benchmark carrega.
+    """
+    opcoes = _lista_em_portugues(
+        f"{c.denom_social} (código CVM {c.cd_cvm})" for c in resolucao.candidatas
+    )
+    return (
+        f"“{resolucao.termo}” corresponde a {len(resolucao.candidatas)} "
+        f"companhias no painel da CVM: {opcoes}. Qual delas? Escolha abaixo ou "
+        "responda com o código."
+    )
 
 
 def opcoes_no_texto(texto: str) -> list[dict]:
@@ -2127,11 +2304,19 @@ def responder_com_agentes(
     except Exception as exc:
         raise FalhaConsultaAoVivo(orcamento.acumulado_usd) from exc
 
-    conteudo = resposta.resposta or "—"
+    conteudo = valores_legiveis(resposta.resposta or "—")
     if resposta.citacoes and not resposta.recusa:
-        conteudo += "\n\n" + "\n".join(f"> 📄 {c}" for c in resposta.citacoes)
+        conteudo += "\n\n" + "\n".join(
+            f"> 📄 {citacao_legivel(c)}" for c in resposta.citacoes
+        )
     if resposta.veredito_auditor:
-        conteudo += f"\n\n**Auditor:** {resposta.veredito_auditor.replace('_', ' ')}."
+        conteudo += (
+            "\n\n**Auditor:** "
+            + VEREDITO_LEGIVEL.get(
+                resposta.veredito_auditor, resposta.veredito_auditor.replace("_", " ")
+            )
+            + "."
+        )
     rastro = [
         f"{_papel_legivel(c.papel)} · `{c.ferramenta}` · "
         + (f"falhou ({c.erro})" if c.erro else (c.resumo or "ok"))
@@ -2203,27 +2388,36 @@ opcoes_modo = [MODO_DEMONSTRACAO]
 if config.habilitar_perguntas_livres:
     # Os agentes custam chamadas pagas, então ficam atrás do mesmo opt-in.
     opcoes_modo.extend([MODO_LIVRE, MODO_AGENTES])
-modo = st.sidebar.radio(
-    "Modo",
-    opcoes_modo,
-    index=(
-        0
-        if config.modo_demonstracao_cacheado or len(opcoes_modo) == 1
-        else 1
-    ),
+indice_modo_inicial = (
+    0 if config.modo_demonstracao_cacheado or len(opcoes_modo) == 1 else 1
 )
-st.sidebar.info(
-    f"**Modo ativo:** {modo}\n\n"
-    f"**Provedor LLM:** `{config.llm_provider}` · "
-    f"**Embeddings:** `{config.embedding_provider}`\n\n"
-    f"Perguntas livres restantes na sessão: "
-    f"{max(0, config.limite_perguntas_livres_por_sessao - st.session_state.perguntas_livres_usadas)}\n\n"
-    f"Orçamento restante da sessão: US$ "
-    f"{max(0.0, config.orcamento_teto_usd - st.session_state.custo_usd_acumulado):.4f}"
-)
+if config.habilitar_perguntas_livres:
+    # `_escapar_cifrao`: dois "US$" na mesma linha viravam fórmula LaTeX.
+    st.sidebar.info(
+        _escapar_cifrao(
+        "**Perguntas livres restantes:** "
+        f"{max(0, config.limite_perguntas_livres_por_sessao - st.session_state.perguntas_livres_usadas)}"
+        f" de {config.limite_perguntas_livres_por_sessao}\n\n"
+        "**Orçamento restante:** "
+        + _reais_de_dolar(
+            max(0.0, config.orcamento_teto_usd - st.session_state.custo_usd_acumulado)
+        )
+        + f" de {_reais_de_dolar(config.orcamento_teto_usd)}"
+        )
+    )
+else:
+    st.sidebar.warning(
+        "Perguntas livres estão desabilitadas por segurança. "
+        "Ative-as explicitamente apenas em ambiente controlado."
+    )
 st.sidebar.caption(
-    "**Guardrails ativos:** "
-    + (", ".join(f"`{s}`" for s in config.guardrails_ativos) or "_nenhum_")
+    "**Proteções:** "
+    + (
+        _lista_em_portugues(
+            NOMES_DOS_GUARDRAILS.get(nome, nome) for nome in config.guardrails_ativos
+        )
+        or "nenhuma"
+    )
     + ". Pedido de recomendação, preço-alvo ou aconselhamento pessoal é "
     "recusado antes de qualquer chamada externa (Res. CVM 20/2021 e 19/2021); "
     "identificadores pessoais são anonimizados e não entram em log."
@@ -2241,17 +2435,30 @@ else:
         "e da resposta fica fora: sem o Presidio, nome de pessoa não seria "
         "anonimizado."
     )
-st.sidebar.caption("**Observabilidade:** " + _texto_observabilidade)
-if not config.habilitar_perguntas_livres:
-    st.sidebar.warning(
-        "Perguntas livres estão desabilitadas por segurança. "
-        "Ative-as explicitamente apenas em ambiente controlado."
+with st.sidebar.expander("Detalhes técnicos"):
+    st.caption(
+        f"**Provedor do modelo de linguagem:** `{config.llm_provider}` · "
+        f"**Embeddings:** `{config.embedding_provider}`"
     )
+    st.caption(
+        "**Guardrails:** "
+        + (", ".join(f"`{nome}`" for nome in config.guardrails_ativos) or "nenhum")
+    )
+    st.caption("**Observabilidade:** " + _texto_observabilidade)
 
 # --- Corpo -------------------------------------------------------------------
 st.title("📊 Consulta ao corpus de releases")
 st.caption(
     "Demonstração técnica sobre documentos públicos; não é aconselhamento financeiro."
+)
+# O seletor fica na área principal: no celular a barra lateral abre fechada,
+# e com ela sumia a informação de que existem três modos.
+modo = st.radio(
+    "Modo",
+    opcoes_modo,
+    index=indice_modo_inicial,
+    horizontal=True,
+    captions=[LEGENDA_DO_MODO.get(opcao, "") for opcao in opcoes_modo],
 )
 apresentar_modo(
     modo,
@@ -2277,6 +2484,9 @@ for posicao, msg in enumerate(st.session_state.historico, start=1):
                 f"escolha_{posicao}",
                 rotulo="Companhias candidatas",
             )
+        if msg.get("complemento"):
+            with st.expander("Contexto do modelo: risco por porte e panorama do mercado"):
+                st.markdown(_escapar_cifrao(msg["complemento"]))
         if msg.get("fontes"):
             with st.expander(
                 "Trechos recuperados — os marcados com ✅ foram citados na resposta"
@@ -2296,15 +2506,21 @@ for posicao, msg in enumerate(st.session_state.historico, start=1):
                             f"- {_escapar_cifrao(_redigir_para_exibicao(fonte))}"
                         )
         if msg.get("fatos"):
-            st.dataframe(msg["fatos"], hide_index=True, width="stretch")
+            st.dataframe(
+                msg["fatos"],
+                hide_index=True,
+                width="stretch",
+                column_order=COLUNAS_DOS_FATOS,
+                column_config=ROTULOS_DOS_FATOS,
+            )
             if any("derivado" in f.get("origem", "") for f in msg["fatos"]):
                 st.warning(
-                    "Há valor **derivado** nesta resposta (RN10): o 4º "
+                    "Há valor **derivado** nesta resposta: o 4º "
                     "trimestre não existe como ITR e foi obtido por "
                     "DFP anual − ITR acumulado do 3T."
                 )
         if msg.get("citacoes"):
-            with st.expander("Procedência no painel da CVM (RN01)"):
+            with st.expander("Procedência no painel da CVM"):
                 for citacao in msg["citacoes"]:
                     st.markdown(f"- {_escapar_cifrao(citacao)}")
         if msg.get("rastro_agentes"):
@@ -2314,7 +2530,13 @@ for posicao, msg in enumerate(st.session_state.historico, start=1):
         if msg.get("gabarito"):
             st.info(f"Gabarito verificado: {msg['gabarito']}")
         if msg.get("modo"):
-            st.caption(f"modo: {msg['modo']} · provedor: {msg.get('provedor', '—')}")
+            # Sem provedor, a própria descrição do modo já diz "nenhuma
+            # chamada externa"; "provedor: —" era só ruído.
+            provedor = msg.get("provedor") or "—"
+            st.caption(
+                f"modo: {msg['modo']}"
+                + ("" if provedor == "—" else f" · provedor: {provedor}")
+            )
         if msg.get("motivo_tecnico"):
             st.caption(f"motivo técnico: {_escapar_cifrao(msg['motivo_tecnico'])}")
 
@@ -2376,6 +2598,7 @@ def responder_no_chat(pergunta: str, rastro: observabilidade.Observacao) -> bool
                 "opcoes_desambiguacao": item_projecao.get(
                     "opcoes_desambiguacao", []
                 ),
+                "complemento": item_projecao.get("complemento", ""),
                 "streamar": True,
             }
         )

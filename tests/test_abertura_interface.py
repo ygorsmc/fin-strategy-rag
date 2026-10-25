@@ -76,6 +76,11 @@ def _app(monkeypatch, *, livre: bool = False) -> AppTest:
     return AppTest.from_file("app_streamlit.py", default_timeout=120)
 
 
+def _ajuda(teste) -> list:
+    """O expansor de ajuda do modo; a barra lateral tem os seus."""
+    return [e for e in teste.expander if e.label.startswith("Como usar o modo")]
+
+
 def _painel_ou_pula():
     if app.carregar_rota_estruturada() is None:
         pytest.skip("painel contábil da CVM não construído nesta instância")
@@ -293,7 +298,7 @@ class TestExemplosDaAbertura:
             app.config.limite_perguntas_livres_por_sessao
         )
         for modo in (app.MODO_LIVRE, app.MODO_AGENTES):
-            teste.sidebar.radio[0].set_value(modo).run()
+            teste.radio[0].set_value(modo).run()
             teste.pills[0].set_value(teste.pills[0].options[0]).run()
             assert not teste.exception
             assert teste.session_state["historico"] == []
@@ -348,7 +353,7 @@ class TestAberturaAntesDoHistorico:
         assert _primeiro(elementos, "button_group") < _primeiro(
             elementos, "warning", "aguardando auditoria humana"
         )
-        assert not teste.expander
+        assert not _ajuda(teste)
 
     def test_com_conversa_a_ajuda_fica_acima_do_historico(self, monkeypatch):
         teste = _app(monkeypatch)
@@ -362,7 +367,7 @@ class TestAberturaAntesDoHistorico:
         assert _primeiro(elementos, "expander", "Como usar o modo") < _primeiro(
             elementos, "chat_message"
         )
-        assert teste.expander[0].proto.expanded is False
+        assert _ajuda(teste)[0].proto.expanded is False
 
     def test_trocar_de_modo_abre_a_ajuda_do_modo_novo(self, monkeypatch):
         teste = _app(monkeypatch, livre=True)
@@ -370,7 +375,7 @@ class TestAberturaAntesDoHistorico:
             {"papel": "assistant", "conteudo": "Resposta anterior."}
         ]
         teste.run()
-        teste.sidebar.radio[0].set_value(app.MODO_AGENTES).run()
+        teste.radio[0].set_value(app.MODO_AGENTES).run()
         assert not teste.exception
         ajuda = [e for e in teste.expander if e.label == "Como usar o modo Agentes"]
         assert ajuda and ajuda[0].proto.expanded is True
@@ -381,7 +386,7 @@ class TestAberturaAntesDoHistorico:
             {"papel": "assistant", "conteudo": "Resposta anterior."}
         ]
         teste.run()
-        teste.sidebar.radio[0].set_value(app.MODO_AGENTES).run()
+        teste.radio[0].set_value(app.MODO_AGENTES).run()
         teste.run()
         ajuda = [e for e in teste.expander if e.label == "Como usar o modo Agentes"]
         assert ajuda and ajuda[0].proto.expanded is False

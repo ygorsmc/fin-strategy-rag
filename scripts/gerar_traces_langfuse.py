@@ -317,7 +317,7 @@ def principal(argv=None) -> int:
     linhas = []
     for rotulo, pergunta, paga, modo in perguntas:
         if modo != modo_atual:
-            app.sidebar.radio[0].set_value(modo).run()
+            app.radio[0].set_value(modo).run()
             modo_atual = modo
         _journal(journal, {"evento": "inicio", "rotulo": rotulo, "paga": paga, "modo": modo})
         antes = len(observabilidade.traces_recentes())
